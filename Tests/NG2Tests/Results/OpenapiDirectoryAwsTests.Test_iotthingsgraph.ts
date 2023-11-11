@@ -8,7 +8,7 @@ export namespace MyNS {
 	export interface AssociateEntityToThingRequest {
 		thingName: string;
 		entityId: string;
-		namespaceVersion?: number;
+		namespaceVersion?: number | null;
 	}
 
 	export interface InvalidRequestException {
@@ -26,16 +26,16 @@ export namespace MyNS {
 	export interface CreateFlowTemplateResponse {
 
 		/** An object that contains summary information about a workflow. */
-		summary?: FlowTemplateSummary;
+		summary?: FlowTemplateSummary | null;
 	}
 
 
 	/** An object that contains summary information about a workflow. */
 	export interface FlowTemplateSummary {
-		id?: string;
-		arn?: string;
-		revisionNumber?: number;
-		createdAt?: Date;
+		id?: string | null;
+		arn?: string | null;
+		revisionNumber?: number | null;
+		createdAt?: Date | null;
 	}
 
 	export interface CreateFlowTemplateRequest {
@@ -45,7 +45,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		definition: DefinitionDocument;
-		compatibleNamespaceVersion?: number;
+		compatibleNamespaceVersion?: number | null;
 	}
 
 
@@ -66,21 +66,21 @@ export namespace MyNS {
 	export interface CreateSystemInstanceResponse {
 
 		/** An object that contains summary information about a system instance. */
-		summary?: SystemInstanceSummary;
+		summary?: SystemInstanceSummary | null;
 	}
 
 
 	/** An object that contains summary information about a system instance. */
 	export interface SystemInstanceSummary {
-		id?: string;
-		arn?: string;
-		status?: SystemInstanceSummaryStatus;
-		target?: SystemInstanceSummaryTarget;
-		greengrassGroupName?: string;
-		createdAt?: Date;
-		updatedAt?: Date;
-		greengrassGroupId?: string;
-		greengrassGroupVersionId?: string;
+		id?: string | null;
+		arn?: string | null;
+		status?: SystemInstanceSummaryStatus | null;
+		target?: SystemInstanceSummaryTarget | null;
+		greengrassGroupName?: string | null;
+		createdAt?: Date | null;
+		updatedAt?: Date | null;
+		greengrassGroupId?: string | null;
+		greengrassGroupVersionId?: string | null;
 	}
 
 	export enum SystemInstanceSummaryStatus { NOT_DEPLOYED = 0, BOOTSTRAP = 1, DEPLOY_IN_PROGRESS = 2, DEPLOYED_IN_TARGET = 3, UNDEPLOY_IN_PROGRESS = 4, FAILED = 5, PENDING_DELETE = 6, DELETED_IN_TARGET = 7 }
@@ -88,7 +88,7 @@ export namespace MyNS {
 	export enum SystemInstanceSummaryTarget { GREENGRASS = 0, CLOUD = 1 }
 
 	export interface CreateSystemInstanceRequest {
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 
 		/**
 		 * A document that defines an entity.
@@ -96,12 +96,12 @@ export namespace MyNS {
 		 */
 		definition: DefinitionDocument;
 		target: SystemInstanceSummaryTarget;
-		greengrassGroupName?: string;
-		s3BucketName?: string;
+		greengrassGroupName?: string | null;
+		s3BucketName?: string | null;
 
 		/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
-		metricsConfiguration?: MetricsConfiguration;
-		flowActionsRoleArn?: string;
+		metricsConfiguration?: MetricsConfiguration | null;
+		flowActionsRoleArn?: string | null;
 	}
 
 
@@ -114,23 +114,23 @@ export namespace MyNS {
 
 	/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
 	export interface MetricsConfiguration {
-		cloudMetricEnabled?: boolean;
-		metricRuleRoleArn?: string;
+		cloudMetricEnabled?: boolean | null;
+		metricRuleRoleArn?: string | null;
 	}
 
 	export interface CreateSystemTemplateResponse {
 
 		/** An object that contains information about a system. */
-		summary?: SystemTemplateSummary;
+		summary?: SystemTemplateSummary | null;
 	}
 
 
 	/** An object that contains information about a system. */
 	export interface SystemTemplateSummary {
-		id?: string;
-		arn?: string;
-		revisionNumber?: number;
-		createdAt?: Date;
+		id?: string | null;
+		arn?: string | null;
+		revisionNumber?: number | null;
+		createdAt?: Date | null;
 	}
 
 	export interface CreateSystemTemplateRequest {
@@ -140,7 +140,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		definition: DefinitionDocument;
-		compatibleNamespaceVersion?: number;
+		compatibleNamespaceVersion?: number | null;
 	}
 
 	export interface DeleteFlowTemplateResponse {
@@ -154,8 +154,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteNamespaceResponse {
-		namespaceArn?: string;
-		namespaceName?: string;
+		namespaceArn?: string | null;
+		namespaceName?: string | null;
 	}
 
 	export interface DeleteNamespaceRequest {
@@ -165,7 +165,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSystemInstanceRequest {
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface DeleteSystemTemplateResponse {
@@ -182,11 +182,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		summary: SystemInstanceSummary;
-		greengrassDeploymentId?: string;
+		greengrassDeploymentId?: string | null;
 	}
 
 	export interface DeploySystemInstanceRequest {
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface DeprecateFlowTemplateResponse {
@@ -204,15 +204,15 @@ export namespace MyNS {
 	}
 
 	export interface DescribeNamespaceResponse {
-		namespaceArn?: string;
-		namespaceName?: string;
-		trackingNamespaceName?: string;
-		trackingNamespaceVersion?: number;
-		namespaceVersion?: number;
+		namespaceArn?: string | null;
+		namespaceName?: string | null;
+		trackingNamespaceName?: string | null;
+		trackingNamespaceVersion?: number | null;
+		namespaceVersion?: number | null;
 	}
 
 	export interface DescribeNamespaceRequest {
-		namespaceName?: string;
+		namespaceName?: string | null;
 	}
 
 	export interface DissociateEntityFromThingResponse {
@@ -226,30 +226,30 @@ export namespace MyNS {
 	export enum DissociateEntityFromThingRequestEntityType { DEVICE = 0, SERVICE = 1, DEVICE_MODEL = 2, CAPABILITY = 3, STATE = 4, ACTION = 5, EVENT = 6, PROPERTY = 7, MAPPING = 8, ENUM = 9 }
 
 	export interface GetEntitiesResponse {
-		descriptions?: Array<EntityDescription>;
+		descriptions?: Array<EntityDescription> | null;
 	}
 
 
 	/** Describes the properties of an entity. */
 	export interface EntityDescription {
-		id?: string;
-		arn?: string;
-		type?: DissociateEntityFromThingRequestEntityType;
-		createdAt?: Date;
+		id?: string | null;
+		arn?: string | null;
+		type?: DissociateEntityFromThingRequestEntityType | null;
+		createdAt?: Date | null;
 
 		/** A document that defines an entity. */
-		definition?: DefinitionDocument;
+		definition?: DefinitionDocument | null;
 	}
 
 	export interface GetEntitiesRequest {
 		ids: Array<string>;
-		namespaceVersion?: number;
+		namespaceVersion?: number | null;
 	}
 
 	export interface GetFlowTemplateResponse {
 
 		/** An object that contains a workflow's definition and summary information. */
-		description?: FlowTemplateDescription;
+		description?: FlowTemplateDescription | null;
 	}
 
 
@@ -257,35 +257,35 @@ export namespace MyNS {
 	export interface FlowTemplateDescription {
 
 		/** An object that contains summary information about a workflow. */
-		summary?: FlowTemplateSummary;
+		summary?: FlowTemplateSummary | null;
 
 		/** A document that defines an entity. */
-		definition?: DefinitionDocument;
-		validatedNamespaceVersion?: number;
+		definition?: DefinitionDocument | null;
+		validatedNamespaceVersion?: number | null;
 	}
 
 	export interface GetFlowTemplateRequest {
 		id: string;
-		revisionNumber?: number;
+		revisionNumber?: number | null;
 	}
 
 	export interface GetFlowTemplateRevisionsResponse {
-		summaries?: Array<FlowTemplateSummary>;
-		nextToken?: string;
+		summaries?: Array<FlowTemplateSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetFlowTemplateRevisionsRequest {
 		id: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetNamespaceDeletionStatusResponse {
-		namespaceArn?: string;
-		namespaceName?: string;
-		status?: GetNamespaceDeletionStatusResponseStatus;
-		errorCode?: GetNamespaceDeletionStatusResponseErrorCode;
-		errorMessage?: string;
+		namespaceArn?: string | null;
+		namespaceName?: string | null;
+		status?: GetNamespaceDeletionStatusResponseStatus | null;
+		errorCode?: GetNamespaceDeletionStatusResponseErrorCode | null;
+		errorMessage?: string | null;
 	}
 
 	export enum GetNamespaceDeletionStatusResponseStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
@@ -298,7 +298,7 @@ export namespace MyNS {
 	export interface GetSystemInstanceResponse {
 
 		/** An object that contains a system instance definition and summary information. */
-		description?: SystemInstanceDescription;
+		description?: SystemInstanceDescription | null;
 	}
 
 
@@ -306,24 +306,24 @@ export namespace MyNS {
 	export interface SystemInstanceDescription {
 
 		/** An object that contains summary information about a system instance. */
-		summary?: SystemInstanceSummary;
+		summary?: SystemInstanceSummary | null;
 
 		/** A document that defines an entity. */
-		definition?: DefinitionDocument;
-		s3BucketName?: string;
+		definition?: DefinitionDocument | null;
+		s3BucketName?: string | null;
 
 		/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
-		metricsConfiguration?: MetricsConfiguration;
-		validatedNamespaceVersion?: number;
-		validatedDependencyRevisions?: Array<DependencyRevision>;
-		flowActionsRoleArn?: string;
+		metricsConfiguration?: MetricsConfiguration | null;
+		validatedNamespaceVersion?: number | null;
+		validatedDependencyRevisions?: Array<DependencyRevision> | null;
+		flowActionsRoleArn?: string | null;
 	}
 
 
 	/** An object that contains the ID and revision number of a workflow or system that is part of a deployment. */
 	export interface DependencyRevision {
-		id?: string;
-		revisionNumber?: number;
+		id?: string | null;
+		revisionNumber?: number | null;
 	}
 
 	export interface GetSystemInstanceRequest {
@@ -333,7 +333,7 @@ export namespace MyNS {
 	export interface GetSystemTemplateResponse {
 
 		/** An object that contains a system's definition document and summary information. */
-		description?: SystemTemplateDescription;
+		description?: SystemTemplateDescription | null;
 	}
 
 
@@ -341,36 +341,36 @@ export namespace MyNS {
 	export interface SystemTemplateDescription {
 
 		/** An object that contains information about a system. */
-		summary?: SystemTemplateSummary;
+		summary?: SystemTemplateSummary | null;
 
 		/** A document that defines an entity. */
-		definition?: DefinitionDocument;
-		validatedNamespaceVersion?: number;
+		definition?: DefinitionDocument | null;
+		validatedNamespaceVersion?: number | null;
 	}
 
 	export interface GetSystemTemplateRequest {
 		id: string;
-		revisionNumber?: number;
+		revisionNumber?: number | null;
 	}
 
 	export interface GetSystemTemplateRevisionsResponse {
-		summaries?: Array<SystemTemplateSummary>;
-		nextToken?: string;
+		summaries?: Array<SystemTemplateSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetSystemTemplateRevisionsRequest {
 		id: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetUploadStatusResponse {
 		uploadId: string;
 		uploadStatus: GetNamespaceDeletionStatusResponseStatus;
-		namespaceArn?: string;
-		namespaceName?: string;
-		namespaceVersion?: number;
-		failureReason?: Array<string>;
+		namespaceArn?: string | null;
+		namespaceName?: string | null;
+		namespaceVersion?: number | null;
+		failureReason?: Array<string> | null;
 		createdDate: Date;
 	}
 
@@ -379,49 +379,49 @@ export namespace MyNS {
 	}
 
 	export interface ListFlowExecutionMessagesResponse {
-		messages?: Array<FlowExecutionMessage>;
-		nextToken?: string;
+		messages?: Array<FlowExecutionMessage> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An object that contains information about a flow event. */
 	export interface FlowExecutionMessage {
-		messageId?: string;
-		eventType?: FlowExecutionMessageEventType;
-		timestamp?: Date;
-		payload?: string;
+		messageId?: string | null;
+		eventType?: FlowExecutionMessageEventType | null;
+		timestamp?: Date | null;
+		payload?: string | null;
 	}
 
 	export enum FlowExecutionMessageEventType { EXECUTION_STARTED = 0, EXECUTION_FAILED = 1, EXECUTION_ABORTED = 2, EXECUTION_SUCCEEDED = 3, STEP_STARTED = 4, STEP_FAILED = 5, STEP_SUCCEEDED = 6, ACTIVITY_SCHEDULED = 7, ACTIVITY_STARTED = 8, ACTIVITY_FAILED = 9, ACTIVITY_SUCCEEDED = 10, START_FLOW_EXECUTION_TASK = 11, SCHEDULE_NEXT_READY_STEPS_TASK = 12, THING_ACTION_TASK = 13, THING_ACTION_TASK_FAILED = 14, THING_ACTION_TASK_SUCCEEDED = 15, ACKNOWLEDGE_TASK_MESSAGE = 16 }
 
 	export interface ListFlowExecutionMessagesRequest {
 		flowExecutionId: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag>;
-		nextToken?: string;
+		tags?: Array<Tag> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
-		maxResults?: number;
+		maxResults?: number | null;
 		resourceArn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface SearchEntitiesResponse {
-		descriptions?: Array<EntityDescription>;
-		nextToken?: string;
+		descriptions?: Array<EntityDescription> | null;
+		nextToken?: string | null;
 	}
 
 	export interface SearchEntitiesRequest {
 		entityTypes: Array<EntityType>;
-		filters?: Array<EntityFilter>;
-		nextToken?: string;
-		maxResults?: number;
-		namespaceVersion?: number;
+		filters?: Array<EntityFilter> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		namespaceVersion?: number | null;
 	}
 
 	export enum EntityType { DEVICE = 0, SERVICE = 1, DEVICE_MODEL = 2, CAPABILITY = 3, STATE = 4, ACTION = 5, EVENT = 6, PROPERTY = 7, MAPPING = 8, ENUM = 9 }
@@ -429,48 +429,48 @@ export namespace MyNS {
 
 	/** An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by the value of <code>REFERENCED_ENTITY_ID</code>. */
 	export interface EntityFilter {
-		name?: EntityFilterName;
-		value?: Array<string>;
+		name?: EntityFilterName | null;
+		value?: Array<string> | null;
 	}
 
 	export enum EntityFilterName { NAME = 0, NAMESPACE = 1, SEMANTIC_TYPE_PATH = 2, REFERENCED_ENTITY_ID = 3 }
 
 	export interface SearchFlowExecutionsResponse {
-		summaries?: Array<FlowExecutionSummary>;
-		nextToken?: string;
+		summaries?: Array<FlowExecutionSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An object that contains summary information about a flow execution. */
 	export interface FlowExecutionSummary {
-		flowExecutionId?: string;
-		status?: FlowExecutionSummaryStatus;
-		systemInstanceId?: string;
-		flowTemplateId?: string;
-		createdAt?: Date;
-		updatedAt?: Date;
+		flowExecutionId?: string | null;
+		status?: FlowExecutionSummaryStatus | null;
+		systemInstanceId?: string | null;
+		flowTemplateId?: string | null;
+		createdAt?: Date | null;
+		updatedAt?: Date | null;
 	}
 
 	export enum FlowExecutionSummaryStatus { RUNNING = 0, ABORTED = 1, SUCCEEDED = 2, FAILED = 3 }
 
 	export interface SearchFlowExecutionsRequest {
 		systemInstanceId: string;
-		flowExecutionId?: string;
-		startTime?: Date;
-		endTime?: Date;
-		nextToken?: string;
-		maxResults?: number;
+		flowExecutionId?: string | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface SearchFlowTemplatesResponse {
-		summaries?: Array<FlowTemplateSummary>;
-		nextToken?: string;
+		summaries?: Array<FlowTemplateSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface SearchFlowTemplatesRequest {
-		filters?: Array<FlowTemplateFilter>;
-		nextToken?: string;
-		maxResults?: number;
+		filters?: Array<FlowTemplateFilter> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
@@ -483,34 +483,34 @@ export namespace MyNS {
 	export enum FlowTemplateFilterName { DEVICE_MODEL_ID = 0 }
 
 	export interface SearchSystemInstancesResponse {
-		summaries?: Array<SystemInstanceSummary>;
-		nextToken?: string;
+		summaries?: Array<SystemInstanceSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface SearchSystemInstancesRequest {
-		filters?: Array<SystemInstanceFilter>;
-		nextToken?: string;
-		maxResults?: number;
+		filters?: Array<SystemInstanceFilter> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status. */
 	export interface SystemInstanceFilter {
-		name?: SystemInstanceFilterName;
-		value?: Array<string>;
+		name?: SystemInstanceFilterName | null;
+		value?: Array<string> | null;
 	}
 
 	export enum SystemInstanceFilterName { SYSTEM_TEMPLATE_ID = 0, STATUS = 1, GREENGRASS_GROUP_NAME = 2 }
 
 	export interface SearchSystemTemplatesResponse {
-		summaries?: Array<SystemTemplateSummary>;
-		nextToken?: string;
+		summaries?: Array<SystemTemplateSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface SearchSystemTemplatesRequest {
-		filters?: Array<SystemTemplateFilter>;
-		nextToken?: string;
-		maxResults?: number;
+		filters?: Array<SystemTemplateFilter> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
@@ -523,22 +523,22 @@ export namespace MyNS {
 	export enum SystemTemplateFilterName { FLOW_TEMPLATE_ID = 0 }
 
 	export interface SearchThingsResponse {
-		things?: Array<Thing>;
-		nextToken?: string;
+		things?: Array<Thing> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An AWS IoT thing. */
 	export interface Thing {
-		thingArn?: string;
-		thingName?: string;
+		thingArn?: string | null;
+		thingName?: string | null;
 	}
 
 	export interface SearchThingsRequest {
 		entityId: string;
-		nextToken?: string;
-		maxResults?: number;
-		namespaceVersion?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		namespaceVersion?: number | null;
 	}
 
 	export interface TagResourceResponse {
@@ -552,11 +552,11 @@ export namespace MyNS {
 	export interface UndeploySystemInstanceResponse {
 
 		/** An object that contains summary information about a system instance. */
-		summary?: SystemInstanceSummary;
+		summary?: SystemInstanceSummary | null;
 	}
 
 	export interface UndeploySystemInstanceRequest {
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface UntagResourceResponse {
@@ -570,7 +570,7 @@ export namespace MyNS {
 	export interface UpdateFlowTemplateResponse {
 
 		/** An object that contains summary information about a workflow. */
-		summary?: FlowTemplateSummary;
+		summary?: FlowTemplateSummary | null;
 	}
 
 	export interface UpdateFlowTemplateRequest {
@@ -581,13 +581,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		definition: DefinitionDocument;
-		compatibleNamespaceVersion?: number;
+		compatibleNamespaceVersion?: number | null;
 	}
 
 	export interface UpdateSystemTemplateResponse {
 
 		/** An object that contains information about a system. */
-		summary?: SystemTemplateSummary;
+		summary?: SystemTemplateSummary | null;
 	}
 
 	export interface UpdateSystemTemplateRequest {
@@ -598,7 +598,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		definition: DefinitionDocument;
-		compatibleNamespaceVersion?: number;
+		compatibleNamespaceVersion?: number | null;
 	}
 
 	export interface UploadEntityDefinitionsResponse {
@@ -608,9 +608,9 @@ export namespace MyNS {
 	export interface UploadEntityDefinitionsRequest {
 
 		/** A document that defines an entity. */
-		document?: DefinitionDocument;
-		syncWithPublicNamespace?: boolean;
-		deprecateExistingEntities?: boolean;
+		document?: DefinitionDocument | null;
+		syncWithPublicNamespace?: boolean | null;
+		deprecateExistingEntities?: boolean | null;
 	}
 
 	export enum DeploymentTarget { GREENGRASS = 0, CLOUD = 1 }

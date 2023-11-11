@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface Groups {
 
 		/** The kind of insert resource this is. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The status of the insert request. */
-		responseCode?: string;
+		responseCode?: string | null;
 	}
 
 	@Injectable()

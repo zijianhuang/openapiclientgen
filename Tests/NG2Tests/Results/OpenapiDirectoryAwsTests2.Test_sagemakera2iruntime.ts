@@ -19,15 +19,15 @@ export namespace MyNS {
 
 	export interface DescribeHumanLoopResponse {
 		CreationTime: Date;
-		FailureReason?: string;
-		FailureCode?: string;
+		FailureReason?: string | null;
+		FailureCode?: string | null;
 		HumanLoopStatus: DescribeHumanLoopResponseHumanLoopStatus;
 		HumanLoopName: string;
 		HumanLoopArn: string;
 		FlowDefinitionArn: string;
 
 		/** Information about where the human output will be stored. */
-		HumanLoopOutput?: HumanLoopOutput;
+		HumanLoopOutput?: HumanLoopOutput | null;
 	}
 
 	export enum DescribeHumanLoopResponseHumanLoopStatus { InProgress = 0, Failed = 1, Completed = 2, Stopped = 3, Stopping = 4 }
@@ -40,21 +40,21 @@ export namespace MyNS {
 
 	export interface ListHumanLoopsResponse {
 		HumanLoopSummaries: Array<HumanLoopSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Summary information about the human loop. */
 	export interface HumanLoopSummary {
-		HumanLoopName?: string;
-		HumanLoopStatus?: DescribeHumanLoopResponseHumanLoopStatus;
-		CreationTime?: Date;
-		FailureReason?: string;
-		FlowDefinitionArn?: string;
+		HumanLoopName?: string | null;
+		HumanLoopStatus?: DescribeHumanLoopResponseHumanLoopStatus | null;
+		CreationTime?: Date | null;
+		FailureReason?: string | null;
+		FlowDefinitionArn?: string | null;
 	}
 
 	export interface StartHumanLoopResponse {
-		HumanLoopArn?: string;
+		HumanLoopArn?: string | null;
 	}
 
 	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
@@ -104,7 +104,7 @@ export namespace MyNS {
 		HumanLoopInput: HumanLoopInput;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
-		DataAttributes?: HumanLoopDataAttributes;
+		DataAttributes?: HumanLoopDataAttributes | null;
 	}
 
 	export interface StopHumanLoopRequest {
@@ -196,15 +196,15 @@ export namespace MyNS {
 		HumanLoopInput: StartHumanLoopPostBodyHumanLoopInput;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
-		DataAttributes?: StartHumanLoopPostBodyDataAttributes;
+		DataAttributes?: StartHumanLoopPostBodyDataAttributes | null;
 	}
 
 	export interface StartHumanLoopPostBodyHumanLoopInput {
-		InputContent?: string;
+		InputContent?: string | null;
 	}
 
 	export interface StartHumanLoopPostBodyDataAttributes {
-		ContentClassifiers?: Array<ContentClassifier>;
+		ContentClassifiers?: Array<ContentClassifier> | null;
 	}
 
 	export interface StopHumanLoopPostBody {

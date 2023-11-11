@@ -5,13 +5,13 @@ export namespace MyNS {
 
 	/** The response elements represent the output of a SQL statement over an array of data. */
 	export interface BatchExecuteStatementResponse {
-		updateResults?: Array<UpdateResult>;
+		updateResults?: Array<UpdateResult> | null;
 	}
 
 
 	/** The response elements represent the results of an update. */
 	export interface UpdateResult {
-		generatedFields?: Array<Field>;
+		generatedFields?: Array<Field> | null;
 	}
 
 
@@ -19,13 +19,13 @@ export namespace MyNS {
 	export interface Field {
 
 		/** Contains an array. */
-		arrayValue?: ArrayValue;
-		blobValue?: string;
-		booleanValue?: boolean;
-		doubleValue?: number;
-		isNull?: boolean;
-		longValue?: number;
-		stringValue?: string;
+		arrayValue?: ArrayValue | null;
+		blobValue?: string | null;
+		booleanValue?: boolean | null;
+		doubleValue?: number | null;
+		isNull?: boolean | null;
+		longValue?: number | null;
+		stringValue?: string | null;
 	}
 
 
@@ -33,29 +33,29 @@ export namespace MyNS {
 	export interface ArrayValue {
 
 		/** <p>An array of arrays.</p> <note> <p>Some array entries can be null.</p> </note> */
-		arrayValues?: Array<ArrayValue>;
+		arrayValues?: Array<ArrayValue> | null;
 
 		/** <p>An array of Boolean values.</p> <note> <p>Some array entries can be null.</p> </note> */
-		booleanValues?: Array<boolean>;
+		booleanValues?: Array<boolean> | null;
 
 		/** <p>An array of floating point numbers.</p> <note> <p>Some array entries can be null.</p> </note> */
-		doubleValues?: Array<number>;
+		doubleValues?: Array<number> | null;
 
 		/** <p>An array of integers.</p> <note> <p>Some array entries can be null.</p> </note> */
-		longValues?: Array<number>;
+		longValues?: Array<number> | null;
 
 		/** <p>An array of strings.</p> <note> <p>Some array entries can be null.</p> </note> */
-		stringValues?: Array<string>;
+		stringValues?: Array<string> | null;
 	}
 
 
 	/** A parameter used in a SQL statement. */
 	export interface SqlParameter {
-		name?: string;
-		typeHint?: SqlParameterTypeHint;
+		name?: string | null;
+		typeHint?: SqlParameterTypeHint | null;
 
 		/** Contains a value. */
-		value?: Field;
+		value?: Field | null;
 	}
 
 	export enum SqlParameterTypeHint { DATE = 0, DECIMAL = 1, TIME = 2, TIMESTAMP = 3 }
@@ -78,13 +78,13 @@ export namespace MyNS {
 
 	/** The response elements represent the output of a request to start a SQL transaction. */
 	export interface BeginTransactionResponse {
-		transactionId?: string;
+		transactionId?: string | null;
 	}
 
 
 	/** The response elements represent the output of a commit transaction request. */
 	export interface CommitTransactionResponse {
-		transactionStatus?: string;
+		transactionStatus?: string | null;
 	}
 
 	export interface NotFoundException {
@@ -93,89 +93,89 @@ export namespace MyNS {
 
 	/** The response elements represent the output of a request to run one or more SQL statements. */
 	export interface ExecuteSqlResponse {
-		sqlStatementResults?: Array<SqlStatementResult>;
+		sqlStatementResults?: Array<SqlStatementResult> | null;
 	}
 
 
 	/** <p>The result of a SQL statement.</p> <pre><code> &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; </code></pre> */
 	export interface SqlStatementResult {
-		numberOfRecordsUpdated?: number;
+		numberOfRecordsUpdated?: number | null;
 
 		/** The result set returned by a SQL statement. */
-		resultFrame?: ResultFrame;
+		resultFrame?: ResultFrame | null;
 	}
 
 
 	/** The result set returned by a SQL statement. */
 	export interface ResultFrame {
-		records?: Array<Record>;
+		records?: Array<Record> | null;
 
 		/** The metadata of the result set returned by a SQL statement. */
-		resultSetMetadata?: ResultSetMetadata;
+		resultSetMetadata?: ResultSetMetadata | null;
 	}
 
 
 	/** A record returned by a call. */
 	export interface Record {
-		values?: Array<Value>;
+		values?: Array<Value> | null;
 	}
 
 
 	/** <p>Contains the value of a column.</p> <pre><code> &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; </code></pre> */
 	export interface Value {
-		arrayValues?: Array<Value>;
-		bigIntValue?: number;
-		bitValue?: boolean;
-		blobValue?: string;
-		doubleValue?: number;
-		intValue?: number;
-		isNull?: boolean;
-		realValue?: number;
-		stringValue?: string;
+		arrayValues?: Array<Value> | null;
+		bigIntValue?: number | null;
+		bitValue?: boolean | null;
+		blobValue?: string | null;
+		doubleValue?: number | null;
+		intValue?: number | null;
+		isNull?: boolean | null;
+		realValue?: number | null;
+		stringValue?: string | null;
 
 		/** A structure value returned by a call. */
-		structValue?: StructValue;
+		structValue?: StructValue | null;
 	}
 
 
 	/** A structure value returned by a call. */
 	export interface StructValue {
-		attributes?: Array<Value>;
+		attributes?: Array<Value> | null;
 	}
 
 
 	/** The metadata of the result set returned by a SQL statement. */
 	export interface ResultSetMetadata {
-		columnCount?: number;
-		columnMetadata?: Array<ColumnMetadata>;
+		columnCount?: number | null;
+		columnMetadata?: Array<ColumnMetadata> | null;
 	}
 
 
 	/** Contains the metadata for a column. */
 	export interface ColumnMetadata {
-		arrayBaseColumnType?: number;
-		isAutoIncrement?: boolean;
-		isCaseSensitive?: boolean;
-		isCurrency?: boolean;
-		isSigned?: boolean;
-		label?: string;
-		name?: string;
-		nullable?: number;
-		precision?: number;
-		scale?: number;
-		schemaName?: string;
-		tableName?: string;
-		type?: number;
-		typeName?: string;
+		arrayBaseColumnType?: number | null;
+		isAutoIncrement?: boolean | null;
+		isCaseSensitive?: boolean | null;
+		isCurrency?: boolean | null;
+		isSigned?: boolean | null;
+		label?: string | null;
+		name?: string | null;
+		nullable?: number | null;
+		precision?: number | null;
+		scale?: number | null;
+		schemaName?: string | null;
+		tableName?: string | null;
+		type?: number | null;
+		typeName?: string | null;
 	}
 
 
 	/** The response elements represent the output of a request to run a SQL statement against a database. */
 	export interface ExecuteStatementResponse {
-		columnMetadata?: Array<ColumnMetadata>;
-		generatedFields?: Array<Field>;
-		numberOfRecordsUpdated?: number;
-		records?: Array<Array<Field>>;
+		columnMetadata?: Array<ColumnMetadata> | null;
+		generatedFields?: Array<Field> | null;
+		numberOfRecordsUpdated?: number | null;
+		records?: Array<Array<Field>> | null;
 	}
 
 	export enum DecimalReturnType { DOUBLE_OR_LONG = 0, STRING = 1 }
@@ -183,27 +183,27 @@ export namespace MyNS {
 
 	/** The response elements represent the output of a request to perform a rollback of a transaction. */
 	export interface RollbackTransactionResponse {
-		transactionStatus?: string;
+		transactionStatus?: string | null;
 	}
 
 
 	/** The request parameters represent the input of a SQL statement over an array of data. */
 	export interface BatchExecuteStatementRequest {
-		database?: string;
-		parameterSets?: Array<Array<SqlParameter>>;
+		database?: string | null;
+		parameterSets?: Array<Array<SqlParameter>> | null;
 		resourceArn: string;
-		schema?: string;
+		schema?: string | null;
 		secretArn: string;
 		sql: string;
-		transactionId?: string;
+		transactionId?: string | null;
 	}
 
 
 	/** The request parameters represent the input of a request to start a SQL transaction. */
 	export interface BeginTransactionRequest {
-		database?: string;
+		database?: string | null;
 		resourceArn: string;
-		schema?: string;
+		schema?: string | null;
 		secretArn: string;
 	}
 
@@ -219,33 +219,33 @@ export namespace MyNS {
 	/** The request parameters represent the input of a request to run one or more SQL statements. */
 	export interface ExecuteSqlRequest {
 		awsSecretStoreArn: string;
-		database?: string;
+		database?: string | null;
 		dbClusterOrInstanceArn: string;
-		schema?: string;
+		schema?: string | null;
 		sqlStatements: string;
 	}
 
 
 	/** Options that control how the result set is returned. */
 	export interface ResultSetOptions {
-		decimalReturnType?: DecimalReturnType;
+		decimalReturnType?: DecimalReturnType | null;
 	}
 
 
 	/** The request parameters represent the input of a request to run a SQL statement against a database. */
 	export interface ExecuteStatementRequest {
-		continueAfterTimeout?: boolean;
-		database?: string;
-		includeResultMetadata?: boolean;
-		parameters?: Array<SqlParameter>;
+		continueAfterTimeout?: boolean | null;
+		database?: string | null;
+		includeResultMetadata?: boolean | null;
+		parameters?: Array<SqlParameter> | null;
 		resourceArn: string;
 
 		/** Options that control how the result set is returned. */
-		resultSetOptions?: ResultSetOptions;
-		schema?: string;
+		resultSetOptions?: ResultSetOptions | null;
+		schema?: string | null;
 		secretArn: string;
 		sql: string;
-		transactionId?: string;
+		transactionId?: string | null;
 	}
 
 
@@ -325,10 +325,10 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		database?: string;
+		database?: string | null;
 
 		/** <p>The parameter set for the batch operation.</p> <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p> <ul> <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li> </ul> <note> <p>Array parameters are not supported.</p> </note> */
-		parameterSets?: Array<Array<SqlParameter>>;
+		parameterSets?: Array<Array<SqlParameter>> | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
@@ -343,7 +343,7 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		schema?: string;
+		schema?: string | null;
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
@@ -366,7 +366,7 @@ export namespace MyNS {
 		 * Max length: 192
 		 * Min length: 0
 		 */
-		transactionId?: string;
+		transactionId?: string | null;
 	}
 
 	export interface BeginTransactionPostBody {
@@ -376,7 +376,7 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		database?: string;
+		database?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
@@ -391,7 +391,7 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		schema?: string;
+		schema?: string | null;
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
@@ -444,7 +444,7 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		database?: string;
+		database?: string | null;
 
 		/**
 		 * The ARN of the Aurora Serverless DB cluster.
@@ -459,7 +459,7 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		schema?: string;
+		schema?: string | null;
 
 		/**
 		 * <p>One or more SQL statements to run on the DB cluster.</p> <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
@@ -473,20 +473,20 @@ export namespace MyNS {
 	export interface ExecuteStatementPostBody {
 
 		/** <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important> <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p> </important> */
-		continueAfterTimeout?: boolean;
+		continueAfterTimeout?: boolean | null;
 
 		/**
 		 * The name of the database.
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		database?: string;
+		database?: string | null;
 
 		/** A value that indicates whether to include metadata in the results. */
-		includeResultMetadata?: boolean;
+		includeResultMetadata?: boolean | null;
 
 		/** <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not supported.</p> </note> */
-		parameters?: Array<SqlParameter>;
+		parameters?: Array<SqlParameter> | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
@@ -497,14 +497,14 @@ export namespace MyNS {
 		resourceArn: string;
 
 		/** Options that control how the result set is returned. */
-		resultSetOptions?: ExecuteStatementPostBodyResultSetOptions;
+		resultSetOptions?: ExecuteStatementPostBodyResultSetOptions | null;
 
 		/**
 		 * The name of the database schema.
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		schema?: string;
+		schema?: string | null;
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
@@ -527,11 +527,11 @@ export namespace MyNS {
 		 * Max length: 192
 		 * Min length: 0
 		 */
-		transactionId?: string;
+		transactionId?: string | null;
 	}
 
 	export interface ExecuteStatementPostBodyResultSetOptions {
-		decimalReturnType?: DecimalReturnType;
+		decimalReturnType?: DecimalReturnType | null;
 	}
 
 	export interface RollbackTransactionPostBody {

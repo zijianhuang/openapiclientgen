@@ -3,27 +3,27 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchGetAggregateResourceConfigResponse {
-		BaseConfigurationItems?: Array<BaseConfigurationItem>;
-		UnprocessedResourceIdentifiers?: Array<AggregateResourceIdentifier>;
+		BaseConfigurationItems?: Array<BaseConfigurationItem> | null;
+		UnprocessedResourceIdentifiers?: Array<AggregateResourceIdentifier> | null;
 	}
 
 
 	/** The detailed configuration of a specified resource. */
 	export interface BaseConfigurationItem {
-		version?: string;
-		accountId?: string;
-		configurationItemCaptureTime?: Date;
-		configurationItemStatus?: BaseConfigurationItemConfigurationItemStatus;
-		configurationStateId?: string;
-		arn?: string;
-		resourceType?: BaseConfigurationItemResourceType;
-		resourceId?: string;
-		resourceName?: string;
-		awsRegion?: string;
-		availabilityZone?: string;
-		resourceCreationTime?: Date;
-		configuration?: string;
-		supplementaryConfiguration?: SupplementaryConfiguration;
+		version?: string | null;
+		accountId?: string | null;
+		configurationItemCaptureTime?: Date | null;
+		configurationItemStatus?: BaseConfigurationItemConfigurationItemStatus | null;
+		configurationStateId?: string | null;
+		arn?: string | null;
+		resourceType?: BaseConfigurationItemResourceType | null;
+		resourceId?: string | null;
+		resourceName?: string | null;
+		awsRegion?: string | null;
+		availabilityZone?: string | null;
+		resourceCreationTime?: Date | null;
+		configuration?: string | null;
+		supplementaryConfiguration?: SupplementaryConfiguration | null;
 	}
 
 	export enum BaseConfigurationItemConfigurationItemStatus { OK = 0, ResourceDiscovered = 1, ResourceNotRecorded = 2, ResourceDeleted = 3, ResourceDeletedNotRecorded = 4 }
@@ -40,7 +40,7 @@ export namespace MyNS {
 		SourceRegion: string;
 		ResourceId: string;
 		ResourceType: AggregateResourceIdentifierResourceType;
-		ResourceName?: string;
+		ResourceName?: string | null;
 	}
 
 	export enum AggregateResourceIdentifierResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
@@ -57,8 +57,8 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetResourceConfigResponse {
-		baseConfigurationItems?: Array<BaseConfigurationItem>;
-		unprocessedResourceKeys?: Array<ResourceKey>;
+		baseConfigurationItems?: Array<BaseConfigurationItem> | null;
+		unprocessedResourceKeys?: Array<ResourceKey> | null;
 	}
 
 
@@ -167,7 +167,7 @@ export namespace MyNS {
 
 	export interface DeleteRemediationConfigurationRequest {
 		ConfigRuleName: string;
-		ResourceType?: string;
+		ResourceType?: string | null;
 	}
 
 	export interface NoSuchRemediationConfigurationException {
@@ -180,21 +180,21 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRemediationExceptionsResponse {
-		FailedBatches?: Array<FailedDeleteRemediationExceptionsBatch>;
+		FailedBatches?: Array<FailedDeleteRemediationExceptionsBatch> | null;
 	}
 
 
 	/** List of each of the failed delete remediation exceptions with specific reasons. */
 	export interface FailedDeleteRemediationExceptionsBatch {
-		FailureMessage?: string;
-		FailedItems?: Array<RemediationExceptionResourceKey>;
+		FailureMessage?: string | null;
+		FailedItems?: Array<RemediationExceptionResourceKey> | null;
 	}
 
 
 	/** The details that identify a resource within AWS Config, including the resource type and resource ID.  */
 	export interface RemediationExceptionResourceKey {
-		ResourceType?: string;
-		ResourceId?: string;
+		ResourceType?: string | null;
+		ResourceId?: string | null;
 	}
 
 	export interface DeleteRemediationExceptionsRequest {
@@ -223,7 +223,7 @@ export namespace MyNS {
 
 	/** The output for the <a>DeliverConfigSnapshot</a> action, in JSON format. */
 	export interface DeliverConfigSnapshotResponse {
-		configSnapshotId?: string;
+		configSnapshotId?: string | null;
 	}
 
 
@@ -233,28 +233,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAggregateComplianceByConfigRulesResponse {
-		AggregateComplianceByConfigRules?: Array<AggregateComplianceByConfigRule>;
-		NextToken?: string;
+		AggregateComplianceByConfigRules?: Array<AggregateComplianceByConfigRule> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>Indicates whether an AWS Config rule is compliant based on account ID, region, compliance, and rule name.</p> <p>A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.</p> */
 	export interface AggregateComplianceByConfigRule {
-		ConfigRuleName?: string;
+		ConfigRuleName?: string | null;
 
 		/** Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance. */
-		Compliance?: Compliance;
-		AccountId?: string;
-		AwsRegion?: string;
+		Compliance?: Compliance | null;
+		AccountId?: string | null;
+		AwsRegion?: string | null;
 	}
 
 
 	/** Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance. */
 	export interface Compliance {
-		ComplianceType?: ComplianceComplianceType;
+		ComplianceType?: ComplianceComplianceType | null;
 
 		/** The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number. */
-		ComplianceContributorCount?: ComplianceContributorCount;
+		ComplianceContributorCount?: ComplianceContributorCount | null;
 	}
 
 	export enum ComplianceComplianceType { COMPLIANT = 0, NON_COMPLIANT = 1, NOT_APPLICABLE = 2, INSUFFICIENT_DATA = 3 }
@@ -262,26 +262,26 @@ export namespace MyNS {
 
 	/** The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number. */
 	export interface ComplianceContributorCount {
-		CappedCount?: number;
-		CapExceeded?: boolean;
+		CappedCount?: number | null;
+		CapExceeded?: boolean | null;
 	}
 
 	export interface DescribeAggregateComplianceByConfigRulesRequest {
 		ConfigurationAggregatorName: string;
 
 		/** Filters the compliance results based on account ID, region, compliance type, and rule name. */
-		Filters?: ConfigRuleComplianceFilters;
-		Limit?: number;
-		NextToken?: string;
+		Filters?: ConfigRuleComplianceFilters | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Filters the compliance results based on account ID, region, compliance type, and rule name. */
 	export interface ConfigRuleComplianceFilters {
-		ConfigRuleName?: string;
-		ComplianceType?: ComplianceComplianceType;
-		AccountId?: string;
-		AwsRegion?: string;
+		ConfigRuleName?: string | null;
+		ComplianceType?: ComplianceComplianceType | null;
+		AccountId?: string | null;
+		AwsRegion?: string | null;
 	}
 
 	export interface InvalidLimitException {
@@ -291,46 +291,46 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAggregationAuthorizationsResponse {
-		AggregationAuthorizations?: Array<AggregationAuthorization>;
-		NextToken?: string;
+		AggregationAuthorizations?: Array<AggregationAuthorization> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An object that represents the authorizations granted to aggregator accounts and regions. */
 	export interface AggregationAuthorization {
-		AggregationAuthorizationArn?: string;
-		AuthorizedAccountId?: string;
-		AuthorizedAwsRegion?: string;
-		CreationTime?: Date;
+		AggregationAuthorizationArn?: string | null;
+		AuthorizedAccountId?: string | null;
+		AuthorizedAwsRegion?: string | null;
+		CreationTime?: Date | null;
 	}
 
 	export interface DescribeAggregationAuthorizationsRequest {
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeComplianceByConfigRuleResponse {
-		ComplianceByConfigRules?: Array<ComplianceByConfigRule>;
-		NextToken?: string;
+		ComplianceByConfigRules?: Array<ComplianceByConfigRule> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Indicates whether an AWS Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply. */
 	export interface ComplianceByConfigRule {
-		ConfigRuleName?: string;
+		ConfigRuleName?: string | null;
 
 		/** Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance. */
-		Compliance?: Compliance;
+		Compliance?: Compliance | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeComplianceByConfigRuleRequest {
-		ConfigRuleNames?: Array<string>;
-		ComplianceTypes?: Array<ComplianceType>;
-		NextToken?: string;
+		ConfigRuleNames?: Array<string> | null;
+		ComplianceTypes?: Array<ComplianceType> | null;
+		NextToken?: string | null;
 	}
 
 	export enum ComplianceType { COMPLIANT = 0, NON_COMPLIANT = 1, NOT_APPLICABLE = 2, INSUFFICIENT_DATA = 3 }
@@ -338,98 +338,98 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeComplianceByResourceResponse {
-		ComplianceByResources?: Array<ComplianceByResource>;
-		NextToken?: string;
+		ComplianceByResources?: Array<ComplianceByResource> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Indicates whether an AWS resource that is evaluated according to one or more AWS Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules. */
 	export interface ComplianceByResource {
-		ResourceType?: string;
-		ResourceId?: string;
+		ResourceType?: string | null;
+		ResourceId?: string | null;
 
 		/** Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance. */
-		Compliance?: Compliance;
+		Compliance?: Compliance | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeComplianceByResourceRequest {
-		ResourceType?: string;
-		ResourceId?: string;
-		ComplianceTypes?: Array<ComplianceType>;
-		Limit?: number;
-		NextToken?: string;
+		ResourceType?: string | null;
+		ResourceId?: string | null;
+		ComplianceTypes?: Array<ComplianceType> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeConfigRuleEvaluationStatusResponse {
-		ConfigRulesEvaluationStatus?: Array<ConfigRuleEvaluationStatus>;
-		NextToken?: string;
+		ConfigRulesEvaluationStatus?: Array<ConfigRuleEvaluationStatus> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>Status information for your AWS managed Config rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.</p> <p>This action does not return status information about custom AWS Config rules.</p> */
 	export interface ConfigRuleEvaluationStatus {
-		ConfigRuleName?: string;
-		ConfigRuleArn?: string;
-		ConfigRuleId?: string;
-		LastSuccessfulInvocationTime?: Date;
-		LastFailedInvocationTime?: Date;
-		LastSuccessfulEvaluationTime?: Date;
-		LastFailedEvaluationTime?: Date;
-		FirstActivatedTime?: Date;
-		LastDeactivatedTime?: Date;
-		LastErrorCode?: string;
-		LastErrorMessage?: string;
-		FirstEvaluationStarted?: boolean;
+		ConfigRuleName?: string | null;
+		ConfigRuleArn?: string | null;
+		ConfigRuleId?: string | null;
+		LastSuccessfulInvocationTime?: Date | null;
+		LastFailedInvocationTime?: Date | null;
+		LastSuccessfulEvaluationTime?: Date | null;
+		LastFailedEvaluationTime?: Date | null;
+		FirstActivatedTime?: Date | null;
+		LastDeactivatedTime?: Date | null;
+		LastErrorCode?: string | null;
+		LastErrorMessage?: string | null;
+		FirstEvaluationStarted?: boolean | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeConfigRuleEvaluationStatusRequest {
-		ConfigRuleNames?: Array<string>;
-		NextToken?: string;
-		Limit?: number;
+		ConfigRuleNames?: Array<string> | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeConfigRulesResponse {
-		ConfigRules?: Array<ConfigRule>;
-		NextToken?: string;
+		ConfigRules?: Array<ConfigRule> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).</p> <note> <p>You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> </note> <p>For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p> */
 	export interface ConfigRule {
-		ConfigRuleName?: string;
-		ConfigRuleArn?: string;
-		ConfigRuleId?: string;
-		Description?: string;
+		ConfigRuleName?: string | null;
+		ConfigRuleArn?: string | null;
+		ConfigRuleId?: string | null;
+		Description?: string | null;
 
 		/** Defines which resources trigger an evaluation for an AWS Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration. */
-		Scope?: Scope;
+		Scope?: Scope | null;
 
 		/**
 		 * Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation of your AWS resources.
 		 * Required
 		 */
 		Source: Source;
-		InputParameters?: string;
-		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency;
-		ConfigRuleState?: ConfigRuleConfigRuleState;
-		CreatedBy?: string;
+		InputParameters?: string | null;
+		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency | null;
+		ConfigRuleState?: ConfigRuleConfigRuleState | null;
+		CreatedBy?: string | null;
 	}
 
 
 	/** Defines which resources trigger an evaluation for an AWS Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration. */
 	export interface Scope {
-		ComplianceResourceTypes?: Array<string>;
-		TagKey?: string;
-		TagValue?: string;
-		ComplianceResourceId?: string;
+		ComplianceResourceTypes?: Array<string> | null;
+		TagKey?: string | null;
+		TagValue?: string | null;
+		ComplianceResourceId?: string | null;
 	}
 
 
@@ -437,7 +437,7 @@ export namespace MyNS {
 	export interface Source {
 		Owner: SourceOwner;
 		SourceIdentifier: string;
-		SourceDetails?: Array<SourceDetail>;
+		SourceDetails?: Array<SourceDetail> | null;
 	}
 
 	export enum SourceOwner { CUSTOM_LAMBDA = 0, AWS = 1 }
@@ -445,9 +445,9 @@ export namespace MyNS {
 
 	/** Provides the source and the message types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.  */
 	export interface SourceDetail {
-		EventSource?: SourceDetailEventSource;
-		MessageType?: SourceDetailMessageType;
-		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency;
+		EventSource?: SourceDetailEventSource | null;
+		MessageType?: SourceDetailMessageType | null;
+		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency | null;
 	}
 
 	export enum SourceDetailEventSource { aws_config = 0 }
@@ -461,25 +461,25 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeConfigRulesRequest {
-		ConfigRuleNames?: Array<string>;
-		NextToken?: string;
+		ConfigRuleNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeConfigurationAggregatorSourcesStatusResponse {
-		AggregatedSourceStatusList?: Array<AggregatedSourceStatus>;
-		NextToken?: string;
+		AggregatedSourceStatusList?: Array<AggregatedSourceStatus> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The current sync status between the source and the aggregator account. */
 	export interface AggregatedSourceStatus {
-		SourceId?: string;
-		SourceType?: AggregatedSourceStatusSourceType;
-		AwsRegion?: string;
-		LastUpdateStatus?: AggregatedSourceStatusLastUpdateStatus;
-		LastUpdateTime?: Date;
-		LastErrorCode?: string;
-		LastErrorMessage?: string;
+		SourceId?: string | null;
+		SourceType?: AggregatedSourceStatusSourceType | null;
+		AwsRegion?: string | null;
+		LastUpdateStatus?: AggregatedSourceStatusLastUpdateStatus | null;
+		LastUpdateTime?: Date | null;
+		LastErrorCode?: string | null;
+		LastErrorMessage?: string | null;
 	}
 
 	export enum AggregatedSourceStatusSourceType { ACCOUNT = 0, ORGANIZATION = 1 }
@@ -488,70 +488,70 @@ export namespace MyNS {
 
 	export interface DescribeConfigurationAggregatorSourcesStatusRequest {
 		ConfigurationAggregatorName: string;
-		UpdateStatus?: Array<AggregatedSourceStatusType>;
-		NextToken?: string;
-		Limit?: number;
+		UpdateStatus?: Array<AggregatedSourceStatusType> | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export enum AggregatedSourceStatusType { FAILED = 0, SUCCEEDED = 1, OUTDATED = 2 }
 
 	export interface DescribeConfigurationAggregatorsResponse {
-		ConfigurationAggregators?: Array<ConfigurationAggregator>;
-		NextToken?: string;
+		ConfigurationAggregators?: Array<ConfigurationAggregator> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.  */
 	export interface ConfigurationAggregator {
-		ConfigurationAggregatorName?: string;
-		ConfigurationAggregatorArn?: string;
-		AccountAggregationSources?: Array<AccountAggregationSource>;
+		ConfigurationAggregatorName?: string | null;
+		ConfigurationAggregatorArn?: string | null;
+		AccountAggregationSources?: Array<AccountAggregationSource> | null;
 
 		/** This object contains regions to set up the aggregator and an IAM role to retrieve organization details. */
-		OrganizationAggregationSource?: OrganizationAggregationSource;
-		CreationTime?: Date;
-		LastUpdatedTime?: Date;
+		OrganizationAggregationSource?: OrganizationAggregationSource | null;
+		CreationTime?: Date | null;
+		LastUpdatedTime?: Date | null;
 	}
 
 
 	/** A collection of accounts and regions. */
 	export interface AccountAggregationSource {
 		AccountIds: Array<string>;
-		AllAwsRegions?: boolean;
-		AwsRegions?: Array<string>;
+		AllAwsRegions?: boolean | null;
+		AwsRegions?: Array<string> | null;
 	}
 
 
 	/** This object contains regions to set up the aggregator and an IAM role to retrieve organization details. */
 	export interface OrganizationAggregationSource {
 		RoleArn: string;
-		AwsRegions?: Array<string>;
-		AllAwsRegions?: boolean;
+		AwsRegions?: Array<string> | null;
+		AllAwsRegions?: boolean | null;
 	}
 
 	export interface DescribeConfigurationAggregatorsRequest {
-		ConfigurationAggregatorNames?: Array<string>;
-		NextToken?: string;
-		Limit?: number;
+		ConfigurationAggregatorNames?: Array<string> | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** The output for the <a>DescribeConfigurationRecorderStatus</a> action, in JSON format. */
 	export interface DescribeConfigurationRecorderStatusResponse {
-		ConfigurationRecordersStatus?: Array<ConfigurationRecorderStatus>;
+		ConfigurationRecordersStatus?: Array<ConfigurationRecorderStatus> | null;
 	}
 
 
 	/** The current status of the configuration recorder. */
 	export interface ConfigurationRecorderStatus {
-		name?: string;
-		lastStartTime?: Date;
-		lastStopTime?: Date;
-		recording?: boolean;
-		lastStatus?: ConfigurationRecorderStatusLastStatus;
-		lastErrorCode?: string;
-		lastErrorMessage?: string;
-		lastStatusChangeTime?: Date;
+		name?: string | null;
+		lastStartTime?: Date | null;
+		lastStopTime?: Date | null;
+		recording?: boolean | null;
+		lastStatus?: ConfigurationRecorderStatusLastStatus | null;
+		lastErrorCode?: string | null;
+		lastErrorMessage?: string | null;
+		lastStatusChangeTime?: Date | null;
 	}
 
 	export enum ConfigurationRecorderStatusLastStatus { Pending = 0, Success = 1, Failure = 2 }
@@ -559,31 +559,31 @@ export namespace MyNS {
 
 	/** The input for the <a>DescribeConfigurationRecorderStatus</a> action. */
 	export interface DescribeConfigurationRecorderStatusRequest {
-		ConfigurationRecorderNames?: Array<string>;
+		ConfigurationRecorderNames?: Array<string> | null;
 	}
 
 
 	/** The output for the <a>DescribeConfigurationRecorders</a> action. */
 	export interface DescribeConfigurationRecordersResponse {
-		ConfigurationRecorders?: Array<ConfigurationRecorder>;
+		ConfigurationRecorders?: Array<ConfigurationRecorder> | null;
 	}
 
 
 	/** An object that represents the recording of configuration changes of an AWS resource. */
 	export interface ConfigurationRecorder {
-		name?: string;
-		roleARN?: string;
+		name?: string | null;
+		roleARN?: string | null;
 
 		/** <p>Specifies the types of AWS resource for which AWS Config records configuration changes.</p> <p>In the recording group, you specify whether all supported types or specific types of resources are recorded.</p> <p>By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.</p> <p>You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.</p> <important> <p>The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.</p> </important> <p>If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource types, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources AWS Config Records</a>.</p> */
-		recordingGroup?: RecordingGroup;
+		recordingGroup?: RecordingGroup | null;
 	}
 
 
 	/** <p>Specifies the types of AWS resource for which AWS Config records configuration changes.</p> <p>In the recording group, you specify whether all supported types or specific types of resources are recorded.</p> <p>By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.</p> <p>You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.</p> <important> <p>The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.</p> </important> <p>If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource types, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources AWS Config Records</a>.</p> */
 	export interface RecordingGroup {
-		allSupported?: boolean;
-		includeGlobalResourceTypes?: boolean;
-		resourceTypes?: Array<ResourceType>;
+		allSupported?: boolean | null;
+		includeGlobalResourceTypes?: boolean | null;
+		resourceTypes?: Array<ResourceType> | null;
 	}
 
 	export enum ResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
@@ -591,20 +591,20 @@ export namespace MyNS {
 
 	/** The input for the <a>DescribeConfigurationRecorders</a> action. */
 	export interface DescribeConfigurationRecordersRequest {
-		ConfigurationRecorderNames?: Array<string>;
+		ConfigurationRecorderNames?: Array<string> | null;
 	}
 
 	export interface DescribeConformancePackComplianceResponse {
 		ConformancePackName: string;
 		ConformancePackRuleComplianceList: Array<ConformancePackRuleCompliance>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Compliance information of one or more AWS Config rules within a conformance pack. You can filter using AWS Config rule names and compliance types. */
 	export interface ConformancePackRuleCompliance {
-		ConfigRuleName?: string;
-		ComplianceType?: ConformancePackRuleComplianceComplianceType;
+		ConfigRuleName?: string | null;
+		ComplianceType?: ConformancePackRuleComplianceComplianceType | null;
 	}
 
 	export enum ConformancePackRuleComplianceComplianceType { COMPLIANT = 0, NON_COMPLIANT = 1 }
@@ -613,24 +613,24 @@ export namespace MyNS {
 		ConformancePackName: string;
 
 		/** Filters the conformance pack by compliance types and AWS Config rule names. */
-		Filters?: ConformancePackComplianceFilters;
-		Limit?: number;
-		NextToken?: string;
+		Filters?: ConformancePackComplianceFilters | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Filters the conformance pack by compliance types and AWS Config rule names. */
 	export interface ConformancePackComplianceFilters {
-		ConfigRuleNames?: Array<string>;
-		ComplianceType?: ConformancePackRuleComplianceComplianceType;
+		ConfigRuleNames?: Array<string> | null;
+		ComplianceType?: ConformancePackRuleComplianceComplianceType | null;
 	}
 
 	export interface NoSuchConfigRuleInConformancePackException {
 	}
 
 	export interface DescribeConformancePackStatusResponse {
-		ConformancePackStatusDetails?: Array<ConformancePackStatusDetail>;
-		NextToken?: string;
+		ConformancePackStatusDetails?: Array<ConformancePackStatusDetail> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -641,22 +641,22 @@ export namespace MyNS {
 		ConformancePackArn: string;
 		ConformancePackState: ConformancePackStatusDetailConformancePackState;
 		StackArn: string;
-		ConformancePackStatusReason?: string;
+		ConformancePackStatusReason?: string | null;
 		LastUpdateRequestedTime: Date;
-		LastUpdateCompletedTime?: Date;
+		LastUpdateCompletedTime?: Date | null;
 	}
 
 	export enum ConformancePackStatusDetailConformancePackState { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4 }
 
 	export interface DescribeConformancePackStatusRequest {
-		ConformancePackNames?: Array<string>;
-		Limit?: number;
-		NextToken?: string;
+		ConformancePackNames?: Array<string> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeConformancePacksResponse {
-		ConformancePackDetails?: Array<ConformancePackDetail>;
-		NextToken?: string;
+		ConformancePackDetails?: Array<ConformancePackDetail> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -666,10 +666,10 @@ export namespace MyNS {
 		ConformancePackArn: string;
 		ConformancePackId: string;
 		DeliveryS3Bucket: string;
-		DeliveryS3KeyPrefix?: string;
-		ConformancePackInputParameters?: Array<ConformancePackInputParameter>;
-		LastUpdateRequestedTime?: Date;
-		CreatedBy?: string;
+		DeliveryS3KeyPrefix?: string | null;
+		ConformancePackInputParameters?: Array<ConformancePackInputParameter> | null;
+		LastUpdateRequestedTime?: Date | null;
+		CreatedBy?: string | null;
 	}
 
 
@@ -680,41 +680,41 @@ export namespace MyNS {
 	}
 
 	export interface DescribeConformancePacksRequest {
-		ConformancePackNames?: Array<string>;
-		Limit?: number;
-		NextToken?: string;
+		ConformancePackNames?: Array<string> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The output for the <a>DescribeDeliveryChannelStatus</a> action. */
 	export interface DescribeDeliveryChannelStatusResponse {
-		DeliveryChannelsStatus?: Array<DeliveryChannelStatus>;
+		DeliveryChannelsStatus?: Array<DeliveryChannelStatus> | null;
 	}
 
 
 	/** <p>The status of a specified delivery channel.</p> <p>Valid values: <code>Success</code> | <code>Failure</code> </p> */
 	export interface DeliveryChannelStatus {
-		name?: string;
+		name?: string | null;
 
 		/** Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic. */
-		configSnapshotDeliveryInfo?: ConfigExportDeliveryInfo;
+		configSnapshotDeliveryInfo?: ConfigExportDeliveryInfo | null;
 
 		/** Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic. */
-		configHistoryDeliveryInfo?: ConfigExportDeliveryInfo;
+		configHistoryDeliveryInfo?: ConfigExportDeliveryInfo | null;
 
 		/** A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic. */
-		configStreamDeliveryInfo?: ConfigStreamDeliveryInfo;
+		configStreamDeliveryInfo?: ConfigStreamDeliveryInfo | null;
 	}
 
 
 	/** Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic. */
 	export interface ConfigExportDeliveryInfo {
-		lastStatus?: ConfigExportDeliveryInfoLastStatus;
-		lastErrorCode?: string;
-		lastErrorMessage?: string;
-		lastAttemptTime?: Date;
-		lastSuccessfulTime?: Date;
-		nextDeliveryTime?: Date;
+		lastStatus?: ConfigExportDeliveryInfoLastStatus | null;
+		lastErrorCode?: string | null;
+		lastErrorMessage?: string | null;
+		lastAttemptTime?: Date | null;
+		lastSuccessfulTime?: Date | null;
+		nextDeliveryTime?: Date | null;
 	}
 
 	export enum ConfigExportDeliveryInfoLastStatus { Success = 0, Failure = 1, Not_Applicable = 2 }
@@ -722,51 +722,51 @@ export namespace MyNS {
 
 	/** A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic. */
 	export interface ConfigStreamDeliveryInfo {
-		lastStatus?: ConfigExportDeliveryInfoLastStatus;
-		lastErrorCode?: string;
-		lastErrorMessage?: string;
-		lastStatusChangeTime?: Date;
+		lastStatus?: ConfigExportDeliveryInfoLastStatus | null;
+		lastErrorCode?: string | null;
+		lastErrorMessage?: string | null;
+		lastStatusChangeTime?: Date | null;
 	}
 
 
 	/** The input for the <a>DeliveryChannelStatus</a> action. */
 	export interface DescribeDeliveryChannelStatusRequest {
-		DeliveryChannelNames?: Array<string>;
+		DeliveryChannelNames?: Array<string> | null;
 	}
 
 
 	/** The output for the <a>DescribeDeliveryChannels</a> action. */
 	export interface DescribeDeliveryChannelsResponse {
-		DeliveryChannels?: Array<DeliveryChannel>;
+		DeliveryChannels?: Array<DeliveryChannel> | null;
 	}
 
 
 	/** The channel through which AWS Config delivers notifications and updated configuration states. */
 	export interface DeliveryChannel {
-		name?: string;
-		s3BucketName?: string;
-		s3KeyPrefix?: string;
-		snsTopicARN?: string;
+		name?: string | null;
+		s3BucketName?: string | null;
+		s3KeyPrefix?: string | null;
+		snsTopicARN?: string | null;
 
 		/** <p>Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.</p> <p>The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:</p> <ul> <li> <p>The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules.</p> </li> <li> <p>The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.</p> </li> </ul> <p>If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value.</p> <ol> <li> <p>For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.</p> </li> <li> <p>You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>. </p> </li> <li> <p>You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.</p> </li> <li> <p>Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours. </p> </li> </ol> <p>You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.</p> <p>To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.</p> */
-		configSnapshotDeliveryProperties?: ConfigSnapshotDeliveryProperties;
+		configSnapshotDeliveryProperties?: ConfigSnapshotDeliveryProperties | null;
 	}
 
 
 	/** <p>Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.</p> <p>The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:</p> <ul> <li> <p>The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules.</p> </li> <li> <p>The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.</p> </li> </ul> <p>If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value.</p> <ol> <li> <p>For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.</p> </li> <li> <p>You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>. </p> </li> <li> <p>You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.</p> </li> <li> <p>Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours. </p> </li> </ol> <p>You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.</p> <p>To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.</p> */
 	export interface ConfigSnapshotDeliveryProperties {
-		deliveryFrequency?: SourceDetailMaximumExecutionFrequency;
+		deliveryFrequency?: SourceDetailMaximumExecutionFrequency | null;
 	}
 
 
 	/** The input for the <a>DescribeDeliveryChannels</a> action. */
 	export interface DescribeDeliveryChannelsRequest {
-		DeliveryChannelNames?: Array<string>;
+		DeliveryChannelNames?: Array<string> | null;
 	}
 
 	export interface DescribeOrganizationConfigRuleStatusesResponse {
-		OrganizationConfigRuleStatuses?: Array<OrganizationConfigRuleStatus>;
-		NextToken?: string;
+		OrganizationConfigRuleStatuses?: Array<OrganizationConfigRuleStatus> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -774,22 +774,22 @@ export namespace MyNS {
 	export interface OrganizationConfigRuleStatus {
 		OrganizationConfigRuleName: string;
 		OrganizationRuleStatus: OrganizationConfigRuleStatusOrganizationRuleStatus;
-		ErrorCode?: string;
-		ErrorMessage?: string;
-		LastUpdateTime?: Date;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
+		LastUpdateTime?: Date | null;
 	}
 
 	export enum OrganizationConfigRuleStatusOrganizationRuleStatus { CREATE_SUCCESSFUL = 0, CREATE_IN_PROGRESS = 1, CREATE_FAILED = 2, DELETE_SUCCESSFUL = 3, DELETE_FAILED = 4, DELETE_IN_PROGRESS = 5, UPDATE_SUCCESSFUL = 6, UPDATE_IN_PROGRESS = 7, UPDATE_FAILED = 8 }
 
 	export interface DescribeOrganizationConfigRuleStatusesRequest {
-		OrganizationConfigRuleNames?: Array<string>;
-		Limit?: number;
-		NextToken?: string;
+		OrganizationConfigRuleNames?: Array<string> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeOrganizationConfigRulesResponse {
-		OrganizationConfigRules?: Array<OrganizationConfigRule>;
-		NextToken?: string;
+		OrganizationConfigRules?: Array<OrganizationConfigRule> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -799,52 +799,52 @@ export namespace MyNS {
 		OrganizationConfigRuleArn: string;
 
 		/** An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. */
-		OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata;
+		OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata | null;
 
 		/** An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. */
-		OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata;
-		ExcludedAccounts?: Array<string>;
-		LastUpdateTime?: Date;
+		OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata | null;
+		ExcludedAccounts?: Array<string> | null;
+		LastUpdateTime?: Date | null;
 	}
 
 
 	/** An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. */
 	export interface OrganizationManagedRuleMetadata {
-		Description?: string;
+		Description?: string | null;
 		RuleIdentifier: string;
-		InputParameters?: string;
-		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency;
-		ResourceTypesScope?: Array<string>;
-		ResourceIdScope?: string;
-		TagKeyScope?: string;
-		TagValueScope?: string;
+		InputParameters?: string | null;
+		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency | null;
+		ResourceTypesScope?: Array<string> | null;
+		ResourceIdScope?: string | null;
+		TagKeyScope?: string | null;
+		TagValueScope?: string | null;
 	}
 
 
 	/** An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. */
 	export interface OrganizationCustomRuleMetadata {
-		Description?: string;
+		Description?: string | null;
 		LambdaFunctionArn: string;
 		OrganizationConfigRuleTriggerTypes: Array<OrganizationConfigRuleTriggerType>;
-		InputParameters?: string;
-		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency;
-		ResourceTypesScope?: Array<string>;
-		ResourceIdScope?: string;
-		TagKeyScope?: string;
-		TagValueScope?: string;
+		InputParameters?: string | null;
+		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency | null;
+		ResourceTypesScope?: Array<string> | null;
+		ResourceIdScope?: string | null;
+		TagKeyScope?: string | null;
+		TagValueScope?: string | null;
 	}
 
 	export enum OrganizationConfigRuleTriggerType { ConfigurationItemChangeNotification = 0, OversizedConfigurationItemChangeNotification = 1, ScheduledNotification = 2 }
 
 	export interface DescribeOrganizationConfigRulesRequest {
-		OrganizationConfigRuleNames?: Array<string>;
-		Limit?: number;
-		NextToken?: string;
+		OrganizationConfigRuleNames?: Array<string> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeOrganizationConformancePackStatusesResponse {
-		OrganizationConformancePackStatuses?: Array<OrganizationConformancePackStatus>;
-		NextToken?: string;
+		OrganizationConformancePackStatuses?: Array<OrganizationConformancePackStatus> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -852,20 +852,20 @@ export namespace MyNS {
 	export interface OrganizationConformancePackStatus {
 		OrganizationConformancePackName: string;
 		Status: OrganizationConfigRuleStatusOrganizationRuleStatus;
-		ErrorCode?: string;
-		ErrorMessage?: string;
-		LastUpdateTime?: Date;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
+		LastUpdateTime?: Date | null;
 	}
 
 	export interface DescribeOrganizationConformancePackStatusesRequest {
-		OrganizationConformancePackNames?: Array<string>;
-		Limit?: number;
-		NextToken?: string;
+		OrganizationConformancePackNames?: Array<string> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeOrganizationConformancePacksResponse {
-		OrganizationConformancePacks?: Array<OrganizationConformancePack>;
-		NextToken?: string;
+		OrganizationConformancePacks?: Array<OrganizationConformancePack> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -874,37 +874,37 @@ export namespace MyNS {
 		OrganizationConformancePackName: string;
 		OrganizationConformancePackArn: string;
 		DeliveryS3Bucket: string;
-		DeliveryS3KeyPrefix?: string;
-		ConformancePackInputParameters?: Array<ConformancePackInputParameter>;
-		ExcludedAccounts?: Array<string>;
+		DeliveryS3KeyPrefix?: string | null;
+		ConformancePackInputParameters?: Array<ConformancePackInputParameter> | null;
+		ExcludedAccounts?: Array<string> | null;
 		LastUpdateTime: Date;
 	}
 
 	export interface DescribeOrganizationConformancePacksRequest {
-		OrganizationConformancePackNames?: Array<string>;
-		Limit?: number;
-		NextToken?: string;
+		OrganizationConformancePackNames?: Array<string> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribePendingAggregationRequestsResponse {
-		PendingAggregationRequests?: Array<PendingAggregationRequest>;
-		NextToken?: string;
+		PendingAggregationRequests?: Array<PendingAggregationRequest> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized. */
 	export interface PendingAggregationRequest {
-		RequesterAccountId?: string;
-		RequesterAwsRegion?: string;
+		RequesterAccountId?: string | null;
+		RequesterAwsRegion?: string | null;
 	}
 
 	export interface DescribePendingAggregationRequestsRequest {
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeRemediationConfigurationsResponse {
-		RemediationConfigurations?: Array<RemediationConfiguration>;
+		RemediationConfigurations?: Array<RemediationConfiguration> | null;
 	}
 
 
@@ -913,17 +913,17 @@ export namespace MyNS {
 		ConfigRuleName: string;
 		TargetType: RemediationConfigurationTargetType;
 		TargetId: string;
-		TargetVersion?: string;
-		Parameters?: RemediationParameters;
-		ResourceType?: string;
-		Automatic?: boolean;
+		TargetVersion?: string | null;
+		Parameters?: RemediationParameters | null;
+		ResourceType?: string | null;
+		Automatic?: boolean | null;
 
 		/** The controls that AWS Config uses for executing remediations. */
-		ExecutionControls?: ExecutionControls;
-		MaximumAutomaticAttempts?: number;
-		RetryAttemptSeconds?: number;
-		Arn?: string;
-		CreatedByService?: string;
+		ExecutionControls?: ExecutionControls | null;
+		MaximumAutomaticAttempts?: number | null;
+		RetryAttemptSeconds?: number | null;
+		Arn?: string | null;
+		CreatedByService?: string | null;
 	}
 
 	export enum RemediationConfigurationTargetType { SSM_DOCUMENT = 0 }
@@ -936,14 +936,14 @@ export namespace MyNS {
 	export interface ExecutionControls {
 
 		/** AWS Systems Manager (SSM) specific remediation controls. */
-		SsmControls?: SsmControls;
+		SsmControls?: SsmControls | null;
 	}
 
 
 	/** AWS Systems Manager (SSM) specific remediation controls. */
 	export interface SsmControls {
-		ConcurrentExecutionRatePercentage?: number;
-		ErrorPercentage?: number;
+		ConcurrentExecutionRatePercentage?: number | null;
+		ErrorPercentage?: number | null;
 	}
 
 	export interface DescribeRemediationConfigurationsRequest {
@@ -951,8 +951,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeRemediationExceptionsResponse {
-		RemediationExceptions?: Array<RemediationException>;
-		NextToken?: string;
+		RemediationExceptions?: Array<RemediationException> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -961,20 +961,20 @@ export namespace MyNS {
 		ConfigRuleName: string;
 		ResourceType: string;
 		ResourceId: string;
-		Message?: string;
-		ExpirationTime?: Date;
+		Message?: string | null;
+		ExpirationTime?: Date | null;
 	}
 
 	export interface DescribeRemediationExceptionsRequest {
 		ConfigRuleName: string;
-		ResourceKeys?: Array<RemediationExceptionResourceKey>;
-		Limit?: number;
-		NextToken?: string;
+		ResourceKeys?: Array<RemediationExceptionResourceKey> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeRemediationExecutionStatusResponse {
-		RemediationExecutionStatuses?: Array<RemediationExecutionStatus>;
-		NextToken?: string;
+		RemediationExecutionStatuses?: Array<RemediationExecutionStatus> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -982,11 +982,11 @@ export namespace MyNS {
 	export interface RemediationExecutionStatus {
 
 		/** The details that identify a resource within AWS Config, including the resource type and resource ID. */
-		ResourceKey?: ResourceKey;
-		State?: RemediationExecutionStatusState;
-		StepDetails?: Array<RemediationExecutionStep>;
-		InvocationTime?: Date;
-		LastUpdatedTime?: Date;
+		ResourceKey?: ResourceKey | null;
+		State?: RemediationExecutionStatusState | null;
+		StepDetails?: Array<RemediationExecutionStep> | null;
+		InvocationTime?: Date | null;
+		LastUpdatedTime?: Date | null;
 	}
 
 	export enum RemediationExecutionStatusState { QUEUED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3 }
@@ -994,25 +994,25 @@ export namespace MyNS {
 
 	/** Name of the step from the SSM document. */
 	export interface RemediationExecutionStep {
-		Name?: string;
-		State?: RemediationExecutionStepState;
-		ErrorMessage?: string;
-		StartTime?: Date;
-		StopTime?: Date;
+		Name?: string | null;
+		State?: RemediationExecutionStepState | null;
+		ErrorMessage?: string | null;
+		StartTime?: Date | null;
+		StopTime?: Date | null;
 	}
 
 	export enum RemediationExecutionStepState { SUCCEEDED = 0, PENDING = 1, FAILED = 2 }
 
 	export interface DescribeRemediationExecutionStatusRequest {
 		ConfigRuleName: string;
-		ResourceKeys?: Array<ResourceKey>;
-		Limit?: number;
-		NextToken?: string;
+		ResourceKeys?: Array<ResourceKey> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeRetentionConfigurationsResponse {
-		RetentionConfigurations?: Array<RetentionConfiguration>;
-		NextToken?: string;
+		RetentionConfigurations?: Array<RetentionConfiguration> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1023,13 +1023,13 @@ export namespace MyNS {
 	}
 
 	export interface DescribeRetentionConfigurationsRequest {
-		RetentionConfigurationNames?: Array<string>;
-		NextToken?: string;
+		RetentionConfigurationNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetAggregateComplianceDetailsByConfigRuleResponse {
-		AggregateEvaluationResults?: Array<AggregateEvaluationResult>;
-		NextToken?: string;
+		AggregateEvaluationResults?: Array<AggregateEvaluationResult> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1037,13 +1037,13 @@ export namespace MyNS {
 	export interface AggregateEvaluationResult {
 
 		/** Uniquely identifies an evaluation result. */
-		EvaluationResultIdentifier?: EvaluationResultIdentifier;
-		ComplianceType?: ComplianceComplianceType;
-		ResultRecordedTime?: Date;
-		ConfigRuleInvokedTime?: Date;
-		Annotation?: string;
-		AccountId?: string;
-		AwsRegion?: string;
+		EvaluationResultIdentifier?: EvaluationResultIdentifier | null;
+		ComplianceType?: ComplianceComplianceType | null;
+		ResultRecordedTime?: Date | null;
+		ConfigRuleInvokedTime?: Date | null;
+		Annotation?: string | null;
+		AccountId?: string | null;
+		AwsRegion?: string | null;
 	}
 
 
@@ -1051,16 +1051,16 @@ export namespace MyNS {
 	export interface EvaluationResultIdentifier {
 
 		/** Identifies an AWS Config rule that evaluated an AWS resource, and provides the type and ID of the resource that the rule evaluated. */
-		EvaluationResultQualifier?: EvaluationResultQualifier;
-		OrderingTimestamp?: Date;
+		EvaluationResultQualifier?: EvaluationResultQualifier | null;
+		OrderingTimestamp?: Date | null;
 	}
 
 
 	/** Identifies an AWS Config rule that evaluated an AWS resource, and provides the type and ID of the resource that the rule evaluated. */
 	export interface EvaluationResultQualifier {
-		ConfigRuleName?: string;
-		ResourceType?: string;
-		ResourceId?: string;
+		ConfigRuleName?: string | null;
+		ResourceType?: string | null;
+		ResourceId?: string | null;
 	}
 
 	export interface GetAggregateComplianceDetailsByConfigRuleRequest {
@@ -1068,24 +1068,24 @@ export namespace MyNS {
 		ConfigRuleName: string;
 		AccountId: string;
 		AwsRegion: string;
-		ComplianceType?: ComplianceComplianceType;
-		Limit?: number;
-		NextToken?: string;
+		ComplianceType?: ComplianceComplianceType | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetAggregateConfigRuleComplianceSummaryResponse {
-		GroupByKey?: string;
-		AggregateComplianceCounts?: Array<AggregateComplianceCount>;
-		NextToken?: string;
+		GroupByKey?: string | null;
+		AggregateComplianceCounts?: Array<AggregateComplianceCount> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator. */
 	export interface AggregateComplianceCount {
-		GroupName?: string;
+		GroupName?: string | null;
 
 		/** The number of AWS Config rules or AWS resources that are compliant and noncompliant. */
-		ComplianceSummary?: ComplianceSummary;
+		ComplianceSummary?: ComplianceSummary | null;
 	}
 
 
@@ -1093,37 +1093,37 @@ export namespace MyNS {
 	export interface ComplianceSummary {
 
 		/** The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number. */
-		CompliantResourceCount?: ComplianceContributorCount;
+		CompliantResourceCount?: ComplianceContributorCount | null;
 
 		/** The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number. */
-		NonCompliantResourceCount?: ComplianceContributorCount;
-		ComplianceSummaryTimestamp?: Date;
+		NonCompliantResourceCount?: ComplianceContributorCount | null;
+		ComplianceSummaryTimestamp?: Date | null;
 	}
 
 	export interface GetAggregateConfigRuleComplianceSummaryRequest {
 		ConfigurationAggregatorName: string;
 
 		/** Filters the results based on the account IDs and regions. */
-		Filters?: ConfigRuleComplianceSummaryFilters;
-		GroupByKey?: GetAggregateConfigRuleComplianceSummaryRequestGroupByKey;
-		Limit?: number;
-		NextToken?: string;
+		Filters?: ConfigRuleComplianceSummaryFilters | null;
+		GroupByKey?: GetAggregateConfigRuleComplianceSummaryRequestGroupByKey | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Filters the results based on the account IDs and regions. */
 	export interface ConfigRuleComplianceSummaryFilters {
-		AccountId?: string;
-		AwsRegion?: string;
+		AccountId?: string | null;
+		AwsRegion?: string | null;
 	}
 
 	export enum GetAggregateConfigRuleComplianceSummaryRequestGroupByKey { ACCOUNT_ID = 0, AWS_REGION = 1 }
 
 	export interface GetAggregateDiscoveredResourceCountsResponse {
 		TotalDiscoveredResources: number;
-		GroupByKey?: string;
-		GroupedResourceCounts?: Array<GroupedResourceCount>;
-		NextToken?: string;
+		GroupByKey?: string | null;
+		GroupedResourceCounts?: Array<GroupedResourceCount> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1137,18 +1137,18 @@ export namespace MyNS {
 		ConfigurationAggregatorName: string;
 
 		/** Filters the resource count based on account ID, region, and resource type. */
-		Filters?: ResourceCountFilters;
-		GroupByKey?: GetAggregateDiscoveredResourceCountsRequestGroupByKey;
-		Limit?: number;
-		NextToken?: string;
+		Filters?: ResourceCountFilters | null;
+		GroupByKey?: GetAggregateDiscoveredResourceCountsRequestGroupByKey | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Filters the resource count based on account ID, region, and resource type. */
 	export interface ResourceCountFilters {
-		ResourceType?: ResourceCountFiltersResourceType;
-		AccountId?: string;
-		Region?: string;
+		ResourceType?: ResourceCountFiltersResourceType | null;
+		AccountId?: string | null;
+		Region?: string | null;
 	}
 
 	export enum ResourceCountFiltersResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
@@ -1158,30 +1158,30 @@ export namespace MyNS {
 	export interface GetAggregateResourceConfigResponse {
 
 		/** A list that contains detailed configurations of a specified resource. */
-		ConfigurationItem?: ConfigurationItem;
+		ConfigurationItem?: ConfigurationItem | null;
 	}
 
 
 	/** A list that contains detailed configurations of a specified resource. */
 	export interface ConfigurationItem {
-		version?: string;
-		accountId?: string;
-		configurationItemCaptureTime?: Date;
-		configurationItemStatus?: BaseConfigurationItemConfigurationItemStatus;
-		configurationStateId?: string;
-		configurationItemMD5Hash?: string;
-		arn?: string;
-		resourceType?: ConfigurationItemResourceType;
-		resourceId?: string;
-		resourceName?: string;
-		awsRegion?: string;
-		availabilityZone?: string;
-		resourceCreationTime?: Date;
-		tags?: Tags;
-		relatedEvents?: Array<string>;
-		relationships?: Array<Relationship>;
-		configuration?: string;
-		supplementaryConfiguration?: SupplementaryConfiguration;
+		version?: string | null;
+		accountId?: string | null;
+		configurationItemCaptureTime?: Date | null;
+		configurationItemStatus?: BaseConfigurationItemConfigurationItemStatus | null;
+		configurationStateId?: string | null;
+		configurationItemMD5Hash?: string | null;
+		arn?: string | null;
+		resourceType?: ConfigurationItemResourceType | null;
+		resourceId?: string | null;
+		resourceName?: string | null;
+		awsRegion?: string | null;
+		availabilityZone?: string | null;
+		resourceCreationTime?: Date | null;
+		tags?: Tags | null;
+		relatedEvents?: Array<string> | null;
+		relationships?: Array<Relationship> | null;
+		configuration?: string | null;
+		supplementaryConfiguration?: SupplementaryConfiguration | null;
 	}
 
 	export enum ConfigurationItemResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
@@ -1192,10 +1192,10 @@ export namespace MyNS {
 
 	/** The relationship of the related resource to the main resource. */
 	export interface Relationship {
-		resourceType?: RelationshipResourceType;
-		resourceId?: string;
-		resourceName?: string;
-		relationshipName?: string;
+		resourceType?: RelationshipResourceType | null;
+		resourceId?: string | null;
+		resourceName?: string | null;
+		relationshipName?: string | null;
 	}
 
 	export enum RelationshipResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
@@ -1219,8 +1219,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetComplianceDetailsByConfigRuleResponse {
-		EvaluationResults?: Array<EvaluationResult>;
-		NextToken?: string;
+		EvaluationResults?: Array<EvaluationResult> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1228,28 +1228,28 @@ export namespace MyNS {
 	export interface EvaluationResult {
 
 		/** Uniquely identifies an evaluation result. */
-		EvaluationResultIdentifier?: EvaluationResultIdentifier;
-		ComplianceType?: ComplianceComplianceType;
-		ResultRecordedTime?: Date;
-		ConfigRuleInvokedTime?: Date;
-		Annotation?: string;
-		ResultToken?: string;
+		EvaluationResultIdentifier?: EvaluationResultIdentifier | null;
+		ComplianceType?: ComplianceComplianceType | null;
+		ResultRecordedTime?: Date | null;
+		ConfigRuleInvokedTime?: Date | null;
+		Annotation?: string | null;
+		ResultToken?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface GetComplianceDetailsByConfigRuleRequest {
 		ConfigRuleName: string;
-		ComplianceTypes?: Array<ComplianceType>;
-		Limit?: number;
-		NextToken?: string;
+		ComplianceTypes?: Array<ComplianceType> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface GetComplianceDetailsByResourceResponse {
-		EvaluationResults?: Array<EvaluationResult>;
-		NextToken?: string;
+		EvaluationResults?: Array<EvaluationResult> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1257,8 +1257,8 @@ export namespace MyNS {
 	export interface GetComplianceDetailsByResourceRequest {
 		ResourceType: string;
 		ResourceId: string;
-		ComplianceTypes?: Array<ComplianceType>;
-		NextToken?: string;
+		ComplianceTypes?: Array<ComplianceType> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1266,34 +1266,34 @@ export namespace MyNS {
 	export interface GetComplianceSummaryByConfigRuleResponse {
 
 		/** The number of AWS Config rules or AWS resources that are compliant and noncompliant. */
-		ComplianceSummary?: ComplianceSummary;
+		ComplianceSummary?: ComplianceSummary | null;
 	}
 
 
 	/** <p/> */
 	export interface GetComplianceSummaryByResourceTypeResponse {
-		ComplianceSummariesByResourceType?: Array<ComplianceSummaryByResourceType>;
+		ComplianceSummariesByResourceType?: Array<ComplianceSummaryByResourceType> | null;
 	}
 
 
 	/** The number of AWS resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each. */
 	export interface ComplianceSummaryByResourceType {
-		ResourceType?: string;
+		ResourceType?: string | null;
 
 		/** The number of AWS Config rules or AWS resources that are compliant and noncompliant. */
-		ComplianceSummary?: ComplianceSummary;
+		ComplianceSummary?: ComplianceSummary | null;
 	}
 
 
 	/** <p/> */
 	export interface GetComplianceSummaryByResourceTypeRequest {
-		ResourceTypes?: Array<string>;
+		ResourceTypes?: Array<string> | null;
 	}
 
 	export interface GetConformancePackComplianceDetailsResponse {
 		ConformancePackName: string;
-		ConformancePackRuleEvaluationResults?: Array<ConformancePackEvaluationResult>;
-		NextToken?: string;
+		ConformancePackRuleEvaluationResults?: Array<ConformancePackEvaluationResult> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1308,30 +1308,30 @@ export namespace MyNS {
 		EvaluationResultIdentifier: EvaluationResultIdentifier;
 		ConfigRuleInvokedTime: Date;
 		ResultRecordedTime: Date;
-		Annotation?: string;
+		Annotation?: string | null;
 	}
 
 	export interface GetConformancePackComplianceDetailsRequest {
 		ConformancePackName: string;
 
 		/** Filters a conformance pack by AWS Config rule names, compliance types, AWS resource types, and resource IDs. */
-		Filters?: ConformancePackEvaluationFilters;
-		Limit?: number;
-		NextToken?: string;
+		Filters?: ConformancePackEvaluationFilters | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Filters a conformance pack by AWS Config rule names, compliance types, AWS resource types, and resource IDs. */
 	export interface ConformancePackEvaluationFilters {
-		ConfigRuleNames?: Array<string>;
-		ComplianceType?: ConformancePackRuleComplianceComplianceType;
-		ResourceType?: string;
-		ResourceIds?: Array<string>;
+		ConfigRuleNames?: Array<string> | null;
+		ComplianceType?: ConformancePackRuleComplianceComplianceType | null;
+		ResourceType?: string | null;
+		ResourceIds?: Array<string> | null;
 	}
 
 	export interface GetConformancePackComplianceSummaryResponse {
-		ConformancePackComplianceSummaryList?: Array<ConformancePackComplianceSummary>;
-		NextToken?: string;
+		ConformancePackComplianceSummaryList?: Array<ConformancePackComplianceSummary> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1343,34 +1343,34 @@ export namespace MyNS {
 
 	export interface GetConformancePackComplianceSummaryRequest {
 		ConformancePackNames: Array<string>;
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetDiscoveredResourceCountsResponse {
-		totalDiscoveredResources?: number;
-		resourceCounts?: Array<ResourceCount>;
-		nextToken?: string;
+		totalDiscoveredResources?: number | null;
+		resourceCounts?: Array<ResourceCount> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An object that contains the resource type and the number of resources. */
 	export interface ResourceCount {
-		resourceType?: ResourceCountResourceType;
-		count?: number;
+		resourceType?: ResourceCountResourceType | null;
+		count?: number | null;
 	}
 
 	export enum ResourceCountResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export interface GetDiscoveredResourceCountsRequest {
-		resourceTypes?: Array<string>;
-		limit?: number;
-		nextToken?: string;
+		resourceTypes?: Array<string> | null;
+		limit?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetOrganizationConfigRuleDetailedStatusResponse {
-		OrganizationConfigRuleDetailedStatus?: Array<MemberAccountStatus>;
-		NextToken?: string;
+		OrganizationConfigRuleDetailedStatus?: Array<MemberAccountStatus> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1379,30 +1379,30 @@ export namespace MyNS {
 		AccountId: string;
 		ConfigRuleName: string;
 		MemberAccountRuleStatus: OrganizationConfigRuleStatusOrganizationRuleStatus;
-		ErrorCode?: string;
-		ErrorMessage?: string;
-		LastUpdateTime?: Date;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
+		LastUpdateTime?: Date | null;
 	}
 
 	export interface GetOrganizationConfigRuleDetailedStatusRequest {
 		OrganizationConfigRuleName: string;
 
 		/** Status filter object to filter results based on specific member account ID or status type for an organization config rule. */
-		Filters?: StatusDetailFilters;
-		Limit?: number;
-		NextToken?: string;
+		Filters?: StatusDetailFilters | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Status filter object to filter results based on specific member account ID or status type for an organization config rule.  */
 	export interface StatusDetailFilters {
-		AccountId?: string;
-		MemberAccountRuleStatus?: OrganizationConfigRuleStatusOrganizationRuleStatus;
+		AccountId?: string | null;
+		MemberAccountRuleStatus?: OrganizationConfigRuleStatusOrganizationRuleStatus | null;
 	}
 
 	export interface GetOrganizationConformancePackDetailedStatusResponse {
-		OrganizationConformancePackDetailedStatuses?: Array<OrganizationConformancePackDetailedStatus>;
-		NextToken?: string;
+		OrganizationConformancePackDetailedStatuses?: Array<OrganizationConformancePackDetailedStatus> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1411,32 +1411,32 @@ export namespace MyNS {
 		AccountId: string;
 		ConformancePackName: string;
 		Status: OrganizationConfigRuleStatusOrganizationRuleStatus;
-		ErrorCode?: string;
-		ErrorMessage?: string;
-		LastUpdateTime?: Date;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
+		LastUpdateTime?: Date | null;
 	}
 
 	export interface GetOrganizationConformancePackDetailedStatusRequest {
 		OrganizationConformancePackName: string;
 
 		/** Status filter object to filter results based on specific member account ID or status type for an organization conformance pack. */
-		Filters?: OrganizationResourceDetailedStatusFilters;
-		Limit?: number;
-		NextToken?: string;
+		Filters?: OrganizationResourceDetailedStatusFilters | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Status filter object to filter results based on specific member account ID or status type for an organization conformance pack. */
 	export interface OrganizationResourceDetailedStatusFilters {
-		AccountId?: string;
-		Status?: OrganizationConfigRuleStatusOrganizationRuleStatus;
+		AccountId?: string | null;
+		Status?: OrganizationConfigRuleStatusOrganizationRuleStatus | null;
 	}
 
 
 	/** The output for the <a>GetResourceConfigHistory</a> action. */
 	export interface GetResourceConfigHistoryResponse {
-		configurationItems?: Array<ConfigurationItem>;
-		nextToken?: string;
+		configurationItems?: Array<ConfigurationItem> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -1444,11 +1444,11 @@ export namespace MyNS {
 	export interface GetResourceConfigHistoryRequest {
 		resourceType: GetResourceConfigHistoryRequestResourceType;
 		resourceId: string;
-		laterTime?: Date;
-		earlierTime?: Date;
-		chronologicalOrder?: GetResourceConfigHistoryRequestChronologicalOrder;
-		limit?: number;
-		nextToken?: string;
+		laterTime?: Date | null;
+		earlierTime?: Date | null;
+		chronologicalOrder?: GetResourceConfigHistoryRequestChronologicalOrder | null;
+		limit?: number | null;
+		nextToken?: string | null;
 	}
 
 	export enum GetResourceConfigHistoryRequestResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
@@ -1459,8 +1459,8 @@ export namespace MyNS {
 	}
 
 	export interface ListAggregateDiscoveredResourcesResponse {
-		ResourceIdentifiers?: Array<AggregateResourceIdentifier>;
-		NextToken?: string;
+		ResourceIdentifiers?: Array<AggregateResourceIdentifier> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAggregateDiscoveredResourcesRequest {
@@ -1468,9 +1468,9 @@ export namespace MyNS {
 		ResourceType: ListAggregateDiscoveredResourcesRequestResourceType;
 
 		/** Filters the results by resource account ID, region, resource ID, and resource name. */
-		Filters?: ResourceFilters;
-		Limit?: number;
-		NextToken?: string;
+		Filters?: ResourceFilters | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum ListAggregateDiscoveredResourcesRequestResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
@@ -1478,26 +1478,26 @@ export namespace MyNS {
 
 	/** Filters the results by resource account ID, region, resource ID, and resource name. */
 	export interface ResourceFilters {
-		AccountId?: string;
-		ResourceId?: string;
-		ResourceName?: string;
-		Region?: string;
+		AccountId?: string | null;
+		ResourceId?: string | null;
+		ResourceName?: string | null;
+		Region?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface ListDiscoveredResourcesResponse {
-		resourceIdentifiers?: Array<ResourceIdentifier>;
-		nextToken?: string;
+		resourceIdentifiers?: Array<ResourceIdentifier> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name. */
 	export interface ResourceIdentifier {
-		resourceType?: ResourceIdentifierResourceType;
-		resourceId?: string;
-		resourceName?: string;
-		resourceDeletionTime?: Date;
+		resourceType?: ResourceIdentifierResourceType | null;
+		resourceId?: string | null;
+		resourceName?: string | null;
+		resourceDeletionTime?: Date | null;
 	}
 
 	export enum ResourceIdentifierResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
@@ -1506,31 +1506,31 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ListDiscoveredResourcesRequest {
 		resourceType: ListDiscoveredResourcesRequestResourceType;
-		resourceIds?: Array<string>;
-		resourceName?: string;
-		limit?: number;
-		includeDeletedResources?: boolean;
-		nextToken?: string;
+		resourceIds?: Array<string> | null;
+		resourceName?: string | null;
+		limit?: number | null;
+		includeDeletedResources?: boolean | null;
+		nextToken?: string | null;
 	}
 
 	export enum ListDiscoveredResourcesRequestResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The tags for the resource. The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -1539,13 +1539,13 @@ export namespace MyNS {
 	export interface PutAggregationAuthorizationResponse {
 
 		/** An object that represents the authorizations granted to aggregator accounts and regions. */
-		AggregationAuthorization?: AggregationAuthorization;
+		AggregationAuthorization?: AggregationAuthorization | null;
 	}
 
 	export interface PutAggregationAuthorizationRequest {
 		AuthorizedAccountId: string;
 		AuthorizedAwsRegion: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface PutConfigRuleRequest {
@@ -1555,7 +1555,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		ConfigRule: ConfigRule;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface MaxNumberOfConfigRulesExceededException {
@@ -1564,16 +1564,16 @@ export namespace MyNS {
 	export interface PutConfigurationAggregatorResponse {
 
 		/** The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator. */
-		ConfigurationAggregator?: ConfigurationAggregator;
+		ConfigurationAggregator?: ConfigurationAggregator | null;
 	}
 
 	export interface PutConfigurationAggregatorRequest {
 		ConfigurationAggregatorName: string;
-		AccountAggregationSources?: Array<AccountAggregationSource>;
+		AccountAggregationSources?: Array<AccountAggregationSource> | null;
 
 		/** This object contains regions to set up the aggregator and an IAM role to retrieve organization details. */
-		OrganizationAggregationSource?: OrganizationAggregationSource;
-		Tags?: Array<Tag>;
+		OrganizationAggregationSource?: OrganizationAggregationSource | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface LimitExceededException {
@@ -1609,16 +1609,16 @@ export namespace MyNS {
 	}
 
 	export interface PutConformancePackResponse {
-		ConformancePackArn?: string;
+		ConformancePackArn?: string | null;
 	}
 
 	export interface PutConformancePackRequest {
 		ConformancePackName: string;
-		TemplateS3Uri?: string;
-		TemplateBody?: string;
+		TemplateS3Uri?: string | null;
+		TemplateBody?: string | null;
 		DeliveryS3Bucket: string;
-		DeliveryS3KeyPrefix?: string;
-		ConformancePackInputParameters?: Array<ConformancePackInputParameter>;
+		DeliveryS3KeyPrefix?: string | null;
+		ConformancePackInputParameters?: Array<ConformancePackInputParameter> | null;
 	}
 
 	export interface ConformancePackTemplateValidationException {
@@ -1659,7 +1659,7 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface PutEvaluationsResponse {
-		FailedEvaluations?: Array<Evaluation>;
+		FailedEvaluations?: Array<Evaluation> | null;
 	}
 
 
@@ -1668,51 +1668,51 @@ export namespace MyNS {
 		ComplianceResourceType: string;
 		ComplianceResourceId: string;
 		ComplianceType: ComplianceComplianceType;
-		Annotation?: string;
+		Annotation?: string | null;
 		OrderingTimestamp: Date;
 	}
 
 
 	/** <p/> */
 	export interface PutEvaluationsRequest {
-		Evaluations?: Array<Evaluation>;
+		Evaluations?: Array<Evaluation> | null;
 		ResultToken: string;
-		TestMode?: boolean;
+		TestMode?: boolean | null;
 	}
 
 	export interface InvalidResultTokenException {
 	}
 
 	export interface PutOrganizationConfigRuleResponse {
-		OrganizationConfigRuleArn?: string;
+		OrganizationConfigRuleArn?: string | null;
 	}
 
 	export interface PutOrganizationConfigRuleRequest {
 		OrganizationConfigRuleName: string;
 
 		/** An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. */
-		OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata;
+		OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata | null;
 
 		/** An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. */
-		OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata;
-		ExcludedAccounts?: Array<string>;
+		OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata | null;
+		ExcludedAccounts?: Array<string> | null;
 	}
 
 	export interface MaxNumberOfOrganizationConfigRulesExceededException {
 	}
 
 	export interface PutOrganizationConformancePackResponse {
-		OrganizationConformancePackArn?: string;
+		OrganizationConformancePackArn?: string | null;
 	}
 
 	export interface PutOrganizationConformancePackRequest {
 		OrganizationConformancePackName: string;
-		TemplateS3Uri?: string;
-		TemplateBody?: string;
+		TemplateS3Uri?: string | null;
+		TemplateBody?: string | null;
 		DeliveryS3Bucket: string;
-		DeliveryS3KeyPrefix?: string;
-		ConformancePackInputParameters?: Array<ConformancePackInputParameter>;
-		ExcludedAccounts?: Array<string>;
+		DeliveryS3KeyPrefix?: string | null;
+		ConformancePackInputParameters?: Array<ConformancePackInputParameter> | null;
+		ExcludedAccounts?: Array<string> | null;
 	}
 
 	export interface MaxNumberOfOrganizationConformancePacksExceededException {
@@ -1722,14 +1722,14 @@ export namespace MyNS {
 	}
 
 	export interface PutRemediationConfigurationsResponse {
-		FailedBatches?: Array<FailedRemediationBatch>;
+		FailedBatches?: Array<FailedRemediationBatch> | null;
 	}
 
 
 	/** List of each of the failed remediations with specific reasons. */
 	export interface FailedRemediationBatch {
-		FailureMessage?: string;
-		FailedItems?: Array<RemediationConfiguration>;
+		FailureMessage?: string | null;
+		FailedItems?: Array<RemediationConfiguration> | null;
 	}
 
 	export interface PutRemediationConfigurationsRequest {
@@ -1737,30 +1737,30 @@ export namespace MyNS {
 	}
 
 	export interface PutRemediationExceptionsResponse {
-		FailedBatches?: Array<FailedRemediationExceptionBatch>;
+		FailedBatches?: Array<FailedRemediationExceptionBatch> | null;
 	}
 
 
 	/** List of each of the failed remediation exceptions with specific reasons. */
 	export interface FailedRemediationExceptionBatch {
-		FailureMessage?: string;
-		FailedItems?: Array<RemediationException>;
+		FailureMessage?: string | null;
+		FailedItems?: Array<RemediationException> | null;
 	}
 
 	export interface PutRemediationExceptionsRequest {
 		ConfigRuleName: string;
 		ResourceKeys: Array<RemediationExceptionResourceKey>;
-		Message?: string;
-		ExpirationTime?: Date;
+		Message?: string | null;
+		ExpirationTime?: Date | null;
 	}
 
 	export interface PutResourceConfigRequest {
 		ResourceType: string;
 		SchemaVersionId: string;
 		ResourceId: string;
-		ResourceName?: string;
+		ResourceName?: string | null;
 		Configuration: string;
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface MaxActiveResourcesExceededException {
@@ -1769,7 +1769,7 @@ export namespace MyNS {
 	export interface PutRetentionConfigurationResponse {
 
 		/** An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in AWS Config. */
-		RetentionConfiguration?: RetentionConfiguration;
+		RetentionConfiguration?: RetentionConfiguration | null;
 	}
 
 	export interface PutRetentionConfigurationRequest {
@@ -1780,48 +1780,48 @@ export namespace MyNS {
 	}
 
 	export interface SelectAggregateResourceConfigResponse {
-		Results?: Array<string>;
+		Results?: Array<string> | null;
 
 		/** Details about the query. */
-		QueryInfo?: QueryInfo;
-		NextToken?: string;
+		QueryInfo?: QueryInfo | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Details about the query. */
 	export interface QueryInfo {
-		SelectFields?: Array<FieldInfo>;
+		SelectFields?: Array<FieldInfo> | null;
 	}
 
 
 	/** Details about the fields such as name of the field. */
 	export interface FieldInfo {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface SelectAggregateResourceConfigRequest {
 		Expression: string;
 		ConfigurationAggregatorName: string;
-		Limit?: number;
-		MaxResults?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidExpressionException {
 	}
 
 	export interface SelectResourceConfigResponse {
-		Results?: Array<string>;
+		Results?: Array<string> | null;
 
 		/** Details about the query. */
-		QueryInfo?: QueryInfo;
-		NextToken?: string;
+		QueryInfo?: QueryInfo | null;
+		NextToken?: string | null;
 	}
 
 	export interface SelectResourceConfigRequest {
 		Expression: string;
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1832,7 +1832,7 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface StartConfigRulesEvaluationRequest {
-		ConfigRuleNames?: Array<string>;
+		ConfigRuleNames?: Array<string> | null;
 	}
 
 
@@ -1845,8 +1845,8 @@ export namespace MyNS {
 	}
 
 	export interface StartRemediationExecutionResponse {
-		FailureMessage?: string;
-		FailedItems?: Array<ResourceKey>;
+		FailureMessage?: string | null;
+		FailedItems?: Array<ResourceKey> | null;
 	}
 
 	export interface StartRemediationExecutionRequest {
@@ -1932,10 +1932,10 @@ export namespace MyNS {
 	export interface RemediationParameterValue {
 
 		/** The dynamic value of the resource. */
-		ResourceValue?: ResourceValue;
+		ResourceValue?: ResourceValue | null;
 
 		/** The static value of the resource. */
-		StaticValue?: StaticValue;
+		StaticValue?: StaticValue | null;
 	}
 
 	export enum ResourceValueType { RESOURCE_ID = 0 }

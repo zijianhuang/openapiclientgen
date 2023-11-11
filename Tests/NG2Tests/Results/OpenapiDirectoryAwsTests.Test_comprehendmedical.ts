@@ -5,30 +5,30 @@ export namespace MyNS {
 	export interface DescribeEntitiesDetectionV2JobResponse {
 
 		/** Provides information about a detection job. */
-		ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
+		ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties | null;
 	}
 
 
 	/** Provides information about a detection job. */
 	export interface ComprehendMedicalAsyncJobProperties {
-		JobId?: string;
-		JobName?: string;
-		JobStatus?: ComprehendMedicalAsyncJobPropertiesJobStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
-		ExpirationTime?: Date;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobStatus?: ComprehendMedicalAsyncJobPropertiesJobStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
+		ExpirationTime?: Date | null;
 
 		/** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** The output properties for a detection job. */
-		OutputDataConfig?: OutputDataConfig;
-		LanguageCode?: ComprehendMedicalAsyncJobPropertiesLanguageCode;
-		DataAccessRoleArn?: string;
-		ManifestFilePath?: string;
-		KMSKey?: string;
-		ModelVersion?: string;
+		OutputDataConfig?: OutputDataConfig | null;
+		LanguageCode?: ComprehendMedicalAsyncJobPropertiesLanguageCode | null;
+		DataAccessRoleArn?: string | null;
+		ManifestFilePath?: string | null;
+		KMSKey?: string | null;
+		ModelVersion?: string | null;
 	}
 
 	export enum ComprehendMedicalAsyncJobPropertiesJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, PARTIAL_SUCCESS = 3, FAILED = 4, STOP_REQUESTED = 5, STOPPED = 6 }
@@ -37,14 +37,14 @@ export namespace MyNS {
 	/** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.  */
 	export interface InputDataConfig {
 		S3Bucket: string;
-		S3Key?: string;
+		S3Key?: string | null;
 	}
 
 
 	/** The output properties for a detection job. */
 	export interface OutputDataConfig {
 		S3Bucket: string;
-		S3Key?: string;
+		S3Key?: string | null;
 	}
 
 	export enum ComprehendMedicalAsyncJobPropertiesLanguageCode { en = 0 }
@@ -68,7 +68,7 @@ export namespace MyNS {
 	export interface DescribeICD10CMInferenceJobResponse {
 
 		/** Provides information about a detection job. */
-		ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
+		ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties | null;
 	}
 
 	export interface DescribeICD10CMInferenceJobRequest {
@@ -78,7 +78,7 @@ export namespace MyNS {
 	export interface DescribePHIDetectionJobResponse {
 
 		/** Provides information about a detection job. */
-		ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
+		ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties | null;
 	}
 
 	export interface DescribePHIDetectionJobRequest {
@@ -88,7 +88,7 @@ export namespace MyNS {
 	export interface DescribeRxNormInferenceJobResponse {
 
 		/** Provides information about a detection job. */
-		ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
+		ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties | null;
 	}
 
 	export interface DescribeRxNormInferenceJobRequest {
@@ -97,23 +97,23 @@ export namespace MyNS {
 
 	export interface DetectEntitiesResponse {
 		Entities: Array<Entity>;
-		UnmappedAttributes?: Array<UnmappedAttribute>;
-		PaginationToken?: string;
+		UnmappedAttributes?: Array<UnmappedAttribute> | null;
+		PaginationToken?: string | null;
 		ModelVersion: string;
 	}
 
 
 	/**  Provides information about an extracted medical entity. */
 	export interface Entity {
-		Id?: number;
-		BeginOffset?: number;
-		EndOffset?: number;
-		Score?: number;
-		Text?: string;
-		Category?: EntityCategory;
-		Type?: EntityType;
-		Traits?: Array<Trait>;
-		Attributes?: Array<Attribute>;
+		Id?: number | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
+		Score?: number | null;
+		Text?: string | null;
+		Category?: EntityCategory | null;
+		Type?: EntityType | null;
+		Traits?: Array<Trait> | null;
+		Attributes?: Array<Attribute> | null;
 	}
 
 	export enum EntityCategory { MEDICATION = 0, MEDICAL_CONDITION = 1, PROTECTED_HEALTH_INFORMATION = 2, TEST_TREATMENT_PROCEDURE = 3, ANATOMY = 4, TIME_EXPRESSION = 5 }
@@ -123,8 +123,8 @@ export namespace MyNS {
 
 	/**  Provides contextual information about the extracted entity.  */
 	export interface Trait {
-		Name?: TraitName;
-		Score?: number;
+		Name?: TraitName | null;
+		Score?: number | null;
 	}
 
 	export enum TraitName { SIGN = 0, SYMPTOM = 1, DIAGNOSIS = 2, NEGATION = 3 }
@@ -132,16 +132,16 @@ export namespace MyNS {
 
 	/**  An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text.  */
 	export interface Attribute {
-		Type?: EntityType;
-		Score?: number;
-		RelationshipScore?: number;
-		RelationshipType?: AttributeRelationshipType;
-		Id?: number;
-		BeginOffset?: number;
-		EndOffset?: number;
-		Text?: string;
-		Category?: EntityCategory;
-		Traits?: Array<Trait>;
+		Type?: EntityType | null;
+		Score?: number | null;
+		RelationshipScore?: number | null;
+		RelationshipType?: AttributeRelationshipType | null;
+		Id?: number | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
+		Text?: string | null;
+		Category?: EntityCategory | null;
+		Traits?: Array<Trait> | null;
 	}
 
 	export enum AttributeRelationshipType { EVERY = 0, WITH_DOSAGE = 1, ADMINISTERED_VIA = 2, FOR = 3, NEGATIVE = 4, OVERLAP = 5, DOSAGE = 6, ROUTE_OR_MODE = 7, FORM = 8, FREQUENCY = 9, DURATION = 10, STRENGTH = 11, RATE = 12, ACUITY = 13, TEST_VALUE = 14, TEST_UNITS = 15, DIRECTION = 16 }
@@ -149,10 +149,10 @@ export namespace MyNS {
 
 	/**  An attribute that we extracted, but were unable to relate to an entity.  */
 	export interface UnmappedAttribute {
-		Type?: EntityCategory;
+		Type?: EntityCategory | null;
 
 		/** An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text. */
-		Attribute?: Attribute;
+		Attribute?: Attribute | null;
 	}
 
 	export interface DetectEntitiesRequest {
@@ -170,8 +170,8 @@ export namespace MyNS {
 
 	export interface DetectEntitiesV2Response {
 		Entities: Array<Entity>;
-		UnmappedAttributes?: Array<UnmappedAttribute>;
-		PaginationToken?: string;
+		UnmappedAttributes?: Array<UnmappedAttribute> | null;
+		PaginationToken?: string | null;
 		ModelVersion: string;
 	}
 
@@ -181,7 +181,7 @@ export namespace MyNS {
 
 	export interface DetectPHIResponse {
 		Entities: Array<Entity>;
-		PaginationToken?: string;
+		PaginationToken?: string | null;
 		ModelVersion: string;
 	}
 
@@ -191,23 +191,23 @@ export namespace MyNS {
 
 	export interface InferICD10CMResponse {
 		Entities: Array<ICD10CMEntity>;
-		PaginationToken?: string;
-		ModelVersion?: string;
+		PaginationToken?: string | null;
+		ModelVersion?: string | null;
 	}
 
 
 	/** The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.  */
 	export interface ICD10CMEntity {
-		Id?: number;
-		Text?: string;
-		Category?: ICD10CMEntityCategory;
-		Type?: ICD10CMEntityType;
-		Score?: number;
-		BeginOffset?: number;
-		EndOffset?: number;
-		Attributes?: Array<ICD10CMAttribute>;
-		Traits?: Array<ICD10CMTrait>;
-		ICD10CMConcepts?: Array<ICD10CMConcept>;
+		Id?: number | null;
+		Text?: string | null;
+		Category?: ICD10CMEntityCategory | null;
+		Type?: ICD10CMEntityType | null;
+		Score?: number | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
+		Attributes?: Array<ICD10CMAttribute> | null;
+		Traits?: Array<ICD10CMTrait> | null;
+		ICD10CMConcepts?: Array<ICD10CMConcept> | null;
 	}
 
 	export enum ICD10CMEntityCategory { MEDICAL_CONDITION = 0 }
@@ -217,14 +217,14 @@ export namespace MyNS {
 
 	/** The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>. */
 	export interface ICD10CMAttribute {
-		Type?: ICD10CMAttributeType;
-		Score?: number;
-		RelationshipScore?: number;
-		Id?: number;
-		BeginOffset?: number;
-		EndOffset?: number;
-		Text?: string;
-		Traits?: Array<ICD10CMTrait>;
+		Type?: ICD10CMAttributeType | null;
+		Score?: number | null;
+		RelationshipScore?: number | null;
+		Id?: number | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
+		Text?: string | null;
+		Traits?: Array<ICD10CMTrait> | null;
 	}
 
 	export enum ICD10CMAttributeType { ACUITY = 0, DIRECTION = 1, SYSTEM_ORGAN_SITE = 2, QUALITY = 3, QUANTITY = 4 }
@@ -232,8 +232,8 @@ export namespace MyNS {
 
 	/** Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>. */
 	export interface ICD10CMTrait {
-		Name?: ICD10CMTraitName;
-		Score?: number;
+		Name?: ICD10CMTraitName | null;
+		Score?: number | null;
 	}
 
 	export enum ICD10CMTraitName { NEGATION = 0, DIAGNOSIS = 1, SIGN = 2, SYMPTOM = 3 }
@@ -241,9 +241,9 @@ export namespace MyNS {
 
 	/**  The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match. */
 	export interface ICD10CMConcept {
-		Description?: string;
-		Code?: string;
-		Score?: number;
+		Description?: string | null;
+		Code?: string | null;
+		Score?: number | null;
 	}
 
 	export interface InferICD10CMRequest {
@@ -252,23 +252,23 @@ export namespace MyNS {
 
 	export interface InferRxNormResponse {
 		Entities: Array<RxNormEntity>;
-		PaginationToken?: string;
-		ModelVersion?: string;
+		PaginationToken?: string | null;
+		ModelVersion?: string | null;
 	}
 
 
 	/** The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.  */
 	export interface RxNormEntity {
-		Id?: number;
-		Text?: string;
-		Category?: RxNormEntityCategory;
-		Type?: RxNormEntityType;
-		Score?: number;
-		BeginOffset?: number;
-		EndOffset?: number;
-		Attributes?: Array<RxNormAttribute>;
-		Traits?: Array<RxNormTrait>;
-		RxNormConcepts?: Array<RxNormConcept>;
+		Id?: number | null;
+		Text?: string | null;
+		Category?: RxNormEntityCategory | null;
+		Type?: RxNormEntityType | null;
+		Score?: number | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
+		Attributes?: Array<RxNormAttribute> | null;
+		Traits?: Array<RxNormTrait> | null;
+		RxNormConcepts?: Array<RxNormConcept> | null;
 	}
 
 	export enum RxNormEntityCategory { MEDICATION = 0 }
@@ -278,14 +278,14 @@ export namespace MyNS {
 
 	/** The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>. */
 	export interface RxNormAttribute {
-		Type?: RxNormAttributeType;
-		Score?: number;
-		RelationshipScore?: number;
-		Id?: number;
-		BeginOffset?: number;
-		EndOffset?: number;
-		Text?: string;
-		Traits?: Array<RxNormTrait>;
+		Type?: RxNormAttributeType | null;
+		Score?: number | null;
+		RelationshipScore?: number | null;
+		Id?: number | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
+		Text?: string | null;
+		Traits?: Array<RxNormTrait> | null;
 	}
 
 	export enum RxNormAttributeType { DOSAGE = 0, DURATION = 1, FORM = 2, FREQUENCY = 3, RATE = 4, ROUTE_OR_MODE = 5, STRENGTH = 6 }
@@ -293,8 +293,8 @@ export namespace MyNS {
 
 	/** The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication.  */
 	export interface RxNormTrait {
-		Name?: RxNormTraitName;
-		Score?: number;
+		Name?: RxNormTraitName | null;
+		Score?: number | null;
 	}
 
 	export enum RxNormTraitName { NEGATION = 0 }
@@ -302,9 +302,9 @@ export namespace MyNS {
 
 	/** The RxNorm concept that the entity could refer to, along with a score indicating the likelihood of the match. */
 	export interface RxNormConcept {
-		Description?: string;
-		Code?: string;
-		Score?: number;
+		Description?: string | null;
+		Code?: string | null;
+		Score?: number | null;
 	}
 
 	export interface InferRxNormRequest {
@@ -312,71 +312,71 @@ export namespace MyNS {
 	}
 
 	export interface ListEntitiesDetectionV2JobsResponse {
-		ComprehendMedicalAsyncJobPropertiesList?: Array<ComprehendMedicalAsyncJobProperties>;
-		NextToken?: string;
+		ComprehendMedicalAsyncJobPropertiesList?: Array<ComprehendMedicalAsyncJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListEntitiesDetectionV2JobsRequest {
 
 		/** Provides information for filtering a list of detection jobs. */
-		Filter?: ComprehendMedicalAsyncJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: ComprehendMedicalAsyncJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of detection jobs. */
 	export interface ComprehendMedicalAsyncJobFilter {
-		JobName?: string;
-		JobStatus?: ComprehendMedicalAsyncJobPropertiesJobStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		JobName?: string | null;
+		JobStatus?: ComprehendMedicalAsyncJobPropertiesJobStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface ValidationException {
 	}
 
 	export interface ListICD10CMInferenceJobsResponse {
-		ComprehendMedicalAsyncJobPropertiesList?: Array<ComprehendMedicalAsyncJobProperties>;
-		NextToken?: string;
+		ComprehendMedicalAsyncJobPropertiesList?: Array<ComprehendMedicalAsyncJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListICD10CMInferenceJobsRequest {
 
 		/** Provides information for filtering a list of detection jobs. */
-		Filter?: ComprehendMedicalAsyncJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: ComprehendMedicalAsyncJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListPHIDetectionJobsResponse {
-		ComprehendMedicalAsyncJobPropertiesList?: Array<ComprehendMedicalAsyncJobProperties>;
-		NextToken?: string;
+		ComprehendMedicalAsyncJobPropertiesList?: Array<ComprehendMedicalAsyncJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPHIDetectionJobsRequest {
 
 		/** Provides information for filtering a list of detection jobs. */
-		Filter?: ComprehendMedicalAsyncJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: ComprehendMedicalAsyncJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListRxNormInferenceJobsResponse {
-		ComprehendMedicalAsyncJobPropertiesList?: Array<ComprehendMedicalAsyncJobProperties>;
-		NextToken?: string;
+		ComprehendMedicalAsyncJobPropertiesList?: Array<ComprehendMedicalAsyncJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListRxNormInferenceJobsRequest {
 
 		/** Provides information for filtering a list of detection jobs. */
-		Filter?: ComprehendMedicalAsyncJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: ComprehendMedicalAsyncJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface StartEntitiesDetectionV2JobResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartEntitiesDetectionV2JobRequest {
@@ -393,14 +393,14 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
-		ClientRequestToken?: string;
-		KMSKey?: string;
+		JobName?: string | null;
+		ClientRequestToken?: string | null;
+		KMSKey?: string | null;
 		LanguageCode: ComprehendMedicalAsyncJobPropertiesLanguageCode;
 	}
 
 	export interface StartICD10CMInferenceJobResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartICD10CMInferenceJobRequest {
@@ -417,14 +417,14 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
-		ClientRequestToken?: string;
-		KMSKey?: string;
+		JobName?: string | null;
+		ClientRequestToken?: string | null;
+		KMSKey?: string | null;
 		LanguageCode: ComprehendMedicalAsyncJobPropertiesLanguageCode;
 	}
 
 	export interface StartPHIDetectionJobResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartPHIDetectionJobRequest {
@@ -441,14 +441,14 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
-		ClientRequestToken?: string;
-		KMSKey?: string;
+		JobName?: string | null;
+		ClientRequestToken?: string | null;
+		KMSKey?: string | null;
 		LanguageCode: ComprehendMedicalAsyncJobPropertiesLanguageCode;
 	}
 
 	export interface StartRxNormInferenceJobResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartRxNormInferenceJobRequest {
@@ -465,14 +465,14 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
-		ClientRequestToken?: string;
-		KMSKey?: string;
+		JobName?: string | null;
+		ClientRequestToken?: string | null;
+		KMSKey?: string | null;
 		LanguageCode: ComprehendMedicalAsyncJobPropertiesLanguageCode;
 	}
 
 	export interface StopEntitiesDetectionV2JobResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StopEntitiesDetectionV2JobRequest {
@@ -480,7 +480,7 @@ export namespace MyNS {
 	}
 
 	export interface StopICD10CMInferenceJobResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StopICD10CMInferenceJobRequest {
@@ -488,7 +488,7 @@ export namespace MyNS {
 	}
 
 	export interface StopPHIDetectionJobResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StopPHIDetectionJobRequest {
@@ -496,7 +496,7 @@ export namespace MyNS {
 	}
 
 	export interface StopRxNormInferenceJobResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StopRxNormInferenceJobRequest {

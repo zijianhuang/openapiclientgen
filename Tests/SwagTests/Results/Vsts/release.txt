@@ -5335,84 +5335,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Create a release definition
-		/// Definitions_Create {organization}/{project}/_apis/release/definitions
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
-		/// <param name="requestBody">release definition object to create.</param>
-		/// <returns>successful operation</returns>
-		public async Task<ReleaseDefinition> Definitions_CreateAsync(string organization, string project, string api_version, ReleaseDefinition requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ReleaseDefinition>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Create a release definition
-		/// Definitions_Create {organization}/{project}/_apis/release/definitions
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
-		/// <param name="requestBody">release definition object to create.</param>
-		/// <returns>successful operation</returns>
-		public ReleaseDefinition Definitions_Create(string organization, string project, string api_version, ReleaseDefinition requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ReleaseDefinition>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a list of release definitions.
 		/// Definitions_List {organization}/{project}/_apis/release/definitions
 		/// </summary>
@@ -5615,57 +5537,79 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Delete a release definition.
-		/// Definitions_Delete {organization}/{project}/_apis/release/definitions/{definitionId}
+		/// Create a release definition
+		/// Definitions_Create {organization}/{project}/_apis/release/definitions
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="project">Project ID or project name</param>
-		/// <param name="definitionId">Id of the release definition.</param>
-		/// <param name="comment">Comment for deleting a release definition.</param>
-		/// <param name="forceDelete">'true' to automatically cancel any in-progress release deployments and proceed with release definition deletion . Default is 'false'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
+		/// <param name="requestBody">release definition object to create.</param>
 		/// <returns>successful operation</returns>
-		public async Task Definitions_DeleteAsync(string organization, string project, int definitionId, string comment, bool forceDelete, string api_version)
+		public async Task<ReleaseDefinition> Definitions_CreateAsync(string organization, string project, string api_version, ReleaseDefinition requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions/"+definitionId+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&forceDelete="+forceDelete+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ReleaseDefinition>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
 		
 		/// <summary>
-		/// Delete a release definition.
-		/// Definitions_Delete {organization}/{project}/_apis/release/definitions/{definitionId}
+		/// Create a release definition
+		/// Definitions_Create {organization}/{project}/_apis/release/definitions
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="project">Project ID or project name</param>
-		/// <param name="definitionId">Id of the release definition.</param>
-		/// <param name="comment">Comment for deleting a release definition.</param>
-		/// <param name="forceDelete">'true' to automatically cancel any in-progress release deployments and proceed with release definition deletion . Default is 'false'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
+		/// <param name="requestBody">release definition object to create.</param>
 		/// <returns>successful operation</returns>
-		public void Definitions_Delete(string organization, string project, int definitionId, string comment, bool forceDelete, string api_version)
+		public ReleaseDefinition Definitions_Create(string organization, string project, string api_version, ReleaseDefinition requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions/"+definitionId+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&forceDelete="+forceDelete+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ReleaseDefinition>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -5728,6 +5672,62 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReleaseDefinition>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a release definition.
+		/// Definitions_Delete {organization}/{project}/_apis/release/definitions/{definitionId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="definitionId">Id of the release definition.</param>
+		/// <param name="comment">Comment for deleting a release definition.</param>
+		/// <param name="forceDelete">'true' to automatically cancel any in-progress release deployments and proceed with release definition deletion . Default is 'false'.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Definitions_DeleteAsync(string organization, string project, int definitionId, string comment, bool forceDelete, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions/"+definitionId+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&forceDelete="+forceDelete+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a release definition.
+		/// Definitions_Delete {organization}/{project}/_apis/release/definitions/{definitionId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="definitionId">Id of the release definition.</param>
+		/// <param name="comment">Comment for deleting a release definition.</param>
+		/// <param name="forceDelete">'true' to automatically cancel any in-progress release deployments and proceed with release definition deletion . Default is 'false'.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Definitions_Delete(string organization, string project, int definitionId, string comment, bool forceDelete, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions/"+definitionId+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&forceDelete="+forceDelete+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -5961,6 +5961,72 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Gets folders.
+		/// Folders_List {organization}/{project}/_apis/release/folders/{path}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="path">Path of the folder.</param>
+		/// <param name="queryOrder">Gets the results in the defined order. Default is 'None'.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<Folder[]> Folders_ListAsync(string organization, string project, string path, Folders_ListQueryOrder queryOrder, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/folders/"+ (path==null? "" : Uri.EscapeDataString(path))+"&queryOrder=" + queryOrder+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Folder[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Gets folders.
+		/// Folders_List {organization}/{project}/_apis/release/folders/{path}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="path">Path of the folder.</param>
+		/// <param name="queryOrder">Gets the results in the defined order. Default is 'None'.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public Folder[] Folders_List(string organization, string project, string path, Folders_ListQueryOrder queryOrder, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/folders/"+ (path==null? "" : Uri.EscapeDataString(path))+"&queryOrder=" + queryOrder+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Folder[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// This method is no longer supported. Use CreateFolder with folder parameter API.
 		/// Folders_Create {organization}/{project}/_apis/release/folders/{path}
 		/// </summary>
@@ -6084,72 +6150,6 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets folders.
-		/// Folders_List {organization}/{project}/_apis/release/folders/{path}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="path">Path of the folder.</param>
-		/// <param name="queryOrder">Gets the results in the defined order. Default is 'None'.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<Folder[]> Folders_ListAsync(string organization, string project, string path, Folders_ListQueryOrder queryOrder, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/folders/"+ (path==null? "" : Uri.EscapeDataString(path))+"&queryOrder=" + queryOrder+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Folder[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets folders.
-		/// Folders_List {organization}/{project}/_apis/release/folders/{path}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="path">Path of the folder.</param>
-		/// <param name="queryOrder">Gets the results in the defined order. Default is 'None'.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public Folder[] Folders_List(string organization, string project, string path, Folders_ListQueryOrder queryOrder, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/folders/"+ (path==null? "" : Uri.EscapeDataString(path))+"&queryOrder=" + queryOrder+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Folder[]>(jsonReader);
-				}
 			}
 			finally
 			{

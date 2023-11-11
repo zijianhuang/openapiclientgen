@@ -3,8 +3,8 @@ import {autoinject} from 'aurelia-framework';
 export namespace MyNS {
 	export interface BBSReportRequestType {
 		payeeProvider: ProviderType;
-		claimId?: string;
-		lodgementDate?: Date;
+		claimId?: string | null;
+		lodgementDate?: Date | null;
 	}
 
 	export interface ProviderType {
@@ -12,38 +12,38 @@ export namespace MyNS {
 	}
 
 	export interface BBSPaymentReportResponseType {
-		paymentRun?: PaymentRunType;
-		paymentInfo?: PaymentType;
-		claimSummary?: Array<ClaimSummaryType>;
+		paymentRun?: PaymentRunType | null;
+		paymentInfo?: PaymentType | null;
+		claimSummary?: Array<ClaimSummaryType> | null;
 		status: string;
 	}
 
 	export interface PaymentRunType {
-		payerName?: string;
-		runDate?: Date;
-		runNumber?: string;
+		payerName?: string | null;
+		runDate?: Date | null;
+		runNumber?: string | null;
 	}
 
 	export interface PaymentType {
 		accountInfo: BankAccountType;
-		depositAmount?: string;
-		paymentReference?: string;
+		depositAmount?: string | null;
+		paymentReference?: string | null;
 	}
 
 	export interface BankAccountType {
-		accountName?: string;
-		accountNumber?: string;
-		bsbCode?: string;
+		accountName?: string | null;
+		accountNumber?: string | null;
+		bsbCode?: string | null;
 	}
 
 	export interface ClaimSummaryType {
-		accountReferenceId?: string;
-		benefit?: string;
-		chargeAmount?: string;
-		claimChannelCode?: string;
-		claimId?: string;
-		lodgementDate?: Date;
-		transactionId?: string;
+		accountReferenceId?: string | null;
+		benefit?: string | null;
+		chargeAmount?: string | null;
+		claimChannelCode?: string | null;
+		claimId?: string | null;
+		lodgementDate?: Date | null;
+		transactionId?: string | null;
 	}
 
 	export interface ServiceMessagesType {
@@ -60,58 +60,58 @@ export namespace MyNS {
 	}
 
 	export interface BBSProcessingReportResponseType {
-		claimAssessment?: ClaimAssessmentType;
+		claimAssessment?: ClaimAssessmentType | null;
 		status: string;
 	}
 
 	export interface ClaimAssessmentType {
-		medicalEvent?: Array<MedicalEventResponseType>;
-		serviceProvider?: ProviderType;
-		benefitPaid?: string;
-		chargeAmount?: string;
-		claimId?: string;
+		medicalEvent?: Array<MedicalEventResponseType> | null;
+		serviceProvider?: ProviderType | null;
+		benefitPaid?: string | null;
+		chargeAmount?: string | null;
+		claimId?: string | null;
 	}
 
 	export interface MedicalEventResponseType {
-		patient?: MembershipStatusType;
-		service?: Array<ServiceResponseType>;
-		id?: string;
-		eventDate?: Date;
+		patient?: MembershipStatusType | null;
+		service?: Array<ServiceResponseType> | null;
+		id?: string | null;
+		eventDate?: Date | null;
 	}
 
 	export interface MembershipStatusType {
-		status?: StatusType;
-		currentMembership?: MembershipType;
-		currentMember?: IdentityType;
-		processDate?: Date;
+		status?: StatusType | null;
+		currentMembership?: MembershipType | null;
+		currentMember?: IdentityType | null;
+		processDate?: Date | null;
 	}
 
 	export interface StatusType {
-		code?: number;
-		text?: string;
+		code?: number | null;
+		text?: string | null;
 	}
 
 	export interface MembershipType {
-		memberNumber?: string;
-		memberRefNumber?: string;
+		memberNumber?: string | null;
+		memberRefNumber?: string | null;
 	}
 
 	export interface IdentityType {
-		dateOfBirth?: Date;
-		familyName?: string;
-		givenName?: string;
-		secondInitial?: string;
-		sex?: string;
+		dateOfBirth?: Date | null;
+		familyName?: string | null;
+		givenName?: string | null;
+		secondInitial?: string | null;
+		sex?: string | null;
 	}
 
 	export interface ServiceResponseType {
-		error?: StatusType;
-		id?: string;
-		assessmentCode?: string;
-		benefitPaid?: string;
-		chargeAmount?: string;
-		itemNumber?: string;
-		numberOfPatientsSeen?: string;
+		error?: StatusType | null;
+		id?: string | null;
+		assessmentCode?: string | null;
+		benefitPaid?: string | null;
+		chargeAmount?: string | null;
+		itemNumber?: string | null;
+		numberOfPatientsSeen?: string | null;
 	}
 
 	export interface BulkBillStoreForwardRequestType {
@@ -119,10 +119,10 @@ export namespace MyNS {
 	}
 
 	export interface BulkBillClaimStoreForwardClaimType {
-		facilityId?: string;
-		hospitalInd?: string;
+		facilityId?: string | null;
+		hospitalInd?: string | null;
 		medicalEvent: Array<BBSMedicalEventType>;
-		payeeProvider?: ProviderType;
+		payeeProvider?: ProviderType | null;
 		serviceProvider: ProviderType;
 		serviceTypeCode: string;
 	}
@@ -132,10 +132,10 @@ export namespace MyNS {
 		authorisationDate: Date;
 		createDateTime: Date;
 		medicalEventDate: Date;
-		medicalEventTime?: string;
+		medicalEventTime?: string | null;
 		patient: MedicarePatientType;
-		referral?: ReferralType;
-		referralOverrideCode?: string;
+		referral?: ReferralType | null;
+		referralOverrideCode?: string | null;
 		service: Array<ServiceType>;
 		submissionAuthorityInd: string;
 	}
@@ -147,31 +147,31 @@ export namespace MyNS {
 
 	export interface ReferralType {
 		issueDate: Date;
-		period?: string;
-		periodCode?: string;
+		period?: string | null;
+		periodCode?: string | null;
 		provider: ProviderType;
 		typeCode: string;
 	}
 
 	export interface ServiceType {
 		id: string;
-		accessionDateTime?: Date;
-		aftercareOverrideInd?: string;
-		chargeAmount?: string;
-		collectionDateTime?: Date;
-		duplicateServiceOverrideInd?: string;
-		fieldQuantity?: string;
-		itemNumber?: string;
-		lspNumber?: string;
-		multipleProcedureOverrideInd?: string;
-		numberOfPatientsSeen?: string;
-		restrictiveOverrideCode?: string;
-		rule3ExemptInd?: string;
-		s4b3ExemptInd?: string;
-		scpId?: string;
-		selfDeemedCode?: string;
-		text?: string;
-		timeDuration?: string;
+		accessionDateTime?: Date | null;
+		aftercareOverrideInd?: string | null;
+		chargeAmount?: string | null;
+		collectionDateTime?: Date | null;
+		duplicateServiceOverrideInd?: string | null;
+		fieldQuantity?: string | null;
+		itemNumber?: string | null;
+		lspNumber?: string | null;
+		multipleProcedureOverrideInd?: string | null;
+		numberOfPatientsSeen?: string | null;
+		restrictiveOverrideCode?: string | null;
+		rule3ExemptInd?: string | null;
+		s4b3ExemptInd?: string | null;
+		scpId?: string | null;
+		selfDeemedCode?: string | null;
+		text?: string | null;
+		timeDuration?: string | null;
 	}
 
 	export interface BulkBillStoreForwardResponseType {
@@ -184,35 +184,35 @@ export namespace MyNS {
 	}
 
 	export interface VAAClaimType {
-		hospitalInd?: string;
+		hospitalInd?: string | null;
 		medicalEvent: Array<VAAMedicalEventType>;
-		payeeProvider?: ProviderType;
+		payeeProvider?: ProviderType | null;
 		serviceProvider: ProviderType;
 		serviceTypeCode: string;
 	}
 
 	export interface VAAMedicalEventType {
 		id: string;
-		acceptedDisability?: AcceptedDisabilityType;
+		acceptedDisability?: AcceptedDisabilityType | null;
 		authorisationDate: Date;
-		breakInEpisodeEndDate?: Date;
-		breakInEpisodeOfCareNumber?: string;
-		breakInEpisodeStartDate?: Date;
-		numberOfCNCHours?: string;
-		numberOfCNCVisits?: string;
+		breakInEpisodeEndDate?: Date | null;
+		breakInEpisodeOfCareNumber?: string | null;
+		breakInEpisodeStartDate?: Date | null;
+		numberOfCNCHours?: string | null;
+		numberOfCNCVisits?: string | null;
 		createDateTime: Date;
-		numberOfENHours?: string;
-		numberOfENVisits?: string;
-		facilityId?: string;
+		numberOfENHours?: string | null;
+		numberOfENVisits?: string | null;
+		facilityId?: string | null;
 		medicalEventDate: Date;
-		medicalEventTime?: string;
-		numberOfNSSHours?: string;
-		numberOfNSSVisits?: string;
+		medicalEventTime?: string | null;
+		numberOfNSSHours?: string | null;
+		numberOfNSSVisits?: string | null;
 		patient: VeteranPatientType;
-		referral?: ReferralType;
-		referralOverrideCode?: string;
-		numberOfRNHours?: string;
-		numberOfRNVisits?: string;
+		referral?: ReferralType | null;
+		referralOverrideCode?: string | null;
+		numberOfRNHours?: string | null;
+		numberOfRNVisits?: string | null;
 		service: Array<VAAServiceType>;
 		submissionAuthorityInd: string;
 	}
@@ -224,28 +224,28 @@ export namespace MyNS {
 
 	export interface VAAServiceType {
 		id: string;
-		accountReferenceNumber?: string;
-		admissionDate?: Date;
-		chargeAmount?: string;
-		dischargeDate?: Date;
-		distanceKilometres?: number;
-		duplicateServiceOverrideInd?: string;
+		accountReferenceNumber?: string | null;
+		admissionDate?: Date | null;
+		chargeAmount?: string | null;
+		dischargeDate?: Date | null;
+		distanceKilometres?: number | null;
+		duplicateServiceOverrideInd?: string | null;
 		itemNumber: string;
-		multipleProcedureOverrideInd?: string;
-		numberOfPatientsSeen?: string;
-		numberOfTeeth?: string;
-		opticalScriptCode?: string;
-		restrictiveOverrideCode?: string;
-		secondDeviceInd?: string;
-		selfDeemedCode?: string;
-		text?: string;
-		timeDuration?: string;
-		toothNumber?: string;
-		upperLowerJawCode?: string;
+		multipleProcedureOverrideInd?: string | null;
+		numberOfPatientsSeen?: string | null;
+		numberOfTeeth?: string | null;
+		opticalScriptCode?: string | null;
+		restrictiveOverrideCode?: string | null;
+		secondDeviceInd?: string | null;
+		selfDeemedCode?: string | null;
+		text?: string | null;
+		timeDuration?: string | null;
+		toothNumber?: string | null;
+		upperLowerJawCode?: string | null;
 	}
 
 	export interface VeteranPatientType extends PatientType {
-		veteranMembership?: VeteranMembershipType;
+		veteranMembership?: VeteranMembershipType | null;
 	}
 
 	export interface VeteranMembershipType {
@@ -254,14 +254,14 @@ export namespace MyNS {
 
 	export interface PatientType {
 		identity: IdentityType;
-		residentialAddress?: AddressType;
+		residentialAddress?: AddressType | null;
 	}
 
 	export interface AddressType {
-		addressLineOne?: string;
-		addressLineTwo?: string;
-		locality?: string;
-		postcode?: string;
+		addressLineOne?: string | null;
+		addressLineTwo?: string | null;
+		locality?: string | null;
+		postcode?: string | null;
 	}
 
 	export interface AlliedHealthClaimResponseType {
@@ -274,32 +274,32 @@ export namespace MyNS {
 	}
 
 	export interface DVAClaimType {
-		hospitalInd?: string;
+		hospitalInd?: string | null;
 		serviceTypeCode: string;
 		medicalEvent: Array<DVAMedicalEventType>;
 		serviceProvider: ProviderType;
-		payeeProvider?: ProviderType;
+		payeeProvider?: ProviderType | null;
 	}
 
 	export interface DVAMedicalEventType {
 		id: string;
 		authorisationDate: Date;
 		createDateTime: Date;
-		facilityId?: string;
+		facilityId?: string | null;
 		medicalEventDate: Date;
-		medicalEventTime?: string;
-		referralOverrideCode?: string;
+		medicalEventTime?: string | null;
+		referralOverrideCode?: string | null;
 		submissionAuthorityInd: string;
-		treatmentLocationCode?: string;
-		acceptedDisability?: AcceptedDisabilityType;
-		referral?: ReferralType;
+		treatmentLocationCode?: string | null;
+		acceptedDisability?: AcceptedDisabilityType | null;
+		referral?: ReferralType | null;
 		patient: VeteranPatientType;
 		service: Array<DVAServiceType>;
 	}
 
 	export interface DVAServiceType extends ServiceType {
-		accountReferenceNumber?: string;
-		distanceKilometres?: number;
+		accountReferenceNumber?: string | null;
+		distanceKilometres?: number | null;
 	}
 
 	export interface DVAClaimResponseType {
@@ -309,61 +309,61 @@ export namespace MyNS {
 
 	export interface DVAReportRequestType {
 		payeeProvider: ProviderType;
-		claimId?: string;
-		lodgementDate?: Date;
+		claimId?: string | null;
+		lodgementDate?: Date | null;
 	}
 
 	export interface DVAPaymentReportResponseType {
-		paymentRun?: PaymentRunType;
-		paymentInfo?: PaymentType;
-		claimSummary?: Array<ClaimSummaryType>;
+		paymentRun?: PaymentRunType | null;
+		paymentInfo?: PaymentType | null;
+		claimSummary?: Array<ClaimSummaryType> | null;
 		status: string;
 	}
 
 	export interface DVAProcessingReportResponseType {
-		claimAssessment?: DVAClaimAssessmentType;
+		claimAssessment?: DVAClaimAssessmentType | null;
 		status: string;
 	}
 
 	export interface DVAClaimAssessmentType {
-		medicalEvent?: Array<DVAMedicalEventAssessmentType>;
-		serviceProvider?: ProviderType;
-		benefitPaid?: string;
-		chargeAmount?: string;
-		claimId?: string;
+		medicalEvent?: Array<DVAMedicalEventAssessmentType> | null;
+		serviceProvider?: ProviderType | null;
+		benefitPaid?: string | null;
+		chargeAmount?: string | null;
+		claimId?: string | null;
 	}
 
 	export interface DVAMedicalEventAssessmentType {
-		patient?: VeteranMembershipStatusType;
-		service?: Array<DVAServiceAssessmentType>;
-		id?: string;
-		eventDate?: Date;
+		patient?: VeteranMembershipStatusType | null;
+		service?: Array<DVAServiceAssessmentType> | null;
+		id?: string | null;
+		eventDate?: Date | null;
 	}
 
 	export interface VeteranMembershipStatusType {
-		currentMembership?: VeteranMembershipResponseType;
-		currentMember?: IdentityType;
-		status?: StatusType;
-		processDate?: Date;
+		currentMembership?: VeteranMembershipResponseType | null;
+		currentMember?: IdentityType | null;
+		status?: StatusType | null;
+		processDate?: Date | null;
 	}
 
 	export interface DVAServiceAssessmentType {
-		id?: string;
-		accountReferenceNumber?: string;
-		assessmentCode?: string;
-		benefitPaid?: string;
-		chargeAmount?: string;
-		gstInd?: string;
-		itemNumber?: string;
-		numberOfPatientsSeen?: string;
+		id?: string | null;
+		accountReferenceNumber?: string | null;
+		assessmentCode?: string | null;
+		benefitPaid?: string | null;
+		chargeAmount?: string | null;
+		gstInd?: string | null;
+		itemNumber?: string | null;
+		numberOfPatientsSeen?: string | null;
 	}
 
 	export interface VeteranMembershipResponseType extends VeteranMembershipType {
-		entitlementCode?: string;
+		entitlementCode?: string | null;
 	}
 
 	export interface EnterpriseConcessionVerificationRequestType {
-		timeout?: number;
+		timeout?: number | null;
 		concessionVerificationRequest: Array<ReferenceConcessionVerificationRequestType>;
 	}
 
@@ -373,12 +373,12 @@ export namespace MyNS {
 
 	export interface ConcessionVerificationRequestType {
 		patient: MedicarePatientType;
-		dateOfService?: Date;
+		dateOfService?: Date | null;
 	}
 
 	export interface EnterpriseConcessionVerificationResponseType {
 		status: string;
-		concessionVerificationResponse?: Array<ReferenceConcessionVerificationResponseType>;
+		concessionVerificationResponse?: Array<ReferenceConcessionVerificationResponseType> | null;
 	}
 
 	export interface ReferenceConcessionVerificationResponseType extends ConcessionVerificationResponseType {
@@ -391,12 +391,12 @@ export namespace MyNS {
 	}
 
 	export interface ConcessionStatusType {
-		status?: StatusType;
-		processDate?: Date;
+		status?: StatusType | null;
+		processDate?: Date | null;
 	}
 
 	export interface EnterprisePatientVerificationRequestType {
-		timeout?: number;
+		timeout?: number | null;
 		patientVerificationRequest: Array<ReferencePatientVerificationRequestType>;
 	}
 
@@ -406,26 +406,26 @@ export namespace MyNS {
 
 	export interface PatientVerificationRequestType {
 		patient: FundPatientType;
-		provider?: ProviderType;
-		dateOfService?: Date;
+		provider?: ProviderType | null;
+		dateOfService?: Date | null;
 		typeCode: string;
 	}
 
 	export interface FundPatientType extends PatientType {
-		alsoKnownAs?: IdentityType;
-		medicare?: MembershipType;
-		healthFund?: FundMembershipType;
+		alsoKnownAs?: IdentityType | null;
+		medicare?: MembershipType | null;
+		healthFund?: FundMembershipType | null;
 	}
 
 	export interface FundMembershipType {
-		memberNumber?: string;
-		memberRefNumber?: string;
-		organisation?: string;
+		memberNumber?: string | null;
+		memberRefNumber?: string | null;
+		organisation?: string | null;
 	}
 
 	export interface EnterprisePatientVerificationResponseType {
 		status: string;
-		patientVerificationResponse?: Array<ReferencePatientVerificationResponseType>;
+		patientVerificationResponse?: Array<ReferencePatientVerificationResponseType> | null;
 	}
 
 	export interface ReferencePatientVerificationResponseType extends PatientVerificationResponseType {
@@ -433,19 +433,19 @@ export namespace MyNS {
 	}
 
 	export interface PatientVerificationResponseType {
-		medicareStatus?: MembershipStatusType;
-		healthFundStatus?: FundMembershipStatusType;
+		medicareStatus?: MembershipStatusType | null;
+		healthFundStatus?: FundMembershipStatusType | null;
 	}
 
 	export interface FundMembershipStatusType {
-		status?: StatusType;
-		currentMembership?: FundMembershipType;
-		currentMember?: IdentityType;
-		processDate?: Date;
+		status?: StatusType | null;
+		currentMembership?: FundMembershipType | null;
+		currentMember?: IdentityType | null;
+		processDate?: Date | null;
 	}
 
 	export interface EnterpriseVeteranVerificationRequestType {
-		timeout?: number;
+		timeout?: number | null;
 		veteranVerificationRequest: Array<ReferenceVeteranVerificationRequestType>;
 	}
 
@@ -459,15 +459,15 @@ export namespace MyNS {
 
 	export interface EnterpriseVeteranVerificationResponseType {
 		status: string;
-		veteranVerificationResponse?: Array<ReferenceVeteranVerificationResponseType>;
+		veteranVerificationResponse?: Array<ReferenceVeteranVerificationResponseType> | null;
 	}
 
 	export interface ReferenceVeteranVerificationResponseType extends VeteranVerificationResponseType {
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface VeteranVerificationResponseType {
-		veteranStatus?: VeteranMembershipStatusType;
+		veteranStatus?: VeteranMembershipStatusType | null;
 	}
 
 	export interface PatientClaimInteractiveRequestType {
@@ -476,14 +476,14 @@ export namespace MyNS {
 
 	export interface PatientClaimInteractiveType {
 		patient: MedicarePatientType;
-		referral?: ReferralType;
+		referral?: ReferralType | null;
 		claimant: ClaimantType;
 		medicalEvent: Array<PCIMedicalEventType>;
-		payeeProvider?: ProviderType;
+		payeeProvider?: ProviderType | null;
 		serviceProvider: ProviderType;
-		referralOverrideCode?: string;
+		referralOverrideCode?: string | null;
 		accountPaidInd: string;
-		accountReferenceId?: string;
+		accountReferenceId?: string | null;
 		submissionAuthorityInd: string;
 		authorisationDate: Date;
 	}
@@ -492,25 +492,25 @@ export namespace MyNS {
 		service: Array<PCIServiceType>;
 		id: string;
 		medicalEventDate: Date;
-		medicalEventTime?: string;
+		medicalEventTime?: string | null;
 	}
 
 	export interface PCIServiceType extends ServiceType {
-		patientContribAmount?: string;
-		facilityId?: string;
-		hospitalInd?: string;
+		patientContribAmount?: string | null;
+		facilityId?: string | null;
+		hospitalInd?: string | null;
 	}
 
 	export interface ClaimantType extends MedicarePatientType {
-		eftDetails?: BankAccountType;
-		residentialAddress?: AddressType;
-		contactDetails?: ContactType;
+		eftDetails?: BankAccountType | null;
+		residentialAddress?: AddressType | null;
+		contactDetails?: ContactType | null;
 	}
 
 	export interface ContactType {
-		emailAddress?: string;
-		name?: string;
-		phoneNumber?: string;
+		emailAddress?: string | null;
+		name?: string | null;
+		phoneNumber?: string | null;
 	}
 
 	export interface PatientClaimInteractiveResponseType {
@@ -519,10 +519,10 @@ export namespace MyNS {
 	}
 
 	export interface PCIAssessmentType {
-		claimant?: CurrentMembershipType;
-		patient?: CurrentMembershipType;
-		medicalEvent?: Array<PCIMedicalEventResponseType>;
-		error?: StatusType;
+		claimant?: CurrentMembershipType | null;
+		patient?: CurrentMembershipType | null;
+		medicalEvent?: Array<PCIMedicalEventResponseType> | null;
+		error?: StatusType | null;
 		claimId: string;
 	}
 
@@ -531,9 +531,9 @@ export namespace MyNS {
 	}
 
 	export interface PCIMedicalEventResponseType {
-		service?: Array<ServiceResponseType>;
-		eventDate?: Date;
-		id?: string;
+		service?: Array<ServiceResponseType> | null;
+		eventDate?: Date | null;
+		id?: string | null;
 	}
 
 	export interface RetrieveReportRequestType {
@@ -541,24 +541,24 @@ export namespace MyNS {
 	}
 
 	export interface RetrieveReportResponseType {
-		content?: Array<ContentType>;
+		content?: Array<ContentType> | null;
 	}
 
 	export interface ContentType {
-		transactionId?: string;
-		status?: string;
+		transactionId?: string | null;
+		status?: string | null;
 	}
 
 	export interface EnterpriseConcessionVerificationReportContentType extends ContentType {
-		report?: EnterpriseConcessionVerificationResponseType;
+		report?: EnterpriseConcessionVerificationResponseType | null;
 	}
 
 	export interface EnterprisePatientVerificationReportContentType extends ContentType {
-		report?: EnterprisePatientVerificationResponseType;
+		report?: EnterprisePatientVerificationResponseType | null;
 	}
 
 	export interface EnterpriseVeteranVerificationReportContentType extends ContentType {
-		report?: EnterpriseVeteranVerificationResponseType;
+		report?: EnterpriseVeteranVerificationResponseType | null;
 	}
 
 	export interface SameDayDeleteRequestType {
@@ -575,28 +575,28 @@ export namespace MyNS {
 	}
 
 	export interface StatusReportRequestType {
-		transactionId?: Array<string>;
-		associateName?: string;
-		fromDateTime?: Date;
-		toDateTime?: Date;
-		reportStatus?: string;
-		requestTransmissionType?: string;
-		status?: string;
+		transactionId?: Array<string> | null;
+		associateName?: string | null;
+		fromDateTime?: Date | null;
+		toDateTime?: Date | null;
+		reportStatus?: string | null;
+		requestTransmissionType?: string | null;
+		status?: string | null;
 	}
 
 	export interface StatusReportResponseType {
-		transactionStatus?: Array<TransactionStatusType>;
+		transactionStatus?: Array<TransactionStatusType> | null;
 		status: string;
 	}
 
 	export interface TransactionStatusType {
-		associateName?: string;
-		lodgementDateTime?: Date;
-		processStatus?: string;
-		reference?: string;
-		reportStatus?: string;
-		requestTransmissionType?: string;
-		transactionId?: string;
+		associateName?: string | null;
+		lodgementDateTime?: Date | null;
+		processStatus?: string | null;
+		reference?: string | null;
+		reportStatus?: string | null;
+		requestTransmissionType?: string | null;
+		transactionId?: string | null;
 	}
 
 	@autoinject()

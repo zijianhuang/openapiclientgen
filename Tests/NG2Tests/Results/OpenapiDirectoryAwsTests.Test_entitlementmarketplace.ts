@@ -5,38 +5,38 @@ export namespace MyNS {
 
 	/** The GetEntitlementsRequest contains results from the GetEntitlements operation. */
 	export interface GetEntitlementsResult {
-		Entitlements?: Array<Entitlement>;
-		NextToken?: string;
+		Entitlements?: Array<Entitlement> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database. */
 	export interface Entitlement {
-		ProductCode?: string;
-		Dimension?: string;
-		CustomerIdentifier?: string;
+		ProductCode?: string | null;
+		Dimension?: string | null;
+		CustomerIdentifier?: string | null;
 
 		/** The EntitlementValue represents the amount of capacity that the customer is entitled to for the product. */
-		Value?: EntitlementValue;
-		ExpirationDate?: Date;
+		Value?: EntitlementValue | null;
+		ExpirationDate?: Date | null;
 	}
 
 
 	/** The EntitlementValue represents the amount of capacity that the customer is entitled to for the product. */
 	export interface EntitlementValue {
-		IntegerValue?: number;
-		DoubleValue?: number;
-		BooleanValue?: boolean;
-		StringValue?: string;
+		IntegerValue?: number | null;
+		DoubleValue?: number | null;
+		BooleanValue?: boolean | null;
+		StringValue?: string | null;
 	}
 
 
 	/** The GetEntitlementsRequest contains parameters for the GetEntitlements operation. */
 	export interface GetEntitlementsRequest {
 		ProductCode: string;
-		Filter?: GetEntitlementFilters;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: GetEntitlementFilters | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetEntitlementFilters {
@@ -45,19 +45,19 @@ export namespace MyNS {
 
 	/** One or more parameters in your request was invalid. */
 	export interface InvalidParameterException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The calls to the GetEntitlements API are throttled. */
 	export interface ThrottlingException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums. */
 	export interface InternalServiceErrorException {
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum GetEntitlementFilterName { CUSTOMER_IDENTIFIER = 0, DIMENSION = 1 }

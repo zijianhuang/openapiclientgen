@@ -7,31 +7,31 @@ export namespace MyNS {
 	export interface Account {
 
 		/** When this is false, bid requests that include a deal ID for a private auction or preferred deal are always sent to your bidder. When true, all active pretargeting configs will be applied to private auctions and preferred deals. Programmatic Guaranteed deals (when enabled) are always sent to your bidder. */
-		applyPretargetingToNonGuaranteedDeals?: boolean;
+		applyPretargetingToNonGuaranteedDeals?: boolean | null;
 
 		/** Your bidder locations that have distinct URLs. */
-		AccountBidderLocation?: Array<AccountBidderLocation>;
+		AccountBidderLocation?: Array<AccountBidderLocation> | null;
 
 		/** The nid parameter value used in cookie match requests. Please contact your technical account manager if you need to change this. */
-		cookieMatchingNid?: string;
+		cookieMatchingNid?: string | null;
 
 		/** The base URL used in cookie match requests. */
-		cookieMatchingUrl?: string;
+		cookieMatchingUrl?: string | null;
 
 		/** Account id. */
-		id?: number;
+		id?: number | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The maximum number of active creatives that an account can have, where a creative is active if it was inserted or bid with in the last 30 days. Please contact your technical account manager if you need to change this. */
-		maximumActiveCreatives?: number;
+		maximumActiveCreatives?: number | null;
 
 		/** The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this. */
-		maximumTotalQps?: number;
+		maximumTotalQps?: number | null;
 
 		/** The number of creatives that this account inserted or bid with in the last 30 days. */
-		numberActiveCreatives?: number;
+		numberActiveCreatives?: number | null;
 	}
 
 	export interface AccountBidderLocation {
@@ -47,10 +47,10 @@ export namespace MyNS {
 		 * - PROTOCOL_OPENRTB_PROTOBUF_2_4
 		 * - PROTOCOL_OPENRTB_PROTOBUF_2_5
 		 */
-		bidProtocol?: string;
+		bidProtocol?: string | null;
 
 		/** The maximum queries per second the Ad Exchange will send. */
-		maximumQps?: number;
+		maximumQps?: number | null;
 
 		/**
 		 * The geographical region the Ad Exchange should send requests from. Only used by some quota systems, but always setting the value is recommended. Allowed values:
@@ -59,10 +59,10 @@ export namespace MyNS {
 		 * - US_EAST
 		 * - US_WEST
 		 */
-		region?: string;
+		region?: string | null;
 
 		/** The URL to which the Ad Exchange will send bid requests. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -70,164 +70,164 @@ export namespace MyNS {
 	export interface AccountsList {
 
 		/** A list of accounts. */
-		items?: Array<Account>;
+		items?: Array<Account> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AddOrderDealsRequest {
 
 		/** The list of deals to add */
-		deals?: Array<MarketplaceDeal>;
+		deals?: Array<MarketplaceDeal> | null;
 
 		/** The last known proposal revision number. */
-		proposalRevisionNumber?: string;
+		proposalRevisionNumber?: string | null;
 
 		/** Indicates an optional action to take on the proposal */
-		updateAction?: string;
+		updateAction?: string | null;
 	}
 
 
 	/** A proposal can contain multiple deals. A deal contains the terms and targeting information that is used for serving. */
 	export interface MarketplaceDeal {
-		buyerPrivateData?: PrivateData;
+		buyerPrivateData?: PrivateData | null;
 
 		/** The time (ms since epoch) of the deal creation. (readonly) */
-		creationTimeMs?: string;
+		creationTimeMs?: string | null;
 
 		/** Specifies the creative pre-approval policy (buyer-readonly) */
-		creativePreApprovalPolicy?: string;
+		creativePreApprovalPolicy?: string | null;
 
 		/** Specifies whether the creative is safeFrame compatible (buyer-readonly) */
-		creativeSafeFrameCompatibility?: string;
+		creativeSafeFrameCompatibility?: string | null;
 
 		/** A unique deal-id for the deal (readonly). */
-		dealId?: string;
-		dealServingMetadata?: DealServingMetadata;
-		deliveryControl?: DeliveryControl;
+		dealId?: string | null;
+		dealServingMetadata?: DealServingMetadata | null;
+		deliveryControl?: DeliveryControl | null;
 
 		/** The external deal id assigned to this deal once the deal is finalized. This is the deal-id that shows up in serving/reporting etc. (readonly) */
-		externalDealId?: string;
+		externalDealId?: string | null;
 
 		/** Proposed flight end time of the deal (ms since epoch) This will generally be stored in a granularity of a second. (updatable) */
-		flightEndTimeMs?: string;
+		flightEndTimeMs?: string | null;
 
 		/** Proposed flight start time of the deal (ms since epoch) This will generally be stored in a granularity of a second. (updatable) */
-		flightStartTimeMs?: string;
+		flightStartTimeMs?: string | null;
 
 		/** Description for the deal terms. (buyer-readonly) */
-		inventoryDescription?: string;
+		inventoryDescription?: string | null;
 
 		/** Indicates whether the current deal is a RFP template. RFP template is created by buyer and not based on seller created products. */
-		isRfpTemplate?: boolean;
+		isRfpTemplate?: boolean | null;
 
 		/** True, if the buyside inventory setup is complete for this deal. (readonly, except via OrderSetupCompleted action) */
-		isSetupComplete?: boolean;
+		isSetupComplete?: boolean | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#marketplaceDeal". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The time (ms since epoch) when the deal was last updated. (readonly) */
-		lastUpdateTimeMs?: string;
+		lastUpdateTimeMs?: string | null;
 
 		/** The name of the deal. (updatable) */
-		name?: string;
+		name?: string | null;
 
 		/** The product-id from which this deal was created. (readonly, except on create) */
-		productId?: string;
+		productId?: string | null;
 
 		/** The revision number of the product that the deal was created from (readonly, except on create) */
-		productRevisionNumber?: string;
+		productRevisionNumber?: string | null;
 
 		/** Specifies the creative source for programmatic deals, PUBLISHER means creative is provided by seller and ADVERTISR means creative is provided by buyer. (buyer-readonly) */
-		programmaticCreativeSource?: string;
-		proposalId?: string;
+		programmaticCreativeSource?: string | null;
+		proposalId?: string | null;
 
 		/** Optional Seller contact information for the deal (buyer-readonly) */
-		sellerContacts?: Array<ContactInformation>;
+		sellerContacts?: Array<ContactInformation> | null;
 
 		/** The shared targeting visible to buyers and sellers. Each shared targeting entity is AND'd together. (updatable) */
-		sharedTargetings?: Array<SharedTargeting>;
+		sharedTargetings?: Array<SharedTargeting> | null;
 
 		/** The syndication product associated with the deal. (readonly, except on create) */
-		syndicationProduct?: string;
-		terms?: DealTerms;
-		webPropertyCode?: string;
+		syndicationProduct?: string | null;
+		terms?: DealTerms | null;
+		webPropertyCode?: string | null;
 	}
 
 	export interface PrivateData {
-		referenceId?: string;
-		referencePayload?: string;
+		referenceId?: string | null;
+		referencePayload?: string | null;
 	}
 
 	export interface DealServingMetadata {
 
 		/** True if alcohol ads are allowed for this deal (read-only). This field is only populated when querying for finalized orders using the method GetFinalizedOrderDeals */
-		alcoholAdsAllowed?: boolean;
+		alcoholAdsAllowed?: boolean | null;
 
 		/** Tracks which parties (if any) have paused a deal. The deal is considered paused if has_buyer_paused || has_seller_paused. Each of the has_buyer_paused or the has_seller_paused bits can be set independently. */
-		dealPauseStatus?: DealServingMetadataDealPauseStatus;
+		dealPauseStatus?: DealServingMetadataDealPauseStatus | null;
 	}
 
 
 	/** Tracks which parties (if any) have paused a deal. The deal is considered paused if has_buyer_paused || has_seller_paused. Each of the has_buyer_paused or the has_seller_paused bits can be set independently. */
 	export interface DealServingMetadataDealPauseStatus {
-		buyerPauseReason?: string;
+		buyerPauseReason?: string | null;
 
 		/** If the deal is paused, records which party paused the deal first. */
-		firstPausedBy?: string;
-		hasBuyerPaused?: boolean;
-		hasSellerPaused?: boolean;
-		sellerPauseReason?: string;
+		firstPausedBy?: string | null;
+		hasBuyerPaused?: boolean | null;
+		hasSellerPaused?: boolean | null;
+		sellerPauseReason?: string | null;
 	}
 
 	export interface DeliveryControl {
-		creativeBlockingLevel?: string;
-		deliveryRateType?: string;
-		frequencyCaps?: Array<DeliveryControlFrequencyCap>;
+		creativeBlockingLevel?: string | null;
+		deliveryRateType?: string | null;
+		frequencyCaps?: Array<DeliveryControlFrequencyCap> | null;
 	}
 
 	export interface DeliveryControlFrequencyCap {
-		maxImpressions?: number;
-		numTimeUnits?: number;
-		timeUnitType?: string;
+		maxImpressions?: number | null;
+		numTimeUnits?: number | null;
+		timeUnitType?: string | null;
 	}
 
 	export interface ContactInformation {
 
 		/** Email address of the contact. */
-		email?: string;
+		email?: string | null;
 
 		/** The name of the contact. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface SharedTargeting {
 
 		/** The list of values to exclude from targeting. Each value is AND'd together. */
-		exclusions?: Array<TargetingValue>;
+		exclusions?: Array<TargetingValue> | null;
 
 		/** The list of value to include as part of the targeting. Each value is OR'd together. */
-		inclusions?: Array<TargetingValue>;
+		inclusions?: Array<TargetingValue> | null;
 
 		/** The key representing the shared targeting criterion. */
-		key?: string;
+		key?: string | null;
 	}
 
 	export interface TargetingValue {
 
 		/** Next Id: 7 */
-		creativeSizeValue?: TargetingValueCreativeSize;
-		dayPartTargetingValue?: TargetingValueDayPartTargeting;
-		demogAgeCriteriaValue?: TargetingValueDemogAgeCriteria;
-		demogGenderCriteriaValue?: TargetingValueDemogGenderCriteria;
+		creativeSizeValue?: TargetingValueCreativeSize | null;
+		dayPartTargetingValue?: TargetingValueDayPartTargeting | null;
+		demogAgeCriteriaValue?: TargetingValueDemogAgeCriteria | null;
+		demogGenderCriteriaValue?: TargetingValueDemogGenderCriteria | null;
 
 		/** The long value to exclude/include. */
-		longValue?: string;
+		longValue?: string | null;
 
 		/** The string value to exclude/include. */
-		stringValue?: string;
+		stringValue?: string | null;
 	}
 
 
@@ -235,117 +235,117 @@ export namespace MyNS {
 	export interface TargetingValueCreativeSize {
 
 		/** The formats allowed by the publisher. */
-		allowedFormats?: Array<string>;
+		allowedFormats?: Array<string> | null;
 
 		/** For video size type, the list of companion sizes. */
-		companionSizes?: Array<TargetingValueSize>;
+		companionSizes?: Array<TargetingValueSize> | null;
 
 		/** The Creative size type. */
-		creativeSizeType?: string;
+		creativeSizeType?: string | null;
 
 		/** The native template for native ad. */
-		nativeTemplate?: string;
-		size?: TargetingValueSize;
+		nativeTemplate?: string | null;
+		size?: TargetingValueSize | null;
 
 		/** The skippable ad type for video size. */
-		skippableAdType?: string;
+		skippableAdType?: string | null;
 	}
 
 	export interface TargetingValueSize {
 
 		/** The height of the creative. */
-		height?: number;
+		height?: number | null;
 
 		/** The width of the creative. */
-		width?: number;
+		width?: number | null;
 	}
 
 	export interface TargetingValueDayPartTargeting {
-		dayParts?: Array<TargetingValueDayPartTargetingDayPart>;
-		timeZoneType?: string;
+		dayParts?: Array<TargetingValueDayPartTargetingDayPart> | null;
+		timeZoneType?: string | null;
 	}
 
 	export interface TargetingValueDayPartTargetingDayPart {
-		dayOfWeek?: string;
-		endHour?: number;
-		endMinute?: number;
-		startHour?: number;
-		startMinute?: number;
+		dayOfWeek?: string | null;
+		endHour?: number | null;
+		endMinute?: number | null;
+		startHour?: number | null;
+		startMinute?: number | null;
 	}
 
 	export interface TargetingValueDemogAgeCriteria {
-		demogAgeCriteriaIds?: Array<string>;
+		demogAgeCriteriaIds?: Array<string> | null;
 	}
 
 	export interface TargetingValueDemogGenderCriteria {
-		demogGenderCriteriaIds?: Array<string>;
+		demogGenderCriteriaIds?: Array<string> | null;
 	}
 
 	export interface DealTerms {
 
 		/** Visibility of the URL in bid requests. */
-		brandingType?: string;
+		brandingType?: string | null;
 
 		/** Indicates that this ExternalDealId exists under at least two different AdxInventoryDeals. Currently, the only case that the same ExternalDealId will exist is programmatic cross sell case. */
-		crossListedExternalDealIdType?: string;
+		crossListedExternalDealIdType?: string | null;
 
 		/** Description for the proposed terms of the deal. */
-		description?: string;
-		estimatedGrossSpend?: Price;
+		description?: string | null;
+		estimatedGrossSpend?: Price | null;
 
 		/** Non-binding estimate of the impressions served per day Can be set by buyer or seller. */
-		estimatedImpressionsPerDay?: string;
-		guaranteedFixedPriceTerms?: DealTermsGuaranteedFixedPriceTerms;
-		nonGuaranteedAuctionTerms?: DealTermsNonGuaranteedAuctionTerms;
-		nonGuaranteedFixedPriceTerms?: DealTermsNonGuaranteedFixedPriceTerms;
-		rubiconNonGuaranteedTerms?: DealTermsRubiconNonGuaranteedTerms;
+		estimatedImpressionsPerDay?: string | null;
+		guaranteedFixedPriceTerms?: DealTermsGuaranteedFixedPriceTerms | null;
+		nonGuaranteedAuctionTerms?: DealTermsNonGuaranteedAuctionTerms | null;
+		nonGuaranteedFixedPriceTerms?: DealTermsNonGuaranteedFixedPriceTerms | null;
+		rubiconNonGuaranteedTerms?: DealTermsRubiconNonGuaranteedTerms | null;
 
 		/** For deals with Cost Per Day billing, defines the timezone used to mark the boundaries of a day (buyer-readonly) */
-		sellerTimeZone?: string;
+		sellerTimeZone?: string | null;
 	}
 
 	export interface Price {
 
 		/** The price value in micros. */
-		amountMicros?: number;
+		amountMicros?: number | null;
 
 		/** The currency code for the price. */
-		currencyCode?: string;
+		currencyCode?: string | null;
 
 		/** In case of CPD deals, the expected CPM in micros. */
-		expectedCpmMicros?: number;
+		expectedCpmMicros?: number | null;
 
 		/** The pricing type for the deal/product. */
-		pricingType?: string;
+		pricingType?: string | null;
 	}
 
 	export interface DealTermsGuaranteedFixedPriceTerms {
-		billingInfo?: DealTermsGuaranteedFixedPriceTermsBillingInfo;
+		billingInfo?: DealTermsGuaranteedFixedPriceTermsBillingInfo | null;
 
 		/** Fixed price for the specified buyer. */
-		fixedPrices?: Array<PricePerBuyer>;
+		fixedPrices?: Array<PricePerBuyer> | null;
 
 		/** Guaranteed impressions as a percentage. This is the percentage of guaranteed looks that the buyer is guaranteeing to buy. */
-		guaranteedImpressions?: string;
+		guaranteedImpressions?: string | null;
 
 		/** Count of guaranteed looks. Required for deal, optional for product. For CPD deals, buyer changes to guaranteed_looks will be ignored. */
-		guaranteedLooks?: string;
+		guaranteedLooks?: string | null;
 
 		/** Count of minimum daily looks for a CPD deal. For CPD deals, buyer should negotiate on this field instead of guaranteed_looks. */
-		minimumDailyLooks?: string;
+		minimumDailyLooks?: string | null;
 	}
 
 	export interface DealTermsGuaranteedFixedPriceTermsBillingInfo {
 
 		/** The timestamp (in ms since epoch) when the original reservation price for the deal was first converted to DFP currency. This is used to convert the contracted price into buyer's currency without discrepancy. */
-		currencyConversionTimeMs?: string;
+		currencyConversionTimeMs?: string | null;
 
 		/** The DFP line item id associated with this deal. For features like CPD, buyers can retrieve the DFP line item for billing reconciliation. */
-		dfpLineItemId?: string;
+		dfpLineItemId?: string | null;
 
 		/** The original contracted quantity (# impressions) for this deal. To ensure delivery, sometimes the publisher will book the deal with a impression buffer, such that guaranteed_looks is greater than the contracted quantity. However clients are billed using the original contracted quantity. */
-		originalContractedQuantity?: string;
-		price?: Price;
+		originalContractedQuantity?: string | null;
+		price?: Price | null;
 	}
 
 
@@ -353,51 +353,51 @@ export namespace MyNS {
 	export interface PricePerBuyer {
 
 		/** Optional access type for this buyer. */
-		auctionTier?: string;
-		billedBuyer?: Buyer;
-		buyer?: Buyer;
-		price?: Price;
+		auctionTier?: string | null;
+		billedBuyer?: Buyer | null;
+		buyer?: Buyer | null;
+		price?: Price | null;
 	}
 
 	export interface Buyer {
 
 		/** Adx account id of the buyer. */
-		accountId?: string;
+		accountId?: string | null;
 	}
 
 	export interface DealTermsNonGuaranteedAuctionTerms {
 
 		/** True if open auction buyers are allowed to compete with invited buyers in this private auction (buyer-readonly). */
-		autoOptimizePrivateAuction?: boolean;
+		autoOptimizePrivateAuction?: boolean | null;
 
 		/** Reserve price for the specified buyer. */
-		reservePricePerBuyers?: Array<PricePerBuyer>;
+		reservePricePerBuyers?: Array<PricePerBuyer> | null;
 	}
 
 	export interface DealTermsNonGuaranteedFixedPriceTerms {
 
 		/** Fixed price for the specified buyer. */
-		fixedPrices?: Array<PricePerBuyer>;
+		fixedPrices?: Array<PricePerBuyer> | null;
 	}
 
 	export interface DealTermsRubiconNonGuaranteedTerms {
-		priorityPrice?: Price;
-		standardPrice?: Price;
+		priorityPrice?: Price | null;
+		standardPrice?: Price | null;
 	}
 
 	export interface AddOrderDealsResponse {
 
 		/** List of deals added (in the same proposal as passed in the request) */
-		deals?: Array<MarketplaceDeal>;
+		deals?: Array<MarketplaceDeal> | null;
 
 		/** The updated revision number for the proposal. */
-		proposalRevisionNumber?: string;
+		proposalRevisionNumber?: string | null;
 	}
 
 	export interface AddOrderNotesRequest {
 
 		/** The list of notes to add. */
-		notes?: Array<MarketplaceNote>;
+		notes?: Array<MarketplaceNote> | null;
 	}
 
 
@@ -405,32 +405,32 @@ export namespace MyNS {
 	export interface MarketplaceNote {
 
 		/** The role of the person (buyer/seller) creating the note. (readonly) */
-		creatorRole?: string;
+		creatorRole?: string | null;
 
 		/** Notes can optionally be associated with a deal. (readonly, except on create) */
-		dealId?: string;
+		dealId?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#marketplaceNote". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The actual note to attach. (readonly, except on create) */
-		note?: string;
+		note?: string | null;
 
 		/** The unique id for the note. (readonly) */
-		noteId?: string;
+		noteId?: string | null;
 
 		/** The proposalId that a note is attached to. (readonly) */
-		proposalId?: string;
+		proposalId?: string | null;
 
 		/** If the note is associated with a proposal revision number, then store that here. (readonly, except on create) */
-		proposalRevisionNumber?: string;
+		proposalRevisionNumber?: string | null;
 
 		/** The timestamp (ms since epoch) that this note was created. (readonly) */
-		timestampMs?: string;
+		timestampMs?: string | null;
 	}
 
 	export interface AddOrderNotesResponse {
-		notes?: Array<MarketplaceNote>;
+		notes?: Array<MarketplaceNote> | null;
 	}
 
 
@@ -438,16 +438,16 @@ export namespace MyNS {
 	export interface BillingInfo {
 
 		/** Account id. */
-		accountId?: number;
+		accountId?: number | null;
 
 		/** Account name. */
-		accountName?: string;
+		accountName?: string | null;
 
 		/** A list of adgroup IDs associated with this particular account. These IDs may show up as part of a realtime bidding BidRequest, which indicates a bid request for this account. */
-		billingId?: Array<string>;
+		billingId?: Array<string> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -455,10 +455,10 @@ export namespace MyNS {
 	export interface BillingInfoList {
 
 		/** A list of billing info relevant for your account. */
-		items?: Array<BillingInfo>;
+		items?: Array<BillingInfo> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -466,31 +466,31 @@ export namespace MyNS {
 	export interface Budget {
 
 		/** The id of the account. This is required for get and update requests. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** The billing id to determine which adgroup to provide budget information for. This is required for get and update requests. */
-		billingId?: string;
+		billingId?: string | null;
 
 		/** The daily budget amount in unit amount of the account currency to apply for the billingId provided. This is required for update requests. */
-		budgetAmount?: string;
+		budgetAmount?: string | null;
 
 		/** The currency code for the buyer. This cannot be altered here. */
-		currencyCode?: string;
+		currencyCode?: string | null;
 
 		/** The unique id that describes this item. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of the resource, i.e. "adexchangebuyer#budget". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface CreateOrdersRequest {
 
 		/** The list of proposals to create. */
-		proposals?: Array<Proposal>;
+		proposals?: Array<Proposal> | null;
 
 		/** Web property id of the seller creating these orders */
-		webPropertyCode?: string;
+		webPropertyCode?: string | null;
 	}
 
 
@@ -499,100 +499,100 @@ export namespace MyNS {
 	 * (readonly) - It is an error to try and set this field. (buyer-readonly) - Only the seller can set this field. (seller-readonly) - Only the buyer can set this field. (updatable) - The field is updatable at all times by either buyer or the seller.
 	 */
 	export interface Proposal {
-		billedBuyer?: Buyer;
-		buyer?: Buyer;
+		billedBuyer?: Buyer | null;
+		buyer?: Buyer | null;
 
 		/** Optional contact information of the buyer. (seller-readonly) */
-		buyerContacts?: Array<ContactInformation>;
-		buyerPrivateData?: PrivateData;
+		buyerContacts?: Array<ContactInformation> | null;
+		buyerPrivateData?: PrivateData | null;
 
 		/** IDs of DBM advertisers permission to this proposal. */
-		dbmAdvertiserIds?: Array<string>;
+		dbmAdvertiserIds?: Array<string> | null;
 
 		/** When an proposal is in an accepted state, indicates whether the buyer has signed off. Once both sides have signed off on a deal, the proposal can be finalized by the seller. (seller-readonly) */
-		hasBuyerSignedOff?: boolean;
+		hasBuyerSignedOff?: boolean | null;
 
 		/** When an proposal is in an accepted state, indicates whether the buyer has signed off Once both sides have signed off on a deal, the proposal can be finalized by the seller. (buyer-readonly) */
-		hasSellerSignedOff?: boolean;
+		hasSellerSignedOff?: boolean | null;
 
 		/** What exchange will provide this inventory (readonly, except on create). */
-		inventorySource?: string;
+		inventorySource?: string | null;
 
 		/** True if the proposal is being renegotiated (readonly). */
-		isRenegotiating?: boolean;
+		isRenegotiating?: boolean | null;
 
 		/** True, if the buyside inventory setup is complete for this proposal. (readonly, except via OrderSetupCompleted action) Deprecated in favor of deal level setup complete flag. */
-		isSetupComplete?: boolean;
+		isSetupComplete?: boolean | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#proposal". */
-		kind?: string;
+		kind?: string | null;
 
 		/** List of labels associated with the proposal. (readonly) */
-		labels?: Array<MarketplaceLabel>;
+		labels?: Array<MarketplaceLabel> | null;
 
 		/** The role of the last user that either updated the proposal or left a comment. (readonly) */
-		lastUpdaterOrCommentorRole?: string;
+		lastUpdaterOrCommentorRole?: string | null;
 
 		/** The name for the proposal (updatable) */
-		name?: string;
+		name?: string | null;
 
 		/** Optional negotiation id if this proposal is a preferred deal proposal. */
-		negotiationId?: string;
+		negotiationId?: string | null;
 
 		/** Indicates whether the buyer/seller created the proposal.(readonly) */
-		originatorRole?: string;
+		originatorRole?: string | null;
 
 		/** Optional private auction id if this proposal is a private auction proposal. */
-		privateAuctionId?: string;
+		privateAuctionId?: string | null;
 
 		/** The unique id of the proposal. (readonly). */
-		proposalId?: string;
+		proposalId?: string | null;
 
 		/** The current state of the proposal. (readonly) */
-		proposalState?: string;
+		proposalState?: string | null;
 
 		/** The revision number for the proposal (readonly). */
-		revisionNumber?: string;
+		revisionNumber?: string | null;
 
 		/** The time (ms since epoch) when the proposal was last revised (readonly). */
-		revisionTimeMs?: string;
-		seller?: Seller;
+		revisionTimeMs?: string | null;
+		seller?: Seller | null;
 
 		/** Optional contact information of the seller (buyer-readonly). */
-		sellerContacts?: Array<ContactInformation>;
+		sellerContacts?: Array<ContactInformation> | null;
 	}
 
 	export interface MarketplaceLabel {
 
 		/** The accountId of the party that created the label. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** The creation time (in ms since epoch) for the label. */
-		createTimeMs?: string;
-		deprecatedMarketplaceDealParty?: MarketplaceDealParty;
+		createTimeMs?: string | null;
+		deprecatedMarketplaceDealParty?: MarketplaceDealParty | null;
 
 		/** The label to use. */
-		label?: string;
+		label?: string | null;
 	}
 
 	export interface MarketplaceDealParty {
-		buyer?: Buyer;
-		seller?: Seller;
+		buyer?: Buyer | null;
+		seller?: Seller | null;
 	}
 
 	export interface Seller {
 
 		/** The unique id for the seller. The seller fills in this field. The seller account id is then available to buyer in the product. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Optional sub-account id for the seller. */
-		subAccountId?: string;
+		subAccountId?: string | null;
 	}
 
 	export interface CreateOrdersResponse {
 
 		/** The list of proposals successfully created. */
-		proposals?: Array<Proposal>;
+		proposals?: Array<Proposal> | null;
 	}
 
 
@@ -600,243 +600,243 @@ export namespace MyNS {
 	export interface Creative {
 
 		/** The HTML snippet that displays the ad when inserted in the web page. If set, videoURL, videoVastXML, and nativeAd should not be set. */
-		HTMLSnippet?: string;
+		HTMLSnippet?: string | null;
 
 		/** Account id. */
-		accountId?: number;
+		accountId?: number | null;
 
 		/** The link to the Ad Preferences page. This is only supported for native ads. */
-		adChoicesDestinationUrl?: string;
-		adTechnologyProviders?: CreativeAdTechnologyProviders;
+		adChoicesDestinationUrl?: string | null;
+		adTechnologyProviders?: CreativeAdTechnologyProviders | null;
 
 		/** Detected advertiser id, if any. Read-only. This field should not be set in requests. */
-		advertiserId?: Array<string>;
+		advertiserId?: Array<string> | null;
 
 		/** The name of the company being advertised in the creative. The value provided must exist in the advertisers.txt file. */
-		advertiserName?: string;
+		advertiserName?: string | null;
 
 		/** The agency id for this creative. */
-		agencyId?: string;
+		agencyId?: string | null;
 
 		/** The last upload timestamp of this creative if it was uploaded via API. Read-only. The value of this field is generated, and will be ignored for uploads. (formatted RFC 3339 timestamp). */
-		apiUploadTimestamp?: Date;
+		apiUploadTimestamp?: Date | null;
 
 		/** List of buyer selectable attributes for the ads that may be shown from this snippet. Each attribute is represented by an integer as defined in  buyer-declarable-creative-attributes.txt. */
-		attribute?: Array<number>;
+		attribute?: Array<number> | null;
 
 		/** A buyer-specific id identifying the creative in this ad. */
-		buyerCreativeId?: string;
+		buyerCreativeId?: string | null;
 
 		/** The set of destination urls for the snippet. */
-		clickThroughUrl?: Array<string>;
+		clickThroughUrl?: Array<string> | null;
 
 		/** Shows any corrections that were applied to this creative. Read-only. This field should not be set in requests. */
-		CreativeCorrections?: Array<CreativeCorrections>;
+		CreativeCorrections?: Array<CreativeCorrections> | null;
 
 		/** Creative status identity type that the creative item applies to. Ad Exchange real-time bidding is migrating to the sizeless creative verification. Originally, Ad Exchange assigned creative verification status to a unique combination of a buyer creative ID and creative dimensions. Post-migration, a single verification status will be assigned at the buyer creative ID level. This field allows to distinguish whether a given creative status applies to a unique combination of a buyer creative ID and creative dimensions, or to a buyer creative ID as a whole. */
-		creativeStatusIdentityType?: string;
+		creativeStatusIdentityType?: string | null;
 
 		/** Top-level deals status. Read-only. This field should not be set in requests. If disapproved, an entry for auctionType=DIRECT_DEALS (or ALL) in servingRestrictions will also exist. Note that this may be nuanced with other contextual restrictions, in which case it may be preferable to read from servingRestrictions directly. */
-		dealsStatus?: string;
+		dealsStatus?: string | null;
 
 		/** Detected domains for this creative. Read-only. This field should not be set in requests. */
-		detectedDomains?: Array<string>;
+		detectedDomains?: Array<string> | null;
 
 		/** The filtering reasons for the creative. Read-only. This field should not be set in requests. */
-		filteringReasons?: CreativeFilteringReasons;
+		filteringReasons?: CreativeFilteringReasons | null;
 
 		/** Ad height. */
-		height?: number;
+		height?: number | null;
 
 		/** The set of urls to be called to record an impression. */
-		impressionTrackingUrl?: Array<string>;
+		impressionTrackingUrl?: Array<string> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Detected languages for this creative. Read-only. This field should not be set in requests. */
-		languages?: Array<string>;
+		languages?: Array<string> | null;
 
 		/** If nativeAd is set, HTMLSnippet, videoVastXML, and the videoURL outside of nativeAd should not be set. (The videoURL inside nativeAd can be set.) */
-		nativeAd?: CreativeNativeAd;
+		nativeAd?: CreativeNativeAd | null;
 
 		/** Top-level open auction status. Read-only. This field should not be set in requests. If disapproved, an entry for auctionType=OPEN_AUCTION (or ALL) in servingRestrictions will also exist. Note that this may be nuanced with other contextual restrictions, in which case it may be preferable to read from ServingRestrictions directly. */
-		openAuctionStatus?: string;
+		openAuctionStatus?: string | null;
 
 		/** Detected product categories, if any. Each category is represented by an integer as defined in  ad-product-categories.txt. Read-only. This field should not be set in requests. */
-		productCategories?: Array<number>;
+		productCategories?: Array<number> | null;
 
 		/** All restricted categories for the ads that may be shown from this snippet. Each category is represented by an integer as defined in the  ad-restricted-categories.txt. */
-		restrictedCategories?: Array<number>;
+		restrictedCategories?: Array<number> | null;
 
 		/** Detected sensitive categories, if any. Each category is represented by an integer as defined in  ad-sensitive-categories.txt. Read-only. This field should not be set in requests. */
-		sensitiveCategories?: Array<number>;
+		sensitiveCategories?: Array<number> | null;
 
 		/** The granular status of this ad in specific contexts. A context here relates to where something ultimately serves (for example, a physical location, a platform, an HTTPS vs HTTP request, or the type of auction). Read-only. This field should not be set in requests. See the examples in the Creatives guide for more details. */
-		CreativeServingRestrictions?: Array<CreativeServingRestrictions>;
+		CreativeServingRestrictions?: Array<CreativeServingRestrictions> | null;
 
 		/** List of vendor types for the ads that may be shown from this snippet. Each vendor type is represented by an integer as defined in vendors.txt. */
-		vendorType?: Array<number>;
+		vendorType?: Array<number> | null;
 
 		/** The version for this creative. Read-only. This field should not be set in requests. */
-		version?: number;
+		version?: number | null;
 
 		/** The URL to fetch a video ad. If set, HTMLSnippet, videoVastXML, and nativeAd should not be set. Note, this is different from resource.native_ad.video_url above. */
-		videoURL?: string;
+		videoURL?: string | null;
 
 		/** The contents of a VAST document for a video ad. This document should conform to the VAST 2.0 or 3.0 standard. If set, HTMLSnippet, videoURL, and nativeAd and should not be set. */
-		videoVastXML?: string;
+		videoVastXML?: string | null;
 
 		/** Ad width. */
-		width?: number;
+		width?: number | null;
 	}
 
 	export interface CreativeAdTechnologyProviders {
 
 		/** The detected ad technology provider IDs for this creative. See https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv for mapping of provider ID to provided name, a privacy policy URL, and a list of domains which can be attributed to the provider. If this creative contains provider IDs that are outside of those listed in the `BidRequest.adslot.consented_providers_settings.consented_providers` field on the  Authorized Buyers Real-Time Bidding protocol or the `BidRequest.user.ext.consented_providers_settings.consented_providers` field on the OpenRTB protocol, a bid submitted for a European Economic Area (EEA) user with this creative is not compliant with the GDPR policies as mentioned in the "Third-party Ad Technology Vendors" section of Authorized Buyers Program Guidelines. */
-		detectedProviderIds?: Array<string>;
+		detectedProviderIds?: Array<string> | null;
 
 		/** Whether the creative contains an unidentified ad technology provider. If true, a bid submitted for a European Economic Area (EEA) user with this creative is not compliant with the GDPR policies as mentioned in the "Third-party Ad Technology Vendors" section of Authorized Buyers Program Guidelines. */
-		hasUnidentifiedProvider?: boolean;
+		hasUnidentifiedProvider?: boolean | null;
 	}
 
 	export interface CreativeCorrections {
 
 		/** All known serving contexts containing serving status information. */
-		CreativeCorrectionsContexts?: Array<CreativeCorrectionsContexts>;
+		CreativeCorrectionsContexts?: Array<CreativeCorrectionsContexts> | null;
 
 		/** Additional details about the correction. */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/** The type of correction that was applied to the creative. */
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface CreativeCorrectionsContexts {
 
 		/** Only set when contextType=AUCTION_TYPE. Represents the auction types this correction applies to. */
-		auctionType?: Array<string>;
+		auctionType?: Array<string> | null;
 
 		/** The type of context (e.g., location, platform, auction type, SSL-ness). */
-		contextType?: string;
+		contextType?: string | null;
 
 		/** Only set when contextType=LOCATION. Represents the geo criterias this correction applies to. */
-		geoCriteriaId?: Array<number>;
+		geoCriteriaId?: Array<number> | null;
 
 		/** Only set when contextType=PLATFORM. Represents the platforms this correction applies to. */
-		platform?: Array<string>;
+		platform?: Array<string> | null;
 	}
 
 	export interface CreativeFilteringReasons {
 
 		/** The date in ISO 8601 format for the data. The data is collected from 00:00:00 to 23:59:59 in PST. */
-		date?: string;
+		date?: string | null;
 
 		/** The filtering reasons. */
-		CreativeFilteringReasonsReasons?: Array<CreativeFilteringReasonsReasons>;
+		CreativeFilteringReasonsReasons?: Array<CreativeFilteringReasonsReasons> | null;
 	}
 
 	export interface CreativeFilteringReasonsReasons {
 
 		/** The number of times the creative was filtered for the status. The count is aggregated across all publishers on the exchange. */
-		filteringCount?: string;
+		filteringCount?: string | null;
 
 		/** The filtering status code as defined in  creative-status-codes.txt. */
-		filteringStatus?: number;
+		filteringStatus?: number | null;
 	}
 
 	export interface CreativeNativeAd {
-		advertiser?: string;
+		advertiser?: string | null;
 
 		/** The app icon, for app download ads. */
-		appIcon?: CreativeNativeAdAppIcon;
+		appIcon?: CreativeNativeAdAppIcon | null;
 
 		/** A long description of the ad. */
-		body?: string;
+		body?: string | null;
 
 		/** A label for the button that the user is supposed to click. */
-		callToAction?: string;
+		callToAction?: string | null;
 
 		/** The URL that the browser/SDK will load when the user clicks the ad. */
-		clickLinkUrl?: string;
+		clickLinkUrl?: string | null;
 
 		/** The URL to use for click tracking. */
-		clickTrackingUrl?: string;
+		clickTrackingUrl?: string | null;
 
 		/** A short title for the ad. */
-		headline?: string;
+		headline?: string | null;
 
 		/** A large image. */
-		image?: CreativeNativeAdImage;
+		image?: CreativeNativeAdImage | null;
 
 		/** The URLs are called when the impression is rendered. */
-		impressionTrackingUrl?: Array<string>;
+		impressionTrackingUrl?: Array<string> | null;
 
 		/** A smaller image, for the advertiser logo. */
-		logo?: CreativeNativeAdLogo;
+		logo?: CreativeNativeAdLogo | null;
 
 		/** The price of the promoted app including the currency info. */
-		price?: string;
+		price?: string | null;
 
 		/** The app rating in the app store. Must be in the range [0-5]. */
-		starRating?: number;
+		starRating?: number | null;
 
 		/** The URL of the XML VAST for a native ad. Note this is a separate field from resource.video_url. */
-		videoURL?: string;
+		videoURL?: string | null;
 	}
 
 	export interface CreativeNativeAdAppIcon {
-		height?: number;
-		url?: string;
-		width?: number;
+		height?: number | null;
+		url?: string | null;
+		width?: number | null;
 	}
 
 	export interface CreativeNativeAdImage {
-		height?: number;
-		url?: string;
-		width?: number;
+		height?: number | null;
+		url?: string | null;
+		width?: number | null;
 	}
 
 	export interface CreativeNativeAdLogo {
-		height?: number;
-		url?: string;
-		width?: number;
+		height?: number | null;
+		url?: string | null;
+		width?: number | null;
 	}
 
 	export interface CreativeServingRestrictions {
 
 		/** All known contexts/restrictions. */
-		CreativeServingRestrictionsContexts?: Array<CreativeServingRestrictionsContexts>;
+		CreativeServingRestrictionsContexts?: Array<CreativeServingRestrictionsContexts> | null;
 
 		/** The reasons for disapproval within this restriction, if any. Note that not all disapproval reasons may be categorized, so it is possible for the creative to have a status of DISAPPROVED or CONDITIONALLY_APPROVED with an empty list for disapproval_reasons. In this case, please reach out to your TAM to help debug the issue. */
-		CreativeServingRestrictionsDisapprovalReasons?: Array<CreativeServingRestrictionsDisapprovalReasons>;
+		CreativeServingRestrictionsDisapprovalReasons?: Array<CreativeServingRestrictionsDisapprovalReasons> | null;
 
 		/** Why the creative is ineligible to serve in this context (e.g., it has been explicitly disapproved or is pending review). */
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface CreativeServingRestrictionsContexts {
 
 		/** Only set when contextType=AUCTION_TYPE. Represents the auction types this restriction applies to. */
-		auctionType?: Array<string>;
+		auctionType?: Array<string> | null;
 
 		/** The type of context (e.g., location, platform, auction type, SSL-ness). */
-		contextType?: string;
+		contextType?: string | null;
 
 		/** Only set when contextType=LOCATION. Represents the geo criterias this restriction applies to. Impressions are considered to match a context if either the user location or publisher location matches a given geoCriteriaId. */
-		geoCriteriaId?: Array<number>;
+		geoCriteriaId?: Array<number> | null;
 
 		/** Only set when contextType=PLATFORM. Represents the platforms this restriction applies to. */
-		platform?: Array<string>;
+		platform?: Array<string> | null;
 	}
 
 	export interface CreativeServingRestrictionsDisapprovalReasons {
 
 		/** Additional details about the reason for disapproval. */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/** The categorized reason for disapproval. */
-		reason?: string;
+		reason?: string | null;
 	}
 
 
@@ -844,22 +844,22 @@ export namespace MyNS {
 	export interface CreativeDealIds {
 
 		/** A list of external deal ids and ARC approval status. */
-		CreativeDealIdsDealStatuses?: Array<CreativeDealIdsDealStatuses>;
+		CreativeDealIdsDealStatuses?: Array<CreativeDealIdsDealStatuses> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface CreativeDealIdsDealStatuses {
 
 		/** ARC approval status. */
-		arcStatus?: string;
+		arcStatus?: string | null;
 
 		/** External deal ID. */
-		dealId?: string;
+		dealId?: string | null;
 
 		/** Publisher ID. */
-		webPropertyId?: number;
+		webPropertyId?: number | null;
 	}
 
 
@@ -867,41 +867,41 @@ export namespace MyNS {
 	export interface CreativesList {
 
 		/** A list of creatives. */
-		items?: Array<Creative>;
+		items?: Array<Creative> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Continuation token used to page through creatives. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface DeleteOrderDealsRequest {
 
 		/** List of deals to delete for a given proposal */
-		dealIds?: Array<string>;
+		dealIds?: Array<string> | null;
 
 		/** The last known proposal revision number. */
-		proposalRevisionNumber?: string;
+		proposalRevisionNumber?: string | null;
 
 		/** Indicates an optional action to take on the proposal */
-		updateAction?: string;
+		updateAction?: string | null;
 	}
 
 	export interface DeleteOrderDealsResponse {
 
 		/** List of deals deleted (in the same proposal as passed in the request) */
-		deals?: Array<MarketplaceDeal>;
+		deals?: Array<MarketplaceDeal> | null;
 
 		/** The updated revision number for the proposal. */
-		proposalRevisionNumber?: string;
+		proposalRevisionNumber?: string | null;
 	}
 
 
 	/** This message carries publisher provided breakdown. E.g. {dimension_type: 'COUNTRY', [{dimension_value: {id: 1, name: 'US'}}, {dimension_value: {id: 2, name: 'UK'}}]} */
 	export interface Dimension {
-		dimensionType?: string;
-		dimensionValues?: Array<DimensionDimensionValue>;
+		dimensionType?: string | null;
+		dimensionValues?: Array<DimensionDimensionValue> | null;
 	}
 
 
@@ -909,46 +909,46 @@ export namespace MyNS {
 	export interface DimensionDimensionValue {
 
 		/** Id of the dimension. */
-		id?: number;
+		id?: number | null;
 
 		/** Name of the dimension mainly for debugging purposes, except for the case of CREATIVE_SIZE. For CREATIVE_SIZE, strings are used instead of ids. */
-		name?: string;
+		name?: string | null;
 
 		/** Percent of total impressions for a dimension type. e.g. {dimension_type: 'GENDER', [{dimension_value: {id: 1, name: 'MALE', percentage: 60}}]} Gender MALE is 60% of all impressions which have gender. */
-		percentage?: number;
+		percentage?: number | null;
 	}
 
 	export interface EditAllOrderDealsRequest {
 
 		/** List of deals to edit. Service may perform 3 different operations based on comparison of deals in this list vs deals already persisted in database: 1. Add new deal to proposal If a deal in this list does not exist in the proposal, the service will create a new deal and add it to the proposal. Validation will follow AddOrderDealsRequest. 2. Update existing deal in the proposal If a deal in this list already exist in the proposal, the service will update that existing deal to this new deal in the request. Validation will follow UpdateOrderDealsRequest. 3. Delete deals from the proposal (just need the id) If a existing deal in the proposal is not present in this list, the service will delete that deal from the proposal. Validation will follow DeleteOrderDealsRequest. */
-		deals?: Array<MarketplaceDeal>;
+		deals?: Array<MarketplaceDeal> | null;
 
 		/**
 		 * Represents a proposal in the marketplace. A proposal is the unit of negotiation between a seller and a buyer and contains deals which are served. Each field in a proposal can have one of the following setting:
 		 * (readonly) - It is an error to try and set this field. (buyer-readonly) - Only the seller can set this field. (seller-readonly) - Only the buyer can set this field. (updatable) - The field is updatable at all times by either buyer or the seller.
 		 */
-		proposal?: Proposal;
+		proposal?: Proposal | null;
 
 		/** The last known revision number for the proposal. */
-		proposalRevisionNumber?: string;
+		proposalRevisionNumber?: string | null;
 
 		/** Indicates an optional action to take on the proposal */
-		updateAction?: string;
+		updateAction?: string | null;
 	}
 
 	export interface EditAllOrderDealsResponse {
 
 		/** List of all deals in the proposal after edit. */
-		deals?: Array<MarketplaceDeal>;
+		deals?: Array<MarketplaceDeal> | null;
 
 		/** The latest revision number after the update has been applied. */
-		orderRevisionNumber?: string;
+		orderRevisionNumber?: string | null;
 	}
 
 	export interface GetOffersResponse {
 
 		/** The returned list of products. */
-		products?: Array<Product>;
+		products?: Array<Product> | null;
 	}
 
 
@@ -957,77 +957,77 @@ export namespace MyNS {
 	 * (readonly) - It is an error to try and set this field. (buyer-readonly) - Only the seller can set this field. (seller-readonly) - Only the buyer can set this field. (updatable) - The field is updatable at all times by either buyer or the seller.
 	 */
 	export interface Product {
-		billedBuyer?: Buyer;
-		buyer?: Buyer;
+		billedBuyer?: Buyer | null;
+		buyer?: Buyer | null;
 
 		/** Creation time in ms. since epoch (readonly) */
-		creationTimeMs?: string;
+		creationTimeMs?: string | null;
 
 		/** Optional contact information for the creator of this product. (buyer-readonly) */
-		creatorContacts?: Array<ContactInformation>;
+		creatorContacts?: Array<ContactInformation> | null;
 
 		/** The role that created the offer. Set to BUYER for buyer initiated offers. */
-		creatorRole?: string;
-		deliveryControl?: DeliveryControl;
+		creatorRole?: string | null;
+		deliveryControl?: DeliveryControl | null;
 
 		/** The proposed end time for the deal (ms since epoch) (buyer-readonly) */
-		flightEndTimeMs?: string;
+		flightEndTimeMs?: string | null;
 
 		/** Inventory availability dates. (times are in ms since epoch) The granularity is generally in the order of seconds. (buyer-readonly) */
-		flightStartTimeMs?: string;
+		flightStartTimeMs?: string | null;
 
 		/** If the creator has already signed off on the product, then the buyer can finalize the deal by accepting the product as is. When copying to a proposal, if any of the terms are changed, then auto_finalize is automatically set to false. */
-		hasCreatorSignedOff?: boolean;
+		hasCreatorSignedOff?: boolean | null;
 
 		/** What exchange will provide this inventory (readonly, except on create). */
-		inventorySource?: string;
+		inventorySource?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#product". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Optional List of labels for the product (optional, buyer-readonly). */
-		labels?: Array<MarketplaceLabel>;
+		labels?: Array<MarketplaceLabel> | null;
 
 		/** Time of last update in ms. since epoch (readonly) */
-		lastUpdateTimeMs?: string;
+		lastUpdateTimeMs?: string | null;
 
 		/** Optional legacy offer id if this offer is a preferred deal offer. */
-		legacyOfferId?: string;
+		legacyOfferId?: string | null;
 
 		/** Marketplace publisher profile Id. This Id differs from the regular publisher_profile_id in that 1. This is a new id, the old Id will be deprecated in 2017. 2. This id uniquely identifies a publisher profile by itself. */
-		marketplacePublisherProfileId?: string;
+		marketplacePublisherProfileId?: string | null;
 
 		/** The name for this product as set by the seller. (buyer-readonly) */
-		name?: string;
+		name?: string | null;
 
 		/** Optional private auction id if this offer is a private auction offer. */
-		privateAuctionId?: string;
+		privateAuctionId?: string | null;
 
 		/** The unique id for the product (readonly) */
-		productId?: string;
+		productId?: string | null;
 
 		/** Id of the publisher profile for a given seller. A (seller.account_id, publisher_profile_id) pair uniquely identifies a publisher profile. Buyers can call the PublisherProfiles::List endpoint to get a list of publisher profiles for a given seller. */
-		publisherProfileId?: string;
+		publisherProfileId?: string | null;
 
 		/** This message carries publisher provided forecasting information. */
-		publisherProvidedForecast?: PublisherProvidedForecast;
+		publisherProvidedForecast?: PublisherProvidedForecast | null;
 
 		/** The revision number of the product. (readonly) */
-		revisionNumber?: string;
-		seller?: Seller;
+		revisionNumber?: string | null;
+		seller?: Seller | null;
 
 		/** Targeting that is shared between the buyer and the seller. Each targeting criteria has a specified key and for each key there is a list of inclusion value or exclusion values. (buyer-readonly) */
-		sharedTargetings?: Array<SharedTargeting>;
+		sharedTargetings?: Array<SharedTargeting> | null;
 
 		/** The state of the product. (buyer-readonly) */
-		state?: string;
+		state?: string | null;
 
 		/** The syndication product associated with the deal. (readonly, except on create) */
-		syndicationProduct?: string;
-		terms?: DealTerms;
+		syndicationProduct?: string | null;
+		terms?: DealTerms | null;
 
 		/** The web property code for the seller. This field is meant to be copied over as is when creating deals. */
-		webPropertyCode?: string;
+		webPropertyCode?: string | null;
 	}
 
 
@@ -1035,102 +1035,102 @@ export namespace MyNS {
 	export interface PublisherProvidedForecast {
 
 		/** Publisher provided dimensions. E.g. geo, sizes etc... */
-		dimensions?: Array<Dimension>;
+		dimensions?: Array<Dimension> | null;
 
 		/** Publisher provided weekly impressions. */
-		weeklyImpressions?: string;
+		weeklyImpressions?: string | null;
 
 		/** Publisher provided weekly uniques. */
-		weeklyUniques?: string;
+		weeklyUniques?: string | null;
 	}
 
 	export interface GetOrderDealsResponse {
 
 		/** List of deals for the proposal */
-		deals?: Array<MarketplaceDeal>;
+		deals?: Array<MarketplaceDeal> | null;
 	}
 
 	export interface GetOrderNotesResponse {
 
 		/** The list of matching notes. The notes for a proposal are ordered from oldest to newest. If the notes span multiple proposals, they will be grouped by proposal, with the notes for the most recently modified proposal appearing first. */
-		notes?: Array<MarketplaceNote>;
+		notes?: Array<MarketplaceNote> | null;
 	}
 
 	export interface GetOrdersResponse {
 
 		/** The list of matching proposals. */
-		proposals?: Array<Proposal>;
+		proposals?: Array<Proposal> | null;
 	}
 
 	export interface GetPublisherProfilesByAccountIdResponse {
 
 		/** Profiles for the requested publisher */
-		profiles?: Array<PublisherProfileApiProto>;
+		profiles?: Array<PublisherProfileApiProto> | null;
 	}
 
 	export interface PublisherProfileApiProto {
 
 		/** Publisher provided info on its audience. */
-		audience?: string;
+		audience?: string | null;
 
 		/** A pitch statement for the buyer */
-		buyerPitchStatement?: string;
+		buyerPitchStatement?: string | null;
 
 		/** Direct contact for the publisher profile. */
-		directContact?: string;
+		directContact?: string | null;
 
 		/** Exchange where this publisher profile is from. E.g. AdX, Rubicon etc... */
-		exchange?: string;
+		exchange?: string | null;
 
 		/** Link to publisher's Google+ page. */
-		googlePlusLink?: string;
+		googlePlusLink?: string | null;
 
 		/** True, if this is the parent profile, which represents all domains owned by the publisher. */
-		isParent?: boolean;
+		isParent?: boolean | null;
 
 		/** True, if this profile is published. Deprecated for state. */
-		isPublished?: boolean;
+		isPublished?: boolean | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#publisherProfileApiProto". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The url to the logo for the publisher. */
-		logoUrl?: string;
+		logoUrl?: string | null;
 
 		/** The url for additional marketing and sales materials. */
-		mediaKitLink?: string;
-		name?: string;
+		mediaKitLink?: string | null;
+		name?: string | null;
 
 		/** Publisher provided overview. */
-		overview?: string;
+		overview?: string | null;
 
 		/** The pair of (seller.account_id, profile_id) uniquely identifies a publisher profile for a given publisher. */
-		profileId?: number;
+		profileId?: number | null;
 
 		/** Programmatic contact for the publisher profile. */
-		programmaticContact?: string;
+		programmaticContact?: string | null;
 
 		/** The list of domains represented in this publisher profile. Empty if this is a parent profile. */
-		publisherDomains?: Array<string>;
+		publisherDomains?: Array<string> | null;
 
 		/** Unique Id for publisher profile. */
-		publisherProfileId?: string;
+		publisherProfileId?: string | null;
 
 		/** This message carries publisher provided forecasting information. */
-		publisherProvidedForecast?: PublisherProvidedForecast;
+		publisherProvidedForecast?: PublisherProvidedForecast | null;
 
 		/** Link to publisher rate card */
-		rateCardInfoLink?: string;
+		rateCardInfoLink?: string | null;
 
 		/** Link for a sample content page. */
-		samplePageLink?: string;
-		seller?: Seller;
+		samplePageLink?: string | null;
+		seller?: Seller | null;
 
 		/** State of the publisher profile. */
-		state?: string;
+		state?: string | null;
 
 		/** Publisher provided key metrics and rankings. */
-		topHeadlines?: Array<string>;
+		topHeadlines?: Array<string> | null;
 	}
 
 
@@ -1138,70 +1138,70 @@ export namespace MyNS {
 	export interface PerformanceReport {
 
 		/** The number of bid responses with an ad. */
-		bidRate?: number;
+		bidRate?: number | null;
 
 		/** The number of bid requests sent to your bidder. */
-		bidRequestRate?: number;
+		bidRequestRate?: number | null;
 
 		/** Rate of various prefiltering statuses per match. Please refer to the callout-status-codes.txt file for different statuses. */
-		calloutStatusRate?: Array<string>;
+		calloutStatusRate?: Array<string> | null;
 
 		/** Average QPS for cookie matcher operations. */
-		cookieMatcherStatusRate?: Array<string>;
+		cookieMatcherStatusRate?: Array<string> | null;
 
 		/** Rate of ads with a given status. Please refer to the creative-status-codes.txt file for different statuses. */
-		creativeStatusRate?: Array<string>;
+		creativeStatusRate?: Array<string> | null;
 
 		/** The number of bid responses that were filtered due to a policy violation or other errors. */
-		filteredBidRate?: number;
+		filteredBidRate?: number | null;
 
 		/** Average QPS for hosted match operations. */
-		hostedMatchStatusRate?: Array<string>;
+		hostedMatchStatusRate?: Array<string> | null;
 
 		/** The number of potential queries based on your pretargeting settings. */
-		inventoryMatchRate?: number;
+		inventoryMatchRate?: number | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The 50th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
-		latency50thPercentile?: number;
+		latency50thPercentile?: number | null;
 
 		/** The 85th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
-		latency85thPercentile?: number;
+		latency85thPercentile?: number | null;
 
 		/** The 95th percentile round trip latency(ms) as perceived from Google servers for the duration period covered by the report. */
-		latency95thPercentile?: number;
+		latency95thPercentile?: number | null;
 
 		/** Rate of various quota account statuses per quota check. */
-		noQuotaInRegion?: number;
+		noQuotaInRegion?: number | null;
 
 		/** Rate of various quota account statuses per quota check. */
-		outOfQuota?: number;
+		outOfQuota?: number | null;
 
 		/** Average QPS for pixel match requests from clients. */
-		pixelMatchRequests?: number;
+		pixelMatchRequests?: number | null;
 
 		/** Average QPS for pixel match responses from clients. */
-		pixelMatchResponses?: number;
+		pixelMatchResponses?: number | null;
 
 		/** The configured quota limits for this account. */
-		quotaConfiguredLimit?: number;
+		quotaConfiguredLimit?: number | null;
 
 		/** The throttled quota limits for this account. */
-		quotaThrottledLimit?: number;
+		quotaThrottledLimit?: number | null;
 
 		/** The trading location of this data. */
-		region?: string;
+		region?: string | null;
 
 		/** The number of properly formed bid responses received by our servers within the deadline. */
-		successfulRequestRate?: number;
+		successfulRequestRate?: number | null;
 
 		/** The unix timestamp of the starting time of this performance data. */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/** The number of bid responses that were unsuccessful due to timeouts, incorrect formatting, etc. */
-		unsuccessfulRequestRate?: number;
+		unsuccessfulRequestRate?: number | null;
 	}
 
 
@@ -1209,157 +1209,157 @@ export namespace MyNS {
 	export interface PerformanceReportList {
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** A list of performance reports relevant for the account. */
-		performanceReport?: Array<PerformanceReport>;
+		performanceReport?: Array<PerformanceReport> | null;
 	}
 
 	export interface PretargetingConfig {
 
 		/** The id for billing purposes, provided for reference. Leave this field blank for insert requests; the id will be generated automatically. */
-		billingId?: string;
+		billingId?: string | null;
 
 		/** The config id; generated automatically. Leave this field blank for insert requests. */
-		configId?: string;
+		configId?: string | null;
 
 		/** The name of the config. Must be unique. Required for all requests. */
-		configName?: string;
+		configName?: string | null;
 
 		/** List must contain exactly one of PRETARGETING_CREATIVE_TYPE_HTML or PRETARGETING_CREATIVE_TYPE_VIDEO. */
-		creativeType?: Array<string>;
+		creativeType?: Array<string> | null;
 
 		/** Requests which allow one of these (width, height) pairs will match. All pairs must be supported ad dimensions. */
-		PretargetingConfigDimensions?: Array<PretargetingConfigDimensions>;
+		PretargetingConfigDimensions?: Array<PretargetingConfigDimensions> | null;
 
 		/** Requests with any of these content labels will not match. Values are from content-labels.txt in the downloadable files section. */
-		excludedContentLabels?: Array<string>;
+		excludedContentLabels?: Array<string> | null;
 
 		/** Requests containing any of these geo criteria ids will not match. */
-		excludedGeoCriteriaIds?: Array<string>;
+		excludedGeoCriteriaIds?: Array<string> | null;
 
 		/** Requests containing any of these placements will not match. */
-		PretargetingConfigExcludedPlacements?: Array<PretargetingConfigExcludedPlacements>;
+		PretargetingConfigExcludedPlacements?: Array<PretargetingConfigExcludedPlacements> | null;
 
 		/** Requests containing any of these users list ids will not match. */
-		excludedUserLists?: Array<string>;
+		excludedUserLists?: Array<string> | null;
 
 		/** Requests containing any of these vertical ids will not match. Values are from the publisher-verticals.txt file in the downloadable files section. */
-		excludedVerticals?: Array<string>;
+		excludedVerticals?: Array<string> | null;
 
 		/** Requests containing any of these geo criteria ids will match. */
-		geoCriteriaIds?: Array<string>;
+		geoCriteriaIds?: Array<string> | null;
 
 		/** Whether this config is active. Required for all requests. */
-		isActive?: boolean;
+		isActive?: boolean | null;
 
 		/** The kind of the resource, i.e. "adexchangebuyer#pretargetingConfig". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Request containing any of these language codes will match. */
-		languages?: Array<string>;
+		languages?: Array<string> | null;
 
 		/** The maximum QPS allocated to this pretargeting configuration, used for pretargeting-level QPS limits. By default, this is not set, which indicates that there is no QPS limit at the configuration level (a global or account-level limit may still be imposed). */
-		maximumQps?: string;
+		maximumQps?: string | null;
 
 		/** Requests where the predicted viewability is below the specified decile will not match. E.g. if the buyer sets this value to 5, requests from slots where the predicted viewability is below 50% will not match. If the predicted viewability is unknown this field will be ignored. */
-		minimumViewabilityDecile?: number;
+		minimumViewabilityDecile?: number | null;
 
 		/** Requests containing any of these mobile carrier ids will match. Values are from mobile-carriers.csv in the downloadable files section. */
-		mobileCarriers?: Array<string>;
+		mobileCarriers?: Array<string> | null;
 
 		/** Requests containing any of these mobile device ids will match. Values are from mobile-devices.csv in the downloadable files section. */
-		mobileDevices?: Array<string>;
+		mobileDevices?: Array<string> | null;
 
 		/** Requests containing any of these mobile operating system version ids will match. Values are from mobile-os.csv in the downloadable files section. */
-		mobileOperatingSystemVersions?: Array<string>;
+		mobileOperatingSystemVersions?: Array<string> | null;
 
 		/** Requests containing any of these placements will match. */
-		PretargetingConfigPlacements?: Array<PretargetingConfigPlacements>;
+		PretargetingConfigPlacements?: Array<PretargetingConfigPlacements> | null;
 
 		/** Requests matching any of these platforms will match. Possible values are PRETARGETING_PLATFORM_MOBILE, PRETARGETING_PLATFORM_DESKTOP, and PRETARGETING_PLATFORM_TABLET. */
-		platforms?: Array<string>;
+		platforms?: Array<string> | null;
 
 		/** Creative attributes should be declared here if all creatives corresponding to this pretargeting configuration have that creative attribute. Values are from pretargetable-creative-attributes.txt in the downloadable files section. */
-		supportedCreativeAttributes?: Array<string>;
+		supportedCreativeAttributes?: Array<string> | null;
 
 		/** Requests containing the specified type of user data will match. Possible values are HOSTED_MATCH_DATA, which means the request is cookie-targetable and has a match in the buyer's hosted match table, and COOKIE_OR_IDFA, which means the request has either a targetable cookie or an iOS IDFA. */
-		userIdentifierDataRequired?: Array<string>;
+		userIdentifierDataRequired?: Array<string> | null;
 
 		/** Requests containing any of these user list ids will match. */
-		userLists?: Array<string>;
+		userLists?: Array<string> | null;
 
 		/** Requests that allow any of these vendor ids will match. Values are from vendors.txt in the downloadable files section. */
-		vendorTypes?: Array<string>;
+		vendorTypes?: Array<string> | null;
 
 		/** Requests containing any of these vertical ids will match. */
-		verticals?: Array<string>;
+		verticals?: Array<string> | null;
 
 		/** Video requests satisfying any of these player size constraints will match. */
-		PretargetingConfigVideoPlayerSizes?: Array<PretargetingConfigVideoPlayerSizes>;
+		PretargetingConfigVideoPlayerSizes?: Array<PretargetingConfigVideoPlayerSizes> | null;
 	}
 
 	export interface PretargetingConfigDimensions {
 
 		/** Height in pixels. */
-		height?: string;
+		height?: string | null;
 
 		/** Width in pixels. */
-		width?: string;
+		width?: string | null;
 	}
 
 	export interface PretargetingConfigExcludedPlacements {
 
 		/** The value of the placement. Interpretation depends on the placement type, e.g. URL for a site placement, channel name for a channel placement, app id for a mobile app placement. */
-		token?: string;
+		token?: string | null;
 
 		/** The type of the placement. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface PretargetingConfigPlacements {
 
 		/** The value of the placement. Interpretation depends on the placement type, e.g. URL for a site placement, channel name for a channel placement, app id for a mobile app placement. */
-		token?: string;
+		token?: string | null;
 
 		/** The type of the placement. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface PretargetingConfigVideoPlayerSizes {
 
 		/** The type of aspect ratio. Leave this field blank to match all aspect ratios. */
-		aspectRatio?: string;
+		aspectRatio?: string | null;
 
 		/** The minimum player height in pixels. Leave this field blank to match any player height. */
-		minHeight?: string;
+		minHeight?: string | null;
 
 		/** The minimum player width in pixels. Leave this field blank to match any player width. */
-		minWidth?: string;
+		minWidth?: string | null;
 	}
 
 	export interface PretargetingConfigList {
 
 		/** A list of pretargeting configs */
-		items?: Array<PretargetingConfig>;
+		items?: Array<PretargetingConfig> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface UpdatePrivateAuctionProposalRequest {
 
 		/** The externalDealId of the deal to be updated. */
-		externalDealId?: string;
+		externalDealId?: string | null;
 
 		/** A proposal is associated with a bunch of notes which may optionally be associated with a deal and/or revision number. */
-		note?: MarketplaceNote;
+		note?: MarketplaceNote | null;
 
 		/** The current revision number of the proposal to be updated. */
-		proposalRevisionNumber?: string;
+		proposalRevisionNumber?: string | null;
 
 		/** The proposed action on the private auction proposal. */
-		updateAction?: string;
+		updateAction?: string | null;
 	}
 
 	@Injectable()

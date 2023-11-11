@@ -14,10 +14,10 @@ export namespace MyNS {
 	export interface AdmissionRule {
 
 		/** Required. The action when a pod creation is denied by the admission rule. */
-		enforcementMode?: AdmissionRuleEnforcementMode;
+		enforcementMode?: AdmissionRuleEnforcementMode | null;
 
 		/** Required. How this admission rule will be evaluated. */
-		evaluationMode?: AdmissionRuleEvaluationMode;
+		evaluationMode?: AdmissionRuleEvaluationMode | null;
 
 		/**
 		 * Optional. The resource names of the attestors that must attest to
@@ -28,7 +28,7 @@ export namespace MyNS {
 		 * Note: this field must be non-empty when the evaluation_mode field specifies
 		 * REQUIRE_ATTESTATION, otherwise it must be empty.
 		 */
-		requireAttestationsBy?: Array<string>;
+		requireAttestationsBy?: Array<string> | null;
 	}
 
 	export enum AdmissionRuleEnforcementMode { ENFORCEMENT_MODE_UNSPECIFIED = 0, ENFORCED_BLOCK_AND_AUDIT_LOG = 1, DRYRUN_AUDIT_LOG_ONLY = 2 }
@@ -47,7 +47,7 @@ export namespace MyNS {
 		 * This supports a trailing `*` as a wildcard, but this is allowed only in
 		 * text after the `registry/` part.
 		 */
-		namePattern?: string;
+		namePattern?: string | null;
 	}
 
 
@@ -62,22 +62,22 @@ export namespace MyNS {
 		 * Optional. A descriptive comment.  This field may be updated.
 		 * The field may be displayed in chooser dialogs.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Required. The resource name, in the format:
 		 * `projects/attestors/*`. This field may not be updated.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. Time when the attestor was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/**
 		 * An user owned Grafeas note references a Grafeas
 		 * Attestation.Authority Note created by the user.
 		 */
-		userOwnedGrafeasNote?: UserOwnedGrafeasNote;
+		userOwnedGrafeasNote?: UserOwnedGrafeasNote | null;
 	}
 
 
@@ -97,7 +97,7 @@ export namespace MyNS {
 		 * should not make any other assumptions about the service account email;
 		 * future versions may use an email based on a different naming pattern.
 		 */
-		delegationServiceAccountEmail?: string;
+		delegationServiceAccountEmail?: string | null;
 
 		/**
 		 * Required. The Grafeas resource name of a Attestation.Authority Note,
@@ -107,7 +107,7 @@ export namespace MyNS {
 		 * Attestation.Authority Occurrence that names a container image and that
 		 * links to this Note. Grafeas is an external dependency.
 		 */
-		noteReference?: string;
+		noteReference?: string | null;
 
 		/**
 		 * Optional. Public keys that verify attestations signed by this
@@ -118,7 +118,7 @@ export namespace MyNS {
 		 * If this field is empty, this attestor always returns that no
 		 * valid attestations exist.
 		 */
-		publicKeys?: Array<AttestorPublicKey>;
+		publicKeys?: Array<AttestorPublicKey> | null;
 	}
 
 
@@ -138,10 +138,10 @@ export namespace MyNS {
 		 * upper-case hex.  If `id` is provided by the caller, it will be
 		 * overwritten by the API-calculated ID.
 		 */
-		asciiArmoredPgpPublicKey?: string;
+		asciiArmoredPgpPublicKey?: string | null;
 
 		/** Optional. A descriptive comment. This field may be updated. */
-		comment?: string;
+		comment?: string | null;
 
 		/**
 		 * The ID of this public key.
@@ -152,7 +152,7 @@ export namespace MyNS {
 		 * key type is encapsulated. See the documentation on `public_key` cases below
 		 * for details.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * A public key in the PkixPublicKey format (see
@@ -160,7 +160,7 @@ export namespace MyNS {
 		 * Public keys of this type are typically textually encoded using the PEM
 		 * format.
 		 */
-		pkixPublicKey?: PkixPublicKey;
+		pkixPublicKey?: PkixPublicKey | null;
 	}
 
 
@@ -176,7 +176,7 @@ export namespace MyNS {
 		 * A PEM-encoded public key, as described in
 		 * https://tools.ietf.org/html/rfc7468#section-13
 		 */
-		publicKeyPem?: string;
+		publicKeyPem?: string | null;
 
 		/**
 		 * The signature algorithm used to verify a message against a signature using
@@ -185,7 +185,7 @@ export namespace MyNS {
 		 * identifiers encoded in `public_key_pem` (i.e. this algorithm must match
 		 * that of the public key).
 		 */
-		signatureAlgorithm?: PkixPublicKeySignatureAlgorithm;
+		signatureAlgorithm?: PkixPublicKeySignatureAlgorithm | null;
 	}
 
 	export enum PkixPublicKeySignatureAlgorithm { SIGNATURE_ALGORITHM_UNSPECIFIED = 0, RSA_PSS_2048_SHA256 = 1, RSA_PSS_3072_SHA256 = 2, RSA_PSS_4096_SHA256 = 3, RSA_PSS_4096_SHA512 = 4, RSA_SIGN_PKCS1_2048_SHA256 = 5, RSA_SIGN_PKCS1_3072_SHA256 = 6, RSA_SIGN_PKCS1_4096_SHA256 = 7, RSA_SIGN_PKCS1_4096_SHA512 = 8, ECDSA_P256_SHA256 = 9, ECDSA_P384_SHA384 = 10, ECDSA_P521_SHA512 = 11 }
@@ -218,7 +218,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -253,13 +253,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -293,26 +293,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -393,7 +393,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -408,7 +408,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -428,7 +428,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -436,14 +436,14 @@ export namespace MyNS {
 	export interface ListAttestorsResponse {
 
 		/** The list of attestors. */
-		attestors?: Array<Attestor>;
+		attestors?: Array<Attestor> | null;
 
 		/**
 		 * A token to retrieve the next page of results. Pass this value in the
 		 * ListAttestorsRequest.page_token field in the subsequent call to the
 		 * `ListAttestors` method to retrieve the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -455,7 +455,7 @@ export namespace MyNS {
 		 * always be permitted. This feature is typically used to exclude Google or
 		 * third-party infrastructure images from Binary Authorization policies.
 		 */
-		admissionWhitelistPatterns?: Array<AdmissionWhitelistPattern>;
+		admissionWhitelistPatterns?: Array<AdmissionWhitelistPattern> | null;
 
 		/**
 		 * Optional. Per-cluster admission rules. Cluster spec format:
@@ -466,7 +466,7 @@ export namespace MyNS {
 		 * For `clusterId` syntax restrictions see
 		 * https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters.
 		 */
-		clusterAdmissionRules?: {[id: string]: AdmissionRule };
+		clusterAdmissionRules?: {[id: string]: AdmissionRule } | null;
 
 		/**
 		 * An admission rule specifies either that all container images
@@ -476,10 +476,10 @@ export namespace MyNS {
 		 * Images matching an admission whitelist pattern
 		 * are exempted from admission rules and will never block a pod creation.
 		 */
-		defaultAdmissionRule?: AdmissionRule;
+		defaultAdmissionRule?: AdmissionRule | null;
 
 		/** Optional. A descriptive comment. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Optional. Controls the evaluation of a Google-maintained global admission
@@ -487,16 +487,16 @@ export namespace MyNS {
 		 * policy will be subject to the project admission policy. This setting
 		 * has no effect when specified inside a global admission policy.
 		 */
-		globalPolicyEvaluationMode?: PolicyGlobalPolicyEvaluationMode;
+		globalPolicyEvaluationMode?: PolicyGlobalPolicyEvaluationMode | null;
 
 		/**
 		 * Output only. The resource name, in the format `projects/policy`. There is
 		 * at most one policy per project.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. Time when the policy was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 	export enum PolicyGlobalPolicyEvaluationMode { GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED = 0, ENABLE = 1, DISABLE = 2 }
@@ -562,7 +562,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: IamPolicy;
+		policy?: IamPolicy | null;
 	}
 
 
@@ -575,7 +575,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -586,7 +586,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()

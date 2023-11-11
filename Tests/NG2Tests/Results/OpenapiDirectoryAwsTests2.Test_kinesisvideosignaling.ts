@@ -3,16 +3,16 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface GetIceServerConfigResponse {
-		IceServerList?: Array<IceServer>;
+		IceServerList?: Array<IceServer> | null;
 	}
 
 
 	/** A structure for the ICE server connection data. */
 	export interface IceServer {
-		Uris?: Array<string>;
-		Username?: string;
-		Password?: string;
-		Ttl?: number;
+		Uris?: Array<string> | null;
+		Username?: string | null;
+		Password?: string | null;
+		Ttl?: number | null;
 	}
 
 	export interface InvalidClientException {
@@ -34,16 +34,16 @@ export namespace MyNS {
 	}
 
 	export interface SendAlexaOfferToMasterResponse {
-		Answer?: string;
+		Answer?: string | null;
 	}
 
 	export enum Service { TURN = 0 }
 
 	export interface GetIceServerConfigRequest {
 		ChannelARN: string;
-		ClientId?: string;
-		Service?: Service;
-		Username?: string;
+		ClientId?: string | null;
+		Service?: Service | null;
+		Username?: string | null;
 	}
 
 	export interface SendAlexaOfferToMasterRequest {
@@ -93,10 +93,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		ClientId?: string;
+		ClientId?: string | null;
 
 		/** Specifies the desired service. Currently, <code>TURN</code> is the only valid value. */
-		Service?: Service;
+		Service?: Service | null;
 
 		/**
 		 * An optional user ID to be associated with the credentials.
@@ -104,7 +104,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		Username?: string;
+		Username?: string | null;
 	}
 
 	export interface SendAlexaOfferToMasterPostBody {

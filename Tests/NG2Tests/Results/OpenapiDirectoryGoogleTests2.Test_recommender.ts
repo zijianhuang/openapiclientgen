@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1CostProjection {
 
 		/** Represents an amount of money with its currency type. */
-		cost?: GoogleTypeMoney;
+		cost?: GoogleTypeMoney | null;
 
 		/** Duration for which this cost applies. */
-		duration?: string;
+		duration?: string | null;
 	}
 
 
@@ -18,7 +18,7 @@ export namespace MyNS {
 	export interface GoogleTypeMoney {
 
 		/** The 3-letter currency code defined in ISO 4217. */
-		currencyCode?: string;
+		currencyCode?: string | null;
 
 		/**
 		 * Number of nano (10^-9) units of the amount.
@@ -28,13 +28,13 @@ export namespace MyNS {
 		 * If `units` is negative, `nanos` must be negative or zero.
 		 * For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
 		 */
-		nanos?: number;
+		nanos?: number | null;
 
 		/**
 		 * The whole units of the amount.
 		 * For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar.
 		 */
-		units?: string;
+		units?: string | null;
 	}
 
 
@@ -42,10 +42,10 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1Impact {
 
 		/** Category that is being targeted. */
-		category?: GoogleCloudRecommenderV1beta1ImpactCategory;
+		category?: GoogleCloudRecommenderV1beta1ImpactCategory | null;
 
 		/** Contains metadata about how much money a recommendation can save or incur. */
-		costProjection?: GoogleCloudRecommenderV1beta1CostProjection;
+		costProjection?: GoogleCloudRecommenderV1beta1CostProjection | null;
 	}
 
 	export enum GoogleCloudRecommenderV1beta1ImpactCategory { CATEGORY_UNSPECIFIED = 0, COST = 1, SECURITY = 2, PERFORMANCE = 3, MANAGEABILITY = 4 }
@@ -58,50 +58,50 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1Insight {
 
 		/** Recommendations derived from this insight. */
-		associatedRecommendations?: Array<GoogleCloudRecommenderV1beta1InsightRecommendationReference>;
+		associatedRecommendations?: Array<GoogleCloudRecommenderV1beta1InsightRecommendationReference> | null;
 
 		/** Category being targeted by the insight. */
-		category?: GoogleCloudRecommenderV1beta1ImpactCategory;
+		category?: GoogleCloudRecommenderV1beta1ImpactCategory | null;
 
 		/**
 		 * A struct of custom fields to explain the insight.
 		 * Example: "grantedPermissionsCount": "1000"
 		 */
-		content?: {[id: string]: any };
+		content?: {[id: string]: any } | null;
 
 		/**
 		 * Free-form human readable summary in English. The maximum length is 500
 		 * characters.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Fingerprint of the Insight. Provides optimistic locking when updating
 		 * states.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/** Insight subtype. Insight content schema will be stable for a given subtype. */
-		insightSubtype?: string;
+		insightSubtype?: string | null;
 
 		/** Timestamp of the latest data used to generate the insight. */
-		lastRefreshTime?: string;
+		lastRefreshTime?: string | null;
 
 		/** Name of the insight. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Observation period that led to the insight. The source data used to
 		 * generate the insight ends at last_refresh_time and begins at
 		 * (last_refresh_time - observation_period).
 		 */
-		observationPeriod?: string;
+		observationPeriod?: string | null;
 
 		/** Information related to insight state. */
-		stateInfo?: GoogleCloudRecommenderV1beta1InsightStateInfo;
+		stateInfo?: GoogleCloudRecommenderV1beta1InsightStateInfo | null;
 
 		/** Fully qualified resource names that this insight is targeting. */
-		targetResources?: Array<string>;
+		targetResources?: Array<string> | null;
 	}
 
 
@@ -112,7 +112,7 @@ export namespace MyNS {
 		 * Recommendation resource name, e.g.
 		 * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
 		 */
-		recommendation?: string;
+		recommendation?: string | null;
 	}
 
 
@@ -120,10 +120,10 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1InsightStateInfo {
 
 		/** Insight state. */
-		state?: GoogleCloudRecommenderV1beta1InsightStateInfoState;
+		state?: GoogleCloudRecommenderV1beta1InsightStateInfoState | null;
 
 		/** A map of metadata for the state, provided by user or automations systems. */
-		stateMetadata?: {[id: string]: string };
+		stateMetadata?: {[id: string]: string } | null;
 	}
 
 	export enum GoogleCloudRecommenderV1beta1InsightStateInfoState { STATE_UNSPECIFIED = 0, ACTIVE = 1, ACCEPTED = 2, DISMISSED = 3 }
@@ -133,13 +133,13 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1ListInsightsResponse {
 
 		/** The set of insights for the `parent` resource. */
-		insights?: Array<GoogleCloudRecommenderV1beta1Insight>;
+		insights?: Array<GoogleCloudRecommenderV1beta1Insight> | null;
 
 		/**
 		 * A token that can be used to request the next page of results. This field is
 		 * empty if there are no additional results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -150,10 +150,10 @@ export namespace MyNS {
 		 * A token that can be used to request the next page of results. This field is
 		 * empty if there are no additional results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The set of recommendations for the `parent` resource. */
-		recommendations?: Array<GoogleCloudRecommenderV1beta1Recommendation>;
+		recommendations?: Array<GoogleCloudRecommenderV1beta1Recommendation> | null;
 	}
 
 
@@ -168,37 +168,37 @@ export namespace MyNS {
 		 * trying to optimize for the primary category. These may be positive
 		 * or negative.
 		 */
-		additionalImpact?: Array<GoogleCloudRecommenderV1beta1Impact>;
+		additionalImpact?: Array<GoogleCloudRecommenderV1beta1Impact> | null;
 
 		/** Insights that led to this recommendation. */
-		associatedInsights?: Array<GoogleCloudRecommenderV1beta1RecommendationInsightReference>;
+		associatedInsights?: Array<GoogleCloudRecommenderV1beta1RecommendationInsightReference> | null;
 
 		/** Contains what resources are changing and how they are changing. */
-		content?: GoogleCloudRecommenderV1beta1RecommendationContent;
+		content?: GoogleCloudRecommenderV1beta1RecommendationContent | null;
 
 		/**
 		 * Free-form human readable summary in English. The maximum length is 500
 		 * characters.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Fingerprint of the Recommendation. Provides optimistic locking when
 		 * updating states.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Last time this recommendation was refreshed by the system that created it
 		 * in the first place.
 		 */
-		lastRefreshTime?: string;
+		lastRefreshTime?: string | null;
 
 		/** Name of recommendation. */
-		name?: string;
+		name?: string | null;
 
 		/** Contains the impact a recommendation can have for a given category. */
-		primaryImpact?: GoogleCloudRecommenderV1beta1Impact;
+		primaryImpact?: GoogleCloudRecommenderV1beta1Impact | null;
 
 		/**
 		 * Contains an identifier for a subtype of recommendations produced for the
@@ -210,10 +210,10 @@ export namespace MyNS {
 		 * For recommender = "google.iam.policy.Recommender",
 		 * recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
 		 */
-		recommenderSubtype?: string;
+		recommenderSubtype?: string | null;
 
 		/** Information for state. Contains state and metadata. */
-		stateInfo?: GoogleCloudRecommenderV1beta1RecommendationStateInfo;
+		stateInfo?: GoogleCloudRecommenderV1beta1RecommendationStateInfo | null;
 	}
 
 
@@ -224,7 +224,7 @@ export namespace MyNS {
 		 * Insight resource name, e.g.
 		 * projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/insights/[INSIGHT_ID]
 		 */
-		insight?: string;
+		insight?: string | null;
 	}
 
 
@@ -236,7 +236,7 @@ export namespace MyNS {
 		 * that, all operations within one group are expected to be performed
 		 * atomically and in an order.
 		 */
-		operationGroups?: Array<GoogleCloudRecommenderV1beta1OperationGroup>;
+		operationGroups?: Array<GoogleCloudRecommenderV1beta1OperationGroup> | null;
 	}
 
 
@@ -247,7 +247,7 @@ export namespace MyNS {
 		 * List of operations across one or more resources that belong to this group.
 		 * Loosely based on RFC6902 and should be performed in the order they appear.
 		 */
-		operations?: Array<GoogleCloudRecommenderV1beta1Operation>;
+		operations?: Array<GoogleCloudRecommenderV1beta1Operation> | null;
 	}
 
 
@@ -268,13 +268,13 @@ export namespace MyNS {
 		 * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
 		 * always populated.
 		 */
-		action?: string;
+		action?: string | null;
 
 		/**
 		 * Path to the target field being operated on. If the operation is at the
 		 * resource level, then path should be "/". This field is always populated.
 		 */
-		path?: string;
+		path?: string | null;
 
 		/**
 		 * Set of filters to apply if `path` refers to array elements or nested array
@@ -297,7 +297,7 @@ export namespace MyNS {
 		 * When both path_filters and path_value_matchers are set, an implicit AND
 		 * must be performed.
 		 */
-		pathFilters?: {[id: string]: any };
+		pathFilters?: {[id: string]: any } | null;
 
 		/**
 		 * Similar to path_filters, this contains set of filters to apply if `path`
@@ -306,26 +306,26 @@ export namespace MyNS {
 		 * When both path_filters and path_value_matchers are set, an implicit AND
 		 * must be performed.
 		 */
-		pathValueMatchers?: {[id: string]: GoogleCloudRecommenderV1beta1ValueMatcher };
+		pathValueMatchers?: {[id: string]: GoogleCloudRecommenderV1beta1ValueMatcher } | null;
 
 		/**
 		 * Contains the fully qualified resource name. This field is always populated.
 		 * ex: //cloudresourcemanager.googleapis.com/projects/foo.
 		 */
-		resource?: string;
+		resource?: string | null;
 
 		/**
 		 * Type of GCP resource being modified/tested. This field is always populated.
 		 * Example: cloudresourcemanager.googleapis.com/Project,
 		 * compute.googleapis.com/Instance
 		 */
-		resourceType?: string;
+		resourceType?: string | null;
 
 		/**
 		 * Can be set with action 'copy' or 'move' to indicate the source field within
 		 * resource or source_resource, ignored if provided for other operation types.
 		 */
-		sourcePath?: string;
+		sourcePath?: string | null;
 
 		/**
 		 * Can be set with action 'copy' to copy resource configuration across
@@ -334,17 +334,17 @@ export namespace MyNS {
 		 * source_resource = <source> and resource_name = <target>.
 		 * This field is empty for all other values of `action`.
 		 */
-		sourceResource?: string;
+		sourceResource?: string | null;
 
 		/**
 		 * Value for the `path` field. Will be set for actions:'add'/'replace'.
 		 * Maybe set for action: 'test'. Either this or `value_matcher` will be set
 		 * for 'test' operation. An exact match must be performed.
 		 */
-		value?: any;
+		value?: any | null;
 
 		/** Contains various matching options for values for a GCP resource field. */
-		valueMatcher?: GoogleCloudRecommenderV1beta1ValueMatcher;
+		valueMatcher?: GoogleCloudRecommenderV1beta1ValueMatcher | null;
 	}
 
 
@@ -356,7 +356,7 @@ export namespace MyNS {
 		 * Google RE2 syntax (https://github.com/google/re2/wiki/Syntax), so to be
 		 * used with RE2::FullMatch
 		 */
-		matchesPattern?: string;
+		matchesPattern?: string | null;
 	}
 
 
@@ -364,10 +364,10 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1RecommendationStateInfo {
 
 		/** The state of the recommendation, Eg ACTIVE, SUCCEEDED, FAILED. */
-		state?: GoogleCloudRecommenderV1beta1RecommendationStateInfoState;
+		state?: GoogleCloudRecommenderV1beta1RecommendationStateInfoState | null;
 
 		/** A map of metadata for the state, provided by user or automations systems. */
-		stateMetadata?: {[id: string]: string };
+		stateMetadata?: {[id: string]: string } | null;
 	}
 
 	export enum GoogleCloudRecommenderV1beta1RecommendationStateInfoState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CLAIMED = 2, SUCCEEDED = 3, FAILED = 4, DISMISSED = 5 }
@@ -377,13 +377,13 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1MarkInsightAcceptedRequest {
 
 		/** Required. Fingerprint of the Insight. Provides optimistic locking. */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Optional. State properties user wish to include with this state.  Full replace of the
 		 * current state_metadata.
 		 */
-		stateMetadata?: {[id: string]: string };
+		stateMetadata?: {[id: string]: string } | null;
 	}
 
 
@@ -391,7 +391,7 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1MarkRecommendationClaimedRequest {
 
 		/** Required. Fingerprint of the Recommendation. Provides optimistic locking. */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * State properties to include with this state. Overwrites any existing
@@ -399,7 +399,7 @@ export namespace MyNS {
 		 * Keys must match the regex /^a-z0-9{0,62}$/.
 		 * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
 		 */
-		stateMetadata?: {[id: string]: string };
+		stateMetadata?: {[id: string]: string } | null;
 	}
 
 
@@ -407,7 +407,7 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1MarkRecommendationFailedRequest {
 
 		/** Required. Fingerprint of the Recommendation. Provides optimistic locking. */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * State properties to include with this state. Overwrites any existing
@@ -415,7 +415,7 @@ export namespace MyNS {
 		 * Keys must match the regex /^a-z0-9{0,62}$/.
 		 * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
 		 */
-		stateMetadata?: {[id: string]: string };
+		stateMetadata?: {[id: string]: string } | null;
 	}
 
 
@@ -423,7 +423,7 @@ export namespace MyNS {
 	export interface GoogleCloudRecommenderV1beta1MarkRecommendationSucceededRequest {
 
 		/** Required. Fingerprint of the Recommendation. Provides optimistic locking. */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * State properties to include with this state. Overwrites any existing
@@ -431,7 +431,7 @@ export namespace MyNS {
 		 * Keys must match the regex /^a-z0-9{0,62}$/.
 		 * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
 		 */
-		stateMetadata?: {[id: string]: string };
+		stateMetadata?: {[id: string]: string } | null;
 	}
 
 	@Injectable()

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateSignalingChannelOutput {
-		ChannelARN?: string;
+		ChannelARN?: string | null;
 	}
 
 
@@ -32,7 +32,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateStreamOutput {
-		StreamARN?: string;
+		StreamARN?: string | null;
 	}
 
 	export interface AccountStreamLimitExceededException {
@@ -62,21 +62,21 @@ export namespace MyNS {
 	export interface DescribeSignalingChannelOutput {
 
 		/** A structure that encapsulates a signaling channel's metadata and properties. */
-		ChannelInfo?: ChannelInfo;
+		ChannelInfo?: ChannelInfo | null;
 	}
 
 
 	/** A structure that encapsulates a signaling channel's metadata and properties. */
 	export interface ChannelInfo {
-		ChannelName?: string;
-		ChannelARN?: string;
-		ChannelType?: ChannelInfoChannelType;
-		ChannelStatus?: ChannelInfoChannelStatus;
-		CreationTime?: Date;
+		ChannelName?: string | null;
+		ChannelARN?: string | null;
+		ChannelType?: ChannelInfoChannelType | null;
+		ChannelStatus?: ChannelInfoChannelStatus | null;
+		CreationTime?: Date | null;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: SingleMasterConfiguration;
-		Version?: string;
+		SingleMasterConfiguration?: SingleMasterConfiguration | null;
+		Version?: string | null;
 	}
 
 	export enum ChannelInfoChannelType { SINGLE_MASTER = 0 }
@@ -86,42 +86,42 @@ export namespace MyNS {
 
 	/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
 	export interface SingleMasterConfiguration {
-		MessageTtlSeconds?: number;
+		MessageTtlSeconds?: number | null;
 	}
 
 	export interface DescribeStreamOutput {
 
 		/** An object describing a Kinesis video stream. */
-		StreamInfo?: StreamInfo;
+		StreamInfo?: StreamInfo | null;
 	}
 
 
 	/** An object describing a Kinesis video stream. */
 	export interface StreamInfo {
-		DeviceName?: string;
-		StreamName?: string;
-		StreamARN?: string;
-		MediaType?: string;
-		KmsKeyId?: string;
-		Version?: string;
-		Status?: ChannelInfoChannelStatus;
-		CreationTime?: Date;
-		DataRetentionInHours?: number;
+		DeviceName?: string | null;
+		StreamName?: string | null;
+		StreamARN?: string | null;
+		MediaType?: string | null;
+		KmsKeyId?: string | null;
+		Version?: string | null;
+		Status?: ChannelInfoChannelStatus | null;
+		CreationTime?: Date | null;
+		DataRetentionInHours?: number | null;
 	}
 
 	export interface GetDataEndpointOutput {
-		DataEndpoint?: string;
+		DataEndpoint?: string | null;
 	}
 
 	export interface GetSignalingChannelEndpointOutput {
-		ResourceEndpointList?: Array<ResourceEndpointListItem>;
+		ResourceEndpointList?: Array<ResourceEndpointListItem> | null;
 	}
 
 
 	/** An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API. */
 	export interface ResourceEndpointListItem {
-		Protocol?: ResourceEndpointListItemProtocol;
-		ResourceEndpoint?: string;
+		Protocol?: ResourceEndpointListItemProtocol | null;
+		ResourceEndpoint?: string | null;
 	}
 
 	export enum ResourceEndpointListItemProtocol { WSS = 0, HTTPS = 1 }
@@ -131,28 +131,28 @@ export namespace MyNS {
 	export enum ChannelRole { MASTER = 0, VIEWER = 1 }
 
 	export interface ListSignalingChannelsOutput {
-		ChannelInfoList?: Array<ChannelInfo>;
-		NextToken?: string;
+		ChannelInfoList?: Array<ChannelInfo> | null;
+		NextToken?: string | null;
 	}
 
 	export enum ComparisonOperator { BEGINS_WITH = 0 }
 
 	export interface ListStreamsOutput {
-		StreamInfoList?: Array<StreamInfo>;
-		NextToken?: string;
+		StreamInfoList?: Array<StreamInfo> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		NextToken?: string;
-		Tags?: ResourceTags;
+		NextToken?: string | null;
+		Tags?: ResourceTags | null;
 	}
 
 	export interface ResourceTags {
 	}
 
 	export interface ListTagsForStreamOutput {
-		NextToken?: string;
-		Tags?: ResourceTags;
+		NextToken?: string | null;
+		Tags?: ResourceTags | null;
 	}
 
 	export interface InvalidResourceFormatException {
@@ -188,100 +188,100 @@ export namespace MyNS {
 
 	/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
 	export interface ChannelNameCondition {
-		ComparisonOperator?: ComparisonOperator;
-		ComparisonValue?: string;
+		ComparisonOperator?: ComparisonOperator | null;
+		ComparisonValue?: string | null;
 	}
 
 	export interface CreateSignalingChannelInput {
 		ChannelName: string;
-		ChannelType?: ChannelInfoChannelType;
+		ChannelType?: ChannelInfoChannelType | null;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: SingleMasterConfiguration;
-		Tags?: Array<Tag>;
+		SingleMasterConfiguration?: SingleMasterConfiguration | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateStreamInput {
-		DeviceName?: string;
+		DeviceName?: string | null;
 		StreamName: string;
-		MediaType?: string;
-		KmsKeyId?: string;
-		DataRetentionInHours?: number;
-		Tags?: ResourceTags;
+		MediaType?: string | null;
+		KmsKeyId?: string | null;
+		DataRetentionInHours?: number | null;
+		Tags?: ResourceTags | null;
 	}
 
 	export interface DeleteSignalingChannelInput {
 		ChannelARN: string;
-		CurrentVersion?: string;
+		CurrentVersion?: string | null;
 	}
 
 	export interface DeleteStreamInput {
 		StreamARN: string;
-		CurrentVersion?: string;
+		CurrentVersion?: string | null;
 	}
 
 	export interface DescribeSignalingChannelInput {
-		ChannelName?: string;
-		ChannelARN?: string;
+		ChannelName?: string | null;
+		ChannelARN?: string | null;
 	}
 
 	export interface DescribeStreamInput {
-		StreamName?: string;
-		StreamARN?: string;
+		StreamName?: string | null;
+		StreamARN?: string | null;
 	}
 
 	export interface GetDataEndpointInput {
-		StreamName?: string;
-		StreamARN?: string;
+		StreamName?: string | null;
+		StreamARN?: string | null;
 		APIName: APIName;
 	}
 
 
 	/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.  */
 	export interface SingleMasterChannelEndpointConfiguration {
-		Protocols?: Array<ChannelProtocol>;
-		Role?: ChannelRole;
+		Protocols?: Array<ChannelProtocol> | null;
+		Role?: ChannelRole | null;
 	}
 
 	export interface GetSignalingChannelEndpointInput {
 		ChannelARN: string;
 
 		/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterChannelEndpointConfiguration?: SingleMasterChannelEndpointConfiguration;
+		SingleMasterChannelEndpointConfiguration?: SingleMasterChannelEndpointConfiguration | null;
 	}
 
 	export interface ListSignalingChannelsInput {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 
 		/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
-		ChannelNameCondition?: ChannelNameCondition;
+		ChannelNameCondition?: ChannelNameCondition | null;
 	}
 
 
 	/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.  */
 	export interface StreamNameCondition {
-		ComparisonOperator?: ComparisonOperator;
-		ComparisonValue?: string;
+		ComparisonOperator?: ComparisonOperator | null;
+		ComparisonValue?: string | null;
 	}
 
 	export interface ListStreamsInput {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 
 		/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. */
-		StreamNameCondition?: StreamNameCondition;
+		StreamNameCondition?: StreamNameCondition | null;
 	}
 
 	export interface ListTagsForResourceInput {
-		NextToken?: string;
+		NextToken?: string | null;
 		ResourceARN: string;
 	}
 
 	export interface ListTagsForStreamInput {
-		NextToken?: string;
-		StreamARN?: string;
-		StreamName?: string;
+		NextToken?: string | null;
+		StreamARN?: string | null;
+		StreamName?: string | null;
 	}
 
 	export interface TagResourceInput {
@@ -290,8 +290,8 @@ export namespace MyNS {
 	}
 
 	export interface TagStreamInput {
-		StreamARN?: string;
-		StreamName?: string;
+		StreamARN?: string | null;
+		StreamName?: string | null;
 		Tags: ResourceTags;
 	}
 
@@ -301,16 +301,16 @@ export namespace MyNS {
 	}
 
 	export interface UntagStreamInput {
-		StreamARN?: string;
-		StreamName?: string;
+		StreamARN?: string | null;
+		StreamName?: string | null;
 		TagKeyList: Array<string>;
 	}
 
 	export enum UpdateDataRetentionOperation { INCREASE_DATA_RETENTION = 0, DECREASE_DATA_RETENTION = 1 }
 
 	export interface UpdateDataRetentionInput {
-		StreamName?: string;
-		StreamARN?: string;
+		StreamName?: string | null;
+		StreamARN?: string | null;
 		CurrentVersion: string;
 		Operation: UpdateDataRetentionOperation;
 		DataRetentionChangeInHours: number;
@@ -321,15 +321,15 @@ export namespace MyNS {
 		CurrentVersion: string;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: SingleMasterConfiguration;
+		SingleMasterConfiguration?: SingleMasterConfiguration | null;
 	}
 
 	export interface UpdateStreamInput {
-		StreamName?: string;
-		StreamARN?: string;
+		StreamName?: string | null;
+		StreamARN?: string | null;
 		CurrentVersion: string;
-		DeviceName?: string;
-		MediaType?: string;
+		DeviceName?: string | null;
+		MediaType?: string | null;
 	}
 
 	@Injectable()
@@ -525,21 +525,21 @@ export namespace MyNS {
 		ChannelName: string;
 
 		/** A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. */
-		ChannelType?: ChannelInfoChannelType;
+		ChannelType?: ChannelInfoChannelType | null;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: CreateSignalingChannelPostBodySingleMasterConfiguration;
+		SingleMasterConfiguration?: CreateSignalingChannelPostBodySingleMasterConfiguration | null;
 
 		/**
 		 * A set of tags (key-value pairs) that you want to associate with this channel.
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateSignalingChannelPostBodySingleMasterConfiguration {
-		MessageTtlSeconds?: number;
+		MessageTtlSeconds?: number | null;
 	}
 
 	export interface CreateStreamPostBody {
@@ -550,7 +550,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		DeviceName?: string;
+		DeviceName?: string | null;
 
 		/**
 		 * <p>A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
@@ -567,7 +567,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
-		MediaType?: string;
+		MediaType?: string | null;
 
 		/**
 		 * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p> <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
@@ -575,16 +575,16 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: .+
 		 */
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 
 		/**
 		 * <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> <p>The default value is 0, indicating that the stream does not persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
 		 * Minimum: 0
 		 */
-		DataRetentionInHours?: number;
+		DataRetentionInHours?: number | null;
 
 		/** A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional). */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface DeleteSignalingChannelPostBody {
@@ -604,7 +604,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9]+
 		 */
-		CurrentVersion?: string;
+		CurrentVersion?: string | null;
 	}
 
 	export interface DeleteStreamPostBody {
@@ -624,7 +624,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9]+
 		 */
-		CurrentVersion?: string;
+		CurrentVersion?: string | null;
 	}
 
 	export interface DescribeSignalingChannelPostBody {
@@ -635,7 +635,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		ChannelName?: string;
+		ChannelName?: string | null;
 
 		/**
 		 * The ARN of the signaling channel that you want to describe.
@@ -643,7 +643,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		ChannelARN?: string;
+		ChannelARN?: string | null;
 	}
 
 	export interface DescribeStreamPostBody {
@@ -654,7 +654,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		StreamName?: string;
+		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream.
@@ -662,7 +662,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		StreamARN?: string;
+		StreamARN?: string | null;
 	}
 
 	export interface GetDataEndpointPostBody {
@@ -673,7 +673,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		StreamName?: string;
+		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.
@@ -681,7 +681,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		StreamARN?: string;
+		StreamARN?: string | null;
 
 		/**
 		 * The name of the API action for which to get an endpoint.
@@ -702,12 +702,12 @@ export namespace MyNS {
 		ChannelARN: string;
 
 		/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterChannelEndpointConfiguration?: GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfiguration;
+		SingleMasterChannelEndpointConfiguration?: GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfiguration | null;
 	}
 
 	export interface GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfiguration {
-		Protocols?: Array<ChannelProtocol>;
-		Role?: ChannelRole;
+		Protocols?: Array<ChannelProtocol> | null;
+		Role?: ChannelRole | null;
 	}
 
 	export interface ListSignalingChannelsPostBody {
@@ -717,7 +717,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 10000
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.
@@ -725,15 +725,15 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
-		ChannelNameCondition?: ListSignalingChannelsPostBodyChannelNameCondition;
+		ChannelNameCondition?: ListSignalingChannelsPostBodyChannelNameCondition | null;
 	}
 
 	export interface ListSignalingChannelsPostBodyChannelNameCondition {
-		ComparisonOperator?: ComparisonOperator;
-		ComparisonValue?: string;
+		ComparisonOperator?: ComparisonOperator | null;
+		ComparisonValue?: string | null;
 	}
 
 	export interface ListStreamsPostBody {
@@ -743,7 +743,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 10000
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.
@@ -751,15 +751,15 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. */
-		StreamNameCondition?: ListStreamsPostBodyStreamNameCondition;
+		StreamNameCondition?: ListStreamsPostBodyStreamNameCondition | null;
 	}
 
 	export interface ListStreamsPostBodyStreamNameCondition {
-		ComparisonOperator?: ComparisonOperator;
-		ComparisonValue?: string;
+		ComparisonOperator?: ComparisonOperator | null;
+		ComparisonValue?: string | null;
 	}
 
 	export interface ListTagsForResourcePostBody {
@@ -770,7 +770,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
@@ -790,7 +790,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to list tags for.
@@ -798,7 +798,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		StreamARN?: string;
+		StreamARN?: string | null;
 
 		/**
 		 * The name of the stream that you want to list tags for.
@@ -806,7 +806,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		StreamName?: string;
+		StreamName?: string | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -837,7 +837,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		StreamARN?: string;
+		StreamARN?: string | null;
 
 		/**
 		 * The name of the stream that you want to add the tag or tags to.
@@ -845,7 +845,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		StreamName?: string;
+		StreamName?: string | null;
 
 		/**
 		 * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
@@ -882,7 +882,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		StreamARN?: string;
+		StreamARN?: string | null;
 
 		/**
 		 * The name of the stream that you want to remove tags from.
@@ -890,7 +890,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		StreamName?: string;
+		StreamName?: string | null;
 
 		/**
 		 * A list of the keys of the tags that you want to remove.
@@ -909,7 +909,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		StreamName?: string;
+		StreamName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream whose retention period you want to change.
@@ -917,7 +917,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		StreamARN?: string;
+		StreamARN?: string | null;
 
 		/**
 		 * The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.
@@ -963,11 +963,11 @@ export namespace MyNS {
 		CurrentVersion: string;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: UpdateSignalingChannelPostBodySingleMasterConfiguration;
+		SingleMasterConfiguration?: UpdateSignalingChannelPostBodySingleMasterConfiguration | null;
 	}
 
 	export interface UpdateSignalingChannelPostBodySingleMasterConfiguration {
-		MessageTtlSeconds?: number;
+		MessageTtlSeconds?: number | null;
 	}
 
 	export interface UpdateStreamPostBody {
@@ -978,7 +978,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		StreamName?: string;
+		StreamName?: string | null;
 
 		/**
 		 * The ARN of the stream whose metadata you want to update.
@@ -986,7 +986,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		StreamARN?: string;
+		StreamARN?: string | null;
 
 		/**
 		 * The version of the stream whose metadata you want to update.
@@ -1003,7 +1003,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		DeviceName?: string;
+		DeviceName?: string | null;
 
 		/**
 		 * <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
@@ -1011,7 +1011,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
-		MediaType?: string;
+		MediaType?: string | null;
 	}
 
 }

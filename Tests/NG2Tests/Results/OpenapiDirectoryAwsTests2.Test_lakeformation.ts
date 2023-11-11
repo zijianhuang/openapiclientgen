@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchGrantPermissionsResponse {
-		Failures?: Array<BatchPermissionsFailureEntry>;
+		Failures?: Array<BatchPermissionsFailureEntry> | null;
 	}
 
 
@@ -11,10 +11,10 @@ export namespace MyNS {
 	export interface BatchPermissionsFailureEntry {
 
 		/** A permission to a resource granted by batch operation to the principal. */
-		RequestEntry?: BatchPermissionsRequestEntry;
+		RequestEntry?: BatchPermissionsRequestEntry | null;
 
 		/** Contains details about an error. */
-		Error?: ErrorDetail;
+		Error?: ErrorDetail | null;
 	}
 
 
@@ -23,18 +23,18 @@ export namespace MyNS {
 		Id: string;
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal;
+		Principal?: DataLakePrincipal | null;
 
 		/** A structure for the resource. */
-		Resource?: Resource;
-		Permissions?: Array<Permission>;
-		PermissionsWithGrantOption?: Array<Permission>;
+		Resource?: Resource | null;
+		Permissions?: Array<Permission> | null;
+		PermissionsWithGrantOption?: Array<Permission> | null;
 	}
 
 
 	/** The AWS Lake Formation principal. */
 	export interface DataLakePrincipal {
-		DataLakePrincipalIdentifier?: string;
+		DataLakePrincipalIdentifier?: string | null;
 	}
 
 
@@ -42,19 +42,19 @@ export namespace MyNS {
 	export interface Resource {
 
 		/** A structure for the catalog object. */
-		Catalog?: CatalogResource;
+		Catalog?: CatalogResource | null;
 
 		/** A structure for the database object. */
-		Database?: DatabaseResource;
+		Database?: DatabaseResource | null;
 
 		/** A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. */
-		Table?: TableResource;
+		Table?: TableResource | null;
 
 		/** <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p> <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p> */
-		TableWithColumns?: TableWithColumnsResource;
+		TableWithColumns?: TableWithColumnsResource | null;
 
 		/** A structure for a data location object where permissions are granted or revoked. */
-		DataLocation?: DataLocationResource;
+		DataLocation?: DataLocationResource | null;
 	}
 
 
@@ -78,18 +78,18 @@ export namespace MyNS {
 
 	/** <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p> <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p> */
 	export interface TableWithColumnsResource {
-		DatabaseName?: string;
-		Name?: string;
-		ColumnNames?: Array<string>;
+		DatabaseName?: string | null;
+		Name?: string | null;
+		ColumnNames?: Array<string> | null;
 
 		/** A wildcard object, consisting of an optional list of excluded column names or indexes. */
-		ColumnWildcard?: ColumnWildcard;
+		ColumnWildcard?: ColumnWildcard | null;
 	}
 
 
 	/** A wildcard object, consisting of an optional list of excluded column names or indexes. */
 	export interface ColumnWildcard {
-		ExcludedColumnNames?: Array<string>;
+		ExcludedColumnNames?: Array<string> | null;
 	}
 
 
@@ -103,12 +103,12 @@ export namespace MyNS {
 
 	/** Contains details about an error. */
 	export interface ErrorDetail {
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface BatchGrantPermissionsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		Entries: Array<BatchPermissionsRequestEntry>;
 	}
 
@@ -119,11 +119,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchRevokePermissionsResponse {
-		Failures?: Array<BatchPermissionsFailureEntry>;
+		Failures?: Array<BatchPermissionsFailureEntry> | null;
 	}
 
 	export interface BatchRevokePermissionsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		Entries: Array<BatchPermissionsRequestEntry>;
 	}
 
@@ -143,15 +143,15 @@ export namespace MyNS {
 	export interface DescribeResourceResponse {
 
 		/** A structure containing information about an AWS Lake Formation resource. */
-		ResourceInfo?: ResourceInfo;
+		ResourceInfo?: ResourceInfo | null;
 	}
 
 
 	/** A structure containing information about an AWS Lake Formation resource. */
 	export interface ResourceInfo {
-		ResourceArn?: string;
-		RoleArn?: string;
-		LastModified?: Date;
+		ResourceArn?: string | null;
+		RoleArn?: string | null;
+		LastModified?: Date | null;
 	}
 
 	export interface DescribeResourceRequest {
@@ -161,15 +161,15 @@ export namespace MyNS {
 	export interface GetDataLakeSettingsResponse {
 
 		/** The AWS Lake Formation principal. */
-		DataLakeSettings?: DataLakeSettings;
+		DataLakeSettings?: DataLakeSettings | null;
 	}
 
 
 	/** The AWS Lake Formation principal. */
 	export interface DataLakeSettings {
-		DataLakeAdmins?: Array<DataLakePrincipal>;
-		CreateDatabaseDefaultPermissions?: Array<PrincipalPermissions>;
-		CreateTableDefaultPermissions?: Array<PrincipalPermissions>;
+		DataLakeAdmins?: Array<DataLakePrincipal> | null;
+		CreateDatabaseDefaultPermissions?: Array<PrincipalPermissions> | null;
+		CreateTableDefaultPermissions?: Array<PrincipalPermissions> | null;
 	}
 
 
@@ -177,17 +177,17 @@ export namespace MyNS {
 	export interface PrincipalPermissions {
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal;
-		Permissions?: Array<Permission>;
+		Principal?: DataLakePrincipal | null;
+		Permissions?: Array<Permission> | null;
 	}
 
 	export interface GetDataLakeSettingsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 	}
 
 	export interface GetEffectivePermissionsForPathResponse {
-		Permissions?: Array<PrincipalResourcePermissions>;
-		NextToken?: string;
+		Permissions?: Array<PrincipalResourcePermissions> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -195,26 +195,26 @@ export namespace MyNS {
 	export interface PrincipalResourcePermissions {
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal;
+		Principal?: DataLakePrincipal | null;
 
 		/** A structure for the resource. */
-		Resource?: Resource;
-		Permissions?: Array<Permission>;
-		PermissionsWithGrantOption?: Array<Permission>;
+		Resource?: Resource | null;
+		Permissions?: Array<Permission> | null;
+		PermissionsWithGrantOption?: Array<Permission> | null;
 	}
 
 	export interface GetEffectivePermissionsForPathRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		ResourceArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GrantPermissionsResponse {
 	}
 
 	export interface GrantPermissionsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 
 		/**
 		 * The AWS Lake Formation principal.
@@ -228,49 +228,49 @@ export namespace MyNS {
 		 */
 		Resource: Resource;
 		Permissions: Array<Permission>;
-		PermissionsWithGrantOption?: Array<Permission>;
+		PermissionsWithGrantOption?: Array<Permission> | null;
 	}
 
 	export interface ConcurrentModificationException {
 	}
 
 	export interface ListPermissionsResponse {
-		PrincipalResourcePermissions?: Array<PrincipalResourcePermissions>;
-		NextToken?: string;
+		PrincipalResourcePermissions?: Array<PrincipalResourcePermissions> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPermissionsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal;
-		ResourceType?: ListPermissionsRequestResourceType;
+		Principal?: DataLakePrincipal | null;
+		ResourceType?: ListPermissionsRequestResourceType | null;
 
 		/** A structure for the resource. */
-		Resource?: Resource;
-		NextToken?: string;
-		MaxResults?: number;
+		Resource?: Resource | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export enum ListPermissionsRequestResourceType { CATALOG = 0, DATABASE = 1, TABLE = 2, DATA_LOCATION = 3 }
 
 	export interface ListResourcesResponse {
-		ResourceInfoList?: Array<ResourceInfo>;
-		NextToken?: string;
+		ResourceInfoList?: Array<ResourceInfo> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListResourcesRequest {
-		FilterConditionList?: Array<FilterCondition>;
-		MaxResults?: number;
-		NextToken?: string;
+		FilterConditionList?: Array<FilterCondition> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** This structure describes the filtering of columns in a table based on a filter condition. */
 	export interface FilterCondition {
-		Field?: FilterConditionField;
-		ComparisonOperator?: FilterConditionComparisonOperator;
-		StringValueList?: Array<string>;
+		Field?: FilterConditionField | null;
+		ComparisonOperator?: FilterConditionComparisonOperator | null;
+		StringValueList?: Array<string> | null;
 	}
 
 	export enum FilterConditionField { RESOURCE_ARN = 0, ROLE_ARN = 1, LAST_MODIFIED = 2 }
@@ -281,7 +281,7 @@ export namespace MyNS {
 	}
 
 	export interface PutDataLakeSettingsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 
 		/**
 		 * The AWS Lake Formation principal.
@@ -295,8 +295,8 @@ export namespace MyNS {
 
 	export interface RegisterResourceRequest {
 		ResourceArn: string;
-		UseServiceLinkedRole?: boolean;
-		RoleArn?: string;
+		UseServiceLinkedRole?: boolean | null;
+		RoleArn?: string | null;
 	}
 
 	export interface AlreadyExistsException {
@@ -306,7 +306,7 @@ export namespace MyNS {
 	}
 
 	export interface RevokePermissionsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 
 		/**
 		 * The AWS Lake Formation principal.
@@ -320,7 +320,7 @@ export namespace MyNS {
 		 */
 		Resource: Resource;
 		Permissions: Array<Permission>;
-		PermissionsWithGrantOption?: Array<Permission>;
+		PermissionsWithGrantOption?: Array<Permission> | null;
 	}
 
 	export interface UpdateResourceResponse {

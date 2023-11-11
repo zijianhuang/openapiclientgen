@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchDeleteDocumentResponse {
-		FailedDocuments?: Array<BatchDeleteDocumentResponseFailedDocument>;
+		FailedDocuments?: Array<BatchDeleteDocumentResponseFailedDocument> | null;
 	}
 
 
 	/** Provides information about documents that could not be removed from an index by the <a>BatchDeleteDocument</a> operation. */
 	export interface BatchDeleteDocumentResponseFailedDocument {
-		Id?: string;
-		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode;
-		ErrorMessage?: string;
+		Id?: string | null;
+		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum BatchDeleteDocumentResponseFailedDocumentErrorCode { InternalError = 0, InvalidRequest = 1 }
@@ -21,7 +21,7 @@ export namespace MyNS {
 		DocumentIdList: Array<string>;
 
 		/** Maps a particular data source sync job to a particular data source. */
-		DataSourceSyncJobMetricTarget?: DataSourceSyncJobMetricTarget;
+		DataSourceSyncJobMetricTarget?: DataSourceSyncJobMetricTarget | null;
 	}
 
 
@@ -50,20 +50,20 @@ export namespace MyNS {
 	}
 
 	export interface BatchPutDocumentResponse {
-		FailedDocuments?: Array<BatchPutDocumentResponseFailedDocument>;
+		FailedDocuments?: Array<BatchPutDocumentResponseFailedDocument> | null;
 	}
 
 
 	/** Provides information about a document that could not be indexed. */
 	export interface BatchPutDocumentResponseFailedDocument {
-		Id?: string;
-		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode;
-		ErrorMessage?: string;
+		Id?: string | null;
+		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface BatchPutDocumentRequest {
 		IndexId: string;
-		RoleArn?: string;
+		RoleArn?: string | null;
 		Documents: Array<Document>;
 	}
 
@@ -71,14 +71,14 @@ export namespace MyNS {
 	/** A document in an index. */
 	export interface Document {
 		Id: string;
-		Title?: string;
-		Blob?: string;
+		Title?: string | null;
+		Blob?: string | null;
 
 		/** Information required to find a specific file in an Amazon S3 bucket. */
-		S3Path?: S3Path;
-		Attributes?: Array<DocumentAttribute>;
-		AccessControlList?: Array<Principal>;
-		ContentType?: DocumentContentType;
+		S3Path?: S3Path | null;
+		Attributes?: Array<DocumentAttribute> | null;
+		AccessControlList?: Array<Principal> | null;
+		ContentType?: DocumentContentType | null;
 	}
 
 
@@ -103,10 +103,10 @@ export namespace MyNS {
 
 	/** The value of a custom document attribute. You can only provide one value for a custom attribute. */
 	export interface DocumentAttributeValue {
-		StringValue?: string;
-		StringListValue?: Array<string>;
-		LongValue?: number;
-		DateValue?: Date;
+		StringValue?: string | null;
+		StringListValue?: Array<string> | null;
+		LongValue?: number | null;
+		DateValue?: Date | null;
 	}
 
 
@@ -140,10 +140,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		Configuration: DataSourceConfiguration;
-		Description?: string;
-		Schedule?: string;
+		Description?: string | null;
+		Schedule?: string | null;
 		RoleArn: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateDataSourceRequestType { S3 = 0, SHAREPOINT = 1, DATABASE = 2, SALESFORCE = 3, ONEDRIVE = 4, SERVICENOW = 5 }
@@ -153,48 +153,48 @@ export namespace MyNS {
 	export interface DataSourceConfiguration {
 
 		/** Provides configuration information for a data source to index documents in an Amazon S3 bucket. */
-		S3Configuration?: S3DataSourceConfiguration;
+		S3Configuration?: S3DataSourceConfiguration | null;
 
 		/** Provides configuration information for connecting to a Microsoft SharePoint data source. */
-		SharePointConfiguration?: SharePointConfiguration;
+		SharePointConfiguration?: SharePointConfiguration | null;
 
 		/** Provides the information necessary to connect a database to an index. */
-		DatabaseConfiguration?: DatabaseConfiguration;
+		DatabaseConfiguration?: DatabaseConfiguration | null;
 
 		/** Provides configuration information for connecting to a Salesforce data source. */
-		SalesforceConfiguration?: SalesforceConfiguration;
+		SalesforceConfiguration?: SalesforceConfiguration | null;
 
 		/** Provides configuration information for data sources that connect to OneDrive. */
-		OneDriveConfiguration?: OneDriveConfiguration;
+		OneDriveConfiguration?: OneDriveConfiguration | null;
 
 		/** Provides configuration information required to connect to a ServiceNow data source. */
-		ServiceNowConfiguration?: ServiceNowConfiguration;
+		ServiceNowConfiguration?: ServiceNowConfiguration | null;
 	}
 
 
 	/** Provides configuration information for a data source to index documents in an Amazon S3 bucket. */
 	export interface S3DataSourceConfiguration {
 		BucketName: string;
-		InclusionPrefixes?: Array<string>;
-		ExclusionPatterns?: Array<string>;
+		InclusionPrefixes?: Array<string> | null;
+		ExclusionPatterns?: Array<string> | null;
 
 		/** Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document. */
-		DocumentsMetadataConfiguration?: DocumentsMetadataConfiguration;
+		DocumentsMetadataConfiguration?: DocumentsMetadataConfiguration | null;
 
 		/** Access Control List files for the documents in a data source. */
-		AccessControlListConfiguration?: AccessControlListConfiguration;
+		AccessControlListConfiguration?: AccessControlListConfiguration | null;
 	}
 
 
 	/** Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document. */
 	export interface DocumentsMetadataConfiguration {
-		S3Prefix?: string;
+		S3Prefix?: string | null;
 	}
 
 
 	/** Access Control List files for the documents in a data source. */
 	export interface AccessControlListConfiguration {
-		KeyPath?: string;
+		KeyPath?: string | null;
 	}
 
 
@@ -203,15 +203,15 @@ export namespace MyNS {
 		SharePointVersion: SharePointConfigurationSharePointVersion;
 		Urls: Array<string>;
 		SecretArn: string;
-		CrawlAttachments?: boolean;
-		UseChangeLog?: boolean;
-		InclusionPatterns?: Array<string>;
-		ExclusionPatterns?: Array<string>;
+		CrawlAttachments?: boolean | null;
+		UseChangeLog?: boolean | null;
+		InclusionPatterns?: Array<string> | null;
+		ExclusionPatterns?: Array<string> | null;
 
 		/** Provides information for connecting to an Amazon VPC. */
-		VpcConfiguration?: DataSourceVpcConfiguration;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
-		DocumentTitleFieldName?: string;
+		VpcConfiguration?: DataSourceVpcConfiguration | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
+		DocumentTitleFieldName?: string | null;
 	}
 
 	export enum SharePointConfigurationSharePointVersion { SHAREPOINT_ONLINE = 0 }
@@ -227,7 +227,7 @@ export namespace MyNS {
 	/** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <a>UpdateIndex</a> operation. */
 	export interface DataSourceToIndexFieldMapping {
 		DataSourceFieldName: string;
-		DateFieldFormat?: string;
+		DateFieldFormat?: string | null;
 		IndexFieldName: string;
 	}
 
@@ -243,7 +243,7 @@ export namespace MyNS {
 		ConnectionConfiguration: ConnectionConfiguration;
 
 		/** Provides information for connecting to an Amazon VPC. */
-		VpcConfiguration?: DataSourceVpcConfiguration;
+		VpcConfiguration?: DataSourceVpcConfiguration | null;
 
 		/**
 		 * Provides information about how Amazon Kendra should use the columns of a database in an index.
@@ -252,7 +252,7 @@ export namespace MyNS {
 		ColumnConfiguration: ColumnConfiguration;
 
 		/** Provides information about the column that should be used for filtering the query response by groups. */
-		AclConfiguration?: AclConfiguration;
+		AclConfiguration?: AclConfiguration | null;
 	}
 
 	export enum DatabaseConfigurationDatabaseEngineType { RDS_AURORA_MYSQL = 0, RDS_AURORA_POSTGRESQL = 1, RDS_MYSQL = 2, RDS_POSTGRESQL = 3 }
@@ -272,8 +272,8 @@ export namespace MyNS {
 	export interface ColumnConfiguration {
 		DocumentIdColumnName: string;
 		DocumentDataColumnName: string;
-		DocumentTitleColumnName?: string;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+		DocumentTitleColumnName?: string | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
 		ChangeDetectingColumns: Array<string>;
 	}
 
@@ -288,19 +288,19 @@ export namespace MyNS {
 	export interface SalesforceConfiguration {
 		ServerUrl: string;
 		SecretArn: string;
-		StandardObjectConfigurations?: Array<SalesforceStandardObjectConfiguration>;
+		StandardObjectConfigurations?: Array<SalesforceStandardObjectConfiguration> | null;
 
 		/** Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both */
-		KnowledgeArticleConfiguration?: SalesforceKnowledgeArticleConfiguration;
+		KnowledgeArticleConfiguration?: SalesforceKnowledgeArticleConfiguration | null;
 
 		/** Defines configuration for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table. */
-		ChatterFeedConfiguration?: SalesforceChatterFeedConfiguration;
-		CrawlAttachments?: boolean;
+		ChatterFeedConfiguration?: SalesforceChatterFeedConfiguration | null;
+		CrawlAttachments?: boolean | null;
 
 		/** Provides configuration information for processing attachments to Salesforce standard objects. */
-		StandardObjectAttachmentConfiguration?: SalesforceStandardObjectAttachmentConfiguration;
-		IncludeAttachmentFilePatterns?: Array<string>;
-		ExcludeAttachmentFilePatterns?: Array<string>;
+		StandardObjectAttachmentConfiguration?: SalesforceStandardObjectAttachmentConfiguration | null;
+		IncludeAttachmentFilePatterns?: Array<string> | null;
+		ExcludeAttachmentFilePatterns?: Array<string> | null;
 	}
 
 
@@ -308,8 +308,8 @@ export namespace MyNS {
 	export interface SalesforceStandardObjectConfiguration {
 		Name: SalesforceStandardObjectConfigurationName;
 		DocumentDataFieldName: string;
-		DocumentTitleFieldName?: string;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+		DocumentTitleFieldName?: string | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
 	}
 
 	export enum SalesforceStandardObjectConfigurationName { ACCOUNT = 0, CAMPAIGN = 1, CASE = 2, CONTACT = 3, CONTRACT = 4, DOCUMENT = 5, GROUP = 6, IDEA = 7, LEAD = 8, OPPORTUNITY = 9, PARTNER = 10, PRICEBOOK = 11, PRODUCT = 12, PROFILE = 13, SOLUTION = 14, TASK = 15, USER = 16 }
@@ -320,8 +320,8 @@ export namespace MyNS {
 		IncludedStates: Array<SalesforceKnowledgeArticleState>;
 
 		/** Provides configuration information for standard Salesforce knowledge articles. */
-		StandardKnowledgeArticleTypeConfiguration?: SalesforceStandardKnowledgeArticleTypeConfiguration;
-		CustomKnowledgeArticleTypeConfigurations?: Array<SalesforceCustomKnowledgeArticleTypeConfiguration>;
+		StandardKnowledgeArticleTypeConfiguration?: SalesforceStandardKnowledgeArticleTypeConfiguration | null;
+		CustomKnowledgeArticleTypeConfigurations?: Array<SalesforceCustomKnowledgeArticleTypeConfiguration> | null;
 	}
 
 	export enum SalesforceKnowledgeArticleState { DRAFT = 0, PUBLISHED = 1, ARCHIVED = 2 }
@@ -330,8 +330,8 @@ export namespace MyNS {
 	/** Provides configuration information for standard Salesforce knowledge articles. */
 	export interface SalesforceStandardKnowledgeArticleTypeConfiguration {
 		DocumentDataFieldName: string;
-		DocumentTitleFieldName?: string;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+		DocumentTitleFieldName?: string | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
 	}
 
 
@@ -339,17 +339,17 @@ export namespace MyNS {
 	export interface SalesforceCustomKnowledgeArticleTypeConfiguration {
 		Name: string;
 		DocumentDataFieldName: string;
-		DocumentTitleFieldName?: string;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+		DocumentTitleFieldName?: string | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
 	}
 
 
 	/** Defines configuration for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table. */
 	export interface SalesforceChatterFeedConfiguration {
 		DocumentDataFieldName: string;
-		DocumentTitleFieldName?: string;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
-		IncludeFilterTypes?: Array<SalesforceChatterFeedIncludeFilterType>;
+		DocumentTitleFieldName?: string | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
+		IncludeFilterTypes?: Array<SalesforceChatterFeedIncludeFilterType> | null;
 	}
 
 	export enum SalesforceChatterFeedIncludeFilterType { ACTIVE_USER = 0, STANDARD_USER = 1 }
@@ -357,8 +357,8 @@ export namespace MyNS {
 
 	/** Provides configuration information for processing attachments to Salesforce standard objects.  */
 	export interface SalesforceStandardObjectAttachmentConfiguration {
-		DocumentTitleFieldName?: string;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+		DocumentTitleFieldName?: string | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
 	}
 
 
@@ -372,18 +372,18 @@ export namespace MyNS {
 		 * Required
 		 */
 		OneDriveUsers: OneDriveUsers;
-		InclusionPatterns?: Array<string>;
-		ExclusionPatterns?: Array<string>;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+		InclusionPatterns?: Array<string> | null;
+		ExclusionPatterns?: Array<string> | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
 	}
 
 
 	/** User accounts whose documents should be indexed. */
 	export interface OneDriveUsers {
-		OneDriveUserList?: Array<string>;
+		OneDriveUserList?: Array<string> | null;
 
 		/** Information required to find a specific file in an Amazon S3 bucket. */
-		OneDriveUserS3Path?: S3Path;
+		OneDriveUserS3Path?: S3Path | null;
 	}
 
 
@@ -394,10 +394,10 @@ export namespace MyNS {
 		ServiceNowBuildVersion: ServiceNowConfigurationServiceNowBuildVersion;
 
 		/** Provides configuration information for crawling knowledge articles in the ServiceNow site. */
-		KnowledgeArticleConfiguration?: ServiceNowKnowledgeArticleConfiguration;
+		KnowledgeArticleConfiguration?: ServiceNowKnowledgeArticleConfiguration | null;
 
 		/** Provides configuration information for crawling service catalog items in the ServiceNow site */
-		ServiceCatalogConfiguration?: ServiceNowServiceCatalogConfiguration;
+		ServiceCatalogConfiguration?: ServiceNowServiceCatalogConfiguration | null;
 	}
 
 	export enum ServiceNowConfigurationServiceNowBuildVersion { LONDON = 0, OTHERS = 1 }
@@ -405,23 +405,23 @@ export namespace MyNS {
 
 	/** Provides configuration information for crawling knowledge articles in the ServiceNow site. */
 	export interface ServiceNowKnowledgeArticleConfiguration {
-		CrawlAttachments?: boolean;
-		IncludeAttachmentFilePatterns?: Array<string>;
-		ExcludeAttachmentFilePatterns?: Array<string>;
+		CrawlAttachments?: boolean | null;
+		IncludeAttachmentFilePatterns?: Array<string> | null;
+		ExcludeAttachmentFilePatterns?: Array<string> | null;
 		DocumentDataFieldName: string;
-		DocumentTitleFieldName?: string;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+		DocumentTitleFieldName?: string | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
 	}
 
 
 	/** Provides configuration information for crawling service catalog items in the ServiceNow site */
 	export interface ServiceNowServiceCatalogConfiguration {
-		CrawlAttachments?: boolean;
-		IncludeAttachmentFilePatterns?: Array<string>;
-		ExcludeAttachmentFilePatterns?: Array<string>;
+		CrawlAttachments?: boolean | null;
+		IncludeAttachmentFilePatterns?: Array<string> | null;
+		ExcludeAttachmentFilePatterns?: Array<string> | null;
 		DocumentDataFieldName: string;
-		DocumentTitleFieldName?: string;
-		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+		DocumentTitleFieldName?: string | null;
+		FieldMappings?: Array<DataSourceToIndexFieldMapping> | null;
 	}
 
 
@@ -435,13 +435,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateFaqResponse {
-		Id?: string;
+		Id?: string | null;
 	}
 
 	export interface CreateFaqRequest {
 		IndexId: string;
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * Information required to find a specific file in an Amazon S3 bucket.
@@ -449,23 +449,23 @@ export namespace MyNS {
 		 */
 		S3Path: S3Path;
 		RoleArn: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateIndexResponse {
-		Id?: string;
+		Id?: string | null;
 	}
 
 	export interface CreateIndexRequest {
 		Name: string;
-		Edition?: CreateIndexRequestEdition;
+		Edition?: CreateIndexRequestEdition | null;
 		RoleArn: string;
 
 		/** Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs. */
-		ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
-		Description?: string;
-		ClientToken?: string;
-		Tags?: Array<Tag>;
+		ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration | null;
+		Description?: string | null;
+		ClientToken?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateIndexRequestEdition { DEVELOPER_EDITION = 0, ENTERPRISE_EDITION = 1 }
@@ -473,7 +473,7 @@ export namespace MyNS {
 
 	/** Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs. */
 	export interface ServerSideEncryptionConfiguration {
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 	}
 
 	export interface DeleteDataSourceRequest {
@@ -491,20 +491,20 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDataSourceResponse {
-		Id?: string;
-		IndexId?: string;
-		Name?: string;
-		Type?: CreateDataSourceRequestType;
+		Id?: string | null;
+		IndexId?: string | null;
+		Name?: string | null;
+		Type?: CreateDataSourceRequestType | null;
 
 		/** Configuration information for a Amazon Kendra data source. */
-		Configuration?: DataSourceConfiguration;
-		CreatedAt?: Date;
-		UpdatedAt?: Date;
-		Description?: string;
-		Status?: DescribeDataSourceResponseStatus;
-		Schedule?: string;
-		RoleArn?: string;
-		ErrorMessage?: string;
+		Configuration?: DataSourceConfiguration | null;
+		CreatedAt?: Date | null;
+		UpdatedAt?: Date | null;
+		Description?: string | null;
+		Status?: DescribeDataSourceResponseStatus | null;
+		Schedule?: string | null;
+		RoleArn?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum DescribeDataSourceResponseStatus { CREATING = 0, DELETING = 1, FAILED = 2, UPDATING = 3, ACTIVE = 4 }
@@ -515,18 +515,18 @@ export namespace MyNS {
 	}
 
 	export interface DescribeFaqResponse {
-		Id?: string;
-		IndexId?: string;
-		Name?: string;
-		Description?: string;
-		CreatedAt?: Date;
-		UpdatedAt?: Date;
+		Id?: string | null;
+		IndexId?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		CreatedAt?: Date | null;
+		UpdatedAt?: Date | null;
 
 		/** Information required to find a specific file in an Amazon S3 bucket. */
-		S3Path?: S3Path;
-		Status?: DescribeFaqResponseStatus;
-		RoleArn?: string;
-		ErrorMessage?: string;
+		S3Path?: S3Path | null;
+		Status?: DescribeFaqResponseStatus | null;
+		RoleArn?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum DescribeFaqResponseStatus { CREATING = 0, UPDATING = 1, ACTIVE = 2, DELETING = 3, FAILED = 4 }
@@ -537,25 +537,25 @@ export namespace MyNS {
 	}
 
 	export interface DescribeIndexResponse {
-		Name?: string;
-		Id?: string;
-		Edition?: CreateIndexRequestEdition;
-		RoleArn?: string;
+		Name?: string | null;
+		Id?: string | null;
+		Edition?: CreateIndexRequestEdition | null;
+		RoleArn?: string | null;
 
 		/** Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs. */
-		ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
-		Status?: DescribeIndexResponseStatus;
-		Description?: string;
-		CreatedAt?: Date;
-		UpdatedAt?: Date;
-		DocumentMetadataConfigurations?: Array<DocumentMetadataConfiguration>;
+		ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration | null;
+		Status?: DescribeIndexResponseStatus | null;
+		Description?: string | null;
+		CreatedAt?: Date | null;
+		UpdatedAt?: Date | null;
+		DocumentMetadataConfigurations?: Array<DocumentMetadataConfiguration> | null;
 
 		/** Provides information about the number of documents and the number of questions and answers in an index. */
-		IndexStatistics?: IndexStatistics;
-		ErrorMessage?: string;
+		IndexStatistics?: IndexStatistics | null;
+		ErrorMessage?: string | null;
 
 		/** Specifies capacity units configured for your index. You can add and remove capacity units to tune an index to your requirements. */
-		CapacityUnits?: CapacityUnitsConfiguration;
+		CapacityUnits?: CapacityUnitsConfiguration | null;
 	}
 
 	export enum DescribeIndexResponseStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, UPDATING = 4, SYSTEM_UPDATING = 5 }
@@ -567,10 +567,10 @@ export namespace MyNS {
 		Type: DocumentMetadataConfigurationType;
 
 		/** Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters. */
-		Relevance?: Relevance;
+		Relevance?: Relevance | null;
 
 		/** Provides information about how a custom index field is used during a search. */
-		Search?: Search;
+		Search?: Search | null;
 	}
 
 	export enum DocumentMetadataConfigurationType { STRING_VALUE = 0, STRING_LIST_VALUE = 1, LONG_VALUE = 2, DATE_VALUE = 3 }
@@ -578,11 +578,11 @@ export namespace MyNS {
 
 	/** Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters. */
 	export interface Relevance {
-		Freshness?: boolean;
-		Importance?: number;
-		Duration?: string;
-		RankOrder?: RelevanceRankOrder;
-		ValueImportanceMap?: ValueImportanceMap;
+		Freshness?: boolean | null;
+		Importance?: number | null;
+		Duration?: string | null;
+		RankOrder?: RelevanceRankOrder | null;
+		ValueImportanceMap?: ValueImportanceMap | null;
 	}
 
 	export enum RelevanceRankOrder { ASCENDING = 0, DESCENDING = 1 }
@@ -593,9 +593,9 @@ export namespace MyNS {
 
 	/** Provides information about how a custom index field is used during a search. */
 	export interface Search {
-		Facetable?: boolean;
-		Searchable?: boolean;
-		Displayable?: boolean;
+		Facetable?: boolean | null;
+		Searchable?: boolean | null;
+		Displayable?: boolean | null;
 	}
 
 
@@ -640,23 +640,23 @@ export namespace MyNS {
 	}
 
 	export interface ListDataSourceSyncJobsResponse {
-		History?: Array<DataSourceSyncJob>;
-		NextToken?: string;
+		History?: Array<DataSourceSyncJob> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides information about a synchronization job. */
 	export interface DataSourceSyncJob {
-		ExecutionId?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		Status?: DataSourceSyncJobStatus;
-		ErrorMessage?: string;
-		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode;
-		DataSourceErrorCode?: string;
+		ExecutionId?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Status?: DataSourceSyncJobStatus | null;
+		ErrorMessage?: string | null;
+		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode | null;
+		DataSourceErrorCode?: string | null;
 
 		/** Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a connector. */
-		Metrics?: DataSourceSyncJobMetrics;
+		Metrics?: DataSourceSyncJobMetrics | null;
 	}
 
 	export enum DataSourceSyncJobStatus { FAILED = 0, SUCCEEDED = 1, SYNCING = 2, INCOMPLETE = 3, STOPPING = 4, ABORTED = 5, SYNCING_INDEXING = 6 }
@@ -664,97 +664,97 @@ export namespace MyNS {
 
 	/** Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a connector. */
 	export interface DataSourceSyncJobMetrics {
-		DocumentsAdded?: string;
-		DocumentsModified?: string;
-		DocumentsDeleted?: string;
-		DocumentsFailed?: string;
-		DocumentsScanned?: string;
+		DocumentsAdded?: string | null;
+		DocumentsModified?: string | null;
+		DocumentsDeleted?: string | null;
+		DocumentsFailed?: string | null;
+		DocumentsScanned?: string | null;
 	}
 
 	export interface ListDataSourceSyncJobsRequest {
 		Id: string;
 		IndexId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 
 		/** Provides a range of time. */
-		StartTimeFilter?: TimeRange;
-		StatusFilter?: DataSourceSyncJobStatus;
+		StartTimeFilter?: TimeRange | null;
+		StatusFilter?: DataSourceSyncJobStatus | null;
 	}
 
 
 	/** Provides a range of time. */
 	export interface TimeRange {
-		StartTime?: Date;
-		EndTime?: Date;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 	}
 
 	export interface ListDataSourcesResponse {
-		SummaryItems?: Array<DataSourceSummary>;
-		NextToken?: string;
+		SummaryItems?: Array<DataSourceSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Summary information for a Amazon Kendra data source. Returned in a call to . */
 	export interface DataSourceSummary {
-		Name?: string;
-		Id?: string;
-		Type?: CreateDataSourceRequestType;
-		CreatedAt?: Date;
-		UpdatedAt?: Date;
-		Status?: DescribeDataSourceResponseStatus;
+		Name?: string | null;
+		Id?: string | null;
+		Type?: CreateDataSourceRequestType | null;
+		CreatedAt?: Date | null;
+		UpdatedAt?: Date | null;
+		Status?: DescribeDataSourceResponseStatus | null;
 	}
 
 	export interface ListDataSourcesRequest {
 		IndexId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListFaqsResponse {
-		NextToken?: string;
-		FaqSummaryItems?: Array<FaqSummary>;
+		NextToken?: string | null;
+		FaqSummaryItems?: Array<FaqSummary> | null;
 	}
 
 
 	/** Provides information about a frequently asked questions and answer contained in an index. */
 	export interface FaqSummary {
-		Id?: string;
-		Name?: string;
-		Status?: DescribeFaqResponseStatus;
-		CreatedAt?: Date;
-		UpdatedAt?: Date;
+		Id?: string | null;
+		Name?: string | null;
+		Status?: DescribeFaqResponseStatus | null;
+		CreatedAt?: Date | null;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface ListFaqsRequest {
 		IndexId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListIndicesResponse {
-		IndexConfigurationSummaryItems?: Array<IndexConfigurationSummary>;
-		NextToken?: string;
+		IndexConfigurationSummaryItems?: Array<IndexConfigurationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of information about an index. */
 	export interface IndexConfigurationSummary {
-		Name?: string;
-		Id?: string;
-		Edition?: CreateIndexRequestEdition;
+		Name?: string | null;
+		Id?: string | null;
+		Edition?: CreateIndexRequestEdition | null;
 		CreatedAt: Date;
 		UpdatedAt: Date;
 		Status: DescribeIndexResponseStatus;
 	}
 
 	export interface ListIndicesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -765,27 +765,27 @@ export namespace MyNS {
 	}
 
 	export interface QueryResult {
-		QueryId?: string;
-		ResultItems?: Array<QueryResultItem>;
-		FacetResults?: Array<FacetResult>;
-		TotalNumberOfResults?: number;
+		QueryId?: string | null;
+		ResultItems?: Array<QueryResultItem> | null;
+		FacetResults?: Array<FacetResult> | null;
+		TotalNumberOfResults?: number | null;
 	}
 
 
 	/** <p>A single query result.</p> <p>A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.</p> */
 	export interface QueryResultItem {
-		Id?: string;
-		Type?: QueryResultItemType;
-		AdditionalAttributes?: Array<AdditionalResultAttribute>;
-		DocumentId?: string;
+		Id?: string | null;
+		Type?: QueryResultItemType | null;
+		AdditionalAttributes?: Array<AdditionalResultAttribute> | null;
+		DocumentId?: string | null;
 
 		/** Provides text and information about where to highlight the text. */
-		DocumentTitle?: TextWithHighlights;
+		DocumentTitle?: TextWithHighlights | null;
 
 		/** Provides text and information about where to highlight the text. */
-		DocumentExcerpt?: TextWithHighlights;
-		DocumentURI?: string;
-		DocumentAttributes?: Array<DocumentAttribute>;
+		DocumentExcerpt?: TextWithHighlights | null;
+		DocumentURI?: string | null;
+		DocumentAttributes?: Array<DocumentAttribute> | null;
 	}
 
 	export enum QueryResultItemType { DOCUMENT = 0, QUESTION_ANSWER = 1, ANSWER = 2 }
@@ -810,14 +810,14 @@ export namespace MyNS {
 	export interface AdditionalResultAttributeValue {
 
 		/** Provides text and information about where to highlight the text. */
-		TextWithHighlightsValue?: TextWithHighlights;
+		TextWithHighlightsValue?: TextWithHighlights | null;
 	}
 
 
 	/** Provides text and information about where to highlight the text. */
 	export interface TextWithHighlights {
-		Text?: string;
-		Highlights?: Array<Highlight>;
+		Text?: string | null;
+		Highlights?: Array<Highlight> | null;
 	}
 
 
@@ -825,14 +825,14 @@ export namespace MyNS {
 	export interface Highlight {
 		BeginOffset: number;
 		EndOffset: number;
-		TopAnswer?: boolean;
+		TopAnswer?: boolean | null;
 	}
 
 
 	/** The facet values for the documents in the response. */
 	export interface FacetResult {
-		DocumentAttributeKey?: string;
-		DocumentAttributeValueCountPairs?: Array<DocumentAttributeValueCountPair>;
+		DocumentAttributeKey?: string | null;
+		DocumentAttributeValueCountPairs?: Array<DocumentAttributeValueCountPair> | null;
 	}
 
 
@@ -840,8 +840,8 @@ export namespace MyNS {
 	export interface DocumentAttributeValueCountPair {
 
 		/** The value of a custom document attribute. You can only provide one value for a custom attribute. */
-		DocumentAttributeValue?: DocumentAttributeValue;
-		Count?: number;
+		DocumentAttributeValue?: DocumentAttributeValue | null;
+		Count?: number | null;
 	}
 
 	export interface QueryRequest {
@@ -849,53 +849,53 @@ export namespace MyNS {
 		QueryText: string;
 
 		/** <p>Provides filtering the query results based on document attributes.</p> <p>When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:</p> <p> <code>&lt;AndAllFilters&gt;</code> </p> <ol> <li> <p> <code> &lt;OrAllFilters&gt;</code> </p> </li> <li> <p> <code> &lt;EqualTo&gt;</code> </p> </li> </ol> <p>If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."</p> */
-		AttributeFilter?: AttributeFilter;
-		Facets?: Array<Facet>;
-		RequestedDocumentAttributes?: Array<string>;
-		QueryResultTypeFilter?: QueryResultItemType;
-		PageNumber?: number;
-		PageSize?: number;
+		AttributeFilter?: AttributeFilter | null;
+		Facets?: Array<Facet> | null;
+		RequestedDocumentAttributes?: Array<string> | null;
+		QueryResultTypeFilter?: QueryResultItemType | null;
+		PageNumber?: number | null;
+		PageSize?: number | null;
 	}
 
 
 	/** <p>Provides filtering the query results based on document attributes.</p> <p>When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:</p> <p> <code>&lt;AndAllFilters&gt;</code> </p> <ol> <li> <p> <code> &lt;OrAllFilters&gt;</code> </p> </li> <li> <p> <code> &lt;EqualTo&gt;</code> </p> </li> </ol> <p>If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."</p> */
 	export interface AttributeFilter {
-		AndAllFilters?: Array<AttributeFilter>;
-		OrAllFilters?: Array<AttributeFilter>;
+		AndAllFilters?: Array<AttributeFilter> | null;
+		OrAllFilters?: Array<AttributeFilter> | null;
 
 		/** <p>Provides filtering the query results based on document attributes.</p> <p>When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:</p> <p> <code>&lt;AndAllFilters&gt;</code> </p> <ol> <li> <p> <code> &lt;OrAllFilters&gt;</code> </p> </li> <li> <p> <code> &lt;EqualTo&gt;</code> </p> </li> </ol> <p>If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."</p> */
-		NotFilter?: AttributeFilter;
+		NotFilter?: AttributeFilter | null;
 
 		/** A custom attribute value assigned to a document. */
-		EqualsTo?: DocumentAttribute;
+		EqualsTo?: DocumentAttribute | null;
 
 		/** A custom attribute value assigned to a document. */
-		ContainsAll?: DocumentAttribute;
+		ContainsAll?: DocumentAttribute | null;
 
 		/** A custom attribute value assigned to a document. */
-		ContainsAny?: DocumentAttribute;
+		ContainsAny?: DocumentAttribute | null;
 
 		/** A custom attribute value assigned to a document. */
-		GreaterThan?: DocumentAttribute;
+		GreaterThan?: DocumentAttribute | null;
 
 		/** A custom attribute value assigned to a document. */
-		GreaterThanOrEquals?: DocumentAttribute;
+		GreaterThanOrEquals?: DocumentAttribute | null;
 
 		/** A custom attribute value assigned to a document. */
-		LessThan?: DocumentAttribute;
+		LessThan?: DocumentAttribute | null;
 
 		/** A custom attribute value assigned to a document. */
-		LessThanOrEquals?: DocumentAttribute;
+		LessThanOrEquals?: DocumentAttribute | null;
 	}
 
 
 	/** Information about a document attribute */
 	export interface Facet {
-		DocumentAttributeKey?: string;
+		DocumentAttributeKey?: string | null;
 	}
 
 	export interface StartDataSourceSyncJobResponse {
-		ExecutionId?: string;
+		ExecutionId?: string | null;
 	}
 
 	export interface StartDataSourceSyncJobRequest {
@@ -914,8 +914,8 @@ export namespace MyNS {
 	export interface SubmitFeedbackRequest {
 		IndexId: string;
 		QueryId: string;
-		ClickFeedbackItems?: Array<ClickFeedback>;
-		RelevanceFeedbackItems?: Array<RelevanceFeedback>;
+		ClickFeedbackItems?: Array<ClickFeedback> | null;
+		RelevanceFeedbackItems?: Array<RelevanceFeedback> | null;
 	}
 
 
@@ -952,25 +952,25 @@ export namespace MyNS {
 
 	export interface UpdateDataSourceRequest {
 		Id: string;
-		Name?: string;
+		Name?: string | null;
 		IndexId: string;
 
 		/** Configuration information for a Amazon Kendra data source. */
-		Configuration?: DataSourceConfiguration;
-		Description?: string;
-		Schedule?: string;
-		RoleArn?: string;
+		Configuration?: DataSourceConfiguration | null;
+		Description?: string | null;
+		Schedule?: string | null;
+		RoleArn?: string | null;
 	}
 
 	export interface UpdateIndexRequest {
 		Id: string;
-		Name?: string;
-		RoleArn?: string;
-		Description?: string;
-		DocumentMetadataConfigurationUpdates?: Array<DocumentMetadataConfiguration>;
+		Name?: string | null;
+		RoleArn?: string | null;
+		Description?: string | null;
+		DocumentMetadataConfigurationUpdates?: Array<DocumentMetadataConfiguration> | null;
 
 		/** Specifies capacity units configured for your index. You can add and remove capacity units to tune an index to your requirements. */
-		CapacityUnits?: CapacityUnitsConfiguration;
+		CapacityUnits?: CapacityUnitsConfiguration | null;
 	}
 
 	export enum ErrorCode { InternalError = 0, InvalidRequest = 1 }

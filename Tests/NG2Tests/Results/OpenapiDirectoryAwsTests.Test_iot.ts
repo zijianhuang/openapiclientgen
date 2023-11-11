@@ -30,9 +30,9 @@ export namespace MyNS {
 	}
 
 	export interface AssociateTargetsWithJobResponse {
-		jobArn?: string;
-		jobId?: string;
-		description?: string;
+		jobArn?: string | null;
+		jobId?: string | null;
+		description?: string | null;
 	}
 
 	export interface LimitExceededException {
@@ -56,9 +56,9 @@ export namespace MyNS {
 	}
 
 	export interface CancelJobResponse {
-		jobArn?: string;
-		jobId?: string;
-		description?: string;
+		jobArn?: string | null;
+		jobId?: string | null;
+		description?: string | null;
 	}
 
 	export interface InvalidStateTransitionException {
@@ -77,67 +77,67 @@ export namespace MyNS {
 	}
 
 	export interface CreateAuthorizerResponse {
-		authorizerName?: string;
-		authorizerArn?: string;
+		authorizerName?: string | null;
+		authorizerArn?: string | null;
 	}
 
 
 	/** A set of key/value pairs that are used to manage the resource. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface ResourceAlreadyExistsException {
 	}
 
 	export interface CreateBillingGroupResponse {
-		billingGroupName?: string;
-		billingGroupArn?: string;
-		billingGroupId?: string;
+		billingGroupName?: string | null;
+		billingGroupArn?: string | null;
+		billingGroupId?: string | null;
 	}
 
 
 	/** The output from the CreateCertificateFromCsr operation. */
 	export interface CreateCertificateFromCsrResponse {
-		certificateArn?: string;
-		certificateId?: string;
+		certificateArn?: string | null;
+		certificateId?: string | null;
 
 		/**
 		 * The PEM of a certificate.
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		certificatePem?: string;
+		certificatePem?: string | null;
 	}
 
 	export interface CreateDimensionResponse {
-		name?: string;
-		arn?: string;
+		name?: string | null;
+		arn?: string | null;
 	}
 
 	export interface CreateDomainConfigurationResponse {
-		domainConfigurationName?: string;
-		domainConfigurationArn?: string;
+		domainConfigurationName?: string | null;
+		domainConfigurationArn?: string | null;
 	}
 
 	export interface CertificateValidationException {
 	}
 
 	export interface CreateDynamicThingGroupResponse {
-		thingGroupName?: string;
-		thingGroupArn?: string;
-		thingGroupId?: string;
-		indexName?: string;
-		queryString?: string;
-		queryVersion?: string;
+		thingGroupName?: string | null;
+		thingGroupArn?: string | null;
+		thingGroupId?: string | null;
+		indexName?: string | null;
+		queryString?: string | null;
+		queryVersion?: string | null;
 	}
 
 
 	/** The attribute payload. */
 	export interface AttributePayload {
-		attributes?: Attributes;
-		merge?: boolean;
+		attributes?: Attributes | null;
+		merge?: boolean | null;
 	}
 
 	export interface Attributes {
@@ -147,9 +147,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateJobResponse {
-		jobArn?: string;
-		jobId?: string;
-		description?: string;
+		jobArn?: string | null;
+		jobId?: string | null;
+		description?: string | null;
 	}
 
 
@@ -168,8 +168,8 @@ export namespace MyNS {
 
 	/** Allows you to define a criteria to initiate the increase in rate of rollout for a job. */
 	export interface RateIncreaseCriteria {
-		numberOfNotifiedThings?: number;
-		numberOfSucceededThings?: number;
+		numberOfNotifiedThings?: number | null;
+		numberOfSucceededThings?: number | null;
 	}
 
 
@@ -188,30 +188,30 @@ export namespace MyNS {
 
 	/** The output of the CreateKeysAndCertificate operation. */
 	export interface CreateKeysAndCertificateResponse {
-		certificateArn?: string;
-		certificateId?: string;
+		certificateArn?: string | null;
+		certificateId?: string | null;
 
 		/**
 		 * The PEM of a certificate.
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		certificatePem?: string;
+		certificatePem?: string | null;
 
 		/** Describes a key pair. */
-		keyPair?: KeyPair;
+		keyPair?: KeyPair | null;
 	}
 
 
 	/** Describes a key pair. */
 	export interface KeyPair {
-		PublicKey?: string;
-		PrivateKey?: string;
+		PublicKey?: string | null;
+		PrivateKey?: string | null;
 	}
 
 	export interface CreateMitigationActionResponse {
-		actionArn?: string;
-		actionId?: string;
+		actionArn?: string | null;
+		actionId?: string | null;
 	}
 
 
@@ -232,7 +232,7 @@ export namespace MyNS {
 	/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
 	export interface AddThingsToThingGroupParams {
 		thingGroupNames: Array<string>;
-		overrideDynamicGroups?: boolean;
+		overrideDynamicGroups?: boolean | null;
 	}
 
 
@@ -259,11 +259,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateOTAUpdateResponse {
-		otaUpdateId?: string;
-		awsIotJobId?: string;
-		otaUpdateArn?: string;
-		awsIotJobArn?: string;
-		otaUpdateStatus?: CreateOTAUpdateResponseOtaUpdateStatus;
+		otaUpdateId?: string | null;
+		awsIotJobId?: string | null;
+		otaUpdateArn?: string | null;
+		awsIotJobArn?: string | null;
+		otaUpdateStatus?: CreateOTAUpdateResponseOtaUpdateStatus | null;
 	}
 
 	export enum CreateOTAUpdateResponseOtaUpdateStatus { CREATE_PENDING = 0, CREATE_IN_PROGRESS = 1, CREATE_COMPLETE = 2, CREATE_FAILED = 3 }
@@ -273,15 +273,15 @@ export namespace MyNS {
 
 	/** Describes a file to be associated with an OTA update. */
 	export interface OTAUpdateFile {
-		fileName?: string;
-		fileVersion?: string;
+		fileName?: string | null;
+		fileVersion?: string | null;
 
 		/** The location of the OTA update. */
-		fileLocation?: FileLocation;
+		fileLocation?: FileLocation | null;
 
 		/** Describes the method to use when code signing a file. */
-		codeSigning?: CodeSigning;
-		attributes?: AttributesMap;
+		codeSigning?: CodeSigning | null;
+		attributes?: AttributesMap | null;
 	}
 
 
@@ -289,37 +289,37 @@ export namespace MyNS {
 	export interface FileLocation {
 
 		/** Describes a group of files that can be streamed. */
-		stream?: Stream;
+		stream?: Stream | null;
 
 		/** The S3 location. */
-		s3Location?: S3Location;
+		s3Location?: S3Location | null;
 	}
 
 
 	/** Describes a group of files that can be streamed. */
 	export interface Stream {
-		streamId?: string;
-		fileId?: number;
+		streamId?: string | null;
+		fileId?: number | null;
 	}
 
 
 	/** The S3 location. */
 	export interface S3Location {
-		bucket?: string;
-		key?: string;
-		version?: string;
+		bucket?: string | null;
+		key?: string | null;
+		version?: string | null;
 	}
 
 
 	/** Describes the method to use when code signing a file. */
 	export interface CodeSigning {
-		awsSignerJobId?: string;
+		awsSignerJobId?: string | null;
 
 		/** Information required to start a signing job. */
-		startSigningJobParameter?: StartSigningJobParameter;
+		startSigningJobParameter?: StartSigningJobParameter | null;
 
 		/** Describes a custom method used to code sign a file. */
-		customCodeSigning?: CustomCodeSigning;
+		customCodeSigning?: CustomCodeSigning | null;
 	}
 
 
@@ -327,19 +327,19 @@ export namespace MyNS {
 	export interface StartSigningJobParameter {
 
 		/** Describes the code-signing profile. */
-		signingProfileParameter?: SigningProfileParameter;
-		signingProfileName?: string;
+		signingProfileParameter?: SigningProfileParameter | null;
+		signingProfileName?: string | null;
 
 		/** Describes the location of the updated firmware. */
-		destination?: Destination;
+		destination?: Destination | null;
 	}
 
 
 	/** Describes the code-signing profile. */
 	export interface SigningProfileParameter {
-		certificateArn?: string;
-		platform?: string;
-		certificatePathOnDevice?: string;
+		certificateArn?: string | null;
+		platform?: string | null;
+		certificatePathOnDevice?: string | null;
 	}
 
 
@@ -347,14 +347,14 @@ export namespace MyNS {
 	export interface Destination {
 
 		/** Describes the location of updated firmware in S3. */
-		s3Destination?: S3Destination;
+		s3Destination?: S3Destination | null;
 	}
 
 
 	/** Describes the location of updated firmware in S3. */
 	export interface S3Destination {
-		bucket?: string;
-		prefix?: string;
+		bucket?: string | null;
+		prefix?: string | null;
 	}
 
 
@@ -362,25 +362,25 @@ export namespace MyNS {
 	export interface CustomCodeSigning {
 
 		/** Describes the signature for a file. */
-		signature?: CodeSigningSignature;
+		signature?: CodeSigningSignature | null;
 
 		/** Describes the certificate chain being used when code signing a file. */
-		certificateChain?: CodeSigningCertificateChain;
-		hashAlgorithm?: string;
-		signatureAlgorithm?: string;
+		certificateChain?: CodeSigningCertificateChain | null;
+		hashAlgorithm?: string | null;
+		signatureAlgorithm?: string | null;
 	}
 
 
 	/** Describes the signature for a file. */
 	export interface CodeSigningSignature {
-		inlineDocument?: string;
+		inlineDocument?: string | null;
 	}
 
 
 	/** Describes the certificate chain being used when code signing a file. */
 	export interface CodeSigningCertificateChain {
-		certificateName?: string;
-		inlineDocument?: string;
+		certificateName?: string | null;
+		inlineDocument?: string | null;
 	}
 
 	export interface AttributesMap {
@@ -389,10 +389,10 @@ export namespace MyNS {
 
 	/** The output from the CreatePolicy operation. */
 	export interface CreatePolicyResponse {
-		policyName?: string;
-		policyArn?: string;
-		policyDocument?: string;
-		policyVersionId?: string;
+		policyName?: string | null;
+		policyArn?: string | null;
+		policyDocument?: string | null;
+		policyVersionId?: string | null;
 	}
 
 	export interface MalformedPolicyException {
@@ -401,75 +401,75 @@ export namespace MyNS {
 
 	/** The output of the CreatePolicyVersion operation. */
 	export interface CreatePolicyVersionResponse {
-		policyArn?: string;
-		policyDocument?: string;
-		policyVersionId?: string;
-		isDefaultVersion?: boolean;
+		policyArn?: string | null;
+		policyDocument?: string | null;
+		policyVersionId?: string | null;
+		isDefaultVersion?: boolean | null;
 	}
 
 	export interface VersionsLimitExceededException {
 	}
 
 	export interface CreateProvisioningClaimResponse {
-		certificateId?: string;
+		certificateId?: string | null;
 
 		/**
 		 * The PEM of a certificate.
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		certificatePem?: string;
+		certificatePem?: string | null;
 
 		/** Describes a key pair. */
-		keyPair?: KeyPair;
-		expiration?: Date;
+		keyPair?: KeyPair | null;
+		expiration?: Date | null;
 	}
 
 	export interface CreateProvisioningTemplateResponse {
-		templateArn?: string;
-		templateName?: string;
-		defaultVersionId?: number;
+		templateArn?: string | null;
+		templateName?: string | null;
+		defaultVersionId?: number | null;
 	}
 
 	export interface CreateProvisioningTemplateVersionResponse {
-		templateArn?: string;
-		templateName?: string;
-		versionId?: number;
-		isDefaultVersion?: boolean;
+		templateArn?: string | null;
+		templateName?: string | null;
+		versionId?: number | null;
+		isDefaultVersion?: boolean | null;
 	}
 
 	export interface CreateRoleAliasResponse {
-		roleAlias?: string;
-		roleAliasArn?: string;
+		roleAlias?: string | null;
+		roleAliasArn?: string | null;
 	}
 
 	export interface CreateScheduledAuditResponse {
-		scheduledAuditArn?: string;
+		scheduledAuditArn?: string | null;
 	}
 
 	export interface CreateSecurityProfileResponse {
-		securityProfileName?: string;
-		securityProfileArn?: string;
+		securityProfileName?: string | null;
+		securityProfileArn?: string | null;
 	}
 
 
 	/** A Device Defender security profile behavior. */
 	export interface Behavior {
 		name: string;
-		metric?: string;
+		metric?: string | null;
 
 		/** The dimension of a metric. */
-		metricDimension?: MetricDimension;
+		metricDimension?: MetricDimension | null;
 
 		/** The criteria by which the behavior is determined to be normal. */
-		criteria?: BehaviorCriteria;
+		criteria?: BehaviorCriteria | null;
 	}
 
 
 	/** The dimension of a metric. */
 	export interface MetricDimension {
 		dimensionName: string;
-		operator?: MetricDimensionOperator;
+		operator?: MetricDimensionOperator | null;
 	}
 
 	export enum MetricDimensionOperator { IN = 0, NOT_IN = 1 }
@@ -477,16 +477,16 @@ export namespace MyNS {
 
 	/** The criteria by which the behavior is determined to be normal. */
 	export interface BehaviorCriteria {
-		comparisonOperator?: BehaviorCriteriaComparisonOperator;
+		comparisonOperator?: BehaviorCriteriaComparisonOperator | null;
 
 		/** The value to be compared with the <code>metric</code>. */
-		value?: MetricValue;
-		durationSeconds?: number;
-		consecutiveDatapointsToAlarm?: number;
-		consecutiveDatapointsToClear?: number;
+		value?: MetricValue | null;
+		durationSeconds?: number | null;
+		consecutiveDatapointsToAlarm?: number | null;
+		consecutiveDatapointsToClear?: number | null;
 
 		/** A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior. */
-		statisticalThreshold?: StatisticalThreshold;
+		statisticalThreshold?: StatisticalThreshold | null;
 	}
 
 	export enum BehaviorCriteriaComparisonOperator { less_than = 0, less_than_equals = 1, greater_than = 2, greater_than_equals = 3, in_cidr_set = 4, not_in_cidr_set = 5, in_port_set = 6, not_in_port_set = 7 }
@@ -494,15 +494,15 @@ export namespace MyNS {
 
 	/** The value to be compared with the <code>metric</code>. */
 	export interface MetricValue {
-		count?: number;
-		cidrs?: Array<string>;
-		ports?: Array<number>;
+		count?: number | null;
+		cidrs?: Array<string> | null;
+		ports?: Array<number> | null;
 	}
 
 
 	/** A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior. */
 	export interface StatisticalThreshold {
-		statistic?: string;
+		statistic?: string | null;
 	}
 
 
@@ -518,45 +518,45 @@ export namespace MyNS {
 		metric: string;
 
 		/** The dimension of a metric. */
-		metricDimension?: MetricDimension;
+		metricDimension?: MetricDimension | null;
 	}
 
 	export interface CreateStreamResponse {
-		streamId?: string;
-		streamArn?: string;
-		description?: string;
-		streamVersion?: number;
+		streamId?: string | null;
+		streamArn?: string | null;
+		description?: string | null;
+		streamVersion?: number | null;
 	}
 
 
 	/** Represents a file to stream. */
 	export interface StreamFile {
-		fileId?: number;
+		fileId?: number | null;
 
 		/** The S3 location. */
-		s3Location?: S3Location;
+		s3Location?: S3Location | null;
 	}
 
 
 	/** The output of the CreateThing operation. */
 	export interface CreateThingResponse {
-		thingName?: string;
-		thingArn?: string;
-		thingId?: string;
+		thingName?: string | null;
+		thingArn?: string | null;
+		thingId?: string | null;
 	}
 
 	export interface CreateThingGroupResponse {
-		thingGroupName?: string;
-		thingGroupArn?: string;
-		thingGroupId?: string;
+		thingGroupName?: string | null;
+		thingGroupArn?: string | null;
+		thingGroupId?: string | null;
 	}
 
 
 	/** The output of the CreateThingType operation. */
 	export interface CreateThingTypeResponse {
-		thingTypeName?: string;
-		thingTypeArn?: string;
-		thingTypeId?: string;
+		thingTypeName?: string | null;
+		thingTypeArn?: string | null;
+		thingTypeId?: string | null;
 	}
 
 
@@ -564,61 +564,61 @@ export namespace MyNS {
 	export interface Action {
 
 		/** <p>Describes an action to write to a DynamoDB table.</p> <p>The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.</p> <p>The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: ${<i>sql-expression</i>}.</p> <p>You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:</p> <p> <code>"hashKeyValue": "${topic(3)}"</code> </p> <p>The following field uses the timestamp:</p> <p> <code>"rangeKeyValue": "${timestamp()}"</code> </p> */
-		dynamoDB?: DynamoDBAction;
+		dynamoDB?: DynamoDBAction | null;
 
 		/** <p>Describes an action to write to a DynamoDB table.</p> <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p> */
-		dynamoDBv2?: DynamoDBv2Action;
+		dynamoDBv2?: DynamoDBv2Action | null;
 
 		/** Describes an action to invoke a Lambda function. */
-		lambda?: LambdaAction;
+		lambda?: LambdaAction | null;
 
 		/** Describes an action to publish to an Amazon SNS topic. */
-		sns?: SnsAction;
+		sns?: SnsAction | null;
 
 		/** Describes an action to publish data to an Amazon SQS queue. */
-		sqs?: SqsAction;
+		sqs?: SqsAction | null;
 
 		/** Describes an action to write data to an Amazon Kinesis stream. */
-		kinesis?: KinesisAction;
+		kinesis?: KinesisAction | null;
 
 		/** Describes an action to republish to another topic. */
-		republish?: RepublishAction;
+		republish?: RepublishAction | null;
 
 		/** Describes an action to write data to an Amazon S3 bucket. */
-		s3?: S3Action;
+		s3?: S3Action | null;
 
 		/** Describes an action that writes data to an Amazon Kinesis Firehose stream. */
-		firehose?: FirehoseAction;
+		firehose?: FirehoseAction | null;
 
 		/** Describes an action that captures a CloudWatch metric. */
-		cloudwatchMetric?: CloudwatchMetricAction;
+		cloudwatchMetric?: CloudwatchMetricAction | null;
 
 		/** Describes an action that updates a CloudWatch alarm. */
-		cloudwatchAlarm?: CloudwatchAlarmAction;
+		cloudwatchAlarm?: CloudwatchAlarmAction | null;
 
 		/** Describes an action that sends data to CloudWatch Logs. */
-		cloudwatchLogs?: CloudwatchLogsAction;
+		cloudwatchLogs?: CloudwatchLogsAction | null;
 
 		/** Describes an action that writes data to an Amazon Elasticsearch Service domain. */
-		elasticsearch?: ElasticsearchAction;
+		elasticsearch?: ElasticsearchAction | null;
 
 		/** Describes an action to write a message to a Salesforce IoT Cloud Input Stream. */
-		salesforce?: SalesforceAction;
+		salesforce?: SalesforceAction | null;
 
 		/** Sends message data to an AWS IoT Analytics channel. */
-		iotAnalytics?: IotAnalyticsAction;
+		iotAnalytics?: IotAnalyticsAction | null;
 
 		/** Sends an input to an AWS IoT Events detector. */
-		iotEvents?: IotEventsAction;
+		iotEvents?: IotEventsAction | null;
 
 		/** Describes an action to send data from an MQTT message that triggered the rule to AWS IoT SiteWise asset properties. */
-		iotSiteWise?: IotSiteWiseAction;
+		iotSiteWise?: IotSiteWiseAction | null;
 
 		/** Starts execution of a Step Functions state machine. */
-		stepFunctions?: StepFunctionsAction;
+		stepFunctions?: StepFunctionsAction | null;
 
 		/** Send data to an HTTPS endpoint. */
-		http?: HttpAction;
+		http?: HttpAction | null;
 	}
 
 
@@ -626,14 +626,14 @@ export namespace MyNS {
 	export interface DynamoDBAction {
 		tableName: string;
 		roleArn: string;
-		operation?: string;
+		operation?: string | null;
 		hashKeyField: string;
 		hashKeyValue: string;
-		hashKeyType?: DynamoDBActionHashKeyType;
-		rangeKeyField?: string;
-		rangeKeyValue?: string;
-		rangeKeyType?: DynamoDBActionHashKeyType;
-		payloadField?: string;
+		hashKeyType?: DynamoDBActionHashKeyType | null;
+		rangeKeyField?: string | null;
+		rangeKeyValue?: string | null;
+		rangeKeyType?: DynamoDBActionHashKeyType | null;
+		payloadField?: string | null;
 	}
 
 	export enum DynamoDBActionHashKeyType { STRING = 0, NUMBER = 1 }
@@ -667,7 +667,7 @@ export namespace MyNS {
 	export interface SnsAction {
 		targetArn: string;
 		roleArn: string;
-		messageFormat?: SnsActionMessageFormat;
+		messageFormat?: SnsActionMessageFormat | null;
 	}
 
 	export enum SnsActionMessageFormat { RAW = 0, JSON = 1 }
@@ -677,7 +677,7 @@ export namespace MyNS {
 	export interface SqsAction {
 		roleArn: string;
 		queueUrl: string;
-		useBase64?: boolean;
+		useBase64?: boolean | null;
 	}
 
 
@@ -685,7 +685,7 @@ export namespace MyNS {
 	export interface KinesisAction {
 		roleArn: string;
 		streamName: string;
-		partitionKey?: string;
+		partitionKey?: string | null;
 	}
 
 
@@ -693,7 +693,7 @@ export namespace MyNS {
 	export interface RepublishAction {
 		roleArn: string;
 		topic: string;
-		qos?: number;
+		qos?: number | null;
 	}
 
 
@@ -702,7 +702,7 @@ export namespace MyNS {
 		roleArn: string;
 		bucketName: string;
 		key: string;
-		cannedAcl?: S3ActionCannedAcl;
+		cannedAcl?: S3ActionCannedAcl | null;
 	}
 
 	export enum S3ActionCannedAcl { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6, log_delivery_write = 7 }
@@ -712,7 +712,7 @@ export namespace MyNS {
 	export interface FirehoseAction {
 		roleArn: string;
 		deliveryStreamName: string;
-		separator?: string;
+		separator?: string | null;
 	}
 
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 		metricName: string;
 		metricValue: string;
 		metricUnit: string;
-		metricTimestamp?: string;
+		metricTimestamp?: string | null;
 	}
 
 
@@ -762,16 +762,16 @@ export namespace MyNS {
 
 	/** Sends message data to an AWS IoT Analytics channel. */
 	export interface IotAnalyticsAction {
-		channelArn?: string;
-		channelName?: string;
-		roleArn?: string;
+		channelArn?: string | null;
+		channelName?: string | null;
+		roleArn?: string | null;
 	}
 
 
 	/** Sends an input to an AWS IoT Events detector. */
 	export interface IotEventsAction {
 		inputName: string;
-		messageId?: string;
+		messageId?: string | null;
 		roleArn: string;
 	}
 
@@ -785,10 +785,10 @@ export namespace MyNS {
 
 	/** An asset property value entry containing the following information. */
 	export interface PutAssetPropertyValueEntry {
-		entryId?: string;
-		assetId?: string;
-		propertyId?: string;
-		propertyAlias?: string;
+		entryId?: string | null;
+		assetId?: string | null;
+		propertyId?: string | null;
+		propertyAlias?: string | null;
 		propertyValues: Array<AssetPropertyValue>;
 	}
 
@@ -807,29 +807,29 @@ export namespace MyNS {
 		 * Required
 		 */
 		timestamp: AssetPropertyTimestamp;
-		quality?: string;
+		quality?: string | null;
 	}
 
 
 	/** Contains an asset property value (of a single type). */
 	export interface AssetPropertyVariant {
-		stringValue?: string;
-		integerValue?: string;
-		doubleValue?: string;
-		booleanValue?: string;
+		stringValue?: string | null;
+		integerValue?: string | null;
+		doubleValue?: string | null;
+		booleanValue?: string | null;
 	}
 
 
 	/** An asset property timestamp entry containing the following information. */
 	export interface AssetPropertyTimestamp {
 		timeInSeconds: string;
-		offsetInNanos?: string;
+		offsetInNanos?: string | null;
 	}
 
 
 	/** Starts execution of a Step Functions state machine. */
 	export interface StepFunctionsAction {
-		executionNamePrefix?: string;
+		executionNamePrefix?: string | null;
 		stateMachineName: string;
 		roleArn: string;
 	}
@@ -838,11 +838,11 @@ export namespace MyNS {
 	/** Send data to an HTTPS endpoint. */
 	export interface HttpAction {
 		url: string;
-		confirmationUrl?: string;
-		headers?: Array<HttpActionHeader>;
+		confirmationUrl?: string | null;
+		headers?: Array<HttpActionHeader> | null;
 
 		/** The authorization method used to send messages. */
-		auth?: HttpAuthorization;
+		auth?: HttpAuthorization | null;
 	}
 
 
@@ -857,7 +857,7 @@ export namespace MyNS {
 	export interface HttpAuthorization {
 
 		/** Use Sig V4 authorization. */
-		sigv4?: SigV4Authorization;
+		sigv4?: SigV4Authorization | null;
 	}
 
 
@@ -874,18 +874,18 @@ export namespace MyNS {
 	export interface CreateTopicRuleDestinationResponse {
 
 		/** A topic rule destination. */
-		topicRuleDestination?: TopicRuleDestination;
+		topicRuleDestination?: TopicRuleDestination | null;
 	}
 
 
 	/** A topic rule destination. */
 	export interface TopicRuleDestination {
-		arn?: string;
-		status?: TopicRuleDestinationStatus;
-		statusReason?: string;
+		arn?: string | null;
+		status?: TopicRuleDestinationStatus | null;
+		statusReason?: string | null;
 
 		/** HTTP URL destination properties. */
-		httpUrlProperties?: HttpUrlDestinationProperties;
+		httpUrlProperties?: HttpUrlDestinationProperties | null;
 	}
 
 	export enum TopicRuleDestinationStatus { ENABLED = 0, IN_PROGRESS = 1, DISABLED = 2, ERROR = 3 }
@@ -893,7 +893,7 @@ export namespace MyNS {
 
 	/** HTTP URL destination properties. */
 	export interface HttpUrlDestinationProperties {
-		confirmationUrl?: string;
+		confirmationUrl?: string | null;
 	}
 
 
@@ -982,9 +982,9 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAccountAuditConfigurationResponse {
-		roleArn?: string;
-		auditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations;
-		auditCheckConfigurations?: AuditCheckConfigurations;
+		roleArn?: string | null;
+		auditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations | null;
+		auditCheckConfigurations?: AuditCheckConfigurations | null;
 	}
 
 	export interface AuditNotificationTargetConfigurations {
@@ -996,26 +996,26 @@ export namespace MyNS {
 	export interface DescribeAuditFindingResponse {
 
 		/** The findings (results) of the audit. */
-		finding?: AuditFinding;
+		finding?: AuditFinding | null;
 	}
 
 
 	/** The findings (results) of the audit. */
 	export interface AuditFinding {
-		findingId?: string;
-		taskId?: string;
+		findingId?: string | null;
+		taskId?: string | null;
 
 		/** An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
-		checkName?: string;
-		taskStartTime?: Date;
-		findingTime?: Date;
-		severity?: AuditFindingSeverity;
+		checkName?: string | null;
+		taskStartTime?: Date | null;
+		findingTime?: Date | null;
+		severity?: AuditFindingSeverity | null;
 
 		/** Information about the resource that was noncompliant with the audit check. */
-		nonCompliantResource?: NonCompliantResource;
-		relatedResources?: Array<RelatedResource>;
-		reasonForNonCompliance?: string;
-		reasonForNonComplianceCode?: string;
+		nonCompliantResource?: NonCompliantResource | null;
+		relatedResources?: Array<RelatedResource> | null;
+		reasonForNonCompliance?: string | null;
+		reasonForNonComplianceCode?: string | null;
 	}
 
 	export enum AuditFindingSeverity { CRITICAL = 0, HIGH = 1, MEDIUM = 2, LOW = 3 }
@@ -1023,11 +1023,11 @@ export namespace MyNS {
 
 	/** Information about the resource that was noncompliant with the audit check. */
 	export interface NonCompliantResource {
-		resourceType?: NonCompliantResourceResourceType;
+		resourceType?: NonCompliantResourceResourceType | null;
 
 		/** Information that identifies the noncompliant resource. */
-		resourceIdentifier?: ResourceIdentifier;
-		additionalInfo?: StringMap;
+		resourceIdentifier?: ResourceIdentifier | null;
+		additionalInfo?: StringMap | null;
 	}
 
 	export enum NonCompliantResourceResourceType { DEVICE_CERTIFICATE = 0, CA_CERTIFICATE = 1, IOT_POLICY = 2, COGNITO_IDENTITY_POOL = 3, CLIENT_ID = 4, ACCOUNT_SETTINGS = 5, ROLE_ALIAS = 6, IAM_ROLE = 7 }
@@ -1035,23 +1035,23 @@ export namespace MyNS {
 
 	/** Information that identifies the noncompliant resource. */
 	export interface ResourceIdentifier {
-		deviceCertificateId?: string;
-		caCertificateId?: string;
-		cognitoIdentityPoolId?: string;
-		clientId?: string;
+		deviceCertificateId?: string | null;
+		caCertificateId?: string | null;
+		cognitoIdentityPoolId?: string | null;
+		clientId?: string | null;
 
 		/** Information about the version of the policy associated with the resource. */
-		policyVersionIdentifier?: PolicyVersionIdentifier;
-		account?: string;
-		iamRoleArn?: string;
-		roleAliasArn?: string;
+		policyVersionIdentifier?: PolicyVersionIdentifier | null;
+		account?: string | null;
+		iamRoleArn?: string | null;
+		roleAliasArn?: string | null;
 	}
 
 
 	/** Information about the version of the policy associated with the resource. */
 	export interface PolicyVersionIdentifier {
-		policyName?: string;
-		policyVersionId?: string;
+		policyName?: string | null;
+		policyVersionId?: string | null;
 	}
 
 	export interface StringMap {
@@ -1060,23 +1060,23 @@ export namespace MyNS {
 
 	/** Information about a related resource. */
 	export interface RelatedResource {
-		resourceType?: NonCompliantResourceResourceType;
+		resourceType?: NonCompliantResourceResourceType | null;
 
 		/** Information that identifies the noncompliant resource. */
-		resourceIdentifier?: ResourceIdentifier;
-		additionalInfo?: StringMap;
+		resourceIdentifier?: ResourceIdentifier | null;
+		additionalInfo?: StringMap | null;
 	}
 
 	export interface DescribeAuditMitigationActionsTaskResponse {
-		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus;
-		startTime?: Date;
-		endTime?: Date;
-		taskStatistics?: AuditMitigationActionsTaskStatistics;
+		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		taskStatistics?: AuditMitigationActionsTaskStatistics | null;
 
 		/** Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears. */
-		target?: AuditMitigationActionsTaskTarget;
-		auditCheckToActionsMapping?: AuditCheckToActionsMapping;
-		actionsDefinition?: Array<MitigationAction>;
+		target?: AuditMitigationActionsTaskTarget | null;
+		auditCheckToActionsMapping?: AuditCheckToActionsMapping | null;
+		actionsDefinition?: Array<MitigationAction> | null;
 	}
 
 	export enum DescribeAuditMitigationActionsTaskResponseTaskStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, CANCELED = 3 }
@@ -1087,9 +1087,9 @@ export namespace MyNS {
 
 	/** Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears. */
 	export interface AuditMitigationActionsTaskTarget {
-		auditTaskId?: string;
-		findingIds?: Array<string>;
-		auditCheckToReasonCodeFilter?: AuditCheckToReasonCodeFilter;
+		auditTaskId?: string | null;
+		findingIds?: Array<string> | null;
+		auditCheckToReasonCodeFilter?: AuditCheckToReasonCodeFilter | null;
 	}
 
 	export interface AuditCheckToReasonCodeFilter {
@@ -1101,12 +1101,12 @@ export namespace MyNS {
 
 	/** Describes which changes should be applied as part of a mitigation action. */
 	export interface MitigationAction {
-		name?: string;
-		id?: string;
-		roleArn?: string;
+		name?: string | null;
+		id?: string | null;
+		roleArn?: string | null;
 
 		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
-		actionParams?: MitigationActionParams;
+		actionParams?: MitigationActionParams | null;
 	}
 
 
@@ -1114,33 +1114,33 @@ export namespace MyNS {
 	export interface MitigationActionParams {
 
 		/** Parameters to define a mitigation action that changes the state of the device certificate to inactive. */
-		updateDeviceCertificateParams?: UpdateDeviceCertificateParams;
+		updateDeviceCertificateParams?: UpdateDeviceCertificateParams | null;
 
 		/** Parameters to define a mitigation action that changes the state of the CA certificate to inactive. */
-		updateCACertificateParams?: UpdateCACertificateParams;
+		updateCACertificateParams?: UpdateCACertificateParams | null;
 
 		/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
-		addThingsToThingGroupParams?: AddThingsToThingGroupParams;
+		addThingsToThingGroupParams?: AddThingsToThingGroupParams | null;
 
 		/** Parameters to define a mitigation action that adds a blank policy to restrict permissions. */
-		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams;
+		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams | null;
 
 		/** Parameters used when defining a mitigation action that enable AWS IoT logging. */
-		enableIoTLoggingParams?: EnableIoTLoggingParams;
+		enableIoTLoggingParams?: EnableIoTLoggingParams | null;
 
 		/** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages. */
-		publishFindingToSnsParams?: PublishFindingToSnsParams;
+		publishFindingToSnsParams?: PublishFindingToSnsParams | null;
 	}
 
 	export interface DescribeAuditTaskResponse {
-		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus;
-		taskType?: DescribeAuditTaskResponseTaskType;
-		taskStartTime?: Date;
+		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus | null;
+		taskType?: DescribeAuditTaskResponseTaskType | null;
+		taskStartTime?: Date | null;
 
 		/** Statistics for the checks performed during the audit. */
-		taskStatistics?: TaskStatistics;
-		scheduledAuditName?: string;
-		auditDetails?: AuditDetails;
+		taskStatistics?: TaskStatistics | null;
+		scheduledAuditName?: string | null;
+		auditDetails?: AuditDetails | null;
 	}
 
 	export enum DescribeAuditTaskResponseTaskType { ON_DEMAND_AUDIT_TASK = 0, SCHEDULED_AUDIT_TASK = 1 }
@@ -1148,13 +1148,13 @@ export namespace MyNS {
 
 	/** Statistics for the checks performed during the audit. */
 	export interface TaskStatistics {
-		totalChecks?: number;
-		inProgressChecks?: number;
-		waitingForDataCollectionChecks?: number;
-		compliantChecks?: number;
-		nonCompliantChecks?: number;
-		failedChecks?: number;
-		canceledChecks?: number;
+		totalChecks?: number | null;
+		inProgressChecks?: number | null;
+		waitingForDataCollectionChecks?: number | null;
+		compliantChecks?: number | null;
+		nonCompliantChecks?: number | null;
+		failedChecks?: number | null;
+		canceledChecks?: number | null;
 	}
 
 	export interface AuditDetails {
@@ -1163,21 +1163,21 @@ export namespace MyNS {
 	export interface DescribeAuthorizerResponse {
 
 		/** The authorizer description. */
-		authorizerDescription?: AuthorizerDescription;
+		authorizerDescription?: AuthorizerDescription | null;
 	}
 
 
 	/** The authorizer description. */
 	export interface AuthorizerDescription {
-		authorizerName?: string;
-		authorizerArn?: string;
-		authorizerFunctionArn?: string;
-		tokenKeyName?: string;
-		tokenSigningPublicKeys?: PublicKeyMap;
-		status?: AuthorizerDescriptionStatus;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		signingDisabled?: boolean;
+		authorizerName?: string | null;
+		authorizerArn?: string | null;
+		authorizerFunctionArn?: string | null;
+		tokenKeyName?: string | null;
+		tokenSigningPublicKeys?: PublicKeyMap | null;
+		status?: AuthorizerDescriptionStatus | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		signingDisabled?: boolean | null;
 	}
 
 	export interface PublicKeyMap {
@@ -1186,28 +1186,28 @@ export namespace MyNS {
 	export enum AuthorizerDescriptionStatus { ACTIVE = 0, INACTIVE = 1 }
 
 	export interface DescribeBillingGroupResponse {
-		billingGroupName?: string;
-		billingGroupId?: string;
-		billingGroupArn?: string;
-		version?: number;
+		billingGroupName?: string | null;
+		billingGroupId?: string | null;
+		billingGroupArn?: string | null;
+		version?: number | null;
 
 		/** The properties of a billing group. */
-		billingGroupProperties?: BillingGroupProperties;
+		billingGroupProperties?: BillingGroupProperties | null;
 
 		/** Additional information about the billing group. */
-		billingGroupMetadata?: BillingGroupMetadata;
+		billingGroupMetadata?: BillingGroupMetadata | null;
 	}
 
 
 	/** The properties of a billing group. */
 	export interface BillingGroupProperties {
-		billingGroupDescription?: string;
+		billingGroupDescription?: string | null;
 	}
 
 
 	/** Additional information about the billing group. */
 	export interface BillingGroupMetadata {
-		creationDate?: Date;
+		creationDate?: Date | null;
 	}
 
 
@@ -1215,34 +1215,34 @@ export namespace MyNS {
 	export interface DescribeCACertificateResponse {
 
 		/** Describes a CA certificate. */
-		certificateDescription?: CACertificateDescription;
+		certificateDescription?: CACertificateDescription | null;
 
 		/** The registration configuration. */
-		registrationConfig?: RegistrationConfig;
+		registrationConfig?: RegistrationConfig | null;
 	}
 
 
 	/** Describes a CA certificate. */
 	export interface CACertificateDescription {
-		certificateArn?: string;
-		certificateId?: string;
-		status?: AuthorizerDescriptionStatus;
+		certificateArn?: string | null;
+		certificateId?: string | null;
+		status?: AuthorizerDescriptionStatus | null;
 
 		/**
 		 * The PEM of a certificate.
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		certificatePem?: string;
-		ownedBy?: string;
-		creationDate?: Date;
-		autoRegistrationStatus?: CACertificateDescriptionAutoRegistrationStatus;
-		lastModifiedDate?: Date;
-		customerVersion?: number;
-		generationId?: string;
+		certificatePem?: string | null;
+		ownedBy?: string | null;
+		creationDate?: Date | null;
+		autoRegistrationStatus?: CACertificateDescriptionAutoRegistrationStatus | null;
+		lastModifiedDate?: Date | null;
+		customerVersion?: number | null;
+		generationId?: string | null;
 
 		/** When the certificate is valid. */
-		validity?: CertificateValidity;
+		validity?: CertificateValidity | null;
 	}
 
 	export enum CACertificateDescriptionAutoRegistrationStatus { ENABLE = 0, DISABLE = 1 }
@@ -1250,15 +1250,15 @@ export namespace MyNS {
 
 	/** When the certificate is valid. */
 	export interface CertificateValidity {
-		notBefore?: Date;
-		notAfter?: Date;
+		notBefore?: Date | null;
+		notAfter?: Date | null;
 	}
 
 
 	/** The registration configuration. */
 	export interface RegistrationConfig {
-		templateBody?: string;
-		roleArn?: string;
+		templateBody?: string | null;
+		roleArn?: string | null;
 	}
 
 
@@ -1266,36 +1266,36 @@ export namespace MyNS {
 	export interface DescribeCertificateResponse {
 
 		/** Describes a certificate. */
-		certificateDescription?: CertificateDescription;
+		certificateDescription?: CertificateDescription | null;
 	}
 
 
 	/** Describes a certificate. */
 	export interface CertificateDescription {
-		certificateArn?: string;
-		certificateId?: string;
-		caCertificateId?: string;
-		status?: CertificateDescriptionStatus;
+		certificateArn?: string | null;
+		certificateId?: string | null;
+		caCertificateId?: string | null;
+		status?: CertificateDescriptionStatus | null;
 
 		/**
 		 * The PEM of a certificate.
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		certificatePem?: string;
-		ownedBy?: string;
-		previousOwnedBy?: string;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		customerVersion?: number;
+		certificatePem?: string | null;
+		ownedBy?: string | null;
+		previousOwnedBy?: string | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		customerVersion?: number | null;
 
 		/** Data used to transfer a certificate to an AWS account. */
-		transferData?: TransferData;
-		generationId?: string;
+		transferData?: TransferData | null;
+		generationId?: string | null;
 
 		/** When the certificate is valid. */
-		validity?: CertificateValidity;
-		certificateMode?: CertificateDescriptionCertificateMode;
+		validity?: CertificateValidity | null;
+		certificateMode?: CertificateDescriptionCertificateMode | null;
 	}
 
 	export enum CertificateDescriptionStatus { ACTIVE = 0, INACTIVE = 1, REVOKED = 2, PENDING_TRANSFER = 3, REGISTER_INACTIVE = 4, PENDING_ACTIVATION = 5 }
@@ -1303,11 +1303,11 @@ export namespace MyNS {
 
 	/** Data used to transfer a certificate to an AWS account. */
 	export interface TransferData {
-		transferMessage?: string;
-		rejectReason?: string;
-		transferDate?: Date;
-		acceptDate?: Date;
-		rejectDate?: Date;
+		transferMessage?: string | null;
+		rejectReason?: string | null;
+		transferDate?: Date | null;
+		acceptDate?: Date | null;
+		rejectDate?: Date | null;
 	}
 
 	export enum CertificateDescriptionCertificateMode { DEFAULT = 0, SNI_ONLY = 1 }
@@ -1315,39 +1315,39 @@ export namespace MyNS {
 	export interface DescribeDefaultAuthorizerResponse {
 
 		/** The authorizer description. */
-		authorizerDescription?: AuthorizerDescription;
+		authorizerDescription?: AuthorizerDescription | null;
 	}
 
 	export interface DescribeDimensionResponse {
-		name?: string;
-		arn?: string;
-		type?: DescribeDimensionResponseType;
-		stringValues?: Array<string>;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
+		name?: string | null;
+		arn?: string | null;
+		type?: DescribeDimensionResponseType | null;
+		stringValues?: Array<string> | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
 	}
 
 	export enum DescribeDimensionResponseType { TOPIC_FILTER = 0 }
 
 	export interface DescribeDomainConfigurationResponse {
-		domainConfigurationName?: string;
-		domainConfigurationArn?: string;
-		domainName?: string;
-		serverCertificates?: Array<ServerCertificateSummary>;
+		domainConfigurationName?: string | null;
+		domainConfigurationArn?: string | null;
+		domainName?: string | null;
+		serverCertificates?: Array<ServerCertificateSummary> | null;
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: AuthorizerConfig;
-		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus;
-		serviceType?: DescribeDomainConfigurationResponseServiceType;
-		domainType?: DescribeDomainConfigurationResponseDomainType;
+		authorizerConfig?: AuthorizerConfig | null;
+		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus | null;
+		serviceType?: DescribeDomainConfigurationResponseServiceType | null;
+		domainType?: DescribeDomainConfigurationResponseDomainType | null;
 	}
 
 
 	/** An object that contains information about a server certificate. */
 	export interface ServerCertificateSummary {
-		serverCertificateArn?: string;
-		serverCertificateStatus?: ServerCertificateSummaryServerCertificateStatus;
-		serverCertificateStatusDetail?: string;
+		serverCertificateArn?: string | null;
+		serverCertificateStatus?: ServerCertificateSummaryServerCertificateStatus | null;
+		serverCertificateStatusDetail?: string | null;
 	}
 
 	export enum ServerCertificateSummaryServerCertificateStatus { INVALID = 0, VALID = 1 }
@@ -1355,8 +1355,8 @@ export namespace MyNS {
 
 	/** An object that specifies the authorization service for a domain. */
 	export interface AuthorizerConfig {
-		defaultAuthorizerName?: string;
-		allowAuthorizerOverride?: boolean;
+		defaultAuthorizerName?: string | null;
+		allowAuthorizerOverride?: boolean | null;
 	}
 
 	export enum DescribeDomainConfigurationResponseDomainConfigurationStatus { ENABLED = 0, DISABLED = 1 }
@@ -1368,63 +1368,63 @@ export namespace MyNS {
 
 	/** The output from the DescribeEndpoint operation. */
 	export interface DescribeEndpointResponse {
-		endpointAddress?: string;
+		endpointAddress?: string | null;
 	}
 
 	export interface DescribeEventConfigurationsResponse {
-		eventConfigurations?: EventConfigurations;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
+		eventConfigurations?: EventConfigurations | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
 	}
 
 	export interface EventConfigurations {
 	}
 
 	export interface DescribeIndexResponse {
-		indexName?: string;
-		indexStatus?: DescribeIndexResponseIndexStatus;
-		schema?: string;
+		indexName?: string | null;
+		indexStatus?: DescribeIndexResponseIndexStatus | null;
+		schema?: string | null;
 	}
 
 	export enum DescribeIndexResponseIndexStatus { ACTIVE = 0, BUILDING = 1, REBUILDING = 2 }
 
 	export interface DescribeJobResponse {
-		documentSource?: string;
+		documentSource?: string | null;
 
 		/** The <code>Job</code> object contains details about a job. */
-		job?: Job;
+		job?: Job | null;
 	}
 
 
 	/** The <code>Job</code> object contains details about a job. */
 	export interface Job {
-		jobArn?: string;
-		jobId?: string;
-		targetSelection?: JobTargetSelection;
-		status?: JobStatus;
-		forceCanceled?: boolean;
-		reasonCode?: string;
-		comment?: string;
-		targets?: Array<string>;
-		description?: string;
+		jobArn?: string | null;
+		jobId?: string | null;
+		targetSelection?: JobTargetSelection | null;
+		status?: JobStatus | null;
+		forceCanceled?: boolean | null;
+		reasonCode?: string | null;
+		comment?: string | null;
+		targets?: Array<string> | null;
+		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: PresignedUrlConfig;
+		presignedUrlConfig?: PresignedUrlConfig | null;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
+		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig | null;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: AbortConfig;
-		createdAt?: Date;
-		lastUpdatedAt?: Date;
-		completedAt?: Date;
+		abortConfig?: AbortConfig | null;
+		createdAt?: Date | null;
+		lastUpdatedAt?: Date | null;
+		completedAt?: Date | null;
 
 		/** The job process details. */
-		jobProcessDetails?: JobProcessDetails;
+		jobProcessDetails?: JobProcessDetails | null;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: TimeoutConfig;
+		timeoutConfig?: TimeoutConfig | null;
 	}
 
 	export enum JobTargetSelection { CONTINUOUS = 0, SNAPSHOT = 1 }
@@ -1434,17 +1434,17 @@ export namespace MyNS {
 
 	/** Configuration for pre-signed S3 URLs. */
 	export interface PresignedUrlConfig {
-		roleArn?: string;
-		expiresInSec?: number;
+		roleArn?: string | null;
+		expiresInSec?: number | null;
 	}
 
 
 	/** Allows you to create a staged rollout of a job. */
 	export interface JobExecutionsRolloutConfig {
-		maximumPerMinute?: number;
+		maximumPerMinute?: number | null;
 
 		/** Allows you to create an exponential rate of rollout for a job. */
-		exponentialRate?: ExponentialRolloutRate;
+		exponentialRate?: ExponentialRolloutRate | null;
 	}
 
 
@@ -1456,45 +1456,45 @@ export namespace MyNS {
 
 	/** The job process details. */
 	export interface JobProcessDetails {
-		processingTargets?: Array<string>;
-		numberOfCanceledThings?: number;
-		numberOfSucceededThings?: number;
-		numberOfFailedThings?: number;
-		numberOfRejectedThings?: number;
-		numberOfQueuedThings?: number;
-		numberOfInProgressThings?: number;
-		numberOfRemovedThings?: number;
-		numberOfTimedOutThings?: number;
+		processingTargets?: Array<string> | null;
+		numberOfCanceledThings?: number | null;
+		numberOfSucceededThings?: number | null;
+		numberOfFailedThings?: number | null;
+		numberOfRejectedThings?: number | null;
+		numberOfQueuedThings?: number | null;
+		numberOfInProgressThings?: number | null;
+		numberOfRemovedThings?: number | null;
+		numberOfTimedOutThings?: number | null;
 	}
 
 
 	/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
 	export interface TimeoutConfig {
-		inProgressTimeoutInMinutes?: number;
+		inProgressTimeoutInMinutes?: number | null;
 	}
 
 	export interface DescribeJobExecutionResponse {
 
 		/** The job execution object represents the execution of a job on a particular device. */
-		execution?: JobExecution;
+		execution?: JobExecution | null;
 	}
 
 
 	/** The job execution object represents the execution of a job on a particular device. */
 	export interface JobExecution {
-		jobId?: string;
-		status?: JobExecutionStatus;
-		forceCanceled?: boolean;
+		jobId?: string | null;
+		status?: JobExecutionStatus | null;
+		forceCanceled?: boolean | null;
 
 		/** Details of the job execution status. */
-		statusDetails?: JobExecutionStatusDetails;
-		thingArn?: string;
-		queuedAt?: Date;
-		startedAt?: Date;
-		lastUpdatedAt?: Date;
-		executionNumber?: number;
-		versionNumber?: number;
-		approximateSecondsBeforeTimedOut?: number;
+		statusDetails?: JobExecutionStatusDetails | null;
+		thingArn?: string | null;
+		queuedAt?: Date | null;
+		startedAt?: Date | null;
+		lastUpdatedAt?: Date | null;
+		executionNumber?: number | null;
+		versionNumber?: number | null;
+		approximateSecondsBeforeTimedOut?: number | null;
 	}
 
 	export enum JobExecutionStatus { QUEUED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, TIMED_OUT = 4, REJECTED = 5, REMOVED = 6, CANCELED = 7 }
@@ -1502,81 +1502,81 @@ export namespace MyNS {
 
 	/** Details of the job execution status. */
 	export interface JobExecutionStatusDetails {
-		detailsMap?: DetailsMap;
+		detailsMap?: DetailsMap | null;
 	}
 
 	export interface DetailsMap {
 	}
 
 	export interface DescribeMitigationActionResponse {
-		actionName?: string;
-		actionType?: DescribeMitigationActionResponseActionType;
-		actionArn?: string;
-		actionId?: string;
-		roleArn?: string;
+		actionName?: string | null;
+		actionType?: DescribeMitigationActionResponseActionType | null;
+		actionArn?: string | null;
+		actionId?: string | null;
+		roleArn?: string | null;
 
 		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
-		actionParams?: MitigationActionParams;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
+		actionParams?: MitigationActionParams | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
 	}
 
 	export enum DescribeMitigationActionResponseActionType { UPDATE_DEVICE_CERTIFICATE = 0, UPDATE_CA_CERTIFICATE = 1, ADD_THINGS_TO_THING_GROUP = 2, REPLACE_DEFAULT_POLICY_VERSION = 3, ENABLE_IOT_LOGGING = 4, PUBLISH_FINDING_TO_SNS = 5 }
 
 	export interface DescribeProvisioningTemplateResponse {
-		templateArn?: string;
-		templateName?: string;
-		description?: string;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		defaultVersionId?: number;
-		templateBody?: string;
-		enabled?: boolean;
-		provisioningRoleArn?: string;
+		templateArn?: string | null;
+		templateName?: string | null;
+		description?: string | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		defaultVersionId?: number | null;
+		templateBody?: string | null;
+		enabled?: boolean | null;
+		provisioningRoleArn?: string | null;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: ProvisioningHook;
+		preProvisioningHook?: ProvisioningHook | null;
 	}
 
 
 	/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
 	export interface ProvisioningHook {
-		payloadVersion?: string;
+		payloadVersion?: string | null;
 		targetArn: string;
 	}
 
 	export interface DescribeProvisioningTemplateVersionResponse {
-		versionId?: number;
-		creationDate?: Date;
-		templateBody?: string;
-		isDefaultVersion?: boolean;
+		versionId?: number | null;
+		creationDate?: Date | null;
+		templateBody?: string | null;
+		isDefaultVersion?: boolean | null;
 	}
 
 	export interface DescribeRoleAliasResponse {
 
 		/** Role alias description. */
-		roleAliasDescription?: RoleAliasDescription;
+		roleAliasDescription?: RoleAliasDescription | null;
 	}
 
 
 	/** Role alias description. */
 	export interface RoleAliasDescription {
-		roleAlias?: string;
-		roleAliasArn?: string;
-		roleArn?: string;
-		owner?: string;
-		credentialDurationSeconds?: number;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
+		roleAlias?: string | null;
+		roleAliasArn?: string | null;
+		roleArn?: string | null;
+		owner?: string | null;
+		credentialDurationSeconds?: number | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
 	}
 
 	export interface DescribeScheduledAuditResponse {
-		frequency?: DescribeScheduledAuditResponseFrequency;
-		dayOfMonth?: string;
-		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek;
-		targetCheckNames?: Array<string>;
-		scheduledAuditName?: string;
-		scheduledAuditArn?: string;
+		frequency?: DescribeScheduledAuditResponseFrequency | null;
+		dayOfMonth?: string | null;
+		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
+		targetCheckNames?: Array<string> | null;
+		scheduledAuditName?: string | null;
+		scheduledAuditArn?: string | null;
 	}
 
 	export enum DescribeScheduledAuditResponseFrequency { DAILY = 0, WEEKLY = 1, BIWEEKLY = 2, MONTHLY = 3 }
@@ -1584,16 +1584,16 @@ export namespace MyNS {
 	export enum DescribeScheduledAuditResponseDayOfWeek { SUN = 0, MON = 1, TUE = 2, WED = 3, THU = 4, FRI = 5, SAT = 6 }
 
 	export interface DescribeSecurityProfileResponse {
-		securityProfileName?: string;
-		securityProfileArn?: string;
-		securityProfileDescription?: string;
-		behaviors?: Array<Behavior>;
-		alertTargets?: AlertTargets;
-		additionalMetricsToRetain?: Array<string>;
-		additionalMetricsToRetainV2?: Array<MetricToRetain>;
-		version?: number;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
+		securityProfileName?: string | null;
+		securityProfileArn?: string | null;
+		securityProfileDescription?: string | null;
+		behaviors?: Array<Behavior> | null;
+		alertTargets?: AlertTargets | null;
+		additionalMetricsToRetain?: Array<string> | null;
+		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		version?: number | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
 	}
 
 	export interface AlertTargets {
@@ -1602,89 +1602,89 @@ export namespace MyNS {
 	export interface DescribeStreamResponse {
 
 		/** Information about a stream. */
-		streamInfo?: StreamInfo;
+		streamInfo?: StreamInfo | null;
 	}
 
 
 	/** Information about a stream. */
 	export interface StreamInfo {
-		streamId?: string;
-		streamArn?: string;
-		streamVersion?: number;
-		description?: string;
-		files?: Array<StreamFile>;
-		createdAt?: Date;
-		lastUpdatedAt?: Date;
-		roleArn?: string;
+		streamId?: string | null;
+		streamArn?: string | null;
+		streamVersion?: number | null;
+		description?: string | null;
+		files?: Array<StreamFile> | null;
+		createdAt?: Date | null;
+		lastUpdatedAt?: Date | null;
+		roleArn?: string | null;
 	}
 
 
 	/** The output from the DescribeThing operation. */
 	export interface DescribeThingResponse {
-		defaultClientId?: string;
-		thingName?: string;
-		thingId?: string;
-		thingArn?: string;
-		thingTypeName?: string;
-		attributes?: Attributes;
-		version?: number;
-		billingGroupName?: string;
+		defaultClientId?: string | null;
+		thingName?: string | null;
+		thingId?: string | null;
+		thingArn?: string | null;
+		thingTypeName?: string | null;
+		attributes?: Attributes | null;
+		version?: number | null;
+		billingGroupName?: string | null;
 	}
 
 	export interface DescribeThingGroupResponse {
-		thingGroupName?: string;
-		thingGroupId?: string;
-		thingGroupArn?: string;
-		version?: number;
+		thingGroupName?: string | null;
+		thingGroupId?: string | null;
+		thingGroupArn?: string | null;
+		version?: number | null;
 
 		/** Thing group properties. */
-		thingGroupProperties?: ThingGroupProperties;
+		thingGroupProperties?: ThingGroupProperties | null;
 
 		/** Thing group metadata. */
-		thingGroupMetadata?: ThingGroupMetadata;
-		indexName?: string;
-		queryString?: string;
-		queryVersion?: string;
-		status?: DescribeIndexResponseIndexStatus;
+		thingGroupMetadata?: ThingGroupMetadata | null;
+		indexName?: string | null;
+		queryString?: string | null;
+		queryVersion?: string | null;
+		status?: DescribeIndexResponseIndexStatus | null;
 	}
 
 
 	/** Thing group properties. */
 	export interface ThingGroupProperties {
-		thingGroupDescription?: string;
+		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload;
+		attributePayload?: AttributePayload | null;
 	}
 
 
 	/** Thing group metadata. */
 	export interface ThingGroupMetadata {
-		parentGroupName?: string;
-		rootToParentThingGroups?: Array<GroupNameAndArn>;
-		creationDate?: Date;
+		parentGroupName?: string | null;
+		rootToParentThingGroups?: Array<GroupNameAndArn> | null;
+		creationDate?: Date | null;
 	}
 
 
 	/** The name and ARN of a group. */
 	export interface GroupNameAndArn {
-		groupName?: string;
-		groupArn?: string;
+		groupName?: string | null;
+		groupArn?: string | null;
 	}
 
 	export interface DescribeThingRegistrationTaskResponse {
-		taskId?: string;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		templateBody?: string;
-		inputFileBucket?: string;
-		inputFileKey?: string;
-		roleArn?: string;
-		status?: DescribeThingRegistrationTaskResponseStatus;
-		message?: string;
-		successCount?: number;
-		failureCount?: number;
-		percentageProgress?: number;
+		taskId?: string | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		templateBody?: string | null;
+		inputFileBucket?: string | null;
+		inputFileKey?: string | null;
+		roleArn?: string | null;
+		status?: DescribeThingRegistrationTaskResponseStatus | null;
+		message?: string | null;
+		successCount?: number | null;
+		failureCount?: number | null;
+		percentageProgress?: number | null;
 	}
 
 	export enum DescribeThingRegistrationTaskResponseStatus { InProgress = 0, Completed = 1, Failed = 2, Cancelled = 3, Cancelling = 4 }
@@ -1692,30 +1692,30 @@ export namespace MyNS {
 
 	/** The output for the DescribeThingType operation. */
 	export interface DescribeThingTypeResponse {
-		thingTypeName?: string;
-		thingTypeId?: string;
-		thingTypeArn?: string;
+		thingTypeName?: string | null;
+		thingTypeId?: string | null;
+		thingTypeArn?: string | null;
 
 		/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
-		thingTypeProperties?: ThingTypeProperties;
+		thingTypeProperties?: ThingTypeProperties | null;
 
 		/** The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated. */
-		thingTypeMetadata?: ThingTypeMetadata;
+		thingTypeMetadata?: ThingTypeMetadata | null;
 	}
 
 
 	/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
 	export interface ThingTypeProperties {
-		thingTypeDescription?: string;
-		searchableAttributes?: Array<string>;
+		thingTypeDescription?: string | null;
+		searchableAttributes?: Array<string> | null;
 	}
 
 
 	/** The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated. */
 	export interface ThingTypeMetadata {
-		deprecated?: boolean;
-		deprecationDate?: Date;
-		creationDate?: Date;
+		deprecated?: boolean | null;
+		deprecationDate?: Date | null;
+		creationDate?: Date | null;
 	}
 
 	export interface DetachSecurityProfileResponse {
@@ -1727,7 +1727,7 @@ export namespace MyNS {
 	}
 
 	export interface GetCardinalityResponse {
-		cardinality?: number;
+		cardinality?: number | null;
 	}
 
 	export interface InvalidAggregationException {
@@ -1737,33 +1737,33 @@ export namespace MyNS {
 	}
 
 	export interface GetEffectivePoliciesResponse {
-		effectivePolicies?: Array<EffectivePolicy>;
+		effectivePolicies?: Array<EffectivePolicy> | null;
 	}
 
 
 	/** The policy that has the effect on the authorization results. */
 	export interface EffectivePolicy {
-		policyName?: string;
-		policyArn?: string;
-		policyDocument?: string;
+		policyName?: string | null;
+		policyArn?: string | null;
+		policyDocument?: string | null;
 	}
 
 	export interface GetIndexingConfigurationResponse {
 
 		/** The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>. */
-		thingIndexingConfiguration?: ThingIndexingConfiguration;
+		thingIndexingConfiguration?: ThingIndexingConfiguration | null;
 
 		/** Thing group indexing configuration. */
-		thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration;
+		thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration | null;
 	}
 
 
 	/** The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>. */
 	export interface ThingIndexingConfiguration {
 		thingIndexingMode: ThingIndexingConfigurationThingIndexingMode;
-		thingConnectivityIndexingMode?: ThingIndexingConfigurationThingConnectivityIndexingMode;
-		managedFields?: Array<Field>;
-		customFields?: Array<Field>;
+		thingConnectivityIndexingMode?: ThingIndexingConfigurationThingConnectivityIndexingMode | null;
+		managedFields?: Array<Field> | null;
+		customFields?: Array<Field> | null;
 	}
 
 	export enum ThingIndexingConfigurationThingIndexingMode { OFF = 0, REGISTRY = 1, REGISTRY_AND_SHADOW = 2 }
@@ -1773,8 +1773,8 @@ export namespace MyNS {
 
 	/** Describes the name and data type at a field. */
 	export interface Field {
-		name?: string;
-		type?: FieldType;
+		name?: string | null;
+		type?: FieldType | null;
 	}
 
 	export enum FieldType { Number = 0, String = 1, Boolean = 2 }
@@ -1783,537 +1783,537 @@ export namespace MyNS {
 	/** Thing group indexing configuration. */
 	export interface ThingGroupIndexingConfiguration {
 		thingGroupIndexingMode: ThingGroupIndexingConfigurationThingGroupIndexingMode;
-		managedFields?: Array<Field>;
-		customFields?: Array<Field>;
+		managedFields?: Array<Field> | null;
+		customFields?: Array<Field> | null;
 	}
 
 	export enum ThingGroupIndexingConfigurationThingGroupIndexingMode { OFF = 0, ON = 1 }
 
 	export interface GetJobDocumentResponse {
-		document?: string;
+		document?: string | null;
 	}
 
 
 	/** The output from the GetLoggingOptions operation. */
 	export interface GetLoggingOptionsResponse {
-		roleArn?: string;
-		logLevel?: EnableIoTLoggingParamsLogLevel;
+		roleArn?: string | null;
+		logLevel?: EnableIoTLoggingParamsLogLevel | null;
 	}
 
 	export interface GetOTAUpdateResponse {
 
 		/** Information about an OTA update. */
-		otaUpdateInfo?: OTAUpdateInfo;
+		otaUpdateInfo?: OTAUpdateInfo | null;
 	}
 
 
 	/** Information about an OTA update. */
 	export interface OTAUpdateInfo {
-		otaUpdateId?: string;
-		otaUpdateArn?: string;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		description?: string;
-		targets?: Array<string>;
-		protocols?: Array<Protocol>;
+		otaUpdateId?: string | null;
+		otaUpdateArn?: string | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		description?: string | null;
+		targets?: Array<string> | null;
+		protocols?: Array<Protocol> | null;
 
 		/** Configuration for the rollout of OTA updates. */
-		awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig;
+		awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig | null;
 
 		/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
-		awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig;
-		targetSelection?: JobTargetSelection;
-		otaUpdateFiles?: Array<OTAUpdateFile>;
-		otaUpdateStatus?: CreateOTAUpdateResponseOtaUpdateStatus;
-		awsIotJobId?: string;
-		awsIotJobArn?: string;
+		awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig | null;
+		targetSelection?: JobTargetSelection | null;
+		otaUpdateFiles?: Array<OTAUpdateFile> | null;
+		otaUpdateStatus?: CreateOTAUpdateResponseOtaUpdateStatus | null;
+		awsIotJobId?: string | null;
+		awsIotJobArn?: string | null;
 
 		/** Error information. */
-		errorInfo?: ErrorInfo;
-		additionalParameters?: AdditionalParameterMap;
+		errorInfo?: ErrorInfo | null;
+		additionalParameters?: AdditionalParameterMap | null;
 	}
 
 
 	/** Configuration for the rollout of OTA updates. */
 	export interface AwsJobExecutionsRolloutConfig {
-		maximumPerMinute?: number;
+		maximumPerMinute?: number | null;
 	}
 
 
 	/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
 	export interface AwsJobPresignedUrlConfig {
-		expiresInSec?: number;
+		expiresInSec?: number | null;
 	}
 
 
 	/** Error information. */
 	export interface ErrorInfo {
-		code?: string;
-		message?: string;
+		code?: string | null;
+		message?: string | null;
 	}
 
 	export interface AdditionalParameterMap {
 	}
 
 	export interface GetPercentilesResponse {
-		percentiles?: Array<PercentPair>;
+		percentiles?: Array<PercentPair> | null;
 	}
 
 
 	/** Describes the percentile and percentile value. */
 	export interface PercentPair {
-		percent?: number;
-		value?: number;
+		percent?: number | null;
+		value?: number | null;
 	}
 
 
 	/** The output from the GetPolicy operation. */
 	export interface GetPolicyResponse {
-		policyName?: string;
-		policyArn?: string;
-		policyDocument?: string;
-		defaultVersionId?: string;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		generationId?: string;
+		policyName?: string | null;
+		policyArn?: string | null;
+		policyDocument?: string | null;
+		defaultVersionId?: string | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		generationId?: string | null;
 	}
 
 
 	/** The output from the GetPolicyVersion operation. */
 	export interface GetPolicyVersionResponse {
-		policyArn?: string;
-		policyName?: string;
-		policyDocument?: string;
-		policyVersionId?: string;
-		isDefaultVersion?: boolean;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		generationId?: string;
+		policyArn?: string | null;
+		policyName?: string | null;
+		policyDocument?: string | null;
+		policyVersionId?: string | null;
+		isDefaultVersion?: boolean | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		generationId?: string | null;
 	}
 
 
 	/** The output from the GetRegistrationCode operation. */
 	export interface GetRegistrationCodeResponse {
-		registrationCode?: string;
+		registrationCode?: string | null;
 	}
 
 	export interface GetStatisticsResponse {
 
 		/** A map of key-value pairs for all supported statistics. Currently, only count is supported. */
-		statistics?: Statistics;
+		statistics?: Statistics | null;
 	}
 
 
 	/** A map of key-value pairs for all supported statistics. Currently, only count is supported. */
 	export interface Statistics {
-		count?: number;
-		average?: number;
-		sum?: number;
-		minimum?: number;
-		maximum?: number;
-		sumOfSquares?: number;
-		variance?: number;
-		stdDeviation?: number;
+		count?: number | null;
+		average?: number | null;
+		sum?: number | null;
+		minimum?: number | null;
+		maximum?: number | null;
+		sumOfSquares?: number | null;
+		variance?: number | null;
+		stdDeviation?: number | null;
 	}
 
 
 	/** The output from the GetTopicRule operation. */
 	export interface GetTopicRuleResponse {
-		ruleArn?: string;
+		ruleArn?: string | null;
 
 		/** Describes a rule. */
-		rule?: TopicRule;
+		rule?: TopicRule | null;
 	}
 
 
 	/** Describes a rule. */
 	export interface TopicRule {
-		ruleName?: string;
-		sql?: string;
-		description?: string;
-		createdAt?: Date;
-		actions?: Array<Action>;
-		ruleDisabled?: boolean;
-		awsIotSqlVersion?: string;
+		ruleName?: string | null;
+		sql?: string | null;
+		description?: string | null;
+		createdAt?: Date | null;
+		actions?: Array<Action> | null;
+		ruleDisabled?: boolean | null;
+		awsIotSqlVersion?: string | null;
 
 		/** Describes the actions associated with a rule. */
-		errorAction?: Action;
+		errorAction?: Action | null;
 	}
 
 	export interface GetTopicRuleDestinationResponse {
 
 		/** A topic rule destination. */
-		topicRuleDestination?: TopicRuleDestination;
+		topicRuleDestination?: TopicRuleDestination | null;
 	}
 
 	export interface GetV2LoggingOptionsResponse {
-		roleArn?: string;
-		defaultLogLevel?: EnableIoTLoggingParamsLogLevel;
-		disableAllLogs?: boolean;
+		roleArn?: string | null;
+		defaultLogLevel?: EnableIoTLoggingParamsLogLevel | null;
+		disableAllLogs?: boolean | null;
 	}
 
 	export interface NotConfiguredException {
 	}
 
 	export interface ListActiveViolationsResponse {
-		activeViolations?: Array<ActiveViolation>;
-		nextToken?: string;
+		activeViolations?: Array<ActiveViolation> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about an active Device Defender security profile behavior violation. */
 	export interface ActiveViolation {
-		violationId?: string;
-		thingName?: string;
-		securityProfileName?: string;
+		violationId?: string | null;
+		thingName?: string | null;
+		securityProfileName?: string | null;
 
 		/** A Device Defender security profile behavior. */
-		behavior?: Behavior;
+		behavior?: Behavior | null;
 
 		/** The value to be compared with the <code>metric</code>. */
-		lastViolationValue?: MetricValue;
-		lastViolationTime?: Date;
-		violationStartTime?: Date;
+		lastViolationValue?: MetricValue | null;
+		lastViolationTime?: Date | null;
+		violationStartTime?: Date | null;
 	}
 
 	export interface ListAttachedPoliciesResponse {
-		policies?: Array<Policy>;
-		nextMarker?: string;
+		policies?: Array<Policy> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** Describes an AWS IoT policy. */
 	export interface Policy {
-		policyName?: string;
-		policyArn?: string;
+		policyName?: string | null;
+		policyArn?: string | null;
 	}
 
 	export interface ListAuditFindingsResponse {
-		findings?: Array<AuditFinding>;
-		nextToken?: string;
+		findings?: Array<AuditFinding> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListAuditMitigationActionsExecutionsResponse {
-		actionsExecutions?: Array<AuditMitigationActionExecutionMetadata>;
-		nextToken?: string;
+		actionsExecutions?: Array<AuditMitigationActionExecutionMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Returned by ListAuditMitigationActionsTask, this object contains information that describes a mitigation action that has been started. */
 	export interface AuditMitigationActionExecutionMetadata {
-		taskId?: string;
-		findingId?: string;
-		actionName?: string;
-		actionId?: string;
-		status?: AuditMitigationActionExecutionMetadataStatus;
-		startTime?: Date;
-		endTime?: Date;
-		errorCode?: string;
-		message?: string;
+		taskId?: string | null;
+		findingId?: string | null;
+		actionName?: string | null;
+		actionId?: string | null;
+		status?: AuditMitigationActionExecutionMetadataStatus | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		errorCode?: string | null;
+		message?: string | null;
 	}
 
 	export enum AuditMitigationActionExecutionMetadataStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, CANCELED = 3, SKIPPED = 4, PENDING = 5 }
 
 	export interface ListAuditMitigationActionsTasksResponse {
-		tasks?: Array<AuditMitigationActionsTaskMetadata>;
-		nextToken?: string;
+		tasks?: Array<AuditMitigationActionsTaskMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about an audit mitigation actions task that is returned by <code>ListAuditMitigationActionsTasks</code>. */
 	export interface AuditMitigationActionsTaskMetadata {
-		taskId?: string;
-		startTime?: Date;
-		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus;
+		taskId?: string | null;
+		startTime?: Date | null;
+		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus | null;
 	}
 
 	export interface ListAuditTasksResponse {
-		tasks?: Array<AuditTaskMetadata>;
-		nextToken?: string;
+		tasks?: Array<AuditTaskMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The audits that were performed. */
 	export interface AuditTaskMetadata {
-		taskId?: string;
-		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus;
-		taskType?: DescribeAuditTaskResponseTaskType;
+		taskId?: string | null;
+		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus | null;
+		taskType?: DescribeAuditTaskResponseTaskType | null;
 	}
 
 	export interface ListAuthorizersResponse {
-		authorizers?: Array<AuthorizerSummary>;
-		nextMarker?: string;
+		authorizers?: Array<AuthorizerSummary> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** The authorizer summary. */
 	export interface AuthorizerSummary {
-		authorizerName?: string;
-		authorizerArn?: string;
+		authorizerName?: string | null;
+		authorizerArn?: string | null;
 	}
 
 	export interface ListBillingGroupsResponse {
-		billingGroups?: Array<GroupNameAndArn>;
-		nextToken?: string;
+		billingGroups?: Array<GroupNameAndArn> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The output from the ListCACertificates operation. */
 	export interface ListCACertificatesResponse {
-		certificates?: Array<CACertificate>;
-		nextMarker?: string;
+		certificates?: Array<CACertificate> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** A CA certificate. */
 	export interface CACertificate {
-		certificateArn?: string;
-		certificateId?: string;
-		status?: AuthorizerDescriptionStatus;
-		creationDate?: Date;
+		certificateArn?: string | null;
+		certificateId?: string | null;
+		status?: AuthorizerDescriptionStatus | null;
+		creationDate?: Date | null;
 	}
 
 
 	/** The output of the ListCertificates operation. */
 	export interface ListCertificatesResponse {
-		certificates?: Array<Certificate>;
-		nextMarker?: string;
+		certificates?: Array<Certificate> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** Information about a certificate. */
 	export interface Certificate {
-		certificateArn?: string;
-		certificateId?: string;
-		status?: CertificateDescriptionStatus;
-		certificateMode?: CertificateDescriptionCertificateMode;
-		creationDate?: Date;
+		certificateArn?: string | null;
+		certificateId?: string | null;
+		status?: CertificateDescriptionStatus | null;
+		certificateMode?: CertificateDescriptionCertificateMode | null;
+		creationDate?: Date | null;
 	}
 
 
 	/** The output of the ListCertificatesByCA operation. */
 	export interface ListCertificatesByCAResponse {
-		certificates?: Array<Certificate>;
-		nextMarker?: string;
+		certificates?: Array<Certificate> | null;
+		nextMarker?: string | null;
 	}
 
 	export interface ListDimensionsResponse {
-		dimensionNames?: Array<string>;
-		nextToken?: string;
+		dimensionNames?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListDomainConfigurationsResponse {
-		domainConfigurations?: Array<DomainConfigurationSummary>;
-		nextMarker?: string;
+		domainConfigurations?: Array<DomainConfigurationSummary> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** <p>The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain. A domain configuration can be associated with an AWS-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.</p> <ul> <li> <p>Data</p> </li> <li> <p>Jobs</p> </li> <li> <p>CredentialProvider</p> </li> </ul> <note> <p>The domain configuration feature is in public preview and is subject to change.</p> </note> */
 	export interface DomainConfigurationSummary {
-		domainConfigurationName?: string;
-		domainConfigurationArn?: string;
-		serviceType?: DescribeDomainConfigurationResponseServiceType;
+		domainConfigurationName?: string | null;
+		domainConfigurationArn?: string | null;
+		serviceType?: DescribeDomainConfigurationResponseServiceType | null;
 	}
 
 	export interface ListIndicesResponse {
-		indexNames?: Array<string>;
-		nextToken?: string;
+		indexNames?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListJobExecutionsForJobResponse {
-		executionSummaries?: Array<JobExecutionSummaryForJob>;
-		nextToken?: string;
+		executionSummaries?: Array<JobExecutionSummaryForJob> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Contains a summary of information about job executions for a specific job. */
 	export interface JobExecutionSummaryForJob {
-		thingArn?: string;
+		thingArn?: string | null;
 
 		/** The job execution summary. */
-		jobExecutionSummary?: JobExecutionSummary;
+		jobExecutionSummary?: JobExecutionSummary | null;
 	}
 
 
 	/** The job execution summary. */
 	export interface JobExecutionSummary {
-		status?: JobExecutionStatus;
-		queuedAt?: Date;
-		startedAt?: Date;
-		lastUpdatedAt?: Date;
-		executionNumber?: number;
+		status?: JobExecutionStatus | null;
+		queuedAt?: Date | null;
+		startedAt?: Date | null;
+		lastUpdatedAt?: Date | null;
+		executionNumber?: number | null;
 	}
 
 	export interface ListJobExecutionsForThingResponse {
-		executionSummaries?: Array<JobExecutionSummaryForThing>;
-		nextToken?: string;
+		executionSummaries?: Array<JobExecutionSummaryForThing> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The job execution summary for a thing. */
 	export interface JobExecutionSummaryForThing {
-		jobId?: string;
+		jobId?: string | null;
 
 		/** The job execution summary. */
-		jobExecutionSummary?: JobExecutionSummary;
+		jobExecutionSummary?: JobExecutionSummary | null;
 	}
 
 	export interface ListJobsResponse {
-		jobs?: Array<JobSummary>;
-		nextToken?: string;
+		jobs?: Array<JobSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The job summary. */
 	export interface JobSummary {
-		jobArn?: string;
-		jobId?: string;
-		thingGroupId?: string;
-		targetSelection?: JobTargetSelection;
-		status?: JobStatus;
-		createdAt?: Date;
-		lastUpdatedAt?: Date;
-		completedAt?: Date;
+		jobArn?: string | null;
+		jobId?: string | null;
+		thingGroupId?: string | null;
+		targetSelection?: JobTargetSelection | null;
+		status?: JobStatus | null;
+		createdAt?: Date | null;
+		lastUpdatedAt?: Date | null;
+		completedAt?: Date | null;
 	}
 
 	export interface ListMitigationActionsResponse {
-		actionIdentifiers?: Array<MitigationActionIdentifier>;
-		nextToken?: string;
+		actionIdentifiers?: Array<MitigationActionIdentifier> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information that identifies a mitigation action. This information is returned by ListMitigationActions. */
 	export interface MitigationActionIdentifier {
-		actionName?: string;
-		actionArn?: string;
-		creationDate?: Date;
+		actionName?: string | null;
+		actionArn?: string | null;
+		creationDate?: Date | null;
 	}
 
 	export interface ListOTAUpdatesResponse {
-		otaUpdates?: Array<OTAUpdateSummary>;
-		nextToken?: string;
+		otaUpdates?: Array<OTAUpdateSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An OTA update summary. */
 	export interface OTAUpdateSummary {
-		otaUpdateId?: string;
-		otaUpdateArn?: string;
-		creationDate?: Date;
+		otaUpdateId?: string | null;
+		otaUpdateArn?: string | null;
+		creationDate?: Date | null;
 	}
 
 
 	/** The output from the ListOutgoingCertificates operation. */
 	export interface ListOutgoingCertificatesResponse {
-		outgoingCertificates?: Array<OutgoingCertificate>;
-		nextMarker?: string;
+		outgoingCertificates?: Array<OutgoingCertificate> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** A certificate that has been transferred but not yet accepted. */
 	export interface OutgoingCertificate {
-		certificateArn?: string;
-		certificateId?: string;
-		transferredTo?: string;
-		transferDate?: Date;
-		transferMessage?: string;
-		creationDate?: Date;
+		certificateArn?: string | null;
+		certificateId?: string | null;
+		transferredTo?: string | null;
+		transferDate?: Date | null;
+		transferMessage?: string | null;
+		creationDate?: Date | null;
 	}
 
 
 	/** The output from the ListPolicies operation. */
 	export interface ListPoliciesResponse {
-		policies?: Array<Policy>;
-		nextMarker?: string;
+		policies?: Array<Policy> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** The output from the ListPolicyPrincipals operation. */
 	export interface ListPolicyPrincipalsResponse {
-		principals?: Array<string>;
-		nextMarker?: string;
+		principals?: Array<string> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** The output from the ListPolicyVersions operation. */
 	export interface ListPolicyVersionsResponse {
-		policyVersions?: Array<PolicyVersion>;
+		policyVersions?: Array<PolicyVersion> | null;
 	}
 
 
 	/** Describes a policy version. */
 	export interface PolicyVersion {
-		versionId?: string;
-		isDefaultVersion?: boolean;
-		createDate?: Date;
+		versionId?: string | null;
+		isDefaultVersion?: boolean | null;
+		createDate?: Date | null;
 	}
 
 
 	/** The output from the ListPrincipalPolicies operation. */
 	export interface ListPrincipalPoliciesResponse {
-		policies?: Array<Policy>;
-		nextMarker?: string;
+		policies?: Array<Policy> | null;
+		nextMarker?: string | null;
 	}
 
 
 	/** The output from the ListPrincipalThings operation. */
 	export interface ListPrincipalThingsResponse {
-		things?: Array<string>;
-		nextToken?: string;
+		things?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListProvisioningTemplateVersionsResponse {
-		versions?: Array<ProvisioningTemplateVersionSummary>;
-		nextToken?: string;
+		versions?: Array<ProvisioningTemplateVersionSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A summary of information about a fleet provision template version. */
 	export interface ProvisioningTemplateVersionSummary {
-		versionId?: number;
-		creationDate?: Date;
-		isDefaultVersion?: boolean;
+		versionId?: number | null;
+		creationDate?: Date | null;
+		isDefaultVersion?: boolean | null;
 	}
 
 	export interface ListProvisioningTemplatesResponse {
-		templates?: Array<ProvisioningTemplateSummary>;
-		nextToken?: string;
+		templates?: Array<ProvisioningTemplateSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A summary of information about a fleet provisioning template. */
 	export interface ProvisioningTemplateSummary {
-		templateArn?: string;
-		templateName?: string;
-		description?: string;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		enabled?: boolean;
+		templateArn?: string | null;
+		templateName?: string | null;
+		description?: string | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		enabled?: boolean | null;
 	}
 
 	export interface ListRoleAliasesResponse {
-		roleAliases?: Array<string>;
-		nextMarker?: string;
+		roleAliases?: Array<string> | null;
+		nextMarker?: string | null;
 	}
 
 	export interface ListScheduledAuditsResponse {
-		scheduledAudits?: Array<ScheduledAuditMetadata>;
-		nextToken?: string;
+		scheduledAudits?: Array<ScheduledAuditMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about the scheduled audit. */
 	export interface ScheduledAuditMetadata {
-		scheduledAuditName?: string;
-		scheduledAuditArn?: string;
-		frequency?: DescribeScheduledAuditResponseFrequency;
-		dayOfMonth?: string;
-		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek;
+		scheduledAuditName?: string | null;
+		scheduledAuditArn?: string | null;
+		frequency?: DescribeScheduledAuditResponseFrequency | null;
+		dayOfMonth?: string | null;
+		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
 	}
 
 	export interface ListSecurityProfilesResponse {
-		securityProfileIdentifiers?: Array<SecurityProfileIdentifier>;
-		nextToken?: string;
+		securityProfileIdentifiers?: Array<SecurityProfileIdentifier> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -2324,8 +2324,8 @@ export namespace MyNS {
 	}
 
 	export interface ListSecurityProfilesForTargetResponse {
-		securityProfileTargetMappings?: Array<SecurityProfileTargetMapping>;
-		nextToken?: string;
+		securityProfileTargetMappings?: Array<SecurityProfileTargetMapping> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -2333,10 +2333,10 @@ export namespace MyNS {
 	export interface SecurityProfileTargetMapping {
 
 		/** Identifying information for a Device Defender security profile. */
-		securityProfileIdentifier?: SecurityProfileIdentifier;
+		securityProfileIdentifier?: SecurityProfileIdentifier | null;
 
 		/** A target to which an alert is sent when a security profile behavior is violated. */
-		target?: SecurityProfileTarget;
+		target?: SecurityProfileTarget | null;
 	}
 
 
@@ -2346,152 +2346,152 @@ export namespace MyNS {
 	}
 
 	export interface ListStreamsResponse {
-		streams?: Array<StreamSummary>;
-		nextToken?: string;
+		streams?: Array<StreamSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A summary of a stream. */
 	export interface StreamSummary {
-		streamId?: string;
-		streamArn?: string;
-		streamVersion?: number;
-		description?: string;
+		streamId?: string | null;
+		streamArn?: string | null;
+		streamVersion?: number | null;
+		description?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag>;
-		nextToken?: string;
+		tags?: Array<Tag> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTargetsForPolicyResponse {
-		targets?: Array<string>;
-		nextMarker?: string;
+		targets?: Array<string> | null;
+		nextMarker?: string | null;
 	}
 
 	export interface ListTargetsForSecurityProfileResponse {
-		securityProfileTargets?: Array<SecurityProfileTarget>;
-		nextToken?: string;
+		securityProfileTargets?: Array<SecurityProfileTarget> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListThingGroupsResponse {
-		thingGroups?: Array<GroupNameAndArn>;
-		nextToken?: string;
+		thingGroups?: Array<GroupNameAndArn> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListThingGroupsForThingResponse {
-		thingGroups?: Array<GroupNameAndArn>;
-		nextToken?: string;
+		thingGroups?: Array<GroupNameAndArn> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The output from the ListThingPrincipals operation. */
 	export interface ListThingPrincipalsResponse {
-		principals?: Array<string>;
+		principals?: Array<string> | null;
 	}
 
 	export interface ListThingRegistrationTaskReportsResponse {
-		resourceLinks?: Array<string>;
-		reportType?: ListThingRegistrationTaskReportsResponseReportType;
-		nextToken?: string;
+		resourceLinks?: Array<string> | null;
+		reportType?: ListThingRegistrationTaskReportsResponseReportType | null;
+		nextToken?: string | null;
 	}
 
 	export enum ListThingRegistrationTaskReportsResponseReportType { ERRORS = 0, RESULTS = 1 }
 
 	export interface ListThingRegistrationTasksResponse {
-		taskIds?: Array<string>;
-		nextToken?: string;
+		taskIds?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The output for the ListThingTypes operation. */
 	export interface ListThingTypesResponse {
-		thingTypes?: Array<ThingTypeDefinition>;
-		nextToken?: string;
+		thingTypes?: Array<ThingTypeDefinition> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The definition of the thing type, including thing type name and description. */
 	export interface ThingTypeDefinition {
-		thingTypeName?: string;
-		thingTypeArn?: string;
+		thingTypeName?: string | null;
+		thingTypeArn?: string | null;
 
 		/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
-		thingTypeProperties?: ThingTypeProperties;
+		thingTypeProperties?: ThingTypeProperties | null;
 
 		/** The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated. */
-		thingTypeMetadata?: ThingTypeMetadata;
+		thingTypeMetadata?: ThingTypeMetadata | null;
 	}
 
 
 	/** The output from the ListThings operation. */
 	export interface ListThingsResponse {
-		things?: Array<ThingAttribute>;
-		nextToken?: string;
+		things?: Array<ThingAttribute> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The properties of the thing, including thing name, thing type name, and a list of thing attributes. */
 	export interface ThingAttribute {
-		thingName?: string;
-		thingTypeName?: string;
-		thingArn?: string;
-		attributes?: Attributes;
-		version?: number;
+		thingName?: string | null;
+		thingTypeName?: string | null;
+		thingArn?: string | null;
+		attributes?: Attributes | null;
+		version?: number | null;
 	}
 
 	export interface ListThingsInBillingGroupResponse {
-		things?: Array<string>;
-		nextToken?: string;
+		things?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListThingsInThingGroupResponse {
-		things?: Array<string>;
-		nextToken?: string;
+		things?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTopicRuleDestinationsResponse {
-		destinationSummaries?: Array<TopicRuleDestinationSummary>;
-		nextToken?: string;
+		destinationSummaries?: Array<TopicRuleDestinationSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about the topic rule destination. */
 	export interface TopicRuleDestinationSummary {
-		arn?: string;
-		status?: TopicRuleDestinationStatus;
-		statusReason?: string;
+		arn?: string | null;
+		status?: TopicRuleDestinationStatus | null;
+		statusReason?: string | null;
 
 		/** Information about an HTTP URL destination. */
-		httpUrlSummary?: HttpUrlDestinationSummary;
+		httpUrlSummary?: HttpUrlDestinationSummary | null;
 	}
 
 
 	/** Information about an HTTP URL destination. */
 	export interface HttpUrlDestinationSummary {
-		confirmationUrl?: string;
+		confirmationUrl?: string | null;
 	}
 
 
 	/** The output from the ListTopicRules operation. */
 	export interface ListTopicRulesResponse {
-		rules?: Array<TopicRuleListItem>;
-		nextToken?: string;
+		rules?: Array<TopicRuleListItem> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Describes a rule. */
 	export interface TopicRuleListItem {
-		ruleArn?: string;
-		ruleName?: string;
-		topicPattern?: string;
-		createdAt?: Date;
-		ruleDisabled?: boolean;
+		ruleArn?: string | null;
+		ruleName?: string | null;
+		topicPattern?: string | null;
+		createdAt?: Date | null;
+		ruleDisabled?: boolean | null;
 	}
 
 	export interface ListV2LoggingLevelsResponse {
-		logTargetConfigurations?: Array<LogTargetConfiguration>;
-		nextToken?: string;
+		logTargetConfigurations?: Array<LogTargetConfiguration> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -2499,38 +2499,38 @@ export namespace MyNS {
 	export interface LogTargetConfiguration {
 
 		/** A log target. */
-		logTarget?: LogTarget;
-		logLevel?: EnableIoTLoggingParamsLogLevel;
+		logTarget?: LogTarget | null;
+		logLevel?: EnableIoTLoggingParamsLogLevel | null;
 	}
 
 
 	/** A log target. */
 	export interface LogTarget {
 		targetType: LogTargetTargetType;
-		targetName?: string;
+		targetName?: string | null;
 	}
 
 	export enum LogTargetTargetType { DEFAULT = 0, THING_GROUP = 1 }
 
 	export interface ListViolationEventsResponse {
-		violationEvents?: Array<ViolationEvent>;
-		nextToken?: string;
+		violationEvents?: Array<ViolationEvent> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a Device Defender security profile behavior violation. */
 	export interface ViolationEvent {
-		violationId?: string;
-		thingName?: string;
-		securityProfileName?: string;
+		violationId?: string | null;
+		thingName?: string | null;
+		securityProfileName?: string | null;
 
 		/** A Device Defender security profile behavior. */
-		behavior?: Behavior;
+		behavior?: Behavior | null;
 
 		/** The value to be compared with the <code>metric</code>. */
-		metricValue?: MetricValue;
-		violationEventType?: ViolationEventViolationEventType;
-		violationEventTime?: Date;
+		metricValue?: MetricValue | null;
+		violationEventType?: ViolationEventViolationEventType | null;
+		violationEventTime?: Date | null;
 	}
 
 	export enum ViolationEventViolationEventType { in_alarm = 0, alarm_cleared = 1, alarm_invalidated = 2 }
@@ -2538,8 +2538,8 @@ export namespace MyNS {
 
 	/** The output from the RegisterCACertificateResponse operation. */
 	export interface RegisterCACertificateResponse {
-		certificateArn?: string;
-		certificateId?: string;
+		certificateArn?: string | null;
+		certificateId?: string | null;
 	}
 
 	export interface RegistrationCodeValidationException {
@@ -2548,16 +2548,16 @@ export namespace MyNS {
 
 	/** The output from the RegisterCertificate operation. */
 	export interface RegisterCertificateResponse {
-		certificateArn?: string;
-		certificateId?: string;
+		certificateArn?: string | null;
+		certificateId?: string | null;
 	}
 
 	export interface CertificateConflictException {
 	}
 
 	export interface RegisterCertificateWithoutCAResponse {
-		certificateArn?: string;
-		certificateId?: string;
+		certificateArn?: string | null;
+		certificateId?: string | null;
 	}
 
 	export interface RegisterThingResponse {
@@ -2567,8 +2567,8 @@ export namespace MyNS {
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		certificatePem?: string;
-		resourceArns?: ResourceArns;
+		certificatePem?: string | null;
+		resourceArns?: ResourceArns | null;
 	}
 
 	export interface ResourceArns {
@@ -2584,45 +2584,45 @@ export namespace MyNS {
 	}
 
 	export interface SearchIndexResponse {
-		nextToken?: string;
-		things?: Array<ThingDocument>;
-		thingGroups?: Array<ThingGroupDocument>;
+		nextToken?: string | null;
+		things?: Array<ThingDocument> | null;
+		thingGroups?: Array<ThingGroupDocument> | null;
 	}
 
 
 	/** The thing search index document. */
 	export interface ThingDocument {
-		thingName?: string;
-		thingId?: string;
-		thingTypeName?: string;
-		thingGroupNames?: Array<string>;
-		attributes?: Attributes;
-		shadow?: string;
+		thingName?: string | null;
+		thingId?: string | null;
+		thingTypeName?: string | null;
+		thingGroupNames?: Array<string> | null;
+		attributes?: Attributes | null;
+		shadow?: string | null;
 
 		/** The connectivity status of the thing. */
-		connectivity?: ThingConnectivity;
+		connectivity?: ThingConnectivity | null;
 	}
 
 
 	/** The connectivity status of the thing. */
 	export interface ThingConnectivity {
-		connected?: boolean;
-		timestamp?: number;
+		connected?: boolean | null;
+		timestamp?: number | null;
 	}
 
 
 	/** The thing group search index document. */
 	export interface ThingGroupDocument {
-		thingGroupName?: string;
-		thingGroupId?: string;
-		thingGroupDescription?: string;
-		attributes?: Attributes;
-		parentGroupNames?: Array<string>;
+		thingGroupName?: string | null;
+		thingGroupId?: string | null;
+		thingGroupDescription?: string | null;
+		attributes?: Attributes | null;
+		parentGroupNames?: Array<string> | null;
 	}
 
 	export interface SetDefaultAuthorizerResponse {
-		authorizerName?: string;
-		authorizerArn?: string;
+		authorizerName?: string | null;
+		authorizerArn?: string | null;
 	}
 
 	export enum LogLevel { DEBUG = 0, INFO = 1, ERROR = 2, WARN = 3, DISABLED = 4 }
@@ -2630,18 +2630,18 @@ export namespace MyNS {
 	export enum LogTargetType { DEFAULT = 0, THING_GROUP = 1 }
 
 	export interface StartAuditMitigationActionsTaskResponse {
-		taskId?: string;
+		taskId?: string | null;
 	}
 
 	export interface TaskAlreadyExistsException {
 	}
 
 	export interface StartOnDemandAuditTaskResponse {
-		taskId?: string;
+		taskId?: string | null;
 	}
 
 	export interface StartThingRegistrationTaskResponse {
-		taskId?: string;
+		taskId?: string | null;
 	}
 
 	export interface StopThingRegistrationTaskResponse {
@@ -2651,7 +2651,7 @@ export namespace MyNS {
 	}
 
 	export interface TestAuthorizationResponse {
-		authResults?: Array<AuthResult>;
+		authResults?: Array<AuthResult> | null;
 	}
 
 
@@ -2659,21 +2659,21 @@ export namespace MyNS {
 	export interface AuthResult {
 
 		/** A collection of authorization information. */
-		authInfo?: AuthInfo;
+		authInfo?: AuthInfo | null;
 
 		/** Contains information that allowed the authorization. */
-		allowed?: Allowed;
+		allowed?: Allowed | null;
 
 		/** Contains information that denied the authorization. */
-		denied?: Denied;
-		authDecision?: AuthResultAuthDecision;
-		missingContextValues?: Array<string>;
+		denied?: Denied | null;
+		authDecision?: AuthResultAuthDecision | null;
+		missingContextValues?: Array<string> | null;
 	}
 
 
 	/** A collection of authorization information. */
 	export interface AuthInfo {
-		actionType?: AuthInfoActionType;
+		actionType?: AuthInfoActionType | null;
 		resources: Array<string>;
 	}
 
@@ -2682,7 +2682,7 @@ export namespace MyNS {
 
 	/** Contains information that allowed the authorization. */
 	export interface Allowed {
-		policies?: Array<Policy>;
+		policies?: Array<Policy> | null;
 	}
 
 
@@ -2690,32 +2690,32 @@ export namespace MyNS {
 	export interface Denied {
 
 		/** Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny. */
-		implicitDeny?: ImplicitDeny;
+		implicitDeny?: ImplicitDeny | null;
 
 		/** Information that explicitly denies authorization. */
-		explicitDeny?: ExplicitDeny;
+		explicitDeny?: ExplicitDeny | null;
 	}
 
 
 	/** Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny. */
 	export interface ImplicitDeny {
-		policies?: Array<Policy>;
+		policies?: Array<Policy> | null;
 	}
 
 
 	/** Information that explicitly denies authorization. */
 	export interface ExplicitDeny {
-		policies?: Array<Policy>;
+		policies?: Array<Policy> | null;
 	}
 
 	export enum AuthResultAuthDecision { ALLOWED = 0, EXPLICIT_DENY = 1, IMPLICIT_DENY = 2 }
 
 	export interface TestInvokeAuthorizerResponse {
-		isAuthenticated?: boolean;
-		principalId?: string;
-		policyDocuments?: Array<string>;
-		refreshAfterInSeconds?: number;
-		disconnectAfterInSeconds?: number;
+		isAuthenticated?: boolean | null;
+		principalId?: string | null;
+		policyDocuments?: Array<string> | null;
+		refreshAfterInSeconds?: number | null;
+		disconnectAfterInSeconds?: number | null;
 	}
 
 	export interface HttpHeaders {
@@ -2727,7 +2727,7 @@ export namespace MyNS {
 
 	/** The output from the TransferCertificate operation. */
 	export interface TransferCertificateResponse {
-		transferredCertificateArn?: string;
+		transferredCertificateArn?: string | null;
 	}
 
 	export interface TransferConflictException {
@@ -2742,42 +2742,42 @@ export namespace MyNS {
 
 	/** Information about the targets to which audit notifications are sent. */
 	export interface AuditNotificationTarget {
-		targetArn?: string;
-		roleArn?: string;
-		enabled?: boolean;
+		targetArn?: string | null;
+		roleArn?: string | null;
+		enabled?: boolean | null;
 	}
 
 
 	/** Which audit checks are enabled and disabled for this account. */
 	export interface AuditCheckConfiguration {
-		enabled?: boolean;
+		enabled?: boolean | null;
 	}
 
 	export interface UpdateAuthorizerResponse {
-		authorizerName?: string;
-		authorizerArn?: string;
+		authorizerName?: string | null;
+		authorizerArn?: string | null;
 	}
 
 	export interface UpdateBillingGroupResponse {
-		version?: number;
+		version?: number | null;
 	}
 
 	export interface UpdateDimensionResponse {
-		name?: string;
-		arn?: string;
-		type?: DescribeDimensionResponseType;
-		stringValues?: Array<string>;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
+		name?: string | null;
+		arn?: string | null;
+		type?: DescribeDimensionResponseType | null;
+		stringValues?: Array<string> | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
 	}
 
 	export interface UpdateDomainConfigurationResponse {
-		domainConfigurationName?: string;
-		domainConfigurationArn?: string;
+		domainConfigurationName?: string | null;
+		domainConfigurationArn?: string | null;
 	}
 
 	export interface UpdateDynamicThingGroupResponse {
-		version?: number;
+		version?: number | null;
 	}
 
 	export interface UpdateEventConfigurationsResponse {
@@ -2786,7 +2786,7 @@ export namespace MyNS {
 
 	/** Configuration. */
 	export interface Configuration {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export interface UpdateIndexingConfigurationResponse {
@@ -2799,40 +2799,40 @@ export namespace MyNS {
 	export enum ThingGroupIndexingMode { OFF = 0, ON = 1 }
 
 	export interface UpdateMitigationActionResponse {
-		actionArn?: string;
-		actionId?: string;
+		actionArn?: string | null;
+		actionId?: string | null;
 	}
 
 	export interface UpdateProvisioningTemplateResponse {
 	}
 
 	export interface UpdateRoleAliasResponse {
-		roleAlias?: string;
-		roleAliasArn?: string;
+		roleAlias?: string | null;
+		roleAliasArn?: string | null;
 	}
 
 	export interface UpdateScheduledAuditResponse {
-		scheduledAuditArn?: string;
+		scheduledAuditArn?: string | null;
 	}
 
 	export interface UpdateSecurityProfileResponse {
-		securityProfileName?: string;
-		securityProfileArn?: string;
-		securityProfileDescription?: string;
-		behaviors?: Array<Behavior>;
-		alertTargets?: AlertTargets;
-		additionalMetricsToRetain?: Array<string>;
-		additionalMetricsToRetainV2?: Array<MetricToRetain>;
-		version?: number;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
+		securityProfileName?: string | null;
+		securityProfileArn?: string | null;
+		securityProfileDescription?: string | null;
+		behaviors?: Array<Behavior> | null;
+		alertTargets?: AlertTargets | null;
+		additionalMetricsToRetain?: Array<string> | null;
+		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		version?: number | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
 	}
 
 	export interface UpdateStreamResponse {
-		streamId?: string;
-		streamArn?: string;
-		description?: string;
-		streamVersion?: number;
+		streamId?: string | null;
+		streamArn?: string | null;
+		description?: string | null;
+		streamVersion?: number | null;
 	}
 
 
@@ -2841,7 +2841,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateThingGroupResponse {
-		version?: number;
+		version?: number | null;
 	}
 
 	export interface UpdateThingGroupsForThingResponse {
@@ -2851,14 +2851,14 @@ export namespace MyNS {
 	}
 
 	export interface ValidateSecurityProfileBehaviorsResponse {
-		valid?: boolean;
-		validationErrors?: Array<ValidationError>;
+		valid?: boolean | null;
+		validationErrors?: Array<ValidationError> | null;
 	}
 
 
 	/** Information about an error found in a behavior specification. */
 	export interface ValidationError {
-		errorMessage?: string;
+		errorMessage?: string | null;
 	}
 
 	export enum AbortAction { CANCEL = 0 }
@@ -2873,18 +2873,18 @@ export namespace MyNS {
 	export enum ActionType { PUBLISH = 0, SUBSCRIBE = 1, RECEIVE = 2, CONNECT = 3 }
 
 	export interface AddThingToBillingGroupRequest {
-		billingGroupName?: string;
-		billingGroupArn?: string;
-		thingName?: string;
-		thingArn?: string;
+		billingGroupName?: string | null;
+		billingGroupArn?: string | null;
+		thingName?: string | null;
+		thingArn?: string | null;
 	}
 
 	export interface AddThingToThingGroupRequest {
-		thingGroupName?: string;
-		thingGroupArn?: string;
-		thingName?: string;
-		thingArn?: string;
-		overrideDynamicGroups?: boolean;
+		thingGroupName?: string | null;
+		thingGroupArn?: string | null;
+		thingName?: string | null;
+		thingArn?: string | null;
+		overrideDynamicGroups?: boolean | null;
 	}
 
 
@@ -2893,7 +2893,7 @@ export namespace MyNS {
 
 	export interface AssociateTargetsWithJobRequest {
 		targets: Array<string>;
-		comment?: string;
+		comment?: string | null;
 	}
 
 	export interface AttachPolicyRequest {
@@ -2918,12 +2918,12 @@ export namespace MyNS {
 
 	/** Information about the audit check. */
 	export interface AuditCheckDetails {
-		checkRunStatus?: AuditCheckRunStatus;
-		checkCompliant?: boolean;
-		totalResourcesCount?: number;
-		nonCompliantResourcesCount?: number;
-		errorCode?: string;
-		message?: string;
+		checkRunStatus?: AuditCheckRunStatus | null;
+		checkCompliant?: boolean | null;
+		totalResourcesCount?: number | null;
+		nonCompliantResourcesCount?: number | null;
+		errorCode?: string | null;
+		message?: string | null;
 	}
 
 	export enum AuditFrequency { DAILY = 0, WEEKLY = 1, BIWEEKLY = 2, MONTHLY = 3 }
@@ -2935,11 +2935,11 @@ export namespace MyNS {
 
 	/** Provides summary counts of how many tasks for findings are in a particular state. This information is included in the response from DescribeAuditMitigationActionsTask. */
 	export interface TaskStatisticsForAuditCheck {
-		totalFindingsCount?: number;
-		failedFindingsCount?: number;
-		succeededFindingsCount?: number;
-		skippedFindingsCount?: number;
-		canceledFindingsCount?: number;
+		totalFindingsCount?: number | null;
+		failedFindingsCount?: number | null;
+		succeededFindingsCount?: number | null;
+		skippedFindingsCount?: number | null;
+		canceledFindingsCount?: number | null;
 	}
 
 	export enum AuditNotificationType { SNS = 0 }
@@ -2972,13 +2972,13 @@ export namespace MyNS {
 	}
 
 	export interface CancelJobExecutionRequest {
-		expectedVersion?: number;
-		statusDetails?: DetailsMap;
+		expectedVersion?: number | null;
+		statusDetails?: DetailsMap | null;
 	}
 
 	export interface CancelJobRequest {
-		reasonCode?: string;
-		comment?: string;
+		reasonCode?: string | null;
+		comment?: string | null;
 	}
 
 	export enum CannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6, log_delivery_write = 7 }
@@ -2995,18 +2995,18 @@ export namespace MyNS {
 
 	export interface CreateAuthorizerRequest {
 		authorizerFunctionArn: string;
-		tokenKeyName?: string;
-		tokenSigningPublicKeys?: PublicKeyMap;
-		status?: AuthorizerDescriptionStatus;
-		tags?: Array<Tag>;
-		signingDisabled?: boolean;
+		tokenKeyName?: string | null;
+		tokenSigningPublicKeys?: PublicKeyMap | null;
+		status?: AuthorizerDescriptionStatus | null;
+		tags?: Array<Tag> | null;
+		signingDisabled?: boolean | null;
 	}
 
 	export interface CreateBillingGroupRequest {
 
 		/** The properties of a billing group. */
-		billingGroupProperties?: BillingGroupProperties;
-		tags?: Array<Tag>;
+		billingGroupProperties?: BillingGroupProperties | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -3020,54 +3020,54 @@ export namespace MyNS {
 	export interface CreateDimensionRequest {
 		type: DescribeDimensionResponseType;
 		stringValues: Array<string>;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 		clientRequestToken: string;
 	}
 
 	export enum ServiceType { DATA = 0, CREDENTIAL_PROVIDER = 1, JOBS = 2 }
 
 	export interface CreateDomainConfigurationRequest {
-		domainName?: string;
-		serverCertificateArns?: Array<string>;
-		validationCertificateArn?: string;
+		domainName?: string | null;
+		serverCertificateArns?: Array<string> | null;
+		validationCertificateArn?: string | null;
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: AuthorizerConfig;
-		serviceType?: DescribeDomainConfigurationResponseServiceType;
-		tags?: Array<Tag>;
+		authorizerConfig?: AuthorizerConfig | null;
+		serviceType?: DescribeDomainConfigurationResponseServiceType | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDynamicThingGroupRequest {
 
 		/** Thing group properties. */
-		thingGroupProperties?: ThingGroupProperties;
-		indexName?: string;
+		thingGroupProperties?: ThingGroupProperties | null;
+		indexName?: string | null;
 		queryString: string;
-		queryVersion?: string;
-		tags?: Array<Tag>;
+		queryVersion?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum TargetSelection { CONTINUOUS = 0, SNAPSHOT = 1 }
 
 	export interface CreateJobRequest {
 		targets: Array<string>;
-		documentSource?: string;
-		document?: string;
-		description?: string;
+		documentSource?: string | null;
+		document?: string | null;
+		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: PresignedUrlConfig;
-		targetSelection?: JobTargetSelection;
+		presignedUrlConfig?: PresignedUrlConfig | null;
+		targetSelection?: JobTargetSelection | null;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
+		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig | null;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: AbortConfig;
+		abortConfig?: AbortConfig | null;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: TimeoutConfig;
-		tags?: Array<Tag>;
+		timeoutConfig?: TimeoutConfig | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -3083,24 +3083,24 @@ export namespace MyNS {
 		 * Required
 		 */
 		actionParams: MitigationActionParams;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateOTAUpdateRequest {
-		description?: string;
+		description?: string | null;
 		targets: Array<string>;
-		protocols?: Array<Protocol>;
-		targetSelection?: JobTargetSelection;
+		protocols?: Array<Protocol> | null;
+		targetSelection?: JobTargetSelection | null;
 
 		/** Configuration for the rollout of OTA updates. */
-		awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig;
+		awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig | null;
 
 		/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
-		awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig;
+		awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig | null;
 		files: Array<OTAUpdateFile>;
 		roleArn: string;
-		additionalParameters?: AdditionalParameterMap;
-		tags?: Array<Tag>;
+		additionalParameters?: AdditionalParameterMap | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum OTAUpdateStatus { CREATE_PENDING = 0, CREATE_IN_PROGRESS = 1, CREATE_COMPLETE = 2, CREATE_FAILED = 3 }
@@ -3109,7 +3109,7 @@ export namespace MyNS {
 	/** The input for the CreatePolicy operation. */
 	export interface CreatePolicyRequest {
 		policyDocument: string;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -3123,14 +3123,14 @@ export namespace MyNS {
 
 	export interface CreateProvisioningTemplateRequest {
 		templateName: string;
-		description?: string;
+		description?: string | null;
 		templateBody: string;
-		enabled?: boolean;
+		enabled?: boolean | null;
 		provisioningRoleArn: string;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: ProvisioningHook;
-		tags?: Array<Tag>;
+		preProvisioningHook?: ProvisioningHook | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateProvisioningTemplateVersionRequest {
@@ -3139,52 +3139,52 @@ export namespace MyNS {
 
 	export interface CreateRoleAliasRequest {
 		roleArn: string;
-		credentialDurationSeconds?: number;
-		tags?: Array<Tag>;
+		credentialDurationSeconds?: number | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum DayOfWeek { SUN = 0, MON = 1, TUE = 2, WED = 3, THU = 4, FRI = 5, SAT = 6 }
 
 	export interface CreateScheduledAuditRequest {
 		frequency: DescribeScheduledAuditResponseFrequency;
-		dayOfMonth?: string;
-		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek;
+		dayOfMonth?: string | null;
+		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
 		targetCheckNames: Array<string>;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateSecurityProfileRequest {
-		securityProfileDescription?: string;
-		behaviors?: Array<Behavior>;
-		alertTargets?: AlertTargets;
-		additionalMetricsToRetain?: Array<string>;
-		additionalMetricsToRetainV2?: Array<MetricToRetain>;
-		tags?: Array<Tag>;
+		securityProfileDescription?: string | null;
+		behaviors?: Array<Behavior> | null;
+		alertTargets?: AlertTargets | null;
+		additionalMetricsToRetain?: Array<string> | null;
+		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateStreamRequest {
-		description?: string;
+		description?: string | null;
 		files: Array<StreamFile>;
 		roleArn: string;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateThingGroupRequest {
-		parentGroupName?: string;
+		parentGroupName?: string | null;
 
 		/** Thing group properties. */
-		thingGroupProperties?: ThingGroupProperties;
-		tags?: Array<Tag>;
+		thingGroupProperties?: ThingGroupProperties | null;
+		tags?: Array<Tag> | null;
 	}
 
 
 	/** The input for the CreateThing operation. */
 	export interface CreateThingRequest {
-		thingTypeName?: string;
+		thingTypeName?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload;
-		billingGroupName?: string;
+		attributePayload?: AttributePayload | null;
+		billingGroupName?: string | null;
 	}
 
 
@@ -3192,8 +3192,8 @@ export namespace MyNS {
 	export interface CreateThingTypeRequest {
 
 		/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
-		thingTypeProperties?: ThingTypeProperties;
-		tags?: Array<Tag>;
+		thingTypeProperties?: ThingTypeProperties | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -3201,7 +3201,7 @@ export namespace MyNS {
 	export interface TopicRuleDestinationConfiguration {
 
 		/** HTTP URL destination configuration used by the topic rule's HTTP action. */
-		httpUrlConfiguration?: HttpUrlDestinationConfiguration;
+		httpUrlConfiguration?: HttpUrlDestinationConfiguration | null;
 	}
 
 	export interface CreateTopicRuleDestinationRequest {
@@ -3217,13 +3217,13 @@ export namespace MyNS {
 	/** Describes a rule. */
 	export interface TopicRulePayload {
 		sql: string;
-		description?: string;
+		description?: string | null;
 		actions: Array<Action>;
-		ruleDisabled?: boolean;
-		awsIotSqlVersion?: string;
+		ruleDisabled?: boolean | null;
+		awsIotSqlVersion?: string | null;
 
 		/** Describes the actions associated with a rule. */
-		errorAction?: Action;
+		errorAction?: Action | null;
 	}
 
 
@@ -3337,7 +3337,7 @@ export namespace MyNS {
 
 	/** The input for the DeprecateThingType operation. */
 	export interface DeprecateThingTypeRequest {
-		undoDeprecate?: boolean;
+		undoDeprecate?: boolean | null;
 	}
 
 	export interface DescribeAccountAuditConfigurationRequest {
@@ -3479,15 +3479,15 @@ export namespace MyNS {
 	export enum EventType { THING = 0, THING_GROUP = 1, THING_TYPE = 2, THING_GROUP_MEMBERSHIP = 3, THING_GROUP_HIERARCHY = 4, THING_TYPE_ASSOCIATION = 5, JOB = 6, JOB_EXECUTION = 7, POLICY = 8, CERTIFICATE = 9, CA_CERTIFICATE = 10 }
 
 	export interface GetCardinalityRequest {
-		indexName?: string;
+		indexName?: string | null;
 		queryString: string;
-		aggregationField?: string;
-		queryVersion?: string;
+		aggregationField?: string | null;
+		queryVersion?: string | null;
 	}
 
 	export interface GetEffectivePoliciesRequest {
-		principal?: string;
-		cognitoIdentityPoolId?: string;
+		principal?: string | null;
+		cognitoIdentityPoolId?: string | null;
 	}
 
 	export interface GetIndexingConfigurationRequest {
@@ -3505,11 +3505,11 @@ export namespace MyNS {
 	}
 
 	export interface GetPercentilesRequest {
-		indexName?: string;
+		indexName?: string | null;
 		queryString: string;
-		aggregationField?: string;
-		queryVersion?: string;
-		percents?: Array<number>;
+		aggregationField?: string | null;
+		queryVersion?: string | null;
+		percents?: Array<number> | null;
 	}
 
 
@@ -3528,10 +3528,10 @@ export namespace MyNS {
 	}
 
 	export interface GetStatisticsRequest {
-		indexName?: string;
+		indexName?: string | null;
 		queryString: string;
-		aggregationField?: string;
-		queryVersion?: string;
+		aggregationField?: string | null;
+		queryVersion?: string | null;
 	}
 
 	export interface GetTopicRuleDestinationRequest {
@@ -3548,8 +3548,8 @@ export namespace MyNS {
 
 	/** Specifies the HTTP context to use for the test authorizer request. */
 	export interface HttpContext {
-		headers?: HttpHeaders;
-		queryString?: string;
+		headers?: HttpHeaders | null;
+		queryString?: string | null;
 	}
 
 	export interface ListActiveViolationsRequest {
@@ -3559,17 +3559,17 @@ export namespace MyNS {
 	}
 
 	export interface ListAuditFindingsRequest {
-		taskId?: string;
+		taskId?: string | null;
 
 		/** An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
-		checkName?: string;
+		checkName?: string | null;
 
 		/** Information that identifies the noncompliant resource. */
-		resourceIdentifier?: ResourceIdentifier;
-		maxResults?: number;
-		nextToken?: string;
-		startTime?: Date;
-		endTime?: Date;
+		resourceIdentifier?: ResourceIdentifier | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
 	}
 
 	export interface ListAuditMitigationActionsExecutionsRequest {
@@ -3739,7 +3739,7 @@ export namespace MyNS {
 	/** Describes the logging options payload. */
 	export interface LoggingOptionsPayload {
 		roleArn: string;
-		logLevel?: EnableIoTLoggingParamsLogLevel;
+		logLevel?: EnableIoTLoggingParamsLogLevel | null;
 	}
 
 	export enum MessageFormat { RAW = 0, JSON = 1 }
@@ -3747,9 +3747,9 @@ export namespace MyNS {
 
 	/** Specifies the MQTT context to use for the test authorizer request */
 	export interface MqttContext {
-		username?: string;
-		password?: string;
-		clientId?: string;
+		username?: string | null;
+		password?: string | null;
+		clientId?: string | null;
 	}
 
 	export enum ResourceType { DEVICE_CERTIFICATE = 0, CA_CERTIFICATE = 1, IOT_POLICY = 2, COGNITO_IDENTITY_POOL = 3, CLIENT_ID = 4, ACCOUNT_SETTINGS = 5, ROLE_ALIAS = 6, IAM_ROLE = 7 }
@@ -3780,8 +3780,8 @@ export namespace MyNS {
 		verificationCertificate: string;
 
 		/** The registration configuration. */
-		registrationConfig?: RegistrationConfig;
-		tags?: Array<Tag>;
+		registrationConfig?: RegistrationConfig | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -3801,8 +3801,8 @@ export namespace MyNS {
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		caCertificatePem?: string;
-		status?: CertificateDescriptionStatus;
+		caCertificatePem?: string | null;
+		status?: CertificateDescriptionStatus | null;
 	}
 
 	export interface RegisterCertificateWithoutCARequest {
@@ -3814,32 +3814,32 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		certificatePem: string;
-		status?: CertificateDescriptionStatus;
+		status?: CertificateDescriptionStatus | null;
 	}
 
 	export interface RegisterThingRequest {
 		templateBody: string;
-		parameters?: Parameters;
+		parameters?: Parameters | null;
 	}
 
 
 	/** The input for the RejectCertificateTransfer operation. */
 	export interface RejectCertificateTransferRequest {
-		rejectReason?: string;
+		rejectReason?: string | null;
 	}
 
 	export interface RemoveThingFromBillingGroupRequest {
-		billingGroupName?: string;
-		billingGroupArn?: string;
-		thingName?: string;
-		thingArn?: string;
+		billingGroupName?: string | null;
+		billingGroupArn?: string | null;
+		thingName?: string | null;
+		thingArn?: string | null;
 	}
 
 	export interface RemoveThingFromThingGroupRequest {
-		thingGroupName?: string;
-		thingGroupArn?: string;
-		thingName?: string;
-		thingArn?: string;
+		thingGroupName?: string | null;
+		thingGroupArn?: string | null;
+		thingName?: string | null;
+		thingArn?: string | null;
 	}
 
 
@@ -3854,11 +3854,11 @@ export namespace MyNS {
 	}
 
 	export interface SearchIndexRequest {
-		indexName?: string;
+		indexName?: string | null;
 		queryString: string;
-		nextToken?: string;
-		maxResults?: number;
-		queryVersion?: string;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		queryVersion?: string | null;
 	}
 
 	export enum ServerCertificateStatus { INVALID = 0, VALID = 1 }
@@ -3894,9 +3894,9 @@ export namespace MyNS {
 	}
 
 	export interface SetV2LoggingOptionsRequest {
-		roleArn?: string;
-		defaultLogLevel?: EnableIoTLoggingParamsLogLevel;
-		disableAllLogs?: boolean;
+		roleArn?: string | null;
+		defaultLogLevel?: EnableIoTLoggingParamsLogLevel | null;
+		disableAllLogs?: boolean | null;
 	}
 
 	export interface StartAuditMitigationActionsTaskRequest {
@@ -3930,37 +3930,37 @@ export namespace MyNS {
 	}
 
 	export interface TestAuthorizationRequest {
-		principal?: string;
-		cognitoIdentityPoolId?: string;
+		principal?: string | null;
+		cognitoIdentityPoolId?: string | null;
 		authInfos: Array<AuthInfo>;
-		policyNamesToAdd?: Array<string>;
-		policyNamesToSkip?: Array<string>;
+		policyNamesToAdd?: Array<string> | null;
+		policyNamesToSkip?: Array<string> | null;
 	}
 
 
 	/** Specifies the TLS context to use for the test authorizer request. */
 	export interface TlsContext {
-		serverName?: string;
+		serverName?: string | null;
 	}
 
 	export interface TestInvokeAuthorizerRequest {
-		token?: string;
-		tokenSignature?: string;
+		token?: string | null;
+		tokenSignature?: string | null;
 
 		/** Specifies the HTTP context to use for the test authorizer request. */
-		httpContext?: HttpContext;
+		httpContext?: HttpContext | null;
 
 		/** Specifies the MQTT context to use for the test authorizer request */
-		mqttContext?: MqttContext;
+		mqttContext?: MqttContext | null;
 
 		/** Specifies the TLS context to use for the test authorizer request. */
-		tlsContext?: TlsContext;
+		tlsContext?: TlsContext | null;
 	}
 
 
 	/** The input for the TransferCertificate operation. */
 	export interface TransferCertificateRequest {
-		transferMessage?: string;
+		transferMessage?: string | null;
 	}
 
 	export interface UntagResourceRequest {
@@ -3969,16 +3969,16 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAccountAuditConfigurationRequest {
-		roleArn?: string;
-		auditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations;
-		auditCheckConfigurations?: AuditCheckConfigurations;
+		roleArn?: string | null;
+		auditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations | null;
+		auditCheckConfigurations?: AuditCheckConfigurations | null;
 	}
 
 	export interface UpdateAuthorizerRequest {
-		authorizerFunctionArn?: string;
-		tokenKeyName?: string;
-		tokenSigningPublicKeys?: PublicKeyMap;
-		status?: AuthorizerDescriptionStatus;
+		authorizerFunctionArn?: string | null;
+		tokenKeyName?: string | null;
+		tokenSigningPublicKeys?: PublicKeyMap | null;
+		status?: AuthorizerDescriptionStatus | null;
 	}
 
 	export interface UpdateBillingGroupRequest {
@@ -3988,7 +3988,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		billingGroupProperties: BillingGroupProperties;
-		expectedVersion?: number;
+		expectedVersion?: number | null;
 	}
 
 
@@ -3996,8 +3996,8 @@ export namespace MyNS {
 	export interface UpdateCACertificateRequest {
 
 		/** The registration configuration. */
-		registrationConfig?: RegistrationConfig;
-		removeAutoRegistration?: boolean;
+		registrationConfig?: RegistrationConfig | null;
+		removeAutoRegistration?: boolean | null;
 	}
 
 
@@ -4012,9 +4012,9 @@ export namespace MyNS {
 	export interface UpdateDomainConfigurationRequest {
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: AuthorizerConfig;
-		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus;
-		removeAuthorizerConfig?: boolean;
+		authorizerConfig?: AuthorizerConfig | null;
+		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus | null;
+		removeAuthorizerConfig?: boolean | null;
 	}
 
 	export interface UpdateDynamicThingGroupRequest {
@@ -4024,86 +4024,86 @@ export namespace MyNS {
 		 * Required
 		 */
 		thingGroupProperties: ThingGroupProperties;
-		expectedVersion?: number;
-		indexName?: string;
-		queryString?: string;
-		queryVersion?: string;
+		expectedVersion?: number | null;
+		indexName?: string | null;
+		queryString?: string | null;
+		queryVersion?: string | null;
 	}
 
 	export interface UpdateEventConfigurationsRequest {
-		eventConfigurations?: EventConfigurations;
+		eventConfigurations?: EventConfigurations | null;
 	}
 
 	export interface UpdateIndexingConfigurationRequest {
 
 		/** The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>. */
-		thingIndexingConfiguration?: ThingIndexingConfiguration;
+		thingIndexingConfiguration?: ThingIndexingConfiguration | null;
 
 		/** Thing group indexing configuration. */
-		thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration;
+		thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration | null;
 	}
 
 	export interface UpdateJobRequest {
-		description?: string;
+		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: PresignedUrlConfig;
+		presignedUrlConfig?: PresignedUrlConfig | null;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
+		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig | null;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: AbortConfig;
+		abortConfig?: AbortConfig | null;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: TimeoutConfig;
+		timeoutConfig?: TimeoutConfig | null;
 	}
 
 	export interface UpdateMitigationActionRequest {
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
-		actionParams?: MitigationActionParams;
+		actionParams?: MitigationActionParams | null;
 	}
 
 	export interface UpdateProvisioningTemplateRequest {
-		description?: string;
-		enabled?: boolean;
-		defaultVersionId?: number;
-		provisioningRoleArn?: string;
+		description?: string | null;
+		enabled?: boolean | null;
+		defaultVersionId?: number | null;
+		provisioningRoleArn?: string | null;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: ProvisioningHook;
-		removePreProvisioningHook?: boolean;
+		preProvisioningHook?: ProvisioningHook | null;
+		removePreProvisioningHook?: boolean | null;
 	}
 
 	export interface UpdateRoleAliasRequest {
-		roleArn?: string;
-		credentialDurationSeconds?: number;
+		roleArn?: string | null;
+		credentialDurationSeconds?: number | null;
 	}
 
 	export interface UpdateScheduledAuditRequest {
-		frequency?: DescribeScheduledAuditResponseFrequency;
-		dayOfMonth?: string;
-		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek;
-		targetCheckNames?: Array<string>;
+		frequency?: DescribeScheduledAuditResponseFrequency | null;
+		dayOfMonth?: string | null;
+		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
+		targetCheckNames?: Array<string> | null;
 	}
 
 	export interface UpdateSecurityProfileRequest {
-		securityProfileDescription?: string;
-		behaviors?: Array<Behavior>;
-		alertTargets?: AlertTargets;
-		additionalMetricsToRetain?: Array<string>;
-		additionalMetricsToRetainV2?: Array<MetricToRetain>;
-		deleteBehaviors?: boolean;
-		deleteAlertTargets?: boolean;
-		deleteAdditionalMetricsToRetain?: boolean;
+		securityProfileDescription?: string | null;
+		behaviors?: Array<Behavior> | null;
+		alertTargets?: AlertTargets | null;
+		additionalMetricsToRetain?: Array<string> | null;
+		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		deleteBehaviors?: boolean | null;
+		deleteAlertTargets?: boolean | null;
+		deleteAdditionalMetricsToRetain?: boolean | null;
 	}
 
 	export interface UpdateStreamRequest {
-		description?: string;
-		files?: Array<StreamFile>;
-		roleArn?: string;
+		description?: string | null;
+		files?: Array<StreamFile> | null;
+		roleArn?: string | null;
 	}
 
 	export interface UpdateThingGroupRequest {
@@ -4113,25 +4113,25 @@ export namespace MyNS {
 		 * Required
 		 */
 		thingGroupProperties: ThingGroupProperties;
-		expectedVersion?: number;
+		expectedVersion?: number | null;
 	}
 
 	export interface UpdateThingGroupsForThingRequest {
-		thingName?: string;
-		thingGroupsToAdd?: Array<string>;
-		thingGroupsToRemove?: Array<string>;
-		overrideDynamicGroups?: boolean;
+		thingName?: string | null;
+		thingGroupsToAdd?: Array<string> | null;
+		thingGroupsToRemove?: Array<string> | null;
+		overrideDynamicGroups?: boolean | null;
 	}
 
 
 	/** The input for the UpdateThing operation. */
 	export interface UpdateThingRequest {
-		thingTypeName?: string;
+		thingTypeName?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload;
-		expectedVersion?: number;
-		removeThingType?: boolean;
+		attributePayload?: AttributePayload | null;
+		expectedVersion?: number | null;
+		removeThingType?: boolean | null;
 	}
 
 	export interface UpdateTopicRuleDestinationRequest {
@@ -6339,10 +6339,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		billingGroupName?: string;
+		billingGroupName?: string | null;
 
 		/** The ARN of the billing group. */
-		billingGroupArn?: string;
+		billingGroupArn?: string | null;
 
 		/**
 		 * The name of the thing to be added to the billing group.
@@ -6350,10 +6350,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingName?: string;
+		thingName?: string | null;
 
 		/** The ARN of the thing to be added to the billing group. */
-		thingArn?: string;
+		thingArn?: string | null;
 	}
 
 	export interface AddThingToThingGroupPutBody {
@@ -6364,10 +6364,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingGroupName?: string;
+		thingGroupName?: string | null;
 
 		/** The ARN of the group to which you are adding a thing. */
-		thingGroupArn?: string;
+		thingGroupArn?: string | null;
 
 		/**
 		 * The name of the thing to add to a group.
@@ -6375,13 +6375,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingName?: string;
+		thingName?: string | null;
 
 		/** The ARN of the thing to add to a group. */
-		thingArn?: string;
+		thingArn?: string | null;
 
 		/** Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group. */
-		overrideDynamicGroups?: boolean;
+		overrideDynamicGroups?: boolean | null;
 	}
 
 	export interface AssociateTargetsWithJobPostBody {
@@ -6398,7 +6398,7 @@ export namespace MyNS {
 		 * Max length: 2028
 		 * Pattern: [^\p{C}]+
 		 */
-		comment?: string;
+		comment?: string | null;
 	}
 
 	export interface AttachPolicyPutBody {
@@ -6426,23 +6426,23 @@ export namespace MyNS {
 		 * Max length: 128
 		 * Pattern: [\p{Upper}\p{Digit}_]+
 		 */
-		reasonCode?: string;
+		reasonCode?: string | null;
 
 		/**
 		 * An optional comment string describing why the job was canceled.
 		 * Max length: 2028
 		 * Pattern: [^\p{C}]+
 		 */
-		comment?: string;
+		comment?: string | null;
 	}
 
 	export interface CancelJobExecutionPutBody {
 
 		/** (Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.) */
-		expectedVersion?: number;
+		expectedVersion?: number | null;
 
 		/** A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs. */
-		statusDetails?: {[id: string]: string };
+		statusDetails?: {[id: string]: string } | null;
 	}
 
 	export interface SetDefaultAuthorizerPostBody {
@@ -6471,25 +6471,25 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_-]+
 		 */
-		tokenKeyName?: string;
+		tokenKeyName?: string | null;
 
 		/** The public keys used to verify the digital signature returned by your custom authentication service. */
-		tokenSigningPublicKeys?: {[id: string]: string };
+		tokenSigningPublicKeys?: {[id: string]: string } | null;
 
 		/** The status of the create authorizer request. */
-		status?: AuthorizerDescriptionStatus;
+		status?: AuthorizerDescriptionStatus | null;
 
 		/** <p>Metadata which can be used to manage the custom authorizer.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 
 		/** Specifies whether AWS IoT validates the token signature in an authorization request. */
-		signingDisabled?: boolean;
+		signingDisabled?: boolean | null;
 	}
 
 	export interface UpdateAuthorizerPutBody {
 
 		/** The ARN of the authorizer's Lambda function. */
-		authorizerFunctionArn?: string;
+		authorizerFunctionArn?: string | null;
 
 		/**
 		 * The key used to extract the token from the HTTP headers.
@@ -6497,26 +6497,26 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_-]+
 		 */
-		tokenKeyName?: string;
+		tokenKeyName?: string | null;
 
 		/** The public keys used to verify the token signature. */
-		tokenSigningPublicKeys?: {[id: string]: string };
+		tokenSigningPublicKeys?: {[id: string]: string } | null;
 
 		/** The status of the update authorizer request. */
-		status?: AuthorizerDescriptionStatus;
+		status?: AuthorizerDescriptionStatus | null;
 	}
 
 	export interface CreateBillingGroupPostBody {
 
 		/** The properties of a billing group. */
-		billingGroupProperties?: CreateBillingGroupPostBodyBillingGroupProperties;
+		billingGroupProperties?: CreateBillingGroupPostBodyBillingGroupProperties | null;
 
 		/** Metadata which can be used to manage the billing group. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateBillingGroupPostBodyBillingGroupProperties {
-		billingGroupDescription?: string;
+		billingGroupDescription?: string | null;
 	}
 
 	export interface UpdateBillingGroupPatchBody {
@@ -6528,11 +6528,11 @@ export namespace MyNS {
 		billingGroupProperties: UpdateBillingGroupPatchBodyBillingGroupProperties;
 
 		/** The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>. */
-		expectedVersion?: number;
+		expectedVersion?: number | null;
 	}
 
 	export interface UpdateBillingGroupPatchBodyBillingGroupProperties {
-		billingGroupDescription?: string;
+		billingGroupDescription?: string | null;
 	}
 
 	export interface CreateCertificateFromCsrPostBody {
@@ -6562,7 +6562,7 @@ export namespace MyNS {
 		stringValues: Array<string>;
 
 		/** Metadata that can be used to manage the dimension. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 
 		/**
 		 * Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
@@ -6592,14 +6592,14 @@ export namespace MyNS {
 		 * Max length: 253
 		 * Min length: 1
 		 */
-		domainName?: string;
+		domainName?: string | null;
 
 		/**
 		 * The ARNs of the certificates that AWS IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for AWS-managed domains.
 		 * Minimum items: 0
 		 * Maximum items: 1
 		 */
-		serverCertificateArns?: Array<string>;
+		serverCertificateArns?: Array<string> | null;
 
 		/**
 		 * The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for AWS-managed domains.
@@ -6607,44 +6607,44 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:acm:[a-z]{2}-(gov-)?[a-z]{4,9}-\d{1}:\d{12}:certificate/?[a-zA-Z0-9/-]+
 		 */
-		validationCertificateArn?: string;
+		validationCertificateArn?: string | null;
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: CreateDomainConfigurationPostBodyAuthorizerConfig;
+		authorizerConfig?: CreateDomainConfigurationPostBodyAuthorizerConfig | null;
 
 		/** <p>The type of service delivered by the endpoint.</p> <note> <p>AWS IoT Core currently supports only the <code>DATA</code> service type.</p> </note> */
-		serviceType?: DescribeDomainConfigurationResponseServiceType;
+		serviceType?: DescribeDomainConfigurationResponseServiceType | null;
 
 		/** <p>Metadata which can be used to manage the domain configuration.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDomainConfigurationPostBodyAuthorizerConfig {
-		defaultAuthorizerName?: string;
-		allowAuthorizerOverride?: boolean;
+		defaultAuthorizerName?: string | null;
+		allowAuthorizerOverride?: boolean | null;
 	}
 
 	export interface UpdateDomainConfigurationPutBody {
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: UpdateDomainConfigurationPutBodyAuthorizerConfig;
+		authorizerConfig?: UpdateDomainConfigurationPutBodyAuthorizerConfig | null;
 
 		/** The status to which the domain configuration should be updated. */
-		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus;
+		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus | null;
 
 		/** Removes the authorization configuration from a domain. */
-		removeAuthorizerConfig?: boolean;
+		removeAuthorizerConfig?: boolean | null;
 	}
 
 	export interface UpdateDomainConfigurationPutBodyAuthorizerConfig {
-		defaultAuthorizerName?: string;
-		allowAuthorizerOverride?: boolean;
+		defaultAuthorizerName?: string | null;
+		allowAuthorizerOverride?: boolean | null;
 	}
 
 	export interface CreateDynamicThingGroupPostBody {
 
 		/** Thing group properties. */
-		thingGroupProperties?: CreateDynamicThingGroupPostBodyThingGroupProperties;
+		thingGroupProperties?: CreateDynamicThingGroupPostBodyThingGroupProperties | null;
 
 		/**
 		 * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is supported: "AWS_Things".</p> </note>
@@ -6652,7 +6652,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		indexName?: string;
+		indexName?: string | null;
 
 		/**
 		 * <p>The dynamic thing group search query string.</p> <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
@@ -6662,17 +6662,17 @@ export namespace MyNS {
 		queryString: string;
 
 		/** <p>The dynamic thing group query version.</p> <note> <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> </note> */
-		queryVersion?: string;
+		queryVersion?: string | null;
 
 		/** Metadata which can be used to manage the dynamic thing group. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDynamicThingGroupPostBodyThingGroupProperties {
-		thingGroupDescription?: string;
+		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload;
+		attributePayload?: AttributePayload | null;
 	}
 
 	export interface UpdateDynamicThingGroupPatchBody {
@@ -6684,7 +6684,7 @@ export namespace MyNS {
 		thingGroupProperties: UpdateDynamicThingGroupPatchBodyThingGroupProperties;
 
 		/** The expected version of the dynamic thing group to update. */
-		expectedVersion?: number;
+		expectedVersion?: number | null;
 
 		/**
 		 * <p>The dynamic thing group index to update.</p> <note> <p>Currently one index is supported: 'AWS_Things'.</p> </note>
@@ -6692,23 +6692,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		indexName?: string;
+		indexName?: string | null;
 
 		/**
 		 * The dynamic thing group search query string to update.
 		 * Min length: 1
 		 */
-		queryString?: string;
+		queryString?: string | null;
 
 		/** <p>The dynamic thing group query version to update.</p> <note> <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> </note> */
-		queryVersion?: string;
+		queryVersion?: string | null;
 	}
 
 	export interface UpdateDynamicThingGroupPatchBodyThingGroupProperties {
-		thingGroupDescription?: string;
+		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload;
+		attributePayload?: AttributePayload | null;
 	}
 
 	export interface CreateJobPutBody {
@@ -6725,58 +6725,58 @@ export namespace MyNS {
 		 * Max length: 1350
 		 * Min length: 1
 		 */
-		documentSource?: string;
+		documentSource?: string | null;
 
 		/**
 		 * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> <p>The placeholder link is of the following form:</p> <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> </note>
 		 * Max length: 32768
 		 */
-		document?: string;
+		document?: string | null;
 
 		/**
 		 * A short text description of the job.
 		 * Max length: 2028
 		 * Pattern: [^\p{C}]+
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: CreateJobPutBodyPresignedUrlConfig;
+		presignedUrlConfig?: CreateJobPutBodyPresignedUrlConfig | null;
 
 		/** Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. */
-		targetSelection?: JobTargetSelection;
+		targetSelection?: JobTargetSelection | null;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: CreateJobPutBodyJobExecutionsRolloutConfig;
+		jobExecutionsRolloutConfig?: CreateJobPutBodyJobExecutionsRolloutConfig | null;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: CreateJobPutBodyAbortConfig;
+		abortConfig?: CreateJobPutBodyAbortConfig | null;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: CreateJobPutBodyTimeoutConfig;
+		timeoutConfig?: CreateJobPutBodyTimeoutConfig | null;
 
 		/** Metadata which can be used to manage the job. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateJobPutBodyPresignedUrlConfig {
-		roleArn?: string;
-		expiresInSec?: number;
+		roleArn?: string | null;
+		expiresInSec?: number | null;
 	}
 
 	export interface CreateJobPutBodyJobExecutionsRolloutConfig {
-		maximumPerMinute?: number;
+		maximumPerMinute?: number | null;
 
 		/** Allows you to create an exponential rate of rollout for a job. */
-		exponentialRate?: ExponentialRolloutRate;
+		exponentialRate?: ExponentialRolloutRate | null;
 	}
 
 	export interface CreateJobPutBodyAbortConfig {
-		criteriaList?: Array<AbortCriteria>;
+		criteriaList?: Array<AbortCriteria> | null;
 	}
 
 	export interface CreateJobPutBodyTimeoutConfig {
-		inProgressTimeoutInMinutes?: number;
+		inProgressTimeoutInMinutes?: number | null;
 	}
 
 	export interface UpdateJobPatchBody {
@@ -6786,39 +6786,39 @@ export namespace MyNS {
 		 * Max length: 2028
 		 * Pattern: [^\p{C}]+
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: UpdateJobPatchBodyPresignedUrlConfig;
+		presignedUrlConfig?: UpdateJobPatchBodyPresignedUrlConfig | null;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: UpdateJobPatchBodyJobExecutionsRolloutConfig;
+		jobExecutionsRolloutConfig?: UpdateJobPatchBodyJobExecutionsRolloutConfig | null;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: UpdateJobPatchBodyAbortConfig;
+		abortConfig?: UpdateJobPatchBodyAbortConfig | null;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: UpdateJobPatchBodyTimeoutConfig;
+		timeoutConfig?: UpdateJobPatchBodyTimeoutConfig | null;
 	}
 
 	export interface UpdateJobPatchBodyPresignedUrlConfig {
-		roleArn?: string;
-		expiresInSec?: number;
+		roleArn?: string | null;
+		expiresInSec?: number | null;
 	}
 
 	export interface UpdateJobPatchBodyJobExecutionsRolloutConfig {
-		maximumPerMinute?: number;
+		maximumPerMinute?: number | null;
 
 		/** Allows you to create an exponential rate of rollout for a job. */
-		exponentialRate?: ExponentialRolloutRate;
+		exponentialRate?: ExponentialRolloutRate | null;
 	}
 
 	export interface UpdateJobPatchBodyAbortConfig {
-		criteriaList?: Array<AbortCriteria>;
+		criteriaList?: Array<AbortCriteria> | null;
 	}
 
 	export interface UpdateJobPatchBodyTimeoutConfig {
-		inProgressTimeoutInMinutes?: number;
+		inProgressTimeoutInMinutes?: number | null;
 	}
 
 	export interface CreateMitigationActionPostBody {
@@ -6838,28 +6838,28 @@ export namespace MyNS {
 		actionParams: CreateMitigationActionPostBodyActionParams;
 
 		/** Metadata that can be used to manage the mitigation action. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateMitigationActionPostBodyActionParams {
 
 		/** Parameters to define a mitigation action that changes the state of the device certificate to inactive. */
-		updateDeviceCertificateParams?: UpdateDeviceCertificateParams;
+		updateDeviceCertificateParams?: UpdateDeviceCertificateParams | null;
 
 		/** Parameters to define a mitigation action that changes the state of the CA certificate to inactive. */
-		updateCACertificateParams?: UpdateCACertificateParams;
+		updateCACertificateParams?: UpdateCACertificateParams | null;
 
 		/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
-		addThingsToThingGroupParams?: AddThingsToThingGroupParams;
+		addThingsToThingGroupParams?: AddThingsToThingGroupParams | null;
 
 		/** Parameters to define a mitigation action that adds a blank policy to restrict permissions. */
-		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams;
+		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams | null;
 
 		/** Parameters used when defining a mitigation action that enable AWS IoT logging. */
-		enableIoTLoggingParams?: EnableIoTLoggingParams;
+		enableIoTLoggingParams?: EnableIoTLoggingParams | null;
 
 		/** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages. */
-		publishFindingToSnsParams?: PublishFindingToSnsParams;
+		publishFindingToSnsParams?: PublishFindingToSnsParams | null;
 	}
 
 	export interface UpdateMitigationActionPatchBody {
@@ -6869,31 +6869,31 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
-		actionParams?: UpdateMitigationActionPatchBodyActionParams;
+		actionParams?: UpdateMitigationActionPatchBodyActionParams | null;
 	}
 
 	export interface UpdateMitigationActionPatchBodyActionParams {
 
 		/** Parameters to define a mitigation action that changes the state of the device certificate to inactive. */
-		updateDeviceCertificateParams?: UpdateDeviceCertificateParams;
+		updateDeviceCertificateParams?: UpdateDeviceCertificateParams | null;
 
 		/** Parameters to define a mitigation action that changes the state of the CA certificate to inactive. */
-		updateCACertificateParams?: UpdateCACertificateParams;
+		updateCACertificateParams?: UpdateCACertificateParams | null;
 
 		/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
-		addThingsToThingGroupParams?: AddThingsToThingGroupParams;
+		addThingsToThingGroupParams?: AddThingsToThingGroupParams | null;
 
 		/** Parameters to define a mitigation action that adds a blank policy to restrict permissions. */
-		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams;
+		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams | null;
 
 		/** Parameters used when defining a mitigation action that enable AWS IoT logging. */
-		enableIoTLoggingParams?: EnableIoTLoggingParams;
+		enableIoTLoggingParams?: EnableIoTLoggingParams | null;
 
 		/** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages. */
-		publishFindingToSnsParams?: PublishFindingToSnsParams;
+		publishFindingToSnsParams?: PublishFindingToSnsParams | null;
 	}
 
 	export interface CreateOTAUpdatePostBody {
@@ -6903,7 +6903,7 @@ export namespace MyNS {
 		 * Max length: 2028
 		 * Pattern: [^\p{C}]+
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The targeted devices to receive OTA updates.
@@ -6917,16 +6917,16 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 2
 		 */
-		protocols?: Array<Protocol>;
+		protocols?: Array<Protocol> | null;
 
 		/** Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT. */
-		targetSelection?: JobTargetSelection;
+		targetSelection?: JobTargetSelection | null;
 
 		/** Configuration for the rollout of OTA updates. */
-		awsJobExecutionsRolloutConfig?: CreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfig;
+		awsJobExecutionsRolloutConfig?: CreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfig | null;
 
 		/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
-		awsJobPresignedUrlConfig?: CreateOTAUpdatePostBodyAwsJobPresignedUrlConfig;
+		awsJobPresignedUrlConfig?: CreateOTAUpdatePostBodyAwsJobPresignedUrlConfig | null;
 
 		/**
 		 * The files to be streamed by the OTA update.
@@ -6945,18 +6945,18 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** A list of additional OTA update parameters which are name-value pairs. */
-		additionalParameters?: {[id: string]: string };
+		additionalParameters?: {[id: string]: string } | null;
 
 		/** Metadata which can be used to manage updates. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfig {
-		maximumPerMinute?: number;
+		maximumPerMinute?: number | null;
 	}
 
 	export interface CreateOTAUpdatePostBodyAwsJobPresignedUrlConfig {
-		expiresInSec?: number;
+		expiresInSec?: number | null;
 	}
 
 	export interface CreatePolicyPostBody {
@@ -6968,7 +6968,7 @@ export namespace MyNS {
 		policyDocument: string;
 
 		/** <p>Metadata which can be used to manage the policy.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreatePolicyVersionPostBody {
@@ -6997,7 +6997,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: [^\p{C}]*
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The JSON formatted contents of the fleet provisioning template.
@@ -7006,7 +7006,7 @@ export namespace MyNS {
 		templateBody: string;
 
 		/** True to enable the fleet provisioning template, otherwise false. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/**
 		 * The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.
@@ -7017,15 +7017,15 @@ export namespace MyNS {
 		provisioningRoleArn: string;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: CreateProvisioningTemplatePostBodyPreProvisioningHook;
+		preProvisioningHook?: CreateProvisioningTemplatePostBodyPreProvisioningHook | null;
 
 		/** <p>Metadata which can be used to manage the fleet provisioning template.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateProvisioningTemplatePostBodyPreProvisioningHook {
-		payloadVersion?: string;
-		targetArn?: string;
+		payloadVersion?: string | null;
+		targetArn?: string | null;
 	}
 
 	export interface CreateProvisioningTemplateVersionPostBody {
@@ -7052,10 +7052,10 @@ export namespace MyNS {
 		 * Minimum: 900
 		 * Maximum: 3600
 		 */
-		credentialDurationSeconds?: number;
+		credentialDurationSeconds?: number | null;
 
 		/** <p>Metadata which can be used to manage the role alias.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateRoleAliasPutBody {
@@ -7065,14 +7065,14 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/**
 		 * The number of seconds the credential will be valid.
 		 * Minimum: 900
 		 * Maximum: 3600
 		 */
-		credentialDurationSeconds?: number;
+		credentialDurationSeconds?: number | null;
 	}
 
 	export interface CreateScheduledAuditPostBody {
@@ -7087,10 +7087,10 @@ export namespace MyNS {
 		 * The day of the month on which the scheduled audit takes place. Can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to "MONTHLY". If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.
 		 * Pattern: ^([1-9]|[12][0-9]|3[01])$|^LAST$
 		 */
-		dayOfMonth?: string;
+		dayOfMonth?: string | null;
 
 		/** The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY". */
-		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek;
+		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
 
 		/**
 		 * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
@@ -7099,25 +7099,25 @@ export namespace MyNS {
 		targetCheckNames: Array<string>;
 
 		/** Metadata that can be used to manage the scheduled audit. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateScheduledAuditPatchBody {
 
 		/** How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the system. */
-		frequency?: DescribeScheduledAuditResponseFrequency;
+		frequency?: DescribeScheduledAuditResponseFrequency | null;
 
 		/**
 		 * The day of the month on which the scheduled audit takes place. Can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to "MONTHLY". If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.
 		 * Pattern: ^([1-9]|[12][0-9]|3[01])$|^LAST$
 		 */
-		dayOfMonth?: string;
+		dayOfMonth?: string | null;
 
 		/** The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY". */
-		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek;
+		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
 
 		/** Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
-		targetCheckNames?: Array<string>;
+		targetCheckNames?: Array<string> | null;
 	}
 
 	export interface CreateSecurityProfilePostBody {
@@ -7127,25 +7127,25 @@ export namespace MyNS {
 		 * Max length: 1000
 		 * Pattern: [\p{Graph}\x20]*
 		 */
-		securityProfileDescription?: string;
+		securityProfileDescription?: string | null;
 
 		/**
 		 * Specifies the behaviors that, when violated by a device (thing), cause an alert.
 		 * Maximum items: 100
 		 */
-		behaviors?: Array<Behavior>;
+		behaviors?: Array<Behavior> | null;
 
 		/** Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior. */
-		alertTargets?: {[id: string]: AlertTarget };
+		alertTargets?: {[id: string]: AlertTarget } | null;
 
 		/** <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p> <p> <b>Note:</b> This API field is deprecated. Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</p> */
-		additionalMetricsToRetain?: Array<string>;
+		additionalMetricsToRetain?: Array<string> | null;
 
 		/** A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. */
-		additionalMetricsToRetainV2?: Array<MetricToRetain>;
+		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
 
 		/** Metadata that can be used to manage the security profile. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateSecurityProfilePatchBody {
@@ -7155,31 +7155,31 @@ export namespace MyNS {
 		 * Max length: 1000
 		 * Pattern: [\p{Graph}\x20]*
 		 */
-		securityProfileDescription?: string;
+		securityProfileDescription?: string | null;
 
 		/**
 		 * Specifies the behaviors that, when violated by a device (thing), cause an alert.
 		 * Maximum items: 100
 		 */
-		behaviors?: Array<Behavior>;
+		behaviors?: Array<Behavior> | null;
 
 		/** Where the alerts are sent. (Alerts are always sent to the console.) */
-		alertTargets?: {[id: string]: AlertTarget };
+		alertTargets?: {[id: string]: AlertTarget } | null;
 
 		/** <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p> <p> <b>Note:</b> This API field is deprecated. Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</p> */
-		additionalMetricsToRetain?: Array<string>;
+		additionalMetricsToRetain?: Array<string> | null;
 
 		/** A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. */
-		additionalMetricsToRetainV2?: Array<MetricToRetain>;
+		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
 
 		/** If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs. */
-		deleteBehaviors?: boolean;
+		deleteBehaviors?: boolean | null;
 
 		/** If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs. */
-		deleteAlertTargets?: boolean;
+		deleteAlertTargets?: boolean | null;
 
 		/** If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs. */
-		deleteAdditionalMetricsToRetain?: boolean;
+		deleteAdditionalMetricsToRetain?: boolean | null;
 	}
 
 	export interface CreateStreamPostBody {
@@ -7189,7 +7189,7 @@ export namespace MyNS {
 		 * Max length: 2028
 		 * Pattern: [^\p{C}]+
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The files to stream.
@@ -7208,7 +7208,7 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** Metadata which can be used to manage streams. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateStreamPutBody {
@@ -7218,21 +7218,21 @@ export namespace MyNS {
 		 * Max length: 2028
 		 * Pattern: [^\p{C}]+
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The files associated with the stream.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		files?: Array<StreamFile>;
+		files?: Array<StreamFile> | null;
 
 		/**
 		 * An IAM role that allows the IoT service principal assumes to access your S3 files.
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		roleArn?: string;
+		roleArn?: string | null;
 	}
 
 	export interface CreateThingPostBody {
@@ -7243,10 +7243,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingTypeName?: string;
+		thingTypeName?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: CreateThingPostBodyAttributePayload;
+		attributePayload?: CreateThingPostBodyAttributePayload | null;
 
 		/**
 		 * The name of the billing group the thing will be added to.
@@ -7254,12 +7254,12 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		billingGroupName?: string;
+		billingGroupName?: string | null;
 	}
 
 	export interface CreateThingPostBodyAttributePayload {
-		attributes?: Attributes;
-		merge?: boolean;
+		attributes?: Attributes | null;
+		merge?: boolean | null;
 	}
 
 	export interface UpdateThingPatchBody {
@@ -7270,21 +7270,21 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingTypeName?: string;
+		thingTypeName?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: UpdateThingPatchBodyAttributePayload;
+		attributePayload?: UpdateThingPatchBodyAttributePayload | null;
 
 		/** The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>. */
-		expectedVersion?: number;
+		expectedVersion?: number | null;
 
 		/** Remove a thing type association. If <b>true</b>, the association is removed. */
-		removeThingType?: boolean;
+		removeThingType?: boolean | null;
 	}
 
 	export interface UpdateThingPatchBodyAttributePayload {
-		attributes?: Attributes;
-		merge?: boolean;
+		attributes?: Attributes | null;
+		merge?: boolean | null;
 	}
 
 	export interface CreateThingGroupPostBody {
@@ -7295,20 +7295,20 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		parentGroupName?: string;
+		parentGroupName?: string | null;
 
 		/** Thing group properties. */
-		thingGroupProperties?: CreateThingGroupPostBodyThingGroupProperties;
+		thingGroupProperties?: CreateThingGroupPostBodyThingGroupProperties | null;
 
 		/** Metadata which can be used to manage the thing group. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateThingGroupPostBodyThingGroupProperties {
-		thingGroupDescription?: string;
+		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload;
+		attributePayload?: AttributePayload | null;
 	}
 
 	export interface UpdateThingGroupPatchBody {
@@ -7320,28 +7320,28 @@ export namespace MyNS {
 		thingGroupProperties: UpdateThingGroupPatchBodyThingGroupProperties;
 
 		/** The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail. */
-		expectedVersion?: number;
+		expectedVersion?: number | null;
 	}
 
 	export interface UpdateThingGroupPatchBodyThingGroupProperties {
-		thingGroupDescription?: string;
+		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload;
+		attributePayload?: AttributePayload | null;
 	}
 
 	export interface CreateThingTypePostBody {
 
 		/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
-		thingTypeProperties?: CreateThingTypePostBodyThingTypeProperties;
+		thingTypeProperties?: CreateThingTypePostBodyThingTypeProperties | null;
 
 		/** Metadata which can be used to manage the thing type. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateThingTypePostBodyThingTypeProperties {
-		thingTypeDescription?: string;
-		searchableAttributes?: Array<string>;
+		thingTypeDescription?: string | null;
+		searchableAttributes?: Array<string> | null;
 	}
 
 	export interface CreateTopicRulePostBody {
@@ -7354,14 +7354,14 @@ export namespace MyNS {
 	}
 
 	export interface CreateTopicRulePostBodyTopicRulePayload {
-		sql?: string;
-		description?: string;
-		actions?: Array<Action>;
-		ruleDisabled?: boolean;
-		awsIotSqlVersion?: string;
+		sql?: string | null;
+		description?: string | null;
+		actions?: Array<Action> | null;
+		ruleDisabled?: boolean | null;
+		awsIotSqlVersion?: string | null;
 
 		/** Describes the actions associated with a rule. */
-		errorAction?: Action;
+		errorAction?: Action | null;
 	}
 
 	export interface ReplaceTopicRulePatchBody {
@@ -7374,14 +7374,14 @@ export namespace MyNS {
 	}
 
 	export interface ReplaceTopicRulePatchBodyTopicRulePayload {
-		sql?: string;
-		description?: string;
-		actions?: Array<Action>;
-		ruleDisabled?: boolean;
-		awsIotSqlVersion?: string;
+		sql?: string | null;
+		description?: string | null;
+		actions?: Array<Action> | null;
+		ruleDisabled?: boolean | null;
+		awsIotSqlVersion?: string | null;
 
 		/** Describes the actions associated with a rule. */
-		errorAction?: Action;
+		errorAction?: Action | null;
 	}
 
 	export interface CreateTopicRuleDestinationPostBody {
@@ -7396,7 +7396,7 @@ export namespace MyNS {
 	export interface CreateTopicRuleDestinationPostBodyDestinationConfiguration {
 
 		/** HTTP URL destination configuration used by the topic rule's HTTP action. */
-		httpUrlConfiguration?: HttpUrlDestinationConfiguration;
+		httpUrlConfiguration?: HttpUrlDestinationConfiguration | null;
 	}
 
 	export interface UpdateTopicRuleDestinationPatchBody {
@@ -7421,27 +7421,27 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/** Information about the targets to which audit notifications are sent. */
-		auditNotificationTargetConfigurations?: {[id: string]: AuditNotificationTarget };
+		auditNotificationTargetConfigurations?: {[id: string]: AuditNotificationTarget } | null;
 
 		/** <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p> <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p> <p>You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p> */
-		auditCheckConfigurations?: {[id: string]: AuditCheckConfiguration };
+		auditCheckConfigurations?: {[id: string]: AuditCheckConfiguration } | null;
 	}
 
 	export interface UpdateCACertificatePutBody {
 
 		/** The registration configuration. */
-		registrationConfig?: UpdateCACertificatePutBodyRegistrationConfig;
+		registrationConfig?: UpdateCACertificatePutBodyRegistrationConfig | null;
 
 		/** If true, removes auto registration. */
-		removeAutoRegistration?: boolean;
+		removeAutoRegistration?: boolean | null;
 	}
 
 	export interface UpdateCACertificatePutBodyRegistrationConfig {
-		templateBody?: string;
-		roleArn?: string;
+		templateBody?: string | null;
+		roleArn?: string | null;
 	}
 
 	export interface UpdateProvisioningTemplatePatchBody {
@@ -7452,37 +7452,37 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: [^\p{C}]*
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** True to enable the fleet provisioning template, otherwise false. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/** The ID of the default provisioning template version. */
-		defaultVersionId?: number;
+		defaultVersionId?: number | null;
 
 		/**
 		 * The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		provisioningRoleArn?: string;
+		provisioningRoleArn?: string | null;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: UpdateProvisioningTemplatePatchBodyPreProvisioningHook;
+		preProvisioningHook?: UpdateProvisioningTemplatePatchBodyPreProvisioningHook | null;
 
 		/** Removes pre-provisioning hook template. */
-		removePreProvisioningHook?: boolean;
+		removePreProvisioningHook?: boolean | null;
 	}
 
 	export interface UpdateProvisioningTemplatePatchBodyPreProvisioningHook {
-		payloadVersion?: string;
-		targetArn?: string;
+		payloadVersion?: string | null;
+		targetArn?: string | null;
 	}
 
 	export interface DeprecateThingTypePostBody {
 
 		/** Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things. */
-		undoDeprecate?: boolean;
+		undoDeprecate?: boolean | null;
 	}
 
 	export interface StartAuditMitigationActionsTaskPostBody {
@@ -7510,15 +7510,15 @@ export namespace MyNS {
 	}
 
 	export interface StartAuditMitigationActionsTaskPostBodyTarget {
-		auditTaskId?: string;
-		findingIds?: Array<string>;
-		auditCheckToReasonCodeFilter?: AuditCheckToReasonCodeFilter;
+		auditTaskId?: string | null;
+		findingIds?: Array<string> | null;
+		auditCheckToReasonCodeFilter?: AuditCheckToReasonCodeFilter | null;
 	}
 
 	export interface UpdateEventConfigurationsPatchBody {
 
 		/** The new event configuration values. */
-		eventConfigurations?: {[id: string]: Configuration };
+		eventConfigurations?: {[id: string]: Configuration } | null;
 	}
 
 	export interface GetCardinalityPostBody {
@@ -7529,7 +7529,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		indexName?: string;
+		indexName?: string | null;
 
 		/**
 		 * The search query.
@@ -7542,41 +7542,41 @@ export namespace MyNS {
 		 * The field to aggregate.
 		 * Min length: 1
 		 */
-		aggregationField?: string;
+		aggregationField?: string | null;
 
 		/** The query version. */
-		queryVersion?: string;
+		queryVersion?: string | null;
 	}
 
 	export interface GetEffectivePoliciesPostBody {
 
 		/** The principal. */
-		principal?: string;
+		principal?: string | null;
 
 		/** The Cognito identity pool ID. */
-		cognitoIdentityPoolId?: string;
+		cognitoIdentityPoolId?: string | null;
 	}
 
 	export interface UpdateIndexingConfigurationPostBody {
 
 		/** The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>. */
-		thingIndexingConfiguration?: UpdateIndexingConfigurationPostBodyThingIndexingConfiguration;
+		thingIndexingConfiguration?: UpdateIndexingConfigurationPostBodyThingIndexingConfiguration | null;
 
 		/** Thing group indexing configuration. */
-		thingGroupIndexingConfiguration?: UpdateIndexingConfigurationPostBodyThingGroupIndexingConfiguration;
+		thingGroupIndexingConfiguration?: UpdateIndexingConfigurationPostBodyThingGroupIndexingConfiguration | null;
 	}
 
 	export interface UpdateIndexingConfigurationPostBodyThingIndexingConfiguration {
-		thingIndexingMode?: ThingIndexingConfigurationThingIndexingMode;
-		thingConnectivityIndexingMode?: ThingIndexingConfigurationThingConnectivityIndexingMode;
-		managedFields?: Array<Field>;
-		customFields?: Array<Field>;
+		thingIndexingMode?: ThingIndexingConfigurationThingIndexingMode | null;
+		thingConnectivityIndexingMode?: ThingIndexingConfigurationThingConnectivityIndexingMode | null;
+		managedFields?: Array<Field> | null;
+		customFields?: Array<Field> | null;
 	}
 
 	export interface UpdateIndexingConfigurationPostBodyThingGroupIndexingConfiguration {
-		thingGroupIndexingMode?: ThingGroupIndexingConfigurationThingGroupIndexingMode;
-		managedFields?: Array<Field>;
-		customFields?: Array<Field>;
+		thingGroupIndexingMode?: ThingGroupIndexingConfigurationThingGroupIndexingMode | null;
+		managedFields?: Array<Field> | null;
+		customFields?: Array<Field> | null;
 	}
 
 	export interface SetLoggingOptionsPostBody {
@@ -7589,8 +7589,8 @@ export namespace MyNS {
 	}
 
 	export interface SetLoggingOptionsPostBodyLoggingOptionsPayload {
-		roleArn?: string;
-		logLevel?: EnableIoTLoggingParamsLogLevel;
+		roleArn?: string | null;
+		logLevel?: EnableIoTLoggingParamsLogLevel | null;
 	}
 
 	export interface GetPercentilesPostBody {
@@ -7601,7 +7601,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		indexName?: string;
+		indexName?: string | null;
 
 		/**
 		 * The query string.
@@ -7614,13 +7614,13 @@ export namespace MyNS {
 		 * The field to aggregate.
 		 * Min length: 1
 		 */
-		aggregationField?: string;
+		aggregationField?: string | null;
 
 		/** The query version. */
-		queryVersion?: string;
+		queryVersion?: string | null;
 
 		/** The percentile groups returned. */
-		percents?: Array<number>;
+		percents?: Array<number> | null;
 	}
 
 	export interface GetStatisticsPostBody {
@@ -7631,7 +7631,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		indexName?: string;
+		indexName?: string | null;
 
 		/**
 		 * The query used to search. You can specify "*" for the query string to get the count of all indexed things in your AWS account.
@@ -7644,22 +7644,22 @@ export namespace MyNS {
 		 * The aggregation field name.
 		 * Min length: 1
 		 */
-		aggregationField?: string;
+		aggregationField?: string | null;
 
 		/** The version of the query used to search. */
-		queryVersion?: string;
+		queryVersion?: string | null;
 	}
 
 	export interface SetV2LoggingOptionsPostBody {
 
 		/** The ARN of the role that allows IoT to write to Cloudwatch logs. */
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/** The default logging level. */
-		defaultLogLevel?: EnableIoTLoggingParamsLogLevel;
+		defaultLogLevel?: EnableIoTLoggingParamsLogLevel | null;
 
 		/** If true all logs are disabled. The default is false. */
-		disableAllLogs?: boolean;
+		disableAllLogs?: boolean | null;
 	}
 
 	export interface ListAuditFindingsPostBody {
@@ -7670,42 +7670,42 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9\-]+
 		 */
-		taskId?: string;
+		taskId?: string | null;
 
 		/** An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
-		checkName?: string;
+		checkName?: string | null;
 
 		/** Information that identifies the noncompliant resource. */
-		resourceIdentifier?: ListAuditFindingsPostBodyResourceIdentifier;
+		resourceIdentifier?: ListAuditFindingsPostBodyResourceIdentifier | null;
 
 		/**
 		 * The maximum number of results to return at one time. The default is 25.
 		 * Minimum: 1
 		 * Maximum: 250
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/** The token for the next set of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. */
-		startTime?: Date;
+		startTime?: Date | null;
 
 		/** A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both. */
-		endTime?: Date;
+		endTime?: Date | null;
 	}
 
 	export interface ListAuditFindingsPostBodyResourceIdentifier {
-		deviceCertificateId?: string;
-		caCertificateId?: string;
-		cognitoIdentityPoolId?: string;
-		clientId?: string;
+		deviceCertificateId?: string | null;
+		caCertificateId?: string | null;
+		cognitoIdentityPoolId?: string | null;
+		clientId?: string | null;
 
 		/** Information about the version of the policy associated with the resource. */
-		policyVersionIdentifier?: PolicyVersionIdentifier;
-		account?: string;
-		iamRoleArn?: string;
-		roleAliasArn?: string;
+		policyVersionIdentifier?: PolicyVersionIdentifier | null;
+		account?: string | null;
+		iamRoleArn?: string | null;
+		roleAliasArn?: string | null;
 	}
 
 	export interface StartThingRegistrationTaskPostBody {
@@ -7752,7 +7752,7 @@ export namespace MyNS {
 		templateBody: string;
 
 		/** The parameters for provisioning a thing. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning Templates</a> for more information. */
-		parameters?: {[id: string]: string };
+		parameters?: {[id: string]: string } | null;
 	}
 
 	export interface SetV2LoggingLevelPostBody {
@@ -7771,8 +7771,8 @@ export namespace MyNS {
 	}
 
 	export interface SetV2LoggingLevelPostBodyLogTarget {
-		targetType?: LogTargetTargetType;
-		targetName?: string;
+		targetType?: LogTargetTargetType | null;
+		targetName?: string | null;
 	}
 
 	export interface RegisterCACertificatePostBody {
@@ -7794,15 +7794,15 @@ export namespace MyNS {
 		verificationCertificate: string;
 
 		/** The registration configuration. */
-		registrationConfig?: RegisterCACertificatePostBodyRegistrationConfig;
+		registrationConfig?: RegisterCACertificatePostBodyRegistrationConfig | null;
 
 		/** <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface RegisterCACertificatePostBodyRegistrationConfig {
-		templateBody?: string;
-		roleArn?: string;
+		templateBody?: string | null;
+		roleArn?: string | null;
 	}
 
 	export interface RegisterCertificatePostBody {
@@ -7820,10 +7820,10 @@ export namespace MyNS {
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		caCertificatePem?: string;
+		caCertificatePem?: string | null;
 
 		/** The status of the register certificate request. */
-		status?: CertificateDescriptionStatus;
+		status?: CertificateDescriptionStatus | null;
 	}
 
 	export interface RegisterCertificateWithoutCAPostBody {
@@ -7837,7 +7837,7 @@ export namespace MyNS {
 		certificatePem: string;
 
 		/** The status of the register certificate request. */
-		status?: CertificateDescriptionStatus;
+		status?: CertificateDescriptionStatus | null;
 	}
 
 	export interface RejectCertificateTransferPatchBody {
@@ -7846,7 +7846,7 @@ export namespace MyNS {
 		 * The reason the certificate transfer was rejected.
 		 * Max length: 128
 		 */
-		rejectReason?: string;
+		rejectReason?: string | null;
 	}
 
 	export interface RemoveThingFromBillingGroupPutBody {
@@ -7857,10 +7857,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		billingGroupName?: string;
+		billingGroupName?: string | null;
 
 		/** The ARN of the billing group. */
-		billingGroupArn?: string;
+		billingGroupArn?: string | null;
 
 		/**
 		 * The name of the thing to be removed from the billing group.
@@ -7868,10 +7868,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingName?: string;
+		thingName?: string | null;
 
 		/** The ARN of the thing to be removed from the billing group. */
-		thingArn?: string;
+		thingArn?: string | null;
 	}
 
 	export interface RemoveThingFromThingGroupPutBody {
@@ -7882,10 +7882,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingGroupName?: string;
+		thingGroupName?: string | null;
 
 		/** The group ARN. */
-		thingGroupArn?: string;
+		thingGroupArn?: string | null;
 
 		/**
 		 * The name of the thing to remove from the group.
@@ -7893,10 +7893,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingName?: string;
+		thingName?: string | null;
 
 		/** The ARN of the thing to remove from the group. */
-		thingArn?: string;
+		thingArn?: string | null;
 	}
 
 	export interface SearchIndexPostBody {
@@ -7907,7 +7907,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		indexName?: string;
+		indexName?: string | null;
 
 		/**
 		 * The search query string.
@@ -7917,17 +7917,17 @@ export namespace MyNS {
 		queryString: string;
 
 		/** The token used to get the next set of results, or <code>null</code> if there are no additional results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return at one time.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/** The query version. */
-		queryVersion?: string;
+		queryVersion?: string | null;
 	}
 
 	export interface StartOnDemandAuditTaskPostBody {
@@ -7957,10 +7957,10 @@ export namespace MyNS {
 	export interface TestAuthorizationPostBody {
 
 		/** The principal. */
-		principal?: string;
+		principal?: string | null;
 
 		/** The Cognito identity pool ID. */
-		cognitoIdentityPoolId?: string;
+		cognitoIdentityPoolId?: string | null;
 
 		/**
 		 * A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.
@@ -7971,10 +7971,10 @@ export namespace MyNS {
 		authInfos: Array<AuthInfo>;
 
 		/** When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized. */
-		policyNamesToAdd?: Array<string>;
+		policyNamesToAdd?: Array<string> | null;
 
 		/** When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized. */
-		policyNamesToSkip?: Array<string>;
+		policyNamesToSkip?: Array<string> | null;
 	}
 
 	export interface TestInvokeAuthorizerPostBody {
@@ -7984,7 +7984,7 @@ export namespace MyNS {
 		 * Max length: 6144
 		 * Min length: 1
 		 */
-		token?: string;
+		token?: string | null;
 
 		/**
 		 * The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.
@@ -7992,31 +7992,31 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-Za-z0-9+/]+={0,2}
 		 */
-		tokenSignature?: string;
+		tokenSignature?: string | null;
 
 		/** Specifies the HTTP context to use for the test authorizer request. */
-		httpContext?: TestInvokeAuthorizerPostBodyHttpContext;
+		httpContext?: TestInvokeAuthorizerPostBodyHttpContext | null;
 
 		/** Specifies the MQTT context to use for the test authorizer request */
-		mqttContext?: TestInvokeAuthorizerPostBodyMqttContext;
+		mqttContext?: TestInvokeAuthorizerPostBodyMqttContext | null;
 
 		/** Specifies the TLS context to use for the test authorizer request. */
-		tlsContext?: TestInvokeAuthorizerPostBodyTlsContext;
+		tlsContext?: TestInvokeAuthorizerPostBodyTlsContext | null;
 	}
 
 	export interface TestInvokeAuthorizerPostBodyHttpContext {
-		headers?: HttpHeaders;
-		queryString?: string;
+		headers?: HttpHeaders | null;
+		queryString?: string | null;
 	}
 
 	export interface TestInvokeAuthorizerPostBodyMqttContext {
-		username?: string;
-		password?: string;
-		clientId?: string;
+		username?: string | null;
+		password?: string | null;
+		clientId?: string | null;
 	}
 
 	export interface TestInvokeAuthorizerPostBodyTlsContext {
-		serverName?: string;
+		serverName?: string | null;
 	}
 
 	export interface TransferCertificatePatchBody {
@@ -8025,7 +8025,7 @@ export namespace MyNS {
 		 * The transfer message.
 		 * Max length: 128
 		 */
-		transferMessage?: string;
+		transferMessage?: string | null;
 	}
 
 	export interface UntagResourcePostBody {
@@ -8051,16 +8051,16 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
-		thingName?: string;
+		thingName?: string | null;
 
 		/** The groups to which the thing will be added. */
-		thingGroupsToAdd?: Array<string>;
+		thingGroupsToAdd?: Array<string> | null;
 
 		/** The groups from which the thing will be removed. */
-		thingGroupsToRemove?: Array<string>;
+		thingGroupsToRemove?: Array<string> | null;
 
 		/** Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group. */
-		overrideDynamicGroups?: boolean;
+		overrideDynamicGroups?: boolean | null;
 	}
 
 	export interface ValidateSecurityProfileBehaviorsPostBody {

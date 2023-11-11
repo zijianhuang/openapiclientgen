@@ -10,13 +10,13 @@ export namespace MyNS {
 	export interface AuditRefs {
 
 		/** The category group that the audit belongs to (optional). */
-		group?: string;
+		group?: string | null;
 
 		/** The audit ref id. */
-		id?: string;
+		id?: string | null;
 
 		/** The weight this audit's score has on the overall category score. */
-		weight?: number;
+		weight?: number | null;
 	}
 
 
@@ -28,13 +28,13 @@ export namespace MyNS {
 	export interface Bucket {
 
 		/** Upper bound for a bucket's range. */
-		max?: number;
+		max?: number | null;
 
 		/** Lower bound for a bucket's range. */
-		min?: number;
+		min?: number | null;
 
 		/** The proportion of data in this bucket. */
-		proportion?: number;
+		proportion?: number | null;
 	}
 
 
@@ -42,19 +42,19 @@ export namespace MyNS {
 	export interface Categories {
 
 		/** A Lighthouse category. */
-		accessibility?: LighthouseCategoryV5;
+		accessibility?: LighthouseCategoryV5 | null;
 
 		/** A Lighthouse category. */
-		best_practices?: LighthouseCategoryV5;
+		best_practices?: LighthouseCategoryV5 | null;
 
 		/** A Lighthouse category. */
-		performance?: LighthouseCategoryV5;
+		performance?: LighthouseCategoryV5 | null;
 
 		/** A Lighthouse category. */
-		pwa?: LighthouseCategoryV5;
+		pwa?: LighthouseCategoryV5 | null;
 
 		/** A Lighthouse category. */
-		seo?: LighthouseCategoryV5;
+		seo?: LighthouseCategoryV5 | null;
 	}
 
 
@@ -62,25 +62,25 @@ export namespace MyNS {
 	export interface LighthouseCategoryV5 {
 
 		/** An array of references to all the audit members of this category. */
-		auditRefs?: Array<AuditRefs>;
+		auditRefs?: Array<AuditRefs> | null;
 
 		/** A more detailed description of the category and its importance. */
-		description?: string;
+		description?: string | null;
 
 		/** The string identifier of the category. */
-		id?: string;
+		id?: string | null;
 
 		/** A description for the manual audits in the category. */
-		manualDescription?: string;
+		manualDescription?: string | null;
 
 		/**
 		 * The overall score of the category, the weighted average of all its audits.
 		 * (The category's score, can be null.)
 		 */
-		score?: any;
+		score?: any | null;
 
 		/** The human-friendly name of the category. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -88,10 +88,10 @@ export namespace MyNS {
 	export interface CategoryGroupV5 {
 
 		/** The description of what the category is grouping */
-		description?: string;
+		description?: string | null;
 
 		/** The human readable title of the group */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -102,16 +102,16 @@ export namespace MyNS {
 		 * How Lighthouse was run, e.g. from the Chrome extension or from the npm
 		 * module.
 		 */
-		channel?: string;
+		channel?: string | null;
 
 		/** The form factor the emulation should use. */
-		emulatedFormFactor?: string;
+		emulatedFormFactor?: string | null;
 
 		/** The locale setting. */
-		locale?: string;
+		locale?: string | null;
 
 		/** List of categories of audits the run should conduct. */
-		onlyCategories?: any;
+		onlyCategories?: any | null;
 	}
 
 
@@ -119,13 +119,13 @@ export namespace MyNS {
 	export interface Environment {
 
 		/** The benchmark index number that indicates rough device class. */
-		benchmarkIndex?: number;
+		benchmarkIndex?: number | null;
 
 		/** The user agent string of the version of Chrome used. */
-		hostUserAgent?: string;
+		hostUserAgent?: string | null;
 
 		/** The user agent string that was sent over the network. */
-		networkUserAgent?: string;
+		networkUserAgent?: string | null;
 	}
 
 
@@ -133,7 +133,7 @@ export namespace MyNS {
 	export interface I18n {
 
 		/** Message holding the formatted strings used in the renderer. */
-		rendererFormattedStrings?: RendererFormattedStrings;
+		rendererFormattedStrings?: RendererFormattedStrings | null;
 	}
 
 
@@ -141,64 +141,64 @@ export namespace MyNS {
 	export interface RendererFormattedStrings {
 
 		/** The tooltip text on an expandable chevron icon. */
-		auditGroupExpandTooltip?: string;
+		auditGroupExpandTooltip?: string | null;
 
 		/** The label for the initial request in a critical request chain. */
-		crcInitialNavigation?: string;
+		crcInitialNavigation?: string | null;
 
 		/** The label for values shown in the summary of critical request chains. */
-		crcLongestDurationLabel?: string;
+		crcLongestDurationLabel?: string | null;
 
 		/** The label shown next to an audit or metric that has had an error. */
-		errorLabel?: string;
+		errorLabel?: string | null;
 
 		/** The error string shown next to an erroring audit. */
-		errorMissingAuditInfo?: string;
+		errorMissingAuditInfo?: string | null;
 
 		/** The title of the lab data performance category. */
-		labDataTitle?: string;
+		labDataTitle?: string | null;
 
 		/**
 		 * The disclaimer shown under performance explaning that the network can
 		 * vary.
 		 */
-		lsPerformanceCategoryDescription?: string;
+		lsPerformanceCategoryDescription?: string | null;
 
 		/**
 		 * The heading shown above a list of audits that were not computerd in the
 		 * run.
 		 */
-		manualAuditsGroupTitle?: string;
+		manualAuditsGroupTitle?: string | null;
 
 		/** The heading shown above a list of audits that do not apply to a page. */
-		notApplicableAuditsGroupTitle?: string;
+		notApplicableAuditsGroupTitle?: string | null;
 
 		/**
 		 * The heading for the estimated page load savings opportunity of an
 		 * audit.
 		 */
-		opportunityResourceColumnLabel?: string;
+		opportunityResourceColumnLabel?: string | null;
 
 		/** The heading for the estimated page load savings of opportunity audits. */
-		opportunitySavingsColumnLabel?: string;
+		opportunitySavingsColumnLabel?: string | null;
 
 		/** The heading that is shown above a list of audits that are passing. */
-		passedAuditsGroupTitle?: string;
+		passedAuditsGroupTitle?: string | null;
 
 		/** The label that explains the score gauges scale (0-49, 50-89, 90-100). */
-		scorescaleLabel?: string;
+		scorescaleLabel?: string | null;
 
 		/**
 		 * The label shown preceding important warnings that may have invalidated
 		 * an entire report.
 		 */
-		toplevelWarningsMessage?: string;
+		toplevelWarningsMessage?: string | null;
 
 		/** The disclaimer shown below a performance metric value. */
-		varianceDisclaimer?: string;
+		varianceDisclaimer?: string | null;
 
 		/** The label shown above a bulleted list of warnings. */
-		warningHeader?: string;
+		warningHeader?: string | null;
 	}
 
 
@@ -206,41 +206,41 @@ export namespace MyNS {
 	export interface LighthouseAuditResultV5 {
 
 		/** The description of the audit. */
-		description?: string;
+		description?: string | null;
 
 		/** Freeform details section of the audit. */
-		details?: {[id: string]: any };
+		details?: {[id: string]: any } | null;
 
 		/** The value that should be displayed on the UI for this audit. */
-		displayValue?: string;
+		displayValue?: string | null;
 
 		/** An error message from a thrown error inside the audit. */
-		errorMessage?: string;
+		errorMessage?: string | null;
 
 		/** An explanation of the errors in the audit. */
-		explanation?: string;
+		explanation?: string | null;
 
 		/** The audit's id. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * A numeric value that has a meaning specific to the audit, e.g. the number
 		 * of nodes in the DOM or the timestamp of a specific load event. More
 		 * information can be found in the audit details, if present.
 		 */
-		numericValue?: number;
+		numericValue?: number | null;
 
 		/** The score of the audit, can be null. */
-		score?: any;
+		score?: any | null;
 
 		/** The enumerated score display mode. */
-		scoreDisplayMode?: string;
+		scoreDisplayMode?: string | null;
 
 		/** The human readable title. */
-		title?: string;
+		title?: string | null;
 
 		/** Possible warnings that occurred in the audit, can be null. */
-		warnings?: any;
+		warnings?: any | null;
 	}
 
 
@@ -248,49 +248,49 @@ export namespace MyNS {
 	export interface LighthouseResultV5 {
 
 		/** Map of audits in the LHR. */
-		audits?: {[id: string]: LighthouseAuditResultV5 };
+		audits?: {[id: string]: LighthouseAuditResultV5 } | null;
 
 		/** The categories in a Lighthouse run. */
-		categories?: Categories;
+		categories?: Categories | null;
 
 		/** Map of category groups in the LHR. */
-		categoryGroups?: {[id: string]: CategoryGroupV5 };
+		categoryGroups?: {[id: string]: CategoryGroupV5 } | null;
 
 		/** Message containing the configuration settings for the Lighthouse run. */
-		configSettings?: ConfigSettings;
+		configSettings?: ConfigSettings | null;
 
 		/** Message containing environment configuration for a Lighthouse run. */
-		environment?: Environment;
+		environment?: Environment | null;
 
 		/** The time that this run was fetched. */
-		fetchTime?: string;
+		fetchTime?: string | null;
 
 		/** The final resolved url that was audited. */
-		finalUrl?: string;
+		finalUrl?: string | null;
 
 		/** Message containing the i18n data for the LHR - Version 1. */
-		i18n?: I18n;
+		i18n?: I18n | null;
 
 		/** The lighthouse version that was used to generate this LHR. */
-		lighthouseVersion?: string;
+		lighthouseVersion?: string | null;
 
 		/** The original requested url. */
-		requestedUrl?: string;
+		requestedUrl?: string | null;
 
 		/** List of all run warnings in the LHR.  Will always output to at least `[]`. */
-		runWarnings?: Array<string>;
+		runWarnings?: Array<string> | null;
 
 		/** Message containing a runtime error config. */
-		runtimeError?: RuntimeError;
+		runtimeError?: RuntimeError | null;
 
 		/** The Stack Pack advice strings. */
-		stackPacks?: Array<StackPack>;
+		stackPacks?: Array<StackPack> | null;
 
 		/** Message containing the performance timing data for the Lighthouse run. */
-		timing?: Timing;
+		timing?: Timing | null;
 
 		/** The user agent that was used to run this LHR. */
-		userAgent?: string;
+		userAgent?: string | null;
 	}
 
 
@@ -298,10 +298,10 @@ export namespace MyNS {
 	export interface RuntimeError {
 
 		/** The enumerated Lighthouse Error code. */
-		code?: string;
+		code?: string | null;
 
 		/** A human readable message explaining the error code. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -309,16 +309,16 @@ export namespace MyNS {
 	export interface StackPack {
 
 		/** The stack pack advice strings. */
-		descriptions?: {[id: string]: string };
+		descriptions?: {[id: string]: string } | null;
 
 		/** The stack pack icon data uri. */
-		iconDataURL?: string;
+		iconDataURL?: string | null;
 
 		/** The stack pack id. */
-		id?: string;
+		id?: string | null;
 
 		/** The stack pack title. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -326,7 +326,7 @@ export namespace MyNS {
 	export interface Timing {
 
 		/** The total duration of Lighthouse's run. */
-		total?: number;
+		total?: number | null;
 	}
 
 
@@ -334,16 +334,16 @@ export namespace MyNS {
 	export interface PagespeedApiLoadingExperienceV5 {
 
 		/** The url, pattern or origin which the metrics are on. */
-		id?: string;
+		id?: string | null;
 
 		/** The requested URL, which may differ from the resolved "id". */
-		initial_url?: string;
+		initial_url?: string | null;
 
 		/** The map of <metrics, data>. */
-		metrics?: {[id: string]: UserPageLoadMetricV5 };
+		metrics?: {[id: string]: UserPageLoadMetricV5 } | null;
 
 		/** The human readable speed "category" of the id. */
-		overall_category?: string;
+		overall_category?: string | null;
 	}
 
 
@@ -351,26 +351,26 @@ export namespace MyNS {
 	export interface UserPageLoadMetricV5 {
 
 		/** The category of the specific time metric. */
-		category?: string;
+		category?: string | null;
 
 		/** Metric distributions. Proportions should sum up to 1. */
-		distributions?: Array<Bucket>;
+		distributions?: Array<Bucket> | null;
 
 		/** Identifies the form factor of the metric being collected. */
-		formFactor?: string;
+		formFactor?: string | null;
 
 		/** The median number of the metric, in millisecond. */
-		median?: number;
+		median?: number | null;
 
 		/** Identifies the type of the metric. */
-		metricId?: string;
+		metricId?: string | null;
 
 		/**
 		 * We use this field to store certain percentile value for this metric.
 		 * For v4, this field contains pc50.
 		 * For v5, this field contains pc90.
 		 */
-		percentile?: number;
+		percentile?: number | null;
 	}
 
 
@@ -378,31 +378,31 @@ export namespace MyNS {
 	export interface PagespeedApiPagespeedResponseV5 {
 
 		/** The UTC timestamp of this analysis. */
-		analysisUTCTimestamp?: string;
+		analysisUTCTimestamp?: string | null;
 
 		/** The captcha verify result */
-		captchaResult?: string;
+		captchaResult?: string | null;
 
 		/**
 		 * Canonicalized and final URL for the document, after following page
 		 * redirects (if any).
 		 */
-		id?: string;
+		id?: string | null;
 
 		/** Kind of result. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The Lighthouse result object. */
-		lighthouseResult?: LighthouseResultV5;
+		lighthouseResult?: LighthouseResultV5 | null;
 
 		/** The CrUX loading experience object that contains CrUX data breakdowns. */
-		loadingExperience?: PagespeedApiLoadingExperienceV5;
+		loadingExperience?: PagespeedApiLoadingExperienceV5 | null;
 
 		/** The CrUX loading experience object that contains CrUX data breakdowns. */
-		originLoadingExperience?: PagespeedApiLoadingExperienceV5;
+		originLoadingExperience?: PagespeedApiLoadingExperienceV5 | null;
 
 		/** The Pagespeed Version object. */
-		version?: PagespeedVersion;
+		version?: PagespeedVersion | null;
 	}
 
 
@@ -410,10 +410,10 @@ export namespace MyNS {
 	export interface PagespeedVersion {
 
 		/** The major version number of PageSpeed used to generate these results. */
-		major?: string;
+		major?: string | null;
 
 		/** The minor version number of PageSpeed used to generate these results. */
-		minor?: string;
+		minor?: string | null;
 	}
 
 	@Injectable()

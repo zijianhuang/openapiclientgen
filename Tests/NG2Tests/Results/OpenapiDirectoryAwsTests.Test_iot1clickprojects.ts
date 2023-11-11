@@ -72,22 +72,22 @@ export namespace MyNS {
 
 	/** An object providing detailed information for a particular project associated with an AWS account and region. */
 	export interface ProjectDescription {
-		arn?: string;
+		arn?: string | null;
 		projectName: string;
-		description?: string;
+		description?: string | null;
 		createdDate: Date;
 		updatedDate: Date;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: PlacementTemplate;
-		tags?: TagMap;
+		placementTemplate?: PlacementTemplate | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** An object defining the template for a placement. */
 	export interface PlacementTemplate {
-		defaultAttributes?: DefaultPlacementAttributeMap;
-		deviceTemplates?: DeviceTemplateMap;
+		defaultAttributes?: DefaultPlacementAttributeMap | null;
+		deviceTemplates?: DeviceTemplateMap | null;
 	}
 
 	export interface TagMap {
@@ -105,7 +105,7 @@ export namespace MyNS {
 
 	export interface ListPlacementsResponse {
 		placements: Array<PlacementSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -119,21 +119,21 @@ export namespace MyNS {
 
 	export interface ListProjectsResponse {
 		projects: Array<ProjectSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** An object providing summary information for a particular project for an associated AWS account and region. */
 	export interface ProjectSummary {
-		arn?: string;
+		arn?: string | null;
 		projectName: string;
 		createdDate: Date;
 		updatedDate: Date;
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface TagResourceResponse {
@@ -154,16 +154,16 @@ export namespace MyNS {
 
 	export interface CreatePlacementRequest {
 		placementName: string;
-		attributes?: PlacementAttributeMap;
+		attributes?: PlacementAttributeMap | null;
 	}
 
 	export interface CreateProjectRequest {
 		projectName: string;
-		description?: string;
+		description?: string | null;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: PlacementTemplate;
-		tags?: TagMap;
+		placementTemplate?: PlacementTemplate | null;
+		tags?: TagMap | null;
 	}
 
 	export interface DeletePlacementRequest {
@@ -184,8 +184,8 @@ export namespace MyNS {
 
 	/** An object representing a device for a placement template (see <a>PlacementTemplate</a>). */
 	export interface DeviceTemplate {
-		deviceType?: string;
-		callbackOverrides?: DeviceCallbackOverrideMap;
+		deviceType?: string | null;
+		callbackOverrides?: DeviceCallbackOverrideMap | null;
 	}
 
 	export interface DisassociateDeviceFromPlacementRequest {
@@ -211,14 +211,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePlacementRequest {
-		attributes?: PlacementAttributeMap;
+		attributes?: PlacementAttributeMap | null;
 	}
 
 	export interface UpdateProjectRequest {
-		description?: string;
+		description?: string | null;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: PlacementTemplate;
+		placementTemplate?: PlacementTemplate | null;
 	}
 
 	@Injectable()
@@ -421,7 +421,7 @@ export namespace MyNS {
 		placementName: string;
 
 		/** Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement. */
-		attributes?: {[id: string]: string };
+		attributes?: {[id: string]: string } | null;
 	}
 
 	export interface CreateProjectPostBody {
@@ -440,24 +440,24 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 0
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: CreateProjectPostBodyPlacementTemplate;
+		placementTemplate?: CreateProjectPostBodyPlacementTemplate | null;
 
 		/** Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateProjectPostBodyPlacementTemplate {
-		defaultAttributes?: DefaultPlacementAttributeMap;
-		deviceTemplates?: DeviceTemplateMap;
+		defaultAttributes?: DefaultPlacementAttributeMap | null;
+		deviceTemplates?: DeviceTemplateMap | null;
 	}
 
 	export interface UpdatePlacementPutBody {
 
 		/** The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50. */
-		attributes?: {[id: string]: string };
+		attributes?: {[id: string]: string } | null;
 	}
 
 	export interface UpdateProjectPutBody {
@@ -467,15 +467,15 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 0
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: UpdateProjectPutBodyPlacementTemplate;
+		placementTemplate?: UpdateProjectPutBodyPlacementTemplate | null;
 	}
 
 	export interface UpdateProjectPutBodyPlacementTemplate {
-		defaultAttributes?: DefaultPlacementAttributeMap;
-		deviceTemplates?: DeviceTemplateMap;
+		defaultAttributes?: DefaultPlacementAttributeMap | null;
+		deviceTemplates?: DeviceTemplateMap | null;
 	}
 
 	export interface TagResourcePostBody {

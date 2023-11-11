@@ -14,14 +14,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		CreatedArtifact: CreatedArtifact;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 
 	/** An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.). */
 	export interface CreatedArtifact {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface AccessDeniedException {
@@ -63,14 +63,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		DiscoveredResource: DiscoveredResource;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 
 	/** Object representing the on-premises resource being migrated. */
 	export interface DiscoveredResource {
 		ConfigurationId: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface PolicyErrorException {
@@ -81,7 +81,7 @@ export namespace MyNS {
 
 	export interface CreateProgressUpdateStreamRequest {
 		ProgressUpdateStreamName: string;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface DeleteProgressUpdateStreamResult {
@@ -89,12 +89,12 @@ export namespace MyNS {
 
 	export interface DeleteProgressUpdateStreamRequest {
 		ProgressUpdateStreamName: string;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface DescribeApplicationStateResult {
-		ApplicationStatus?: DescribeApplicationStateResultApplicationStatus;
-		LastUpdatedTime?: Date;
+		ApplicationStatus?: DescribeApplicationStateResultApplicationStatus | null;
+		LastUpdatedTime?: Date | null;
 	}
 
 	export enum DescribeApplicationStateResultApplicationStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
@@ -106,27 +106,27 @@ export namespace MyNS {
 	export interface DescribeMigrationTaskResult {
 
 		/** Represents a migration task in a migration tool. */
-		MigrationTask?: MigrationTask;
+		MigrationTask?: MigrationTask | null;
 	}
 
 
 	/** Represents a migration task in a migration tool. */
 	export interface MigrationTask {
-		ProgressUpdateStream?: string;
-		MigrationTaskName?: string;
+		ProgressUpdateStream?: string | null;
+		MigrationTaskName?: string | null;
 
 		/** Task object encapsulating task information. */
-		Task?: Task_;
-		UpdateDateTime?: Date;
-		ResourceAttributeList?: Array<ResourceAttribute>;
+		Task?: Task_ | null;
+		UpdateDateTime?: Date | null;
+		ResourceAttributeList?: Array<ResourceAttribute> | null;
 	}
 
 
 	/** Task object encapsulating task information. */
 	export interface Task_ {
 		Status: Task_Status;
-		StatusDetail?: string;
-		ProgressPercent?: number;
+		StatusDetail?: string | null;
+		ProgressPercent?: number | null;
 	}
 
 	export enum Task_Status { NOT_STARTED = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3 }
@@ -152,7 +152,7 @@ export namespace MyNS {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
 		CreatedArtifactName: string;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface DisassociateDiscoveredResourceResult {
@@ -162,7 +162,7 @@ export namespace MyNS {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
 		ConfigurationId: string;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface ImportMigrationTaskResult {
@@ -171,88 +171,88 @@ export namespace MyNS {
 	export interface ImportMigrationTaskRequest {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface ListApplicationStatesResult {
-		ApplicationStateList?: Array<ApplicationState>;
-		NextToken?: string;
+		ApplicationStateList?: Array<ApplicationState> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent. */
 	export interface ApplicationState {
-		ApplicationId?: string;
-		ApplicationStatus?: DescribeApplicationStateResultApplicationStatus;
-		LastUpdatedTime?: Date;
+		ApplicationId?: string | null;
+		ApplicationStatus?: DescribeApplicationStateResultApplicationStatus | null;
+		LastUpdatedTime?: Date | null;
 	}
 
 	export interface ListApplicationStatesRequest {
-		ApplicationIds?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		ApplicationIds?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListCreatedArtifactsResult {
-		NextToken?: string;
-		CreatedArtifactList?: Array<CreatedArtifact>;
+		NextToken?: string | null;
+		CreatedArtifactList?: Array<CreatedArtifact> | null;
 	}
 
 	export interface ListCreatedArtifactsRequest {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDiscoveredResourcesResult {
-		NextToken?: string;
-		DiscoveredResourceList?: Array<DiscoveredResource>;
+		NextToken?: string | null;
+		DiscoveredResourceList?: Array<DiscoveredResource> | null;
 	}
 
 	export interface ListDiscoveredResourcesRequest {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListMigrationTasksResult {
-		NextToken?: string;
-		MigrationTaskSummaryList?: Array<MigrationTaskSummary>;
+		NextToken?: string | null;
+		MigrationTaskSummaryList?: Array<MigrationTaskSummary> | null;
 	}
 
 
 	/** MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task. */
 	export interface MigrationTaskSummary {
-		ProgressUpdateStream?: string;
-		MigrationTaskName?: string;
-		Status?: Task_Status;
-		ProgressPercent?: number;
-		StatusDetail?: string;
-		UpdateDateTime?: Date;
+		ProgressUpdateStream?: string | null;
+		MigrationTaskName?: string | null;
+		Status?: Task_Status | null;
+		ProgressPercent?: number | null;
+		StatusDetail?: string | null;
+		UpdateDateTime?: Date | null;
 	}
 
 	export interface ListMigrationTasksRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		ResourceName?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		ResourceName?: string | null;
 	}
 
 	export interface ListProgressUpdateStreamsResult {
-		ProgressUpdateStreamSummaryList?: Array<ProgressUpdateStreamSummary>;
-		NextToken?: string;
+		ProgressUpdateStreamSummaryList?: Array<ProgressUpdateStreamSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Summary of the AWS resource used for access control that is implicitly linked to your AWS account. */
 	export interface ProgressUpdateStreamSummary {
-		ProgressUpdateStreamName?: string;
+		ProgressUpdateStreamName?: string | null;
 	}
 
 	export interface ListProgressUpdateStreamsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface NotifyApplicationStateResult {
@@ -261,8 +261,8 @@ export namespace MyNS {
 	export interface NotifyApplicationStateRequest {
 		ApplicationId: string;
 		Status: DescribeApplicationStateResultApplicationStatus;
-		UpdateDateTime?: Date;
-		DryRun?: boolean;
+		UpdateDateTime?: Date | null;
+		DryRun?: boolean | null;
 	}
 
 	export interface NotifyMigrationTaskStateResult {
@@ -279,7 +279,7 @@ export namespace MyNS {
 		Task: Task_;
 		UpdateDateTime: Date;
 		NextUpdateSeconds: number;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface PutResourceAttributesResult {
@@ -289,7 +289,7 @@ export namespace MyNS {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
 		ResourceAttributeList: Array<ResourceAttribute>;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export enum ApplicationStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }

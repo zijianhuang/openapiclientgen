@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchPutMessageResponse {
-		batchPutMessageErrorEntries?: Array<BatchPutMessageErrorEntry>;
+		batchPutMessageErrorEntries?: Array<BatchPutMessageErrorEntry> | null;
 	}
 
 
 	/** Contains informations about errors. */
 	export interface BatchPutMessageErrorEntry {
-		messageId?: string;
-		errorCode?: string;
-		errorMessage?: string;
+		messageId?: string | null;
+		errorCode?: string | null;
+		errorMessage?: string | null;
 	}
 
 
@@ -40,18 +40,18 @@ export namespace MyNS {
 	}
 
 	export interface CreateChannelResponse {
-		channelName?: string;
-		channelArn?: string;
+		channelName?: string | null;
+		channelArn?: string | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
+		retentionPeriod?: RetentionPeriod | null;
 	}
 
 
 	/** How long, in days, message data is kept. */
 	export interface RetentionPeriod {
-		unlimited?: boolean;
-		numberOfDays?: number;
+		unlimited?: boolean | null;
+		numberOfDays?: number | null;
 	}
 
 
@@ -63,7 +63,7 @@ export namespace MyNS {
 	/** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
 	export interface CustomerManagedChannelS3Storage {
 		bucket: string;
-		keyPrefix?: string;
+		keyPrefix?: string | null;
 		roleArn: string;
 	}
 
@@ -81,30 +81,30 @@ export namespace MyNS {
 	}
 
 	export interface CreateDatasetResponse {
-		datasetName?: string;
-		datasetArn?: string;
+		datasetName?: string | null;
+		datasetArn?: string | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
+		retentionPeriod?: RetentionPeriod | null;
 	}
 
 
 	/** A "DatasetAction" object that specifies how data set contents are automatically created. */
 	export interface DatasetAction {
-		actionName?: string;
+		actionName?: string | null;
 
 		/** The SQL query to modify the message. */
-		queryAction?: SqlQueryDatasetAction;
+		queryAction?: SqlQueryDatasetAction | null;
 
 		/** Information needed to run the "containerAction" to produce data set contents. */
-		containerAction?: ContainerDatasetAction;
+		containerAction?: ContainerDatasetAction | null;
 	}
 
 
 	/** The SQL query to modify the message. */
 	export interface SqlQueryDatasetAction {
 		sqlQuery: string;
-		filters?: Array<QueryFilter>;
+		filters?: Array<QueryFilter> | null;
 	}
 
 
@@ -112,7 +112,7 @@ export namespace MyNS {
 	export interface QueryFilter {
 
 		/** Used to limit data to that which has arrived since the last execution of the action. */
-		deltaTime?: DeltaTime;
+		deltaTime?: DeltaTime | null;
 	}
 
 
@@ -133,7 +133,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		resourceConfiguration: ResourceConfiguration;
-		variables?: Array<Variable>;
+		variables?: Array<Variable> | null;
 	}
 
 
@@ -149,14 +149,14 @@ export namespace MyNS {
 	/** An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue". */
 	export interface Variable {
 		name: string;
-		stringValue?: string;
-		doubleValue?: number;
+		stringValue?: string | null;
+		doubleValue?: number | null;
 
 		/** The data set whose latest contents are used as input to the notebook or application. */
-		datasetContentVersionValue?: DatasetContentVersionValue;
+		datasetContentVersionValue?: DatasetContentVersionValue | null;
 
 		/** The value of the variable as a structure that specifies an output file URI. */
-		outputFileUriValue?: OutputFileUriValue;
+		outputFileUriValue?: OutputFileUriValue | null;
 	}
 
 
@@ -176,16 +176,16 @@ export namespace MyNS {
 	export interface DatasetTrigger {
 
 		/** The schedule for when to trigger an update. */
-		schedule?: Schedule;
+		schedule?: Schedule | null;
 
 		/** Information about the data set whose content generation triggers the new data set content generation. */
-		dataset?: TriggeringDataset;
+		dataset?: TriggeringDataset | null;
 	}
 
 
 	/** The schedule for when to trigger an update. */
 	export interface Schedule {
-		expression?: string;
+		expression?: string | null;
 	}
 
 
@@ -197,7 +197,7 @@ export namespace MyNS {
 
 	/** When data set contents are created they are delivered to destination specified here. */
 	export interface DatasetContentDeliveryRule {
-		entryName?: string;
+		entryName?: string | null;
 
 		/**
 		 * The destination to which data set contents are delivered.
@@ -211,10 +211,10 @@ export namespace MyNS {
 	export interface DatasetContentDeliveryDestination {
 
 		/** Configuration information for delivery of data set contents to AWS IoT Events. */
-		iotEventsDestinationConfiguration?: IotEventsDestinationConfiguration;
+		iotEventsDestinationConfiguration?: IotEventsDestinationConfiguration | null;
 
 		/** Configuration information for delivery of data set contents to Amazon S3. */
-		s3DestinationConfiguration?: S3DestinationConfiguration;
+		s3DestinationConfiguration?: S3DestinationConfiguration | null;
 	}
 
 
@@ -231,7 +231,7 @@ export namespace MyNS {
 		key: string;
 
 		/** Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service. */
-		glueConfiguration?: GlueConfiguration;
+		glueConfiguration?: GlueConfiguration | null;
 		roleArn: string;
 	}
 
@@ -243,15 +243,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateDatasetContentResponse {
-		versionId?: string;
+		versionId?: string | null;
 	}
 
 	export interface CreateDatastoreResponse {
-		datastoreName?: string;
-		datastoreArn?: string;
+		datastoreName?: string | null;
+		datastoreArn?: string | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
+		retentionPeriod?: RetentionPeriod | null;
 	}
 
 
@@ -263,13 +263,13 @@ export namespace MyNS {
 	/** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
 	export interface CustomerManagedDatastoreS3Storage {
 		bucket: string;
-		keyPrefix?: string;
+		keyPrefix?: string | null;
 		roleArn: string;
 	}
 
 	export interface CreatePipelineResponse {
-		pipelineName?: string;
-		pipelineArn?: string;
+		pipelineName?: string | null;
+		pipelineArn?: string | null;
 	}
 
 
@@ -277,34 +277,34 @@ export namespace MyNS {
 	export interface PipelineActivity {
 
 		/** The activity that determines the source of the messages to be processed. */
-		channel?: ChannelActivity;
+		channel?: ChannelActivity | null;
 
 		/** An activity that runs a Lambda function to modify the message. */
-		lambda?: LambdaActivity;
+		lambda?: LambdaActivity | null;
 
 		/** The 'datastore' activity that specifies where to store the processed data. */
-		datastore?: DatastoreActivity;
+		datastore?: DatastoreActivity | null;
 
 		/** An activity that adds other attributes based on existing attributes in the message. */
-		addAttributes?: AddAttributesActivity;
+		addAttributes?: AddAttributesActivity | null;
 
 		/** An activity that removes attributes from a message. */
-		removeAttributes?: RemoveAttributesActivity;
+		removeAttributes?: RemoveAttributesActivity | null;
 
 		/** Creates a new message using only the specified attributes from the original message. */
-		selectAttributes?: SelectAttributesActivity;
+		selectAttributes?: SelectAttributesActivity | null;
 
 		/** An activity that filters a message based on its attributes. */
-		filter?: FilterActivity;
+		filter?: FilterActivity | null;
 
 		/** An activity that computes an arithmetic expression using the message's attributes. */
-		math?: MathActivity;
+		math?: MathActivity | null;
 
 		/** An activity that adds data from the AWS IoT device registry to your message. */
-		deviceRegistryEnrich?: DeviceRegistryEnrichActivity;
+		deviceRegistryEnrich?: DeviceRegistryEnrichActivity | null;
 
 		/** An activity that adds information from the AWS IoT Device Shadows service to a message. */
-		deviceShadowEnrich?: DeviceShadowEnrichActivity;
+		deviceShadowEnrich?: DeviceShadowEnrichActivity | null;
 	}
 
 
@@ -312,7 +312,7 @@ export namespace MyNS {
 	export interface ChannelActivity {
 		name: string;
 		channelName: string;
-		next?: string;
+		next?: string | null;
 	}
 
 
@@ -321,7 +321,7 @@ export namespace MyNS {
 		name: string;
 		lambdaName: string;
 		batchSize: number;
-		next?: string;
+		next?: string | null;
 	}
 
 
@@ -336,7 +336,7 @@ export namespace MyNS {
 	export interface AddAttributesActivity {
 		name: string;
 		attributes: AttributeNameMapping;
-		next?: string;
+		next?: string | null;
 	}
 
 	export interface AttributeNameMapping {
@@ -347,7 +347,7 @@ export namespace MyNS {
 	export interface RemoveAttributesActivity {
 		name: string;
 		attributes: Array<string>;
-		next?: string;
+		next?: string | null;
 	}
 
 
@@ -355,7 +355,7 @@ export namespace MyNS {
 	export interface SelectAttributesActivity {
 		name: string;
 		attributes: Array<string>;
-		next?: string;
+		next?: string | null;
 	}
 
 
@@ -363,7 +363,7 @@ export namespace MyNS {
 	export interface FilterActivity {
 		name: string;
 		filter: string;
-		next?: string;
+		next?: string | null;
 	}
 
 
@@ -372,7 +372,7 @@ export namespace MyNS {
 		name: string;
 		attribute: string;
 		math: string;
-		next?: string;
+		next?: string | null;
 	}
 
 
@@ -382,7 +382,7 @@ export namespace MyNS {
 		attribute: string;
 		thingName: string;
 		roleArn: string;
-		next?: string;
+		next?: string | null;
 	}
 
 
@@ -392,32 +392,32 @@ export namespace MyNS {
 		attribute: string;
 		thingName: string;
 		roleArn: string;
-		next?: string;
+		next?: string | null;
 	}
 
 	export interface DescribeChannelResponse {
 
 		/** A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline. */
-		channel?: Channel;
+		channel?: Channel | null;
 
 		/** Statistics information about the channel. */
-		statistics?: ChannelStatistics;
+		statistics?: ChannelStatistics | null;
 	}
 
 
 	/** A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline. */
 	export interface Channel {
-		name?: string;
+		name?: string | null;
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		storage?: ChannelStorage;
-		arn?: string;
-		status?: ChannelStatus;
+		storage?: ChannelStorage | null;
+		arn?: string | null;
+		status?: ChannelStatus | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		retentionPeriod?: RetentionPeriod | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 	}
 
 
@@ -425,10 +425,10 @@ export namespace MyNS {
 	export interface ChannelStorage {
 
 		/** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		serviceManagedS3?: ServiceManagedChannelS3Storage;
+		serviceManagedS3?: ServiceManagedChannelS3Storage | null;
 
 		/** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		customerManagedS3?: CustomerManagedChannelS3Storage;
+		customerManagedS3?: CustomerManagedChannelS3Storage | null;
 	}
 
 	export enum ChannelStatus { CREATING = 0, ACTIVE = 1, DELETING = 2 }
@@ -438,71 +438,71 @@ export namespace MyNS {
 	export interface ChannelStatistics {
 
 		/** The estimated size of the resource. */
-		size?: EstimatedResourceSize;
+		size?: EstimatedResourceSize | null;
 	}
 
 
 	/** The estimated size of the resource. */
 	export interface EstimatedResourceSize {
-		estimatedSizeInBytes?: number;
-		estimatedOn?: Date;
+		estimatedSizeInBytes?: number | null;
+		estimatedOn?: Date | null;
 	}
 
 	export interface DescribeDatasetResponse {
 
 		/** Information about a data set. */
-		dataset?: Dataset;
+		dataset?: Dataset | null;
 	}
 
 
 	/** Information about a data set. */
 	export interface Dataset {
-		name?: string;
-		arn?: string;
-		actions?: Array<DatasetAction>;
-		triggers?: Array<DatasetTrigger>;
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
-		status?: ChannelStatus;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		name?: string | null;
+		arn?: string | null;
+		actions?: Array<DatasetAction> | null;
+		triggers?: Array<DatasetTrigger> | null;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
+		status?: ChannelStatus | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
+		retentionPeriod?: RetentionPeriod | null;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: VersioningConfiguration;
+		versioningConfiguration?: VersioningConfiguration | null;
 	}
 
 
 	/** Information about the versioning of data set contents. */
 	export interface VersioningConfiguration {
-		unlimited?: boolean;
-		maxVersions?: number;
+		unlimited?: boolean | null;
+		maxVersions?: number | null;
 	}
 
 	export interface DescribeDatastoreResponse {
 
 		/** Information about a data store. */
-		datastore?: Datastore;
+		datastore?: Datastore | null;
 
 		/** Statistical information about the data store. */
-		statistics?: DatastoreStatistics;
+		statistics?: DatastoreStatistics | null;
 	}
 
 
 	/** Information about a data store. */
 	export interface Datastore {
-		name?: string;
+		name?: string | null;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		storage?: DatastoreStorage;
-		arn?: string;
-		status?: ChannelStatus;
+		storage?: DatastoreStorage | null;
+		arn?: string | null;
+		status?: ChannelStatus | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		retentionPeriod?: RetentionPeriod | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 	}
 
 
@@ -510,10 +510,10 @@ export namespace MyNS {
 	export interface DatastoreStorage {
 
 		/** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		serviceManagedS3?: ServiceManagedDatastoreS3Storage;
+		serviceManagedS3?: ServiceManagedDatastoreS3Storage | null;
 
 		/** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		customerManagedS3?: CustomerManagedDatastoreS3Storage;
+		customerManagedS3?: CustomerManagedDatastoreS3Storage | null;
 	}
 
 
@@ -521,13 +521,13 @@ export namespace MyNS {
 	export interface DatastoreStatistics {
 
 		/** The estimated size of the resource. */
-		size?: EstimatedResourceSize;
+		size?: EstimatedResourceSize | null;
 	}
 
 	export interface DescribeLoggingOptionsResponse {
 
 		/** Information about logging options. */
-		loggingOptions?: LoggingOptions;
+		loggingOptions?: LoggingOptions | null;
 	}
 
 
@@ -543,69 +543,69 @@ export namespace MyNS {
 	export interface DescribePipelineResponse {
 
 		/** Contains information about a pipeline. */
-		pipeline?: Pipeline;
+		pipeline?: Pipeline | null;
 	}
 
 
 	/** Contains information about a pipeline. */
 	export interface Pipeline {
-		name?: string;
-		arn?: string;
-		activities?: Array<PipelineActivity>;
-		reprocessingSummaries?: Array<ReprocessingSummary>;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		name?: string | null;
+		arn?: string | null;
+		activities?: Array<PipelineActivity> | null;
+		reprocessingSummaries?: Array<ReprocessingSummary> | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 	}
 
 
 	/** Information about pipeline reprocessing. */
 	export interface ReprocessingSummary {
-		id?: string;
-		status?: ReprocessingSummaryStatus;
-		creationTime?: Date;
+		id?: string | null;
+		status?: ReprocessingSummaryStatus | null;
+		creationTime?: Date | null;
 	}
 
 	export enum ReprocessingSummaryStatus { RUNNING = 0, SUCCEEDED = 1, CANCELLED = 2, FAILED = 3 }
 
 	export interface GetDatasetContentResponse {
-		entries?: Array<DatasetEntry>;
-		timestamp?: Date;
+		entries?: Array<DatasetEntry> | null;
+		timestamp?: Date | null;
 
 		/** The state of the data set contents and the reason they are in this state. */
-		status?: DatasetContentStatus;
+		status?: DatasetContentStatus | null;
 	}
 
 
 	/** The reference to a data set entry. */
 	export interface DatasetEntry {
-		entryName?: string;
-		dataURI?: string;
+		entryName?: string | null;
+		dataURI?: string | null;
 	}
 
 
 	/** The state of the data set contents and the reason they are in this state. */
 	export interface DatasetContentStatus {
-		state?: DatasetContentStatusState;
-		reason?: string;
+		state?: DatasetContentStatusState | null;
+		reason?: string | null;
 	}
 
 	export enum DatasetContentStatusState { CREATING = 0, SUCCEEDED = 1, FAILED = 2 }
 
 	export interface ListChannelsResponse {
-		channelSummaries?: Array<ChannelSummary>;
-		nextToken?: string;
+		channelSummaries?: Array<ChannelSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A summary of information about a channel. */
 	export interface ChannelSummary {
-		channelName?: string;
+		channelName?: string | null;
 
 		/** Where channel data is stored. */
-		channelStorage?: ChannelStorageSummary;
-		status?: ChannelStatus;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		channelStorage?: ChannelStorageSummary | null;
+		status?: ChannelStatus | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 	}
 
 
@@ -613,10 +613,10 @@ export namespace MyNS {
 	export interface ChannelStorageSummary {
 
 		/** Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service. */
-		serviceManagedS3?: ServiceManagedChannelS3StorageSummary;
+		serviceManagedS3?: ServiceManagedChannelS3StorageSummary | null;
 
 		/** Used to store channel data in an S3 bucket that you manage. */
-		customerManagedS3?: CustomerManagedChannelS3StorageSummary;
+		customerManagedS3?: CustomerManagedChannelS3StorageSummary | null;
 	}
 
 
@@ -627,68 +627,68 @@ export namespace MyNS {
 
 	/** Used to store channel data in an S3 bucket that you manage. */
 	export interface CustomerManagedChannelS3StorageSummary {
-		bucket?: string;
-		keyPrefix?: string;
-		roleArn?: string;
+		bucket?: string | null;
+		keyPrefix?: string | null;
+		roleArn?: string | null;
 	}
 
 	export interface ListDatasetContentsResponse {
-		datasetContentSummaries?: Array<DatasetContentSummary>;
-		nextToken?: string;
+		datasetContentSummaries?: Array<DatasetContentSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Summary information about data set contents. */
 	export interface DatasetContentSummary {
-		version?: string;
+		version?: string | null;
 
 		/** The state of the data set contents and the reason they are in this state. */
-		status?: DatasetContentStatus;
-		creationTime?: Date;
-		scheduleTime?: Date;
-		completionTime?: Date;
+		status?: DatasetContentStatus | null;
+		creationTime?: Date | null;
+		scheduleTime?: Date | null;
+		completionTime?: Date | null;
 	}
 
 	export interface ListDatasetsResponse {
-		datasetSummaries?: Array<DatasetSummary>;
-		nextToken?: string;
+		datasetSummaries?: Array<DatasetSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A summary of information about a data set. */
 	export interface DatasetSummary {
-		datasetName?: string;
-		status?: ChannelStatus;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
-		triggers?: Array<DatasetTrigger>;
-		actions?: Array<DatasetActionSummary>;
+		datasetName?: string | null;
+		status?: ChannelStatus | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
+		triggers?: Array<DatasetTrigger> | null;
+		actions?: Array<DatasetActionSummary> | null;
 	}
 
 
 	/** Information about the action which automatically creates the data set's contents. */
 	export interface DatasetActionSummary {
-		actionName?: string;
-		actionType?: DatasetActionSummaryActionType;
+		actionName?: string | null;
+		actionType?: DatasetActionSummaryActionType | null;
 	}
 
 	export enum DatasetActionSummaryActionType { QUERY = 0, CONTAINER = 1 }
 
 	export interface ListDatastoresResponse {
-		datastoreSummaries?: Array<DatastoreSummary>;
-		nextToken?: string;
+		datastoreSummaries?: Array<DatastoreSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A summary of information about a data store. */
 	export interface DatastoreSummary {
-		datastoreName?: string;
+		datastoreName?: string | null;
 
 		/** Where data store data is stored. */
-		datastoreStorage?: DatastoreStorageSummary;
-		status?: ChannelStatus;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		datastoreStorage?: DatastoreStorageSummary | null;
+		status?: ChannelStatus | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 	}
 
 
@@ -696,10 +696,10 @@ export namespace MyNS {
 	export interface DatastoreStorageSummary {
 
 		/** Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service. */
-		serviceManagedS3?: ServiceManagedDatastoreS3StorageSummary;
+		serviceManagedS3?: ServiceManagedDatastoreS3StorageSummary | null;
 
 		/** Used to store data store data in an S3 bucket that you manage. */
-		customerManagedS3?: CustomerManagedDatastoreS3StorageSummary;
+		customerManagedS3?: CustomerManagedDatastoreS3StorageSummary | null;
 	}
 
 
@@ -710,42 +710,42 @@ export namespace MyNS {
 
 	/** Used to store data store data in an S3 bucket that you manage. */
 	export interface CustomerManagedDatastoreS3StorageSummary {
-		bucket?: string;
-		keyPrefix?: string;
-		roleArn?: string;
+		bucket?: string | null;
+		keyPrefix?: string | null;
+		roleArn?: string | null;
 	}
 
 	export interface ListPipelinesResponse {
-		pipelineSummaries?: Array<PipelineSummary>;
-		nextToken?: string;
+		pipelineSummaries?: Array<PipelineSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A summary of information about a pipeline. */
 	export interface PipelineSummary {
-		pipelineName?: string;
-		reprocessingSummaries?: Array<ReprocessingSummary>;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		pipelineName?: string | null;
+		reprocessingSummaries?: Array<ReprocessingSummary> | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum LoggingLevel { ERROR = 0 }
 
 	export interface RunPipelineActivityResponse {
-		payloads?: Array<string>;
-		logResult?: string;
+		payloads?: Array<string> | null;
+		logResult?: string | null;
 	}
 
 	export interface SampleChannelDataResponse {
-		payloads?: Array<string>;
+		payloads?: Array<string> | null;
 	}
 
 	export interface StartPipelineReprocessingResponse {
-		reprocessingId?: string;
+		reprocessingId?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -768,11 +768,11 @@ export namespace MyNS {
 		channelName: string;
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		channelStorage?: ChannelStorage;
+		channelStorage?: ChannelStorage | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
-		tags?: Array<Tag>;
+		retentionPeriod?: RetentionPeriod | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDatasetContentRequest {
@@ -781,32 +781,32 @@ export namespace MyNS {
 	export interface CreateDatasetRequest {
 		datasetName: string;
 		actions: Array<DatasetAction>;
-		triggers?: Array<DatasetTrigger>;
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
+		triggers?: Array<DatasetTrigger> | null;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
+		retentionPeriod?: RetentionPeriod | null;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: VersioningConfiguration;
-		tags?: Array<Tag>;
+		versioningConfiguration?: VersioningConfiguration | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDatastoreRequest {
 		datastoreName: string;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		datastoreStorage?: DatastoreStorage;
+		datastoreStorage?: DatastoreStorage | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
-		tags?: Array<Tag>;
+		retentionPeriod?: RetentionPeriod | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreatePipelineRequest {
 		pipelineName: string;
 		pipelineActivities: Array<PipelineActivity>;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum DatasetStatus { CREATING = 0, ACTIVE = 1, DELETING = 2 }
@@ -893,8 +893,8 @@ export namespace MyNS {
 	}
 
 	export interface StartPipelineReprocessingRequest {
-		startTime?: Date;
-		endTime?: Date;
+		startTime?: Date | null;
+		endTime?: Date | null;
 	}
 
 	export interface TagResourceRequest {
@@ -907,31 +907,31 @@ export namespace MyNS {
 	export interface UpdateChannelRequest {
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		channelStorage?: ChannelStorage;
+		channelStorage?: ChannelStorage | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
+		retentionPeriod?: RetentionPeriod | null;
 	}
 
 	export interface UpdateDatasetRequest {
 		actions: Array<DatasetAction>;
-		triggers?: Array<DatasetTrigger>;
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
+		triggers?: Array<DatasetTrigger> | null;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
+		retentionPeriod?: RetentionPeriod | null;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: VersioningConfiguration;
+		versioningConfiguration?: VersioningConfiguration | null;
 	}
 
 	export interface UpdateDatastoreRequest {
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod;
+		retentionPeriod?: RetentionPeriod | null;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		datastoreStorage?: DatastoreStorage;
+		datastoreStorage?: DatastoreStorage | null;
 	}
 
 	export interface UpdatePipelineRequest {
@@ -1323,31 +1323,31 @@ export namespace MyNS {
 		channelName: string;
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		channelStorage?: CreateChannelPostBodyChannelStorage;
+		channelStorage?: CreateChannelPostBodyChannelStorage | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: CreateChannelPostBodyRetentionPeriod;
+		retentionPeriod?: CreateChannelPostBodyRetentionPeriod | null;
 
 		/**
 		 * Metadata which can be used to manage the channel.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateChannelPostBodyChannelStorage {
 
 		/** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		serviceManagedS3?: ServiceManagedChannelS3Storage;
+		serviceManagedS3?: ServiceManagedChannelS3Storage | null;
 
 		/** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		customerManagedS3?: CustomerManagedChannelS3Storage;
+		customerManagedS3?: CustomerManagedChannelS3Storage | null;
 	}
 
 	export interface CreateChannelPostBodyRetentionPeriod {
-		unlimited?: boolean;
-		numberOfDays?: number;
+		unlimited?: boolean | null;
+		numberOfDays?: number | null;
 	}
 
 	export interface CreateDatasetPostBody {
@@ -1374,37 +1374,37 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 5
 		 */
-		triggers?: Array<DatasetTrigger>;
+		triggers?: Array<DatasetTrigger> | null;
 
 		/**
 		 * When data set contents are created they are delivered to destinations specified here.
 		 * Minimum items: 0
 		 * Maximum items: 20
 		 */
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: CreateDatasetPostBodyRetentionPeriod;
+		retentionPeriod?: CreateDatasetPostBodyRetentionPeriod | null;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: CreateDatasetPostBodyVersioningConfiguration;
+		versioningConfiguration?: CreateDatasetPostBodyVersioningConfiguration | null;
 
 		/**
 		 * Metadata which can be used to manage the data set.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDatasetPostBodyRetentionPeriod {
-		unlimited?: boolean;
-		numberOfDays?: number;
+		unlimited?: boolean | null;
+		numberOfDays?: number | null;
 	}
 
 	export interface CreateDatasetPostBodyVersioningConfiguration {
-		unlimited?: boolean;
-		maxVersions?: number;
+		unlimited?: boolean | null;
+		maxVersions?: number | null;
 	}
 
 	export interface CreateDatastorePostBody {
@@ -1419,31 +1419,31 @@ export namespace MyNS {
 		datastoreName: string;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		datastoreStorage?: CreateDatastorePostBodyDatastoreStorage;
+		datastoreStorage?: CreateDatastorePostBodyDatastoreStorage | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: CreateDatastorePostBodyRetentionPeriod;
+		retentionPeriod?: CreateDatastorePostBodyRetentionPeriod | null;
 
 		/**
 		 * Metadata which can be used to manage the data store.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDatastorePostBodyDatastoreStorage {
 
 		/** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		serviceManagedS3?: ServiceManagedDatastoreS3Storage;
+		serviceManagedS3?: ServiceManagedDatastoreS3Storage | null;
 
 		/** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		customerManagedS3?: CustomerManagedDatastoreS3Storage;
+		customerManagedS3?: CustomerManagedDatastoreS3Storage | null;
 	}
 
 	export interface CreateDatastorePostBodyRetentionPeriod {
-		unlimited?: boolean;
-		numberOfDays?: number;
+		unlimited?: boolean | null;
+		numberOfDays?: number | null;
 	}
 
 	export interface CreatePipelinePostBody {
@@ -1470,30 +1470,30 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateChannelPutBody {
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		channelStorage?: UpdateChannelPutBodyChannelStorage;
+		channelStorage?: UpdateChannelPutBodyChannelStorage | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: UpdateChannelPutBodyRetentionPeriod;
+		retentionPeriod?: UpdateChannelPutBodyRetentionPeriod | null;
 	}
 
 	export interface UpdateChannelPutBodyChannelStorage {
 
 		/** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		serviceManagedS3?: ServiceManagedChannelS3Storage;
+		serviceManagedS3?: ServiceManagedChannelS3Storage | null;
 
 		/** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		customerManagedS3?: CustomerManagedChannelS3Storage;
+		customerManagedS3?: CustomerManagedChannelS3Storage | null;
 	}
 
 	export interface UpdateChannelPutBodyRetentionPeriod {
-		unlimited?: boolean;
-		numberOfDays?: number;
+		unlimited?: boolean | null;
+		numberOfDays?: number | null;
 	}
 
 	export interface UpdateDatasetPutBody {
@@ -1511,53 +1511,53 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 5
 		 */
-		triggers?: Array<DatasetTrigger>;
+		triggers?: Array<DatasetTrigger> | null;
 
 		/**
 		 * When data set contents are created they are delivered to destinations specified here.
 		 * Minimum items: 0
 		 * Maximum items: 20
 		 */
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: UpdateDatasetPutBodyRetentionPeriod;
+		retentionPeriod?: UpdateDatasetPutBodyRetentionPeriod | null;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: UpdateDatasetPutBodyVersioningConfiguration;
+		versioningConfiguration?: UpdateDatasetPutBodyVersioningConfiguration | null;
 	}
 
 	export interface UpdateDatasetPutBodyRetentionPeriod {
-		unlimited?: boolean;
-		numberOfDays?: number;
+		unlimited?: boolean | null;
+		numberOfDays?: number | null;
 	}
 
 	export interface UpdateDatasetPutBodyVersioningConfiguration {
-		unlimited?: boolean;
-		maxVersions?: number;
+		unlimited?: boolean | null;
+		maxVersions?: number | null;
 	}
 
 	export interface UpdateDatastorePutBody {
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: UpdateDatastorePutBodyRetentionPeriod;
+		retentionPeriod?: UpdateDatastorePutBodyRetentionPeriod | null;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		datastoreStorage?: UpdateDatastorePutBodyDatastoreStorage;
+		datastoreStorage?: UpdateDatastorePutBodyDatastoreStorage | null;
 	}
 
 	export interface UpdateDatastorePutBodyRetentionPeriod {
-		unlimited?: boolean;
-		numberOfDays?: number;
+		unlimited?: boolean | null;
+		numberOfDays?: number | null;
 	}
 
 	export interface UpdateDatastorePutBodyDatastoreStorage {
 
 		/** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		serviceManagedS3?: ServiceManagedDatastoreS3Storage;
+		serviceManagedS3?: ServiceManagedDatastoreS3Storage | null;
 
 		/** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		customerManagedS3?: CustomerManagedDatastoreS3Storage;
+		customerManagedS3?: CustomerManagedDatastoreS3Storage | null;
 	}
 
 	export interface UpdatePipelinePutBody {
@@ -1581,9 +1581,9 @@ export namespace MyNS {
 	}
 
 	export interface PutLoggingOptionsPutBodyLoggingOptions {
-		roleArn?: string;
-		level?: LoggingOptionsLevel;
-		enabled?: boolean;
+		roleArn?: string | null;
+		level?: LoggingOptionsLevel | null;
+		enabled?: boolean | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -1617,43 +1617,43 @@ export namespace MyNS {
 	export interface RunPipelineActivityPostBodyPipelineActivity {
 
 		/** The activity that determines the source of the messages to be processed. */
-		channel?: ChannelActivity;
+		channel?: ChannelActivity | null;
 
 		/** An activity that runs a Lambda function to modify the message. */
-		lambda?: LambdaActivity;
+		lambda?: LambdaActivity | null;
 
 		/** The 'datastore' activity that specifies where to store the processed data. */
-		datastore?: DatastoreActivity;
+		datastore?: DatastoreActivity | null;
 
 		/** An activity that adds other attributes based on existing attributes in the message. */
-		addAttributes?: AddAttributesActivity;
+		addAttributes?: AddAttributesActivity | null;
 
 		/** An activity that removes attributes from a message. */
-		removeAttributes?: RemoveAttributesActivity;
+		removeAttributes?: RemoveAttributesActivity | null;
 
 		/** Creates a new message using only the specified attributes from the original message. */
-		selectAttributes?: SelectAttributesActivity;
+		selectAttributes?: SelectAttributesActivity | null;
 
 		/** An activity that filters a message based on its attributes. */
-		filter?: FilterActivity;
+		filter?: FilterActivity | null;
 
 		/** An activity that computes an arithmetic expression using the message's attributes. */
-		math?: MathActivity;
+		math?: MathActivity | null;
 
 		/** An activity that adds data from the AWS IoT device registry to your message. */
-		deviceRegistryEnrich?: DeviceRegistryEnrichActivity;
+		deviceRegistryEnrich?: DeviceRegistryEnrichActivity | null;
 
 		/** An activity that adds information from the AWS IoT Device Shadows service to a message. */
-		deviceShadowEnrich?: DeviceShadowEnrichActivity;
+		deviceShadowEnrich?: DeviceShadowEnrichActivity | null;
 	}
 
 	export interface StartPipelineReprocessingPostBody {
 
 		/** The start time (inclusive) of raw message data that is reprocessed. */
-		startTime?: Date;
+		startTime?: Date | null;
 
 		/** The end time (exclusive) of raw message data that is reprocessed. */
-		endTime?: Date;
+		endTime?: Date | null;
 	}
 
 }

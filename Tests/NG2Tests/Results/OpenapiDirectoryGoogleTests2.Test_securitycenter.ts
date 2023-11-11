@@ -14,7 +14,7 @@ export namespace MyNS {
 	export interface Asset {
 
 		/** The time at which the asset was created in Security Command Center. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Cloud IAM Policy information associated with the Google Cloud resource
@@ -22,7 +22,7 @@ export namespace MyNS {
 		 * and defined by the Google Cloud resource and cannot be modified by the
 		 * user.
 		 */
-		iamPolicy?: IamPolicy;
+		iamPolicy?: IamPolicy | null;
 
 		/**
 		 * The relative resource name of this asset. See:
@@ -30,19 +30,19 @@ export namespace MyNS {
 		 * Example:
 		 * "organizations/{organization_id}/assets/{asset_id}".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Resource managed properties. These properties are managed and defined by
 		 * the Google Cloud resource and cannot be modified by the user.
 		 */
-		resourceProperties?: {[id: string]: any };
+		resourceProperties?: {[id: string]: any } | null;
 
 		/**
 		 * Security Command Center managed properties. These properties are managed by
 		 * Security Command Center and cannot be modified by the user.
 		 */
-		securityCenterProperties?: SecurityCenterProperties;
+		securityCenterProperties?: SecurityCenterProperties | null;
 
 		/**
 		 * User specified security marks that are attached to the parent Security
@@ -50,13 +50,13 @@ export namespace MyNS {
 		 * Center organization -- they can be modified and viewed by all users who have
 		 * proper permissions on the organization.
 		 */
-		securityMarks?: SecurityMarks;
+		securityMarks?: SecurityMarks | null;
 
 		/**
 		 * The time at which the asset was last updated, added, or deleted in Security
 		 * Command Center.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -73,7 +73,7 @@ export namespace MyNS {
 		 * See https://cloud.google.com/iam/reference/rest/v1/Policy for format
 		 * details.
 		 */
-		policyBlob?: string;
+		policyBlob?: string | null;
 	}
 
 
@@ -84,35 +84,35 @@ export namespace MyNS {
 	export interface SecurityCenterProperties {
 
 		/** The user defined display name for this resource. */
-		resourceDisplayName?: string;
+		resourceDisplayName?: string | null;
 
 		/**
 		 * The full resource name of the Google Cloud resource this asset
 		 * represents. This field is immutable after create time. See:
 		 * https://cloud.google.com/apis/design/resource_names#full_resource_name
 		 */
-		resourceName?: string;
+		resourceName?: string | null;
 
 		/** Owners of the Google Cloud resource. */
-		resourceOwners?: Array<string>;
+		resourceOwners?: Array<string> | null;
 
 		/**
 		 * The full resource name of the immediate parent of the resource. See:
 		 * https://cloud.google.com/apis/design/resource_names#full_resource_name
 		 */
-		resourceParent?: string;
+		resourceParent?: string | null;
 
 		/** The user defined display name for the parent of this resource. */
-		resourceParentDisplayName?: string;
+		resourceParentDisplayName?: string | null;
 
 		/**
 		 * The full resource name of the project the resource belongs to. See:
 		 * https://cloud.google.com/apis/design/resource_names#full_resource_name
 		 */
-		resourceProject?: string;
+		resourceProject?: string | null;
 
 		/** The user defined display name for the project of this resource. */
-		resourceProjectDisplayName?: string;
+		resourceProjectDisplayName?: string | null;
 
 		/**
 		 * The type of the Google Cloud resource. Examples include: APPLICATION,
@@ -120,7 +120,7 @@ export namespace MyNS {
 		 * Security Command Center and/or the producer of the resource and is
 		 * immutable after create time.
 		 */
-		resourceType?: string;
+		resourceType?: string | null;
 	}
 
 
@@ -141,7 +141,7 @@ export namespace MyNS {
 		 * * Values have leading and trailing whitespace trimmed, remaining
 		 * characters must be between 1 - 4096 characters (inclusive)
 		 */
-		marks?: {[id: string]: string };
+		marks?: {[id: string]: string } | null;
 
 		/**
 		 * The relative resource name of the SecurityMarks. See:
@@ -150,7 +150,7 @@ export namespace MyNS {
 		 * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
 		 * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -158,10 +158,10 @@ export namespace MyNS {
 	export interface AssetDiscoveryConfig {
 
 		/** The mode to use for filtering asset discovery. */
-		inclusionMode?: AssetDiscoveryConfigInclusionMode;
+		inclusionMode?: AssetDiscoveryConfigInclusionMode | null;
 
 		/** The project ids to use for filtering asset discovery. */
-		projectIds?: Array<string>;
+		projectIds?: Array<string> | null;
 	}
 
 	export enum AssetDiscoveryConfigInclusionMode { INCLUSION_MODE_UNSPECIFIED = 0, INCLUDE_ONLY = 1, EXCLUDE = 2 }
@@ -219,14 +219,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -256,10 +256,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -292,7 +292,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -327,13 +327,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -367,26 +367,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -418,24 +418,24 @@ export namespace MyNS {
 		 * This field is immutable after creation time.
 		 * Example: "XSS_FLASH_INJECTION"
 		 */
-		category?: string;
+		category?: string | null;
 
 		/** The time at which the finding was created in Security Command Center. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * The time at which the event took place. For example, if the finding
 		 * represents an open firewall it would capture the time the detector believes
 		 * the firewall became open. The accuracy is determined by the detector.
 		 */
-		eventTime?: string;
+		eventTime?: string | null;
 
 		/**
 		 * The URI that, if available, points to a web page outside of Security
 		 * Command Center where additional information about the finding can be found.
 		 * This field is guaranteed to be either empty or a well formed URL.
 		 */
-		externalUri?: string;
+		externalUri?: string | null;
 
 		/**
 		 * The relative resource name of this finding. See:
@@ -443,7 +443,7 @@ export namespace MyNS {
 		 * Example:
 		 * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The relative resource name of the source the finding belongs to. See:
@@ -452,7 +452,7 @@ export namespace MyNS {
 		 * For example:
 		 * "organizations/{organization_id}/sources/{source_id}"
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/**
 		 * For findings on Google Cloud resources, the full resource
@@ -462,7 +462,7 @@ export namespace MyNS {
 		 * be a customer or partner defined string. This field is immutable after
 		 * creation time.
 		 */
-		resourceName?: string;
+		resourceName?: string | null;
 
 		/**
 		 * User specified security marks that are attached to the parent Security
@@ -470,7 +470,7 @@ export namespace MyNS {
 		 * Center organization -- they can be modified and viewed by all users who have
 		 * proper permissions on the organization.
 		 */
-		securityMarks?: SecurityMarks;
+		securityMarks?: SecurityMarks | null;
 
 		/**
 		 * Source specific properties. These properties are managed by the source
@@ -478,10 +478,10 @@ export namespace MyNS {
 		 * between 1 and 255 characters, and must start with a letter and contain
 		 * alphanumeric characters or underscores only.
 		 */
-		sourceProperties?: {[id: string]: any };
+		sourceProperties?: {[id: string]: any } | null;
 
 		/** The state of the finding. */
-		state?: FindingState;
+		state?: FindingState | null;
 	}
 
 	export enum FindingState { STATE_UNSPECIFIED = 0, ACTIVE = 1, INACTIVE = 2 }
@@ -491,7 +491,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -506,7 +506,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -521,10 +521,10 @@ export namespace MyNS {
 		 * cross-site scripting (XSS) vulnerability in an App Engine application is a
 		 * finding.
 		 */
-		finding?: Finding;
+		finding?: Finding | null;
 
 		/** Name of the notification config that generated current notification. */
-		notificationConfigName?: string;
+		notificationConfigName?: string | null;
 	}
 
 
@@ -532,10 +532,10 @@ export namespace MyNS {
 	export interface GoogleCloudSecuritycenterV1RunAssetDiscoveryResponse {
 
 		/** The duration between asset discovery run start and end */
-		duration?: string;
+		duration?: string | null;
 
 		/** The state of an asset discovery run. */
-		state?: GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState;
+		state?: GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState | null;
 	}
 
 	export enum GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState { STATE_UNSPECIFIED = 0, COMPLETED = 1, SUPERSEDED = 2, TERMINATED = 3 }
@@ -545,10 +545,10 @@ export namespace MyNS {
 	export interface GoogleCloudSecuritycenterV1beta1RunAssetDiscoveryResponse {
 
 		/** The duration between asset discovery run start and end */
-		duration?: string;
+		duration?: string | null;
 
 		/** The state of an asset discovery run. */
-		state?: GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState;
+		state?: GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState | null;
 	}
 
 
@@ -563,7 +563,7 @@ export namespace MyNS {
 	export interface GoogleCloudSecuritycenterV1p1beta1Asset {
 
 		/** The time at which the asset was created in Security Command Center. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Cloud IAM Policy information associated with the Google Cloud resource
@@ -571,7 +571,7 @@ export namespace MyNS {
 		 * and defined by the Google Cloud resource and cannot be modified by the
 		 * user.
 		 */
-		iamPolicy?: GoogleCloudSecuritycenterV1p1beta1IamPolicy;
+		iamPolicy?: GoogleCloudSecuritycenterV1p1beta1IamPolicy | null;
 
 		/**
 		 * The relative resource name of this asset. See:
@@ -579,19 +579,19 @@ export namespace MyNS {
 		 * Example:
 		 * "organizations/{organization_id}/assets/{asset_id}".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Resource managed properties. These properties are managed and defined by
 		 * the Google Cloud resource and cannot be modified by the user.
 		 */
-		resourceProperties?: {[id: string]: any };
+		resourceProperties?: {[id: string]: any } | null;
 
 		/**
 		 * Security Command Center managed properties. These properties are managed by
 		 * Security Command Center and cannot be modified by the user.
 		 */
-		securityCenterProperties?: GoogleCloudSecuritycenterV1p1beta1SecurityCenterProperties;
+		securityCenterProperties?: GoogleCloudSecuritycenterV1p1beta1SecurityCenterProperties | null;
 
 		/**
 		 * User specified security marks that are attached to the parent Security
@@ -599,13 +599,13 @@ export namespace MyNS {
 		 * Center organization -- they can be modified and viewed by all users who have
 		 * proper permissions on the organization.
 		 */
-		securityMarks?: GoogleCloudSecuritycenterV1p1beta1SecurityMarks;
+		securityMarks?: GoogleCloudSecuritycenterV1p1beta1SecurityMarks | null;
 
 		/**
 		 * The time at which the asset was last updated, added, or deleted in Cloud
 		 * SCC.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -622,7 +622,7 @@ export namespace MyNS {
 		 * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
 		 * format details.
 		 */
-		policyBlob?: string;
+		policyBlob?: string | null;
 	}
 
 
@@ -633,35 +633,35 @@ export namespace MyNS {
 	export interface GoogleCloudSecuritycenterV1p1beta1SecurityCenterProperties {
 
 		/** The user defined display name for this resource. */
-		resourceDisplayName?: string;
+		resourceDisplayName?: string | null;
 
 		/**
 		 * The full resource name of the Google Cloud resource this asset
 		 * represents. This field is immutable after create time. See:
 		 * https://cloud.google.com/apis/design/resource_names#full_resource_name
 		 */
-		resourceName?: string;
+		resourceName?: string | null;
 
 		/** Owners of the Google Cloud resource. */
-		resourceOwners?: Array<string>;
+		resourceOwners?: Array<string> | null;
 
 		/**
 		 * The full resource name of the immediate parent of the resource. See:
 		 * https://cloud.google.com/apis/design/resource_names#full_resource_name
 		 */
-		resourceParent?: string;
+		resourceParent?: string | null;
 
 		/** The user defined display name for the parent of this resource. */
-		resourceParentDisplayName?: string;
+		resourceParentDisplayName?: string | null;
 
 		/**
 		 * The full resource name of the project the resource belongs to. See:
 		 * https://cloud.google.com/apis/design/resource_names#full_resource_name
 		 */
-		resourceProject?: string;
+		resourceProject?: string | null;
 
 		/** The user defined display name for the project of this resource. */
-		resourceProjectDisplayName?: string;
+		resourceProjectDisplayName?: string | null;
 
 		/**
 		 * The type of the Google Cloud resource. Examples include: APPLICATION,
@@ -669,7 +669,7 @@ export namespace MyNS {
 		 * Security Command Center and/or the producer of the resource and is
 		 * immutable after create time.
 		 */
-		resourceType?: string;
+		resourceType?: string | null;
 	}
 
 
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * * Values have leading and trailing whitespace trimmed, remaining
 		 * characters must be between 1 - 4096 characters (inclusive)
 		 */
-		marks?: {[id: string]: string };
+		marks?: {[id: string]: string } | null;
 
 		/**
 		 * The relative resource name of the SecurityMarks. See:
@@ -699,7 +699,7 @@ export namespace MyNS {
 		 * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
 		 * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -717,24 +717,24 @@ export namespace MyNS {
 		 * This field is immutable after creation time.
 		 * Example: "XSS_FLASH_INJECTION"
 		 */
-		category?: string;
+		category?: string | null;
 
 		/** The time at which the finding was created in Security Command Center. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * The time at which the event took place. For example, if the finding
 		 * represents an open firewall it would capture the time the detector believes
 		 * the firewall became open. The accuracy is determined by the detector.
 		 */
-		eventTime?: string;
+		eventTime?: string | null;
 
 		/**
 		 * The URI that, if available, points to a web page outside of Security
 		 * Command Center where additional information about the finding can be found.
 		 * This field is guaranteed to be either empty or a well formed URL.
 		 */
-		externalUri?: string;
+		externalUri?: string | null;
 
 		/**
 		 * The relative resource name of this finding. See:
@@ -742,7 +742,7 @@ export namespace MyNS {
 		 * Example:
 		 * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The relative resource name of the source the finding belongs to. See:
@@ -751,7 +751,7 @@ export namespace MyNS {
 		 * For example:
 		 * "organizations/{organization_id}/sources/{source_id}"
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/**
 		 * For findings on Google Cloud resources, the full resource
@@ -761,7 +761,7 @@ export namespace MyNS {
 		 * be a customer or partner defined string. This field is immutable after
 		 * creation time.
 		 */
-		resourceName?: string;
+		resourceName?: string | null;
 
 		/**
 		 * User specified security marks that are attached to the parent Security
@@ -769,7 +769,7 @@ export namespace MyNS {
 		 * Center organization -- they can be modified and viewed by all users who have
 		 * proper permissions on the organization.
 		 */
-		securityMarks?: GoogleCloudSecuritycenterV1p1beta1SecurityMarks;
+		securityMarks?: GoogleCloudSecuritycenterV1p1beta1SecurityMarks | null;
 
 		/**
 		 * Source specific properties. These properties are managed by the source
@@ -777,10 +777,10 @@ export namespace MyNS {
 		 * between 1 and 255 characters, and must start with a letter and contain
 		 * alphanumeric characters or underscores only.
 		 */
-		sourceProperties?: {[id: string]: any };
+		sourceProperties?: {[id: string]: any } | null;
 
 		/** The state of the finding. */
-		state?: FindingState;
+		state?: FindingState | null;
 	}
 
 
@@ -794,16 +794,16 @@ export namespace MyNS {
 		 * analysis, policy testing, and enforcement. For example, an XSS vulnerability
 		 * in an App Engine application is a finding.
 		 */
-		finding?: GoogleCloudSecuritycenterV1p1beta1Finding;
+		finding?: GoogleCloudSecuritycenterV1p1beta1Finding | null;
 
 		/** Name of the notification config that generated current notification. */
-		notificationConfigName?: string;
+		notificationConfigName?: string | null;
 
 		/**
 		 * Wrapper over asset object that also captures the state change for the asset
 		 * e.g. if it was a newly created asset vs updated or deleted asset.
 		 */
-		temporalAsset?: GoogleCloudSecuritycenterV1p1beta1TemporalAsset;
+		temporalAsset?: GoogleCloudSecuritycenterV1p1beta1TemporalAsset | null;
 	}
 
 
@@ -821,10 +821,10 @@ export namespace MyNS {
 		 * within the context of Security Command Center and don't affect the referenced
 		 * Google Cloud resource.
 		 */
-		asset?: GoogleCloudSecuritycenterV1p1beta1Asset;
+		asset?: GoogleCloudSecuritycenterV1p1beta1Asset | null;
 
 		/** Represents if the asset was created/updated/deleted. */
-		changeType?: GoogleCloudSecuritycenterV1p1beta1TemporalAssetChangeType;
+		changeType?: GoogleCloudSecuritycenterV1p1beta1TemporalAssetChangeType | null;
 	}
 
 	export enum GoogleCloudSecuritycenterV1p1beta1TemporalAssetChangeType { CHANGE_TYPE_UNSPECIFIED = 0, CREATED = 1, UPDATED = 2, DELETED = 3 }
@@ -834,10 +834,10 @@ export namespace MyNS {
 	export interface GoogleCloudSecuritycenterV1p1beta1RunAssetDiscoveryResponse {
 
 		/** The duration between asset discovery run start and end */
-		duration?: string;
+		duration?: string | null;
 
 		/** The state of an asset discovery run. */
-		state?: GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState;
+		state?: GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState | null;
 	}
 
 
@@ -868,7 +868,7 @@ export namespace MyNS {
 		 * If this field is set then `state_change` must be a specified field in
 		 * `group_by`.
 		 */
-		compareDuration?: string;
+		compareDuration?: string | null;
 
 		/**
 		 * Expression that defines the filter to apply across assets.
@@ -919,7 +919,7 @@ export namespace MyNS {
 		 * Use a negated partial match on the empty string to filter based on a
 		 * property not existing: "-resource_properties.my_property : \"\""
 		 */
-		filter?: string;
+		filter?: string | null;
 
 		/**
 		 * Required. Expression that defines what assets fields to use for grouping. The string
@@ -937,20 +937,20 @@ export namespace MyNS {
 		 * * security_center_properties.resource_project_display_name
 		 * * security_center_properties.resource_parent_display_name
 		 */
-		groupBy?: string;
+		groupBy?: string | null;
 
 		/**
 		 * The maximum number of results to return in a single response. Default is
 		 * 10, minimum is 1, maximum is 1000.
 		 */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * The value returned by the last `GroupAssetsResponse`; indicates
 		 * that this is a continuation of a prior `GroupAssets` call, and that the
 		 * system should return the next page of data.
 		 */
-		pageToken?: string;
+		pageToken?: string | null;
 
 		/**
 		 * Time used as a reference point when filtering assets. The filter is limited
@@ -958,7 +958,7 @@ export namespace MyNS {
 		 * specific time. Absence of this field will default to the API's version of
 		 * NOW.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 	}
 
 
@@ -970,19 +970,19 @@ export namespace MyNS {
 		 * combination of property/values. The element contains a count for the number
 		 * of times those specific property/values appear.
 		 */
-		groupByResults?: Array<GroupResult>;
+		groupByResults?: Array<GroupResult> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Time used for executing the groupBy request. */
-		readTime?: string;
+		readTime?: string | null;
 
 		/** The total number of results matching the query. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -990,10 +990,10 @@ export namespace MyNS {
 	export interface GroupResult {
 
 		/** Total count of resources for the given properties. */
-		count?: string;
+		count?: string | null;
 
 		/** Properties matching the groupBy fields in the request. */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: any } | null;
 	}
 
 
@@ -1029,7 +1029,7 @@ export namespace MyNS {
 		 * If this field is set then `state_change` must be a specified field in
 		 * `group_by`.
 		 */
-		compareDuration?: string;
+		compareDuration?: string | null;
 
 		/**
 		 * Expression that defines the filter to apply across findings.
@@ -1069,7 +1069,7 @@ export namespace MyNS {
 		 * Use a negated partial match on the empty string to filter based on a
 		 * property not existing: "-source_properties.my_property : \"\""
 		 */
-		filter?: string;
+		filter?: string | null;
 
 		/**
 		 * Required. Expression that defines what assets fields to use for grouping (including
@@ -1083,20 +1083,20 @@ export namespace MyNS {
 		 * The following fields are supported when compare_duration is set:
 		 * * state_change
 		 */
-		groupBy?: string;
+		groupBy?: string | null;
 
 		/**
 		 * The maximum number of results to return in a single response. Default is
 		 * 10, minimum is 1, maximum is 1000.
 		 */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * The value returned by the last `GroupFindingsResponse`; indicates
 		 * that this is a continuation of a prior `GroupFindings` call, and
 		 * that the system should return the next page of data.
 		 */
-		pageToken?: string;
+		pageToken?: string | null;
 
 		/**
 		 * Time used as a reference point when filtering findings. The filter is
@@ -1104,7 +1104,7 @@ export namespace MyNS {
 		 * those at that specific time. Absence of this field will default to the
 		 * API's version of NOW.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 	}
 
 
@@ -1116,19 +1116,19 @@ export namespace MyNS {
 		 * combination of property/values. The element contains a count for the number
 		 * of times those specific property/values appear.
 		 */
-		groupByResults?: Array<GroupResult>;
+		groupByResults?: Array<GroupResult> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Time used for executing the groupBy request. */
-		readTime?: string;
+		readTime?: string | null;
 
 		/** The total number of results matching the query. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -1136,19 +1136,19 @@ export namespace MyNS {
 	export interface ListAssetsResponse {
 
 		/** Assets matching the list request. */
-		listAssetsResults?: Array<ListAssetsResult>;
+		listAssetsResults?: Array<ListAssetsResult> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Time used for executing the list request. */
-		readTime?: string;
+		readTime?: string | null;
 
 		/** The total number of assets matching the query. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -1163,10 +1163,10 @@ export namespace MyNS {
 		 * within the context of Security Command Center and don't affect the referenced
 		 * Google Cloud resource.
 		 */
-		asset?: Asset;
+		asset?: Asset | null;
 
 		/** State change of the asset between the points in time. */
-		stateChange?: ListAssetsResultStateChange;
+		stateChange?: ListAssetsResultStateChange | null;
 	}
 
 	export enum ListAssetsResultStateChange { UNUSED = 0, ADDED = 1, REMOVED = 2, ACTIVE = 3 }
@@ -1176,19 +1176,19 @@ export namespace MyNS {
 	export interface ListFindingsResponse {
 
 		/** Findings matching the list request. */
-		listFindingsResults?: Array<ListFindingsResult>;
+		listFindingsResults?: Array<ListFindingsResult> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Time used for executing the list request. */
-		readTime?: string;
+		readTime?: string | null;
 
 		/** The total number of findings matching the query. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -1203,16 +1203,16 @@ export namespace MyNS {
 		 * cross-site scripting (XSS) vulnerability in an App Engine application is a
 		 * finding.
 		 */
-		finding?: Finding;
+		finding?: Finding | null;
 
 		/**
 		 * Information related to the Google Cloud resource that is
 		 * associated with this finding.
 		 */
-		resource?: Resource;
+		resource?: Resource | null;
 
 		/** State change of the finding between the points in time. */
-		stateChange?: ListFindingsResultStateChange;
+		stateChange?: ListFindingsResultStateChange | null;
 	}
 
 
@@ -1226,19 +1226,19 @@ export namespace MyNS {
 		 * The full resource name of the resource. See:
 		 * https://cloud.google.com/apis/design/resource_names#full_resource_name
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The human readable name of resource's parent. */
-		parentDisplayName?: string;
+		parentDisplayName?: string | null;
 
 		/** The full resource name of resource's parent. */
-		parentName?: string;
+		parentName?: string | null;
 
 		/** The human readable name of project that the resource belongs to. */
-		projectDisplayName?: string;
+		projectDisplayName?: string | null;
 
 		/** The full resource name of project that the resource belongs to. */
-		projectName?: string;
+		projectName?: string | null;
 	}
 
 	export enum ListFindingsResultStateChange { UNUSED = 0, CHANGED = 1, UNCHANGED = 2, ADDED = 3, REMOVED = 4 }
@@ -1251,10 +1251,10 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Notification configs belonging to the requested parent. */
-		notificationConfigs?: Array<NotificationConfig>;
+		notificationConfigs?: Array<NotificationConfig> | null;
 	}
 
 
@@ -1266,7 +1266,7 @@ export namespace MyNS {
 	export interface NotificationConfig {
 
 		/** The description of the notification config (max of 1024 characters). */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The relative resource name of this notification config. See:
@@ -1274,25 +1274,25 @@ export namespace MyNS {
 		 * Example:
 		 * "organizations/{organization_id}/notificationConfigs/notify_public_bucket".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The PubSub topic to send notifications to. Its format is
 		 * "projects/[project_id]/topics/[topic]".
 		 */
-		pubsubTopic?: string;
+		pubsubTopic?: string | null;
 
 		/**
 		 * Output only. The service account that needs "pubsub.topics.publish"
 		 * permission to publish to the PubSub topic.
 		 */
-		serviceAccount?: string;
+		serviceAccount?: string | null;
 
 		/**
 		 * The config for streaming-based notifications, which send each event as soon
 		 * as it is detected.
 		 */
-		streamingConfig?: StreamingConfig;
+		streamingConfig?: StreamingConfig | null;
 	}
 
 
@@ -1320,7 +1320,7 @@ export namespace MyNS {
 		 * * integer literals without quotes.
 		 * * boolean literals `true` and `false` without quotes.
 		 */
-		filter?: string;
+		filter?: string | null;
 	}
 
 
@@ -1328,10 +1328,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -1346,7 +1346,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1356,7 +1356,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -1364,14 +1364,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -1383,7 +1383,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -1398,20 +1398,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -1422,10 +1422,10 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Sources belonging to the requested parent. */
-		sources?: Array<Source>;
+		sources?: Array<Source> | null;
 	}
 
 
@@ -1446,7 +1446,7 @@ export namespace MyNS {
 		 * (XSS), Flash injection, mixed content (HTTP in HTTPS), and
 		 * outdated or insecure libraries."
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The source's display name.
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 		 * The display name must have a length between 1 and 64 characters
 		 * (inclusive).
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The relative resource name of this source. See:
@@ -1463,7 +1463,7 @@ export namespace MyNS {
 		 * Example:
 		 * "organizations/{organization_id}/sources/{source_id}"
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1474,7 +1474,7 @@ export namespace MyNS {
 	export interface OrganizationSettings {
 
 		/** The configuration used for Asset Discovery runs. */
-		assetDiscoveryConfig?: AssetDiscoveryConfig;
+		assetDiscoveryConfig?: AssetDiscoveryConfig | null;
 
 		/**
 		 * A flag that indicates if Asset Discovery should be enabled. If the flag is
@@ -1482,7 +1482,7 @@ export namespace MyNS {
 		 * all historical assets will remain, but discovery of future assets will not
 		 * occur.
 		 */
-		enableAssetDiscovery?: boolean;
+		enableAssetDiscovery?: boolean | null;
 
 		/**
 		 * The relative resource name of the settings. See:
@@ -1490,7 +1490,7 @@ export namespace MyNS {
 		 * Example:
 		 * "organizations/{organization_id}/organizationSettings".
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1554,14 +1554,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -1576,7 +1576,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -1596,7 +1596,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -1609,10 +1609,10 @@ export namespace MyNS {
 	export interface SetFindingStateRequest {
 
 		/** Required. The time at which the updated state takes effect. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Required. The desired State of the finding. */
-		state?: FindingState;
+		state?: FindingState | null;
 	}
 
 
@@ -1676,7 +1676,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -1685,7 +1685,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1709,7 +1709,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()

@@ -3,36 +3,36 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateJobResult {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 
 	/** Contains the configuration parameters for a <code>Lambda Invoke</code> operation. */
 	export interface LambdaInvokeOperation {
-		FunctionArn?: string;
+		FunctionArn?: string | null;
 	}
 
 
 	/** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>. */
 	export interface S3CopyObjectOperation {
-		TargetResource?: string;
-		CannedAccessControlList?: S3CopyObjectOperationCannedAccessControlList;
-		AccessControlGrants?: Array<S3Grant>;
-		MetadataDirective?: S3CopyObjectOperationMetadataDirective;
-		ModifiedSinceConstraint?: Date;
+		TargetResource?: string | null;
+		CannedAccessControlList?: S3CopyObjectOperationCannedAccessControlList | null;
+		AccessControlGrants?: Array<S3Grant> | null;
+		MetadataDirective?: S3CopyObjectOperationMetadataDirective | null;
+		ModifiedSinceConstraint?: Date | null;
 
 		/** <p/> */
-		NewObjectMetadata?: S3ObjectMetadata;
-		NewObjectTagging?: Array<S3Tag>;
-		RedirectLocation?: string;
-		RequesterPays?: boolean;
-		StorageClass?: S3CopyObjectOperationStorageClass;
-		UnModifiedSinceConstraint?: Date;
-		SSEAwsKmsKeyId?: string;
-		TargetKeyPrefix?: string;
-		ObjectLockLegalHoldStatus?: S3CopyObjectOperationObjectLockLegalHoldStatus;
-		ObjectLockMode?: S3CopyObjectOperationObjectLockMode;
-		ObjectLockRetainUntilDate?: Date;
+		NewObjectMetadata?: S3ObjectMetadata | null;
+		NewObjectTagging?: Array<S3Tag> | null;
+		RedirectLocation?: string | null;
+		RequesterPays?: boolean | null;
+		StorageClass?: S3CopyObjectOperationStorageClass | null;
+		UnModifiedSinceConstraint?: Date | null;
+		SSEAwsKmsKeyId?: string | null;
+		TargetKeyPrefix?: string | null;
+		ObjectLockLegalHoldStatus?: S3CopyObjectOperationObjectLockLegalHoldStatus | null;
+		ObjectLockMode?: S3CopyObjectOperationObjectLockMode | null;
+		ObjectLockRetainUntilDate?: Date | null;
 	}
 
 	export enum S3CopyObjectOperationCannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
@@ -42,16 +42,16 @@ export namespace MyNS {
 	export interface S3Grant {
 
 		/** <p/> */
-		Grantee?: S3Grantee;
-		Permission?: S3GrantPermission;
+		Grantee?: S3Grantee | null;
+		Permission?: S3GrantPermission | null;
 	}
 
 
 	/** <p/> */
 	export interface S3Grantee {
-		TypeIdentifier?: S3GranteeTypeIdentifier;
-		Identifier?: string;
-		DisplayName?: string;
+		TypeIdentifier?: S3GranteeTypeIdentifier | null;
+		Identifier?: string | null;
+		DisplayName?: string | null;
 	}
 
 	export enum S3GranteeTypeIdentifier { id = 0, emailAddress = 1, uri = 2 }
@@ -63,17 +63,17 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface S3ObjectMetadata {
-		CacheControl?: string;
-		ContentDisposition?: string;
-		ContentEncoding?: string;
-		ContentLanguage?: string;
-		UserMetadata?: S3UserMetadata;
-		ContentLength?: number;
-		ContentMD5?: string;
-		ContentType?: string;
-		HttpExpiresDate?: Date;
-		RequesterCharged?: boolean;
-		SSEAlgorithm?: S3ObjectMetadataSSEAlgorithm;
+		CacheControl?: string | null;
+		ContentDisposition?: string | null;
+		ContentEncoding?: string | null;
+		ContentLanguage?: string | null;
+		UserMetadata?: S3UserMetadata | null;
+		ContentLength?: number | null;
+		ContentMD5?: string | null;
+		ContentType?: string | null;
+		HttpExpiresDate?: Date | null;
+		RequesterCharged?: boolean | null;
+		SSEAlgorithm?: S3ObjectMetadataSSEAlgorithm | null;
 	}
 
 	export interface S3UserMetadata {
@@ -99,7 +99,7 @@ export namespace MyNS {
 	export interface S3SetObjectAclOperation {
 
 		/** <p/> */
-		AccessControlPolicy?: S3AccessControlPolicy;
+		AccessControlPolicy?: S3AccessControlPolicy | null;
 	}
 
 
@@ -107,8 +107,8 @@ export namespace MyNS {
 	export interface S3AccessControlPolicy {
 
 		/** <p/> */
-		AccessControlList?: S3AccessControlList;
-		CannedAccessControlList?: S3AccessControlPolicyCannedAccessControlList;
+		AccessControlList?: S3AccessControlList | null;
+		CannedAccessControlList?: S3AccessControlPolicyCannedAccessControlList | null;
 	}
 
 
@@ -120,14 +120,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		Owner: S3ObjectOwner;
-		Grants?: Array<S3Grant>;
+		Grants?: Array<S3Grant> | null;
 	}
 
 
 	/** <p/> */
 	export interface S3ObjectOwner {
-		ID?: string;
-		DisplayName?: string;
+		ID?: string | null;
+		DisplayName?: string | null;
 	}
 
 	export enum S3AccessControlPolicyCannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
@@ -135,14 +135,14 @@ export namespace MyNS {
 
 	/** Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT Object tagging</a>. */
 	export interface S3SetObjectTaggingOperation {
-		TagSet?: Array<S3Tag>;
+		TagSet?: Array<S3Tag> | null;
 	}
 
 
 	/** Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">Restoring Archives</a>. */
 	export interface S3InitiateRestoreObjectOperation {
-		ExpirationInDays?: number;
-		GlacierJobTier?: S3InitiateRestoreObjectOperationGlacierJobTier;
+		ExpirationInDays?: number | null;
+		GlacierJobTier?: S3InitiateRestoreObjectOperationGlacierJobTier | null;
 	}
 
 	export enum S3InitiateRestoreObjectOperationGlacierJobTier { BULK = 0, STANDARD = 1 }
@@ -167,7 +167,7 @@ export namespace MyNS {
 
 	/** Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Retention API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes">PUT Object Retention</a>. */
 	export interface S3SetObjectRetentionOperation {
-		BypassGovernanceRetention?: boolean;
+		BypassGovernanceRetention?: boolean | null;
 
 		/**
 		 * <p/>
@@ -179,8 +179,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface S3Retention {
-		RetainUntilDate?: Date;
-		Mode?: S3CopyObjectOperationObjectLockMode;
+		RetainUntilDate?: Date | null;
+		Mode?: S3CopyObjectOperationObjectLockMode | null;
 	}
 
 	export enum JobReportFormat { Report_CSV_20180820 = 0 }
@@ -191,7 +191,7 @@ export namespace MyNS {
 	/** Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest. */
 	export interface JobManifestSpec {
 		Format: JobManifestSpecFormat;
-		Fields?: Array<JobManifestFieldName>;
+		Fields?: Array<JobManifestFieldName> | null;
 	}
 
 	export enum JobManifestSpecFormat { S3BatchOperations_CSV_20180820 = 0, S3InventoryReport_CSV_20161130 = 1 }
@@ -202,7 +202,7 @@ export namespace MyNS {
 	/** Contains the information required to locate a manifest object. */
 	export interface JobManifestLocation {
 		ObjectArn: string;
-		ObjectVersionId?: string;
+		ObjectVersionId?: string | null;
 		ETag: string;
 	}
 
@@ -227,37 +227,37 @@ export namespace MyNS {
 	export interface DescribeJobResult {
 
 		/** A container element for the job configuration and status information returned by a <code>Describe Job</code> request. */
-		Job?: JobDescriptor;
+		Job?: JobDescriptor | null;
 	}
 
 
 	/** A container element for the job configuration and status information returned by a <code>Describe Job</code> request. */
 	export interface JobDescriptor {
-		JobId?: string;
-		ConfirmationRequired?: boolean;
-		Description?: string;
-		JobArn?: string;
-		Status?: JobDescriptorStatus;
+		JobId?: string | null;
+		ConfirmationRequired?: boolean | null;
+		Description?: string | null;
+		JobArn?: string | null;
+		Status?: JobDescriptorStatus | null;
 
 		/** Contains the configuration information for a job's manifest. */
-		Manifest?: JobManifest;
+		Manifest?: JobManifest | null;
 
 		/** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. */
-		Operation?: JobOperation;
-		Priority?: number;
+		Operation?: JobOperation | null;
+		Priority?: number | null;
 
 		/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
-		ProgressSummary?: JobProgressSummary;
-		StatusUpdateReason?: string;
-		FailureReasons?: Array<JobFailure>;
+		ProgressSummary?: JobProgressSummary | null;
+		StatusUpdateReason?: string | null;
+		FailureReasons?: Array<JobFailure> | null;
 
 		/** Contains the configuration parameters for a job-completion report. */
-		Report?: JobReport;
-		CreationTime?: Date;
-		TerminationDate?: Date;
-		RoleArn?: string;
-		SuspendedDate?: Date;
-		SuspendedCause?: string;
+		Report?: JobReport | null;
+		CreationTime?: Date | null;
+		TerminationDate?: Date | null;
+		RoleArn?: string | null;
+		SuspendedDate?: Date | null;
+		SuspendedCause?: string | null;
 	}
 
 	export enum JobDescriptorStatus { Active = 0, Cancelled = 1, Cancelling = 2, Complete = 3, Completing = 4, Failed = 5, Failing = 6, New = 7, Paused = 8, Pausing = 9, Preparing = 10, Ready = 11, Suspended = 12 }
@@ -284,63 +284,63 @@ export namespace MyNS {
 	export interface JobOperation {
 
 		/** Contains the configuration parameters for a <code>Lambda Invoke</code> operation. */
-		LambdaInvoke?: LambdaInvokeOperation;
+		LambdaInvoke?: LambdaInvokeOperation | null;
 
 		/** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>. */
-		S3PutObjectCopy?: S3CopyObjectOperation;
+		S3PutObjectCopy?: S3CopyObjectOperation | null;
 
 		/** Contains the configuration parameters for a Set Object ACL operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT Object acl</a>. */
-		S3PutObjectAcl?: S3SetObjectAclOperation;
+		S3PutObjectAcl?: S3SetObjectAclOperation | null;
 
 		/** Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT Object tagging</a>. */
-		S3PutObjectTagging?: S3SetObjectTaggingOperation;
+		S3PutObjectTagging?: S3SetObjectTaggingOperation | null;
 
 		/** Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">Restoring Archives</a>. */
-		S3InitiateRestoreObject?: S3InitiateRestoreObjectOperation;
+		S3InitiateRestoreObject?: S3InitiateRestoreObjectOperation | null;
 
 		/** Contains the configuration parameters for a Set Object Legal Hold operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds">PUT Object Legal Hold</a>. */
-		S3PutObjectLegalHold?: S3SetObjectLegalHoldOperation;
+		S3PutObjectLegalHold?: S3SetObjectLegalHoldOperation | null;
 
 		/** Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Retention API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes">PUT Object Retention</a>. */
-		S3PutObjectRetention?: S3SetObjectRetentionOperation;
+		S3PutObjectRetention?: S3SetObjectRetentionOperation | null;
 	}
 
 
 	/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
 	export interface JobProgressSummary {
-		TotalNumberOfTasks?: number;
-		NumberOfTasksSucceeded?: number;
-		NumberOfTasksFailed?: number;
+		TotalNumberOfTasks?: number | null;
+		NumberOfTasksSucceeded?: number | null;
+		NumberOfTasksFailed?: number | null;
 	}
 
 
 	/** If this job failed, this element indicates why the job failed. */
 	export interface JobFailure {
-		FailureCode?: string;
-		FailureReason?: string;
+		FailureCode?: string | null;
+		FailureReason?: string | null;
 	}
 
 
 	/** Contains the configuration parameters for a job-completion report. */
 	export interface JobReport {
-		Bucket?: string;
-		Format?: JobReportFormat;
+		Bucket?: string | null;
+		Format?: JobReportFormat | null;
 		Enabled: boolean;
-		Prefix?: string;
-		ReportScope?: JobReportScope;
+		Prefix?: string | null;
+		ReportScope?: JobReportScope | null;
 	}
 
 	export interface GetAccessPointResult {
-		Name?: string;
-		Bucket?: string;
-		NetworkOrigin?: GetAccessPointResultNetworkOrigin;
+		Name?: string | null;
+		Bucket?: string | null;
+		NetworkOrigin?: GetAccessPointResultNetworkOrigin | null;
 
 		/** The virtual private cloud (VPC) configuration for an access point. */
-		VpcConfiguration?: VpcConfiguration;
+		VpcConfiguration?: VpcConfiguration | null;
 
 		/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
-		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
-		CreationDate?: Date;
+		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | null;
+		CreationDate?: Date | null;
 	}
 
 	export enum GetAccessPointResultNetworkOrigin { Internet = 0, VPC = 1 }
@@ -354,44 +354,44 @@ export namespace MyNS {
 
 	/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
 	export interface PublicAccessBlockConfiguration {
-		BlockPublicAcls?: boolean;
-		IgnorePublicAcls?: boolean;
-		BlockPublicPolicy?: boolean;
-		RestrictPublicBuckets?: boolean;
+		BlockPublicAcls?: boolean | null;
+		IgnorePublicAcls?: boolean | null;
+		BlockPublicPolicy?: boolean | null;
+		RestrictPublicBuckets?: boolean | null;
 	}
 
 	export interface GetAccessPointPolicyResult {
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 	export interface GetAccessPointPolicyStatusResult {
 
 		/** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. */
-		PolicyStatus?: PolicyStatus;
+		PolicyStatus?: PolicyStatus | null;
 	}
 
 
 	/** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.  */
 	export interface PolicyStatus {
-		IsPublic?: boolean;
+		IsPublic?: boolean | null;
 	}
 
 	export interface GetJobTaggingResult {
-		Tags?: Array<S3Tag>;
+		Tags?: Array<S3Tag> | null;
 	}
 
 	export interface GetPublicAccessBlockOutput {
 
 		/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
-		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
+		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | null;
 	}
 
 	export interface NoSuchPublicAccessBlockConfiguration {
 	}
 
 	export interface ListAccessPointsResult {
-		AccessPointList?: Array<AccessPoint>;
-		NextToken?: string;
+		AccessPointList?: Array<AccessPoint> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -401,28 +401,28 @@ export namespace MyNS {
 		NetworkOrigin: GetAccessPointResultNetworkOrigin;
 
 		/** The virtual private cloud (VPC) configuration for an access point. */
-		VpcConfiguration?: VpcConfiguration;
+		VpcConfiguration?: VpcConfiguration | null;
 		Bucket: string;
 	}
 
 	export interface ListJobsResult {
-		NextToken?: string;
-		Jobs?: Array<JobListDescriptor>;
+		NextToken?: string | null;
+		Jobs?: Array<JobListDescriptor> | null;
 	}
 
 
 	/** Contains the configuration and status information for a single job retrieved as part of a job list. */
 	export interface JobListDescriptor {
-		JobId?: string;
-		Description?: string;
-		Operation?: JobListDescriptorOperation;
-		Priority?: number;
-		Status?: JobDescriptorStatus;
-		CreationTime?: Date;
-		TerminationDate?: Date;
+		JobId?: string | null;
+		Description?: string | null;
+		Operation?: JobListDescriptorOperation | null;
+		Priority?: number | null;
+		Status?: JobDescriptorStatus | null;
+		CreationTime?: Date | null;
+		TerminationDate?: Date | null;
 
 		/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
-		ProgressSummary?: JobProgressSummary;
+		ProgressSummary?: JobProgressSummary | null;
 	}
 
 	export enum JobListDescriptorOperation { LambdaInvoke = 0, S3PutObjectCopy = 1, S3PutObjectAcl = 2, S3PutObjectTagging = 3, S3InitiateRestoreObject = 4, S3PutObjectLegalHold = 5, S3PutObjectRetention = 6 }
@@ -447,9 +447,9 @@ export namespace MyNS {
 	}
 
 	export interface UpdateJobStatusResult {
-		JobId?: string;
-		Status?: JobDescriptorStatus;
-		StatusUpdateReason?: string;
+		JobId?: string | null;
+		Status?: JobDescriptorStatus | null;
+		StatusUpdateReason?: string | null;
 	}
 
 	export interface JobStatusException {
@@ -461,14 +461,14 @@ export namespace MyNS {
 		Bucket: string;
 
 		/** The virtual private cloud (VPC) configuration for an access point. */
-		VpcConfiguration?: VpcConfiguration;
+		VpcConfiguration?: VpcConfiguration | null;
 
 		/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
-		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
+		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | null;
 	}
 
 	export interface CreateJobRequest {
-		ConfirmationRequired?: boolean;
+		ConfirmationRequired?: boolean | null;
 
 		/**
 		 * The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
@@ -488,10 +488,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		Manifest: JobManifest;
-		Description?: string;
+		Description?: string | null;
 		Priority: number;
 		RoleArn: string;
-		Tags?: Array<S3Tag>;
+		Tags?: Array<S3Tag> | null;
 	}
 
 	export interface DeleteAccessPointPolicyRequest {

@@ -20,33 +20,33 @@ export namespace MyNS {
 	export interface CreateDataSetResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
-		AssetType?: CreateDataSetResponseAssetType;
+		AssetType?: CreateDataSetResponseAssetType | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A description of a resource. */
-		Description?: string;
+		Description?: string | null;
 
 		/** A unique identifier. */
-		Id?: string;
+		Id?: string | null;
 
 		/** The name of the model. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set. */
-		Origin?: CreateDataSetResponseOrigin;
-		OriginDetails?: OriginDetails;
+		Origin?: CreateDataSetResponseOrigin | null;
+		OriginDetails?: OriginDetails | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
-		Tags?: MapOf__string;
+		SourceId?: string | null;
+		Tags?: MapOf__string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 	export enum CreateDataSetResponseAssetType { S3_SNAPSHOT = 0 }
@@ -69,22 +69,22 @@ export namespace MyNS {
 	export interface CreateJobResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** Details for the response. */
-		Details?: ResponseDetails;
-		Errors?: Array<JobError>;
+		Details?: ResponseDetails | null;
+		Errors?: Array<JobError> | null;
 
 		/** A unique identifier. */
-		Id?: string;
-		State?: CreateJobResponseState;
-		Type?: CreateJobResponseType;
+		Id?: string | null;
+		State?: CreateJobResponseState | null;
+		Type?: CreateJobResponseType | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 
@@ -92,16 +92,16 @@ export namespace MyNS {
 	export interface ResponseDetails {
 
 		/** The details of the export to signed URL response. */
-		ExportAssetToSignedUrl?: ExportAssetToSignedUrlResponseDetails;
+		ExportAssetToSignedUrl?: ExportAssetToSignedUrlResponseDetails | null;
 
 		/** Details about the export to Amazon S3 response. */
-		ExportAssetsToS3?: ExportAssetsToS3ResponseDetails;
+		ExportAssetsToS3?: ExportAssetsToS3ResponseDetails | null;
 
 		/** The details in the response for an import request, including the signed URL and other information. */
-		ImportAssetFromSignedUrl?: ImportAssetFromSignedUrlResponseDetails;
+		ImportAssetFromSignedUrl?: ImportAssetFromSignedUrlResponseDetails | null;
 
 		/** Details from an import from Amazon S3 response. */
-		ImportAssetsFromS3?: ImportAssetsFromS3ResponseDetails;
+		ImportAssetsFromS3?: ImportAssetsFromS3ResponseDetails | null;
 	}
 
 
@@ -125,10 +125,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		RevisionId: string;
-		SignedUrl?: string;
+		SignedUrl?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		SignedUrlExpiresAt?: Date;
+		SignedUrlExpiresAt?: Date | null;
 	}
 
 
@@ -148,7 +148,7 @@ export namespace MyNS {
 		DataSetId: string;
 
 		/** Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type. */
-		Encryption?: ExportServerSideEncryption;
+		Encryption?: ExportServerSideEncryption | null;
 
 		/**
 		 * A unique identifier.
@@ -167,7 +167,7 @@ export namespace MyNS {
 		 */
 		AssetId: string;
 		Bucket: string;
-		Key?: string;
+		Key?: string | null;
 	}
 
 
@@ -199,17 +199,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSetId: string;
-		Md5Hash?: string;
+		Md5Hash?: string | null;
 
 		/**
 		 * A unique identifier.
 		 * Required
 		 */
 		RevisionId: string;
-		SignedUrl?: string;
+		SignedUrl?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		SignedUrlExpiresAt?: Date;
+		SignedUrlExpiresAt?: Date | null;
 	}
 
 
@@ -246,25 +246,25 @@ export namespace MyNS {
 	/** An error that occurred with the job request. */
 	export interface JobError {
 		Code: JobErrorCode;
-		Details?: Details;
+		Details?: Details | null;
 
 		/** The name of the limit that was reached. */
-		LimitName?: JobErrorLimitName;
-		LimitValue?: number;
+		LimitName?: JobErrorLimitName | null;
+		LimitValue?: number | null;
 		Message: string;
-		ResourceId?: string;
+		ResourceId?: string | null;
 
 		/** The types of resource which the job error can apply to. */
-		ResourceType?: JobErrorResourceType;
+		ResourceType?: JobErrorResourceType | null;
 	}
 
 	export enum JobErrorCode { ACCESS_DENIED_EXCEPTION = 0, INTERNAL_SERVER_EXCEPTION = 1, MALWARE_DETECTED = 2, RESOURCE_NOT_FOUND_EXCEPTION = 3, SERVICE_QUOTA_EXCEEDED_EXCEPTION = 4, VALIDATION_EXCEPTION = 5, MALWARE_SCAN_ENCRYPTED_FILE = 6 }
 
 	export interface Details {
-		ImportAssetFromSignedUrlJobErrorDetails?: ImportAssetFromSignedUrlJobErrorDetails;
+		ImportAssetFromSignedUrlJobErrorDetails?: ImportAssetFromSignedUrlJobErrorDetails | null;
 
 		/** The list of sources for the assets. */
-		ImportAssetsFromS3JobErrorDetails?: Array<AssetSourceEntry>;
+		ImportAssetsFromS3JobErrorDetails?: Array<AssetSourceEntry> | null;
 	}
 
 	export interface ImportAssetFromSignedUrlJobErrorDetails {
@@ -324,7 +324,7 @@ export namespace MyNS {
 		DataSetId: string;
 
 		/** Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type. */
-		Encryption?: ExportServerSideEncryption;
+		Encryption?: ExportServerSideEncryption | null;
 
 		/**
 		 * A unique identifier.
@@ -383,62 +383,62 @@ export namespace MyNS {
 	export interface CreateRevisionResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
-		Comment?: string;
+		Arn?: string | null;
+		Comment?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A unique identifier. */
-		DataSetId?: string;
-		Finalized?: boolean;
+		DataSetId?: string | null;
+		Finalized?: boolean | null;
 
 		/** A unique identifier. */
-		Id?: string;
+		Id?: string | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
-		Tags?: MapOf__string;
+		SourceId?: string | null;
+		Tags?: MapOf__string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface GetAssetResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
-		AssetDetails?: AssetDetails;
+		Arn?: string | null;
+		AssetDetails?: AssetDetails | null;
 
 		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
-		AssetType?: CreateDataSetResponseAssetType;
+		AssetType?: CreateDataSetResponseAssetType | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A unique identifier. */
-		DataSetId?: string;
+		DataSetId?: string | null;
 
 		/** A unique identifier. */
-		Id?: string;
+		Id?: string | null;
 
 		/** The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A unique identifier. */
-		RevisionId?: string;
+		RevisionId?: string | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
+		SourceId?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface AssetDetails {
 
 		/** The S3 object that is the asset. */
-		S3SnapshotAsset?: S3SnapshotAsset;
+		S3SnapshotAsset?: S3SnapshotAsset | null;
 	}
 
 
@@ -450,85 +450,85 @@ export namespace MyNS {
 	export interface GetDataSetResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
-		AssetType?: CreateDataSetResponseAssetType;
+		AssetType?: CreateDataSetResponseAssetType | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A description of a resource. */
-		Description?: string;
+		Description?: string | null;
 
 		/** A unique identifier. */
-		Id?: string;
+		Id?: string | null;
 
 		/** The name of the model. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set. */
-		Origin?: CreateDataSetResponseOrigin;
-		OriginDetails?: OriginDetails;
+		Origin?: CreateDataSetResponseOrigin | null;
+		OriginDetails?: OriginDetails | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
-		Tags?: MapOf__string;
+		SourceId?: string | null;
+		Tags?: MapOf__string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface GetJobResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** Details for the response. */
-		Details?: ResponseDetails;
-		Errors?: Array<JobError>;
+		Details?: ResponseDetails | null;
+		Errors?: Array<JobError> | null;
 
 		/** A unique identifier. */
-		Id?: string;
-		State?: CreateJobResponseState;
-		Type?: CreateJobResponseType;
+		Id?: string | null;
+		State?: CreateJobResponseState | null;
+		Type?: CreateJobResponseType | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface GetRevisionResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
-		Comment?: string;
+		Arn?: string | null;
+		Comment?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A unique identifier. */
-		DataSetId?: string;
-		Finalized?: boolean;
+		DataSetId?: string | null;
+		Finalized?: boolean | null;
 
 		/** A unique identifier. */
-		Id?: string;
+		Id?: string | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
-		Tags?: MapOf__string;
+		SourceId?: string | null;
+		Tags?: MapOf__string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface ListDataSetRevisionsResponse {
 
 		/** The token value retrieved from a previous call to access the next page of results. */
-		NextToken?: string;
-		Revisions?: Array<RevisionEntry>;
+		NextToken?: string | null;
+		Revisions?: Array<RevisionEntry> | null;
 	}
 
 
@@ -540,7 +540,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Arn: string;
-		Comment?: string;
+		Comment?: string | null;
 
 		/**
 		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
@@ -553,7 +553,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSetId: string;
-		Finalized?: boolean;
+		Finalized?: boolean | null;
 
 		/**
 		 * A unique identifier.
@@ -562,7 +562,7 @@ export namespace MyNS {
 		Id: string;
 
 		/** A unique identifier. */
-		SourceId?: string;
+		SourceId?: string | null;
 
 		/**
 		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
@@ -572,10 +572,10 @@ export namespace MyNS {
 	}
 
 	export interface ListDataSetsResponse {
-		DataSets?: Array<DataSetEntry>;
+		DataSets?: Array<DataSetEntry> | null;
 
 		/** The token value retrieved from a previous call to access the next page of results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -623,10 +623,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		Origin: CreateDataSetResponseOrigin;
-		OriginDetails?: OriginDetails;
+		OriginDetails?: OriginDetails | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
+		SourceId?: string | null;
 
 		/**
 		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
@@ -636,10 +636,10 @@ export namespace MyNS {
 	}
 
 	export interface ListJobsResponse {
-		Jobs?: Array<JobEntry>;
+		Jobs?: Array<JobEntry> | null;
 
 		/** The token value retrieved from a previous call to access the next page of results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -663,7 +663,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Details: ResponseDetails;
-		Errors?: Array<JobError>;
+		Errors?: Array<JobError> | null;
 
 		/**
 		 * A unique identifier.
@@ -681,10 +681,10 @@ export namespace MyNS {
 	}
 
 	export interface ListRevisionAssetsResponse {
-		Assets?: Array<AssetEntry>;
+		Assets?: Array<AssetEntry> | null;
 
 		/** The token value retrieved from a previous call to access the next page of results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -735,7 +735,7 @@ export namespace MyNS {
 		RevisionId: string;
 
 		/** A unique identifier. */
-		SourceId?: string;
+		SourceId?: string | null;
 
 		/**
 		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
@@ -745,7 +745,7 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: MapOf__string;
+		Tags?: MapOf__string | null;
 	}
 
 	export interface StartJobResponse {
@@ -754,86 +754,86 @@ export namespace MyNS {
 	export interface UpdateAssetResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
-		AssetDetails?: AssetDetails;
+		Arn?: string | null;
+		AssetDetails?: AssetDetails | null;
 
 		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
-		AssetType?: CreateDataSetResponseAssetType;
+		AssetType?: CreateDataSetResponseAssetType | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A unique identifier. */
-		DataSetId?: string;
+		DataSetId?: string | null;
 
 		/** A unique identifier. */
-		Id?: string;
+		Id?: string | null;
 
 		/** The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A unique identifier. */
-		RevisionId?: string;
+		RevisionId?: string | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
+		SourceId?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface UpdateDataSetResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
-		AssetType?: CreateDataSetResponseAssetType;
+		AssetType?: CreateDataSetResponseAssetType | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A description of a resource. */
-		Description?: string;
+		Description?: string | null;
 
 		/** A unique identifier. */
-		Id?: string;
+		Id?: string | null;
 
 		/** The name of the model. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set. */
-		Origin?: CreateDataSetResponseOrigin;
-		OriginDetails?: OriginDetails;
+		Origin?: CreateDataSetResponseOrigin | null;
+		OriginDetails?: OriginDetails | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
+		SourceId?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface UpdateRevisionResponse {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
-		Arn?: string;
-		Comment?: string;
+		Arn?: string | null;
+		Comment?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A unique identifier. */
-		DataSetId?: string;
-		Finalized?: boolean;
+		DataSetId?: string | null;
+		Finalized?: boolean | null;
 
 		/** A unique identifier. */
-		Id?: string;
+		Id?: string | null;
 
 		/** A unique identifier. */
-		SourceId?: string;
+		SourceId?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
-		UpdatedAt?: Date;
+		UpdatedAt?: Date | null;
 	}
 
 
@@ -866,7 +866,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Name: string;
-		Tags?: MapOf__string;
+		Tags?: MapOf__string | null;
 	}
 
 
@@ -878,16 +878,16 @@ export namespace MyNS {
 	export interface RequestDetails {
 
 		/** Details of the operation to be performed by the job. */
-		ExportAssetToSignedUrl?: ExportAssetToSignedUrlRequestDetails;
+		ExportAssetToSignedUrl?: ExportAssetToSignedUrlRequestDetails | null;
 
 		/** Details of the operation to be performed by the job. */
-		ExportAssetsToS3?: ExportAssetsToS3RequestDetails;
+		ExportAssetsToS3?: ExportAssetsToS3RequestDetails | null;
 
 		/** Details of the operation to be performed by the job. */
-		ImportAssetFromSignedUrl?: ImportAssetFromSignedUrlRequestDetails;
+		ImportAssetFromSignedUrl?: ImportAssetFromSignedUrlRequestDetails | null;
 
 		/** Details of the operation to be performed by the job. */
-		ImportAssetsFromS3?: ImportAssetsFromS3RequestDetails;
+		ImportAssetsFromS3?: ImportAssetsFromS3RequestDetails | null;
 	}
 
 	export enum Type { IMPORT_ASSETS_FROM_S3 = 0, IMPORT_ASSET_FROM_SIGNED_URL = 1, EXPORT_ASSETS_TO_S3 = 2, EXPORT_ASSET_TO_SIGNED_URL = 3 }
@@ -909,8 +909,8 @@ export namespace MyNS {
 
 	/** The request body for CreateRevision. */
 	export interface CreateRevisionRequest {
-		Comment?: string;
-		Tags?: MapOf__string;
+		Comment?: string | null;
+		Tags?: MapOf__string | null;
 	}
 
 	export interface DeleteAssetRequest {
@@ -985,17 +985,17 @@ export namespace MyNS {
 	export interface UpdateDataSetRequest {
 
 		/** A description of a resource. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The name of the model. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/** The request body for UpdateRevision. */
 	export interface UpdateRevisionRequest {
-		Comment?: string;
-		Finalized?: boolean;
+		Comment?: string | null;
+		Finalized?: boolean | null;
 	}
 
 	@Injectable()
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateJobPostBody {
@@ -1292,16 +1292,16 @@ export namespace MyNS {
 	export interface CreateJobPostBodyDetails {
 
 		/** Details of the operation to be performed by the job. */
-		ExportAssetToSignedUrl?: ExportAssetToSignedUrlRequestDetails;
+		ExportAssetToSignedUrl?: ExportAssetToSignedUrlRequestDetails | null;
 
 		/** Details of the operation to be performed by the job. */
-		ExportAssetsToS3?: ExportAssetsToS3RequestDetails;
+		ExportAssetsToS3?: ExportAssetsToS3RequestDetails | null;
 
 		/** Details of the operation to be performed by the job. */
-		ImportAssetFromSignedUrl?: ImportAssetFromSignedUrlRequestDetails;
+		ImportAssetFromSignedUrl?: ImportAssetFromSignedUrlRequestDetails | null;
 
 		/** Details of the operation to be performed by the job. */
-		ImportAssetsFromS3?: ImportAssetsFromS3RequestDetails;
+		ImportAssetsFromS3?: ImportAssetsFromS3RequestDetails | null;
 	}
 
 	export interface CreateRevisionPostBody {
@@ -1311,10 +1311,10 @@ export namespace MyNS {
 		 * Max length: 16384
 		 * Min length: 0
 		 */
-		Comment?: string;
+		Comment?: string | null;
 
 		/** A revision tag is an optional label that you can assign to a revision when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface UpdateAssetPatchBody {
@@ -1329,10 +1329,10 @@ export namespace MyNS {
 	export interface UpdateDataSetPatchBody {
 
 		/** A description of a resource. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The name of the model. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateRevisionPatchBody {
@@ -1342,10 +1342,10 @@ export namespace MyNS {
 		 * Max length: 16384
 		 * Min length: 0
 		 */
-		Comment?: string;
+		Comment?: string | null;
 
 		/** Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. */
-		Finalized?: boolean;
+		Finalized?: boolean | null;
 	}
 
 	export interface TagResourcePostBody {

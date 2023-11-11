@@ -5,37 +5,37 @@ export namespace MyNS {
 	export interface Webfont {
 
 		/** The category of the font. */
-		category?: string;
+		category?: string | null;
 
 		/** The name of the font. */
-		family?: string;
+		family?: string | null;
 
 		/** The font files (with all supported scripts) for each one of the available variants, as a key : value map. */
-		files?: {[id: string]: string };
+		files?: {[id: string]: string } | null;
 
 		/** This kind represents a webfont object in the webfonts service. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The date (format "yyyy-MM-dd") the font was modified for the last time. */
-		lastModified?: Date;
+		lastModified?: Date | null;
 
 		/** The scripts supported by the font. */
-		subsets?: Array<string>;
+		subsets?: Array<string> | null;
 
 		/** The available variants for the font. */
-		variants?: Array<string>;
+		variants?: Array<string> | null;
 
 		/** The font version. */
-		version?: string;
+		version?: string | null;
 	}
 
 	export interface WebfontList {
 
 		/** The list of fonts currently served by the Google Fonts API. */
-		items?: Array<Webfont>;
+		items?: Array<Webfont> | null;
 
 		/** This kind represents a list of webfont objects in the webfonts service. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	@Injectable()

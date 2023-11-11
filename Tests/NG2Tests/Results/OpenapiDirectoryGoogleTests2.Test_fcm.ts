@@ -14,39 +14,39 @@ export namespace MyNS {
 		 * the last message gets sent when delivery can be resumed. A maximum of 4
 		 * different collapse keys is allowed at any given time.
 		 */
-		collapseKey?: string;
+		collapseKey?: string | null;
 
 		/**
 		 * Arbitrary key/value payload. If present, it will override
 		 * google.firebase.fcm.v1.Message.data.
 		 */
-		data?: {[id: string]: string };
+		data?: {[id: string]: string } | null;
 
 		/**
 		 * If set to true, messages will be allowed to be delivered to the app while
 		 * the device is in direct boot mode. See [Support Direct Boot
 		 * mode](https://developer.android.com/training/articles/direct-boot).
 		 */
-		directBootOk?: boolean;
+		directBootOk?: boolean | null;
 
 		/** Options for features provided by the FCM SDK for Android. */
-		fcmOptions?: AndroidFcmOptions;
+		fcmOptions?: AndroidFcmOptions | null;
 
 		/** Notification to send to android devices. */
-		notification?: AndroidNotification;
+		notification?: AndroidNotification | null;
 
 		/**
 		 * Message priority. Can take "normal" and "high" values.
 		 * For more information, see [Setting the priority of a
 		 * message](https://goo.gl/GjONJv).
 		 */
-		priority?: AndroidConfigPriority;
+		priority?: AndroidConfigPriority | null;
 
 		/**
 		 * Package name of the application where the registration token must match in
 		 * order to receive the message.
 		 */
-		restrictedPackageName?: string;
+		restrictedPackageName?: string | null;
 
 		/**
 		 * How long (in seconds) the message should be kept in FCM storage if the
@@ -61,7 +61,7 @@ export namespace MyNS {
 		 * be expressed in JSON format as "3.000000001s". The ttl will be rounded down
 		 * to the nearest second.
 		 */
-		ttl?: string;
+		ttl?: string | null;
 	}
 
 
@@ -69,7 +69,7 @@ export namespace MyNS {
 	export interface AndroidFcmOptions {
 
 		/** Label associated with the message's analytics data. */
-		analyticsLabel?: string;
+		analyticsLabel?: string | null;
 	}
 
 
@@ -80,7 +80,7 @@ export namespace MyNS {
 		 * The notification's body text. If present, it will override
 		 * google.firebase.fcm.v1.Notification.body.
 		 */
-		body?: string;
+		body?: string | null;
 
 		/**
 		 * Variable string values to be used in place of the format specifiers in
@@ -88,14 +88,14 @@ export namespace MyNS {
 		 * localization.
 		 * See [Formatting and Styling](https://goo.gl/MalYE3) for more information.
 		 */
-		bodyLocArgs?: Array<string>;
+		bodyLocArgs?: Array<string> | null;
 
 		/**
 		 * The key to the body string in the app's string resources to use to localize
 		 * the body text to the user's current localization.
 		 * See [String Resources](https://goo.gl/NdFZGI) for more information.
 		 */
-		bodyLocKey?: string;
+		bodyLocKey?: string | null;
 
 		/**
 		 * The [notification's channel
@@ -106,17 +106,17 @@ export namespace MyNS {
 		 * been created by the app, FCM uses the channel ID specified in the app
 		 * manifest.
 		 */
-		channelId?: string;
+		channelId?: string | null;
 
 		/**
 		 * The action associated with a user click on the notification.
 		 * If specified, an activity with a matching intent filter is launched when
 		 * a user clicks on the notification.
 		 */
-		clickAction?: string;
+		clickAction?: string | null;
 
 		/** The notification's icon color, expressed in #rrggbb format. */
-		color?: string;
+		color?: string | null;
 
 		/**
 		 * If set to true, use the Android framework's default LED light settings for
@@ -126,14 +126,14 @@ export namespace MyNS {
 		 * set, the user-specified `light_settings` is used instead of the
 		 * default value.
 		 */
-		defaultLightSettings?: boolean;
+		defaultLightSettings?: boolean | null;
 
 		/**
 		 * If set to true, use the Android framework's default sound for the
 		 * notification. Default values are specified in
 		 * [config.xml](https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml).
 		 */
-		defaultSound?: boolean;
+		defaultSound?: boolean | null;
 
 		/**
 		 * If set to true, use the Android framework's default vibrate pattern for the
@@ -143,14 +143,14 @@ export namespace MyNS {
 		 * set, the default value is used instead of the user-specified
 		 * `vibrate_timings`.
 		 */
-		defaultVibrateTimings?: boolean;
+		defaultVibrateTimings?: boolean | null;
 
 		/**
 		 * Set the time that the event in the notification occurred. Notifications in
 		 * the panel are sorted by this time. A point in time is represented using
 		 * [protobuf.Timestamp](https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/Timestamp).
 		 */
-		eventTime?: string;
+		eventTime?: string | null;
 
 		/**
 		 * The notification's icon.
@@ -158,17 +158,17 @@ export namespace MyNS {
 		 * If you don't send this key in the request, FCM displays the launcher icon
 		 * specified in your app manifest.
 		 */
-		icon?: string;
+		icon?: string | null;
 
 		/**
 		 * Contains the URL of an image that is going to be displayed in a
 		 * notification. If present, it will override
 		 * google.firebase.fcm.v1.Notification.image.
 		 */
-		image?: string;
+		image?: string | null;
 
 		/** Settings to control notification LED. */
-		lightSettings?: LightSettings;
+		lightSettings?: LightSettings | null;
 
 		/**
 		 * Set whether or not this notification is relevant only to the current
@@ -177,7 +177,7 @@ export namespace MyNS {
 		 * notification not be bridged. See [Wear OS
 		 * guides](https://developer.android.com/training/wearables/notifications/bridger#existing-method-of-preventing-bridging)
 		 */
-		localOnly?: boolean;
+		localOnly?: boolean | null;
 
 		/**
 		 * Sets the number of items this notification represents. May be displayed as
@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * is to increment a number displayed on the long-press menu each time a new
 		 * notification arrives.
 		 */
-		notificationCount?: number;
+		notificationCount?: number | null;
 
 		/**
 		 * Set the relative priority for this notification. Priority is an indication
@@ -204,21 +204,21 @@ export namespace MyNS {
 		 * [AndroidMessagePriority](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#androidmessagepriority)
 		 * is an FCM concept that controls when the message is delivered.
 		 */
-		notificationPriority?: AndroidNotificationNotificationPriority;
+		notificationPriority?: AndroidNotificationNotificationPriority | null;
 
 		/**
 		 * The sound to play when the device receives the notification.
 		 * Supports "default" or the filename of a sound resource bundled in the app.
 		 * Sound files must reside in /res/raw/.
 		 */
-		sound?: string;
+		sound?: string | null;
 
 		/**
 		 * When set to false or unset, the notification is automatically
 		 * dismissed when the user clicks it in the panel. When set to true, the
 		 * notification persists even when the user clicks it.
 		 */
-		sticky?: boolean;
+		sticky?: boolean | null;
 
 		/**
 		 * Identifier used to replace existing notifications in the notification
@@ -227,20 +227,20 @@ export namespace MyNS {
 		 * If specified and a notification with the same tag is already being shown,
 		 * the new notification replaces the existing one in the notification drawer.
 		 */
-		tag?: string;
+		tag?: string | null;
 
 		/**
 		 * Sets the "ticker" text, which is sent to accessibility services.
 		 * Prior to API level 21 (`Lollipop`), sets the text that is displayed in the
 		 * status bar when the notification first arrives.
 		 */
-		ticker?: string;
+		ticker?: string | null;
 
 		/**
 		 * The notification's title. If present, it will override
 		 * google.firebase.fcm.v1.Notification.title.
 		 */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * Variable string values to be used in place of the format specifiers in
@@ -248,14 +248,14 @@ export namespace MyNS {
 		 * localization.
 		 * See [Formatting and Styling](https://goo.gl/MalYE3) for more information.
 		 */
-		titleLocArgs?: Array<string>;
+		titleLocArgs?: Array<string> | null;
 
 		/**
 		 * The key to the title string in the app's string resources to use to
 		 * localize the title text to the user's current localization.
 		 * See [String Resources](https://goo.gl/NdFZGI) for more information.
 		 */
-		titleLocKey?: string;
+		titleLocKey?: string | null;
 
 		/**
 		 * Set the vibration pattern to use. Pass in an array of
@@ -267,14 +267,14 @@ export namespace MyNS {
 		 * If `vibrate_timings` is set and `default_vibrate_timings` is set to `true`,
 		 * the default value is used instead of the user-specified `vibrate_timings`.
 		 */
-		vibrateTimings?: Array<string>;
+		vibrateTimings?: Array<string> | null;
 
 		/**
 		 * Set the
 		 * [Notification.visibility](https://developer.android.com/reference/android/app/Notification.html#visibility)
 		 * of the notification.
 		 */
-		visibility?: AndroidNotificationVisibility;
+		visibility?: AndroidNotificationVisibility | null;
 	}
 
 
@@ -386,21 +386,21 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/**
 		 * Required. Along with `light_on_duration `, define the blink rate of LED
 		 * flashes. Resolution defined by
 		 * [proto.Duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Duration)
 		 */
-		lightOffDuration?: string;
+		lightOffDuration?: string | null;
 
 		/**
 		 * Required. Along with `light_off_duration`, define the blink rate of LED
 		 * flashes. Resolution defined by
 		 * [proto.Duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Duration)
 		 */
-		lightOnDuration?: string;
+		lightOnDuration?: string | null;
 	}
 
 
@@ -522,16 +522,16 @@ export namespace MyNS {
 		 * If omitted, this color object is to be rendered as a solid color
 		 * (as if the alpha value had been explicitly given with a value of 1.0).
 		 */
-		alpha?: number;
+		alpha?: number | null;
 
 		/** The amount of blue in the color as a value in the interval [0, 1]. */
-		blue?: number;
+		blue?: number | null;
 
 		/** The amount of green in the color as a value in the interval [0, 1]. */
-		green?: number;
+		green?: number | null;
 
 		/** The amount of red in the color as a value in the interval [0, 1]. */
-		red?: number;
+		red?: number | null;
 	}
 
 	export enum AndroidNotificationNotificationPriority { PRIORITY_UNSPECIFIED = 0, PRIORITY_MIN = 1, PRIORITY_LOW = 2, PRIORITY_DEFAULT = 3, PRIORITY_HIGH = 4, PRIORITY_MAX = 5 }
@@ -545,7 +545,7 @@ export namespace MyNS {
 	export interface ApnsConfig {
 
 		/** Options for features provided by the FCM SDK for iOS. */
-		fcmOptions?: ApnsFcmOptions;
+		fcmOptions?: ApnsFcmOptions | null;
 
 		/**
 		 * HTTP request headers defined in Apple Push Notification Service. Refer to
@@ -553,7 +553,7 @@ export namespace MyNS {
 		 * headers](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns)
 		 * for supported headers, e.g. "apns-priority": "10".
 		 */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/**
 		 * APNs payload as a JSON object, including both `aps` dictionary and custom
@@ -562,7 +562,7 @@ export namespace MyNS {
 		 * If present, it overrides google.firebase.fcm.v1.Notification.title
 		 * and google.firebase.fcm.v1.Notification.body.
 		 */
-		payload?: {[id: string]: any };
+		payload?: {[id: string]: any } | null;
 	}
 
 
@@ -570,14 +570,14 @@ export namespace MyNS {
 	export interface ApnsFcmOptions {
 
 		/** Label associated with the message's analytics data. */
-		analyticsLabel?: string;
+		analyticsLabel?: string | null;
 
 		/**
 		 * Contains the URL of an image that is going to be displayed in a
 		 * notification. If present, it will override
 		 * google.firebase.fcm.v1.Notification.image.
 		 */
-		image?: string;
+		image?: string | null;
 	}
 
 
@@ -585,7 +585,7 @@ export namespace MyNS {
 	export interface FcmOptions {
 
 		/** Label associated with the message's analytics data. */
-		analyticsLabel?: string;
+		analyticsLabel?: string | null;
 	}
 
 
@@ -596,46 +596,46 @@ export namespace MyNS {
 		 * Android specific options for messages sent through
 		 * [FCM connection server](https://goo.gl/4GLdUl).
 		 */
-		android?: AndroidConfig;
+		android?: AndroidConfig | null;
 
 		/** [Apple Push Notification Service](https://goo.gl/MXRTPa) specific options. */
-		apns?: ApnsConfig;
+		apns?: ApnsConfig | null;
 
 		/**
 		 * Condition to send a message to,
 		 * e.g. "'foo' in topics && 'bar' in topics".
 		 */
-		condition?: string;
+		condition?: string | null;
 
 		/**
 		 * Input only. Arbitrary key/value payload. The key should not be a reserved
 		 * word ("from", "message_type", or any word starting with "google" or "gcm").
 		 */
-		data?: {[id: string]: string };
+		data?: {[id: string]: string } | null;
 
 		/** Platform independent options for features provided by the FCM SDKs. */
-		fcmOptions?: FcmOptions;
+		fcmOptions?: FcmOptions | null;
 
 		/**
 		 * Output Only. The identifier of the message sent, in the format of
 		 * `projects/messages/{message_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Basic notification template to use across all platforms. */
-		notification?: Notification;
+		notification?: Notification | null;
 
 		/** Registration token to send a message to. */
-		token?: string;
+		token?: string | null;
 
 		/**
 		 * Topic name to send a message to, e.g. "weather".
 		 * Note: "/topics/" prefix should not be provided.
 		 */
-		topic?: string;
+		topic?: string | null;
 
 		/** [Webpush protocol](https://tools.ietf.org/html/rfc8030) options. */
-		webpush?: WebpushConfig;
+		webpush?: WebpushConfig | null;
 	}
 
 
@@ -643,7 +643,7 @@ export namespace MyNS {
 	export interface Notification {
 
 		/** The notification's body text. */
-		body?: string;
+		body?: string | null;
 
 		/**
 		 * Contains the URL of an image that is going to be downloaded on the device
@@ -655,10 +655,10 @@ export namespace MyNS {
 		 * Quota usage and implications/costs for hosting image on Firebase Storage:
 		 * https://firebase.google.com/pricing
 		 */
-		image?: string;
+		image?: string | null;
 
 		/** The notification's title. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -669,17 +669,17 @@ export namespace MyNS {
 		 * Arbitrary key/value payload. If present, it will override
 		 * google.firebase.fcm.v1.Message.data.
 		 */
-		data?: {[id: string]: string };
+		data?: {[id: string]: string } | null;
 
 		/** Options for features provided by the FCM SDK for Web. */
-		fcmOptions?: WebpushFcmOptions;
+		fcmOptions?: WebpushFcmOptions | null;
 
 		/**
 		 * HTTP headers defined in webpush protocol. Refer to
 		 * [Webpush protocol](https://tools.ietf.org/html/rfc8030#section-5) for
 		 * supported headers, e.g. "TTL": "15".
 		 */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/**
 		 * Web Notification options as a JSON object. Supports Notification instance
@@ -689,7 +689,7 @@ export namespace MyNS {
 		 * [google.firebase.fcm.v1.Notification.title] and
 		 * [google.firebase.fcm.v1.Notification.body].
 		 */
-		notification?: {[id: string]: any };
+		notification?: {[id: string]: any } | null;
 	}
 
 
@@ -697,13 +697,13 @@ export namespace MyNS {
 	export interface WebpushFcmOptions {
 
 		/** Label associated with the message's analytics data. */
-		analyticsLabel?: string;
+		analyticsLabel?: string | null;
 
 		/**
 		 * The link to open when the user clicks on the notification.
 		 * For all URL values, HTTPS is required.
 		 */
-		link?: string;
+		link?: string | null;
 	}
 
 
@@ -711,10 +711,10 @@ export namespace MyNS {
 	export interface SendMessageRequest {
 
 		/** Message to send by Firebase Cloud Messaging Service. */
-		message?: Message;
+		message?: Message | null;
 
 		/** Flag for testing the request without actually delivering the message. */
-		validateOnly?: boolean;
+		validateOnly?: boolean | null;
 	}
 
 	@Injectable()

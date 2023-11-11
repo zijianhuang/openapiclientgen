@@ -5,23 +5,23 @@ export namespace MyNS {
 	export interface DescribeJobExecutionResponse {
 
 		/** Contains data about a job execution. */
-		execution?: JobExecution;
+		execution?: JobExecution | null;
 	}
 
 
 	/** Contains data about a job execution. */
 	export interface JobExecution {
-		jobId?: string;
-		thingName?: string;
-		status?: JobExecutionStatus;
-		statusDetails?: DetailsMap;
-		queuedAt?: number;
-		startedAt?: number;
-		lastUpdatedAt?: number;
-		approximateSecondsBeforeTimedOut?: number;
-		versionNumber?: number;
-		executionNumber?: number;
-		jobDocument?: string;
+		jobId?: string | null;
+		thingName?: string | null;
+		status?: JobExecutionStatus | null;
+		statusDetails?: DetailsMap | null;
+		queuedAt?: number | null;
+		startedAt?: number | null;
+		lastUpdatedAt?: number | null;
+		approximateSecondsBeforeTimedOut?: number | null;
+		versionNumber?: number | null;
+		executionNumber?: number | null;
+		jobDocument?: string | null;
 	}
 
 	export enum JobExecutionStatus { QUEUED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, TIMED_OUT = 4, REJECTED = 5, REMOVED = 6, CANCELED = 7 }
@@ -48,40 +48,40 @@ export namespace MyNS {
 	}
 
 	export interface GetPendingJobExecutionsResponse {
-		inProgressJobs?: Array<JobExecutionSummary>;
-		queuedJobs?: Array<JobExecutionSummary>;
+		inProgressJobs?: Array<JobExecutionSummary> | null;
+		queuedJobs?: Array<JobExecutionSummary> | null;
 	}
 
 
 	/** Contains a subset of information about a job execution. */
 	export interface JobExecutionSummary {
-		jobId?: string;
-		queuedAt?: number;
-		startedAt?: number;
-		lastUpdatedAt?: number;
-		versionNumber?: number;
-		executionNumber?: number;
+		jobId?: string | null;
+		queuedAt?: number | null;
+		startedAt?: number | null;
+		lastUpdatedAt?: number | null;
+		versionNumber?: number | null;
+		executionNumber?: number | null;
 	}
 
 	export interface StartNextPendingJobExecutionResponse {
 
 		/** Contains data about a job execution. */
-		execution?: JobExecution;
+		execution?: JobExecution | null;
 	}
 
 	export interface UpdateJobExecutionResponse {
 
 		/** Contains data about the state of a job execution. */
-		executionState?: JobExecutionState;
-		jobDocument?: string;
+		executionState?: JobExecutionState | null;
+		jobDocument?: string | null;
 	}
 
 
 	/** Contains data about the state of a job execution. */
 	export interface JobExecutionState {
-		status?: JobExecutionStatus;
-		statusDetails?: DetailsMap;
-		versionNumber?: number;
+		status?: JobExecutionStatus | null;
+		statusDetails?: DetailsMap | null;
+		versionNumber?: number | null;
 	}
 
 	export interface InvalidStateTransitionException {
@@ -94,18 +94,18 @@ export namespace MyNS {
 	}
 
 	export interface StartNextPendingJobExecutionRequest {
-		statusDetails?: DetailsMap;
-		stepTimeoutInMinutes?: number;
+		statusDetails?: DetailsMap | null;
+		stepTimeoutInMinutes?: number | null;
 	}
 
 	export interface UpdateJobExecutionRequest {
 		status: JobExecutionStatus;
-		statusDetails?: DetailsMap;
-		stepTimeoutInMinutes?: number;
-		expectedVersion?: number;
-		includeJobExecutionState?: boolean;
-		includeJobDocument?: boolean;
-		executionNumber?: number;
+		statusDetails?: DetailsMap | null;
+		stepTimeoutInMinutes?: number | null;
+		expectedVersion?: number | null;
+		includeJobExecutionState?: boolean | null;
+		includeJobDocument?: boolean | null;
+		executionNumber?: number | null;
 	}
 
 	@Injectable()
@@ -167,31 +167,31 @@ export namespace MyNS {
 		status: JobExecutionStatus;
 
 		/** Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. */
-		statusDetails?: {[id: string]: string };
+		statusDetails?: {[id: string]: string } | null;
 
 		/** Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>). */
-		stepTimeoutInMinutes?: number;
+		stepTimeoutInMinutes?: number | null;
 
 		/** Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.) */
-		expectedVersion?: number;
+		expectedVersion?: number | null;
 
 		/** Optional. When included and set to true, the response contains the JobExecutionState data. The default is false. */
-		includeJobExecutionState?: boolean;
+		includeJobExecutionState?: boolean | null;
 
 		/** Optional. When set to true, the response contains the job document. The default is false. */
-		includeJobDocument?: boolean;
+		includeJobDocument?: boolean | null;
 
 		/** Optional. A number that identifies a particular job execution on a particular device. */
-		executionNumber?: number;
+		executionNumber?: number | null;
 	}
 
 	export interface StartNextPendingJobExecutionPutBody {
 
 		/** A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. */
-		statusDetails?: {[id: string]: string };
+		statusDetails?: {[id: string]: string } | null;
 
 		/** Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>). */
-		stepTimeoutInMinutes?: number;
+		stepTimeoutInMinutes?: number | null;
 	}
 
 }

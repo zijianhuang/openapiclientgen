@@ -15,19 +15,19 @@ export namespace MyNS {
 	export interface Category {
 
 		/** Category ID */
-		id?: number;
+		id?: number | null;
 
 		/** Category name */
-		name?: string;
+		name?: string | null;
 
 		/** Test Sub Category */
-		sub?: CategorySub;
+		sub?: CategorySub | null;
 	}
 
 	export interface CategorySub {
 
 		/** Dumb Property */
-		prop1?: string;
+		prop1?: string | null;
 	}
 
 
@@ -49,35 +49,35 @@ export namespace MyNS {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number;
+		id?: number | null;
 
 		/** Categories this pet belongs to */
-		category?: Category;
+		category?: Category | null;
 
 		/** The name given to a pet */
 		name: string;
 
 		/** The list of URL to a cute photos featuring pet */
 		photoUrls: Array<string>;
-		friend?: Pet;
+		friend?: Pet | null;
 
 		/** Tags attached to the pet */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 
 		/** Pet status in the store */
-		status?: PetStatus;
+		status?: PetStatus | null;
 
 		/** Type of a pet */
-		petType?: string;
+		petType?: string | null;
 	}
 
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number;
+		id?: number | null;
 
 		/** Tag name */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }

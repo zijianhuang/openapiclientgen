@@ -11,7 +11,7 @@ export namespace MyNS {
 		 * to achieve better client-side cache hits and quota aggregation for rate
 		 * quota. This field is not populated for allocation quota checks.
 		 */
-		unusedArguments?: Array<string>;
+		unusedArguments?: Array<string> | null;
 	}
 
 
@@ -19,14 +19,14 @@ export namespace MyNS {
 	export interface AllocateQuotaRequest {
 
 		/** Represents information regarding a quota operation. */
-		allocateOperation?: QuotaOperation;
+		allocateOperation?: QuotaOperation | null;
 
 		/**
 		 * Specifies which version of service configuration should be used to process
 		 * the request. If unspecified or no matching version can be found, the latest
 		 * one will be used.
 		 */
-		serviceConfigId?: string;
+		serviceConfigId?: string | null;
 	}
 
 
@@ -40,10 +40,10 @@ export namespace MyNS {
 		 * project_number:<project_number>,
 		 * api_key:<api_key>.
 		 */
-		consumerId?: string;
+		consumerId?: string | null;
 
 		/** Labels describing the operation. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Fully qualified name of the API method for which this quota operation is
@@ -55,7 +55,7 @@ export namespace MyNS {
 		 * Example of an RPC method name:
 		 * google.example.library.v1.LibraryService.CreateShelf
 		 */
-		methodName?: string;
+		methodName?: string | null;
 
 		/**
 		 * Identity of the operation. This is expected to be unique within the scope
@@ -67,7 +67,7 @@ export namespace MyNS {
 		 * recommended token for services that intend to operate at a high QPS is
 		 * Unix time in nanos + UUID
 		 */
-		operationId?: string;
+		operationId?: string | null;
 
 		/**
 		 * Represents information about this operation. Each MetricValueSet
@@ -81,10 +81,10 @@ export namespace MyNS {
 		 * an invalid argument error.
 		 * This field is mutually exclusive with method_name.
 		 */
-		quotaMetrics?: Array<MetricValueSet>;
+		quotaMetrics?: Array<MetricValueSet> | null;
 
 		/** Quota mode for this operation. */
-		quotaMode?: QuotaOperationQuotaMode;
+		quotaMode?: QuotaOperationQuotaMode | null;
 	}
 
 
@@ -96,10 +96,10 @@ export namespace MyNS {
 	export interface MetricValueSet {
 
 		/** The metric name defined in the service configuration. */
-		metricName?: string;
+		metricName?: string | null;
 
 		/** The values in this metric. */
-		metricValues?: Array<MetricValue>;
+		metricValues?: Array<MetricValue> | null;
 	}
 
 
@@ -107,7 +107,7 @@ export namespace MyNS {
 	export interface MetricValue {
 
 		/** A boolean value. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/**
 		 * Distribution represents a frequency distribution of double-valued sample
@@ -118,19 +118,19 @@ export namespace MyNS {
 		 * - the sum-squared-deviation of the samples, used to compute variance
 		 * - a histogram of the values of the sample points
 		 */
-		distributionValue?: Distribution;
+		distributionValue?: Distribution | null;
 
 		/** A double precision floating point value. */
-		doubleValue?: number;
+		doubleValue?: number | null;
 
 		/**
 		 * The end of the time period over which this metric value's measurement
 		 * applies.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** A signed 64-bit integer value. */
-		int64Value?: string;
+		int64Value?: string | null;
 
 		/**
 		 * The labels describing the metric value.
@@ -138,10 +138,10 @@ export namespace MyNS {
 		 * the overriding relationship.
 		 * Note that this map must not contain monitored resource labels.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Represents an amount of money with its currency type. */
-		moneyValue?: Money;
+		moneyValue?: Money | null;
 
 		/**
 		 * The start of the time period over which this metric value's measurement
@@ -149,10 +149,10 @@ export namespace MyNS {
 		 * types (cumulative, delta, and gauge). See the metric definition
 		 * documentation in the service configuration for details.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** A text string value. */
-		stringValue?: string;
+		stringValue?: string | null;
 	}
 
 
@@ -178,34 +178,34 @@ export namespace MyNS {
 		 * below for more details.
 		 * Any suffix of trailing zeros may be omitted.
 		 */
-		bucketCounts?: Array<string>;
+		bucketCounts?: Array<string> | null;
 
 		/** The total number of samples in the distribution. Must be >= 0. */
-		count?: string;
+		count?: string | null;
 
 		/** Example points. Must be in increasing order of `value` field. */
-		exemplars?: Array<Exemplar>;
+		exemplars?: Array<Exemplar> | null;
 
 		/** Describing buckets with arbitrary user-provided width. */
-		explicitBuckets?: ExplicitBuckets;
+		explicitBuckets?: ExplicitBuckets | null;
 
 		/** Describing buckets with exponentially growing width. */
-		exponentialBuckets?: ExponentialBuckets;
+		exponentialBuckets?: ExponentialBuckets | null;
 
 		/** Describing buckets with constant width. */
-		linearBuckets?: LinearBuckets;
+		linearBuckets?: LinearBuckets | null;
 
 		/** The maximum of the population of values. Ignored if `count` is zero. */
-		maximum?: number;
+		maximum?: number | null;
 
 		/**
 		 * The arithmetic mean of the samples in the distribution. If `count` is
 		 * zero then this field must be zero.
 		 */
-		mean?: number;
+		mean?: number | null;
 
 		/** The minimum of the population of values. Ignored if `count` is zero. */
-		minimum?: number;
+		minimum?: number | null;
 
 		/**
 		 * The sum of squared deviations from the mean:
@@ -213,7 +213,7 @@ export namespace MyNS {
 		 * where each x_i is a sample values. If `count` is zero then this field
 		 * must be zero, otherwise validation of the request fails.
 		 */
-		sumOfSquaredDeviation?: number;
+		sumOfSquaredDeviation?: number | null;
 	}
 
 
@@ -235,16 +235,16 @@ export namespace MyNS {
 		 * There may be only a single attachment of any given message type in a
 		 * single exemplar, and this is enforced by the system.
 		 */
-		attachments?: Array<string>;
+		attachments?: Array<string> | null;
 
 		/** The observation (sampling) time of the above value. */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/**
 		 * Value of the exemplar point. This value determines to which bucket the
 		 * exemplar belongs.
 		 */
-		value?: number;
+		value?: number | null;
 	}
 
 
@@ -266,7 +266,7 @@ export namespace MyNS {
 		 * 0 < i < bound_size()            bound[i-1]     bound[i]
 		 * i == bound_size() (overflow)    bound[i-1]     +inf
 		 */
-		bounds?: Array<number>;
+		bounds?: Array<number> | null;
 	}
 
 
@@ -279,14 +279,14 @@ export namespace MyNS {
 		 * where i ranges from 1 to num_finite_buckets inclusive.
 		 * Must be larger than 1.0.
 		 */
-		growthFactor?: number;
+		growthFactor?: number | null;
 
 		/**
 		 * The number of finite buckets. With the underflow and overflow buckets,
 		 * the total number of buckets is `num_finite_buckets` + 2.
 		 * See comments on `bucket_options` for details.
 		 */
-		numFiniteBuckets?: number;
+		numFiniteBuckets?: number | null;
 
 		/**
 		 * The i'th exponential bucket covers the interval
@@ -294,7 +294,7 @@ export namespace MyNS {
 		 * where i ranges from 1 to num_finite_buckets inclusive.
 		 * Must be > 0.
 		 */
-		scale?: number;
+		scale?: number | null;
 	}
 
 
@@ -306,14 +306,14 @@ export namespace MyNS {
 		 * the total number of buckets is `num_finite_buckets` + 2.
 		 * See comments on `bucket_options` for details.
 		 */
-		numFiniteBuckets?: number;
+		numFiniteBuckets?: number | null;
 
 		/**
 		 * The i'th linear bucket covers the interval
 		 * [offset + (i-1) * width, offset + i * width)
 		 * where i ranges from 1 to num_finite_buckets, inclusive.
 		 */
-		offset?: number;
+		offset?: number | null;
 
 		/**
 		 * The i'th linear bucket covers the interval
@@ -321,7 +321,7 @@ export namespace MyNS {
 		 * where i ranges from 1 to num_finite_buckets, inclusive.
 		 * Must be strictly positive.
 		 */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -329,7 +329,7 @@ export namespace MyNS {
 	export interface Money {
 
 		/** The 3-letter currency code defined in ISO 4217. */
-		currencyCode?: string;
+		currencyCode?: string | null;
 
 		/**
 		 * Number of nano (10^-9) units of the amount.
@@ -339,13 +339,13 @@ export namespace MyNS {
 		 * If `units` is negative, `nanos` must be negative or zero.
 		 * For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
 		 */
-		nanos?: number;
+		nanos?: number | null;
 
 		/**
 		 * The whole units of the amount.
 		 * For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar.
 		 */
-		units?: string;
+		units?: string | null;
 	}
 
 	export enum QuotaOperationQuotaMode { UNSPECIFIED = 0, NORMAL = 1, BEST_EFFORT = 2, CHECK_ONLY = 3, QUERY_ONLY = 4, ADJUST_ONLY = 5 }
@@ -355,14 +355,14 @@ export namespace MyNS {
 	export interface AllocateQuotaResponse {
 
 		/** Indicates the decision of the allocate. */
-		allocateErrors?: Array<QuotaError>;
-		allocateInfo?: AllocateInfo;
+		allocateErrors?: Array<QuotaError> | null;
+		allocateInfo?: AllocateInfo | null;
 
 		/**
 		 * The same operation_id value used in the AllocateQuotaRequest. Used for
 		 * logging and diagnostics purposes.
 		 */
-		operationId?: string;
+		operationId?: string | null;
 
 		/**
 		 * Quota metrics to indicate the result of allocation. Depending on the
@@ -374,10 +374,10 @@ export namespace MyNS {
 		 * boolean metric :
 		 * "serviceruntime.googleapis.com/quota/exceeded"
 		 */
-		quotaMetrics?: Array<MetricValueSet>;
+		quotaMetrics?: Array<MetricValueSet> | null;
 
 		/** ID of the actual config used to process the request. */
-		serviceConfigId?: string;
+		serviceConfigId?: string | null;
 	}
 
 
@@ -385,17 +385,17 @@ export namespace MyNS {
 	export interface QuotaError {
 
 		/** Error code. */
-		code?: QuotaErrorCode;
+		code?: QuotaErrorCode | null;
 
 		/** Free-form text that provides details on the cause of the error. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Subject to whom this error applies. See the specific enum for more details
 		 * on this field. For example, "clientip:<ip address of client>" or
 		 * "project:<Google developer project id>".
 		 */
-		subject?: string;
+		subject?: string | null;
 	}
 
 	export enum QuotaErrorCode { UNSPECIFIED = 0, RESOURCE_EXHAUSTED = 1, OUT_OF_RANGE = 2, BILLING_NOT_ACTIVE = 3, PROJECT_DELETED = 4, API_KEY_INVALID = 5, API_KEY_EXPIRED = 6, SPATULA_HEADER_INVALID = 7, LOAS_ROLE_INVALID = 8, NO_LOAS_PROJECT = 9, PROJECT_STATUS_UNAVAILABLE = 10, SERVICE_STATUS_UNAVAILABLE = 11, BILLING_STATUS_UNAVAILABLE = 12, QUOTA_SYSTEM_UNAVAILABLE = 13 }
@@ -405,13 +405,13 @@ export namespace MyNS {
 	export interface AttributeValue {
 
 		/** A Boolean value represented by `true` or `false`. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** A 64-bit signed integer. */
-		intValue?: string;
+		intValue?: string | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		stringValue?: TruncatableString;
+		stringValue?: TruncatableString | null;
 	}
 
 
@@ -422,7 +422,7 @@ export namespace MyNS {
 		 * The number of bytes removed from the original string. If this
 		 * value is 0, then the string was not shortened.
 		 */
-		truncatedByteCount?: number;
+		truncatedByteCount?: number | null;
 
 		/**
 		 * The shortened string. For example, if the original string is 500
@@ -432,7 +432,7 @@ export namespace MyNS {
 		 * are multi-byte characters in the string, then the length of the
 		 * shortened string might be less than the size limit.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -448,14 +448,14 @@ export namespace MyNS {
 		 * "/http/request_bytes": 300
 		 * "abc.com/myattribute": true
 		 */
-		attributeMap?: {[id: string]: AttributeValue };
+		attributeMap?: {[id: string]: AttributeValue } | null;
 
 		/**
 		 * The number of attributes that were discarded. Attributes can be discarded
 		 * because their keys are too long or because there are too many attributes.
 		 * If this value is 0 then all attributes are valid.
 		 */
-		droppedAttributesCount?: number;
+		droppedAttributesCount?: number | null;
 	}
 
 
@@ -465,20 +465,20 @@ export namespace MyNS {
 	export interface AuditLog {
 
 		/** Authentication information for the operation. */
-		authenticationInfo?: AuthenticationInfo;
+		authenticationInfo?: AuthenticationInfo | null;
 
 		/**
 		 * Authorization information. If there are multiple
 		 * resources or permissions involved, then there is
 		 * one AuthorizationInfo element for each {resource, permission} tuple.
 		 */
-		authorizationInfo?: Array<AuthorizationInfo>;
+		authorizationInfo?: Array<AuthorizationInfo> | null;
 
 		/**
 		 * Other service-specific data about the request, response, and other
 		 * information associated with the current audited event.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The name of the service method or operation.
@@ -487,13 +487,13 @@ export namespace MyNS {
 		 * "google.datastore.v1.Datastore.RunQuery"
 		 * "google.logging.v1.LoggingService.DeleteLog"
 		 */
-		methodName?: string;
+		methodName?: string | null;
 
 		/**
 		 * The number of items returned from a List or Query API method,
 		 * if applicable.
 		 */
-		numResponseItems?: string;
+		numResponseItems?: string | null;
 
 		/**
 		 * The operation request. This may not include all request parameters,
@@ -503,13 +503,13 @@ export namespace MyNS {
 		 * When the JSON object represented here has a proto equivalent, the proto
 		 * name will be indicated in the `@type` property.
 		 */
-		request?: {[id: string]: any };
+		request?: {[id: string]: any } | null;
 
 		/** Metadata about the request. */
-		requestMetadata?: RequestMetadata;
+		requestMetadata?: RequestMetadata | null;
 
 		/** Location information about a resource. */
-		resourceLocation?: ResourceLocation;
+		resourceLocation?: ResourceLocation | null;
 
 		/**
 		 * The resource or collection that is the target of the operation.
@@ -518,7 +518,7 @@ export namespace MyNS {
 		 * "shelves/SHELF_ID/books"
 		 * "shelves/SHELF_ID/books/BOOK_ID"
 		 */
-		resourceName?: string;
+		resourceName?: string | null;
 
 		/**
 		 * The resource's original state before mutation. Present only for
@@ -529,7 +529,7 @@ export namespace MyNS {
 		 * When the JSON object represented here has a proto equivalent,
 		 * the proto name will be indicated in the `@type` property.
 		 */
-		resourceOriginalState?: {[id: string]: any };
+		resourceOriginalState?: {[id: string]: any } | null;
 
 		/**
 		 * The operation response. This may not include all response elements,
@@ -539,20 +539,20 @@ export namespace MyNS {
 		 * When the JSON object represented here has a proto equivalent, the proto
 		 * name will be indicated in the `@type` property.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 
 		/**
 		 * Deprecated, use `metadata` field instead.
 		 * Other service-specific data about the request, response, and other
 		 * activities.
 		 */
-		serviceData?: {[id: string]: any };
+		serviceData?: {[id: string]: any } | null;
 
 		/**
 		 * The name of the API service performing the operation. For example,
 		 * `"datastore.googleapis.com"`.
 		 */
-		serviceName?: string;
+		serviceName?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -562,7 +562,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 	}
 
 
@@ -573,7 +573,7 @@ export namespace MyNS {
 		 * The authority selector specified by the requestor, if any.
 		 * It is not guaranteed that the principal was allowed to use this authority.
 		 */
-		authoritySelector?: string;
+		authoritySelector?: string | null;
 
 		/**
 		 * The email address of the authenticated user (or service account on behalf
@@ -581,13 +581,13 @@ export namespace MyNS {
 		 * principal email address is redacted for all read-only operations that fail
 		 * with a "permission denied" error.
 		 */
-		principalEmail?: string;
+		principalEmail?: string | null;
 
 		/**
 		 * String representation of identity of requesting party.
 		 * Populated for both first and third party identities.
 		 */
-		principalSubject?: string;
+		principalSubject?: string | null;
 
 		/**
 		 * Identity delegation history of an authenticated service account that makes
@@ -596,7 +596,7 @@ export namespace MyNS {
 		 * authorities present, they are guaranteed to be sorted based on the original
 		 * ordering of the identity delegation events.
 		 */
-		serviceAccountDelegationInfo?: Array<ServiceAccountDelegationInfo>;
+		serviceAccountDelegationInfo?: Array<ServiceAccountDelegationInfo> | null;
 
 		/**
 		 * The name of the service account key used to create or exchange
@@ -604,7 +604,7 @@ export namespace MyNS {
 		 * This is a scheme-less URI full resource name. For example:
 		 * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
 		 */
-		serviceAccountKeyName?: string;
+		serviceAccountKeyName?: string | null;
 
 		/**
 		 * The third party identification (if any) of the authenticated user making
@@ -612,7 +612,7 @@ export namespace MyNS {
 		 * When the JSON object represented here has a proto equivalent, the proto
 		 * name will be indicated in the `@type` property.
 		 */
-		thirdPartyPrincipal?: {[id: string]: any };
+		thirdPartyPrincipal?: {[id: string]: any } | null;
 	}
 
 
@@ -620,10 +620,10 @@ export namespace MyNS {
 	export interface ServiceAccountDelegationInfo {
 
 		/** First party identity principal. */
-		firstPartyPrincipal?: FirstPartyPrincipal;
+		firstPartyPrincipal?: FirstPartyPrincipal | null;
 
 		/** Third party identity principal. */
-		thirdPartyPrincipal?: ThirdPartyPrincipal;
+		thirdPartyPrincipal?: ThirdPartyPrincipal | null;
 	}
 
 
@@ -634,13 +634,13 @@ export namespace MyNS {
 		 * The email address of a Google account.
 		 * .
 		 */
-		principalEmail?: string;
+		principalEmail?: string | null;
 
 		/**
 		 * Metadata about the service that uses the service account.
 		 * .
 		 */
-		serviceMetadata?: {[id: string]: any };
+		serviceMetadata?: {[id: string]: any } | null;
 	}
 
 
@@ -648,7 +648,7 @@ export namespace MyNS {
 	export interface ThirdPartyPrincipal {
 
 		/** Metadata about third party identity. */
-		thirdPartyClaims?: {[id: string]: any };
+		thirdPartyClaims?: {[id: string]: any } | null;
 	}
 
 
@@ -659,23 +659,23 @@ export namespace MyNS {
 		 * Whether or not authorization for `resource` and `permission`
 		 * was granted.
 		 */
-		granted?: boolean;
+		granted?: boolean | null;
 
 		/** The required IAM permission. */
-		permission?: string;
+		permission?: string | null;
 
 		/**
 		 * The resource being accessed, as a REST-style string. For example:
 		 * bigquery.googleapis.com/projects/PROJECTID/datasets/DATASETID
 		 */
-		resource?: string;
+		resource?: string | null;
 
 		/**
 		 * This message defines core attributes for a resource. A resource is an
 		 * addressable (named) entity provided by the destination service. For
 		 * example, a file stored on a network storage service.
 		 */
-		resourceAttributes?: Resource;
+		resourceAttributes?: Resource | null;
 	}
 
 
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * The labels or tags on the resource, such as AWS resource tags and
 		 * Kubernetes resource labels.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The stable identifier (name) of a resource on the `service`. A resource
@@ -704,21 +704,21 @@ export namespace MyNS {
 		 * `https://pubsub.googleapis.com/v1/projects/123/topics/news-feed`.
 		 * See https://cloud.google.com/apis/design/resource_names for details.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The name of the service that this resource belongs to, such as
 		 * `pubsub.googleapis.com`. The service may be different from the DNS
 		 * hostname that actually serves the request.
 		 */
-		service?: string;
+		service?: string | null;
 
 		/**
 		 * The type of the resource. The syntax is platform-specific because
 		 * different platforms define their resources differently.
 		 * For Google APIs, the type format must be "{service}/{kind}".
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -736,7 +736,7 @@ export namespace MyNS {
 		 * redacted to "gce-internal-ip".
 		 * See https://cloud.google.com/compute/docs/vpc/ for more information.
 		 */
-		callerIp?: string;
+		callerIp?: string | null;
 
 		/**
 		 * The network of the caller.
@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * This is a scheme-less URI full resource name. For example:
 		 * "//compute.googleapis.com/projects/PROJECT_ID/global/networks/NETWORK_ID"
 		 */
-		callerNetwork?: string;
+		callerNetwork?: string | null;
 
 		/**
 		 * The user agent of the caller.
@@ -761,7 +761,7 @@ export namespace MyNS {
 		 * The request was made from the `my-project` App Engine app.
 		 * NOLINT
 		 */
-		callerSuppliedUserAgent?: string;
+		callerSuppliedUserAgent?: string | null;
 
 		/**
 		 * This message defines attributes for a node that handles a network request.
@@ -769,14 +769,14 @@ export namespace MyNS {
 		 * or receives the request. Service peers should fill in
 		 * `principal` and `labels` as appropriate.
 		 */
-		destinationAttributes?: Peer;
+		destinationAttributes?: Peer | null;
 
 		/**
 		 * This message defines attributes for an HTTP request. If the actual
 		 * request is not an HTTP request, the runtime system should try to map
 		 * the actual request to an equivalent HTTP request.
 		 */
-		requestAttributes?: Request;
+		requestAttributes?: Request | null;
 	}
 
 
@@ -789,27 +789,27 @@ export namespace MyNS {
 	export interface Peer {
 
 		/** The IP address of the peer. */
-		ip?: string;
+		ip?: string | null;
 
 		/** The labels associated with the peer. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The network port of the peer. */
-		port?: string;
+		port?: string | null;
 
 		/**
 		 * The identity of this peer. Similar to `Request.auth.principal`, but
 		 * relative to the peer instead of the request. For example, the
 		 * idenity associated with a load balancer that forwared the request.
 		 */
-		principal?: string;
+		principal?: string | null;
 
 		/**
 		 * The CLDR country/region code associated with the above IP address.
 		 * If the IP address is private, the `region_code` should reflect the
 		 * physical location where this peer is running.
 		 */
-		regionCode?: string;
+		regionCode?: string | null;
 	}
 
 
@@ -825,30 +825,30 @@ export namespace MyNS {
 		 * based on the JSON Web Token (JWT) standard, but the terms also
 		 * correlate to concepts in other standards.
 		 */
-		auth?: Auth;
+		auth?: Auth | null;
 
 		/**
 		 * The HTTP request headers. If multiple headers share the same key, they
 		 * must be merged according to the HTTP spec. All header keys must be
 		 * lowercased, because HTTP header keys are case-insensitive.
 		 */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/** The HTTP request `Host` header value. */
-		host?: string;
+		host?: string | null;
 
 		/**
 		 * The unique ID for a request, which can be propagated to downstream
 		 * systems. The ID should have low probability of collision
 		 * within a single day for a specific service.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/** The HTTP request method, such as `GET`, `POST`. */
-		method?: string;
+		method?: string | null;
 
 		/** The HTTP URL path. */
-		path?: string;
+		path?: string | null;
 
 		/**
 		 * The network protocol used with the request, such as "http/1.1",
@@ -856,31 +856,31 @@ export namespace MyNS {
 		 * https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
 		 * for details.
 		 */
-		protocol?: string;
+		protocol?: string | null;
 
 		/**
 		 * The HTTP URL query in the format of `name1=value1&name2=value2`, as it
 		 * appears in the first line of the HTTP request. No decoding is performed.
 		 */
-		query?: string;
+		query?: string | null;
 
 		/**
 		 * A special parameter for request reason. It is used by security systems
 		 * to associate auditing information with a request.
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The HTTP URL scheme, such as `http` and `https`. */
-		scheme?: string;
+		scheme?: string | null;
 
 		/** The HTTP request size in bytes. If unknown, it must be -1. */
-		size?: string;
+		size?: string | null;
 
 		/**
 		 * The timestamp when the `destination` service receives the first byte of
 		 * the request.
 		 */
-		time?: string;
+		time?: string | null;
 	}
 
 
@@ -899,7 +899,7 @@ export namespace MyNS {
 		 * Example:
 		 * "//accesscontextmanager.googleapis.com/accessPolicies/MY_POLICY_ID/accessLevels/MY_LEVEL"
 		 */
-		accessLevels?: Array<string>;
+		accessLevels?: Array<string> | null;
 
 		/**
 		 * The intended audience(s) for this authentication information. Reflects
@@ -915,7 +915,7 @@ export namespace MyNS {
 		 * Consult the documentation for the credential issuer to determine the
 		 * information provided.
 		 */
-		audiences?: Array<string>;
+		audiences?: Array<string> | null;
 
 		/**
 		 * Structured claims presented with the credential. JWTs include
@@ -932,7 +932,7 @@ export namespace MyNS {
 		 * SAML assertions are similarly specified, but with an identity provider
 		 * dependent structure.
 		 */
-		claims?: {[id: string]: any };
+		claims?: {[id: string]: any } | null;
 
 		/**
 		 * The authorized presenter of the credential. Reflects the optional
@@ -940,7 +940,7 @@ export namespace MyNS {
 		 * OAuth client id. For example, a Google Cloud Platform client id looks
 		 * as follows: "123456789012.apps.googleusercontent.com".
 		 */
-		presenter?: string;
+		presenter?: string | null;
 
 		/**
 		 * The authenticated principal. Reflects the issuer (`iss`) and subject
@@ -949,7 +949,7 @@ export namespace MyNS {
 		 * Google accounts, the principal format is:
 		 * "https://accounts.google.com/{id}"
 		 */
-		principal?: string;
+		principal?: string | null;
 	}
 
 
@@ -965,7 +965,7 @@ export namespace MyNS {
 		 * "us-east1"
 		 * "nam3"
 		 */
-		currentLocations?: Array<string>;
+		currentLocations?: Array<string> | null;
 
 		/**
 		 * The locations of a resource prior to the execution of the operation.
@@ -976,7 +976,7 @@ export namespace MyNS {
 		 * "us-east1"
 		 * "nam3"
 		 */
-		originalLocations?: Array<string>;
+		originalLocations?: Array<string> | null;
 	}
 
 
@@ -991,20 +991,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -1015,10 +1015,10 @@ export namespace MyNS {
 	export interface CheckError {
 
 		/** The error code. */
-		code?: CheckErrorCode;
+		code?: CheckErrorCode | null;
 
 		/** Free-form text providing details on the error cause of the error. */
-		detail?: string;
+		detail?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1028,7 +1028,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 
 		/**
 		 * Subject to whom this error applies. See the specific code enum for more
@@ -1037,7 +1037,7 @@ export namespace MyNS {
 		 * - “folder:<folder-id>”
 		 * - “organization:<organization-id>”
 		 */
-		subject?: string;
+		subject?: string | null;
 	}
 
 	export enum CheckErrorCode { ERROR_CODE_UNSPECIFIED = 0, NOT_FOUND = 1, PERMISSION_DENIED = 2, RESOURCE_EXHAUSTED = 3, BUDGET_EXCEEDED = 4, DENIAL_OF_SERVICE_DETECTED = 5, LOAD_SHEDDING = 6, ABUSER_DETECTED = 7, SERVICE_NOT_ACTIVATED = 8, VISIBILITY_DENIED = 9, BILLING_DISABLED = 10, PROJECT_DELETED = 11, PROJECT_INVALID = 12, CONSUMER_INVALID = 13, IP_ADDRESS_BLOCKED = 14, REFERER_BLOCKED = 15, CLIENT_APP_BLOCKED = 16, API_TARGET_BLOCKED = 17, API_KEY_INVALID = 18, API_KEY_EXPIRED = 19, API_KEY_NOT_FOUND = 20, SPATULA_HEADER_INVALID = 21, LOAS_ROLE_INVALID = 22, NO_LOAS_PROJECT = 23, LOAS_PROJECT_DISABLED = 24, SECURITY_POLICY_VIOLATED = 25, INVALID_CREDENTIAL = 26, LOCATION_POLICY_VIOLATED = 27, NAMESPACE_LOOKUP_UNAVAILABLE = 28, SERVICE_STATUS_UNAVAILABLE = 29, BILLING_STATUS_UNAVAILABLE = 30, QUOTA_CHECK_UNAVAILABLE = 31, LOAS_PROJECT_LOOKUP_UNAVAILABLE = 32, CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE = 33, SECURITY_POLICY_BACKEND_UNAVAILABLE = 34, LOCATION_POLICY_BACKEND_UNAVAILABLE = 35 }
@@ -1047,14 +1047,14 @@ export namespace MyNS {
 	export interface CheckInfo {
 
 		/** `ConsumerInfo` provides information about the consumer. */
-		consumerInfo?: ConsumerInfo;
+		consumerInfo?: ConsumerInfo | null;
 
 		/**
 		 * A list of fields and label keys that are ignored by the server.
 		 * The client doesn't need to send them for following requests to improve
 		 * performance and allow better aggregation.
 		 */
-		unusedArguments?: Array<string>;
+		unusedArguments?: Array<string> | null;
 	}
 
 
@@ -1066,7 +1066,7 @@ export namespace MyNS {
 		 * number or organization number e.g. 1234567890. A value of 0 indicates no
 		 * consumer number is found.
 		 */
-		consumerNumber?: string;
+		consumerNumber?: string | null;
 
 		/**
 		 * The Google cloud project number, e.g. 1234567890. A value of 0 indicates
@@ -1074,13 +1074,13 @@ export namespace MyNS {
 		 * NOTE: This field is deprecated after Chemist support flexible consumer
 		 * id. New code should not depend on this field anymore.
 		 */
-		projectNumber?: string;
+		projectNumber?: string | null;
 
 		/**
 		 * The type of the consumer which should have been defined in
 		 * [Google Resource Manager](https://cloud.google.com/resource-manager/).
 		 */
-		type?: ConsumerInfoType;
+		type?: ConsumerInfoType | null;
 	}
 
 	export enum ConsumerInfoType { CONSUMER_TYPE_UNSPECIFIED = 0, PROJECT = 1, FOLDER = 2, ORGANIZATION = 3, SERVICE_SPECIFIC = 4 }
@@ -1090,10 +1090,10 @@ export namespace MyNS {
 	export interface CheckRequest {
 
 		/** Represents information regarding an operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 
 		/** Requests the project settings to be returned as part of the check response. */
-		requestProjectSettings?: boolean;
+		requestProjectSettings?: boolean | null;
 
 		/**
 		 * Specifies which version of service configuration should be used to process
@@ -1101,14 +1101,14 @@ export namespace MyNS {
 		 * If unspecified or no matching version can be found, the
 		 * latest one will be used.
 		 */
-		serviceConfigId?: string;
+		serviceConfigId?: string | null;
 
 		/**
 		 * Indicates if service activation check should be skipped for this request.
 		 * Default behavior is to perform the check and apply relevant quota.
 		 * WARNING: Setting this flag to "true" will disable quota enforcement.
 		 */
-		skipActivationCheck?: boolean;
+		skipActivationCheck?: boolean | null;
 	}
 
 
@@ -1128,17 +1128,17 @@ export namespace MyNS {
 		 * - organizations/ORGANIZATION_NUMBER,
 		 * - api`_`key:API_KEY.
 		 */
-		consumerId?: string;
+		consumerId?: string | null;
 
 		/**
 		 * End time of the operation.
 		 * Required when the operation is used in ServiceController.Report,
 		 * but optional when the operation is used in ServiceController.Check.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** DO NOT USE. This is an experimental field. */
-		importance?: OperationImportance;
+		importance?: OperationImportance | null;
 
 		/**
 		 * Labels describing the operation. Only the following labels are allowed:
@@ -1157,10 +1157,10 @@ export namespace MyNS {
 		 * where the API is served, such as App Engine, Compute Engine, or
 		 * Kubernetes Engine.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Represents information to be logged. */
-		logEntries?: Array<LogEntry>;
+		logEntries?: Array<LogEntry> | null;
 
 		/**
 		 * Represents information about this operation. Each MetricValueSet
@@ -1173,7 +1173,7 @@ export namespace MyNS {
 		 * instances, the entire request is rejected with
 		 * an invalid argument error.
 		 */
-		metricValueSets?: Array<MetricValueSet>;
+		metricValueSets?: Array<MetricValueSet> | null;
 
 		/**
 		 * Identity of the operation. This must be unique within the scope of the
@@ -1185,36 +1185,36 @@ export namespace MyNS {
 		 * and an idempotent id is desirable for deduplication purpose, UUID version 5
 		 * is recommended. See RFC 4122 for details.
 		 */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** Fully qualified name of the operation. Reserved for future use. */
-		operationName?: string;
+		operationName?: string | null;
 
 		/** Represents the properties needed for quota operations. */
-		quotaProperties?: QuotaProperties;
+		quotaProperties?: QuotaProperties | null;
 
 		/**
 		 * The resources that are involved in the operation.
 		 * The maximum supported number of entries in this field is 100.
 		 */
-		resources?: Array<ResourceInfo>;
+		resources?: Array<ResourceInfo> | null;
 
 		/** Required. Start time of the operation. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/**
 		 * Unimplemented. A list of Cloud Trace spans. The span names shall contain
 		 * the id of the destination project which can be either the produce or the
 		 * consumer project.
 		 */
-		traceSpans?: Array<TraceSpan>;
+		traceSpans?: Array<TraceSpan> | null;
 
 		/**
 		 * User defined labels for the resource that this operation is associated
 		 * with. Only a combination of 1000 user labels per consumer project are
 		 * allowed.
 		 */
-		userLabels?: {[id: string]: string };
+		userLabels?: {[id: string]: string } | null;
 	}
 
 	export enum OperationImportance { LOW = 0, HIGH = 1, DEBUG = 2 }
@@ -1228,65 +1228,65 @@ export namespace MyNS {
 		 * defined by the HTTP specification. Product-specific logging
 		 * information MUST be defined in a separate message.
 		 */
-		httpRequest?: HttpRequest;
+		httpRequest?: HttpRequest | null;
 
 		/**
 		 * A unique ID for the log entry used for deduplication. If omitted,
 		 * the implementation will generate one based on operation_id.
 		 */
-		insertId?: string;
+		insertId?: string | null;
 
 		/**
 		 * A set of user-defined (key, value) data that provides additional
 		 * information about the log entry.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Required. The log to which this log entry belongs. Examples: `"syslog"`,
 		 * `"book_log"`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Additional information about a potentially long-running operation with which
 		 * a log entry is associated.
 		 */
-		operation?: LogEntryOperation;
+		operation?: LogEntryOperation | null;
 
 		/**
 		 * The log entry payload, represented as a protocol buffer that is
 		 * expressed as a JSON object. The only accepted type currently is
 		 * AuditLog.
 		 */
-		protoPayload?: {[id: string]: any };
+		protoPayload?: {[id: string]: any } | null;
 
 		/**
 		 * The severity of the log entry. The default value is
 		 * `LogSeverity.DEFAULT`.
 		 */
-		severity?: LogEntrySeverity;
+		severity?: LogEntrySeverity | null;
 
 		/**
 		 * Additional information about the source code location that produced the log
 		 * entry.
 		 */
-		sourceLocation?: LogEntrySourceLocation;
+		sourceLocation?: LogEntrySourceLocation | null;
 
 		/**
 		 * The log entry payload, represented as a structure that
 		 * is expressed as a JSON object.
 		 */
-		structPayload?: {[id: string]: any };
+		structPayload?: {[id: string]: any } | null;
 
 		/** The log entry payload, represented as a Unicode string (UTF-8). */
-		textPayload?: string;
+		textPayload?: string | null;
 
 		/**
 		 * The time the event described by the log entry occurred. If
 		 * omitted, defaults to operation start time.
 		 */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/**
 		 * Optional. Resource name of the trace associated with the log entry, if any.
@@ -1294,7 +1294,7 @@ export namespace MyNS {
 		 * relative to `//tracing.googleapis.com`. Example:
 		 * `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
 		 */
-		trace?: string;
+		trace?: string | null;
 	}
 
 
@@ -1309,86 +1309,86 @@ export namespace MyNS {
 		 * The number of HTTP response bytes inserted into cache. Set only when a
 		 * cache fill was attempted.
 		 */
-		cacheFillBytes?: string;
+		cacheFillBytes?: string | null;
 
 		/**
 		 * Whether or not an entity was served from cache
 		 * (with or without validation).
 		 */
-		cacheHit?: boolean;
+		cacheHit?: boolean | null;
 
 		/** Whether or not a cache lookup was attempted. */
-		cacheLookup?: boolean;
+		cacheLookup?: boolean | null;
 
 		/**
 		 * Whether or not the response was validated with the origin server before
 		 * being served from cache. This field is only meaningful if `cache_hit` is
 		 * True.
 		 */
-		cacheValidatedWithOriginServer?: boolean;
+		cacheValidatedWithOriginServer?: boolean | null;
 
 		/**
 		 * The request processing latency on the server, from the time the request was
 		 * received until the response was sent.
 		 */
-		latency?: string;
+		latency?: string | null;
 
 		/** Protocol used for the request. Examples: "HTTP/1.1", "HTTP/2", "websocket" */
-		protocol?: string;
+		protocol?: string | null;
 
 		/**
 		 * The referer URL of the request, as defined in
 		 * [HTTP/1.1 Header Field
 		 * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
 		 */
-		referer?: string;
+		referer?: string | null;
 
 		/**
 		 * The IP address (IPv4 or IPv6) of the client that issued the HTTP
 		 * request. Examples: `"192.168.1.1"`, `"FE80::0202:B3FF:FE1E:8329"`.
 		 */
-		remoteIp?: string;
+		remoteIp?: string | null;
 
 		/** The request method. Examples: `"GET"`, `"HEAD"`, `"PUT"`, `"POST"`. */
-		requestMethod?: string;
+		requestMethod?: string | null;
 
 		/**
 		 * The size of the HTTP request message in bytes, including the request
 		 * headers and the request body.
 		 */
-		requestSize?: string;
+		requestSize?: string | null;
 
 		/**
 		 * The scheme (http, https), the host name, the path, and the query
 		 * portion of the URL that was requested.
 		 * Example: `"http://example.com/some/info?color=red"`.
 		 */
-		requestUrl?: string;
+		requestUrl?: string | null;
 
 		/**
 		 * The size of the HTTP response message sent back to the client, in bytes,
 		 * including the response headers and the response body.
 		 */
-		responseSize?: string;
+		responseSize?: string | null;
 
 		/**
 		 * The IP address (IPv4 or IPv6) of the origin server that the request was
 		 * sent to.
 		 */
-		serverIp?: string;
+		serverIp?: string | null;
 
 		/**
 		 * The response code indicating the status of the response.
 		 * Examples: 200, 404.
 		 */
-		status?: number;
+		status?: number | null;
 
 		/**
 		 * The user agent sent by the client. Example:
 		 * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
 		 * CLR 1.0.3705)"`.
 		 */
-		userAgent?: string;
+		userAgent?: string | null;
 	}
 
 
@@ -1399,23 +1399,23 @@ export namespace MyNS {
 	export interface LogEntryOperation {
 
 		/** Optional. Set this to True if this is the first log entry in the operation. */
-		first?: boolean;
+		first?: boolean | null;
 
 		/**
 		 * Optional. An arbitrary operation identifier. Log entries with the
 		 * same identifier are assumed to be part of the same operation.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/** Optional. Set this to True if this is the last log entry in the operation. */
-		last?: boolean;
+		last?: boolean | null;
 
 		/**
 		 * Optional. An arbitrary producer identifier. The combination of
 		 * `id` and `producer` must be globally unique.  Examples for `producer`:
 		 * `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
 		 */
-		producer?: string;
+		producer?: string | null;
 	}
 
 	export enum LogEntrySeverity { DEFAULT = 0, DEBUG = 1, INFO = 2, NOTICE = 3, WARNING = 4, ERROR = 5, CRITICAL = 6, ALERT = 7, EMERGENCY = 8 }
@@ -1431,7 +1431,7 @@ export namespace MyNS {
 		 * Optional. Source file name. Depending on the runtime environment, this
 		 * might be a simple name or a fully-qualified name.
 		 */
-		file?: string;
+		file?: string | null;
 
 		/**
 		 * Optional. Human-readable name of the function or method being invoked, with
@@ -1441,13 +1441,13 @@ export namespace MyNS {
 		 * `qual.if.ied.Class.method` (Java), `dir/package.func` (Go), `function`
 		 * (Python).
 		 */
-		function?: string;
+		function?: string | null;
 
 		/**
 		 * Optional. Line within the source file. 1-based; 0 indicates no line number
 		 * available.
 		 */
-		line?: string;
+		line?: string | null;
 	}
 
 
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 	export interface QuotaProperties {
 
 		/** Quota mode for this operation. */
-		quotaMode?: QuotaPropertiesQuotaMode;
+		quotaMode?: QuotaPropertiesQuotaMode | null;
 	}
 
 	export enum QuotaPropertiesQuotaMode { ACQUIRE = 0, ACQUIRE_BEST_EFFORT = 1, CHECK = 2, RELEASE = 3 }
@@ -1471,17 +1471,17 @@ export namespace MyNS {
 		 * - “folders/<folder-id>”
 		 * - “organizations/<organization-id>”
 		 */
-		resourceContainer?: string;
+		resourceContainer?: string | null;
 
 		/**
 		 * The location of the resource. If not empty, the resource will be checked
 		 * against location policy. The value must be a valid zone, region or
 		 * multiregion. For example: "europe-west4" or "northamerica-northeast1-a"
 		 */
-		resourceLocation?: string;
+		resourceLocation?: string | null;
 
 		/** Name of the resource. This is used for auditing purposes. */
-		resourceName?: string;
+		resourceName?: string | null;
 	}
 
 
@@ -1496,23 +1496,23 @@ export namespace MyNS {
 	export interface TraceSpan {
 
 		/** A set of attributes, each in the format `[KEY]:[VALUE]`. */
-		attributes?: Attributes;
+		attributes?: Attributes | null;
 
 		/**
 		 * An optional number of child spans that were generated while this span
 		 * was active. If set, allows implementation to detect missing child spans.
 		 */
-		childSpanCount?: number;
+		childSpanCount?: number | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		displayName?: TruncatableString;
+		displayName?: TruncatableString | null;
 
 		/**
 		 * The end time of the span. On the client side, this is the time kept by
 		 * the local machine where the span execution ends. On the server side, this
 		 * is the time when the server application handler stops running.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * The resource name of the span in the following format:
@@ -1521,13 +1521,13 @@ export namespace MyNS {
 		 * [SPAN_ID] is a unique identifier for a span within a trace; it
 		 * is a 16-character hexadecimal encoding of an 8-byte array.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The [SPAN_ID] of this span's parent span. If this is a root span,
 		 * then this field must be empty.
 		 */
-		parentSpanId?: string;
+		parentSpanId?: string | null;
 
 		/**
 		 * (Optional) Set this parameter to indicate whether this span is in
@@ -1535,24 +1535,24 @@ export namespace MyNS {
 		 * Stackdriver Trace is unable to take advantage of this helpful
 		 * information.
 		 */
-		sameProcessAsParentSpan?: boolean;
+		sameProcessAsParentSpan?: boolean | null;
 
 		/** The [SPAN_ID] portion of the span's resource name. */
-		spanId?: string;
+		spanId?: string | null;
 
 		/**
 		 * Distinguishes between spans generated in a particular context. For example,
 		 * two spans with the same name may be distinguished using `CLIENT` (caller)
 		 * and `SERVER` (callee) to identify an RPC call.
 		 */
-		spanKind?: TraceSpanSpanKind;
+		spanKind?: TraceSpanSpanKind | null;
 
 		/**
 		 * The start time of the span. On the client side, this is the time kept by
 		 * the local machine where the span execution starts. On the server side, this
 		 * is the time when the server's application handler starts running.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1562,7 +1562,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 	}
 
 	export enum TraceSpanSpanKind { SPAN_KIND_UNSPECIFIED = 0, INTERNAL = 1, SERVER = 2, CLIENT = 3, PRODUCER = 4, CONSUMER = 5 }
@@ -1577,25 +1577,25 @@ export namespace MyNS {
 		 * Otherwise the service should use the list of errors to determine the
 		 * appropriate action.
 		 */
-		checkErrors?: Array<CheckError>;
+		checkErrors?: Array<CheckError> | null;
 
 		/** Contains additional information about the check operation. */
-		checkInfo?: CheckInfo;
+		checkInfo?: CheckInfo | null;
 
 		/**
 		 * The same operation_id value used in the CheckRequest.
 		 * Used for logging and diagnostics purposes.
 		 */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** Contains the quota information for a quota check response. */
-		quotaInfo?: QuotaInfo;
+		quotaInfo?: QuotaInfo | null;
 
 		/** The actual config id used to process the request. */
-		serviceConfigId?: string;
+		serviceConfigId?: string | null;
 
 		/** The current service rollout id used to process the request. */
-		serviceRolloutId?: string;
+		serviceRolloutId?: string | null;
 	}
 
 
@@ -1609,7 +1609,7 @@ export namespace MyNS {
 		 * See: google.api.Quota
 		 * Deprecated: Use quota_metrics to get per quota group limit exceeded status.
 		 */
-		limitExceeded?: Array<string>;
+		limitExceeded?: Array<string> | null;
 
 		/**
 		 * Map of quota group name to the actual number of tokens consumed. If the
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 		 * keep this field for Castor (that scales quota usage) and 'quota_metrics'
 		 * for SuperQuota (that doesn't scale quota usage).
 		 */
-		quotaConsumed?: {[id: string]: number };
+		quotaConsumed?: {[id: string]: number } | null;
 
 		/**
 		 * Quota metrics to indicate the usage. Depending on the check request, one or
@@ -1635,7 +1635,7 @@ export namespace MyNS {
 		 * condition will be specified using the following boolean metric:
 		 * "serviceruntime.googleapis.com/quota/exceeded"
 		 */
-		quotaMetrics?: Array<MetricValueSet>;
+		quotaMetrics?: Array<MetricValueSet> | null;
 	}
 
 
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 	export interface ReportError {
 
 		/** The Operation.operation_id value from the request. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1653,7 +1653,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 	}
 
 
@@ -1661,10 +1661,10 @@ export namespace MyNS {
 	export interface ReportInfo {
 
 		/** The Operation.operation_id value from the request. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** Contains the quota information for a quota check response. */
-		quotaInfo?: QuotaInfo;
+		quotaInfo?: QuotaInfo | null;
 	}
 
 
@@ -1681,7 +1681,7 @@ export namespace MyNS {
 		 * however the ReportRequest size should be no larger than 1MB. See
 		 * ReportResponse.report_errors for partial failure behavior.
 		 */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 
 		/**
 		 * Specifies which version of service config should be used to process the
@@ -1689,7 +1689,7 @@ export namespace MyNS {
 		 * If unspecified or no matching version can be found, the
 		 * latest one will be used.
 		 */
-		serviceConfigId?: string;
+		serviceConfigId?: string | null;
 	}
 
 
@@ -1711,7 +1711,7 @@ export namespace MyNS {
 		 * When this happens, it's impossible to know which of the
 		 * 'Operations' in the request succeeded or failed.
 		 */
-		reportErrors?: Array<ReportError>;
+		reportErrors?: Array<ReportError> | null;
 
 		/**
 		 * Quota usage for each quota release `Operation` request.
@@ -1721,13 +1721,13 @@ export namespace MyNS {
 		 * info. A deadline exceeded quota request will not have quota usage info.
 		 * If there is no quota release request, report_quota_info will be empty.
 		 */
-		reportInfos?: Array<ReportInfo>;
+		reportInfos?: Array<ReportInfo> | null;
 
 		/** The actual config id used to process the request. */
-		serviceConfigId?: string;
+		serviceConfigId?: string | null;
 
 		/** The current service rollout id used to process the request. */
-		serviceRolloutId?: string;
+		serviceRolloutId?: string | null;
 	}
 
 
@@ -1748,7 +1748,7 @@ export namespace MyNS {
 		 * `[SPAN_ID]` is a unique identifier for a span within a trace; it
 		 * is a 16-character hexadecimal encoding of an 8-byte array.
 		 */
-		spanName?: string;
+		spanName?: string | null;
 	}
 
 	@Injectable()

@@ -14,7 +14,7 @@ export namespace MyNS {
 		 * The ID of the entity within the given namespace. The ID must be unique
 		 * within its namespace.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Namespaces provide isolation for IDs, so an ID only needs to be unique
@@ -23,7 +23,7 @@ export namespace MyNS {
 		 * from Admin Console. A namespace `"identitysources/{identity_source_id}"` is
 		 * created corresponding to every Identity Source `identity_source_id`.
 		 */
-		namespace?: string;
+		namespace?: string | null;
 	}
 
 
@@ -34,7 +34,7 @@ export namespace MyNS {
 		 * Output only. The time when the Group was created.
 		 * Output only.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * An extended description to help users determine the purpose of a Group. For
@@ -42,24 +42,24 @@ export namespace MyNS {
 		 * types of messages to send to the Group, links to FAQs about the Group, or
 		 * related Groups. Maximum length is 4,096 characters.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** The Group's display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * An EntityKey uniquely identifies an Entity. Namespaces are used to provide
 		 * isolation for IDs. A single ID can be reused across namespaces but the
 		 * combination of a namespace and an ID must be unique.
 		 */
-		groupKey?: EntityKey;
+		groupKey?: EntityKey | null;
 
 		/**
 		 * Required. `Required`. Labels for Group resource.
 		 * For creating Groups under a namespace, set label key to
 		 * 'labels/system/groups/external' and label value as empty.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
@@ -67,20 +67,20 @@ export namespace MyNS {
 		 * assigned to the Group.
 		 * Must be left blank while creating a Group.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. Immutable. The entity under which this Group resides in Cloud Identity resource
 		 * hierarchy. Must be set when creating a Group, read-only afterwards.
 		 * Currently allowed types: `identitysources`.
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/**
 		 * Output only. The time when the Group was last updated.
 		 * Output only.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -91,25 +91,25 @@ export namespace MyNS {
 		 * Groups returned in response to list request.
 		 * The results are not sorted.
 		 */
-		groups?: Array<Group>;
+		groups?: Array<Group> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results available for listing.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface ListMembershipsResponse {
 
 		/** List of Memberships. */
-		memberships?: Array<Membership>;
+		memberships?: Array<Membership> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results available for listing.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -117,7 +117,7 @@ export namespace MyNS {
 	export interface Membership {
 
 		/** Output only. Creation timestamp of the Membership. Output only. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
@@ -126,23 +126,23 @@ export namespace MyNS {
 		 * belongs to, and member_id is the unique ID assigned to the member
 		 * Must be left blank while creating a Membership.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * An EntityKey uniquely identifies an Entity. Namespaces are used to provide
 		 * isolation for IDs. A single ID can be reused across namespaces but the
 		 * combination of a namespace and an ID must be unique.
 		 */
-		preferredMemberKey?: EntityKey;
+		preferredMemberKey?: EntityKey | null;
 
 		/**
 		 * Roles for a member within the Group.
 		 * Currently supported MembershipRoles: `"MEMBER"`.
 		 */
-		roles?: Array<MembershipRole>;
+		roles?: Array<MembershipRole> | null;
 
 		/** Output only. Last updated timestamp of the Membership. Output only. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -153,7 +153,7 @@ export namespace MyNS {
 		 * MembershipRole in string format.
 		 * Currently supported MembershipRoles: `"MEMBER"`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface LookupGroupNameResponse {
@@ -163,7 +163,7 @@ export namespace MyNS {
 		 * Group in the format: `groups/{group_id}`, where `group_id` is the unique ID
 		 * assigned to the Group.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface LookupMembershipNameResponse {
@@ -175,7 +175,7 @@ export namespace MyNS {
 		 * the unique ID assigned to the Group to which Membership belongs to, and
 		 * `member_id` is the unique ID assigned to the member.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -200,7 +200,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -208,14 +208,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -227,7 +227,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -242,32 +242,32 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 	export interface SearchGroupsResponse {
 
 		/** List of Groups satisfying the search query. */
-		groups?: Array<Group>;
+		groups?: Array<Group> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results available for specified query.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()

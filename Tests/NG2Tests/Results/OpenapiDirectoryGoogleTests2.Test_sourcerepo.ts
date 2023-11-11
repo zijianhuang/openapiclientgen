@@ -55,14 +55,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -92,10 +92,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -128,7 +128,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -163,13 +163,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -203,26 +203,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -247,10 +247,10 @@ export namespace MyNS {
 		 * can be retrieved by including this value in the next ListReposRequest's
 		 * page_token field.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The listed repos. */
-		repos?: Array<Repo>;
+		repos?: Array<Repo> | null;
 	}
 
 
@@ -261,32 +261,32 @@ export namespace MyNS {
 		 * Configuration to automatically mirror a repository from another
 		 * hosting service, for example GitHub or Bitbucket.
 		 */
-		mirrorConfig?: MirrorConfig;
+		mirrorConfig?: MirrorConfig | null;
 
 		/**
 		 * Resource name of the repository, of the form
 		 * `projects/<project>/repos/<repo>`.  The repo name may contain slashes.
 		 * eg, `projects/myproject/repos/name/with/slash`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * How this repository publishes a change in the repository through Cloud
 		 * Pub/Sub. Keyed by the topic names.
 		 */
-		pubsubConfigs?: {[id: string]: PubsubConfig };
+		pubsubConfigs?: {[id: string]: PubsubConfig } | null;
 
 		/**
 		 * The disk usage of the repo, in bytes. Read-only field. Size is only
 		 * returned by GetRepo.
 		 */
-		size?: string;
+		size?: string | null;
 
 		/**
 		 * URL to clone the repository from Google Cloud Source Repositories.
 		 * Read-only field.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -301,10 +301,10 @@ export namespace MyNS {
 		 * Removing this key from the other service would deauthorize
 		 * Google Cloud Source Repositories from mirroring.
 		 */
-		deployKeyId?: string;
+		deployKeyId?: string | null;
 
 		/** URL of the main repository at the other hosting service. */
-		url?: string;
+		url?: string | null;
 
 		/**
 		 * ID of the webhook listening to updates to trigger mirroring.
@@ -312,7 +312,7 @@ export namespace MyNS {
 		 * Google Cloud Source Repositories from receiving notifications,
 		 * and thereby disabling mirroring.
 		 */
-		webhookId?: string;
+		webhookId?: string | null;
 	}
 
 
@@ -320,7 +320,7 @@ export namespace MyNS {
 	export interface PubsubConfig {
 
 		/** The format of the Cloud Pub/Sub messages. */
-		messageFormat?: PubsubConfigMessageFormat;
+		messageFormat?: PubsubConfigMessageFormat | null;
 
 		/**
 		 * Email address of the service account used for publishing Cloud Pub/Sub
@@ -329,14 +329,14 @@ export namespace MyNS {
 		 * iam.serviceAccounts.actAs permission on this service account. If
 		 * unspecified, it defaults to the compute engine default service account.
 		 */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 
 		/**
 		 * A topic of Cloud Pub/Sub. Values are of the form
 		 * `projects/<project>/topics/<topic>`. The project needs to be the same
 		 * project as this config is in.
 		 */
-		topic?: string;
+		topic?: string | null;
 	}
 
 	export enum PubsubConfigMessageFormat { MESSAGE_FORMAT_UNSPECIFIED = 0, PROTOBUF = 1, JSON = 2 }
@@ -353,7 +353,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -363,7 +363,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -371,14 +371,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -390,7 +390,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -405,20 +405,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -482,14 +482,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -504,7 +504,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -524,7 +524,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -532,16 +532,16 @@ export namespace MyNS {
 	export interface ProjectConfig {
 
 		/** Reject a Git push that contains a private key. */
-		enablePrivateKeyCheck?: boolean;
+		enablePrivateKeyCheck?: boolean | null;
 
 		/** The name of the project. Values are of the form `projects/<project>`. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * How this project publishes a change in the repositories through Cloud
 		 * Pub/Sub. Keyed by the topic names.
 		 */
-		pubsubConfigs?: {[id: string]: PubsubConfig };
+		pubsubConfigs?: {[id: string]: PubsubConfig } | null;
 	}
 
 
@@ -605,7 +605,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -614,7 +614,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -628,16 +628,16 @@ export namespace MyNS {
 		 * The name of the repo being synchronized. Values are of the form
 		 * `projects/<project>/repos/<repo>`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The time this operation is started. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The latest status message on syncing the repository. */
-		statusMessage?: string;
+		statusMessage?: string | null;
 
 		/** The time this operation's status message is updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -655,7 +655,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -666,7 +666,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -674,14 +674,14 @@ export namespace MyNS {
 	export interface UpdateProjectConfigRequest {
 
 		/** Cloud Source Repositories configuration of a project. */
-		projectConfig?: ProjectConfig;
+		projectConfig?: ProjectConfig | null;
 
 		/**
 		 * A FieldMask specifying which fields of the project_config to modify. Only
 		 * the fields in the mask will be modified. If no mask is provided, this
 		 * request is no-op.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -689,14 +689,14 @@ export namespace MyNS {
 	export interface UpdateRepoRequest {
 
 		/** A repository (or repo) is a Git repository storing versioned source content. */
-		repo?: Repo;
+		repo?: Repo | null;
 
 		/**
 		 * A FieldMask specifying which fields of the repo to modify. Only the fields
 		 * in the mask will be modified. If no mask is provided, this request is
 		 * no-op.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 	@Injectable()

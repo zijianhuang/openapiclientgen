@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface AddBandingRequest {
 
 		/** A banded (alternating colors) range in a sheet. */
-		bandedRange?: BandedRange;
+		bandedRange?: BandedRange | null;
 	}
 
 
@@ -15,7 +15,7 @@ export namespace MyNS {
 	export interface BandedRange {
 
 		/** The id of the banded range. */
-		bandedRangeId?: number;
+		bandedRangeId?: number | null;
 
 		/**
 		 * Properties referring a single dimension (either row or column). If both
@@ -30,7 +30,7 @@ export namespace MyNS {
 		 * top left cell, but the column header takes priority over the first row
 		 * color if the row header is not set.
 		 */
-		columnProperties?: BandingProperties;
+		columnProperties?: BandingProperties | null;
 
 		/**
 		 * A range on a sheet.
@@ -56,7 +56,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/**
 		 * Properties referring a single dimension (either row or column). If both
@@ -71,7 +71,7 @@ export namespace MyNS {
 		 * top left cell, but the column header takes priority over the first row
 		 * color if the row header is not set.
 		 */
-		rowProperties?: BandingProperties;
+		rowProperties?: BandingProperties | null;
 	}
 
 
@@ -195,10 +195,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		firstBandColor?: Color;
+		firstBandColor?: Color | null;
 
 		/** A color value. */
-		firstBandColorStyle?: ColorStyle;
+		firstBandColorStyle?: ColorStyle | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -305,10 +305,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		footerColor?: Color;
+		footerColor?: Color | null;
 
 		/** A color value. */
-		footerColorStyle?: ColorStyle;
+		footerColorStyle?: ColorStyle | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -415,10 +415,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		headerColor?: Color;
+		headerColor?: Color | null;
 
 		/** A color value. */
-		headerColorStyle?: ColorStyle;
+		headerColorStyle?: ColorStyle | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -525,10 +525,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		secondBandColor?: Color;
+		secondBandColor?: Color | null;
 
 		/** A color value. */
-		secondBandColorStyle?: ColorStyle;
+		secondBandColorStyle?: ColorStyle | null;
 	}
 
 
@@ -650,16 +650,16 @@ export namespace MyNS {
 		 * If omitted, this color object is to be rendered as a solid color
 		 * (as if the alpha value had been explicitly given with a value of 1.0).
 		 */
-		alpha?: number;
+		alpha?: number | null;
 
 		/** The amount of blue in the color as a value in the interval [0, 1]. */
-		blue?: number;
+		blue?: number | null;
 
 		/** The amount of green in the color as a value in the interval [0, 1]. */
-		green?: number;
+		green?: number | null;
 
 		/** The amount of red in the color as a value in the interval [0, 1]. */
-		red?: number;
+		red?: number | null;
 	}
 
 
@@ -771,10 +771,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		rgbColor?: Color;
+		rgbColor?: Color | null;
 
 		/** Theme color. */
-		themeColor?: ColorStyleThemeColor;
+		themeColor?: ColorStyleThemeColor | null;
 	}
 
 	export enum ColorStyleThemeColor { THEME_COLOR_TYPE_UNSPECIFIED = 0, TEXT = 1, BACKGROUND = 2, ACCENT1 = 3, ACCENT2 = 4, ACCENT3 = 5, ACCENT4 = 6, ACCENT5 = 7, ACCENT6 = 8, LINK = 9 }
@@ -807,19 +807,19 @@ export namespace MyNS {
 	export interface GridRange {
 
 		/** The end column (exclusive) of the range, or not set if unbounded. */
-		endColumnIndex?: number;
+		endColumnIndex?: number | null;
 
 		/** The end row (exclusive) of the range, or not set if unbounded. */
-		endRowIndex?: number;
+		endRowIndex?: number | null;
 
 		/** The sheet this range is on. */
-		sheetId?: number;
+		sheetId?: number | null;
 
 		/** The start column (inclusive) of the range, or not set if unbounded. */
-		startColumnIndex?: number;
+		startColumnIndex?: number | null;
 
 		/** The start row (inclusive) of the range, or not set if unbounded. */
-		startRowIndex?: number;
+		startRowIndex?: number | null;
 	}
 
 
@@ -827,7 +827,7 @@ export namespace MyNS {
 	export interface AddBandingResponse {
 
 		/** A banded (alternating colors) range in a sheet. */
-		bandedRange?: BandedRange;
+		bandedRange?: BandedRange | null;
 	}
 
 
@@ -835,7 +835,7 @@ export namespace MyNS {
 	export interface AddChartRequest {
 
 		/** A chart embedded in a sheet. */
-		chart?: EmbeddedChart;
+		chart?: EmbeddedChart | null;
 	}
 
 
@@ -843,13 +843,13 @@ export namespace MyNS {
 	export interface EmbeddedChart {
 
 		/** The ID of the chart. */
-		chartId?: number;
+		chartId?: number | null;
 
 		/** The position of an embedded object such as a chart. */
-		position?: EmbeddedObjectPosition;
+		position?: EmbeddedObjectPosition | null;
 
 		/** The specifications of a chart. */
-		spec?: ChartSpec;
+		spec?: ChartSpec | null;
 	}
 
 
@@ -860,16 +860,16 @@ export namespace MyNS {
 		 * If true, the embedded object is put on a new sheet whose ID
 		 * is chosen for you. Used only when writing.
 		 */
-		newSheet?: boolean;
+		newSheet?: boolean | null;
 
 		/** The location an object is overlaid on top of a grid. */
-		overlayPosition?: OverlayPosition;
+		overlayPosition?: OverlayPosition | null;
 
 		/**
 		 * The sheet this is on. Set only if the embedded object
 		 * is on its own sheet. Must be non-negative.
 		 */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -880,25 +880,25 @@ export namespace MyNS {
 		 * A coordinate in a sheet.
 		 * All indexes are zero-based.
 		 */
-		anchorCell?: GridCoordinate;
+		anchorCell?: GridCoordinate | null;
 
 		/** The height of the object, in pixels. Defaults to 371. */
-		heightPixels?: number;
+		heightPixels?: number | null;
 
 		/**
 		 * The horizontal offset, in pixels, that the object is offset
 		 * from the anchor cell.
 		 */
-		offsetXPixels?: number;
+		offsetXPixels?: number | null;
 
 		/**
 		 * The vertical offset, in pixels, that the object is offset
 		 * from the anchor cell.
 		 */
-		offsetYPixels?: number;
+		offsetYPixels?: number | null;
 
 		/** The width of the object, in pixels. Defaults to 600. */
-		widthPixels?: number;
+		widthPixels?: number | null;
 	}
 
 
@@ -909,13 +909,13 @@ export namespace MyNS {
 	export interface GridCoordinate {
 
 		/** The column index of the coordinate. */
-		columnIndex?: number;
+		columnIndex?: number | null;
 
 		/** The row index of the coordinate. */
-		rowIndex?: number;
+		rowIndex?: number | null;
 
 		/** The sheet this coordinate is on. */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -926,7 +926,7 @@ export namespace MyNS {
 		 * The alternative text that describes the chart.  This is often used
 		 * for accessibility.
 		 */
-		altText?: string;
+		altText?: string | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -1033,35 +1033,35 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		backgroundColor?: Color;
+		backgroundColor?: Color | null;
 
 		/** A color value. */
-		backgroundColorStyle?: ColorStyle;
+		backgroundColorStyle?: ColorStyle | null;
 
 		/**
 		 * The specification for a basic chart.  See BasicChartType for the list
 		 * of charts this supports.
 		 */
-		basicChart?: BasicChartSpec;
+		basicChart?: BasicChartSpec | null;
 
 		/** A <a href="/chart/interactive/docs/gallery/bubblechart">bubble chart</a>. */
-		bubbleChart?: BubbleChartSpec;
+		bubbleChart?: BubbleChartSpec | null;
 
 		/**
 		 * A <a href="/chart/interactive/docs/gallery/candlestickchart">candlestick
 		 * chart</a>.
 		 */
-		candlestickChart?: CandlestickChartSpec;
+		candlestickChart?: CandlestickChartSpec | null;
 
 		/**
 		 * The name of the font to use by default for all chart text (e.g. title,
 		 * axis labels, legend).  If a font is specified for a specific part of the
 		 * chart it will override this font name.
 		 */
-		fontName?: string;
+		fontName?: string | null;
 
 		/** Determines how the charts will use hidden rows or columns. */
-		hiddenDimensionStrategy?: ChartSpecHiddenDimensionStrategy;
+		hiddenDimensionStrategy?: ChartSpecHiddenDimensionStrategy | null;
 
 		/**
 		 * A <a href="/chart/interactive/docs/gallery/histogram">histogram chart</a>.
@@ -1071,14 +1071,14 @@ export namespace MyNS {
 		 * items fall.  The number of bins can be chosen automatically or specified
 		 * explicitly.
 		 */
-		histogramChart?: HistogramChartSpec;
+		histogramChart?: HistogramChartSpec | null;
 
 		/**
 		 * True to make a chart fill the entire space in which it's rendered with
 		 * minimum padding.  False to use the default padding.
 		 * (Not applicable to Geo and Org charts.)
 		 */
-		maximized?: boolean;
+		maximized?: boolean | null;
 
 		/**
 		 * An <a href="/chart/interactive/docs/gallery/orgchart">org chart</a>.
@@ -1092,10 +1092,10 @@ export namespace MyNS {
 		 * parent_labels contain "", "Alice", "Alice" and tooltips contain
 		 * "CEO", "President", "VP Sales".
 		 */
-		orgChart?: OrgChartSpec;
+		orgChart?: OrgChartSpec | null;
 
 		/** A <a href="/chart/interactive/docs/gallery/piechart">pie chart</a>. */
-		pieChart?: PieChartSpec;
+		pieChart?: PieChartSpec | null;
 
 		/**
 		 * A scorecard chart. Scorecard charts are used to highlight key performance
@@ -1105,37 +1105,37 @@ export namespace MyNS {
 		 * Percentage or absolute difference from a baseline value can be highlighted,
 		 * like changes over time.
 		 */
-		scorecardChart?: ScorecardChartSpec;
+		scorecardChart?: ScorecardChartSpec | null;
 
 		/** The subtitle of the chart. */
-		subtitle?: string;
+		subtitle?: string | null;
 
 		/**
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		subtitleTextFormat?: TextFormat;
+		subtitleTextFormat?: TextFormat | null;
 
 		/** Position settings for text. */
-		subtitleTextPosition?: TextPosition;
+		subtitleTextPosition?: TextPosition | null;
 
 		/** The title of the chart. */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		titleTextFormat?: TextFormat;
+		titleTextFormat?: TextFormat | null;
 
 		/** Position settings for text. */
-		titleTextPosition?: TextPosition;
+		titleTextPosition?: TextPosition | null;
 
 		/** A <a href="/chart/interactive/docs/gallery/treemap">Treemap chart</a>. */
-		treemapChart?: TreemapChartSpec;
+		treemapChart?: TreemapChartSpec | null;
 
 		/** A waterfall chart. */
-		waterfallChart?: WaterfallChartSpec;
+		waterfallChart?: WaterfallChartSpec | null;
 	}
 
 
@@ -1146,22 +1146,22 @@ export namespace MyNS {
 	export interface BasicChartSpec {
 
 		/** The axis on the chart. */
-		axis?: Array<BasicChartAxis>;
+		axis?: Array<BasicChartAxis> | null;
 
 		/** The type of the chart. */
-		chartType?: BasicChartSpecChartType;
+		chartType?: BasicChartSpecChartType | null;
 
 		/**
 		 * The behavior of tooltips and data highlighting when hovering on data and
 		 * chart area.
 		 */
-		compareMode?: BasicChartSpecCompareMode;
+		compareMode?: BasicChartSpecCompareMode | null;
 
 		/**
 		 * The domain of data this is charting.
 		 * Only a single domain is supported.
 		 */
-		domains?: Array<BasicChartDomain>;
+		domains?: Array<BasicChartDomain> | null;
 
 		/**
 		 * The number of rows or columns in the data that are "headers".
@@ -1170,7 +1170,7 @@ export namespace MyNS {
 		 * (Note that BasicChartAxis.title may override the axis title
 		 * inferred from the header values.)
 		 */
-		headerCount?: number;
+		headerCount?: number | null;
 
 		/**
 		 * If some values in a series are missing, gaps may appear in the chart (e.g,
@@ -1178,31 +1178,31 @@ export namespace MyNS {
 		 * gaps set this to true.
 		 * Applies to Line, Area, and Combo charts.
 		 */
-		interpolateNulls?: boolean;
+		interpolateNulls?: boolean | null;
 
 		/** The position of the chart legend. */
-		legendPosition?: BasicChartSpecLegendPosition;
+		legendPosition?: BasicChartSpecLegendPosition | null;
 
 		/**
 		 * Gets whether all lines should be rendered smooth or straight by default.
 		 * Applies to Line charts.
 		 */
-		lineSmoothing?: boolean;
+		lineSmoothing?: boolean | null;
 
 		/** The data this chart is visualizing. */
-		series?: Array<BasicChartSeries>;
+		series?: Array<BasicChartSeries> | null;
 
 		/**
 		 * The stacked type for charts that support vertical stacking.
 		 * Applies to Area, Bar, Column, Combo, and Stepped Area charts.
 		 */
-		stackedType?: BasicChartSpecStackedType;
+		stackedType?: BasicChartSpecStackedType | null;
 
 		/**
 		 * True to make the chart 3D.
 		 * Applies to Bar and Column charts.
 		 */
-		threeDimensional?: boolean;
+		threeDimensional?: boolean | null;
 	}
 
 
@@ -1217,25 +1217,25 @@ export namespace MyNS {
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		format?: TextFormat;
+		format?: TextFormat | null;
 
 		/** The position of this axis. */
-		position?: BasicChartAxisPosition;
+		position?: BasicChartAxisPosition | null;
 
 		/**
 		 * The title of this axis. If set, this overrides any title inferred
 		 * from headers of the data.
 		 */
-		title?: string;
+		title?: string | null;
 
 		/** Position settings for text. */
-		titleTextPosition?: TextPosition;
+		titleTextPosition?: TextPosition | null;
 
 		/**
 		 * The options that define a "view window" for a chart (such as the visible
 		 * values in an axis).
 		 */
-		viewWindowOptions?: ChartAxisViewWindowOptions;
+		viewWindowOptions?: ChartAxisViewWindowOptions | null;
 	}
 
 
@@ -1246,13 +1246,13 @@ export namespace MyNS {
 	export interface TextFormat {
 
 		/** True if the text is bold. */
-		bold?: boolean;
+		bold?: boolean | null;
 
 		/** The font family. */
-		fontFamily?: string;
+		fontFamily?: string | null;
 
 		/** The size of the font. */
-		fontSize?: number;
+		fontSize?: number | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -1359,19 +1359,19 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		foregroundColor?: Color;
+		foregroundColor?: Color | null;
 
 		/** A color value. */
-		foregroundColorStyle?: ColorStyle;
+		foregroundColorStyle?: ColorStyle | null;
 
 		/** True if the text is italicized. */
-		italic?: boolean;
+		italic?: boolean | null;
 
 		/** True if the text has a strikethrough. */
-		strikethrough?: boolean;
+		strikethrough?: boolean | null;
 
 		/** True if the text is underlined. */
-		underline?: boolean;
+		underline?: boolean | null;
 	}
 
 	export enum BasicChartAxisPosition { BASIC_CHART_AXIS_POSITION_UNSPECIFIED = 0, BOTTOM_AXIS = 1, LEFT_AXIS = 2, RIGHT_AXIS = 3 }
@@ -1381,7 +1381,7 @@ export namespace MyNS {
 	export interface TextPosition {
 
 		/** Horizontal alignment setting for the piece of text. */
-		horizontalAlignment?: TextPositionHorizontalAlignment;
+		horizontalAlignment?: TextPositionHorizontalAlignment | null;
 	}
 
 	export enum TextPositionHorizontalAlignment { HORIZONTAL_ALIGN_UNSPECIFIED = 0, LEFT = 1, CENTER = 2, RIGHT = 3 }
@@ -1397,16 +1397,16 @@ export namespace MyNS {
 		 * The maximum numeric value to be shown in this view window. If unset, will
 		 * automatically determine a maximum value that looks good for the data.
 		 */
-		viewWindowMax?: number;
+		viewWindowMax?: number | null;
 
 		/**
 		 * The minimum numeric value to be shown in this view window. If unset, will
 		 * automatically determine a minimum value that looks good for the data.
 		 */
-		viewWindowMin?: number;
+		viewWindowMin?: number | null;
 
 		/** The view window's mode. */
-		viewWindowMode?: ChartAxisViewWindowOptionsViewWindowMode;
+		viewWindowMode?: ChartAxisViewWindowOptionsViewWindowMode | null;
 	}
 
 	export enum ChartAxisViewWindowOptionsViewWindowMode { DEFAULT_VIEW_WINDOW_MODE = 0, VIEW_WINDOW_MODE_UNSUPPORTED = 1, EXPLICIT = 2, PRETTY = 3 }
@@ -1423,10 +1423,10 @@ export namespace MyNS {
 	export interface BasicChartDomain {
 
 		/** The data included in a domain or series. */
-		domain?: ChartData;
+		domain?: ChartData | null;
 
 		/** True to reverse the order of the domain values (horizontal axis). */
-		reversed?: boolean;
+		reversed?: boolean | null;
 	}
 
 
@@ -1434,7 +1434,7 @@ export namespace MyNS {
 	export interface ChartData {
 
 		/** Source ranges for a chart. */
-		sourceRange?: ChartSourceRange;
+		sourceRange?: ChartSourceRange | null;
 	}
 
 
@@ -1458,7 +1458,7 @@ export namespace MyNS {
 		 * series1 sources: B1:B5, D10:D12
 		 * series2 sources: C1:C5, E10:E12
 		 */
-		sources?: Array<GridRange>;
+		sources?: Array<GridRange> | null;
 	}
 
 	export enum BasicChartSpecLegendPosition { BASIC_CHART_LEGEND_POSITION_UNSPECIFIED = 0, BOTTOM_LEGEND = 1, LEFT_LEGEND = 2, RIGHT_LEGEND = 3, TOP_LEGEND = 4, NO_LEGEND = 5 }
@@ -1576,16 +1576,16 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/** A color value. */
-		colorStyle?: ColorStyle;
+		colorStyle?: ColorStyle | null;
 
 		/** Properties that describe the style of a line. */
-		lineStyle?: LineStyle;
+		lineStyle?: LineStyle | null;
 
 		/** The data included in a domain or series. */
-		series?: ChartData;
+		series?: ChartData | null;
 
 		/**
 		 * The minor axis that will specify the range of values for this series.
@@ -1596,7 +1596,7 @@ export namespace MyNS {
 		 * It is an error to specify an axis that isn't a valid minor axis
 		 * for the chart's type.
 		 */
-		targetAxis?: BasicChartAxisPosition;
+		targetAxis?: BasicChartAxisPosition | null;
 
 		/**
 		 * The type of this series. Valid only if the
@@ -1606,7 +1606,7 @@ export namespace MyNS {
 		 * Only LINE, AREA,
 		 * and COLUMN are supported.
 		 */
-		type?: BasicChartSpecChartType;
+		type?: BasicChartSpecChartType | null;
 	}
 
 
@@ -1614,10 +1614,10 @@ export namespace MyNS {
 	export interface LineStyle {
 
 		/** The dash type of the line. */
-		type?: LineStyleType;
+		type?: LineStyleType | null;
 
 		/** The thickness of the line, in px. */
-		width?: number;
+		width?: number | null;
 	}
 
 	export enum LineStyleType { LINE_DASH_TYPE_UNSPECIFIED = 0, INVISIBLE = 1, CUSTOM = 2, SOLID = 3, DOTTED = 4, MEDIUM_DASHED = 5, MEDIUM_DASHED_DOTTED = 6, LONG_DASHED = 7, LONG_DASHED_DOTTED = 8 }
@@ -1733,52 +1733,52 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		bubbleBorderColor?: Color;
+		bubbleBorderColor?: Color | null;
 
 		/** A color value. */
-		bubbleBorderColorStyle?: ColorStyle;
+		bubbleBorderColorStyle?: ColorStyle | null;
 
 		/** The data included in a domain or series. */
-		bubbleLabels?: ChartData;
+		bubbleLabels?: ChartData | null;
 
 		/**
 		 * The max radius size of the bubbles, in pixels.
 		 * If specified, the field must be a positive value.
 		 */
-		bubbleMaxRadiusSize?: number;
+		bubbleMaxRadiusSize?: number | null;
 
 		/**
 		 * The minimum radius size of the bubbles, in pixels.
 		 * If specific, the field must be a positive value.
 		 */
-		bubbleMinRadiusSize?: number;
+		bubbleMinRadiusSize?: number | null;
 
 		/**
 		 * The opacity of the bubbles between 0 and 1.0.
 		 * 0 is fully transparent and 1 is fully opaque.
 		 */
-		bubbleOpacity?: number;
+		bubbleOpacity?: number | null;
 
 		/** The data included in a domain or series. */
-		bubbleSizes?: ChartData;
+		bubbleSizes?: ChartData | null;
 
 		/**
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		bubbleTextStyle?: TextFormat;
+		bubbleTextStyle?: TextFormat | null;
 
 		/** The data included in a domain or series. */
-		domain?: ChartData;
+		domain?: ChartData | null;
 
 		/** The data included in a domain or series. */
-		groupIds?: ChartData;
+		groupIds?: ChartData | null;
 
 		/** Where the legend of the chart should be drawn. */
-		legendPosition?: BubbleChartSpecLegendPosition;
+		legendPosition?: BubbleChartSpecLegendPosition | null;
 
 		/** The data included in a domain or series. */
-		series?: ChartData;
+		series?: ChartData | null;
 	}
 
 	export enum BubbleChartSpecLegendPosition { BUBBLE_CHART_LEGEND_POSITION_UNSPECIFIED = 0, BOTTOM_LEGEND = 1, LEFT_LEGEND = 2, RIGHT_LEGEND = 3, TOP_LEGEND = 4, NO_LEGEND = 5, INSIDE_LEGEND = 6 }
@@ -1794,10 +1794,10 @@ export namespace MyNS {
 		 * The Candlestick chart data.
 		 * Only one CandlestickData is supported.
 		 */
-		data?: Array<CandlestickData>;
+		data?: Array<CandlestickData> | null;
 
 		/** The domain of a CandlestickChart. */
-		domain?: CandlestickDomain;
+		domain?: CandlestickDomain | null;
 	}
 
 
@@ -1808,16 +1808,16 @@ export namespace MyNS {
 	export interface CandlestickData {
 
 		/** The series of a CandlestickData. */
-		closeSeries?: CandlestickSeries;
+		closeSeries?: CandlestickSeries | null;
 
 		/** The series of a CandlestickData. */
-		highSeries?: CandlestickSeries;
+		highSeries?: CandlestickSeries | null;
 
 		/** The series of a CandlestickData. */
-		lowSeries?: CandlestickSeries;
+		lowSeries?: CandlestickSeries | null;
 
 		/** The series of a CandlestickData. */
-		openSeries?: CandlestickSeries;
+		openSeries?: CandlestickSeries | null;
 	}
 
 
@@ -1825,7 +1825,7 @@ export namespace MyNS {
 	export interface CandlestickSeries {
 
 		/** The data included in a domain or series. */
-		data?: ChartData;
+		data?: ChartData | null;
 	}
 
 
@@ -1833,10 +1833,10 @@ export namespace MyNS {
 	export interface CandlestickDomain {
 
 		/** The data included in a domain or series. */
-		data?: ChartData;
+		data?: ChartData | null;
 
 		/** True to reverse the order of the domain values (horizontal axis). */
-		reversed?: boolean;
+		reversed?: boolean | null;
 	}
 
 	export enum ChartSpecHiddenDimensionStrategy { CHART_HIDDEN_DIMENSION_STRATEGY_UNSPECIFIED = 0, SKIP_HIDDEN_ROWS_AND_COLUMNS = 1, SKIP_HIDDEN_ROWS = 2, SKIP_HIDDEN_COLUMNS = 3, SHOW_ALL = 4 }
@@ -1859,10 +1859,10 @@ export namespace MyNS {
 		 * Cannot be negative.
 		 * This field is optional.
 		 */
-		bucketSize?: number;
+		bucketSize?: number | null;
 
 		/** The position of the chart legend. */
-		legendPosition?: HistogramChartSpecLegendPosition;
+		legendPosition?: HistogramChartSpecLegendPosition | null;
 
 		/**
 		 * The outlier percentile is used to ensure that outliers do not adversely
@@ -1872,20 +1872,20 @@ export namespace MyNS {
 		 * be added to the first or last buckets instead of their own buckets.
 		 * Must be between 0.0 and 0.5.
 		 */
-		outlierPercentile?: number;
+		outlierPercentile?: number | null;
 
 		/**
 		 * The series for a histogram may be either a single series of values to be
 		 * bucketed or multiple series, each of the same length, containing the name
 		 * of the series followed by the values to be bucketed for that series.
 		 */
-		series?: Array<HistogramSeries>;
+		series?: Array<HistogramSeries> | null;
 
 		/**
 		 * Whether horizontal divider lines should be displayed between items in each
 		 * column.
 		 */
-		showItemDividers?: boolean;
+		showItemDividers?: boolean | null;
 	}
 
 	export enum HistogramChartSpecLegendPosition { HISTOGRAM_CHART_LEGEND_POSITION_UNSPECIFIED = 0, BOTTOM_LEGEND = 1, LEFT_LEGEND = 2, RIGHT_LEGEND = 3, TOP_LEGEND = 4, NO_LEGEND = 5, INSIDE_LEGEND = 6 }
@@ -1999,13 +1999,13 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		barColor?: Color;
+		barColor?: Color | null;
 
 		/** A color value. */
-		barColorStyle?: ColorStyle;
+		barColorStyle?: ColorStyle | null;
 
 		/** The data included in a domain or series. */
-		data?: ChartData;
+		data?: ChartData | null;
 	}
 
 
@@ -2024,7 +2024,7 @@ export namespace MyNS {
 	export interface OrgChartSpec {
 
 		/** The data included in a domain or series. */
-		labels?: ChartData;
+		labels?: ChartData | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -2131,16 +2131,16 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		nodeColor?: Color;
+		nodeColor?: Color | null;
 
 		/** A color value. */
-		nodeColorStyle?: ColorStyle;
+		nodeColorStyle?: ColorStyle | null;
 
 		/** The size of the org chart nodes. */
-		nodeSize?: OrgChartSpecNodeSize;
+		nodeSize?: OrgChartSpecNodeSize | null;
 
 		/** The data included in a domain or series. */
-		parentLabels?: ChartData;
+		parentLabels?: ChartData | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -2247,13 +2247,13 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		selectedNodeColor?: Color;
+		selectedNodeColor?: Color | null;
 
 		/** A color value. */
-		selectedNodeColorStyle?: ColorStyle;
+		selectedNodeColorStyle?: ColorStyle | null;
 
 		/** The data included in a domain or series. */
-		tooltips?: ChartData;
+		tooltips?: ChartData | null;
 	}
 
 	export enum OrgChartSpecNodeSize { ORG_CHART_LABEL_SIZE_UNSPECIFIED = 0, SMALL = 1, MEDIUM = 2, LARGE = 3 }
@@ -2263,19 +2263,19 @@ export namespace MyNS {
 	export interface PieChartSpec {
 
 		/** The data included in a domain or series. */
-		domain?: ChartData;
+		domain?: ChartData | null;
 
 		/** Where the legend of the pie chart should be drawn. */
-		legendPosition?: PieChartSpecLegendPosition;
+		legendPosition?: PieChartSpecLegendPosition | null;
 
 		/** The size of the hole in the pie chart. */
-		pieHole?: number;
+		pieHole?: number | null;
 
 		/** The data included in a domain or series. */
-		series?: ChartData;
+		series?: ChartData | null;
 
 		/** True if the pie is three dimensional. */
-		threeDimensional?: boolean;
+		threeDimensional?: boolean | null;
 	}
 
 	export enum PieChartSpecLegendPosition { PIE_CHART_LEGEND_POSITION_UNSPECIFIED = 0, BOTTOM_LEGEND = 1, LEFT_LEGEND = 2, RIGHT_LEGEND = 3, TOP_LEGEND = 4, NO_LEGEND = 5, LABELED_LEGEND = 6 }
@@ -2295,35 +2295,35 @@ export namespace MyNS {
 		 * The aggregation type for key and baseline chart data in scorecard chart.
 		 * This field is optional.
 		 */
-		aggregateType?: ScorecardChartSpecAggregateType;
+		aggregateType?: ScorecardChartSpecAggregateType | null;
 
 		/** The data included in a domain or series. */
-		baselineValueData?: ChartData;
+		baselineValueData?: ChartData | null;
 
 		/** Formatting options for baseline value. */
-		baselineValueFormat?: BaselineValueFormat;
+		baselineValueFormat?: BaselineValueFormat | null;
 
 		/** Custom number formatting options for chart attributes. */
-		customFormatOptions?: ChartCustomNumberFormatOptions;
+		customFormatOptions?: ChartCustomNumberFormatOptions | null;
 
 		/** The data included in a domain or series. */
-		keyValueData?: ChartData;
+		keyValueData?: ChartData | null;
 
 		/** Formatting options for key value. */
-		keyValueFormat?: KeyValueFormat;
+		keyValueFormat?: KeyValueFormat | null;
 
 		/**
 		 * The number format source used in the scorecard chart.
 		 * This field is optional.
 		 */
-		numberFormatSource?: ScorecardChartSpecNumberFormatSource;
+		numberFormatSource?: ScorecardChartSpecNumberFormatSource | null;
 
 		/**
 		 * Value to scale scorecard key and baseline value. For example, a factor of
 		 * 10 can be used to divide all values in the chart by 10.
 		 * This field is optional.
 		 */
-		scaleFactor?: number;
+		scaleFactor?: number | null;
 	}
 
 	export enum ScorecardChartSpecAggregateType { CHART_AGGREGATE_TYPE_UNSPECIFIED = 0, AVERAGE = 1, COUNT = 2, MAX = 3, MEDIAN = 4, MIN = 5, SUM = 6 }
@@ -2333,13 +2333,13 @@ export namespace MyNS {
 	export interface BaselineValueFormat {
 
 		/** The comparison type of key value with baseline value. */
-		comparisonType?: BaselineValueFormatComparisonType;
+		comparisonType?: BaselineValueFormatComparisonType | null;
 
 		/**
 		 * Description which is appended after the baseline value.
 		 * This field is optional.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -2446,13 +2446,13 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		negativeColor?: Color;
+		negativeColor?: Color | null;
 
 		/** A color value. */
-		negativeColorStyle?: ColorStyle;
+		negativeColorStyle?: ColorStyle | null;
 
 		/** Position settings for text. */
-		position?: TextPosition;
+		position?: TextPosition | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -2559,16 +2559,16 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		positiveColor?: Color;
+		positiveColor?: Color | null;
 
 		/** A color value. */
-		positiveColorStyle?: ColorStyle;
+		positiveColorStyle?: ColorStyle | null;
 
 		/**
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		textFormat?: TextFormat;
+		textFormat?: TextFormat | null;
 	}
 
 	export enum BaselineValueFormatComparisonType { COMPARISON_TYPE_UNDEFINED = 0, ABSOLUTE_DIFFERENCE = 1, PERCENTAGE_DIFFERENCE = 2 }
@@ -2581,13 +2581,13 @@ export namespace MyNS {
 		 * Custom prefix to be prepended to the chart attribute.
 		 * This field is optional.
 		 */
-		prefix?: string;
+		prefix?: string | null;
 
 		/**
 		 * Custom suffix to be appended to the chart attribute.
 		 * This field is optional.
 		 */
-		suffix?: string;
+		suffix?: string | null;
 	}
 
 
@@ -2595,13 +2595,13 @@ export namespace MyNS {
 	export interface KeyValueFormat {
 
 		/** Position settings for text. */
-		position?: TextPosition;
+		position?: TextPosition | null;
 
 		/**
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		textFormat?: TextFormat;
+		textFormat?: TextFormat | null;
 	}
 
 	export enum ScorecardChartSpecNumberFormatSource { CHART_NUMBER_FORMAT_SOURCE_UNDEFINED = 0, FROM_DATA = 1, CUSTOM = 2 }
@@ -2611,10 +2611,10 @@ export namespace MyNS {
 	export interface TreemapChartSpec {
 
 		/** The data included in a domain or series. */
-		colorData?: ChartData;
+		colorData?: ChartData | null;
 
 		/** A color scale for a treemap chart. */
-		colorScale?: TreemapChartColorScale;
+		colorScale?: TreemapChartColorScale | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -2721,30 +2721,30 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		headerColor?: Color;
+		headerColor?: Color | null;
 
 		/** A color value. */
-		headerColorStyle?: ColorStyle;
+		headerColorStyle?: ColorStyle | null;
 
 		/** True to hide tooltips. */
-		hideTooltips?: boolean;
+		hideTooltips?: boolean | null;
 
 		/**
 		 * The number of additional data levels beyond the labeled levels to be shown
 		 * on the treemap chart. These levels are not interactive and are shown
 		 * without their labels. Defaults to 0 if not specified.
 		 */
-		hintedLevels?: number;
+		hintedLevels?: number | null;
 
 		/** The data included in a domain or series. */
-		labels?: ChartData;
+		labels?: ChartData | null;
 
 		/**
 		 * The number of data levels to show on the treemap chart. These levels are
 		 * interactive and are shown with their labels. Defaults to 2 if not
 		 * specified.
 		 */
-		levels?: number;
+		levels?: number | null;
 
 		/**
 		 * The maximum possible data value. Cells with values greater than this will
@@ -2752,7 +2752,7 @@ export namespace MyNS {
 		 * to the actual maximum value from color_data, or the maximum value from
 		 * size_data if color_data is not specified.
 		 */
-		maxValue?: number;
+		maxValue?: number | null;
 
 		/**
 		 * The minimum possible data value. Cells with values less than this will
@@ -2760,19 +2760,19 @@ export namespace MyNS {
 		 * to the actual minimum value from color_data, or the minimum value from
 		 * size_data if color_data is not specified.
 		 */
-		minValue?: number;
+		minValue?: number | null;
 
 		/** The data included in a domain or series. */
-		parentLabels?: ChartData;
+		parentLabels?: ChartData | null;
 
 		/** The data included in a domain or series. */
-		sizeData?: ChartData;
+		sizeData?: ChartData | null;
 
 		/**
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		textFormat?: TextFormat;
+		textFormat?: TextFormat | null;
 	}
 
 
@@ -2884,10 +2884,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		maxValueColor?: Color;
+		maxValueColor?: Color | null;
 
 		/** A color value. */
-		maxValueColorStyle?: ColorStyle;
+		maxValueColorStyle?: ColorStyle | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -2994,10 +2994,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		midValueColor?: Color;
+		midValueColor?: Color | null;
 
 		/** A color value. */
-		midValueColorStyle?: ColorStyle;
+		midValueColorStyle?: ColorStyle | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -3104,10 +3104,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		minValueColor?: Color;
+		minValueColor?: Color | null;
 
 		/** A color value. */
-		minValueColorStyle?: ColorStyle;
+		minValueColorStyle?: ColorStyle | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -3214,10 +3214,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		noDataColor?: Color;
+		noDataColor?: Color | null;
 
 		/** A color value. */
-		noDataColorStyle?: ColorStyle;
+		noDataColorStyle?: ColorStyle | null;
 	}
 
 
@@ -3225,22 +3225,22 @@ export namespace MyNS {
 	export interface WaterfallChartSpec {
 
 		/** Properties that describe the style of a line. */
-		connectorLineStyle?: LineStyle;
+		connectorLineStyle?: LineStyle | null;
 
 		/** The domain of a waterfall chart. */
-		domain?: WaterfallChartDomain;
+		domain?: WaterfallChartDomain | null;
 
 		/** True to interpret the first value as a total. */
-		firstValueIsTotal?: boolean;
+		firstValueIsTotal?: boolean | null;
 
 		/** True to hide connector lines between columns. */
-		hideConnectorLines?: boolean;
+		hideConnectorLines?: boolean | null;
 
 		/** The data this waterfall chart is visualizing. */
-		series?: Array<WaterfallChartSeries>;
+		series?: Array<WaterfallChartSeries> | null;
 
 		/** The stacked type. */
-		stackedType?: WaterfallChartSpecStackedType;
+		stackedType?: WaterfallChartSpecStackedType | null;
 	}
 
 
@@ -3248,10 +3248,10 @@ export namespace MyNS {
 	export interface WaterfallChartDomain {
 
 		/** The data included in a domain or series. */
-		data?: ChartData;
+		data?: ChartData | null;
 
 		/** True to reverse the order of the domain values (horizontal axis). */
-		reversed?: boolean;
+		reversed?: boolean | null;
 	}
 
 
@@ -3263,26 +3263,26 @@ export namespace MyNS {
 		 * subtotals are defined is not significant. Only one subtotal may be
 		 * defined for each data point.
 		 */
-		customSubtotals?: Array<WaterfallChartCustomSubtotal>;
+		customSubtotals?: Array<WaterfallChartCustomSubtotal> | null;
 
 		/** The data included in a domain or series. */
-		data?: ChartData;
+		data?: ChartData | null;
 
 		/**
 		 * True to hide the subtotal column from the end of the series. By default,
 		 * a subtotal column will appear at the end of each series. Setting this
 		 * field to true will hide that subtotal column for this series.
 		 */
-		hideTrailingSubtotal?: boolean;
+		hideTrailingSubtotal?: boolean | null;
 
 		/** Styles for a waterfall chart column. */
-		negativeColumnsStyle?: WaterfallChartColumnStyle;
+		negativeColumnsStyle?: WaterfallChartColumnStyle | null;
 
 		/** Styles for a waterfall chart column. */
-		positiveColumnsStyle?: WaterfallChartColumnStyle;
+		positiveColumnsStyle?: WaterfallChartColumnStyle | null;
 
 		/** Styles for a waterfall chart column. */
-		subtotalColumnsStyle?: WaterfallChartColumnStyle;
+		subtotalColumnsStyle?: WaterfallChartColumnStyle | null;
 	}
 
 
@@ -3293,10 +3293,10 @@ export namespace MyNS {
 		 * True if the data point at subtotal_index is the subtotal. If false,
 		 * the subtotal will be computed and appear after the data point.
 		 */
-		dataIsSubtotal?: boolean;
+		dataIsSubtotal?: boolean | null;
 
 		/** A label for the subtotal column. */
-		label?: string;
+		label?: string | null;
 
 		/**
 		 * The 0-based index of a data point within the series. If
@@ -3308,7 +3308,7 @@ export namespace MyNS {
 		 * be 0, 1, and 2, regardless of how many subtotals exist on the series or
 		 * what data points they are associated with.
 		 */
-		subtotalIndex?: number;
+		subtotalIndex?: number | null;
 	}
 
 
@@ -3420,13 +3420,13 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/** A color value. */
-		colorStyle?: ColorStyle;
+		colorStyle?: ColorStyle | null;
 
 		/** The label of the column's legend. */
-		label?: string;
+		label?: string | null;
 	}
 
 	export enum WaterfallChartSpecStackedType { WATERFALL_STACKED_TYPE_UNSPECIFIED = 0, STACKED = 1, SEQUENTIAL = 2 }
@@ -3436,7 +3436,7 @@ export namespace MyNS {
 	export interface AddChartResponse {
 
 		/** A chart embedded in a sheet. */
-		chart?: EmbeddedChart;
+		chart?: EmbeddedChart | null;
 	}
 
 
@@ -3447,10 +3447,10 @@ export namespace MyNS {
 	export interface AddConditionalFormatRuleRequest {
 
 		/** The zero-based index where the rule should be inserted. */
-		index?: number;
+		index?: number | null;
 
 		/** A rule describing a conditional format. */
-		rule?: ConditionalFormatRule;
+		rule?: ConditionalFormatRule | null;
 	}
 
 
@@ -3458,7 +3458,7 @@ export namespace MyNS {
 	export interface ConditionalFormatRule {
 
 		/** A rule that may or may not match, depending on the condition. */
-		booleanRule?: BooleanRule;
+		booleanRule?: BooleanRule | null;
 
 		/**
 		 * A rule that applies a gradient color scale format, based on
@@ -3466,13 +3466,13 @@ export namespace MyNS {
 		 * based on its contents as compared to the values of the interpolation
 		 * points.
 		 */
-		gradientRule?: GradientRule;
+		gradientRule?: GradientRule | null;
 
 		/**
 		 * The ranges that are formatted if the condition is true.
 		 * All the ranges must be on the same grid.
 		 */
-		ranges?: Array<GridRange>;
+		ranges?: Array<GridRange> | null;
 	}
 
 
@@ -3484,10 +3484,10 @@ export namespace MyNS {
 		 * BooleanConditions are used by conditional formatting,
 		 * data validation, and the criteria in filters.
 		 */
-		condition?: BooleanCondition;
+		condition?: BooleanCondition | null;
 
 		/** The format of a cell. */
-		format?: CellFormat;
+		format?: CellFormat | null;
 	}
 
 
@@ -3499,7 +3499,7 @@ export namespace MyNS {
 	export interface BooleanCondition {
 
 		/** The type of condition. */
-		type?: BooleanConditionType;
+		type?: BooleanConditionType | null;
 
 		/**
 		 * The values of the condition. The number of supported values depends
@@ -3507,7 +3507,7 @@ export namespace MyNS {
 		 * others one or two values,
 		 * and ConditionType.ONE_OF_LIST supports an arbitrary number of values.
 		 */
-		values?: Array<ConditionValue>;
+		values?: Array<ConditionValue> | null;
 	}
 
 	export enum BooleanConditionType { CONDITION_TYPE_UNSPECIFIED = 0, NUMBER_GREATER = 1, NUMBER_GREATER_THAN_EQ = 2, NUMBER_LESS = 3, NUMBER_LESS_THAN_EQ = 4, NUMBER_EQ = 5, NUMBER_NOT_EQ = 6, NUMBER_BETWEEN = 7, NUMBER_NOT_BETWEEN = 8, TEXT_CONTAINS = 9, TEXT_NOT_CONTAINS = 10, TEXT_STARTS_WITH = 11, TEXT_ENDS_WITH = 12, TEXT_EQ = 13, TEXT_IS_EMAIL = 14, TEXT_IS_URL = 15, DATE_EQ = 16, DATE_BEFORE = 17, DATE_AFTER = 18, DATE_ON_OR_BEFORE = 19, DATE_ON_OR_AFTER = 20, DATE_BETWEEN = 21, DATE_NOT_BETWEEN = 22, DATE_IS_VALID = 23, ONE_OF_RANGE = 24, ONE_OF_LIST = 25, BLANK = 26, NOT_BLANK = 27, CUSTOM_FORMULA = 28, BOOLEAN = 29 }
@@ -3527,14 +3527,14 @@ export namespace MyNS {
 		 * They are supported only in conditional formatting and
 		 * conditional filters.
 		 */
-		relativeDate?: ConditionValueRelativeDate;
+		relativeDate?: ConditionValueRelativeDate | null;
 
 		/**
 		 * A value the condition is based on.
 		 * The value is parsed as if the user typed into a cell.
 		 * Formulas are supported (and must begin with an `=` or a '+').
 		 */
-		userEnteredValue?: string;
+		userEnteredValue?: string | null;
 	}
 
 	export enum ConditionValueRelativeDate { RELATIVE_DATE_UNSPECIFIED = 0, PAST_YEAR = 1, PAST_MONTH = 2, PAST_WEEK = 3, YESTERDAY = 4, TODAY = 5, TOMORROW = 6 }
@@ -3648,46 +3648,46 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		backgroundColor?: Color;
+		backgroundColor?: Color | null;
 
 		/** A color value. */
-		backgroundColorStyle?: ColorStyle;
+		backgroundColorStyle?: ColorStyle | null;
 
 		/** The borders of the cell. */
-		borders?: Borders;
+		borders?: Borders | null;
 
 		/** The horizontal alignment of the value in the cell. */
-		horizontalAlignment?: TextPositionHorizontalAlignment;
+		horizontalAlignment?: TextPositionHorizontalAlignment | null;
 
 		/** How a hyperlink, if it exists, should be displayed in the cell. */
-		hyperlinkDisplayType?: CellFormatHyperlinkDisplayType;
+		hyperlinkDisplayType?: CellFormatHyperlinkDisplayType | null;
 
 		/** The number format of a cell. */
-		numberFormat?: NumberFormat;
+		numberFormat?: NumberFormat | null;
 
 		/**
 		 * The amount of padding around the cell, in pixels.
 		 * When updating padding, every field must be specified.
 		 */
-		padding?: Padding;
+		padding?: Padding | null;
 
 		/** The direction of the text in the cell. */
-		textDirection?: CellFormatTextDirection;
+		textDirection?: CellFormatTextDirection | null;
 
 		/**
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		textFormat?: TextFormat;
+		textFormat?: TextFormat | null;
 
 		/** The rotation applied to text in a cell. */
-		textRotation?: TextRotation;
+		textRotation?: TextRotation | null;
 
 		/** The vertical alignment of the value in the cell. */
-		verticalAlignment?: CellFormatVerticalAlignment;
+		verticalAlignment?: CellFormatVerticalAlignment | null;
 
 		/** The wrap strategy for the value in the cell. */
-		wrapStrategy?: CellFormatWrapStrategy;
+		wrapStrategy?: CellFormatWrapStrategy | null;
 	}
 
 
@@ -3695,16 +3695,16 @@ export namespace MyNS {
 	export interface Borders {
 
 		/** A border along a cell. */
-		bottom?: Border;
+		bottom?: Border | null;
 
 		/** A border along a cell. */
-		left?: Border;
+		left?: Border | null;
 
 		/** A border along a cell. */
-		right?: Border;
+		right?: Border | null;
 
 		/** A border along a cell. */
-		top?: Border;
+		top?: Border | null;
 	}
 
 
@@ -3816,19 +3816,19 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/** A color value. */
-		colorStyle?: ColorStyle;
+		colorStyle?: ColorStyle | null;
 
 		/** The style of the border. */
-		style?: BorderStyle;
+		style?: BorderStyle | null;
 
 		/**
 		 * The width of the border, in pixels.
 		 * Deprecated; the width is determined by the "style" field.
 		 */
-		width?: number;
+		width?: number | null;
 	}
 
 	export enum BorderStyle { STYLE_UNSPECIFIED = 0, DOTTED = 1, DASHED = 2, SOLID = 3, SOLID_MEDIUM = 4, SOLID_THICK = 5, NONE = 6, DOUBLE = 7 }
@@ -3845,13 +3845,13 @@ export namespace MyNS {
 		 * See the [Date and Number Formats guide](/sheets/api/guides/formats) for
 		 * more information about the supported patterns.
 		 */
-		pattern?: string;
+		pattern?: string | null;
 
 		/**
 		 * The type of the number format.
 		 * When writing, this field must be set.
 		 */
-		type?: NumberFormatType;
+		type?: NumberFormatType | null;
 	}
 
 	export enum NumberFormatType { NUMBER_FORMAT_TYPE_UNSPECIFIED = 0, TEXT = 1, NUMBER = 2, PERCENT = 3, CURRENCY = 4, DATE = 5, TIME = 6, DATE_TIME = 7, SCIENTIFIC = 8 }
@@ -3864,16 +3864,16 @@ export namespace MyNS {
 	export interface Padding {
 
 		/** The bottom padding of the cell. */
-		bottom?: number;
+		bottom?: number | null;
 
 		/** The left padding of the cell. */
-		left?: number;
+		left?: number | null;
 
 		/** The right padding of the cell. */
-		right?: number;
+		right?: number | null;
 
 		/** The top padding of the cell. */
-		top?: number;
+		top?: number | null;
 	}
 
 	export enum CellFormatTextDirection { TEXT_DIRECTION_UNSPECIFIED = 0, LEFT_TO_RIGHT = 1, RIGHT_TO_LEFT = 2 }
@@ -3890,7 +3890,7 @@ export namespace MyNS {
 		 * counterclockwise direction, whereas for RTL they are in the clockwise
 		 * direction
 		 */
-		angle?: number;
+		angle?: number | null;
 
 		/**
 		 * If true, text reads top to bottom, but the orientation of individual
@@ -3905,7 +3905,7 @@ export namespace MyNS {
 		 * | a |
 		 * | l |
 		 */
-		vertical?: boolean;
+		vertical?: boolean | null;
 	}
 
 	export enum CellFormatVerticalAlignment { VERTICAL_ALIGN_UNSPECIFIED = 0, TOP = 1, MIDDLE = 2, BOTTOM = 3 }
@@ -3926,21 +3926,21 @@ export namespace MyNS {
 		 * These pin the gradient color scale according to the color,
 		 * type and value chosen.
 		 */
-		maxpoint?: InterpolationPoint;
+		maxpoint?: InterpolationPoint | null;
 
 		/**
 		 * A single interpolation point on a gradient conditional format.
 		 * These pin the gradient color scale according to the color,
 		 * type and value chosen.
 		 */
-		midpoint?: InterpolationPoint;
+		midpoint?: InterpolationPoint | null;
 
 		/**
 		 * A single interpolation point on a gradient conditional format.
 		 * These pin the gradient color scale according to the color,
 		 * type and value chosen.
 		 */
-		minpoint?: InterpolationPoint;
+		minpoint?: InterpolationPoint | null;
 	}
 
 
@@ -4056,20 +4056,20 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/** A color value. */
-		colorStyle?: ColorStyle;
+		colorStyle?: ColorStyle | null;
 
 		/** How the value should be interpreted. */
-		type?: InterpolationPointType;
+		type?: InterpolationPointType | null;
 
 		/**
 		 * The value this interpolation point uses.  May be a formula.
 		 * Unused if type is MIN or
 		 * MAX.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 	export enum InterpolationPointType { INTERPOLATION_POINT_TYPE_UNSPECIFIED = 0, MIN = 1, MAX = 2, NUMBER = 3, PERCENT = 4, PERCENTILE = 5 }
@@ -4101,7 +4101,7 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		range?: DimensionRange;
+		range?: DimensionRange | null;
 	}
 
 
@@ -4115,16 +4115,16 @@ export namespace MyNS {
 	export interface DimensionRange {
 
 		/** The dimension of the span. */
-		dimension?: DimensionRangeDimension;
+		dimension?: DimensionRangeDimension | null;
 
 		/** The end (exclusive) of the span, or not set if unbounded. */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/** The sheet this span is on. */
-		sheetId?: number;
+		sheetId?: number | null;
 
 		/** The start (inclusive) of the span, or not set if unbounded. */
-		startIndex?: number;
+		startIndex?: number | null;
 	}
 
 	export enum DimensionRangeDimension { DIMENSION_UNSPECIFIED = 0, ROWS = 1, COLUMNS = 2 }
@@ -4134,7 +4134,7 @@ export namespace MyNS {
 	export interface AddDimensionGroupResponse {
 
 		/** All groups of a dimension after adding a group to that dimension. */
-		dimensionGroups?: Array<DimensionGroup>;
+		dimensionGroups?: Array<DimensionGroup> | null;
 	}
 
 
@@ -4154,13 +4154,13 @@ export namespace MyNS {
 		 * within it are set to hidden if this field is true, or set to visible if
 		 * this field is false.
 		 */
-		collapsed?: boolean;
+		collapsed?: boolean | null;
 
 		/**
 		 * The depth of the group, representing how many groups have a range that
 		 * wholly contains the range of this group.
 		 */
-		depth?: number;
+		depth?: number | null;
 
 		/**
 		 * A range along a single dimension on a sheet.
@@ -4169,7 +4169,7 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		range?: DimensionRange;
+		range?: DimensionRange | null;
 	}
 
 
@@ -4177,7 +4177,7 @@ export namespace MyNS {
 	export interface AddFilterViewRequest {
 
 		/** A filter view. */
-		filter?: FilterView;
+		filter?: FilterView | null;
 	}
 
 
@@ -4189,17 +4189,17 @@ export namespace MyNS {
 		 * The map's key is the column index, and the value is the criteria for
 		 * that column.
 		 */
-		criteria?: {[id: string]: FilterCriteria };
+		criteria?: {[id: string]: FilterCriteria } | null;
 
 		/** The ID of the filter view. */
-		filterViewId?: number;
+		filterViewId?: number | null;
 
 		/**
 		 * The named range this filter view is backed by, if any.
 		 * When writing, only one of range or named_range_id
 		 * may be set.
 		 */
-		namedRangeId?: string;
+		namedRangeId?: string | null;
 
 		/**
 		 * A range on a sheet.
@@ -4225,16 +4225,16 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/**
 		 * The sort order per column. Later specifications are used when values
 		 * are equal in the earlier specifications.
 		 */
-		sortSpecs?: Array<SortSpec>;
+		sortSpecs?: Array<SortSpec> | null;
 
 		/** The name of the filter view. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -4246,10 +4246,10 @@ export namespace MyNS {
 		 * BooleanConditions are used by conditional formatting,
 		 * data validation, and the criteria in filters.
 		 */
-		condition?: BooleanCondition;
+		condition?: BooleanCondition | null;
 
 		/** Values that should be hidden. */
-		hiddenValues?: Array<string>;
+		hiddenValues?: Array<string> | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -4356,10 +4356,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		visibleBackgroundColor?: Color;
+		visibleBackgroundColor?: Color | null;
 
 		/** A color value. */
-		visibleBackgroundColorStyle?: ColorStyle;
+		visibleBackgroundColorStyle?: ColorStyle | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -4466,10 +4466,10 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		visibleForegroundColor?: Color;
+		visibleForegroundColor?: Color | null;
 
 		/** A color value. */
-		visibleForegroundColorStyle?: ColorStyle;
+		visibleForegroundColorStyle?: ColorStyle | null;
 	}
 
 
@@ -4581,13 +4581,13 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		backgroundColor?: Color;
+		backgroundColor?: Color | null;
 
 		/** A color value. */
-		backgroundColorStyle?: ColorStyle;
+		backgroundColorStyle?: ColorStyle | null;
 
 		/** The dimension the sort should be applied to. */
-		dimensionIndex?: number;
+		dimensionIndex?: number | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -4694,13 +4694,13 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		foregroundColor?: Color;
+		foregroundColor?: Color | null;
 
 		/** A color value. */
-		foregroundColorStyle?: ColorStyle;
+		foregroundColorStyle?: ColorStyle | null;
 
 		/** The order data should be sorted. */
-		sortOrder?: SortSpecSortOrder;
+		sortOrder?: SortSpecSortOrder | null;
 	}
 
 	export enum SortSpecSortOrder { SORT_ORDER_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
@@ -4710,7 +4710,7 @@ export namespace MyNS {
 	export interface AddFilterViewResponse {
 
 		/** A filter view. */
-		filter?: FilterView;
+		filter?: FilterView | null;
 	}
 
 
@@ -4718,7 +4718,7 @@ export namespace MyNS {
 	export interface AddNamedRangeRequest {
 
 		/** A named range. */
-		namedRange?: NamedRange;
+		namedRange?: NamedRange | null;
 	}
 
 
@@ -4726,10 +4726,10 @@ export namespace MyNS {
 	export interface NamedRange {
 
 		/** The name of the named range. */
-		name?: string;
+		name?: string | null;
 
 		/** The ID of the named range. */
-		namedRangeId?: string;
+		namedRangeId?: string | null;
 
 		/**
 		 * A range on a sheet.
@@ -4755,7 +4755,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 	}
 
 
@@ -4763,7 +4763,7 @@ export namespace MyNS {
 	export interface AddNamedRangeResponse {
 
 		/** A named range. */
-		namedRange?: NamedRange;
+		namedRange?: NamedRange | null;
 	}
 
 
@@ -4771,7 +4771,7 @@ export namespace MyNS {
 	export interface AddProtectedRangeRequest {
 
 		/** A protected range. */
-		protectedRange?: ProtectedRange;
+		protectedRange?: ProtectedRange | null;
 	}
 
 
@@ -4779,23 +4779,23 @@ export namespace MyNS {
 	export interface ProtectedRange {
 
 		/** The description of this protected range. */
-		description?: string;
+		description?: string | null;
 
 		/** The editors of a protected range. */
-		editors?: Editors;
+		editors?: Editors | null;
 
 		/**
 		 * The named range this protected range is backed by, if any.
 		 * When writing, only one of range or named_range_id
 		 * may be set.
 		 */
-		namedRangeId?: string;
+		namedRangeId?: string | null;
 
 		/**
 		 * The ID of the protected range.
 		 * This field is read-only.
 		 */
-		protectedRangeId?: number;
+		protectedRangeId?: number | null;
 
 		/**
 		 * A range on a sheet.
@@ -4821,20 +4821,20 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/**
 		 * True if the user who requested this protected range can edit the
 		 * protected area.
 		 * This field is read-only.
 		 */
-		requestingUserCanEdit?: boolean;
+		requestingUserCanEdit?: boolean | null;
 
 		/**
 		 * The list of unprotected ranges within a protected sheet.
 		 * Unprotected ranges are only supported on protected sheets.
 		 */
-		unprotectedRanges?: Array<GridRange>;
+		unprotectedRanges?: Array<GridRange> | null;
 
 		/**
 		 * True if this protected range will show a warning when editing.
@@ -4846,7 +4846,7 @@ export namespace MyNS {
 		 * `editors` field is not set (nor included in the field mask), then
 		 * the editors will be set to all the editors in the document.
 		 */
-		warningOnly?: boolean;
+		warningOnly?: boolean | null;
 	}
 
 
@@ -4857,13 +4857,13 @@ export namespace MyNS {
 		 * True if anyone in the document's domain has edit access to the protected
 		 * range.  Domain protection is only supported on documents within a domain.
 		 */
-		domainUsersCanEdit?: boolean;
+		domainUsersCanEdit?: boolean | null;
 
 		/** The email addresses of groups with edit access to the protected range. */
-		groups?: Array<string>;
+		groups?: Array<string> | null;
 
 		/** The email addresses of users with edit access to the protected range. */
-		users?: Array<string>;
+		users?: Array<string> | null;
 	}
 
 
@@ -4871,7 +4871,7 @@ export namespace MyNS {
 	export interface AddProtectedRangeResponse {
 
 		/** A protected range. */
-		protectedRange?: ProtectedRange;
+		protectedRange?: ProtectedRange | null;
 	}
 
 
@@ -4886,7 +4886,7 @@ export namespace MyNS {
 	export interface AddSheetRequest {
 
 		/** Properties of a sheet. */
-		properties?: SheetProperties;
+		properties?: SheetProperties | null;
 	}
 
 
@@ -4894,10 +4894,10 @@ export namespace MyNS {
 	export interface SheetProperties {
 
 		/** Properties of a grid. */
-		gridProperties?: GridProperties;
+		gridProperties?: GridProperties | null;
 
 		/** True if the sheet is hidden in the UI, false if it's visible. */
-		hidden?: boolean;
+		hidden?: boolean | null;
 
 		/**
 		 * The index of the sheet within the spreadsheet.
@@ -4911,22 +4911,22 @@ export namespace MyNS {
 		 * identical to the sheets current index or if the requested new
 		 * index is equal to the current sheet index + 1.
 		 */
-		index?: number;
+		index?: number | null;
 
 		/** True if the sheet is an RTL sheet instead of an LTR sheet. */
-		rightToLeft?: boolean;
+		rightToLeft?: boolean | null;
 
 		/**
 		 * The ID of the sheet. Must be non-negative.
 		 * This field cannot be changed once set.
 		 */
-		sheetId?: number;
+		sheetId?: number | null;
 
 		/**
 		 * The type of sheet. Defaults to GRID.
 		 * This field cannot be changed once set.
 		 */
-		sheetType?: SheetPropertiesSheetType;
+		sheetType?: SheetPropertiesSheetType | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -5033,13 +5033,13 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		tabColor?: Color;
+		tabColor?: Color | null;
 
 		/** A color value. */
-		tabColorStyle?: ColorStyle;
+		tabColorStyle?: ColorStyle | null;
 
 		/** The name of the sheet. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -5047,25 +5047,25 @@ export namespace MyNS {
 	export interface GridProperties {
 
 		/** The number of columns in the grid. */
-		columnCount?: number;
+		columnCount?: number | null;
 
 		/** True if the column grouping control toggle is shown after the group. */
-		columnGroupControlAfter?: boolean;
+		columnGroupControlAfter?: boolean | null;
 
 		/** The number of columns that are frozen in the grid. */
-		frozenColumnCount?: number;
+		frozenColumnCount?: number | null;
 
 		/** The number of rows that are frozen in the grid. */
-		frozenRowCount?: number;
+		frozenRowCount?: number | null;
 
 		/** True if the grid isn't showing gridlines in the UI. */
-		hideGridlines?: boolean;
+		hideGridlines?: boolean | null;
 
 		/** The number of rows in the grid. */
-		rowCount?: number;
+		rowCount?: number | null;
 
 		/** True if the row grouping control toggle is shown after the group. */
-		rowGroupControlAfter?: boolean;
+		rowGroupControlAfter?: boolean | null;
 	}
 
 	export enum SheetPropertiesSheetType { SHEET_TYPE_UNSPECIFIED = 0, GRID = 1, OBJECT = 2 }
@@ -5075,7 +5075,7 @@ export namespace MyNS {
 	export interface AddSheetResponse {
 
 		/** Properties of a sheet. */
-		properties?: SheetProperties;
+		properties?: SheetProperties | null;
 	}
 
 
@@ -5083,7 +5083,7 @@ export namespace MyNS {
 	export interface AddSlicerRequest {
 
 		/** A slicer in a sheet. */
-		slicer?: Slicer;
+		slicer?: Slicer | null;
 	}
 
 
@@ -5091,13 +5091,13 @@ export namespace MyNS {
 	export interface Slicer {
 
 		/** The position of an embedded object such as a chart. */
-		position?: EmbeddedObjectPosition;
+		position?: EmbeddedObjectPosition | null;
 
 		/** The ID of the slicer. */
-		slicerId?: number;
+		slicerId?: number | null;
 
 		/** The specifications of a slicer. */
-		spec?: SlicerSpec;
+		spec?: SlicerSpec | null;
 	}
 
 
@@ -5108,7 +5108,7 @@ export namespace MyNS {
 		 * True if the filter should apply to pivot tables.
 		 * If not set, default to `True`.
 		 */
-		applyToPivotTables?: boolean;
+		applyToPivotTables?: boolean | null;
 
 		/**
 		 * Represents a color in the RGBA color space. This representation is designed
@@ -5215,13 +5215,13 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		backgroundColor?: Color;
+		backgroundColor?: Color | null;
 
 		/** A color value. */
-		backgroundColorStyle?: ColorStyle;
+		backgroundColorStyle?: ColorStyle | null;
 
 		/** The column index in the data table on which the filter is applied to. */
-		columnIndex?: number;
+		columnIndex?: number | null;
 
 		/**
 		 * A range on a sheet.
@@ -5247,25 +5247,25 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		dataRange?: GridRange;
+		dataRange?: GridRange | null;
 
 		/** Criteria for showing/hiding rows in a filter or filter view. */
-		filterCriteria?: FilterCriteria;
+		filterCriteria?: FilterCriteria | null;
 
 		/**
 		 * The horizontal alignment of title in the slicer.
 		 * If unspecified, defaults to `LEFT`
 		 */
-		horizontalAlignment?: TextPositionHorizontalAlignment;
+		horizontalAlignment?: TextPositionHorizontalAlignment | null;
 
 		/**
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		textFormat?: TextFormat;
+		textFormat?: TextFormat | null;
 
 		/** The title of the slicer. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -5273,7 +5273,7 @@ export namespace MyNS {
 	export interface AddSlicerResponse {
 
 		/** A slicer in a sheet. */
-		slicer?: Slicer;
+		slicer?: Slicer | null;
 	}
 
 
@@ -5289,13 +5289,13 @@ export namespace MyNS {
 		 * The root is the CellData; 'row.values.' should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The data to append. */
-		rows?: Array<RowData>;
+		rows?: Array<RowData> | null;
 
 		/** The sheet ID to append the data to. */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -5303,7 +5303,7 @@ export namespace MyNS {
 	export interface RowData {
 
 		/** The values in the row, one per column. */
-		values?: Array<CellData>;
+		values?: Array<CellData> | null;
 	}
 
 
@@ -5311,20 +5311,20 @@ export namespace MyNS {
 	export interface CellData {
 
 		/** A data validation rule. */
-		dataValidation?: DataValidationRule;
+		dataValidation?: DataValidationRule | null;
 
 		/** The format of a cell. */
-		effectiveFormat?: CellFormat;
+		effectiveFormat?: CellFormat | null;
 
 		/** The kinds of value that a cell in a spreadsheet can have. */
-		effectiveValue?: ExtendedValue;
+		effectiveValue?: ExtendedValue | null;
 
 		/**
 		 * The formatted value of the cell.
 		 * This is the value as it's shown to the user.
 		 * This field is read-only.
 		 */
-		formattedValue?: string;
+		formattedValue?: string | null;
 
 		/**
 		 * A hyperlink this cell points to, if any.
@@ -5332,13 +5332,13 @@ export namespace MyNS {
 		 * in the userEnteredValue.formulaValue
 		 * field.)
 		 */
-		hyperlink?: string;
+		hyperlink?: string | null;
 
 		/** Any note on the cell. */
-		note?: string;
+		note?: string | null;
 
 		/** A pivot table. */
-		pivotTable?: PivotTable;
+		pivotTable?: PivotTable | null;
 
 		/**
 		 * Runs of rich text applied to subsections of the cell.  Runs are only valid
@@ -5350,13 +5350,13 @@ export namespace MyNS {
 		 * When writing, the new runs will overwrite any prior runs.  When writing a
 		 * new user_entered_value, previous runs are erased.
 		 */
-		textFormatRuns?: Array<TextFormatRun>;
+		textFormatRuns?: Array<TextFormatRun> | null;
 
 		/** The format of a cell. */
-		userEnteredFormat?: CellFormat;
+		userEnteredFormat?: CellFormat | null;
 
 		/** The kinds of value that a cell in a spreadsheet can have. */
-		userEnteredValue?: ExtendedValue;
+		userEnteredValue?: ExtendedValue | null;
 	}
 
 
@@ -5368,19 +5368,19 @@ export namespace MyNS {
 		 * BooleanConditions are used by conditional formatting,
 		 * data validation, and the criteria in filters.
 		 */
-		condition?: BooleanCondition;
+		condition?: BooleanCondition | null;
 
 		/** A message to show the user when adding data to the cell. */
-		inputMessage?: string;
+		inputMessage?: string | null;
 
 		/**
 		 * True if the UI should be customized based on the kind of condition.
 		 * If true, "List" conditions will show a dropdown.
 		 */
-		showCustomUi?: boolean;
+		showCustomUi?: boolean | null;
 
 		/** True if invalid data should be rejected. */
-		strict?: boolean;
+		strict?: boolean | null;
 	}
 
 
@@ -5388,20 +5388,20 @@ export namespace MyNS {
 	export interface ExtendedValue {
 
 		/** Represents a boolean value. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** An error in a cell. */
-		errorValue?: ErrorValue;
+		errorValue?: ErrorValue | null;
 
 		/** Represents a formula. */
-		formulaValue?: string;
+		formulaValue?: string | null;
 
 		/**
 		 * Represents a double value.
 		 * Note: Dates, Times and DateTimes are represented as doubles in
 		 * "serial number" format.
 		 */
-		numberValue?: number;
+		numberValue?: number | null;
 
 		/**
 		 * Represents a string value.
@@ -5409,7 +5409,7 @@ export namespace MyNS {
 		 * `'123` into the UI, this would be represented as a `stringValue` of
 		 * `"123"`.
 		 */
-		stringValue?: string;
+		stringValue?: string | null;
 	}
 
 
@@ -5420,10 +5420,10 @@ export namespace MyNS {
 		 * A message with more information about the error
 		 * (in the spreadsheet's locale).
 		 */
-		message?: string;
+		message?: string | null;
 
 		/** The type of error. */
-		type?: ErrorValueType;
+		type?: ErrorValueType | null;
 	}
 
 	export enum ErrorValueType { ERROR_TYPE_UNSPECIFIED = 0, ERROR = 1, NULL_VALUE = 2, DIVIDE_BY_ZERO = 3, VALUE = 4, REF = 5, NAME = 6, NUM = 7, N_A = 8, LOADING = 9 }
@@ -5433,7 +5433,7 @@ export namespace MyNS {
 	export interface PivotTable {
 
 		/** Each column grouping in the pivot table. */
-		columns?: Array<PivotGroup>;
+		columns?: Array<PivotGroup> | null;
 
 		/**
 		 * An optional mapping of filters per source column offset.
@@ -5443,10 +5443,10 @@ export namespace MyNS {
 		 * For example, if the source was `C10:E15`, a key of `0` will have the filter
 		 * for column `C`, whereas the key `1` is for column `D`.
 		 */
-		criteria?: {[id: string]: PivotFilterCriteria };
+		criteria?: {[id: string]: PivotFilterCriteria } | null;
 
 		/** Each row grouping in the pivot table. */
-		rows?: Array<PivotGroup>;
+		rows?: Array<PivotGroup> | null;
 
 		/**
 		 * A range on a sheet.
@@ -5472,16 +5472,16 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		source?: GridRange;
+		source?: GridRange | null;
 
 		/**
 		 * Whether values should be listed horizontally (as columns)
 		 * or vertically (as rows).
 		 */
-		valueLayout?: PivotTableValueLayout;
+		valueLayout?: PivotTableValueLayout | null;
 
 		/** A list of values to include in the pivot table. */
-		values?: Array<PivotValue>;
+		values?: Array<PivotValue> | null;
 	}
 
 
@@ -5495,7 +5495,7 @@ export namespace MyNS {
 		 * the source data, though on any given column you may add both a
 		 * PivotGroup that has a rule and a PivotGroup that does not.
 		 */
-		groupRule?: PivotGroupRule;
+		groupRule?: PivotGroupRule | null;
 
 		/**
 		 * The labels to use for the row/column groups which can be customized. For
@@ -5516,7 +5516,7 @@ export namespace MyNS {
 		 * | Grand Total  |    1110 |   636 |
 		 * +--------------+---------+-------+
 		 */
-		label?: string;
+		label?: string | null;
 
 		/**
 		 * True if the headings in this pivot group should be repeated.
@@ -5534,13 +5534,13 @@ export namespace MyNS {
 		 * | Q1 Total     |
 		 * +--------------+
 		 */
-		repeatHeadings?: boolean;
+		repeatHeadings?: boolean | null;
 
 		/** True if the pivot table should include the totals for this grouping. */
-		showTotals?: boolean;
+		showTotals?: boolean | null;
 
 		/** The order the values in this group should be sorted. */
-		sortOrder?: SortSpecSortOrder;
+		sortOrder?: SortSpecSortOrder | null;
 
 		/**
 		 * The column offset of the source range that this grouping is based on.
@@ -5548,13 +5548,13 @@ export namespace MyNS {
 		 * means this group refers to column `C`, whereas the offset `1` would refer
 		 * to column `D`.
 		 */
-		sourceColumnOffset?: number;
+		sourceColumnOffset?: number | null;
 
 		/** Information about which values in a pivot group should be used for sorting. */
-		valueBucket?: PivotGroupSortValueBucket;
+		valueBucket?: PivotGroupSortValueBucket | null;
 
 		/** Metadata about values in the grouping. */
-		valueMetadata?: Array<PivotGroupValueMetadata>;
+		valueMetadata?: Array<PivotGroupValueMetadata> | null;
 	}
 
 
@@ -5590,7 +5590,7 @@ export namespace MyNS {
 		 * ...
 		 * +--------------+--------------+
 		 */
-		dateTimeRule?: DateTimeRule;
+		dateTimeRule?: DateTimeRule | null;
 
 		/**
 		 * Allows you to organize the numeric values in a source data column into
@@ -5626,7 +5626,7 @@ export namespace MyNS {
 		 * | Grand Total |            $29.12 |
 		 * +-------------+-------------------+
 		 */
-		histogramRule?: HistogramRule;
+		histogramRule?: HistogramRule | null;
 
 		/**
 		 * Allows you to manually organize the values in a source data column into
@@ -5654,7 +5654,7 @@ export namespace MyNS {
 		 * ...
 		 * +-----------+-------------------+
 		 */
-		manualRule?: ManualRule;
+		manualRule?: ManualRule | null;
 	}
 
 
@@ -5684,7 +5684,7 @@ export namespace MyNS {
 	export interface DateTimeRule {
 
 		/** The type of date-time grouping to apply. */
-		type?: DateTimeRuleType;
+		type?: DateTimeRuleType | null;
 	}
 
 	export enum DateTimeRuleType { DATE_TIME_RULE_TYPE_UNSPECIFIED = 0, SECOND = 1, MINUTE = 2, HOUR = 3, HOUR_MINUTE = 4, HOUR_MINUTE_AMPM = 5, DAY_OF_WEEK = 6, DAY_OF_YEAR = 7, DAY_OF_MONTH = 8, DAY_MONTH = 9, MONTH = 10, QUARTER = 11, YEAR = 12, YEAR_MONTH = 13, YEAR_QUARTER = 14, YEAR_MONTH_DAY = 15 }
@@ -5731,17 +5731,17 @@ export namespace MyNS {
 		 * of constant size. Values above end are lumped into a single bucket.
 		 * This field is optional.
 		 */
-		end?: number;
+		end?: number | null;
 
 		/** The size of the buckets that are created. Must be positive. */
-		interval?: number;
+		interval?: number | null;
 
 		/**
 		 * The minimum value at which items are placed into buckets
 		 * of constant size. Values below start are lumped into a single bucket.
 		 * This field is optional.
 		 */
-		start?: number;
+		start?: number | null;
 	}
 
 
@@ -5777,7 +5777,7 @@ export namespace MyNS {
 		 * The list of group names and the corresponding items from the source data
 		 * that map to each group name.
 		 */
-		groups?: Array<ManualRuleGroup>;
+		groups?: Array<ManualRuleGroup> | null;
 	}
 
 
@@ -5788,7 +5788,7 @@ export namespace MyNS {
 	export interface ManualRuleGroup {
 
 		/** The kinds of value that a cell in a spreadsheet can have. */
-		groupName?: ExtendedValue;
+		groupName?: ExtendedValue | null;
 
 		/**
 		 * The items in the source data that should be placed into this group. Each
@@ -5796,7 +5796,7 @@ export namespace MyNS {
 		 * group within a given ManualRule. Items that do not appear in any
 		 * group will appear on their own.
 		 */
-		items?: Array<ExtendedValue>;
+		items?: Array<ExtendedValue> | null;
 	}
 
 
@@ -5813,13 +5813,13 @@ export namespace MyNS {
 		 * to the "Grand Total" over the column groups. If a single value is listed,
 		 * this would correspond to using the "Total" of that bucket.
 		 */
-		buckets?: Array<ExtendedValue>;
+		buckets?: Array<ExtendedValue> | null;
 
 		/**
 		 * The offset in the PivotTable.values list which the values in this
 		 * grouping should be sorted by.
 		 */
-		valuesIndex?: number;
+		valuesIndex?: number | null;
 	}
 
 
@@ -5827,10 +5827,10 @@ export namespace MyNS {
 	export interface PivotGroupValueMetadata {
 
 		/** True if the data corresponding to the value is collapsed. */
-		collapsed?: boolean;
+		collapsed?: boolean | null;
 
 		/** The kinds of value that a cell in a spreadsheet can have. */
-		value?: ExtendedValue;
+		value?: ExtendedValue | null;
 	}
 
 
@@ -5838,7 +5838,7 @@ export namespace MyNS {
 	export interface PivotFilterCriteria {
 
 		/** Values that should be included.  Values not listed here are excluded. */
-		visibleValues?: Array<string>;
+		visibleValues?: Array<string> | null;
 	}
 
 	export enum PivotTableValueLayout { HORIZONTAL = 0, VERTICAL = 1 }
@@ -5855,16 +5855,16 @@ export namespace MyNS {
 		 * the Sheets UI, this is referred to as "Show As" in the value section of a
 		 * pivot table.
 		 */
-		calculatedDisplayType?: PivotValueCalculatedDisplayType;
+		calculatedDisplayType?: PivotValueCalculatedDisplayType | null;
 
 		/**
 		 * A custom formula to calculate the value.  The formula must start
 		 * with an `=` character.
 		 */
-		formula?: string;
+		formula?: string | null;
 
 		/** A name to use for the value. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The column offset of the source range that this value reads from.
@@ -5872,7 +5872,7 @@ export namespace MyNS {
 		 * means this value refers to column `C`, whereas the offset `1` would
 		 * refer to column `D`.
 		 */
-		sourceColumnOffset?: number;
+		sourceColumnOffset?: number | null;
 
 		/**
 		 * A function to summarize the value.
@@ -5882,7 +5882,7 @@ export namespace MyNS {
 		 * If sourceColumnOffset is set, then `CUSTOM`
 		 * is not supported.
 		 */
-		summarizeFunction?: PivotValueSummarizeFunction;
+		summarizeFunction?: PivotValueSummarizeFunction | null;
 	}
 
 	export enum PivotValueCalculatedDisplayType { PIVOT_VALUE_CALCULATED_DISPLAY_TYPE_UNSPECIFIED = 0, PERCENT_OF_ROW_TOTAL = 1, PERCENT_OF_COLUMN_TOTAL = 2, PERCENT_OF_GRAND_TOTAL = 3 }
@@ -5901,10 +5901,10 @@ export namespace MyNS {
 		 * The format of a run of text in a cell.
 		 * Absent values indicate that the field isn't specified.
 		 */
-		format?: TextFormat;
+		format?: TextFormat | null;
 
 		/** The character index where this run starts. */
-		startIndex?: number;
+		startIndex?: number | null;
 	}
 
 
@@ -5912,13 +5912,13 @@ export namespace MyNS {
 	export interface AppendDimensionRequest {
 
 		/** Whether rows or columns should be appended. */
-		dimension?: DimensionRangeDimension;
+		dimension?: DimensionRangeDimension | null;
 
 		/** The number of rows or columns to append. */
-		length?: number;
+		length?: number | null;
 
 		/** The sheet to append rows or columns to. */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -5926,17 +5926,17 @@ export namespace MyNS {
 	export interface AppendValuesResponse {
 
 		/** The spreadsheet the updates were applied to. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 
 		/**
 		 * The range (in A1 notation) of the table that values are being appended to
 		 * (before the values were appended).
 		 * Empty if no table was found.
 		 */
-		tableRange?: string;
+		tableRange?: string | null;
 
 		/** The response when updating a range of values in a spreadsheet. */
-		updates?: UpdateValuesResponse;
+		updates?: UpdateValuesResponse | null;
 	}
 
 
@@ -5944,22 +5944,22 @@ export namespace MyNS {
 	export interface UpdateValuesResponse {
 
 		/** The spreadsheet the updates were applied to. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 
 		/** The number of cells updated. */
-		updatedCells?: number;
+		updatedCells?: number | null;
 
 		/** The number of columns where at least one cell in the column was updated. */
-		updatedColumns?: number;
+		updatedColumns?: number | null;
 
 		/** Data within a range of the spreadsheet. */
-		updatedData?: ValueRange;
+		updatedData?: ValueRange | null;
 
 		/** The range (in A1 notation) that updates were applied to. */
-		updatedRange?: string;
+		updatedRange?: string | null;
 
 		/** The number of rows where at least one cell in the row was updated. */
-		updatedRows?: number;
+		updatedRows?: number | null;
 	}
 
 
@@ -5978,7 +5978,7 @@ export namespace MyNS {
 		 * then `[[1,2],[3,4]]` will set `A1=1,B1=3,A2=2,B2=4`.
 		 * When writing, if this field is not set, it defaults to ROWS.
 		 */
-		majorDimension?: DimensionRangeDimension;
+		majorDimension?: DimensionRangeDimension | null;
 
 		/**
 		 * The range the values cover, in A1 notation.
@@ -5987,7 +5987,7 @@ export namespace MyNS {
 		 * When appending values, this field represents the range to search for a
 		 * table, after which values will be appended.
 		 */
-		range?: string;
+		range?: string | null;
 
 		/**
 		 * The data that was read or to be written.  This is an array of arrays,
@@ -5999,7 +5999,7 @@ export namespace MyNS {
 		 * Null values will be skipped.
 		 * To set a cell to an empty value, set the string value to an empty string.
 		 */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
@@ -6030,16 +6030,16 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/** A combination of a source range and how to extend that source. */
-		sourceAndDestination?: SourceAndDestination;
+		sourceAndDestination?: SourceAndDestination | null;
 
 		/**
 		 * True if we should generate data with the "alternate" series.
 		 * This differs based on the type and amount of source data.
 		 */
-		useAlternateSeries?: boolean;
+		useAlternateSeries?: boolean | null;
 	}
 
 
@@ -6047,7 +6047,7 @@ export namespace MyNS {
 	export interface SourceAndDestination {
 
 		/** The dimension that data should be filled into. */
-		dimension?: DimensionRangeDimension;
+		dimension?: DimensionRangeDimension | null;
 
 		/**
 		 * The number of rows or columns that data should be filled into.
@@ -6055,7 +6055,7 @@ export namespace MyNS {
 		 * of the source.  Negative numbers expand before the first row
 		 * or first column of the source.
 		 */
-		fillLength?: number;
+		fillLength?: number | null;
 
 		/**
 		 * A range on a sheet.
@@ -6081,7 +6081,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		source?: GridRange;
+		source?: GridRange | null;
 	}
 
 
@@ -6098,7 +6098,7 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		dimensions?: DimensionRange;
+		dimensions?: DimensionRange | null;
 	}
 
 
@@ -6110,7 +6110,7 @@ export namespace MyNS {
 		 * The map's key is the column index, and the value is the criteria for
 		 * that column.
 		 */
-		criteria?: {[id: string]: FilterCriteria };
+		criteria?: {[id: string]: FilterCriteria } | null;
 
 		/**
 		 * A range on a sheet.
@@ -6136,13 +6136,13 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/**
 		 * The sort order per column. Later specifications are used when values
 		 * are equal in the earlier specifications.
 		 */
-		sortSpecs?: Array<SortSpec>;
+		sortSpecs?: Array<SortSpec> | null;
 	}
 
 
@@ -6153,7 +6153,7 @@ export namespace MyNS {
 	export interface BatchClearValuesByDataFilterRequest {
 
 		/** The DataFilters used to determine which ranges to clear. */
-		dataFilters?: Array<DataFilter>;
+		dataFilters?: Array<DataFilter> | null;
 	}
 
 
@@ -6164,7 +6164,7 @@ export namespace MyNS {
 	export interface DataFilter {
 
 		/** Selects data that matches the specified A1 range. */
-		a1Range?: string;
+		a1Range?: string | null;
 
 		/**
 		 * Selects DeveloperMetadata that matches all of the specified fields.  For
@@ -6177,7 +6177,7 @@ export namespace MyNS {
 		 * selects all DeveloperMetadata that matches the intersection of all the
 		 * specified fields; any field or combination of fields may be specified.
 		 */
-		developerMetadataLookup?: DeveloperMetadataLookup;
+		developerMetadataLookup?: DeveloperMetadataLookup | null;
 
 		/**
 		 * A range on a sheet.
@@ -6203,7 +6203,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		gridRange?: GridRange;
+		gridRange?: GridRange | null;
 	}
 
 
@@ -6230,7 +6230,7 @@ export namespace MyNS {
 		 * If this field is specified, a metadataLocation
 		 * must also be specified.
 		 */
-		locationMatchingStrategy?: DeveloperMetadataLookupLocationMatchingStrategy;
+		locationMatchingStrategy?: DeveloperMetadataLookupLocationMatchingStrategy | null;
 
 		/**
 		 * Limits the selected developer metadata to those entries which are
@@ -6247,35 +6247,35 @@ export namespace MyNS {
 		 * the locationMatchingStrategy
 		 * is specified as EXACT.
 		 */
-		locationType?: DeveloperMetadataLookupLocationType;
+		locationType?: DeveloperMetadataLookupLocationType | null;
 
 		/**
 		 * Limits the selected developer metadata to that which has a matching
 		 * DeveloperMetadata.metadata_id.
 		 */
-		metadataId?: number;
+		metadataId?: number | null;
 
 		/**
 		 * Limits the selected developer metadata to that which has a matching
 		 * DeveloperMetadata.metadata_key.
 		 */
-		metadataKey?: string;
+		metadataKey?: string | null;
 
 		/** A location where metadata may be associated in a spreadsheet. */
-		metadataLocation?: DeveloperMetadataLocation;
+		metadataLocation?: DeveloperMetadataLocation | null;
 
 		/**
 		 * Limits the selected developer metadata to that which has a matching
 		 * DeveloperMetadata.metadata_value.
 		 */
-		metadataValue?: string;
+		metadataValue?: string | null;
 
 		/**
 		 * Limits the selected developer metadata to that which has a matching
 		 * DeveloperMetadata.visibility.  If left unspecified, all developer
 		 * metadata visibile to the requesting project is considered.
 		 */
-		visibility?: DeveloperMetadataLookupVisibility;
+		visibility?: DeveloperMetadataLookupVisibility | null;
 	}
 
 	export enum DeveloperMetadataLookupLocationMatchingStrategy { DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED = 0, EXACT_LOCATION = 1, INTERSECTING_LOCATION = 2 }
@@ -6293,16 +6293,16 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		dimensionRange?: DimensionRange;
+		dimensionRange?: DimensionRange | null;
 
 		/** The type of location this object represents.  This field is read-only. */
-		locationType?: DeveloperMetadataLookupLocationType;
+		locationType?: DeveloperMetadataLookupLocationType | null;
 
 		/** The ID of the sheet when metadata is associated with an entire sheet. */
-		sheetId?: number;
+		sheetId?: number | null;
 
 		/** True when metadata is associated with an entire spreadsheet. */
-		spreadsheet?: boolean;
+		spreadsheet?: boolean | null;
 	}
 
 	export enum DeveloperMetadataLookupVisibility { DEVELOPER_METADATA_VISIBILITY_UNSPECIFIED = 0, DOCUMENT = 1, PROJECT = 2 }
@@ -6319,10 +6319,10 @@ export namespace MyNS {
 		 * unbounded range or a ranger larger than the bounds of the sheet, this is
 		 * the actual ranges that were cleared, bounded to the sheet's limits.
 		 */
-		clearedRanges?: Array<string>;
+		clearedRanges?: Array<string> | null;
 
 		/** The spreadsheet the updates were applied to. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 	}
 
 
@@ -6330,7 +6330,7 @@ export namespace MyNS {
 	export interface BatchClearValuesRequest {
 
 		/** The ranges to clear, in A1 notation. */
-		ranges?: Array<string>;
+		ranges?: Array<string> | null;
 	}
 
 
@@ -6342,10 +6342,10 @@ export namespace MyNS {
 		 * unbounded range or a ranger larger than the bounds of the sheet, this is
 		 * the actual ranges that were cleared, bounded to the sheet's limits.
 		 */
-		clearedRanges?: Array<string>;
+		clearedRanges?: Array<string> | null;
 
 		/** The spreadsheet the updates were applied to. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 	}
 
 
@@ -6359,7 +6359,7 @@ export namespace MyNS {
 		 * The data filters used to match the ranges of values to retrieve. Ranges
 		 * that match any of the specified data filters are included in the response.
 		 */
-		dataFilters?: Array<DataFilter>;
+		dataFilters?: Array<DataFilter> | null;
 
 		/**
 		 * How dates, times, and durations should be represented in the output.
@@ -6367,7 +6367,7 @@ export namespace MyNS {
 		 * FORMATTED_VALUE.
 		 * The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
 		 */
-		dateTimeRenderOption?: BatchGetValuesByDataFilterRequestDateTimeRenderOption;
+		dateTimeRenderOption?: BatchGetValuesByDataFilterRequestDateTimeRenderOption | null;
 
 		/**
 		 * The major dimension that results should use.
@@ -6376,13 +6376,13 @@ export namespace MyNS {
 		 * returns `[[1,2],[3,4]]`, whereas a request that sets
 		 * `majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.
 		 */
-		majorDimension?: DimensionRangeDimension;
+		majorDimension?: DimensionRangeDimension | null;
 
 		/**
 		 * How values should be represented in the output.
 		 * The default render option is ValueRenderOption.FORMATTED_VALUE.
 		 */
-		valueRenderOption?: BatchGetValuesByDataFilterRequestValueRenderOption;
+		valueRenderOption?: BatchGetValuesByDataFilterRequestValueRenderOption | null;
 	}
 
 	export enum BatchGetValuesByDataFilterRequestDateTimeRenderOption { SERIAL_NUMBER = 0, FORMATTED_STRING = 1 }
@@ -6397,10 +6397,10 @@ export namespace MyNS {
 	export interface BatchGetValuesByDataFilterResponse {
 
 		/** The ID of the spreadsheet the data was retrieved from. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 
 		/** The requested values with the list of data filters that matched them. */
-		valueRanges?: Array<MatchedValueRange>;
+		valueRanges?: Array<MatchedValueRange> | null;
 	}
 
 
@@ -6411,10 +6411,10 @@ export namespace MyNS {
 		 * The DataFilters from the request that matched the range of
 		 * values.
 		 */
-		dataFilters?: Array<DataFilter>;
+		dataFilters?: Array<DataFilter> | null;
 
 		/** Data within a range of the spreadsheet. */
-		valueRange?: ValueRange;
+		valueRange?: ValueRange | null;
 	}
 
 
@@ -6422,13 +6422,13 @@ export namespace MyNS {
 	export interface BatchGetValuesResponse {
 
 		/** The ID of the spreadsheet the data was retrieved from. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 
 		/**
 		 * The requested values. The order of the ValueRanges is the same as the
 		 * order of the requested ranges.
 		 */
-		valueRanges?: Array<ValueRange>;
+		valueRanges?: Array<ValueRange> | null;
 	}
 
 
@@ -6439,27 +6439,27 @@ export namespace MyNS {
 		 * Determines if the update response should include the spreadsheet
 		 * resource.
 		 */
-		includeSpreadsheetInResponse?: boolean;
+		includeSpreadsheetInResponse?: boolean | null;
 
 		/**
 		 * A list of updates to apply to the spreadsheet.
 		 * Requests will be applied in the order they are specified.
 		 * If any request is not valid, no requests will be applied.
 		 */
-		requests?: Array<Request>;
+		requests?: Array<Request> | null;
 
 		/**
 		 * True if grid data should be returned. Meaningful only if
 		 * include_spreadsheet_in_response is 'true'.
 		 * This parameter is ignored if a field mask was set in the request.
 		 */
-		responseIncludeGridData?: boolean;
+		responseIncludeGridData?: boolean | null;
 
 		/**
 		 * Limits the ranges included in the response spreadsheet.
 		 * Meaningful only if include_spreadsheet_in_response is 'true'.
 		 */
-		responseRanges?: Array<string>;
+		responseRanges?: Array<string> | null;
 	}
 
 
@@ -6467,16 +6467,16 @@ export namespace MyNS {
 	export interface Request {
 
 		/** Adds a new banded range to the spreadsheet. */
-		addBanding?: AddBandingRequest;
+		addBanding?: AddBandingRequest | null;
 
 		/** Adds a chart to a sheet in the spreadsheet. */
-		addChart?: AddChartRequest;
+		addChart?: AddChartRequest | null;
 
 		/**
 		 * Adds a new conditional format rule at the given index.
 		 * All subsequent rules' indexes are incremented.
 		 */
-		addConditionalFormatRule?: AddConditionalFormatRuleRequest;
+		addConditionalFormatRule?: AddConditionalFormatRuleRequest | null;
 
 		/**
 		 * Creates a group over the specified range.
@@ -6495,16 +6495,16 @@ export namespace MyNS {
 		 * ranges. For example, a group [B:D, depth 1] + [C:E] results in groups [B:E,
 		 * depth 1] and [C:D, depth 2].
 		 */
-		addDimensionGroup?: AddDimensionGroupRequest;
+		addDimensionGroup?: AddDimensionGroupRequest | null;
 
 		/** Adds a filter view. */
-		addFilterView?: AddFilterViewRequest;
+		addFilterView?: AddFilterViewRequest | null;
 
 		/** Adds a named range to the spreadsheet. */
-		addNamedRange?: AddNamedRangeRequest;
+		addNamedRange?: AddNamedRangeRequest | null;
 
 		/** Adds a new protected range. */
-		addProtectedRange?: AddProtectedRangeRequest;
+		addProtectedRange?: AddProtectedRangeRequest | null;
 
 		/**
 		 * Adds a new sheet.
@@ -6514,55 +6514,55 @@ export namespace MyNS {
 		 * EmbeddedObjectPosition.sheetId or
 		 * EmbeddedObjectPosition.newSheet.
 		 */
-		addSheet?: AddSheetRequest;
+		addSheet?: AddSheetRequest | null;
 
 		/** Adds a slicer to a sheet in the spreadsheet. */
-		addSlicer?: AddSlicerRequest;
+		addSlicer?: AddSlicerRequest | null;
 
 		/**
 		 * Adds new cells after the last row with data in a sheet,
 		 * inserting new rows into the sheet if necessary.
 		 */
-		appendCells?: AppendCellsRequest;
+		appendCells?: AppendCellsRequest | null;
 
 		/** Appends rows or columns to the end of a sheet. */
-		appendDimension?: AppendDimensionRequest;
+		appendDimension?: AppendDimensionRequest | null;
 
 		/** Fills in more data based on existing data. */
-		autoFill?: AutoFillRequest;
+		autoFill?: AutoFillRequest | null;
 
 		/**
 		 * Automatically resizes one or more dimensions based on the contents
 		 * of the cells in that dimension.
 		 */
-		autoResizeDimensions?: AutoResizeDimensionsRequest;
+		autoResizeDimensions?: AutoResizeDimensionsRequest | null;
 
 		/** Clears the basic filter, if any exists on the sheet. */
-		clearBasicFilter?: ClearBasicFilterRequest;
+		clearBasicFilter?: ClearBasicFilterRequest | null;
 
 		/** Copies data from the source to the destination. */
-		copyPaste?: CopyPasteRequest;
+		copyPaste?: CopyPasteRequest | null;
 
 		/** A request to create developer metadata. */
-		createDeveloperMetadata?: CreateDeveloperMetadataRequest;
+		createDeveloperMetadata?: CreateDeveloperMetadataRequest | null;
 
 		/** Moves data from the source to the destination. */
-		cutPaste?: CutPasteRequest;
+		cutPaste?: CutPasteRequest | null;
 
 		/** Removes the banded range with the given ID from the spreadsheet. */
-		deleteBanding?: DeleteBandingRequest;
+		deleteBanding?: DeleteBandingRequest | null;
 
 		/**
 		 * Deletes a conditional format rule at the given index.
 		 * All subsequent rules' indexes are decremented.
 		 */
-		deleteConditionalFormatRule?: DeleteConditionalFormatRuleRequest;
+		deleteConditionalFormatRule?: DeleteConditionalFormatRuleRequest | null;
 
 		/** A request to delete developer metadata. */
-		deleteDeveloperMetadata?: DeleteDeveloperMetadataRequest;
+		deleteDeveloperMetadata?: DeleteDeveloperMetadataRequest | null;
 
 		/** Deletes the dimensions from the sheet. */
-		deleteDimension?: DeleteDimensionRequest;
+		deleteDimension?: DeleteDimensionRequest | null;
 
 		/**
 		 * Deletes a group over the specified range by decrementing the depth of the
@@ -6571,7 +6571,7 @@ export namespace MyNS {
 		 * group over C:D. Deleting a group over D:E leaves the sheet with a
 		 * depth-1 group over B:D and a depth-2 group over C:C.
 		 */
-		deleteDimensionGroup?: DeleteDimensionGroupRequest;
+		deleteDimensionGroup?: DeleteDimensionGroupRequest | null;
 
 		/**
 		 * Removes rows within this range that contain values in the specified columns
@@ -6584,52 +6584,52 @@ export namespace MyNS {
 		 * outside of the specified range isn't removed, and rows considered duplicates
 		 * do not have to be adjacent to each other in the range.
 		 */
-		deleteDuplicates?: DeleteDuplicatesRequest;
+		deleteDuplicates?: DeleteDuplicatesRequest | null;
 
 		/** Deletes the embedded object with the given ID. */
-		deleteEmbeddedObject?: DeleteEmbeddedObjectRequest;
+		deleteEmbeddedObject?: DeleteEmbeddedObjectRequest | null;
 
 		/** Deletes a particular filter view. */
-		deleteFilterView?: DeleteFilterViewRequest;
+		deleteFilterView?: DeleteFilterViewRequest | null;
 
 		/** Removes the named range with the given ID from the spreadsheet. */
-		deleteNamedRange?: DeleteNamedRangeRequest;
+		deleteNamedRange?: DeleteNamedRangeRequest | null;
 
 		/** Deletes the protected range with the given ID. */
-		deleteProtectedRange?: DeleteProtectedRangeRequest;
+		deleteProtectedRange?: DeleteProtectedRangeRequest | null;
 
 		/** Deletes a range of cells, shifting other cells into the deleted area. */
-		deleteRange?: DeleteRangeRequest;
+		deleteRange?: DeleteRangeRequest | null;
 
 		/** Deletes the requested sheet. */
-		deleteSheet?: DeleteSheetRequest;
+		deleteSheet?: DeleteSheetRequest | null;
 
 		/** Duplicates a particular filter view. */
-		duplicateFilterView?: DuplicateFilterViewRequest;
+		duplicateFilterView?: DuplicateFilterViewRequest | null;
 
 		/** Duplicates the contents of a sheet. */
-		duplicateSheet?: DuplicateSheetRequest;
+		duplicateSheet?: DuplicateSheetRequest | null;
 
 		/** Finds and replaces data in cells over a range, sheet, or all sheets. */
-		findReplace?: FindReplaceRequest;
+		findReplace?: FindReplaceRequest | null;
 
 		/** Inserts rows or columns in a sheet at a particular index. */
-		insertDimension?: InsertDimensionRequest;
+		insertDimension?: InsertDimensionRequest | null;
 
 		/** Inserts cells into a range, shifting the existing cells over or down. */
-		insertRange?: InsertRangeRequest;
+		insertRange?: InsertRangeRequest | null;
 
 		/** Merges all cells in the range. */
-		mergeCells?: MergeCellsRequest;
+		mergeCells?: MergeCellsRequest | null;
 
 		/** Moves one or more rows or columns. */
-		moveDimension?: MoveDimensionRequest;
+		moveDimension?: MoveDimensionRequest | null;
 
 		/** Inserts data into the spreadsheet starting at the specified coordinate. */
-		pasteData?: PasteDataRequest;
+		pasteData?: PasteDataRequest | null;
 
 		/** Randomizes the order of the rows in a range. */
-		randomizeRange?: RandomizeRangeRequest;
+		randomizeRange?: RandomizeRangeRequest | null;
 
 		/**
 		 * Updates all cells in the range to the values in the given Cell object.
@@ -6644,25 +6644,25 @@ export namespace MyNS {
 		 * For example, use the formula `=$A$1` to prevent both the row and the
 		 * column from incrementing.
 		 */
-		repeatCell?: RepeatCellRequest;
+		repeatCell?: RepeatCellRequest | null;
 
 		/** Sets the basic filter associated with a sheet. */
-		setBasicFilter?: SetBasicFilterRequest;
+		setBasicFilter?: SetBasicFilterRequest | null;
 
 		/**
 		 * Sets a data validation rule to every cell in the range.
 		 * To clear validation in a range, call this with no rule specified.
 		 */
-		setDataValidation?: SetDataValidationRequest;
+		setDataValidation?: SetDataValidationRequest | null;
 
 		/** Sorts data in rows based on a sort order per column. */
-		sortRange?: SortRangeRequest;
+		sortRange?: SortRangeRequest | null;
 
 		/**
 		 * Splits a column of text into multiple columns,
 		 * based on a delimiter in each cell.
 		 */
-		textToColumns?: TextToColumnsRequest;
+		textToColumns?: TextToColumnsRequest | null;
 
 		/**
 		 * Trims the whitespace (such as spaces, tabs, or new lines) in every cell in
@@ -6672,13 +6672,13 @@ export namespace MyNS {
 		 * or '=' character, the text remains as a string value and isn't interpreted
 		 * as a formula.
 		 */
-		trimWhitespace?: TrimWhitespaceRequest;
+		trimWhitespace?: TrimWhitespaceRequest | null;
 
 		/** Unmerges cells in the given range. */
-		unmergeCells?: UnmergeCellsRequest;
+		unmergeCells?: UnmergeCellsRequest | null;
 
 		/** Updates properties of the supplied banded range. */
-		updateBanding?: UpdateBandingRequest;
+		updateBanding?: UpdateBandingRequest | null;
 
 		/**
 		 * Updates the borders of a range.
@@ -6691,23 +6691,23 @@ export namespace MyNS {
 		 * If you want to clear a border, explicitly set the style to
 		 * NONE.
 		 */
-		updateBorders?: UpdateBordersRequest;
+		updateBorders?: UpdateBordersRequest | null;
 
 		/** Updates all cells in a range with new data. */
-		updateCells?: UpdateCellsRequest;
+		updateCells?: UpdateCellsRequest | null;
 
 		/**
 		 * Updates a chart's specifications.
 		 * (This does not move or resize a chart. To move or resize a chart, use
 		 * UpdateEmbeddedObjectPositionRequest.)
 		 */
-		updateChartSpec?: UpdateChartSpecRequest;
+		updateChartSpec?: UpdateChartSpecRequest | null;
 
 		/**
 		 * Updates a conditional format rule at the given index,
 		 * or moves a conditional format rule to another index.
 		 */
-		updateConditionalFormatRule?: UpdateConditionalFormatRuleRequest;
+		updateConditionalFormatRule?: UpdateConditionalFormatRuleRequest | null;
 
 		/**
 		 * A request to update properties of developer metadata.
@@ -6717,50 +6717,50 @@ export namespace MyNS {
 		 * as specify at least one DataFilter matching the metadata they wish to
 		 * update.
 		 */
-		updateDeveloperMetadata?: UpdateDeveloperMetadataRequest;
+		updateDeveloperMetadata?: UpdateDeveloperMetadataRequest | null;
 
 		/** Updates the state of the specified group. */
-		updateDimensionGroup?: UpdateDimensionGroupRequest;
+		updateDimensionGroup?: UpdateDimensionGroupRequest | null;
 
 		/** Updates properties of dimensions within the specified range. */
-		updateDimensionProperties?: UpdateDimensionPropertiesRequest;
+		updateDimensionProperties?: UpdateDimensionPropertiesRequest | null;
 
 		/**
 		 * Update an embedded object's position (such as a moving or resizing a
 		 * chart or image).
 		 */
-		updateEmbeddedObjectPosition?: UpdateEmbeddedObjectPositionRequest;
+		updateEmbeddedObjectPosition?: UpdateEmbeddedObjectPositionRequest | null;
 
 		/** Updates properties of the filter view. */
-		updateFilterView?: UpdateFilterViewRequest;
+		updateFilterView?: UpdateFilterViewRequest | null;
 
 		/**
 		 * Updates properties of the named range with the specified
 		 * namedRangeId.
 		 */
-		updateNamedRange?: UpdateNamedRangeRequest;
+		updateNamedRange?: UpdateNamedRangeRequest | null;
 
 		/**
 		 * Updates an existing protected range with the specified
 		 * protectedRangeId.
 		 */
-		updateProtectedRange?: UpdateProtectedRangeRequest;
+		updateProtectedRange?: UpdateProtectedRangeRequest | null;
 
 		/**
 		 * Updates properties of the sheet with the specified
 		 * sheetId.
 		 */
-		updateSheetProperties?: UpdateSheetPropertiesRequest;
+		updateSheetProperties?: UpdateSheetPropertiesRequest | null;
 
 		/**
 		 * Updates a slicer's specifications.
 		 * (This does not move or resize a slicer. To move or resize a slicer use
 		 * UpdateEmbeddedObjectPositionRequest.
 		 */
-		updateSlicerSpec?: UpdateSlicerSpecRequest;
+		updateSlicerSpec?: UpdateSlicerSpecRequest | null;
 
 		/** Updates properties of a spreadsheet. */
-		updateSpreadsheetProperties?: UpdateSpreadsheetPropertiesRequest;
+		updateSpreadsheetProperties?: UpdateSpreadsheetPropertiesRequest | null;
 	}
 
 
@@ -6768,7 +6768,7 @@ export namespace MyNS {
 	export interface ClearBasicFilterRequest {
 
 		/** The sheet ID on which the basic filter should be cleared. */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -6799,13 +6799,13 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		destination?: GridRange;
+		destination?: GridRange | null;
 
 		/** How that data should be oriented when pasting. */
-		pasteOrientation?: CopyPasteRequestPasteOrientation;
+		pasteOrientation?: CopyPasteRequestPasteOrientation | null;
 
 		/** What kind of data to paste. */
-		pasteType?: CopyPasteRequestPasteType;
+		pasteType?: CopyPasteRequestPasteType | null;
 
 		/**
 		 * A range on a sheet.
@@ -6831,7 +6831,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		source?: GridRange;
+		source?: GridRange | null;
 	}
 
 	export enum CopyPasteRequestPasteOrientation { NORMAL = 0, TRANSPOSE = 1 }
@@ -6852,7 +6852,7 @@ export namespace MyNS {
 		 * the row it was first associated with (what is now row 6). If the associated
 		 * object is deleted its metadata is deleted too.
 		 */
-		developerMetadata?: DeveloperMetadata;
+		developerMetadata?: DeveloperMetadata | null;
 	}
 
 
@@ -6869,29 +6869,29 @@ export namespace MyNS {
 	export interface DeveloperMetadata {
 
 		/** A location where metadata may be associated in a spreadsheet. */
-		location?: DeveloperMetadataLocation;
+		location?: DeveloperMetadataLocation | null;
 
 		/**
 		 * The spreadsheet-scoped unique ID that identifies the metadata. IDs may be
 		 * specified when metadata is created, otherwise one will be randomly
 		 * generated and assigned. Must be positive.
 		 */
-		metadataId?: number;
+		metadataId?: number | null;
 
 		/**
 		 * The metadata key. There may be multiple metadata in a spreadsheet with the
 		 * same key.  Developer metadata must always have a key specified.
 		 */
-		metadataKey?: string;
+		metadataKey?: string | null;
 
 		/** Data associated with the metadata's key. */
-		metadataValue?: string;
+		metadataValue?: string | null;
 
 		/**
 		 * The metadata visibility.  Developer metadata must always have a visibility
 		 * specified.
 		 */
-		visibility?: DeveloperMetadataLookupVisibility;
+		visibility?: DeveloperMetadataLookupVisibility | null;
 	}
 
 
@@ -6902,13 +6902,13 @@ export namespace MyNS {
 		 * A coordinate in a sheet.
 		 * All indexes are zero-based.
 		 */
-		destination?: GridCoordinate;
+		destination?: GridCoordinate | null;
 
 		/**
 		 * What kind of data to paste.  All the source data will be cut, regardless
 		 * of what is pasted.
 		 */
-		pasteType?: CopyPasteRequestPasteType;
+		pasteType?: CopyPasteRequestPasteType | null;
 
 		/**
 		 * A range on a sheet.
@@ -6934,7 +6934,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		source?: GridRange;
+		source?: GridRange | null;
 	}
 
 
@@ -6942,7 +6942,7 @@ export namespace MyNS {
 	export interface DeleteBandingRequest {
 
 		/** The ID of the banded range to delete. */
-		bandedRangeId?: number;
+		bandedRangeId?: number | null;
 	}
 
 
@@ -6953,10 +6953,10 @@ export namespace MyNS {
 	export interface DeleteConditionalFormatRuleRequest {
 
 		/** The zero-based index of the rule to be deleted. */
-		index?: number;
+		index?: number | null;
 
 		/** The sheet the rule is being deleted from. */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -6967,7 +6967,7 @@ export namespace MyNS {
 		 * Filter that describes what data should be selected or returned from a
 		 * request.
 		 */
-		dataFilter?: DataFilter;
+		dataFilter?: DataFilter | null;
 	}
 
 
@@ -6981,7 +6981,7 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		range?: DimensionRange;
+		range?: DimensionRange | null;
 	}
 
 
@@ -7001,7 +7001,7 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		range?: DimensionRange;
+		range?: DimensionRange | null;
 	}
 
 
@@ -7022,7 +7022,7 @@ export namespace MyNS {
 		 * The columns in the range to analyze for duplicate values. If no columns are
 		 * selected then all columns are analyzed for duplicates.
 		 */
-		comparisonColumns?: Array<DimensionRange>;
+		comparisonColumns?: Array<DimensionRange> | null;
 
 		/**
 		 * A range on a sheet.
@@ -7048,7 +7048,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 	}
 
 
@@ -7056,7 +7056,7 @@ export namespace MyNS {
 	export interface DeleteEmbeddedObjectRequest {
 
 		/** The ID of the embedded object to delete. */
-		objectId?: number;
+		objectId?: number | null;
 	}
 
 
@@ -7064,7 +7064,7 @@ export namespace MyNS {
 	export interface DeleteFilterViewRequest {
 
 		/** The ID of the filter to delete. */
-		filterId?: number;
+		filterId?: number | null;
 	}
 
 
@@ -7072,7 +7072,7 @@ export namespace MyNS {
 	export interface DeleteNamedRangeRequest {
 
 		/** The ID of the named range to delete. */
-		namedRangeId?: string;
+		namedRangeId?: string | null;
 	}
 
 
@@ -7080,7 +7080,7 @@ export namespace MyNS {
 	export interface DeleteProtectedRangeRequest {
 
 		/** The ID of the protected range to delete. */
-		protectedRangeId?: number;
+		protectedRangeId?: number | null;
 	}
 
 
@@ -7111,7 +7111,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/**
 		 * The dimension from which deleted cells will be replaced with.
@@ -7119,7 +7119,7 @@ export namespace MyNS {
 		 * replace the deleted cells. If COLUMNS, existing cells
 		 * will be shifted left to replace the deleted cells.
 		 */
-		shiftDimension?: DimensionRangeDimension;
+		shiftDimension?: DimensionRangeDimension | null;
 	}
 
 
@@ -7127,7 +7127,7 @@ export namespace MyNS {
 	export interface DeleteSheetRequest {
 
 		/** The ID of the sheet to delete. */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -7135,7 +7135,7 @@ export namespace MyNS {
 	export interface DuplicateFilterViewRequest {
 
 		/** The ID of the filter being duplicated. */
-		filterId?: number;
+		filterId?: number | null;
 	}
 
 
@@ -7146,20 +7146,20 @@ export namespace MyNS {
 		 * The zero-based index where the new sheet should be inserted.
 		 * The index of all sheets after this are incremented.
 		 */
-		insertSheetIndex?: number;
+		insertSheetIndex?: number | null;
 
 		/**
 		 * If set, the ID of the new sheet. If not set, an ID is chosen.
 		 * If set, the ID must not conflict with any existing sheet ID.
 		 * If set, it must be non-negative.
 		 */
-		newSheetId?: number;
+		newSheetId?: number | null;
 
 		/** The name of the new sheet.  If empty, a new name is chosen for you. */
-		newSheetName?: string;
+		newSheetName?: string | null;
 
 		/** The sheet to duplicate. */
-		sourceSheetId?: number;
+		sourceSheetId?: number | null;
 	}
 
 
@@ -7167,22 +7167,22 @@ export namespace MyNS {
 	export interface FindReplaceRequest {
 
 		/** True to find/replace over all sheets. */
-		allSheets?: boolean;
+		allSheets?: boolean | null;
 
 		/** The value to search. */
-		find?: string;
+		find?: string | null;
 
 		/**
 		 * True if the search should include cells with formulas.
 		 * False to skip cells with formulas.
 		 */
-		includeFormulas?: boolean;
+		includeFormulas?: boolean | null;
 
 		/** True if the search is case sensitive. */
-		matchCase?: boolean;
+		matchCase?: boolean | null;
 
 		/** True if the find value should match the entire cell. */
-		matchEntireCell?: boolean;
+		matchEntireCell?: boolean | null;
 
 		/**
 		 * A range on a sheet.
@@ -7208,10 +7208,10 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/** The value to use as the replacement. */
-		replacement?: string;
+		replacement?: string | null;
 
 		/**
 		 * True if the find value is a regex.
@@ -7223,10 +7223,10 @@ export namespace MyNS {
 		 * `"$1 Rocks"` would change the contents of the cells to
 		 * `"GSheets Rocks"` and `"GDocs Rocks"` respectively.
 		 */
-		searchByRegex?: boolean;
+		searchByRegex?: boolean | null;
 
 		/** The sheet to find/replace over. */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -7246,7 +7246,7 @@ export namespace MyNS {
 		 * was red), whereas if `inheritFromBefore` is false, the two new rows will
 		 * be green (because the row after the insertion point was green).
 		 */
-		inheritFromBefore?: boolean;
+		inheritFromBefore?: boolean | null;
 
 		/**
 		 * A range along a single dimension on a sheet.
@@ -7255,7 +7255,7 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		range?: DimensionRange;
+		range?: DimensionRange | null;
 	}
 
 
@@ -7286,14 +7286,14 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/**
 		 * The dimension which will be shifted when inserting cells.
 		 * If ROWS, existing cells will be shifted down.
 		 * If COLUMNS, existing cells will be shifted right.
 		 */
-		shiftDimension?: DimensionRangeDimension;
+		shiftDimension?: DimensionRangeDimension | null;
 	}
 
 
@@ -7301,7 +7301,7 @@ export namespace MyNS {
 	export interface MergeCellsRequest {
 
 		/** How the cells should be merged. */
-		mergeType?: MergeCellsRequestMergeType;
+		mergeType?: MergeCellsRequestMergeType | null;
 
 		/**
 		 * A range on a sheet.
@@ -7327,7 +7327,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 	}
 
 	export enum MergeCellsRequestMergeType { MERGE_ALL = 0, MERGE_COLUMNS = 1, MERGE_ROWS = 2 }
@@ -7349,7 +7349,7 @@ export namespace MyNS {
 		 * (the zero-based index of row 5).
 		 * The end result would be `A1..A5` of `0, 3, 1, 2, 4`.
 		 */
-		destinationIndex?: number;
+		destinationIndex?: number | null;
 
 		/**
 		 * A range along a single dimension on a sheet.
@@ -7358,7 +7358,7 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		source?: DimensionRange;
+		source?: DimensionRange | null;
 	}
 
 
@@ -7369,19 +7369,19 @@ export namespace MyNS {
 		 * A coordinate in a sheet.
 		 * All indexes are zero-based.
 		 */
-		coordinate?: GridCoordinate;
+		coordinate?: GridCoordinate | null;
 
 		/** The data to insert. */
-		data?: string;
+		data?: string | null;
 
 		/** The delimiter in the data. */
-		delimiter?: string;
+		delimiter?: string | null;
 
 		/** True if the data is HTML. */
-		html?: boolean;
+		html?: boolean | null;
 
 		/** How the data should be pasted. */
-		type?: CopyPasteRequestPasteType;
+		type?: CopyPasteRequestPasteType | null;
 	}
 
 
@@ -7412,7 +7412,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 	}
 
 
@@ -7432,14 +7432,14 @@ export namespace MyNS {
 	export interface RepeatCellRequest {
 
 		/** Data about a specific cell. */
-		cell?: CellData;
+		cell?: CellData | null;
 
 		/**
 		 * The fields that should be updated.  At least one field must be specified.
 		 * The root `cell` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/**
 		 * A range on a sheet.
@@ -7465,7 +7465,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 	}
 
 
@@ -7473,7 +7473,7 @@ export namespace MyNS {
 	export interface SetBasicFilterRequest {
 
 		/** The default filter associated with a sheet. */
-		filter?: BasicFilter;
+		filter?: BasicFilter | null;
 	}
 
 
@@ -7507,10 +7507,10 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/** A data validation rule. */
-		rule?: DataValidationRule;
+		rule?: DataValidationRule | null;
 	}
 
 
@@ -7541,13 +7541,13 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/**
 		 * The sort order per column. Later specifications are used when values
 		 * are equal in the earlier specifications.
 		 */
-		sortSpecs?: Array<SortSpec>;
+		sortSpecs?: Array<SortSpec> | null;
 	}
 
 
@@ -7561,10 +7561,10 @@ export namespace MyNS {
 		 * The delimiter to use. Used only if delimiterType is
 		 * CUSTOM.
 		 */
-		delimiter?: string;
+		delimiter?: string | null;
 
 		/** The delimiter type to use. */
-		delimiterType?: TextToColumnsRequestDelimiterType;
+		delimiterType?: TextToColumnsRequestDelimiterType | null;
 
 		/**
 		 * A range on a sheet.
@@ -7590,7 +7590,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		source?: GridRange;
+		source?: GridRange | null;
 	}
 
 	export enum TextToColumnsRequestDelimiterType { DELIMITER_TYPE_UNSPECIFIED = 0, COMMA = 1, SEMICOLON = 2, PERIOD = 3, SPACE = 4, CUSTOM = 5, AUTODETECT = 6 }
@@ -7630,7 +7630,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 	}
 
 
@@ -7661,7 +7661,7 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 	}
 
 
@@ -7669,14 +7669,14 @@ export namespace MyNS {
 	export interface UpdateBandingRequest {
 
 		/** A banded (alternating colors) range in a sheet. */
-		bandedRange?: BandedRange;
+		bandedRange?: BandedRange | null;
 
 		/**
 		 * The fields that should be updated.  At least one field must be specified.
 		 * The root `bandedRange` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 	}
 
 
@@ -7694,16 +7694,16 @@ export namespace MyNS {
 	export interface UpdateBordersRequest {
 
 		/** A border along a cell. */
-		bottom?: Border;
+		bottom?: Border | null;
 
 		/** A border along a cell. */
-		innerHorizontal?: Border;
+		innerHorizontal?: Border | null;
 
 		/** A border along a cell. */
-		innerVertical?: Border;
+		innerVertical?: Border | null;
 
 		/** A border along a cell. */
-		left?: Border;
+		left?: Border | null;
 
 		/**
 		 * A range on a sheet.
@@ -7729,13 +7729,13 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/** A border along a cell. */
-		right?: Border;
+		right?: Border | null;
 
 		/** A border along a cell. */
-		top?: Border;
+		top?: Border | null;
 	}
 
 
@@ -7748,7 +7748,7 @@ export namespace MyNS {
 		 * The root is the CellData; 'row.values.' should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/**
 		 * A range on a sheet.
@@ -7774,16 +7774,16 @@ export namespace MyNS {
 		 * Empty ranges are typically not meaningful and are usually rendered in the
 		 * UI as `#REF!`.
 		 */
-		range?: GridRange;
+		range?: GridRange | null;
 
 		/** The data to write. */
-		rows?: Array<RowData>;
+		rows?: Array<RowData> | null;
 
 		/**
 		 * A coordinate in a sheet.
 		 * All indexes are zero-based.
 		 */
-		start?: GridCoordinate;
+		start?: GridCoordinate | null;
 	}
 
 
@@ -7795,10 +7795,10 @@ export namespace MyNS {
 	export interface UpdateChartSpecRequest {
 
 		/** The ID of the chart to update. */
-		chartId?: number;
+		chartId?: number | null;
 
 		/** The specifications of a chart. */
-		spec?: ChartSpec;
+		spec?: ChartSpec | null;
 	}
 
 
@@ -7809,19 +7809,19 @@ export namespace MyNS {
 	export interface UpdateConditionalFormatRuleRequest {
 
 		/** The zero-based index of the rule that should be replaced or moved. */
-		index?: number;
+		index?: number | null;
 
 		/** The zero-based new index the rule should end up at. */
-		newIndex?: number;
+		newIndex?: number | null;
 
 		/** A rule describing a conditional format. */
-		rule?: ConditionalFormatRule;
+		rule?: ConditionalFormatRule | null;
 
 		/**
 		 * The sheet of the rule to move.  Required if new_index is set,
 		 * unused otherwise.
 		 */
-		sheetId?: number;
+		sheetId?: number | null;
 	}
 
 
@@ -7836,7 +7836,7 @@ export namespace MyNS {
 	export interface UpdateDeveloperMetadataRequest {
 
 		/** The filters matching the developer metadata entries to update. */
-		dataFilters?: Array<DataFilter>;
+		dataFilters?: Array<DataFilter> | null;
 
 		/**
 		 * Developer metadata associated with a location or object in a spreadsheet.
@@ -7848,14 +7848,14 @@ export namespace MyNS {
 		 * the row it was first associated with (what is now row 6). If the associated
 		 * object is deleted its metadata is deleted too.
 		 */
-		developerMetadata?: DeveloperMetadata;
+		developerMetadata?: DeveloperMetadata | null;
 
 		/**
 		 * The fields that should be updated.  At least one field must be specified.
 		 * The root `developerMetadata` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 	}
 
 
@@ -7867,14 +7867,14 @@ export namespace MyNS {
 		 * be contained within other groups. A group can be collapsed or expanded as a
 		 * unit on the sheet.
 		 */
-		dimensionGroup?: DimensionGroup;
+		dimensionGroup?: DimensionGroup | null;
 
 		/**
 		 * The fields that should be updated.  At least one field must be specified.
 		 * The root `dimensionGroup` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 	}
 
 
@@ -7886,10 +7886,10 @@ export namespace MyNS {
 		 * The root `properties` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** Properties about a dimension. */
-		properties?: DimensionProperties;
+		properties?: DimensionProperties | null;
 
 		/**
 		 * A range along a single dimension on a sheet.
@@ -7898,7 +7898,7 @@ export namespace MyNS {
 		 * and the end index is exclusive.
 		 * Missing indexes indicate the range is unbounded on that side.
 		 */
-		range?: DimensionRange;
+		range?: DimensionRange | null;
 	}
 
 
@@ -7906,19 +7906,19 @@ export namespace MyNS {
 	export interface DimensionProperties {
 
 		/** The developer metadata associated with a single row or column. */
-		developerMetadata?: Array<DeveloperMetadata>;
+		developerMetadata?: Array<DeveloperMetadata> | null;
 
 		/**
 		 * True if this dimension is being filtered.
 		 * This field is read-only.
 		 */
-		hiddenByFilter?: boolean;
+		hiddenByFilter?: boolean | null;
 
 		/** True if this dimension is explicitly hidden. */
-		hiddenByUser?: boolean;
+		hiddenByUser?: boolean | null;
 
 		/** The height (if a row) or width (if a column) of the dimension in pixels. */
-		pixelSize?: number;
+		pixelSize?: number | null;
 	}
 
 
@@ -7937,13 +7937,13 @@ export namespace MyNS {
 		 * should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The position of an embedded object such as a chart. */
-		newPosition?: EmbeddedObjectPosition;
+		newPosition?: EmbeddedObjectPosition | null;
 
 		/** The ID of the object to moved. */
-		objectId?: number;
+		objectId?: number | null;
 	}
 
 
@@ -7955,10 +7955,10 @@ export namespace MyNS {
 		 * The root `filter` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** A filter view. */
-		filter?: FilterView;
+		filter?: FilterView | null;
 	}
 
 
@@ -7973,10 +7973,10 @@ export namespace MyNS {
 		 * The root `namedRange` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** A named range. */
-		namedRange?: NamedRange;
+		namedRange?: NamedRange | null;
 	}
 
 
@@ -7991,10 +7991,10 @@ export namespace MyNS {
 		 * The root `protectedRange` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** A protected range. */
-		protectedRange?: ProtectedRange;
+		protectedRange?: ProtectedRange | null;
 	}
 
 
@@ -8009,10 +8009,10 @@ export namespace MyNS {
 		 * The root `properties` is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** Properties of a sheet. */
-		properties?: SheetProperties;
+		properties?: SheetProperties | null;
 	}
 
 
@@ -8028,13 +8028,13 @@ export namespace MyNS {
 		 * The root `SlicerSpec` is implied and should not be specified. A single "*"`
 		 * can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The id of the slicer to update. */
-		slicerId?: number;
+		slicerId?: number | null;
 
 		/** The specifications of a slicer. */
-		spec?: SlicerSpec;
+		spec?: SlicerSpec | null;
 	}
 
 
@@ -8046,10 +8046,10 @@ export namespace MyNS {
 		 * The root 'properties' is implied and should not be specified.
 		 * A single `"*"` can be used as short-hand for listing every field.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** Properties of a spreadsheet. */
-		properties?: SpreadsheetProperties;
+		properties?: SpreadsheetProperties | null;
 	}
 
 
@@ -8057,16 +8057,16 @@ export namespace MyNS {
 	export interface SpreadsheetProperties {
 
 		/** The amount of time to wait before volatile functions are recalculated. */
-		autoRecalc?: SpreadsheetPropertiesAutoRecalc;
+		autoRecalc?: SpreadsheetPropertiesAutoRecalc | null;
 
 		/** The format of a cell. */
-		defaultFormat?: CellFormat;
+		defaultFormat?: CellFormat | null;
 
 		/**
 		 * Settings to control how circular dependencies are resolved with iterative
 		 * calculation.
 		 */
-		iterativeCalculationSettings?: IterativeCalculationSettings;
+		iterativeCalculationSettings?: IterativeCalculationSettings | null;
 
 		/**
 		 * The locale of the spreadsheet in one of the following formats:
@@ -8075,20 +8075,20 @@ export namespace MyNS {
 		 * * a combination of the ISO language code and country code, such as `en_US`
 		 * Note: when updating this field, not all locales/languages are supported.
 		 */
-		locale?: string;
+		locale?: string | null;
 
 		/** Represents spreadsheet theme */
-		spreadsheetTheme?: SpreadsheetTheme;
+		spreadsheetTheme?: SpreadsheetTheme | null;
 
 		/**
 		 * The time zone of the spreadsheet, in CLDR format such as
 		 * `America/New_York`. If the time zone isn't recognized, this may
 		 * be a custom time zone such as `GMT-07:00`.
 		 */
-		timeZone?: string;
+		timeZone?: string | null;
 
 		/** The title of the spreadsheet. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export enum SpreadsheetPropertiesAutoRecalc { RECALCULATION_INTERVAL_UNSPECIFIED = 0, ON_CHANGE = 1, MINUTE = 2, HOUR = 3 }
@@ -8104,13 +8104,13 @@ export namespace MyNS {
 		 * When iterative calculation is enabled and successive results differ by
 		 * less than this threshold value, the calculation rounds stop.
 		 */
-		convergenceThreshold?: number;
+		convergenceThreshold?: number | null;
 
 		/**
 		 * When iterative calculation is enabled, the maximum number of calculation
 		 * rounds to perform.
 		 */
-		maxIterations?: number;
+		maxIterations?: number | null;
 	}
 
 
@@ -8118,13 +8118,13 @@ export namespace MyNS {
 	export interface SpreadsheetTheme {
 
 		/** / Name of the primary font family. */
-		primaryFontFamily?: string;
+		primaryFontFamily?: string | null;
 
 		/**
 		 * The spreadsheet theme color pairs. To update you must provide all theme
 		 * color pairs.
 		 */
-		themeColors?: Array<ThemeColorPair>;
+		themeColors?: Array<ThemeColorPair> | null;
 	}
 
 
@@ -8135,10 +8135,10 @@ export namespace MyNS {
 	export interface ThemeColorPair {
 
 		/** A color value. */
-		color?: ColorStyle;
+		color?: ColorStyle | null;
 
 		/** The type of the spreadsheet theme color. */
-		colorType?: ColorStyleThemeColor;
+		colorType?: ColorStyleThemeColor | null;
 	}
 
 
@@ -8149,13 +8149,13 @@ export namespace MyNS {
 		 * The reply of the updates.  This maps 1:1 with the updates, although
 		 * replies to some requests may be empty.
 		 */
-		replies?: Array<Response>;
+		replies?: Array<Response> | null;
 
 		/** The spreadsheet the updates were applied to. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 
 		/** Resource that represents a spreadsheet. */
-		updatedSpreadsheet?: Spreadsheet;
+		updatedSpreadsheet?: Spreadsheet | null;
 	}
 
 
@@ -8163,64 +8163,64 @@ export namespace MyNS {
 	export interface Response {
 
 		/** The result of adding a banded range. */
-		addBanding?: AddBandingResponse;
+		addBanding?: AddBandingResponse | null;
 
 		/** The result of adding a chart to a spreadsheet. */
-		addChart?: AddChartResponse;
+		addChart?: AddChartResponse | null;
 
 		/** The result of adding a group. */
-		addDimensionGroup?: AddDimensionGroupResponse;
+		addDimensionGroup?: AddDimensionGroupResponse | null;
 
 		/** The result of adding a filter view. */
-		addFilterView?: AddFilterViewResponse;
+		addFilterView?: AddFilterViewResponse | null;
 
 		/** The result of adding a named range. */
-		addNamedRange?: AddNamedRangeResponse;
+		addNamedRange?: AddNamedRangeResponse | null;
 
 		/** The result of adding a new protected range. */
-		addProtectedRange?: AddProtectedRangeResponse;
+		addProtectedRange?: AddProtectedRangeResponse | null;
 
 		/** The result of adding a sheet. */
-		addSheet?: AddSheetResponse;
+		addSheet?: AddSheetResponse | null;
 
 		/** The result of adding a slicer to a spreadsheet. */
-		addSlicer?: AddSlicerResponse;
+		addSlicer?: AddSlicerResponse | null;
 
 		/** The response from creating developer metadata. */
-		createDeveloperMetadata?: CreateDeveloperMetadataResponse;
+		createDeveloperMetadata?: CreateDeveloperMetadataResponse | null;
 
 		/** The result of deleting a conditional format rule. */
-		deleteConditionalFormatRule?: DeleteConditionalFormatRuleResponse;
+		deleteConditionalFormatRule?: DeleteConditionalFormatRuleResponse | null;
 
 		/** The response from deleting developer metadata. */
-		deleteDeveloperMetadata?: DeleteDeveloperMetadataResponse;
+		deleteDeveloperMetadata?: DeleteDeveloperMetadataResponse | null;
 
 		/** The result of deleting a group. */
-		deleteDimensionGroup?: DeleteDimensionGroupResponse;
+		deleteDimensionGroup?: DeleteDimensionGroupResponse | null;
 
 		/** The result of removing duplicates in a range. */
-		deleteDuplicates?: DeleteDuplicatesResponse;
+		deleteDuplicates?: DeleteDuplicatesResponse | null;
 
 		/** The result of a filter view being duplicated. */
-		duplicateFilterView?: DuplicateFilterViewResponse;
+		duplicateFilterView?: DuplicateFilterViewResponse | null;
 
 		/** The result of duplicating a sheet. */
-		duplicateSheet?: DuplicateSheetResponse;
+		duplicateSheet?: DuplicateSheetResponse | null;
 
 		/** The result of the find/replace. */
-		findReplace?: FindReplaceResponse;
+		findReplace?: FindReplaceResponse | null;
 
 		/** The result of trimming whitespace in cells. */
-		trimWhitespace?: TrimWhitespaceResponse;
+		trimWhitespace?: TrimWhitespaceResponse | null;
 
 		/** The result of updating a conditional format rule. */
-		updateConditionalFormatRule?: UpdateConditionalFormatRuleResponse;
+		updateConditionalFormatRule?: UpdateConditionalFormatRuleResponse | null;
 
 		/** The response from updating developer metadata. */
-		updateDeveloperMetadata?: UpdateDeveloperMetadataResponse;
+		updateDeveloperMetadata?: UpdateDeveloperMetadataResponse | null;
 
 		/** The result of updating an embedded object's position. */
-		updateEmbeddedObjectPosition?: UpdateEmbeddedObjectPositionResponse;
+		updateEmbeddedObjectPosition?: UpdateEmbeddedObjectPositionResponse | null;
 	}
 
 
@@ -8237,7 +8237,7 @@ export namespace MyNS {
 		 * the row it was first associated with (what is now row 6). If the associated
 		 * object is deleted its metadata is deleted too.
 		 */
-		developerMetadata?: DeveloperMetadata;
+		developerMetadata?: DeveloperMetadata | null;
 	}
 
 
@@ -8245,7 +8245,7 @@ export namespace MyNS {
 	export interface DeleteConditionalFormatRuleResponse {
 
 		/** A rule describing a conditional format. */
-		rule?: ConditionalFormatRule;
+		rule?: ConditionalFormatRule | null;
 	}
 
 
@@ -8253,7 +8253,7 @@ export namespace MyNS {
 	export interface DeleteDeveloperMetadataResponse {
 
 		/** The metadata that was deleted. */
-		deletedDeveloperMetadata?: Array<DeveloperMetadata>;
+		deletedDeveloperMetadata?: Array<DeveloperMetadata> | null;
 	}
 
 
@@ -8261,7 +8261,7 @@ export namespace MyNS {
 	export interface DeleteDimensionGroupResponse {
 
 		/** All groups of a dimension after deleting a group from that dimension. */
-		dimensionGroups?: Array<DimensionGroup>;
+		dimensionGroups?: Array<DimensionGroup> | null;
 	}
 
 
@@ -8269,7 +8269,7 @@ export namespace MyNS {
 	export interface DeleteDuplicatesResponse {
 
 		/** The number of duplicate rows removed. */
-		duplicatesRemovedCount?: number;
+		duplicatesRemovedCount?: number | null;
 	}
 
 
@@ -8277,7 +8277,7 @@ export namespace MyNS {
 	export interface DuplicateFilterViewResponse {
 
 		/** A filter view. */
-		filter?: FilterView;
+		filter?: FilterView | null;
 	}
 
 
@@ -8285,7 +8285,7 @@ export namespace MyNS {
 	export interface DuplicateSheetResponse {
 
 		/** Properties of a sheet. */
-		properties?: SheetProperties;
+		properties?: SheetProperties | null;
 	}
 
 
@@ -8293,23 +8293,23 @@ export namespace MyNS {
 	export interface FindReplaceResponse {
 
 		/** The number of formula cells changed. */
-		formulasChanged?: number;
+		formulasChanged?: number | null;
 
 		/**
 		 * The number of occurrences (possibly multiple within a cell) changed.
 		 * For example, if replacing `"e"` with `"o"` in `"Google Sheets"`, this would
 		 * be `"3"` because `"Google Sheets"` -> `"Googlo Shoots"`.
 		 */
-		occurrencesChanged?: number;
+		occurrencesChanged?: number | null;
 
 		/** The number of rows changed. */
-		rowsChanged?: number;
+		rowsChanged?: number | null;
 
 		/** The number of sheets changed. */
-		sheetsChanged?: number;
+		sheetsChanged?: number | null;
 
 		/** The number of non-formula cells changed. */
-		valuesChanged?: number;
+		valuesChanged?: number | null;
 	}
 
 
@@ -8317,7 +8317,7 @@ export namespace MyNS {
 	export interface TrimWhitespaceResponse {
 
 		/** The number of cells that were trimmed of whitespace. */
-		cellsChangedCount?: number;
+		cellsChangedCount?: number | null;
 	}
 
 
@@ -8325,19 +8325,19 @@ export namespace MyNS {
 	export interface UpdateConditionalFormatRuleResponse {
 
 		/** The index of the new rule. */
-		newIndex?: number;
+		newIndex?: number | null;
 
 		/** A rule describing a conditional format. */
-		newRule?: ConditionalFormatRule;
+		newRule?: ConditionalFormatRule | null;
 
 		/**
 		 * The old index of the rule. Not set if a rule was replaced
 		 * (because it is the same as new_index).
 		 */
-		oldIndex?: number;
+		oldIndex?: number | null;
 
 		/** A rule describing a conditional format. */
-		oldRule?: ConditionalFormatRule;
+		oldRule?: ConditionalFormatRule | null;
 	}
 
 
@@ -8345,7 +8345,7 @@ export namespace MyNS {
 	export interface UpdateDeveloperMetadataResponse {
 
 		/** The updated developer metadata. */
-		developerMetadata?: Array<DeveloperMetadata>;
+		developerMetadata?: Array<DeveloperMetadata> | null;
 	}
 
 
@@ -8353,7 +8353,7 @@ export namespace MyNS {
 	export interface UpdateEmbeddedObjectPositionResponse {
 
 		/** The position of an embedded object such as a chart. */
-		position?: EmbeddedObjectPosition;
+		position?: EmbeddedObjectPosition | null;
 	}
 
 
@@ -8361,28 +8361,28 @@ export namespace MyNS {
 	export interface Spreadsheet {
 
 		/** The developer metadata associated with a spreadsheet. */
-		developerMetadata?: Array<DeveloperMetadata>;
+		developerMetadata?: Array<DeveloperMetadata> | null;
 
 		/** The named ranges defined in a spreadsheet. */
-		namedRanges?: Array<NamedRange>;
+		namedRanges?: Array<NamedRange> | null;
 
 		/** Properties of a spreadsheet. */
-		properties?: SpreadsheetProperties;
+		properties?: SpreadsheetProperties | null;
 
 		/** The sheets that are part of a spreadsheet. */
-		sheets?: Array<Sheet>;
+		sheets?: Array<Sheet> | null;
 
 		/**
 		 * The ID of the spreadsheet.
 		 * This field is read-only.
 		 */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 
 		/**
 		 * The url of the spreadsheet.
 		 * This field is read-only.
 		 */
-		spreadsheetUrl?: string;
+		spreadsheetUrl?: string | null;
 	}
 
 
@@ -8390,22 +8390,22 @@ export namespace MyNS {
 	export interface Sheet {
 
 		/** The banded (alternating colors) ranges on this sheet. */
-		bandedRanges?: Array<BandedRange>;
+		bandedRanges?: Array<BandedRange> | null;
 
 		/** The default filter associated with a sheet. */
-		basicFilter?: BasicFilter;
+		basicFilter?: BasicFilter | null;
 
 		/** The specifications of every chart on this sheet. */
-		charts?: Array<EmbeddedChart>;
+		charts?: Array<EmbeddedChart> | null;
 
 		/**
 		 * All column groups on this sheet, ordered by increasing range start index,
 		 * then by group depth.
 		 */
-		columnGroups?: Array<DimensionGroup>;
+		columnGroups?: Array<DimensionGroup> | null;
 
 		/** The conditional format rules in this sheet. */
-		conditionalFormats?: Array<ConditionalFormatRule>;
+		conditionalFormats?: Array<ConditionalFormatRule> | null;
 
 		/**
 		 * Data in the grid, if this is a grid sheet.
@@ -8417,31 +8417,31 @@ export namespace MyNS {
 		 * while the second one will have `startRow 14` (zero-based row 15),
 		 * and `startColumn 3` (zero-based column D).
 		 */
-		data?: Array<GridData>;
+		data?: Array<GridData> | null;
 
 		/** The developer metadata associated with a sheet. */
-		developerMetadata?: Array<DeveloperMetadata>;
+		developerMetadata?: Array<DeveloperMetadata> | null;
 
 		/** The filter views in this sheet. */
-		filterViews?: Array<FilterView>;
+		filterViews?: Array<FilterView> | null;
 
 		/** The ranges that are merged together. */
-		merges?: Array<GridRange>;
+		merges?: Array<GridRange> | null;
 
 		/** Properties of a sheet. */
-		properties?: SheetProperties;
+		properties?: SheetProperties | null;
 
 		/** The protected ranges in this sheet. */
-		protectedRanges?: Array<ProtectedRange>;
+		protectedRanges?: Array<ProtectedRange> | null;
 
 		/**
 		 * All row groups on this sheet, ordered by increasing range start index, then
 		 * by group depth.
 		 */
-		rowGroups?: Array<DimensionGroup>;
+		rowGroups?: Array<DimensionGroup> | null;
 
 		/** The slicers on this sheet. */
-		slicers?: Array<Slicer>;
+		slicers?: Array<Slicer> | null;
 	}
 
 
@@ -8452,7 +8452,7 @@ export namespace MyNS {
 		 * Metadata about the requested columns in the grid, starting with the column
 		 * in start_column.
 		 */
-		columnMetadata?: Array<DimensionProperties>;
+		columnMetadata?: Array<DimensionProperties> | null;
 
 		/**
 		 * The data in the grid, one entry per row,
@@ -8460,19 +8460,19 @@ export namespace MyNS {
 		 * The values in RowData will correspond to columns starting
 		 * at start_column.
 		 */
-		rowData?: Array<RowData>;
+		rowData?: Array<RowData> | null;
 
 		/**
 		 * Metadata about the requested rows in the grid, starting with the row
 		 * in start_row.
 		 */
-		rowMetadata?: Array<DimensionProperties>;
+		rowMetadata?: Array<DimensionProperties> | null;
 
 		/** The first column this GridData refers to, zero-based. */
-		startColumn?: number;
+		startColumn?: number | null;
 
 		/** The first row this GridData refers to, zero-based. */
-		startRow?: number;
+		startRow?: number | null;
 	}
 
 
@@ -8484,7 +8484,7 @@ export namespace MyNS {
 		 * matched by the specified DataFilter the specified values are applied to
 		 * all of those ranges.
 		 */
-		data?: Array<DataFilterValueRange>;
+		data?: Array<DataFilterValueRange> | null;
 
 		/**
 		 * Determines if the update response should include the values
@@ -8495,7 +8495,7 @@ export namespace MyNS {
 		 * the response includes all values in the requested range (excluding trailing
 		 * empty rows and columns).
 		 */
-		includeValuesInResponse?: boolean;
+		includeValuesInResponse?: boolean | null;
 
 		/**
 		 * Determines how dates, times, and durations in the response should be
@@ -8504,16 +8504,16 @@ export namespace MyNS {
 		 * The default dateTime render option is
 		 * DateTimeRenderOption.SERIAL_NUMBER.
 		 */
-		responseDateTimeRenderOption?: BatchGetValuesByDataFilterRequestDateTimeRenderOption;
+		responseDateTimeRenderOption?: BatchGetValuesByDataFilterRequestDateTimeRenderOption | null;
 
 		/**
 		 * Determines how values in the response should be rendered.
 		 * The default render option is ValueRenderOption.FORMATTED_VALUE.
 		 */
-		responseValueRenderOption?: BatchGetValuesByDataFilterRequestValueRenderOption;
+		responseValueRenderOption?: BatchGetValuesByDataFilterRequestValueRenderOption | null;
 
 		/** How the input data should be interpreted. */
-		valueInputOption?: BatchUpdateValuesByDataFilterRequestValueInputOption;
+		valueInputOption?: BatchUpdateValuesByDataFilterRequestValueInputOption | null;
 	}
 
 
@@ -8524,10 +8524,10 @@ export namespace MyNS {
 		 * Filter that describes what data should be selected or returned from a
 		 * request.
 		 */
-		dataFilter?: DataFilter;
+		dataFilter?: DataFilter | null;
 
 		/** The major dimension of the values. */
-		majorDimension?: DimensionRangeDimension;
+		majorDimension?: DimensionRangeDimension | null;
 
 		/**
 		 * The data to be written.  If the provided values exceed any of the ranges
@@ -8535,7 +8535,7 @@ export namespace MyNS {
 		 * are less than the matched ranges only the specified values are written,
 		 * existing values in the matched ranges remain unaffected.
 		 */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 	export enum BatchUpdateValuesByDataFilterRequestValueInputOption { INPUT_VALUE_OPTION_UNSPECIFIED = 0, RAW = 1, USER_ENTERED = 2 }
@@ -8545,28 +8545,28 @@ export namespace MyNS {
 	export interface BatchUpdateValuesByDataFilterResponse {
 
 		/** The response for each range updated. */
-		responses?: Array<UpdateValuesByDataFilterResponse>;
+		responses?: Array<UpdateValuesByDataFilterResponse> | null;
 
 		/** The spreadsheet the updates were applied to. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 
 		/** The total number of cells updated. */
-		totalUpdatedCells?: number;
+		totalUpdatedCells?: number | null;
 
 		/**
 		 * The total number of columns where at least one cell in the column was
 		 * updated.
 		 */
-		totalUpdatedColumns?: number;
+		totalUpdatedColumns?: number | null;
 
 		/** The total number of rows where at least one cell in the row was updated. */
-		totalUpdatedRows?: number;
+		totalUpdatedRows?: number | null;
 
 		/**
 		 * The total number of sheets where at least one cell in the sheet was
 		 * updated.
 		 */
-		totalUpdatedSheets?: number;
+		totalUpdatedSheets?: number | null;
 	}
 
 
@@ -8580,22 +8580,22 @@ export namespace MyNS {
 		 * Filter that describes what data should be selected or returned from a
 		 * request.
 		 */
-		dataFilter?: DataFilter;
+		dataFilter?: DataFilter | null;
 
 		/** The number of cells updated. */
-		updatedCells?: number;
+		updatedCells?: number | null;
 
 		/** The number of columns where at least one cell in the column was updated. */
-		updatedColumns?: number;
+		updatedColumns?: number | null;
 
 		/** Data within a range of the spreadsheet. */
-		updatedData?: ValueRange;
+		updatedData?: ValueRange | null;
 
 		/** The range (in A1 notation) that updates were applied to. */
-		updatedRange?: string;
+		updatedRange?: string | null;
 
 		/** The number of rows where at least one cell in the row was updated. */
-		updatedRows?: number;
+		updatedRows?: number | null;
 	}
 
 
@@ -8603,7 +8603,7 @@ export namespace MyNS {
 	export interface BatchUpdateValuesRequest {
 
 		/** The new values to apply to the spreadsheet. */
-		data?: Array<ValueRange>;
+		data?: Array<ValueRange> | null;
 
 		/**
 		 * Determines if the update response should include the values
@@ -8614,7 +8614,7 @@ export namespace MyNS {
 		 * the response includes all values in the requested range (excluding trailing
 		 * empty rows and columns).
 		 */
-		includeValuesInResponse?: boolean;
+		includeValuesInResponse?: boolean | null;
 
 		/**
 		 * Determines how dates, times, and durations in the response should be
@@ -8623,16 +8623,16 @@ export namespace MyNS {
 		 * The default dateTime render option is
 		 * DateTimeRenderOption.SERIAL_NUMBER.
 		 */
-		responseDateTimeRenderOption?: BatchGetValuesByDataFilterRequestDateTimeRenderOption;
+		responseDateTimeRenderOption?: BatchGetValuesByDataFilterRequestDateTimeRenderOption | null;
 
 		/**
 		 * Determines how values in the response should be rendered.
 		 * The default render option is ValueRenderOption.FORMATTED_VALUE.
 		 */
-		responseValueRenderOption?: BatchGetValuesByDataFilterRequestValueRenderOption;
+		responseValueRenderOption?: BatchGetValuesByDataFilterRequestValueRenderOption | null;
 
 		/** How the input data should be interpreted. */
-		valueInputOption?: BatchUpdateValuesByDataFilterRequestValueInputOption;
+		valueInputOption?: BatchUpdateValuesByDataFilterRequestValueInputOption | null;
 	}
 
 
@@ -8643,28 +8643,28 @@ export namespace MyNS {
 		 * One UpdateValuesResponse per requested range, in the same order as
 		 * the requests appeared.
 		 */
-		responses?: Array<UpdateValuesResponse>;
+		responses?: Array<UpdateValuesResponse> | null;
 
 		/** The spreadsheet the updates were applied to. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 
 		/** The total number of cells updated. */
-		totalUpdatedCells?: number;
+		totalUpdatedCells?: number | null;
 
 		/**
 		 * The total number of columns where at least one cell in the column was
 		 * updated.
 		 */
-		totalUpdatedColumns?: number;
+		totalUpdatedColumns?: number | null;
 
 		/** The total number of rows where at least one cell in the row was updated. */
-		totalUpdatedRows?: number;
+		totalUpdatedRows?: number | null;
 
 		/**
 		 * The total number of sheets where at least one cell in the sheet was
 		 * updated.
 		 */
-		totalUpdatedSheets?: number;
+		totalUpdatedSheets?: number | null;
 	}
 
 
@@ -8682,10 +8682,10 @@ export namespace MyNS {
 		 * than the bounds of the sheet, this will be the actual range
 		 * that was cleared, bounded to the sheet's limits.)
 		 */
-		clearedRange?: string;
+		clearedRange?: string | null;
 
 		/** The spreadsheet the updates were applied to. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 	}
 
 
@@ -8693,7 +8693,7 @@ export namespace MyNS {
 	export interface CopySheetToAnotherSpreadsheetRequest {
 
 		/** The ID of the spreadsheet to copy the sheet to. */
-		destinationSpreadsheetId?: string;
+		destinationSpreadsheetId?: string | null;
 	}
 
 
@@ -8704,13 +8704,13 @@ export namespace MyNS {
 		 * The DataFilters used to select which ranges to retrieve from
 		 * the spreadsheet.
 		 */
-		dataFilters?: Array<DataFilter>;
+		dataFilters?: Array<DataFilter> | null;
 
 		/**
 		 * True if grid data should be returned.
 		 * This parameter is ignored if a field mask was set in the request.
 		 */
-		includeGridData?: boolean;
+		includeGridData?: boolean | null;
 	}
 
 
@@ -8721,7 +8721,7 @@ export namespace MyNS {
 	export interface MatchedDeveloperMetadata {
 
 		/** All filters matching the returned developer metadata. */
-		dataFilters?: Array<DataFilter>;
+		dataFilters?: Array<DataFilter> | null;
 
 		/**
 		 * Developer metadata associated with a location or object in a spreadsheet.
@@ -8733,7 +8733,7 @@ export namespace MyNS {
 		 * the row it was first associated with (what is now row 6). If the associated
 		 * object is deleted its metadata is deleted too.
 		 */
-		developerMetadata?: DeveloperMetadata;
+		developerMetadata?: DeveloperMetadata | null;
 	}
 
 
@@ -8748,7 +8748,7 @@ export namespace MyNS {
 		 * DeveloperMetadata entries to return.  DeveloperMetadata matching any of the
 		 * specified filters are included in the response.
 		 */
-		dataFilters?: Array<DataFilter>;
+		dataFilters?: Array<DataFilter> | null;
 	}
 
 
@@ -8756,7 +8756,7 @@ export namespace MyNS {
 	export interface SearchDeveloperMetadataResponse {
 
 		/** The metadata matching the criteria of the search request. */
-		matchedDeveloperMetadata?: Array<MatchedDeveloperMetadata>;
+		matchedDeveloperMetadata?: Array<MatchedDeveloperMetadata> | null;
 	}
 
 	@Injectable()

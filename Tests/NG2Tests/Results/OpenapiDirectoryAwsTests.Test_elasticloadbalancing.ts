@@ -11,7 +11,7 @@ export namespace MyNS {
 	/** Information about a tag. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface AccessPointNotFoundException {
@@ -26,7 +26,7 @@ export namespace MyNS {
 
 	/** Contains the output of ApplySecurityGroupsToLoadBalancer. */
 	export interface ApplySecurityGroupsToLoadBalancerOutput {
-		SecurityGroups?: Array<string>;
+		SecurityGroups?: Array<string> | null;
 	}
 
 	export interface InvalidConfigurationRequestException {
@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	/** Contains the output of AttachLoadBalancerToSubnets. */
 	export interface AttachLoadBalancerToSubnetsOutput {
-		Subnets?: Array<string>;
+		Subnets?: Array<string> | null;
 	}
 
 	export interface SubnetNotFoundException {
@@ -52,7 +52,7 @@ export namespace MyNS {
 	export interface ConfigureHealthCheckOutput {
 
 		/** Information about a health check. */
-		HealthCheck?: HealthCheck;
+		HealthCheck?: HealthCheck | null;
 	}
 
 
@@ -84,7 +84,7 @@ export namespace MyNS {
 
 	/** Contains the output for CreateLoadBalancer. */
 	export interface CreateAccessPointOutput {
-		DNSName?: string;
+		DNSName?: string | null;
 	}
 
 
@@ -92,9 +92,9 @@ export namespace MyNS {
 	export interface Listener {
 		Protocol: string;
 		LoadBalancerPort: number;
-		InstanceProtocol?: string;
+		InstanceProtocol?: string | null;
 		InstancePort: number;
-		SSLCertificateId?: string;
+		SSLCertificateId?: string | null;
 	}
 
 	export interface DuplicateAccessPointNameException {
@@ -131,8 +131,8 @@ export namespace MyNS {
 
 	/** Information about a policy attribute. */
 	export interface PolicyAttribute {
-		AttributeName?: string;
-		AttributeValue?: string;
+		AttributeName?: string | null;
+		AttributeValue?: string | null;
 	}
 
 	export interface PolicyTypeNotFoundException {
@@ -156,43 +156,43 @@ export namespace MyNS {
 
 	/** Contains the output of DeregisterInstancesFromLoadBalancer. */
 	export interface DeregisterEndPointsOutput {
-		Instances?: Array<Instance>;
+		Instances?: Array<Instance> | null;
 	}
 
 
 	/** The ID of an EC2 instance. */
 	export interface Instance {
-		InstanceId?: string;
+		InstanceId?: string | null;
 	}
 
 	export interface InvalidEndPointException {
 	}
 
 	export interface DescribeAccountLimitsOutput {
-		Limits?: Array<Limit>;
-		NextMarker?: string;
+		Limits?: Array<Limit> | null;
+		NextMarker?: string | null;
 	}
 
 
 	/** Information about an Elastic Load Balancing resource limit for your AWS account. */
 	export interface Limit {
-		Name?: string;
-		Max?: string;
+		Name?: string | null;
+		Max?: string | null;
 	}
 
 
 	/** Contains the output for DescribeInstanceHealth. */
 	export interface DescribeEndPointStateOutput {
-		InstanceStates?: Array<InstanceState>;
+		InstanceStates?: Array<InstanceState> | null;
 	}
 
 
 	/** Information about the state of an EC2 instance. */
 	export interface InstanceState {
-		InstanceId?: string;
-		State?: string;
-		ReasonCode?: string;
-		Description?: string;
+		InstanceId?: string | null;
+		State?: string | null;
+		ReasonCode?: string | null;
+		Description?: string | null;
 	}
 
 
@@ -200,7 +200,7 @@ export namespace MyNS {
 	export interface DescribeLoadBalancerAttributesOutput {
 
 		/** The attributes for a load balancer. */
-		LoadBalancerAttributes?: LoadBalancerAttributes;
+		LoadBalancerAttributes?: LoadBalancerAttributes | null;
 	}
 
 
@@ -208,17 +208,17 @@ export namespace MyNS {
 	export interface LoadBalancerAttributes {
 
 		/** Information about the <code>CrossZoneLoadBalancing</code> attribute. */
-		CrossZoneLoadBalancing?: CrossZoneLoadBalancing;
+		CrossZoneLoadBalancing?: CrossZoneLoadBalancing | null;
 
 		/** Information about the <code>AccessLog</code> attribute. */
-		AccessLog?: AccessLog;
+		AccessLog?: AccessLog | null;
 
 		/** Information about the <code>ConnectionDraining</code> attribute. */
-		ConnectionDraining?: ConnectionDraining;
+		ConnectionDraining?: ConnectionDraining | null;
 
 		/** Information about the <code>ConnectionSettings</code> attribute. */
-		ConnectionSettings?: ConnectionSettings;
-		AdditionalAttributes?: Array<AdditionalAttribute>;
+		ConnectionSettings?: ConnectionSettings | null;
+		AdditionalAttributes?: Array<AdditionalAttribute> | null;
 	}
 
 
@@ -231,16 +231,16 @@ export namespace MyNS {
 	/** Information about the <code>AccessLog</code> attribute. */
 	export interface AccessLog {
 		Enabled: boolean;
-		S3BucketName?: string;
-		EmitInterval?: number;
-		S3BucketPrefix?: string;
+		S3BucketName?: string | null;
+		EmitInterval?: number | null;
+		S3BucketPrefix?: string | null;
 	}
 
 
 	/** Information about the <code>ConnectionDraining</code> attribute. */
 	export interface ConnectionDraining {
 		Enabled: boolean;
-		Timeout?: number;
+		Timeout?: number | null;
 	}
 
 
@@ -252,8 +252,8 @@ export namespace MyNS {
 
 	/** This data type is reserved. */
 	export interface AdditionalAttribute {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface LoadBalancerAttributeNotFoundException {
@@ -262,22 +262,22 @@ export namespace MyNS {
 
 	/** Contains the output of DescribeLoadBalancerPolicies. */
 	export interface DescribeLoadBalancerPoliciesOutput {
-		PolicyDescriptions?: Array<PolicyDescription>;
+		PolicyDescriptions?: Array<PolicyDescription> | null;
 	}
 
 
 	/** Information about a policy. */
 	export interface PolicyDescription {
-		PolicyName?: string;
-		PolicyTypeName?: string;
-		PolicyAttributeDescriptions?: Array<PolicyAttributeDescription>;
+		PolicyName?: string | null;
+		PolicyTypeName?: string | null;
+		PolicyAttributeDescriptions?: Array<PolicyAttributeDescription> | null;
 	}
 
 
 	/** Information about a policy attribute. */
 	export interface PolicyAttributeDescription {
-		AttributeName?: string;
-		AttributeValue?: string;
+		AttributeName?: string | null;
+		AttributeValue?: string | null;
 	}
 
 	export interface PolicyNotFoundException {
@@ -286,59 +286,59 @@ export namespace MyNS {
 
 	/** Contains the output of DescribeLoadBalancerPolicyTypes. */
 	export interface DescribeLoadBalancerPolicyTypesOutput {
-		PolicyTypeDescriptions?: Array<PolicyTypeDescription>;
+		PolicyTypeDescriptions?: Array<PolicyTypeDescription> | null;
 	}
 
 
 	/** Information about a policy type. */
 	export interface PolicyTypeDescription {
-		PolicyTypeName?: string;
-		Description?: string;
-		PolicyAttributeTypeDescriptions?: Array<PolicyAttributeTypeDescription>;
+		PolicyTypeName?: string | null;
+		Description?: string | null;
+		PolicyAttributeTypeDescriptions?: Array<PolicyAttributeTypeDescription> | null;
 	}
 
 
 	/** Information about a policy attribute type. */
 	export interface PolicyAttributeTypeDescription {
-		AttributeName?: string;
-		AttributeType?: string;
-		Description?: string;
-		DefaultValue?: string;
-		Cardinality?: string;
+		AttributeName?: string | null;
+		AttributeType?: string | null;
+		Description?: string | null;
+		DefaultValue?: string | null;
+		Cardinality?: string | null;
 	}
 
 
 	/** Contains the parameters for DescribeLoadBalancers. */
 	export interface DescribeAccessPointsOutput {
-		LoadBalancerDescriptions?: Array<LoadBalancerDescription>;
-		NextMarker?: string;
+		LoadBalancerDescriptions?: Array<LoadBalancerDescription> | null;
+		NextMarker?: string | null;
 	}
 
 
 	/** Information about a load balancer. */
 	export interface LoadBalancerDescription {
-		LoadBalancerName?: string;
-		DNSName?: string;
-		CanonicalHostedZoneName?: string;
-		CanonicalHostedZoneNameID?: string;
-		ListenerDescriptions?: Array<ListenerDescription>;
+		LoadBalancerName?: string | null;
+		DNSName?: string | null;
+		CanonicalHostedZoneName?: string | null;
+		CanonicalHostedZoneNameID?: string | null;
+		ListenerDescriptions?: Array<ListenerDescription> | null;
 
 		/** The policies for a load balancer. */
-		Policies?: Policies;
-		BackendServerDescriptions?: Array<BackendServerDescription>;
-		AvailabilityZones?: Array<string>;
-		Subnets?: Array<string>;
-		VPCId?: string;
-		Instances?: Array<Instance>;
+		Policies?: Policies | null;
+		BackendServerDescriptions?: Array<BackendServerDescription> | null;
+		AvailabilityZones?: Array<string> | null;
+		Subnets?: Array<string> | null;
+		VPCId?: string | null;
+		Instances?: Array<Instance> | null;
 
 		/** Information about a health check. */
-		HealthCheck?: HealthCheck;
+		HealthCheck?: HealthCheck | null;
 
 		/** Information about a source security group. */
-		SourceSecurityGroup?: SourceSecurityGroup;
-		SecurityGroups?: Array<string>;
-		CreatedTime?: Date;
-		Scheme?: string;
+		SourceSecurityGroup?: SourceSecurityGroup | null;
+		SecurityGroups?: Array<string> | null;
+		CreatedTime?: Date | null;
+		Scheme?: string | null;
 	}
 
 
@@ -346,44 +346,44 @@ export namespace MyNS {
 	export interface ListenerDescription {
 
 		/** <p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p> */
-		Listener?: Listener;
-		PolicyNames?: Array<string>;
+		Listener?: Listener | null;
+		PolicyNames?: Array<string> | null;
 	}
 
 
 	/** The policies for a load balancer. */
 	export interface Policies {
-		AppCookieStickinessPolicies?: Array<AppCookieStickinessPolicy>;
-		LBCookieStickinessPolicies?: Array<LBCookieStickinessPolicy>;
-		OtherPolicies?: Array<string>;
+		AppCookieStickinessPolicies?: Array<AppCookieStickinessPolicy> | null;
+		LBCookieStickinessPolicies?: Array<LBCookieStickinessPolicy> | null;
+		OtherPolicies?: Array<string> | null;
 	}
 
 
 	/** Information about a policy for application-controlled session stickiness. */
 	export interface AppCookieStickinessPolicy {
-		PolicyName?: string;
-		CookieName?: string;
+		PolicyName?: string | null;
+		CookieName?: string | null;
 	}
 
 
 	/** Information about a policy for duration-based session stickiness. */
 	export interface LBCookieStickinessPolicy {
-		PolicyName?: string;
-		CookieExpirationPeriod?: number;
+		PolicyName?: string | null;
+		CookieExpirationPeriod?: number | null;
 	}
 
 
 	/** Information about the configuration of an EC2 instance. */
 	export interface BackendServerDescription {
-		InstancePort?: number;
-		PolicyNames?: Array<string>;
+		InstancePort?: number | null;
+		PolicyNames?: Array<string> | null;
 	}
 
 
 	/** Information about a source security group. */
 	export interface SourceSecurityGroup {
-		OwnerAlias?: string;
-		GroupName?: string;
+		OwnerAlias?: string | null;
+		GroupName?: string | null;
 	}
 
 	export interface DependencyThrottleException {
@@ -392,47 +392,47 @@ export namespace MyNS {
 
 	/** Contains the output for DescribeTags. */
 	export interface DescribeTagsOutput {
-		TagDescriptions?: Array<TagDescription>;
+		TagDescriptions?: Array<TagDescription> | null;
 	}
 
 
 	/** The tags associated with a load balancer. */
 	export interface TagDescription {
-		LoadBalancerName?: string;
-		Tags?: Array<Tag>;
+		LoadBalancerName?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Contains the output of DetachLoadBalancerFromSubnets. */
 	export interface DetachLoadBalancerFromSubnetsOutput {
-		Subnets?: Array<string>;
+		Subnets?: Array<string> | null;
 	}
 
 
 	/** Contains the output for DisableAvailabilityZonesForLoadBalancer. */
 	export interface RemoveAvailabilityZonesOutput {
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 	}
 
 
 	/** Contains the output of EnableAvailabilityZonesForLoadBalancer. */
 	export interface AddAvailabilityZonesOutput {
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 	}
 
 
 	/** Contains the output of ModifyLoadBalancerAttributes. */
 	export interface ModifyLoadBalancerAttributesOutput {
-		LoadBalancerName?: string;
+		LoadBalancerName?: string | null;
 
 		/** The attributes for a load balancer. */
-		LoadBalancerAttributes?: LoadBalancerAttributes;
+		LoadBalancerAttributes?: LoadBalancerAttributes | null;
 	}
 
 
 	/** Contains the output of RegisterInstancesWithLoadBalancer. */
 	export interface RegisterEndPointsOutput {
-		Instances?: Array<Instance>;
+		Instances?: Array<Instance> | null;
 	}
 
 
@@ -443,7 +443,7 @@ export namespace MyNS {
 
 	/** The key of a tag. */
 	export interface TagKeyOnly {
-		Key?: string;
+		Key?: string | null;
 	}
 
 
@@ -509,11 +509,11 @@ export namespace MyNS {
 	export interface CreateAccessPointInput {
 		LoadBalancerName: string;
 		Listeners: Array<Listener>;
-		AvailabilityZones?: Array<string>;
-		Subnets?: Array<string>;
-		SecurityGroups?: Array<string>;
-		Scheme?: string;
-		Tags?: Array<Tag>;
+		AvailabilityZones?: Array<string> | null;
+		Subnets?: Array<string> | null;
+		SecurityGroups?: Array<string> | null;
+		Scheme?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -529,7 +529,7 @@ export namespace MyNS {
 	export interface CreateLBCookieStickinessPolicyInput {
 		LoadBalancerName: string;
 		PolicyName: string;
-		CookieExpirationPeriod?: number;
+		CookieExpirationPeriod?: number | null;
 	}
 
 
@@ -545,7 +545,7 @@ export namespace MyNS {
 		LoadBalancerName: string;
 		PolicyName: string;
 		PolicyTypeName: string;
-		PolicyAttributes?: Array<PolicyAttribute>;
+		PolicyAttributes?: Array<PolicyAttribute> | null;
 	}
 
 
@@ -578,21 +578,21 @@ export namespace MyNS {
 
 	/** Contains the parameters for DescribeLoadBalancers. */
 	export interface DescribeAccessPointsInput {
-		LoadBalancerNames?: Array<string>;
-		Marker?: string;
-		PageSize?: number;
+		LoadBalancerNames?: Array<string> | null;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeAccountLimitsInput {
-		Marker?: string;
-		PageSize?: number;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 
 	/** Contains the parameters for DescribeInstanceHealth. */
 	export interface DescribeEndPointStateInput {
 		LoadBalancerName: string;
-		Instances?: Array<Instance>;
+		Instances?: Array<Instance> | null;
 	}
 
 
@@ -604,14 +604,14 @@ export namespace MyNS {
 
 	/** Contains the parameters for DescribeLoadBalancerPolicies. */
 	export interface DescribeLoadBalancerPoliciesInput {
-		LoadBalancerName?: string;
-		PolicyNames?: Array<string>;
+		LoadBalancerName?: string | null;
+		PolicyNames?: Array<string> | null;
 	}
 
 
 	/** Contains the parameters for DescribeLoadBalancerPolicyTypes. */
 	export interface DescribeLoadBalancerPolicyTypesInput {
-		PolicyTypeNames?: Array<string>;
+		PolicyTypeNames?: Array<string> | null;
 	}
 
 
@@ -1167,17 +1167,17 @@ export namespace MyNS {
 	export interface GET_ModifyLoadBalancerAttributesLoadBalancerAttributes {
 
 		/** Information about the <code>CrossZoneLoadBalancing</code> attribute. */
-		CrossZoneLoadBalancing?: CrossZoneLoadBalancing;
+		CrossZoneLoadBalancing?: CrossZoneLoadBalancing | null;
 
 		/** Information about the <code>AccessLog</code> attribute. */
-		AccessLog?: AccessLog;
+		AccessLog?: AccessLog | null;
 
 		/** Information about the <code>ConnectionDraining</code> attribute. */
-		ConnectionDraining?: ConnectionDraining;
+		ConnectionDraining?: ConnectionDraining | null;
 
 		/** Information about the <code>ConnectionSettings</code> attribute. */
-		ConnectionSettings?: ConnectionSettings;
-		AdditionalAttributes?: Array<AdditionalAttribute>;
+		ConnectionSettings?: ConnectionSettings | null;
+		AdditionalAttributes?: Array<AdditionalAttribute> | null;
 	}
 
 	export enum GET_ModifyLoadBalancerAttributesAction { ModifyLoadBalancerAttributes = 0 }

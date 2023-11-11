@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface Activity {
 
 		/** Represents the changes associated with an action taken by a user. */
-		combinedEvent?: Event;
+		combinedEvent?: Event | null;
 
 		/** A list of all the Events that make up the Activity. */
-		singleEvents?: Array<Event>;
+		singleEvents?: Array<Event> | null;
 	}
 
 
@@ -18,31 +18,31 @@ export namespace MyNS {
 	export interface Event {
 
 		/** Additional event types. Some events may have multiple types when multiple actions are part of a single event. For example, creating a document, renaming it, and sharing it may be part of a single file-creation event. */
-		additionalEventTypes?: Array<string>;
+		additionalEventTypes?: Array<string> | null;
 
 		/** The time at which the event occurred formatted as Unix time in milliseconds. */
-		eventTimeMillis?: string;
+		eventTimeMillis?: string | null;
 
 		/** Whether this event is caused by a user being deleted. */
-		fromUserDeletion?: boolean;
+		fromUserDeletion?: boolean | null;
 
 		/** Contains information about changes in an object's parents as a result of a move type event. */
-		move?: Move;
+		move?: Move | null;
 
 		/** Extra information for permissionChange type events, such as the user or group the new permission applies to. */
-		permissionChanges?: Array<PermissionChange>;
+		permissionChanges?: Array<PermissionChange> | null;
 
 		/** The main type of event that occurred. */
-		primaryEventType?: EventPrimaryEventType;
+		primaryEventType?: EventPrimaryEventType | null;
 
 		/** Contains information about a renametype event. */
-		rename?: Rename;
+		rename?: Rename | null;
 
 		/** Information about the object modified by the event. */
-		target?: Target;
+		target?: Target | null;
 
 		/** A representation of a user. */
-		user?: User;
+		user?: User | null;
 	}
 
 
@@ -50,10 +50,10 @@ export namespace MyNS {
 	export interface Move {
 
 		/** The added parent(s). */
-		addedParents?: Array<Parent>;
+		addedParents?: Array<Parent> | null;
 
 		/** The removed parent(s). */
-		removedParents?: Array<Parent>;
+		removedParents?: Array<Parent> | null;
 	}
 
 
@@ -61,13 +61,13 @@ export namespace MyNS {
 	export interface Parent {
 
 		/** The parent's ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Whether this is the root folder. */
-		isRoot?: boolean;
+		isRoot?: boolean | null;
 
 		/** The parent's title. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -75,10 +75,10 @@ export namespace MyNS {
 	export interface PermissionChange {
 
 		/** Lists all Permission objects added. */
-		addedPermissions?: Array<Permission>;
+		addedPermissions?: Array<Permission> | null;
 
 		/** Lists all Permission objects removed. */
-		removedPermissions?: Array<Permission>;
+		removedPermissions?: Array<Permission> | null;
 	}
 
 
@@ -86,22 +86,22 @@ export namespace MyNS {
 	export interface Permission {
 
 		/** The name of the user or group the permission applies to. */
-		name?: string;
+		name?: string | null;
 
 		/** The ID for this permission. Corresponds to the Drive API's permission ID returned as part of the Drive Permissions resource. */
-		permissionId?: string;
+		permissionId?: string | null;
 
 		/** Indicates the Google Drive permissions role. The role determines a user's ability to read, write, or comment on the file. */
-		role?: PermissionRole;
+		role?: PermissionRole | null;
 
 		/** Indicates how widely permissions are granted. */
-		type?: PermissionType;
+		type?: PermissionType | null;
 
 		/** A representation of a user. */
-		user?: User;
+		user?: User | null;
 
 		/** Whether the permission requires a link to the file. */
-		withLink?: boolean;
+		withLink?: boolean | null;
 	}
 
 	export enum PermissionRole { commenter = 0, fileOrganizer = 1, owner = 2, publishedReader = 3, reader = 4, writer = 5 }
@@ -113,19 +113,19 @@ export namespace MyNS {
 	export interface User {
 
 		/** A boolean which indicates whether the specified User was deleted. If true, name, photo and permission_id will be omitted. */
-		isDeleted?: boolean;
+		isDeleted?: boolean | null;
 
 		/** Whether the user is the authenticated user. */
-		isMe?: boolean;
+		isMe?: boolean | null;
 
 		/** The displayable name of the user. */
-		name?: string;
+		name?: string | null;
 
 		/** The permission ID associated with this user. Equivalent to the Drive API's permission ID for this user, returned as part of the Drive Permissions resource. */
-		permissionId?: string;
+		permissionId?: string | null;
 
 		/** Photo information for a user. */
-		photo?: Photo;
+		photo?: Photo | null;
 	}
 
 
@@ -133,7 +133,7 @@ export namespace MyNS {
 	export interface Photo {
 
 		/** The URL of the photo. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum EventPrimaryEventType { comment = 0, create = 1, edit = 2, emptyTrash = 3, move = 4, permissionChange = 5, rename = 6, trash = 7, unknown = 8, untrash = 9, upload = 10 }
@@ -143,10 +143,10 @@ export namespace MyNS {
 	export interface Rename {
 
 		/** The new title. */
-		newTitle?: string;
+		newTitle?: string | null;
 
 		/** The old title. */
-		oldTitle?: string;
+		oldTitle?: string | null;
 	}
 
 
@@ -154,13 +154,13 @@ export namespace MyNS {
 	export interface Target {
 
 		/** The ID of the target. For example, in Google Drive, this is the file or folder ID. */
-		id?: string;
+		id?: string | null;
 
 		/** The MIME type of the target. */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** The name of the target. For example, in Google Drive, this is the title of the file. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -168,10 +168,10 @@ export namespace MyNS {
 	export interface ListActivitiesResponse {
 
 		/** List of activities. */
-		activities?: Array<Activity>;
+		activities?: Array<Activity> | null;
 
 		/** Token for the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()

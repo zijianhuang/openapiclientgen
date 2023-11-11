@@ -3,17 +3,17 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AddApplicationCloudWatchLoggingOptionResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
-		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription>;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
+		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription> | null;
 	}
 
 
 	/** Describes the Amazon CloudWatch logging option. */
 	export interface CloudWatchLoggingOptionDescription {
-		CloudWatchLoggingOptionId?: string;
+		CloudWatchLoggingOptionId?: string | null;
 		LogStreamARN: string;
-		RoleARN?: string;
+		RoleARN?: string | null;
 	}
 
 	export interface AddApplicationCloudWatchLoggingOptionRequest {
@@ -52,35 +52,35 @@ export namespace MyNS {
 	}
 
 	export interface AddApplicationInputResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
-		InputDescriptions?: Array<InputDescription>;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
+		InputDescriptions?: Array<InputDescription> | null;
 	}
 
 
 	/** Describes the application input configuration for an SQL-based Amazon Kinesis Data Analytics application.  */
 	export interface InputDescription {
-		InputId?: string;
-		NamePrefix?: string;
-		InAppStreamNames?: Array<string>;
+		InputId?: string | null;
+		NamePrefix?: string | null;
+		InAppStreamNames?: Array<string> | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>. */
-		InputProcessingConfigurationDescription?: InputProcessingConfigurationDescription;
+		InputProcessingConfigurationDescription?: InputProcessingConfigurationDescription | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the streaming source in the application input configuration. */
-		KinesisStreamsInputDescription?: KinesisStreamsInputDescription;
+		KinesisStreamsInputDescription?: KinesisStreamsInputDescription | null;
 
 		/** Describes the Amazon Kinesis Data Firehose delivery stream that is configured as the streaming source in the application input configuration. */
-		KinesisFirehoseInputDescription?: KinesisFirehoseInputDescription;
+		KinesisFirehoseInputDescription?: KinesisFirehoseInputDescription | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
-		InputSchema?: SourceSchema;
+		InputSchema?: SourceSchema | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source. */
-		InputParallelism?: InputParallelism;
+		InputParallelism?: InputParallelism | null;
 
 		/** Describes the point at which the application reads from the streaming source. */
-		InputStartingPositionConfiguration?: InputStartingPositionConfiguration;
+		InputStartingPositionConfiguration?: InputStartingPositionConfiguration | null;
 	}
 
 
@@ -88,28 +88,28 @@ export namespace MyNS {
 	export interface InputProcessingConfigurationDescription {
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream. */
-		InputLambdaProcessorDescription?: InputLambdaProcessorDescription;
+		InputLambdaProcessorDescription?: InputLambdaProcessorDescription | null;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream. */
 	export interface InputLambdaProcessorDescription {
 		ResourceARN: string;
-		RoleARN?: string;
+		RoleARN?: string | null;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the streaming source in the application input configuration.  */
 	export interface KinesisStreamsInputDescription {
 		ResourceARN: string;
-		RoleARN?: string;
+		RoleARN?: string | null;
 	}
 
 
 	/** Describes the Amazon Kinesis Data Firehose delivery stream that is configured as the streaming source in the application input configuration.  */
 	export interface KinesisFirehoseInputDescription {
 		ResourceARN: string;
-		RoleARN?: string;
+		RoleARN?: string | null;
 	}
 
 
@@ -121,7 +121,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		RecordFormat: RecordFormat;
-		RecordEncoding?: string;
+		RecordEncoding?: string | null;
 		RecordColumns: Array<RecordColumn>;
 	}
 
@@ -131,7 +131,7 @@ export namespace MyNS {
 		RecordFormatType: RecordFormatRecordFormatType;
 
 		/** When you configure an SQL-based Amazon Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source. */
-		MappingParameters?: MappingParameters;
+		MappingParameters?: MappingParameters | null;
 	}
 
 	export enum RecordFormatRecordFormatType { JSON = 0, CSV = 1 }
@@ -141,10 +141,10 @@ export namespace MyNS {
 	export interface MappingParameters {
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source. */
-		JSONMappingParameters?: JSONMappingParameters;
+		JSONMappingParameters?: JSONMappingParameters | null;
 
 		/** <p>For an SQL-based application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p> <p> <code>"name2", "address2"</code> </p> */
-		CSVMappingParameters?: CSVMappingParameters;
+		CSVMappingParameters?: CSVMappingParameters | null;
 	}
 
 
@@ -164,20 +164,20 @@ export namespace MyNS {
 	/** <p>For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p> <p>Also used to describe the format of the reference data source.</p> */
 	export interface RecordColumn {
 		Name: string;
-		Mapping?: string;
+		Mapping?: string | null;
 		SqlType: string;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source.  */
 	export interface InputParallelism {
-		Count?: number;
+		Count?: number | null;
 	}
 
 
 	/** Describes the point at which the application reads from the streaming source. */
 	export interface InputStartingPositionConfiguration {
-		InputStartingPosition?: InputStartingPositionConfigurationInputStartingPosition;
+		InputStartingPosition?: InputStartingPositionConfigurationInputStartingPosition | null;
 	}
 
 	export enum InputStartingPositionConfigurationInputStartingPosition { NOW = 0, TRIM_HORIZON = 1, LAST_STOPPED_POINT = 2 }
@@ -199,16 +199,16 @@ export namespace MyNS {
 		NamePrefix: string;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>. */
-		InputProcessingConfiguration?: InputProcessingConfiguration;
+		InputProcessingConfiguration?: InputProcessingConfiguration | null;
 
 		/** Identifies an Amazon Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN). */
-		KinesisStreamsInput?: KinesisStreamsInput;
+		KinesisStreamsInput?: KinesisStreamsInput | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN). */
-		KinesisFirehoseInput?: KinesisFirehoseInput;
+		KinesisFirehoseInput?: KinesisFirehoseInput | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source. */
-		InputParallelism?: InputParallelism;
+		InputParallelism?: InputParallelism | null;
 
 		/**
 		 * For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
@@ -250,12 +250,12 @@ export namespace MyNS {
 	}
 
 	export interface AddApplicationInputProcessingConfigurationResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
-		InputId?: string;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
+		InputId?: string | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>. */
-		InputProcessingConfigurationDescription?: InputProcessingConfigurationDescription;
+		InputProcessingConfigurationDescription?: InputProcessingConfigurationDescription | null;
 	}
 
 	export interface AddApplicationInputProcessingConfigurationRequest {
@@ -271,49 +271,49 @@ export namespace MyNS {
 	}
 
 	export interface AddApplicationOutputResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
-		OutputDescriptions?: Array<OutputDescription>;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
+		OutputDescriptions?: Array<OutputDescription> | null;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application, describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.  */
 	export interface OutputDescription {
-		OutputId?: string;
-		Name?: string;
+		OutputId?: string | null;
+		Name?: string | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application's output, describes the Kinesis data stream that is configured as its destination. */
-		KinesisStreamsOutputDescription?: KinesisStreamsOutputDescription;
+		KinesisStreamsOutputDescription?: KinesisStreamsOutputDescription | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application's output, describes the Kinesis Data Firehose delivery stream that is configured as its destination. */
-		KinesisFirehoseOutputDescription?: KinesisFirehoseOutputDescription;
+		KinesisFirehoseOutputDescription?: KinesisFirehoseOutputDescription | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application output, describes the AWS Lambda function that is configured as its destination. */
-		LambdaOutputDescription?: LambdaOutputDescription;
+		LambdaOutputDescription?: LambdaOutputDescription | null;
 
 		/** Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application. */
-		DestinationSchema?: DestinationSchema;
+		DestinationSchema?: DestinationSchema | null;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application's output, describes the Kinesis data stream that is configured as its destination.  */
 	export interface KinesisStreamsOutputDescription {
 		ResourceARN: string;
-		RoleARN?: string;
+		RoleARN?: string | null;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application's output, describes the Kinesis Data Firehose delivery stream that is configured as its destination. */
 	export interface KinesisFirehoseOutputDescription {
 		ResourceARN: string;
-		RoleARN?: string;
+		RoleARN?: string | null;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application output, describes the AWS Lambda function that is configured as its destination.  */
 	export interface LambdaOutputDescription {
 		ResourceARN: string;
-		RoleARN?: string;
+		RoleARN?: string | null;
 	}
 
 
@@ -339,13 +339,13 @@ export namespace MyNS {
 		Name: string;
 
 		/** When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN). */
-		KinesisStreamsOutput?: KinesisStreamsOutput;
+		KinesisStreamsOutput?: KinesisStreamsOutput | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, when configuring application output, identifies a Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) of the delivery stream. */
-		KinesisFirehoseOutput?: KinesisFirehoseOutput;
+		KinesisFirehoseOutput?: KinesisFirehoseOutput | null;
 
 		/** When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function. */
-		LambdaOutput?: LambdaOutput;
+		LambdaOutput?: LambdaOutput | null;
 
 		/**
 		 * Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application.
@@ -373,9 +373,9 @@ export namespace MyNS {
 	}
 
 	export interface AddApplicationReferenceDataSourceResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
-		ReferenceDataSourceDescriptions?: Array<ReferenceDataSourceDescription>;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
+		ReferenceDataSourceDescriptions?: Array<ReferenceDataSourceDescription> | null;
 	}
 
 
@@ -391,7 +391,7 @@ export namespace MyNS {
 		S3ReferenceDataSourceDescription: S3ReferenceDataSourceDescription;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
-		ReferenceSchema?: SourceSchema;
+		ReferenceSchema?: SourceSchema | null;
 	}
 
 
@@ -399,7 +399,7 @@ export namespace MyNS {
 	export interface S3ReferenceDataSourceDescription {
 		BucketARN: string;
 		FileKey: string;
-		ReferenceRoleARN?: string;
+		ReferenceRoleARN?: string | null;
 	}
 
 	export interface AddApplicationReferenceDataSourceRequest {
@@ -419,7 +419,7 @@ export namespace MyNS {
 		TableName: string;
 
 		/** <p>For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.</p> <p>A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application. </p> */
-		S3ReferenceDataSource?: S3ReferenceDataSource;
+		S3ReferenceDataSource?: S3ReferenceDataSource | null;
 
 		/**
 		 * For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
@@ -431,16 +431,16 @@ export namespace MyNS {
 
 	/** <p>For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.</p> <p>A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application. </p> */
 	export interface S3ReferenceDataSource {
-		BucketARN?: string;
-		FileKey?: string;
+		BucketARN?: string | null;
+		FileKey?: string | null;
 	}
 
 	export interface AddApplicationVpcConfigurationResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
 
 		/** Describes the parameters of a VPC used by the application. */
-		VpcConfigurationDescription?: VpcConfigurationDescription;
+		VpcConfigurationDescription?: VpcConfigurationDescription | null;
 	}
 
 
@@ -483,18 +483,18 @@ export namespace MyNS {
 	/** Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations. */
 	export interface ApplicationDetail {
 		ApplicationARN: string;
-		ApplicationDescription?: string;
+		ApplicationDescription?: string | null;
 		ApplicationName: string;
 		RuntimeEnvironment: ApplicationDetailRuntimeEnvironment;
-		ServiceExecutionRole?: string;
+		ServiceExecutionRole?: string | null;
 		ApplicationStatus: ApplicationDetailApplicationStatus;
 		ApplicationVersionId: number;
-		CreateTimestamp?: Date;
-		LastUpdateTimestamp?: Date;
+		CreateTimestamp?: Date | null;
+		LastUpdateTimestamp?: Date | null;
 
 		/** Describes details about the application code and starting parameters for an Amazon Kinesis Data Analytics application. */
-		ApplicationConfigurationDescription?: ApplicationConfigurationDescription;
-		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription>;
+		ApplicationConfigurationDescription?: ApplicationConfigurationDescription | null;
+		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription> | null;
 	}
 
 	export enum ApplicationDetailRuntimeEnvironment { SQL_1_0 = 0, FLINK_1_6 = 1, FLINK_1_8 = 2 }
@@ -506,31 +506,31 @@ export namespace MyNS {
 	export interface ApplicationConfigurationDescription {
 
 		/** Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application. */
-		SqlApplicationConfigurationDescription?: SqlApplicationConfigurationDescription;
+		SqlApplicationConfigurationDescription?: SqlApplicationConfigurationDescription | null;
 
 		/** Describes code configuration for a Java-based Kinesis Data Analytics application. */
-		ApplicationCodeConfigurationDescription?: ApplicationCodeConfigurationDescription;
+		ApplicationCodeConfigurationDescription?: ApplicationCodeConfigurationDescription | null;
 
 		/** Describes the starting properties for a Kinesis Data Analytics application. */
-		RunConfigurationDescription?: RunConfigurationDescription;
+		RunConfigurationDescription?: RunConfigurationDescription | null;
 
 		/** Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application. */
-		FlinkApplicationConfigurationDescription?: FlinkApplicationConfigurationDescription;
+		FlinkApplicationConfigurationDescription?: FlinkApplicationConfigurationDescription | null;
 
 		/** Describes the execution properties for a Java-based Amazon Kinesis Data Analytics application. */
-		EnvironmentPropertyDescriptions?: EnvironmentPropertyDescriptions;
+		EnvironmentPropertyDescriptions?: EnvironmentPropertyDescriptions | null;
 
 		/** Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application. */
-		ApplicationSnapshotConfigurationDescription?: ApplicationSnapshotConfigurationDescription;
-		VpcConfigurationDescriptions?: Array<VpcConfigurationDescription>;
+		ApplicationSnapshotConfigurationDescription?: ApplicationSnapshotConfigurationDescription | null;
+		VpcConfigurationDescriptions?: Array<VpcConfigurationDescription> | null;
 	}
 
 
 	/** Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application. */
 	export interface SqlApplicationConfigurationDescription {
-		InputDescriptions?: Array<InputDescription>;
-		OutputDescriptions?: Array<OutputDescription>;
-		ReferenceDataSourceDescriptions?: Array<ReferenceDataSourceDescription>;
+		InputDescriptions?: Array<InputDescription> | null;
+		OutputDescriptions?: Array<OutputDescription> | null;
+		ReferenceDataSourceDescriptions?: Array<ReferenceDataSourceDescription> | null;
 	}
 
 
@@ -539,7 +539,7 @@ export namespace MyNS {
 		CodeContentType: ApplicationCodeConfigurationDescriptionCodeContentType;
 
 		/** Describes details about the application code for a Java-based Kinesis Data Analytics application. */
-		CodeContentDescription?: CodeContentDescription;
+		CodeContentDescription?: CodeContentDescription | null;
 	}
 
 	export enum ApplicationCodeConfigurationDescriptionCodeContentType { PLAINTEXT = 0, ZIPFILE = 1 }
@@ -547,12 +547,12 @@ export namespace MyNS {
 
 	/** Describes details about the application code for a Java-based Kinesis Data Analytics application. */
 	export interface CodeContentDescription {
-		TextContent?: string;
-		CodeMD5?: string;
-		CodeSize?: number;
+		TextContent?: string | null;
+		CodeMD5?: string | null;
+		CodeSize?: number | null;
 
 		/** Describes the location of a Java-based Amazon Kinesis Data Analytics application's code stored in an S3 bucket. */
-		S3ApplicationCodeLocationDescription?: S3ApplicationCodeLocationDescription;
+		S3ApplicationCodeLocationDescription?: S3ApplicationCodeLocationDescription | null;
 	}
 
 
@@ -560,7 +560,7 @@ export namespace MyNS {
 	export interface S3ApplicationCodeLocationDescription {
 		BucketARN: string;
 		FileKey: string;
-		ObjectVersion?: string;
+		ObjectVersion?: string | null;
 	}
 
 
@@ -568,14 +568,14 @@ export namespace MyNS {
 	export interface RunConfigurationDescription {
 
 		/** Specifies the method and snapshot to use when restarting an application using previously saved application state. */
-		ApplicationRestoreConfigurationDescription?: ApplicationRestoreConfiguration;
+		ApplicationRestoreConfigurationDescription?: ApplicationRestoreConfiguration | null;
 	}
 
 
 	/** Specifies the method and snapshot to use when restarting an application using previously saved application state. */
 	export interface ApplicationRestoreConfiguration {
 		ApplicationRestoreType: ApplicationRestoreConfigurationApplicationRestoreType;
-		SnapshotName?: string;
+		SnapshotName?: string | null;
 	}
 
 	export enum ApplicationRestoreConfigurationApplicationRestoreType { SKIP_RESTORE_FROM_SNAPSHOT = 0, RESTORE_FROM_LATEST_SNAPSHOT = 1, RESTORE_FROM_CUSTOM_SNAPSHOT = 2 }
@@ -585,23 +585,23 @@ export namespace MyNS {
 	export interface FlinkApplicationConfigurationDescription {
 
 		/** Describes checkpointing parameters for a Java-based Amazon Kinesis Data Analytics application. */
-		CheckpointConfigurationDescription?: CheckpointConfigurationDescription;
+		CheckpointConfigurationDescription?: CheckpointConfigurationDescription | null;
 
 		/** Describes configuration parameters for CloudWatch logging for a Java-based Kinesis Data Analytics application. */
-		MonitoringConfigurationDescription?: MonitoringConfigurationDescription;
+		MonitoringConfigurationDescription?: MonitoringConfigurationDescription | null;
 
 		/** Describes parameters for how a Java-based Kinesis Data Analytics application executes multiple tasks simultaneously. */
-		ParallelismConfigurationDescription?: ParallelismConfigurationDescription;
-		JobPlanDescription?: string;
+		ParallelismConfigurationDescription?: ParallelismConfigurationDescription | null;
+		JobPlanDescription?: string | null;
 	}
 
 
 	/** Describes checkpointing parameters for a Java-based Amazon Kinesis Data Analytics application. */
 	export interface CheckpointConfigurationDescription {
-		ConfigurationType?: CheckpointConfigurationDescriptionConfigurationType;
-		CheckpointingEnabled?: boolean;
-		CheckpointInterval?: number;
-		MinPauseBetweenCheckpoints?: number;
+		ConfigurationType?: CheckpointConfigurationDescriptionConfigurationType | null;
+		CheckpointingEnabled?: boolean | null;
+		CheckpointInterval?: number | null;
+		MinPauseBetweenCheckpoints?: number | null;
 	}
 
 	export enum CheckpointConfigurationDescriptionConfigurationType { DEFAULT = 0, CUSTOM = 1 }
@@ -609,9 +609,9 @@ export namespace MyNS {
 
 	/** Describes configuration parameters for CloudWatch logging for a Java-based Kinesis Data Analytics application. */
 	export interface MonitoringConfigurationDescription {
-		ConfigurationType?: CheckpointConfigurationDescriptionConfigurationType;
-		MetricsLevel?: MonitoringConfigurationDescriptionMetricsLevel;
-		LogLevel?: MonitoringConfigurationDescriptionLogLevel;
+		ConfigurationType?: CheckpointConfigurationDescriptionConfigurationType | null;
+		MetricsLevel?: MonitoringConfigurationDescriptionMetricsLevel | null;
+		LogLevel?: MonitoringConfigurationDescriptionLogLevel | null;
 	}
 
 	export enum MonitoringConfigurationDescriptionMetricsLevel { APPLICATION = 0, TASK = 1, OPERATOR = 2, PARALLELISM = 3 }
@@ -621,17 +621,17 @@ export namespace MyNS {
 
 	/** Describes parameters for how a Java-based Kinesis Data Analytics application executes multiple tasks simultaneously. */
 	export interface ParallelismConfigurationDescription {
-		ConfigurationType?: CheckpointConfigurationDescriptionConfigurationType;
-		Parallelism?: number;
-		ParallelismPerKPU?: number;
-		CurrentParallelism?: number;
-		AutoScalingEnabled?: boolean;
+		ConfigurationType?: CheckpointConfigurationDescriptionConfigurationType | null;
+		Parallelism?: number | null;
+		ParallelismPerKPU?: number | null;
+		CurrentParallelism?: number | null;
+		AutoScalingEnabled?: boolean | null;
 	}
 
 
 	/** Describes the execution properties for a Java-based Amazon Kinesis Data Analytics application. */
 	export interface EnvironmentPropertyDescriptions {
-		PropertyGroupDescriptions?: Array<PropertyGroup>;
+		PropertyGroupDescriptions?: Array<PropertyGroup> | null;
 	}
 
 
@@ -652,14 +652,14 @@ export namespace MyNS {
 
 	export interface CreateApplicationRequest {
 		ApplicationName: string;
-		ApplicationDescription?: string;
+		ApplicationDescription?: string | null;
 		RuntimeEnvironment: CreateApplicationRequestRuntimeEnvironment;
 		ServiceExecutionRole: string;
 
 		/** Specifies the creation parameters for an Amazon Kinesis Data Analytics application. */
-		ApplicationConfiguration?: ApplicationConfiguration;
-		CloudWatchLoggingOptions?: Array<CloudWatchLoggingOption>;
-		Tags?: Array<Tag>;
+		ApplicationConfiguration?: ApplicationConfiguration | null;
+		CloudWatchLoggingOptions?: Array<CloudWatchLoggingOption> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateApplicationRequestRuntimeEnvironment { SQL_1_0 = 0, FLINK_1_6 = 1, FLINK_1_8 = 2 }
@@ -669,13 +669,13 @@ export namespace MyNS {
 	export interface ApplicationConfiguration {
 
 		/** Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application. */
-		SqlApplicationConfiguration?: SqlApplicationConfiguration;
+		SqlApplicationConfiguration?: SqlApplicationConfiguration | null;
 
 		/** Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application. */
-		FlinkApplicationConfiguration?: FlinkApplicationConfiguration;
+		FlinkApplicationConfiguration?: FlinkApplicationConfiguration | null;
 
 		/** Describes execution properties for a Java-based Kinesis Data Analytics application. */
-		EnvironmentProperties?: EnvironmentProperties;
+		EnvironmentProperties?: EnvironmentProperties | null;
 
 		/**
 		 * Describes code configuration for a Java-based Kinesis Data Analytics application.
@@ -684,16 +684,16 @@ export namespace MyNS {
 		ApplicationCodeConfiguration: ApplicationCodeConfiguration;
 
 		/** Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application. */
-		ApplicationSnapshotConfiguration?: ApplicationSnapshotConfiguration;
-		VpcConfigurations?: Array<VpcConfiguration>;
+		ApplicationSnapshotConfiguration?: ApplicationSnapshotConfiguration | null;
+		VpcConfigurations?: Array<VpcConfiguration> | null;
 	}
 
 
 	/** Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application. */
 	export interface SqlApplicationConfiguration {
-		Inputs?: Array<Input>;
-		Outputs?: Array<Output>;
-		ReferenceDataSources?: Array<ReferenceDataSource>;
+		Inputs?: Array<Input> | null;
+		Outputs?: Array<Output> | null;
+		ReferenceDataSources?: Array<ReferenceDataSource> | null;
 	}
 
 
@@ -701,39 +701,39 @@ export namespace MyNS {
 	export interface FlinkApplicationConfiguration {
 
 		/** Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>. */
-		CheckpointConfiguration?: CheckpointConfiguration;
+		CheckpointConfiguration?: CheckpointConfiguration | null;
 
 		/** Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>. */
-		MonitoringConfiguration?: MonitoringConfiguration;
+		MonitoringConfiguration?: MonitoringConfiguration | null;
 
 		/** Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see <a href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html">Parallel Execution</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>. */
-		ParallelismConfiguration?: ParallelismConfiguration;
+		ParallelismConfiguration?: ParallelismConfiguration | null;
 	}
 
 
 	/** Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>. */
 	export interface CheckpointConfiguration {
 		ConfigurationType: CheckpointConfigurationDescriptionConfigurationType;
-		CheckpointingEnabled?: boolean;
-		CheckpointInterval?: number;
-		MinPauseBetweenCheckpoints?: number;
+		CheckpointingEnabled?: boolean | null;
+		CheckpointInterval?: number | null;
+		MinPauseBetweenCheckpoints?: number | null;
 	}
 
 
 	/** Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>. */
 	export interface MonitoringConfiguration {
 		ConfigurationType: CheckpointConfigurationDescriptionConfigurationType;
-		MetricsLevel?: MonitoringConfigurationDescriptionMetricsLevel;
-		LogLevel?: MonitoringConfigurationDescriptionLogLevel;
+		MetricsLevel?: MonitoringConfigurationDescriptionMetricsLevel | null;
+		LogLevel?: MonitoringConfigurationDescriptionLogLevel | null;
 	}
 
 
 	/** Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see <a href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html">Parallel Execution</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>. */
 	export interface ParallelismConfiguration {
 		ConfigurationType: CheckpointConfigurationDescriptionConfigurationType;
-		Parallelism?: number;
-		ParallelismPerKPU?: number;
-		AutoScalingEnabled?: boolean;
+		Parallelism?: number | null;
+		ParallelismPerKPU?: number | null;
+		AutoScalingEnabled?: boolean | null;
 	}
 
 
@@ -747,18 +747,18 @@ export namespace MyNS {
 	export interface ApplicationCodeConfiguration {
 
 		/** Specifies either the application code, or the location of the application code, for a Java-based Amazon Kinesis Data Analytics application. */
-		CodeContent?: CodeContent;
+		CodeContent?: CodeContent | null;
 		CodeContentType: ApplicationCodeConfigurationDescriptionCodeContentType;
 	}
 
 
 	/** Specifies either the application code, or the location of the application code, for a Java-based Amazon Kinesis Data Analytics application.  */
 	export interface CodeContent {
-		TextContent?: string;
-		ZipFileContent?: string;
+		TextContent?: string | null;
+		ZipFileContent?: string | null;
 
 		/** For a Java-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. */
-		S3ContentLocation?: S3ContentLocation;
+		S3ContentLocation?: S3ContentLocation | null;
 	}
 
 
@@ -766,7 +766,7 @@ export namespace MyNS {
 	export interface S3ContentLocation {
 		BucketARN: string;
 		FileKey: string;
-		ObjectVersion?: string;
+		ObjectVersion?: string | null;
 	}
 
 
@@ -779,7 +779,7 @@ export namespace MyNS {
 	/** A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface LimitExceededException {
@@ -808,9 +808,9 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationCloudWatchLoggingOptionResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
-		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription>;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
+		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription> | null;
 	}
 
 	export interface DeleteApplicationCloudWatchLoggingOptionRequest {
@@ -820,8 +820,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationInputProcessingConfigurationResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
 	}
 
 	export interface DeleteApplicationInputProcessingConfigurationRequest {
@@ -831,8 +831,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationOutputResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
 	}
 
 	export interface DeleteApplicationOutputRequest {
@@ -842,8 +842,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationReferenceDataSourceResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
 	}
 
 	export interface DeleteApplicationReferenceDataSourceRequest {
@@ -862,8 +862,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationVpcConfigurationResponse {
-		ApplicationARN?: string;
-		ApplicationVersionId?: number;
+		ApplicationARN?: string | null;
+		ApplicationVersionId?: number | null;
 	}
 
 	export interface DeleteApplicationVpcConfigurationRequest {
@@ -883,7 +883,7 @@ export namespace MyNS {
 
 	export interface DescribeApplicationRequest {
 		ApplicationName: string;
-		IncludeAdditionalDetails?: boolean;
+		IncludeAdditionalDetails?: boolean | null;
 	}
 
 	export interface DescribeApplicationSnapshotResponse {
@@ -901,7 +901,7 @@ export namespace MyNS {
 		SnapshotName: string;
 		SnapshotStatus: SnapshotDetailsSnapshotStatus;
 		ApplicationVersionId: number;
-		SnapshotCreationTimestamp?: Date;
+		SnapshotCreationTimestamp?: Date | null;
 	}
 
 	export enum SnapshotDetailsSnapshotStatus { CREATING = 0, READY = 1, DELETING = 2, FAILED = 3 }
@@ -914,24 +914,24 @@ export namespace MyNS {
 	export interface DiscoverInputSchemaResponse {
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
-		InputSchema?: SourceSchema;
-		ParsedInputRecords?: Array<Array<string>>;
-		ProcessedInputRecords?: Array<string>;
-		RawInputRecords?: Array<string>;
+		InputSchema?: SourceSchema | null;
+		ParsedInputRecords?: Array<Array<string>> | null;
+		ProcessedInputRecords?: Array<string> | null;
+		RawInputRecords?: Array<string> | null;
 	}
 
 	export interface DiscoverInputSchemaRequest {
-		ResourceARN?: string;
+		ResourceARN?: string | null;
 		ServiceExecutionRole: string;
 
 		/** Describes the point at which the application reads from the streaming source. */
-		InputStartingPositionConfiguration?: InputStartingPositionConfiguration;
+		InputStartingPositionConfiguration?: InputStartingPositionConfiguration | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data. */
-		S3Configuration?: S3Configuration;
+		S3Configuration?: S3Configuration | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>. */
-		InputProcessingConfiguration?: InputProcessingConfiguration;
+		InputProcessingConfiguration?: InputProcessingConfiguration | null;
 	}
 
 
@@ -951,19 +951,19 @@ export namespace MyNS {
 	}
 
 	export interface ListApplicationSnapshotsResponse {
-		SnapshotSummaries?: Array<SnapshotDetails>;
-		NextToken?: string;
+		SnapshotSummaries?: Array<SnapshotDetails> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListApplicationSnapshotsRequest {
 		ApplicationName: string;
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListApplicationsResponse {
 		ApplicationSummaries: Array<ApplicationSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -979,12 +979,12 @@ export namespace MyNS {
 	export enum ApplicationSummaryRuntimeEnvironment { SQL_1_0 = 0, FLINK_1_6 = 1, FLINK_1_8 = 2 }
 
 	export interface ListApplicationsRequest {
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -1009,17 +1009,17 @@ export namespace MyNS {
 	export interface RunConfiguration {
 
 		/** Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application. */
-		FlinkRunConfiguration?: FlinkRunConfiguration;
-		SqlRunConfigurations?: Array<SqlRunConfiguration>;
+		FlinkRunConfiguration?: FlinkRunConfiguration | null;
+		SqlRunConfigurations?: Array<SqlRunConfiguration> | null;
 
 		/** Specifies the method and snapshot to use when restarting an application using previously saved application state. */
-		ApplicationRestoreConfiguration?: ApplicationRestoreConfiguration;
+		ApplicationRestoreConfiguration?: ApplicationRestoreConfiguration | null;
 	}
 
 
 	/** Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application. */
 	export interface FlinkRunConfiguration {
-		AllowNonRestoredState?: boolean;
+		AllowNonRestoredState?: boolean | null;
 	}
 
 
@@ -1071,12 +1071,12 @@ export namespace MyNS {
 		CurrentApplicationVersionId: number;
 
 		/** Describes updates to an application's configuration. */
-		ApplicationConfigurationUpdate?: ApplicationConfigurationUpdate;
-		ServiceExecutionRoleUpdate?: string;
+		ApplicationConfigurationUpdate?: ApplicationConfigurationUpdate | null;
+		ServiceExecutionRoleUpdate?: string | null;
 
 		/** Describes the updates to the starting parameters for a Kinesis Data Analytics application. */
-		RunConfigurationUpdate?: RunConfigurationUpdate;
-		CloudWatchLoggingOptionUpdates?: Array<CloudWatchLoggingOptionUpdate>;
+		RunConfigurationUpdate?: RunConfigurationUpdate | null;
+		CloudWatchLoggingOptionUpdates?: Array<CloudWatchLoggingOptionUpdate> | null;
 	}
 
 
@@ -1084,50 +1084,50 @@ export namespace MyNS {
 	export interface ApplicationConfigurationUpdate {
 
 		/** Describes updates to the input streams, destination streams, and reference data sources for an SQL-based Kinesis Data Analytics application. */
-		SqlApplicationConfigurationUpdate?: SqlApplicationConfigurationUpdate;
+		SqlApplicationConfigurationUpdate?: SqlApplicationConfigurationUpdate | null;
 
 		/** Describes updates to a Java-based Amazon Kinesis Data Analytics application. */
-		ApplicationCodeConfigurationUpdate?: ApplicationCodeConfigurationUpdate;
+		ApplicationCodeConfigurationUpdate?: ApplicationCodeConfigurationUpdate | null;
 
 		/** Describes updates to the configuration parameters for a Java-based Amazon Kinesis Data Analytics application. */
-		FlinkApplicationConfigurationUpdate?: FlinkApplicationConfigurationUpdate;
+		FlinkApplicationConfigurationUpdate?: FlinkApplicationConfigurationUpdate | null;
 
 		/** Describes updates to the execution property groups for a Java-based Amazon Kinesis Data Analytics application. */
-		EnvironmentPropertyUpdates?: EnvironmentPropertyUpdates;
+		EnvironmentPropertyUpdates?: EnvironmentPropertyUpdates | null;
 
 		/** Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application. */
-		ApplicationSnapshotConfigurationUpdate?: ApplicationSnapshotConfigurationUpdate;
-		VpcConfigurationUpdates?: Array<VpcConfigurationUpdate>;
+		ApplicationSnapshotConfigurationUpdate?: ApplicationSnapshotConfigurationUpdate | null;
+		VpcConfigurationUpdates?: Array<VpcConfigurationUpdate> | null;
 	}
 
 
 	/** Describes updates to the input streams, destination streams, and reference data sources for an SQL-based Kinesis Data Analytics application. */
 	export interface SqlApplicationConfigurationUpdate {
-		InputUpdates?: Array<InputUpdate>;
-		OutputUpdates?: Array<OutputUpdate>;
-		ReferenceDataSourceUpdates?: Array<ReferenceDataSourceUpdate>;
+		InputUpdates?: Array<InputUpdate> | null;
+		OutputUpdates?: Array<OutputUpdate> | null;
+		ReferenceDataSourceUpdates?: Array<ReferenceDataSourceUpdate> | null;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application, describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).  */
 	export interface InputUpdate {
 		InputId: string;
-		NamePrefixUpdate?: string;
+		NamePrefixUpdate?: string | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes updates to an <a>InputProcessingConfiguration</a>. */
-		InputProcessingConfigurationUpdate?: InputProcessingConfigurationUpdate;
+		InputProcessingConfigurationUpdate?: InputProcessingConfigurationUpdate | null;
 
 		/** When you update the input configuration for an SQL-based Amazon Kinesis Data Analytics application, provides information about an Amazon Kinesis stream as the streaming source. */
-		KinesisStreamsInputUpdate?: KinesisStreamsInputUpdate;
+		KinesisStreamsInputUpdate?: KinesisStreamsInputUpdate | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, when updating application input configuration, provides information about a Kinesis Data Firehose delivery stream as the streaming source. */
-		KinesisFirehoseInputUpdate?: KinesisFirehoseInputUpdate;
+		KinesisFirehoseInputUpdate?: KinesisFirehoseInputUpdate | null;
 
 		/** Describes updates for an SQL-based Amazon Kinesis Data Analytics application's input schema. */
-		InputSchemaUpdate?: InputSchemaUpdate;
+		InputSchemaUpdate?: InputSchemaUpdate | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, provides updates to the parallelism count. */
-		InputParallelismUpdate?: InputParallelismUpdate;
+		InputParallelismUpdate?: InputParallelismUpdate | null;
 	}
 
 
@@ -1164,9 +1164,9 @@ export namespace MyNS {
 	export interface InputSchemaUpdate {
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream. */
-		RecordFormatUpdate?: RecordFormat;
-		RecordEncodingUpdate?: string;
-		RecordColumnUpdates?: Array<RecordColumn>;
+		RecordFormatUpdate?: RecordFormat | null;
+		RecordEncodingUpdate?: string | null;
+		RecordColumnUpdates?: Array<RecordColumn> | null;
 	}
 
 
@@ -1179,19 +1179,19 @@ export namespace MyNS {
 	/**  For an SQL-based Amazon Kinesis Data Analytics application, describes updates to the output configuration identified by the <code>OutputId</code>.  */
 	export interface OutputUpdate {
 		OutputId: string;
-		NameUpdate?: string;
+		NameUpdate?: string | null;
 
 		/** When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis data stream that is configured as the destination. */
-		KinesisStreamsOutputUpdate?: KinesisStreamsOutputUpdate;
+		KinesisStreamsOutputUpdate?: KinesisStreamsOutputUpdate | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, when updating an output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination. */
-		KinesisFirehoseOutputUpdate?: KinesisFirehoseOutputUpdate;
+		KinesisFirehoseOutputUpdate?: KinesisFirehoseOutputUpdate | null;
 
 		/** When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about an AWS Lambda function that is configured as the destination. */
-		LambdaOutputUpdate?: LambdaOutputUpdate;
+		LambdaOutputUpdate?: LambdaOutputUpdate | null;
 
 		/** Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application. */
-		DestinationSchemaUpdate?: DestinationSchema;
+		DestinationSchemaUpdate?: DestinationSchema | null;
 	}
 
 
@@ -1216,47 +1216,47 @@ export namespace MyNS {
 	/** When you update a reference data source configuration for a SQL-based Amazon Kinesis Data Analytics application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created. */
 	export interface ReferenceDataSourceUpdate {
 		ReferenceId: string;
-		TableNameUpdate?: string;
+		TableNameUpdate?: string | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the Amazon S3 bucket name and object key name for an in-application reference table. */
-		S3ReferenceDataSourceUpdate?: S3ReferenceDataSourceUpdate;
+		S3ReferenceDataSourceUpdate?: S3ReferenceDataSourceUpdate | null;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
-		ReferenceSchemaUpdate?: SourceSchema;
+		ReferenceSchemaUpdate?: SourceSchema | null;
 	}
 
 
 	/** For an SQL-based Amazon Kinesis Data Analytics application, describes the Amazon S3 bucket name and object key name for an in-application reference table.  */
 	export interface S3ReferenceDataSourceUpdate {
-		BucketARNUpdate?: string;
-		FileKeyUpdate?: string;
+		BucketARNUpdate?: string | null;
+		FileKeyUpdate?: string | null;
 	}
 
 
 	/** Describes updates to a Java-based Amazon Kinesis Data Analytics application. */
 	export interface ApplicationCodeConfigurationUpdate {
-		CodeContentTypeUpdate?: ApplicationCodeConfigurationDescriptionCodeContentType;
+		CodeContentTypeUpdate?: ApplicationCodeConfigurationDescriptionCodeContentType | null;
 
 		/** Describes an update to the code of a Java-based Kinesis Data Analytics application. */
-		CodeContentUpdate?: CodeContentUpdate;
+		CodeContentUpdate?: CodeContentUpdate | null;
 	}
 
 
 	/** Describes an update to the code of a Java-based Kinesis Data Analytics application. */
 	export interface CodeContentUpdate {
-		TextContentUpdate?: string;
-		ZipFileContentUpdate?: string;
+		TextContentUpdate?: string | null;
+		ZipFileContentUpdate?: string | null;
 
 		/** Describes an update for the Amazon S3 code content location for a Java-based Amazon Kinesis Data Analytics application. */
-		S3ContentLocationUpdate?: S3ContentLocationUpdate;
+		S3ContentLocationUpdate?: S3ContentLocationUpdate | null;
 	}
 
 
 	/** Describes an update for the Amazon S3 code content location for a Java-based Amazon Kinesis Data Analytics application. */
 	export interface S3ContentLocationUpdate {
-		BucketARNUpdate?: string;
-		FileKeyUpdate?: string;
-		ObjectVersionUpdate?: string;
+		BucketARNUpdate?: string | null;
+		FileKeyUpdate?: string | null;
+		ObjectVersionUpdate?: string | null;
 	}
 
 
@@ -1264,39 +1264,39 @@ export namespace MyNS {
 	export interface FlinkApplicationConfigurationUpdate {
 
 		/** Describes updates to the checkpointing parameters for a Java-based Amazon Kinesis Data Analytics application. */
-		CheckpointConfigurationUpdate?: CheckpointConfigurationUpdate;
+		CheckpointConfigurationUpdate?: CheckpointConfigurationUpdate | null;
 
 		/** Describes updates to configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. */
-		MonitoringConfigurationUpdate?: MonitoringConfigurationUpdate;
+		MonitoringConfigurationUpdate?: MonitoringConfigurationUpdate | null;
 
 		/** Describes updates to parameters for how a Java-based Kinesis Data Analytics application executes multiple tasks simultaneously. */
-		ParallelismConfigurationUpdate?: ParallelismConfigurationUpdate;
+		ParallelismConfigurationUpdate?: ParallelismConfigurationUpdate | null;
 	}
 
 
 	/** Describes updates to the checkpointing parameters for a Java-based Amazon Kinesis Data Analytics application. */
 	export interface CheckpointConfigurationUpdate {
-		ConfigurationTypeUpdate?: CheckpointConfigurationDescriptionConfigurationType;
-		CheckpointingEnabledUpdate?: boolean;
-		CheckpointIntervalUpdate?: number;
-		MinPauseBetweenCheckpointsUpdate?: number;
+		ConfigurationTypeUpdate?: CheckpointConfigurationDescriptionConfigurationType | null;
+		CheckpointingEnabledUpdate?: boolean | null;
+		CheckpointIntervalUpdate?: number | null;
+		MinPauseBetweenCheckpointsUpdate?: number | null;
 	}
 
 
 	/** Describes updates to configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. */
 	export interface MonitoringConfigurationUpdate {
-		ConfigurationTypeUpdate?: CheckpointConfigurationDescriptionConfigurationType;
-		MetricsLevelUpdate?: MonitoringConfigurationDescriptionMetricsLevel;
-		LogLevelUpdate?: MonitoringConfigurationDescriptionLogLevel;
+		ConfigurationTypeUpdate?: CheckpointConfigurationDescriptionConfigurationType | null;
+		MetricsLevelUpdate?: MonitoringConfigurationDescriptionMetricsLevel | null;
+		LogLevelUpdate?: MonitoringConfigurationDescriptionLogLevel | null;
 	}
 
 
 	/** Describes updates to parameters for how a Java-based Kinesis Data Analytics application executes multiple tasks simultaneously. */
 	export interface ParallelismConfigurationUpdate {
-		ConfigurationTypeUpdate?: CheckpointConfigurationDescriptionConfigurationType;
-		ParallelismUpdate?: number;
-		ParallelismPerKPUUpdate?: number;
-		AutoScalingEnabledUpdate?: boolean;
+		ConfigurationTypeUpdate?: CheckpointConfigurationDescriptionConfigurationType | null;
+		ParallelismUpdate?: number | null;
+		ParallelismPerKPUUpdate?: number | null;
+		AutoScalingEnabledUpdate?: boolean | null;
 	}
 
 
@@ -1315,8 +1315,8 @@ export namespace MyNS {
 	/** Describes updates to the VPC configuration used by the application. */
 	export interface VpcConfigurationUpdate {
 		VpcConfigurationId: string;
-		SubnetIdUpdates?: Array<string>;
-		SecurityGroupIdUpdates?: Array<string>;
+		SubnetIdUpdates?: Array<string> | null;
+		SecurityGroupIdUpdates?: Array<string> | null;
 	}
 
 
@@ -1324,17 +1324,17 @@ export namespace MyNS {
 	export interface RunConfigurationUpdate {
 
 		/** Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application. */
-		FlinkRunConfiguration?: FlinkRunConfiguration;
+		FlinkRunConfiguration?: FlinkRunConfiguration | null;
 
 		/** Specifies the method and snapshot to use when restarting an application using previously saved application state. */
-		ApplicationRestoreConfiguration?: ApplicationRestoreConfiguration;
+		ApplicationRestoreConfiguration?: ApplicationRestoreConfiguration | null;
 	}
 
 
 	/** Describes the Amazon CloudWatch logging option updates. */
 	export interface CloudWatchLoggingOptionUpdate {
 		CloudWatchLoggingOptionId: string;
-		LogStreamARNUpdate?: string;
+		LogStreamARNUpdate?: string | null;
 	}
 
 	export enum CodeContentType { PLAINTEXT = 0, ZIPFILE = 1 }

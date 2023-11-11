@@ -20,14 +20,14 @@ namespace SwagTests
 	export interface Pet {
 
 		/** The name given to a pet */
-		name?: string;
+		name?: string | null;
 
 		/** Type of a pet */
-		petType?: string;
-		BirthDate?: Date;
+		petType?: string | null;
+		BirthDate?: Date | null;
 
 		/** The id of a pet */
-		id?: string;
+		id?: string | null;
 	}
 
 }
@@ -45,10 +45,10 @@ namespace SwagTests
 	export interface Pet {
 
 		/** The name given to a pet */
-		name?: string;
+		name?: string | null;
 
 		/** Type of a pet */
-		petType?: string;
+		petType?: string | null;
 	}
 
 
@@ -56,7 +56,7 @@ namespace SwagTests
 	export interface Cat extends Pet {
 
 		/** The measured skill for hunting */
-		huntingSkill?: string;
+		huntingSkill?: string | null;
 	}
 
 }
@@ -104,13 +104,13 @@ namespace SwagTests
 	export interface Pet {
 
 		/** The name given to a pet */
-		name?: string;
+		name?: string | null;
 
 		/** Type of a pet */
-		petType?: string;
+		petType?: string | null;
 
 		/** Pet status in the store */
-		status?: PetStatus;
+		status?: PetStatus | null;
 	}
 
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
@@ -129,16 +129,16 @@ namespace SwagTests
 	export interface Pet {
 
 		/** The name given to a pet */
-		name?: string;
+		name?: string | null;
 
 		/** Type of a pet */
-		petType?: string;
+		petType?: string | null;
 
 		/**
 		 * The list of URL to a cute photos featuring pet
 		 * Maximum items: 20
 		 */
-		photoUrls?: Array<string>;
+		photoUrls?: Array<string> | null;
 	}
 
 }
@@ -155,28 +155,28 @@ namespace SwagTests
 	export interface Pet {
 
 		/** The name given to a pet */
-		name?: string;
+		name?: string | null;
 
 		/** Type of a pet */
-		petType?: string;
+		petType?: string | null;
 
 		/**
 		 * Tags attached to the pet
 		 * Minimum items: 1
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number;
+		id?: number | null;
 
 		/**
 		 * Tag name
 		 * Min length: 1
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 }
@@ -191,19 +191,19 @@ namespace SwagTests
 		{
 			string expected = @"export namespace MyNS {
 	export interface Order {
-		quantity?: number;
+		quantity?: number | null;
 
 		/** Estimated ship date */
-		shipDate?: Date;
+		shipDate?: Date | null;
 
 		/** Order Status */
-		status?: OrderStatus;
+		status?: OrderStatus | null;
 
 		/** Indicates whenever order was completed or not */
-		complete?: boolean;
+		complete?: boolean | null;
 
 		/** Unique Request Id */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 	export enum OrderStatus { placed = 0, approved = 1, delivered = 2 }
@@ -222,13 +222,13 @@ namespace SwagTests
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number;
+		id?: number | null;
 
 		/**
 		 * Tag name
 		 * Min length: 1
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 }
@@ -251,7 +251,7 @@ namespace SwagTests
 		name: string;
 
 		/** Type of a pet */
-		petType?: string;
+		petType?: string | null;
 	}
 
 
@@ -282,25 +282,25 @@ export namespace MyNS {
 
 	/** Model information */
 	export interface TestModel {
-		stringDict?: {[id: string]: string };
-		dateDict?: {[id: string]: Date };
-		intDict?: {[id: string]: number };
-		int32Dict?: {[id: string]: number };
-		int64Dict?: {[id: string]: number };
-		floatDict?: {[id: string]: number };
-		doubleDict?: {[id: string]: number };
-		numberDict?: {[id: string]: number };
-		tagDict?: {[id: string]: Tag };
-		objectDict?: {[id: string]: any };
+		stringDict?: {[id: string]: string } | null;
+		dateDict?: {[id: string]: Date } | null;
+		intDict?: {[id: string]: number } | null;
+		int32Dict?: {[id: string]: number } | null;
+		int64Dict?: {[id: string]: number } | null;
+		floatDict?: {[id: string]: number } | null;
+		doubleDict?: {[id: string]: number } | null;
+		numberDict?: {[id: string]: number } | null;
+		tagDict?: {[id: string]: Tag } | null;
+		objectDict?: {[id: string]: any } | null;
 	}
 
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number;
+		id?: number | null;
 
 		/** Tag name */
-		name?: string;
+		name?: string | null;
 	}
 
 	@Injectable()

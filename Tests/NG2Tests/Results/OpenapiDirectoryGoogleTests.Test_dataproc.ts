@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface AcceleratorConfig {
 
 		/** The number of the accelerator cards of this type exposed to this instance. */
-		acceleratorCount?: number;
+		acceleratorCount?: number | null;
 
 		/**
 		 * Full URL, partial URI, or short name of the accelerator type resource to expose to this instance. See Compute Engine AcceleratorTypes (https://cloud.google.com/compute/docs/reference/beta/acceleratorTypes).Examples:
@@ -15,7 +15,7 @@ export namespace MyNS {
 		 * projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80
 		 * nvidia-tesla-k80Auto Zone Exception: If you are using the Dataproc Auto Zone Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the accelerator type resource, for example, nvidia-tesla-k80.
 		 */
-		acceleratorTypeUri?: string;
+		acceleratorTypeUri?: string | null;
 	}
 
 
@@ -27,7 +27,7 @@ export namespace MyNS {
 		 * https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]
 		 * projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]Note that the policy must be in the same project and Dataproc region.
 		 */
-		policyUri?: string;
+		policyUri?: string | null;
 	}
 
 
@@ -35,23 +35,23 @@ export namespace MyNS {
 	export interface AutoscalingPolicy {
 
 		/** Basic algorithm for autoscaling. */
-		basicAlgorithm?: BasicAutoscalingAlgorithm;
+		basicAlgorithm?: BasicAutoscalingAlgorithm | null;
 
 		/** Required. The policy id.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Output only. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names.
 		 * For projects.regions.autoscalingPolicies, the resource name of the  policy has the following format:  projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}
 		 * For projects.locations.autoscalingPolicies, the resource name of the  policy has the following format:  projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Configuration for the size bounds of an instance group, including its proportional size to other groups. */
-		secondaryWorkerConfig?: InstanceGroupAutoscalingPolicyConfig;
+		secondaryWorkerConfig?: InstanceGroupAutoscalingPolicyConfig | null;
 
 		/** Configuration for the size bounds of an instance group, including its proportional size to other groups. */
-		workerConfig?: InstanceGroupAutoscalingPolicyConfig;
+		workerConfig?: InstanceGroupAutoscalingPolicyConfig | null;
 	}
 
 
@@ -59,10 +59,10 @@ export namespace MyNS {
 	export interface BasicAutoscalingAlgorithm {
 
 		/** Optional. Duration between scaling events. A scaling period starts after the update operation from the previous event has completed.Bounds: 2m, 1d. Default: 2m. */
-		cooldownPeriod?: string;
+		cooldownPeriod?: string | null;
 
 		/** Basic autoscaling configurations for YARN. */
-		yarnConfig?: BasicYarnAutoscalingConfig;
+		yarnConfig?: BasicYarnAutoscalingConfig | null;
 	}
 
 
@@ -70,19 +70,19 @@ export namespace MyNS {
 	export interface BasicYarnAutoscalingConfig {
 
 		/** Required. Timeout for YARN graceful decommissioning of Node Managers. Specifies the duration to wait for jobs to complete before forcefully removing workers (and potentially interrupting jobs). Only applicable to downscaling operations.Bounds: 0s, 1d. */
-		gracefulDecommissionTimeout?: string;
+		gracefulDecommissionTimeout?: string | null;
 
 		/** Required. Fraction of average pending memory in the last cooldown period for which to remove workers. A scale-down factor of 1 will result in scaling down so that there is no available memory remaining after the update (more aggressive scaling). A scale-down factor of 0 disables removing workers, which can be beneficial for autoscaling a single job.Bounds: 0.0, 1.0. */
-		scaleDownFactor?: number;
+		scaleDownFactor?: number | null;
 
 		/** Optional. Minimum scale-down threshold as a fraction of total cluster size before scaling occurs. For example, in a 20-worker cluster, a threshold of 0.1 means the autoscaler must recommend at least a 2 worker scale-down for the cluster to scale. A threshold of 0 means the autoscaler will scale down on any recommended change.Bounds: 0.0, 1.0. Default: 0.0. */
-		scaleDownMinWorkerFraction?: number;
+		scaleDownMinWorkerFraction?: number | null;
 
 		/** Required. Fraction of average pending memory in the last cooldown period for which to add workers. A scale-up factor of 1.0 will result in scaling up so that there is no pending memory remaining after the update (more aggressive scaling). A scale-up factor closer to 0 will result in a smaller magnitude of scaling up (less aggressive scaling).Bounds: 0.0, 1.0. */
-		scaleUpFactor?: number;
+		scaleUpFactor?: number | null;
 
 		/** Optional. Minimum scale-up threshold as a fraction of total cluster size before scaling occurs. For example, in a 20-worker cluster, a threshold of 0.1 means the autoscaler must recommend at least a 2-worker scale-up for the cluster to scale. A threshold of 0 means the autoscaler will scale up on any recommended change.Bounds: 0.0, 1.0. Default: 0.0. */
-		scaleUpMinWorkerFraction?: number;
+		scaleUpMinWorkerFraction?: number | null;
 	}
 
 
@@ -90,13 +90,13 @@ export namespace MyNS {
 	export interface InstanceGroupAutoscalingPolicyConfig {
 
 		/** Required. Maximum number of instances for this group. Required for primary workers. Note that by default, clusters will not use secondary workers. Required for secondary workers if the minimum secondary instances is set.Primary workers - Bounds: [min_instances, ). Secondary workers - Bounds: [min_instances, ). Default: 0. */
-		maxInstances?: number;
+		maxInstances?: number | null;
 
 		/** Optional. Minimum number of instances for this group.Primary workers - Bounds: 2, max_instances. Default: 2. Secondary workers - Bounds: 0, max_instances. Default: 0. */
-		minInstances?: number;
+		minInstances?: number | null;
 
 		/** Optional. Weight for the instance group, which is used to determine the fraction of total workers in the cluster from this instance group. For example, if primary workers have weight 2, and secondary workers have weight 1, the cluster will have approximately 2 primary workers for each secondary worker.The cluster may not reach the specified balance if constrained by min/max bounds or other autoscaling settings. For example, if max_instances for secondary workers is 0, then only primary workers will be added. The cluster can also be out of balance when created.If weight is not set on any instance group, the cluster will default to equal weight for all groups: the cluster will attempt to maintain an equal number of workers in each group within the configured size bounds for each group. If weight is set for one group only, the cluster will default to zero weight on the unset group. For example if weight is set only on primary workers, the cluster will use primary workers only and no secondary workers. */
-		weight?: number;
+		weight?: number | null;
 	}
 
 
@@ -122,7 +122,7 @@ export namespace MyNS {
 		 * expression: "'New message received at ' + string(document.create_time)"
 		 * The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource. members can have the following values:
@@ -136,10 +136,10 @@ export namespace MyNS {
 		 * deleted:group:{emailid}?uid={uniqueid}: An email address (plus unique  identifier) representing a Google group that has been recently  deleted. For example, admins@example.com?uid=123456789012345678901. If  the group is recovered, this value reverts to group:{emailid} and the  recovered group retains the role in the binding.
 		 * domain:{domain}: The G Suite domain (primary) that represents all the  users of that domain. For example, google.com or example.com.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/** Role that is assigned to members. For example, roles/viewer, roles/editor, or roles/owner. */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -165,16 +165,16 @@ export namespace MyNS {
 	export interface Expr {
 
 		/** Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI. */
-		description?: string;
+		description?: string | null;
 
 		/** Textual representation of an expression in Common Expression Language syntax. */
-		expression?: string;
+		expression?: string | null;
 
 		/** Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file. */
-		location?: string;
+		location?: string | null;
 
 		/** Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -187,28 +187,28 @@ export namespace MyNS {
 	export interface Cluster {
 
 		/** Required. The cluster name. Cluster names within a project must be unique. Names of deleted clusters can be reused. */
-		clusterName?: string;
+		clusterName?: string | null;
 
 		/** Output only. A cluster UUID (Unique Universal Identifier). Dataproc generates this value when it creates the cluster. */
-		clusterUuid?: string;
+		clusterUuid?: string | null;
 
 		/** The cluster config. */
-		config?: ClusterConfig;
+		config?: ClusterConfig | null;
 
 		/** Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Contains cluster daemon metrics, such as HDFS and YARN stats.Beta Feature: This report is available for testing purposes only. It may be changed before final release. */
-		metrics?: ClusterMetrics;
+		metrics?: ClusterMetrics | null;
 
 		/** Required. The Google Cloud Platform project ID that the cluster belongs to. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** The status of a cluster and its instances. */
-		status?: ClusterStatus;
+		status?: ClusterStatus | null;
 
 		/** Output only. The previous cluster status. */
-		statusHistory?: Array<ClusterStatus>;
+		statusHistory?: Array<ClusterStatus> | null;
 	}
 
 
@@ -216,16 +216,16 @@ export namespace MyNS {
 	export interface ClusterConfig {
 
 		/** Autoscaling Policy config associated with the cluster. */
-		autoscalingConfig?: AutoscalingConfig;
+		autoscalingConfig?: AutoscalingConfig | null;
 
 		/** Optional. A Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging bucket (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)). */
-		configBucket?: string;
+		configBucket?: string | null;
 
 		/** Encryption settings for the cluster. */
-		encryptionConfig?: EncryptionConfig;
+		encryptionConfig?: EncryptionConfig | null;
 
 		/** Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster. */
-		gceClusterConfig?: GceClusterConfig;
+		gceClusterConfig?: GceClusterConfig | null;
 
 		/**
 		 * Optional. Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node's role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget):
@@ -237,25 +237,25 @@ export namespace MyNS {
 		 * ... worker specific actions ...
 		 * fi
 		 */
-		initializationActions?: Array<NodeInitializationAction>;
+		initializationActions?: Array<NodeInitializationAction> | null;
 
 		/** Specifies the cluster auto-delete schedule configuration. */
-		lifecycleConfig?: LifecycleConfig;
+		lifecycleConfig?: LifecycleConfig | null;
 
 		/** The config settings for Compute Engine resources in an instance group, such as a master or worker group. */
-		masterConfig?: InstanceGroupConfig;
+		masterConfig?: InstanceGroupConfig | null;
 
 		/** The config settings for Compute Engine resources in an instance group, such as a master or worker group. */
-		secondaryWorkerConfig?: InstanceGroupConfig;
+		secondaryWorkerConfig?: InstanceGroupConfig | null;
 
 		/** Security related configuration, including Kerberos. */
-		securityConfig?: SecurityConfig;
+		securityConfig?: SecurityConfig | null;
 
 		/** Specifies the selection and config of software inside the cluster. */
-		softwareConfig?: SoftwareConfig;
+		softwareConfig?: SoftwareConfig | null;
 
 		/** The config settings for Compute Engine resources in an instance group, such as a master or worker group. */
-		workerConfig?: InstanceGroupConfig;
+		workerConfig?: InstanceGroupConfig | null;
 	}
 
 
@@ -263,7 +263,7 @@ export namespace MyNS {
 	export interface EncryptionConfig {
 
 		/** Optional. The Cloud KMS key name to use for PD disk encryption for all instances in the cluster. */
-		gcePdKmsKeyName?: string;
+		gcePdKmsKeyName?: string | null;
 	}
 
 
@@ -271,10 +271,10 @@ export namespace MyNS {
 	export interface GceClusterConfig {
 
 		/** Optional. If true, all instances in the cluster will only have internal IP addresses. By default, clusters are not restricted to internal IP addresses, and will have ephemeral external IP addresses assigned to each instance. This internal_ip_only restriction can only be enabled for subnetwork enabled networks, and all off-cluster dependencies must be configured to be accessible without external IP addresses. */
-		internalIpOnly?: boolean;
+		internalIpOnly?: boolean | null;
 
 		/** The Compute Engine metadata entries to add to all instances (see Project and instance metadata (https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)). */
-		metadata?: {[id: string]: string };
+		metadata?: {[id: string]: string } | null;
 
 		/**
 		 * Optional. The Compute Engine network to be used for machine communications. Cannot be specified with subnetwork_uri. If neither network_uri nor subnetwork_uri is specified, the "default" network of the project is used, if it exists. Cannot be a "Custom Subnet Network" (see Using Subnetworks (https://cloud.google.com/compute/docs/subnetworks) for more information).A full URL, partial URI, or short name are valid. Examples:
@@ -282,13 +282,13 @@ export namespace MyNS {
 		 * projects/[project_id]/regions/global/default
 		 * default
 		 */
-		networkUri?: string;
+		networkUri?: string | null;
 
 		/** Reservation Affinity for consuming Zonal reservation. */
-		reservationAffinity?: ReservationAffinity;
+		reservationAffinity?: ReservationAffinity | null;
 
 		/** Optional. The Dataproc service account (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc) (also see VM Data Plane identity (https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity)) used by Dataproc cluster VM instances to access Google Cloud Platform services.If not specified, the Compute Engine default service account (https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used. */
-		serviceAccount?: string;
+		serviceAccount?: string | null;
 
 		/**
 		 * Optional. The URIs of service account scopes to be included in Compute Engine instances. The following base set of scopes is always included:
@@ -300,7 +300,7 @@ export namespace MyNS {
 		 * https://www.googleapis.com/auth/bigtable.data
 		 * https://www.googleapis.com/auth/devstorage.full_control
 		 */
-		serviceAccountScopes?: Array<string>;
+		serviceAccountScopes?: Array<string> | null;
 
 		/**
 		 * Optional. The Compute Engine subnetwork to be used for machine communications. Cannot be specified with network_uri.A full URL, partial URI, or short name are valid. Examples:
@@ -308,10 +308,10 @@ export namespace MyNS {
 		 * projects/[project_id]/regions/us-east1/subnetworks/sub0
 		 * sub0
 		 */
-		subnetworkUri?: string;
+		subnetworkUri?: string | null;
 
 		/** The Compute Engine tags to add to all instances (see Tagging instances (https://cloud.google.com/compute/docs/label-or-tag-resources#tags)). */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 
 		/**
 		 * Optional. The zone where the Compute Engine cluster will be located. On a create request, it is required in the "global" region. If omitted in a non-global Dataproc region, the service will pick a zone in the corresponding Compute Engine region. On a get request, zone will always be present.A full URL, partial URI, or short name are valid. Examples:
@@ -319,7 +319,7 @@ export namespace MyNS {
 		 * projects/[project_id]/zones/[zone]
 		 * us-central1-f
 		 */
-		zoneUri?: string;
+		zoneUri?: string | null;
 	}
 
 
@@ -327,13 +327,13 @@ export namespace MyNS {
 	export interface ReservationAffinity {
 
 		/** Optional. Type of reservation to consume */
-		consumeReservationType?: ReservationAffinityConsumeReservationType;
+		consumeReservationType?: ReservationAffinityConsumeReservationType | null;
 
 		/** Optional. Corresponds to the label key of reservation resource. */
-		key?: string;
+		key?: string | null;
 
 		/** Optional. Corresponds to the label values of reservation resource. */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 	export enum ReservationAffinityConsumeReservationType { TYPE_UNSPECIFIED = 0, NO_RESERVATION = 1, ANY_RESERVATION = 2, SPECIFIC_RESERVATION = 3 }
@@ -343,10 +343,10 @@ export namespace MyNS {
 	export interface NodeInitializationAction {
 
 		/** Required. Cloud Storage URI of executable file. */
-		executableFile?: string;
+		executableFile?: string | null;
 
 		/** Optional. Amount of time executable has to complete. Default is 10 minutes (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).Cluster creation fails with an explanatory error message (the name of the executable that caused the error and the exceeded timeout period) if the executable is not completed at end of the timeout period. */
-		executionTimeout?: string;
+		executionTimeout?: string | null;
 	}
 
 
@@ -354,16 +354,16 @@ export namespace MyNS {
 	export interface LifecycleConfig {
 
 		/** Optional. The time when cluster will be auto-deleted (see JSON representation of Timestamp (https://developers.google.com/protocol-buffers/docs/proto3#json)). */
-		autoDeleteTime?: string;
+		autoDeleteTime?: string | null;
 
 		/** Optional. The lifetime duration of cluster. The cluster will be auto-deleted at the end of this period. Minimum value is 10 minutes; maximum value is 14 days (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)). */
-		autoDeleteTtl?: string;
+		autoDeleteTtl?: string | null;
 
 		/** Optional. The duration to keep the cluster alive while idling (when no jobs are running). Passing this threshold will cause the cluster to be deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json). */
-		idleDeleteTtl?: string;
+		idleDeleteTtl?: string | null;
 
 		/** Output only. The time when cluster became idle (most recent job finished) and became eligible for deletion due to idleness (see JSON representation of Timestamp (https://developers.google.com/protocol-buffers/docs/proto3#json)). */
-		idleStartTime?: string;
+		idleStartTime?: string | null;
 	}
 
 
@@ -371,10 +371,10 @@ export namespace MyNS {
 	export interface InstanceGroupConfig {
 
 		/** Optional. The Compute Engine accelerator configuration for these instances. */
-		accelerators?: Array<AcceleratorConfig>;
+		accelerators?: Array<AcceleratorConfig> | null;
 
 		/** Specifies the config of disk options for a group of VM instances. */
-		diskConfig?: DiskConfig;
+		diskConfig?: DiskConfig | null;
 
 		/**
 		 * Optional. The Compute Engine image resource used for cluster instances.The URI can represent an image or image family.Image examples:
@@ -384,13 +384,13 @@ export namespace MyNS {
 		 * https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/family/[custom-image-family-name]
 		 * projects/[project_id]/global/images/family/[custom-image-family-name]If the URI is unspecified, it will be inferred from SoftwareConfig.image_version or the system default.
 		 */
-		imageUri?: string;
+		imageUri?: string | null;
 
 		/** Output only. The list of instance names. Dataproc derives the names from cluster_name, num_instances, and the instance group. */
-		instanceNames?: Array<string>;
+		instanceNames?: Array<string> | null;
 
 		/** Output only. Specifies that this instance group contains preemptible instances. */
-		isPreemptible?: boolean;
+		isPreemptible?: boolean | null;
 
 		/**
 		 * Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples:
@@ -398,19 +398,19 @@ export namespace MyNS {
 		 * projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
 		 * n1-standard-2Auto Zone Exception: If you are using the Dataproc Auto Zone Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the machine type resource, for example, n1-standard-2.
 		 */
-		machineTypeUri?: string;
+		machineTypeUri?: string | null;
 
 		/** Specifies the resources used to actively manage an instance group. */
-		managedGroupConfig?: ManagedGroupConfig;
+		managedGroupConfig?: ManagedGroupConfig | null;
 
 		/** Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc -&gt; Minimum CPU Platform (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu). */
-		minCpuPlatform?: string;
+		minCpuPlatform?: string | null;
 
 		/** Optional. The number of VM instances in the instance group. For master instance groups, must be set to 1. */
-		numInstances?: number;
+		numInstances?: number | null;
 
 		/** Optional. Specifies the preemptibility of the instance group.The default value for master and worker groups is NON_PREEMPTIBLE. This default cannot be changed.The default value for secondary instances is PREEMPTIBLE. */
-		preemptibility?: InstanceGroupConfigPreemptibility;
+		preemptibility?: InstanceGroupConfigPreemptibility | null;
 	}
 
 
@@ -418,13 +418,13 @@ export namespace MyNS {
 	export interface DiskConfig {
 
 		/** Optional. Size in GB of the boot disk (default is 500GB). */
-		bootDiskSizeGb?: number;
+		bootDiskSizeGb?: number | null;
 
 		/** Optional. Type of the boot disk (default is "pd-standard"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive). */
-		bootDiskType?: string;
+		bootDiskType?: string | null;
 
 		/** Optional. Number of attached SSDs, from 0 to 4 (default is 0). If SSDs are not attached, the boot disk is used to store runtime logs and HDFS (https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data. If one or more SSDs are attached, this runtime bulk data is spread across them, and the boot disk contains only basic config and installed binaries. */
-		numLocalSsds?: number;
+		numLocalSsds?: number | null;
 	}
 
 
@@ -432,10 +432,10 @@ export namespace MyNS {
 	export interface ManagedGroupConfig {
 
 		/** Output only. The name of the Instance Group Manager for this group. */
-		instanceGroupManagerName?: string;
+		instanceGroupManagerName?: string | null;
 
 		/** Output only. The name of the Instance Template used for the Managed Instance Group. */
-		instanceTemplateName?: string;
+		instanceTemplateName?: string | null;
 	}
 
 	export enum InstanceGroupConfigPreemptibility { PREEMPTIBILITY_UNSPECIFIED = 0, NON_PREEMPTIBLE = 1, PREEMPTIBLE = 2 }
@@ -445,7 +445,7 @@ export namespace MyNS {
 	export interface SecurityConfig {
 
 		/** Specifies Kerberos related configuration. */
-		kerberosConfig?: KerberosConfig;
+		kerberosConfig?: KerberosConfig | null;
 	}
 
 
@@ -453,49 +453,49 @@ export namespace MyNS {
 	export interface KerberosConfig {
 
 		/** Optional. The admin server (IP or hostname) for the remote trusted realm in a cross realm trust relationship. */
-		crossRealmTrustAdminServer?: string;
+		crossRealmTrustAdminServer?: string | null;
 
 		/** Optional. The KDC (IP or hostname) for the remote trusted realm in a cross realm trust relationship. */
-		crossRealmTrustKdc?: string;
+		crossRealmTrustKdc?: string | null;
 
 		/** Optional. The remote realm the Dataproc on-cluster KDC will trust, should the user enable cross realm trust. */
-		crossRealmTrustRealm?: string;
+		crossRealmTrustRealm?: string | null;
 
 		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the shared password between the on-cluster Kerberos realm and the remote trusted realm, in a cross realm trust relationship. */
-		crossRealmTrustSharedPasswordUri?: string;
+		crossRealmTrustSharedPasswordUri?: string | null;
 
 		/** Optional. Flag to indicate whether to Kerberize the cluster (default: false). Set this field to true to enable Kerberos on a cluster. */
-		enableKerberos?: boolean;
+		enableKerberos?: boolean | null;
 
 		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the master key of the KDC database. */
-		kdcDbKeyUri?: string;
+		kdcDbKeyUri?: string | null;
 
 		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the password to the user provided key. For the self-signed certificate, this password is generated by Dataproc. */
-		keyPasswordUri?: string;
+		keyPasswordUri?: string | null;
 
 		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the password to the user provided keystore. For the self-signed certificate, this password is generated by Dataproc. */
-		keystorePasswordUri?: string;
+		keystorePasswordUri?: string | null;
 
 		/** Optional. The Cloud Storage URI of the keystore file used for SSL encryption. If not provided, Dataproc will provide a self-signed certificate. */
-		keystoreUri?: string;
+		keystoreUri?: string | null;
 
 		/** Required. The uri of the KMS key used to encrypt various sensitive files. */
-		kmsKeyUri?: string;
+		kmsKeyUri?: string | null;
 
 		/** Optional. The name of the on-cluster Kerberos realm. If not specified, the uppercased domain of hostnames will be the realm. */
-		realm?: string;
+		realm?: string | null;
 
 		/** Required. The Cloud Storage URI of a KMS encrypted file containing the root principal password. */
-		rootPrincipalPasswordUri?: string;
+		rootPrincipalPasswordUri?: string | null;
 
 		/** Optional. The lifetime of the ticket granting ticket, in hours. If not specified, or user specifies 0, then default value 10 will be used. */
-		tgtLifetimeHours?: number;
+		tgtLifetimeHours?: number | null;
 
 		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the password to the user provided truststore. For the self-signed certificate, this password is generated by Dataproc. */
-		truststorePasswordUri?: string;
+		truststorePasswordUri?: string | null;
 
 		/** Optional. The Cloud Storage URI of the truststore file used for SSL encryption. If not provided, Dataproc will provide a self-signed certificate. */
-		truststoreUri?: string;
+		truststoreUri?: string | null;
 	}
 
 
@@ -503,10 +503,10 @@ export namespace MyNS {
 	export interface SoftwareConfig {
 
 		/** Optional. The version of software inside the cluster. It must be one of the supported Dataproc Versions (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions), such as "1.2" (including a subminor version, such as "1.2.29"), or the "preview" version (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions). If unspecified, it defaults to the latest Debian version. */
-		imageVersion?: string;
+		imageVersion?: string | null;
 
 		/** Optional. The set of components to activate on the cluster. */
-		optionalComponents?: Array<string>;
+		optionalComponents?: Array<string> | null;
 
 		/**
 		 * Optional. The properties to set on daemon config files.Property keys are specified in prefix:property format, for example core:hadoop.tmp.dir. The following are supported prefixes and their mappings:
@@ -520,7 +520,7 @@ export namespace MyNS {
 		 * spark: spark-defaults.conf
 		 * yarn: yarn-site.xmlFor more information, see Cluster properties (https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
 		 */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 	}
 
 
@@ -528,10 +528,10 @@ export namespace MyNS {
 	export interface ClusterMetrics {
 
 		/** The HDFS metrics. */
-		hdfsMetrics?: {[id: string]: string };
+		hdfsMetrics?: {[id: string]: string } | null;
 
 		/** The YARN metrics. */
-		yarnMetrics?: {[id: string]: string };
+		yarnMetrics?: {[id: string]: string } | null;
 	}
 
 
@@ -539,16 +539,16 @@ export namespace MyNS {
 	export interface ClusterStatus {
 
 		/** Optional. Output only. Details of cluster's state. */
-		detail?: string;
+		detail?: string | null;
 
 		/** Output only. The cluster's state. */
-		state?: ClusterStatusState;
+		state?: ClusterStatusState | null;
 
 		/** Output only. Time when this state was entered (see JSON representation of Timestamp (https://developers.google.com/protocol-buffers/docs/proto3#json)). */
-		stateStartTime?: string;
+		stateStartTime?: string | null;
 
 		/** Output only. Additional state information that includes status reported by the agent. */
-		substate?: ClusterStatusSubstate;
+		substate?: ClusterStatusSubstate | null;
 	}
 
 	export enum ClusterStatusState { UNKNOWN = 0, CREATING = 1, RUNNING = 2, ERROR = 3, DELETING = 4, UPDATING = 5 }
@@ -560,13 +560,13 @@ export namespace MyNS {
 	export interface ClusterOperation {
 
 		/** Output only. Indicates the operation is done. */
-		done?: boolean;
+		done?: boolean | null;
 
 		/** Output only. Error, if operation failed. */
-		error?: string;
+		error?: string | null;
 
 		/** Output only. The id of the cluster operation. */
-		operationId?: string;
+		operationId?: string | null;
 	}
 
 
@@ -574,28 +574,28 @@ export namespace MyNS {
 	export interface ClusterOperationMetadata {
 
 		/** Output only. Name of the cluster for the operation. */
-		clusterName?: string;
+		clusterName?: string | null;
 
 		/** Output only. Cluster UUID for the operation. */
-		clusterUuid?: string;
+		clusterUuid?: string | null;
 
 		/** Output only. Short description of operation. */
-		description?: string;
+		description?: string | null;
 
 		/** Output only. Labels associated with the operation */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Output only. The operation type. */
-		operationType?: string;
+		operationType?: string | null;
 
 		/** The status of the operation. */
-		status?: ClusterOperationStatus;
+		status?: ClusterOperationStatus | null;
 
 		/** Output only. The previous operation status. */
-		statusHistory?: Array<ClusterOperationStatus>;
+		statusHistory?: Array<ClusterOperationStatus> | null;
 
 		/** Output only. Errors encountered during operation execution. */
-		warnings?: Array<string>;
+		warnings?: Array<string> | null;
 	}
 
 
@@ -603,16 +603,16 @@ export namespace MyNS {
 	export interface ClusterOperationStatus {
 
 		/** Output only. A message containing any operation metadata details. */
-		details?: string;
+		details?: string | null;
 
 		/** Output only. A message containing the detailed operation state. */
-		innerState?: string;
+		innerState?: string | null;
 
 		/** Output only. A message containing the operation state. */
-		state?: ClusterOperationStatusState;
+		state?: ClusterOperationStatusState | null;
 
 		/** Output only. The time this state was entered. */
-		stateStartTime?: string;
+		stateStartTime?: string | null;
 	}
 
 	export enum ClusterOperationStatusState { UNKNOWN = 0, PENDING = 1, RUNNING = 2, DONE = 3 }
@@ -622,10 +622,10 @@ export namespace MyNS {
 	export interface ClusterSelector {
 
 		/** Required. The cluster labels. Cluster must have all labels to match. */
-		clusterLabels?: {[id: string]: string };
+		clusterLabels?: {[id: string]: string } | null;
 
 		/** Optional. The zone where workflow process executes. This parameter does not affect the selection of the cluster.If unspecified, the zone of the first cluster matching the selector is used. */
-		zone?: string;
+		zone?: string | null;
 	}
 
 
@@ -638,7 +638,7 @@ export namespace MyNS {
 	export interface DiagnoseClusterResults {
 
 		/** Output only. The Cloud Storage URI of the diagnostic output. The output report is a plain text file with a summary of collected diagnostics. */
-		outputUri?: string;
+		outputUri?: string | null;
 	}
 
 
@@ -657,7 +657,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -665,7 +665,7 @@ export namespace MyNS {
 	export interface GetPolicyOptions {
 
 		/** Optional. The policy format version to be returned.Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -673,28 +673,28 @@ export namespace MyNS {
 	export interface HadoopJob {
 
 		/** Optional. HCFS URIs of archives to be extracted in the working directory of Hadoop drivers and tasks. Supported file types: .jar, .tar, .tar.gz, .tgz, or .zip. */
-		archiveUris?: Array<string>;
+		archiveUris?: Array<string> | null;
 
 		/** Optional. The arguments to pass to the driver. Do not include arguments, such as -libjars or -Dfoo=bar, that can be set as job properties, since a collision may occur that causes an incorrect job submission. */
-		args?: Array<string>;
+		args?: Array<string> | null;
 
 		/** Optional. HCFS (Hadoop Compatible Filesystem) URIs of files to be copied to the working directory of Hadoop drivers and distributed tasks. Useful for naively parallel tasks. */
-		fileUris?: Array<string>;
+		fileUris?: Array<string> | null;
 
 		/** Optional. Jar file URIs to add to the CLASSPATHs of the Hadoop driver and tasks. */
-		jarFileUris?: Array<string>;
+		jarFileUris?: Array<string> | null;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 
 		/** The name of the driver's main class. The jar file containing the class must be in the default CLASSPATH or specified in jar_file_uris. */
-		mainClass?: string;
+		mainClass?: string | null;
 
 		/** The HCFS URI of the jar file containing the main class. Examples:  'gs://foo-bucket/analytics-binaries/extract-useful-metrics-mr.jar'  'hdfs:/tmp/test-samples/custom-wordcount.jar'  'file:///home/usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar' */
-		mainJarFileUri?: string;
+		mainJarFileUri?: string | null;
 
 		/** Optional. A mapping of property names to values, used to configure Hadoop. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site and classes in user code. */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 	}
 
 
@@ -702,7 +702,7 @@ export namespace MyNS {
 	export interface LoggingConfig {
 
 		/** The per-package log levels for the driver. This may include "root" package name to configure rootLogger. Examples:  'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG' */
-		driverLogLevels?: {[id: string]: LoggingConfigDriverLogLevels };
+		driverLogLevels?: {[id: string]: LoggingConfigDriverLogLevels } | null;
 	}
 
 	export enum LoggingConfigDriverLogLevels { LEVEL_UNSPECIFIED = 0, ALL = 1, TRACE = 2, DEBUG = 3, INFO = 4, WARN = 5, ERROR = 6, FATAL = 7, OFF = 8 }
@@ -712,22 +712,22 @@ export namespace MyNS {
 	export interface HiveJob {
 
 		/** Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries. */
-		continueOnFailure?: boolean;
+		continueOnFailure?: boolean | null;
 
 		/** Optional. HCFS URIs of jar files to add to the CLASSPATH of the Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes and UDFs. */
-		jarFileUris?: Array<string>;
+		jarFileUris?: Array<string> | null;
 
 		/** Optional. A mapping of property names and values, used to configure Hive. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/hive/conf/hive-site.xml, and classes in user code. */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 
 		/** The HCFS URI of the script that contains Hive queries. */
-		queryFileUri?: string;
+		queryFileUri?: string | null;
 
 		/** A list of queries to run on a cluster. */
-		queryList?: QueryList;
+		queryList?: QueryList | null;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Hive command: SET name="value";). */
-		scriptVariables?: {[id: string]: string };
+		scriptVariables?: {[id: string]: string } | null;
 	}
 
 
@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * }
 		 * }
 		 */
-		queries?: Array<string>;
+		queries?: Array<string> | null;
 	}
 
 
@@ -754,13 +754,13 @@ export namespace MyNS {
 	export interface InstantiateWorkflowTemplateRequest {
 
 		/** Optional. Map from parameter names to values that should be used for those parameters. Values may not exceed 100 characters. */
-		parameters?: {[id: string]: string };
+		parameters?: {[id: string]: string } | null;
 
 		/** Optional. A tag that prevents multiple concurrent workflow instances with the same tag from running. This mitigates risk of concurrent instances started due to retries.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The tag must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters. */
-		requestId?: string;
+		requestId?: string | null;
 
 		/** Optional. The version of workflow template to instantiate. If specified, the workflow will be instantiated only if the current version of the workflow template has the supplied version.This option cannot be used to instantiate a previous version of workflow template. */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -768,61 +768,61 @@ export namespace MyNS {
 	export interface Job {
 
 		/** Output only. Indicates whether the job is completed. If the value is false, the job is still in progress. If true, the job is completed, and status.state field will indicate if it was successful, failed, or cancelled. */
-		done?: boolean;
+		done?: boolean | null;
 
 		/** Output only. If present, the location of miscellaneous control files which may be used as part of job setup and handling. If not present, control files may be placed in the same location as driver_output_uri. */
-		driverControlFilesUri?: string;
+		driverControlFilesUri?: string | null;
 
 		/** Output only. A URI pointing to the location of the stdout of the job's driver program. */
-		driverOutputResourceUri?: string;
+		driverOutputResourceUri?: string | null;
 
 		/** A Dataproc job for running Apache Hadoop MapReduce (https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) jobs on Apache Hadoop YARN (https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html). */
-		hadoopJob?: HadoopJob;
+		hadoopJob?: HadoopJob | null;
 
 		/** A Dataproc job for running Apache Hive (https://hive.apache.org/) queries on YARN. */
-		hiveJob?: HiveJob;
+		hiveJob?: HiveJob | null;
 
 		/** Output only. A UUID that uniquely identifies a job within the project over time. This is in contrast to a user-settable reference.job_id that may be reused over time. */
-		jobUuid?: string;
+		jobUuid?: string | null;
 
 		/** Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** A Dataproc job for running Apache Pig (https://pig.apache.org/) queries on YARN. */
-		pigJob?: PigJob;
+		pigJob?: PigJob | null;
 
 		/** Dataproc job config. */
-		placement?: JobPlacement;
+		placement?: JobPlacement | null;
 
 		/** A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/presto) must be enabled when the cluster is created to submit a Presto job to the cluster. */
-		prestoJob?: PrestoJob;
+		prestoJob?: PrestoJob | null;
 
 		/** A Dataproc job for running Apache PySpark (https://spark.apache.org/docs/0.9.0/python-programming-guide.html) applications on YARN. */
-		pysparkJob?: PySparkJob;
+		pysparkJob?: PySparkJob | null;
 
 		/** Encapsulates the full scoping used to reference a job. */
-		reference?: JobReference;
+		reference?: JobReference | null;
 
 		/** Job scheduling options. */
-		scheduling?: JobScheduling;
+		scheduling?: JobScheduling | null;
 
 		/** A Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN. */
-		sparkJob?: SparkJob;
+		sparkJob?: SparkJob | null;
 
 		/** A Dataproc job for running Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) applications on YARN. */
-		sparkRJob?: SparkRJob;
+		sparkRJob?: SparkRJob | null;
 
 		/** A Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries. */
-		sparkSqlJob?: SparkSqlJob;
+		sparkSqlJob?: SparkSqlJob | null;
 
 		/** Dataproc job status. */
-		status?: JobStatus;
+		status?: JobStatus | null;
 
 		/** Output only. The previous job status. */
-		statusHistory?: Array<JobStatus>;
+		statusHistory?: Array<JobStatus> | null;
 
 		/** Output only. The collection of YARN applications spun up by this job.Beta Feature: This report is available for testing purposes only. It may be changed before final release. */
-		yarnApplications?: Array<YarnApplication>;
+		yarnApplications?: Array<YarnApplication> | null;
 	}
 
 
@@ -830,25 +830,25 @@ export namespace MyNS {
 	export interface PigJob {
 
 		/** Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries. */
-		continueOnFailure?: boolean;
+		continueOnFailure?: boolean | null;
 
 		/** Optional. HCFS URIs of jar files to add to the CLASSPATH of the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs. */
-		jarFileUris?: Array<string>;
+		jarFileUris?: Array<string> | null;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 
 		/** Optional. A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/pig/conf/pig.properties, and classes in user code. */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 
 		/** The HCFS URI of the script that contains the Pig queries. */
-		queryFileUri?: string;
+		queryFileUri?: string | null;
 
 		/** A list of queries to run on a cluster. */
-		queryList?: QueryList;
+		queryList?: QueryList | null;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Pig command: name=[value]). */
-		scriptVariables?: {[id: string]: string };
+		scriptVariables?: {[id: string]: string } | null;
 	}
 
 
@@ -856,10 +856,10 @@ export namespace MyNS {
 	export interface JobPlacement {
 
 		/** Required. The name of the cluster where the job will be submitted. */
-		clusterName?: string;
+		clusterName?: string | null;
 
 		/** Output only. A cluster UUID generated by the Dataproc service when the job is submitted. */
-		clusterUuid?: string;
+		clusterUuid?: string | null;
 	}
 
 
@@ -867,25 +867,25 @@ export namespace MyNS {
 	export interface PrestoJob {
 
 		/** Optional. Presto client tags to attach to this query */
-		clientTags?: Array<string>;
+		clientTags?: Array<string> | null;
 
 		/** Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries. */
-		continueOnFailure?: boolean;
+		continueOnFailure?: boolean | null;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 
 		/** Optional. The format in which query output will be displayed. See the Presto documentation for supported output formats */
-		outputFormat?: string;
+		outputFormat?: string | null;
 
 		/** Optional. A mapping of property names to values. Used to set Presto session properties (https://prestodb.io/docs/current/sql/set-session.html) Equivalent to using the --session flag in the Presto CLI */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 
 		/** The HCFS URI of the script that contains SQL queries. */
-		queryFileUri?: string;
+		queryFileUri?: string | null;
 
 		/** A list of queries to run on a cluster. */
-		queryList?: QueryList;
+		queryList?: QueryList | null;
 	}
 
 
@@ -893,28 +893,28 @@ export namespace MyNS {
 	export interface PySparkJob {
 
 		/** Optional. HCFS URIs of archives to be extracted in the working directory of .jar, .tar, .tar.gz, .tgz, and .zip. */
-		archiveUris?: Array<string>;
+		archiveUris?: Array<string> | null;
 
 		/** Optional. The arguments to pass to the driver. Do not include arguments, such as --conf, that can be set as job properties, since a collision may occur that causes an incorrect job submission. */
-		args?: Array<string>;
+		args?: Array<string> | null;
 
 		/** Optional. HCFS URIs of files to be copied to the working directory of Python drivers and distributed tasks. Useful for naively parallel tasks. */
-		fileUris?: Array<string>;
+		fileUris?: Array<string> | null;
 
 		/** Optional. HCFS URIs of jar files to add to the CLASSPATHs of the Python driver and tasks. */
-		jarFileUris?: Array<string>;
+		jarFileUris?: Array<string> | null;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 
 		/** Required. The HCFS URI of the main Python file to use as the driver. Must be a .py file. */
-		mainPythonFileUri?: string;
+		mainPythonFileUri?: string | null;
 
 		/** Optional. A mapping of property names to values, used to configure PySpark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 
 		/** Optional. HCFS file URIs of Python files to pass to the PySpark framework. Supported file types: .py, .egg, and .zip. */
-		pythonFileUris?: Array<string>;
+		pythonFileUris?: Array<string> | null;
 	}
 
 
@@ -922,10 +922,10 @@ export namespace MyNS {
 	export interface JobReference {
 
 		/** Optional. The job ID, which must be unique within the project.The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or hyphens (-). The maximum length is 100 characters.If not specified by the caller, the job ID will be provided by the server. */
-		jobId?: string;
+		jobId?: string | null;
 
 		/** Required. The ID of the Google Cloud Platform project that the job belongs to. */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -933,7 +933,7 @@ export namespace MyNS {
 	export interface JobScheduling {
 
 		/** Optional. Maximum number of times per hour a driver may be restarted as a result of driver terminating with non-zero code before job is reported failed.A job may be reported as thrashing if driver exits with non-zero code 4 times within 10 minute window.Maximum value is 10. */
-		maxFailuresPerHour?: number;
+		maxFailuresPerHour?: number | null;
 	}
 
 
@@ -941,28 +941,28 @@ export namespace MyNS {
 	export interface SparkJob {
 
 		/** Optional. HCFS URIs of archives to be extracted in the working directory of Spark drivers and tasks. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip. */
-		archiveUris?: Array<string>;
+		archiveUris?: Array<string> | null;
 
 		/** Optional. The arguments to pass to the driver. Do not include arguments, such as --conf, that can be set as job properties, since a collision may occur that causes an incorrect job submission. */
-		args?: Array<string>;
+		args?: Array<string> | null;
 
 		/** Optional. HCFS URIs of files to be copied to the working directory of Spark drivers and distributed tasks. Useful for naively parallel tasks. */
-		fileUris?: Array<string>;
+		fileUris?: Array<string> | null;
 
 		/** Optional. HCFS URIs of jar files to add to the CLASSPATHs of the Spark driver and tasks. */
-		jarFileUris?: Array<string>;
+		jarFileUris?: Array<string> | null;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 
 		/** The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in jar_file_uris. */
-		mainClass?: string;
+		mainClass?: string | null;
 
 		/** The HCFS URI of the jar file that contains the main class. */
-		mainJarFileUri?: string;
+		mainJarFileUri?: string | null;
 
 		/** Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 	}
 
 
@@ -970,22 +970,22 @@ export namespace MyNS {
 	export interface SparkRJob {
 
 		/** Optional. HCFS URIs of archives to be extracted in the working directory of Spark drivers and tasks. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip. */
-		archiveUris?: Array<string>;
+		archiveUris?: Array<string> | null;
 
 		/** Optional. The arguments to pass to the driver. Do not include arguments, such as --conf, that can be set as job properties, since a collision may occur that causes an incorrect job submission. */
-		args?: Array<string>;
+		args?: Array<string> | null;
 
 		/** Optional. HCFS URIs of files to be copied to the working directory of R drivers and distributed tasks. Useful for naively parallel tasks. */
-		fileUris?: Array<string>;
+		fileUris?: Array<string> | null;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 
 		/** Required. The HCFS URI of the main R file to use as the driver. Must be a .R file. */
-		mainRFileUri?: string;
+		mainRFileUri?: string | null;
 
 		/** Optional. A mapping of property names to values, used to configure SparkR. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 	}
 
 
@@ -993,22 +993,22 @@ export namespace MyNS {
 	export interface SparkSqlJob {
 
 		/** Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH. */
-		jarFileUris?: Array<string>;
+		jarFileUris?: Array<string> | null;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 
 		/** Optional. A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Dataproc API may be overwritten. */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 
 		/** The HCFS URI of the script that contains SQL queries. */
-		queryFileUri?: string;
+		queryFileUri?: string | null;
 
 		/** A list of queries to run on a cluster. */
-		queryList?: QueryList;
+		queryList?: QueryList | null;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Spark SQL command: SET name="value";). */
-		scriptVariables?: {[id: string]: string };
+		scriptVariables?: {[id: string]: string } | null;
 	}
 
 
@@ -1016,16 +1016,16 @@ export namespace MyNS {
 	export interface JobStatus {
 
 		/** Optional. Output only. Job state details, such as an error description if the state is <code>ERROR</code>. */
-		details?: string;
+		details?: string | null;
 
 		/** Output only. A state message specifying the overall job state. */
-		state?: JobStatusState;
+		state?: JobStatusState | null;
 
 		/** Output only. The time when this state was entered. */
-		stateStartTime?: string;
+		stateStartTime?: string | null;
 
 		/** Output only. Additional state information, which includes status reported by the agent. */
-		substate?: JobStatusSubstate;
+		substate?: JobStatusSubstate | null;
 	}
 
 	export enum JobStatusState { STATE_UNSPECIFIED = 0, PENDING = 1, SETUP_DONE = 2, RUNNING = 3, CANCEL_PENDING = 4, CANCEL_STARTED = 5, CANCELLED = 6, DONE = 7, ERROR = 8, ATTEMPT_FAILURE = 9 }
@@ -1037,16 +1037,16 @@ export namespace MyNS {
 	export interface YarnApplication {
 
 		/** Required. The application name. */
-		name?: string;
+		name?: string | null;
 
 		/** Required. The numerical progress of the application, from 1 to 100. */
-		progress?: number;
+		progress?: number | null;
 
 		/** Required. The application state. */
-		state?: YarnApplicationState;
+		state?: YarnApplicationState | null;
 
 		/** Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or TimelineServer that provides application-specific information. The URL uses the internal hostname, and requires a proxy server for resolution and, possibly, access. */
-		trackingUrl?: string;
+		trackingUrl?: string | null;
 	}
 
 	export enum YarnApplicationState { STATE_UNSPECIFIED = 0, NEW = 1, NEW_SAVING = 2, SUBMITTED = 3, ACCEPTED = 4, RUNNING = 5, FINISHED = 6, FAILED = 7, KILLED = 8 }
@@ -1056,16 +1056,16 @@ export namespace MyNS {
 	export interface JobMetadata {
 
 		/** Output only. The job id. */
-		jobId?: string;
+		jobId?: string | null;
 
 		/** Output only. Operation type. */
-		operationType?: string;
+		operationType?: string | null;
 
 		/** Output only. Job submission time. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Dataproc job status. */
-		status?: JobStatus;
+		status?: JobStatus | null;
 	}
 
 
@@ -1073,10 +1073,10 @@ export namespace MyNS {
 	export interface ListAutoscalingPoliciesResponse {
 
 		/** Output only. This token is included in the response if there are more results to fetch. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Output only. Autoscaling policies list. */
-		policies?: Array<AutoscalingPolicy>;
+		policies?: Array<AutoscalingPolicy> | null;
 	}
 
 
@@ -1084,10 +1084,10 @@ export namespace MyNS {
 	export interface ListClustersResponse {
 
 		/** Output only. The clusters in the project. */
-		clusters?: Array<Cluster>;
+		clusters?: Array<Cluster> | null;
 
 		/** Output only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent ListClustersRequest. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1095,10 +1095,10 @@ export namespace MyNS {
 	export interface ListJobsResponse {
 
 		/** Output only. Jobs list. */
-		jobs?: Array<Job>;
+		jobs?: Array<Job> | null;
 
 		/** Optional. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent <code>ListJobsRequest</code>. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1106,10 +1106,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -1117,19 +1117,19 @@ export namespace MyNS {
 	export interface Operation {
 
 		/** If the value is false, it means the operation is still in progress. If true, the operation is completed, and either error or response is available. */
-		done?: boolean;
+		done?: boolean | null;
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
-		error?: Status;
+		error?: Status | null;
 
 		/** Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/** The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the name should be a resource name ending with operations/{unique_id}. */
-		name?: string;
+		name?: string | null;
 
 		/** The normal response of the operation in case of success. If the original method returns no data on success, such as Delete, the response is google.protobuf.Empty. If the original method is standard Get/Create/Update, the response should be the resource. For other methods, the response should have the type XxxResponse, where Xxx is the original method name. For example, if the original method name is TakeSnapshot(), the inferred response type is TakeSnapshotResponse. */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -1137,13 +1137,13 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -1151,10 +1151,10 @@ export namespace MyNS {
 	export interface ListWorkflowTemplatesResponse {
 
 		/** Output only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent <code>ListWorkflowTemplatesRequest</code>. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Output only. WorkflowTemplates list. */
-		templates?: Array<WorkflowTemplate>;
+		templates?: Array<WorkflowTemplate> | null;
 	}
 
 
@@ -1162,33 +1162,33 @@ export namespace MyNS {
 	export interface WorkflowTemplate {
 
 		/** Output only. The time template was created. */
-		createTime?: string;
-		id?: string;
+		createTime?: string | null;
+		id?: string | null;
 
 		/** Required. The Directed Acyclic Graph of Jobs to submit. */
-		jobs?: Array<OrderedJob>;
+		jobs?: Array<OrderedJob> | null;
 
 		/** Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names.
 		 * For projects.regions.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
 		 * For projects.locations.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Optional. emplate parameters whose values are substituted into the template. Values for parameters must be provided when the template is instantiated. */
-		parameters?: Array<TemplateParameter>;
+		parameters?: Array<TemplateParameter> | null;
 
 		/** Specifies workflow execution target.Either managed_cluster or cluster_selector is required. */
-		placement?: WorkflowTemplatePlacement;
+		placement?: WorkflowTemplatePlacement | null;
 
 		/** Output only. The time template was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** Optional. Used to perform a consistent read-modify-write.This field should be left blank for a CreateWorkflowTemplate request. It is required for an UpdateWorkflowTemplate request, and must match the current server version. A typical update template flow would fetch the current template with a GetWorkflowTemplate request, which will return the current template with the version field filled in with the current server version. The user updates other fields in the template, then returns it as part of the UpdateWorkflowTemplate request. */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -1196,40 +1196,40 @@ export namespace MyNS {
 	export interface OrderedJob {
 
 		/** A Dataproc job for running Apache Hadoop MapReduce (https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) jobs on Apache Hadoop YARN (https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html). */
-		hadoopJob?: HadoopJob;
+		hadoopJob?: HadoopJob | null;
 
 		/** A Dataproc job for running Apache Hive (https://hive.apache.org/) queries on YARN. */
-		hiveJob?: HiveJob;
+		hiveJob?: HiveJob | null;
 
 		/** Optional. The labels to associate with this job.Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following regular expression: \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a given job. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** A Dataproc job for running Apache Pig (https://pig.apache.org/) queries on YARN. */
-		pigJob?: PigJob;
+		pigJob?: PigJob | null;
 
 		/** Optional. The optional list of prerequisite job step_ids. If not specified, the job will start at the beginning of workflow. */
-		prerequisiteStepIds?: Array<string>;
+		prerequisiteStepIds?: Array<string> | null;
 
 		/** A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/presto) must be enabled when the cluster is created to submit a Presto job to the cluster. */
-		prestoJob?: PrestoJob;
+		prestoJob?: PrestoJob | null;
 
 		/** A Dataproc job for running Apache PySpark (https://spark.apache.org/docs/0.9.0/python-programming-guide.html) applications on YARN. */
-		pysparkJob?: PySparkJob;
+		pysparkJob?: PySparkJob | null;
 
 		/** Job scheduling options. */
-		scheduling?: JobScheduling;
+		scheduling?: JobScheduling | null;
 
 		/** A Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN. */
-		sparkJob?: SparkJob;
+		sparkJob?: SparkJob | null;
 
 		/** A Dataproc job for running Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) applications on YARN. */
-		sparkRJob?: SparkRJob;
+		sparkRJob?: SparkRJob | null;
 
 		/** A Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries. */
-		sparkSqlJob?: SparkSqlJob;
+		sparkSqlJob?: SparkSqlJob | null;
 
 		/** Required. The step id. The id must be unique among all jobs within the template.The step id is used as prefix for job id, as job goog-dataproc-workflow-step-id label, and in prerequisiteStepIds field from other steps.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters. */
-		stepId?: string;
+		stepId?: string | null;
 	}
 
 
@@ -1237,7 +1237,7 @@ export namespace MyNS {
 	export interface TemplateParameter {
 
 		/** Optional. Brief description of the parameter. Must not exceed 1024 characters. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Required. Paths to all fields that the parameter replaces. A field is allowed to appear in at most one parameter's list of field paths.A field path is similar in syntax to a google.protobuf.FieldMask. For example, a field path that references the zone field of a workflow template's cluster selector would be specified as placement.clusterSelector.zone.Also, field paths can reference fields using the following syntax:
@@ -1266,13 +1266,13 @@ export namespace MyNS {
 		 * placement.clusterSelector.clusterLabels
 		 * jobs'step-id'.sparkJob.args
 		 */
-		fields?: Array<string>;
+		fields?: Array<string> | null;
 
 		/** Required. Parameter name. The parameter name is used as the key, and paired with the parameter value, which are passed to the template when the template is instantiated. The name must contain only capital letters (A-Z), numbers (0-9), and underscores (_), and must not start with a number. The maximum length is 40 characters. */
-		name?: string;
+		name?: string | null;
 
 		/** Configuration for parameter validation. */
-		validation?: ParameterValidation;
+		validation?: ParameterValidation | null;
 	}
 
 
@@ -1280,10 +1280,10 @@ export namespace MyNS {
 	export interface ParameterValidation {
 
 		/** Validation based on regular expressions. */
-		regex?: RegexValidation;
+		regex?: RegexValidation | null;
 
 		/** Validation based on a list of allowed values. */
-		values?: ValueValidation;
+		values?: ValueValidation | null;
 	}
 
 
@@ -1291,7 +1291,7 @@ export namespace MyNS {
 	export interface RegexValidation {
 
 		/** Required. RE2 regular expressions used to validate the parameter's value. The value must match the regex in its entirety (substring matches are not sufficient). */
-		regexes?: Array<string>;
+		regexes?: Array<string> | null;
 	}
 
 
@@ -1299,7 +1299,7 @@ export namespace MyNS {
 	export interface ValueValidation {
 
 		/** Required. List of allowed values for the parameter. */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
@@ -1307,10 +1307,10 @@ export namespace MyNS {
 	export interface WorkflowTemplatePlacement {
 
 		/** A selector that chooses target cluster for jobs based on metadata. */
-		clusterSelector?: ClusterSelector;
+		clusterSelector?: ClusterSelector | null;
 
 		/** Cluster that is managed by the workflow. */
-		managedCluster?: ManagedCluster;
+		managedCluster?: ManagedCluster | null;
 	}
 
 
@@ -1318,13 +1318,13 @@ export namespace MyNS {
 	export interface ManagedCluster {
 
 		/** Required. The cluster name prefix. A unique cluster name will be formed by appending a random suffix.The name must contain only lower-case letters (a-z), numbers (0-9), and hyphens (-). Must begin with a letter. Cannot begin or end with hyphen. Must consist of between 2 and 35 characters. */
-		clusterName?: string;
+		clusterName?: string | null;
 
 		/** The cluster config. */
-		config?: ClusterConfig;
+		config?: ClusterConfig | null;
 
 		/** Optional. The labels to associate with this cluster.Label keys must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a given cluster. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 	}
 
 
@@ -1376,10 +1376,10 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Associates a list of members to a role. Optionally, may specify a condition that determines how and when the bindings are applied. Each of the bindings must contain at least one member. */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/** etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the etag in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An etag is returned in the response to getIamPolicy, and systems are expected to put that etag in the request to setIamPolicy to ensure that their change will be applied to the same version of the policy.Important: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost. */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.Valid values are 0, 1, and 3. Requests that specify an invalid value are rejected.Any operation that affects conditional role bindings must specify version 3. This requirement applies to the following operations:
@@ -1388,7 +1388,7 @@ export namespace MyNS {
 		 * Changing a conditional role binding in a policy
 		 * Removing any role binding, with or without a condition, from a policy  that includes conditionsImportant: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost.If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -1440,7 +1440,7 @@ export namespace MyNS {
 		 * - version: 3
 		 * For a description of IAM and its features, see the IAM documentation (https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 	}
 
 
@@ -1448,10 +1448,10 @@ export namespace MyNS {
 	export interface SubmitJobRequest {
 
 		/** A Dataproc job resource. */
-		job?: Job;
+		job?: Job | null;
 
 		/** Optional. A unique id used to identify the request. If the server receives two SubmitJobRequest requests with the same id, then the second request will be ignored and the first Job created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters. */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 
@@ -1459,7 +1459,7 @@ export namespace MyNS {
 	export interface TestIamPermissionsRequest {
 
 		/** The set of permissions to check for the resource. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see IAM Overview (https://cloud.google.com/iam/docs/overview#permissions). */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1467,7 +1467,7 @@ export namespace MyNS {
 	export interface TestIamPermissionsResponse {
 
 		/** A subset of TestPermissionsRequest.permissions that the caller is allowed. */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1475,7 +1475,7 @@ export namespace MyNS {
 	export interface WorkflowGraph {
 
 		/** Output only. The workflow nodes. */
-		nodes?: Array<WorkflowNode>;
+		nodes?: Array<WorkflowNode> | null;
 	}
 
 
@@ -1483,19 +1483,19 @@ export namespace MyNS {
 	export interface WorkflowNode {
 
 		/** Output only. The error detail. */
-		error?: string;
+		error?: string | null;
 
 		/** Output only. The job id; populated after the node enters RUNNING state. */
-		jobId?: string;
+		jobId?: string | null;
 
 		/** Output only. Node's prerequisite nodes. */
-		prerequisiteStepIds?: Array<string>;
+		prerequisiteStepIds?: Array<string> | null;
 
 		/** Output only. The node state. */
-		state?: WorkflowNodeState;
+		state?: WorkflowNodeState | null;
 
 		/** Output only. The name of the node. */
-		stepId?: string;
+		stepId?: string | null;
 	}
 
 	export enum WorkflowNodeState { NODE_STATE_UNSPECIFIED = 0, BLOCKED = 1, RUNNABLE = 2, RUNNING = 3, COMPLETED = 4, FAILED = 5 }
@@ -1505,41 +1505,41 @@ export namespace MyNS {
 	export interface WorkflowMetadata {
 
 		/** Output only. The name of the target cluster. */
-		clusterName?: string;
+		clusterName?: string | null;
 
 		/** Output only. The UUID of target cluster. */
-		clusterUuid?: string;
+		clusterUuid?: string | null;
 
 		/** The cluster operation triggered by a workflow. */
-		createCluster?: ClusterOperation;
+		createCluster?: ClusterOperation | null;
 
 		/** The cluster operation triggered by a workflow. */
-		deleteCluster?: ClusterOperation;
+		deleteCluster?: ClusterOperation | null;
 
 		/** Output only. Workflow end time. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The workflow graph. */
-		graph?: WorkflowGraph;
+		graph?: WorkflowGraph | null;
 
 		/** Map from parameter names to values that were used for those parameters. */
-		parameters?: {[id: string]: string };
+		parameters?: {[id: string]: string } | null;
 
 		/** Output only. Workflow start time. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Output only. The workflow state. */
-		state?: ClusterOperationStatusState;
+		state?: ClusterOperationStatusState | null;
 
 		/**
 		 * Output only. The resource name of the workflow template as described in https://cloud.google.com/apis/design/resource_names.
 		 * For projects.regions.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
 		 * For projects.locations.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
 		 */
-		template?: string;
+		template?: string | null;
 
 		/** Output only. The version of template at the time of workflow instantiation. */
-		version?: number;
+		version?: number | null;
 	}
 
 	@Injectable()

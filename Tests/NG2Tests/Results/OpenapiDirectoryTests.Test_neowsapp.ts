@@ -3,40 +3,40 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CloseApproachData {
-		close_approach_date?: string;
-		close_approach_date_full?: string;
-		epoch_date_close_approach?: number;
-		miss_distance?: MissDistance;
-		orbiting_body?: string;
-		relative_velocity?: RelVelocity;
+		close_approach_date?: string | null;
+		close_approach_date_full?: string | null;
+		epoch_date_close_approach?: number | null;
+		miss_distance?: MissDistance | null;
+		orbiting_body?: string | null;
+		relative_velocity?: RelVelocity | null;
 	}
 
 	export interface MissDistance {
-		astronomical?: string;
-		kilometers?: string;
-		lunar?: string;
-		miles?: string;
+		astronomical?: string | null;
+		kilometers?: string | null;
+		lunar?: string | null;
+		miles?: string | null;
 	}
 
 	export interface RelVelocity {
-		kilometers_per_hour?: string;
-		miles_per_hour?: string;
+		kilometers_per_hour?: string | null;
+		miles_per_hour?: string | null;
 	}
 
 	export interface EstimatedDiameter {
 
 		/** An estimate of the maximum size of the Asteroid - bases on the abosolute magnitude */
-		estimated_diameter_max?: number;
+		estimated_diameter_max?: number | null;
 
 		/** An estimate of the minimum size of the Asteroid - bases on the abosolute magnitude */
-		estimated_diameter_min?: number;
+		estimated_diameter_min?: number | null;
 	}
 
 	export interface EstimatedDiameterContainer {
-		feet?: EstimatedDiameter;
-		kilometers?: EstimatedDiameter;
-		meters?: EstimatedDiameter;
-		miles?: EstimatedDiameter;
+		feet?: EstimatedDiameter | null;
+		kilometers?: EstimatedDiameter | null;
+		meters?: EstimatedDiameter | null;
+		miles?: EstimatedDiameter | null;
 	}
 
 	export interface HashMap_string_List_NearEarthObject_ {
@@ -45,56 +45,56 @@ export namespace MyNS {
 	export interface NearEarthObject {
 
 		/** Is a measure of an asteroids brightness */
-		absolute_magnitude_h?: number;
+		absolute_magnitude_h?: number | null;
 
 		/** Close approach information of the Asteroid */
-		close_approach_data?: Array<CloseApproachData>;
-		designation?: string;
-		estimated_diameter?: EstimatedDiameterContainer;
-		is_potentially_hazardous_asteroid?: boolean;
-		is_sentry_object?: boolean;
-		name?: string;
-		name_limited?: string;
+		close_approach_data?: Array<CloseApproachData> | null;
+		designation?: string | null;
+		estimated_diameter?: EstimatedDiameterContainer | null;
+		is_potentially_hazardous_asteroid?: boolean | null;
+		is_sentry_object?: boolean | null;
+		name?: string | null;
+		name_limited?: string | null;
 
 		/** A Link to the NASA JPL Small-Body Database website */
-		nasa_jpl_url?: string;
+		nasa_jpl_url?: string | null;
 
 		/** The reference ID of the Asteroid - This correlates to the SPK ID for the JPL NEO data */
-		neo_reference_id?: string;
-		orbital_data?: OrbitalData;
-		sentry_data?: string;
+		neo_reference_id?: string | null;
+		orbital_data?: OrbitalData | null;
+		sentry_data?: string | null;
 	}
 
 	export interface OrbitalData {
-		aphelion_distance?: string;
-		ascending_node_longitude?: string;
-		data_arc_in_days?: number;
-		eccentricity?: string;
-		epoch_osculation?: string;
-		equinox?: string;
-		first_observation_date?: string;
-		inclination?: string;
-		jupiter_tisserand_invariant?: string;
-		last_observation_date?: string;
-		mean_anomaly?: string;
-		mean_motion?: string;
-		minimum_orbit_intersection?: string;
-		observations_used?: number;
-		orbit_class?: OrbitClass;
-		orbit_determination_date?: string;
-		orbit_id?: string;
-		orbit_uncertainty?: string;
-		orbital_period?: string;
-		perihelion_argument?: string;
-		perihelion_distance?: string;
-		perihelion_time?: string;
-		semi_major_axis?: string;
+		aphelion_distance?: string | null;
+		ascending_node_longitude?: string | null;
+		data_arc_in_days?: number | null;
+		eccentricity?: string | null;
+		epoch_osculation?: string | null;
+		equinox?: string | null;
+		first_observation_date?: string | null;
+		inclination?: string | null;
+		jupiter_tisserand_invariant?: string | null;
+		last_observation_date?: string | null;
+		mean_anomaly?: string | null;
+		mean_motion?: string | null;
+		minimum_orbit_intersection?: string | null;
+		observations_used?: number | null;
+		orbit_class?: OrbitClass | null;
+		orbit_determination_date?: string | null;
+		orbit_id?: string | null;
+		orbit_uncertainty?: string | null;
+		orbital_period?: string | null;
+		perihelion_argument?: string | null;
+		perihelion_distance?: string | null;
+		perihelion_time?: string | null;
+		semi_major_axis?: string | null;
 	}
 
 	export interface OrbitClass {
-		orbit_class_description?: string;
-		orbit_class_range?: string;
-		orbit_class_type?: OrbitClassOrbit_class_type;
+		orbit_class_description?: string | null;
+		orbit_class_range?: string | null;
+		orbit_class_type?: OrbitClassOrbit_class_type | null;
 	}
 
 	export enum OrbitClassOrbit_class_type { IEO = 0, ATE = 1, APO = 2, AMO = 3, MCA = 4, IMB = 5, MBA = 6, OMB = 7, TJN = 8, CEN = 9, TNO = 10, PAA = 11, HYA = 12, HYP = 13, PAR = 14, COM = 15, JFC = 16, HTC = 17, ETC = 18, CTC = 19, JFc = 20 }
@@ -102,73 +102,73 @@ export namespace MyNS {
 	export interface NearEarthObjectList {
 
 		/** Number of NEOs in list */
-		element_count?: number;
+		element_count?: number | null;
 
 		/** Hypermedia links to collection */
-		links?: string;
-		near_earth_objects?: HashMap_string_List_NearEarthObject_;
+		links?: string | null;
+		near_earth_objects?: HashMap_string_List_NearEarthObject_ | null;
 	}
 
 	export interface PageMetaData {
-		number?: number;
-		size?: number;
-		total_elements?: number;
-		total_pages?: number;
+		number?: number | null;
+		size?: number | null;
+		total_elements?: number | null;
+		total_pages?: number | null;
 	}
 
 	export interface SentryImpactRiskObject {
-		Palermo_scale_max?: string;
-		absolute_magnitude?: string;
-		average_lunar_distance?: number;
-		designation?: string;
-		estimated_diameter?: string;
-		fullname?: string;
-		impact_probability?: string;
-		is_active_sentry_object?: boolean;
-		last_obs?: string;
-		last_obs_jd?: string;
-		palermo_scale_ave?: string;
-		potential_impacts?: string;
-		removal_date?: string;
-		sentryId?: string;
-		torino_scale?: string;
-		v_infinity?: string;
-		year_range_max?: string;
-		year_range_min?: string;
+		Palermo_scale_max?: string | null;
+		absolute_magnitude?: string | null;
+		average_lunar_distance?: number | null;
+		designation?: string | null;
+		estimated_diameter?: string | null;
+		fullname?: string | null;
+		impact_probability?: string | null;
+		is_active_sentry_object?: boolean | null;
+		last_obs?: string | null;
+		last_obs_jd?: string | null;
+		palermo_scale_ave?: string | null;
+		potential_impacts?: string | null;
+		removal_date?: string | null;
+		sentryId?: string | null;
+		torino_scale?: string | null;
+		v_infinity?: string | null;
+		year_range_max?: string | null;
+		year_range_min?: string | null;
 	}
 
 	export interface SentryObjectPagingDto {
-		links?: string;
-		page?: PageMetaData;
-		sentry_objects?: Array<SentryImpactRiskObject>;
+		links?: string | null;
+		page?: PageMetaData | null;
+		sentry_objects?: Array<SentryImpactRiskObject> | null;
 	}
 
 	export interface Statistics {
 
 		/** Number of Close Approach listings across all NEOs listed in NeoWs */
-		close_approach_count?: number;
+		close_approach_count?: number | null;
 
 		/** TimeStamp the last time the DB was updated */
-		last_updated?: string;
-		nasa_jpl_url?: URL;
+		last_updated?: string | null;
+		nasa_jpl_url?: URL | null;
 
 		/** Number of NearEarthObjects listed in NeoWs */
-		near_earth_object_count?: number;
-		source?: string;
+		near_earth_object_count?: number | null;
+		source?: string | null;
 	}
 
 	export interface URL {
-		authority?: string;
-		content?: string;
-		defaultPort?: number;
-		file?: string;
-		host?: string;
-		path?: string;
-		port?: number;
-		protocol?: string;
-		query?: string;
-		ref?: string;
-		userInfo?: string;
+		authority?: string | null;
+		content?: string | null;
+		defaultPort?: number | null;
+		file?: string | null;
+		host?: string | null;
+		path?: string | null;
+		port?: number | null;
+		protocol?: string | null;
+		query?: string | null;
+		ref?: string | null;
+		userInfo?: string | null;
 	}
 
 	@Injectable()

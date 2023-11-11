@@ -5,7 +5,7 @@ export namespace MyNS {
 
 	/** Container for the result of the GenerateDataSet operation. */
 	export interface GenerateDataSetResult {
-		dataSetRequestId?: string;
+		dataSetRequestId?: string | null;
 	}
 
 
@@ -15,9 +15,9 @@ export namespace MyNS {
 		dataSetPublicationDate: Date;
 		roleNameArn: string;
 		destinationS3BucketName: string;
-		destinationS3Prefix?: string;
+		destinationS3Prefix?: string | null;
 		snsTopicArn: string;
-		customerDefinedValues?: CustomerDefinedValues;
+		customerDefinedValues?: CustomerDefinedValues | null;
 	}
 
 	export enum GenerateDataSetRequestDataSetType { customer_subscriber_hourly_monthly_subscriptions = 0, customer_subscriber_annual_subscriptions = 1, daily_business_usage_by_instance_type = 2, daily_business_fees = 3, daily_business_free_trial_conversions = 4, daily_business_new_instances = 5, daily_business_new_product_subscribers = 6, daily_business_canceled_product_subscribers = 7, monthly_revenue_billing_and_revenue_data = 8, monthly_revenue_annual_subscriptions = 9, monthly_revenue_field_demonstration_usage = 10, monthly_revenue_flexible_payment_schedule = 11, disbursed_amount_by_product = 12, disbursed_amount_by_product_with_uncollected_funds = 13, disbursed_amount_by_instance_hours = 14, disbursed_amount_by_customer_geo = 15, disbursed_amount_by_age_of_uncollected_funds = 16, disbursed_amount_by_age_of_disbursed_funds = 17, disbursed_amount_by_age_of_past_due_funds = 18, disbursed_amount_by_uncollected_funds_breakdown = 19, customer_profile_by_industry = 20, customer_profile_by_revenue = 21, customer_profile_by_geography = 22, sales_compensation_billed_revenue = 23, us_sales_and_use_tax_records = 24 }
@@ -31,7 +31,7 @@ export namespace MyNS {
 
 	/** Container for the result of the StartSupportDataExport operation. */
 	export interface StartSupportDataExportResult {
-		dataSetRequestId?: string;
+		dataSetRequestId?: string | null;
 	}
 
 
@@ -41,9 +41,9 @@ export namespace MyNS {
 		fromDate: Date;
 		roleNameArn: string;
 		destinationS3BucketName: string;
-		destinationS3Prefix?: string;
+		destinationS3Prefix?: string | null;
 		snsTopicArn: string;
-		customerDefinedValues?: CustomerDefinedValues;
+		customerDefinedValues?: CustomerDefinedValues | null;
 	}
 
 	export enum StartSupportDataExportRequestDataSetType { customer_support_contacts_data = 0, test_customer_support_contacts_data = 1 }

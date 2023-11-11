@@ -7,7 +7,7 @@ export namespace MyNS {
 
 	export interface CloseTunnelRequest {
 		tunnelId: string;
-		delete?: boolean;
+		delete?: boolean | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -16,31 +16,31 @@ export namespace MyNS {
 	export interface DescribeTunnelResponse {
 
 		/** A connection between a source computer and a destination device. */
-		tunnel?: Tunnel;
+		tunnel?: Tunnel | null;
 	}
 
 
 	/** A connection between a source computer and a destination device. */
 	export interface Tunnel {
-		tunnelId?: string;
-		tunnelArn?: string;
-		status?: TunnelStatus;
+		tunnelId?: string | null;
+		tunnelArn?: string | null;
+		status?: TunnelStatus | null;
 
 		/** The state of a connection. */
-		sourceConnectionState?: ConnectionState;
+		sourceConnectionState?: ConnectionState | null;
 
 		/** The state of a connection. */
-		destinationConnectionState?: ConnectionState;
-		description?: string;
+		destinationConnectionState?: ConnectionState | null;
+		description?: string | null;
 
 		/** The destination configuration. */
-		destinationConfig?: DestinationConfig;
+		destinationConfig?: DestinationConfig | null;
 
 		/** Tunnel timeout configuration. */
-		timeoutConfig?: TimeoutConfig;
-		tags?: Array<Tag>;
-		createdAt?: Date;
-		lastUpdatedAt?: Date;
+		timeoutConfig?: TimeoutConfig | null;
+		tags?: Array<Tag> | null;
+		createdAt?: Date | null;
+		lastUpdatedAt?: Date | null;
 	}
 
 	export enum TunnelStatus { OPEN = 0, CLOSED = 1 }
@@ -48,8 +48,8 @@ export namespace MyNS {
 
 	/** The state of a connection. */
 	export interface ConnectionState {
-		status?: ConnectionStateStatus;
-		lastUpdatedAt?: Date;
+		status?: ConnectionStateStatus | null;
+		lastUpdatedAt?: Date | null;
 	}
 
 	export enum ConnectionStateStatus { CONNECTED = 0, DISCONNECTED = 1 }
@@ -64,7 +64,7 @@ export namespace MyNS {
 
 	/** Tunnel timeout configuration. */
 	export interface TimeoutConfig {
-		maxLifetimeTimeoutMinutes?: number;
+		maxLifetimeTimeoutMinutes?: number | null;
 	}
 
 
@@ -79,7 +79,7 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -87,43 +87,43 @@ export namespace MyNS {
 	}
 
 	export interface ListTunnelsResponse {
-		tunnelSummaries?: Array<TunnelSummary>;
-		nextToken?: string;
+		tunnelSummaries?: Array<TunnelSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about the tunnel. */
 	export interface TunnelSummary {
-		tunnelId?: string;
-		tunnelArn?: string;
-		status?: TunnelStatus;
-		description?: string;
-		createdAt?: Date;
-		lastUpdatedAt?: Date;
+		tunnelId?: string | null;
+		tunnelArn?: string | null;
+		status?: TunnelStatus | null;
+		description?: string | null;
+		createdAt?: Date | null;
+		lastUpdatedAt?: Date | null;
 	}
 
 	export interface ListTunnelsRequest {
-		thingName?: string;
-		maxResults?: number;
-		nextToken?: string;
+		thingName?: string | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface OpenTunnelResponse {
-		tunnelId?: string;
-		tunnelArn?: string;
-		sourceAccessToken?: string;
-		destinationAccessToken?: string;
+		tunnelId?: string | null;
+		tunnelArn?: string | null;
+		sourceAccessToken?: string | null;
+		destinationAccessToken?: string | null;
 	}
 
 	export interface OpenTunnelRequest {
-		description?: string;
-		tags?: Array<Tag>;
+		description?: string | null;
+		tags?: Array<Tag> | null;
 
 		/** The destination configuration. */
-		destinationConfig?: DestinationConfig;
+		destinationConfig?: DestinationConfig | null;
 
 		/** Tunnel timeout configuration. */
-		timeoutConfig?: TimeoutConfig;
+		timeoutConfig?: TimeoutConfig | null;
 	}
 
 	export interface LimitExceededException {

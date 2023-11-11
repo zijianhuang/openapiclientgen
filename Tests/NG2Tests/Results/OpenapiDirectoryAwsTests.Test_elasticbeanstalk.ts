@@ -8,10 +8,10 @@ export namespace MyNS {
 
 	/** The result message containing information about the managed action. */
 	export interface ApplyEnvironmentManagedActionResult {
-		ActionId?: string;
-		ActionDescription?: string;
-		ActionType?: ApplyEnvironmentManagedActionResultActionType;
-		Status?: string;
+		ActionId?: string | null;
+		ActionDescription?: string | null;
+		ActionType?: ApplyEnvironmentManagedActionResultActionType | null;
+		Status?: string | null;
 	}
 
 	export enum ApplyEnvironmentManagedActionResultActionType { InstanceRefresh = 0, PlatformUpdate = 1, Unknown = 2 }
@@ -25,45 +25,45 @@ export namespace MyNS {
 
 	/** Indicates if the specified CNAME is available. */
 	export interface CheckDNSAvailabilityResultMessage {
-		Available?: boolean;
-		FullyQualifiedCNAME?: string;
+		Available?: boolean | null;
+		FullyQualifiedCNAME?: string | null;
 	}
 
 
 	/** Result message containing a list of environment descriptions. */
 	export interface EnvironmentDescriptionsMessage {
-		Environments?: Array<EnvironmentDescription>;
-		NextToken?: string;
+		Environments?: Array<EnvironmentDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes the properties of an environment. */
 	export interface EnvironmentDescription {
-		EnvironmentName?: string;
-		EnvironmentId?: string;
-		ApplicationName?: string;
-		VersionLabel?: string;
-		SolutionStackName?: string;
-		PlatformArn?: string;
-		TemplateName?: string;
-		Description?: string;
-		EndpointURL?: string;
-		CNAME?: string;
-		DateCreated?: Date;
-		DateUpdated?: Date;
-		Status?: EnvironmentDescriptionStatus;
-		AbortableOperationInProgress?: boolean;
-		Health?: EnvironmentDescriptionHealth;
-		HealthStatus?: EnvironmentDescriptionHealthStatus;
+		EnvironmentName?: string | null;
+		EnvironmentId?: string | null;
+		ApplicationName?: string | null;
+		VersionLabel?: string | null;
+		SolutionStackName?: string | null;
+		PlatformArn?: string | null;
+		TemplateName?: string | null;
+		Description?: string | null;
+		EndpointURL?: string | null;
+		CNAME?: string | null;
+		DateCreated?: Date | null;
+		DateUpdated?: Date | null;
+		Status?: EnvironmentDescriptionStatus | null;
+		AbortableOperationInProgress?: boolean | null;
+		Health?: EnvironmentDescriptionHealth | null;
+		HealthStatus?: EnvironmentDescriptionHealthStatus | null;
 
 		/** Describes the AWS resources in use by this environment. This data is not live data. */
-		Resources?: EnvironmentResourcesDescription;
+		Resources?: EnvironmentResourcesDescription | null;
 
 		/** Describes the properties of an environment tier */
-		Tier?: EnvironmentTier;
-		EnvironmentLinks?: Array<EnvironmentLink>;
-		EnvironmentArn?: string;
-		OperationsRole?: string;
+		Tier?: EnvironmentTier | null;
+		EnvironmentLinks?: Array<EnvironmentLink> | null;
+		EnvironmentArn?: string | null;
+		OperationsRole?: string | null;
 	}
 
 	export enum EnvironmentDescriptionStatus { Launching = 0, Updating = 1, Ready = 2, Terminating = 3, Terminated = 4 }
@@ -77,37 +77,37 @@ export namespace MyNS {
 	export interface EnvironmentResourcesDescription {
 
 		/** Describes the details of a LoadBalancer. */
-		LoadBalancer?: LoadBalancerDescription;
+		LoadBalancer?: LoadBalancerDescription | null;
 	}
 
 
 	/** Describes the details of a LoadBalancer. */
 	export interface LoadBalancerDescription {
-		LoadBalancerName?: string;
-		Domain?: string;
-		Listeners?: Array<Listener>;
+		LoadBalancerName?: string | null;
+		Domain?: string | null;
+		Listeners?: Array<Listener> | null;
 	}
 
 
 	/** Describes the properties of a Listener for the LoadBalancer. */
 	export interface Listener {
-		Protocol?: string;
-		Port?: number;
+		Protocol?: string | null;
+		Port?: number | null;
 	}
 
 
 	/** Describes the properties of an environment tier */
 	export interface EnvironmentTier {
-		Name?: string;
-		Type?: string;
-		Version?: string;
+		Name?: string | null;
+		Type?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details. */
 	export interface EnvironmentLink {
-		LinkName?: string;
-		EnvironmentName?: string;
+		LinkName?: string | null;
+		EnvironmentName?: string | null;
 	}
 
 	export interface TooManyEnvironmentsException {
@@ -118,31 +118,31 @@ export namespace MyNS {
 	export interface ApplicationDescriptionMessage {
 
 		/** Describes the properties of an application. */
-		Application?: ApplicationDescription;
+		Application?: ApplicationDescription | null;
 	}
 
 
 	/** Describes the properties of an application. */
 	export interface ApplicationDescription {
-		ApplicationArn?: string;
-		ApplicationName?: string;
-		Description?: string;
-		DateCreated?: Date;
-		DateUpdated?: Date;
-		Versions?: Array<string>;
-		ConfigurationTemplates?: Array<string>;
+		ApplicationArn?: string | null;
+		ApplicationName?: string | null;
+		Description?: string | null;
+		DateCreated?: Date | null;
+		DateUpdated?: Date | null;
+		Versions?: Array<string> | null;
+		ConfigurationTemplates?: Array<string> | null;
 
 		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
-		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
+		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig | null;
 	}
 
 
 	/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
 	export interface ApplicationResourceLifecycleConfig {
-		ServiceRole?: string;
+		ServiceRole?: string | null;
 
 		/** <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p> */
-		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
+		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig | null;
 	}
 
 
@@ -150,33 +150,33 @@ export namespace MyNS {
 	export interface ApplicationVersionLifecycleConfig {
 
 		/** A lifecycle rule that deletes the oldest application version when the maximum count is exceeded. */
-		MaxCountRule?: MaxCountRule;
+		MaxCountRule?: MaxCountRule | null;
 
 		/** A lifecycle rule that deletes application versions after the specified number of days. */
-		MaxAgeRule?: MaxAgeRule;
+		MaxAgeRule?: MaxAgeRule | null;
 	}
 
 
 	/** A lifecycle rule that deletes the oldest application version when the maximum count is exceeded. */
 	export interface MaxCountRule {
 		Enabled: boolean;
-		MaxCount?: number;
-		DeleteSourceFromS3?: boolean;
+		MaxCount?: number | null;
+		DeleteSourceFromS3?: boolean | null;
 	}
 
 
 	/** A lifecycle rule that deletes application versions after the specified number of days. */
 	export interface MaxAgeRule {
 		Enabled: boolean;
-		MaxAgeInDays?: number;
-		DeleteSourceFromS3?: boolean;
+		MaxAgeInDays?: number | null;
+		DeleteSourceFromS3?: boolean | null;
 	}
 
 
 	/** Describes a tag applied to a resource in an environment. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface TooManyApplicationsException {
@@ -187,26 +187,26 @@ export namespace MyNS {
 	export interface ApplicationVersionDescriptionMessage {
 
 		/** Describes the properties of an application version. */
-		ApplicationVersion?: ApplicationVersionDescription;
+		ApplicationVersion?: ApplicationVersionDescription | null;
 	}
 
 
 	/** Describes the properties of an application version. */
 	export interface ApplicationVersionDescription {
-		ApplicationVersionArn?: string;
-		ApplicationName?: string;
-		Description?: string;
-		VersionLabel?: string;
+		ApplicationVersionArn?: string | null;
+		ApplicationName?: string | null;
+		Description?: string | null;
+		VersionLabel?: string | null;
 
 		/** Location of the source code for an application version. */
-		SourceBuildInformation?: SourceBuildInformation;
-		BuildArn?: string;
+		SourceBuildInformation?: SourceBuildInformation | null;
+		BuildArn?: string | null;
 
 		/** The bucket and key of an item stored in Amazon S3. */
-		SourceBundle?: S3Location;
-		DateCreated?: Date;
-		DateUpdated?: Date;
-		Status?: ApplicationVersionDescriptionStatus;
+		SourceBundle?: S3Location | null;
+		DateCreated?: Date | null;
+		DateUpdated?: Date | null;
+		Status?: ApplicationVersionDescriptionStatus | null;
 	}
 
 
@@ -224,8 +224,8 @@ export namespace MyNS {
 
 	/** The bucket and key of an item stored in Amazon S3. */
 	export interface S3Location {
-		S3Bucket?: string;
-		S3Key?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
 	}
 
 	export enum ApplicationVersionDescriptionStatus { Processed = 0, Unprocessed = 1, Failed = 2, Processing = 3, Building = 4 }
@@ -248,16 +248,16 @@ export namespace MyNS {
 
 	/** Describes the settings for a configuration set. */
 	export interface ConfigurationSettingsDescription {
-		SolutionStackName?: string;
-		PlatformArn?: string;
-		ApplicationName?: string;
-		TemplateName?: string;
-		Description?: string;
-		EnvironmentName?: string;
-		DeploymentStatus?: ConfigurationSettingsDescriptionDeploymentStatus;
-		DateCreated?: Date;
-		DateUpdated?: Date;
-		OptionSettings?: Array<ConfigurationOptionSetting>;
+		SolutionStackName?: string | null;
+		PlatformArn?: string | null;
+		ApplicationName?: string | null;
+		TemplateName?: string | null;
+		Description?: string | null;
+		EnvironmentName?: string | null;
+		DeploymentStatus?: ConfigurationSettingsDescriptionDeploymentStatus | null;
+		DateCreated?: Date | null;
+		DateUpdated?: Date | null;
+		OptionSettings?: Array<ConfigurationOptionSetting> | null;
 	}
 
 	export enum ConfigurationSettingsDescriptionDeploymentStatus { deployed = 0, pending = 1, failed = 2 }
@@ -265,10 +265,10 @@ export namespace MyNS {
 
 	/** A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.  */
 	export interface ConfigurationOptionSetting {
-		ResourceName?: string;
-		Namespace?: string;
-		OptionName?: string;
-		Value?: string;
+		ResourceName?: string | null;
+		Namespace?: string | null;
+		OptionName?: string | null;
+		Value?: string | null;
 	}
 
 	export interface TooManyBucketsException {
@@ -280,35 +280,35 @@ export namespace MyNS {
 
 	/** A specification identifying an individual configuration option. */
 	export interface OptionSpecification {
-		ResourceName?: string;
-		Namespace?: string;
-		OptionName?: string;
+		ResourceName?: string | null;
+		Namespace?: string | null;
+		OptionName?: string | null;
 	}
 
 	export interface CreatePlatformVersionResult {
 
 		/** Summary information about a platform version. */
-		PlatformSummary?: PlatformSummary;
+		PlatformSummary?: PlatformSummary | null;
 
 		/** The builder used to build the custom platform. */
-		Builder?: Builder;
+		Builder?: Builder | null;
 	}
 
 
 	/** Summary information about a platform version. */
 	export interface PlatformSummary {
-		PlatformArn?: string;
-		PlatformOwner?: string;
-		PlatformStatus?: PlatformSummaryPlatformStatus;
-		PlatformCategory?: string;
-		OperatingSystemName?: string;
-		OperatingSystemVersion?: string;
-		SupportedTierList?: Array<string>;
-		SupportedAddonList?: Array<string>;
-		PlatformLifecycleState?: string;
-		PlatformVersion?: string;
-		PlatformBranchName?: string;
-		PlatformBranchLifecycleState?: string;
+		PlatformArn?: string | null;
+		PlatformOwner?: string | null;
+		PlatformStatus?: PlatformSummaryPlatformStatus | null;
+		PlatformCategory?: string | null;
+		OperatingSystemName?: string | null;
+		OperatingSystemVersion?: string | null;
+		SupportedTierList?: Array<string> | null;
+		SupportedAddonList?: Array<string> | null;
+		PlatformLifecycleState?: string | null;
+		PlatformVersion?: string | null;
+		PlatformBranchName?: string | null;
+		PlatformBranchLifecycleState?: string | null;
 	}
 
 	export enum PlatformSummaryPlatformStatus { Creating = 0, Failed = 1, Ready = 2, Deleting = 3, Deleted = 4 }
@@ -316,7 +316,7 @@ export namespace MyNS {
 
 	/** The builder used to build the custom platform. */
 	export interface Builder {
-		ARN?: string;
+		ARN?: string | null;
 	}
 
 	export interface TooManyPlatformsException {
@@ -325,7 +325,7 @@ export namespace MyNS {
 
 	/** Results of a <a>CreateStorageLocationResult</a> call. */
 	export interface CreateStorageLocationResultMessage {
-		S3Bucket?: string;
+		S3Bucket?: string | null;
 	}
 
 	export interface S3SubscriptionRequiredException {
@@ -340,7 +340,7 @@ export namespace MyNS {
 	export interface DeletePlatformVersionResult {
 
 		/** Summary information about a platform version. */
-		PlatformSummary?: PlatformSummary;
+		PlatformSummary?: PlatformSummary | null;
 	}
 
 	export interface PlatformVersionStillReferencedException {
@@ -349,7 +349,7 @@ export namespace MyNS {
 	export interface DescribeAccountAttributesResult {
 
 		/** A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account. */
-		ResourceQuotas?: ResourceQuotas;
+		ResourceQuotas?: ResourceQuotas | null;
 	}
 
 
@@ -357,64 +357,64 @@ export namespace MyNS {
 	export interface ResourceQuotas {
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		ApplicationQuota?: ResourceQuota;
+		ApplicationQuota?: ResourceQuota | null;
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		ApplicationVersionQuota?: ResourceQuota;
+		ApplicationVersionQuota?: ResourceQuota | null;
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		EnvironmentQuota?: ResourceQuota;
+		EnvironmentQuota?: ResourceQuota | null;
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		ConfigurationTemplateQuota?: ResourceQuota;
+		ConfigurationTemplateQuota?: ResourceQuota | null;
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		CustomPlatformQuota?: ResourceQuota;
+		CustomPlatformQuota?: ResourceQuota | null;
 	}
 
 
 	/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
 	export interface ResourceQuota {
-		Maximum?: number;
+		Maximum?: number | null;
 	}
 
 
 	/** Result message wrapping a list of application version descriptions. */
 	export interface ApplicationVersionDescriptionsMessage {
-		ApplicationVersions?: Array<ApplicationVersionDescription>;
-		NextToken?: string;
+		ApplicationVersions?: Array<ApplicationVersionDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Result message containing a list of application descriptions. */
 	export interface ApplicationDescriptionsMessage {
-		Applications?: Array<ApplicationDescription>;
+		Applications?: Array<ApplicationDescription> | null;
 	}
 
 
 	/** Describes the settings for a specified configuration set. */
 	export interface ConfigurationOptionsDescription {
-		SolutionStackName?: string;
-		PlatformArn?: string;
-		Options?: Array<ConfigurationOptionDescription>;
+		SolutionStackName?: string | null;
+		PlatformArn?: string | null;
+		Options?: Array<ConfigurationOptionDescription> | null;
 	}
 
 
 	/** Describes the possible values for a configuration option. */
 	export interface ConfigurationOptionDescription {
-		Namespace?: string;
-		Name?: string;
-		DefaultValue?: string;
-		ChangeSeverity?: string;
-		UserDefined?: boolean;
-		ValueType?: ConfigurationOptionDescriptionValueType;
-		ValueOptions?: Array<string>;
-		MinValue?: number;
-		MaxValue?: number;
-		MaxLength?: number;
+		Namespace?: string | null;
+		Name?: string | null;
+		DefaultValue?: string | null;
+		ChangeSeverity?: string | null;
+		UserDefined?: boolean | null;
+		ValueType?: ConfigurationOptionDescriptionValueType | null;
+		ValueOptions?: Array<string> | null;
+		MinValue?: number | null;
+		MaxValue?: number | null;
+		MaxLength?: number | null;
 
 		/** A regular expression representing a restriction on a string configuration option value. */
-		Regex?: OptionRestrictionRegex;
+		Regex?: OptionRestrictionRegex | null;
 	}
 
 	export enum ConfigurationOptionDescriptionValueType { Scalar = 0, List = 1 }
@@ -422,79 +422,79 @@ export namespace MyNS {
 
 	/** A regular expression representing a restriction on a string configuration option value. */
 	export interface OptionRestrictionRegex {
-		Pattern?: string;
-		Label?: string;
+		Pattern?: string | null;
+		Label?: string | null;
 	}
 
 
 	/** The results from a request to change the configuration settings of an environment. */
 	export interface ConfigurationSettingsDescriptions {
-		ConfigurationSettings?: Array<ConfigurationSettingsDescription>;
+		ConfigurationSettings?: Array<ConfigurationSettingsDescription> | null;
 	}
 
 
 	/** Health details for an AWS Elastic Beanstalk environment. */
 	export interface DescribeEnvironmentHealthResult {
-		EnvironmentName?: string;
-		HealthStatus?: string;
-		Status?: EnvironmentDescriptionHealth;
-		Color?: string;
-		Causes?: Array<string>;
+		EnvironmentName?: string | null;
+		HealthStatus?: string | null;
+		Status?: EnvironmentDescriptionHealth | null;
+		Color?: string | null;
+		Causes?: Array<string> | null;
 
 		/** Application request metrics for an AWS Elastic Beanstalk environment. */
-		ApplicationMetrics?: ApplicationMetrics;
+		ApplicationMetrics?: ApplicationMetrics | null;
 
 		/** Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>. */
-		InstancesHealth?: InstanceHealthSummary;
-		RefreshedAt?: Date;
+		InstancesHealth?: InstanceHealthSummary | null;
+		RefreshedAt?: Date | null;
 	}
 
 
 	/** Application request metrics for an AWS Elastic Beanstalk environment. */
 	export interface ApplicationMetrics {
-		Duration?: number;
-		RequestCount?: number;
+		Duration?: number | null;
+		RequestCount?: number | null;
 
 		/** Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>. */
-		StatusCodes?: StatusCodes;
+		StatusCodes?: StatusCodes | null;
 
 		/** Represents the average latency for the slowest X percent of requests over the last 10 seconds. */
-		Latency?: Latency;
+		Latency?: Latency | null;
 	}
 
 
 	/** Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>. */
 	export interface StatusCodes {
-		Status2xx?: number;
-		Status3xx?: number;
-		Status4xx?: number;
-		Status5xx?: number;
+		Status2xx?: number | null;
+		Status3xx?: number | null;
+		Status4xx?: number | null;
+		Status5xx?: number | null;
 	}
 
 
 	/** Represents the average latency for the slowest X percent of requests over the last 10 seconds. */
 	export interface Latency {
-		P999?: number;
-		P99?: number;
-		P95?: number;
-		P90?: number;
-		P85?: number;
-		P75?: number;
-		P50?: number;
-		P10?: number;
+		P999?: number | null;
+		P99?: number | null;
+		P95?: number | null;
+		P90?: number | null;
+		P85?: number | null;
+		P75?: number | null;
+		P50?: number | null;
+		P10?: number | null;
 	}
 
 
 	/** Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>. */
 	export interface InstanceHealthSummary {
-		NoData?: number;
-		Unknown?: number;
-		Pending?: number;
-		Ok?: number;
-		Info?: number;
-		Warning?: number;
-		Degraded?: number;
-		Severe?: number;
+		NoData?: number | null;
+		Unknown?: number | null;
+		Pending?: number | null;
+		Ok?: number | null;
+		Info?: number | null;
+		Warning?: number | null;
+		Degraded?: number | null;
+		Severe?: number | null;
 	}
 
 	export enum EnvironmentHealthAttribute { Status = 0, Color = 1, Causes = 2, ApplicationMetrics = 3, InstancesHealth = 4, All = 5, HealthStatus = 6, RefreshedAt = 7 }
@@ -505,21 +505,21 @@ export namespace MyNS {
 
 	/** A result message containing a list of completed and failed managed actions. */
 	export interface DescribeEnvironmentManagedActionHistoryResult {
-		ManagedActionHistoryItems?: Array<ManagedActionHistoryItem>;
-		NextToken?: string;
+		ManagedActionHistoryItems?: Array<ManagedActionHistoryItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The record of a completed or failed managed action. */
 	export interface ManagedActionHistoryItem {
-		ActionId?: string;
-		ActionType?: ApplyEnvironmentManagedActionResultActionType;
-		ActionDescription?: string;
-		FailureType?: ManagedActionHistoryItemFailureType;
-		Status?: ManagedActionHistoryItemStatus;
-		FailureDescription?: string;
-		ExecutedTime?: Date;
-		FinishedTime?: Date;
+		ActionId?: string | null;
+		ActionType?: ApplyEnvironmentManagedActionResultActionType | null;
+		ActionDescription?: string | null;
+		FailureType?: ManagedActionHistoryItemFailureType | null;
+		Status?: ManagedActionHistoryItemStatus | null;
+		FailureDescription?: string | null;
+		ExecutedTime?: Date | null;
+		FinishedTime?: Date | null;
 	}
 
 	export enum ManagedActionHistoryItemFailureType { UpdateCancelled = 0, CancellationFailed = 1, RollbackFailed = 2, RollbackSuccessful = 3, InternalFailure = 4, InvalidEnvironmentState = 5, PermissionsError = 6 }
@@ -529,17 +529,17 @@ export namespace MyNS {
 
 	/** The result message containing a list of managed actions. */
 	export interface DescribeEnvironmentManagedActionsResult {
-		ManagedActions?: Array<ManagedAction>;
+		ManagedActions?: Array<ManagedAction> | null;
 	}
 
 
 	/** The record of an upcoming or in-progress managed action. */
 	export interface ManagedAction {
-		ActionId?: string;
-		ActionDescription?: string;
-		ActionType?: ApplyEnvironmentManagedActionResultActionType;
-		Status?: ManagedActionStatus;
-		WindowStartTime?: Date;
+		ActionId?: string | null;
+		ActionDescription?: string | null;
+		ActionType?: ApplyEnvironmentManagedActionResultActionType | null;
+		Status?: ManagedActionStatus | null;
+		WindowStartTime?: Date | null;
 	}
 
 	export enum ManagedActionStatus { Scheduled = 0, Pending = 1, Running = 2, Unknown = 3 }
@@ -549,84 +549,84 @@ export namespace MyNS {
 	export interface EnvironmentResourceDescriptionsMessage {
 
 		/** Describes the AWS resources in use by this environment. This data is live. */
-		EnvironmentResources?: EnvironmentResourceDescription;
+		EnvironmentResources?: EnvironmentResourceDescription | null;
 	}
 
 
 	/** Describes the AWS resources in use by this environment. This data is live. */
 	export interface EnvironmentResourceDescription {
-		EnvironmentName?: string;
-		AutoScalingGroups?: Array<AutoScalingGroup>;
-		Instances?: Array<Instance>;
-		LaunchConfigurations?: Array<LaunchConfiguration>;
-		LaunchTemplates?: Array<LaunchTemplate>;
-		LoadBalancers?: Array<LoadBalancer>;
-		Triggers?: Array<Trigger>;
-		Queues?: Array<Queue>;
+		EnvironmentName?: string | null;
+		AutoScalingGroups?: Array<AutoScalingGroup> | null;
+		Instances?: Array<Instance> | null;
+		LaunchConfigurations?: Array<LaunchConfiguration> | null;
+		LaunchTemplates?: Array<LaunchTemplate> | null;
+		LoadBalancers?: Array<LoadBalancer> | null;
+		Triggers?: Array<Trigger> | null;
+		Queues?: Array<Queue> | null;
 	}
 
 
 	/** Describes an Auto Scaling launch configuration. */
 	export interface AutoScalingGroup {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/** The description of an Amazon EC2 instance. */
 	export interface Instance {
-		Id?: string;
+		Id?: string | null;
 	}
 
 
 	/** Describes an Auto Scaling launch configuration. */
 	export interface LaunchConfiguration {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/** Describes an Amazon EC2 launch template. */
 	export interface LaunchTemplate {
-		Id?: string;
+		Id?: string | null;
 	}
 
 
 	/** Describes a LoadBalancer. */
 	export interface LoadBalancer {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/** Describes a trigger. */
 	export interface Trigger {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/** Describes a queue. */
 	export interface Queue {
-		Name?: string;
-		URL?: string;
+		Name?: string | null;
+		URL?: string | null;
 	}
 
 
 	/** Result message wrapping a list of event descriptions. */
 	export interface EventDescriptionsMessage {
-		Events?: Array<EventDescription>;
-		NextToken?: string;
+		Events?: Array<EventDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes an event. */
 	export interface EventDescription {
-		EventDate?: Date;
-		Message?: string;
-		ApplicationName?: string;
-		VersionLabel?: string;
-		TemplateName?: string;
-		EnvironmentName?: string;
-		PlatformArn?: string;
-		RequestId?: string;
-		Severity?: EventDescriptionSeverity;
+		EventDate?: Date | null;
+		Message?: string | null;
+		ApplicationName?: string | null;
+		VersionLabel?: string | null;
+		TemplateName?: string | null;
+		EnvironmentName?: string | null;
+		PlatformArn?: string | null;
+		RequestId?: string | null;
+		Severity?: EventDescriptionSeverity | null;
 	}
 
 	export enum EventDescriptionSeverity { TRACE = 0, DEBUG = 1, INFO = 2, WARN = 3, ERROR = 4, FATAL = 5 }
@@ -634,30 +634,30 @@ export namespace MyNS {
 
 	/** Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment. */
 	export interface DescribeInstancesHealthResult {
-		InstanceHealthList?: Array<SingleInstanceHealth>;
-		RefreshedAt?: Date;
-		NextToken?: string;
+		InstanceHealthList?: Array<SingleInstanceHealth> | null;
+		RefreshedAt?: Date | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment. */
 	export interface SingleInstanceHealth {
-		InstanceId?: string;
-		HealthStatus?: string;
-		Color?: string;
-		Causes?: Array<string>;
-		LaunchedAt?: Date;
+		InstanceId?: string | null;
+		HealthStatus?: string | null;
+		Color?: string | null;
+		Causes?: Array<string> | null;
+		LaunchedAt?: Date | null;
 
 		/** Application request metrics for an AWS Elastic Beanstalk environment. */
-		ApplicationMetrics?: ApplicationMetrics;
+		ApplicationMetrics?: ApplicationMetrics | null;
 
 		/** CPU utilization and load average metrics for an Amazon EC2 instance. */
-		System?: SystemStatus;
+		System?: SystemStatus | null;
 
 		/** Information about an application version deployment. */
-		Deployment?: Deployment;
-		AvailabilityZone?: string;
-		InstanceType?: string;
+		Deployment?: Deployment | null;
+		AvailabilityZone?: string | null;
+		InstanceType?: string | null;
 	}
 
 
@@ -665,30 +665,30 @@ export namespace MyNS {
 	export interface SystemStatus {
 
 		/** CPU utilization metrics for an instance. */
-		CPUUtilization?: CPUUtilization;
-		LoadAverage?: Array<number>;
+		CPUUtilization?: CPUUtilization | null;
+		LoadAverage?: Array<number> | null;
 	}
 
 
 	/** CPU utilization metrics for an instance. */
 	export interface CPUUtilization {
-		User?: number;
-		Nice?: number;
-		System?: number;
-		Idle?: number;
-		IOWait?: number;
-		IRQ?: number;
-		SoftIRQ?: number;
-		Privileged?: number;
+		User?: number | null;
+		Nice?: number | null;
+		System?: number | null;
+		Idle?: number | null;
+		IOWait?: number | null;
+		IRQ?: number | null;
+		SoftIRQ?: number | null;
+		Privileged?: number | null;
 	}
 
 
 	/** Information about an application version deployment. */
 	export interface Deployment {
-		VersionLabel?: string;
-		DeploymentId?: number;
-		Status?: string;
-		DeploymentTime?: Date;
+		VersionLabel?: string | null;
+		DeploymentId?: number | null;
+		Status?: string | null;
+		DeploymentTime?: Date | null;
 	}
 
 	export enum InstancesHealthAttribute { HealthStatus = 0, Color = 1, Causes = 2, ApplicationMetrics = 3, RefreshedAt = 4, LaunchedAt = 5, System = 6, Deployment = 7, AvailabilityZone = 8, InstanceType = 9, All = 10 }
@@ -696,109 +696,109 @@ export namespace MyNS {
 	export interface DescribePlatformVersionResult {
 
 		/** Detailed information about a platform version. */
-		PlatformDescription?: PlatformDescription;
+		PlatformDescription?: PlatformDescription | null;
 	}
 
 
 	/** Detailed information about a platform version. */
 	export interface PlatformDescription {
-		PlatformArn?: string;
-		PlatformOwner?: string;
-		PlatformName?: string;
-		PlatformVersion?: string;
-		SolutionStackName?: string;
-		PlatformStatus?: PlatformSummaryPlatformStatus;
-		DateCreated?: Date;
-		DateUpdated?: Date;
-		PlatformCategory?: string;
-		Description?: string;
-		Maintainer?: string;
-		OperatingSystemName?: string;
-		OperatingSystemVersion?: string;
-		ProgrammingLanguages?: Array<PlatformProgrammingLanguage>;
-		Frameworks?: Array<PlatformFramework>;
-		CustomAmiList?: Array<CustomAmi>;
-		SupportedTierList?: Array<string>;
-		SupportedAddonList?: Array<string>;
-		PlatformLifecycleState?: string;
-		PlatformBranchName?: string;
-		PlatformBranchLifecycleState?: string;
+		PlatformArn?: string | null;
+		PlatformOwner?: string | null;
+		PlatformName?: string | null;
+		PlatformVersion?: string | null;
+		SolutionStackName?: string | null;
+		PlatformStatus?: PlatformSummaryPlatformStatus | null;
+		DateCreated?: Date | null;
+		DateUpdated?: Date | null;
+		PlatformCategory?: string | null;
+		Description?: string | null;
+		Maintainer?: string | null;
+		OperatingSystemName?: string | null;
+		OperatingSystemVersion?: string | null;
+		ProgrammingLanguages?: Array<PlatformProgrammingLanguage> | null;
+		Frameworks?: Array<PlatformFramework> | null;
+		CustomAmiList?: Array<CustomAmi> | null;
+		SupportedTierList?: Array<string> | null;
+		SupportedAddonList?: Array<string> | null;
+		PlatformLifecycleState?: string | null;
+		PlatformBranchName?: string | null;
+		PlatformBranchLifecycleState?: string | null;
 	}
 
 
 	/** A programming language supported by the platform. */
 	export interface PlatformProgrammingLanguage {
-		Name?: string;
-		Version?: string;
+		Name?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** A framework supported by the platform. */
 	export interface PlatformFramework {
-		Name?: string;
-		Version?: string;
+		Name?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** A custom AMI available to platforms. */
 	export interface CustomAmi {
-		VirtualizationType?: string;
-		ImageId?: string;
+		VirtualizationType?: string | null;
+		ImageId?: string | null;
 	}
 
 
 	/** A list of available AWS Elastic Beanstalk solution stacks. */
 	export interface ListAvailableSolutionStacksResultMessage {
-		SolutionStacks?: Array<string>;
-		SolutionStackDetails?: Array<SolutionStackDescription>;
+		SolutionStacks?: Array<string> | null;
+		SolutionStackDetails?: Array<SolutionStackDescription> | null;
 	}
 
 
 	/** Describes the solution stack. */
 	export interface SolutionStackDescription {
-		SolutionStackName?: string;
-		PermittedFileTypes?: Array<string>;
+		SolutionStackName?: string | null;
+		PermittedFileTypes?: Array<string> | null;
 	}
 
 	export interface ListPlatformBranchesResult {
-		PlatformBranchSummaryList?: Array<PlatformBranchSummary>;
-		NextToken?: string;
+		PlatformBranchSummaryList?: Array<PlatformBranchSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Summary information about a platform branch. */
 	export interface PlatformBranchSummary {
-		PlatformName?: string;
-		BranchName?: string;
-		LifecycleState?: string;
-		BranchOrder?: number;
-		SupportedTierList?: Array<string>;
+		PlatformName?: string | null;
+		BranchName?: string | null;
+		LifecycleState?: string | null;
+		BranchOrder?: number | null;
+		SupportedTierList?: Array<string> | null;
 	}
 
 
 	/** <p>Describes criteria to restrict a list of results.</p> <p>For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code> </p> <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> </p> <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.</p> */
 	export interface SearchFilter {
-		Attribute?: string;
-		Operator?: string;
-		Values?: Array<string>;
+		Attribute?: string | null;
+		Operator?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface ListPlatformVersionsResult {
-		PlatformSummaryList?: Array<PlatformSummary>;
-		NextToken?: string;
+		PlatformSummaryList?: Array<PlatformSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>Describes criteria to restrict the results when listing platform versions.</p> <p>The filter is evaluated as follows: <code>Type Operator Values[1]</code> </p> */
 	export interface PlatformFilter {
-		Type?: string;
-		Operator?: string;
-		Values?: Array<string>;
+		Type?: string | null;
+		Operator?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface ResourceTagsDescriptionMessage {
-		ResourceArn?: string;
-		ResourceTags?: Array<Tag>;
+		ResourceArn?: string | null;
+		ResourceTags?: Array<Tag> | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -810,25 +810,25 @@ export namespace MyNS {
 
 	/** Result message containing a description of the requested environment info. */
 	export interface RetrieveEnvironmentInfoResultMessage {
-		EnvironmentInfo?: Array<EnvironmentInfoDescription>;
+		EnvironmentInfo?: Array<EnvironmentInfoDescription> | null;
 	}
 
 
 	/** The information retrieved from the Amazon EC2 instances. */
 	export interface EnvironmentInfoDescription {
-		InfoType?: EnvironmentInfoDescriptionInfoType;
-		Ec2InstanceId?: string;
-		SampleTimestamp?: Date;
-		Message?: string;
+		InfoType?: EnvironmentInfoDescriptionInfoType | null;
+		Ec2InstanceId?: string | null;
+		SampleTimestamp?: Date | null;
+		Message?: string | null;
 	}
 
 	export enum EnvironmentInfoDescriptionInfoType { tail = 0, bundle = 1 }
 
 	export interface ApplicationResourceLifecycleDescriptionMessage {
-		ApplicationName?: string;
+		ApplicationName?: string | null;
 
 		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
-		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
+		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig | null;
 	}
 
 	export interface TooManyTagsException {
@@ -837,16 +837,16 @@ export namespace MyNS {
 
 	/** Provides a list of validation messages. */
 	export interface ConfigurationSettingsValidationMessages {
-		Messages?: Array<ValidationMessage>;
+		Messages?: Array<ValidationMessage> | null;
 	}
 
 
 	/** An error or warning for a desired configuration option value. */
 	export interface ValidationMessage {
-		Message?: string;
-		Severity?: ValidationMessageSeverity;
-		Namespace?: string;
-		OptionName?: string;
+		Message?: string | null;
+		Severity?: ValidationMessageSeverity | null;
+		Namespace?: string | null;
+		OptionName?: string | null;
 	}
 
 	export enum ValidationMessageSeverity { error = 0, warning = 1 }
@@ -854,8 +854,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AbortEnvironmentUpdateMessage {
-		EnvironmentId?: string;
-		EnvironmentName?: string;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
 	}
 
 	export enum ActionHistoryStatus { Completed = 0, Failed = 1, Unknown = 2 }
@@ -869,8 +869,8 @@ export namespace MyNS {
 
 	/** Request to execute a scheduled managed action immediately. */
 	export interface ApplyEnvironmentManagedActionRequest {
-		EnvironmentName?: string;
-		EnvironmentId?: string;
+		EnvironmentName?: string | null;
+		EnvironmentId?: string | null;
 		ActionId: string;
 	}
 
@@ -884,11 +884,11 @@ export namespace MyNS {
 
 	/** Settings for an AWS CodeBuild build. */
 	export interface BuildConfiguration {
-		ArtifactName?: string;
+		ArtifactName?: string | null;
 		CodeBuildServiceRole: string;
-		ComputeType?: ComputeType;
+		ComputeType?: ComputeType | null;
 		Image: string;
-		TimeoutInMinutes?: number;
+		TimeoutInMinutes?: number | null;
 	}
 
 
@@ -900,9 +900,9 @@ export namespace MyNS {
 
 	/** Request to create or update a group of environments. */
 	export interface ComposeEnvironmentsMessage {
-		ApplicationName?: string;
-		GroupName?: string;
-		VersionLabels?: Array<string>;
+		ApplicationName?: string | null;
+		GroupName?: string | null;
+		VersionLabels?: Array<string> | null;
 	}
 
 	export enum ConfigurationDeploymentStatus { deployed = 0, pending = 1, failed = 2 }
@@ -913,11 +913,11 @@ export namespace MyNS {
 	/** Request to create an application. */
 	export interface CreateApplicationMessage {
 		ApplicationName: string;
-		Description?: string;
+		Description?: string | null;
 
 		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
-		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
-		Tags?: Array<Tag>;
+		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -925,26 +925,26 @@ export namespace MyNS {
 	export interface CreateApplicationVersionMessage {
 		ApplicationName: string;
 		VersionLabel: string;
-		Description?: string;
+		Description?: string | null;
 
 		/** Location of the source code for an application version. */
-		SourceBuildInformation?: SourceBuildInformation;
+		SourceBuildInformation?: SourceBuildInformation | null;
 
 		/** The bucket and key of an item stored in Amazon S3. */
-		SourceBundle?: S3Location;
+		SourceBundle?: S3Location | null;
 
 		/** Settings for an AWS CodeBuild build. */
-		BuildConfiguration?: BuildConfiguration;
-		AutoCreateApplication?: boolean;
-		Process?: boolean;
-		Tags?: Array<Tag>;
+		BuildConfiguration?: BuildConfiguration | null;
+		AutoCreateApplication?: boolean | null;
+		Process?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** A specification for an environment configuration. */
 	export interface SourceConfiguration {
-		ApplicationName?: string;
-		TemplateName?: string;
+		ApplicationName?: string | null;
+		TemplateName?: string | null;
 	}
 
 
@@ -952,36 +952,36 @@ export namespace MyNS {
 	export interface CreateConfigurationTemplateMessage {
 		ApplicationName: string;
 		TemplateName: string;
-		SolutionStackName?: string;
-		PlatformArn?: string;
+		SolutionStackName?: string | null;
+		PlatformArn?: string | null;
 
 		/** A specification for an environment configuration. */
-		SourceConfiguration?: SourceConfiguration;
-		EnvironmentId?: string;
-		Description?: string;
-		OptionSettings?: Array<ConfigurationOptionSetting>;
-		Tags?: Array<Tag>;
+		SourceConfiguration?: SourceConfiguration | null;
+		EnvironmentId?: string | null;
+		Description?: string | null;
+		OptionSettings?: Array<ConfigurationOptionSetting> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateEnvironmentMessage {
 		ApplicationName: string;
-		EnvironmentName?: string;
-		GroupName?: string;
-		Description?: string;
-		CNAMEPrefix?: string;
+		EnvironmentName?: string | null;
+		GroupName?: string | null;
+		Description?: string | null;
+		CNAMEPrefix?: string | null;
 
 		/** Describes the properties of an environment tier */
-		Tier?: EnvironmentTier;
-		Tags?: Array<Tag>;
-		VersionLabel?: string;
-		TemplateName?: string;
-		SolutionStackName?: string;
-		PlatformArn?: string;
-		OptionSettings?: Array<ConfigurationOptionSetting>;
-		OptionsToRemove?: Array<OptionSpecification>;
-		OperationsRole?: string;
+		Tier?: EnvironmentTier | null;
+		Tags?: Array<Tag> | null;
+		VersionLabel?: string | null;
+		TemplateName?: string | null;
+		SolutionStackName?: string | null;
+		PlatformArn?: string | null;
+		OptionSettings?: Array<ConfigurationOptionSetting> | null;
+		OptionsToRemove?: Array<OptionSpecification> | null;
+		OperationsRole?: string | null;
 	}
 
 
@@ -995,16 +995,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		PlatformDefinitionBundle: S3Location;
-		EnvironmentName?: string;
-		OptionSettings?: Array<ConfigurationOptionSetting>;
-		Tags?: Array<Tag>;
+		EnvironmentName?: string | null;
+		OptionSettings?: Array<ConfigurationOptionSetting> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Request to delete an application. */
 	export interface DeleteApplicationMessage {
 		ApplicationName: string;
-		TerminateEnvByForce?: boolean;
+		TerminateEnvByForce?: boolean | null;
 	}
 
 
@@ -1012,7 +1012,7 @@ export namespace MyNS {
 	export interface DeleteApplicationVersionMessage {
 		ApplicationName: string;
 		VersionLabel: string;
-		DeleteSourceBundle?: boolean;
+		DeleteSourceBundle?: boolean | null;
 	}
 
 
@@ -1030,49 +1030,49 @@ export namespace MyNS {
 	}
 
 	export interface DeletePlatformVersionRequest {
-		PlatformArn?: string;
+		PlatformArn?: string | null;
 	}
 
 
 	/** Request to describe application versions. */
 	export interface DescribeApplicationVersionsMessage {
-		ApplicationName?: string;
-		VersionLabels?: Array<string>;
-		MaxRecords?: number;
-		NextToken?: string;
+		ApplicationName?: string | null;
+		VersionLabels?: Array<string> | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Request to describe one or more applications. */
 	export interface DescribeApplicationsMessage {
-		ApplicationNames?: Array<string>;
+		ApplicationNames?: Array<string> | null;
 	}
 
 
 	/** Result message containing a list of application version descriptions. */
 	export interface DescribeConfigurationOptionsMessage {
-		ApplicationName?: string;
-		TemplateName?: string;
-		EnvironmentName?: string;
-		SolutionStackName?: string;
-		PlatformArn?: string;
-		Options?: Array<OptionSpecification>;
+		ApplicationName?: string | null;
+		TemplateName?: string | null;
+		EnvironmentName?: string | null;
+		SolutionStackName?: string | null;
+		PlatformArn?: string | null;
+		Options?: Array<OptionSpecification> | null;
 	}
 
 
 	/** Result message containing all of the configuration settings for a specified solution stack or configuration template. */
 	export interface DescribeConfigurationSettingsMessage {
 		ApplicationName: string;
-		TemplateName?: string;
-		EnvironmentName?: string;
+		TemplateName?: string | null;
+		EnvironmentName?: string | null;
 	}
 
 
 	/** See the example below to learn how to create a request body. */
 	export interface DescribeEnvironmentHealthRequest {
-		EnvironmentName?: string;
-		EnvironmentId?: string;
-		AttributeNames?: Array<EnvironmentHealthAttribute>;
+		EnvironmentName?: string | null;
+		EnvironmentId?: string | null;
+		AttributeNames?: Array<EnvironmentHealthAttribute> | null;
 	}
 
 	export enum EnvironmentHealth { Green = 0, Yellow = 1, Red = 2, Grey = 3 }
@@ -1080,38 +1080,38 @@ export namespace MyNS {
 
 	/** Request to list completed and failed managed actions. */
 	export interface DescribeEnvironmentManagedActionHistoryRequest {
-		EnvironmentId?: string;
-		EnvironmentName?: string;
-		NextToken?: string;
-		MaxItems?: number;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
+		NextToken?: string | null;
+		MaxItems?: number | null;
 	}
 
 
 	/** Request to list an environment's upcoming and in-progress managed actions. */
 	export interface DescribeEnvironmentManagedActionsRequest {
-		EnvironmentName?: string;
-		EnvironmentId?: string;
-		Status?: ManagedActionStatus;
+		EnvironmentName?: string | null;
+		EnvironmentId?: string | null;
+		Status?: ManagedActionStatus | null;
 	}
 
 
 	/** Request to describe the resources in an environment. */
 	export interface DescribeEnvironmentResourcesMessage {
-		EnvironmentId?: string;
-		EnvironmentName?: string;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
 	}
 
 
 	/** Request to describe one or more environments. */
 	export interface DescribeEnvironmentsMessage {
-		ApplicationName?: string;
-		VersionLabel?: string;
-		EnvironmentIds?: Array<string>;
-		EnvironmentNames?: Array<string>;
-		IncludeDeleted?: boolean;
-		IncludedDeletedBackTo?: Date;
-		MaxRecords?: number;
-		NextToken?: string;
+		ApplicationName?: string | null;
+		VersionLabel?: string | null;
+		EnvironmentIds?: Array<string> | null;
+		EnvironmentNames?: Array<string> | null;
+		IncludeDeleted?: boolean | null;
+		IncludedDeletedBackTo?: Date | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum EventSeverity { TRACE = 0, DEBUG = 1, INFO = 2, WARN = 3, ERROR = 4, FATAL = 5 }
@@ -1119,31 +1119,31 @@ export namespace MyNS {
 
 	/** Request to retrieve a list of events for an environment. */
 	export interface DescribeEventsMessage {
-		ApplicationName?: string;
-		VersionLabel?: string;
-		TemplateName?: string;
-		EnvironmentId?: string;
-		EnvironmentName?: string;
-		PlatformArn?: string;
-		RequestId?: string;
-		Severity?: EventDescriptionSeverity;
-		StartTime?: Date;
-		EndTime?: Date;
-		MaxRecords?: number;
-		NextToken?: string;
+		ApplicationName?: string | null;
+		VersionLabel?: string | null;
+		TemplateName?: string | null;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
+		PlatformArn?: string | null;
+		RequestId?: string | null;
+		Severity?: EventDescriptionSeverity | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Parameters for a call to <code>DescribeInstancesHealth</code>. */
 	export interface DescribeInstancesHealthRequest {
-		EnvironmentName?: string;
-		EnvironmentId?: string;
-		AttributeNames?: Array<InstancesHealthAttribute>;
-		NextToken?: string;
+		EnvironmentName?: string | null;
+		EnvironmentId?: string | null;
+		AttributeNames?: Array<InstancesHealthAttribute> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribePlatformVersionRequest {
-		PlatformArn?: string;
+		PlatformArn?: string | null;
 	}
 
 
@@ -1161,15 +1161,15 @@ export namespace MyNS {
 	export enum FailureType { UpdateCancelled = 0, CancellationFailed = 1, RollbackFailed = 2, RollbackSuccessful = 3, InternalFailure = 4, InvalidEnvironmentState = 5, PermissionsError = 6 }
 
 	export interface ListPlatformBranchesRequest {
-		Filters?: Array<SearchFilter>;
-		MaxRecords?: number;
-		NextToken?: string;
+		Filters?: Array<SearchFilter> | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPlatformVersionsRequest {
-		Filters?: Array<PlatformFilter>;
-		MaxRecords?: number;
-		NextToken?: string;
+		Filters?: Array<PlatformFilter> | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceMessage {
@@ -1181,56 +1181,56 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RebuildEnvironmentMessage {
-		EnvironmentId?: string;
-		EnvironmentName?: string;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
 	}
 
 
 	/** Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket. */
 	export interface RequestEnvironmentInfoMessage {
-		EnvironmentId?: string;
-		EnvironmentName?: string;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
 		InfoType: EnvironmentInfoDescriptionInfoType;
 	}
 
 
 	/** <p/> */
 	export interface RestartAppServerMessage {
-		EnvironmentId?: string;
-		EnvironmentName?: string;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
 	}
 
 
 	/** Request to download logs retrieved with <a>RequestEnvironmentInfo</a>. */
 	export interface RetrieveEnvironmentInfoMessage {
-		EnvironmentId?: string;
-		EnvironmentName?: string;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
 		InfoType: EnvironmentInfoDescriptionInfoType;
 	}
 
 
 	/** Swaps the CNAMEs of two environments. */
 	export interface SwapEnvironmentCNAMEsMessage {
-		SourceEnvironmentId?: string;
-		SourceEnvironmentName?: string;
-		DestinationEnvironmentId?: string;
-		DestinationEnvironmentName?: string;
+		SourceEnvironmentId?: string | null;
+		SourceEnvironmentName?: string | null;
+		DestinationEnvironmentId?: string | null;
+		DestinationEnvironmentName?: string | null;
 	}
 
 
 	/** Request to terminate an environment. */
 	export interface TerminateEnvironmentMessage {
-		EnvironmentId?: string;
-		EnvironmentName?: string;
-		TerminateResources?: boolean;
-		ForceTerminate?: boolean;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
+		TerminateResources?: boolean | null;
+		ForceTerminate?: boolean | null;
 	}
 
 
 	/** Request to update an application. */
 	export interface UpdateApplicationMessage {
 		ApplicationName: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateApplicationResourceLifecycleMessage {
@@ -1248,7 +1248,7 @@ export namespace MyNS {
 	export interface UpdateApplicationVersionMessage {
 		ApplicationName: string;
 		VersionLabel: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 
@@ -1256,42 +1256,42 @@ export namespace MyNS {
 	export interface UpdateConfigurationTemplateMessage {
 		ApplicationName: string;
 		TemplateName: string;
-		Description?: string;
-		OptionSettings?: Array<ConfigurationOptionSetting>;
-		OptionsToRemove?: Array<OptionSpecification>;
+		Description?: string | null;
+		OptionSettings?: Array<ConfigurationOptionSetting> | null;
+		OptionsToRemove?: Array<OptionSpecification> | null;
 	}
 
 
 	/** Request to update an environment. */
 	export interface UpdateEnvironmentMessage {
-		ApplicationName?: string;
-		EnvironmentId?: string;
-		EnvironmentName?: string;
-		GroupName?: string;
-		Description?: string;
+		ApplicationName?: string | null;
+		EnvironmentId?: string | null;
+		EnvironmentName?: string | null;
+		GroupName?: string | null;
+		Description?: string | null;
 
 		/** Describes the properties of an environment tier */
-		Tier?: EnvironmentTier;
-		VersionLabel?: string;
-		TemplateName?: string;
-		SolutionStackName?: string;
-		PlatformArn?: string;
-		OptionSettings?: Array<ConfigurationOptionSetting>;
-		OptionsToRemove?: Array<OptionSpecification>;
+		Tier?: EnvironmentTier | null;
+		VersionLabel?: string | null;
+		TemplateName?: string | null;
+		SolutionStackName?: string | null;
+		PlatformArn?: string | null;
+		OptionSettings?: Array<ConfigurationOptionSetting> | null;
+		OptionsToRemove?: Array<OptionSpecification> | null;
 	}
 
 	export interface UpdateTagsForResourceMessage {
 		ResourceArn: string;
-		TagsToAdd?: Array<Tag>;
-		TagsToRemove?: Array<string>;
+		TagsToAdd?: Array<Tag> | null;
+		TagsToRemove?: Array<string> | null;
 	}
 
 
 	/** A list of validation messages for a specified configuration template. */
 	export interface ValidateConfigurationSettingsMessage {
 		ApplicationName: string;
-		TemplateName?: string;
-		EnvironmentName?: string;
+		TemplateName?: string | null;
+		EnvironmentName?: string | null;
 		OptionSettings: Array<ConfigurationOptionSetting>;
 	}
 
@@ -1955,10 +1955,10 @@ export namespace MyNS {
 	export enum POST_ComposeEnvironmentsVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateApplicationResourceLifecycleConfig {
-		ServiceRole?: string;
+		ServiceRole?: string | null;
 
 		/** <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p> */
-		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
+		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig | null;
 	}
 
 	export enum GET_CreateApplicationAction { CreateApplication = 0 }
@@ -1974,16 +1974,16 @@ export namespace MyNS {
 	}
 
 	export interface GET_CreateApplicationVersionSourceBundle {
-		S3Bucket?: string;
-		S3Key?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
 	}
 
 	export interface GET_CreateApplicationVersionBuildConfiguration {
-		ArtifactName?: string;
+		ArtifactName?: string | null;
 		CodeBuildServiceRole: string;
-		ComputeType?: ComputeType;
+		ComputeType?: ComputeType | null;
 		Image: string;
-		TimeoutInMinutes?: number;
+		TimeoutInMinutes?: number | null;
 	}
 
 	export enum GET_CreateApplicationVersionAction { CreateApplicationVersion = 0 }
@@ -1993,8 +1993,8 @@ export namespace MyNS {
 	export enum POST_CreateApplicationVersionVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateConfigurationTemplateSourceConfiguration {
-		ApplicationName?: string;
-		TemplateName?: string;
+		ApplicationName?: string | null;
+		TemplateName?: string | null;
 	}
 
 	export enum GET_CreateConfigurationTemplateAction { CreateConfigurationTemplate = 0 }
@@ -2004,9 +2004,9 @@ export namespace MyNS {
 	export enum POST_CreateConfigurationTemplateVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateEnvironmentTier {
-		Name?: string;
-		Type?: string;
-		Version?: string;
+		Name?: string | null;
+		Type?: string | null;
+		Version?: string | null;
 	}
 
 	export enum GET_CreateEnvironmentAction { CreateEnvironment = 0 }
@@ -2016,8 +2016,8 @@ export namespace MyNS {
 	export enum POST_CreateEnvironmentVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreatePlatformVersionPlatformDefinitionBundle {
-		S3Bucket?: string;
-		S3Key?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
 	}
 
 	export enum GET_CreatePlatformVersionAction { CreatePlatformVersion = 0 }
@@ -2213,10 +2213,10 @@ export namespace MyNS {
 	export enum POST_UpdateApplicationVersion { _2010_12_01 = 0 }
 
 	export interface GET_UpdateApplicationResourceLifecycleResourceLifecycleConfig {
-		ServiceRole?: string;
+		ServiceRole?: string | null;
 
 		/** <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p> */
-		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
+		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig | null;
 	}
 
 	export enum GET_UpdateApplicationResourceLifecycleAction { UpdateApplicationResourceLifecycle = 0 }
@@ -2238,9 +2238,9 @@ export namespace MyNS {
 	export enum POST_UpdateConfigurationTemplateVersion { _2010_12_01 = 0 }
 
 	export interface GET_UpdateEnvironmentTier {
-		Name?: string;
-		Type?: string;
-		Version?: string;
+		Name?: string | null;
+		Type?: string | null;
+		Version?: string | null;
 	}
 
 	export enum GET_UpdateEnvironmentAction { UpdateEnvironment = 0 }

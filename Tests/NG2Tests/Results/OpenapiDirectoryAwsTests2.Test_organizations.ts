@@ -5,20 +5,20 @@ export namespace MyNS {
 	export interface AcceptHandshakeResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake;
+		Handshake?: Handshake | null;
 	}
 
 
 	/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
 	export interface Handshake {
-		Id?: string;
-		Arn?: string;
-		Parties?: Array<HandshakeParty>;
-		State?: HandshakeState;
-		RequestedTimestamp?: Date;
-		ExpirationTimestamp?: Date;
-		Action?: HandshakeAction;
-		Resources?: Array<HandshakeResource>;
+		Id?: string | null;
+		Arn?: string | null;
+		Parties?: Array<HandshakeParty> | null;
+		State?: HandshakeState | null;
+		RequestedTimestamp?: Date | null;
+		ExpirationTimestamp?: Date | null;
+		Action?: HandshakeAction | null;
+		Resources?: Array<HandshakeResource> | null;
 	}
 
 
@@ -37,9 +37,9 @@ export namespace MyNS {
 
 	/** Contains additional data that is needed to process a handshake. */
 	export interface HandshakeResource {
-		Value?: string;
-		Type?: HandshakeResourceType;
-		Resources?: Array<HandshakeResource>;
+		Value?: string | null;
+		Type?: HandshakeResourceType | null;
+		Resources?: Array<HandshakeResource> | null;
 	}
 
 	export enum HandshakeResourceType { ACCOUNT = 0, ORGANIZATION = 1, ORGANIZATION_FEATURE_SET = 2, EMAIL = 3, MASTER_EMAIL = 4, MASTER_NAME = 5, NOTES = 6, PARENT_HANDSHAKE = 7 }
@@ -110,7 +110,7 @@ export namespace MyNS {
 	export interface CancelHandshakeResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake;
+		Handshake?: Handshake | null;
 	}
 
 	export interface CancelHandshakeRequest {
@@ -120,20 +120,20 @@ export namespace MyNS {
 	export interface CreateAccountResponse {
 
 		/** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization. */
-		CreateAccountStatus?: CreateAccountStatus;
+		CreateAccountStatus?: CreateAccountStatus | null;
 	}
 
 
 	/** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization. */
 	export interface CreateAccountStatus {
-		Id?: string;
-		AccountName?: string;
-		State?: CreateAccountStatusState;
-		RequestedTimestamp?: Date;
-		CompletedTimestamp?: Date;
-		AccountId?: string;
-		GovCloudAccountId?: string;
-		FailureReason?: CreateAccountStatusFailureReason;
+		Id?: string | null;
+		AccountName?: string | null;
+		State?: CreateAccountStatusState | null;
+		RequestedTimestamp?: Date | null;
+		CompletedTimestamp?: Date | null;
+		AccountId?: string | null;
+		GovCloudAccountId?: string | null;
+		FailureReason?: CreateAccountStatusFailureReason | null;
 	}
 
 	export enum CreateAccountStatusState { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
@@ -143,8 +143,8 @@ export namespace MyNS {
 	export interface CreateAccountRequest {
 		Email: string;
 		AccountName: string;
-		RoleName?: string;
-		IamUserAccessToBilling?: CreateAccountRequestIamUserAccessToBilling;
+		RoleName?: string | null;
+		IamUserAccessToBilling?: CreateAccountRequestIamUserAccessToBilling | null;
 	}
 
 	export enum CreateAccountRequestIamUserAccessToBilling { ALLOW = 0, DENY = 1 }
@@ -155,32 +155,32 @@ export namespace MyNS {
 	export interface CreateGovCloudAccountResponse {
 
 		/** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization. */
-		CreateAccountStatus?: CreateAccountStatus;
+		CreateAccountStatus?: CreateAccountStatus | null;
 	}
 
 	export interface CreateGovCloudAccountRequest {
 		Email: string;
 		AccountName: string;
-		RoleName?: string;
-		IamUserAccessToBilling?: CreateAccountRequestIamUserAccessToBilling;
+		RoleName?: string | null;
+		IamUserAccessToBilling?: CreateAccountRequestIamUserAccessToBilling | null;
 	}
 
 	export interface CreateOrganizationResponse {
 
 		/** Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies . */
-		Organization?: Organization;
+		Organization?: Organization | null;
 	}
 
 
 	/** Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies . */
 	export interface Organization {
-		Id?: string;
-		Arn?: string;
-		FeatureSet?: OrganizationFeatureSet;
-		MasterAccountArn?: string;
-		MasterAccountId?: string;
-		MasterAccountEmail?: string;
-		AvailablePolicyTypes?: Array<PolicyTypeSummary>;
+		Id?: string | null;
+		Arn?: string | null;
+		FeatureSet?: OrganizationFeatureSet | null;
+		MasterAccountArn?: string | null;
+		MasterAccountId?: string | null;
+		MasterAccountEmail?: string | null;
+		AvailablePolicyTypes?: Array<PolicyTypeSummary> | null;
 	}
 
 	export enum OrganizationFeatureSet { ALL = 0, CONSOLIDATED_BILLING = 1 }
@@ -188,8 +188,8 @@ export namespace MyNS {
 
 	/** Contains information about a policy type and its status in the associated root. */
 	export interface PolicyTypeSummary {
-		Type?: PolicyTypeSummaryType;
-		Status?: PolicyTypeSummaryStatus;
+		Type?: PolicyTypeSummaryType | null;
+		Status?: PolicyTypeSummaryStatus | null;
 	}
 
 	export enum PolicyTypeSummaryType { SERVICE_CONTROL_POLICY = 0, TAG_POLICY = 1 }
@@ -197,7 +197,7 @@ export namespace MyNS {
 	export enum PolicyTypeSummaryStatus { ENABLED = 0, PENDING_ENABLE = 1, PENDING_DISABLE = 2 }
 
 	export interface CreateOrganizationRequest {
-		FeatureSet?: OrganizationFeatureSet;
+		FeatureSet?: OrganizationFeatureSet | null;
 	}
 
 	export interface AlreadyInOrganizationException {
@@ -206,15 +206,15 @@ export namespace MyNS {
 	export interface CreateOrganizationalUnitResponse {
 
 		/** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs. */
-		OrganizationalUnit?: OrganizationalUnit;
+		OrganizationalUnit?: OrganizationalUnit | null;
 	}
 
 
 	/** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs. */
 	export interface OrganizationalUnit {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface CreateOrganizationalUnitRequest {
@@ -231,7 +231,7 @@ export namespace MyNS {
 	export interface CreatePolicyResponse {
 
 		/** Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies. */
-		Policy?: Policy;
+		Policy?: Policy | null;
 	}
 
 
@@ -239,19 +239,19 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>. */
-		PolicySummary?: PolicySummary;
-		Content?: string;
+		PolicySummary?: PolicySummary | null;
+		Content?: string | null;
 	}
 
 
 	/** Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>. */
 	export interface PolicySummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		Description?: string;
-		Type?: PolicyTypeSummaryType;
-		AwsManaged?: boolean;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Type?: PolicyTypeSummaryType | null;
+		AwsManaged?: boolean | null;
 	}
 
 	export interface CreatePolicyRequest {
@@ -273,7 +273,7 @@ export namespace MyNS {
 	export interface DeclineHandshakeResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake;
+		Handshake?: Handshake | null;
 	}
 
 	export interface DeclineHandshakeRequest {
@@ -314,19 +314,19 @@ export namespace MyNS {
 	export interface DescribeAccountResponse {
 
 		/** Contains information about an AWS account that is a member of an organization. */
-		Account?: Account;
+		Account?: Account | null;
 	}
 
 
 	/** Contains information about an AWS account that is a member of an organization. */
 	export interface Account {
-		Id?: string;
-		Arn?: string;
-		Email?: string;
-		Name?: string;
-		Status?: AccountStatus;
-		JoinedMethod?: AccountJoinedMethod;
-		JoinedTimestamp?: Date;
+		Id?: string | null;
+		Arn?: string | null;
+		Email?: string | null;
+		Name?: string | null;
+		Status?: AccountStatus | null;
+		JoinedMethod?: AccountJoinedMethod | null;
+		JoinedTimestamp?: Date | null;
 	}
 
 	export enum AccountStatus { ACTIVE = 0, SUSPENDED = 1 }
@@ -340,7 +340,7 @@ export namespace MyNS {
 	export interface DescribeCreateAccountStatusResponse {
 
 		/** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization. */
-		CreateAccountStatus?: CreateAccountStatus;
+		CreateAccountStatus?: CreateAccountStatus | null;
 	}
 
 	export interface DescribeCreateAccountStatusRequest {
@@ -353,23 +353,23 @@ export namespace MyNS {
 	export interface DescribeEffectivePolicyResponse {
 
 		/** Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account. */
-		EffectivePolicy?: EffectivePolicy;
+		EffectivePolicy?: EffectivePolicy | null;
 	}
 
 
 	/** Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account. */
 	export interface EffectivePolicy {
-		PolicyContent?: string;
-		LastUpdatedTimestamp?: Date;
-		TargetId?: string;
-		PolicyType?: EffectivePolicyPolicyType;
+		PolicyContent?: string | null;
+		LastUpdatedTimestamp?: Date | null;
+		TargetId?: string | null;
+		PolicyType?: EffectivePolicyPolicyType | null;
 	}
 
 	export enum EffectivePolicyPolicyType { TAG_POLICY = 0 }
 
 	export interface DescribeEffectivePolicyRequest {
 		PolicyType: EffectivePolicyPolicyType;
-		TargetId?: string;
+		TargetId?: string | null;
 	}
 
 	export interface EffectivePolicyNotFoundException {
@@ -378,7 +378,7 @@ export namespace MyNS {
 	export interface DescribeHandshakeResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake;
+		Handshake?: Handshake | null;
 	}
 
 	export interface DescribeHandshakeRequest {
@@ -388,13 +388,13 @@ export namespace MyNS {
 	export interface DescribeOrganizationResponse {
 
 		/** Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies . */
-		Organization?: Organization;
+		Organization?: Organization | null;
 	}
 
 	export interface DescribeOrganizationalUnitResponse {
 
 		/** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs. */
-		OrganizationalUnit?: OrganizationalUnit;
+		OrganizationalUnit?: OrganizationalUnit | null;
 	}
 
 	export interface DescribeOrganizationalUnitRequest {
@@ -404,7 +404,7 @@ export namespace MyNS {
 	export interface DescribePolicyResponse {
 
 		/** Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies. */
-		Policy?: Policy;
+		Policy?: Policy | null;
 	}
 
 	export interface DescribePolicyRequest {
@@ -426,16 +426,16 @@ export namespace MyNS {
 	export interface DisablePolicyTypeResponse {
 
 		/** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root. */
-		Root?: Root;
+		Root?: Root | null;
 	}
 
 
 	/** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root. */
 	export interface Root {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		PolicyTypes?: Array<PolicyTypeSummary>;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		PolicyTypes?: Array<PolicyTypeSummary> | null;
 	}
 
 	export interface DisablePolicyTypeRequest {
@@ -453,7 +453,7 @@ export namespace MyNS {
 	export interface EnableAllFeaturesResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake;
+		Handshake?: Handshake | null;
 	}
 
 	export interface EnableAllFeaturesRequest {
@@ -462,7 +462,7 @@ export namespace MyNS {
 	export interface EnablePolicyTypeResponse {
 
 		/** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root. */
-		Root?: Root;
+		Root?: Root | null;
 	}
 
 	export interface EnablePolicyTypeRequest {
@@ -476,7 +476,7 @@ export namespace MyNS {
 	export interface InviteAccountToOrganizationResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake;
+		Handshake?: Handshake | null;
 	}
 
 	export interface InviteAccountToOrganizationRequest {
@@ -486,7 +486,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Target: HandshakeParty;
-		Notes?: string;
+		Notes?: string | null;
 	}
 
 	export interface AccountOwnerNotVerifiedException {
@@ -499,53 +499,53 @@ export namespace MyNS {
 	}
 
 	export interface ListAWSServiceAccessForOrganizationResponse {
-		EnabledServicePrincipals?: Array<EnabledServicePrincipal>;
-		NextToken?: string;
+		EnabledServicePrincipals?: Array<EnabledServicePrincipal> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A structure that contains details of a service principal that represents an AWS service that is enabled to integrate with AWS Organizations. */
 	export interface EnabledServicePrincipal {
-		ServicePrincipal?: string;
-		DateEnabled?: Date;
+		ServicePrincipal?: string | null;
+		DateEnabled?: Date | null;
 	}
 
 	export interface ListAWSServiceAccessForOrganizationRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListAccountsResponse {
-		Accounts?: Array<Account>;
-		NextToken?: string;
+		Accounts?: Array<Account> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAccountsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListAccountsForParentResponse {
-		Accounts?: Array<Account>;
-		NextToken?: string;
+		Accounts?: Array<Account> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAccountsForParentRequest {
 		ParentId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListChildrenResponse {
-		Children?: Array<Child>;
-		NextToken?: string;
+		Children?: Array<Child> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains a list of child entities, either OUs or accounts. */
 	export interface Child {
-		Id?: string;
-		Type?: ChildType;
+		Id?: string | null;
+		Type?: ChildType | null;
 	}
 
 	export enum ChildType { ACCOUNT = 0, ORGANIZATIONAL_UNIT = 1 }
@@ -553,168 +553,168 @@ export namespace MyNS {
 	export interface ListChildrenRequest {
 		ParentId: string;
 		ChildType: ChildType;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListCreateAccountStatusResponse {
-		CreateAccountStatuses?: Array<CreateAccountStatus>;
-		NextToken?: string;
+		CreateAccountStatuses?: Array<CreateAccountStatus> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListCreateAccountStatusRequest {
-		States?: Array<CreateAccountState>;
-		NextToken?: string;
-		MaxResults?: number;
+		States?: Array<CreateAccountState> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export enum CreateAccountState { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
 
 	export interface ListDelegatedAdministratorsResponse {
-		DelegatedAdministrators?: Array<DelegatedAdministrator>;
-		NextToken?: string;
+		DelegatedAdministrators?: Array<DelegatedAdministrator> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about the delegated administrator. */
 	export interface DelegatedAdministrator {
-		Id?: string;
-		Arn?: string;
-		Email?: string;
-		Name?: string;
-		Status?: AccountStatus;
-		JoinedMethod?: AccountJoinedMethod;
-		JoinedTimestamp?: Date;
-		DelegationEnabledDate?: Date;
+		Id?: string | null;
+		Arn?: string | null;
+		Email?: string | null;
+		Name?: string | null;
+		Status?: AccountStatus | null;
+		JoinedMethod?: AccountJoinedMethod | null;
+		JoinedTimestamp?: Date | null;
+		DelegationEnabledDate?: Date | null;
 	}
 
 	export interface ListDelegatedAdministratorsRequest {
-		ServicePrincipal?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		ServicePrincipal?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDelegatedServicesForAccountResponse {
-		DelegatedServices?: Array<DelegatedService>;
-		NextToken?: string;
+		DelegatedServices?: Array<DelegatedService> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about the AWS service for which the account is a delegated administrator. */
 	export interface DelegatedService {
-		ServicePrincipal?: string;
-		DelegationEnabledDate?: Date;
+		ServicePrincipal?: string | null;
+		DelegationEnabledDate?: Date | null;
 	}
 
 	export interface ListDelegatedServicesForAccountRequest {
 		AccountId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListHandshakesForAccountResponse {
-		Handshakes?: Array<Handshake>;
-		NextToken?: string;
+		Handshakes?: Array<Handshake> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListHandshakesForAccountRequest {
 
 		/** Specifies the criteria that are used to select the handshakes for the operation. */
-		Filter?: HandshakeFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: HandshakeFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Specifies the criteria that are used to select the handshakes for the operation. */
 	export interface HandshakeFilter {
-		ActionType?: HandshakeAction;
-		ParentHandshakeId?: string;
+		ActionType?: HandshakeAction | null;
+		ParentHandshakeId?: string | null;
 	}
 
 	export interface ListHandshakesForOrganizationResponse {
-		Handshakes?: Array<Handshake>;
-		NextToken?: string;
+		Handshakes?: Array<Handshake> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListHandshakesForOrganizationRequest {
 
 		/** Specifies the criteria that are used to select the handshakes for the operation. */
-		Filter?: HandshakeFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: HandshakeFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListOrganizationalUnitsForParentResponse {
-		OrganizationalUnits?: Array<OrganizationalUnit>;
-		NextToken?: string;
+		OrganizationalUnits?: Array<OrganizationalUnit> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListOrganizationalUnitsForParentRequest {
 		ParentId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListParentsResponse {
-		Parents?: Array<Parent>;
-		NextToken?: string;
+		Parents?: Array<Parent> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization. */
 	export interface Parent {
-		Id?: string;
-		Type?: ParentType;
+		Id?: string | null;
+		Type?: ParentType | null;
 	}
 
 	export enum ParentType { ROOT = 0, ORGANIZATIONAL_UNIT = 1 }
 
 	export interface ListParentsRequest {
 		ChildId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ChildNotFoundException {
 	}
 
 	export interface ListPoliciesResponse {
-		Policies?: Array<PolicySummary>;
-		NextToken?: string;
+		Policies?: Array<PolicySummary> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPoliciesRequest {
 		Filter: PolicyTypeSummaryType;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListPoliciesForTargetResponse {
-		Policies?: Array<PolicySummary>;
-		NextToken?: string;
+		Policies?: Array<PolicySummary> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPoliciesForTargetRequest {
 		TargetId: string;
 		Filter: PolicyTypeSummaryType;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListRootsResponse {
-		Roots?: Array<Root>;
-		NextToken?: string;
+		Roots?: Array<Root> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListRootsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -726,29 +726,29 @@ export namespace MyNS {
 
 	export interface ListTagsForResourceRequest {
 		ResourceId: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTargetsForPolicyResponse {
-		Targets?: Array<PolicyTargetSummary>;
-		NextToken?: string;
+		Targets?: Array<PolicyTargetSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about a root, OU, or account that a policy is attached to. */
 	export interface PolicyTargetSummary {
-		TargetId?: string;
-		Arn?: string;
-		Name?: string;
-		Type?: PolicyTargetSummaryType;
+		TargetId?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		Type?: PolicyTargetSummaryType | null;
 	}
 
 	export enum PolicyTargetSummaryType { ACCOUNT = 0, ORGANIZATIONAL_UNIT = 1, ROOT = 2 }
 
 	export interface ListTargetsForPolicyRequest {
 		PolicyId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface MoveAccountRequest {
@@ -791,25 +791,25 @@ export namespace MyNS {
 	export interface UpdateOrganizationalUnitResponse {
 
 		/** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs. */
-		OrganizationalUnit?: OrganizationalUnit;
+		OrganizationalUnit?: OrganizationalUnit | null;
 	}
 
 	export interface UpdateOrganizationalUnitRequest {
 		OrganizationalUnitId: string;
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdatePolicyResponse {
 
 		/** Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies. */
-		Policy?: Policy;
+		Policy?: Policy | null;
 	}
 
 	export interface UpdatePolicyRequest {
 		PolicyId: string;
-		Name?: string;
-		Description?: string;
-		Content?: string;
+		Name?: string | null;
+		Description?: string | null;
+		Content?: string | null;
 	}
 
 	export enum ActionType { INVITE = 0, ENABLE_ALL_FEATURES = 1, APPROVE_ALL_FEATURES = 2, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = 3 }

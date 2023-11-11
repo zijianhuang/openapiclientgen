@@ -17,34 +17,34 @@ export namespace MyNS {
 		appId: string;
 		appArn: string;
 		name: string;
-		tags?: TagMap;
+		tags?: TagMap | null;
 		description: string;
 		repository: string;
 		platform: AppPlatform;
 		createTime: Date;
 		updateTime: Date;
-		iamServiceRoleArn?: string;
+		iamServiceRoleArn?: string | null;
 		environmentVariables: EnvironmentVariables;
 		defaultDomain: string;
 		enableBranchAutoBuild: boolean;
 		enableBasicAuth: boolean;
-		basicAuthCredentials?: string;
-		customRules?: Array<CustomRule>;
+		basicAuthCredentials?: string | null;
+		customRules?: Array<CustomRule> | null;
 
 		/** Structure with Production Branch information. */
-		productionBranch?: ProductionBranch;
+		productionBranch?: ProductionBranch | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
-		enableAutoBranchCreation?: boolean;
-		autoBranchCreationPatterns?: Array<string>;
+		buildSpec?: string | null;
+		enableAutoBranchCreation?: boolean | null;
+		autoBranchCreationPatterns?: Array<string> | null;
 
 		/** Structure with auto branch creation config. */
-		autoBranchCreationConfig?: AutoBranchCreationConfig;
+		autoBranchCreationConfig?: AutoBranchCreationConfig | null;
 	}
 
 	export interface TagMap {
@@ -60,37 +60,37 @@ export namespace MyNS {
 	export interface CustomRule {
 		source: string;
 		target: string;
-		status?: string;
-		condition?: string;
+		status?: string | null;
+		condition?: string | null;
 	}
 
 
 	/**  Structure with Production Branch information.  */
 	export interface ProductionBranch {
-		lastDeployTime?: Date;
-		status?: string;
-		thumbnailUrl?: string;
-		branchName?: string;
+		lastDeployTime?: Date | null;
+		status?: string | null;
+		thumbnailUrl?: string | null;
+		branchName?: string | null;
 	}
 
 
 	/**  Structure with auto branch creation config.  */
 	export interface AutoBranchCreationConfig {
-		stage?: AutoBranchCreationConfigStage;
-		framework?: string;
-		enableAutoBuild?: boolean;
-		environmentVariables?: EnvironmentVariables;
-		basicAuthCredentials?: string;
-		enableBasicAuth?: boolean;
+		stage?: AutoBranchCreationConfigStage | null;
+		framework?: string | null;
+		enableAutoBuild?: boolean | null;
+		environmentVariables?: EnvironmentVariables | null;
+		basicAuthCredentials?: string | null;
+		enableBasicAuth?: boolean | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
-		enablePullRequestPreview?: boolean;
-		pullRequestEnvironmentName?: string;
+		buildSpec?: string | null;
+		enablePullRequestPreview?: boolean | null;
+		pullRequestEnvironmentName?: string | null;
 	}
 
 	export enum AutoBranchCreationConfigStage { PRODUCTION = 0, BETA = 1, DEVELOPMENT = 2, EXPERIMENTAL = 3, PULL_REQUEST = 4 }
@@ -128,8 +128,8 @@ export namespace MyNS {
 	export interface BackendEnvironment {
 		backendEnvironmentArn: string;
 		environmentName: string;
-		stackName?: string;
-		deploymentArtifacts?: string;
+		stackName?: string | null;
+		deploymentArtifacts?: string | null;
 		createTime: Date;
 		updateTime: Date;
 	}
@@ -154,7 +154,7 @@ export namespace MyNS {
 		branchArn: string;
 		branchName: string;
 		description: string;
-		tags?: TagMap;
+		tags?: TagMap | null;
 		stage: AutoBranchCreationConfigStage;
 		displayName: string;
 		enableNotification: boolean;
@@ -167,33 +167,33 @@ export namespace MyNS {
 		activeJobId: string;
 		totalNumberOfJobs: string;
 		enableBasicAuth: boolean;
-		thumbnailUrl?: string;
-		basicAuthCredentials?: string;
+		thumbnailUrl?: string | null;
+		basicAuthCredentials?: string | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
+		buildSpec?: string | null;
 
 		/**
 		 * The content TTL for the website in seconds.
 		 * Required
 		 */
 		ttl: string;
-		associatedResources?: Array<string>;
+		associatedResources?: Array<string> | null;
 		enablePullRequestPreview: boolean;
-		pullRequestEnvironmentName?: string;
-		destinationBranch?: string;
-		sourceBranch?: string;
-		backendEnvironmentArn?: string;
+		pullRequestEnvironmentName?: string | null;
+		destinationBranch?: string | null;
+		sourceBranch?: string | null;
+		backendEnvironmentArn?: string | null;
 	}
 
 
 	/**  Result structure for create a new deployment.  */
 	export interface CreateDeploymentResult {
-		jobId?: string;
+		jobId?: string | null;
 		fileUploadUrls: FileUploadUrls;
 		zipUploadUrl: string;
 	}
@@ -220,7 +220,7 @@ export namespace MyNS {
 		enableAutoSubDomain: boolean;
 		domainStatus: DomainAssociationDomainStatus;
 		statusReason: string;
-		certificateVerificationDNSRecord?: string;
+		certificateVerificationDNSRecord?: string | null;
 		subDomains: Array<SubDomain>;
 	}
 
@@ -332,7 +332,7 @@ export namespace MyNS {
 		commitTime: Date;
 		startTime: Date;
 		status: JobSummaryStatus;
-		endTime?: Date;
+		endTime?: Date | null;
 		jobType: JobSummaryJobType;
 	}
 
@@ -354,7 +354,7 @@ export namespace MyNS {
 
 	/**  Result structure for the generate access logs request.  */
 	export interface GenerateAccessLogsResult {
-		logUrl?: string;
+		logUrl?: string | null;
 	}
 
 	export interface GetAppResult {
@@ -432,13 +432,13 @@ export namespace MyNS {
 		startTime: Date;
 		status: JobSummaryStatus;
 		endTime: Date;
-		logUrl?: string;
-		artifactsUrl?: string;
-		testArtifactsUrl?: string;
-		testConfigUrl?: string;
-		screenshots?: Screenshots;
-		statusReason?: string;
-		context?: string;
+		logUrl?: string | null;
+		artifactsUrl?: string | null;
+		testArtifactsUrl?: string | null;
+		testConfigUrl?: string | null;
+		screenshots?: Screenshots | null;
+		statusReason?: string | null;
+		context?: string | null;
 	}
 
 	export interface Screenshots {
@@ -459,14 +459,14 @@ export namespace MyNS {
 	/**  Result structure for an Amplify App list request.  */
 	export interface ListAppsResult {
 		apps: Array<App>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/**  Result structure for the list artifacts request.  */
 	export interface ListArtifactsResult {
 		artifacts: Array<Artifact>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -480,34 +480,34 @@ export namespace MyNS {
 	/**  Result structure for list backend environments result.  */
 	export interface ListBackendEnvironmentsResult {
 		backendEnvironments: Array<BackendEnvironment>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/**  Result structure for list branches request.  */
 	export interface ListBranchesResult {
 		branches: Array<Branch>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/**  Result structure for the list Domain Association request.  */
 	export interface ListDomainAssociationsResult {
 		domainAssociations: Array<DomainAssociation>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/**  Maximum number of records to list in a single response.  */
 	export interface ListJobsResult {
 		jobSummaries: Array<JobSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/**  Response for list tags.  */
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -517,7 +517,7 @@ export namespace MyNS {
 	/**  Result structure for the list webhooks request.  */
 	export interface ListWebhooksResult {
 		webhooks: Array<Webhook>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -613,67 +613,67 @@ export namespace MyNS {
 	/**  Request structure used to create Apps in Amplify.  */
 	export interface CreateAppRequest {
 		name: string;
-		description?: string;
-		repository?: string;
-		platform?: AppPlatform;
-		iamServiceRoleArn?: string;
-		oauthToken?: string;
-		accessToken?: string;
-		environmentVariables?: EnvironmentVariables;
-		enableBranchAutoBuild?: boolean;
-		enableBasicAuth?: boolean;
-		basicAuthCredentials?: string;
-		customRules?: Array<CustomRule>;
-		tags?: TagMap;
+		description?: string | null;
+		repository?: string | null;
+		platform?: AppPlatform | null;
+		iamServiceRoleArn?: string | null;
+		oauthToken?: string | null;
+		accessToken?: string | null;
+		environmentVariables?: EnvironmentVariables | null;
+		enableBranchAutoBuild?: boolean | null;
+		enableBasicAuth?: boolean | null;
+		basicAuthCredentials?: string | null;
+		customRules?: Array<CustomRule> | null;
+		tags?: TagMap | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
-		enableAutoBranchCreation?: boolean;
-		autoBranchCreationPatterns?: Array<string>;
+		buildSpec?: string | null;
+		enableAutoBranchCreation?: boolean | null;
+		autoBranchCreationPatterns?: Array<string> | null;
 
 		/** Structure with auto branch creation config. */
-		autoBranchCreationConfig?: AutoBranchCreationConfig;
+		autoBranchCreationConfig?: AutoBranchCreationConfig | null;
 	}
 
 
 	/**  Request structure for a backend environment create request.  */
 	export interface CreateBackendEnvironmentRequest {
 		environmentName: string;
-		stackName?: string;
-		deploymentArtifacts?: string;
+		stackName?: string | null;
+		deploymentArtifacts?: string | null;
 	}
 
 
 	/**  Request structure for a branch create request.  */
 	export interface CreateBranchRequest {
 		branchName: string;
-		description?: string;
-		stage?: AutoBranchCreationConfigStage;
-		framework?: string;
-		enableNotification?: boolean;
-		enableAutoBuild?: boolean;
-		environmentVariables?: EnvironmentVariables;
-		basicAuthCredentials?: string;
-		enableBasicAuth?: boolean;
-		tags?: TagMap;
+		description?: string | null;
+		stage?: AutoBranchCreationConfigStage | null;
+		framework?: string | null;
+		enableNotification?: boolean | null;
+		enableAutoBuild?: boolean | null;
+		environmentVariables?: EnvironmentVariables | null;
+		basicAuthCredentials?: string | null;
+		enableBasicAuth?: boolean | null;
+		tags?: TagMap | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
+		buildSpec?: string | null;
 
 		/** The content TTL for the website in seconds. */
-		ttl?: string;
-		displayName?: string;
-		enablePullRequestPreview?: boolean;
-		pullRequestEnvironmentName?: string;
-		backendEnvironmentArn?: string;
+		ttl?: string | null;
+		displayName?: string | null;
+		enablePullRequestPreview?: boolean | null;
+		pullRequestEnvironmentName?: string | null;
+		backendEnvironmentArn?: string | null;
 	}
 
 	export interface FileMap {
@@ -682,14 +682,14 @@ export namespace MyNS {
 
 	/**  Request structure for create a new deployment.  */
 	export interface CreateDeploymentRequest {
-		fileMap?: FileMap;
+		fileMap?: FileMap | null;
 	}
 
 
 	/**  Request structure for create Domain Association request.  */
 	export interface CreateDomainAssociationRequest {
 		domainName: string;
-		enableAutoSubDomain?: boolean;
+		enableAutoSubDomain?: boolean | null;
 		subDomainSettings: Array<SubDomainSetting>;
 	}
 
@@ -697,7 +697,7 @@ export namespace MyNS {
 	/**  Request structure for create webhook request.  */
 	export interface CreateWebhookRequest {
 		branchName: string;
-		description?: string;
+		description?: string | null;
 	}
 
 
@@ -735,8 +735,8 @@ export namespace MyNS {
 
 	/**  Request structure for the generate access logs request.  */
 	export interface GenerateAccessLogsRequest {
-		startTime?: Date;
-		endTime?: Date;
+		startTime?: Date | null;
+		endTime?: Date | null;
 		domainName: string;
 	}
 
@@ -792,7 +792,7 @@ export namespace MyNS {
 
 	/**  Request structure for list backend environments request.  */
 	export interface ListBackendEnvironmentsRequest {
-		environmentName?: string;
+		environmentName?: string | null;
 	}
 
 
@@ -823,19 +823,19 @@ export namespace MyNS {
 
 	/**  Request structure for start a deployment.  */
 	export interface StartDeploymentRequest {
-		jobId?: string;
-		sourceUrl?: string;
+		jobId?: string | null;
+		sourceUrl?: string | null;
 	}
 
 
 	/**  Request structure for Start job request.  */
 	export interface StartJobRequest {
-		jobId?: string;
+		jobId?: string | null;
 		jobType: JobSummaryJobType;
-		jobReason?: string;
-		commitId?: string;
-		commitMessage?: string;
-		commitTime?: Date;
+		jobReason?: string | null;
+		commitId?: string | null;
+		commitMessage?: string | null;
+		commitTime?: Date | null;
 	}
 
 
@@ -857,71 +857,71 @@ export namespace MyNS {
 
 	/**  Request structure for update App request.  */
 	export interface UpdateAppRequest {
-		name?: string;
-		description?: string;
-		platform?: AppPlatform;
-		iamServiceRoleArn?: string;
-		environmentVariables?: EnvironmentVariables;
-		enableBranchAutoBuild?: boolean;
-		enableBasicAuth?: boolean;
-		basicAuthCredentials?: string;
-		customRules?: Array<CustomRule>;
+		name?: string | null;
+		description?: string | null;
+		platform?: AppPlatform | null;
+		iamServiceRoleArn?: string | null;
+		environmentVariables?: EnvironmentVariables | null;
+		enableBranchAutoBuild?: boolean | null;
+		enableBasicAuth?: boolean | null;
+		basicAuthCredentials?: string | null;
+		customRules?: Array<CustomRule> | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
-		enableAutoBranchCreation?: boolean;
-		autoBranchCreationPatterns?: Array<string>;
+		buildSpec?: string | null;
+		enableAutoBranchCreation?: boolean | null;
+		autoBranchCreationPatterns?: Array<string> | null;
 
 		/** Structure with auto branch creation config. */
-		autoBranchCreationConfig?: AutoBranchCreationConfig;
-		repository?: string;
-		oauthToken?: string;
-		accessToken?: string;
+		autoBranchCreationConfig?: AutoBranchCreationConfig | null;
+		repository?: string | null;
+		oauthToken?: string | null;
+		accessToken?: string | null;
 	}
 
 
 	/**  Request structure for update branch request.  */
 	export interface UpdateBranchRequest {
-		description?: string;
-		framework?: string;
-		stage?: AutoBranchCreationConfigStage;
-		enableNotification?: boolean;
-		enableAutoBuild?: boolean;
-		environmentVariables?: EnvironmentVariables;
-		basicAuthCredentials?: string;
-		enableBasicAuth?: boolean;
+		description?: string | null;
+		framework?: string | null;
+		stage?: AutoBranchCreationConfigStage | null;
+		enableNotification?: boolean | null;
+		enableAutoBuild?: boolean | null;
+		environmentVariables?: EnvironmentVariables | null;
+		basicAuthCredentials?: string | null;
+		enableBasicAuth?: boolean | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
+		buildSpec?: string | null;
 
 		/** The content TTL for the website in seconds. */
-		ttl?: string;
-		displayName?: string;
-		enablePullRequestPreview?: boolean;
-		pullRequestEnvironmentName?: string;
-		backendEnvironmentArn?: string;
+		ttl?: string | null;
+		displayName?: string | null;
+		enablePullRequestPreview?: boolean | null;
+		pullRequestEnvironmentName?: string | null;
+		backendEnvironmentArn?: string | null;
 	}
 
 
 	/**  Request structure for update Domain Association request.  */
 	export interface UpdateDomainAssociationRequest {
-		enableAutoSubDomain?: boolean;
+		enableAutoSubDomain?: boolean | null;
 		subDomainSettings: Array<SubDomainSetting>;
 	}
 
 
 	/**  Request structure for update webhook request.  */
 	export interface UpdateWebhookRequest {
-		branchName?: string;
-		description?: string;
+		branchName?: string | null;
+		description?: string | null;
 	}
 
 	@Injectable()
@@ -1347,91 +1347,91 @@ export namespace MyNS {
 		 * Description for an Amplify App
 		 * Max length: 1000
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Repository for an Amplify App
 		 * Max length: 1000
 		 */
-		repository?: string;
+		repository?: string | null;
 
 		/** Platform / framework for an Amplify App */
-		platform?: AppPlatform;
+		platform?: AppPlatform | null;
 
 		/**
 		 * AWS IAM service role for an Amplify App
 		 * Max length: 1000
 		 * Min length: 1
 		 */
-		iamServiceRoleArn?: string;
+		iamServiceRoleArn?: string | null;
 
 		/**
 		 * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. OAuth token is not stored.
 		 * Max length: 100
 		 */
-		oauthToken?: string;
+		oauthToken?: string | null;
 
 		/**
 		 * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. Token is not stored.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		accessToken?: string;
+		accessToken?: string | null;
 
 		/** Environment variables map for an Amplify App. */
-		environmentVariables?: {[id: string]: string };
+		environmentVariables?: {[id: string]: string } | null;
 
 		/** Enable the auto building of branches for an Amplify App. */
-		enableBranchAutoBuild?: boolean;
+		enableBranchAutoBuild?: boolean | null;
 
 		/** Enable Basic Authorization for an Amplify App, this will apply to all branches part of this App. */
-		enableBasicAuth?: boolean;
+		enableBasicAuth?: boolean | null;
 
 		/**
 		 * Credentials for Basic Authorization for an Amplify App.
 		 * Max length: 2000
 		 */
-		basicAuthCredentials?: string;
+		basicAuthCredentials?: string | null;
 
 		/** Custom rewrite / redirect rules for an Amplify App. */
-		customRules?: Array<CustomRule>;
+		customRules?: Array<CustomRule> | null;
 
 		/** Tag for an Amplify App */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
+		buildSpec?: string | null;
 
 		/** Enables automated branch creation for the Amplify App. */
-		enableAutoBranchCreation?: boolean;
+		enableAutoBranchCreation?: boolean | null;
 
 		/** Automated branch creation glob patterns for the Amplify App. */
-		autoBranchCreationPatterns?: Array<string>;
+		autoBranchCreationPatterns?: Array<string> | null;
 
 		/** Structure with auto branch creation config. */
-		autoBranchCreationConfig?: CreateAppPostBodyAutoBranchCreationConfig;
+		autoBranchCreationConfig?: CreateAppPostBodyAutoBranchCreationConfig | null;
 	}
 
 	export interface CreateAppPostBodyAutoBranchCreationConfig {
-		stage?: AutoBranchCreationConfigStage;
-		framework?: string;
-		enableAutoBuild?: boolean;
-		environmentVariables?: EnvironmentVariables;
-		basicAuthCredentials?: string;
-		enableBasicAuth?: boolean;
+		stage?: AutoBranchCreationConfigStage | null;
+		framework?: string | null;
+		enableAutoBuild?: boolean | null;
+		environmentVariables?: EnvironmentVariables | null;
+		basicAuthCredentials?: string | null;
+		enableBasicAuth?: boolean | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
-		enablePullRequestPreview?: boolean;
-		pullRequestEnvironmentName?: string;
+		buildSpec?: string | null;
+		enablePullRequestPreview?: boolean | null;
+		pullRequestEnvironmentName?: string | null;
 	}
 
 	export interface CreateBackendEnvironmentPostBody {
@@ -1449,14 +1449,14 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		stackName?: string;
+		stackName?: string | null;
 
 		/**
 		 * Name of deployment artifacts.
 		 * Max length: 1000
 		 * Min length: 1
 		 */
-		deploymentArtifacts?: string;
+		deploymentArtifacts?: string | null;
 	}
 
 	export interface CreateBranchPostBody {
@@ -1473,75 +1473,75 @@ export namespace MyNS {
 		 * Description for the branch.
 		 * Max length: 1000
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** Stage for the branch. */
-		stage?: AutoBranchCreationConfigStage;
+		stage?: AutoBranchCreationConfigStage | null;
 
 		/**
 		 * Framework for the branch.
 		 * Max length: 255
 		 */
-		framework?: string;
+		framework?: string | null;
 
 		/** Enables notifications for the branch. */
-		enableNotification?: boolean;
+		enableNotification?: boolean | null;
 
 		/** Enables auto building for the branch. */
-		enableAutoBuild?: boolean;
+		enableAutoBuild?: boolean | null;
 
 		/** Environment Variables for the branch. */
-		environmentVariables?: {[id: string]: string };
+		environmentVariables?: {[id: string]: string } | null;
 
 		/**
 		 * Basic Authorization credentials for the branch.
 		 * Max length: 2000
 		 */
-		basicAuthCredentials?: string;
+		basicAuthCredentials?: string | null;
 
 		/** Enables Basic Auth for the branch. */
-		enableBasicAuth?: boolean;
+		enableBasicAuth?: boolean | null;
 
 		/** Tag for the branch. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
+		buildSpec?: string | null;
 
 		/** The content TTL for the website in seconds. */
-		ttl?: string;
+		ttl?: string | null;
 
 		/**
 		 * Display name for a branch, will use as the default domain prefix.
 		 * Max length: 255
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Enables Pull Request Preview for this branch. */
-		enablePullRequestPreview?: boolean;
+		enablePullRequestPreview?: boolean | null;
 
 		/**
 		 * The Amplify Environment name for the pull request.
 		 * Max length: 20
 		 */
-		pullRequestEnvironmentName?: string;
+		pullRequestEnvironmentName?: string | null;
 
 		/**
 		 * ARN for a Backend Environment, part of an Amplify App.
 		 * Max length: 1000
 		 * Min length: 1
 		 */
-		backendEnvironmentArn?: string;
+		backendEnvironmentArn?: string | null;
 	}
 
 	export interface CreateDeploymentPostBody {
 
 		/** Optional file map that contains file name as the key and file content md5 hash as the value. If this argument is provided, the service will generate different upload url per file. Otherwise, the service will only generate a single upload url for the zipped files. */
-		fileMap?: {[id: string]: string };
+		fileMap?: {[id: string]: string } | null;
 	}
 
 	export interface CreateDomainAssociationPostBody {
@@ -1554,7 +1554,7 @@ export namespace MyNS {
 		domainName: string;
 
 		/** Enables automated creation of Subdomains for branches. (Currently not supported) */
-		enableAutoSubDomain?: boolean;
+		enableAutoSubDomain?: boolean | null;
 
 		/**
 		 * Setting structure for the Subdomain.
@@ -1578,7 +1578,7 @@ export namespace MyNS {
 		 * Description for a webhook.
 		 * Max length: 1000
 		 */
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface UpdateAppPostBody {
@@ -1588,94 +1588,94 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Description for an Amplify App.
 		 * Max length: 1000
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** Platform for an Amplify App. */
-		platform?: AppPlatform;
+		platform?: AppPlatform | null;
 
 		/**
 		 * IAM service role for an Amplify App.
 		 * Max length: 1000
 		 * Min length: 1
 		 */
-		iamServiceRoleArn?: string;
+		iamServiceRoleArn?: string | null;
 
 		/** Environment Variables for an Amplify App. */
-		environmentVariables?: {[id: string]: string };
+		environmentVariables?: {[id: string]: string } | null;
 
 		/** Enables branch auto-building for an Amplify App. */
-		enableBranchAutoBuild?: boolean;
+		enableBranchAutoBuild?: boolean | null;
 
 		/** Enables Basic Authorization for an Amplify App. */
-		enableBasicAuth?: boolean;
+		enableBasicAuth?: boolean | null;
 
 		/**
 		 * Basic Authorization credentials for an Amplify App.
 		 * Max length: 2000
 		 */
-		basicAuthCredentials?: string;
+		basicAuthCredentials?: string | null;
 
 		/** Custom redirect / rewrite rules for an Amplify App. */
-		customRules?: Array<CustomRule>;
+		customRules?: Array<CustomRule> | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
+		buildSpec?: string | null;
 
 		/** Enables automated branch creation for the Amplify App. */
-		enableAutoBranchCreation?: boolean;
+		enableAutoBranchCreation?: boolean | null;
 
 		/** Automated branch creation glob patterns for the Amplify App. */
-		autoBranchCreationPatterns?: Array<string>;
+		autoBranchCreationPatterns?: Array<string> | null;
 
 		/** Structure with auto branch creation config. */
-		autoBranchCreationConfig?: UpdateAppPostBodyAutoBranchCreationConfig;
+		autoBranchCreationConfig?: UpdateAppPostBodyAutoBranchCreationConfig | null;
 
 		/**
 		 * Repository for an Amplify App
 		 * Max length: 1000
 		 */
-		repository?: string;
+		repository?: string | null;
 
 		/**
 		 * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. OAuth token is not stored.
 		 * Max length: 100
 		 */
-		oauthToken?: string;
+		oauthToken?: string | null;
 
 		/**
 		 * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. Token is not stored.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		accessToken?: string;
+		accessToken?: string | null;
 	}
 
 	export interface UpdateAppPostBodyAutoBranchCreationConfig {
-		stage?: AutoBranchCreationConfigStage;
-		framework?: string;
-		enableAutoBuild?: boolean;
-		environmentVariables?: EnvironmentVariables;
-		basicAuthCredentials?: string;
-		enableBasicAuth?: boolean;
+		stage?: AutoBranchCreationConfigStage | null;
+		framework?: string | null;
+		enableAutoBuild?: boolean | null;
+		environmentVariables?: EnvironmentVariables | null;
+		basicAuthCredentials?: string | null;
+		enableBasicAuth?: boolean | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
-		enablePullRequestPreview?: boolean;
-		pullRequestEnvironmentName?: string;
+		buildSpec?: string | null;
+		enablePullRequestPreview?: boolean | null;
+		pullRequestEnvironmentName?: string | null;
 	}
 
 	export interface UpdateBranchPostBody {
@@ -1684,72 +1684,72 @@ export namespace MyNS {
 		 * Description for the branch.
 		 * Max length: 1000
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Framework for the branch.
 		 * Max length: 255
 		 */
-		framework?: string;
+		framework?: string | null;
 
 		/** Stage for the branch. */
-		stage?: AutoBranchCreationConfigStage;
+		stage?: AutoBranchCreationConfigStage | null;
 
 		/** Enables notifications for the branch. */
-		enableNotification?: boolean;
+		enableNotification?: boolean | null;
 
 		/** Enables auto building for the branch. */
-		enableAutoBuild?: boolean;
+		enableAutoBuild?: boolean | null;
 
 		/** Environment Variables for the branch. */
-		environmentVariables?: {[id: string]: string };
+		environmentVariables?: {[id: string]: string } | null;
 
 		/**
 		 * Basic Authorization credentials for the branch.
 		 * Max length: 2000
 		 */
-		basicAuthCredentials?: string;
+		basicAuthCredentials?: string | null;
 
 		/** Enables Basic Auth for the branch. */
-		enableBasicAuth?: boolean;
+		enableBasicAuth?: boolean | null;
 
 		/**
 		 * BuildSpec file for Amplify app build.
 		 * Max length: 25000
 		 * Min length: 1
 		 */
-		buildSpec?: string;
+		buildSpec?: string | null;
 
 		/** The content TTL for the website in seconds. */
-		ttl?: string;
+		ttl?: string | null;
 
 		/**
 		 * Display name for a branch, will use as the default domain prefix.
 		 * Max length: 255
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Enables Pull Request Preview for this branch. */
-		enablePullRequestPreview?: boolean;
+		enablePullRequestPreview?: boolean | null;
 
 		/**
 		 * The Amplify Environment name for the pull request.
 		 * Max length: 20
 		 */
-		pullRequestEnvironmentName?: string;
+		pullRequestEnvironmentName?: string | null;
 
 		/**
 		 * ARN for a Backend Environment, part of an Amplify App.
 		 * Max length: 1000
 		 * Min length: 1
 		 */
-		backendEnvironmentArn?: string;
+		backendEnvironmentArn?: string | null;
 	}
 
 	export interface UpdateDomainAssociationPostBody {
 
 		/** Enables automated creation of Subdomains for branches. (Currently not supported) */
-		enableAutoSubDomain?: boolean;
+		enableAutoSubDomain?: boolean | null;
 
 		/**
 		 * Setting structure for the Subdomain.
@@ -1766,22 +1766,22 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		branchName?: string;
+		branchName?: string | null;
 
 		/**
 		 * Description for a webhook.
 		 * Max length: 1000
 		 */
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface GenerateAccessLogsPostBody {
 
 		/** The time at which the logs should start, inclusive. */
-		startTime?: Date;
+		startTime?: Date | null;
 
 		/** The time at which the logs should end, inclusive. */
-		endTime?: Date;
+		endTime?: Date | null;
 
 		/**
 		 * Name of the domain.
@@ -1797,7 +1797,7 @@ export namespace MyNS {
 		 * Unique Id for an existing job. Required for "RETRY" JobType.
 		 * Max length: 255
 		 */
-		jobId?: string;
+		jobId?: string | null;
 
 		/**
 		 * Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the specified branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing job. JobId is required for this type of job.
@@ -1810,22 +1810,22 @@ export namespace MyNS {
 		 * Descriptive reason for starting this job.
 		 * Max length: 255
 		 */
-		jobReason?: string;
+		jobReason?: string | null;
 
 		/**
 		 * Commit Id from 3rd party repository provider for the Job.
 		 * Max length: 255
 		 */
-		commitId?: string;
+		commitId?: string | null;
 
 		/**
 		 * Commit message from 3rd party repository provider for the Job.
 		 * Max length: 10000
 		 */
-		commitMessage?: string;
+		commitMessage?: string | null;
 
 		/** Commit date / time for the Job. */
-		commitTime?: Date;
+		commitTime?: Date | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -1843,13 +1843,13 @@ export namespace MyNS {
 		 * The job id for this deployment, generated by create deployment request.
 		 * Max length: 255
 		 */
-		jobId?: string;
+		jobId?: string | null;
 
 		/**
 		 * The sourceUrl for this deployment, used when calling start deployment without create deployment. SourceUrl can be any HTTP GET url that is public accessible and downloads a single zip.
 		 * Max length: 1000
 		 */
-		sourceUrl?: string;
+		sourceUrl?: string | null;
 	}
 
 }

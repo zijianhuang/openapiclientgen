@@ -3,59 +3,59 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CalculateReachableRangePostDataParameters {
-		allowVignette?: Array<string>;
-		avoidAreas?: CalculateReachableRangePostDataParametersAvoidAreas;
-		avoidVignette?: Array<string>;
+		allowVignette?: Array<string> | null;
+		avoidAreas?: CalculateReachableRangePostDataParametersAvoidAreas | null;
+		avoidVignette?: Array<string> | null;
 	}
 
 	export interface CalculateReachableRangePostDataParametersAvoidAreas {
-		CalculateReachableRangePostDataParametersAvoidAreasRectangles?: Array<CalculateReachableRangePostDataParametersAvoidAreasRectangles>;
+		CalculateReachableRangePostDataParametersAvoidAreasRectangles?: Array<CalculateReachableRangePostDataParametersAvoidAreasRectangles> | null;
 	}
 
 	export interface CalculateReachableRangePostDataParametersAvoidAreasRectangles {
-		northEastCorner?: CalculateReachableRangePostDataParametersAvoidAreasNorthEastCorner;
-		southWestCorner?: CalculateReachableRangePostDataParametersAvoidAreasSouthWestCorner;
+		northEastCorner?: CalculateReachableRangePostDataParametersAvoidAreasNorthEastCorner | null;
+		southWestCorner?: CalculateReachableRangePostDataParametersAvoidAreasSouthWestCorner | null;
 	}
 
 	export interface CalculateReachableRangePostDataParametersAvoidAreasNorthEastCorner {
-		latitude?: string;
-		longitude?: string;
+		latitude?: string | null;
+		longitude?: string | null;
 	}
 
 	export interface CalculateReachableRangePostDataParametersAvoidAreasSouthWestCorner {
-		latitude?: string;
-		longitude?: string;
+		latitude?: string | null;
+		longitude?: string | null;
 	}
 
 	export interface CalculateRoutePostDataParameters {
-		allowVignette?: Array<string>;
-		avoidAreas?: CalculateRoutePostDataParametersAvoidAreas;
-		avoidVignette?: Array<string>;
-		CalculateRoutePostDataParametersSupportingPoints?: Array<CalculateRoutePostDataParametersSupportingPoints>;
+		allowVignette?: Array<string> | null;
+		avoidAreas?: CalculateRoutePostDataParametersAvoidAreas | null;
+		avoidVignette?: Array<string> | null;
+		CalculateRoutePostDataParametersSupportingPoints?: Array<CalculateRoutePostDataParametersSupportingPoints> | null;
 	}
 
 	export interface CalculateRoutePostDataParametersAvoidAreas {
-		CalculateRoutePostDataParametersAvoidAreasRectangles?: Array<CalculateRoutePostDataParametersAvoidAreasRectangles>;
+		CalculateRoutePostDataParametersAvoidAreasRectangles?: Array<CalculateRoutePostDataParametersAvoidAreasRectangles> | null;
 	}
 
 	export interface CalculateRoutePostDataParametersAvoidAreasRectangles {
-		northEastCorner?: CalculateRoutePostDataParametersAvoidAreasNorthEastCorner;
-		southWestCorner?: CalculateRoutePostDataParametersAvoidAreasSouthWestCorner;
+		northEastCorner?: CalculateRoutePostDataParametersAvoidAreasNorthEastCorner | null;
+		southWestCorner?: CalculateRoutePostDataParametersAvoidAreasSouthWestCorner | null;
 	}
 
 	export interface CalculateRoutePostDataParametersAvoidAreasNorthEastCorner {
-		latitude?: string;
-		longitude?: string;
+		latitude?: string | null;
+		longitude?: string | null;
 	}
 
 	export interface CalculateRoutePostDataParametersAvoidAreasSouthWestCorner {
-		latitude?: string;
-		longitude?: string;
+		latitude?: string | null;
+		longitude?: string | null;
 	}
 
 	export interface CalculateRoutePostDataParametersSupportingPoints {
-		latitude?: string;
-		longitude?: string;
+		latitude?: string | null;
+		longitude?: string | null;
 	}
 
 	@Injectable()

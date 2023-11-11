@@ -5,7 +5,7 @@ export namespace MyNS {
 	export enum CaseType { LowerCase = 0, UpperCase = 1, SentenceCase = 2, TitleCase = 3 }
 
 	export interface GetHash {
-		key?: number;
+		key?: number | null;
 		text: string;
 	}
 
@@ -18,7 +18,7 @@ export namespace MyNS {
 	export enum TextActionType { Transform = 0, Replace = 1 }
 
 	export interface TextDto {
-		text?: string;
+		text?: string | null;
 	}
 
 	export enum TextType { paragraphs = 0, words = 1 }

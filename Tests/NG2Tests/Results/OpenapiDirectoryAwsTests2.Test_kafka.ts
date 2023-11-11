@@ -3,13 +3,13 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateClusterResponse {
-		ClusterArn?: string;
-		ClusterName?: string;
+		ClusterArn?: string | null;
+		ClusterName?: string | null;
 
 		/**
 		 * <p>The state of a Kafka cluster.</p>
 		 */
-		State?: CreateClusterResponseState;
+		State?: CreateClusterResponseState | null;
 	}
 
 	export enum CreateClusterResponseState { ACTIVE = 0, CREATING = 1, UPDATING = 2, DELETING = 3, FAILED = 4 }
@@ -32,7 +32,7 @@ export namespace MyNS {
 		/**
 		 * <p>Contains information about the EBS storage volumes attached to Kafka broker nodes.</p>
 		 */
-		EbsStorageInfo?: EBSStorageInfo;
+		EbsStorageInfo?: EBSStorageInfo | null;
 	}
 
 
@@ -41,7 +41,7 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface EBSStorageInfo {
-		VolumeSize?: number;
+		VolumeSize?: number | null;
 	}
 
 
@@ -50,7 +50,7 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface Tls {
-		CertificateAuthorityArnList?: Array<string>;
+		CertificateAuthorityArnList?: Array<string> | null;
 	}
 
 
@@ -72,8 +72,8 @@ export namespace MyNS {
 		/**
 		 * <p>Client-broker encryption in transit setting.</p>
 		 */
-		ClientBroker?: EncryptionInTransitClientBroker;
-		InCluster?: boolean;
+		ClientBroker?: EncryptionInTransitClientBroker | null;
+		InCluster?: boolean | null;
 	}
 
 	export enum EncryptionInTransitClientBroker { TLS = 0, TLS_PLAINTEXT = 1, PLAINTEXT = 2 }
@@ -88,12 +88,12 @@ export namespace MyNS {
 		/**
 		 * <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
 		 */
-		JmxExporter?: JmxExporterInfo;
+		JmxExporter?: JmxExporterInfo | null;
 
 		/**
 		 * <p>Indicates whether you want to enable or disable the Node Exporter.</p>
 		 */
-		NodeExporter?: NodeExporterInfo;
+		NodeExporter?: NodeExporterInfo | null;
 	}
 
 
@@ -115,25 +115,25 @@ export namespace MyNS {
 	}
 
 	export interface BrokerLogs {
-		CloudWatchLogs?: CloudWatchLogs;
-		Firehose?: Firehose;
-		S3?: S3;
+		CloudWatchLogs?: CloudWatchLogs | null;
+		Firehose?: Firehose | null;
+		S3?: S3 | null;
 	}
 
 	export interface CloudWatchLogs {
 		Enabled: boolean;
-		LogGroup?: string;
+		LogGroup?: string | null;
 	}
 
 	export interface Firehose {
-		DeliveryStream?: string;
+		DeliveryStream?: string | null;
 		Enabled: boolean;
 	}
 
 	export interface S3 {
-		Bucket?: string;
+		Bucket?: string | null;
 		Enabled: boolean;
-		Prefix?: string;
+		Prefix?: string | null;
 	}
 
 	export interface BadRequestException {
@@ -158,14 +158,14 @@ export namespace MyNS {
 	}
 
 	export interface CreateConfigurationResponse {
-		Arn?: string;
-		CreationTime?: Date;
+		Arn?: string | null;
+		CreationTime?: Date | null;
 
 		/**
 		 * <p>Describes a configuration revision.</p>
 		 */
-		LatestRevision?: ConfigurationRevision;
-		Name?: string;
+		LatestRevision?: ConfigurationRevision | null;
+		Name?: string | null;
 	}
 
 
@@ -175,17 +175,17 @@ export namespace MyNS {
 	 */
 	export interface ConfigurationRevision {
 		CreationTime: Date;
-		Description?: string;
+		Description?: string | null;
 		Revision: number;
 	}
 
 	export interface DeleteClusterResponse {
-		ClusterArn?: string;
+		ClusterArn?: string | null;
 
 		/**
 		 * <p>The state of a Kafka cluster.</p>
 		 */
-		State?: CreateClusterResponseState;
+		State?: CreateClusterResponseState | null;
 	}
 
 	export interface NotFoundException {
@@ -196,7 +196,7 @@ export namespace MyNS {
 		/**
 		 * <p>Returns information about a cluster.</p>
 		 */
-		ClusterInfo?: ClusterInfo;
+		ClusterInfo?: ClusterInfo | null;
 	}
 
 
@@ -205,51 +205,51 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ClusterInfo {
-		ActiveOperationArn?: string;
+		ActiveOperationArn?: string | null;
 
 		/**
 		 * <p>Describes the setup to be used for Kafka broker nodes in the cluster.</p>
 		 */
-		BrokerNodeGroupInfo?: BrokerNodeGroupInfo;
+		BrokerNodeGroupInfo?: BrokerNodeGroupInfo | null;
 
 		/**
 		 * <p>Includes all client authentication information.</p>
 		 */
-		ClientAuthentication?: ClientAuthentication;
-		ClusterArn?: string;
-		ClusterName?: string;
-		CreationTime?: Date;
+		ClientAuthentication?: ClientAuthentication | null;
+		ClusterArn?: string | null;
+		ClusterName?: string | null;
+		CreationTime?: Date | null;
 
 		/**
 		 * <p>Information about the current software installed on the cluster.</p>
 		 */
-		CurrentBrokerSoftwareInfo?: BrokerSoftwareInfo;
-		CurrentVersion?: string;
+		CurrentBrokerSoftwareInfo?: BrokerSoftwareInfo | null;
+		CurrentVersion?: string | null;
 
 		/**
 		 * <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 		 */
-		EncryptionInfo?: EncryptionInfo;
+		EncryptionInfo?: EncryptionInfo | null;
 
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 		 */
-		EnhancedMonitoring?: ClusterInfoEnhancedMonitoring;
+		EnhancedMonitoring?: ClusterInfoEnhancedMonitoring | null;
 
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		OpenMonitoring?: OpenMonitoring;
-		LoggingInfo?: LoggingInfo;
-		NumberOfBrokerNodes?: number;
+		OpenMonitoring?: OpenMonitoring | null;
+		LoggingInfo?: LoggingInfo | null;
+		NumberOfBrokerNodes?: number | null;
 
 		/**
 		 * <p>The state of a Kafka cluster.</p>
 		 */
-		State?: CreateClusterResponseState;
-		StateInfo?: StateInfo;
-		Tags?: __mapOf__string;
-		ZookeeperConnectString?: string;
+		State?: CreateClusterResponseState | null;
+		StateInfo?: StateInfo | null;
+		Tags?: __mapOf__string | null;
+		ZookeeperConnectString?: string | null;
 	}
 
 
@@ -263,15 +263,15 @@ export namespace MyNS {
 		 * <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
 		 * <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 		 */
-		BrokerAZDistribution?: BrokerAZDistribution;
+		BrokerAZDistribution?: BrokerAZDistribution | null;
 		ClientSubnets: Array<string>;
 		InstanceType: string;
-		SecurityGroups?: Array<string>;
+		SecurityGroups?: Array<string> | null;
 
 		/**
 		 * <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 		 */
-		StorageInfo?: StorageInfo;
+		StorageInfo?: StorageInfo | null;
 	}
 
 
@@ -284,7 +284,7 @@ export namespace MyNS {
 		/**
 		 * <p>Details for client authentication using TLS.</p>
 		 */
-		Tls?: Tls;
+		Tls?: Tls | null;
 	}
 
 
@@ -293,9 +293,9 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface BrokerSoftwareInfo {
-		ConfigurationArn?: string;
-		ConfigurationRevision?: number;
-		KafkaVersion?: string;
+		ConfigurationArn?: string | null;
+		ConfigurationRevision?: number | null;
+		KafkaVersion?: string | null;
 	}
 
 
@@ -308,12 +308,12 @@ export namespace MyNS {
 		/**
 		 * <p>The data-volume encryption details.</p>
 		 */
-		EncryptionAtRest?: EncryptionAtRest;
+		EncryptionAtRest?: EncryptionAtRest | null;
 
 		/**
 		 * <p>The settings for encrypting data in transit.</p>
 		 */
-		EncryptionInTransit?: EncryptionInTransit;
+		EncryptionInTransit?: EncryptionInTransit | null;
 	}
 
 	export enum ClusterInfoEnhancedMonitoring { DEFAULT = 0, PER_BROKER = 1, PER_TOPIC_PER_BROKER = 2 }
@@ -342,12 +342,12 @@ export namespace MyNS {
 		/**
 		 * <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
 		 */
-		JmxExporter?: JmxExporter;
+		JmxExporter?: JmxExporter | null;
 
 		/**
 		 * <p>Indicates whether you want to enable or disable the Node Exporter.</p>
 		 */
-		NodeExporter?: NodeExporter;
+		NodeExporter?: NodeExporter | null;
 	}
 
 
@@ -373,8 +373,8 @@ export namespace MyNS {
 	}
 
 	export interface StateInfo {
-		Code?: string;
-		Message?: string;
+		Code?: string | null;
+		Message?: string | null;
 	}
 
 	export interface __mapOf__string {
@@ -385,7 +385,7 @@ export namespace MyNS {
 		/**
 		 * <p>Returns information about a cluster operation.</p>
 		 */
-		ClusterOperationInfo?: ClusterOperationInfo;
+		ClusterOperationInfo?: ClusterOperationInfo | null;
 	}
 
 
@@ -394,29 +394,29 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ClusterOperationInfo {
-		ClientRequestId?: string;
-		ClusterArn?: string;
-		CreationTime?: Date;
-		EndTime?: Date;
+		ClientRequestId?: string | null;
+		ClusterArn?: string | null;
+		CreationTime?: Date | null;
+		EndTime?: Date | null;
 
 		/**
 		 * <p>Returns information about an error state of the cluster.</p>
 		 */
-		ErrorInfo?: ErrorInfo;
-		OperationArn?: string;
-		OperationState?: string;
-		OperationSteps?: Array<ClusterOperationStep>;
-		OperationType?: string;
+		ErrorInfo?: ErrorInfo | null;
+		OperationArn?: string | null;
+		OperationState?: string | null;
+		OperationSteps?: Array<ClusterOperationStep> | null;
+		OperationType?: string | null;
 
 		/**
 		 * <p>Information about cluster attributes that can be updated via update APIs.</p>
 		 */
-		SourceClusterInfo?: MutableClusterInfo;
+		SourceClusterInfo?: MutableClusterInfo | null;
 
 		/**
 		 * <p>Information about cluster attributes that can be updated via update APIs.</p>
 		 */
-		TargetClusterInfo?: MutableClusterInfo;
+		TargetClusterInfo?: MutableClusterInfo | null;
 	}
 
 
@@ -425,8 +425,8 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ErrorInfo {
-		ErrorCode?: string;
-		ErrorString?: string;
+		ErrorCode?: string | null;
+		ErrorString?: string | null;
 	}
 
 
@@ -439,8 +439,8 @@ export namespace MyNS {
 		/**
 		 * <p>State information about the operation step.</p>
 		 */
-		StepInfo?: ClusterOperationStepInfo;
-		StepName?: string;
+		StepInfo?: ClusterOperationStepInfo | null;
+		StepName?: string | null;
 	}
 
 
@@ -449,7 +449,7 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ClusterOperationStepInfo {
-		StepStatus?: string;
+		StepStatus?: string | null;
 	}
 
 
@@ -458,25 +458,25 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface MutableClusterInfo {
-		BrokerEBSVolumeInfo?: Array<BrokerEBSVolumeInfo>;
+		BrokerEBSVolumeInfo?: Array<BrokerEBSVolumeInfo> | null;
 
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		ConfigurationInfo?: ConfigurationInfo;
-		NumberOfBrokerNodes?: number;
+		ConfigurationInfo?: ConfigurationInfo | null;
+		NumberOfBrokerNodes?: number | null;
 
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 		 */
-		EnhancedMonitoring?: ClusterInfoEnhancedMonitoring;
+		EnhancedMonitoring?: ClusterInfoEnhancedMonitoring | null;
 
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		OpenMonitoring?: OpenMonitoring;
-		KafkaVersion?: string;
-		LoggingInfo?: LoggingInfo;
+		OpenMonitoring?: OpenMonitoring | null;
+		KafkaVersion?: string | null;
+		LoggingInfo?: LoggingInfo | null;
 	}
 
 
@@ -500,33 +500,33 @@ export namespace MyNS {
 	}
 
 	export interface DescribeConfigurationResponse {
-		Arn?: string;
-		CreationTime?: Date;
-		Description?: string;
-		KafkaVersions?: Array<string>;
+		Arn?: string | null;
+		CreationTime?: Date | null;
+		Description?: string | null;
+		KafkaVersions?: Array<string> | null;
 
 		/**
 		 * <p>Describes a configuration revision.</p>
 		 */
-		LatestRevision?: ConfigurationRevision;
-		Name?: string;
+		LatestRevision?: ConfigurationRevision | null;
+		Name?: string | null;
 	}
 
 	export interface DescribeConfigurationRevisionResponse {
-		Arn?: string;
-		CreationTime?: Date;
-		Description?: string;
-		Revision?: number;
-		ServerProperties?: string;
+		Arn?: string | null;
+		CreationTime?: Date | null;
+		Description?: string | null;
+		Revision?: number | null;
+		ServerProperties?: string | null;
 	}
 
 	export interface GetBootstrapBrokersResponse {
-		BootstrapBrokerString?: string;
-		BootstrapBrokerStringTls?: string;
+		BootstrapBrokerString?: string | null;
+		BootstrapBrokerStringTls?: string | null;
 	}
 
 	export interface GetCompatibleKafkaVersionsResponse {
-		CompatibleKafkaVersions?: Array<CompatibleKafkaVersion>;
+		CompatibleKafkaVersions?: Array<CompatibleKafkaVersion> | null;
 	}
 
 
@@ -535,28 +535,28 @@ export namespace MyNS {
 	 *         
 	 */
 	export interface CompatibleKafkaVersion {
-		SourceVersion?: string;
-		TargetVersions?: Array<string>;
+		SourceVersion?: string | null;
+		TargetVersions?: Array<string> | null;
 	}
 
 	export interface ListClusterOperationsResponse {
-		ClusterOperationInfoList?: Array<ClusterOperationInfo>;
-		NextToken?: string;
+		ClusterOperationInfoList?: Array<ClusterOperationInfo> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListClustersResponse {
-		ClusterInfoList?: Array<ClusterInfo>;
-		NextToken?: string;
+		ClusterInfoList?: Array<ClusterInfo> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListConfigurationRevisionsResponse {
-		NextToken?: string;
-		Revisions?: Array<ConfigurationRevision>;
+		NextToken?: string | null;
+		Revisions?: Array<ConfigurationRevision> | null;
 	}
 
 	export interface ListConfigurationsResponse {
-		Configurations?: Array<Configuration>;
-		NextToken?: string;
+		Configurations?: Array<Configuration> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -579,20 +579,20 @@ export namespace MyNS {
 	}
 
 	export interface ListKafkaVersionsResponse {
-		KafkaVersions?: Array<KafkaVersion>;
-		NextToken?: string;
+		KafkaVersions?: Array<KafkaVersion> | null;
+		NextToken?: string | null;
 	}
 
 	export interface KafkaVersion {
-		Version?: string;
-		Status?: KafkaVersionStatus;
+		Version?: string | null;
+		Status?: KafkaVersionStatus | null;
 	}
 
 	export enum KafkaVersionStatus { ACTIVE = 0, DEPRECATED = 1 }
 
 	export interface ListNodesResponse {
-		NextToken?: string;
-		NodeInfoList?: Array<NodeInfo>;
+		NextToken?: string | null;
+		NodeInfoList?: Array<NodeInfo> | null;
 	}
 
 
@@ -601,24 +601,24 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface NodeInfo {
-		AddedToClusterTime?: string;
+		AddedToClusterTime?: string | null;
 
 		/**
 		 * <p>BrokerNodeInfo</p>
 		 */
-		BrokerNodeInfo?: BrokerNodeInfo;
-		InstanceType?: string;
-		NodeARN?: string;
+		BrokerNodeInfo?: BrokerNodeInfo | null;
+		InstanceType?: string | null;
+		NodeARN?: string | null;
 
 		/**
 		 * <p>The broker or Zookeeper node.</p>
 		 */
-		NodeType?: NodeInfoNodeType;
+		NodeType?: NodeInfoNodeType | null;
 
 		/**
 		 * <p>Zookeeper node information.</p>
 		 */
-		ZookeeperNodeInfo?: ZookeeperNodeInfo;
+		ZookeeperNodeInfo?: ZookeeperNodeInfo | null;
 	}
 
 
@@ -627,16 +627,16 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface BrokerNodeInfo {
-		AttachedENIId?: string;
-		BrokerId?: number;
-		ClientSubnet?: string;
-		ClientVpcIpAddress?: string;
+		AttachedENIId?: string | null;
+		BrokerId?: number | null;
+		ClientSubnet?: string | null;
+		ClientVpcIpAddress?: string | null;
 
 		/**
 		 * <p>Information about the current software installed on the cluster.</p>
 		 */
-		CurrentBrokerSoftwareInfo?: BrokerSoftwareInfo;
-		Endpoints?: Array<string>;
+		CurrentBrokerSoftwareInfo?: BrokerSoftwareInfo | null;
+		Endpoints?: Array<string> | null;
 	}
 
 	export enum NodeInfoNodeType { BROKER = 0 }
@@ -647,40 +647,40 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ZookeeperNodeInfo {
-		AttachedENIId?: string;
-		ClientVpcIpAddress?: string;
-		Endpoints?: Array<string>;
-		ZookeeperId?: number;
-		ZookeeperVersion?: string;
+		AttachedENIId?: string | null;
+		ClientVpcIpAddress?: string | null;
+		Endpoints?: Array<string> | null;
+		ZookeeperId?: number | null;
+		ZookeeperVersion?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string;
+		Tags?: __mapOf__string | null;
 	}
 
 	export interface UpdateBrokerCountResponse {
-		ClusterArn?: string;
-		ClusterOperationArn?: string;
+		ClusterArn?: string | null;
+		ClusterOperationArn?: string | null;
 	}
 
 	export interface UpdateBrokerStorageResponse {
-		ClusterArn?: string;
-		ClusterOperationArn?: string;
+		ClusterArn?: string | null;
+		ClusterOperationArn?: string | null;
 	}
 
 	export interface UpdateClusterConfigurationResponse {
-		ClusterArn?: string;
-		ClusterOperationArn?: string;
+		ClusterArn?: string | null;
+		ClusterOperationArn?: string | null;
 	}
 
 	export interface UpdateClusterKafkaVersionResponse {
-		ClusterArn?: string;
-		ClusterOperationArn?: string;
+		ClusterArn?: string | null;
+		ClusterOperationArn?: string | null;
 	}
 
 	export interface UpdateMonitoringResponse {
-		ClusterArn?: string;
-		ClusterOperationArn?: string;
+		ClusterArn?: string | null;
+		ClusterOperationArn?: string | null;
 	}
 
 
@@ -729,37 +729,37 @@ export namespace MyNS {
 		/**
 		 * <p>Includes all client authentication information.</p>
 		 */
-		ClientAuthentication?: ClientAuthentication;
+		ClientAuthentication?: ClientAuthentication | null;
 		ClusterName: string;
 
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		ConfigurationInfo?: ConfigurationInfo;
+		ConfigurationInfo?: ConfigurationInfo | null;
 
 		/**
 		 * <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 		 */
-		EncryptionInfo?: EncryptionInfo;
+		EncryptionInfo?: EncryptionInfo | null;
 
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 		 */
-		EnhancedMonitoring?: ClusterInfoEnhancedMonitoring;
+		EnhancedMonitoring?: ClusterInfoEnhancedMonitoring | null;
 
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		OpenMonitoring?: OpenMonitoringInfo;
+		OpenMonitoring?: OpenMonitoringInfo | null;
 		KafkaVersion: string;
-		LoggingInfo?: LoggingInfo;
+		LoggingInfo?: LoggingInfo | null;
 		NumberOfBrokerNodes: number;
-		Tags?: __mapOf__string;
+		Tags?: __mapOf__string | null;
 	}
 
 	export interface CreateConfigurationRequest {
-		Description?: string;
-		KafkaVersions?: Array<string>;
+		Description?: string | null;
+		KafkaVersions?: Array<string> | null;
 		Name: string;
 		ServerProperties: string;
 	}
@@ -845,7 +845,7 @@ export namespace MyNS {
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		ConfigurationInfo?: ConfigurationInfo;
+		ConfigurationInfo?: ConfigurationInfo | null;
 		CurrentVersion: string;
 		TargetKafkaVersion: string;
 	}
@@ -858,13 +858,13 @@ export namespace MyNS {
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 		 */
-		EnhancedMonitoring?: ClusterInfoEnhancedMonitoring;
+		EnhancedMonitoring?: ClusterInfoEnhancedMonitoring | null;
 
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		OpenMonitoring?: OpenMonitoringInfo;
-		LoggingInfo?: LoggingInfo;
+		OpenMonitoring?: OpenMonitoringInfo | null;
+		LoggingInfo?: LoggingInfo | null;
 	}
 
 	@Injectable()
@@ -1227,7 +1227,7 @@ export namespace MyNS {
 		/**
 		 * <p>Includes all client authentication information.</p>
 		 */
-		clientAuthentication?: CreateClusterPostBodyClientAuthentication;
+		clientAuthentication?: CreateClusterPostBodyClientAuthentication | null;
 
 		/**
 		 * <p>The name of the cluster.</p>
@@ -1240,22 +1240,22 @@ export namespace MyNS {
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		configurationInfo?: CreateClusterPostBodyConfigurationInfo;
+		configurationInfo?: CreateClusterPostBodyConfigurationInfo | null;
 
 		/**
 		 * <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 		 */
-		encryptionInfo?: CreateClusterPostBodyEncryptionInfo;
+		encryptionInfo?: CreateClusterPostBodyEncryptionInfo | null;
 
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 		 */
-		enhancedMonitoring?: ClusterInfoEnhancedMonitoring;
+		enhancedMonitoring?: ClusterInfoEnhancedMonitoring | null;
 
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		openMonitoring?: CreateClusterPostBodyOpenMonitoring;
+		openMonitoring?: CreateClusterPostBodyOpenMonitoring | null;
 
 		/**
 		 * <p>The version of Apache Kafka.</p>
@@ -1264,7 +1264,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		kafkaVersion: string;
-		loggingInfo?: CreateClusterPostBodyLoggingInfo;
+		loggingInfo?: CreateClusterPostBodyLoggingInfo | null;
 
 		/**
 		 * <p>The number of broker nodes in the cluster.</p>
@@ -1277,7 +1277,7 @@ export namespace MyNS {
 		/**
 		 * <p>Create tags when creating the cluster.</p>
 		 */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateClusterPostBodyBrokerNodeGroupInfo {
@@ -1286,15 +1286,15 @@ export namespace MyNS {
 		 * <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
 		 * <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 		 */
-		BrokerAZDistribution?: BrokerAZDistribution;
-		ClientSubnets?: Array<string>;
-		InstanceType?: string;
-		SecurityGroups?: Array<string>;
+		BrokerAZDistribution?: BrokerAZDistribution | null;
+		ClientSubnets?: Array<string> | null;
+		InstanceType?: string | null;
+		SecurityGroups?: Array<string> | null;
 
 		/**
 		 * <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 		 */
-		StorageInfo?: StorageInfo;
+		StorageInfo?: StorageInfo | null;
 	}
 
 	export interface CreateClusterPostBodyClientAuthentication {
@@ -1302,12 +1302,12 @@ export namespace MyNS {
 		/**
 		 * <p>Details for client authentication using TLS.</p>
 		 */
-		Tls?: Tls;
+		Tls?: Tls | null;
 	}
 
 	export interface CreateClusterPostBodyConfigurationInfo {
-		Arn?: string;
-		Revision?: number;
+		Arn?: string | null;
+		Revision?: number | null;
 	}
 
 	export interface CreateClusterPostBodyEncryptionInfo {
@@ -1315,12 +1315,12 @@ export namespace MyNS {
 		/**
 		 * <p>The data-volume encryption details.</p>
 		 */
-		EncryptionAtRest?: EncryptionAtRest;
+		EncryptionAtRest?: EncryptionAtRest | null;
 
 		/**
 		 * <p>The settings for encrypting data in transit.</p>
 		 */
-		EncryptionInTransit?: EncryptionInTransit;
+		EncryptionInTransit?: EncryptionInTransit | null;
 	}
 
 	export interface CreateClusterPostBodyOpenMonitoring {
@@ -1328,11 +1328,11 @@ export namespace MyNS {
 		/**
 		 * <p>Prometheus settings.</p>
 		 */
-		Prometheus?: PrometheusInfo;
+		Prometheus?: PrometheusInfo | null;
 	}
 
 	export interface CreateClusterPostBodyLoggingInfo {
-		BrokerLogs?: BrokerLogs;
+		BrokerLogs?: BrokerLogs | null;
 	}
 
 	export interface CreateConfigurationPostBody {
@@ -1340,12 +1340,12 @@ export namespace MyNS {
 		/**
 		 * <p>The description of the configuration.</p>
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
 		 */
-		kafkaVersions?: Array<string>;
+		kafkaVersions?: Array<string> | null;
 
 		/**
 		 * <p>The name of the configuration.</p>
@@ -1418,8 +1418,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateClusterConfigurationPutBodyConfigurationInfo {
-		Arn?: string;
-		Revision?: number;
+		Arn?: string | null;
+		Revision?: number | null;
 	}
 
 	export interface UpdateClusterKafkaVersionPutBody {
@@ -1427,7 +1427,7 @@ export namespace MyNS {
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		configurationInfo?: UpdateClusterKafkaVersionPutBodyConfigurationInfo;
+		configurationInfo?: UpdateClusterKafkaVersionPutBodyConfigurationInfo | null;
 
 		/**
 		 * <p>Current cluster version.</p>
@@ -1443,8 +1443,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateClusterKafkaVersionPutBodyConfigurationInfo {
-		Arn?: string;
-		Revision?: number;
+		Arn?: string | null;
+		Revision?: number | null;
 	}
 
 	export interface UpdateMonitoringPutBody {
@@ -1458,13 +1458,13 @@ export namespace MyNS {
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 		 */
-		enhancedMonitoring?: ClusterInfoEnhancedMonitoring;
+		enhancedMonitoring?: ClusterInfoEnhancedMonitoring | null;
 
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		openMonitoring?: UpdateMonitoringPutBodyOpenMonitoring;
-		loggingInfo?: UpdateMonitoringPutBodyLoggingInfo;
+		openMonitoring?: UpdateMonitoringPutBodyOpenMonitoring | null;
+		loggingInfo?: UpdateMonitoringPutBodyLoggingInfo | null;
 	}
 
 	export interface UpdateMonitoringPutBodyOpenMonitoring {
@@ -1472,11 +1472,11 @@ export namespace MyNS {
 		/**
 		 * <p>Prometheus settings.</p>
 		 */
-		Prometheus?: PrometheusInfo;
+		Prometheus?: PrometheusInfo | null;
 	}
 
 	export interface UpdateMonitoringPutBodyLoggingInfo {
-		BrokerLogs?: BrokerLogs;
+		BrokerLogs?: BrokerLogs | null;
 	}
 
 }

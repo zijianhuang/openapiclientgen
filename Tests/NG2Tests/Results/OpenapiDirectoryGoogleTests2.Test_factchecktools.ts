@@ -7,16 +7,16 @@ export namespace MyNS {
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1Claim {
 
 		/** The date that the claim was made. */
-		claimDate?: string;
+		claimDate?: string | null;
 
 		/** One or more reviews of this claim (namely, a fact-checking article). */
-		claimReview?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview>;
+		claimReview?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview> | null;
 
 		/** A person or organization stating the claim. For instance, "John Doe". */
-		claimant?: string;
+		claimant?: string | null;
 
 		/** The claim text. For instance, "Crime has doubled in the last 2 years." */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -24,22 +24,22 @@ export namespace MyNS {
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview {
 
 		/** The language this review was written in. For instance, "en" or "de". */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Information about the publisher. */
-		publisher?: GoogleFactcheckingFactchecktoolsV1alpha1Publisher;
+		publisher?: GoogleFactcheckingFactchecktoolsV1alpha1Publisher | null;
 
 		/** The date the claim was reviewed. */
-		reviewDate?: string;
+		reviewDate?: string | null;
 
 		/** Textual rating. For instance, "Mostly false". */
-		textualRating?: string;
+		textualRating?: string | null;
 
 		/** The title of this claim review, if it can be determined. */
-		title?: string;
+		title?: string | null;
 
 		/** The URL of this claim review. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -47,14 +47,14 @@ export namespace MyNS {
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1Publisher {
 
 		/** The name of this publisher. For instance, "Awesome Fact Checks". */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Host-level site name, without the protocol or "www" prefix. For instance,
 		 * "awesomefactchecks.com". This value of this field is based purely on the
 		 * claim review URL.
 		 */
-		site?: string;
+		site?: string | null;
 	}
 
 
@@ -62,19 +62,19 @@ export namespace MyNS {
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor {
 
 		/** Corresponds to `ClaimReview.itemReviewed.author.image`. */
-		imageUrl?: string;
+		imageUrl?: string | null;
 
 		/** Corresponds to `ClaimReview.itemReviewed.author.jobTitle`. */
-		jobTitle?: string;
+		jobTitle?: string | null;
 
 		/**
 		 * A person or organization stating the claim. For instance, "John Doe".<br>
 		 * Corresponds to `ClaimReview.itemReviewed.author.name`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Corresponds to `ClaimReview.itemReviewed.author.sameAs`. */
-		sameAs?: string;
+		sameAs?: string | null;
 	}
 
 
@@ -86,33 +86,33 @@ export namespace MyNS {
 		 * best.<br>
 		 * Corresponds to `ClaimReview.reviewRating.bestRating`.
 		 */
-		bestRating?: number;
+		bestRating?: number | null;
 
 		/** Corresponds to `ClaimReview.reviewRating.image`. */
-		imageUrl?: string;
+		imageUrl?: string | null;
 
 		/** Corresponds to `ClaimReview.reviewRating.ratingExplanation`. */
-		ratingExplanation?: string;
+		ratingExplanation?: string | null;
 
 		/**
 		 * A numeric rating of this claim, in the range worstRating — bestRating
 		 * inclusive.<br>
 		 * Corresponds to `ClaimReview.reviewRating.ratingValue`.
 		 */
-		ratingValue?: number;
+		ratingValue?: number | null;
 
 		/**
 		 * The truthfulness rating as a human-readible short word or phrase.<br>
 		 * Corresponds to `ClaimReview.reviewRating.alternateName`.
 		 */
-		textualRating?: string;
+		textualRating?: string | null;
 
 		/**
 		 * For numeric ratings, the worst value possible in the scale from worst to
 		 * best.<br>
 		 * Corresponds to `ClaimReview.reviewRating.worstRating`.
 		 */
-		worstRating?: number;
+		worstRating?: number | null;
 	}
 
 
@@ -120,13 +120,13 @@ export namespace MyNS {
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor {
 
 		/** Corresponds to `ClaimReview.author.image`. */
-		imageUrl?: string;
+		imageUrl?: string | null;
 
 		/**
 		 * Name of the organization that is publishing the fact check.<br>
 		 * Corresponds to `ClaimReview.author.name`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -143,37 +143,37 @@ export namespace MyNS {
 		 * specified in `claim_first_appearance`.<br>
 		 * Corresponds to `ClaimReview.itemReviewed[@type=Claim].appearance.url`.
 		 */
-		claimAppearances?: Array<string>;
+		claimAppearances?: Array<string> | null;
 
 		/** Information about the claim author. */
-		claimAuthor?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor;
+		claimAuthor?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor | null;
 
 		/**
 		 * The date when the claim was made or entered public discourse.<br>
 		 * Corresponds to `ClaimReview.itemReviewed.datePublished`.
 		 */
-		claimDate?: string;
+		claimDate?: string | null;
 
 		/**
 		 * A link to a work in which this claim first appears.<br>
 		 * Corresponds to `ClaimReview.itemReviewed[@type=Claim].firstAppearance.url`.
 		 */
-		claimFirstAppearance?: string;
+		claimFirstAppearance?: string | null;
 
 		/**
 		 * The location where this claim was made.<br>
 		 * Corresponds to `ClaimReview.itemReviewed.name`.
 		 */
-		claimLocation?: string;
+		claimLocation?: string | null;
 
 		/**
 		 * A short summary of the claim being evaluated.<br>
 		 * Corresponds to `ClaimReview.claimReviewed`.
 		 */
-		claimReviewed?: string;
+		claimReviewed?: string | null;
 
 		/** Information about the claim rating. */
-		rating?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating;
+		rating?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating | null;
 
 		/**
 		 * This field is optional, and will default to the page URL. We provide this
@@ -181,7 +181,7 @@ export namespace MyNS {
 		 * override is the page URL plus an optional anchor link ("page jump").<br>
 		 * Corresponds to `ClaimReview.url`
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -189,20 +189,20 @@ export namespace MyNS {
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage {
 
 		/** Information about the claim review author. */
-		claimReviewAuthor?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor;
+		claimReviewAuthor?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor | null;
 
 		/**
 		 * A list of individual claim reviews for this page.
 		 * Each item in the list corresponds to one `ClaimReview` element.
 		 */
-		claimReviewMarkups?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup>;
+		claimReviewMarkups?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup> | null;
 
 		/**
 		 * The name of this `ClaimReview` markup page resource, in the form of
 		 * `pages/{page_id}`. Except for update requests, this field is output-only
 		 * and should not be set by the user.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The URL of the page associated with this `ClaimReview` markup.
@@ -211,7 +211,7 @@ export namespace MyNS {
 		 * this value unless individually overridden.<br>
 		 * Corresponds to `ClaimReview.url`
 		 */
-		pageUrl?: string;
+		pageUrl?: string | null;
 
 		/**
 		 * The date when the fact check was published.
@@ -219,13 +219,13 @@ export namespace MyNS {
 		 * `ClaimReview` on this page will contain the same value.<br>
 		 * Corresponds to `ClaimReview.datePublished`
 		 */
-		publishDate?: string;
+		publishDate?: string | null;
 
 		/**
 		 * The version ID for this markup. Except for update requests, this field is
 		 * output-only and should not be set by the user.
 		 */
-		versionId?: string;
+		versionId?: string | null;
 	}
 
 
@@ -233,14 +233,14 @@ export namespace MyNS {
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponse {
 
 		/** The list of claims and all of their associated information. */
-		claims?: Array<GoogleFactcheckingFactchecktoolsV1alpha1Claim>;
+		claims?: Array<GoogleFactcheckingFactchecktoolsV1alpha1Claim> | null;
 
 		/**
 		 * The next pagination token in the Search response. It should be used as the
 		 * `page_token` for the following request. An empty value means no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -248,14 +248,14 @@ export namespace MyNS {
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse {
 
 		/** The result list of pages of `ClaimReview` markup. */
-		claimReviewMarkupPages?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage>;
+		claimReviewMarkupPages?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage> | null;
 
 		/**
 		 * The next pagination token in the Search response. It should be used as the
 		 * `page_token` for the following request. An empty value means no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 

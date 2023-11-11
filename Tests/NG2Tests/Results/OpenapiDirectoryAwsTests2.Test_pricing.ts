@@ -3,85 +3,85 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface DescribeServicesResponse {
-		Services?: Array<Service>;
-		FormatVersion?: string;
-		NextToken?: string;
+		Services?: Array<Service> | null;
+		FormatVersion?: string | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The metadata for a service, such as the service code and available attribute names. */
 	export interface Service {
-		ServiceCode?: string;
-		AttributeNames?: Array<string>;
+		ServiceCode?: string | null;
+		AttributeNames?: Array<string> | null;
 	}
 
 	export interface DescribeServicesRequest {
-		ServiceCode?: string;
-		FormatVersion?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		ServiceCode?: string | null;
+		FormatVersion?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** An error on the server occurred during the processing of your request. Try again later. */
 	export interface InternalErrorException {
-		Message?: string;
+		Message?: string | null;
 	}
 
 
 	/** One or more parameters had an invalid value. */
 	export interface InvalidParameterException {
-		Message?: string;
+		Message?: string | null;
 	}
 
 
 	/** The requested resource can't be found. */
 	export interface NotFoundException {
-		Message?: string;
+		Message?: string | null;
 	}
 
 
 	/** The pagination token is invalid. Try again without a pagination token. */
 	export interface InvalidNextTokenException {
-		Message?: string;
+		Message?: string | null;
 	}
 
 
 	/** The pagination token expired. Try again without a pagination token. */
 	export interface ExpiredNextTokenException {
-		Message?: string;
+		Message?: string | null;
 	}
 
 	export interface GetAttributeValuesResponse {
-		AttributeValues?: Array<AttributeValue>;
-		NextToken?: string;
+		AttributeValues?: Array<AttributeValue> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute. */
 	export interface AttributeValue {
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface GetAttributeValuesRequest {
 		ServiceCode: string;
 		AttributeName: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetProductsResponse {
-		FormatVersion?: string;
-		PriceList?: Array<string>;
-		NextToken?: string;
+		FormatVersion?: string | null;
+		PriceList?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetProductsRequest {
-		ServiceCode?: string;
-		Filters?: Array<Filter>;
-		FormatVersion?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		ServiceCode?: string | null;
+		Filters?: Array<Filter> | null;
+		FormatVersion?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 

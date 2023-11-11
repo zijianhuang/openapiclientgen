@@ -3,19 +3,19 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Request {
-		ip?: string;
+		ip?: string | null;
 	}
 
 	export interface Response {
-		city?: string;
-		country?: string;
-		country_code?: string;
-		ip?: string;
-		latitude?: number;
-		longitude?: number;
-		state?: string;
-		timezone?: string;
-		zip?: string;
+		city?: string | null;
+		country?: string | null;
+		country_code?: string | null;
+		ip?: string | null;
+		latitude?: number | null;
+		longitude?: number | null;
+		state?: string | null;
+		timezone?: string | null;
+		zip?: string | null;
 	}
 
 	@Injectable()

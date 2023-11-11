@@ -33,13 +33,13 @@ export namespace MyNS {
 		 * Required. Full path to the Docker image used to run this environment, e.g.
 		 * "gcr.io/dev-con/cloud-devshell:latest".
 		 */
-		dockerImage?: string;
+		dockerImage?: string | null;
 
 		/**
 		 * Output only. The environment's identifier, unique among the user's
 		 * environments.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Output only. Full name of this resource, in the format
@@ -48,7 +48,7 @@ export namespace MyNS {
 		 * `{environment_id}` is the identifier of this environment. For example,
 		 * `users/someone@example.com/environments/default`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. Public keys associated with the environment. Clients can
@@ -57,53 +57,53 @@ export namespace MyNS {
 		 * removed from the environment using the CreatePublicKey and DeletePublicKey
 		 * methods.
 		 */
-		publicKeys?: Array<PublicKey>;
+		publicKeys?: Array<PublicKey> | null;
 
 		/**
 		 * Indicates the size of the backing VM running the environment.  If set to
 		 * something other than DEFAULT, it will be reverted to the default VM size
 		 * after vm_size_expire_time.
 		 */
-		size?: EnvironmentSize;
+		size?: EnvironmentSize | null;
 
 		/**
 		 * Output only. Host to which clients can connect to initiate SSH sessions
 		 * with the environment.
 		 */
-		sshHost?: string;
+		sshHost?: string | null;
 
 		/**
 		 * Output only. Port to which clients can connect to initiate SSH sessions
 		 * with the environment.
 		 */
-		sshPort?: number;
+		sshPort?: number | null;
 
 		/**
 		 * Output only. Username that clients should use when initiating SSH sessions
 		 * with the environment.
 		 */
-		sshUsername?: string;
+		sshUsername?: string | null;
 
 		/** Output only. Current execution state of this environment. */
-		state?: EnvironmentState;
+		state?: EnvironmentState | null;
 
 		/**
 		 * Output only. The time when the Environment will expire back to the default
 		 * VM size.
 		 */
-		vmSizeExpireTime?: string;
+		vmSizeExpireTime?: string | null;
 
 		/**
 		 * Output only. Host to which clients can connect to initiate HTTPS or WSS
 		 * connections with the environment.
 		 */
-		webHost?: string;
+		webHost?: string | null;
 
 		/**
 		 * Output only. Ports to which clients can connect to initiate HTTPS or WSS
 		 * connections with the environment.
 		 */
-		webPorts?: Array<number>;
+		webPorts?: Array<number> | null;
 	}
 
 
@@ -111,10 +111,10 @@ export namespace MyNS {
 	export interface PublicKey {
 
 		/** Required. Format of this key's content. */
-		format?: PublicKeyFormat;
+		format?: PublicKeyFormat | null;
 
 		/** Required. Content of this key. */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * Output only. Full name of this resource, in the format
@@ -124,7 +124,7 @@ export namespace MyNS {
 		 * grants access. `{key_id}` is the unique identifier of the key. For example,
 		 * `users/someone@example.com/environments/default/publicKeys/myKey`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum PublicKeyFormat { FORMAT_UNSPECIFIED = 0, SSH_DSS = 1, SSH_RSA = 2, ECDSA_SHA2_NISTP256 = 3, ECDSA_SHA2_NISTP384 = 4, ECDSA_SHA2_NISTP521 = 5 }
@@ -138,10 +138,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -156,7 +156,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -166,7 +166,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -174,14 +174,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -193,7 +193,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -208,20 +208,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -232,7 +232,7 @@ export namespace MyNS {
 	export interface StartEnvironmentMetadata {
 
 		/** Current state of the environment being started. */
-		state?: StartEnvironmentMetadataState;
+		state?: StartEnvironmentMetadataState | null;
 	}
 
 	export enum StartEnvironmentMetadataState { STATE_UNSPECIFIED = 0, STARTING = 1, UNARCHIVING_DISK = 2, AWAITING_VM = 3, AWAITING_COMPUTE_RESOURCES = 4, FINISHED = 5 }
@@ -251,7 +251,7 @@ export namespace MyNS {
 		 * containing the user's data that will remain across sessions. Each user has a
 		 * single environment with the ID "default".
 		 */
-		environment?: Environment;
+		environment?: Environment | null;
 	}
 
 	@Injectable()

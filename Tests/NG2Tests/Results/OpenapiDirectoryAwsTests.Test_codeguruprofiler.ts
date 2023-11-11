@@ -48,14 +48,14 @@ export namespace MyNS {
 	export interface ProfilingGroupDescription {
 
 		/** <p/> */
-		agentOrchestrationConfig?: AgentOrchestrationConfig;
-		arn?: string;
-		createdAt?: Date;
-		name?: string;
+		agentOrchestrationConfig?: AgentOrchestrationConfig | null;
+		arn?: string | null;
+		createdAt?: Date | null;
+		name?: string | null;
 
 		/** Information about the profiling status. */
-		profilingStatus?: ProfilingStatus;
-		updatedAt?: Date;
+		profilingStatus?: ProfilingStatus | null;
+		updatedAt?: Date | null;
 	}
 
 
@@ -67,18 +67,18 @@ export namespace MyNS {
 
 	/** Information about the profiling status. */
 	export interface ProfilingStatus {
-		latestAgentOrchestratedAt?: Date;
-		latestAgentProfileReportedAt?: Date;
+		latestAgentOrchestratedAt?: Date | null;
+		latestAgentProfileReportedAt?: Date | null;
 
 		/** Information about the time range of the latest available aggregated profile. */
-		latestAggregatedProfile?: AggregatedProfileTime;
+		latestAggregatedProfile?: AggregatedProfileTime | null;
 	}
 
 
 	/** Information about the time range of the latest available aggregated profile. */
 	export interface AggregatedProfileTime {
-		period?: AggregatedProfileTimePeriod;
-		start?: Date;
+		period?: AggregatedProfileTimePeriod | null;
+		start?: Date | null;
 	}
 
 	export enum AggregatedProfileTimePeriod { P1D = 0, PT1H = 1, PT5M = 2 }
@@ -121,22 +121,22 @@ export namespace MyNS {
 
 	/** The structure representing the listProfileTimesResponse. */
 	export interface ListProfileTimesResponse {
-		nextToken?: string;
+		nextToken?: string | null;
 		profileTimes: Array<ProfileTime>;
 	}
 
 
 	/** Information about the profile time. */
 	export interface ProfileTime {
-		start?: Date;
+		start?: Date | null;
 	}
 
 
 	/** The structure representing the listProfilingGroupsResponse. */
 	export interface ListProfilingGroupsResponse {
-		nextToken?: string;
+		nextToken?: string | null;
 		profilingGroupNames: Array<string>;
-		profilingGroups?: Array<ProfilingGroupDescription>;
+		profilingGroups?: Array<ProfilingGroupDescription> | null;
 	}
 
 
@@ -176,7 +176,7 @@ export namespace MyNS {
 
 	/** The structure representing the configureAgentRequest. */
 	export interface ConfigureAgentRequest {
-		fleetInstanceId?: string;
+		fleetInstanceId?: string | null;
 	}
 
 
@@ -184,7 +184,7 @@ export namespace MyNS {
 	export interface CreateProfilingGroupRequest {
 
 		/** <p/> */
-		agentOrchestrationConfig?: AgentOrchestrationConfig;
+		agentOrchestrationConfig?: AgentOrchestrationConfig | null;
 		profilingGroupName: string;
 	}
 
@@ -230,7 +230,7 @@ export namespace MyNS {
 	/** The structure representing the putPermissionRequest. */
 	export interface PutPermissionRequest {
 		principals: Array<string>;
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 
@@ -399,13 +399,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w-.:/]+$
 		 */
-		fleetInstanceId?: string;
+		fleetInstanceId?: string | null;
 	}
 
 	export interface CreateProfilingGroupPostBody {
 
 		/** <p/> */
-		agentOrchestrationConfig?: CreateProfilingGroupPostBodyAgentOrchestrationConfig;
+		agentOrchestrationConfig?: CreateProfilingGroupPostBodyAgentOrchestrationConfig | null;
 
 		/**
 		 * The name of the profiling group.
@@ -418,7 +418,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateProfilingGroupPostBodyAgentOrchestrationConfig {
-		profilingEnabled?: boolean;
+		profilingEnabled?: boolean | null;
 	}
 
 	export interface UpdateProfilingGroupPutBody {
@@ -431,7 +431,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateProfilingGroupPutBodyAgentOrchestrationConfig {
-		profilingEnabled?: boolean;
+		profilingEnabled?: boolean | null;
 	}
 
 	export interface PostAgentProfilePostBody {
@@ -457,7 +457,7 @@ export namespace MyNS {
 		 * A unique identifier for the current revision of the policy. This is required, if a policy exists for the profiling group. This is not required when creating the policy for the first time.
 		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
 		 */
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 }

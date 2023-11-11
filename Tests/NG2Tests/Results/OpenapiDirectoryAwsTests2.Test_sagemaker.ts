@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AddTagsOutput {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -19,8 +19,8 @@ export namespace MyNS {
 	}
 
 	export interface AssociateTrialComponentResponse {
-		TrialComponentArn?: string;
-		TrialArn?: string;
+		TrialComponentArn?: string | null;
+		TrialArn?: string | null;
 	}
 
 	export interface AssociateTrialComponentRequest {
@@ -40,7 +40,7 @@ export namespace MyNS {
 
 	export interface CreateAlgorithmInput {
 		AlgorithmName: string;
-		AlgorithmDescription?: string;
+		AlgorithmDescription?: string | null;
 
 		/**
 		 * Defines how the algorithm is used for a training job.
@@ -49,38 +49,38 @@ export namespace MyNS {
 		TrainingSpecification: TrainingSpecification;
 
 		/** Defines how to perform inference generation after a training job is run. */
-		InferenceSpecification?: InferenceSpecification;
+		InferenceSpecification?: InferenceSpecification | null;
 
 		/** Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm. */
-		ValidationSpecification?: AlgorithmValidationSpecification;
-		CertifyForMarketplace?: boolean;
+		ValidationSpecification?: AlgorithmValidationSpecification | null;
+		CertifyForMarketplace?: boolean | null;
 	}
 
 
 	/** Defines how the algorithm is used for a training job. */
 	export interface TrainingSpecification {
 		TrainingImage: string;
-		TrainingImageDigest?: string;
-		SupportedHyperParameters?: Array<HyperParameterSpecification>;
+		TrainingImageDigest?: string | null;
+		SupportedHyperParameters?: Array<HyperParameterSpecification> | null;
 		SupportedTrainingInstanceTypes: Array<TrainingInstanceType>;
-		SupportsDistributedTraining?: boolean;
-		MetricDefinitions?: Array<MetricDefinition>;
+		SupportsDistributedTraining?: boolean | null;
+		MetricDefinitions?: Array<MetricDefinition> | null;
 		TrainingChannels: Array<ChannelSpecification>;
-		SupportedTuningJobObjectiveMetrics?: Array<HyperParameterTuningJobObjective>;
+		SupportedTuningJobObjectiveMetrics?: Array<HyperParameterTuningJobObjective> | null;
 	}
 
 
 	/** Defines a hyperparameter to be used by an algorithm. */
 	export interface HyperParameterSpecification {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		Type: HyperParameterSpecificationType;
 
 		/** Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm. */
-		Range?: ParameterRange;
-		IsTunable?: boolean;
-		IsRequired?: boolean;
-		DefaultValue?: string;
+		Range?: ParameterRange | null;
+		IsTunable?: boolean | null;
+		IsRequired?: boolean | null;
+		DefaultValue?: string | null;
 	}
 
 	export enum HyperParameterSpecificationType { Integer = 0, Continuous = 1, Categorical = 2, FreeText = 3 }
@@ -90,13 +90,13 @@ export namespace MyNS {
 	export interface ParameterRange {
 
 		/** Defines the possible values for an integer hyperparameter. */
-		IntegerParameterRangeSpecification?: IntegerParameterRangeSpecification;
+		IntegerParameterRangeSpecification?: IntegerParameterRangeSpecification | null;
 
 		/** Defines the possible values for a continuous hyperparameter. */
-		ContinuousParameterRangeSpecification?: ContinuousParameterRangeSpecification;
+		ContinuousParameterRangeSpecification?: ContinuousParameterRangeSpecification | null;
 
 		/** Defines the possible values for a categorical hyperparameter. */
-		CategoricalParameterRangeSpecification?: CategoricalParameterRangeSpecification;
+		CategoricalParameterRangeSpecification?: CategoricalParameterRangeSpecification | null;
 	}
 
 
@@ -132,10 +132,10 @@ export namespace MyNS {
 	/** Defines a named input source, called a channel, to be used by an algorithm. */
 	export interface ChannelSpecification {
 		Name: string;
-		Description?: string;
-		IsRequired?: boolean;
+		Description?: string | null;
+		IsRequired?: boolean | null;
 		SupportedContentTypes: Array<string>;
-		SupportedCompressionTypes?: Array<CompressionType>;
+		SupportedCompressionTypes?: Array<CompressionType> | null;
 		SupportedInputModes: Array<TrainingInputMode>;
 	}
 
@@ -165,11 +165,11 @@ export namespace MyNS {
 
 	/** Describes the Docker container for the model package. */
 	export interface ModelPackageContainerDefinition {
-		ContainerHostname?: string;
+		ContainerHostname?: string | null;
 		Image: string;
-		ImageDigest?: string;
-		ModelDataUrl?: string;
-		ProductId?: string;
+		ImageDigest?: string | null;
+		ModelDataUrl?: string | null;
+		ProductId?: string | null;
 	}
 
 	export enum TransformInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_c4_xlarge = 5, ml_c4_2xlarge = 6, ml_c4_4xlarge = 7, ml_c4_8xlarge = 8, ml_p2_xlarge = 9, ml_p2_8xlarge = 10, ml_p2_16xlarge = 11, ml_p3_2xlarge = 12, ml_p3_8xlarge = 13, ml_p3_16xlarge = 14, ml_c5_xlarge = 15, ml_c5_2xlarge = 16, ml_c5_4xlarge = 17, ml_c5_9xlarge = 18, ml_c5_18xlarge = 19, ml_m5_large = 20, ml_m5_xlarge = 21, ml_m5_2xlarge = 22, ml_m5_4xlarge = 23, ml_m5_12xlarge = 24, ml_m5_24xlarge = 25 }
@@ -195,14 +195,14 @@ export namespace MyNS {
 		TrainingJobDefinition: TrainingJobDefinition;
 
 		/** Defines the input needed to run a transform job using the inference specification specified in the algorithm. */
-		TransformJobDefinition?: TransformJobDefinition;
+		TransformJobDefinition?: TransformJobDefinition | null;
 	}
 
 
 	/** Defines the input needed to run a training job using the algorithm. */
 	export interface TrainingJobDefinition {
 		TrainingInputMode: TrainingInputMode;
-		HyperParameters?: HyperParameters;
+		HyperParameters?: HyperParameters | null;
 		InputDataConfig: Array<Channel>;
 
 		/**
@@ -237,13 +237,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSource: DataSource;
-		ContentType?: string;
-		CompressionType?: CompressionType;
-		RecordWrapperType?: ChannelRecordWrapperType;
-		InputMode?: TrainingInputMode;
+		ContentType?: string | null;
+		CompressionType?: CompressionType | null;
+		RecordWrapperType?: ChannelRecordWrapperType | null;
+		InputMode?: TrainingInputMode | null;
 
 		/** <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p> <p>For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p> */
-		ShuffleConfig?: ShuffleConfig;
+		ShuffleConfig?: ShuffleConfig | null;
 	}
 
 
@@ -251,10 +251,10 @@ export namespace MyNS {
 	export interface DataSource {
 
 		/** Describes the S3 data source. */
-		S3DataSource?: S3DataSource;
+		S3DataSource?: S3DataSource | null;
 
 		/** Specifies a file system data source for a channel. */
-		FileSystemDataSource?: FileSystemDataSource;
+		FileSystemDataSource?: FileSystemDataSource | null;
 	}
 
 
@@ -262,8 +262,8 @@ export namespace MyNS {
 	export interface S3DataSource {
 		S3DataType: S3DataSourceS3DataType;
 		S3Uri: string;
-		S3DataDistributionType?: S3DataSourceS3DataDistributionType;
-		AttributeNames?: Array<string>;
+		S3DataDistributionType?: S3DataSourceS3DataDistributionType | null;
+		AttributeNames?: Array<string> | null;
 	}
 
 	export enum S3DataSourceS3DataType { ManifestFile = 0, S3Prefix = 1, AugmentedManifestFile = 2 }
@@ -294,7 +294,7 @@ export namespace MyNS {
 
 	/** Provides information about how to store model training results (model artifacts). */
 	export interface OutputDataConfig {
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 		S3OutputPath: string;
 	}
 
@@ -304,7 +304,7 @@ export namespace MyNS {
 		InstanceType: ResourceConfigInstanceType;
 		InstanceCount: number;
 		VolumeSizeInGB: number;
-		VolumeKmsKeyId?: string;
+		VolumeKmsKeyId?: string | null;
 	}
 
 	export enum ResourceConfigInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_g4dn_xlarge = 5, ml_g4dn_2xlarge = 6, ml_g4dn_4xlarge = 7, ml_g4dn_8xlarge = 8, ml_g4dn_12xlarge = 9, ml_g4dn_16xlarge = 10, ml_m5_large = 11, ml_m5_xlarge = 12, ml_m5_2xlarge = 13, ml_m5_4xlarge = 14, ml_m5_12xlarge = 15, ml_m5_24xlarge = 16, ml_c4_xlarge = 17, ml_c4_2xlarge = 18, ml_c4_4xlarge = 19, ml_c4_8xlarge = 20, ml_p2_xlarge = 21, ml_p2_8xlarge = 22, ml_p2_16xlarge = 23, ml_p3_2xlarge = 24, ml_p3_8xlarge = 25, ml_p3_16xlarge = 26, ml_p3dn_24xlarge = 27, ml_c5_xlarge = 28, ml_c5_2xlarge = 29, ml_c5_4xlarge = 30, ml_c5_9xlarge = 31, ml_c5_18xlarge = 32, ml_c5n_xlarge = 33, ml_c5n_2xlarge = 34, ml_c5n_4xlarge = 35, ml_c5n_9xlarge = 36, ml_c5n_18xlarge = 37 }
@@ -312,17 +312,17 @@ export namespace MyNS {
 
 	/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
 	export interface StoppingCondition {
-		MaxRuntimeInSeconds?: number;
-		MaxWaitTimeInSeconds?: number;
+		MaxRuntimeInSeconds?: number | null;
+		MaxWaitTimeInSeconds?: number | null;
 	}
 
 
 	/** Defines the input needed to run a transform job using the inference specification specified in the algorithm. */
 	export interface TransformJobDefinition {
-		MaxConcurrentTransforms?: number;
-		MaxPayloadInMB?: number;
-		BatchStrategy?: TransformJobDefinitionBatchStrategy;
-		Environment?: TransformEnvironmentMap;
+		MaxConcurrentTransforms?: number | null;
+		MaxPayloadInMB?: number | null;
+		BatchStrategy?: TransformJobDefinitionBatchStrategy | null;
+		Environment?: TransformEnvironmentMap | null;
 
 		/**
 		 * Describes the input source of a transform job and the way the transform job consumes it.
@@ -357,9 +357,9 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSource: TransformDataSource;
-		ContentType?: string;
-		CompressionType?: CompressionType;
-		SplitType?: TransformInputSplitType;
+		ContentType?: string | null;
+		CompressionType?: CompressionType | null;
+		SplitType?: TransformInputSplitType | null;
 	}
 
 
@@ -386,9 +386,9 @@ export namespace MyNS {
 	/** Describes the results of a transform job. */
 	export interface TransformOutput {
 		S3OutputPath: string;
-		Accept?: string;
-		AssembleWith?: TransformOutputAssembleWith;
-		KmsKeyId?: string;
+		Accept?: string | null;
+		AssembleWith?: TransformOutputAssembleWith | null;
+		KmsKeyId?: string | null;
 	}
 
 	export enum TransformOutputAssembleWith { None = 0, Line = 1 }
@@ -398,13 +398,13 @@ export namespace MyNS {
 	export interface TransformResources {
 		InstanceType: TransformResourcesInstanceType;
 		InstanceCount: number;
-		VolumeKmsKeyId?: string;
+		VolumeKmsKeyId?: string | null;
 	}
 
 	export enum TransformResourcesInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_c4_xlarge = 5, ml_c4_2xlarge = 6, ml_c4_4xlarge = 7, ml_c4_8xlarge = 8, ml_p2_xlarge = 9, ml_p2_8xlarge = 10, ml_p2_16xlarge = 11, ml_p3_2xlarge = 12, ml_p3_8xlarge = 13, ml_p3_16xlarge = 14, ml_c5_xlarge = 15, ml_c5_2xlarge = 16, ml_c5_4xlarge = 17, ml_c5_9xlarge = 18, ml_c5_18xlarge = 19, ml_m5_large = 20, ml_m5_xlarge = 21, ml_m5_2xlarge = 22, ml_m5_4xlarge = 23, ml_m5_12xlarge = 24, ml_m5_24xlarge = 25 }
 
 	export interface CreateAppResponse {
-		AppArn?: string;
+		AppArn?: string | null;
 	}
 
 	export interface CreateAppRequest {
@@ -412,10 +412,10 @@ export namespace MyNS {
 		UserProfileName: string;
 		AppType: CreateAppRequestAppType;
 		AppName: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		ResourceSpec?: ResourceSpec;
+		ResourceSpec?: ResourceSpec | null;
 	}
 
 	export enum CreateAppRequestAppType { JupyterServer = 0, KernelGateway = 1, TensorBoard = 2 }
@@ -423,8 +423,8 @@ export namespace MyNS {
 
 	/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
 	export interface ResourceSpec {
-		SageMakerImageArn?: string;
-		InstanceType?: ResourceSpecInstanceType;
+		SageMakerImageArn?: string | null;
+		InstanceType?: ResourceSpecInstanceType | null;
 	}
 
 	export enum ResourceSpecInstanceType { system = 0, ml_t3_micro = 1, ml_t3_small = 2, ml_t3_medium = 3, ml_t3_large = 4, ml_t3_xlarge = 5, ml_t3_2xlarge = 6, ml_m5_large = 7, ml_m5_xlarge = 8, ml_m5_2xlarge = 9, ml_m5_4xlarge = 10, ml_m5_8xlarge = 11, ml_m5_12xlarge = 12, ml_m5_16xlarge = 13, ml_m5_24xlarge = 14, ml_c5_large = 15, ml_c5_xlarge = 16, ml_c5_2xlarge = 17, ml_c5_4xlarge = 18, ml_c5_9xlarge = 19, ml_c5_12xlarge = 20, ml_c5_18xlarge = 21, ml_c5_24xlarge = 22, ml_p3_2xlarge = 23, ml_p3_8xlarge = 24, ml_p3_16xlarge = 25, ml_g4dn_xlarge = 26, ml_g4dn_2xlarge = 27, ml_g4dn_4xlarge = 28, ml_g4dn_8xlarge = 29, ml_g4dn_12xlarge = 30, ml_g4dn_16xlarge = 31 }
@@ -445,16 +445,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		OutputDataConfig: AutoMLOutputDataConfig;
-		ProblemType?: CreateAutoMLJobRequestProblemType;
+		ProblemType?: CreateAutoMLJobRequestProblemType | null;
 
 		/** Applies a metric to minimize or maximize for the job's objective. */
-		AutoMLJobObjective?: AutoMLJobObjective;
+		AutoMLJobObjective?: AutoMLJobObjective | null;
 
 		/** A collection of settings used for a job. */
-		AutoMLJobConfig?: AutoMLJobConfig;
+		AutoMLJobConfig?: AutoMLJobConfig | null;
 		RoleArn: string;
-		GenerateCandidateDefinitionsOnly?: boolean;
-		Tags?: Array<Tag>;
+		GenerateCandidateDefinitionsOnly?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -466,7 +466,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSource: AutoMLDataSource;
-		CompressionType?: CompressionType;
+		CompressionType?: CompressionType | null;
 		TargetAttributeName: string;
 	}
 
@@ -493,7 +493,7 @@ export namespace MyNS {
 
 	/** The output data configuration. */
 	export interface AutoMLOutputDataConfig {
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 		S3OutputPath: string;
 	}
 
@@ -512,28 +512,28 @@ export namespace MyNS {
 	export interface AutoMLJobConfig {
 
 		/** How long a job is allowed to run, or how many candidates a job is allowed to generate. */
-		CompletionCriteria?: AutoMLJobCompletionCriteria;
+		CompletionCriteria?: AutoMLJobCompletionCriteria | null;
 
 		/** Security options. */
-		SecurityConfig?: AutoMLSecurityConfig;
+		SecurityConfig?: AutoMLSecurityConfig | null;
 	}
 
 
 	/** How long a job is allowed to run, or how many candidates a job is allowed to generate. */
 	export interface AutoMLJobCompletionCriteria {
-		MaxCandidates?: number;
-		MaxRuntimePerTrainingJobInSeconds?: number;
-		MaxAutoMLJobRuntimeInSeconds?: number;
+		MaxCandidates?: number | null;
+		MaxRuntimePerTrainingJobInSeconds?: number | null;
+		MaxAutoMLJobRuntimeInSeconds?: number | null;
 	}
 
 
 	/** Security options. */
 	export interface AutoMLSecurityConfig {
-		VolumeKmsKeyId?: string;
-		EnableInterContainerTrafficEncryption?: boolean;
+		VolumeKmsKeyId?: string | null;
+		EnableInterContainerTrafficEncryption?: boolean | null;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 
@@ -561,8 +561,8 @@ export namespace MyNS {
 	/** Specifies configuration details for a Git repository in your AWS account. */
 	export interface GitConfig {
 		RepositoryUrl: string;
-		Branch?: string;
-		SecretArn?: string;
+		Branch?: string | null;
+		SecretArn?: string | null;
 	}
 
 	export interface CreateCompilationJobResponse {
@@ -612,8 +612,8 @@ export namespace MyNS {
 	export enum OutputConfigTargetDevice { lambda = 0, ml_m4 = 1, ml_m5 = 2, ml_c4 = 3, ml_c5 = 4, ml_p2 = 5, ml_p3 = 6, ml_inf1 = 7, jetson_tx1 = 8, jetson_tx2 = 9, jetson_nano = 10, jetson_xavier = 11, rasp3b = 12, imx8qm = 13, deeplens = 14, rk3399 = 15, rk3288 = 16, aisage = 17, sbe_c = 18, qcs605 = 19, qcs603 = 20, sitara_am57x = 21, amba_cv22 = 22 }
 
 	export interface CreateDomainResponse {
-		DomainArn?: string;
-		Url?: string;
+		DomainArn?: string | null;
+		Url?: string | null;
 	}
 
 	export interface CreateDomainRequest {
@@ -627,8 +627,8 @@ export namespace MyNS {
 		DefaultUserSettings: UserSettings;
 		SubnetIds: Array<string>;
 		VpcId: string;
-		Tags?: Array<Tag>;
-		HomeEfsFileSystemKmsKeyId?: string;
+		Tags?: Array<Tag> | null;
+		HomeEfsFileSystemKmsKeyId?: string | null;
 	}
 
 	export enum CreateDomainRequestAuthMode { SSO = 0, IAM = 1 }
@@ -636,28 +636,28 @@ export namespace MyNS {
 
 	/** A collection of settings. */
 	export interface UserSettings {
-		ExecutionRole?: string;
-		SecurityGroups?: Array<string>;
+		ExecutionRole?: string | null;
+		SecurityGroups?: Array<string> | null;
 
 		/** Specifies options when sharing an Amazon SageMaker Studio notebook. These settings are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a> API is called. */
-		SharingSettings?: SharingSettings;
+		SharingSettings?: SharingSettings | null;
 
 		/** Jupyter server's app settings. */
-		JupyterServerAppSettings?: JupyterServerAppSettings;
+		JupyterServerAppSettings?: JupyterServerAppSettings | null;
 
 		/** The kernel gateway app settings. */
-		KernelGatewayAppSettings?: KernelGatewayAppSettings;
+		KernelGatewayAppSettings?: KernelGatewayAppSettings | null;
 
 		/** The TensorBoard app settings. */
-		TensorBoardAppSettings?: TensorBoardAppSettings;
+		TensorBoardAppSettings?: TensorBoardAppSettings | null;
 	}
 
 
 	/** Specifies options when sharing an Amazon SageMaker Studio notebook. These settings are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a> API is called. */
 	export interface SharingSettings {
-		NotebookOutputOption?: SharingSettingsNotebookOutputOption;
-		S3OutputPath?: string;
-		S3KmsKeyId?: string;
+		NotebookOutputOption?: SharingSettingsNotebookOutputOption | null;
+		S3OutputPath?: string | null;
+		S3KmsKeyId?: string | null;
 	}
 
 	export enum SharingSettingsNotebookOutputOption { Allowed = 0, Disabled = 1 }
@@ -667,7 +667,7 @@ export namespace MyNS {
 	export interface JupyterServerAppSettings {
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		DefaultResourceSpec?: ResourceSpec;
+		DefaultResourceSpec?: ResourceSpec | null;
 	}
 
 
@@ -675,7 +675,7 @@ export namespace MyNS {
 	export interface KernelGatewayAppSettings {
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		DefaultResourceSpec?: ResourceSpec;
+		DefaultResourceSpec?: ResourceSpec | null;
 	}
 
 
@@ -683,7 +683,7 @@ export namespace MyNS {
 	export interface TensorBoardAppSettings {
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		DefaultResourceSpec?: ResourceSpec;
+		DefaultResourceSpec?: ResourceSpec | null;
 	}
 
 	export interface CreateEndpointOutput {
@@ -693,7 +693,7 @@ export namespace MyNS {
 	export interface CreateEndpointInput {
 		EndpointName: string;
 		EndpointConfigName: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateEndpointConfigOutput {
@@ -705,9 +705,9 @@ export namespace MyNS {
 		ProductionVariants: Array<ProductionVariant>;
 
 		/** <p/> */
-		DataCaptureConfig?: DataCaptureConfig;
-		Tags?: Array<Tag>;
-		KmsKeyId?: string;
+		DataCaptureConfig?: DataCaptureConfig | null;
+		Tags?: Array<Tag> | null;
+		KmsKeyId?: string | null;
 	}
 
 
@@ -717,8 +717,8 @@ export namespace MyNS {
 		ModelName: string;
 		InitialInstanceCount: number;
 		InstanceType: ProductionVariantInstanceType;
-		InitialVariantWeight?: number;
-		AcceleratorType?: ProductionVariantAcceleratorType;
+		InitialVariantWeight?: number | null;
+		AcceleratorType?: ProductionVariantAcceleratorType | null;
 	}
 
 	export enum ProductionVariantAcceleratorType { ml_eia1_medium = 0, ml_eia1_large = 1, ml_eia1_xlarge = 2, ml_eia2_medium = 3, ml_eia2_large = 4, ml_eia2_xlarge = 5 }
@@ -726,14 +726,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DataCaptureConfig {
-		EnableCapture?: boolean;
+		EnableCapture?: boolean | null;
 		InitialSamplingPercentage: number;
 		DestinationS3Uri: string;
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 		CaptureOptions: Array<CaptureOption>;
 
 		/** <p/> */
-		CaptureContentTypeHeader?: CaptureContentTypeHeader;
+		CaptureContentTypeHeader?: CaptureContentTypeHeader | null;
 	}
 
 
@@ -747,19 +747,19 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CaptureContentTypeHeader {
-		CsvContentTypes?: Array<string>;
-		JsonContentTypes?: Array<string>;
+		CsvContentTypes?: Array<string> | null;
+		JsonContentTypes?: Array<string> | null;
 	}
 
 	export interface CreateExperimentResponse {
-		ExperimentArn?: string;
+		ExperimentArn?: string | null;
 	}
 
 	export interface CreateExperimentRequest {
 		ExperimentName: string;
-		DisplayName?: string;
-		Description?: string;
-		Tags?: Array<Tag>;
+		DisplayName?: string | null;
+		Description?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateFlowDefinitionResponse {
@@ -770,10 +770,10 @@ export namespace MyNS {
 		FlowDefinitionName: string;
 
 		/** Container for configuring the source of human task requests. */
-		HumanLoopRequestSource?: HumanLoopRequestSource;
+		HumanLoopRequestSource?: HumanLoopRequestSource | null;
 
 		/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
-		HumanLoopActivationConfig?: HumanLoopActivationConfig;
+		HumanLoopActivationConfig?: HumanLoopActivationConfig | null;
 
 		/**
 		 * Describes the work to be performed by human workers.
@@ -787,7 +787,7 @@ export namespace MyNS {
 		 */
 		OutputConfig: FlowDefinitionOutputConfig;
 		RoleArn: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -823,12 +823,12 @@ export namespace MyNS {
 		TaskTitle: string;
 		TaskDescription: string;
 		TaskCount: number;
-		TaskAvailabilityLifetimeInSeconds?: number;
-		TaskTimeLimitInSeconds?: number;
-		TaskKeywords?: Array<string>;
+		TaskAvailabilityLifetimeInSeconds?: number | null;
+		TaskTimeLimitInSeconds?: number | null;
+		TaskKeywords?: Array<string> | null;
 
 		/** <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p> <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p> <ul> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p> <ul> <li> <p>0.012</p> </li> <li> <p>0.024</p> </li> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p> <ul> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>2.400 </p> </li> <li> <p>2.280 </p> </li> <li> <p>2.160 </p> </li> <li> <p>2.040 </p> </li> <li> <p>1.920 </p> </li> <li> <p>1.800 </p> </li> <li> <p>1.680 </p> </li> <li> <p>1.560 </p> </li> <li> <p>1.440 </p> </li> <li> <p>1.320 </p> </li> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> */
-		PublicWorkforceTaskPrice?: PublicWorkforceTaskPrice;
+		PublicWorkforceTaskPrice?: PublicWorkforceTaskPrice | null;
 	}
 
 
@@ -836,22 +836,22 @@ export namespace MyNS {
 	export interface PublicWorkforceTaskPrice {
 
 		/** Represents an amount of money in United States dollars/ */
-		AmountInUsd?: USD;
+		AmountInUsd?: USD | null;
 	}
 
 
 	/** Represents an amount of money in United States dollars/ */
 	export interface USD {
-		Dollars?: number;
-		Cents?: number;
-		TenthFractionsOfACent?: number;
+		Dollars?: number | null;
+		Cents?: number | null;
+		TenthFractionsOfACent?: number | null;
 	}
 
 
 	/** Contains information about where human output will be stored. */
 	export interface FlowDefinitionOutputConfig {
 		S3OutputPath: string;
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 	}
 
 	export interface CreateHumanTaskUiResponse {
@@ -866,7 +866,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		UiTemplate: UiTemplate;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -889,12 +889,12 @@ export namespace MyNS {
 		HyperParameterTuningJobConfig: HyperParameterTuningJobConfig;
 
 		/** Defines the training jobs launched by a hyperparameter tuning job. */
-		TrainingJobDefinition?: HyperParameterTrainingJobDefinition;
-		TrainingJobDefinitions?: Array<HyperParameterTrainingJobDefinition>;
+		TrainingJobDefinition?: HyperParameterTrainingJobDefinition | null;
+		TrainingJobDefinitions?: Array<HyperParameterTrainingJobDefinition> | null;
 
 		/** <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p> <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note> <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p> </note> */
-		WarmStartConfig?: HyperParameterTuningJobWarmStartConfig;
-		Tags?: Array<Tag>;
+		WarmStartConfig?: HyperParameterTuningJobWarmStartConfig | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -908,7 +908,7 @@ export namespace MyNS {
 		Strategy: HyperParameterTuningJobConfigStrategy;
 
 		/** Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter. */
-		HyperParameterTuningJobObjective?: HyperParameterTuningJobObjective;
+		HyperParameterTuningJobObjective?: HyperParameterTuningJobObjective | null;
 
 		/**
 		 * Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.
@@ -917,11 +917,11 @@ export namespace MyNS {
 		ResourceLimits: ResourceLimits;
 
 		/** <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note> */
-		ParameterRanges?: ParameterRanges;
-		TrainingJobEarlyStoppingType?: HyperParameterTuningJobConfigTrainingJobEarlyStoppingType;
+		ParameterRanges?: ParameterRanges | null;
+		TrainingJobEarlyStoppingType?: HyperParameterTuningJobConfigTrainingJobEarlyStoppingType | null;
 
 		/** The job completion criteria. */
-		TuningJobCompletionCriteria?: TuningJobCompletionCriteria;
+		TuningJobCompletionCriteria?: TuningJobCompletionCriteria | null;
 	}
 
 	export enum HyperParameterTuningJobConfigStrategy { Bayesian = 0, Random = 1 }
@@ -936,9 +936,9 @@ export namespace MyNS {
 
 	/** <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note> */
 	export interface ParameterRanges {
-		IntegerParameterRanges?: Array<IntegerParameterRange>;
-		ContinuousParameterRanges?: Array<ContinuousParameterRange>;
-		CategoricalParameterRanges?: Array<CategoricalParameterRange>;
+		IntegerParameterRanges?: Array<IntegerParameterRange> | null;
+		ContinuousParameterRanges?: Array<ContinuousParameterRange> | null;
+		CategoricalParameterRanges?: Array<CategoricalParameterRange> | null;
 	}
 
 
@@ -947,7 +947,7 @@ export namespace MyNS {
 		Name: string;
 		MinValue: string;
 		MaxValue: string;
-		ScalingType?: IntegerParameterRangeScalingType;
+		ScalingType?: IntegerParameterRangeScalingType | null;
 	}
 
 	export enum IntegerParameterRangeScalingType { Auto = 0, Linear = 1, Logarithmic = 2, ReverseLogarithmic = 3 }
@@ -958,7 +958,7 @@ export namespace MyNS {
 		Name: string;
 		MinValue: string;
 		MaxValue: string;
-		ScalingType?: IntegerParameterRangeScalingType;
+		ScalingType?: IntegerParameterRangeScalingType | null;
 	}
 
 
@@ -979,14 +979,14 @@ export namespace MyNS {
 
 	/** Defines the training jobs launched by a hyperparameter tuning job. */
 	export interface HyperParameterTrainingJobDefinition {
-		DefinitionName?: string;
+		DefinitionName?: string | null;
 
 		/** Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter. */
-		TuningObjective?: HyperParameterTuningJobObjective;
+		TuningObjective?: HyperParameterTuningJobObjective | null;
 
 		/** <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note> */
-		HyperParameterRanges?: ParameterRanges;
-		StaticHyperParameters?: HyperParameters;
+		HyperParameterRanges?: ParameterRanges | null;
+		StaticHyperParameters?: HyperParameters | null;
 
 		/**
 		 * Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.
@@ -994,10 +994,10 @@ export namespace MyNS {
 		 */
 		AlgorithmSpecification: HyperParameterAlgorithmSpecification;
 		RoleArn: string;
-		InputDataConfig?: Array<Channel>;
+		InputDataConfig?: Array<Channel> | null;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 
 		/**
 		 * Provides information about how to store model training results (model artifacts).
@@ -1016,28 +1016,28 @@ export namespace MyNS {
 		 * Required
 		 */
 		StoppingCondition: StoppingCondition;
-		EnableNetworkIsolation?: boolean;
-		EnableInterContainerTrafficEncryption?: boolean;
-		EnableManagedSpotTraining?: boolean;
+		EnableNetworkIsolation?: boolean | null;
+		EnableInterContainerTrafficEncryption?: boolean | null;
+		EnableManagedSpotTraining?: boolean | null;
 
 		/** Contains information about the output location for managed spot training checkpoint data. */
-		CheckpointConfig?: CheckpointConfig;
+		CheckpointConfig?: CheckpointConfig | null;
 	}
 
 
 	/** Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor. */
 	export interface HyperParameterAlgorithmSpecification {
-		TrainingImage?: string;
+		TrainingImage?: string | null;
 		TrainingInputMode: TrainingInputMode;
-		AlgorithmName?: string;
-		MetricDefinitions?: Array<MetricDefinition>;
+		AlgorithmName?: string | null;
+		MetricDefinitions?: Array<MetricDefinition> | null;
 	}
 
 
 	/** Contains information about the output location for managed spot training checkpoint data.  */
 	export interface CheckpointConfig {
 		S3Uri: string;
-		LocalPath?: string;
+		LocalPath?: string | null;
 	}
 
 
@@ -1050,7 +1050,7 @@ export namespace MyNS {
 
 	/** A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job. */
 	export interface ParentHyperParameterTuningJob {
-		HyperParameterTuningJobName?: string;
+		HyperParameterTuningJobName?: string | null;
 	}
 
 	export enum HyperParameterTuningJobWarmStartConfigWarmStartType { IdenticalDataAndAlgorithm = 0, TransferLearning = 1 }
@@ -1075,20 +1075,20 @@ export namespace MyNS {
 		 */
 		OutputConfig: LabelingJobOutputConfig;
 		RoleArn: string;
-		LabelCategoryConfigS3Uri?: string;
+		LabelCategoryConfigS3Uri?: string | null;
 
 		/** <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p> <note> <p>Labeling jobs fail after 30 days with an appropriate client error message.</p> </note> */
-		StoppingConditions?: LabelingJobStoppingConditions;
+		StoppingConditions?: LabelingJobStoppingConditions | null;
 
 		/** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling. */
-		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig;
+		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig | null;
 
 		/**
 		 * Information required for human workers to complete a labeling task.
 		 * Required
 		 */
 		HumanTaskConfig: HumanTaskConfig;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1102,7 +1102,7 @@ export namespace MyNS {
 		DataSource: LabelingJobDataSource;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
-		DataAttributes?: LabelingJobDataAttributes;
+		DataAttributes?: LabelingJobDataAttributes | null;
 	}
 
 
@@ -1125,7 +1125,7 @@ export namespace MyNS {
 
 	/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
 	export interface LabelingJobDataAttributes {
-		ContentClassifiers?: Array<ContentClassifier>;
+		ContentClassifiers?: Array<ContentClassifier> | null;
 	}
 
 	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
@@ -1134,30 +1134,30 @@ export namespace MyNS {
 	/** Output configuration information for a labeling job. */
 	export interface LabelingJobOutputConfig {
 		S3OutputPath: string;
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 	}
 
 
 	/** <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p> <note> <p>Labeling jobs fail after 30 days with an appropriate client error message.</p> </note> */
 	export interface LabelingJobStoppingConditions {
-		MaxHumanLabeledObjectCount?: number;
-		MaxPercentageOfInputDatasetLabeled?: number;
+		MaxHumanLabeledObjectCount?: number | null;
+		MaxPercentageOfInputDatasetLabeled?: number | null;
 	}
 
 
 	/** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling. */
 	export interface LabelingJobAlgorithmsConfig {
 		LabelingJobAlgorithmSpecificationArn: string;
-		InitialActiveLearningModelArn?: string;
+		InitialActiveLearningModelArn?: string | null;
 
 		/** Provides configuration information for labeling jobs. */
-		LabelingJobResourceConfig?: LabelingJobResourceConfig;
+		LabelingJobResourceConfig?: LabelingJobResourceConfig | null;
 	}
 
 
 	/** Provides configuration information for labeling jobs. */
 	export interface LabelingJobResourceConfig {
-		VolumeKmsKeyId?: string;
+		VolumeKmsKeyId?: string | null;
 	}
 
 
@@ -1171,13 +1171,13 @@ export namespace MyNS {
 		 */
 		UiConfig: UiConfig;
 		PreHumanTaskLambdaArn: string;
-		TaskKeywords?: Array<string>;
+		TaskKeywords?: Array<string> | null;
 		TaskTitle: string;
 		TaskDescription: string;
 		NumberOfHumanWorkersPerDataObject: number;
 		TaskTimeLimitInSeconds: number;
-		TaskAvailabilityLifetimeInSeconds?: number;
-		MaxConcurrentTaskCount?: number;
+		TaskAvailabilityLifetimeInSeconds?: number | null;
+		MaxConcurrentTaskCount?: number | null;
 
 		/**
 		 * Configures how labels are consolidated across human workers.
@@ -1186,14 +1186,14 @@ export namespace MyNS {
 		AnnotationConsolidationConfig: AnnotationConsolidationConfig;
 
 		/** <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p> <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p> <ul> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p> <ul> <li> <p>0.012</p> </li> <li> <p>0.024</p> </li> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p> <ul> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>2.400 </p> </li> <li> <p>2.280 </p> </li> <li> <p>2.160 </p> </li> <li> <p>2.040 </p> </li> <li> <p>1.920 </p> </li> <li> <p>1.800 </p> </li> <li> <p>1.680 </p> </li> <li> <p>1.560 </p> </li> <li> <p>1.440 </p> </li> <li> <p>1.320 </p> </li> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> */
-		PublicWorkforceTaskPrice?: PublicWorkforceTaskPrice;
+		PublicWorkforceTaskPrice?: PublicWorkforceTaskPrice | null;
 	}
 
 
 	/** Provided configuration information for the worker UI for a labeling job.  */
 	export interface UiConfig {
-		UiTemplateS3Uri?: string;
-		HumanTaskUiArn?: string;
+		UiTemplateS3Uri?: string | null;
+		HumanTaskUiArn?: string | null;
 	}
 
 
@@ -1210,25 +1210,25 @@ export namespace MyNS {
 		ModelName: string;
 
 		/** Describes the container, as part of model definition. */
-		PrimaryContainer?: ContainerDefinition;
-		Containers?: Array<ContainerDefinition>;
+		PrimaryContainer?: ContainerDefinition | null;
+		Containers?: Array<ContainerDefinition> | null;
 		ExecutionRoleArn: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig;
-		EnableNetworkIsolation?: boolean;
+		VpcConfig?: VpcConfig | null;
+		EnableNetworkIsolation?: boolean | null;
 	}
 
 
 	/** Describes the container, as part of model definition. */
 	export interface ContainerDefinition {
-		ContainerHostname?: string;
-		Image?: string;
-		Mode?: ContainerDefinitionMode;
-		ModelDataUrl?: string;
-		Environment?: EnvironmentMap;
-		ModelPackageName?: string;
+		ContainerHostname?: string | null;
+		Image?: string | null;
+		Mode?: ContainerDefinitionMode | null;
+		ModelDataUrl?: string | null;
+		Environment?: EnvironmentMap | null;
+		ModelPackageName?: string | null;
 	}
 
 	export enum ContainerDefinitionMode { SingleModel = 0, MultiModel = 1 }
@@ -1242,17 +1242,17 @@ export namespace MyNS {
 
 	export interface CreateModelPackageInput {
 		ModelPackageName: string;
-		ModelPackageDescription?: string;
+		ModelPackageDescription?: string | null;
 
 		/** Defines how to perform inference generation after a training job is run. */
-		InferenceSpecification?: InferenceSpecification;
+		InferenceSpecification?: InferenceSpecification | null;
 
 		/** Specifies batch transform jobs that Amazon SageMaker runs to validate your model package. */
-		ValidationSpecification?: ModelPackageValidationSpecification;
+		ValidationSpecification?: ModelPackageValidationSpecification | null;
 
 		/** A list of algorithms that were used to create a model package. */
-		SourceAlgorithmSpecification?: SourceAlgorithmSpecification;
-		CertifyForMarketplace?: boolean;
+		SourceAlgorithmSpecification?: SourceAlgorithmSpecification | null;
+		CertifyForMarketplace?: boolean | null;
 	}
 
 
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 
 	/** Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to. */
 	export interface SourceAlgorithm {
-		ModelDataUrl?: string;
+		ModelDataUrl?: string | null;
 		AlgorithmName: string;
 	}
 
@@ -1299,7 +1299,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		MonitoringScheduleConfig: MonitoringScheduleConfig;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1307,7 +1307,7 @@ export namespace MyNS {
 	export interface MonitoringScheduleConfig {
 
 		/** Configuration details about the monitoring schedule. */
-		ScheduleConfig?: ScheduleConfig;
+		ScheduleConfig?: ScheduleConfig | null;
 
 		/**
 		 * Defines the monitoring job.
@@ -1327,7 +1327,7 @@ export namespace MyNS {
 	export interface MonitoringJobDefinition {
 
 		/** Configuration for monitoring constraints and monitoring statistics. These baseline resources are compared against the results of the current job from the series of jobs scheduled to collect data periodically. */
-		BaselineConfig?: MonitoringBaselineConfig;
+		BaselineConfig?: MonitoringBaselineConfig | null;
 		MonitoringInputs: Array<MonitoringInput>;
 
 		/**
@@ -1349,11 +1349,11 @@ export namespace MyNS {
 		MonitoringAppSpecification: MonitoringAppSpecification;
 
 		/** A time limit for how long the monitoring job is allowed to run before stopping. */
-		StoppingCondition?: MonitoringStoppingCondition;
-		Environment?: MonitoringEnvironmentMap;
+		StoppingCondition?: MonitoringStoppingCondition | null;
+		Environment?: MonitoringEnvironmentMap | null;
 
 		/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
-		NetworkConfig?: NetworkConfig;
+		NetworkConfig?: NetworkConfig | null;
 		RoleArn: string;
 	}
 
@@ -1362,22 +1362,22 @@ export namespace MyNS {
 	export interface MonitoringBaselineConfig {
 
 		/** The constraints resource for a monitoring job. */
-		ConstraintsResource?: MonitoringConstraintsResource;
+		ConstraintsResource?: MonitoringConstraintsResource | null;
 
 		/** The statistics resource for a monitoring job. */
-		StatisticsResource?: MonitoringStatisticsResource;
+		StatisticsResource?: MonitoringStatisticsResource | null;
 	}
 
 
 	/** The constraints resource for a monitoring job. */
 	export interface MonitoringConstraintsResource {
-		S3Uri?: string;
+		S3Uri?: string | null;
 	}
 
 
 	/** The statistics resource for a monitoring job. */
 	export interface MonitoringStatisticsResource {
-		S3Uri?: string;
+		S3Uri?: string | null;
 	}
 
 
@@ -1396,15 +1396,15 @@ export namespace MyNS {
 	export interface EndpointInput {
 		EndpointName: string;
 		LocalPath: string;
-		S3InputMode?: TrainingInputMode;
-		S3DataDistributionType?: S3DataSourceS3DataDistributionType;
+		S3InputMode?: TrainingInputMode | null;
+		S3DataDistributionType?: S3DataSourceS3DataDistributionType | null;
 	}
 
 
 	/** The output configuration for monitoring jobs. */
 	export interface MonitoringOutputConfig {
 		MonitoringOutputs: Array<MonitoringOutput>;
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 	}
 
 
@@ -1423,7 +1423,7 @@ export namespace MyNS {
 	export interface MonitoringS3Output {
 		S3Uri: string;
 		LocalPath: string;
-		S3UploadMode?: MonitoringS3OutputS3UploadMode;
+		S3UploadMode?: MonitoringS3OutputS3UploadMode | null;
 	}
 
 	export enum MonitoringS3OutputS3UploadMode { Continuous = 0, EndOfJob = 1 }
@@ -1445,7 +1445,7 @@ export namespace MyNS {
 		InstanceCount: number;
 		InstanceType: MonitoringClusterConfigInstanceType;
 		VolumeSizeInGB: number;
-		VolumeKmsKeyId?: string;
+		VolumeKmsKeyId?: string | null;
 	}
 
 	export enum MonitoringClusterConfigInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
@@ -1454,10 +1454,10 @@ export namespace MyNS {
 	/** Container image configuration object for the monitoring job. */
 	export interface MonitoringAppSpecification {
 		ImageUri: string;
-		ContainerEntrypoint?: Array<string>;
-		ContainerArguments?: Array<string>;
-		RecordPreprocessorSourceUri?: string;
-		PostAnalyticsProcessorSourceUri?: string;
+		ContainerEntrypoint?: Array<string> | null;
+		ContainerArguments?: Array<string> | null;
+		RecordPreprocessorSourceUri?: string | null;
+		PostAnalyticsProcessorSourceUri?: string | null;
 	}
 
 
@@ -1472,32 +1472,32 @@ export namespace MyNS {
 
 	/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
 	export interface NetworkConfig {
-		EnableInterContainerTrafficEncryption?: boolean;
-		EnableNetworkIsolation?: boolean;
+		EnableInterContainerTrafficEncryption?: boolean | null;
+		EnableNetworkIsolation?: boolean | null;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export interface CreateNotebookInstanceOutput {
-		NotebookInstanceArn?: string;
+		NotebookInstanceArn?: string | null;
 	}
 
 	export interface CreateNotebookInstanceInput {
 		NotebookInstanceName: string;
 		InstanceType: CreateNotebookInstanceInputInstanceType;
-		SubnetId?: string;
-		SecurityGroupIds?: Array<string>;
+		SubnetId?: string | null;
+		SecurityGroupIds?: Array<string> | null;
 		RoleArn: string;
-		KmsKeyId?: string;
-		Tags?: Array<Tag>;
-		LifecycleConfigName?: string;
-		DirectInternetAccess?: CreateNotebookInstanceInputDirectInternetAccess;
-		VolumeSizeInGB?: number;
-		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType>;
-		DefaultCodeRepository?: string;
-		AdditionalCodeRepositories?: Array<string>;
-		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess;
+		KmsKeyId?: string | null;
+		Tags?: Array<Tag> | null;
+		LifecycleConfigName?: string | null;
+		DirectInternetAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
+		VolumeSizeInGB?: number | null;
+		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType> | null;
+		DefaultCodeRepository?: string | null;
+		AdditionalCodeRepositories?: Array<string> | null;
+		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
 	}
 
 	export enum CreateNotebookInstanceInputInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
@@ -1507,38 +1507,38 @@ export namespace MyNS {
 	export enum NotebookInstanceAcceleratorType { ml_eia1_medium = 0, ml_eia1_large = 1, ml_eia1_xlarge = 2, ml_eia2_medium = 3, ml_eia2_large = 4, ml_eia2_xlarge = 5 }
 
 	export interface CreateNotebookInstanceLifecycleConfigOutput {
-		NotebookInstanceLifecycleConfigArn?: string;
+		NotebookInstanceLifecycleConfigArn?: string | null;
 	}
 
 	export interface CreateNotebookInstanceLifecycleConfigInput {
 		NotebookInstanceLifecycleConfigName: string;
-		OnCreate?: Array<NotebookInstanceLifecycleHook>;
-		OnStart?: Array<NotebookInstanceLifecycleHook>;
+		OnCreate?: Array<NotebookInstanceLifecycleHook> | null;
+		OnStart?: Array<NotebookInstanceLifecycleHook> | null;
 	}
 
 
 	/** <p>Contains the notebook instance lifecycle configuration script.</p> <p>Each lifecycle configuration script has a limit of 16384 characters.</p> <p>The value of the <code>$PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.</p> <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p> */
 	export interface NotebookInstanceLifecycleHook {
-		Content?: string;
+		Content?: string | null;
 	}
 
 	export interface CreatePresignedDomainUrlResponse {
-		AuthorizedUrl?: string;
+		AuthorizedUrl?: string | null;
 	}
 
 	export interface CreatePresignedDomainUrlRequest {
 		DomainId: string;
 		UserProfileName: string;
-		SessionExpirationDurationInSeconds?: number;
+		SessionExpirationDurationInSeconds?: number | null;
 	}
 
 	export interface CreatePresignedNotebookInstanceUrlOutput {
-		AuthorizedUrl?: string;
+		AuthorizedUrl?: string | null;
 	}
 
 	export interface CreatePresignedNotebookInstanceUrlInput {
 		NotebookInstanceName: string;
-		SessionExpirationDurationInSeconds?: number;
+		SessionExpirationDurationInSeconds?: number | null;
 	}
 
 	export interface CreateProcessingJobResponse {
@@ -1546,10 +1546,10 @@ export namespace MyNS {
 	}
 
 	export interface CreateProcessingJobRequest {
-		ProcessingInputs?: Array<ProcessingInput>;
+		ProcessingInputs?: Array<ProcessingInput> | null;
 
 		/** The output configuration for the processing job. */
-		ProcessingOutputConfig?: ProcessingOutputConfig;
+		ProcessingOutputConfig?: ProcessingOutputConfig | null;
 		ProcessingJobName: string;
 
 		/**
@@ -1559,22 +1559,22 @@ export namespace MyNS {
 		ProcessingResources: ProcessingResources;
 
 		/** Specifies a time limit for how long the processing job is allowed to run. */
-		StoppingCondition?: ProcessingStoppingCondition;
+		StoppingCondition?: ProcessingStoppingCondition | null;
 
 		/**
 		 * Configuration to run a processing job in a specified container image.
 		 * Required
 		 */
 		AppSpecification: AppSpecification;
-		Environment?: ProcessingEnvironmentMap;
+		Environment?: ProcessingEnvironmentMap | null;
 
 		/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
-		NetworkConfig?: NetworkConfig;
+		NetworkConfig?: NetworkConfig | null;
 		RoleArn: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig;
+		ExperimentConfig?: ExperimentConfig | null;
 	}
 
 
@@ -1596,15 +1596,15 @@ export namespace MyNS {
 		LocalPath: string;
 		S3DataType: AutoMLS3DataSourceS3DataType;
 		S3InputMode: TrainingInputMode;
-		S3DataDistributionType?: S3DataSourceS3DataDistributionType;
-		S3CompressionType?: CompressionType;
+		S3DataDistributionType?: S3DataSourceS3DataDistributionType | null;
+		S3CompressionType?: CompressionType | null;
 	}
 
 
 	/** The output configuration for the processing job. */
 	export interface ProcessingOutputConfig {
 		Outputs: Array<ProcessingOutput>;
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 	}
 
 
@@ -1644,7 +1644,7 @@ export namespace MyNS {
 		InstanceCount: number;
 		InstanceType: ProcessingClusterConfigInstanceType;
 		VolumeSizeInGB: number;
-		VolumeKmsKeyId?: string;
+		VolumeKmsKeyId?: string | null;
 	}
 
 	export enum ProcessingClusterConfigInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
@@ -1659,8 +1659,8 @@ export namespace MyNS {
 	/** Configuration to run a processing job in a specified container image. */
 	export interface AppSpecification {
 		ImageUri: string;
-		ContainerEntrypoint?: Array<string>;
-		ContainerArguments?: Array<string>;
+		ContainerEntrypoint?: Array<string> | null;
+		ContainerArguments?: Array<string> | null;
 	}
 
 	export interface ProcessingEnvironmentMap {
@@ -1669,9 +1669,9 @@ export namespace MyNS {
 
 	/** Configuration for the experiment. */
 	export interface ExperimentConfig {
-		ExperimentName?: string;
-		TrialName?: string;
-		TrialComponentDisplayName?: string;
+		ExperimentName?: string | null;
+		TrialName?: string | null;
+		TrialComponentDisplayName?: string | null;
 	}
 
 	export interface CreateTrainingJobResponse {
@@ -1680,7 +1680,7 @@ export namespace MyNS {
 
 	export interface CreateTrainingJobRequest {
 		TrainingJobName: string;
-		HyperParameters?: HyperParameters;
+		HyperParameters?: HyperParameters | null;
 
 		/**
 		 * <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
@@ -1688,7 +1688,7 @@ export namespace MyNS {
 		 */
 		AlgorithmSpecification: AlgorithmSpecification;
 		RoleArn: string;
-		InputDataConfig?: Array<Channel>;
+		InputDataConfig?: Array<Channel> | null;
 
 		/**
 		 * Provides information about how to store model training results (model artifacts).
@@ -1703,49 +1703,49 @@ export namespace MyNS {
 		ResourceConfig: ResourceConfig;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 
 		/**
 		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
 		 * Required
 		 */
 		StoppingCondition: StoppingCondition;
-		Tags?: Array<Tag>;
-		EnableNetworkIsolation?: boolean;
-		EnableInterContainerTrafficEncryption?: boolean;
-		EnableManagedSpotTraining?: boolean;
+		Tags?: Array<Tag> | null;
+		EnableNetworkIsolation?: boolean | null;
+		EnableInterContainerTrafficEncryption?: boolean | null;
+		EnableManagedSpotTraining?: boolean | null;
 
 		/** Contains information about the output location for managed spot training checkpoint data. */
-		CheckpointConfig?: CheckpointConfig;
+		CheckpointConfig?: CheckpointConfig | null;
 
 		/** Configuration information for the debug hook parameters, collection configuration, and storage paths. */
-		DebugHookConfig?: DebugHookConfig;
-		DebugRuleConfigurations?: Array<DebugRuleConfiguration>;
+		DebugHookConfig?: DebugHookConfig | null;
+		DebugRuleConfigurations?: Array<DebugRuleConfiguration> | null;
 
 		/** Configuration of storage locations for TensorBoard output. */
-		TensorBoardOutputConfig?: TensorBoardOutputConfig;
+		TensorBoardOutputConfig?: TensorBoardOutputConfig | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig;
+		ExperimentConfig?: ExperimentConfig | null;
 	}
 
 
 	/** <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> */
 	export interface AlgorithmSpecification {
-		TrainingImage?: string;
-		AlgorithmName?: string;
+		TrainingImage?: string | null;
+		AlgorithmName?: string | null;
 		TrainingInputMode: TrainingInputMode;
-		MetricDefinitions?: Array<MetricDefinition>;
-		EnableSageMakerMetricsTimeSeries?: boolean;
+		MetricDefinitions?: Array<MetricDefinition> | null;
+		EnableSageMakerMetricsTimeSeries?: boolean | null;
 	}
 
 
 	/** Configuration information for the debug hook parameters, collection configuration, and storage paths. */
 	export interface DebugHookConfig {
-		LocalPath?: string;
+		LocalPath?: string | null;
 		S3OutputPath: string;
-		HookParameters?: HookParameters;
-		CollectionConfigurations?: Array<CollectionConfiguration>;
+		HookParameters?: HookParameters | null;
+		CollectionConfigurations?: Array<CollectionConfiguration> | null;
 	}
 
 	export interface HookParameters {
@@ -1754,8 +1754,8 @@ export namespace MyNS {
 
 	/** Configuration information for tensor collections. */
 	export interface CollectionConfiguration {
-		CollectionName?: string;
-		CollectionParameters?: CollectionParameters;
+		CollectionName?: string | null;
+		CollectionParameters?: CollectionParameters | null;
 	}
 
 	export interface CollectionParameters {
@@ -1765,12 +1765,12 @@ export namespace MyNS {
 	/** Configuration information for debugging rules. */
 	export interface DebugRuleConfiguration {
 		RuleConfigurationName: string;
-		LocalPath?: string;
-		S3OutputPath?: string;
+		LocalPath?: string | null;
+		S3OutputPath?: string | null;
 		RuleEvaluatorImage: string;
-		InstanceType?: DebugRuleConfigurationInstanceType;
-		VolumeSizeInGB?: number;
-		RuleParameters?: RuleParameters;
+		InstanceType?: DebugRuleConfigurationInstanceType | null;
+		VolumeSizeInGB?: number | null;
+		RuleParameters?: RuleParameters | null;
 	}
 
 	export enum DebugRuleConfigurationInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
@@ -1781,7 +1781,7 @@ export namespace MyNS {
 
 	/** Configuration of storage locations for TensorBoard output. */
 	export interface TensorBoardOutputConfig {
-		LocalPath?: string;
+		LocalPath?: string | null;
 		S3OutputPath: string;
 	}
 
@@ -1792,10 +1792,10 @@ export namespace MyNS {
 	export interface CreateTransformJobRequest {
 		TransformJobName: string;
 		ModelName: string;
-		MaxConcurrentTransforms?: number;
-		MaxPayloadInMB?: number;
-		BatchStrategy?: TransformJobDefinitionBatchStrategy;
-		Environment?: TransformEnvironmentMap;
+		MaxConcurrentTransforms?: number | null;
+		MaxPayloadInMB?: number | null;
+		BatchStrategy?: TransformJobDefinitionBatchStrategy | null;
+		Environment?: TransformEnvironmentMap | null;
 
 		/**
 		 * Describes the input source of a transform job and the way the transform job consumes it.
@@ -1816,57 +1816,57 @@ export namespace MyNS {
 		TransformResources: TransformResources;
 
 		/** The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>. */
-		DataProcessing?: DataProcessing;
-		Tags?: Array<Tag>;
+		DataProcessing?: DataProcessing | null;
+		Tags?: Array<Tag> | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig;
+		ExperimentConfig?: ExperimentConfig | null;
 	}
 
 
 	/** The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>. */
 	export interface DataProcessing {
-		InputFilter?: string;
-		OutputFilter?: string;
-		JoinSource?: DataProcessingJoinSource;
+		InputFilter?: string | null;
+		OutputFilter?: string | null;
+		JoinSource?: DataProcessingJoinSource | null;
 	}
 
 	export enum DataProcessingJoinSource { Input = 0, None = 1 }
 
 	export interface CreateTrialResponse {
-		TrialArn?: string;
+		TrialArn?: string | null;
 	}
 
 	export interface CreateTrialRequest {
 		TrialName: string;
-		DisplayName?: string;
+		DisplayName?: string | null;
 		ExperimentName: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateTrialComponentResponse {
-		TrialComponentArn?: string;
+		TrialComponentArn?: string | null;
 	}
 
 	export interface CreateTrialComponentRequest {
 		TrialComponentName: string;
-		DisplayName?: string;
+		DisplayName?: string | null;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus;
-		StartTime?: Date;
-		EndTime?: Date;
-		Parameters?: TrialComponentParameters;
-		InputArtifacts?: TrialComponentArtifacts;
-		OutputArtifacts?: TrialComponentArtifacts;
-		Tags?: Array<Tag>;
+		Status?: TrialComponentStatus | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Parameters?: TrialComponentParameters | null;
+		InputArtifacts?: TrialComponentArtifacts | null;
+		OutputArtifacts?: TrialComponentArtifacts | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** The status of the trial component. */
 	export interface TrialComponentStatus {
-		PrimaryStatus?: TrialComponentStatusPrimaryStatus;
-		Message?: string;
+		PrimaryStatus?: TrialComponentStatusPrimaryStatus | null;
+		Message?: string | null;
 	}
 
 	export enum TrialComponentStatusPrimaryStatus { InProgress = 0, Completed = 1, Failed = 2, Stopping = 3, Stopped = 4 }
@@ -1878,22 +1878,22 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserProfileResponse {
-		UserProfileArn?: string;
+		UserProfileArn?: string | null;
 	}
 
 	export interface CreateUserProfileRequest {
 		DomainId: string;
 		UserProfileName: string;
-		SingleSignOnUserIdentifier?: string;
-		SingleSignOnUserValue?: string;
-		Tags?: Array<Tag>;
+		SingleSignOnUserIdentifier?: string | null;
+		SingleSignOnUserValue?: string | null;
+		Tags?: Array<Tag> | null;
 
 		/** A collection of settings. */
-		UserSettings?: UserSettings;
+		UserSettings?: UserSettings | null;
 	}
 
 	export interface CreateWorkteamResponse {
-		WorkteamArn?: string;
+		WorkteamArn?: string | null;
 	}
 
 	export interface CreateWorkteamRequest {
@@ -1902,8 +1902,8 @@ export namespace MyNS {
 		Description: string;
 
 		/** Configures SNS notifications of available or expiring work items for work teams. */
-		NotificationConfiguration?: NotificationConfiguration;
-		Tags?: Array<Tag>;
+		NotificationConfiguration?: NotificationConfiguration | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1911,7 +1911,7 @@ export namespace MyNS {
 	export interface MemberDefinition {
 
 		/** Identifies a Amazon Cognito user group. A user group can be used in on or more work teams. */
-		CognitoMemberDefinition?: CognitoMemberDefinition;
+		CognitoMemberDefinition?: CognitoMemberDefinition | null;
 	}
 
 
@@ -1925,7 +1925,7 @@ export namespace MyNS {
 
 	/** Configures SNS notifications of available or expiring work items for work teams. */
 	export interface NotificationConfiguration {
-		NotificationTopicArn?: string;
+		NotificationTopicArn?: string | null;
 	}
 
 	export interface DeleteAlgorithmInput {
@@ -1947,13 +1947,13 @@ export namespace MyNS {
 		DomainId: string;
 
 		/** The retention policy for data stored on an Amazon Elastic File System (EFS) volume. */
-		RetentionPolicy?: RetentionPolicy;
+		RetentionPolicy?: RetentionPolicy | null;
 	}
 
 
 	/** The retention policy for data stored on an Amazon Elastic File System (EFS) volume. */
 	export interface RetentionPolicy {
-		HomeEfsFileSystem?: RetentionPolicyHomeEfsFileSystem;
+		HomeEfsFileSystem?: RetentionPolicyHomeEfsFileSystem | null;
 	}
 
 	export enum RetentionPolicyHomeEfsFileSystem { Retain = 0, Delete = 1 }
@@ -1967,7 +1967,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteExperimentResponse {
-		ExperimentArn?: string;
+		ExperimentArn?: string | null;
 	}
 
 	export interface DeleteExperimentRequest {
@@ -2010,7 +2010,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteTrialResponse {
-		TrialArn?: string;
+		TrialArn?: string | null;
 	}
 
 	export interface DeleteTrialRequest {
@@ -2018,7 +2018,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteTrialComponentResponse {
-		TrialComponentArn?: string;
+		TrialComponentArn?: string | null;
 	}
 
 	export interface DeleteTrialComponentRequest {
@@ -2041,7 +2041,7 @@ export namespace MyNS {
 	export interface DescribeAlgorithmOutput {
 		AlgorithmName: string;
 		AlgorithmArn: string;
-		AlgorithmDescription?: string;
+		AlgorithmDescription?: string | null;
 		CreationTime: Date;
 
 		/**
@@ -2051,10 +2051,10 @@ export namespace MyNS {
 		TrainingSpecification: TrainingSpecification;
 
 		/** Defines how to perform inference generation after a training job is run. */
-		InferenceSpecification?: InferenceSpecification;
+		InferenceSpecification?: InferenceSpecification | null;
 
 		/** Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm. */
-		ValidationSpecification?: AlgorithmValidationSpecification;
+		ValidationSpecification?: AlgorithmValidationSpecification | null;
 		AlgorithmStatus: DescribeAlgorithmOutputAlgorithmStatus;
 
 		/**
@@ -2062,8 +2062,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		AlgorithmStatusDetails: AlgorithmStatusDetails;
-		ProductId?: string;
-		CertifyForMarketplace?: boolean;
+		ProductId?: string | null;
+		CertifyForMarketplace?: boolean | null;
 	}
 
 	export enum DescribeAlgorithmOutputAlgorithmStatus { Pending = 0, InProgress = 1, Completed = 2, Failed = 3, Deleting = 4 }
@@ -2071,8 +2071,8 @@ export namespace MyNS {
 
 	/** Specifies the validation and image scan statuses of the algorithm. */
 	export interface AlgorithmStatusDetails {
-		ValidationStatuses?: Array<AlgorithmStatusItem>;
-		ImageScanStatuses?: Array<AlgorithmStatusItem>;
+		ValidationStatuses?: Array<AlgorithmStatusItem> | null;
+		ImageScanStatuses?: Array<AlgorithmStatusItem> | null;
 	}
 
 
@@ -2080,7 +2080,7 @@ export namespace MyNS {
 	export interface AlgorithmStatusItem {
 		Name: string;
 		Status: AlgorithmStatusItemStatus;
-		FailureReason?: string;
+		FailureReason?: string | null;
 	}
 
 	export enum AlgorithmStatusItemStatus { NotStarted = 0, InProgress = 1, Completed = 2, Failed = 3 }
@@ -2090,19 +2090,19 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAppResponse {
-		AppArn?: string;
-		AppType?: CreateAppRequestAppType;
-		AppName?: string;
-		DomainId?: string;
-		UserProfileName?: string;
-		Status?: DescribeAppResponseStatus;
-		LastHealthCheckTimestamp?: Date;
-		LastUserActivityTimestamp?: Date;
-		CreationTime?: Date;
-		FailureReason?: string;
+		AppArn?: string | null;
+		AppType?: CreateAppRequestAppType | null;
+		AppName?: string | null;
+		DomainId?: string | null;
+		UserProfileName?: string | null;
+		Status?: DescribeAppResponseStatus | null;
+		LastHealthCheckTimestamp?: Date | null;
+		LastUserActivityTimestamp?: Date | null;
+		CreationTime?: Date | null;
+		FailureReason?: string | null;
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		ResourceSpec?: ResourceSpec;
+		ResourceSpec?: ResourceSpec | null;
 	}
 
 	export enum DescribeAppResponseStatus { Deleted = 0, Deleting = 1, Failed = 2, InService = 3, Pending = 4 }
@@ -2127,27 +2127,27 @@ export namespace MyNS {
 		RoleArn: string;
 
 		/** Applies a metric to minimize or maximize for the job's objective. */
-		AutoMLJobObjective?: AutoMLJobObjective;
-		ProblemType?: CreateAutoMLJobRequestProblemType;
+		AutoMLJobObjective?: AutoMLJobObjective | null;
+		ProblemType?: CreateAutoMLJobRequestProblemType | null;
 
 		/** A collection of settings used for a job. */
-		AutoMLJobConfig?: AutoMLJobConfig;
+		AutoMLJobConfig?: AutoMLJobConfig | null;
 		CreationTime: Date;
-		EndTime?: Date;
+		EndTime?: Date | null;
 		LastModifiedTime: Date;
-		FailureReason?: string;
+		FailureReason?: string | null;
 
 		/** An AutoPilot job will return recommendations, or candidates. Each candidate has futher details about the steps involed, and the status. */
-		BestCandidate?: AutoMLCandidate;
+		BestCandidate?: AutoMLCandidate | null;
 		AutoMLJobStatus: AutoMLCandidateCandidateStatus;
 		AutoMLJobSecondaryStatus: DescribeAutoMLJobResponseAutoMLJobSecondaryStatus;
-		GenerateCandidateDefinitionsOnly?: boolean;
+		GenerateCandidateDefinitionsOnly?: boolean | null;
 
 		/** Artifacts that are generation during a job. */
-		AutoMLJobArtifacts?: AutoMLJobArtifacts;
+		AutoMLJobArtifacts?: AutoMLJobArtifacts | null;
 
 		/** The resolved attributes. */
-		ResolvedAttributes?: ResolvedAttributes;
+		ResolvedAttributes?: ResolvedAttributes | null;
 	}
 
 
@@ -2156,21 +2156,21 @@ export namespace MyNS {
 		CandidateName: string;
 
 		/** The candidate result from a job. */
-		FinalAutoMLJobObjectiveMetric?: FinalAutoMLJobObjectiveMetric;
+		FinalAutoMLJobObjectiveMetric?: FinalAutoMLJobObjectiveMetric | null;
 		ObjectiveStatus: AutoMLCandidateObjectiveStatus;
 		CandidateSteps: Array<AutoMLCandidateStep>;
 		CandidateStatus: AutoMLCandidateCandidateStatus;
-		InferenceContainers?: Array<AutoMLContainerDefinition>;
+		InferenceContainers?: Array<AutoMLContainerDefinition> | null;
 		CreationTime: Date;
-		EndTime?: Date;
+		EndTime?: Date | null;
 		LastModifiedTime: Date;
-		FailureReason?: string;
+		FailureReason?: string | null;
 	}
 
 
 	/** The candidate result from a job. */
 	export interface FinalAutoMLJobObjectiveMetric {
-		Type?: HyperParameterTuningJobObjectiveType;
+		Type?: HyperParameterTuningJobObjectiveType | null;
 		MetricName: AutoMLJobObjectiveMetricName;
 		Value: number;
 	}
@@ -2194,7 +2194,7 @@ export namespace MyNS {
 	export interface AutoMLContainerDefinition {
 		Image: string;
 		ModelDataUrl: string;
-		Environment?: EnvironmentMap;
+		Environment?: EnvironmentMap | null;
 	}
 
 	export enum DescribeAutoMLJobResponseAutoMLJobSecondaryStatus { Starting = 0, AnalyzingData = 1, FeatureEngineering = 2, ModelTuning = 3, MaxCandidatesReached = 4, Failed = 5, Stopped = 6, MaxAutoMLJobRuntimeReached = 7, Stopping = 8, CandidateDefinitionsGenerated = 9 }
@@ -2202,8 +2202,8 @@ export namespace MyNS {
 
 	/** Artifacts that are generation during a job. */
 	export interface AutoMLJobArtifacts {
-		CandidateDefinitionNotebookLocation?: string;
-		DataExplorationNotebookLocation?: string;
+		CandidateDefinitionNotebookLocation?: string | null;
+		DataExplorationNotebookLocation?: string | null;
 	}
 
 
@@ -2211,11 +2211,11 @@ export namespace MyNS {
 	export interface ResolvedAttributes {
 
 		/** Applies a metric to minimize or maximize for the job's objective. */
-		AutoMLJobObjective?: AutoMLJobObjective;
-		ProblemType?: CreateAutoMLJobRequestProblemType;
+		AutoMLJobObjective?: AutoMLJobObjective | null;
+		ProblemType?: CreateAutoMLJobRequestProblemType | null;
 
 		/** How long a job is allowed to run, or how many candidates a job is allowed to generate. */
-		CompletionCriteria?: AutoMLJobCompletionCriteria;
+		CompletionCriteria?: AutoMLJobCompletionCriteria | null;
 	}
 
 	export interface DescribeAutoMLJobRequest {
@@ -2229,7 +2229,7 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 
 		/** Specifies configuration details for a Git repository in your AWS account. */
-		GitConfig?: GitConfig;
+		GitConfig?: GitConfig | null;
 	}
 
 	export interface DescribeCodeRepositoryInput {
@@ -2240,8 +2240,8 @@ export namespace MyNS {
 		CompilationJobName: string;
 		CompilationJobArn: string;
 		CompilationJobStatus: DescribeCompilationJobResponseCompilationJobStatus;
-		CompilationStartTime?: Date;
-		CompilationEndTime?: Date;
+		CompilationStartTime?: Date | null;
+		CompilationEndTime?: Date | null;
 
 		/**
 		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
@@ -2285,23 +2285,23 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDomainResponse {
-		DomainArn?: string;
-		DomainId?: string;
-		DomainName?: string;
-		HomeEfsFileSystemId?: string;
-		SingleSignOnManagedApplicationInstanceId?: string;
-		Status?: DescribeDomainResponseStatus;
-		CreationTime?: Date;
-		LastModifiedTime?: Date;
-		FailureReason?: string;
-		AuthMode?: CreateDomainRequestAuthMode;
+		DomainArn?: string | null;
+		DomainId?: string | null;
+		DomainName?: string | null;
+		HomeEfsFileSystemId?: string | null;
+		SingleSignOnManagedApplicationInstanceId?: string | null;
+		Status?: DescribeDomainResponseStatus | null;
+		CreationTime?: Date | null;
+		LastModifiedTime?: Date | null;
+		FailureReason?: string | null;
+		AuthMode?: CreateDomainRequestAuthMode | null;
 
 		/** A collection of settings. */
-		DefaultUserSettings?: UserSettings;
-		HomeEfsFileSystemKmsKeyId?: string;
-		SubnetIds?: Array<string>;
-		Url?: string;
-		VpcId?: string;
+		DefaultUserSettings?: UserSettings | null;
+		HomeEfsFileSystemKmsKeyId?: string | null;
+		SubnetIds?: Array<string> | null;
+		Url?: string | null;
+		VpcId?: string | null;
 	}
 
 	export enum DescribeDomainResponseStatus { Deleting = 0, Failed = 1, InService = 2, Pending = 3 }
@@ -2314,12 +2314,12 @@ export namespace MyNS {
 		EndpointName: string;
 		EndpointArn: string;
 		EndpointConfigName: string;
-		ProductionVariants?: Array<ProductionVariantSummary>;
+		ProductionVariants?: Array<ProductionVariantSummary> | null;
 
 		/** <p/> */
-		DataCaptureConfig?: DataCaptureConfigSummary;
+		DataCaptureConfig?: DataCaptureConfigSummary | null;
 		EndpointStatus: DescribeEndpointOutputEndpointStatus;
-		FailureReason?: string;
+		FailureReason?: string | null;
 		CreationTime: Date;
 		LastModifiedTime: Date;
 	}
@@ -2328,19 +2328,19 @@ export namespace MyNS {
 	/** Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.  */
 	export interface ProductionVariantSummary {
 		VariantName: string;
-		DeployedImages?: Array<DeployedImage>;
-		CurrentWeight?: number;
-		DesiredWeight?: number;
-		CurrentInstanceCount?: number;
-		DesiredInstanceCount?: number;
+		DeployedImages?: Array<DeployedImage> | null;
+		CurrentWeight?: number | null;
+		DesiredWeight?: number | null;
+		CurrentInstanceCount?: number | null;
+		DesiredInstanceCount?: number | null;
 	}
 
 
 	/** <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.</p> <p>If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.</p> */
 	export interface DeployedImage {
-		SpecifiedImage?: string;
-		ResolvedImage?: string;
-		ResolutionTime?: Date;
+		SpecifiedImage?: string | null;
+		ResolvedImage?: string | null;
+		ResolutionTime?: Date | null;
 	}
 
 
@@ -2367,8 +2367,8 @@ export namespace MyNS {
 		ProductionVariants: Array<ProductionVariant>;
 
 		/** <p/> */
-		DataCaptureConfig?: DataCaptureConfig;
-		KmsKeyId?: string;
+		DataCaptureConfig?: DataCaptureConfig | null;
+		KmsKeyId?: string | null;
 		CreationTime: Date;
 	}
 
@@ -2377,36 +2377,36 @@ export namespace MyNS {
 	}
 
 	export interface DescribeExperimentResponse {
-		ExperimentName?: string;
-		ExperimentArn?: string;
-		DisplayName?: string;
+		ExperimentName?: string | null;
+		ExperimentArn?: string | null;
+		DisplayName?: string | null;
 
 		/** The source of the experiment. */
-		Source?: ExperimentSource;
-		Description?: string;
-		CreationTime?: Date;
+		Source?: ExperimentSource | null;
+		Description?: string | null;
+		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext;
-		LastModifiedTime?: Date;
+		CreatedBy?: UserContext | null;
+		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext;
+		LastModifiedBy?: UserContext | null;
 	}
 
 
 	/** The source of the experiment. */
 	export interface ExperimentSource {
 		SourceArn: string;
-		SourceType?: string;
+		SourceType?: string | null;
 	}
 
 
 	/** Information about the user who created or modified an experiment, trial, or trial component. */
 	export interface UserContext {
-		UserProfileArn?: string;
-		UserProfileName?: string;
-		DomainId?: string;
+		UserProfileArn?: string | null;
+		UserProfileName?: string | null;
+		DomainId?: string | null;
 	}
 
 	export interface DescribeExperimentRequest {
@@ -2420,10 +2420,10 @@ export namespace MyNS {
 		CreationTime: Date;
 
 		/** Container for configuring the source of human task requests. */
-		HumanLoopRequestSource?: HumanLoopRequestSource;
+		HumanLoopRequestSource?: HumanLoopRequestSource | null;
 
 		/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
-		HumanLoopActivationConfig?: HumanLoopActivationConfig;
+		HumanLoopActivationConfig?: HumanLoopActivationConfig | null;
 
 		/**
 		 * Describes the work to be performed by human workers.
@@ -2437,7 +2437,7 @@ export namespace MyNS {
 		 */
 		OutputConfig: FlowDefinitionOutputConfig;
 		RoleArn: string;
-		FailureReason?: string;
+		FailureReason?: string | null;
 	}
 
 	export enum DescribeFlowDefinitionResponseFlowDefinitionStatus { Initializing = 0, Active = 1, Failed = 2, Deleting = 3 }
@@ -2461,8 +2461,8 @@ export namespace MyNS {
 
 	/** Container for user interface template information. */
 	export interface UiTemplateInfo {
-		Url?: string;
-		ContentSha256?: string;
+		Url?: string | null;
+		ContentSha256?: string | null;
 	}
 
 	export interface DescribeHumanTaskUiRequest {
@@ -2480,12 +2480,12 @@ export namespace MyNS {
 		HyperParameterTuningJobConfig: HyperParameterTuningJobConfig;
 
 		/** Defines the training jobs launched by a hyperparameter tuning job. */
-		TrainingJobDefinition?: HyperParameterTrainingJobDefinition;
-		TrainingJobDefinitions?: Array<HyperParameterTrainingJobDefinition>;
+		TrainingJobDefinition?: HyperParameterTrainingJobDefinition | null;
+		TrainingJobDefinitions?: Array<HyperParameterTrainingJobDefinition> | null;
 		HyperParameterTuningJobStatus: AutoMLCandidateCandidateStatus;
 		CreationTime: Date;
-		HyperParameterTuningEndTime?: Date;
-		LastModifiedTime?: Date;
+		HyperParameterTuningEndTime?: Date | null;
+		LastModifiedTime?: Date | null;
 
 		/**
 		 * The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
@@ -2500,57 +2500,57 @@ export namespace MyNS {
 		ObjectiveStatusCounters: ObjectiveStatusCounters;
 
 		/** Specifies summary information about a training job. */
-		BestTrainingJob?: HyperParameterTrainingJobSummary;
+		BestTrainingJob?: HyperParameterTrainingJobSummary | null;
 
 		/** Specifies summary information about a training job. */
-		OverallBestTrainingJob?: HyperParameterTrainingJobSummary;
+		OverallBestTrainingJob?: HyperParameterTrainingJobSummary | null;
 
 		/** <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p> <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note> <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p> </note> */
-		WarmStartConfig?: HyperParameterTuningJobWarmStartConfig;
-		FailureReason?: string;
+		WarmStartConfig?: HyperParameterTuningJobWarmStartConfig | null;
+		FailureReason?: string | null;
 	}
 
 
 	/** The numbers of training jobs launched by a hyperparameter tuning job, categorized by status. */
 	export interface TrainingJobStatusCounters {
-		Completed?: number;
-		InProgress?: number;
-		RetryableError?: number;
-		NonRetryableError?: number;
-		Stopped?: number;
+		Completed?: number | null;
+		InProgress?: number | null;
+		RetryableError?: number | null;
+		NonRetryableError?: number | null;
+		Stopped?: number | null;
 	}
 
 
 	/** Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process. */
 	export interface ObjectiveStatusCounters {
-		Succeeded?: number;
-		Pending?: number;
-		Failed?: number;
+		Succeeded?: number | null;
+		Pending?: number | null;
+		Failed?: number | null;
 	}
 
 
 	/** Specifies summary information about a training job. */
 	export interface HyperParameterTrainingJobSummary {
-		TrainingJobDefinitionName?: string;
+		TrainingJobDefinitionName?: string | null;
 		TrainingJobName: string;
 		TrainingJobArn: string;
-		TuningJobName?: string;
+		TuningJobName?: string | null;
 		CreationTime: Date;
-		TrainingStartTime?: Date;
-		TrainingEndTime?: Date;
+		TrainingStartTime?: Date | null;
+		TrainingEndTime?: Date | null;
 		TrainingJobStatus: TrialComponentStatusPrimaryStatus;
 		TunedHyperParameters: HyperParameters;
-		FailureReason?: string;
+		FailureReason?: string | null;
 
 		/** Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>. */
-		FinalHyperParameterTuningJobObjectiveMetric?: FinalHyperParameterTuningJobObjectiveMetric;
-		ObjectiveStatus?: AutoMLCandidateObjectiveStatus;
+		FinalHyperParameterTuningJobObjectiveMetric?: FinalHyperParameterTuningJobObjectiveMetric | null;
+		ObjectiveStatus?: AutoMLCandidateObjectiveStatus | null;
 	}
 
 
 	/** Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>. */
 	export interface FinalHyperParameterTuningJobObjectiveMetric {
-		Type?: HyperParameterTuningJobObjectiveType;
+		Type?: HyperParameterTuningJobObjectiveType | null;
 		MetricName: string;
 		Value: number;
 	}
@@ -2567,13 +2567,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		LabelCounters: LabelCounters;
-		FailureReason?: string;
+		FailureReason?: string | null;
 		CreationTime: Date;
 		LastModifiedTime: Date;
 		JobReferenceCode: string;
 		LabelingJobName: string;
 		LabelingJobArn: string;
-		LabelAttributeName?: string;
+		LabelAttributeName?: string | null;
 
 		/**
 		 * Input configuration information for a labeling job.
@@ -2587,40 +2587,40 @@ export namespace MyNS {
 		 */
 		OutputConfig: LabelingJobOutputConfig;
 		RoleArn: string;
-		LabelCategoryConfigS3Uri?: string;
+		LabelCategoryConfigS3Uri?: string | null;
 
 		/** <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p> <note> <p>Labeling jobs fail after 30 days with an appropriate client error message.</p> </note> */
-		StoppingConditions?: LabelingJobStoppingConditions;
+		StoppingConditions?: LabelingJobStoppingConditions | null;
 
 		/** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling. */
-		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig;
+		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig | null;
 
 		/**
 		 * Information required for human workers to complete a labeling task.
 		 * Required
 		 */
 		HumanTaskConfig: HumanTaskConfig;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** Specifies the location of the output produced by the labeling job. */
-		LabelingJobOutput?: LabelingJobOutput;
+		LabelingJobOutput?: LabelingJobOutput | null;
 	}
 
 
 	/** Provides a breakdown of the number of objects labeled. */
 	export interface LabelCounters {
-		TotalLabeled?: number;
-		HumanLabeled?: number;
-		MachineLabeled?: number;
-		FailedNonRetryableError?: number;
-		Unlabeled?: number;
+		TotalLabeled?: number | null;
+		HumanLabeled?: number | null;
+		MachineLabeled?: number | null;
+		FailedNonRetryableError?: number | null;
+		Unlabeled?: number | null;
 	}
 
 
 	/** Specifies the location of the output produced by the labeling job.  */
 	export interface LabelingJobOutput {
 		OutputDatasetS3Uri: string;
-		FinalActiveLearningModelArn?: string;
+		FinalActiveLearningModelArn?: string | null;
 	}
 
 	export interface DescribeLabelingJobRequest {
@@ -2631,15 +2631,15 @@ export namespace MyNS {
 		ModelName: string;
 
 		/** Describes the container, as part of model definition. */
-		PrimaryContainer?: ContainerDefinition;
-		Containers?: Array<ContainerDefinition>;
+		PrimaryContainer?: ContainerDefinition | null;
+		Containers?: Array<ContainerDefinition> | null;
 		ExecutionRoleArn: string;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 		CreationTime: Date;
 		ModelArn: string;
-		EnableNetworkIsolation?: boolean;
+		EnableNetworkIsolation?: boolean | null;
 	}
 
 	export interface DescribeModelInput {
@@ -2649,17 +2649,17 @@ export namespace MyNS {
 	export interface DescribeModelPackageOutput {
 		ModelPackageName: string;
 		ModelPackageArn: string;
-		ModelPackageDescription?: string;
+		ModelPackageDescription?: string | null;
 		CreationTime: Date;
 
 		/** Defines how to perform inference generation after a training job is run. */
-		InferenceSpecification?: InferenceSpecification;
+		InferenceSpecification?: InferenceSpecification | null;
 
 		/** A list of algorithms that were used to create a model package. */
-		SourceAlgorithmSpecification?: SourceAlgorithmSpecification;
+		SourceAlgorithmSpecification?: SourceAlgorithmSpecification | null;
 
 		/** Specifies batch transform jobs that Amazon SageMaker runs to validate your model package. */
-		ValidationSpecification?: ModelPackageValidationSpecification;
+		ValidationSpecification?: ModelPackageValidationSpecification | null;
 		ModelPackageStatus: DescribeAlgorithmOutputAlgorithmStatus;
 
 		/**
@@ -2667,14 +2667,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		ModelPackageStatusDetails: ModelPackageStatusDetails;
-		CertifyForMarketplace?: boolean;
+		CertifyForMarketplace?: boolean | null;
 	}
 
 
 	/** Specifies the validation and image scan statuses of the model package. */
 	export interface ModelPackageStatusDetails {
 		ValidationStatuses: Array<ModelPackageStatusItem>;
-		ImageScanStatuses?: Array<ModelPackageStatusItem>;
+		ImageScanStatuses?: Array<ModelPackageStatusItem> | null;
 	}
 
 
@@ -2682,7 +2682,7 @@ export namespace MyNS {
 	export interface ModelPackageStatusItem {
 		Name: string;
 		Status: AlgorithmStatusItemStatus;
-		FailureReason?: string;
+		FailureReason?: string | null;
 	}
 
 	export interface DescribeModelPackageInput {
@@ -2693,7 +2693,7 @@ export namespace MyNS {
 		MonitoringScheduleArn: string;
 		MonitoringScheduleName: string;
 		MonitoringScheduleStatus: DescribeMonitoringScheduleResponseMonitoringScheduleStatus;
-		FailureReason?: string;
+		FailureReason?: string | null;
 		CreationTime: Date;
 		LastModifiedTime: Date;
 
@@ -2702,10 +2702,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		MonitoringScheduleConfig: MonitoringScheduleConfig;
-		EndpointName?: string;
+		EndpointName?: string | null;
 
 		/** Summary of information about the last monitoring job to run. */
-		LastMonitoringExecutionSummary?: MonitoringExecutionSummary;
+		LastMonitoringExecutionSummary?: MonitoringExecutionSummary | null;
 	}
 
 	export enum DescribeMonitoringScheduleResponseMonitoringScheduleStatus { Pending = 0, Failed = 1, Scheduled = 2, Stopped = 3 }
@@ -2718,9 +2718,9 @@ export namespace MyNS {
 		CreationTime: Date;
 		LastModifiedTime: Date;
 		MonitoringExecutionStatus: MonitoringExecutionSummaryMonitoringExecutionStatus;
-		ProcessingJobArn?: string;
-		EndpointName?: string;
-		FailureReason?: string;
+		ProcessingJobArn?: string | null;
+		EndpointName?: string | null;
+		FailureReason?: string | null;
 	}
 
 	export enum MonitoringExecutionSummaryMonitoringExecutionStatus { Pending = 0, Completed = 1, CompletedWithViolations = 2, InProgress = 3, Failed = 4, Stopping = 5, Stopped = 6 }
@@ -2730,26 +2730,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeNotebookInstanceOutput {
-		NotebookInstanceArn?: string;
-		NotebookInstanceName?: string;
-		NotebookInstanceStatus?: DescribeNotebookInstanceOutputNotebookInstanceStatus;
-		FailureReason?: string;
-		Url?: string;
-		InstanceType?: DescribeNotebookInstanceOutputInstanceType;
-		SubnetId?: string;
-		SecurityGroups?: Array<string>;
-		RoleArn?: string;
-		KmsKeyId?: string;
-		NetworkInterfaceId?: string;
-		LastModifiedTime?: Date;
-		CreationTime?: Date;
-		NotebookInstanceLifecycleConfigName?: string;
-		DirectInternetAccess?: CreateNotebookInstanceInputDirectInternetAccess;
-		VolumeSizeInGB?: number;
-		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType>;
-		DefaultCodeRepository?: string;
-		AdditionalCodeRepositories?: Array<string>;
-		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess;
+		NotebookInstanceArn?: string | null;
+		NotebookInstanceName?: string | null;
+		NotebookInstanceStatus?: DescribeNotebookInstanceOutputNotebookInstanceStatus | null;
+		FailureReason?: string | null;
+		Url?: string | null;
+		InstanceType?: DescribeNotebookInstanceOutputInstanceType | null;
+		SubnetId?: string | null;
+		SecurityGroups?: Array<string> | null;
+		RoleArn?: string | null;
+		KmsKeyId?: string | null;
+		NetworkInterfaceId?: string | null;
+		LastModifiedTime?: Date | null;
+		CreationTime?: Date | null;
+		NotebookInstanceLifecycleConfigName?: string | null;
+		DirectInternetAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
+		VolumeSizeInGB?: number | null;
+		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType> | null;
+		DefaultCodeRepository?: string | null;
+		AdditionalCodeRepositories?: Array<string> | null;
+		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
 	}
 
 	export enum DescribeNotebookInstanceOutputNotebookInstanceStatus { Pending = 0, InService = 1, Stopping = 2, Stopped = 3, Failed = 4, Deleting = 5, Updating = 6 }
@@ -2761,12 +2761,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeNotebookInstanceLifecycleConfigOutput {
-		NotebookInstanceLifecycleConfigArn?: string;
-		NotebookInstanceLifecycleConfigName?: string;
-		OnCreate?: Array<NotebookInstanceLifecycleHook>;
-		OnStart?: Array<NotebookInstanceLifecycleHook>;
-		LastModifiedTime?: Date;
-		CreationTime?: Date;
+		NotebookInstanceLifecycleConfigArn?: string | null;
+		NotebookInstanceLifecycleConfigName?: string | null;
+		OnCreate?: Array<NotebookInstanceLifecycleHook> | null;
+		OnStart?: Array<NotebookInstanceLifecycleHook> | null;
+		LastModifiedTime?: Date | null;
+		CreationTime?: Date | null;
 	}
 
 	export interface DescribeNotebookInstanceLifecycleConfigInput {
@@ -2774,10 +2774,10 @@ export namespace MyNS {
 	}
 
 	export interface DescribeProcessingJobResponse {
-		ProcessingInputs?: Array<ProcessingInput>;
+		ProcessingInputs?: Array<ProcessingInput> | null;
 
 		/** The output configuration for the processing job. */
-		ProcessingOutputConfig?: ProcessingOutputConfig;
+		ProcessingOutputConfig?: ProcessingOutputConfig | null;
 		ProcessingJobName: string;
 
 		/**
@@ -2787,32 +2787,32 @@ export namespace MyNS {
 		ProcessingResources: ProcessingResources;
 
 		/** Specifies a time limit for how long the processing job is allowed to run. */
-		StoppingCondition?: ProcessingStoppingCondition;
+		StoppingCondition?: ProcessingStoppingCondition | null;
 
 		/**
 		 * Configuration to run a processing job in a specified container image.
 		 * Required
 		 */
 		AppSpecification: AppSpecification;
-		Environment?: ProcessingEnvironmentMap;
+		Environment?: ProcessingEnvironmentMap | null;
 
 		/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
-		NetworkConfig?: NetworkConfig;
-		RoleArn?: string;
+		NetworkConfig?: NetworkConfig | null;
+		RoleArn?: string | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig;
+		ExperimentConfig?: ExperimentConfig | null;
 		ProcessingJobArn: string;
 		ProcessingJobStatus: TrialComponentStatusPrimaryStatus;
-		ExitMessage?: string;
-		FailureReason?: string;
-		ProcessingEndTime?: Date;
-		ProcessingStartTime?: Date;
-		LastModifiedTime?: Date;
+		ExitMessage?: string | null;
+		FailureReason?: string | null;
+		ProcessingEndTime?: Date | null;
+		ProcessingStartTime?: Date | null;
+		LastModifiedTime?: Date | null;
 		CreationTime: Date;
-		MonitoringScheduleArn?: string;
-		AutoMLJobArn?: string;
-		TrainingJobArn?: string;
+		MonitoringScheduleArn?: string | null;
+		AutoMLJobArn?: string | null;
+		TrainingJobArn?: string | null;
 	}
 
 	export interface DescribeProcessingJobRequest {
@@ -2832,10 +2832,10 @@ export namespace MyNS {
 	/** Describes a work team of a vendor that does the a labelling job. */
 	export interface SubscribedWorkteam {
 		WorkteamArn: string;
-		MarketplaceTitle?: string;
-		SellerName?: string;
-		MarketplaceDescription?: string;
-		ListingId?: string;
+		MarketplaceTitle?: string | null;
+		SellerName?: string | null;
+		MarketplaceDescription?: string | null;
+		ListingId?: string | null;
 	}
 
 	export interface DescribeSubscribedWorkteamRequest {
@@ -2845,9 +2845,9 @@ export namespace MyNS {
 	export interface DescribeTrainingJobResponse {
 		TrainingJobName: string;
 		TrainingJobArn: string;
-		TuningJobArn?: string;
-		LabelingJobArn?: string;
-		AutoMLJobArn?: string;
+		TuningJobArn?: string | null;
+		LabelingJobArn?: string | null;
+		AutoMLJobArn?: string | null;
 
 		/**
 		 * <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.</p>
@@ -2856,19 +2856,19 @@ export namespace MyNS {
 		ModelArtifacts: ModelArtifacts;
 		TrainingJobStatus: TrialComponentStatusPrimaryStatus;
 		SecondaryStatus: DescribeTrainingJobResponseSecondaryStatus;
-		FailureReason?: string;
-		HyperParameters?: HyperParameters;
+		FailureReason?: string | null;
+		HyperParameters?: HyperParameters | null;
 
 		/**
 		 * <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
 		 * Required
 		 */
 		AlgorithmSpecification: AlgorithmSpecification;
-		RoleArn?: string;
-		InputDataConfig?: Array<Channel>;
+		RoleArn?: string | null;
+		InputDataConfig?: Array<Channel> | null;
 
 		/** Provides information about how to store model training results (model artifacts). */
-		OutputDataConfig?: OutputDataConfig;
+		OutputDataConfig?: OutputDataConfig | null;
 
 		/**
 		 * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
@@ -2877,7 +2877,7 @@ export namespace MyNS {
 		ResourceConfig: ResourceConfig;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 
 		/**
 		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
@@ -2885,30 +2885,30 @@ export namespace MyNS {
 		 */
 		StoppingCondition: StoppingCondition;
 		CreationTime: Date;
-		TrainingStartTime?: Date;
-		TrainingEndTime?: Date;
-		LastModifiedTime?: Date;
-		SecondaryStatusTransitions?: Array<SecondaryStatusTransition>;
-		FinalMetricDataList?: Array<MetricData>;
-		EnableNetworkIsolation?: boolean;
-		EnableInterContainerTrafficEncryption?: boolean;
-		EnableManagedSpotTraining?: boolean;
+		TrainingStartTime?: Date | null;
+		TrainingEndTime?: Date | null;
+		LastModifiedTime?: Date | null;
+		SecondaryStatusTransitions?: Array<SecondaryStatusTransition> | null;
+		FinalMetricDataList?: Array<MetricData> | null;
+		EnableNetworkIsolation?: boolean | null;
+		EnableInterContainerTrafficEncryption?: boolean | null;
+		EnableManagedSpotTraining?: boolean | null;
 
 		/** Contains information about the output location for managed spot training checkpoint data. */
-		CheckpointConfig?: CheckpointConfig;
-		TrainingTimeInSeconds?: number;
-		BillableTimeInSeconds?: number;
+		CheckpointConfig?: CheckpointConfig | null;
+		TrainingTimeInSeconds?: number | null;
+		BillableTimeInSeconds?: number | null;
 
 		/** Configuration information for the debug hook parameters, collection configuration, and storage paths. */
-		DebugHookConfig?: DebugHookConfig;
+		DebugHookConfig?: DebugHookConfig | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig;
-		DebugRuleConfigurations?: Array<DebugRuleConfiguration>;
+		ExperimentConfig?: ExperimentConfig | null;
+		DebugRuleConfigurations?: Array<DebugRuleConfiguration> | null;
 
 		/** Configuration of storage locations for TensorBoard output. */
-		TensorBoardOutputConfig?: TensorBoardOutputConfig;
-		DebugRuleEvaluationStatuses?: Array<DebugRuleEvaluationStatus>;
+		TensorBoardOutputConfig?: TensorBoardOutputConfig | null;
+		DebugRuleEvaluationStatuses?: Array<DebugRuleEvaluationStatus> | null;
 	}
 
 	export enum DescribeTrainingJobResponseSecondaryStatus { Starting = 0, LaunchingMLInstances = 1, PreparingTrainingStack = 2, Downloading = 3, DownloadingTrainingImage = 4, Training = 5, Uploading = 6, Stopping = 7, Stopped = 8, MaxRuntimeExceeded = 9, Completed = 10, Failed = 11, Interrupted = 12, MaxWaitTimeExceeded = 13 }
@@ -2918,26 +2918,26 @@ export namespace MyNS {
 	export interface SecondaryStatusTransition {
 		Status: DescribeTrainingJobResponseSecondaryStatus;
 		StartTime: Date;
-		EndTime?: Date;
-		StatusMessage?: string;
+		EndTime?: Date | null;
+		StatusMessage?: string | null;
 	}
 
 
 	/** The name, value, and date and time of a metric that was emitted to Amazon CloudWatch. */
 	export interface MetricData {
-		MetricName?: string;
-		Value?: number;
-		Timestamp?: Date;
+		MetricName?: string | null;
+		Value?: number | null;
+		Timestamp?: Date | null;
 	}
 
 
 	/** Information about the status of the rule evaluation. */
 	export interface DebugRuleEvaluationStatus {
-		RuleConfigurationName?: string;
-		RuleEvaluationJobArn?: string;
-		RuleEvaluationStatus?: DebugRuleEvaluationStatusRuleEvaluationStatus;
-		StatusDetails?: string;
-		LastModifiedTime?: Date;
+		RuleConfigurationName?: string | null;
+		RuleEvaluationJobArn?: string | null;
+		RuleEvaluationStatus?: DebugRuleEvaluationStatusRuleEvaluationStatus | null;
+		StatusDetails?: string | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export enum DebugRuleEvaluationStatusRuleEvaluationStatus { InProgress = 0, NoIssuesFound = 1, IssuesFound = 2, Error = 3, Stopping = 4, Stopped = 5 }
@@ -2950,12 +2950,12 @@ export namespace MyNS {
 		TransformJobName: string;
 		TransformJobArn: string;
 		TransformJobStatus: TrialComponentStatusPrimaryStatus;
-		FailureReason?: string;
+		FailureReason?: string | null;
 		ModelName: string;
-		MaxConcurrentTransforms?: number;
-		MaxPayloadInMB?: number;
-		BatchStrategy?: TransformJobDefinitionBatchStrategy;
-		Environment?: TransformEnvironmentMap;
+		MaxConcurrentTransforms?: number | null;
+		MaxPayloadInMB?: number | null;
+		BatchStrategy?: TransformJobDefinitionBatchStrategy | null;
+		Environment?: TransformEnvironmentMap | null;
 
 		/**
 		 * Describes the input source of a transform job and the way the transform job consumes it.
@@ -2964,7 +2964,7 @@ export namespace MyNS {
 		TransformInput: TransformInput;
 
 		/** Describes the results of a transform job. */
-		TransformOutput?: TransformOutput;
+		TransformOutput?: TransformOutput | null;
 
 		/**
 		 * Describes the resources, including ML instance types and ML instance count, to use for transform job.
@@ -2972,16 +2972,16 @@ export namespace MyNS {
 		 */
 		TransformResources: TransformResources;
 		CreationTime: Date;
-		TransformStartTime?: Date;
-		TransformEndTime?: Date;
-		LabelingJobArn?: string;
-		AutoMLJobArn?: string;
+		TransformStartTime?: Date | null;
+		TransformEndTime?: Date | null;
+		LabelingJobArn?: string | null;
+		AutoMLJobArn?: string | null;
 
 		/** The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>. */
-		DataProcessing?: DataProcessing;
+		DataProcessing?: DataProcessing | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig;
+		ExperimentConfig?: ExperimentConfig | null;
 	}
 
 	export interface DescribeTransformJobRequest {
@@ -2989,28 +2989,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTrialResponse {
-		TrialName?: string;
-		TrialArn?: string;
-		DisplayName?: string;
-		ExperimentName?: string;
+		TrialName?: string | null;
+		TrialArn?: string | null;
+		DisplayName?: string | null;
+		ExperimentName?: string | null;
 
 		/** The source of the trial. */
-		Source?: TrialSource;
-		CreationTime?: Date;
+		Source?: TrialSource | null;
+		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext;
-		LastModifiedTime?: Date;
+		CreatedBy?: UserContext | null;
+		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext;
+		LastModifiedBy?: UserContext | null;
 	}
 
 
 	/** The source of the trial. */
 	export interface TrialSource {
 		SourceArn: string;
-		SourceType?: string;
+		SourceType?: string | null;
 	}
 
 	export interface DescribeTrialRequest {
@@ -3018,50 +3018,50 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTrialComponentResponse {
-		TrialComponentName?: string;
-		TrialComponentArn?: string;
-		DisplayName?: string;
+		TrialComponentName?: string | null;
+		TrialComponentArn?: string | null;
+		DisplayName?: string | null;
 
 		/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
-		Source?: TrialComponentSource;
+		Source?: TrialComponentSource | null;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus;
-		StartTime?: Date;
-		EndTime?: Date;
-		CreationTime?: Date;
+		Status?: TrialComponentStatus | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext;
-		LastModifiedTime?: Date;
+		CreatedBy?: UserContext | null;
+		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext;
-		Parameters?: TrialComponentParameters;
-		InputArtifacts?: TrialComponentArtifacts;
-		OutputArtifacts?: TrialComponentArtifacts;
-		Metrics?: Array<TrialComponentMetricSummary>;
+		LastModifiedBy?: UserContext | null;
+		Parameters?: TrialComponentParameters | null;
+		InputArtifacts?: TrialComponentArtifacts | null;
+		OutputArtifacts?: TrialComponentArtifacts | null;
+		Metrics?: Array<TrialComponentMetricSummary> | null;
 	}
 
 
 	/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
 	export interface TrialComponentSource {
 		SourceArn: string;
-		SourceType?: string;
+		SourceType?: string | null;
 	}
 
 
 	/** A summary of the metrics of a trial component. */
 	export interface TrialComponentMetricSummary {
-		MetricName?: string;
-		SourceArn?: string;
-		TimeStamp?: Date;
-		Max?: number;
-		Min?: number;
-		Last?: number;
-		Count?: number;
-		Avg?: number;
-		StdDev?: number;
+		MetricName?: string | null;
+		SourceArn?: string | null;
+		TimeStamp?: Date | null;
+		Max?: number | null;
+		Min?: number | null;
+		Last?: number | null;
+		Count?: number | null;
+		Avg?: number | null;
+		StdDev?: number | null;
 	}
 
 	export interface DescribeTrialComponentRequest {
@@ -3069,19 +3069,19 @@ export namespace MyNS {
 	}
 
 	export interface DescribeUserProfileResponse {
-		DomainId?: string;
-		UserProfileArn?: string;
-		UserProfileName?: string;
-		HomeEfsFileSystemUid?: string;
-		Status?: DescribeDomainResponseStatus;
-		LastModifiedTime?: Date;
-		CreationTime?: Date;
-		FailureReason?: string;
-		SingleSignOnUserIdentifier?: string;
-		SingleSignOnUserValue?: string;
+		DomainId?: string | null;
+		UserProfileArn?: string | null;
+		UserProfileName?: string | null;
+		HomeEfsFileSystemUid?: string | null;
+		Status?: DescribeDomainResponseStatus | null;
+		LastModifiedTime?: Date | null;
+		CreationTime?: Date | null;
+		FailureReason?: string | null;
+		SingleSignOnUserIdentifier?: string | null;
+		SingleSignOnUserValue?: string | null;
 
 		/** A collection of settings. */
-		UserSettings?: UserSettings;
+		UserSettings?: UserSettings | null;
 	}
 
 	export interface DescribeUserProfileRequest {
@@ -3103,10 +3103,10 @@ export namespace MyNS {
 	export interface Workforce {
 		WorkforceName: string;
 		WorkforceArn: string;
-		LastUpdatedDate?: Date;
+		LastUpdatedDate?: Date | null;
 
 		/** A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. For more information, see . */
-		SourceIpConfig?: SourceIpConfig;
+		SourceIpConfig?: SourceIpConfig | null;
 	}
 
 
@@ -3134,14 +3134,14 @@ export namespace MyNS {
 		WorkteamName: string;
 		MemberDefinitions: Array<MemberDefinition>;
 		WorkteamArn: string;
-		ProductListingIds?: Array<string>;
+		ProductListingIds?: Array<string> | null;
 		Description: string;
-		SubDomain?: string;
-		CreateDate?: Date;
-		LastUpdatedDate?: Date;
+		SubDomain?: string | null;
+		CreateDate?: Date | null;
+		LastUpdatedDate?: Date | null;
 
 		/** Configures SNS notifications of available or expiring work items for work teams. */
-		NotificationConfiguration?: NotificationConfiguration;
+		NotificationConfiguration?: NotificationConfiguration | null;
 	}
 
 	export interface DescribeWorkteamRequest {
@@ -3149,8 +3149,8 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateTrialComponentResponse {
-		TrialComponentArn?: string;
-		TrialArn?: string;
+		TrialComponentArn?: string | null;
+		TrialArn?: string | null;
 	}
 
 	export interface DisassociateTrialComponentRequest {
@@ -3159,20 +3159,20 @@ export namespace MyNS {
 	}
 
 	export interface GetSearchSuggestionsResponse {
-		PropertyNameSuggestions?: Array<PropertyNameSuggestion>;
+		PropertyNameSuggestions?: Array<PropertyNameSuggestion> | null;
 	}
 
 
 	/** A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field. */
 	export interface PropertyNameSuggestion {
-		PropertyName?: string;
+		PropertyName?: string | null;
 	}
 
 	export interface GetSearchSuggestionsRequest {
 		Resource: GetSearchSuggestionsRequestResource;
 
 		/** Specified in the <a>GetSearchSuggestions</a> request. Limits the property names that are included in the response. */
-		SuggestionQuery?: SuggestionQuery;
+		SuggestionQuery?: SuggestionQuery | null;
 	}
 
 	export enum GetSearchSuggestionsRequestResource { TrainingJob = 0, Experiment = 1, ExperimentTrial = 2, ExperimentTrialComponent = 3 }
@@ -3182,7 +3182,7 @@ export namespace MyNS {
 	export interface SuggestionQuery {
 
 		/** Part of the <code>SuggestionQuery</code> type. Specifies a hint for retrieving property names that begin with the specified text. */
-		PropertyNameQuery?: PropertyNameQuery;
+		PropertyNameQuery?: PropertyNameQuery | null;
 	}
 
 
@@ -3193,7 +3193,7 @@ export namespace MyNS {
 
 	export interface ListAlgorithmsOutput {
 		AlgorithmSummaryList: Array<AlgorithmSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3201,19 +3201,19 @@ export namespace MyNS {
 	export interface AlgorithmSummary {
 		AlgorithmName: string;
 		AlgorithmArn: string;
-		AlgorithmDescription?: string;
+		AlgorithmDescription?: string | null;
 		CreationTime: Date;
 		AlgorithmStatus: DescribeAlgorithmOutputAlgorithmStatus;
 	}
 
 	export interface ListAlgorithmsInput {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		MaxResults?: number;
-		NameContains?: string;
-		NextToken?: string;
-		SortBy?: ListAlgorithmsInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		MaxResults?: number | null;
+		NameContains?: string | null;
+		NextToken?: string | null;
+		SortBy?: ListAlgorithmsInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
 
 	export enum ListAlgorithmsInputSortBy { Name = 0, CreationTime = 1 }
@@ -3221,35 +3221,35 @@ export namespace MyNS {
 	export enum ListAlgorithmsInputSortOrder { Ascending = 0, Descending = 1 }
 
 	export interface ListAppsResponse {
-		Apps?: Array<AppDetails>;
-		NextToken?: string;
+		Apps?: Array<AppDetails> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The app's details. */
 	export interface AppDetails {
-		DomainId?: string;
-		UserProfileName?: string;
-		AppType?: CreateAppRequestAppType;
-		AppName?: string;
-		Status?: DescribeAppResponseStatus;
-		CreationTime?: Date;
+		DomainId?: string | null;
+		UserProfileName?: string | null;
+		AppType?: CreateAppRequestAppType | null;
+		AppName?: string | null;
+		Status?: DescribeAppResponseStatus | null;
+		CreationTime?: Date | null;
 	}
 
 	export interface ListAppsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		SortBy?: ListAppsRequestSortBy;
-		DomainIdEquals?: string;
-		UserProfileNameEquals?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		SortBy?: ListAppsRequestSortBy | null;
+		DomainIdEquals?: string | null;
+		UserProfileNameEquals?: string | null;
 	}
 
 	export enum ListAppsRequestSortBy { CreationTime = 0 }
 
 	export interface ListAutoMLJobsResponse {
 		AutoMLJobSummaries: Array<AutoMLJobSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3260,46 +3260,46 @@ export namespace MyNS {
 		AutoMLJobStatus: AutoMLCandidateCandidateStatus;
 		AutoMLJobSecondaryStatus: DescribeAutoMLJobResponseAutoMLJobSecondaryStatus;
 		CreationTime: Date;
-		EndTime?: Date;
+		EndTime?: Date | null;
 		LastModifiedTime: Date;
-		FailureReason?: string;
+		FailureReason?: string | null;
 	}
 
 	export interface ListAutoMLJobsRequest {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		NameContains?: string;
-		StatusEquals?: AutoMLCandidateCandidateStatus;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		MaxResults?: number;
-		NextToken?: string;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		NameContains?: string | null;
+		StatusEquals?: AutoMLCandidateCandidateStatus | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum ListAutoMLJobsRequestSortBy { Name = 0, CreationTime = 1, Status = 2 }
 
 	export interface ListCandidatesForAutoMLJobResponse {
 		Candidates: Array<AutoMLCandidate>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListCandidatesForAutoMLJobRequest {
 		AutoMLJobName: string;
-		StatusEquals?: AutoMLCandidateCandidateStatus;
-		CandidateNameEquals?: string;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		SortBy?: ListCandidatesForAutoMLJobRequestSortBy;
-		MaxResults?: number;
-		NextToken?: string;
+		StatusEquals?: AutoMLCandidateCandidateStatus | null;
+		CandidateNameEquals?: string | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		SortBy?: ListCandidatesForAutoMLJobRequestSortBy | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum ListCandidatesForAutoMLJobRequestSortBy { CreationTime = 0, Status = 1, FinalObjectiveMetricValue = 2 }
 
 	export interface ListCodeRepositoriesOutput {
 		CodeRepositorySummaryList: Array<CodeRepositorySummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3311,26 +3311,26 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 
 		/** Specifies configuration details for a Git repository in your AWS account. */
-		GitConfig?: GitConfig;
+		GitConfig?: GitConfig | null;
 	}
 
 	export interface ListCodeRepositoriesInput {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		MaxResults?: number;
-		NameContains?: string;
-		NextToken?: string;
-		SortBy?: ListCodeRepositoriesInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		MaxResults?: number | null;
+		NameContains?: string | null;
+		NextToken?: string | null;
+		SortBy?: ListCodeRepositoriesInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
 
 	export enum ListCodeRepositoriesInputSortBy { Name = 0, CreationTime = 1, LastModifiedTime = 2 }
 
 	export interface ListCompilationJobsResponse {
 		CompilationJobSummaries: Array<CompilationJobSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3339,51 +3339,51 @@ export namespace MyNS {
 		CompilationJobName: string;
 		CompilationJobArn: string;
 		CreationTime: Date;
-		CompilationStartTime?: Date;
-		CompilationEndTime?: Date;
+		CompilationStartTime?: Date | null;
+		CompilationEndTime?: Date | null;
 		CompilationTargetDevice: OutputConfigTargetDevice;
-		LastModifiedTime?: Date;
+		LastModifiedTime?: Date | null;
 		CompilationJobStatus: DescribeCompilationJobResponseCompilationJobStatus;
 	}
 
 	export interface ListCompilationJobsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		NameContains?: string;
-		StatusEquals?: DescribeCompilationJobResponseCompilationJobStatus;
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		NameContains?: string | null;
+		StatusEquals?: DescribeCompilationJobResponseCompilationJobStatus | null;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
 
 	export interface ListDomainsResponse {
-		Domains?: Array<DomainDetails>;
-		NextToken?: string;
+		Domains?: Array<DomainDetails> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The domain's details. */
 	export interface DomainDetails {
-		DomainArn?: string;
-		DomainId?: string;
-		DomainName?: string;
-		Status?: DescribeDomainResponseStatus;
-		CreationTime?: Date;
-		LastModifiedTime?: Date;
-		Url?: string;
+		DomainArn?: string | null;
+		DomainId?: string | null;
+		DomainName?: string | null;
+		Status?: DescribeDomainResponseStatus | null;
+		CreationTime?: Date | null;
+		LastModifiedTime?: Date | null;
+		Url?: string | null;
 	}
 
 	export interface ListDomainsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListEndpointConfigsOutput {
 		EndpointConfigs: Array<EndpointConfigSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3395,18 +3395,18 @@ export namespace MyNS {
 	}
 
 	export interface ListEndpointConfigsInput {
-		SortBy?: ListAlgorithmsInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
-		NameContains?: string;
-		CreationTimeBefore?: Date;
-		CreationTimeAfter?: Date;
+		SortBy?: ListAlgorithmsInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		NameContains?: string | null;
+		CreationTimeBefore?: Date | null;
+		CreationTimeAfter?: Date | null;
 	}
 
 	export interface ListEndpointsOutput {
 		Endpoints: Array<EndpointSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3420,48 +3420,48 @@ export namespace MyNS {
 	}
 
 	export interface ListEndpointsInput {
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
-		NameContains?: string;
-		CreationTimeBefore?: Date;
-		CreationTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		StatusEquals?: DescribeEndpointOutputEndpointStatus;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		NameContains?: string | null;
+		CreationTimeBefore?: Date | null;
+		CreationTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		StatusEquals?: DescribeEndpointOutputEndpointStatus | null;
 	}
 
 	export interface ListExperimentsResponse {
-		ExperimentSummaries?: Array<ExperimentSummary>;
-		NextToken?: string;
+		ExperimentSummaries?: Array<ExperimentSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of the properties of an experiment. To get the complete set of properties, call the <a>DescribeExperiment</a> API and provide the <code>ExperimentName</code>. */
 	export interface ExperimentSummary {
-		ExperimentArn?: string;
-		ExperimentName?: string;
-		DisplayName?: string;
+		ExperimentArn?: string | null;
+		ExperimentName?: string | null;
+		DisplayName?: string | null;
 
 		/** The source of the experiment. */
-		ExperimentSource?: ExperimentSource;
-		CreationTime?: Date;
-		LastModifiedTime?: Date;
+		ExperimentSource?: ExperimentSource | null;
+		CreationTime?: Date | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export interface ListExperimentsRequest {
-		CreatedAfter?: Date;
-		CreatedBefore?: Date;
-		SortBy?: ListAlgorithmsInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
+		CreatedAfter?: Date | null;
+		CreatedBefore?: Date | null;
+		SortBy?: ListAlgorithmsInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListFlowDefinitionsResponse {
 		FlowDefinitionSummaries: Array<FlowDefinitionSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3471,20 +3471,20 @@ export namespace MyNS {
 		FlowDefinitionArn: string;
 		FlowDefinitionStatus: DescribeFlowDefinitionResponseFlowDefinitionStatus;
 		CreationTime: Date;
-		FailureReason?: string;
+		FailureReason?: string | null;
 	}
 
 	export interface ListFlowDefinitionsRequest {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListHumanTaskUisResponse {
 		HumanTaskUiSummaries: Array<HumanTaskUiSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3496,16 +3496,16 @@ export namespace MyNS {
 	}
 
 	export interface ListHumanTaskUisRequest {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListHyperParameterTuningJobsResponse {
 		HyperParameterTuningJobSummaries: Array<HyperParameterTuningJobSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3521,8 +3521,8 @@ export namespace MyNS {
 		 */
 		Strategy: HyperParameterTuningJobConfigStrategy;
 		CreationTime: Date;
-		HyperParameterTuningEndTime?: Date;
-		LastModifiedTime?: Date;
+		HyperParameterTuningEndTime?: Date | null;
+		LastModifiedTime?: Date | null;
 
 		/**
 		 * The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
@@ -3537,27 +3537,27 @@ export namespace MyNS {
 		ObjectiveStatusCounters: ObjectiveStatusCounters;
 
 		/** Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch. */
-		ResourceLimits?: ResourceLimits;
+		ResourceLimits?: ResourceLimits | null;
 	}
 
 	export interface ListHyperParameterTuningJobsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		SortBy?: ListHyperParameterTuningJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NameContains?: string;
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		StatusEquals?: AutoMLCandidateCandidateStatus;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		SortBy?: ListHyperParameterTuningJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NameContains?: string | null;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		StatusEquals?: AutoMLCandidateCandidateStatus | null;
 	}
 
 	export enum ListHyperParameterTuningJobsRequestSortBy { Name = 0, Status = 1, CreationTime = 2 }
 
 	export interface ListLabelingJobsResponse {
-		LabelingJobSummaryList?: Array<LabelingJobSummary>;
-		NextToken?: string;
+		LabelingJobSummaryList?: Array<LabelingJobSummary> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -3576,69 +3576,69 @@ export namespace MyNS {
 		LabelCounters: LabelCounters;
 		WorkteamArn: string;
 		PreHumanTaskLambdaArn: string;
-		AnnotationConsolidationLambdaArn?: string;
-		FailureReason?: string;
+		AnnotationConsolidationLambdaArn?: string | null;
+		FailureReason?: string | null;
 
 		/** Specifies the location of the output produced by the labeling job. */
-		LabelingJobOutput?: LabelingJobOutput;
+		LabelingJobOutput?: LabelingJobOutput | null;
 
 		/** Input configuration information for a labeling job. */
-		InputConfig?: LabelingJobInputConfig;
+		InputConfig?: LabelingJobInputConfig | null;
 	}
 
 	export interface ListLabelingJobsRequest {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		MaxResults?: number;
-		NextToken?: string;
-		NameContains?: string;
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		StatusEquals?: TrialComponentStatusPrimaryStatus;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		NameContains?: string | null;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		StatusEquals?: TrialComponentStatusPrimaryStatus | null;
 	}
 
 	export interface ListLabelingJobsForWorkteamResponse {
 		LabelingJobSummaryList: Array<LabelingJobForWorkteamSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides summary information for a work team. */
 	export interface LabelingJobForWorkteamSummary {
-		LabelingJobName?: string;
+		LabelingJobName?: string | null;
 		JobReferenceCode: string;
 		WorkRequesterAccountId: string;
 		CreationTime: Date;
 
 		/** Provides counts for human-labeled tasks in the labeling job. */
-		LabelCounters?: LabelCountersForWorkteam;
-		NumberOfHumanWorkersPerDataObject?: number;
+		LabelCounters?: LabelCountersForWorkteam | null;
+		NumberOfHumanWorkersPerDataObject?: number | null;
 	}
 
 
 	/** Provides counts for human-labeled tasks in the labeling job. */
 	export interface LabelCountersForWorkteam {
-		HumanLabeled?: number;
-		PendingHuman?: number;
-		Total?: number;
+		HumanLabeled?: number | null;
+		PendingHuman?: number | null;
+		Total?: number | null;
 	}
 
 	export interface ListLabelingJobsForWorkteamRequest {
 		WorkteamArn: string;
-		MaxResults?: number;
-		NextToken?: string;
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		JobReferenceCodeContains?: string;
-		SortBy?: ListAppsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		JobReferenceCodeContains?: string | null;
+		SortBy?: ListAppsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
 
 	export interface ListModelPackagesOutput {
 		ModelPackageSummaryList: Array<ModelPackageSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3646,24 +3646,24 @@ export namespace MyNS {
 	export interface ModelPackageSummary {
 		ModelPackageName: string;
 		ModelPackageArn: string;
-		ModelPackageDescription?: string;
+		ModelPackageDescription?: string | null;
 		CreationTime: Date;
 		ModelPackageStatus: DescribeAlgorithmOutputAlgorithmStatus;
 	}
 
 	export interface ListModelPackagesInput {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		MaxResults?: number;
-		NameContains?: string;
-		NextToken?: string;
-		SortBy?: ListAlgorithmsInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		MaxResults?: number | null;
+		NameContains?: string | null;
+		NextToken?: string | null;
+		SortBy?: ListAlgorithmsInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
 
 	export interface ListModelsOutput {
 		Models: Array<ModelSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3675,41 +3675,41 @@ export namespace MyNS {
 	}
 
 	export interface ListModelsInput {
-		SortBy?: ListAlgorithmsInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
-		NameContains?: string;
-		CreationTimeBefore?: Date;
-		CreationTimeAfter?: Date;
+		SortBy?: ListAlgorithmsInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		NameContains?: string | null;
+		CreationTimeBefore?: Date | null;
+		CreationTimeAfter?: Date | null;
 	}
 
 	export interface ListMonitoringExecutionsResponse {
 		MonitoringExecutionSummaries: Array<MonitoringExecutionSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListMonitoringExecutionsRequest {
-		MonitoringScheduleName?: string;
-		EndpointName?: string;
-		SortBy?: ListMonitoringExecutionsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
-		ScheduledTimeBefore?: Date;
-		ScheduledTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		CreationTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		StatusEquals?: MonitoringExecutionSummaryMonitoringExecutionStatus;
+		MonitoringScheduleName?: string | null;
+		EndpointName?: string | null;
+		SortBy?: ListMonitoringExecutionsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		ScheduledTimeBefore?: Date | null;
+		ScheduledTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		CreationTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		StatusEquals?: MonitoringExecutionSummaryMonitoringExecutionStatus | null;
 	}
 
 	export enum ListMonitoringExecutionsRequestSortBy { CreationTime = 0, ScheduledTime = 1, Status = 2 }
 
 	export interface ListMonitoringSchedulesResponse {
 		MonitoringScheduleSummaries: Array<MonitoringScheduleSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3720,26 +3720,26 @@ export namespace MyNS {
 		CreationTime: Date;
 		LastModifiedTime: Date;
 		MonitoringScheduleStatus: DescribeMonitoringScheduleResponseMonitoringScheduleStatus;
-		EndpointName?: string;
+		EndpointName?: string | null;
 	}
 
 	export interface ListMonitoringSchedulesRequest {
-		EndpointName?: string;
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
-		NameContains?: string;
-		CreationTimeBefore?: Date;
-		CreationTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		StatusEquals?: DescribeMonitoringScheduleResponseMonitoringScheduleStatus;
+		EndpointName?: string | null;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		NameContains?: string | null;
+		CreationTimeBefore?: Date | null;
+		CreationTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		StatusEquals?: DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null;
 	}
 
 	export interface ListNotebookInstanceLifecycleConfigsOutput {
-		NextToken?: string;
-		NotebookInstanceLifecycleConfigs?: Array<NotebookInstanceLifecycleConfigSummary>;
+		NextToken?: string | null;
+		NotebookInstanceLifecycleConfigs?: Array<NotebookInstanceLifecycleConfigSummary> | null;
 	}
 
 
@@ -3747,25 +3747,25 @@ export namespace MyNS {
 	export interface NotebookInstanceLifecycleConfigSummary {
 		NotebookInstanceLifecycleConfigName: string;
 		NotebookInstanceLifecycleConfigArn: string;
-		CreationTime?: Date;
-		LastModifiedTime?: Date;
+		CreationTime?: Date | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export interface ListNotebookInstanceLifecycleConfigsInput {
-		NextToken?: string;
-		MaxResults?: number;
-		SortBy?: ListCodeRepositoriesInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NameContains?: string;
-		CreationTimeBefore?: Date;
-		CreationTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		SortBy?: ListCodeRepositoriesInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NameContains?: string | null;
+		CreationTimeBefore?: Date | null;
+		CreationTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
 	}
 
 	export interface ListNotebookInstancesOutput {
-		NextToken?: string;
-		NotebookInstances?: Array<NotebookInstanceSummary>;
+		NextToken?: string | null;
+		NotebookInstances?: Array<NotebookInstanceSummary> | null;
 	}
 
 
@@ -3773,37 +3773,37 @@ export namespace MyNS {
 	export interface NotebookInstanceSummary {
 		NotebookInstanceName: string;
 		NotebookInstanceArn: string;
-		NotebookInstanceStatus?: DescribeNotebookInstanceOutputNotebookInstanceStatus;
-		Url?: string;
-		InstanceType?: NotebookInstanceSummaryInstanceType;
-		CreationTime?: Date;
-		LastModifiedTime?: Date;
-		NotebookInstanceLifecycleConfigName?: string;
-		DefaultCodeRepository?: string;
-		AdditionalCodeRepositories?: Array<string>;
+		NotebookInstanceStatus?: DescribeNotebookInstanceOutputNotebookInstanceStatus | null;
+		Url?: string | null;
+		InstanceType?: NotebookInstanceSummaryInstanceType | null;
+		CreationTime?: Date | null;
+		LastModifiedTime?: Date | null;
+		NotebookInstanceLifecycleConfigName?: string | null;
+		DefaultCodeRepository?: string | null;
+		AdditionalCodeRepositories?: Array<string> | null;
 	}
 
 	export enum NotebookInstanceSummaryInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
 
 	export interface ListNotebookInstancesInput {
-		NextToken?: string;
-		MaxResults?: number;
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NameContains?: string;
-		CreationTimeBefore?: Date;
-		CreationTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		StatusEquals?: DescribeNotebookInstanceOutputNotebookInstanceStatus;
-		NotebookInstanceLifecycleConfigNameContains?: string;
-		DefaultCodeRepositoryContains?: string;
-		AdditionalCodeRepositoryEquals?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NameContains?: string | null;
+		CreationTimeBefore?: Date | null;
+		CreationTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		StatusEquals?: DescribeNotebookInstanceOutputNotebookInstanceStatus | null;
+		NotebookInstanceLifecycleConfigNameContains?: string | null;
+		DefaultCodeRepositoryContains?: string | null;
+		AdditionalCodeRepositoryEquals?: string | null;
 	}
 
 	export interface ListProcessingJobsResponse {
 		ProcessingJobSummaries: Array<ProcessingJobSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3812,51 +3812,51 @@ export namespace MyNS {
 		ProcessingJobName: string;
 		ProcessingJobArn: string;
 		CreationTime: Date;
-		ProcessingEndTime?: Date;
-		LastModifiedTime?: Date;
+		ProcessingEndTime?: Date | null;
+		LastModifiedTime?: Date | null;
 		ProcessingJobStatus: TrialComponentStatusPrimaryStatus;
-		FailureReason?: string;
-		ExitMessage?: string;
+		FailureReason?: string | null;
+		ExitMessage?: string | null;
 	}
 
 	export interface ListProcessingJobsRequest {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		NameContains?: string;
-		StatusEquals?: TrialComponentStatusPrimaryStatus;
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		NameContains?: string | null;
+		StatusEquals?: TrialComponentStatusPrimaryStatus | null;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListSubscribedWorkteamsResponse {
 		SubscribedWorkteams: Array<SubscribedWorkteam>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListSubscribedWorkteamsRequest {
-		NameContains?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NameContains?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsOutput {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsInput {
 		ResourceArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTrainingJobsResponse {
 		TrainingJobSummaries: Array<TrainingJobSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3865,43 +3865,43 @@ export namespace MyNS {
 		TrainingJobName: string;
 		TrainingJobArn: string;
 		CreationTime: Date;
-		TrainingEndTime?: Date;
-		LastModifiedTime?: Date;
+		TrainingEndTime?: Date | null;
+		LastModifiedTime?: Date | null;
 		TrainingJobStatus: TrialComponentStatusPrimaryStatus;
 	}
 
 	export interface ListTrainingJobsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		NameContains?: string;
-		StatusEquals?: TrialComponentStatusPrimaryStatus;
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		NameContains?: string | null;
+		StatusEquals?: TrialComponentStatusPrimaryStatus | null;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
 
 	export interface ListTrainingJobsForHyperParameterTuningJobResponse {
 		TrainingJobSummaries: Array<HyperParameterTrainingJobSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTrainingJobsForHyperParameterTuningJobRequest {
 		HyperParameterTuningJobName: string;
-		NextToken?: string;
-		MaxResults?: number;
-		StatusEquals?: TrialComponentStatusPrimaryStatus;
-		SortBy?: ListTrainingJobsForHyperParameterTuningJobRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		StatusEquals?: TrialComponentStatusPrimaryStatus | null;
+		SortBy?: ListTrainingJobsForHyperParameterTuningJobRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
 
 	export enum ListTrainingJobsForHyperParameterTuningJobRequestSortBy { Name = 0, CreationTime = 1, Status = 2, FinalObjectiveMetricValue = 3 }
 
 	export interface ListTransformJobsResponse {
 		TransformJobSummaries: Array<TransformJobSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -3910,132 +3910,132 @@ export namespace MyNS {
 		TransformJobName: string;
 		TransformJobArn: string;
 		CreationTime: Date;
-		TransformEndTime?: Date;
-		LastModifiedTime?: Date;
+		TransformEndTime?: Date | null;
+		LastModifiedTime?: Date | null;
 		TransformJobStatus: TrialComponentStatusPrimaryStatus;
-		FailureReason?: string;
+		FailureReason?: string | null;
 	}
 
 	export interface ListTransformJobsRequest {
-		CreationTimeAfter?: Date;
-		CreationTimeBefore?: Date;
-		LastModifiedTimeAfter?: Date;
-		LastModifiedTimeBefore?: Date;
-		NameContains?: string;
-		StatusEquals?: TrialComponentStatusPrimaryStatus;
-		SortBy?: ListAutoMLJobsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
+		CreationTimeAfter?: Date | null;
+		CreationTimeBefore?: Date | null;
+		LastModifiedTimeAfter?: Date | null;
+		LastModifiedTimeBefore?: Date | null;
+		NameContains?: string | null;
+		StatusEquals?: TrialComponentStatusPrimaryStatus | null;
+		SortBy?: ListAutoMLJobsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTrialComponentsResponse {
-		TrialComponentSummaries?: Array<TrialComponentSummary>;
-		NextToken?: string;
+		TrialComponentSummaries?: Array<TrialComponentSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of the properties of a trial component. To get all the properties, call the <a>DescribeTrialComponent</a> API and provide the <code>TrialComponentName</code>. */
 	export interface TrialComponentSummary {
-		TrialComponentName?: string;
-		TrialComponentArn?: string;
-		DisplayName?: string;
+		TrialComponentName?: string | null;
+		TrialComponentArn?: string | null;
+		DisplayName?: string | null;
 
 		/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
-		TrialComponentSource?: TrialComponentSource;
+		TrialComponentSource?: TrialComponentSource | null;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus;
-		StartTime?: Date;
-		EndTime?: Date;
-		CreationTime?: Date;
+		Status?: TrialComponentStatus | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext;
-		LastModifiedTime?: Date;
+		CreatedBy?: UserContext | null;
+		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext;
+		LastModifiedBy?: UserContext | null;
 	}
 
 	export interface ListTrialComponentsRequest {
-		ExperimentName?: string;
-		TrialName?: string;
-		SourceArn?: string;
-		CreatedAfter?: Date;
-		CreatedBefore?: Date;
-		SortBy?: ListAlgorithmsInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		MaxResults?: number;
-		NextToken?: string;
+		ExperimentName?: string | null;
+		TrialName?: string | null;
+		SourceArn?: string | null;
+		CreatedAfter?: Date | null;
+		CreatedBefore?: Date | null;
+		SortBy?: ListAlgorithmsInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTrialsResponse {
-		TrialSummaries?: Array<TrialSummary>;
-		NextToken?: string;
+		TrialSummaries?: Array<TrialSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of the properties of a trial. To get the complete set of properties, call the <a>DescribeTrial</a> API and provide the <code>TrialName</code>. */
 	export interface TrialSummary {
-		TrialArn?: string;
-		TrialName?: string;
-		DisplayName?: string;
+		TrialArn?: string | null;
+		TrialName?: string | null;
+		DisplayName?: string | null;
 
 		/** The source of the trial. */
-		TrialSource?: TrialSource;
-		CreationTime?: Date;
-		LastModifiedTime?: Date;
+		TrialSource?: TrialSource | null;
+		CreationTime?: Date | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export interface ListTrialsRequest {
-		ExperimentName?: string;
-		TrialComponentName?: string;
-		CreatedAfter?: Date;
-		CreatedBefore?: Date;
-		SortBy?: ListAlgorithmsInputSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		MaxResults?: number;
-		NextToken?: string;
+		ExperimentName?: string | null;
+		TrialComponentName?: string | null;
+		CreatedAfter?: Date | null;
+		CreatedBefore?: Date | null;
+		SortBy?: ListAlgorithmsInputSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListUserProfilesResponse {
-		UserProfiles?: Array<UserProfileDetails>;
-		NextToken?: string;
+		UserProfiles?: Array<UserProfileDetails> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The user profile details. */
 	export interface UserProfileDetails {
-		DomainId?: string;
-		UserProfileName?: string;
-		Status?: DescribeDomainResponseStatus;
-		CreationTime?: Date;
-		LastModifiedTime?: Date;
+		DomainId?: string | null;
+		UserProfileName?: string | null;
+		Status?: DescribeDomainResponseStatus | null;
+		CreationTime?: Date | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export interface ListUserProfilesRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		SortBy?: ListUserProfilesRequestSortBy;
-		DomainIdEquals?: string;
-		UserProfileNameContains?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		SortBy?: ListUserProfilesRequestSortBy | null;
+		DomainIdEquals?: string | null;
+		UserProfileNameContains?: string | null;
 	}
 
 	export enum ListUserProfilesRequestSortBy { CreationTime = 0, LastModifiedTime = 1 }
 
 	export interface ListWorkteamsResponse {
 		Workteams: Array<Workteam>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListWorkteamsRequest {
-		SortBy?: ListWorkteamsRequestSortBy;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NameContains?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		SortBy?: ListWorkteamsRequestSortBy | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NameContains?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export enum ListWorkteamsRequestSortBy { Name = 0, CreateDate = 1 }
@@ -4055,7 +4055,7 @@ export namespace MyNS {
 	export interface RenderUiTemplateRequest {
 
 		/** The Liquid template for the worker user interface. */
-		UiTemplate?: UiTemplate;
+		UiTemplate?: UiTemplate | null;
 
 		/**
 		 * Contains input values for a task.
@@ -4063,7 +4063,7 @@ export namespace MyNS {
 		 */
 		Task: RenderableTask;
 		RoleArn: string;
-		HumanTaskUiArn?: string;
+		HumanTaskUiArn?: string | null;
 	}
 
 
@@ -4073,8 +4073,8 @@ export namespace MyNS {
 	}
 
 	export interface SearchResponse {
-		Results?: Array<SearchRecord>;
-		NextToken?: string;
+		Results?: Array<SearchRecord> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -4082,252 +4082,252 @@ export namespace MyNS {
 	export interface SearchRecord {
 
 		/** Contains information about a training job. */
-		TrainingJob?: TrainingJob;
+		TrainingJob?: TrainingJob | null;
 
 		/** The properties of an experiment as returned by the <a>Search</a> API. */
-		Experiment?: Experiment;
+		Experiment?: Experiment | null;
 
 		/** The properties of a trial as returned by the <a>Search</a> API. */
-		Trial?: Trial;
+		Trial?: Trial | null;
 
 		/** The properties of a trial component as returned by the <a>Search</a> API. */
-		TrialComponent?: TrialComponent;
+		TrialComponent?: TrialComponent | null;
 	}
 
 
 	/** Contains information about a training job. */
 	export interface TrainingJob {
-		TrainingJobName?: string;
-		TrainingJobArn?: string;
-		TuningJobArn?: string;
-		LabelingJobArn?: string;
-		AutoMLJobArn?: string;
+		TrainingJobName?: string | null;
+		TrainingJobArn?: string | null;
+		TuningJobArn?: string | null;
+		LabelingJobArn?: string | null;
+		AutoMLJobArn?: string | null;
 
 		/** <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.</p> */
-		ModelArtifacts?: ModelArtifacts;
-		TrainingJobStatus?: TrialComponentStatusPrimaryStatus;
-		SecondaryStatus?: DescribeTrainingJobResponseSecondaryStatus;
-		FailureReason?: string;
-		HyperParameters?: HyperParameters;
+		ModelArtifacts?: ModelArtifacts | null;
+		TrainingJobStatus?: TrialComponentStatusPrimaryStatus | null;
+		SecondaryStatus?: DescribeTrainingJobResponseSecondaryStatus | null;
+		FailureReason?: string | null;
+		HyperParameters?: HyperParameters | null;
 
 		/** <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> */
-		AlgorithmSpecification?: AlgorithmSpecification;
-		RoleArn?: string;
-		InputDataConfig?: Array<Channel>;
+		AlgorithmSpecification?: AlgorithmSpecification | null;
+		RoleArn?: string | null;
+		InputDataConfig?: Array<Channel> | null;
 
 		/** Provides information about how to store model training results (model artifacts). */
-		OutputDataConfig?: OutputDataConfig;
+		OutputDataConfig?: OutputDataConfig | null;
 
 		/** Describes the resources, including ML compute instances and ML storage volumes, to use for model training. */
-		ResourceConfig?: ResourceConfig;
+		ResourceConfig?: ResourceConfig | null;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 
 		/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
-		StoppingCondition?: StoppingCondition;
-		CreationTime?: Date;
-		TrainingStartTime?: Date;
-		TrainingEndTime?: Date;
-		LastModifiedTime?: Date;
-		SecondaryStatusTransitions?: Array<SecondaryStatusTransition>;
-		FinalMetricDataList?: Array<MetricData>;
-		EnableNetworkIsolation?: boolean;
-		EnableInterContainerTrafficEncryption?: boolean;
-		EnableManagedSpotTraining?: boolean;
+		StoppingCondition?: StoppingCondition | null;
+		CreationTime?: Date | null;
+		TrainingStartTime?: Date | null;
+		TrainingEndTime?: Date | null;
+		LastModifiedTime?: Date | null;
+		SecondaryStatusTransitions?: Array<SecondaryStatusTransition> | null;
+		FinalMetricDataList?: Array<MetricData> | null;
+		EnableNetworkIsolation?: boolean | null;
+		EnableInterContainerTrafficEncryption?: boolean | null;
+		EnableManagedSpotTraining?: boolean | null;
 
 		/** Contains information about the output location for managed spot training checkpoint data. */
-		CheckpointConfig?: CheckpointConfig;
-		TrainingTimeInSeconds?: number;
-		BillableTimeInSeconds?: number;
+		CheckpointConfig?: CheckpointConfig | null;
+		TrainingTimeInSeconds?: number | null;
+		BillableTimeInSeconds?: number | null;
 
 		/** Configuration information for the debug hook parameters, collection configuration, and storage paths. */
-		DebugHookConfig?: DebugHookConfig;
+		DebugHookConfig?: DebugHookConfig | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig;
-		DebugRuleConfigurations?: Array<DebugRuleConfiguration>;
+		ExperimentConfig?: ExperimentConfig | null;
+		DebugRuleConfigurations?: Array<DebugRuleConfiguration> | null;
 
 		/** Configuration of storage locations for TensorBoard output. */
-		TensorBoardOutputConfig?: TensorBoardOutputConfig;
-		DebugRuleEvaluationStatuses?: Array<DebugRuleEvaluationStatus>;
-		Tags?: Array<Tag>;
+		TensorBoardOutputConfig?: TensorBoardOutputConfig | null;
+		DebugRuleEvaluationStatuses?: Array<DebugRuleEvaluationStatus> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** The properties of an experiment as returned by the <a>Search</a> API. */
 	export interface Experiment {
-		ExperimentName?: string;
-		ExperimentArn?: string;
-		DisplayName?: string;
+		ExperimentName?: string | null;
+		ExperimentArn?: string | null;
+		DisplayName?: string | null;
 
 		/** The source of the experiment. */
-		Source?: ExperimentSource;
-		Description?: string;
-		CreationTime?: Date;
+		Source?: ExperimentSource | null;
+		Description?: string | null;
+		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext;
-		LastModifiedTime?: Date;
+		CreatedBy?: UserContext | null;
+		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext;
-		Tags?: Array<Tag>;
+		LastModifiedBy?: UserContext | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** The properties of a trial as returned by the <a>Search</a> API. */
 	export interface Trial {
-		TrialName?: string;
-		TrialArn?: string;
-		DisplayName?: string;
-		ExperimentName?: string;
+		TrialName?: string | null;
+		TrialArn?: string | null;
+		DisplayName?: string | null;
+		ExperimentName?: string | null;
 
 		/** The source of the trial. */
-		Source?: TrialSource;
-		CreationTime?: Date;
+		Source?: TrialSource | null;
+		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext;
-		LastModifiedTime?: Date;
+		CreatedBy?: UserContext | null;
+		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext;
-		Tags?: Array<Tag>;
-		TrialComponentSummaries?: Array<TrialComponentSimpleSummary>;
+		LastModifiedBy?: UserContext | null;
+		Tags?: Array<Tag> | null;
+		TrialComponentSummaries?: Array<TrialComponentSimpleSummary> | null;
 	}
 
 
 	/** A short summary of a trial component. */
 	export interface TrialComponentSimpleSummary {
-		TrialComponentName?: string;
-		TrialComponentArn?: string;
+		TrialComponentName?: string | null;
+		TrialComponentArn?: string | null;
 
 		/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
-		TrialComponentSource?: TrialComponentSource;
-		CreationTime?: Date;
+		TrialComponentSource?: TrialComponentSource | null;
+		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext;
+		CreatedBy?: UserContext | null;
 	}
 
 
 	/** The properties of a trial component as returned by the <a>Search</a> API. */
 	export interface TrialComponent {
-		TrialComponentName?: string;
-		DisplayName?: string;
-		TrialComponentArn?: string;
+		TrialComponentName?: string | null;
+		DisplayName?: string | null;
+		TrialComponentArn?: string | null;
 
 		/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
-		Source?: TrialComponentSource;
+		Source?: TrialComponentSource | null;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus;
-		StartTime?: Date;
-		EndTime?: Date;
-		CreationTime?: Date;
+		Status?: TrialComponentStatus | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext;
-		LastModifiedTime?: Date;
+		CreatedBy?: UserContext | null;
+		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext;
-		Parameters?: TrialComponentParameters;
-		InputArtifacts?: TrialComponentArtifacts;
-		OutputArtifacts?: TrialComponentArtifacts;
-		Metrics?: Array<TrialComponentMetricSummary>;
+		LastModifiedBy?: UserContext | null;
+		Parameters?: TrialComponentParameters | null;
+		InputArtifacts?: TrialComponentArtifacts | null;
+		OutputArtifacts?: TrialComponentArtifacts | null;
+		Metrics?: Array<TrialComponentMetricSummary> | null;
 
 		/** Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned. */
-		SourceDetail?: TrialComponentSourceDetail;
-		Tags?: Array<Tag>;
-		Parents?: Array<Parent>;
+		SourceDetail?: TrialComponentSourceDetail | null;
+		Tags?: Array<Tag> | null;
+		Parents?: Array<Parent> | null;
 	}
 
 
 	/** Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned. */
 	export interface TrialComponentSourceDetail {
-		SourceArn?: string;
+		SourceArn?: string | null;
 
 		/** Contains information about a training job. */
-		TrainingJob?: TrainingJob;
+		TrainingJob?: TrainingJob | null;
 
 		/** An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html">Process Data and Evaluate Models</a>. */
-		ProcessingJob?: ProcessingJob;
+		ProcessingJob?: ProcessingJob | null;
 	}
 
 
 	/** An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html">Process Data and Evaluate Models</a>. */
 	export interface ProcessingJob {
-		ProcessingInputs?: Array<ProcessingInput>;
+		ProcessingInputs?: Array<ProcessingInput> | null;
 
 		/** The output configuration for the processing job. */
-		ProcessingOutputConfig?: ProcessingOutputConfig;
-		ProcessingJobName?: string;
+		ProcessingOutputConfig?: ProcessingOutputConfig | null;
+		ProcessingJobName?: string | null;
 
 		/** Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance. */
-		ProcessingResources?: ProcessingResources;
+		ProcessingResources?: ProcessingResources | null;
 
 		/** Specifies a time limit for how long the processing job is allowed to run. */
-		StoppingCondition?: ProcessingStoppingCondition;
+		StoppingCondition?: ProcessingStoppingCondition | null;
 
 		/** Configuration to run a processing job in a specified container image. */
-		AppSpecification?: AppSpecification;
-		Environment?: ProcessingEnvironmentMap;
+		AppSpecification?: AppSpecification | null;
+		Environment?: ProcessingEnvironmentMap | null;
 
 		/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
-		NetworkConfig?: NetworkConfig;
-		RoleArn?: string;
+		NetworkConfig?: NetworkConfig | null;
+		RoleArn?: string | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig;
-		ProcessingJobArn?: string;
-		ProcessingJobStatus?: TrialComponentStatusPrimaryStatus;
-		ExitMessage?: string;
-		FailureReason?: string;
-		ProcessingEndTime?: Date;
-		ProcessingStartTime?: Date;
-		LastModifiedTime?: Date;
-		CreationTime?: Date;
-		MonitoringScheduleArn?: string;
-		AutoMLJobArn?: string;
-		TrainingJobArn?: string;
-		Tags?: Array<Tag>;
+		ExperimentConfig?: ExperimentConfig | null;
+		ProcessingJobArn?: string | null;
+		ProcessingJobStatus?: TrialComponentStatusPrimaryStatus | null;
+		ExitMessage?: string | null;
+		FailureReason?: string | null;
+		ProcessingEndTime?: Date | null;
+		ProcessingStartTime?: Date | null;
+		LastModifiedTime?: Date | null;
+		CreationTime?: Date | null;
+		MonitoringScheduleArn?: string | null;
+		AutoMLJobArn?: string | null;
+		TrainingJobArn?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** The trial that a trial component is associated with and the experiment the trial is part of. A component might not be associated with a trial. A component can be associated with multiple trials. */
 	export interface Parent {
-		TrialName?: string;
-		ExperimentName?: string;
+		TrialName?: string | null;
+		ExperimentName?: string | null;
 	}
 
 	export interface SearchRequest {
 		Resource: GetSearchSuggestionsRequestResource;
 
 		/** <p>A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.</p> <p>A <code>SearchExpression</code> contains the following components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value. A <code>SearchExpression</code> can include only one <code>Contains</code> operator.</p> </li> <li> <p>A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.</p> </li> <li> <p>A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.</p> </li> <li> <p>A Boolean operator: <code>And</code> or <code>Or</code>.</p> </li> </ul> */
-		SearchExpression?: SearchExpression;
-		SortBy?: string;
-		SortOrder?: ListAlgorithmsInputSortOrder;
-		NextToken?: string;
-		MaxResults?: number;
+		SearchExpression?: SearchExpression | null;
+		SortBy?: string | null;
+		SortOrder?: ListAlgorithmsInputSortOrder | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** <p>A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.</p> <p>A <code>SearchExpression</code> contains the following components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value. A <code>SearchExpression</code> can include only one <code>Contains</code> operator.</p> </li> <li> <p>A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.</p> </li> <li> <p>A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.</p> </li> <li> <p>A Boolean operator: <code>And</code> or <code>Or</code>.</p> </li> </ul> */
 	export interface SearchExpression {
-		Filters?: Array<Filter>;
-		NestedFilters?: Array<NestedFilters>;
-		SubExpressions?: Array<SearchExpression>;
-		Operator?: SearchExpressionOperator;
+		Filters?: Array<Filter> | null;
+		NestedFilters?: Array<NestedFilters> | null;
+		SubExpressions?: Array<SearchExpression> | null;
+		Operator?: SearchExpressionOperator | null;
 	}
 
 
 	/** <p>A conditional statement for a search expression that includes a resource property, a Boolean operator, and a value. Resources that match the statement are returned in the results from the <a>Search</a> API.</p> <p>If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator.</p> <p>In search, there are several property types:</p> <dl> <dt>Metrics</dt> <dd> <p>To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:</p> <p> <code>{</code> </p> <p> <code>"Name": "Metrics.accuracy",</code> </p> <p> <code>"Operator": "GreaterThan",</code> </p> <p> <code>"Value": "0.9"</code> </p> <p> <code>}</code> </p> </dd> <dt>HyperParameters</dt> <dd> <p>To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:</p> <p> <code> {</code> </p> <p> <code> "Name": "HyperParameters.learning_rate",</code> </p> <p> <code> "Operator": "LessThan",</code> </p> <p> <code> "Value": "0.5"</code> </p> <p> <code> }</code> </p> </dd> <dt>Tags</dt> <dd> <p>To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.</p> </dd> </dl> */
 	export interface Filter {
 		Name: string;
-		Operator?: FilterOperator;
-		Value?: string;
+		Operator?: FilterOperator | null;
+		Value?: string | null;
 	}
 
 	export enum FilterOperator { Equals = 0, NotEquals = 1, GreaterThan = 2, GreaterThanOrEqualTo = 3, LessThan = 4, LessThanOrEqualTo = 5, Contains = 6, Exists = 7, NotExists = 8, In = 9 }
@@ -4393,24 +4393,24 @@ export namespace MyNS {
 		CodeRepositoryName: string;
 
 		/** Specifies configuration details for a Git repository when the repository is updated. */
-		GitConfig?: GitConfigForUpdate;
+		GitConfig?: GitConfigForUpdate | null;
 	}
 
 
 	/** Specifies configuration details for a Git repository when the repository is updated. */
 	export interface GitConfigForUpdate {
-		SecretArn?: string;
+		SecretArn?: string | null;
 	}
 
 	export interface UpdateDomainResponse {
-		DomainArn?: string;
+		DomainArn?: string | null;
 	}
 
 	export interface UpdateDomainRequest {
 		DomainId: string;
 
 		/** A collection of settings. */
-		DefaultUserSettings?: UserSettings;
+		DefaultUserSettings?: UserSettings | null;
 	}
 
 	export interface UpdateEndpointOutput {
@@ -4420,8 +4420,8 @@ export namespace MyNS {
 	export interface UpdateEndpointInput {
 		EndpointName: string;
 		EndpointConfigName: string;
-		RetainAllVariantProperties?: boolean;
-		ExcludeRetainedVariantProperties?: Array<VariantProperty>;
+		RetainAllVariantProperties?: boolean | null;
+		ExcludeRetainedVariantProperties?: Array<VariantProperty> | null;
 	}
 
 
@@ -4445,18 +4445,18 @@ export namespace MyNS {
 	/** Specifies weight and capacity values for a production variant. */
 	export interface DesiredWeightAndCapacity {
 		VariantName: string;
-		DesiredWeight?: number;
-		DesiredInstanceCount?: number;
+		DesiredWeight?: number | null;
+		DesiredInstanceCount?: number | null;
 	}
 
 	export interface UpdateExperimentResponse {
-		ExperimentArn?: string;
+		ExperimentArn?: string | null;
 	}
 
 	export interface UpdateExperimentRequest {
 		ExperimentName: string;
-		DisplayName?: string;
-		Description?: string;
+		DisplayName?: string | null;
+		Description?: string | null;
 	}
 
 	export interface ConflictException {
@@ -4481,18 +4481,18 @@ export namespace MyNS {
 
 	export interface UpdateNotebookInstanceInput {
 		NotebookInstanceName: string;
-		InstanceType?: UpdateNotebookInstanceInputInstanceType;
-		RoleArn?: string;
-		LifecycleConfigName?: string;
-		DisassociateLifecycleConfig?: boolean;
-		VolumeSizeInGB?: number;
-		DefaultCodeRepository?: string;
-		AdditionalCodeRepositories?: Array<string>;
-		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType>;
-		DisassociateAcceleratorTypes?: boolean;
-		DisassociateDefaultCodeRepository?: boolean;
-		DisassociateAdditionalCodeRepositories?: boolean;
-		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess;
+		InstanceType?: UpdateNotebookInstanceInputInstanceType | null;
+		RoleArn?: string | null;
+		LifecycleConfigName?: string | null;
+		DisassociateLifecycleConfig?: boolean | null;
+		VolumeSizeInGB?: number | null;
+		DefaultCodeRepository?: string | null;
+		AdditionalCodeRepositories?: Array<string> | null;
+		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType> | null;
+		DisassociateAcceleratorTypes?: boolean | null;
+		DisassociateDefaultCodeRepository?: boolean | null;
+		DisassociateAdditionalCodeRepositories?: boolean | null;
+		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
 	}
 
 	export enum UpdateNotebookInstanceInputInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
@@ -4502,41 +4502,41 @@ export namespace MyNS {
 
 	export interface UpdateNotebookInstanceLifecycleConfigInput {
 		NotebookInstanceLifecycleConfigName: string;
-		OnCreate?: Array<NotebookInstanceLifecycleHook>;
-		OnStart?: Array<NotebookInstanceLifecycleHook>;
+		OnCreate?: Array<NotebookInstanceLifecycleHook> | null;
+		OnStart?: Array<NotebookInstanceLifecycleHook> | null;
 	}
 
 	export interface UpdateTrialResponse {
-		TrialArn?: string;
+		TrialArn?: string | null;
 	}
 
 	export interface UpdateTrialRequest {
 		TrialName: string;
-		DisplayName?: string;
+		DisplayName?: string | null;
 	}
 
 	export interface UpdateTrialComponentResponse {
-		TrialComponentArn?: string;
+		TrialComponentArn?: string | null;
 	}
 
 	export interface UpdateTrialComponentRequest {
 		TrialComponentName: string;
-		DisplayName?: string;
+		DisplayName?: string | null;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus;
-		StartTime?: Date;
-		EndTime?: Date;
-		Parameters?: TrialComponentParameters;
-		ParametersToRemove?: Array<string>;
-		InputArtifacts?: TrialComponentArtifacts;
-		InputArtifactsToRemove?: Array<string>;
-		OutputArtifacts?: TrialComponentArtifacts;
-		OutputArtifactsToRemove?: Array<string>;
+		Status?: TrialComponentStatus | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Parameters?: TrialComponentParameters | null;
+		ParametersToRemove?: Array<string> | null;
+		InputArtifacts?: TrialComponentArtifacts | null;
+		InputArtifactsToRemove?: Array<string> | null;
+		OutputArtifacts?: TrialComponentArtifacts | null;
+		OutputArtifactsToRemove?: Array<string> | null;
 	}
 
 	export interface UpdateUserProfileResponse {
-		UserProfileArn?: string;
+		UserProfileArn?: string | null;
 	}
 
 	export interface UpdateUserProfileRequest {
@@ -4544,7 +4544,7 @@ export namespace MyNS {
 		UserProfileName: string;
 
 		/** A collection of settings. */
-		UserSettings?: UserSettings;
+		UserSettings?: UserSettings | null;
 	}
 
 	export interface UpdateWorkforceResponse {
@@ -4560,7 +4560,7 @@ export namespace MyNS {
 		WorkforceName: string;
 
 		/** A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. For more information, see . */
-		SourceIpConfig?: SourceIpConfig;
+		SourceIpConfig?: SourceIpConfig | null;
 	}
 
 	export interface UpdateWorkteamResponse {
@@ -4574,11 +4574,11 @@ export namespace MyNS {
 
 	export interface UpdateWorkteamRequest {
 		WorkteamName: string;
-		MemberDefinitions?: Array<MemberDefinition>;
-		Description?: string;
+		MemberDefinitions?: Array<MemberDefinition> | null;
+		Description?: string | null;
 
 		/** Configures SNS notifications of available or expiring work items for work teams. */
-		NotificationConfiguration?: NotificationConfiguration;
+		NotificationConfiguration?: NotificationConfiguration | null;
 	}
 
 	export enum AlgorithmSortBy { Name = 0, CreationTime = 1 }
@@ -4778,15 +4778,15 @@ export namespace MyNS {
 
 	/** <p>Represents an input or output artifact of a trial component. You specify <code>TrialComponentArtifact</code> as part of the <code>InputArtifacts</code> and <code>OutputArtifacts</code> parameters in the <a>CreateTrialComponent</a> request.</p> <p>Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types. Examples of output artifacts are metrics, snapshots, logs, and images.</p> */
 	export interface TrialComponentArtifact {
-		MediaType?: string;
+		MediaType?: string | null;
 		Value: string;
 	}
 
 
 	/** <p>The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code> can be specified.</p> <p>This object is specified in the <a>CreateTrialComponent</a> request.</p> */
 	export interface TrialComponentParameterValue {
-		StringValue?: string;
-		NumberValue?: number;
+		StringValue?: string | null;
+		NumberValue?: number | null;
 	}
 
 	export enum TrialComponentPrimaryStatus { InProgress = 0, Completed = 1, Failed = 2, Stopping = 3, Stopped = 4 }

@@ -11,9 +11,9 @@ export namespace MyNS {
 		 * Example: If aggregation_level is "DAILY" and aggregation_count is 14,
 		 * aggregation will be over 14 days.
 		 */
-		aggregationCount?: number;
-		aggregationInterval?: AggregationInfoAggregationInterval;
-		aggregationLevel?: AggregationInfoAggregationLevel;
+		aggregationCount?: number | null;
+		aggregationInterval?: AggregationInfoAggregationInterval | null;
+		aggregationLevel?: AggregationInfoAggregationLevel | null;
 	}
 
 	export enum AggregationInfoAggregationInterval { AGGREGATION_INTERVAL_UNSPECIFIED = 0, DAILY = 1, MONTHLY = 2 }
@@ -73,14 +73,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -110,10 +110,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -129,7 +129,7 @@ export namespace MyNS {
 		 * The display name given to the billing account, such as `My Billing
 		 * Account`. This name is displayed in the GCP Console.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * If this account is a
@@ -138,7 +138,7 @@ export namespace MyNS {
 		 * resold through.
 		 * Otherwise this will be empty.
 		 */
-		masterBillingAccount?: string;
+		masterBillingAccount?: string | null;
 
 		/**
 		 * The resource name of the billing account. The resource name has the form
@@ -146,14 +146,14 @@ export namespace MyNS {
 		 * `billingAccounts/012345-567890-ABCDEF` would be the resource name for
 		 * billing account `012345-567890-ABCDEF`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. True if the billing account is open, and will therefore be charged for any
 		 * usage on associated projects. False if the billing account is closed, and
 		 * therefore projects associated with it will be unable to use paid services.
 		 */
-		open?: boolean;
+		open?: boolean | null;
 	}
 
 
@@ -184,7 +184,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -219,13 +219,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -259,26 +259,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -289,22 +289,22 @@ export namespace MyNS {
 		 * The type of product the SKU refers to.
 		 * Example: "Compute", "Storage", "Network", "ApplicationServices" etc.
 		 */
-		resourceFamily?: string;
+		resourceFamily?: string | null;
 
 		/**
 		 * A group classification for related SKUs.
 		 * Example: "RAM", "GPU", "Prediction", "Ops", "GoogleEgress" etc.
 		 */
-		resourceGroup?: string;
+		resourceGroup?: string | null;
 
 		/** The display name of the service this SKU belongs to. */
-		serviceDisplayName?: string;
+		serviceDisplayName?: string | null;
 
 		/**
 		 * Represents how the SKU is consumed.
 		 * Example: "OnDemand", "Preemptible", "Commit1Mo", "Commit1Yr" etc.
 		 */
-		usageType?: string;
+		usageType?: string | null;
 	}
 
 
@@ -312,14 +312,14 @@ export namespace MyNS {
 	export interface ListBillingAccountsResponse {
 
 		/** A list of billing accounts. */
-		billingAccounts?: Array<BillingAccount>;
+		billingAccounts?: Array<BillingAccount> | null;
 
 		/**
 		 * A token to retrieve the next page of results. To retrieve the next page,
 		 * call `ListBillingAccounts` again with the `page_token` field set to this
 		 * value. This field is empty if there are no more results to retrieve.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -331,13 +331,13 @@ export namespace MyNS {
 		 * call `ListProjectBillingInfo` again with the `page_token` field set to this
 		 * value. This field is empty if there are no more results to retrieve.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * A list of `ProjectBillingInfo` resources representing the projects
 		 * associated with the billing account.
 		 */
-		projectBillingInfo?: Array<ProjectBillingInfo>;
+		projectBillingInfo?: Array<ProjectBillingInfo> | null;
 	}
 
 
@@ -352,7 +352,7 @@ export namespace MyNS {
 		 * The resource name of the billing account associated with the project, if
 		 * any. For example, `billingAccounts/012345-567890-ABCDEF`.
 		 */
-		billingAccountName?: string;
+		billingAccountName?: string | null;
 
 		/**
 		 * True if the project is associated with an open billing account, to which
@@ -360,7 +360,7 @@ export namespace MyNS {
 		 * closed billing account, or no billing account at all, and therefore cannot
 		 * use paid services. This field is read-only.
 		 */
-		billingEnabled?: boolean;
+		billingEnabled?: boolean | null;
 
 		/**
 		 * The resource name for the `ProjectBillingInfo`; has the form
@@ -368,14 +368,14 @@ export namespace MyNS {
 		 * billing information for project `tokyo-rain-123` would be
 		 * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The ID of the project that this `ProjectBillingInfo` represents, such as
 		 * `tokyo-rain-123`. This is a convenience field so that you don't need to
 		 * parse the `name` field to obtain a project ID. This field is read-only.
 		 */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -387,10 +387,10 @@ export namespace MyNS {
 		 * call `ListServices` again with the `page_token` field set to this
 		 * value. This field is empty if there are no more results to retrieve.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of services. */
-		services?: Array<Service>;
+		services?: Array<Service> | null;
 	}
 
 
@@ -401,22 +401,22 @@ export namespace MyNS {
 		 * The business under which the service is offered.
 		 * Ex. "businessEntities/GCP", "businessEntities/Maps"
 		 */
-		businessEntityName?: string;
+		businessEntityName?: string | null;
 
 		/** A human readable display name for this service. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The resource name for the service.
 		 * Example: "services/DA34-426B-A397"
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The identifier for the service.
 		 * Example: "DA34-426B-A397"
 		 */
-		serviceId?: string;
+		serviceId?: string | null;
 	}
 
 
@@ -428,10 +428,10 @@ export namespace MyNS {
 		 * call `ListSkus` again with the `page_token` field set to this
 		 * value. This field is empty if there are no more results to retrieve.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of public SKUs of the given service. */
-		skus?: Array<Sku>;
+		skus?: Array<Sku> | null;
 	}
 
 
@@ -439,41 +439,41 @@ export namespace MyNS {
 	export interface Sku {
 
 		/** Represents the category hierarchy of a SKU. */
-		category?: Category;
+		category?: Category | null;
 
 		/**
 		 * A human readable description of the SKU, has a maximum length of 256
 		 * characters.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The resource name for the SKU.
 		 * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** A timeline of pricing info for this SKU in chronological order. */
-		pricingInfo?: Array<PricingInfo>;
+		pricingInfo?: Array<PricingInfo> | null;
 
 		/**
 		 * Identifies the service provider.
 		 * This is 'Google' for first party services in Google Cloud Platform.
 		 */
-		serviceProviderName?: string;
+		serviceProviderName?: string | null;
 
 		/**
 		 * List of service regions this SKU is offered at.
 		 * Example: "asia-east1"
 		 * Service regions can be found at https://cloud.google.com/about/locations/
 		 */
-		serviceRegions?: Array<string>;
+		serviceRegions?: Array<string> | null;
 
 		/**
 		 * The identifier for the SKU.
 		 * Example: "AA95-CD31-42FE"
 		 */
-		skuId?: string;
+		skuId?: string | null;
 	}
 
 
@@ -481,7 +481,7 @@ export namespace MyNS {
 	export interface PricingInfo {
 
 		/** Represents the aggregation level and interval for pricing of a single SKU. */
-		aggregationInfo?: AggregationInfo;
+		aggregationInfo?: AggregationInfo | null;
 
 		/**
 		 * Conversion rate used for currency conversion, from USD to the currency
@@ -490,7 +490,7 @@ export namespace MyNS {
 		 * defaults to 1.0.
 		 * Example: USD * currency_conversion_rate = JPY
 		 */
-		currencyConversionRate?: number;
+		currencyConversionRate?: number | null;
 
 		/**
 		 * The timestamp from which this pricing was effective within the requested
@@ -500,7 +500,7 @@ export namespace MyNS {
 		 * be equivalent to a time within the last 12 hours, indicating the latest
 		 * pricing info.
 		 */
-		effectiveTime?: string;
+		effectiveTime?: string | null;
 
 		/**
 		 * Expresses a mathematical pricing formula. For Example:-
@@ -512,13 +512,13 @@ export namespace MyNS {
 		 * next 80GB is priced at $10 per GB followed by $5 per GB for additional
 		 * usage.
 		 */
-		pricingExpression?: PricingExpression;
+		pricingExpression?: PricingExpression | null;
 
 		/**
 		 * An optional human readable summary of the pricing information, has a
 		 * maximum length of 256 characters.
 		 */
-		summary?: string;
+		summary?: string | null;
 	}
 
 
@@ -538,7 +538,7 @@ export namespace MyNS {
 		 * The base unit for the SKU which is the unit used in usage exports.
 		 * Example: "By"
 		 */
-		baseUnit?: string;
+		baseUnit?: string | null;
 
 		/**
 		 * Conversion factor for converting from price per usage_unit to price per
@@ -547,13 +547,13 @@ export namespace MyNS {
 		 * start_usage_amount * base_unit_conversion_factor = start_usage_amount in
 		 * base_unit.
 		 */
-		baseUnitConversionFactor?: number;
+		baseUnitConversionFactor?: number | null;
 
 		/**
 		 * The base unit in human readable form.
 		 * Example: "byte".
 		 */
-		baseUnitDescription?: string;
+		baseUnitDescription?: string | null;
 
 		/**
 		 * The recommended quantity of units for displaying pricing info. When
@@ -565,26 +565,26 @@ export namespace MyNS {
 		 * the display_quantity is "1000" then the recommended way of displaying the
 		 * pricing info is "0.10 USD per 1000 GB"
 		 */
-		displayQuantity?: number;
+		displayQuantity?: number | null;
 
 		/**
 		 * The list of tiered rates for this pricing. The total cost is computed by
 		 * applying each of the tiered rates on usage. This repeated list is sorted
 		 * by ascending order of start_usage_amount.
 		 */
-		tieredRates?: Array<TierRate>;
+		tieredRates?: Array<TierRate> | null;
 
 		/**
 		 * The short hand for unit of usage this pricing is specified in.
 		 * Example: usage_unit of "GiBy" means that usage is specified in "Gibi Byte".
 		 */
-		usageUnit?: string;
+		usageUnit?: string | null;
 
 		/**
 		 * The unit of usage in human readable form.
 		 * Example: "gibi byte".
 		 */
-		usageUnitDescription?: string;
+		usageUnitDescription?: string | null;
 	}
 
 
@@ -596,10 +596,10 @@ export namespace MyNS {
 		 * Example: start_usage_amount of 10 indicates that the usage will be priced
 		 * at the unit_price after the first 10 usage_units.
 		 */
-		startUsageAmount?: number;
+		startUsageAmount?: number | null;
 
 		/** Represents an amount of money with its currency type. */
-		unitPrice?: Money;
+		unitPrice?: Money | null;
 	}
 
 
@@ -607,7 +607,7 @@ export namespace MyNS {
 	export interface Money {
 
 		/** The 3-letter currency code defined in ISO 4217. */
-		currencyCode?: string;
+		currencyCode?: string | null;
 
 		/**
 		 * Number of nano (10^-9) units of the amount.
@@ -617,13 +617,13 @@ export namespace MyNS {
 		 * If `units` is negative, `nanos` must be negative or zero.
 		 * For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
 		 */
-		nanos?: number;
+		nanos?: number | null;
 
 		/**
 		 * The whole units of the amount.
 		 * For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar.
 		 */
-		units?: string;
+		units?: string | null;
 	}
 
 
@@ -687,14 +687,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -709,7 +709,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -729,7 +729,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -793,7 +793,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -802,7 +802,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -815,7 +815,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -826,7 +826,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()

@@ -317,72 +317,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Remove the specified ACEs from the ACL belonging to the specified token.
-		/// Access_Control_Entries_Remove_Access_Control_Entries {organization}/_apis/accesscontrolentries/{securityNamespaceId}
-		/// </summary>
-		/// <param name="securityNamespaceId">Security namespace identifier.</param>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="token">The token whose ACL should be modified.</param>
-		/// <param name="descriptors">String containing a list of identity descriptors separated by ',' whose entries should be removed.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<bool> Access_Control_Entries_Remove_Access_Control_EntriesAsync(string securityNamespaceId, string organization, string token, string descriptors, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<bool>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Remove the specified ACEs from the ACL belonging to the specified token.
-		/// Access_Control_Entries_Remove_Access_Control_Entries {organization}/_apis/accesscontrolentries/{securityNamespaceId}
-		/// </summary>
-		/// <param name="securityNamespaceId">Security namespace identifier.</param>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="token">The token whose ACL should be modified.</param>
-		/// <param name="descriptors">String containing a list of identity descriptors separated by ',' whose entries should be removed.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public bool Access_Control_Entries_Remove_Access_Control_Entries(string securityNamespaceId, string organization, string token, string descriptors, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<bool>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Add or update ACEs in the ACL for the provided token. The request body contains the target token, a list of [ACEs](https://docs.microsoft.com/en-us/rest/api/azure/devops/security/access%20control%20entries/set%20access%20control%20entries?#accesscontrolentry) and a optional merge parameter. In the case of a collision (by identity descriptor) with an existing ACE in the ACL, the "merge" parameter determines the behavior. If set, the existing ACE has its allow and deny merged with the incoming ACE's allow and deny. If unset, the existing ACE is displaced.
 		/// Access_Control_Entries_Set_Access_Control_Entries {organization}/_apis/accesscontrolentries/{securityNamespaceId}
 		/// </summary>
@@ -459,6 +393,72 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Remove the specified ACEs from the ACL belonging to the specified token.
+		/// Access_Control_Entries_Remove_Access_Control_Entries {organization}/_apis/accesscontrolentries/{securityNamespaceId}
+		/// </summary>
+		/// <param name="securityNamespaceId">Security namespace identifier.</param>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="token">The token whose ACL should be modified.</param>
+		/// <param name="descriptors">String containing a list of identity descriptors separated by ',' whose entries should be removed.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<bool> Access_Control_Entries_Remove_Access_Control_EntriesAsync(string securityNamespaceId, string organization, string token, string descriptors, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<bool>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Remove the specified ACEs from the ACL belonging to the specified token.
+		/// Access_Control_Entries_Remove_Access_Control_Entries {organization}/_apis/accesscontrolentries/{securityNamespaceId}
+		/// </summary>
+		/// <param name="securityNamespaceId">Security namespace identifier.</param>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="token">The token whose ACL should be modified.</param>
+		/// <param name="descriptors">String containing a list of identity descriptors separated by ',' whose entries should be removed.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public bool Access_Control_Entries_Remove_Access_Control_Entries(string securityNamespaceId, string organization, string token, string descriptors, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<bool>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Return a list of access control lists for the specified security namespace and token. All ACLs in the security namespace will be retrieved if no optional parameters are provided.
 		/// Access_Control_Lists_Query {organization}/_apis/accesscontrollists/{securityNamespaceId}
 		/// </summary>
@@ -519,72 +519,6 @@ namespace MyNS
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AccessControlList[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Remove access control lists under the specfied security namespace.
-		/// Access_Control_Lists_Remove_Access_Control_Lists {organization}/_apis/accesscontrollists/{securityNamespaceId}
-		/// </summary>
-		/// <param name="securityNamespaceId">Security namespace identifier.</param>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="tokens">One or more comma-separated security tokens</param>
-		/// <param name="recurse">If true and this is a hierarchical namespace, also remove child ACLs of the specified tokens.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<bool> Access_Control_Lists_Remove_Access_Control_ListsAsync(string securityNamespaceId, string organization, string tokens, bool recurse, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<bool>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Remove access control lists under the specfied security namespace.
-		/// Access_Control_Lists_Remove_Access_Control_Lists {organization}/_apis/accesscontrollists/{securityNamespaceId}
-		/// </summary>
-		/// <param name="securityNamespaceId">Security namespace identifier.</param>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="tokens">One or more comma-separated security tokens</param>
-		/// <param name="recurse">If true and this is a hierarchical namespace, also remove child ACLs of the specified tokens.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public bool Access_Control_Lists_Remove_Access_Control_Lists(string securityNamespaceId, string organization, string tokens, bool recurse, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<bool>(jsonReader);
 				}
 			}
 			finally
@@ -656,6 +590,72 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Remove access control lists under the specfied security namespace.
+		/// Access_Control_Lists_Remove_Access_Control_Lists {organization}/_apis/accesscontrollists/{securityNamespaceId}
+		/// </summary>
+		/// <param name="securityNamespaceId">Security namespace identifier.</param>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="tokens">One or more comma-separated security tokens</param>
+		/// <param name="recurse">If true and this is a hierarchical namespace, also remove child ACLs of the specified tokens.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<bool> Access_Control_Lists_Remove_Access_Control_ListsAsync(string securityNamespaceId, string organization, string tokens, bool recurse, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<bool>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Remove access control lists under the specfied security namespace.
+		/// Access_Control_Lists_Remove_Access_Control_Lists {organization}/_apis/accesscontrollists/{securityNamespaceId}
+		/// </summary>
+		/// <param name="securityNamespaceId">Security namespace identifier.</param>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="tokens">One or more comma-separated security tokens</param>
+		/// <param name="recurse">If true and this is a hierarchical namespace, also remove child ACLs of the specified tokens.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public bool Access_Control_Lists_Remove_Access_Control_Lists(string securityNamespaceId, string organization, string tokens, bool recurse, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<bool>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
 			}
 			}
 		}

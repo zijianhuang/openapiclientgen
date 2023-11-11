@@ -17,17 +17,17 @@ export namespace MyNS {
 
 	/** Contains information about the schema attribute. */
 	export interface SchemaAttributeType {
-		Name?: string;
-		AttributeDataType?: SchemaAttributeTypeAttributeDataType;
-		DeveloperOnlyAttribute?: boolean;
-		Mutable?: boolean;
-		Required?: boolean;
+		Name?: string | null;
+		AttributeDataType?: SchemaAttributeTypeAttributeDataType | null;
+		DeveloperOnlyAttribute?: boolean | null;
+		Mutable?: boolean | null;
+		Required?: boolean | null;
 
 		/** The minimum and maximum value of an attribute that is of the number data type. */
-		NumberAttributeConstraints?: NumberAttributeConstraintsType;
+		NumberAttributeConstraints?: NumberAttributeConstraintsType | null;
 
 		/** The constraints associated with a string attribute. */
-		StringAttributeConstraints?: StringAttributeConstraintsType;
+		StringAttributeConstraints?: StringAttributeConstraintsType | null;
 	}
 
 	export enum SchemaAttributeTypeAttributeDataType { String = 0, Number = 1, DateTime = 2, Boolean = 3 }
@@ -35,15 +35,15 @@ export namespace MyNS {
 
 	/** The minimum and maximum value of an attribute that is of the number data type. */
 	export interface NumberAttributeConstraintsType {
-		MinValue?: string;
-		MaxValue?: string;
+		MinValue?: string | null;
+		MaxValue?: string | null;
 	}
 
 
 	/** The constraints associated with a string attribute. */
 	export interface StringAttributeConstraintsType {
-		MinLength?: string;
-		MaxLength?: string;
+		MinLength?: string | null;
+		MaxLength?: string | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -83,7 +83,7 @@ export namespace MyNS {
 	export interface AdminConfirmSignUpRequest {
 		UserPoolId: string;
 		Username: string;
-		ClientMetadata?: ClientMetadataType;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 	export interface ClientMetadataType {
@@ -109,26 +109,26 @@ export namespace MyNS {
 	export interface AdminCreateUserResponse {
 
 		/** The user type. */
-		User?: UserType;
+		User?: UserType | null;
 	}
 
 
 	/** The user type. */
 	export interface UserType {
-		Username?: string;
-		Attributes?: Array<AttributeType>;
-		UserCreateDate?: Date;
-		UserLastModifiedDate?: Date;
-		Enabled?: boolean;
-		UserStatus?: UserTypeUserStatus;
-		MFAOptions?: Array<MFAOptionType>;
+		Username?: string | null;
+		Attributes?: Array<AttributeType> | null;
+		UserCreateDate?: Date | null;
+		UserLastModifiedDate?: Date | null;
+		Enabled?: boolean | null;
+		UserStatus?: UserTypeUserStatus | null;
+		MFAOptions?: Array<MFAOptionType> | null;
 	}
 
 
 	/** Specifies whether the attribute is standard or custom. */
 	export interface AttributeType {
 		Name: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export enum UserTypeUserStatus { UNCONFIRMED = 0, CONFIRMED = 1, ARCHIVED = 2, COMPROMISED = 3, UNKNOWN = 4, RESET_REQUIRED = 5, FORCE_CHANGE_PASSWORD = 6 }
@@ -136,8 +136,8 @@ export namespace MyNS {
 
 	/** <p> <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for TOTP software token MFA configurations.</p> <p>To set either type of MFA configuration, use the <a>AdminSetUserMFAPreference</a> or <a>SetUserMFAPreference</a> actions.</p> <p>To look up information about either type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a> or <a>GetUserResponse$UserMFASettingList</a> responses.</p> */
 	export interface MFAOptionType {
-		DeliveryMedium?: MFAOptionTypeDeliveryMedium;
-		AttributeName?: string;
+		DeliveryMedium?: MFAOptionTypeDeliveryMedium | null;
+		AttributeName?: string | null;
 	}
 
 	export enum MFAOptionTypeDeliveryMedium { SMS = 0, EMAIL = 1 }
@@ -147,13 +147,13 @@ export namespace MyNS {
 	export interface AdminCreateUserRequest {
 		UserPoolId: string;
 		Username: string;
-		UserAttributes?: Array<AttributeType>;
-		ValidationData?: Array<AttributeType>;
-		TemporaryPassword?: string;
-		ForceAliasCreation?: boolean;
-		MessageAction?: AdminCreateUserRequestMessageAction;
-		DesiredDeliveryMediums?: Array<DeliveryMediumType>;
-		ClientMetadata?: ClientMetadataType;
+		UserAttributes?: Array<AttributeType> | null;
+		ValidationData?: Array<AttributeType> | null;
+		TemporaryPassword?: string | null;
+		ForceAliasCreation?: boolean | null;
+		MessageAction?: AdminCreateUserRequestMessageAction | null;
+		DesiredDeliveryMediums?: Array<DeliveryMediumType> | null;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 	export enum AdminCreateUserRequestMessageAction { RESEND = 0, SUPPRESS = 1 }
@@ -217,9 +217,9 @@ export namespace MyNS {
 
 	/** A container for information about an identity provider for a user pool. */
 	export interface ProviderUserIdentifierType {
-		ProviderName?: string;
-		ProviderAttributeName?: string;
-		ProviderAttributeValue?: string;
+		ProviderName?: string | null;
+		ProviderAttributeName?: string | null;
+		ProviderAttributeValue?: string | null;
 	}
 
 	export interface AliasExistsException {
@@ -274,11 +274,11 @@ export namespace MyNS {
 
 	/** The device type. */
 	export interface DeviceType {
-		DeviceKey?: string;
-		DeviceAttributes?: Array<AttributeType>;
-		DeviceCreateDate?: Date;
-		DeviceLastModifiedDate?: Date;
-		DeviceLastAuthenticatedDate?: Date;
+		DeviceKey?: string | null;
+		DeviceAttributes?: Array<AttributeType> | null;
+		DeviceCreateDate?: Date | null;
+		DeviceLastModifiedDate?: Date | null;
+		DeviceLastAuthenticatedDate?: Date | null;
 	}
 
 
@@ -293,14 +293,14 @@ export namespace MyNS {
 	/** Represents the response from the server from the request to get the specified user as an administrator. */
 	export interface AdminGetUserResponse {
 		Username: string;
-		UserAttributes?: Array<AttributeType>;
-		UserCreateDate?: Date;
-		UserLastModifiedDate?: Date;
-		Enabled?: boolean;
-		UserStatus?: UserTypeUserStatus;
-		MFAOptions?: Array<MFAOptionType>;
-		PreferredMfaSetting?: string;
-		UserMFASettingList?: Array<string>;
+		UserAttributes?: Array<AttributeType> | null;
+		UserCreateDate?: Date | null;
+		UserLastModifiedDate?: Date | null;
+		Enabled?: boolean | null;
+		UserStatus?: UserTypeUserStatus | null;
+		MFAOptions?: Array<MFAOptionType> | null;
+		PreferredMfaSetting?: string | null;
+		UserMFASettingList?: Array<string> | null;
 	}
 
 
@@ -313,12 +313,12 @@ export namespace MyNS {
 
 	/** Initiates the authentication response, as an administrator. */
 	export interface AdminInitiateAuthResponse {
-		ChallengeName?: AdminInitiateAuthResponseChallengeName;
-		Session?: string;
-		ChallengeParameters?: ChallengeParametersType;
+		ChallengeName?: AdminInitiateAuthResponseChallengeName | null;
+		Session?: string | null;
+		ChallengeParameters?: ChallengeParametersType | null;
 
 		/** The authentication result. */
-		AuthenticationResult?: AuthenticationResultType;
+		AuthenticationResult?: AuthenticationResultType | null;
 	}
 
 	export enum AdminInitiateAuthResponseChallengeName { SMS_MFA = 0, SOFTWARE_TOKEN_MFA = 1, SELECT_MFA_TYPE = 2, MFA_SETUP = 3, PASSWORD_VERIFIER = 4, CUSTOM_CHALLENGE = 5, DEVICE_SRP_AUTH = 6, DEVICE_PASSWORD_VERIFIER = 7, ADMIN_NO_SRP_AUTH = 8, NEW_PASSWORD_REQUIRED = 9 }
@@ -329,21 +329,21 @@ export namespace MyNS {
 
 	/** The authentication result. */
 	export interface AuthenticationResultType {
-		AccessToken?: string;
-		ExpiresIn?: number;
-		TokenType?: string;
-		RefreshToken?: string;
-		IdToken?: string;
+		AccessToken?: string | null;
+		ExpiresIn?: number | null;
+		TokenType?: string | null;
+		RefreshToken?: string | null;
+		IdToken?: string | null;
 
 		/** The new device metadata type. */
-		NewDeviceMetadata?: NewDeviceMetadataType;
+		NewDeviceMetadata?: NewDeviceMetadataType | null;
 	}
 
 
 	/** The new device metadata type. */
 	export interface NewDeviceMetadataType {
-		DeviceKey?: string;
-		DeviceGroupKey?: string;
+		DeviceKey?: string | null;
+		DeviceGroupKey?: string | null;
 	}
 
 
@@ -352,14 +352,14 @@ export namespace MyNS {
 		UserPoolId: string;
 		ClientId: string;
 		AuthFlow: AdminInitiateAuthRequestAuthFlow;
-		AuthParameters?: AuthParametersType;
-		ClientMetadata?: ClientMetadataType;
+		AuthParameters?: AuthParametersType | null;
+		ClientMetadata?: ClientMetadataType | null;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
 
 		/** Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		ContextData?: ContextDataType;
+		ContextData?: ContextDataType | null;
 	}
 
 	export enum AdminInitiateAuthRequestAuthFlow { USER_SRP_AUTH = 0, REFRESH_TOKEN_AUTH = 1, REFRESH_TOKEN = 2, CUSTOM_AUTH = 3, ADMIN_NO_SRP_AUTH = 4, USER_PASSWORD_AUTH = 5, ADMIN_USER_PASSWORD_AUTH = 6 }
@@ -370,7 +370,7 @@ export namespace MyNS {
 
 	/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
 	export interface AnalyticsMetadataType {
-		AnalyticsEndpointId?: string;
+		AnalyticsEndpointId?: string | null;
 	}
 
 
@@ -380,14 +380,14 @@ export namespace MyNS {
 		ServerName: string;
 		ServerPath: string;
 		HttpHeaders: Array<HttpHeader>;
-		EncodedData?: string;
+		EncodedData?: string | null;
 	}
 
 
 	/** The HTTP header. */
 	export interface HttpHeader {
-		headerName?: string;
-		headerValue?: string;
+		headerName?: string | null;
+		headerValue?: string | null;
 	}
 
 	export interface MFAMethodNotFoundException {
@@ -421,8 +421,8 @@ export namespace MyNS {
 
 	/** Lists the device's response, as an administrator. */
 	export interface AdminListDevicesResponse {
-		Devices?: Array<DeviceType>;
-		PaginationToken?: string;
+		Devices?: Array<DeviceType> | null;
+		PaginationToken?: string | null;
 	}
 
 
@@ -430,56 +430,56 @@ export namespace MyNS {
 	export interface AdminListDevicesRequest {
 		UserPoolId: string;
 		Username: string;
-		Limit?: number;
-		PaginationToken?: string;
+		Limit?: number | null;
+		PaginationToken?: string | null;
 	}
 
 	export interface AdminListGroupsForUserResponse {
-		Groups?: Array<GroupType>;
-		NextToken?: string;
+		Groups?: Array<GroupType> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The group type. */
 	export interface GroupType {
-		GroupName?: string;
-		UserPoolId?: string;
-		Description?: string;
-		RoleArn?: string;
-		Precedence?: number;
-		LastModifiedDate?: Date;
-		CreationDate?: Date;
+		GroupName?: string | null;
+		UserPoolId?: string | null;
+		Description?: string | null;
+		RoleArn?: string | null;
+		Precedence?: number | null;
+		LastModifiedDate?: Date | null;
+		CreationDate?: Date | null;
 	}
 
 	export interface AdminListGroupsForUserRequest {
 		Username: string;
 		UserPoolId: string;
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface AdminListUserAuthEventsResponse {
-		AuthEvents?: Array<AuthEventType>;
-		NextToken?: string;
+		AuthEvents?: Array<AuthEventType> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The authentication event type. */
 	export interface AuthEventType {
-		EventId?: string;
-		EventType?: AuthEventTypeEventType;
-		CreationDate?: Date;
-		EventResponse?: AuthEventTypeEventResponse;
+		EventId?: string | null;
+		EventType?: AuthEventTypeEventType | null;
+		CreationDate?: Date | null;
+		EventResponse?: AuthEventTypeEventResponse | null;
 
 		/** The event risk type. */
-		EventRisk?: EventRiskType;
-		ChallengeResponses?: Array<ChallengeResponseType>;
+		EventRisk?: EventRiskType | null;
+		ChallengeResponses?: Array<ChallengeResponseType> | null;
 
 		/** Specifies the user context data captured at the time of an event request. */
-		EventContextData?: EventContextDataType;
+		EventContextData?: EventContextDataType | null;
 
 		/** Specifies the event feedback type. */
-		EventFeedback?: EventFeedbackType;
+		EventFeedback?: EventFeedbackType | null;
 	}
 
 	export enum AuthEventTypeEventType { SignIn = 0, SignUp = 1, ForgotPassword = 2 }
@@ -489,9 +489,9 @@ export namespace MyNS {
 
 	/** The event risk type. */
 	export interface EventRiskType {
-		RiskDecision?: EventRiskTypeRiskDecision;
-		RiskLevel?: EventRiskTypeRiskLevel;
-		CompromisedCredentialsDetected?: boolean;
+		RiskDecision?: EventRiskTypeRiskDecision | null;
+		RiskLevel?: EventRiskTypeRiskLevel | null;
+		CompromisedCredentialsDetected?: boolean | null;
 	}
 
 	export enum EventRiskTypeRiskDecision { NoRisk = 0, AccountTakeover = 1, Block = 2 }
@@ -501,8 +501,8 @@ export namespace MyNS {
 
 	/** The challenge response type. */
 	export interface ChallengeResponseType {
-		ChallengeName?: ChallengeResponseTypeChallengeName;
-		ChallengeResponse?: AuthEventTypeEventResponse;
+		ChallengeName?: ChallengeResponseTypeChallengeName | null;
+		ChallengeResponse?: AuthEventTypeEventResponse | null;
 	}
 
 	export enum ChallengeResponseTypeChallengeName { Password = 0, Mfa = 1 }
@@ -510,11 +510,11 @@ export namespace MyNS {
 
 	/** Specifies the user context data captured at the time of an event request. */
 	export interface EventContextDataType {
-		IpAddress?: string;
-		DeviceName?: string;
-		Timezone?: string;
-		City?: string;
-		Country?: string;
+		IpAddress?: string | null;
+		DeviceName?: string | null;
+		Timezone?: string | null;
+		City?: string | null;
+		Country?: string | null;
 	}
 
 
@@ -522,7 +522,7 @@ export namespace MyNS {
 	export interface EventFeedbackType {
 		FeedbackValue: EventFeedbackTypeFeedbackValue;
 		Provider: string;
-		FeedbackDate?: Date;
+		FeedbackDate?: Date | null;
 	}
 
 	export enum EventFeedbackTypeFeedbackValue { Valid = 0, Invalid = 1 }
@@ -530,8 +530,8 @@ export namespace MyNS {
 	export interface AdminListUserAuthEventsRequest {
 		UserPoolId: string;
 		Username: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface UserPoolAddOnNotEnabledException {
@@ -553,7 +553,7 @@ export namespace MyNS {
 	export interface AdminResetUserPasswordRequest {
 		UserPoolId: string;
 		Username: string;
-		ClientMetadata?: ClientMetadataType;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 	export interface InvalidEmailRoleAccessPolicyException {
@@ -562,12 +562,12 @@ export namespace MyNS {
 
 	/** Responds to the authentication challenge, as an administrator. */
 	export interface AdminRespondToAuthChallengeResponse {
-		ChallengeName?: AdminInitiateAuthResponseChallengeName;
-		Session?: string;
-		ChallengeParameters?: ChallengeParametersType;
+		ChallengeName?: AdminInitiateAuthResponseChallengeName | null;
+		Session?: string | null;
+		ChallengeParameters?: ChallengeParametersType | null;
 
 		/** The authentication result. */
-		AuthenticationResult?: AuthenticationResultType;
+		AuthenticationResult?: AuthenticationResultType | null;
 	}
 
 
@@ -576,15 +576,15 @@ export namespace MyNS {
 		UserPoolId: string;
 		ClientId: string;
 		ChallengeName: AdminInitiateAuthResponseChallengeName;
-		ChallengeResponses?: ChallengeResponsesType;
-		Session?: string;
+		ChallengeResponses?: ChallengeResponsesType | null;
+		Session?: string | null;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
 
 		/** Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		ContextData?: ContextDataType;
-		ClientMetadata?: ClientMetadataType;
+		ContextData?: ContextDataType | null;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 	export interface ChallengeResponsesType {
@@ -605,10 +605,10 @@ export namespace MyNS {
 	export interface AdminSetUserMFAPreferenceRequest {
 
 		/** The type used for enabling SMS MFA at the user level. */
-		SMSMfaSettings?: SMSMfaSettingsType;
+		SMSMfaSettings?: SMSMfaSettingsType | null;
 
 		/** The type used for enabling software token MFA at the user level. */
-		SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType;
+		SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType | null;
 		Username: string;
 		UserPoolId: string;
 	}
@@ -616,15 +616,15 @@ export namespace MyNS {
 
 	/** The type used for enabling SMS MFA at the user level. */
 	export interface SMSMfaSettingsType {
-		Enabled?: boolean;
-		PreferredMfa?: boolean;
+		Enabled?: boolean | null;
+		PreferredMfa?: boolean | null;
 	}
 
 
 	/** The type used for enabling software token MFA at the user level. */
 	export interface SoftwareTokenMfaSettingsType {
-		Enabled?: boolean;
-		PreferredMfa?: boolean;
+		Enabled?: boolean | null;
+		PreferredMfa?: boolean | null;
 	}
 
 	export interface AdminSetUserPasswordResponse {
@@ -634,7 +634,7 @@ export namespace MyNS {
 		UserPoolId: string;
 		Username: string;
 		Password: string;
-		Permanent?: boolean;
+		Permanent?: boolean | null;
 	}
 
 
@@ -671,7 +671,7 @@ export namespace MyNS {
 		UserPoolId: string;
 		Username: string;
 		DeviceKey: string;
-		DeviceRememberedStatus?: AdminUpdateDeviceStatusRequestDeviceRememberedStatus;
+		DeviceRememberedStatus?: AdminUpdateDeviceStatusRequestDeviceRememberedStatus | null;
 	}
 
 	export enum AdminUpdateDeviceStatusRequestDeviceRememberedStatus { remembered = 0, not_remembered = 1 }
@@ -687,7 +687,7 @@ export namespace MyNS {
 		UserPoolId: string;
 		Username: string;
 		UserAttributes: Array<AttributeType>;
-		ClientMetadata?: ClientMetadataType;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 
@@ -703,13 +703,13 @@ export namespace MyNS {
 	}
 
 	export interface AssociateSoftwareTokenResponse {
-		SecretCode?: string;
-		Session?: string;
+		SecretCode?: string | null;
+		Session?: string | null;
 	}
 
 	export interface AssociateSoftwareTokenRequest {
-		AccessToken?: string;
-		Session?: string;
+		AccessToken?: string | null;
+		Session?: string | null;
 	}
 
 
@@ -728,7 +728,7 @@ export namespace MyNS {
 
 	/** Confirms the device response. */
 	export interface ConfirmDeviceResponse {
-		UserConfirmationNecessary?: boolean;
+		UserConfirmationNecessary?: boolean | null;
 	}
 
 
@@ -738,15 +738,15 @@ export namespace MyNS {
 		DeviceKey: string;
 
 		/** The device verifier against which it will be authenticated. */
-		DeviceSecretVerifierConfig?: DeviceSecretVerifierConfigType;
-		DeviceName?: string;
+		DeviceSecretVerifierConfig?: DeviceSecretVerifierConfigType | null;
+		DeviceName?: string | null;
 	}
 
 
 	/** The device verifier against which it will be authenticated. */
 	export interface DeviceSecretVerifierConfigType {
-		PasswordVerifier?: string;
-		Salt?: string;
+		PasswordVerifier?: string | null;
+		Salt?: string | null;
 	}
 
 
@@ -758,23 +758,23 @@ export namespace MyNS {
 	/** The request representing the confirmation for a password reset. */
 	export interface ConfirmForgotPasswordRequest {
 		ClientId: string;
-		SecretHash?: string;
+		SecretHash?: string | null;
 		Username: string;
 		ConfirmationCode: string;
 		Password: string;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType;
-		ClientMetadata?: ClientMetadataType;
+		UserContextData?: UserContextDataType | null;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 
 	/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
 	export interface UserContextDataType {
-		EncodedData?: string;
+		EncodedData?: string | null;
 	}
 
 
@@ -786,31 +786,31 @@ export namespace MyNS {
 	/** Represents the request to confirm registration of a user. */
 	export interface ConfirmSignUpRequest {
 		ClientId: string;
-		SecretHash?: string;
+		SecretHash?: string | null;
 		Username: string;
 		ConfirmationCode: string;
-		ForceAliasCreation?: boolean;
+		ForceAliasCreation?: boolean | null;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType;
-		ClientMetadata?: ClientMetadataType;
+		UserContextData?: UserContextDataType | null;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 	export interface CreateGroupResponse {
 
 		/** The group type. */
-		Group?: GroupType;
+		Group?: GroupType | null;
 	}
 
 	export interface CreateGroupRequest {
 		GroupName: string;
 		UserPoolId: string;
-		Description?: string;
-		RoleArn?: string;
-		Precedence?: number;
+		Description?: string | null;
+		RoleArn?: string | null;
+		Precedence?: number | null;
 	}
 
 	export interface GroupExistsException {
@@ -828,14 +828,14 @@ export namespace MyNS {
 
 	/** A container for information about an identity provider. */
 	export interface IdentityProviderType {
-		UserPoolId?: string;
-		ProviderName?: string;
-		ProviderType?: IdentityProviderTypeProviderType;
-		ProviderDetails?: ProviderDetailsType;
-		AttributeMapping?: AttributeMappingType;
-		IdpIdentifiers?: Array<string>;
-		LastModifiedDate?: Date;
-		CreationDate?: Date;
+		UserPoolId?: string | null;
+		ProviderName?: string | null;
+		ProviderType?: IdentityProviderTypeProviderType | null;
+		ProviderDetails?: ProviderDetailsType | null;
+		AttributeMapping?: AttributeMappingType | null;
+		IdpIdentifiers?: Array<string> | null;
+		LastModifiedDate?: Date | null;
+		CreationDate?: Date | null;
 	}
 
 	export enum IdentityProviderTypeProviderType { SAML = 0, Facebook = 1, Google = 2, LoginWithAmazon = 3, SignInWithApple = 4, OIDC = 5 }
@@ -851,8 +851,8 @@ export namespace MyNS {
 		ProviderName: string;
 		ProviderType: IdentityProviderTypeProviderType;
 		ProviderDetails: ProviderDetailsType;
-		AttributeMapping?: AttributeMappingType;
-		IdpIdentifiers?: Array<string>;
+		AttributeMapping?: AttributeMappingType | null;
+		IdpIdentifiers?: Array<string> | null;
 	}
 
 	export interface DuplicateProviderException {
@@ -870,10 +870,10 @@ export namespace MyNS {
 
 	/** A container for information about a resource server for a user pool. */
 	export interface ResourceServerType {
-		UserPoolId?: string;
-		Identifier?: string;
-		Name?: string;
-		Scopes?: Array<ResourceServerScopeType>;
+		UserPoolId?: string | null;
+		Identifier?: string | null;
+		Name?: string | null;
+		Scopes?: Array<ResourceServerScopeType> | null;
 	}
 
 
@@ -887,7 +887,7 @@ export namespace MyNS {
 		UserPoolId: string;
 		Identifier: string;
 		Name: string;
-		Scopes?: Array<ResourceServerScopeType>;
+		Scopes?: Array<ResourceServerScopeType> | null;
 	}
 
 
@@ -895,25 +895,25 @@ export namespace MyNS {
 	export interface CreateUserImportJobResponse {
 
 		/** The user import job type. */
-		UserImportJob?: UserImportJobType;
+		UserImportJob?: UserImportJobType | null;
 	}
 
 
 	/** The user import job type. */
 	export interface UserImportJobType {
-		JobName?: string;
-		JobId?: string;
-		UserPoolId?: string;
-		PreSignedUrl?: string;
-		CreationDate?: Date;
-		StartDate?: Date;
-		CompletionDate?: Date;
-		Status?: UserImportJobTypeStatus;
-		CloudWatchLogsRoleArn?: string;
-		ImportedUsers?: number;
-		SkippedUsers?: number;
-		FailedUsers?: number;
-		CompletionMessage?: string;
+		JobName?: string | null;
+		JobId?: string | null;
+		UserPoolId?: string | null;
+		PreSignedUrl?: string | null;
+		CreationDate?: Date | null;
+		StartDate?: Date | null;
+		CompletionDate?: Date | null;
+		Status?: UserImportJobTypeStatus | null;
+		CloudWatchLogsRoleArn?: string | null;
+		ImportedUsers?: number | null;
+		SkippedUsers?: number | null;
+		FailedUsers?: number | null;
+		CompletionMessage?: string | null;
 	}
 
 	export enum UserImportJobTypeStatus { Created = 0, Pending = 1, InProgress = 2, Stopping = 3, Expired = 4, Stopped = 5, Failed = 6, Succeeded = 7 }
@@ -931,63 +931,63 @@ export namespace MyNS {
 	export interface CreateUserPoolResponse {
 
 		/** A container for information about the user pool. */
-		UserPool?: UserPoolType;
+		UserPool?: UserPoolType | null;
 	}
 
 
 	/** A container for information about the user pool. */
 	export interface UserPoolType {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 
 		/** The policy associated with a user pool. */
-		Policies?: UserPoolPolicyType;
+		Policies?: UserPoolPolicyType | null;
 
 		/** Specifies the configuration for AWS Lambda triggers. */
-		LambdaConfig?: LambdaConfigType;
-		Status?: UserPoolTypeStatus;
-		LastModifiedDate?: Date;
-		CreationDate?: Date;
-		SchemaAttributes?: Array<SchemaAttributeType>;
-		AutoVerifiedAttributes?: Array<VerifiedAttributeType>;
-		AliasAttributes?: Array<AliasAttributeType>;
-		UsernameAttributes?: Array<UsernameAttributeType>;
-		SmsVerificationMessage?: string;
-		EmailVerificationMessage?: string;
-		EmailVerificationSubject?: string;
+		LambdaConfig?: LambdaConfigType | null;
+		Status?: UserPoolTypeStatus | null;
+		LastModifiedDate?: Date | null;
+		CreationDate?: Date | null;
+		SchemaAttributes?: Array<SchemaAttributeType> | null;
+		AutoVerifiedAttributes?: Array<VerifiedAttributeType> | null;
+		AliasAttributes?: Array<AliasAttributeType> | null;
+		UsernameAttributes?: Array<UsernameAttributeType> | null;
+		SmsVerificationMessage?: string | null;
+		EmailVerificationMessage?: string | null;
+		EmailVerificationSubject?: string | null;
 
 		/** The template for verification messages. */
-		VerificationMessageTemplate?: VerificationMessageTemplateType;
-		SmsAuthenticationMessage?: string;
-		MfaConfiguration?: UserPoolTypeMfaConfiguration;
+		VerificationMessageTemplate?: VerificationMessageTemplateType | null;
+		SmsAuthenticationMessage?: string | null;
+		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 
 		/** The configuration for the user pool's device tracking. */
-		DeviceConfiguration?: DeviceConfigurationType;
-		EstimatedNumberOfUsers?: number;
+		DeviceConfiguration?: DeviceConfigurationType | null;
+		EstimatedNumberOfUsers?: number | null;
 
 		/** The email configuration type. */
-		EmailConfiguration?: EmailConfigurationType;
+		EmailConfiguration?: EmailConfigurationType | null;
 
 		/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
-		SmsConfiguration?: SmsConfigurationType;
-		UserPoolTags?: UserPoolTagsType;
-		SmsConfigurationFailure?: string;
-		EmailConfigurationFailure?: string;
-		Domain?: string;
-		CustomDomain?: string;
+		SmsConfiguration?: SmsConfigurationType | null;
+		UserPoolTags?: UserPoolTagsType | null;
+		SmsConfigurationFailure?: string | null;
+		EmailConfigurationFailure?: string | null;
+		Domain?: string | null;
+		CustomDomain?: string | null;
 
 		/** The configuration for creating a new user profile. */
-		AdminCreateUserConfig?: AdminCreateUserConfigType;
+		AdminCreateUserConfig?: AdminCreateUserConfigType | null;
 
 		/** The user pool add-ons type. */
-		UserPoolAddOns?: UserPoolAddOnsType;
+		UserPoolAddOns?: UserPoolAddOnsType | null;
 
 		/** The username configuration type. */
-		UsernameConfiguration?: UsernameConfigurationType;
-		Arn?: string;
+		UsernameConfiguration?: UsernameConfigurationType | null;
+		Arn?: string | null;
 
 		/** The data type for <code>AccountRecoverySetting</code>. */
-		AccountRecoverySetting?: AccountRecoverySettingType;
+		AccountRecoverySetting?: AccountRecoverySettingType | null;
 	}
 
 
@@ -995,33 +995,33 @@ export namespace MyNS {
 	export interface UserPoolPolicyType {
 
 		/** The password policy type. */
-		PasswordPolicy?: PasswordPolicyType;
+		PasswordPolicy?: PasswordPolicyType | null;
 	}
 
 
 	/** The password policy type. */
 	export interface PasswordPolicyType {
-		MinimumLength?: number;
-		RequireUppercase?: boolean;
-		RequireLowercase?: boolean;
-		RequireNumbers?: boolean;
-		RequireSymbols?: boolean;
-		TemporaryPasswordValidityDays?: number;
+		MinimumLength?: number | null;
+		RequireUppercase?: boolean | null;
+		RequireLowercase?: boolean | null;
+		RequireNumbers?: boolean | null;
+		RequireSymbols?: boolean | null;
+		TemporaryPasswordValidityDays?: number | null;
 	}
 
 
 	/** Specifies the configuration for AWS Lambda triggers. */
 	export interface LambdaConfigType {
-		PreSignUp?: string;
-		CustomMessage?: string;
-		PostConfirmation?: string;
-		PreAuthentication?: string;
-		PostAuthentication?: string;
-		DefineAuthChallenge?: string;
-		CreateAuthChallenge?: string;
-		VerifyAuthChallengeResponse?: string;
-		PreTokenGeneration?: string;
-		UserMigration?: string;
+		PreSignUp?: string | null;
+		CustomMessage?: string | null;
+		PostConfirmation?: string | null;
+		PreAuthentication?: string | null;
+		PostAuthentication?: string | null;
+		DefineAuthChallenge?: string | null;
+		CreateAuthChallenge?: string | null;
+		VerifyAuthChallengeResponse?: string | null;
+		PreTokenGeneration?: string | null;
+		UserMigration?: string | null;
 	}
 
 	export enum UserPoolTypeStatus { Enabled = 0, Disabled = 1 }
@@ -1035,12 +1035,12 @@ export namespace MyNS {
 
 	/** The template for verification messages. */
 	export interface VerificationMessageTemplateType {
-		SmsMessage?: string;
-		EmailMessage?: string;
-		EmailSubject?: string;
-		EmailMessageByLink?: string;
-		EmailSubjectByLink?: string;
-		DefaultEmailOption?: VerificationMessageTemplateTypeDefaultEmailOption;
+		SmsMessage?: string | null;
+		EmailMessage?: string | null;
+		EmailSubject?: string | null;
+		EmailMessageByLink?: string | null;
+		EmailSubjectByLink?: string | null;
+		DefaultEmailOption?: VerificationMessageTemplateTypeDefaultEmailOption | null;
 	}
 
 	export enum VerificationMessageTemplateTypeDefaultEmailOption { CONFIRM_WITH_LINK = 0, CONFIRM_WITH_CODE = 1 }
@@ -1050,18 +1050,18 @@ export namespace MyNS {
 
 	/** The configuration for the user pool's device tracking. */
 	export interface DeviceConfigurationType {
-		ChallengeRequiredOnNewDevice?: boolean;
-		DeviceOnlyRememberedOnUserPrompt?: boolean;
+		ChallengeRequiredOnNewDevice?: boolean | null;
+		DeviceOnlyRememberedOnUserPrompt?: boolean | null;
 	}
 
 
 	/** The email configuration type. */
 	export interface EmailConfigurationType {
-		SourceArn?: string;
-		ReplyToEmailAddress?: string;
-		EmailSendingAccount?: EmailConfigurationTypeEmailSendingAccount;
-		From?: string;
-		ConfigurationSet?: string;
+		SourceArn?: string | null;
+		ReplyToEmailAddress?: string | null;
+		EmailSendingAccount?: EmailConfigurationTypeEmailSendingAccount | null;
+		From?: string | null;
+		ConfigurationSet?: string | null;
 	}
 
 	export enum EmailConfigurationTypeEmailSendingAccount { COGNITO_DEFAULT = 0, DEVELOPER = 1 }
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 	/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
 	export interface SmsConfigurationType {
 		SnsCallerArn: string;
-		ExternalId?: string;
+		ExternalId?: string | null;
 	}
 
 	export interface UserPoolTagsType {
@@ -1079,19 +1079,19 @@ export namespace MyNS {
 
 	/** The configuration for creating a new user profile. */
 	export interface AdminCreateUserConfigType {
-		AllowAdminCreateUserOnly?: boolean;
-		UnusedAccountValidityDays?: number;
+		AllowAdminCreateUserOnly?: boolean | null;
+		UnusedAccountValidityDays?: number | null;
 
 		/** The message template structure. */
-		InviteMessageTemplate?: MessageTemplateType;
+		InviteMessageTemplate?: MessageTemplateType | null;
 	}
 
 
 	/** The message template structure. */
 	export interface MessageTemplateType {
-		SMSMessage?: string;
-		EmailMessage?: string;
-		EmailSubject?: string;
+		SMSMessage?: string | null;
+		EmailMessage?: string | null;
+		EmailSubject?: string | null;
 	}
 
 
@@ -1111,7 +1111,7 @@ export namespace MyNS {
 
 	/** The data type for <code>AccountRecoverySetting</code>. */
 	export interface AccountRecoverySettingType {
-		RecoveryMechanisms?: Array<RecoveryOptionType>;
+		RecoveryMechanisms?: Array<RecoveryOptionType> | null;
 	}
 
 
@@ -1129,44 +1129,44 @@ export namespace MyNS {
 		PoolName: string;
 
 		/** The policy associated with a user pool. */
-		Policies?: UserPoolPolicyType;
+		Policies?: UserPoolPolicyType | null;
 
 		/** Specifies the configuration for AWS Lambda triggers. */
-		LambdaConfig?: LambdaConfigType;
-		AutoVerifiedAttributes?: Array<VerifiedAttributeType>;
-		AliasAttributes?: Array<AliasAttributeType>;
-		UsernameAttributes?: Array<UsernameAttributeType>;
-		SmsVerificationMessage?: string;
-		EmailVerificationMessage?: string;
-		EmailVerificationSubject?: string;
+		LambdaConfig?: LambdaConfigType | null;
+		AutoVerifiedAttributes?: Array<VerifiedAttributeType> | null;
+		AliasAttributes?: Array<AliasAttributeType> | null;
+		UsernameAttributes?: Array<UsernameAttributeType> | null;
+		SmsVerificationMessage?: string | null;
+		EmailVerificationMessage?: string | null;
+		EmailVerificationSubject?: string | null;
 
 		/** The template for verification messages. */
-		VerificationMessageTemplate?: VerificationMessageTemplateType;
-		SmsAuthenticationMessage?: string;
-		MfaConfiguration?: UserPoolTypeMfaConfiguration;
+		VerificationMessageTemplate?: VerificationMessageTemplateType | null;
+		SmsAuthenticationMessage?: string | null;
+		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 
 		/** The configuration for the user pool's device tracking. */
-		DeviceConfiguration?: DeviceConfigurationType;
+		DeviceConfiguration?: DeviceConfigurationType | null;
 
 		/** The email configuration type. */
-		EmailConfiguration?: EmailConfigurationType;
+		EmailConfiguration?: EmailConfigurationType | null;
 
 		/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
-		SmsConfiguration?: SmsConfigurationType;
-		UserPoolTags?: UserPoolTagsType;
+		SmsConfiguration?: SmsConfigurationType | null;
+		UserPoolTags?: UserPoolTagsType | null;
 
 		/** The configuration for creating a new user profile. */
-		AdminCreateUserConfig?: AdminCreateUserConfigType;
-		Schema?: Array<SchemaAttributeType>;
+		AdminCreateUserConfig?: AdminCreateUserConfigType | null;
+		Schema?: Array<SchemaAttributeType> | null;
 
 		/** The user pool add-ons type. */
-		UserPoolAddOns?: UserPoolAddOnsType;
+		UserPoolAddOns?: UserPoolAddOnsType | null;
 
 		/** The username configuration type. */
-		UsernameConfiguration?: UsernameConfigurationType;
+		UsernameConfiguration?: UsernameConfigurationType | null;
 
 		/** The data type for <code>AccountRecoverySetting</code>. */
-		AccountRecoverySetting?: AccountRecoverySettingType;
+		AccountRecoverySetting?: AccountRecoverySettingType | null;
 	}
 
 	export interface UserPoolTaggingException {
@@ -1177,33 +1177,33 @@ export namespace MyNS {
 	export interface CreateUserPoolClientResponse {
 
 		/** Contains information about a user pool client. */
-		UserPoolClient?: UserPoolClientType;
+		UserPoolClient?: UserPoolClientType | null;
 	}
 
 
 	/** Contains information about a user pool client. */
 	export interface UserPoolClientType {
-		UserPoolId?: string;
-		ClientName?: string;
-		ClientId?: string;
-		ClientSecret?: string;
-		LastModifiedDate?: Date;
-		CreationDate?: Date;
-		RefreshTokenValidity?: number;
-		ReadAttributes?: Array<string>;
-		WriteAttributes?: Array<string>;
-		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType>;
-		SupportedIdentityProviders?: Array<string>;
-		CallbackURLs?: Array<string>;
-		LogoutURLs?: Array<string>;
-		DefaultRedirectURI?: string;
-		AllowedOAuthFlows?: Array<OAuthFlowType>;
-		AllowedOAuthScopes?: Array<string>;
-		AllowedOAuthFlowsUserPoolClient?: boolean;
+		UserPoolId?: string | null;
+		ClientName?: string | null;
+		ClientId?: string | null;
+		ClientSecret?: string | null;
+		LastModifiedDate?: Date | null;
+		CreationDate?: Date | null;
+		RefreshTokenValidity?: number | null;
+		ReadAttributes?: Array<string> | null;
+		WriteAttributes?: Array<string> | null;
+		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType> | null;
+		SupportedIdentityProviders?: Array<string> | null;
+		CallbackURLs?: Array<string> | null;
+		LogoutURLs?: Array<string> | null;
+		DefaultRedirectURI?: string | null;
+		AllowedOAuthFlows?: Array<OAuthFlowType> | null;
+		AllowedOAuthScopes?: Array<string> | null;
+		AllowedOAuthFlowsUserPoolClient?: boolean | null;
 
 		/** <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsConfiguration?: AnalyticsConfigurationType;
-		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors;
+		AnalyticsConfiguration?: AnalyticsConfigurationType | null;
+		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors | null;
 	}
 
 	export enum ExplicitAuthFlowsType { ADMIN_NO_SRP_AUTH = 0, CUSTOM_AUTH_FLOW_ONLY = 1, USER_PASSWORD_AUTH = 2, ALLOW_ADMIN_USER_PASSWORD_AUTH = 3, ALLOW_CUSTOM_AUTH = 4, ALLOW_USER_PASSWORD_AUTH = 5, ALLOW_USER_SRP_AUTH = 6, ALLOW_REFRESH_TOKEN_AUTH = 7 }
@@ -1216,7 +1216,7 @@ export namespace MyNS {
 		ApplicationId: string;
 		RoleArn: string;
 		ExternalId: string;
-		UserDataShared?: boolean;
+		UserDataShared?: boolean | null;
 	}
 
 	export enum UserPoolClientTypePreventUserExistenceErrors { LEGACY = 0, ENABLED = 1 }
@@ -1226,22 +1226,22 @@ export namespace MyNS {
 	export interface CreateUserPoolClientRequest {
 		UserPoolId: string;
 		ClientName: string;
-		GenerateSecret?: boolean;
-		RefreshTokenValidity?: number;
-		ReadAttributes?: Array<string>;
-		WriteAttributes?: Array<string>;
-		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType>;
-		SupportedIdentityProviders?: Array<string>;
-		CallbackURLs?: Array<string>;
-		LogoutURLs?: Array<string>;
-		DefaultRedirectURI?: string;
-		AllowedOAuthFlows?: Array<OAuthFlowType>;
-		AllowedOAuthScopes?: Array<string>;
-		AllowedOAuthFlowsUserPoolClient?: boolean;
+		GenerateSecret?: boolean | null;
+		RefreshTokenValidity?: number | null;
+		ReadAttributes?: Array<string> | null;
+		WriteAttributes?: Array<string> | null;
+		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType> | null;
+		SupportedIdentityProviders?: Array<string> | null;
+		CallbackURLs?: Array<string> | null;
+		LogoutURLs?: Array<string> | null;
+		DefaultRedirectURI?: string | null;
+		AllowedOAuthFlows?: Array<OAuthFlowType> | null;
+		AllowedOAuthScopes?: Array<string> | null;
+		AllowedOAuthFlowsUserPoolClient?: boolean | null;
 
 		/** <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsConfiguration?: AnalyticsConfigurationType;
-		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors;
+		AnalyticsConfiguration?: AnalyticsConfigurationType | null;
+		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors | null;
 	}
 
 	export interface ScopeDoesNotExistException {
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserPoolDomainResponse {
-		CloudFrontDomain?: string;
+		CloudFrontDomain?: string | null;
 	}
 
 	export interface CreateUserPoolDomainRequest {
@@ -1259,7 +1259,7 @@ export namespace MyNS {
 		UserPoolId: string;
 
 		/** The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application. */
-		CustomDomainConfig?: CustomDomainConfigType;
+		CustomDomainConfig?: CustomDomainConfigType | null;
 	}
 
 
@@ -1365,24 +1365,24 @@ export namespace MyNS {
 
 	/** The risk configuration type. */
 	export interface RiskConfigurationType {
-		UserPoolId?: string;
-		ClientId?: string;
+		UserPoolId?: string | null;
+		ClientId?: string | null;
 
 		/** The compromised credentials risk configuration type. */
-		CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType;
+		CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType | null;
 
 		/** Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover. */
-		AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType;
+		AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType | null;
 
 		/** The type of the configuration to override the risk decision. */
-		RiskExceptionConfiguration?: RiskExceptionConfigurationType;
-		LastModifiedDate?: Date;
+		RiskExceptionConfiguration?: RiskExceptionConfigurationType | null;
+		LastModifiedDate?: Date | null;
 	}
 
 
 	/** The compromised credentials risk configuration type. */
 	export interface CompromisedCredentialsRiskConfigurationType {
-		EventFilter?: Array<EventFilterType>;
+		EventFilter?: Array<EventFilterType> | null;
 
 		/**
 		 * The compromised credentials actions type
@@ -1406,7 +1406,7 @@ export namespace MyNS {
 	export interface AccountTakeoverRiskConfigurationType {
 
 		/** The notify configuration type. */
-		NotifyConfiguration?: NotifyConfigurationType;
+		NotifyConfiguration?: NotifyConfigurationType | null;
 
 		/**
 		 * Account takeover actions type.
@@ -1418,26 +1418,26 @@ export namespace MyNS {
 
 	/** The notify configuration type. */
 	export interface NotifyConfigurationType {
-		From?: string;
-		ReplyTo?: string;
+		From?: string | null;
+		ReplyTo?: string | null;
 		SourceArn: string;
 
 		/** The notify email type. */
-		BlockEmail?: NotifyEmailType;
+		BlockEmail?: NotifyEmailType | null;
 
 		/** The notify email type. */
-		NoActionEmail?: NotifyEmailType;
+		NoActionEmail?: NotifyEmailType | null;
 
 		/** The notify email type. */
-		MfaEmail?: NotifyEmailType;
+		MfaEmail?: NotifyEmailType | null;
 	}
 
 
 	/** The notify email type. */
 	export interface NotifyEmailType {
 		Subject: string;
-		HtmlBody?: string;
-		TextBody?: string;
+		HtmlBody?: string | null;
+		TextBody?: string | null;
 	}
 
 
@@ -1445,13 +1445,13 @@ export namespace MyNS {
 	export interface AccountTakeoverActionsType {
 
 		/** Account takeover action type. */
-		LowAction?: AccountTakeoverActionType;
+		LowAction?: AccountTakeoverActionType | null;
 
 		/** Account takeover action type. */
-		MediumAction?: AccountTakeoverActionType;
+		MediumAction?: AccountTakeoverActionType | null;
 
 		/** Account takeover action type. */
-		HighAction?: AccountTakeoverActionType;
+		HighAction?: AccountTakeoverActionType | null;
 	}
 
 
@@ -1466,13 +1466,13 @@ export namespace MyNS {
 
 	/** The type of the configuration to override the risk decision. */
 	export interface RiskExceptionConfigurationType {
-		BlockedIPRangeList?: Array<string>;
-		SkippedIPRangeList?: Array<string>;
+		BlockedIPRangeList?: Array<string> | null;
+		SkippedIPRangeList?: Array<string> | null;
 	}
 
 	export interface DescribeRiskConfigurationRequest {
 		UserPoolId: string;
-		ClientId?: string;
+		ClientId?: string | null;
 	}
 
 
@@ -1480,7 +1480,7 @@ export namespace MyNS {
 	export interface DescribeUserImportJobResponse {
 
 		/** The user import job type. */
-		UserImportJob?: UserImportJobType;
+		UserImportJob?: UserImportJobType | null;
 	}
 
 
@@ -1495,7 +1495,7 @@ export namespace MyNS {
 	export interface DescribeUserPoolResponse {
 
 		/** A container for information about the user pool. */
-		UserPool?: UserPoolType;
+		UserPool?: UserPoolType | null;
 	}
 
 
@@ -1509,7 +1509,7 @@ export namespace MyNS {
 	export interface DescribeUserPoolClientResponse {
 
 		/** Contains information about a user pool client. */
-		UserPoolClient?: UserPoolClientType;
+		UserPoolClient?: UserPoolClientType | null;
 	}
 
 
@@ -1522,22 +1522,22 @@ export namespace MyNS {
 	export interface DescribeUserPoolDomainResponse {
 
 		/** A container for information about a domain. */
-		DomainDescription?: DomainDescriptionType;
+		DomainDescription?: DomainDescriptionType | null;
 	}
 
 
 	/** A container for information about a domain. */
 	export interface DomainDescriptionType {
-		UserPoolId?: string;
-		AWSAccountId?: string;
-		Domain?: string;
-		S3Bucket?: string;
-		CloudFrontDistribution?: string;
-		Version?: string;
-		Status?: DomainDescriptionTypeStatus;
+		UserPoolId?: string | null;
+		AWSAccountId?: string | null;
+		Domain?: string | null;
+		S3Bucket?: string | null;
+		CloudFrontDistribution?: string | null;
+		Version?: string | null;
+		Status?: DomainDescriptionTypeStatus | null;
 
 		/** The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application. */
-		CustomDomainConfig?: CustomDomainConfigType;
+		CustomDomainConfig?: CustomDomainConfigType | null;
 	}
 
 	export enum DomainDescriptionTypeStatus { CREATING = 0, DELETING = 1, UPDATING = 2, ACTIVE = 3, FAILED = 4 }
@@ -1549,7 +1549,7 @@ export namespace MyNS {
 
 	/** Represents the request to forget the device. */
 	export interface ForgetDeviceRequest {
-		AccessToken?: string;
+		AccessToken?: string | null;
 		DeviceKey: string;
 	}
 
@@ -1558,37 +1558,37 @@ export namespace MyNS {
 	export interface ForgotPasswordResponse {
 
 		/** The code delivery details being returned from the server. */
-		CodeDeliveryDetails?: CodeDeliveryDetailsType;
+		CodeDeliveryDetails?: CodeDeliveryDetailsType | null;
 	}
 
 
 	/** The code delivery details being returned from the server. */
 	export interface CodeDeliveryDetailsType {
-		Destination?: string;
-		DeliveryMedium?: MFAOptionTypeDeliveryMedium;
-		AttributeName?: string;
+		Destination?: string | null;
+		DeliveryMedium?: MFAOptionTypeDeliveryMedium | null;
+		AttributeName?: string | null;
 	}
 
 
 	/** Represents the request to reset a user's password. */
 	export interface ForgotPasswordRequest {
 		ClientId: string;
-		SecretHash?: string;
+		SecretHash?: string | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType;
+		UserContextData?: UserContextDataType | null;
 		Username: string;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
-		ClientMetadata?: ClientMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 
 	/** Represents the response from the server to the request to get the header information for the .csv file for the user import job. */
 	export interface GetCSVHeaderResponse {
-		UserPoolId?: string;
-		CSVHeader?: Array<string>;
+		UserPoolId?: string | null;
+		CSVHeader?: Array<string> | null;
 	}
 
 
@@ -1612,13 +1612,13 @@ export namespace MyNS {
 	/** Represents the request to get the device. */
 	export interface GetDeviceRequest {
 		DeviceKey: string;
-		AccessToken?: string;
+		AccessToken?: string | null;
 	}
 
 	export interface GetGroupResponse {
 
 		/** The group type. */
-		Group?: GroupType;
+		Group?: GroupType | null;
 	}
 
 	export interface GetGroupRequest {
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 
 	/** Response from Cognito for a signing certificate request. */
 	export interface GetSigningCertificateResponse {
-		Certificate?: string;
+		Certificate?: string | null;
 	}
 
 
@@ -1664,18 +1664,18 @@ export namespace MyNS {
 
 	/** A container for the UI customization information for a user pool's built-in app UI. */
 	export interface UICustomizationType {
-		UserPoolId?: string;
-		ClientId?: string;
-		ImageUrl?: string;
-		CSS?: string;
-		CSSVersion?: string;
-		LastModifiedDate?: Date;
-		CreationDate?: Date;
+		UserPoolId?: string | null;
+		ClientId?: string | null;
+		ImageUrl?: string | null;
+		CSS?: string | null;
+		CSSVersion?: string | null;
+		LastModifiedDate?: Date | null;
+		CreationDate?: Date | null;
 	}
 
 	export interface GetUICustomizationRequest {
 		UserPoolId: string;
-		ClientId?: string;
+		ClientId?: string | null;
 	}
 
 
@@ -1683,9 +1683,9 @@ export namespace MyNS {
 	export interface GetUserResponse {
 		Username: string;
 		UserAttributes: Array<AttributeType>;
-		MFAOptions?: Array<MFAOptionType>;
-		PreferredMfaSetting?: string;
-		UserMFASettingList?: Array<string>;
+		MFAOptions?: Array<MFAOptionType> | null;
+		PreferredMfaSetting?: string | null;
+		UserMFASettingList?: Array<string> | null;
 	}
 
 
@@ -1699,7 +1699,7 @@ export namespace MyNS {
 	export interface GetUserAttributeVerificationCodeResponse {
 
 		/** The code delivery details being returned from the server. */
-		CodeDeliveryDetails?: CodeDeliveryDetailsType;
+		CodeDeliveryDetails?: CodeDeliveryDetailsType | null;
 	}
 
 
@@ -1707,32 +1707,32 @@ export namespace MyNS {
 	export interface GetUserAttributeVerificationCodeRequest {
 		AccessToken: string;
 		AttributeName: string;
-		ClientMetadata?: ClientMetadataType;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 	export interface GetUserPoolMfaConfigResponse {
 
 		/** The SMS text message multi-factor authentication (MFA) configuration type. */
-		SmsMfaConfiguration?: SmsMfaConfigType;
+		SmsMfaConfiguration?: SmsMfaConfigType | null;
 
 		/** The type used for enabling software token MFA at the user pool level. */
-		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType;
-		MfaConfiguration?: UserPoolTypeMfaConfiguration;
+		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType | null;
+		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 	}
 
 
 	/** The SMS text message multi-factor authentication (MFA) configuration type. */
 	export interface SmsMfaConfigType {
-		SmsAuthenticationMessage?: string;
+		SmsAuthenticationMessage?: string | null;
 
 		/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
-		SmsConfiguration?: SmsConfigurationType;
+		SmsConfiguration?: SmsConfigurationType | null;
 	}
 
 
 	/** The type used for enabling software token MFA at the user pool level. */
 	export interface SoftwareTokenMfaConfigType {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export interface GetUserPoolMfaConfigRequest {
@@ -1753,88 +1753,88 @@ export namespace MyNS {
 
 	/** Initiates the authentication response. */
 	export interface InitiateAuthResponse {
-		ChallengeName?: AdminInitiateAuthResponseChallengeName;
-		Session?: string;
-		ChallengeParameters?: ChallengeParametersType;
+		ChallengeName?: AdminInitiateAuthResponseChallengeName | null;
+		Session?: string | null;
+		ChallengeParameters?: ChallengeParametersType | null;
 
 		/** The authentication result. */
-		AuthenticationResult?: AuthenticationResultType;
+		AuthenticationResult?: AuthenticationResultType | null;
 	}
 
 
 	/** Initiates the authentication request. */
 	export interface InitiateAuthRequest {
 		AuthFlow: AdminInitiateAuthRequestAuthFlow;
-		AuthParameters?: AuthParametersType;
-		ClientMetadata?: ClientMetadataType;
+		AuthParameters?: AuthParametersType | null;
+		ClientMetadata?: ClientMetadataType | null;
 		ClientId: string;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType;
+		UserContextData?: UserContextDataType | null;
 	}
 
 
 	/** Represents the response to list devices. */
 	export interface ListDevicesResponse {
-		Devices?: Array<DeviceType>;
-		PaginationToken?: string;
+		Devices?: Array<DeviceType> | null;
+		PaginationToken?: string | null;
 	}
 
 
 	/** Represents the request to list the devices. */
 	export interface ListDevicesRequest {
 		AccessToken: string;
-		Limit?: number;
-		PaginationToken?: string;
+		Limit?: number | null;
+		PaginationToken?: string | null;
 	}
 
 	export interface ListGroupsResponse {
-		Groups?: Array<GroupType>;
-		NextToken?: string;
+		Groups?: Array<GroupType> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListGroupsRequest {
 		UserPoolId: string;
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListIdentityProvidersResponse {
 		Providers: Array<ProviderDescription>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** A container for identity provider details. */
 	export interface ProviderDescription {
-		ProviderName?: string;
-		ProviderType?: IdentityProviderTypeProviderType;
-		LastModifiedDate?: Date;
-		CreationDate?: Date;
+		ProviderName?: string | null;
+		ProviderType?: IdentityProviderTypeProviderType | null;
+		LastModifiedDate?: Date | null;
+		CreationDate?: Date | null;
 	}
 
 	export interface ListIdentityProvidersRequest {
 		UserPoolId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListResourceServersResponse {
 		ResourceServers: Array<ResourceServerType>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListResourceServersRequest {
 		UserPoolId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: UserPoolTagsType;
+		Tags?: UserPoolTagsType | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -1844,8 +1844,8 @@ export namespace MyNS {
 
 	/** Represents the response from the server to the request to list the user import jobs. */
 	export interface ListUserImportJobsResponse {
-		UserImportJobs?: Array<UserImportJobType>;
-		PaginationToken?: string;
+		UserImportJobs?: Array<UserImportJobType> | null;
+		PaginationToken?: string | null;
 	}
 
 
@@ -1853,86 +1853,86 @@ export namespace MyNS {
 	export interface ListUserImportJobsRequest {
 		UserPoolId: string;
 		MaxResults: number;
-		PaginationToken?: string;
+		PaginationToken?: string | null;
 	}
 
 
 	/** Represents the response from the server that lists user pool clients. */
 	export interface ListUserPoolClientsResponse {
-		UserPoolClients?: Array<UserPoolClientDescription>;
-		NextToken?: string;
+		UserPoolClients?: Array<UserPoolClientDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The description of the user pool client. */
 	export interface UserPoolClientDescription {
-		ClientId?: string;
-		UserPoolId?: string;
-		ClientName?: string;
+		ClientId?: string | null;
+		UserPoolId?: string | null;
+		ClientName?: string | null;
 	}
 
 
 	/** Represents the request to list the user pool clients. */
 	export interface ListUserPoolClientsRequest {
 		UserPoolId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the response to list user pools. */
 	export interface ListUserPoolsResponse {
-		UserPools?: Array<UserPoolDescriptionType>;
-		NextToken?: string;
+		UserPools?: Array<UserPoolDescriptionType> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A user pool description. */
 	export interface UserPoolDescriptionType {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 
 		/** Specifies the configuration for AWS Lambda triggers. */
-		LambdaConfig?: LambdaConfigType;
-		Status?: UserPoolTypeStatus;
-		LastModifiedDate?: Date;
-		CreationDate?: Date;
+		LambdaConfig?: LambdaConfigType | null;
+		Status?: UserPoolTypeStatus | null;
+		LastModifiedDate?: Date | null;
+		CreationDate?: Date | null;
 	}
 
 
 	/** Represents the request to list user pools. */
 	export interface ListUserPoolsRequest {
-		NextToken?: string;
+		NextToken?: string | null;
 		MaxResults: number;
 	}
 
 
 	/** The response from the request to list users. */
 	export interface ListUsersResponse {
-		Users?: Array<UserType>;
-		PaginationToken?: string;
+		Users?: Array<UserType> | null;
+		PaginationToken?: string | null;
 	}
 
 
 	/** Represents the request to list users. */
 	export interface ListUsersRequest {
 		UserPoolId: string;
-		AttributesToGet?: Array<string>;
-		Limit?: number;
-		PaginationToken?: string;
-		Filter?: string;
+		AttributesToGet?: Array<string> | null;
+		Limit?: number | null;
+		PaginationToken?: string | null;
+		Filter?: string | null;
 	}
 
 	export interface ListUsersInGroupResponse {
-		Users?: Array<UserType>;
-		NextToken?: string;
+		Users?: Array<UserType> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListUsersInGroupRequest {
 		UserPoolId: string;
 		GroupName: string;
-		Limit?: number;
-		NextToken?: string;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1940,33 +1940,33 @@ export namespace MyNS {
 	export interface ResendConfirmationCodeResponse {
 
 		/** The code delivery details being returned from the server. */
-		CodeDeliveryDetails?: CodeDeliveryDetailsType;
+		CodeDeliveryDetails?: CodeDeliveryDetailsType | null;
 	}
 
 
 	/** Represents the request to resend the confirmation code. */
 	export interface ResendConfirmationCodeRequest {
 		ClientId: string;
-		SecretHash?: string;
+		SecretHash?: string | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType;
+		UserContextData?: UserContextDataType | null;
 		Username: string;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
-		ClientMetadata?: ClientMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 
 	/** The response to respond to the authentication challenge. */
 	export interface RespondToAuthChallengeResponse {
-		ChallengeName?: AdminInitiateAuthResponseChallengeName;
-		Session?: string;
-		ChallengeParameters?: ChallengeParametersType;
+		ChallengeName?: AdminInitiateAuthResponseChallengeName | null;
+		Session?: string | null;
+		ChallengeParameters?: ChallengeParametersType | null;
 
 		/** The authentication result. */
-		AuthenticationResult?: AuthenticationResultType;
+		AuthenticationResult?: AuthenticationResultType | null;
 	}
 
 
@@ -1974,15 +1974,15 @@ export namespace MyNS {
 	export interface RespondToAuthChallengeRequest {
 		ClientId: string;
 		ChallengeName: AdminInitiateAuthResponseChallengeName;
-		Session?: string;
-		ChallengeResponses?: ChallengeResponsesType;
+		Session?: string | null;
+		ChallengeResponses?: ChallengeResponsesType | null;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType;
-		ClientMetadata?: ClientMetadataType;
+		UserContextData?: UserContextDataType | null;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 	export interface SetRiskConfigurationResponse {
@@ -1996,16 +1996,16 @@ export namespace MyNS {
 
 	export interface SetRiskConfigurationRequest {
 		UserPoolId: string;
-		ClientId?: string;
+		ClientId?: string | null;
 
 		/** The compromised credentials risk configuration type. */
-		CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType;
+		CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType | null;
 
 		/** Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover. */
-		AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType;
+		AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType | null;
 
 		/** The type of the configuration to override the risk decision. */
-		RiskExceptionConfiguration?: RiskExceptionConfigurationType;
+		RiskExceptionConfiguration?: RiskExceptionConfigurationType | null;
 	}
 
 	export interface SetUICustomizationResponse {
@@ -2019,9 +2019,9 @@ export namespace MyNS {
 
 	export interface SetUICustomizationRequest {
 		UserPoolId: string;
-		ClientId?: string;
-		CSS?: string;
-		ImageFile?: string;
+		ClientId?: string | null;
+		CSS?: string | null;
+		ImageFile?: string | null;
 	}
 
 	export interface SetUserMFAPreferenceResponse {
@@ -2030,32 +2030,32 @@ export namespace MyNS {
 	export interface SetUserMFAPreferenceRequest {
 
 		/** The type used for enabling SMS MFA at the user level. */
-		SMSMfaSettings?: SMSMfaSettingsType;
+		SMSMfaSettings?: SMSMfaSettingsType | null;
 
 		/** The type used for enabling software token MFA at the user level. */
-		SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType;
+		SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType | null;
 		AccessToken: string;
 	}
 
 	export interface SetUserPoolMfaConfigResponse {
 
 		/** The SMS text message multi-factor authentication (MFA) configuration type. */
-		SmsMfaConfiguration?: SmsMfaConfigType;
+		SmsMfaConfiguration?: SmsMfaConfigType | null;
 
 		/** The type used for enabling software token MFA at the user pool level. */
-		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType;
-		MfaConfiguration?: UserPoolTypeMfaConfiguration;
+		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType | null;
+		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 	}
 
 	export interface SetUserPoolMfaConfigRequest {
 		UserPoolId: string;
 
 		/** The SMS text message multi-factor authentication (MFA) configuration type. */
-		SmsMfaConfiguration?: SmsMfaConfigType;
+		SmsMfaConfiguration?: SmsMfaConfigType | null;
 
 		/** The type used for enabling software token MFA at the user pool level. */
-		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType;
-		MfaConfiguration?: UserPoolTypeMfaConfiguration;
+		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType | null;
+		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 	}
 
 
@@ -2076,7 +2076,7 @@ export namespace MyNS {
 		UserConfirmed: boolean;
 
 		/** The code delivery details being returned from the server. */
-		CodeDeliveryDetails?: CodeDeliveryDetailsType;
+		CodeDeliveryDetails?: CodeDeliveryDetailsType | null;
 		UserSub: string;
 	}
 
@@ -2084,18 +2084,18 @@ export namespace MyNS {
 	/** Represents the request to register a user. */
 	export interface SignUpRequest {
 		ClientId: string;
-		SecretHash?: string;
+		SecretHash?: string | null;
 		Username: string;
 		Password: string;
-		UserAttributes?: Array<AttributeType>;
-		ValidationData?: Array<AttributeType>;
+		UserAttributes?: Array<AttributeType> | null;
+		ValidationData?: Array<AttributeType> | null;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType;
+		AnalyticsMetadata?: AnalyticsMetadataType | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType;
-		ClientMetadata?: ClientMetadataType;
+		UserContextData?: UserContextDataType | null;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 
@@ -2103,7 +2103,7 @@ export namespace MyNS {
 	export interface StartUserImportJobResponse {
 
 		/** The user import job type. */
-		UserImportJob?: UserImportJobType;
+		UserImportJob?: UserImportJobType | null;
 	}
 
 
@@ -2118,7 +2118,7 @@ export namespace MyNS {
 	export interface StopUserImportJobResponse {
 
 		/** The user import job type. */
-		UserImportJob?: UserImportJobType;
+		UserImportJob?: UserImportJobType | null;
 	}
 
 
@@ -2165,21 +2165,21 @@ export namespace MyNS {
 	export interface UpdateDeviceStatusRequest {
 		AccessToken: string;
 		DeviceKey: string;
-		DeviceRememberedStatus?: AdminUpdateDeviceStatusRequestDeviceRememberedStatus;
+		DeviceRememberedStatus?: AdminUpdateDeviceStatusRequestDeviceRememberedStatus | null;
 	}
 
 	export interface UpdateGroupResponse {
 
 		/** The group type. */
-		Group?: GroupType;
+		Group?: GroupType | null;
 	}
 
 	export interface UpdateGroupRequest {
 		GroupName: string;
 		UserPoolId: string;
-		Description?: string;
-		RoleArn?: string;
-		Precedence?: number;
+		Description?: string | null;
+		RoleArn?: string | null;
+		Precedence?: number | null;
 	}
 
 	export interface UpdateIdentityProviderResponse {
@@ -2194,9 +2194,9 @@ export namespace MyNS {
 	export interface UpdateIdentityProviderRequest {
 		UserPoolId: string;
 		ProviderName: string;
-		ProviderDetails?: ProviderDetailsType;
-		AttributeMapping?: AttributeMappingType;
-		IdpIdentifiers?: Array<string>;
+		ProviderDetails?: ProviderDetailsType | null;
+		AttributeMapping?: AttributeMappingType | null;
+		IdpIdentifiers?: Array<string> | null;
 	}
 
 	export interface UpdateResourceServerResponse {
@@ -2212,13 +2212,13 @@ export namespace MyNS {
 		UserPoolId: string;
 		Identifier: string;
 		Name: string;
-		Scopes?: Array<ResourceServerScopeType>;
+		Scopes?: Array<ResourceServerScopeType> | null;
 	}
 
 
 	/** Represents the response from the server for the request to update user attributes. */
 	export interface UpdateUserAttributesResponse {
-		CodeDeliveryDetailsList?: Array<CodeDeliveryDetailsType>;
+		CodeDeliveryDetailsList?: Array<CodeDeliveryDetailsType> | null;
 	}
 
 
@@ -2226,7 +2226,7 @@ export namespace MyNS {
 	export interface UpdateUserAttributesRequest {
 		UserAttributes: Array<AttributeType>;
 		AccessToken: string;
-		ClientMetadata?: ClientMetadataType;
+		ClientMetadata?: ClientMetadataType | null;
 	}
 
 
@@ -2240,38 +2240,38 @@ export namespace MyNS {
 		UserPoolId: string;
 
 		/** The policy associated with a user pool. */
-		Policies?: UserPoolPolicyType;
+		Policies?: UserPoolPolicyType | null;
 
 		/** Specifies the configuration for AWS Lambda triggers. */
-		LambdaConfig?: LambdaConfigType;
-		AutoVerifiedAttributes?: Array<VerifiedAttributeType>;
-		SmsVerificationMessage?: string;
-		EmailVerificationMessage?: string;
-		EmailVerificationSubject?: string;
+		LambdaConfig?: LambdaConfigType | null;
+		AutoVerifiedAttributes?: Array<VerifiedAttributeType> | null;
+		SmsVerificationMessage?: string | null;
+		EmailVerificationMessage?: string | null;
+		EmailVerificationSubject?: string | null;
 
 		/** The template for verification messages. */
-		VerificationMessageTemplate?: VerificationMessageTemplateType;
-		SmsAuthenticationMessage?: string;
-		MfaConfiguration?: UserPoolTypeMfaConfiguration;
+		VerificationMessageTemplate?: VerificationMessageTemplateType | null;
+		SmsAuthenticationMessage?: string | null;
+		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 
 		/** The configuration for the user pool's device tracking. */
-		DeviceConfiguration?: DeviceConfigurationType;
+		DeviceConfiguration?: DeviceConfigurationType | null;
 
 		/** The email configuration type. */
-		EmailConfiguration?: EmailConfigurationType;
+		EmailConfiguration?: EmailConfigurationType | null;
 
 		/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
-		SmsConfiguration?: SmsConfigurationType;
-		UserPoolTags?: UserPoolTagsType;
+		SmsConfiguration?: SmsConfigurationType | null;
+		UserPoolTags?: UserPoolTagsType | null;
 
 		/** The configuration for creating a new user profile. */
-		AdminCreateUserConfig?: AdminCreateUserConfigType;
+		AdminCreateUserConfig?: AdminCreateUserConfigType | null;
 
 		/** The user pool add-ons type. */
-		UserPoolAddOns?: UserPoolAddOnsType;
+		UserPoolAddOns?: UserPoolAddOnsType | null;
 
 		/** The data type for <code>AccountRecoverySetting</code>. */
-		AccountRecoverySetting?: AccountRecoverySettingType;
+		AccountRecoverySetting?: AccountRecoverySettingType | null;
 	}
 
 	export interface ConcurrentModificationException {
@@ -2282,7 +2282,7 @@ export namespace MyNS {
 	export interface UpdateUserPoolClientResponse {
 
 		/** Contains information about a user pool client. */
-		UserPoolClient?: UserPoolClientType;
+		UserPoolClient?: UserPoolClientType | null;
 	}
 
 
@@ -2290,28 +2290,28 @@ export namespace MyNS {
 	export interface UpdateUserPoolClientRequest {
 		UserPoolId: string;
 		ClientId: string;
-		ClientName?: string;
-		RefreshTokenValidity?: number;
-		ReadAttributes?: Array<string>;
-		WriteAttributes?: Array<string>;
-		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType>;
-		SupportedIdentityProviders?: Array<string>;
-		CallbackURLs?: Array<string>;
-		LogoutURLs?: Array<string>;
-		DefaultRedirectURI?: string;
-		AllowedOAuthFlows?: Array<OAuthFlowType>;
-		AllowedOAuthScopes?: Array<string>;
-		AllowedOAuthFlowsUserPoolClient?: boolean;
+		ClientName?: string | null;
+		RefreshTokenValidity?: number | null;
+		ReadAttributes?: Array<string> | null;
+		WriteAttributes?: Array<string> | null;
+		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType> | null;
+		SupportedIdentityProviders?: Array<string> | null;
+		CallbackURLs?: Array<string> | null;
+		LogoutURLs?: Array<string> | null;
+		DefaultRedirectURI?: string | null;
+		AllowedOAuthFlows?: Array<OAuthFlowType> | null;
+		AllowedOAuthScopes?: Array<string> | null;
+		AllowedOAuthFlowsUserPoolClient?: boolean | null;
 
 		/** <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsConfiguration?: AnalyticsConfigurationType;
-		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors;
+		AnalyticsConfiguration?: AnalyticsConfigurationType | null;
+		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors | null;
 	}
 
 
 	/** The UpdateUserPoolDomain response output. */
 	export interface UpdateUserPoolDomainResponse {
-		CloudFrontDomain?: string;
+		CloudFrontDomain?: string | null;
 	}
 
 
@@ -2328,17 +2328,17 @@ export namespace MyNS {
 	}
 
 	export interface VerifySoftwareTokenResponse {
-		Status?: VerifySoftwareTokenResponseStatus;
-		Session?: string;
+		Status?: VerifySoftwareTokenResponseStatus | null;
+		Session?: string | null;
 	}
 
 	export enum VerifySoftwareTokenResponseStatus { SUCCESS = 0, ERROR = 1 }
 
 	export interface VerifySoftwareTokenRequest {
-		AccessToken?: string;
-		Session?: string;
+		AccessToken?: string | null;
+		Session?: string | null;
 		UserCode: string;
-		FriendlyDeviceName?: string;
+		FriendlyDeviceName?: string | null;
 	}
 
 	export interface EnableSoftwareTokenMFAException {

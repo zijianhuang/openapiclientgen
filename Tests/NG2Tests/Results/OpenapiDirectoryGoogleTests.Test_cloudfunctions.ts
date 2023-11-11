@@ -55,14 +55,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -92,10 +92,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -128,7 +128,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -163,13 +163,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -203,26 +203,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -230,7 +230,7 @@ export namespace MyNS {
 	export interface CallFunctionRequest {
 
 		/** Required. Input to be passed to the function. */
-		data?: string;
+		data?: string | null;
 	}
 
 
@@ -241,16 +241,16 @@ export namespace MyNS {
 		 * Either system or user-function generated error. Set if execution
 		 * was not successful.
 		 */
-		error?: string;
+		error?: string | null;
 
 		/** Execution id of function invocation. */
-		executionId?: string;
+		executionId?: string | null;
 
 		/**
 		 * Result populated for successful execution of synchronous function. Will
 		 * not be populated if function does not return a result through context.
 		 */
-		result?: string;
+		result?: string | null;
 	}
 
 
@@ -264,10 +264,10 @@ export namespace MyNS {
 		 * The amount of memory in MB available for a function.
 		 * Defaults to 256MB.
 		 */
-		availableMemoryMb?: number;
+		availableMemoryMb?: number | null;
 
 		/** User-provided description of a function. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The name of the function (as defined in source code) that will be
@@ -277,40 +277,40 @@ export namespace MyNS {
 		 * For Node.js this is name of a function exported by the module specified
 		 * in `source_location`.
 		 */
-		entryPoint?: string;
+		entryPoint?: string | null;
 
 		/** Environment variables that shall be available during function execution. */
-		environmentVariables?: {[id: string]: string };
+		environmentVariables?: {[id: string]: string } | null;
 
 		/**
 		 * Describes EventTrigger, used to request events be sent from another
 		 * service.
 		 */
-		eventTrigger?: EventTrigger;
+		eventTrigger?: EventTrigger | null;
 
 		/** Describes HttpsTrigger, could be used to connect web hooks to function. */
-		httpsTrigger?: HttpsTrigger;
+		httpsTrigger?: HttpsTrigger | null;
 
 		/**
 		 * The ingress settings for the function, controlling what traffic can reach
 		 * it.
 		 */
-		ingressSettings?: CloudFunctionIngressSettings;
+		ingressSettings?: CloudFunctionIngressSettings | null;
 
 		/** Labels associated with this Cloud Function. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The limit on the maximum number of function instances that may coexist at a
 		 * given time.
 		 */
-		maxInstances?: number;
+		maxInstances?: number | null;
 
 		/**
 		 * A user-defined name of the function. Function names must be unique
 		 * globally and match pattern `projects/locations/functions/*`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The VPC Network that this cloud function can connect to. It can be
@@ -326,7 +326,7 @@ export namespace MyNS {
 		 * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
 		 * more information on connecting Cloud projects.
 		 */
-		network?: string;
+		network?: string | null;
 
 		/**
 		 * The runtime in which to run the function. Required when deploying a new
@@ -335,50 +335,50 @@ export namespace MyNS {
 		 * [`gcloud` command
 		 * reference](/sdk/gcloud/reference/functions/deploy#--runtime).
 		 */
-		runtime?: string;
+		runtime?: string | null;
 
 		/**
 		 * The email of the function's service account. If empty, defaults to
 		 * `{project_id}@appspot.gserviceaccount.com`.
 		 */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 
 		/**
 		 * The Google Cloud Storage URL, starting with gs://, pointing to the zip
 		 * archive which contains the function.
 		 */
-		sourceArchiveUrl?: string;
+		sourceArchiveUrl?: string | null;
 
 		/**
 		 * Describes SourceRepository, used to represent parameters related to
 		 * source repository where a function is hosted.
 		 */
-		sourceRepository?: SourceRepository;
+		sourceRepository?: SourceRepository | null;
 
 		/**
 		 * The Google Cloud Storage signed URL used for source uploading, generated
 		 * by google.cloud.functions.v1.GenerateUploadUrl
 		 */
-		sourceUploadUrl?: string;
+		sourceUploadUrl?: string | null;
 
 		/** Output only. Status of the function deployment. */
-		status?: CloudFunctionStatus;
+		status?: CloudFunctionStatus | null;
 
 		/**
 		 * The function execution timeout. Execution is considered failed and
 		 * can be terminated if the function is not completed at the end of the
 		 * timeout period. Defaults to 60 seconds.
 		 */
-		timeout?: string;
+		timeout?: string | null;
 
 		/** Output only. The last update timestamp of a Cloud Function. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/**
 		 * Output only. The version identifier of the Cloud Function. Each deployment attempt
 		 * results in a new version of a function being created.
 		 */
-		versionId?: string;
+		versionId?: string | null;
 
 		/**
 		 * The VPC Network Connector that this cloud function can connect to. It can
@@ -390,13 +390,13 @@ export namespace MyNS {
 		 * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
 		 * more information on connecting Cloud projects.
 		 */
-		vpcConnector?: string;
+		vpcConnector?: string | null;
 
 		/**
 		 * The egress settings for the connector, controlling what traffic is diverted
 		 * through it.
 		 */
-		vpcConnectorEgressSettings?: CloudFunctionVpcConnectorEgressSettings;
+		vpcConnectorEgressSettings?: CloudFunctionVpcConnectorEgressSettings | null;
 	}
 
 
@@ -420,13 +420,13 @@ export namespace MyNS {
 		 * a Google Cloud Storage Object is 'change'.
 		 * These parts are lower case.
 		 */
-		eventType?: string;
+		eventType?: string | null;
 
 		/**
 		 * Describes the policy in case of function's execution failure.
 		 * If empty, then defaults to ignoring failures (i.e. not retrying them).
 		 */
-		failurePolicy?: FailurePolicy;
+		failurePolicy?: FailurePolicy | null;
 
 		/**
 		 * Required. The resource(s) from which to observe events, for example,
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * format.
 		 * See each *service's* documentation for supported formats.
 		 */
-		resource?: string;
+		resource?: string | null;
 
 		/**
 		 * The hostname of the service that should be observed.
@@ -453,7 +453,7 @@ export namespace MyNS {
 		 * be used. For example, `storage.googleapis.com` is the default for all
 		 * event types in the `google.storage` namespace.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -470,7 +470,7 @@ export namespace MyNS {
 		 * (capped at 10 seconds).
 		 * Retried execution is charged as any other execution.
 		 */
-		retry?: Retry;
+		retry?: Retry | null;
 	}
 
 
@@ -489,7 +489,7 @@ export namespace MyNS {
 	export interface HttpsTrigger {
 
 		/** Output only. The deployed url for the function. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum CloudFunctionIngressSettings { INGRESS_SETTINGS_UNSPECIFIED = 0, ALLOW_ALL = 1, ALLOW_INTERNAL_ONLY = 2 }
@@ -506,7 +506,7 @@ export namespace MyNS {
 		 * were defined at the time of deployment. It always points to a specific
 		 * commit in the format described above.
 		 */
-		deployedUrl?: string;
+		deployedUrl?: string | null;
 
 		/**
 		 * The URL pointing to the hosted repository where the function is defined.
@@ -521,7 +521,7 @@ export namespace MyNS {
 		 * `https://source.developers.google.com/projects/repos/fixed-aliases/paths/*`
 		 * You may omit `paths/*` if you want to use the main directory.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum CloudFunctionStatus { CLOUD_FUNCTION_STATUS_UNSPECIFIED = 0, ACTIVE = 1, OFFLINE = 2, DEPLOY_IN_PROGRESS = 3, DELETE_IN_PROGRESS = 4, UNKNOWN = 5 }
@@ -536,7 +536,7 @@ export namespace MyNS {
 		 * The optional version of function. If not set, default, current version
 		 * is used.
 		 */
-		versionId?: string;
+		versionId?: string | null;
 	}
 
 
@@ -547,7 +547,7 @@ export namespace MyNS {
 		 * The generated Google Cloud Storage signed URL that should be used for
 		 * function source code download.
 		 */
-		downloadUrl?: string;
+		downloadUrl?: string | null;
 	}
 
 
@@ -564,7 +564,7 @@ export namespace MyNS {
 		 * function source code upload. The uploaded file should be a zip archive
 		 * which contains a function.
 		 */
-		uploadUrl?: string;
+		uploadUrl?: string | null;
 	}
 
 
@@ -572,7 +572,7 @@ export namespace MyNS {
 	export interface ListFunctionsResponse {
 
 		/** The functions that match the request. */
-		functions?: Array<CloudFunction>;
+		functions?: Array<CloudFunction> | null;
 
 		/**
 		 * If not empty, indicates that there may be more functions that match
@@ -580,13 +580,13 @@ export namespace MyNS {
 		 * google.cloud.functions.v1.ListFunctionsRequest
 		 * to get more functions.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * Locations that could not be reached. The response does not include any
 		 * functions from these locations.
 		 */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -594,10 +594,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -608,28 +608,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -637,10 +637,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -655,7 +655,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -665,7 +665,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -673,14 +673,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -692,7 +692,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -707,20 +707,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -728,25 +728,25 @@ export namespace MyNS {
 	export interface OperationMetadataV1 {
 
 		/** The original request that started the operation. */
-		request?: {[id: string]: any };
+		request?: {[id: string]: any } | null;
 
 		/**
 		 * Target of the operation - for example
 		 * projects/project-1/locations/region-1/functions/function-1
 		 */
-		target?: string;
+		target?: string | null;
 
 		/** Type of operation. */
-		type?: OperationMetadataV1Type;
+		type?: OperationMetadataV1Type | null;
 
 		/** The last update timestamp of the operation. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/**
 		 * Version id of the function created or updated by an API call.
 		 * This field is only populated for Create and Update operations.
 		 */
-		versionId?: string;
+		versionId?: string | null;
 	}
 
 	export enum OperationMetadataV1Type { OPERATION_UNSPECIFIED = 0, CREATE_FUNCTION = 1, UPDATE_FUNCTION = 2, DELETE_FUNCTION = 3 }
@@ -756,25 +756,25 @@ export namespace MyNS {
 	export interface OperationMetadataV1Beta2 {
 
 		/** The original request that started the operation. */
-		request?: {[id: string]: any };
+		request?: {[id: string]: any } | null;
 
 		/**
 		 * Target of the operation - for example
 		 * projects/project-1/locations/region-1/functions/function-1
 		 */
-		target?: string;
+		target?: string | null;
 
 		/** Type of operation. */
-		type?: OperationMetadataV1Type;
+		type?: OperationMetadataV1Type | null;
 
 		/** The last update timestamp of the operation. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/**
 		 * Version id of the function created or updated by an API call.
 		 * This field is only populated for Create and Update operations.
 		 */
-		versionId?: string;
+		versionId?: string | null;
 	}
 
 
@@ -838,14 +838,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -860,7 +860,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -880,7 +880,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -944,7 +944,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -953,7 +953,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -966,7 +966,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -977,7 +977,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()

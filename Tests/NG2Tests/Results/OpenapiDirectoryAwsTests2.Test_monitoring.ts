@@ -34,32 +34,32 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInsightRulesOutput {
-		Failures?: Array<PartialFailure>;
+		Failures?: Array<PartialFailure> | null;
 	}
 
 
 	/** This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules. */
 	export interface PartialFailure {
-		FailureResource?: string;
-		ExceptionType?: string;
-		FailureCode?: string;
-		FailureDescription?: string;
+		FailureResource?: string | null;
+		ExceptionType?: string | null;
+		FailureCode?: string | null;
+		FailureDescription?: string | null;
 	}
 
 	export interface DescribeAlarmHistoryOutput {
-		AlarmHistoryItems?: Array<AlarmHistoryItem>;
-		NextToken?: string;
+		AlarmHistoryItems?: Array<AlarmHistoryItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the history of a specific alarm. */
 	export interface AlarmHistoryItem {
-		AlarmName?: string;
-		AlarmType?: AlarmHistoryItemAlarmType;
-		Timestamp?: Date;
-		HistoryItemType?: AlarmHistoryItemHistoryItemType;
-		HistorySummary?: string;
-		HistoryData?: string;
+		AlarmName?: string | null;
+		AlarmType?: AlarmHistoryItemAlarmType | null;
+		Timestamp?: Date | null;
+		HistoryItemType?: AlarmHistoryItemHistoryItemType | null;
+		HistorySummary?: string | null;
+		HistoryData?: string | null;
 	}
 
 	export enum AlarmHistoryItemAlarmType { CompositeAlarm = 0, MetricAlarm = 1 }
@@ -72,27 +72,27 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAlarmsOutput {
-		CompositeAlarms?: Array<CompositeAlarm>;
-		MetricAlarms?: Array<MetricAlarm>;
-		NextToken?: string;
+		CompositeAlarms?: Array<CompositeAlarm> | null;
+		MetricAlarms?: Array<MetricAlarm> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The details about a composite alarm. */
 	export interface CompositeAlarm {
-		ActionsEnabled?: boolean;
-		AlarmActions?: Array<string>;
-		AlarmArn?: string;
-		AlarmConfigurationUpdatedTimestamp?: Date;
-		AlarmDescription?: string;
-		AlarmName?: string;
-		AlarmRule?: string;
-		InsufficientDataActions?: Array<string>;
-		OKActions?: Array<string>;
-		StateReason?: string;
-		StateReasonData?: string;
-		StateUpdatedTimestamp?: Date;
-		StateValue?: CompositeAlarmStateValue;
+		ActionsEnabled?: boolean | null;
+		AlarmActions?: Array<string> | null;
+		AlarmArn?: string | null;
+		AlarmConfigurationUpdatedTimestamp?: Date | null;
+		AlarmDescription?: string | null;
+		AlarmName?: string | null;
+		AlarmRule?: string | null;
+		InsufficientDataActions?: Array<string> | null;
+		OKActions?: Array<string> | null;
+		StateReason?: string | null;
+		StateReasonData?: string | null;
+		StateUpdatedTimestamp?: Date | null;
+		StateValue?: CompositeAlarmStateValue | null;
 	}
 
 	export enum CompositeAlarmStateValue { OK = 0, ALARM = 1, INSUFFICIENT_DATA = 2 }
@@ -100,33 +100,33 @@ export namespace MyNS {
 
 	/** The details about a metric alarm. */
 	export interface MetricAlarm {
-		AlarmName?: string;
-		AlarmArn?: string;
-		AlarmDescription?: string;
-		AlarmConfigurationUpdatedTimestamp?: Date;
-		ActionsEnabled?: boolean;
-		OKActions?: Array<string>;
-		AlarmActions?: Array<string>;
-		InsufficientDataActions?: Array<string>;
-		StateValue?: CompositeAlarmStateValue;
-		StateReason?: string;
-		StateReasonData?: string;
-		StateUpdatedTimestamp?: Date;
-		MetricName?: string;
-		Namespace?: string;
-		Statistic?: MetricAlarmStatistic;
-		ExtendedStatistic?: string;
-		Dimensions?: Array<Dimension>;
-		Period?: number;
-		Unit?: MetricAlarmUnit;
-		EvaluationPeriods?: number;
-		DatapointsToAlarm?: number;
-		Threshold?: number;
-		ComparisonOperator?: MetricAlarmComparisonOperator;
-		TreatMissingData?: string;
-		EvaluateLowSampleCountPercentile?: string;
-		Metrics?: Array<MetricDataQuery>;
-		ThresholdMetricId?: string;
+		AlarmName?: string | null;
+		AlarmArn?: string | null;
+		AlarmDescription?: string | null;
+		AlarmConfigurationUpdatedTimestamp?: Date | null;
+		ActionsEnabled?: boolean | null;
+		OKActions?: Array<string> | null;
+		AlarmActions?: Array<string> | null;
+		InsufficientDataActions?: Array<string> | null;
+		StateValue?: CompositeAlarmStateValue | null;
+		StateReason?: string | null;
+		StateReasonData?: string | null;
+		StateUpdatedTimestamp?: Date | null;
+		MetricName?: string | null;
+		Namespace?: string | null;
+		Statistic?: MetricAlarmStatistic | null;
+		ExtendedStatistic?: string | null;
+		Dimensions?: Array<Dimension> | null;
+		Period?: number | null;
+		Unit?: MetricAlarmUnit | null;
+		EvaluationPeriods?: number | null;
+		DatapointsToAlarm?: number | null;
+		Threshold?: number | null;
+		ComparisonOperator?: MetricAlarmComparisonOperator | null;
+		TreatMissingData?: string | null;
+		EvaluateLowSampleCountPercentile?: string | null;
+		Metrics?: Array<MetricDataQuery> | null;
+		ThresholdMetricId?: string | null;
 	}
 
 	export enum MetricAlarmStatistic { SampleCount = 0, Average = 1, Sum = 2, Minimum = 3, Maximum = 4 }
@@ -141,11 +141,11 @@ export namespace MyNS {
 		Id: string;
 
 		/** This structure defines the metric to be returned, along with the statistics, period, and units. */
-		MetricStat?: MetricStat;
-		Expression?: string;
-		Label?: string;
-		ReturnData?: boolean;
-		Period?: number;
+		MetricStat?: MetricStat | null;
+		Expression?: string | null;
+		Label?: string | null;
+		ReturnData?: boolean | null;
+		Period?: number | null;
 	}
 
 
@@ -159,46 +159,46 @@ export namespace MyNS {
 		Metric: Metric;
 		Period: number;
 		Stat: string;
-		Unit?: MetricStatUnit;
+		Unit?: MetricStatUnit | null;
 	}
 
 
 	/** Represents a specific metric. */
 	export interface Metric {
-		Namespace?: string;
-		MetricName?: string;
-		Dimensions?: Array<Dimension>;
+		Namespace?: string | null;
+		MetricName?: string | null;
+		Dimensions?: Array<Dimension> | null;
 	}
 
 	export enum MetricStatUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DescribeAlarmsForMetricOutput {
-		MetricAlarms?: Array<MetricAlarm>;
+		MetricAlarms?: Array<MetricAlarm> | null;
 	}
 
 	export interface DescribeAnomalyDetectorsOutput {
-		AnomalyDetectors?: Array<AnomalyDetector>;
-		NextToken?: string;
+		AnomalyDetectors?: Array<AnomalyDetector> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to display a band of expected normal values when the metric is graphed. */
 	export interface AnomalyDetector {
-		Namespace?: string;
-		MetricName?: string;
-		Dimensions?: Array<Dimension>;
-		Stat?: string;
+		Namespace?: string | null;
+		MetricName?: string | null;
+		Dimensions?: Array<Dimension> | null;
+		Stat?: string | null;
 
 		/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
-		Configuration?: AnomalyDetectorConfiguration;
-		StateValue?: AnomalyDetectorStateValue;
+		Configuration?: AnomalyDetectorConfiguration | null;
+		StateValue?: AnomalyDetectorStateValue | null;
 	}
 
 
 	/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
 	export interface AnomalyDetectorConfiguration {
-		ExcludedTimeRanges?: Array<Range>;
-		MetricTimezone?: string;
+		ExcludedTimeRanges?: Array<Range> | null;
+		MetricTimezone?: string | null;
 	}
 
 
@@ -211,8 +211,8 @@ export namespace MyNS {
 	export enum AnomalyDetectorStateValue { PENDING_TRAINING = 0, TRAINED_INSUFFICIENT_DATA = 1, TRAINED = 2 }
 
 	export interface DescribeInsightRulesOutput {
-		NextToken?: string;
-		InsightRules?: Array<InsightRule>;
+		NextToken?: string | null;
+		InsightRules?: Array<InsightRule> | null;
 	}
 
 
@@ -225,29 +225,29 @@ export namespace MyNS {
 	}
 
 	export interface DisableInsightRulesOutput {
-		Failures?: Array<PartialFailure>;
+		Failures?: Array<PartialFailure> | null;
 	}
 
 	export interface EnableInsightRulesOutput {
-		Failures?: Array<PartialFailure>;
+		Failures?: Array<PartialFailure> | null;
 	}
 
 	export interface LimitExceededException {
 	}
 
 	export interface GetDashboardOutput {
-		DashboardArn?: string;
-		DashboardBody?: string;
-		DashboardName?: string;
+		DashboardArn?: string | null;
+		DashboardBody?: string | null;
+		DashboardName?: string | null;
 	}
 
 	export interface GetInsightRuleReportOutput {
-		KeyLabels?: Array<string>;
-		AggregationStatistic?: string;
-		AggregateValue?: number;
-		ApproximateUniqueCount?: number;
-		Contributors?: Array<InsightRuleContributor>;
-		MetricDatapoints?: Array<InsightRuleMetricDatapoint>;
+		KeyLabels?: Array<string> | null;
+		AggregationStatistic?: string | null;
+		AggregateValue?: number | null;
+		ApproximateUniqueCount?: number | null;
+		Contributors?: Array<InsightRuleContributor> | null;
+		MetricDatapoints?: Array<InsightRuleMetricDatapoint> | null;
 	}
 
 
@@ -269,30 +269,30 @@ export namespace MyNS {
 	/** <p>One data point from the metric time series returned in a Contributor Insights rule report.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p> */
 	export interface InsightRuleMetricDatapoint {
 		Timestamp: Date;
-		UniqueContributors?: number;
-		MaxContributorValue?: number;
-		SampleCount?: number;
-		Average?: number;
-		Sum?: number;
-		Minimum?: number;
-		Maximum?: number;
+		UniqueContributors?: number | null;
+		MaxContributorValue?: number | null;
+		SampleCount?: number | null;
+		Average?: number | null;
+		Sum?: number | null;
+		Minimum?: number | null;
+		Maximum?: number | null;
 	}
 
 	export interface GetMetricDataOutput {
-		MetricDataResults?: Array<MetricDataResult>;
-		NextToken?: string;
-		Messages?: Array<MessageData>;
+		MetricDataResults?: Array<MetricDataResult> | null;
+		NextToken?: string | null;
+		Messages?: Array<MessageData> | null;
 	}
 
 
 	/** A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information. */
 	export interface MetricDataResult {
-		Id?: string;
-		Label?: string;
-		Timestamps?: Array<string>;
-		Values?: Array<number>;
-		StatusCode?: MetricDataResultStatusCode;
-		Messages?: Array<MessageData>;
+		Id?: string | null;
+		Label?: string | null;
+		Timestamps?: Array<string> | null;
+		Values?: Array<number> | null;
+		StatusCode?: MetricDataResultStatusCode | null;
+		Messages?: Array<MessageData> | null;
 	}
 
 	export enum MetricDataResultStatusCode { Complete = 0, InternalError = 1, PartialData = 2 }
@@ -300,26 +300,26 @@ export namespace MyNS {
 
 	/** A message returned by the <code>GetMetricData</code>API, including a code and a description. */
 	export interface MessageData {
-		Code?: string;
-		Value?: string;
+		Code?: string | null;
+		Value?: string | null;
 	}
 
 	export interface GetMetricStatisticsOutput {
-		Label?: string;
-		Datapoints?: Array<Datapoint>;
+		Label?: string | null;
+		Datapoints?: Array<Datapoint> | null;
 	}
 
 
 	/** Encapsulates the statistical data that CloudWatch computes from metric data. */
 	export interface Datapoint {
-		Timestamp?: Date;
-		SampleCount?: number;
-		Average?: number;
-		Sum?: number;
-		Minimum?: number;
-		Maximum?: number;
-		Unit?: DatapointUnit;
-		ExtendedStatistics?: DatapointValueMap;
+		Timestamp?: Date | null;
+		SampleCount?: number | null;
+		Average?: number | null;
+		Sum?: number | null;
+		Minimum?: number | null;
+		Maximum?: number | null;
+		Unit?: DatapointUnit | null;
+		ExtendedStatistics?: DatapointValueMap | null;
 	}
 
 	export enum DatapointUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
@@ -333,37 +333,37 @@ export namespace MyNS {
 	}
 
 	export interface GetMetricWidgetImageOutput {
-		MetricWidgetImage?: string;
+		MetricWidgetImage?: string | null;
 	}
 
 	export interface ListDashboardsOutput {
-		DashboardEntries?: Array<DashboardEntry>;
-		NextToken?: string;
+		DashboardEntries?: Array<DashboardEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a specific dashboard. */
 	export interface DashboardEntry {
-		DashboardName?: string;
-		DashboardArn?: string;
-		LastModified?: Date;
-		Size?: number;
+		DashboardName?: string | null;
+		DashboardArn?: string | null;
+		LastModified?: Date | null;
+		Size?: number | null;
 	}
 
 	export interface ListMetricsOutput {
-		Metrics?: Array<Metric>;
-		NextToken?: string;
+		Metrics?: Array<Metric> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents filters for a dimension. */
 	export interface DimensionFilter {
 		Name: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -380,14 +380,14 @@ export namespace MyNS {
 	}
 
 	export interface PutDashboardOutput {
-		DashboardValidationMessages?: Array<DashboardValidationMessage>;
+		DashboardValidationMessages?: Array<DashboardValidationMessage> | null;
 	}
 
 
 	/** An error or warning for the operation. */
 	export interface DashboardValidationMessage {
-		DataPath?: string;
-		Message?: string;
+		DataPath?: string | null;
+		Message?: string | null;
 	}
 
 	export interface DashboardInvalidInputError {
@@ -400,16 +400,16 @@ export namespace MyNS {
 	/** Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric. */
 	export interface MetricDatum {
 		MetricName: string;
-		Dimensions?: Array<Dimension>;
-		Timestamp?: Date;
-		Value?: number;
+		Dimensions?: Array<Dimension> | null;
+		Timestamp?: Date | null;
+		Value?: number | null;
 
 		/** Represents a set of statistics that describes a specific metric. */
-		StatisticValues?: StatisticSet;
-		Values?: Array<number>;
-		Counts?: Array<number>;
-		Unit?: MetricDatumUnit;
-		StorageResolution?: number;
+		StatisticValues?: StatisticSet | null;
+		Values?: Array<number> | null;
+		Counts?: Array<number> | null;
+		Unit?: MetricDatumUnit | null;
+		StorageResolution?: number | null;
 	}
 
 
@@ -450,7 +450,7 @@ export namespace MyNS {
 	export interface DeleteAnomalyDetectorInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension>;
+		Dimensions?: Array<Dimension> | null;
 		Stat: string;
 	}
 
@@ -465,51 +465,51 @@ export namespace MyNS {
 	export enum ScanBy { TimestampDescending = 0, TimestampAscending = 1 }
 
 	export interface DescribeAlarmHistoryInput {
-		AlarmName?: string;
-		AlarmTypes?: Array<AlarmType>;
-		HistoryItemType?: AlarmHistoryItemHistoryItemType;
-		StartDate?: Date;
-		EndDate?: Date;
-		MaxRecords?: number;
-		NextToken?: string;
-		ScanBy?: ScanBy;
+		AlarmName?: string | null;
+		AlarmTypes?: Array<AlarmType> | null;
+		HistoryItemType?: AlarmHistoryItemHistoryItemType | null;
+		StartDate?: Date | null;
+		EndDate?: Date | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
+		ScanBy?: ScanBy | null;
 	}
 
 	export interface DescribeAlarmsForMetricInput {
 		MetricName: string;
 		Namespace: string;
-		Statistic?: MetricAlarmStatistic;
-		ExtendedStatistic?: string;
-		Dimensions?: Array<Dimension>;
-		Period?: number;
-		Unit?: DescribeAlarmsForMetricInputUnit;
+		Statistic?: MetricAlarmStatistic | null;
+		ExtendedStatistic?: string | null;
+		Dimensions?: Array<Dimension> | null;
+		Period?: number | null;
+		Unit?: DescribeAlarmsForMetricInputUnit | null;
 	}
 
 	export enum DescribeAlarmsForMetricInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DescribeAlarmsInput {
-		AlarmNames?: Array<string>;
-		AlarmNamePrefix?: string;
-		AlarmTypes?: Array<AlarmType>;
-		ChildrenOfAlarmName?: string;
-		ParentsOfAlarmName?: string;
-		StateValue?: CompositeAlarmStateValue;
-		ActionPrefix?: string;
-		MaxRecords?: number;
-		NextToken?: string;
+		AlarmNames?: Array<string> | null;
+		AlarmNamePrefix?: string | null;
+		AlarmTypes?: Array<AlarmType> | null;
+		ChildrenOfAlarmName?: string | null;
+		ParentsOfAlarmName?: string | null;
+		StateValue?: CompositeAlarmStateValue | null;
+		ActionPrefix?: string | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeAnomalyDetectorsInput {
-		NextToken?: string;
-		MaxResults?: number;
-		Namespace?: string;
-		MetricName?: string;
-		Dimensions?: Array<Dimension>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Namespace?: string | null;
+		MetricName?: string | null;
+		Dimensions?: Array<Dimension> | null;
 	}
 
 	export interface DescribeInsightRulesInput {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DisableAlarmActionsInput {
@@ -537,49 +537,49 @@ export namespace MyNS {
 		StartTime: Date;
 		EndTime: Date;
 		Period: number;
-		MaxContributorCount?: number;
-		Metrics?: Array<string>;
-		OrderBy?: string;
+		MaxContributorCount?: number | null;
+		Metrics?: Array<string> | null;
+		OrderBy?: string | null;
 	}
 
 	export interface GetMetricDataInput {
 		MetricDataQueries: Array<MetricDataQuery>;
 		StartTime: Date;
 		EndTime: Date;
-		NextToken?: string;
-		ScanBy?: ScanBy;
-		MaxDatapoints?: number;
+		NextToken?: string | null;
+		ScanBy?: ScanBy | null;
+		MaxDatapoints?: number | null;
 	}
 
 	export interface GetMetricStatisticsInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension>;
+		Dimensions?: Array<Dimension> | null;
 		StartTime: Date;
 		EndTime: Date;
 		Period: number;
-		Statistics?: Array<Statistic>;
-		ExtendedStatistics?: Array<string>;
-		Unit?: GetMetricStatisticsInputUnit;
+		Statistics?: Array<Statistic> | null;
+		ExtendedStatistics?: Array<string> | null;
+		Unit?: GetMetricStatisticsInputUnit | null;
 	}
 
 	export enum GetMetricStatisticsInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface GetMetricWidgetImageInput {
 		MetricWidget: string;
-		OutputFormat?: string;
+		OutputFormat?: string | null;
 	}
 
 	export interface ListDashboardsInput {
-		DashboardNamePrefix?: string;
-		NextToken?: string;
+		DashboardNamePrefix?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListMetricsInput {
-		Namespace?: string;
-		MetricName?: string;
-		Dimensions?: Array<DimensionFilter>;
-		NextToken?: string;
+		Namespace?: string | null;
+		MetricName?: string | null;
+		Dimensions?: Array<DimensionFilter> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceInput {
@@ -591,22 +591,22 @@ export namespace MyNS {
 	export interface PutAnomalyDetectorInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension>;
+		Dimensions?: Array<Dimension> | null;
 		Stat: string;
 
 		/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
-		Configuration?: AnomalyDetectorConfiguration;
+		Configuration?: AnomalyDetectorConfiguration | null;
 	}
 
 	export interface PutCompositeAlarmInput {
-		ActionsEnabled?: boolean;
-		AlarmActions?: Array<string>;
-		AlarmDescription?: string;
+		ActionsEnabled?: boolean | null;
+		AlarmActions?: Array<string> | null;
+		AlarmDescription?: string | null;
 		AlarmName: string;
 		AlarmRule: string;
-		InsufficientDataActions?: Array<string>;
-		OKActions?: Array<string>;
-		Tags?: Array<Tag>;
+		InsufficientDataActions?: Array<string> | null;
+		OKActions?: Array<string> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface PutDashboardInput {
@@ -616,34 +616,34 @@ export namespace MyNS {
 
 	export interface PutInsightRuleInput {
 		RuleName: string;
-		RuleState?: string;
+		RuleState?: string | null;
 		RuleDefinition: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface PutMetricAlarmInput {
 		AlarmName: string;
-		AlarmDescription?: string;
-		ActionsEnabled?: boolean;
-		OKActions?: Array<string>;
-		AlarmActions?: Array<string>;
-		InsufficientDataActions?: Array<string>;
-		MetricName?: string;
-		Namespace?: string;
-		Statistic?: MetricAlarmStatistic;
-		ExtendedStatistic?: string;
-		Dimensions?: Array<Dimension>;
-		Period?: number;
-		Unit?: PutMetricAlarmInputUnit;
+		AlarmDescription?: string | null;
+		ActionsEnabled?: boolean | null;
+		OKActions?: Array<string> | null;
+		AlarmActions?: Array<string> | null;
+		InsufficientDataActions?: Array<string> | null;
+		MetricName?: string | null;
+		Namespace?: string | null;
+		Statistic?: MetricAlarmStatistic | null;
+		ExtendedStatistic?: string | null;
+		Dimensions?: Array<Dimension> | null;
+		Period?: number | null;
+		Unit?: PutMetricAlarmInputUnit | null;
 		EvaluationPeriods: number;
-		DatapointsToAlarm?: number;
-		Threshold?: number;
+		DatapointsToAlarm?: number | null;
+		Threshold?: number | null;
 		ComparisonOperator: MetricAlarmComparisonOperator;
-		TreatMissingData?: string;
-		EvaluateLowSampleCountPercentile?: string;
-		Metrics?: Array<MetricDataQuery>;
-		Tags?: Array<Tag>;
-		ThresholdMetricId?: string;
+		TreatMissingData?: string | null;
+		EvaluateLowSampleCountPercentile?: string | null;
+		Metrics?: Array<MetricDataQuery> | null;
+		Tags?: Array<Tag> | null;
+		ThresholdMetricId?: string | null;
 	}
 
 	export enum PutMetricAlarmInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
@@ -657,7 +657,7 @@ export namespace MyNS {
 		AlarmName: string;
 		StateValue: CompositeAlarmStateValue;
 		StateReason: string;
-		StateReasonData?: string;
+		StateReasonData?: string | null;
 	}
 
 	export interface TagResourceInput {
@@ -1202,8 +1202,8 @@ export namespace MyNS {
 	export enum POST_ListTagsForResourceVersion { _2010_08_01 = 0 }
 
 	export interface GET_PutAnomalyDetectorConfiguration {
-		ExcludedTimeRanges?: Array<Range>;
-		MetricTimezone?: string;
+		ExcludedTimeRanges?: Array<Range> | null;
+		MetricTimezone?: string | null;
 	}
 
 	export enum GET_PutAnomalyDetectorAction { PutAnomalyDetector = 0 }

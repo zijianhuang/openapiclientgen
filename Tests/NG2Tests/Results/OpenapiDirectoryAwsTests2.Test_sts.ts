@@ -7,11 +7,11 @@ export namespace MyNS {
 	export interface AssumeRoleResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials;
+		Credentials?: Credentials | null;
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
-		AssumedRoleUser?: AssumedRoleUser;
-		PackedPolicySize?: number;
+		AssumedRoleUser?: AssumedRoleUser | null;
+		PackedPolicySize?: number | null;
 	}
 
 
@@ -33,7 +33,7 @@ export namespace MyNS {
 
 	/** A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session. */
 	export interface PolicyDescriptorType {
-		arn?: string;
+		arn?: string | null;
 	}
 
 
@@ -57,16 +57,16 @@ export namespace MyNS {
 	export interface AssumeRoleWithSAMLResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials;
+		Credentials?: Credentials | null;
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
-		AssumedRoleUser?: AssumedRoleUser;
-		PackedPolicySize?: number;
-		Subject?: string;
-		SubjectType?: string;
-		Issuer?: string;
-		Audience?: string;
-		NameQualifier?: string;
+		AssumedRoleUser?: AssumedRoleUser | null;
+		PackedPolicySize?: number | null;
+		Subject?: string | null;
+		SubjectType?: string | null;
+		Issuer?: string | null;
+		Audience?: string | null;
+		NameQualifier?: string | null;
 	}
 
 	export interface IDPRejectedClaimException {
@@ -83,14 +83,14 @@ export namespace MyNS {
 	export interface AssumeRoleWithWebIdentityResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials;
-		SubjectFromWebIdentityToken?: string;
+		Credentials?: Credentials | null;
+		SubjectFromWebIdentityToken?: string | null;
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
-		AssumedRoleUser?: AssumedRoleUser;
-		PackedPolicySize?: number;
-		Provider?: string;
-		Audience?: string;
+		AssumedRoleUser?: AssumedRoleUser | null;
+		PackedPolicySize?: number | null;
+		Provider?: string | null;
+		Audience?: string | null;
 	}
 
 	export interface IDPCommunicationErrorException {
@@ -99,22 +99,22 @@ export namespace MyNS {
 
 	/** A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request. */
 	export interface DecodeAuthorizationMessageResponse {
-		DecodedMessage?: string;
+		DecodedMessage?: string | null;
 	}
 
 	export interface InvalidAuthorizationMessageException {
 	}
 
 	export interface GetAccessKeyInfoResponse {
-		Account?: string;
+		Account?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making the request. */
 	export interface GetCallerIdentityResponse {
-		UserId?: string;
-		Account?: string;
-		Arn?: string;
+		UserId?: string | null;
+		Account?: string | null;
+		Arn?: string | null;
 	}
 
 
@@ -122,11 +122,11 @@ export namespace MyNS {
 	export interface GetFederationTokenResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials;
+		Credentials?: Credentials | null;
 
 		/** Identifiers for the federated user that is associated with the credentials. */
-		FederatedUser?: FederatedUser;
-		PackedPolicySize?: number;
+		FederatedUser?: FederatedUser | null;
+		PackedPolicySize?: number | null;
 	}
 
 
@@ -141,39 +141,39 @@ export namespace MyNS {
 	export interface GetSessionTokenResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials;
+		Credentials?: Credentials | null;
 	}
 
 	export interface AssumeRoleRequest {
 		RoleArn: string;
 		RoleSessionName: string;
-		PolicyArns?: Array<PolicyDescriptorType>;
-		Policy?: string;
-		DurationSeconds?: number;
-		Tags?: Array<Tag>;
-		TransitiveTagKeys?: Array<string>;
-		ExternalId?: string;
-		SerialNumber?: string;
-		TokenCode?: string;
+		PolicyArns?: Array<PolicyDescriptorType> | null;
+		Policy?: string | null;
+		DurationSeconds?: number | null;
+		Tags?: Array<Tag> | null;
+		TransitiveTagKeys?: Array<string> | null;
+		ExternalId?: string | null;
+		SerialNumber?: string | null;
+		TokenCode?: string | null;
 	}
 
 	export interface AssumeRoleWithSAMLRequest {
 		RoleArn: string;
 		PrincipalArn: string;
 		SAMLAssertion: string;
-		PolicyArns?: Array<PolicyDescriptorType>;
-		Policy?: string;
-		DurationSeconds?: number;
+		PolicyArns?: Array<PolicyDescriptorType> | null;
+		Policy?: string | null;
+		DurationSeconds?: number | null;
 	}
 
 	export interface AssumeRoleWithWebIdentityRequest {
 		RoleArn: string;
 		RoleSessionName: string;
 		WebIdentityToken: string;
-		ProviderId?: string;
-		PolicyArns?: Array<PolicyDescriptorType>;
-		Policy?: string;
-		DurationSeconds?: number;
+		ProviderId?: string | null;
+		PolicyArns?: Array<PolicyDescriptorType> | null;
+		Policy?: string | null;
+		DurationSeconds?: number | null;
 	}
 
 	export interface DecodeAuthorizationMessageRequest {
@@ -189,16 +189,16 @@ export namespace MyNS {
 
 	export interface GetFederationTokenRequest {
 		Name: string;
-		Policy?: string;
-		PolicyArns?: Array<PolicyDescriptorType>;
-		DurationSeconds?: number;
-		Tags?: Array<Tag>;
+		Policy?: string | null;
+		PolicyArns?: Array<PolicyDescriptorType> | null;
+		DurationSeconds?: number | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface GetSessionTokenRequest {
-		DurationSeconds?: number;
-		SerialNumber?: string;
-		TokenCode?: string;
+		DurationSeconds?: number | null;
+		SerialNumber?: string | null;
+		TokenCode?: string | null;
 	}
 
 	@Injectable()

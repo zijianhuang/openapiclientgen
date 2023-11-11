@@ -17,7 +17,7 @@ export namespace MyNS {
 		 * services, along with a list of requirements necessary for the label to be
 		 * applied.
 		 */
-		accessLevel?: GoogleIdentityAccesscontextmanagerV1AccessLevel;
+		accessLevel?: GoogleIdentityAccesscontextmanagerV1AccessLevel | null;
 
 		/**
 		 * `AccessPolicy` is a container for `AccessLevels` (which define the necessary
@@ -26,7 +26,7 @@ export namespace MyNS {
 		 * access policy is globally visible within an organization, and the
 		 * restrictions it specifies apply to all projects within an organization.
 		 */
-		accessPolicy?: GoogleIdentityAccesscontextmanagerV1AccessPolicy;
+		accessPolicy?: GoogleIdentityAccesscontextmanagerV1AccessPolicy | null;
 
 		/**
 		 * The ancestry path of an asset in Google Cloud [resource
@@ -37,7 +37,7 @@ export namespace MyNS {
 		 * asset itself.
 		 * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
 		 */
-		ancestors?: Array<string>;
+		ancestors?: Array<string> | null;
 
 		/**
 		 * The type of the asset. For example: "compute.googleapis.com/Disk"
@@ -45,7 +45,7 @@ export namespace MyNS {
 		 * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
 		 * for more information.
 		 */
-		assetType?: string;
+		assetType?: string | null;
 
 		/**
 		 * An Identity and Access Management (IAM) policy, which specifies access
@@ -104,7 +104,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		iamPolicy?: Policy;
+		iamPolicy?: Policy | null;
 
 		/**
 		 * The full name of the asset. For example:
@@ -113,7 +113,7 @@ export namespace MyNS {
 		 * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
 		 * for more information.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A representation of an [organization
@@ -121,10 +121,10 @@ export namespace MyNS {
 		 * There can be more than one organization policy with different constraints
 		 * set on a given resource.
 		 */
-		orgPolicy?: Array<GoogleCloudOrgpolicyV1Policy>;
+		orgPolicy?: Array<GoogleCloudOrgpolicyV1Policy> | null;
 
 		/** A representation of a Google Cloud resource. */
-		resource?: Resource;
+		resource?: Resource | null;
 
 		/**
 		 * `ServicePerimeter` describes a set of Google Cloud resources which can freely
@@ -138,7 +138,7 @@ export namespace MyNS {
 		 * a single Google Cloud project may belong to multiple Service Perimeter
 		 * Bridges.
 		 */
-		servicePerimeter?: GoogleIdentityAccesscontextmanagerV1ServicePerimeter;
+		servicePerimeter?: GoogleIdentityAccesscontextmanagerV1ServicePerimeter | null;
 	}
 
 
@@ -150,17 +150,17 @@ export namespace MyNS {
 	export interface GoogleIdentityAccesscontextmanagerV1AccessLevel {
 
 		/** `BasicLevel` is an `AccessLevel` using a set of recommended features. */
-		basic?: GoogleIdentityAccesscontextmanagerV1BasicLevel;
+		basic?: GoogleIdentityAccesscontextmanagerV1BasicLevel | null;
 
 		/**
 		 * `CustomLevel` is an `AccessLevel` using the Cloud Common Expression Language
 		 * to represent the necessary conditions for the level to apply to a request.
 		 * See CEL spec at: https://github.com/google/cel-spec
 		 */
-		custom?: GoogleIdentityAccesscontextmanagerV1CustomLevel;
+		custom?: GoogleIdentityAccesscontextmanagerV1CustomLevel | null;
 
 		/** Description of the `AccessLevel` and its use. Does not affect behavior. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Required. Resource name for the Access Level. The `short_name` component
@@ -168,10 +168,10 @@ export namespace MyNS {
 		 * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
 		 * of the `short_name` component is 50 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Human readable title. Must be unique within the Policy. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -185,10 +185,10 @@ export namespace MyNS {
 		 * is used, at least one `Condition` in `conditions` must be satisfied for the
 		 * `AccessLevel` to be applied. Default behavior is AND.
 		 */
-		combiningFunction?: GoogleIdentityAccesscontextmanagerV1BasicLevelCombiningFunction;
+		combiningFunction?: GoogleIdentityAccesscontextmanagerV1BasicLevelCombiningFunction | null;
 
 		/** Required. A list of requirements for the `AccessLevel` to be granted. */
-		conditions?: Array<GoogleIdentityAccesscontextmanagerV1Condition>;
+		conditions?: Array<GoogleIdentityAccesscontextmanagerV1Condition> | null;
 	}
 
 	export enum GoogleIdentityAccesscontextmanagerV1BasicLevelCombiningFunction { AND = 0, OR = 1 }
@@ -214,7 +214,7 @@ export namespace MyNS {
 		 * true for requests originating from encrypted Linux desktops and encrypted
 		 * Windows desktops.
 		 */
-		devicePolicy?: GoogleIdentityAccesscontextmanagerV1DevicePolicy;
+		devicePolicy?: GoogleIdentityAccesscontextmanagerV1DevicePolicy | null;
 
 		/**
 		 * CIDR block IP subnetwork specification. May be IPv4 or IPv6. Note that for
@@ -226,7 +226,7 @@ export namespace MyNS {
 		 * the listed subnets in order for this Condition to be true. If empty, all IP
 		 * addresses are allowed.
 		 */
-		ipSubnetworks?: Array<string>;
+		ipSubnetworks?: Array<string> | null;
 
 		/**
 		 * The request must be made by one of the provided user or service
@@ -236,20 +236,20 @@ export namespace MyNS {
 		 * `serviceAccount:{emailid}`
 		 * If not specified, a request may come from any user.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Whether to negate the Condition. If true, the Condition becomes a NAND over
 		 * its non-empty fields, each field must be false for the Condition overall to
 		 * be satisfied. Defaults to false.
 		 */
-		negate?: boolean;
+		negate?: boolean | null;
 
 		/**
 		 * The request must originate from one of the provided countries/regions.
 		 * Must be valid ISO 3166-1 alpha-2 codes.
 		 */
-		regions?: Array<string>;
+		regions?: Array<string> | null;
 
 		/**
 		 * A list of other access levels defined in the same `Policy`, referenced by
@@ -258,7 +258,7 @@ export namespace MyNS {
 		 * to be true. Example:
 		 * "`accessPolicies/MY_POLICY/accessLevels/LEVEL_NAME"`
 		 */
-		requiredAccessLevels?: Array<string>;
+		requiredAccessLevels?: Array<string> | null;
 	}
 
 
@@ -279,25 +279,25 @@ export namespace MyNS {
 		 * Allowed device management levels, an empty list allows all management
 		 * levels.
 		 */
-		allowedDeviceManagementLevels?: Array<string>;
+		allowedDeviceManagementLevels?: Array<string> | null;
 
 		/** Allowed encryptions statuses, an empty list allows all statuses. */
-		allowedEncryptionStatuses?: Array<string>;
+		allowedEncryptionStatuses?: Array<string> | null;
 
 		/** Allowed OS versions, an empty list allows all types and all versions. */
-		osConstraints?: Array<GoogleIdentityAccesscontextmanagerV1OsConstraint>;
+		osConstraints?: Array<GoogleIdentityAccesscontextmanagerV1OsConstraint> | null;
 
 		/** Whether the device needs to be approved by the customer admin. */
-		requireAdminApproval?: boolean;
+		requireAdminApproval?: boolean | null;
 
 		/** Whether the device needs to be corp owned. */
-		requireCorpOwned?: boolean;
+		requireCorpOwned?: boolean | null;
 
 		/**
 		 * Whether or not screenlock is required for the DevicePolicy to be true.
 		 * Defaults to `false`.
 		 */
-		requireScreenlock?: boolean;
+		requireScreenlock?: boolean | null;
 	}
 
 
@@ -309,10 +309,10 @@ export namespace MyNS {
 		 * satisfies the constraint. Format: `"major.minor.patch"`.
 		 * Examples: `"10.5.301"`, `"9.2.1"`.
 		 */
-		minimumVersion?: string;
+		minimumVersion?: string | null;
 
 		/** Required. The allowed OS type. */
-		osType?: GoogleIdentityAccesscontextmanagerV1OsConstraintOsType;
+		osType?: GoogleIdentityAccesscontextmanagerV1OsConstraintOsType | null;
 
 		/**
 		 * Only allows requests from devices with a verified Chrome OS.
@@ -320,7 +320,7 @@ export namespace MyNS {
 		 * conformant to domain policies, and the caller has permission to call
 		 * the API targeted by the request.
 		 */
-		requireVerifiedChromeOs?: boolean;
+		requireVerifiedChromeOs?: boolean | null;
 	}
 
 	export enum GoogleIdentityAccesscontextmanagerV1OsConstraintOsType { OS_UNSPECIFIED = 0, DESKTOP_MAC = 1, DESKTOP_WINDOWS = 2, DESKTOP_LINUX = 3, DESKTOP_CHROME_OS = 4, ANDROID = 5, IOS = 6 }
@@ -357,7 +357,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		expr?: Expr;
+		expr?: Expr | null;
 	}
 
 
@@ -391,26 +391,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -429,23 +429,23 @@ export namespace MyNS {
 		 * two Access Polices will be identical if and only if their etags are
 		 * identical. Clients should not expect this to be in any specific format.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Output only. Resource name of the `AccessPolicy`. Format:
 		 * `accessPolicies/{policy_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. The parent of this `AccessPolicy` in the Cloud Resource
 		 * Hierarchy. Currently immutable once created. Format:
 		 * `organizations/{organization_id}`
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/** Required. Human readable title. Does not affect behavior. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -509,14 +509,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -531,7 +531,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -551,7 +551,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -607,14 +607,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -644,10 +644,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -680,7 +680,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -715,13 +715,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -735,14 +735,14 @@ export namespace MyNS {
 		 * Used in `policy_type` to specify how `boolean_policy` will behave at this
 		 * resource.
 		 */
-		booleanPolicy?: GoogleCloudOrgpolicyV1BooleanPolicy;
+		booleanPolicy?: GoogleCloudOrgpolicyV1BooleanPolicy | null;
 
 		/**
 		 * The name of the `Constraint` the `Policy` is configuring, for example,
 		 * `constraints/serviceuser.services`.
 		 * Immutable after creation.
 		 */
-		constraint?: string;
+		constraint?: string | null;
 
 		/**
 		 * An opaque tag indicating the current version of the `Policy`, used for
@@ -758,7 +758,7 @@ export namespace MyNS {
 		 * `SetOrgPolicy` request will result in an unconditional write of the
 		 * `Policy`.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Used in `policy_type` to specify how `list_policy` behaves at this
@@ -782,7 +782,7 @@ export namespace MyNS {
 		 * values. If `all_values` is set to either `ALLOW` or `DENY`,
 		 * `allowed_values` and `denied_values` must be unset.
 		 */
-		listPolicy?: GoogleCloudOrgpolicyV1ListPolicy;
+		listPolicy?: GoogleCloudOrgpolicyV1ListPolicy | null;
 
 		/**
 		 * Ignores policies set above this resource and restores the
@@ -797,7 +797,7 @@ export namespace MyNS {
 		 * enforcement of the `Constraint` for only those projects, allowing those
 		 * projects to have all services activated.
 		 */
-		restoreDefault?: GoogleCloudOrgpolicyV1RestoreDefault;
+		restoreDefault?: GoogleCloudOrgpolicyV1RestoreDefault | null;
 
 		/**
 		 * The time stamp the `Policy` was previously updated. This is set by the
@@ -805,10 +805,10 @@ export namespace MyNS {
 		 * `SetOrgPolicy` was made for that `Policy`. Any value set by the client will
 		 * be ignored.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** Version of the `Policy`. Default version is 0; */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -859,7 +859,7 @@ export namespace MyNS {
 		 * The constraint at `projects/bar` is not enforced, because
 		 * `constraint_default` for the `Constraint` is `ALLOW`.
 		 */
-		enforced?: boolean;
+		enforced?: boolean | null;
 	}
 
 
@@ -888,19 +888,19 @@ export namespace MyNS {
 	export interface GoogleCloudOrgpolicyV1ListPolicy {
 
 		/** The policy all_values state. */
-		allValues?: GoogleCloudOrgpolicyV1ListPolicyAllValues;
+		allValues?: GoogleCloudOrgpolicyV1ListPolicyAllValues | null;
 
 		/**
 		 * List of values allowed  at this resource. Can only be set if `all_values`
 		 * is set to `ALL_VALUES_UNSPECIFIED`.
 		 */
-		allowedValues?: Array<string>;
+		allowedValues?: Array<string> | null;
 
 		/**
 		 * List of values denied at this resource. Can only be set if `all_values`
 		 * is set to `ALL_VALUES_UNSPECIFIED`.
 		 */
-		deniedValues?: Array<string>;
+		deniedValues?: Array<string> | null;
 
 		/**
 		 * Determines the inheritance behavior for this `Policy`.
@@ -989,7 +989,7 @@ export namespace MyNS {
 		 * The accepted values at `projects/bar` are `organizations/O1`,
 		 * `folders/F1`, `projects/P1`.
 		 */
-		inheritFromParent?: boolean;
+		inheritFromParent?: boolean | null;
 
 		/**
 		 * Optional. The Google Cloud Console will try to default to a configuration
@@ -997,7 +997,7 @@ export namespace MyNS {
 		 * is not set, it will inherit the value specified higher in the hierarchy,
 		 * unless `inherit_from_parent` is `false`.
 		 */
-		suggestedValue?: string;
+		suggestedValue?: string | null;
 	}
 
 	export enum GoogleCloudOrgpolicyV1ListPolicyAllValues { ALL_VALUES_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
@@ -1027,7 +1027,7 @@ export namespace MyNS {
 		 * The content of the resource, in which some sensitive fields are removed
 		 * and may not be present.
 		 */
-		data?: {[id: string]: any };
+		data?: {[id: string]: any } | null;
 
 		/**
 		 * The URL of the discovery document containing the resource's JSON schema.
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 		 * This value is unspecified for resources that do not have an API based on a
 		 * discovery document, such as Cloud Bigtable.
 		 */
-		discoveryDocumentUri?: string;
+		discoveryDocumentUri?: string | null;
 
 		/**
 		 * The JSON schema name listed in the discovery document. For example:
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 		 * This value is unspecified for resources that do not have an API based on a
 		 * discovery document, such as Cloud Bigtable.
 		 */
-		discoveryName?: string;
+		discoveryName?: string | null;
 
 		/**
 		 * The full name of the immediate parent of this resource. See
@@ -1058,7 +1058,7 @@ export namespace MyNS {
 		 * "//cloudresourcemanager.googleapis.com/projects/my_project_123"
 		 * For third-party assets, this field may be set differently.
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/**
 		 * The REST URL for accessing the resource. An HTTP `GET` request using this
@@ -1066,10 +1066,10 @@ export namespace MyNS {
 		 * "https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123"
 		 * This value is unspecified for resources without a REST API.
 		 */
-		resourceUrl?: string;
+		resourceUrl?: string | null;
 
 		/** The API version. For example: "v1" */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -1091,14 +1091,14 @@ export namespace MyNS {
 		 * Description of the `ServicePerimeter` and its use. Does not affect
 		 * behavior.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Required. Resource name for the ServicePerimeter.  The `short_name`
 		 * component must begin with a letter and only include alphanumeric and '_'.
 		 * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Perimeter type indicator. A single project is
@@ -1108,22 +1108,22 @@ export namespace MyNS {
 		 * the restricted service list as well as access level lists must be
 		 * empty.
 		 */
-		perimeterType?: GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType;
+		perimeterType?: GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType | null;
 
 		/**
 		 * `ServicePerimeterConfig` specifies a set of Google Cloud resources that
 		 * describe specific Service Perimeter configuration.
 		 */
-		spec?: GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig;
+		spec?: GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig | null;
 
 		/**
 		 * `ServicePerimeterConfig` specifies a set of Google Cloud resources that
 		 * describe specific Service Perimeter configuration.
 		 */
-		status?: GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig;
+		status?: GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig | null;
 
 		/** Human readable title. Must be unique within the Policy. */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * Use explicit dry run spec flag. Ordinarily, a dry-run spec implicitly
@@ -1137,7 +1137,7 @@ export namespace MyNS {
 		 * restrictions. use_explicit_dry_run_spec must bet set to True if any of the
 		 * fields in the spec are set to non-default values.
 		 */
-		useExplicitDryRunSpec?: boolean;
+		useExplicitDryRunSpec?: boolean | null;
 	}
 
 	export enum GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 0, PERIMETER_TYPE_BRIDGE = 1 }
@@ -1159,13 +1159,13 @@ export namespace MyNS {
 		 * `"accessPolicies/MY_POLICY/accessLevels/MY_LEVEL"`.
 		 * For Service Perimeter Bridge, must be empty.
 		 */
-		accessLevels?: Array<string>;
+		accessLevels?: Array<string> | null;
 
 		/**
 		 * A list of Google Cloud resources that are inside of the service perimeter.
 		 * Currently only projects are allowed. Format: `projects/{project_number}`
 		 */
-		resources?: Array<string>;
+		resources?: Array<string> | null;
 
 		/**
 		 * Google Cloud services that are subject to the Service Perimeter
@@ -1173,13 +1173,13 @@ export namespace MyNS {
 		 * to the storage buckets inside the perimeter must meet the perimeter's
 		 * access restrictions.
 		 */
-		restrictedServices?: Array<string>;
+		restrictedServices?: Array<string> | null;
 
 		/**
 		 * Specifies how APIs are allowed to communicate within the Service
 		 * Perimeter.
 		 */
-		vpcAccessibleServices?: GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices;
+		vpcAccessibleServices?: GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices | null;
 	}
 
 
@@ -1193,13 +1193,13 @@ export namespace MyNS {
 		 * The list of APIs usable within the Service Perimeter. Must be empty
 		 * unless 'enable_restriction' is True.
 		 */
-		allowedServices?: Array<string>;
+		allowedServices?: Array<string> | null;
 
 		/**
 		 * Whether to restrict API calls within the Service Perimeter to the list of
 		 * APIs specified in 'allowed_services'.
 		 */
-		enableRestriction?: boolean;
+		enableRestriction?: boolean | null;
 	}
 
 
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 	export interface BatchGetAssetsHistoryResponse {
 
 		/** A list of assets with valid time windows. */
-		assets?: Array<TemporalAsset>;
+		assets?: Array<TemporalAsset> | null;
 	}
 
 
@@ -1224,13 +1224,13 @@ export namespace MyNS {
 		 * a resource outside the Google Cloud resource hierarchy (such as Google
 		 * Kubernetes Engine clusters and objects), or a Cloud IAM policy.
 		 */
-		asset?: Asset;
+		asset?: Asset | null;
 
 		/** Whether the asset has been deleted or not. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/** A time window specified by its "start_time" and "end_time". */
-		window?: TimeWindow;
+		window?: TimeWindow | null;
 	}
 
 
@@ -1241,10 +1241,10 @@ export namespace MyNS {
 		 * End time of the time window (inclusive). If not specified, the current
 		 * timestamp is used instead.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Start time of the time window (exclusive). */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -1257,7 +1257,7 @@ export namespace MyNS {
 		 * should be exported. If this dataset does not exist, the export call returns
 		 * an INVALID_ARGUMENT error.
 		 */
-		dataset?: string;
+		dataset?: string | null;
 
 		/**
 		 * If the destination table already exists and this flag is `TRUE`, the
@@ -1265,14 +1265,14 @@ export namespace MyNS {
 		 * is `FALSE` or unset and the destination table already exists, the export
 		 * call returns an INVALID_ARGUMEMT error.
 		 */
-		force?: boolean;
+		force?: boolean | null;
 
 		/**
 		 * Required. The BigQuery table to which the snapshot result should be
 		 * written. If this table does not exist, a new table with the given name
 		 * will be created.
 		 */
-		table?: string;
+		table?: string | null;
 	}
 
 
@@ -1286,13 +1286,13 @@ export namespace MyNS {
 		 * folder. Supported destinations are:
 		 * Pub/Sub topics.
 		 */
-		feed?: Feed;
+		feed?: Feed | null;
 
 		/**
 		 * Required. This is the client-assigned asset feed identifier and it needs to
 		 * be unique under a specific parent project/folder/organization.
 		 */
-		feedId?: string;
+		feedId?: string | null;
 	}
 
 
@@ -1315,7 +1315,7 @@ export namespace MyNS {
 		 * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
 		 * for more info.
 		 */
-		assetNames?: Array<string>;
+		assetNames?: Array<string> | null;
 
 		/**
 		 * A list of types of the assets to receive updates. You must specify either
@@ -1326,16 +1326,16 @@ export namespace MyNS {
 		 * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
 		 * for a list of all supported asset types.
 		 */
-		assetTypes?: Array<string>;
+		assetTypes?: Array<string> | null;
 
 		/**
 		 * Asset content type. If not specified, no content but the asset name and
 		 * type will be returned.
 		 */
-		contentType?: FeedContentType;
+		contentType?: FeedContentType | null;
 
 		/** Output configuration for asset feed destination. */
-		feedOutputConfig?: FeedOutputConfig;
+		feedOutputConfig?: FeedOutputConfig | null;
 
 		/**
 		 * Required. The format will be
@@ -1345,7 +1345,7 @@ export namespace MyNS {
 		 * The client-assigned feed identifier must be unique within the parent
 		 * project/folder/organization.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum FeedContentType { CONTENT_TYPE_UNSPECIFIED = 0, RESOURCE = 1, IAM_POLICY = 2, ORG_POLICY = 3, ACCESS_POLICY = 4 }
@@ -1355,7 +1355,7 @@ export namespace MyNS {
 	export interface FeedOutputConfig {
 
 		/** A Pub/Sub destination. */
-		pubsubDestination?: PubsubDestination;
+		pubsubDestination?: PubsubDestination | null;
 	}
 
 
@@ -1366,7 +1366,7 @@ export namespace MyNS {
 		 * The name of the Pub/Sub topic to publish to.
 		 * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
 		 */
-		topic?: string;
+		topic?: string | null;
 	}
 
 
@@ -1393,16 +1393,16 @@ export namespace MyNS {
 		 * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
 		 * for all supported asset types.
 		 */
-		assetTypes?: Array<string>;
+		assetTypes?: Array<string> | null;
 
 		/**
 		 * Asset content type. If not specified, no content but the asset name will be
 		 * returned.
 		 */
-		contentType?: FeedContentType;
+		contentType?: FeedContentType | null;
 
 		/** Output configuration for export assets destination. */
-		outputConfig?: OutputConfig;
+		outputConfig?: OutputConfig | null;
 
 		/**
 		 * Timestamp to take an asset snapshot. This can only be set to a timestamp
@@ -1411,7 +1411,7 @@ export namespace MyNS {
 		 * data collection and indexing, there is a volatile window during which
 		 * running the same query may get different results.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 	}
 
 
@@ -1419,10 +1419,10 @@ export namespace MyNS {
 	export interface OutputConfig {
 
 		/** A BigQuery destination. */
-		bigqueryDestination?: BigQueryDestination;
+		bigqueryDestination?: BigQueryDestination | null;
 
 		/** A Cloud Storage location. */
-		gcsDestination?: GcsDestination;
+		gcsDestination?: GcsDestination | null;
 	}
 
 
@@ -1436,7 +1436,7 @@ export namespace MyNS {
 		 * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
 		 * for more information.
 		 */
-		uri?: string;
+		uri?: string | null;
 
 		/**
 		 * The uri prefix of all generated Cloud Storage objects. For example:
@@ -1449,13 +1449,13 @@ export namespace MyNS {
 		 * returned if file with the same name "gs://bucket_name/object_name_prefix"
 		 * already exists.
 		 */
-		uriPrefix?: string;
+		uriPrefix?: string | null;
 	}
 
 	export interface ListFeedsResponse {
 
 		/** A list of feeds. */
-		feeds?: Array<Feed>;
+		feeds?: Array<Feed> | null;
 	}
 
 
@@ -1470,7 +1470,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1480,7 +1480,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -1488,14 +1488,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -1507,7 +1507,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -1522,20 +1522,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -1549,14 +1549,14 @@ export namespace MyNS {
 		 * folder. Supported destinations are:
 		 * Pub/Sub topics.
 		 */
-		feed?: Feed;
+		feed?: Feed | null;
 
 		/**
 		 * Required. Only updates the `feed` fields indicated by this mask.
 		 * The field mask must not be empty, and it must not contain fields that
 		 * are immutable or only set by the server.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 	@Injectable()

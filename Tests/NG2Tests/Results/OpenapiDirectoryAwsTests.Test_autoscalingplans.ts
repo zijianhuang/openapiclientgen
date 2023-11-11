@@ -20,15 +20,15 @@ export namespace MyNS {
 
 	/** Represents an application source. */
 	export interface ApplicationSource {
-		CloudFormationStackARN?: string;
-		TagFilters?: Array<TagFilter>;
+		CloudFormationStackARN?: string | null;
+		TagFilters?: Array<TagFilter> | null;
 	}
 
 
 	/** Represents a tag. */
 	export interface TagFilter {
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 
@@ -42,16 +42,16 @@ export namespace MyNS {
 		TargetTrackingConfigurations: Array<TargetTrackingConfiguration>;
 
 		/** Represents a predefined metric that can be used for predictive scaling. */
-		PredefinedLoadMetricSpecification?: PredefinedLoadMetricSpecification;
+		PredefinedLoadMetricSpecification?: PredefinedLoadMetricSpecification | null;
 
 		/** <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are calculations used to aggregate data over specified time periods.</p> <p>When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.</p> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> */
-		CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification;
-		ScheduledActionBufferTime?: number;
-		PredictiveScalingMaxCapacityBehavior?: ScalingInstructionPredictiveScalingMaxCapacityBehavior;
-		PredictiveScalingMaxCapacityBuffer?: number;
-		PredictiveScalingMode?: ScalingInstructionPredictiveScalingMode;
-		ScalingPolicyUpdateBehavior?: ScalingInstructionScalingPolicyUpdateBehavior;
-		DisableDynamicScaling?: boolean;
+		CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification | null;
+		ScheduledActionBufferTime?: number | null;
+		PredictiveScalingMaxCapacityBehavior?: ScalingInstructionPredictiveScalingMaxCapacityBehavior | null;
+		PredictiveScalingMaxCapacityBuffer?: number | null;
+		PredictiveScalingMode?: ScalingInstructionPredictiveScalingMode | null;
+		ScalingPolicyUpdateBehavior?: ScalingInstructionScalingPolicyUpdateBehavior | null;
+		DisableDynamicScaling?: boolean | null;
 	}
 
 	export enum ScalingInstructionServiceNamespace { autoscaling = 0, ecs = 1, ec2 = 2, rds = 3, dynamodb = 4 }
@@ -63,22 +63,22 @@ export namespace MyNS {
 	export interface TargetTrackingConfiguration {
 
 		/** Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy. */
-		PredefinedScalingMetricSpecification?: PredefinedScalingMetricSpecification;
+		PredefinedScalingMetricSpecification?: PredefinedScalingMetricSpecification | null;
 
 		/** <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p> <p>To create your customized scaling metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
-		CustomizedScalingMetricSpecification?: CustomizedScalingMetricSpecification;
+		CustomizedScalingMetricSpecification?: CustomizedScalingMetricSpecification | null;
 		TargetValue: number;
-		DisableScaleIn?: boolean;
-		ScaleOutCooldown?: number;
-		ScaleInCooldown?: number;
-		EstimatedInstanceWarmup?: number;
+		DisableScaleIn?: boolean | null;
+		ScaleOutCooldown?: number | null;
+		ScaleInCooldown?: number | null;
+		EstimatedInstanceWarmup?: number | null;
 	}
 
 
 	/** Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy. */
 	export interface PredefinedScalingMetricSpecification {
 		PredefinedScalingMetricType: PredefinedScalingMetricSpecificationPredefinedScalingMetricType;
-		ResourceLabel?: string;
+		ResourceLabel?: string | null;
 	}
 
 	export enum PredefinedScalingMetricSpecificationPredefinedScalingMetricType { ASGAverageCPUUtilization = 0, ASGAverageNetworkIn = 1, ASGAverageNetworkOut = 2, DynamoDBReadCapacityUtilization = 3, DynamoDBWriteCapacityUtilization = 4, ECSServiceAverageCPUUtilization = 5, ECSServiceAverageMemoryUtilization = 6, ALBRequestCountPerTarget = 7, RDSReaderAverageCPUUtilization = 8, RDSReaderAverageDatabaseConnections = 9, EC2SpotFleetRequestAverageCPUUtilization = 10, EC2SpotFleetRequestAverageNetworkIn = 11, EC2SpotFleetRequestAverageNetworkOut = 12 }
@@ -88,9 +88,9 @@ export namespace MyNS {
 	export interface CustomizedScalingMetricSpecification {
 		MetricName: string;
 		Namespace: string;
-		Dimensions?: Array<MetricDimension>;
+		Dimensions?: Array<MetricDimension> | null;
 		Statistic: CustomizedScalingMetricSpecificationStatistic;
-		Unit?: string;
+		Unit?: string | null;
 	}
 
 
@@ -106,7 +106,7 @@ export namespace MyNS {
 	/** Represents a predefined metric that can be used for predictive scaling.  */
 	export interface PredefinedLoadMetricSpecification {
 		PredefinedLoadMetricType: PredefinedLoadMetricSpecificationPredefinedLoadMetricType;
-		ResourceLabel?: string;
+		ResourceLabel?: string | null;
 	}
 
 	export enum PredefinedLoadMetricSpecificationPredefinedLoadMetricType { ASGTotalCPUUtilization = 0, ASGTotalNetworkIn = 1, ASGTotalNetworkOut = 2, ALBTargetGroupRequestCount = 3 }
@@ -116,9 +116,9 @@ export namespace MyNS {
 	export interface CustomizedLoadMetricSpecification {
 		MetricName: string;
 		Namespace: string;
-		Dimensions?: Array<MetricDimension>;
+		Dimensions?: Array<MetricDimension> | null;
 		Statistic: CustomizedScalingMetricSpecificationStatistic;
-		Unit?: string;
+		Unit?: string | null;
 	}
 
 	export enum ScalingInstructionPredictiveScalingMaxCapacityBehavior { SetForecastCapacityToMaxCapacity = 0, SetMaxCapacityToForecastCapacity = 1, SetMaxCapacityAboveForecastCapacity = 2 }
@@ -151,8 +151,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeScalingPlanResourcesResponse {
-		ScalingPlanResources?: Array<ScalingPlanResource>;
-		NextToken?: string;
+		ScalingPlanResources?: Array<ScalingPlanResource> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -163,9 +163,9 @@ export namespace MyNS {
 		ServiceNamespace: ScalingInstructionServiceNamespace;
 		ResourceId: string;
 		ScalableDimension: ScalingPlanResourceScalableDimension;
-		ScalingPolicies?: Array<ScalingPolicy>;
+		ScalingPolicies?: Array<ScalingPolicy> | null;
 		ScalingStatusCode: ScalingPlanResourceScalingStatusCode;
-		ScalingStatusMessage?: string;
+		ScalingStatusMessage?: string | null;
 	}
 
 	export enum ScalingPlanResourceScalableDimension { autoscalingautoScalingGroupDesiredCapacity = 0, ecsserviceDesiredCount = 1, ec2spot_fleet_requestTargetCapacity = 2, rdsclusterReadReplicaCount = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7 }
@@ -177,7 +177,7 @@ export namespace MyNS {
 		PolicyType: ScalingPolicyPolicyType;
 
 		/** Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>. */
-		TargetTrackingConfiguration?: TargetTrackingConfiguration;
+		TargetTrackingConfiguration?: TargetTrackingConfiguration | null;
 	}
 
 	export enum ScalingPolicyPolicyType { TargetTrackingScaling = 0 }
@@ -187,16 +187,16 @@ export namespace MyNS {
 	export interface DescribeScalingPlanResourcesRequest {
 		ScalingPlanName: string;
 		ScalingPlanVersion: number;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface DescribeScalingPlansResponse {
-		ScalingPlans?: Array<ScalingPlan>;
-		NextToken?: string;
+		ScalingPlans?: Array<ScalingPlan> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -212,19 +212,19 @@ export namespace MyNS {
 		ApplicationSource: ApplicationSource;
 		ScalingInstructions: Array<ScalingInstruction>;
 		StatusCode: ScalingPlanStatusCode;
-		StatusMessage?: string;
-		StatusStartTime?: Date;
-		CreationTime?: Date;
+		StatusMessage?: string | null;
+		StatusStartTime?: Date | null;
+		CreationTime?: Date | null;
 	}
 
 	export enum ScalingPlanStatusCode { Active = 0, ActiveWithProblems = 1, CreationInProgress = 2, CreationFailed = 3, DeletionInProgress = 4, DeletionFailed = 5, UpdateInProgress = 6, UpdateFailed = 7 }
 
 	export interface DescribeScalingPlansRequest {
-		ScalingPlanNames?: Array<string>;
-		ScalingPlanVersion?: number;
-		ApplicationSources?: Array<ApplicationSource>;
-		MaxResults?: number;
-		NextToken?: string;
+		ScalingPlanNames?: Array<string> | null;
+		ScalingPlanVersion?: number | null;
+		ApplicationSources?: Array<ApplicationSource> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetScalingPlanResourceForecastDataResponse {
@@ -234,8 +234,8 @@ export namespace MyNS {
 
 	/** Represents a single value in the forecast data used for predictive scaling. */
 	export interface Datapoint {
-		Timestamp?: Date;
-		Value?: number;
+		Timestamp?: Date | null;
+		Value?: number | null;
 	}
 
 	export interface GetScalingPlanResourceForecastDataRequest {
@@ -261,8 +261,8 @@ export namespace MyNS {
 		ScalingPlanVersion: number;
 
 		/** Represents an application source. */
-		ApplicationSource?: ApplicationSource;
-		ScalingInstructions?: Array<ScalingInstruction>;
+		ApplicationSource?: ApplicationSource | null;
+		ScalingInstructions?: Array<ScalingInstruction> | null;
 	}
 
 	export enum MetricStatistic { Average = 0, Minimum = 1, Maximum = 2, SampleCount = 3, Sum = 4 }

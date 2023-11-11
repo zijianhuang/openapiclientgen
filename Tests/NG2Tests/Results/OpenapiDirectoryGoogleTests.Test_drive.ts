@@ -7,82 +7,82 @@ export namespace MyNS {
 	export interface About {
 
 		/** Whether the user has installed the requesting app. */
-		appInstalled?: boolean;
+		appInstalled?: boolean | null;
 
 		/** Whether the user can create shared drives. */
-		canCreateDrives?: boolean;
+		canCreateDrives?: boolean | null;
 
 		/** Deprecated - use canCreateDrives instead. */
-		canCreateTeamDrives?: boolean;
+		canCreateTeamDrives?: boolean | null;
 
 		/** A list of themes that are supported for shared drives. */
-		AboutDriveThemes?: Array<AboutDriveThemes>;
+		AboutDriveThemes?: Array<AboutDriveThemes> | null;
 
 		/** A map of source MIME type to possible targets for all supported exports. */
-		exportFormats?: {[id: string]: Array<string> };
+		exportFormats?: {[id: string]: Array<string> } | null;
 
 		/** The currently supported folder colors as RGB hex strings. */
-		folderColorPalette?: Array<string>;
+		folderColorPalette?: Array<string> | null;
 
 		/** A map of source MIME type to possible targets for all supported imports. */
-		importFormats?: {[id: string]: Array<string> };
+		importFormats?: {[id: string]: Array<string> } | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#about". */
-		kind?: string;
+		kind?: string | null;
 
 		/** A map of maximum import sizes by MIME type, in bytes. */
-		maxImportSizes?: {[id: string]: string };
+		maxImportSizes?: {[id: string]: string } | null;
 
 		/** The maximum upload size in bytes. */
-		maxUploadSize?: string;
+		maxUploadSize?: string | null;
 
 		/** The user's storage quota limits and usage. All fields are measured in bytes. */
-		storageQuota?: AboutStorageQuota;
+		storageQuota?: AboutStorageQuota | null;
 
 		/** Deprecated - use driveThemes instead. */
-		AboutTeamDriveThemes?: Array<AboutTeamDriveThemes>;
+		AboutTeamDriveThemes?: Array<AboutTeamDriveThemes> | null;
 
 		/** Information about a Drive user. */
-		user?: User;
+		user?: User | null;
 	}
 
 	export interface AboutDriveThemes {
 
 		/** A link to this theme's background image. */
-		backgroundImageLink?: string;
+		backgroundImageLink?: string | null;
 
 		/** The color of this theme as an RGB hex string. */
-		colorRgb?: string;
+		colorRgb?: string | null;
 
 		/** The ID of the theme. */
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface AboutStorageQuota {
 
 		/** The usage limit, if applicable. This will not be present if the user has unlimited storage. */
-		limit?: string;
+		limit?: string | null;
 
 		/** The total usage across all services. */
-		usage?: string;
+		usage?: string | null;
 
 		/** The usage by all files in Google Drive. */
-		usageInDrive?: string;
+		usageInDrive?: string | null;
 
 		/** The usage by trashed files in Google Drive. */
-		usageInDriveTrash?: string;
+		usageInDriveTrash?: string | null;
 	}
 
 	export interface AboutTeamDriveThemes {
 
 		/** Deprecated - use driveThemes/backgroundImageLink instead. */
-		backgroundImageLink?: string;
+		backgroundImageLink?: string | null;
 
 		/** Deprecated - use driveThemes/colorRgb instead. */
-		colorRgb?: string;
+		colorRgb?: string | null;
 
 		/** Deprecated - use driveThemes/id instead. */
-		id?: string;
+		id?: string | null;
 	}
 
 
@@ -90,22 +90,22 @@ export namespace MyNS {
 	export interface User {
 
 		/** A plain text displayable name for this user. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The email address of the user. This may not be present in certain contexts if the user has not made their email address visible to the requester. */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#user". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Whether this user is the requesting user. */
-		me?: boolean;
+		me?: boolean | null;
 
 		/** The user's ID as visible in Permission resources. */
-		permissionId?: string;
+		permissionId?: string | null;
 
 		/** A link to the user's profile photo, if available. */
-		photoLink?: string;
+		photoLink?: string | null;
 	}
 
 
@@ -113,37 +113,37 @@ export namespace MyNS {
 	export interface Change {
 
 		/** The type of the change. Possible values are file and drive. */
-		changeType?: string;
+		changeType?: string | null;
 
 		/** Representation of a shared drive. */
-		drive?: Drive;
+		drive?: Drive | null;
 
 		/** The ID of the shared drive associated with this change. */
-		driveId?: string;
+		driveId?: string | null;
 
 		/** The metadata for a file. */
-		file?: File;
+		file?: File | null;
 
 		/** The ID of the file which has changed. */
-		fileId?: string;
+		fileId?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#change". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Whether the file or shared drive has been removed from this list of changes, for example by deletion or loss of access. */
-		removed?: boolean;
+		removed?: boolean | null;
 
 		/** Deprecated: use the drive collection instead. */
-		teamDrive?: TeamDrive;
+		teamDrive?: TeamDrive | null;
 
 		/** Deprecated - use driveId instead. */
-		teamDriveId?: string;
+		teamDriveId?: string | null;
 
 		/** The time of this change (RFC 3339 date-time). */
-		time?: Date;
+		time?: Date | null;
 
 		/** Deprecated - use changeType instead. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -151,124 +151,124 @@ export namespace MyNS {
 	export interface Drive {
 
 		/** An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on drive.drives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set. */
-		backgroundImageFile?: DriveBackgroundImageFile;
+		backgroundImageFile?: DriveBackgroundImageFile | null;
 
 		/** A short-lived link to this shared drive's background image. */
-		backgroundImageLink?: string;
+		backgroundImageLink?: string | null;
 
 		/** Capabilities the current user has on this shared drive. */
-		capabilities?: DriveCapabilities;
+		capabilities?: DriveCapabilities | null;
 
 		/** The color of this shared drive as an RGB hex string. It can only be set on a drive.drives.update request that does not set themeId. */
-		colorRgb?: string;
+		colorRgb?: string | null;
 
 		/** The time at which the shared drive was created (RFC 3339 date-time). */
-		createdTime?: Date;
+		createdTime?: Date | null;
 
 		/** Whether the shared drive is hidden from default view. */
-		hidden?: boolean;
+		hidden?: boolean | null;
 
 		/** The ID of this shared drive which is also the ID of the top level folder of this shared drive. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#drive". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The name of this shared drive. */
-		name?: string;
+		name?: string | null;
 
 		/** A set of restrictions that apply to this shared drive or items inside this shared drive. */
-		restrictions?: DriveRestrictions;
+		restrictions?: DriveRestrictions | null;
 
 		/** The ID of the theme from which the background image and color will be set. The set of possible driveThemes can be retrieved from a drive.about.get response. When not specified on a drive.drives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile. */
-		themeId?: string;
+		themeId?: string | null;
 	}
 
 	export interface DriveBackgroundImageFile {
 
 		/** The ID of an image file in Google Drive to use for the background image. */
-		id?: string;
+		id?: string | null;
 
 		/** The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high. */
-		width?: number;
+		width?: number | null;
 
 		/** The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image. */
-		xCoordinate?: number;
+		xCoordinate?: number | null;
 
 		/** The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image. */
-		yCoordinate?: number;
+		yCoordinate?: number | null;
 	}
 
 	export interface DriveCapabilities {
 
 		/** Whether the current user can add children to folders in this shared drive. */
-		canAddChildren?: boolean;
+		canAddChildren?: boolean | null;
 
 		/** Whether the current user can change the copyRequiresWriterPermission restriction of this shared drive. */
-		canChangeCopyRequiresWriterPermissionRestriction?: boolean;
+		canChangeCopyRequiresWriterPermissionRestriction?: boolean | null;
 
 		/** Whether the current user can change the domainUsersOnly restriction of this shared drive. */
-		canChangeDomainUsersOnlyRestriction?: boolean;
+		canChangeDomainUsersOnlyRestriction?: boolean | null;
 
 		/** Whether the current user can change the background of this shared drive. */
-		canChangeDriveBackground?: boolean;
+		canChangeDriveBackground?: boolean | null;
 
 		/** Whether the current user can change the driveMembersOnly restriction of this shared drive. */
-		canChangeDriveMembersOnlyRestriction?: boolean;
+		canChangeDriveMembersOnlyRestriction?: boolean | null;
 
 		/** Whether the current user can comment on files in this shared drive. */
-		canComment?: boolean;
+		canComment?: boolean | null;
 
 		/** Whether the current user can copy files in this shared drive. */
-		canCopy?: boolean;
+		canCopy?: boolean | null;
 
 		/** Whether the current user can delete children from folders in this shared drive. */
-		canDeleteChildren?: boolean;
+		canDeleteChildren?: boolean | null;
 
 		/** Whether the current user can delete this shared drive. Attempting to delete the shared drive may still fail if there are untrashed items inside the shared drive. */
-		canDeleteDrive?: boolean;
+		canDeleteDrive?: boolean | null;
 
 		/** Whether the current user can download files in this shared drive. */
-		canDownload?: boolean;
+		canDownload?: boolean | null;
 
 		/** Whether the current user can edit files in this shared drive */
-		canEdit?: boolean;
+		canEdit?: boolean | null;
 
 		/** Whether the current user can list the children of folders in this shared drive. */
-		canListChildren?: boolean;
+		canListChildren?: boolean | null;
 
 		/** Whether the current user can add members to this shared drive or remove them or change their role. */
-		canManageMembers?: boolean;
+		canManageMembers?: boolean | null;
 
 		/** Whether the current user can read the revisions resource of files in this shared drive. */
-		canReadRevisions?: boolean;
+		canReadRevisions?: boolean | null;
 
 		/** Whether the current user can rename files or folders in this shared drive. */
-		canRename?: boolean;
+		canRename?: boolean | null;
 
 		/** Whether the current user can rename this shared drive. */
-		canRenameDrive?: boolean;
+		canRenameDrive?: boolean | null;
 
 		/** Whether the current user can share files or folders in this shared drive. */
-		canShare?: boolean;
+		canShare?: boolean | null;
 
 		/** Whether the current user can trash children from folders in this shared drive. */
-		canTrashChildren?: boolean;
+		canTrashChildren?: boolean | null;
 	}
 
 	export interface DriveRestrictions {
 
 		/** Whether administrative privileges on this shared drive are required to modify restrictions. */
-		adminManagedRestrictions?: boolean;
+		adminManagedRestrictions?: boolean | null;
 
 		/** Whether the options to copy, print, or download files inside this shared drive, should be disabled for readers and commenters. When this restriction is set to true, it will override the similarly named field to true for any file inside this shared drive. */
-		copyRequiresWriterPermission?: boolean;
+		copyRequiresWriterPermission?: boolean | null;
 
 		/** Whether access to this shared drive and items inside this shared drive is restricted to users of the domain to which this shared drive belongs. This restriction may be overridden by other sharing policies controlled outside of this shared drive. */
-		domainUsersOnly?: boolean;
+		domainUsersOnly?: boolean | null;
 
 		/** Whether access to items inside this shared drive is restricted to its members. */
-		driveMembersOnly?: boolean;
+		driveMembersOnly?: boolean | null;
 	}
 
 
@@ -279,386 +279,386 @@ export namespace MyNS {
 		 * A collection of arbitrary key-value pairs which are private to the requesting app.
 		 * Entries with null values are cleared in update and copy requests.
 		 */
-		appProperties?: {[id: string]: string };
+		appProperties?: {[id: string]: string } | null;
 
 		/** Capabilities the current user has on this file. Each capability corresponds to a fine-grained action that a user may take. */
-		capabilities?: FileCapabilities;
+		capabilities?: FileCapabilities | null;
 
 		/** Additional information about the content of the file. These fields are never populated in responses. */
-		contentHints?: FileContentHints;
+		contentHints?: FileContentHints | null;
 
 		/** Whether the options to copy, print, or download this file, should be disabled for readers and commenters. */
-		copyRequiresWriterPermission?: boolean;
+		copyRequiresWriterPermission?: boolean | null;
 
 		/** The time at which the file was created (RFC 3339 date-time). */
-		createdTime?: Date;
+		createdTime?: Date | null;
 
 		/** A short description of the file. */
-		description?: string;
+		description?: string | null;
 
 		/** ID of the shared drive the file resides in. Only populated for items in shared drives. */
-		driveId?: string;
+		driveId?: string | null;
 
 		/** Whether the file has been explicitly trashed, as opposed to recursively trashed from a parent folder. */
-		explicitlyTrashed?: boolean;
+		explicitlyTrashed?: boolean | null;
 
 		/** Links for exporting Google Docs to specific formats. */
-		exportLinks?: {[id: string]: string };
+		exportLinks?: {[id: string]: string } | null;
 
 		/** The final component of fullFileExtension. This is only available for files with binary content in Google Drive. */
-		fileExtension?: string;
+		fileExtension?: string | null;
 
 		/**
 		 * The color for a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.
 		 * If an unsupported color is specified, the closest color in the palette will be used instead.
 		 */
-		folderColorRgb?: string;
+		folderColorRgb?: string | null;
 
 		/**
 		 * The full file extension extracted from the name field. May contain multiple concatenated extensions, such as "tar.gz". This is only available for files with binary content in Google Drive.
 		 * This is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension.
 		 */
-		fullFileExtension?: string;
+		fullFileExtension?: string | null;
 
 		/** Whether there are permissions directly on this file. This field is only populated for items in shared drives. */
-		hasAugmentedPermissions?: boolean;
+		hasAugmentedPermissions?: boolean | null;
 
 		/** Whether this file has a thumbnail. This does not indicate whether the requesting app has access to the thumbnail. To check access, look for the presence of the thumbnailLink field. */
-		hasThumbnail?: boolean;
+		hasThumbnail?: boolean | null;
 
 		/** The ID of the file's head revision. This is currently only available for files with binary content in Google Drive. */
-		headRevisionId?: string;
+		headRevisionId?: string | null;
 
 		/** A static, unauthenticated link to the file's icon. */
-		iconLink?: string;
+		iconLink?: string | null;
 
 		/** The ID of the file. */
-		id?: string;
+		id?: string | null;
 
 		/** Additional metadata about image media, if available. */
-		imageMediaMetadata?: FileImageMediaMetadata;
+		imageMediaMetadata?: FileImageMediaMetadata | null;
 
 		/** Whether the file was created or opened by the requesting app. */
-		isAppAuthorized?: boolean;
+		isAppAuthorized?: boolean | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#file". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Information about a Drive user. */
-		lastModifyingUser?: User;
+		lastModifyingUser?: User | null;
 
 		/** The MD5 checksum for the content of the file. This is only applicable to files with binary content in Google Drive. */
-		md5Checksum?: string;
+		md5Checksum?: string | null;
 
 		/**
 		 * The MIME type of the file.
 		 * Google Drive will attempt to automatically detect an appropriate value from uploaded content if no value is provided. The value cannot be changed unless a new revision is uploaded.
 		 * If a file is created with a Google Doc MIME type, the uploaded content will be imported if possible. The supported import formats are published in the About resource.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** Whether the file has been modified by this user. */
-		modifiedByMe?: boolean;
+		modifiedByMe?: boolean | null;
 
 		/** The last time the file was modified by the user (RFC 3339 date-time). */
-		modifiedByMeTime?: Date;
+		modifiedByMeTime?: Date | null;
 
 		/**
 		 * The last time the file was modified by anyone (RFC 3339 date-time).
 		 * Note that setting modifiedTime will also update modifiedByMeTime for the user.
 		 */
-		modifiedTime?: Date;
+		modifiedTime?: Date | null;
 
 		/** The name of the file. This is not necessarily unique within a folder. Note that for immutable items such as the top level folders of shared drives, My Drive root folder, and Application Data folder the name is constant. */
-		name?: string;
+		name?: string | null;
 
 		/** The original filename of the uploaded content if available, or else the original value of the name field. This is only available for files with binary content in Google Drive. */
-		originalFilename?: string;
+		originalFilename?: string | null;
 
 		/** Whether the user owns the file. Not populated for items in shared drives. */
-		ownedByMe?: boolean;
+		ownedByMe?: boolean | null;
 
 		/** The owners of the file. Currently, only certain legacy files may have more than one owner. Not populated for items in shared drives. */
-		owners?: Array<User>;
+		owners?: Array<User> | null;
 
 		/**
 		 * The IDs of the parent folders which contain the file.
 		 * If not specified as part of a create request, the file will be placed directly in the user's My Drive folder. If not specified as part of a copy request, the file will inherit any discoverable parents of the source file. Update requests must use the addParents and removeParents parameters to modify the parents list.
 		 */
-		parents?: Array<string>;
+		parents?: Array<string> | null;
 
 		/** List of permission IDs for users with access to this file. */
-		permissionIds?: Array<string>;
+		permissionIds?: Array<string> | null;
 
 		/** The full list of permissions for the file. This is only available if the requesting user can share the file. Not populated for items in shared drives. */
-		permissions?: Array<Permission>;
+		permissions?: Array<Permission> | null;
 
 		/**
 		 * A collection of arbitrary key-value pairs which are visible to all apps.
 		 * Entries with null values are cleared in update and copy requests.
 		 */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 
 		/** The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled. */
-		quotaBytesUsed?: string;
+		quotaBytesUsed?: string | null;
 
 		/** Whether the file has been shared. Not populated for items in shared drives. */
-		shared?: boolean;
+		shared?: boolean | null;
 
 		/** The time at which the file was shared with the user, if applicable (RFC 3339 date-time). */
-		sharedWithMeTime?: Date;
+		sharedWithMeTime?: Date | null;
 
 		/** Information about a Drive user. */
-		sharingUser?: User;
+		sharingUser?: User | null;
 
 		/** Shortcut file details. Only populated for shortcut files, which have the mimeType field set to application/vnd.google-apps.shortcut. */
-		shortcutDetails?: FileShortcutDetails;
+		shortcutDetails?: FileShortcutDetails | null;
 
 		/** The size of the file's content in bytes. This is only applicable to files with binary content in Google Drive. */
-		size?: string;
+		size?: string | null;
 
 		/** The list of spaces which contain the file. The currently supported values are 'drive', 'appDataFolder' and 'photos'. */
-		spaces?: Array<string>;
+		spaces?: Array<string> | null;
 
 		/** Whether the user has starred the file. */
-		starred?: boolean;
+		starred?: boolean | null;
 
 		/** Deprecated - use driveId instead. */
-		teamDriveId?: string;
+		teamDriveId?: string | null;
 
 		/** A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content. */
-		thumbnailLink?: string;
+		thumbnailLink?: string | null;
 
 		/** The thumbnail version for use in thumbnail cache invalidation. */
-		thumbnailVersion?: string;
+		thumbnailVersion?: string | null;
 
 		/** Whether the file has been trashed, either explicitly or from a trashed parent folder. Only the owner may trash a file, and other users cannot see files in the owner's trash. */
-		trashed?: boolean;
+		trashed?: boolean | null;
 
 		/** The time that the item was trashed (RFC 3339 date-time). Only populated for items in shared drives. */
-		trashedTime?: Date;
+		trashedTime?: Date | null;
 
 		/** Information about a Drive user. */
-		trashingUser?: User;
+		trashingUser?: User | null;
 
 		/** A monotonically increasing version number for the file. This reflects every change made to the file on the server, even those not visible to the user. */
-		version?: string;
+		version?: string | null;
 
 		/** Additional metadata about video media. This may not be available immediately upon upload. */
-		videoMediaMetadata?: FileVideoMediaMetadata;
+		videoMediaMetadata?: FileVideoMediaMetadata | null;
 
 		/** Whether the file has been viewed by this user. */
-		viewedByMe?: boolean;
+		viewedByMe?: boolean | null;
 
 		/** The last time the file was viewed by the user (RFC 3339 date-time). */
-		viewedByMeTime?: Date;
+		viewedByMeTime?: Date | null;
 
 		/** Deprecated - use copyRequiresWriterPermission instead. */
-		viewersCanCopyContent?: boolean;
+		viewersCanCopyContent?: boolean | null;
 
 		/** A link for downloading the content of the file in a browser. This is only available for files with binary content in Google Drive. */
-		webContentLink?: string;
+		webContentLink?: string | null;
 
 		/** A link for opening the file in a relevant Google editor or viewer in a browser. */
-		webViewLink?: string;
+		webViewLink?: string | null;
 
 		/** Whether users with only writer permission can modify the file's permissions. Not populated for items in shared drives. */
-		writersCanShare?: boolean;
+		writersCanShare?: boolean | null;
 	}
 
 	export interface FileCapabilities {
 
 		/** Whether the current user can add children to this folder. This is always false when the item is not a folder. */
-		canAddChildren?: boolean;
+		canAddChildren?: boolean | null;
 
 		/** Whether the current user can add a parent for the item without removing an existing parent in the same request. Not populated for shared drive files. */
-		canAddMyDriveParent?: boolean;
+		canAddMyDriveParent?: boolean | null;
 
 		/** Whether the current user can change the copyRequiresWriterPermission restriction of this file. */
-		canChangeCopyRequiresWriterPermission?: boolean;
+		canChangeCopyRequiresWriterPermission?: boolean | null;
 
 		/** Deprecated */
-		canChangeViewersCanCopyContent?: boolean;
+		canChangeViewersCanCopyContent?: boolean | null;
 
 		/** Whether the current user can comment on this file. */
-		canComment?: boolean;
+		canComment?: boolean | null;
 
 		/** Whether the current user can copy this file. For an item in a shared drive, whether the current user can copy non-folder descendants of this item, or this item itself if it is not a folder. */
-		canCopy?: boolean;
+		canCopy?: boolean | null;
 
 		/** Whether the current user can delete this file. */
-		canDelete?: boolean;
+		canDelete?: boolean | null;
 
 		/** Whether the current user can delete children of this folder. This is false when the item is not a folder. Only populated for items in shared drives. */
-		canDeleteChildren?: boolean;
+		canDeleteChildren?: boolean | null;
 
 		/** Whether the current user can download this file. */
-		canDownload?: boolean;
+		canDownload?: boolean | null;
 
 		/** Whether the current user can edit this file. Other factors may limit the type of changes a user can make to a file. For example, see canChangeCopyRequiresWriterPermission or canModifyContent. */
-		canEdit?: boolean;
+		canEdit?: boolean | null;
 
 		/** Whether the current user can list the children of this folder. This is always false when the item is not a folder. */
-		canListChildren?: boolean;
+		canListChildren?: boolean | null;
 
 		/** Whether the current user can modify the content of this file. */
-		canModifyContent?: boolean;
+		canModifyContent?: boolean | null;
 
 		/** Whether the current user can move children of this folder outside of the shared drive. This is false when the item is not a folder. Only populated for items in shared drives. */
-		canMoveChildrenOutOfDrive?: boolean;
+		canMoveChildrenOutOfDrive?: boolean | null;
 
 		/** Deprecated - use canMoveChildrenOutOfDrive instead. */
-		canMoveChildrenOutOfTeamDrive?: boolean;
+		canMoveChildrenOutOfTeamDrive?: boolean | null;
 
 		/** Whether the current user can move children of this folder within the shared drive. This is false when the item is not a folder. Only populated for items in shared drives. */
-		canMoveChildrenWithinDrive?: boolean;
+		canMoveChildrenWithinDrive?: boolean | null;
 
 		/** Deprecated - use canMoveChildrenWithinDrive instead. */
-		canMoveChildrenWithinTeamDrive?: boolean;
+		canMoveChildrenWithinTeamDrive?: boolean | null;
 
 		/** Deprecated - use canMoveItemOutOfDrive instead. */
-		canMoveItemIntoTeamDrive?: boolean;
+		canMoveItemIntoTeamDrive?: boolean | null;
 
 		/** Whether the current user can move this item outside of this drive by changing its parent. Note that a request to change the parent of the item may still fail depending on the new parent that is being added. */
-		canMoveItemOutOfDrive?: boolean;
+		canMoveItemOutOfDrive?: boolean | null;
 
 		/** Deprecated - use canMoveItemOutOfDrive instead. */
-		canMoveItemOutOfTeamDrive?: boolean;
+		canMoveItemOutOfTeamDrive?: boolean | null;
 
 		/** Whether the current user can move this item within this shared drive. Note that a request to change the parent of the item may still fail depending on the new parent that is being added. Only populated for items in shared drives. */
-		canMoveItemWithinDrive?: boolean;
+		canMoveItemWithinDrive?: boolean | null;
 
 		/** Deprecated - use canMoveItemWithinDrive instead. */
-		canMoveItemWithinTeamDrive?: boolean;
+		canMoveItemWithinTeamDrive?: boolean | null;
 
 		/** Deprecated - use canMoveItemWithinDrive or canMoveItemOutOfDrive instead. */
-		canMoveTeamDriveItem?: boolean;
+		canMoveTeamDriveItem?: boolean | null;
 
 		/** Whether the current user can read the shared drive to which this file belongs. Only populated for items in shared drives. */
-		canReadDrive?: boolean;
+		canReadDrive?: boolean | null;
 
 		/** Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read. */
-		canReadRevisions?: boolean;
+		canReadRevisions?: boolean | null;
 
 		/** Deprecated - use canReadDrive instead. */
-		canReadTeamDrive?: boolean;
+		canReadTeamDrive?: boolean | null;
 
 		/** Whether the current user can remove children from this folder. This is always false when the item is not a folder. For a folder in a shared drive, use canDeleteChildren or canTrashChildren instead. */
-		canRemoveChildren?: boolean;
+		canRemoveChildren?: boolean | null;
 
 		/** Whether the current user can remove a parent from the item without adding another parent in the same request. Not populated for shared drive files. */
-		canRemoveMyDriveParent?: boolean;
+		canRemoveMyDriveParent?: boolean | null;
 
 		/** Whether the current user can rename this file. */
-		canRename?: boolean;
+		canRename?: boolean | null;
 
 		/** Whether the current user can modify the sharing settings for this file. */
-		canShare?: boolean;
+		canShare?: boolean | null;
 
 		/** Whether the current user can move this file to trash. */
-		canTrash?: boolean;
+		canTrash?: boolean | null;
 
 		/** Whether the current user can trash children of this folder. This is false when the item is not a folder. Only populated for items in shared drives. */
-		canTrashChildren?: boolean;
+		canTrashChildren?: boolean | null;
 
 		/** Whether the current user can restore this file from trash. */
-		canUntrash?: boolean;
+		canUntrash?: boolean | null;
 	}
 
 	export interface FileContentHints {
 
 		/** Text to be indexed for the file to improve fullText queries. This is limited to 128KB in length and may contain HTML elements. */
-		indexableText?: string;
+		indexableText?: string | null;
 
 		/** A thumbnail for the file. This will only be used if Google Drive cannot generate a standard thumbnail. */
-		thumbnail?: FileContentHintsThumbnail;
+		thumbnail?: FileContentHintsThumbnail | null;
 	}
 
 	export interface FileContentHintsThumbnail {
 
 		/** The thumbnail data encoded with URL-safe Base64 (RFC 4648 section 5). */
-		image?: string;
+		image?: string | null;
 
 		/** The MIME type of the thumbnail. */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 	export interface FileImageMediaMetadata {
 
 		/** The aperture used to create the photo (f-number). */
-		aperture?: number;
+		aperture?: number | null;
 
 		/** The make of the camera used to create the photo. */
-		cameraMake?: string;
+		cameraMake?: string | null;
 
 		/** The model of the camera used to create the photo. */
-		cameraModel?: string;
+		cameraModel?: string | null;
 
 		/** The color space of the photo. */
-		colorSpace?: string;
+		colorSpace?: string | null;
 
 		/** The exposure bias of the photo (APEX value). */
-		exposureBias?: number;
+		exposureBias?: number | null;
 
 		/** The exposure mode used to create the photo. */
-		exposureMode?: string;
+		exposureMode?: string | null;
 
 		/** The length of the exposure, in seconds. */
-		exposureTime?: number;
+		exposureTime?: number | null;
 
 		/** Whether a flash was used to create the photo. */
-		flashUsed?: boolean;
+		flashUsed?: boolean | null;
 
 		/** The focal length used to create the photo, in millimeters. */
-		focalLength?: number;
+		focalLength?: number | null;
 
 		/** The height of the image in pixels. */
-		height?: number;
+		height?: number | null;
 
 		/** The ISO speed used to create the photo. */
-		isoSpeed?: number;
+		isoSpeed?: number | null;
 
 		/** The lens used to create the photo. */
-		lens?: string;
+		lens?: string | null;
 
 		/** Geographic location information stored in the image. */
-		location?: FileImageMediaMetadataLocation;
+		location?: FileImageMediaMetadataLocation | null;
 
 		/** The smallest f-number of the lens at the focal length used to create the photo (APEX value). */
-		maxApertureValue?: number;
+		maxApertureValue?: number | null;
 
 		/** The metering mode used to create the photo. */
-		meteringMode?: string;
+		meteringMode?: string | null;
 
 		/** The number of clockwise 90 degree rotations applied from the image's original orientation. */
-		rotation?: number;
+		rotation?: number | null;
 
 		/** The type of sensor used to create the photo. */
-		sensor?: string;
+		sensor?: string | null;
 
 		/** The distance to the subject of the photo, in meters. */
-		subjectDistance?: number;
+		subjectDistance?: number | null;
 
 		/** The date and time the photo was taken (EXIF DateTime). */
-		time?: string;
+		time?: string | null;
 
 		/** The white balance mode used to create the photo. */
-		whiteBalance?: string;
+		whiteBalance?: string | null;
 
 		/** The width of the image in pixels. */
-		width?: number;
+		width?: number | null;
 	}
 
 	export interface FileImageMediaMetadataLocation {
 
 		/** The altitude stored in the image. */
-		altitude?: number;
+		altitude?: number | null;
 
 		/** The latitude stored in the image. */
-		latitude?: number;
+		latitude?: number | null;
 
 		/** The longitude stored in the image. */
-		longitude?: number;
+		longitude?: number | null;
 	}
 
 
@@ -666,10 +666,10 @@ export namespace MyNS {
 	export interface Permission {
 
 		/** Whether the permission allows the file to be discovered through search. This is only applicable for permissions of type domain or anyone. */
-		allowFileDiscovery?: boolean;
+		allowFileDiscovery?: boolean | null;
 
 		/** Whether the account associated with this permission has been deleted. This field only pertains to user and group permissions. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/**
 		 * The "pretty" name of the value of the permission. The following is a list of examples for each type of permission:
@@ -678,13 +678,13 @@ export namespace MyNS {
 		 * - domain - String domain name, such as "thecompany.com."
 		 * - anyone - No displayName is present.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The domain to which this permission refers. */
-		domain?: string;
+		domain?: string | null;
 
 		/** The email address of the user or group to which this permission refers. */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/**
 		 * The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:
@@ -692,19 +692,19 @@ export namespace MyNS {
 		 * - The time must be in the future
 		 * - The time cannot be more than a year in the future
 		 */
-		expirationTime?: Date;
+		expirationTime?: Date | null;
 
 		/** The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as permissionId. IDs should be treated as opaque values. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#permission". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items. */
-		PermissionPermissionDetails?: Array<PermissionPermissionDetails>;
+		PermissionPermissionDetails?: Array<PermissionPermissionDetails> | null;
 
 		/** A link to the user's profile photo, if available. */
-		photoLink?: string;
+		photoLink?: string | null;
 
 		/**
 		 * The role granted by this permission. While new values may be supported in the future, the following are currently allowed:
@@ -715,10 +715,10 @@ export namespace MyNS {
 		 * - commenter
 		 * - reader
 		 */
-		role?: string;
+		role?: string | null;
 
 		/** Deprecated - use permissionDetails instead. */
-		PermissionTeamDrivePermissionDetails?: Array<PermissionTeamDrivePermissionDetails>;
+		PermissionTeamDrivePermissionDetails?: Array<PermissionTeamDrivePermissionDetails> | null;
 
 		/**
 		 * The type of the grantee. Valid values are:
@@ -727,23 +727,23 @@ export namespace MyNS {
 		 * - domain
 		 * - anyone  When creating a permission, if type is user or group, you must provide an emailAddress for the user or group. When type is domain, you must provide a domain. There isn't extra information required for a anyone type.
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface PermissionPermissionDetails {
 
 		/** Whether this permission is inherited. This field is always populated. This is an output-only field. */
-		inherited?: boolean;
+		inherited?: boolean | null;
 
 		/** The ID of the item from which this permission is inherited. This is an output-only field. */
-		inheritedFrom?: string;
+		inheritedFrom?: string | null;
 
 		/**
 		 * The permission type for this user. While new values may be added in future, the following are currently possible:
 		 * - file
 		 * - member
 		 */
-		permissionType?: string;
+		permissionType?: string | null;
 
 		/**
 		 * The primary role for this user. While new values may be added in the future, the following are currently possible:
@@ -753,43 +753,43 @@ export namespace MyNS {
 		 * - commenter
 		 * - reader
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 	export interface PermissionTeamDrivePermissionDetails {
 
 		/** Deprecated - use permissionDetails/inherited instead. */
-		inherited?: boolean;
+		inherited?: boolean | null;
 
 		/** Deprecated - use permissionDetails/inheritedFrom instead. */
-		inheritedFrom?: string;
+		inheritedFrom?: string | null;
 
 		/** Deprecated - use permissionDetails/role instead. */
-		role?: string;
+		role?: string | null;
 
 		/** Deprecated - use permissionDetails/permissionType instead. */
-		teamDrivePermissionType?: string;
+		teamDrivePermissionType?: string | null;
 	}
 
 	export interface FileShortcutDetails {
 
 		/** The ID of the file that this shortcut points to. */
-		targetId?: string;
+		targetId?: string | null;
 
 		/** The MIME type of the file that this shortcut points to. The value of this field is a snapshot of the target's MIME type, captured when the shortcut is created. */
-		targetMimeType?: string;
+		targetMimeType?: string | null;
 	}
 
 	export interface FileVideoMediaMetadata {
 
 		/** The duration of the video in milliseconds. */
-		durationMillis?: string;
+		durationMillis?: string | null;
 
 		/** The height of the video in pixels. */
-		height?: number;
+		height?: number | null;
 
 		/** The width of the video in pixels. */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -797,124 +797,124 @@ export namespace MyNS {
 	export interface TeamDrive {
 
 		/** An image file and cropping parameters from which a background image for this Team Drive is set. This is a write only field; it can only be set on drive.teamdrives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set. */
-		backgroundImageFile?: TeamDriveBackgroundImageFile;
+		backgroundImageFile?: TeamDriveBackgroundImageFile | null;
 
 		/** A short-lived link to this Team Drive's background image. */
-		backgroundImageLink?: string;
+		backgroundImageLink?: string | null;
 
 		/** Capabilities the current user has on this Team Drive. */
-		capabilities?: TeamDriveCapabilities;
+		capabilities?: TeamDriveCapabilities | null;
 
 		/** The color of this Team Drive as an RGB hex string. It can only be set on a drive.teamdrives.update request that does not set themeId. */
-		colorRgb?: string;
+		colorRgb?: string | null;
 
 		/** The time at which the Team Drive was created (RFC 3339 date-time). */
-		createdTime?: Date;
+		createdTime?: Date | null;
 
 		/** The ID of this Team Drive which is also the ID of the top level folder of this Team Drive. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#teamDrive". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The name of this Team Drive. */
-		name?: string;
+		name?: string | null;
 
 		/** A set of restrictions that apply to this Team Drive or items inside this Team Drive. */
-		restrictions?: TeamDriveRestrictions;
+		restrictions?: TeamDriveRestrictions | null;
 
 		/** The ID of the theme from which the background image and color will be set. The set of possible teamDriveThemes can be retrieved from a drive.about.get response. When not specified on a drive.teamdrives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile. */
-		themeId?: string;
+		themeId?: string | null;
 	}
 
 	export interface TeamDriveBackgroundImageFile {
 
 		/** The ID of an image file in Drive to use for the background image. */
-		id?: string;
+		id?: string | null;
 
 		/** The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high. */
-		width?: number;
+		width?: number | null;
 
 		/** The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image. */
-		xCoordinate?: number;
+		xCoordinate?: number | null;
 
 		/** The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image. */
-		yCoordinate?: number;
+		yCoordinate?: number | null;
 	}
 
 	export interface TeamDriveCapabilities {
 
 		/** Whether the current user can add children to folders in this Team Drive. */
-		canAddChildren?: boolean;
+		canAddChildren?: boolean | null;
 
 		/** Whether the current user can change the copyRequiresWriterPermission restriction of this Team Drive. */
-		canChangeCopyRequiresWriterPermissionRestriction?: boolean;
+		canChangeCopyRequiresWriterPermissionRestriction?: boolean | null;
 
 		/** Whether the current user can change the domainUsersOnly restriction of this Team Drive. */
-		canChangeDomainUsersOnlyRestriction?: boolean;
+		canChangeDomainUsersOnlyRestriction?: boolean | null;
 
 		/** Whether the current user can change the background of this Team Drive. */
-		canChangeTeamDriveBackground?: boolean;
+		canChangeTeamDriveBackground?: boolean | null;
 
 		/** Whether the current user can change the teamMembersOnly restriction of this Team Drive. */
-		canChangeTeamMembersOnlyRestriction?: boolean;
+		canChangeTeamMembersOnlyRestriction?: boolean | null;
 
 		/** Whether the current user can comment on files in this Team Drive. */
-		canComment?: boolean;
+		canComment?: boolean | null;
 
 		/** Whether the current user can copy files in this Team Drive. */
-		canCopy?: boolean;
+		canCopy?: boolean | null;
 
 		/** Whether the current user can delete children from folders in this Team Drive. */
-		canDeleteChildren?: boolean;
+		canDeleteChildren?: boolean | null;
 
 		/** Whether the current user can delete this Team Drive. Attempting to delete the Team Drive may still fail if there are untrashed items inside the Team Drive. */
-		canDeleteTeamDrive?: boolean;
+		canDeleteTeamDrive?: boolean | null;
 
 		/** Whether the current user can download files in this Team Drive. */
-		canDownload?: boolean;
+		canDownload?: boolean | null;
 
 		/** Whether the current user can edit files in this Team Drive */
-		canEdit?: boolean;
+		canEdit?: boolean | null;
 
 		/** Whether the current user can list the children of folders in this Team Drive. */
-		canListChildren?: boolean;
+		canListChildren?: boolean | null;
 
 		/** Whether the current user can add members to this Team Drive or remove them or change their role. */
-		canManageMembers?: boolean;
+		canManageMembers?: boolean | null;
 
 		/** Whether the current user can read the revisions resource of files in this Team Drive. */
-		canReadRevisions?: boolean;
+		canReadRevisions?: boolean | null;
 
 		/** Deprecated - use canDeleteChildren or canTrashChildren instead. */
-		canRemoveChildren?: boolean;
+		canRemoveChildren?: boolean | null;
 
 		/** Whether the current user can rename files or folders in this Team Drive. */
-		canRename?: boolean;
+		canRename?: boolean | null;
 
 		/** Whether the current user can rename this Team Drive. */
-		canRenameTeamDrive?: boolean;
+		canRenameTeamDrive?: boolean | null;
 
 		/** Whether the current user can share files or folders in this Team Drive. */
-		canShare?: boolean;
+		canShare?: boolean | null;
 
 		/** Whether the current user can trash children from folders in this Team Drive. */
-		canTrashChildren?: boolean;
+		canTrashChildren?: boolean | null;
 	}
 
 	export interface TeamDriveRestrictions {
 
 		/** Whether administrative privileges on this Team Drive are required to modify restrictions. */
-		adminManagedRestrictions?: boolean;
+		adminManagedRestrictions?: boolean | null;
 
 		/** Whether the options to copy, print, or download files inside this Team Drive, should be disabled for readers and commenters. When this restriction is set to true, it will override the similarly named field to true for any file inside this Team Drive. */
-		copyRequiresWriterPermission?: boolean;
+		copyRequiresWriterPermission?: boolean | null;
 
 		/** Whether access to this Team Drive and items inside this Team Drive is restricted to users of the domain to which this Team Drive belongs. This restriction may be overridden by other sharing policies controlled outside of this Team Drive. */
-		domainUsersOnly?: boolean;
+		domainUsersOnly?: boolean | null;
 
 		/** Whether access to items inside this Team Drive is restricted to members of this Team Drive. */
-		teamMembersOnly?: boolean;
+		teamMembersOnly?: boolean | null;
 	}
 
 
@@ -922,16 +922,16 @@ export namespace MyNS {
 	export interface ChangeList {
 
 		/** The list of changes. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
-		changes?: Array<Change>;
+		changes?: Array<Change> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#changeList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The starting page token for future changes. This will be present only if the end of the current changes list has been reached. */
-		newStartPageToken?: string;
+		newStartPageToken?: string | null;
 
 		/** The page token for the next page of changes. This will be absent if the end of the changes list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -939,34 +939,34 @@ export namespace MyNS {
 	export interface Channel {
 
 		/** The address where notifications are delivered for this channel. */
-		address?: string;
+		address?: string | null;
 
 		/** Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional. */
-		expiration?: string;
+		expiration?: string | null;
 
 		/** A UUID or similar unique string that identifies this channel. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies this as a notification channel used to watch for changes to a resource, which is "api#channel". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Additional parameters controlling delivery channel behavior. Optional. */
-		params?: {[id: string]: string };
+		params?: {[id: string]: string } | null;
 
 		/** A Boolean value to indicate whether payload is wanted. Optional. */
-		payload?: boolean;
+		payload?: boolean | null;
 
 		/** An opaque ID that identifies the resource being watched on this channel. Stable across different API versions. */
-		resourceId?: string;
+		resourceId?: string | null;
 
 		/** A version-specific identifier for the watched resource. */
-		resourceUri?: string;
+		resourceUri?: string | null;
 
 		/** An arbitrary string delivered to the target address with each notification delivered over this channel. Optional. */
-		token?: string;
+		token?: string | null;
 
 		/** The type of delivery mechanism used for this channel. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -974,49 +974,49 @@ export namespace MyNS {
 	export interface Comment {
 
 		/** A region of the document represented as a JSON string. See anchor documentation for details on how to define and interpret anchor properties. */
-		anchor?: string;
+		anchor?: string | null;
 
 		/** Information about a Drive user. */
-		author?: User;
+		author?: User | null;
 
 		/** The plain text content of the comment. This field is used for setting the content, while htmlContent should be displayed. */
-		content?: string;
+		content?: string | null;
 
 		/** The time at which the comment was created (RFC 3339 date-time). */
-		createdTime?: Date;
+		createdTime?: Date | null;
 
 		/** Whether the comment has been deleted. A deleted comment has no content. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/** The content of the comment with HTML formatting. */
-		htmlContent?: string;
+		htmlContent?: string | null;
 
 		/** The ID of the comment. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#comment". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The last time the comment or any of its replies was modified (RFC 3339 date-time). */
-		modifiedTime?: Date;
+		modifiedTime?: Date | null;
 
 		/** The file content to which the comment refers, typically within the anchor region. For a text file, for example, this would be the text at the location of the comment. */
-		quotedFileContent?: CommentQuotedFileContent;
+		quotedFileContent?: CommentQuotedFileContent | null;
 
 		/** The full list of replies to the comment in chronological order. */
-		replies?: Array<Reply>;
+		replies?: Array<Reply> | null;
 
 		/** Whether the comment has been resolved by one of its replies. */
-		resolved?: boolean;
+		resolved?: boolean | null;
 	}
 
 	export interface CommentQuotedFileContent {
 
 		/** The MIME type of the quoted content. */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** The quoted content itself. This is interpreted as plain text if set through the API. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -1028,31 +1028,31 @@ export namespace MyNS {
 		 * - resolve
 		 * - reopen
 		 */
-		action?: string;
+		action?: string | null;
 
 		/** Information about a Drive user. */
-		author?: User;
+		author?: User | null;
 
 		/** The plain text content of the reply. This field is used for setting the content, while htmlContent should be displayed. This is required on creates if no action is specified. */
-		content?: string;
+		content?: string | null;
 
 		/** The time at which the reply was created (RFC 3339 date-time). */
-		createdTime?: Date;
+		createdTime?: Date | null;
 
 		/** Whether the reply has been deleted. A deleted reply has no content. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/** The content of the reply with HTML formatting. */
-		htmlContent?: string;
+		htmlContent?: string | null;
 
 		/** The ID of the reply. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#reply". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The last time the reply was modified (RFC 3339 date-time). */
-		modifiedTime?: Date;
+		modifiedTime?: Date | null;
 	}
 
 
@@ -1060,13 +1060,13 @@ export namespace MyNS {
 	export interface CommentList {
 
 		/** The list of comments. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
-		comments?: Array<Comment>;
+		comments?: Array<Comment> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#commentList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The page token for the next page of comments. This will be absent if the end of the comments list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1074,13 +1074,13 @@ export namespace MyNS {
 	export interface DriveList {
 
 		/** The list of shared drives. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
-		drives?: Array<Drive>;
+		drives?: Array<Drive> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#driveList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The page token for the next page of shared drives. This will be absent if the end of the list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1088,16 +1088,16 @@ export namespace MyNS {
 	export interface FileList {
 
 		/** The list of files. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
-		files?: Array<File>;
+		files?: Array<File> | null;
 
 		/** Whether the search process was incomplete. If true, then some search results may be missing, since all documents were not searched. This may occur when searching multiple drives with the "allDrives" corpora, but all corpora could not be searched. When this happens, it is suggested that clients narrow their query by choosing a different corpus such as "user" or "drive". */
-		incompleteSearch?: boolean;
+		incompleteSearch?: boolean | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#fileList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The page token for the next page of files. This will be absent if the end of the files list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1105,13 +1105,13 @@ export namespace MyNS {
 	export interface GeneratedIds {
 
 		/** The IDs generated for the requesting user in the specified space. */
-		ids?: Array<string>;
+		ids?: Array<string> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#generatedIds". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The type of file that can be created with these IDs. */
-		space?: string;
+		space?: string | null;
 	}
 
 
@@ -1119,13 +1119,13 @@ export namespace MyNS {
 	export interface PermissionList {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#permissionList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The page token for the next page of permissions. This field will be absent if the end of the permissions list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of permissions. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
-		permissions?: Array<Permission>;
+		permissions?: Array<Permission> | null;
 	}
 
 
@@ -1133,13 +1133,13 @@ export namespace MyNS {
 	export interface ReplyList {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#replyList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The page token for the next page of replies. This will be absent if the end of the replies list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of replies. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
-		replies?: Array<Reply>;
+		replies?: Array<Reply> | null;
 	}
 
 
@@ -1147,46 +1147,46 @@ export namespace MyNS {
 	export interface Revision {
 
 		/** Links for exporting Google Docs to specific formats. */
-		exportLinks?: {[id: string]: string };
+		exportLinks?: {[id: string]: string } | null;
 
 		/** The ID of the revision. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Whether to keep this revision forever, even if it is no longer the head revision. If not set, the revision will be automatically purged 30 days after newer content is uploaded. This can be set on a maximum of 200 revisions for a file.
 		 * This field is only applicable to files with binary content in Drive.
 		 */
-		keepForever?: boolean;
+		keepForever?: boolean | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#revision". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Information about a Drive user. */
-		lastModifyingUser?: User;
+		lastModifyingUser?: User | null;
 
 		/** The MD5 checksum of the revision's content. This is only applicable to files with binary content in Drive. */
-		md5Checksum?: string;
+		md5Checksum?: string | null;
 
 		/** The MIME type of the revision. */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** The last time the revision was modified (RFC 3339 date-time). */
-		modifiedTime?: Date;
+		modifiedTime?: Date | null;
 
 		/** The original filename used to create this revision. This is only applicable to files with binary content in Drive. */
-		originalFilename?: string;
+		originalFilename?: string | null;
 
 		/** Whether subsequent revisions will be automatically republished. This is only applicable to Google Docs. */
-		publishAuto?: boolean;
+		publishAuto?: boolean | null;
 
 		/** Whether this revision is published. This is only applicable to Google Docs. */
-		published?: boolean;
+		published?: boolean | null;
 
 		/** Whether this revision is published outside the domain. This is only applicable to Google Docs. */
-		publishedOutsideDomain?: boolean;
+		publishedOutsideDomain?: boolean | null;
 
 		/** The size of the revision's content in bytes. This is only applicable to files with binary content in Drive. */
-		size?: string;
+		size?: string | null;
 	}
 
 
@@ -1194,22 +1194,22 @@ export namespace MyNS {
 	export interface RevisionList {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#revisionList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The page token for the next page of revisions. This will be absent if the end of the revisions list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of revisions. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
-		revisions?: Array<Revision>;
+		revisions?: Array<Revision> | null;
 	}
 
 	export interface StartPageToken {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#startPageToken". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The starting page token for listing changes. */
-		startPageToken?: string;
+		startPageToken?: string | null;
 	}
 
 
@@ -1217,13 +1217,13 @@ export namespace MyNS {
 	export interface TeamDriveList {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "drive#teamDriveList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The page token for the next page of Team Drives. This will be absent if the end of the Team Drives list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of Team Drives. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
-		teamDrives?: Array<TeamDrive>;
+		teamDrives?: Array<TeamDrive> | null;
 	}
 
 	@Injectable()

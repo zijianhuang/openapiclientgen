@@ -5,55 +5,55 @@ export namespace MyNS {
 	export interface SiteVerificationWebResourceGettokenRequest {
 
 		/** The site for which a verification token will be generated. */
-		site?: SiteVerificationWebResourceGettokenRequestSite;
+		site?: SiteVerificationWebResourceGettokenRequestSite | null;
 
 		/** The verification method that will be used to verify this site. For sites, 'FILE' or 'META' methods may be used. For domains, only 'DNS' may be used. */
-		verificationMethod?: string;
+		verificationMethod?: string | null;
 	}
 
 	export interface SiteVerificationWebResourceGettokenRequestSite {
 
 		/** The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to INET_DOMAIN, the site identifier is a domain name. */
-		identifier?: string;
+		identifier?: string | null;
 
 		/** The type of resource to be verified. Can be SITE or INET_DOMAIN (domain name). */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface SiteVerificationWebResourceGettokenResponse {
 
 		/** The verification method to use in conjunction with this token. For FILE, the token should be placed in the top-level directory of the site, stored inside a file of the same name. For META, the token should be placed in the HEAD tag of the default page that is loaded for the site. For DNS, the token should be placed in a TXT record of the domain. */
-		method?: string;
+		method?: string | null;
 
 		/** The verification token. The token must be placed appropriately in order for verification to succeed. */
-		token?: string;
+		token?: string | null;
 	}
 
 	export interface SiteVerificationWebResourceListResponse {
 
 		/** The list of sites that are owned by the authenticated user. */
-		items?: Array<SiteVerificationWebResourceResource>;
+		items?: Array<SiteVerificationWebResourceResource> | null;
 	}
 
 	export interface SiteVerificationWebResourceResource {
 
 		/** The string used to identify this site. This value should be used in the "id" portion of the REST URL for the Get, Update, and Delete operations. */
-		id?: string;
+		id?: string | null;
 
 		/** The email addresses of all verified owners. */
-		owners?: Array<string>;
+		owners?: Array<string> | null;
 
 		/** The address and type of a site that is verified or will be verified. */
-		site?: SiteVerificationWebResourceResourceSite;
+		site?: SiteVerificationWebResourceResourceSite | null;
 	}
 
 	export interface SiteVerificationWebResourceResourceSite {
 
 		/** The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to INET_DOMAIN, the site identifier is a domain name. */
-		identifier?: string;
+		identifier?: string | null;
 
 		/** The site type. Can be SITE or INET_DOMAIN (domain name). */
-		type?: string;
+		type?: string | null;
 	}
 
 	@Injectable()

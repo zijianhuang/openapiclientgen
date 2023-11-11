@@ -5,7 +5,7 @@ export namespace MyNS {
 
 	/** The AcceptDomainTransferFromAnotherAwsAccount response includes the following element. */
 	export interface AcceptDomainTransferFromAnotherAwsAccountResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 
@@ -27,7 +27,7 @@ export namespace MyNS {
 
 	/** The <code>CancelDomainTransferToAnotherAwsAccount</code> response includes the following element. */
 	export interface CancelDomainTransferToAnotherAwsAccountResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 
@@ -48,7 +48,7 @@ export namespace MyNS {
 	/** The CheckDomainAvailability request contains the following elements. */
 	export interface CheckDomainAvailabilityRequest {
 		DomainName: string;
-		IdnLangCode?: string;
+		IdnLangCode?: string | null;
 	}
 
 	export interface UnsupportedTLD {
@@ -70,7 +70,7 @@ export namespace MyNS {
 	export interface DomainTransferability {
 
 		/** <p>Whether the domain name can be transferred to Route 53.</p> <note> <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p> </note> <p>Valid values:</p> <dl> <dt>TRANSFERABLE</dt> <dd> <p>The domain name can be transferred to Route 53.</p> </dd> <dt>UNTRANSFERRABLE</dt> <dd> <p>The domain name can't be transferred to Route 53.</p> </dd> <dt>DONT_KNOW</dt> <dd> <p>Reserved for future use.</p> </dd> </dl> */
-		Transferable?: DomainTransferabilityTransferable;
+		Transferable?: DomainTransferabilityTransferable | null;
 	}
 
 	export enum DomainTransferabilityTransferable { TRANSFERABLE = 0, UNTRANSFERABLE = 1, DONT_KNOW = 2 }
@@ -79,7 +79,7 @@ export namespace MyNS {
 	/** The CheckDomainTransferability request contains the following elements. */
 	export interface CheckDomainTransferabilityRequest {
 		DomainName: string;
-		AuthCode?: string;
+		AuthCode?: string | null;
 	}
 
 	export interface DeleteTagsForDomainResponse {
@@ -137,14 +137,14 @@ export namespace MyNS {
 	}
 
 	export interface GetContactReachabilityStatusResponse {
-		domainName?: string;
-		status?: GetContactReachabilityStatusResponseStatus;
+		domainName?: string | null;
+		status?: GetContactReachabilityStatusResponseStatus | null;
 	}
 
 	export enum GetContactReachabilityStatusResponseStatus { PENDING = 0, DONE = 1, EXPIRED = 2 }
 
 	export interface GetContactReachabilityStatusRequest {
-		domainName?: string;
+		domainName?: string | null;
 	}
 
 
@@ -152,7 +152,7 @@ export namespace MyNS {
 	export interface GetDomainDetailResponse {
 		DomainName: string;
 		Nameservers: Array<Nameserver>;
-		AutoRenew?: boolean;
+		AutoRenew?: boolean | null;
 
 		/**
 		 * ContactDetail includes the following elements.
@@ -171,47 +171,47 @@ export namespace MyNS {
 		 * Required
 		 */
 		TechContact: ContactDetail;
-		AdminPrivacy?: boolean;
-		RegistrantPrivacy?: boolean;
-		TechPrivacy?: boolean;
-		RegistrarName?: string;
-		WhoIsServer?: string;
-		RegistrarUrl?: string;
-		AbuseContactEmail?: string;
-		AbuseContactPhone?: string;
-		RegistryDomainId?: string;
-		CreationDate?: Date;
-		UpdatedDate?: Date;
-		ExpirationDate?: Date;
-		Reseller?: string;
-		DnsSec?: string;
-		StatusList?: Array<string>;
+		AdminPrivacy?: boolean | null;
+		RegistrantPrivacy?: boolean | null;
+		TechPrivacy?: boolean | null;
+		RegistrarName?: string | null;
+		WhoIsServer?: string | null;
+		RegistrarUrl?: string | null;
+		AbuseContactEmail?: string | null;
+		AbuseContactPhone?: string | null;
+		RegistryDomainId?: string | null;
+		CreationDate?: Date | null;
+		UpdatedDate?: Date | null;
+		ExpirationDate?: Date | null;
+		Reseller?: string | null;
+		DnsSec?: string | null;
+		StatusList?: Array<string> | null;
 	}
 
 
 	/** Nameserver includes the following elements. */
 	export interface Nameserver {
 		Name: string;
-		GlueIps?: Array<string>;
+		GlueIps?: Array<string> | null;
 	}
 
 
 	/** ContactDetail includes the following elements. */
 	export interface ContactDetail {
-		FirstName?: string;
-		LastName?: string;
-		ContactType?: ContactDetailContactType;
-		OrganizationName?: string;
-		AddressLine1?: string;
-		AddressLine2?: string;
-		City?: string;
-		State?: string;
-		CountryCode?: ContactDetailCountryCode;
-		ZipCode?: string;
-		PhoneNumber?: string;
-		Email?: string;
-		Fax?: string;
-		ExtraParams?: Array<ExtraParam>;
+		FirstName?: string | null;
+		LastName?: string | null;
+		ContactType?: ContactDetailContactType | null;
+		OrganizationName?: string | null;
+		AddressLine1?: string | null;
+		AddressLine2?: string | null;
+		City?: string | null;
+		State?: string | null;
+		CountryCode?: ContactDetailCountryCode | null;
+		ZipCode?: string | null;
+		PhoneNumber?: string | null;
+		Email?: string | null;
+		Fax?: string | null;
+		ExtraParams?: Array<ExtraParam> | null;
 	}
 
 	export enum ContactDetailContactType { PERSON = 0, COMPANY = 1, ASSOCIATION = 2, PUBLIC_BODY = 3, RESELLER = 4 }
@@ -234,14 +234,14 @@ export namespace MyNS {
 	}
 
 	export interface GetDomainSuggestionsResponse {
-		SuggestionsList?: Array<DomainSuggestion>;
+		SuggestionsList?: Array<DomainSuggestion> | null;
 	}
 
 
 	/** Information about one suggested domain name. */
 	export interface DomainSuggestion {
-		DomainName?: string;
-		Availability?: string;
+		DomainName?: string | null;
+		Availability?: string | null;
 	}
 
 	export interface GetDomainSuggestionsRequest {
@@ -253,12 +253,12 @@ export namespace MyNS {
 
 	/** The GetOperationDetail response includes the following elements. */
 	export interface GetOperationDetailResponse {
-		OperationId?: string;
-		Status?: GetOperationDetailResponseStatus;
-		Message?: string;
-		DomainName?: string;
-		Type?: GetOperationDetailResponseType;
-		SubmittedDate?: Date;
+		OperationId?: string | null;
+		Status?: GetOperationDetailResponseStatus | null;
+		Message?: string | null;
+		DomainName?: string | null;
+		Type?: GetOperationDetailResponseType | null;
+		SubmittedDate?: Date | null;
 	}
 
 	export enum GetOperationDetailResponseStatus { SUBMITTED = 0, IN_PROGRESS = 1, ERROR = 2, SUCCESSFUL = 3, FAILED = 4 }
@@ -275,30 +275,30 @@ export namespace MyNS {
 	/** The ListDomains response includes the following elements. */
 	export interface ListDomainsResponse {
 		Domains: Array<DomainSummary>;
-		NextPageMarker?: string;
+		NextPageMarker?: string | null;
 	}
 
 
 	/** Summary information about one domain. */
 	export interface DomainSummary {
 		DomainName: string;
-		AutoRenew?: boolean;
-		TransferLock?: boolean;
-		Expiry?: Date;
+		AutoRenew?: boolean | null;
+		TransferLock?: boolean | null;
+		Expiry?: Date | null;
 	}
 
 
 	/** The ListDomains request includes the following elements. */
 	export interface ListDomainsRequest {
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 
 	/** The ListOperations response includes the following elements. */
 	export interface ListOperationsResponse {
 		Operations: Array<OperationSummary>;
-		NextPageMarker?: string;
+		NextPageMarker?: string | null;
 	}
 
 
@@ -313,9 +313,9 @@ export namespace MyNS {
 
 	/** The ListOperations request includes the following elements. */
 	export interface ListOperationsRequest {
-		SubmittedSince?: Date;
-		Marker?: string;
-		MaxItems?: number;
+		SubmittedSince?: Date | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 
@@ -327,8 +327,8 @@ export namespace MyNS {
 
 	/** Each tag includes the following elements. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
@@ -347,9 +347,9 @@ export namespace MyNS {
 	/** The RegisterDomain request includes the following elements. */
 	export interface RegisterDomainRequest {
 		DomainName: string;
-		IdnLangCode?: string;
+		IdnLangCode?: string | null;
 		DurationInYears: number;
-		AutoRenew?: boolean;
+		AutoRenew?: boolean | null;
 
 		/**
 		 * ContactDetail includes the following elements.
@@ -368,15 +368,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		TechContact: ContactDetail;
-		PrivacyProtectAdminContact?: boolean;
-		PrivacyProtectRegistrantContact?: boolean;
-		PrivacyProtectTechContact?: boolean;
+		PrivacyProtectAdminContact?: boolean | null;
+		PrivacyProtectRegistrantContact?: boolean | null;
+		PrivacyProtectTechContact?: boolean | null;
 	}
 
 
 	/** The RejectDomainTransferFromAnotherAwsAccount response includes the following element. */
 	export interface RejectDomainTransferFromAnotherAwsAccountResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 
@@ -393,18 +393,18 @@ export namespace MyNS {
 	/** A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year. */
 	export interface RenewDomainRequest {
 		DomainName: string;
-		DurationInYears?: number;
+		DurationInYears?: number | null;
 		CurrentExpiryYear: number;
 	}
 
 	export interface ResendContactReachabilityEmailResponse {
-		domainName?: string;
-		emailAddress?: string;
-		isAlreadyVerified?: boolean;
+		domainName?: string | null;
+		emailAddress?: string | null;
+		isAlreadyVerified?: boolean | null;
 	}
 
 	export interface ResendContactReachabilityEmailRequest {
-		domainName?: string;
+		domainName?: string | null;
 	}
 
 
@@ -429,11 +429,11 @@ export namespace MyNS {
 	/** The TransferDomain request includes the following elements. */
 	export interface TransferDomainRequest {
 		DomainName: string;
-		IdnLangCode?: string;
+		IdnLangCode?: string | null;
 		DurationInYears: number;
-		Nameservers?: Array<Nameserver>;
-		AuthCode?: string;
-		AutoRenew?: boolean;
+		Nameservers?: Array<Nameserver> | null;
+		AuthCode?: string | null;
+		AutoRenew?: boolean | null;
 
 		/**
 		 * ContactDetail includes the following elements.
@@ -452,16 +452,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		TechContact: ContactDetail;
-		PrivacyProtectAdminContact?: boolean;
-		PrivacyProtectRegistrantContact?: boolean;
-		PrivacyProtectTechContact?: boolean;
+		PrivacyProtectAdminContact?: boolean | null;
+		PrivacyProtectRegistrantContact?: boolean | null;
+		PrivacyProtectTechContact?: boolean | null;
 	}
 
 
 	/** The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements. */
 	export interface TransferDomainToAnotherAwsAccountResponse {
-		OperationId?: string;
-		Password?: string;
+		OperationId?: string | null;
+		Password?: string | null;
 	}
 
 
@@ -483,13 +483,13 @@ export namespace MyNS {
 		DomainName: string;
 
 		/** ContactDetail includes the following elements. */
-		AdminContact?: ContactDetail;
+		AdminContact?: ContactDetail | null;
 
 		/** ContactDetail includes the following elements. */
-		RegistrantContact?: ContactDetail;
+		RegistrantContact?: ContactDetail | null;
 
 		/** ContactDetail includes the following elements. */
-		TechContact?: ContactDetail;
+		TechContact?: ContactDetail | null;
 	}
 
 
@@ -502,9 +502,9 @@ export namespace MyNS {
 	/** The UpdateDomainContactPrivacy request includes the following elements. */
 	export interface UpdateDomainContactPrivacyRequest {
 		DomainName: string;
-		AdminPrivacy?: boolean;
-		RegistrantPrivacy?: boolean;
-		TechPrivacy?: boolean;
+		AdminPrivacy?: boolean | null;
+		RegistrantPrivacy?: boolean | null;
+		TechPrivacy?: boolean | null;
 	}
 
 
@@ -517,7 +517,7 @@ export namespace MyNS {
 	/** <p>Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p> <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email. </p> */
 	export interface UpdateDomainNameserversRequest {
 		DomainName: string;
-		FIAuthKey?: string;
+		FIAuthKey?: string | null;
 		Nameservers: Array<Nameserver>;
 	}
 
@@ -528,33 +528,33 @@ export namespace MyNS {
 	/** The UpdateTagsForDomainRequest includes the following elements. */
 	export interface UpdateTagsForDomainRequest {
 		DomainName: string;
-		TagsToUpdate?: Array<Tag>;
+		TagsToUpdate?: Array<Tag> | null;
 	}
 
 
 	/** The ViewBilling response includes the following elements. */
 	export interface ViewBillingResponse {
-		NextPageMarker?: string;
-		BillingRecords?: Array<BillingRecord>;
+		NextPageMarker?: string | null;
+		BillingRecords?: Array<BillingRecord> | null;
 	}
 
 
 	/** Information for one billing record. */
 	export interface BillingRecord {
-		DomainName?: string;
-		Operation?: GetOperationDetailResponseType;
-		InvoiceId?: string;
-		BillDate?: Date;
-		Price?: number;
+		DomainName?: string | null;
+		Operation?: GetOperationDetailResponseType | null;
+		InvoiceId?: string | null;
+		BillDate?: Date | null;
+		Price?: number | null;
 	}
 
 
 	/** The ViewBilling request includes the following elements. */
 	export interface ViewBillingRequest {
-		Start?: Date;
-		End?: Date;
-		Marker?: string;
-		MaxItems?: number;
+		Start?: Date | null;
+		End?: Date | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export enum OperationType { REGISTER_DOMAIN = 0, DELETE_DOMAIN = 1, TRANSFER_IN_DOMAIN = 2, UPDATE_DOMAIN_CONTACT = 3, UPDATE_NAMESERVER = 4, CHANGE_PRIVACY_PROTECTION = 5, DOMAIN_LOCK = 6, ENABLE_AUTORENEW = 7, DISABLE_AUTORENEW = 8, ADD_DNSSEC = 9, REMOVE_DNSSEC = 10, EXPIRE_DOMAIN = 11, TRANSFER_OUT_DOMAIN = 12, CHANGE_DOMAIN_OWNER = 13, RENEW_DOMAIN = 14, PUSH_DOMAIN = 15, INTERNAL_TRANSFER_OUT_DOMAIN = 16, INTERNAL_TRANSFER_IN_DOMAIN = 17 }

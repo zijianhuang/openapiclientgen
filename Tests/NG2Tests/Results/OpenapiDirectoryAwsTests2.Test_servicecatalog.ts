@@ -6,9 +6,9 @@ export namespace MyNS {
 	}
 
 	export interface AcceptPortfolioShareInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
-		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType;
+		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType | null;
 	}
 
 	export enum AcceptPortfolioShareInputPortfolioShareType { IMPORTED = 0, AWS_SERVICECATALOG = 1, AWS_ORGANIZATIONS = 2 }
@@ -37,7 +37,7 @@ export namespace MyNS {
 	}
 
 	export interface AssociatePrincipalWithPortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
 		PrincipalARN: string;
 		PrincipalType: AssociatePrincipalWithPortfolioInputPrincipalType;
@@ -49,10 +49,10 @@ export namespace MyNS {
 	}
 
 	export interface AssociateProductWithPortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
 		PortfolioId: string;
-		SourcePortfolioId?: string;
+		SourcePortfolioId?: string | null;
 	}
 
 	export interface AssociateServiceActionWithProvisioningArtifactOutput {
@@ -62,7 +62,7 @@ export namespace MyNS {
 		ProductId: string;
 		ProvisioningArtifactId: string;
 		ServiceActionId: string;
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface AssociateTagOptionWithResourceOutput {
@@ -80,24 +80,24 @@ export namespace MyNS {
 	}
 
 	export interface BatchAssociateServiceActionWithProvisioningArtifactOutput {
-		FailedServiceActionAssociations?: Array<FailedServiceActionAssociation>;
+		FailedServiceActionAssociations?: Array<FailedServiceActionAssociation> | null;
 	}
 
 
 	/** An object containing information about the error, along with identifying information about the self-service action and its associations. */
 	export interface FailedServiceActionAssociation {
-		ServiceActionId?: string;
-		ProductId?: string;
-		ProvisioningArtifactId?: string;
-		ErrorCode?: FailedServiceActionAssociationErrorCode;
-		ErrorMessage?: string;
+		ServiceActionId?: string | null;
+		ProductId?: string | null;
+		ProvisioningArtifactId?: string | null;
+		ErrorCode?: FailedServiceActionAssociationErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum FailedServiceActionAssociationErrorCode { DUPLICATE_RESOURCE = 0, INTERNAL_FAILURE = 1, LIMIT_EXCEEDED = 2, RESOURCE_NOT_FOUND = 3, THROTTLING = 4 }
 
 	export interface BatchAssociateServiceActionWithProvisioningArtifactInput {
 		ServiceActionAssociations: Array<ServiceActionAssociation>;
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 	}
 
 
@@ -109,25 +109,25 @@ export namespace MyNS {
 	}
 
 	export interface BatchDisassociateServiceActionFromProvisioningArtifactOutput {
-		FailedServiceActionAssociations?: Array<FailedServiceActionAssociation>;
+		FailedServiceActionAssociations?: Array<FailedServiceActionAssociation> | null;
 	}
 
 	export interface BatchDisassociateServiceActionFromProvisioningArtifactInput {
 		ServiceActionAssociations: Array<ServiceActionAssociation>;
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface CopyProductOutput {
-		CopyProductToken?: string;
+		CopyProductToken?: string | null;
 	}
 
 	export interface CopyProductInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		SourceProductArn: string;
-		TargetProductId?: string;
-		TargetProductName?: string;
-		SourceProvisioningArtifactIdentifiers?: Array<SourceProvisioningArtifactPropertiesMap>;
-		CopyOptions?: Array<CopyOption>;
+		TargetProductId?: string | null;
+		TargetProductName?: string | null;
+		SourceProvisioningArtifactIdentifiers?: Array<SourceProvisioningArtifactPropertiesMap> | null;
+		CopyOptions?: Array<CopyOption> | null;
 		IdempotencyToken: string;
 	}
 
@@ -139,50 +139,50 @@ export namespace MyNS {
 	export interface CreateConstraintOutput {
 
 		/** Information about a constraint. */
-		ConstraintDetail?: ConstraintDetail;
-		ConstraintParameters?: string;
-		Status?: CreateConstraintOutputStatus;
+		ConstraintDetail?: ConstraintDetail | null;
+		ConstraintParameters?: string | null;
+		Status?: CreateConstraintOutputStatus | null;
 	}
 
 
 	/** Information about a constraint. */
 	export interface ConstraintDetail {
-		ConstraintId?: string;
-		Type?: string;
-		Description?: string;
-		Owner?: string;
-		ProductId?: string;
-		PortfolioId?: string;
+		ConstraintId?: string | null;
+		Type?: string | null;
+		Description?: string | null;
+		Owner?: string | null;
+		ProductId?: string | null;
+		PortfolioId?: string | null;
 	}
 
 	export enum CreateConstraintOutputStatus { AVAILABLE = 0, CREATING = 1, FAILED = 2 }
 
 	export interface CreateConstraintInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
 		ProductId: string;
 		Parameters: string;
 		Type: string;
-		Description?: string;
+		Description?: string | null;
 		IdempotencyToken: string;
 	}
 
 	export interface CreatePortfolioOutput {
 
 		/** Information about a portfolio. */
-		PortfolioDetail?: PortfolioDetail;
-		Tags?: Array<Tag>;
+		PortfolioDetail?: PortfolioDetail | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Information about a portfolio. */
 	export interface PortfolioDetail {
-		Id?: string;
-		ARN?: string;
-		DisplayName?: string;
-		Description?: string;
-		CreatedTime?: Date;
-		ProviderName?: string;
+		Id?: string | null;
+		ARN?: string | null;
+		DisplayName?: string | null;
+		Description?: string | null;
+		CreatedTime?: Date | null;
+		ProviderName?: string | null;
 	}
 
 
@@ -193,32 +193,32 @@ export namespace MyNS {
 	}
 
 	export interface CreatePortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		DisplayName: string;
-		Description?: string;
+		Description?: string | null;
 		ProviderName: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 		IdempotencyToken: string;
 	}
 
 	export interface CreatePortfolioShareOutput {
-		PortfolioShareToken?: string;
+		PortfolioShareToken?: string | null;
 	}
 
 	export interface CreatePortfolioShareInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
-		AccountId?: string;
+		AccountId?: string | null;
 
 		/** Information about the organization node. */
-		OrganizationNode?: OrganizationNode;
+		OrganizationNode?: OrganizationNode | null;
 	}
 
 
 	/** Information about the organization node. */
 	export interface OrganizationNode {
-		Type?: OrganizationNodeType;
-		Value?: string;
+		Type?: OrganizationNodeType | null;
+		Value?: string | null;
 	}
 
 	export enum OrganizationNodeType { ORGANIZATION = 0, ORGANIZATIONAL_UNIT = 1, ACCOUNT = 2 }
@@ -229,11 +229,11 @@ export namespace MyNS {
 	export interface CreateProductOutput {
 
 		/** Information about a product view. */
-		ProductViewDetail?: ProductViewDetail;
+		ProductViewDetail?: ProductViewDetail | null;
 
 		/** Information about a provisioning artifact (also known as a version) for a product. */
-		ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
-		Tags?: Array<Tag>;
+		ProvisioningArtifactDetail?: ProvisioningArtifactDetail | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -241,26 +241,26 @@ export namespace MyNS {
 	export interface ProductViewDetail {
 
 		/** Summary information about a product view. */
-		ProductViewSummary?: ProductViewSummary;
-		Status?: CreateConstraintOutputStatus;
-		ProductARN?: string;
-		CreatedTime?: Date;
+		ProductViewSummary?: ProductViewSummary | null;
+		Status?: CreateConstraintOutputStatus | null;
+		ProductARN?: string | null;
+		CreatedTime?: Date | null;
 	}
 
 
 	/** Summary information about a product view. */
 	export interface ProductViewSummary {
-		Id?: string;
-		ProductId?: string;
-		Name?: string;
-		Owner?: string;
-		ShortDescription?: string;
-		Type?: ProductViewSummaryType;
-		Distributor?: string;
-		HasDefaultPath?: boolean;
-		SupportEmail?: string;
-		SupportDescription?: string;
-		SupportUrl?: string;
+		Id?: string | null;
+		ProductId?: string | null;
+		Name?: string | null;
+		Owner?: string | null;
+		ShortDescription?: string | null;
+		Type?: ProductViewSummaryType | null;
+		Distributor?: string | null;
+		HasDefaultPath?: boolean | null;
+		SupportEmail?: string | null;
+		SupportDescription?: string | null;
+		SupportUrl?: string | null;
 	}
 
 	export enum ProductViewSummaryType { CLOUD_FORMATION_TEMPLATE = 0, MARKETPLACE = 1 }
@@ -268,13 +268,13 @@ export namespace MyNS {
 
 	/** Information about a provisioning artifact (also known as a version) for a product. */
 	export interface ProvisioningArtifactDetail {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		Type?: ProvisioningArtifactDetailType;
-		CreatedTime?: Date;
-		Active?: boolean;
-		Guidance?: ProvisioningArtifactDetailGuidance;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Type?: ProvisioningArtifactDetailType | null;
+		CreatedTime?: Date | null;
+		Active?: boolean | null;
+		Guidance?: ProvisioningArtifactDetailGuidance | null;
 	}
 
 	export enum ProvisioningArtifactDetailType { CLOUD_FORMATION_TEMPLATE = 0, MARKETPLACE_AMI = 1, MARKETPLACE_CAR = 2 }
@@ -282,16 +282,16 @@ export namespace MyNS {
 	export enum ProvisioningArtifactDetailGuidance { DEFAULT = 0, DEPRECATED = 1 }
 
 	export interface CreateProductInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Name: string;
 		Owner: string;
-		Description?: string;
-		Distributor?: string;
-		SupportDescription?: string;
-		SupportEmail?: string;
-		SupportUrl?: string;
+		Description?: string | null;
+		Distributor?: string | null;
+		SupportDescription?: string | null;
+		SupportEmail?: string | null;
+		SupportUrl?: string | null;
 		ProductType: ProductViewSummaryType;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * Information about a provisioning artifact (also known as a version) for a product.
@@ -304,36 +304,36 @@ export namespace MyNS {
 
 	/** Information about a provisioning artifact (also known as a version) for a product. */
 	export interface ProvisioningArtifactProperties {
-		Name?: string;
-		Description?: string;
+		Name?: string | null;
+		Description?: string | null;
 		Info: ProvisioningArtifactInfo;
-		Type?: ProvisioningArtifactDetailType;
-		DisableTemplateValidation?: boolean;
+		Type?: ProvisioningArtifactDetailType | null;
+		DisableTemplateValidation?: boolean | null;
 	}
 
 	export interface ProvisioningArtifactInfo {
 	}
 
 	export interface CreateProvisionedProductPlanOutput {
-		PlanName?: string;
-		PlanId?: string;
-		ProvisionProductId?: string;
-		ProvisionedProductName?: string;
-		ProvisioningArtifactId?: string;
+		PlanName?: string | null;
+		PlanId?: string | null;
+		ProvisionProductId?: string | null;
+		ProvisionedProductName?: string | null;
+		ProvisioningArtifactId?: string | null;
 	}
 
 	export interface CreateProvisionedProductPlanInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PlanName: string;
 		PlanType: CreateProvisionedProductPlanInputPlanType;
-		NotificationArns?: Array<string>;
-		PathId?: string;
+		NotificationArns?: Array<string> | null;
+		PathId?: string | null;
 		ProductId: string;
 		ProvisionedProductName: string;
 		ProvisioningArtifactId: string;
-		ProvisioningParameters?: Array<UpdateProvisioningParameter>;
+		ProvisioningParameters?: Array<UpdateProvisioningParameter> | null;
 		IdempotencyToken: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateProvisionedProductPlanInputPlanType { CLOUDFORMATION = 0 }
@@ -341,21 +341,21 @@ export namespace MyNS {
 
 	/** The parameter key-value pair used to update a provisioned product. */
 	export interface UpdateProvisioningParameter {
-		Key?: string;
-		Value?: string;
-		UsePreviousValue?: boolean;
+		Key?: string | null;
+		Value?: string | null;
+		UsePreviousValue?: boolean | null;
 	}
 
 	export interface CreateProvisioningArtifactOutput {
 
 		/** Information about a provisioning artifact (also known as a version) for a product. */
-		ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
-		Info?: ProvisioningArtifactInfo;
-		Status?: CreateConstraintOutputStatus;
+		ProvisioningArtifactDetail?: ProvisioningArtifactDetail | null;
+		Info?: ProvisioningArtifactInfo | null;
+		Status?: CreateConstraintOutputStatus | null;
 	}
 
 	export interface CreateProvisioningArtifactInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
 
 		/**
@@ -369,7 +369,7 @@ export namespace MyNS {
 	export interface CreateServiceActionOutput {
 
 		/** An object containing detailed information about the self-service action. */
-		ServiceActionDetail?: ServiceActionDetail;
+		ServiceActionDetail?: ServiceActionDetail | null;
 	}
 
 
@@ -377,17 +377,17 @@ export namespace MyNS {
 	export interface ServiceActionDetail {
 
 		/** Detailed information about the self-service action. */
-		ServiceActionSummary?: ServiceActionSummary;
-		Definition?: ServiceActionDefinitionMap;
+		ServiceActionSummary?: ServiceActionSummary | null;
+		Definition?: ServiceActionDefinitionMap | null;
 	}
 
 
 	/** Detailed information about the self-service action. */
 	export interface ServiceActionSummary {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		DefinitionType?: ServiceActionSummaryDefinitionType;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		DefinitionType?: ServiceActionSummaryDefinitionType | null;
 	}
 
 	export enum ServiceActionSummaryDefinitionType { SSM_AUTOMATION = 0 }
@@ -399,24 +399,24 @@ export namespace MyNS {
 		Name: string;
 		DefinitionType: ServiceActionSummaryDefinitionType;
 		Definition: ServiceActionDefinitionMap;
-		Description?: string;
-		AcceptLanguage?: string;
+		Description?: string | null;
+		AcceptLanguage?: string | null;
 		IdempotencyToken: string;
 	}
 
 	export interface CreateTagOptionOutput {
 
 		/** Information about a TagOption. */
-		TagOptionDetail?: TagOptionDetail;
+		TagOptionDetail?: TagOptionDetail | null;
 	}
 
 
 	/** Information about a TagOption. */
 	export interface TagOptionDetail {
-		Key?: string;
-		Value?: string;
-		Active?: boolean;
-		Id?: string;
+		Key?: string | null;
+		Value?: string | null;
+		Active?: boolean | null;
+		Id?: string | null;
 	}
 
 	export interface CreateTagOptionInput {
@@ -428,7 +428,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteConstraintInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
 	}
 
@@ -436,7 +436,7 @@ export namespace MyNS {
 	}
 
 	export interface DeletePortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
 	}
 
@@ -444,23 +444,23 @@ export namespace MyNS {
 	}
 
 	export interface DeletePortfolioShareOutput {
-		PortfolioShareToken?: string;
+		PortfolioShareToken?: string | null;
 	}
 
 	export interface DeletePortfolioShareInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
-		AccountId?: string;
+		AccountId?: string | null;
 
 		/** Information about the organization node. */
-		OrganizationNode?: OrganizationNode;
+		OrganizationNode?: OrganizationNode | null;
 	}
 
 	export interface DeleteProductOutput {
 	}
 
 	export interface DeleteProductInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
 	}
 
@@ -468,16 +468,16 @@ export namespace MyNS {
 	}
 
 	export interface DeleteProvisionedProductPlanInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PlanId: string;
-		IgnoreErrors?: boolean;
+		IgnoreErrors?: boolean | null;
 	}
 
 	export interface DeleteProvisioningArtifactOutput {
 	}
 
 	export interface DeleteProvisioningArtifactInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
 		ProvisioningArtifactId: string;
 	}
@@ -487,7 +487,7 @@ export namespace MyNS {
 
 	export interface DeleteServiceActionInput {
 		Id: string;
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface DeleteTagOptionOutput {
@@ -500,57 +500,57 @@ export namespace MyNS {
 	export interface DescribeConstraintOutput {
 
 		/** Information about a constraint. */
-		ConstraintDetail?: ConstraintDetail;
-		ConstraintParameters?: string;
-		Status?: CreateConstraintOutputStatus;
+		ConstraintDetail?: ConstraintDetail | null;
+		ConstraintParameters?: string | null;
+		Status?: CreateConstraintOutputStatus | null;
 	}
 
 	export interface DescribeConstraintInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
 	}
 
 	export interface DescribeCopyProductStatusOutput {
-		CopyProductStatus?: DescribeCopyProductStatusOutputCopyProductStatus;
-		TargetProductId?: string;
-		StatusDetail?: string;
+		CopyProductStatus?: DescribeCopyProductStatusOutputCopyProductStatus | null;
+		TargetProductId?: string | null;
+		StatusDetail?: string | null;
 	}
 
 	export enum DescribeCopyProductStatusOutputCopyProductStatus { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2 }
 
 	export interface DescribeCopyProductStatusInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		CopyProductToken: string;
 	}
 
 	export interface DescribePortfolioOutput {
 
 		/** Information about a portfolio. */
-		PortfolioDetail?: PortfolioDetail;
-		Tags?: Array<Tag>;
-		TagOptions?: Array<TagOptionDetail>;
-		Budgets?: Array<BudgetDetail>;
+		PortfolioDetail?: PortfolioDetail | null;
+		Tags?: Array<Tag> | null;
+		TagOptions?: Array<TagOptionDetail> | null;
+		Budgets?: Array<BudgetDetail> | null;
 	}
 
 
 	/** Information about a budget. */
 	export interface BudgetDetail {
-		BudgetName?: string;
+		BudgetName?: string | null;
 	}
 
 	export interface DescribePortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
 	}
 
 	export interface DescribePortfolioShareStatusOutput {
-		PortfolioShareToken?: string;
-		PortfolioId?: string;
-		OrganizationNodeValue?: string;
-		Status?: DescribePortfolioShareStatusOutputStatus;
+		PortfolioShareToken?: string | null;
+		PortfolioId?: string | null;
+		OrganizationNodeValue?: string | null;
+		Status?: DescribePortfolioShareStatusOutputStatus | null;
 
 		/** Information about the portfolio share operation. */
-		ShareDetails?: ShareDetails;
+		ShareDetails?: ShareDetails | null;
 	}
 
 	export enum DescribePortfolioShareStatusOutputStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2, COMPLETED_WITH_ERRORS = 3, ERROR = 4 }
@@ -558,16 +558,16 @@ export namespace MyNS {
 
 	/** Information about the portfolio share operation. */
 	export interface ShareDetails {
-		SuccessfulShares?: Array<string>;
-		ShareErrors?: Array<ShareError>;
+		SuccessfulShares?: Array<string> | null;
+		ShareErrors?: Array<ShareError> | null;
 	}
 
 
 	/** Errors that occurred during the portfolio share operation. */
 	export interface ShareError {
-		Accounts?: Array<string>;
-		Message?: string;
-		Error?: string;
+		Accounts?: Array<string> | null;
+		Message?: string | null;
+		Error?: string | null;
 	}
 
 	export interface DescribePortfolioShareStatusInput {
@@ -577,94 +577,94 @@ export namespace MyNS {
 	export interface DescribeProductOutput {
 
 		/** Summary information about a product view. */
-		ProductViewSummary?: ProductViewSummary;
-		ProvisioningArtifacts?: Array<ProvisioningArtifact>;
-		Budgets?: Array<BudgetDetail>;
-		LaunchPaths?: Array<LaunchPath>;
+		ProductViewSummary?: ProductViewSummary | null;
+		ProvisioningArtifacts?: Array<ProvisioningArtifact> | null;
+		Budgets?: Array<BudgetDetail> | null;
+		LaunchPaths?: Array<LaunchPath> | null;
 	}
 
 
 	/** Information about a provisioning artifact. A provisioning artifact is also known as a product version. */
 	export interface ProvisioningArtifact {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		CreatedTime?: Date;
-		Guidance?: ProvisioningArtifactDetailGuidance;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		CreatedTime?: Date | null;
+		Guidance?: ProvisioningArtifactDetailGuidance | null;
 	}
 
 
 	/** A launch path object. */
 	export interface LaunchPath {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 	}
 
 	export interface DescribeProductInput {
-		AcceptLanguage?: string;
-		Id?: string;
-		Name?: string;
+		AcceptLanguage?: string | null;
+		Id?: string | null;
+		Name?: string | null;
 	}
 
 	export interface DescribeProductAsAdminOutput {
 
 		/** Information about a product view. */
-		ProductViewDetail?: ProductViewDetail;
-		ProvisioningArtifactSummaries?: Array<ProvisioningArtifactSummary>;
-		Tags?: Array<Tag>;
-		TagOptions?: Array<TagOptionDetail>;
-		Budgets?: Array<BudgetDetail>;
+		ProductViewDetail?: ProductViewDetail | null;
+		ProvisioningArtifactSummaries?: Array<ProvisioningArtifactSummary> | null;
+		Tags?: Array<Tag> | null;
+		TagOptions?: Array<TagOptionDetail> | null;
+		Budgets?: Array<BudgetDetail> | null;
 	}
 
 
 	/** Summary information about a provisioning artifact (also known as a version) for a product. */
 	export interface ProvisioningArtifactSummary {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		CreatedTime?: Date;
-		ProvisioningArtifactMetadata?: ProvisioningArtifactInfo;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		CreatedTime?: Date | null;
+		ProvisioningArtifactMetadata?: ProvisioningArtifactInfo | null;
 	}
 
 	export interface DescribeProductAsAdminInput {
-		AcceptLanguage?: string;
-		Id?: string;
-		Name?: string;
+		AcceptLanguage?: string | null;
+		Id?: string | null;
+		Name?: string | null;
 	}
 
 	export interface DescribeProductViewOutput {
 
 		/** Summary information about a product view. */
-		ProductViewSummary?: ProductViewSummary;
-		ProvisioningArtifacts?: Array<ProvisioningArtifact>;
+		ProductViewSummary?: ProductViewSummary | null;
+		ProvisioningArtifacts?: Array<ProvisioningArtifact> | null;
 	}
 
 	export interface DescribeProductViewInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
 	}
 
 	export interface DescribeProvisionedProductOutput {
 
 		/** Information about a provisioned product. */
-		ProvisionedProductDetail?: ProvisionedProductDetail;
-		CloudWatchDashboards?: Array<CloudWatchDashboard>;
+		ProvisionedProductDetail?: ProvisionedProductDetail | null;
+		CloudWatchDashboards?: Array<CloudWatchDashboard> | null;
 	}
 
 
 	/** Information about a provisioned product. */
 	export interface ProvisionedProductDetail {
-		Name?: string;
-		Arn?: string;
-		Type?: string;
-		Id?: string;
-		Status?: ProvisionedProductDetailStatus;
-		StatusMessage?: string;
-		CreatedTime?: Date;
-		IdempotencyToken?: string;
-		LastRecordId?: string;
-		ProductId?: string;
-		ProvisioningArtifactId?: string;
+		Name?: string | null;
+		Arn?: string | null;
+		Type?: string | null;
+		Id?: string | null;
+		Status?: ProvisionedProductDetailStatus | null;
+		StatusMessage?: string | null;
+		CreatedTime?: Date | null;
+		IdempotencyToken?: string | null;
+		LastRecordId?: string | null;
+		ProductId?: string | null;
+		ProvisioningArtifactId?: string | null;
 	}
 
 	export enum ProvisionedProductDetailStatus { AVAILABLE = 0, UNDER_CHANGE = 1, TAINTED = 2, ERROR = 3, PLAN_IN_PROGRESS = 4 }
@@ -672,40 +672,40 @@ export namespace MyNS {
 
 	/** Information about a CloudWatch dashboard. */
 	export interface CloudWatchDashboard {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface DescribeProvisionedProductInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
 	}
 
 	export interface DescribeProvisionedProductPlanOutput {
 
 		/** Information about a plan. */
-		ProvisionedProductPlanDetails?: ProvisionedProductPlanDetails;
-		ResourceChanges?: Array<ResourceChange>;
-		NextPageToken?: string;
+		ProvisionedProductPlanDetails?: ProvisionedProductPlanDetails | null;
+		ResourceChanges?: Array<ResourceChange> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** Information about a plan. */
 	export interface ProvisionedProductPlanDetails {
-		CreatedTime?: Date;
-		PathId?: string;
-		ProductId?: string;
-		PlanName?: string;
-		PlanId?: string;
-		ProvisionProductId?: string;
-		ProvisionProductName?: string;
-		PlanType?: CreateProvisionedProductPlanInputPlanType;
-		ProvisioningArtifactId?: string;
-		Status?: ProvisionedProductPlanDetailsStatus;
-		UpdatedTime?: Date;
-		NotificationArns?: Array<string>;
-		ProvisioningParameters?: Array<UpdateProvisioningParameter>;
-		Tags?: Array<Tag>;
-		StatusMessage?: string;
+		CreatedTime?: Date | null;
+		PathId?: string | null;
+		ProductId?: string | null;
+		PlanName?: string | null;
+		PlanId?: string | null;
+		ProvisionProductId?: string | null;
+		ProvisionProductName?: string | null;
+		PlanType?: CreateProvisionedProductPlanInputPlanType | null;
+		ProvisioningArtifactId?: string | null;
+		Status?: ProvisionedProductPlanDetailsStatus | null;
+		UpdatedTime?: Date | null;
+		NotificationArns?: Array<string> | null;
+		ProvisioningParameters?: Array<UpdateProvisioningParameter> | null;
+		Tags?: Array<Tag> | null;
+		StatusMessage?: string | null;
 	}
 
 	export enum ProvisionedProductPlanDetailsStatus { CREATE_IN_PROGRESS = 0, CREATE_SUCCESS = 1, CREATE_FAILED = 2, EXECUTE_IN_PROGRESS = 3, EXECUTE_SUCCESS = 4, EXECUTE_FAILED = 5 }
@@ -713,13 +713,13 @@ export namespace MyNS {
 
 	/** Information about a resource change that will occur when a plan is executed. */
 	export interface ResourceChange {
-		Action?: ResourceChangeAction;
-		LogicalResourceId?: string;
-		PhysicalResourceId?: string;
-		ResourceType?: string;
-		Replacement?: ResourceChangeReplacement;
-		Scope?: Array<ResourceAttribute>;
-		Details?: Array<ResourceChangeDetail>;
+		Action?: ResourceChangeAction | null;
+		LogicalResourceId?: string | null;
+		PhysicalResourceId?: string | null;
+		ResourceType?: string | null;
+		Replacement?: ResourceChangeReplacement | null;
+		Scope?: Array<ResourceAttribute> | null;
+		Details?: Array<ResourceChangeDetail> | null;
 	}
 
 	export enum ResourceChangeAction { ADD = 0, MODIFY = 1, REMOVE = 2 }
@@ -733,17 +733,17 @@ export namespace MyNS {
 	export interface ResourceChangeDetail {
 
 		/** Information about a change to a resource attribute. */
-		Target?: ResourceTargetDefinition;
-		Evaluation?: ResourceChangeDetailEvaluation;
-		CausingEntity?: string;
+		Target?: ResourceTargetDefinition | null;
+		Evaluation?: ResourceChangeDetailEvaluation | null;
+		CausingEntity?: string | null;
 	}
 
 
 	/** Information about a change to a resource attribute. */
 	export interface ResourceTargetDefinition {
-		Attribute?: ResourceAttribute;
-		Name?: string;
-		RequiresRecreation?: ResourceTargetDefinitionRequiresRecreation;
+		Attribute?: ResourceAttribute | null;
+		Name?: string | null;
+		RequiresRecreation?: ResourceTargetDefinitionRequiresRecreation | null;
 	}
 
 	export enum ResourceTargetDefinitionRequiresRecreation { NEVER = 0, CONDITIONALLY = 1, ALWAYS = 2 }
@@ -751,117 +751,117 @@ export namespace MyNS {
 	export enum ResourceChangeDetailEvaluation { STATIC = 0, DYNAMIC = 1 }
 
 	export interface DescribeProvisionedProductPlanInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PlanId: string;
-		PageSize?: number;
-		PageToken?: string;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface DescribeProvisioningArtifactOutput {
 
 		/** Information about a provisioning artifact (also known as a version) for a product. */
-		ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
-		Info?: ProvisioningArtifactInfo;
-		Status?: CreateConstraintOutputStatus;
+		ProvisioningArtifactDetail?: ProvisioningArtifactDetail | null;
+		Info?: ProvisioningArtifactInfo | null;
+		Status?: CreateConstraintOutputStatus | null;
 	}
 
 	export interface DescribeProvisioningArtifactInput {
-		AcceptLanguage?: string;
-		ProvisioningArtifactId?: string;
-		ProductId?: string;
-		ProvisioningArtifactName?: string;
-		ProductName?: string;
-		Verbose?: boolean;
+		AcceptLanguage?: string | null;
+		ProvisioningArtifactId?: string | null;
+		ProductId?: string | null;
+		ProvisioningArtifactName?: string | null;
+		ProductName?: string | null;
+		Verbose?: boolean | null;
 	}
 
 	export interface DescribeProvisioningParametersOutput {
-		ProvisioningArtifactParameters?: Array<ProvisioningArtifactParameter>;
-		ConstraintSummaries?: Array<ConstraintSummary>;
-		UsageInstructions?: Array<UsageInstruction>;
-		TagOptions?: Array<TagOptionSummary>;
+		ProvisioningArtifactParameters?: Array<ProvisioningArtifactParameter> | null;
+		ConstraintSummaries?: Array<ConstraintSummary> | null;
+		UsageInstructions?: Array<UsageInstruction> | null;
+		TagOptions?: Array<TagOptionSummary> | null;
 
 		/** <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
-		ProvisioningArtifactPreferences?: ProvisioningArtifactPreferences;
+		ProvisioningArtifactPreferences?: ProvisioningArtifactPreferences | null;
 	}
 
 
 	/** Information about a parameter used to provision a product. */
 	export interface ProvisioningArtifactParameter {
-		ParameterKey?: string;
-		DefaultValue?: string;
-		ParameterType?: string;
-		IsNoEcho?: boolean;
-		Description?: string;
+		ParameterKey?: string | null;
+		DefaultValue?: string | null;
+		ParameterType?: string | null;
+		IsNoEcho?: boolean | null;
+		Description?: string | null;
 
 		/** The constraints that the administrator has put on the parameter. */
-		ParameterConstraints?: ParameterConstraints;
+		ParameterConstraints?: ParameterConstraints | null;
 	}
 
 
 	/** The constraints that the administrator has put on the parameter. */
 	export interface ParameterConstraints {
-		AllowedValues?: Array<string>;
+		AllowedValues?: Array<string> | null;
 	}
 
 
 	/** Summary information about a constraint. */
 	export interface ConstraintSummary {
-		Type?: string;
-		Description?: string;
+		Type?: string | null;
+		Description?: string | null;
 	}
 
 
 	/** Additional information provided by the administrator. */
 	export interface UsageInstruction {
-		Type?: string;
-		Value?: string;
+		Type?: string | null;
+		Value?: string | null;
 	}
 
 
 	/** Summary information about a TagOption. */
 	export interface TagOptionSummary {
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 
 	/** <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
 	export interface ProvisioningArtifactPreferences {
-		StackSetAccounts?: Array<string>;
-		StackSetRegions?: Array<string>;
+		StackSetAccounts?: Array<string> | null;
+		StackSetRegions?: Array<string> | null;
 	}
 
 	export interface DescribeProvisioningParametersInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
 		ProvisioningArtifactId: string;
-		PathId?: string;
+		PathId?: string | null;
 	}
 
 	export interface DescribeRecordOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail;
-		RecordOutputs?: Array<RecordOutput>;
-		NextPageToken?: string;
+		RecordDetail?: RecordDetail | null;
+		RecordOutputs?: Array<RecordOutput> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** Information about a request operation. */
 	export interface RecordDetail {
-		RecordId?: string;
-		ProvisionedProductName?: string;
-		Status?: RecordDetailStatus;
-		CreatedTime?: Date;
-		UpdatedTime?: Date;
-		ProvisionedProductType?: string;
-		RecordType?: string;
-		ProvisionedProductId?: string;
-		ProductId?: string;
-		ProvisioningArtifactId?: string;
-		PathId?: string;
-		RecordErrors?: Array<RecordError>;
-		RecordTags?: Array<RecordTag>;
+		RecordId?: string | null;
+		ProvisionedProductName?: string | null;
+		Status?: RecordDetailStatus | null;
+		CreatedTime?: Date | null;
+		UpdatedTime?: Date | null;
+		ProvisionedProductType?: string | null;
+		RecordType?: string | null;
+		ProvisionedProductId?: string | null;
+		ProductId?: string | null;
+		ProvisioningArtifactId?: string | null;
+		PathId?: string | null;
+		RecordErrors?: Array<RecordError> | null;
+		RecordTags?: Array<RecordTag> | null;
 	}
 
 	export enum RecordDetailStatus { CREATED = 0, IN_PROGRESS = 1, IN_PROGRESS_IN_ERROR = 2, SUCCEEDED = 3, FAILED = 4 }
@@ -869,65 +869,65 @@ export namespace MyNS {
 
 	/** The error code and description resulting from an operation. */
 	export interface RecordError {
-		Code?: string;
-		Description?: string;
+		Code?: string | null;
+		Description?: string | null;
 	}
 
 
 	/** Information about a tag, which is a key-value pair. */
 	export interface RecordTag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
 	/** The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. */
 	export interface RecordOutput {
-		OutputKey?: string;
-		OutputValue?: string;
-		Description?: string;
+		OutputKey?: string | null;
+		OutputValue?: string | null;
+		Description?: string | null;
 	}
 
 	export interface DescribeRecordInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
-		PageToken?: string;
-		PageSize?: number;
+		PageToken?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeServiceActionOutput {
 
 		/** An object containing detailed information about the self-service action. */
-		ServiceActionDetail?: ServiceActionDetail;
+		ServiceActionDetail?: ServiceActionDetail | null;
 	}
 
 	export interface DescribeServiceActionInput {
 		Id: string;
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface DescribeServiceActionExecutionParametersOutput {
-		ServiceActionParameters?: Array<ExecutionParameter>;
+		ServiceActionParameters?: Array<ExecutionParameter> | null;
 	}
 
 
 	/** Details of an execution parameter value that is passed to a self-service action when executed on a provisioned product. */
 	export interface ExecutionParameter {
-		Name?: string;
-		Type?: string;
-		DefaultValues?: Array<string>;
+		Name?: string | null;
+		Type?: string | null;
+		DefaultValues?: Array<string> | null;
 	}
 
 	export interface DescribeServiceActionExecutionParametersInput {
 		ProvisionedProductId: string;
 		ServiceActionId: string;
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface DescribeTagOptionOutput {
 
 		/** Information about a TagOption. */
-		TagOptionDetail?: TagOptionDetail;
+		TagOptionDetail?: TagOptionDetail | null;
 	}
 
 	export interface DescribeTagOptionInput {
@@ -952,7 +952,7 @@ export namespace MyNS {
 	}
 
 	export interface DisassociatePrincipalFromPortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
 		PrincipalARN: string;
 	}
@@ -961,7 +961,7 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateProductFromPortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
 		PortfolioId: string;
 	}
@@ -973,7 +973,7 @@ export namespace MyNS {
 		ProductId: string;
 		ProvisioningArtifactId: string;
 		ServiceActionId: string;
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface DisassociateTagOptionFromResourceOutput {
@@ -993,11 +993,11 @@ export namespace MyNS {
 	export interface ExecuteProvisionedProductPlanOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail;
+		RecordDetail?: RecordDetail | null;
 	}
 
 	export interface ExecuteProvisionedProductPlanInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PlanId: string;
 		IdempotencyToken: string;
 	}
@@ -1005,22 +1005,22 @@ export namespace MyNS {
 	export interface ExecuteProvisionedProductServiceActionOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail;
+		RecordDetail?: RecordDetail | null;
 	}
 
 	export interface ExecuteProvisionedProductServiceActionInput {
 		ProvisionedProductId: string;
 		ServiceActionId: string;
 		ExecuteToken: string;
-		AcceptLanguage?: string;
-		Parameters?: ExecutionParameterMap;
+		AcceptLanguage?: string | null;
+		Parameters?: ExecutionParameterMap | null;
 	}
 
 	export interface ExecutionParameterMap {
 	}
 
 	export interface GetAWSOrganizationsAccessStatusOutput {
-		AccessStatus?: GetAWSOrganizationsAccessStatusOutputAccessStatus;
+		AccessStatus?: GetAWSOrganizationsAccessStatusOutputAccessStatus | null;
 	}
 
 	export enum GetAWSOrganizationsAccessStatusOutputAccessStatus { ENABLED = 0, UNDER_CHANGE = 1, DISABLED = 2 }
@@ -1029,179 +1029,179 @@ export namespace MyNS {
 	}
 
 	export interface ListAcceptedPortfolioSharesOutput {
-		PortfolioDetails?: Array<PortfolioDetail>;
-		NextPageToken?: string;
+		PortfolioDetails?: Array<PortfolioDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListAcceptedPortfolioSharesInput {
-		AcceptLanguage?: string;
-		PageToken?: string;
-		PageSize?: number;
-		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType;
+		AcceptLanguage?: string | null;
+		PageToken?: string | null;
+		PageSize?: number | null;
+		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType | null;
 	}
 
 	export interface ListBudgetsForResourceOutput {
-		Budgets?: Array<BudgetDetail>;
-		NextPageToken?: string;
+		Budgets?: Array<BudgetDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListBudgetsForResourceInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ResourceId: string;
-		PageSize?: number;
-		PageToken?: string;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface ListConstraintsForPortfolioOutput {
-		ConstraintDetails?: Array<ConstraintDetail>;
-		NextPageToken?: string;
+		ConstraintDetails?: Array<ConstraintDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListConstraintsForPortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
-		ProductId?: string;
-		PageSize?: number;
-		PageToken?: string;
+		ProductId?: string | null;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface ListLaunchPathsOutput {
-		LaunchPathSummaries?: Array<LaunchPathSummary>;
-		NextPageToken?: string;
+		LaunchPathSummaries?: Array<LaunchPathSummary> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** Summary information about a product path for a user. */
 	export interface LaunchPathSummary {
-		Id?: string;
-		ConstraintSummaries?: Array<ConstraintSummary>;
-		Tags?: Array<Tag>;
-		Name?: string;
+		Id?: string | null;
+		ConstraintSummaries?: Array<ConstraintSummary> | null;
+		Tags?: Array<Tag> | null;
+		Name?: string | null;
 	}
 
 	export interface ListLaunchPathsInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
-		PageSize?: number;
-		PageToken?: string;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface ListOrganizationPortfolioAccessOutput {
-		OrganizationNodes?: Array<OrganizationNode>;
-		NextPageToken?: string;
+		OrganizationNodes?: Array<OrganizationNode> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListOrganizationPortfolioAccessInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
 		OrganizationNodeType: OrganizationNodeType;
-		PageToken?: string;
-		PageSize?: number;
+		PageToken?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface ListPortfolioAccessOutput {
-		AccountIds?: Array<string>;
-		NextPageToken?: string;
+		AccountIds?: Array<string> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListPortfolioAccessInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
-		OrganizationParentId?: string;
-		PageToken?: string;
-		PageSize?: number;
+		OrganizationParentId?: string | null;
+		PageToken?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface ListPortfoliosOutput {
-		PortfolioDetails?: Array<PortfolioDetail>;
-		NextPageToken?: string;
+		PortfolioDetails?: Array<PortfolioDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListPortfoliosInput {
-		AcceptLanguage?: string;
-		PageToken?: string;
-		PageSize?: number;
+		AcceptLanguage?: string | null;
+		PageToken?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface ListPortfoliosForProductOutput {
-		PortfolioDetails?: Array<PortfolioDetail>;
-		NextPageToken?: string;
+		PortfolioDetails?: Array<PortfolioDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListPortfoliosForProductInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
-		PageToken?: string;
-		PageSize?: number;
+		PageToken?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface ListPrincipalsForPortfolioOutput {
-		Principals?: Array<Principal>;
-		NextPageToken?: string;
+		Principals?: Array<Principal> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** Information about a principal. */
 	export interface Principal {
-		PrincipalARN?: string;
-		PrincipalType?: AssociatePrincipalWithPortfolioInputPrincipalType;
+		PrincipalARN?: string | null;
+		PrincipalType?: AssociatePrincipalWithPortfolioInputPrincipalType | null;
 	}
 
 	export interface ListPrincipalsForPortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
-		PageSize?: number;
-		PageToken?: string;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface ListProvisionedProductPlansOutput {
-		ProvisionedProductPlans?: Array<ProvisionedProductPlanSummary>;
-		NextPageToken?: string;
+		ProvisionedProductPlans?: Array<ProvisionedProductPlanSummary> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** Summary information about a plan. */
 	export interface ProvisionedProductPlanSummary {
-		PlanName?: string;
-		PlanId?: string;
-		ProvisionProductId?: string;
-		ProvisionProductName?: string;
-		PlanType?: CreateProvisionedProductPlanInputPlanType;
-		ProvisioningArtifactId?: string;
+		PlanName?: string | null;
+		PlanId?: string | null;
+		ProvisionProductId?: string | null;
+		ProvisionProductName?: string | null;
+		PlanType?: CreateProvisionedProductPlanInputPlanType | null;
+		ProvisioningArtifactId?: string | null;
 	}
 
 	export interface ListProvisionedProductPlansInput {
-		AcceptLanguage?: string;
-		ProvisionProductId?: string;
-		PageSize?: number;
-		PageToken?: string;
+		AcceptLanguage?: string | null;
+		ProvisionProductId?: string | null;
+		PageSize?: number | null;
+		PageToken?: string | null;
 
 		/** The access level to use to filter results. */
-		AccessLevelFilter?: AccessLevelFilter;
+		AccessLevelFilter?: AccessLevelFilter | null;
 	}
 
 
 	/** The access level to use to filter results. */
 	export interface AccessLevelFilter {
-		Key?: AccessLevelFilterKey;
-		Value?: string;
+		Key?: AccessLevelFilterKey | null;
+		Value?: string | null;
 	}
 
 	export enum AccessLevelFilterKey { Account = 0, Role = 1, User = 2 }
 
 	export interface ListProvisioningArtifactsOutput {
-		ProvisioningArtifactDetails?: Array<ProvisioningArtifactDetail>;
-		NextPageToken?: string;
+		ProvisioningArtifactDetails?: Array<ProvisioningArtifactDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListProvisioningArtifactsInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
 	}
 
 	export interface ListProvisioningArtifactsForServiceActionOutput {
-		ProvisioningArtifactViews?: Array<ProvisioningArtifactView>;
-		NextPageToken?: string;
+		ProvisioningArtifactViews?: Array<ProvisioningArtifactView> | null;
+		NextPageToken?: string | null;
 	}
 
 
@@ -1209,210 +1209,210 @@ export namespace MyNS {
 	export interface ProvisioningArtifactView {
 
 		/** Summary information about a product view. */
-		ProductViewSummary?: ProductViewSummary;
+		ProductViewSummary?: ProductViewSummary | null;
 
 		/** Information about a provisioning artifact. A provisioning artifact is also known as a product version. */
-		ProvisioningArtifact?: ProvisioningArtifact;
+		ProvisioningArtifact?: ProvisioningArtifact | null;
 	}
 
 	export interface ListProvisioningArtifactsForServiceActionInput {
 		ServiceActionId: string;
-		PageSize?: number;
-		PageToken?: string;
-		AcceptLanguage?: string;
+		PageSize?: number | null;
+		PageToken?: string | null;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface ListRecordHistoryOutput {
-		RecordDetails?: Array<RecordDetail>;
-		NextPageToken?: string;
+		RecordDetails?: Array<RecordDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListRecordHistoryInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 
 		/** The access level to use to filter results. */
-		AccessLevelFilter?: AccessLevelFilter;
+		AccessLevelFilter?: AccessLevelFilter | null;
 
 		/** The search filter to use when listing history records. */
-		SearchFilter?: ListRecordHistorySearchFilter;
-		PageSize?: number;
-		PageToken?: string;
+		SearchFilter?: ListRecordHistorySearchFilter | null;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 
 	/** The search filter to use when listing history records. */
 	export interface ListRecordHistorySearchFilter {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface ListResourcesForTagOptionOutput {
-		ResourceDetails?: Array<ResourceDetail>;
-		PageToken?: string;
+		ResourceDetails?: Array<ResourceDetail> | null;
+		PageToken?: string | null;
 	}
 
 
 	/** Information about a resource. */
 	export interface ResourceDetail {
-		Id?: string;
-		ARN?: string;
-		Name?: string;
-		Description?: string;
-		CreatedTime?: Date;
+		Id?: string | null;
+		ARN?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		CreatedTime?: Date | null;
 	}
 
 	export interface ListResourcesForTagOptionInput {
 		TagOptionId: string;
-		ResourceType?: string;
-		PageSize?: number;
-		PageToken?: string;
+		ResourceType?: string | null;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface ListServiceActionsOutput {
-		ServiceActionSummaries?: Array<ServiceActionSummary>;
-		NextPageToken?: string;
+		ServiceActionSummaries?: Array<ServiceActionSummary> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListServiceActionsInput {
-		AcceptLanguage?: string;
-		PageSize?: number;
-		PageToken?: string;
+		AcceptLanguage?: string | null;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface ListServiceActionsForProvisioningArtifactOutput {
-		ServiceActionSummaries?: Array<ServiceActionSummary>;
-		NextPageToken?: string;
+		ServiceActionSummaries?: Array<ServiceActionSummary> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ListServiceActionsForProvisioningArtifactInput {
 		ProductId: string;
 		ProvisioningArtifactId: string;
-		PageSize?: number;
-		PageToken?: string;
-		AcceptLanguage?: string;
+		PageSize?: number | null;
+		PageToken?: string | null;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface ListStackInstancesForProvisionedProductOutput {
-		StackInstances?: Array<StackInstance>;
-		NextPageToken?: string;
+		StackInstances?: Array<StackInstance> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.  */
 	export interface StackInstance {
-		Account?: string;
-		Region?: string;
-		StackInstanceStatus?: StackInstanceStackInstanceStatus;
+		Account?: string | null;
+		Region?: string | null;
+		StackInstanceStatus?: StackInstanceStackInstanceStatus | null;
 	}
 
 	export enum StackInstanceStackInstanceStatus { CURRENT = 0, OUTDATED = 1, INOPERABLE = 2 }
 
 	export interface ListStackInstancesForProvisionedProductInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProvisionedProductId: string;
-		PageToken?: string;
-		PageSize?: number;
+		PageToken?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface ListTagOptionsOutput {
-		TagOptionDetails?: Array<TagOptionDetail>;
-		PageToken?: string;
+		TagOptionDetails?: Array<TagOptionDetail> | null;
+		PageToken?: string | null;
 	}
 
 	export interface ListTagOptionsInput {
 
 		/** Filters to use when listing TagOptions. */
-		Filters?: ListTagOptionsFilters;
-		PageSize?: number;
-		PageToken?: string;
+		Filters?: ListTagOptionsFilters | null;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 
 	/** Filters to use when listing TagOptions. */
 	export interface ListTagOptionsFilters {
-		Key?: string;
-		Value?: string;
-		Active?: boolean;
+		Key?: string | null;
+		Value?: string | null;
+		Active?: boolean | null;
 	}
 
 	export interface ProvisionProductOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail;
+		RecordDetail?: RecordDetail | null;
 	}
 
 	export interface ProvisionProductInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
 		ProvisioningArtifactId: string;
-		PathId?: string;
+		PathId?: string | null;
 		ProvisionedProductName: string;
-		ProvisioningParameters?: Array<ProvisioningParameter>;
+		ProvisioningParameters?: Array<ProvisioningParameter> | null;
 
 		/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
-		ProvisioningPreferences?: ProvisioningPreferences;
-		Tags?: Array<Tag>;
-		NotificationArns?: Array<string>;
+		ProvisioningPreferences?: ProvisioningPreferences | null;
+		Tags?: Array<Tag> | null;
+		NotificationArns?: Array<string> | null;
 		ProvisionToken: string;
 	}
 
 
 	/** Information about a parameter used to provision a product. */
 	export interface ProvisioningParameter {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
 	/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
 	export interface ProvisioningPreferences {
-		StackSetAccounts?: Array<string>;
-		StackSetRegions?: Array<string>;
-		StackSetFailureToleranceCount?: number;
-		StackSetFailureTolerancePercentage?: number;
-		StackSetMaxConcurrencyCount?: number;
-		StackSetMaxConcurrencyPercentage?: number;
+		StackSetAccounts?: Array<string> | null;
+		StackSetRegions?: Array<string> | null;
+		StackSetFailureToleranceCount?: number | null;
+		StackSetFailureTolerancePercentage?: number | null;
+		StackSetMaxConcurrencyCount?: number | null;
+		StackSetMaxConcurrencyPercentage?: number | null;
 	}
 
 	export interface RejectPortfolioShareOutput {
 	}
 
 	export interface RejectPortfolioShareInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		PortfolioId: string;
-		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType;
+		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType | null;
 	}
 
 	export interface ScanProvisionedProductsOutput {
-		ProvisionedProducts?: Array<ProvisionedProductDetail>;
-		NextPageToken?: string;
+		ProvisionedProducts?: Array<ProvisionedProductDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ScanProvisionedProductsInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 
 		/** The access level to use to filter results. */
-		AccessLevelFilter?: AccessLevelFilter;
-		PageSize?: number;
-		PageToken?: string;
+		AccessLevelFilter?: AccessLevelFilter | null;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface SearchProductsOutput {
-		ProductViewSummaries?: Array<ProductViewSummary>;
-		ProductViewAggregations?: ProductViewAggregations;
-		NextPageToken?: string;
+		ProductViewSummaries?: Array<ProductViewSummary> | null;
+		ProductViewAggregations?: ProductViewAggregations | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface ProductViewAggregations {
 	}
 
 	export interface SearchProductsInput {
-		AcceptLanguage?: string;
-		Filters?: ProductViewFilters;
-		PageSize?: number;
-		SortBy?: SearchProductsInputSortBy;
-		SortOrder?: SearchProductsInputSortOrder;
-		PageToken?: string;
+		AcceptLanguage?: string | null;
+		Filters?: ProductViewFilters | null;
+		PageSize?: number | null;
+		SortBy?: SearchProductsInputSortBy | null;
+		SortOrder?: SearchProductsInputSortOrder | null;
+		PageToken?: string | null;
 	}
 
 	export interface ProductViewFilters {
@@ -1423,59 +1423,59 @@ export namespace MyNS {
 	export enum SearchProductsInputSortOrder { ASCENDING = 0, DESCENDING = 1 }
 
 	export interface SearchProductsAsAdminOutput {
-		ProductViewDetails?: Array<ProductViewDetail>;
-		NextPageToken?: string;
+		ProductViewDetails?: Array<ProductViewDetail> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface SearchProductsAsAdminInput {
-		AcceptLanguage?: string;
-		PortfolioId?: string;
-		Filters?: ProductViewFilters;
-		SortBy?: SearchProductsInputSortBy;
-		SortOrder?: SearchProductsInputSortOrder;
-		PageToken?: string;
-		PageSize?: number;
-		ProductSource?: SearchProductsAsAdminInputProductSource;
+		AcceptLanguage?: string | null;
+		PortfolioId?: string | null;
+		Filters?: ProductViewFilters | null;
+		SortBy?: SearchProductsInputSortBy | null;
+		SortOrder?: SearchProductsInputSortOrder | null;
+		PageToken?: string | null;
+		PageSize?: number | null;
+		ProductSource?: SearchProductsAsAdminInputProductSource | null;
 	}
 
 	export enum SearchProductsAsAdminInputProductSource { ACCOUNT = 0 }
 
 	export interface SearchProvisionedProductsOutput {
-		ProvisionedProducts?: Array<ProvisionedProductAttribute>;
-		TotalResultsCount?: number;
-		NextPageToken?: string;
+		ProvisionedProducts?: Array<ProvisionedProductAttribute> | null;
+		TotalResultsCount?: number | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** Information about a provisioned product. */
 	export interface ProvisionedProductAttribute {
-		Name?: string;
-		Arn?: string;
-		Type?: string;
-		Id?: string;
-		Status?: ProvisionedProductDetailStatus;
-		StatusMessage?: string;
-		CreatedTime?: Date;
-		IdempotencyToken?: string;
-		LastRecordId?: string;
-		Tags?: Array<Tag>;
-		PhysicalId?: string;
-		ProductId?: string;
-		ProvisioningArtifactId?: string;
-		UserArn?: string;
-		UserArnSession?: string;
+		Name?: string | null;
+		Arn?: string | null;
+		Type?: string | null;
+		Id?: string | null;
+		Status?: ProvisionedProductDetailStatus | null;
+		StatusMessage?: string | null;
+		CreatedTime?: Date | null;
+		IdempotencyToken?: string | null;
+		LastRecordId?: string | null;
+		Tags?: Array<Tag> | null;
+		PhysicalId?: string | null;
+		ProductId?: string | null;
+		ProvisioningArtifactId?: string | null;
+		UserArn?: string | null;
+		UserArnSession?: string | null;
 	}
 
 	export interface SearchProvisionedProductsInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 
 		/** The access level to use to filter results. */
-		AccessLevelFilter?: AccessLevelFilter;
-		Filters?: ProvisionedProductFilters;
-		SortBy?: string;
-		SortOrder?: SearchProductsInputSortOrder;
-		PageSize?: number;
-		PageToken?: string;
+		AccessLevelFilter?: AccessLevelFilter | null;
+		Filters?: ProvisionedProductFilters | null;
+		SortBy?: string | null;
+		SortOrder?: SearchProductsInputSortOrder | null;
+		PageSize?: number | null;
+		PageToken?: string | null;
 	}
 
 	export interface ProvisionedProductFilters {
@@ -1484,117 +1484,117 @@ export namespace MyNS {
 	export interface TerminateProvisionedProductOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail;
+		RecordDetail?: RecordDetail | null;
 	}
 
 	export interface TerminateProvisionedProductInput {
-		ProvisionedProductName?: string;
-		ProvisionedProductId?: string;
+		ProvisionedProductName?: string | null;
+		ProvisionedProductId?: string | null;
 		TerminateToken: string;
-		IgnoreErrors?: boolean;
-		AcceptLanguage?: string;
+		IgnoreErrors?: boolean | null;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface UpdateConstraintOutput {
 
 		/** Information about a constraint. */
-		ConstraintDetail?: ConstraintDetail;
-		ConstraintParameters?: string;
-		Status?: CreateConstraintOutputStatus;
+		ConstraintDetail?: ConstraintDetail | null;
+		ConstraintParameters?: string | null;
+		Status?: CreateConstraintOutputStatus | null;
 	}
 
 	export interface UpdateConstraintInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
-		Description?: string;
-		Parameters?: string;
+		Description?: string | null;
+		Parameters?: string | null;
 	}
 
 	export interface UpdatePortfolioOutput {
 
 		/** Information about a portfolio. */
-		PortfolioDetail?: PortfolioDetail;
-		Tags?: Array<Tag>;
+		PortfolioDetail?: PortfolioDetail | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface UpdatePortfolioInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
-		DisplayName?: string;
-		Description?: string;
-		ProviderName?: string;
-		AddTags?: Array<Tag>;
-		RemoveTags?: Array<string>;
+		DisplayName?: string | null;
+		Description?: string | null;
+		ProviderName?: string | null;
+		AddTags?: Array<Tag> | null;
+		RemoveTags?: Array<string> | null;
 	}
 
 	export interface UpdateProductOutput {
 
 		/** Information about a product view. */
-		ProductViewDetail?: ProductViewDetail;
-		Tags?: Array<Tag>;
+		ProductViewDetail?: ProductViewDetail | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateProductInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		Id: string;
-		Name?: string;
-		Owner?: string;
-		Description?: string;
-		Distributor?: string;
-		SupportDescription?: string;
-		SupportEmail?: string;
-		SupportUrl?: string;
-		AddTags?: Array<Tag>;
-		RemoveTags?: Array<string>;
+		Name?: string | null;
+		Owner?: string | null;
+		Description?: string | null;
+		Distributor?: string | null;
+		SupportDescription?: string | null;
+		SupportEmail?: string | null;
+		SupportUrl?: string | null;
+		AddTags?: Array<Tag> | null;
+		RemoveTags?: Array<string> | null;
 	}
 
 	export interface UpdateProvisionedProductOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail;
+		RecordDetail?: RecordDetail | null;
 	}
 
 	export interface UpdateProvisionedProductInput {
-		AcceptLanguage?: string;
-		ProvisionedProductName?: string;
-		ProvisionedProductId?: string;
-		ProductId?: string;
-		ProvisioningArtifactId?: string;
-		PathId?: string;
-		ProvisioningParameters?: Array<UpdateProvisioningParameter>;
+		AcceptLanguage?: string | null;
+		ProvisionedProductName?: string | null;
+		ProvisionedProductId?: string | null;
+		ProductId?: string | null;
+		ProvisioningArtifactId?: string | null;
+		PathId?: string | null;
+		ProvisioningParameters?: Array<UpdateProvisioningParameter> | null;
 
 		/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
-		ProvisioningPreferences?: UpdateProvisioningPreferences;
-		Tags?: Array<Tag>;
+		ProvisioningPreferences?: UpdateProvisioningPreferences | null;
+		Tags?: Array<Tag> | null;
 		UpdateToken: string;
 	}
 
 
 	/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
 	export interface UpdateProvisioningPreferences {
-		StackSetAccounts?: Array<string>;
-		StackSetRegions?: Array<string>;
-		StackSetFailureToleranceCount?: number;
-		StackSetFailureTolerancePercentage?: number;
-		StackSetMaxConcurrencyCount?: number;
-		StackSetMaxConcurrencyPercentage?: number;
-		StackSetOperationType?: UpdateProvisioningPreferencesStackSetOperationType;
+		StackSetAccounts?: Array<string> | null;
+		StackSetRegions?: Array<string> | null;
+		StackSetFailureToleranceCount?: number | null;
+		StackSetFailureTolerancePercentage?: number | null;
+		StackSetMaxConcurrencyCount?: number | null;
+		StackSetMaxConcurrencyPercentage?: number | null;
+		StackSetOperationType?: UpdateProvisioningPreferencesStackSetOperationType | null;
 	}
 
 	export enum UpdateProvisioningPreferencesStackSetOperationType { CREATE = 0, UPDATE = 1, DELETE = 2 }
 
 	export interface UpdateProvisionedProductPropertiesOutput {
-		ProvisionedProductId?: string;
-		ProvisionedProductProperties?: ProvisionedProductProperties;
-		RecordId?: string;
-		Status?: RecordDetailStatus;
+		ProvisionedProductId?: string | null;
+		ProvisionedProductProperties?: ProvisionedProductProperties | null;
+		RecordId?: string | null;
+		Status?: RecordDetailStatus | null;
 	}
 
 	export interface ProvisionedProductProperties {
 	}
 
 	export interface UpdateProvisionedProductPropertiesInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProvisionedProductId: string;
 		ProvisionedProductProperties: ProvisionedProductProperties;
 		IdempotencyToken: string;
@@ -1603,45 +1603,45 @@ export namespace MyNS {
 	export interface UpdateProvisioningArtifactOutput {
 
 		/** Information about a provisioning artifact (also known as a version) for a product. */
-		ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
-		Info?: ProvisioningArtifactInfo;
-		Status?: CreateConstraintOutputStatus;
+		ProvisioningArtifactDetail?: ProvisioningArtifactDetail | null;
+		Info?: ProvisioningArtifactInfo | null;
+		Status?: CreateConstraintOutputStatus | null;
 	}
 
 	export interface UpdateProvisioningArtifactInput {
-		AcceptLanguage?: string;
+		AcceptLanguage?: string | null;
 		ProductId: string;
 		ProvisioningArtifactId: string;
-		Name?: string;
-		Description?: string;
-		Active?: boolean;
-		Guidance?: ProvisioningArtifactDetailGuidance;
+		Name?: string | null;
+		Description?: string | null;
+		Active?: boolean | null;
+		Guidance?: ProvisioningArtifactDetailGuidance | null;
 	}
 
 	export interface UpdateServiceActionOutput {
 
 		/** An object containing detailed information about the self-service action. */
-		ServiceActionDetail?: ServiceActionDetail;
+		ServiceActionDetail?: ServiceActionDetail | null;
 	}
 
 	export interface UpdateServiceActionInput {
 		Id: string;
-		Name?: string;
-		Definition?: ServiceActionDefinitionMap;
-		Description?: string;
-		AcceptLanguage?: string;
+		Name?: string | null;
+		Definition?: ServiceActionDefinitionMap | null;
+		Description?: string | null;
+		AcceptLanguage?: string | null;
 	}
 
 	export interface UpdateTagOptionOutput {
 
 		/** Information about a TagOption. */
-		TagOptionDetail?: TagOptionDetail;
+		TagOptionDetail?: TagOptionDetail | null;
 	}
 
 	export interface UpdateTagOptionInput {
 		Id: string;
-		Value?: string;
-		Active?: boolean;
+		Value?: string | null;
+		Active?: boolean | null;
 	}
 
 	export enum PortfolioShareType { IMPORTED = 0, AWS_SERVICECATALOG = 1, AWS_ORGANIZATIONS = 2 }
@@ -1673,8 +1673,8 @@ export namespace MyNS {
 
 	/** A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access. */
 	export interface ProductViewAggregationValue {
-		Value?: string;
-		ApproximateCount?: number;
+		Value?: string | null;
+		ApproximateCount?: number | null;
 	}
 
 	export enum ProductViewFilterBy { FullTextSearch = 0, Owner = 1, ProductType = 2, SourceProductId = 3 }

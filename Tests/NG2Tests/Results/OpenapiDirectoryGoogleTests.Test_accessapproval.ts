@@ -13,7 +13,7 @@ export namespace MyNS {
 		 * or more ancestors of the Project or Folder (this field will always be
 		 * unset for the organization since organizations do not have ancestors).
 		 */
-		enrolledAncestor?: boolean;
+		enrolledAncestor?: boolean | null;
 
 		/**
 		 * A list of Google Cloud Services for which the given resource has Access
@@ -27,7 +27,7 @@ export namespace MyNS {
 		 * enrolled services will be enforced, to be expanded as the set of supported
 		 * services is expanded.
 		 */
-		enrolledServices?: Array<EnrolledService>;
+		enrolledServices?: Array<EnrolledService> | null;
 
 		/**
 		 * The resource name of the settings. Format is one of:
@@ -37,7 +37,7 @@ export namespace MyNS {
 		 * <li>"organizations/{organization_id}/accessApprovalSettings"</li>
 		 * <ol>
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A list of email addresses to which notifications relating to approval
@@ -45,7 +45,7 @@ export namespace MyNS {
 		 * to all emails in the settings of ancestor resources of that resource. A
 		 * maximum of 50 email addresses are allowed.
 		 */
-		notificationEmails?: Array<string>;
+		notificationEmails?: Array<string> | null;
 	}
 
 
@@ -68,10 +68,10 @@ export namespace MyNS {
 		 * <li>storage.googleapis.com</li>
 		 * <ol>
 		 */
-		cloudProduct?: string;
+		cloudProduct?: string | null;
 
 		/** The enrollment level of the service. */
-		enrollmentLevel?: EnrolledServiceEnrollmentLevel;
+		enrollmentLevel?: EnrolledServiceEnrollmentLevel | null;
 	}
 
 	export enum EnrolledServiceEnrollmentLevel { ENROLLMENT_LEVEL_UNSPECIFIED = 0, BLOCK_ALL = 1 }
@@ -97,7 +97,7 @@ export namespace MyNS {
 		 * <li>ANY: Any location</li>
 		 * </ol>
 		 */
-		principalOfficeCountry?: string;
+		principalOfficeCountry?: string | null;
 
 		/**
 		 * Physical location of the principal at the time of the access. A
@@ -116,16 +116,16 @@ export namespace MyNS {
 		 * <li>ANY: Any location</li>
 		 * </ol>
 		 */
-		principalPhysicalLocationCountry?: string;
+		principalPhysicalLocationCountry?: string | null;
 	}
 
 	export interface AccessReason {
 
 		/** More detail about certain reason types. See comments for each type above. */
-		detail?: string;
+		detail?: string | null;
 
 		/** Type of access justification. */
-		type?: AccessReasonType;
+		type?: AccessReasonType | null;
 	}
 
 	export enum AccessReasonType { TYPE_UNSPECIFIED = 0, CUSTOMER_INITIATED_SUPPORT = 1, GOOGLE_INITIATED_SERVICE = 2, GOOGLE_INITIATED_REVIEW = 3 }
@@ -135,29 +135,29 @@ export namespace MyNS {
 	export interface ApprovalRequest {
 
 		/** A decision that has been made to approve access to a resource. */
-		approve?: ApproveDecision;
+		approve?: ApproveDecision | null;
 
 		/** A decision that has been made to dismiss an approval request. */
-		dismiss?: DismissDecision;
+		dismiss?: DismissDecision | null;
 
 		/**
 		 * The resource name of the request. Format is
 		 * "{projects|folders|organizations}/{id}/approvalRequests/{approval_request_id}".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The time at which approval was requested. */
-		requestTime?: string;
+		requestTime?: string | null;
 
 		/**
 		 * The requested expiration for the approval. If the request is approved,
 		 * access will be granted from the time of approval until the expiration time.
 		 */
-		requestedExpiration?: string;
+		requestedExpiration?: string | null;
 
 		/** Home office and physical location of the principal. */
-		requestedLocations?: AccessLocations;
-		requestedReason?: AccessReason;
+		requestedLocations?: AccessLocations | null;
+		requestedReason?: AccessReason | null;
 
 		/**
 		 * The resource for which approval is being requested. The format of the
@@ -168,10 +168,10 @@ export namespace MyNS {
 		 * resource name (e.g. "shelves/shelf1/books/book2") as described in the
 		 * resource name specification.
 		 */
-		requestedResourceName?: string;
+		requestedResourceName?: string | null;
 
 		/** The properties associated with the resource of the request. */
-		requestedResourceProperties?: ResourceProperties;
+		requestedResourceProperties?: ResourceProperties | null;
 	}
 
 
@@ -179,10 +179,10 @@ export namespace MyNS {
 	export interface ApproveDecision {
 
 		/** The time at which approval was granted. */
-		approveTime?: string;
+		approveTime?: string | null;
 
 		/** The time at which the approval expires. */
-		expireTime?: string;
+		expireTime?: string | null;
 	}
 
 
@@ -190,7 +190,7 @@ export namespace MyNS {
 	export interface DismissDecision {
 
 		/** The time at which the approval request was dismissed. */
-		dismissTime?: string;
+		dismissTime?: string | null;
 	}
 
 
@@ -201,7 +201,7 @@ export namespace MyNS {
 		 * Whether an approval will exclude the descendants of the resource being
 		 * requested.
 		 */
-		excludesDescendants?: boolean;
+		excludesDescendants?: boolean | null;
 	}
 
 
@@ -209,7 +209,7 @@ export namespace MyNS {
 	export interface ApproveApprovalRequestMessage {
 
 		/** The expiration time of this approval. */
-		expireTime?: string;
+		expireTime?: string | null;
 	}
 
 
@@ -235,10 +235,10 @@ export namespace MyNS {
 	export interface ListApprovalRequestsResponse {
 
 		/** Approval request details. */
-		approvalRequests?: Array<ApprovalRequest>;
+		approvalRequests?: Array<ApprovalRequest> | null;
 
 		/** Token to retrieve the next page of results, or empty if there are no more. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()

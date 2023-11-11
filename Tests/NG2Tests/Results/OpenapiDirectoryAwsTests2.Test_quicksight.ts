@@ -3,10 +3,10 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CancelIngestionResponse {
-		Arn?: string;
-		IngestionId?: string;
-		RequestId?: string;
-		Status?: number;
+		Arn?: string | null;
+		IngestionId?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface AccessDeniedException {
@@ -28,12 +28,12 @@ export namespace MyNS {
 	}
 
 	export interface CreateDashboardResponse {
-		Arn?: string;
-		VersionArn?: string;
-		DashboardId?: string;
-		CreationStatus?: CreateDashboardResponseCreationStatus;
-		Status?: number;
-		RequestId?: string;
+		Arn?: string | null;
+		VersionArn?: string | null;
+		DashboardId?: string | null;
+		CreationStatus?: CreateDashboardResponseCreationStatus | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 	export enum CreateDashboardResponseCreationStatus { CREATION_IN_PROGRESS = 0, CREATION_SUCCESSFUL = 1, CREATION_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_SUCCESSFUL = 4, UPDATE_FAILED = 5 }
@@ -97,7 +97,7 @@ export namespace MyNS {
 
 	/** Ad hoc (one-time) filtering option. */
 	export interface AdHocFilteringOption {
-		AvailabilityStatus?: AdHocFilteringOptionAvailabilityStatus;
+		AvailabilityStatus?: AdHocFilteringOptionAvailabilityStatus | null;
 	}
 
 	export enum AdHocFilteringOptionAvailabilityStatus { ENABLED = 0, DISABLED = 1 }
@@ -105,13 +105,13 @@ export namespace MyNS {
 
 	/** Export to .csv option. */
 	export interface ExportToCSVOption {
-		AvailabilityStatus?: AdHocFilteringOptionAvailabilityStatus;
+		AvailabilityStatus?: AdHocFilteringOptionAvailabilityStatus | null;
 	}
 
 
 	/** Sheet controls option. */
 	export interface SheetControlsOption {
-		VisibilityState?: SheetControlsOptionVisibilityState;
+		VisibilityState?: SheetControlsOptionVisibilityState | null;
 	}
 
 	export enum SheetControlsOptionVisibilityState { EXPANDED = 0, COLLAPSED = 1 }
@@ -123,12 +123,12 @@ export namespace MyNS {
 	}
 
 	export interface CreateDataSetResponse {
-		Arn?: string;
-		DataSetId?: string;
-		IngestionArn?: string;
-		IngestionId?: string;
-		RequestId?: string;
-		Status?: number;
+		Arn?: string | null;
+		DataSetId?: string | null;
+		IngestionArn?: string | null;
+		IngestionId?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
@@ -136,20 +136,20 @@ export namespace MyNS {
 	export interface PhysicalTable {
 
 		/** A physical table type for relational data sources. */
-		RelationalTable?: RelationalTable;
+		RelationalTable?: RelationalTable | null;
 
 		/** A physical table type built from the results of the custom SQL query. */
-		CustomSql?: CustomSql;
+		CustomSql?: CustomSql | null;
 
 		/** A physical table type for as S3 data source. */
-		S3Source?: S3Source;
+		S3Source?: S3Source | null;
 	}
 
 
 	/** A physical table type for relational data sources. */
 	export interface RelationalTable {
 		DataSourceArn: string;
-		Schema?: string;
+		Schema?: string | null;
 		Name: string;
 		InputColumns: Array<InputColumn>;
 	}
@@ -169,7 +169,7 @@ export namespace MyNS {
 		DataSourceArn: string;
 		Name: string;
 		SqlQuery: string;
-		Columns?: Array<InputColumn>;
+		Columns?: Array<InputColumn> | null;
 	}
 
 
@@ -178,18 +178,18 @@ export namespace MyNS {
 		DataSourceArn: string;
 
 		/** Information about the format for a source file or files. */
-		UploadSettings?: UploadSettings;
+		UploadSettings?: UploadSettings | null;
 		InputColumns: Array<InputColumn>;
 	}
 
 
 	/** Information about the format for a source file or files. */
 	export interface UploadSettings {
-		Format?: UploadSettingsFormat;
-		StartFromRow?: number;
-		ContainsHeader?: boolean;
-		TextQualifier?: UploadSettingsTextQualifier;
-		Delimiter?: string;
+		Format?: UploadSettingsFormat | null;
+		StartFromRow?: number | null;
+		ContainsHeader?: boolean | null;
+		TextQualifier?: UploadSettingsTextQualifier | null;
+		Delimiter?: string | null;
 	}
 
 	export enum UploadSettingsFormat { CSV = 0, TSV = 1, CLF = 2, ELF = 3, XLSX = 4, JSON = 5 }
@@ -200,7 +200,7 @@ export namespace MyNS {
 	/** A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations. */
 	export interface LogicalTable {
 		Alias: string;
-		DataTransforms?: Array<TransformOperation>;
+		DataTransforms?: Array<TransformOperation> | null;
 
 		/**
 		 * Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
@@ -214,22 +214,22 @@ export namespace MyNS {
 	export interface TransformOperation {
 
 		/** A transform operation that projects columns. Operations that come after a projection can only refer to projected columns. */
-		ProjectOperation?: ProjectOperation;
+		ProjectOperation?: ProjectOperation | null;
 
 		/** A transform operation that filters rows based on a condition. */
-		FilterOperation?: FilterOperation;
+		FilterOperation?: FilterOperation | null;
 
 		/** A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure. */
-		CreateColumnsOperation?: CreateColumnsOperation;
+		CreateColumnsOperation?: CreateColumnsOperation | null;
 
 		/** A transform operation that renames a column. */
-		RenameColumnOperation?: RenameColumnOperation;
+		RenameColumnOperation?: RenameColumnOperation | null;
 
 		/** A transform operation that casts a column to a different type. */
-		CastColumnTypeOperation?: CastColumnTypeOperation;
+		CastColumnTypeOperation?: CastColumnTypeOperation | null;
 
 		/** A transform operation that tags a column with additional information. */
-		TagColumnOperation?: TagColumnOperation;
+		TagColumnOperation?: TagColumnOperation | null;
 	}
 
 
@@ -270,7 +270,7 @@ export namespace MyNS {
 	export interface CastColumnTypeOperation {
 		ColumnName: string;
 		NewColumnType: CastColumnTypeOperationNewColumnType;
-		Format?: string;
+		Format?: string | null;
 	}
 
 	export enum CastColumnTypeOperationNewColumnType { STRING = 0, INTEGER = 1, DECIMAL = 2, DATETIME = 3 }
@@ -285,7 +285,7 @@ export namespace MyNS {
 
 	/** A tag for a column in a <code>TagColumnOperation</code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
 	export interface ColumnTag {
-		ColumnGeographicRole?: ColumnTagColumnGeographicRole;
+		ColumnGeographicRole?: ColumnTagColumnGeographicRole | null;
 	}
 
 	export enum ColumnTagColumnGeographicRole { COUNTRY = 0, STATE = 1, COUNTY = 2, CITY = 3, POSTCODE = 4, LONGITUDE = 5, LATITUDE = 6 }
@@ -295,8 +295,8 @@ export namespace MyNS {
 	export interface LogicalTableSource {
 
 		/** Join instruction. */
-		JoinInstruction?: JoinInstruction;
-		PhysicalTableId?: string;
+		JoinInstruction?: JoinInstruction | null;
+		PhysicalTableId?: string | null;
 	}
 
 
@@ -315,7 +315,7 @@ export namespace MyNS {
 	export interface ColumnGroup {
 
 		/** Geospatial column group that denotes a hierarchy. */
-		GeoSpatialColumnGroup?: GeoSpatialColumnGroup;
+		GeoSpatialColumnGroup?: GeoSpatialColumnGroup | null;
 	}
 
 
@@ -334,11 +334,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateDataSourceResponse {
-		Arn?: string;
-		DataSourceId?: string;
-		CreationStatus?: CreateDashboardResponseCreationStatus;
-		RequestId?: string;
-		Status?: number;
+		Arn?: string | null;
+		DataSourceId?: string | null;
+		CreationStatus?: CreateDashboardResponseCreationStatus | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
@@ -350,7 +350,7 @@ export namespace MyNS {
 
 	/** Amazon Athena parameters. */
 	export interface AthenaParameters {
-		WorkGroup?: string;
+		WorkGroup?: string | null;
 	}
 
 
@@ -423,10 +423,10 @@ export namespace MyNS {
 
 	/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
 	export interface RedshiftParameters {
-		Host?: string;
-		Port?: number;
+		Host?: string | null;
+		Port?: number | null;
 		Database: string;
-		ClusterId?: string;
+		ClusterId?: string | null;
 	}
 
 
@@ -503,18 +503,18 @@ export namespace MyNS {
 	export interface CreateGroupResponse {
 
 		/** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups. */
-		Group?: Group;
-		RequestId?: string;
-		Status?: number;
+		Group?: Group | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups. */
 	export interface Group {
-		Arn?: string;
-		GroupName?: string;
-		Description?: string;
-		PrincipalId?: string;
+		Arn?: string | null;
+		GroupName?: string | null;
+		Description?: string | null;
+		PrincipalId?: string | null;
 	}
 
 	export interface PreconditionNotMetException {
@@ -526,26 +526,26 @@ export namespace MyNS {
 	export interface CreateGroupMembershipResponse {
 
 		/** A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. . */
-		GroupMember?: GroupMember;
-		RequestId?: string;
-		Status?: number;
+		GroupMember?: GroupMember | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. . */
 	export interface GroupMember {
-		Arn?: string;
-		MemberName?: string;
+		Arn?: string | null;
+		MemberName?: string | null;
 	}
 
 	export interface CreateIAMPolicyAssignmentResponse {
-		AssignmentName?: string;
-		AssignmentId?: string;
-		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus;
-		PolicyArn?: string;
-		Identities?: IdentityMap;
-		RequestId?: string;
-		Status?: number;
+		AssignmentName?: string | null;
+		AssignmentId?: string | null;
+		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
+		PolicyArn?: string | null;
+		Identities?: IdentityMap | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export enum CreateIAMPolicyAssignmentResponseAssignmentStatus { ENABLED = 0, DRAFT = 1, DISABLED = 2 }
@@ -557,22 +557,22 @@ export namespace MyNS {
 	}
 
 	export interface CreateIngestionResponse {
-		Arn?: string;
-		IngestionId?: string;
-		IngestionStatus?: CreateIngestionResponseIngestionStatus;
-		RequestId?: string;
-		Status?: number;
+		Arn?: string | null;
+		IngestionId?: string | null;
+		IngestionStatus?: CreateIngestionResponseIngestionStatus | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export enum CreateIngestionResponseIngestionStatus { INITIALIZED = 0, QUEUED = 1, RUNNING = 2, FAILED = 3, COMPLETED = 4, CANCELLED = 5 }
 
 	export interface CreateTemplateResponse {
-		Arn?: string;
-		VersionArn?: string;
-		TemplateId?: string;
-		CreationStatus?: CreateDashboardResponseCreationStatus;
-		Status?: number;
-		RequestId?: string;
+		Arn?: string | null;
+		VersionArn?: string | null;
+		TemplateId?: string | null;
+		CreationStatus?: CreateDashboardResponseCreationStatus | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 
@@ -591,158 +591,158 @@ export namespace MyNS {
 	export interface CreateTemplateAliasResponse {
 
 		/** The template alias. */
-		TemplateAlias?: TemplateAlias;
-		Status?: number;
-		RequestId?: string;
+		TemplateAlias?: TemplateAlias | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 
 	/** The template alias. */
 	export interface TemplateAlias {
-		AliasName?: string;
-		Arn?: string;
-		TemplateVersionNumber?: number;
+		AliasName?: string | null;
+		Arn?: string | null;
+		TemplateVersionNumber?: number | null;
 	}
 
 	export interface DeleteDashboardResponse {
-		Status?: number;
-		Arn?: string;
-		DashboardId?: string;
-		RequestId?: string;
+		Status?: number | null;
+		Arn?: string | null;
+		DashboardId?: string | null;
+		RequestId?: string | null;
 	}
 
 	export interface DeleteDataSetResponse {
-		Arn?: string;
-		DataSetId?: string;
-		RequestId?: string;
-		Status?: number;
+		Arn?: string | null;
+		DataSetId?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DeleteDataSourceResponse {
-		Arn?: string;
-		DataSourceId?: string;
-		RequestId?: string;
-		Status?: number;
+		Arn?: string | null;
+		DataSourceId?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DeleteGroupResponse {
-		RequestId?: string;
-		Status?: number;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DeleteGroupMembershipResponse {
-		RequestId?: string;
-		Status?: number;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DeleteIAMPolicyAssignmentResponse {
-		AssignmentName?: string;
-		RequestId?: string;
-		Status?: number;
+		AssignmentName?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DeleteTemplateResponse {
-		RequestId?: string;
-		Arn?: string;
-		TemplateId?: string;
-		Status?: number;
+		RequestId?: string | null;
+		Arn?: string | null;
+		TemplateId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DeleteTemplateAliasResponse {
-		Status?: number;
-		TemplateId?: string;
-		AliasName?: string;
-		Arn?: string;
-		RequestId?: string;
+		Status?: number | null;
+		TemplateId?: string | null;
+		AliasName?: string | null;
+		Arn?: string | null;
+		RequestId?: string | null;
 	}
 
 	export interface DeleteUserResponse {
-		RequestId?: string;
-		Status?: number;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DeleteUserByPrincipalIdResponse {
-		RequestId?: string;
-		Status?: number;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DescribeDashboardResponse {
 
 		/** Dashboard. */
-		Dashboard?: Dashboard;
-		Status?: number;
-		RequestId?: string;
+		Dashboard?: Dashboard | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 
 	/** Dashboard. */
 	export interface Dashboard {
-		DashboardId?: string;
-		Arn?: string;
-		Name?: string;
+		DashboardId?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
 
 		/** Dashboard version. */
-		Version?: DashboardVersion;
-		CreatedTime?: Date;
-		LastPublishedTime?: Date;
-		LastUpdatedTime?: Date;
+		Version?: DashboardVersion | null;
+		CreatedTime?: Date | null;
+		LastPublishedTime?: Date | null;
+		LastUpdatedTime?: Date | null;
 	}
 
 
 	/** Dashboard version. */
 	export interface DashboardVersion {
-		CreatedTime?: Date;
-		Errors?: Array<DashboardError>;
-		VersionNumber?: number;
-		Status?: CreateDashboardResponseCreationStatus;
-		Arn?: string;
-		SourceEntityArn?: string;
-		DataSetArns?: Array<string>;
-		Description?: string;
+		CreatedTime?: Date | null;
+		Errors?: Array<DashboardError> | null;
+		VersionNumber?: number | null;
+		Status?: CreateDashboardResponseCreationStatus | null;
+		Arn?: string | null;
+		SourceEntityArn?: string | null;
+		DataSetArns?: Array<string> | null;
+		Description?: string | null;
 	}
 
 
 	/** Dashboard error. */
 	export interface DashboardError {
-		Type?: DashboardErrorType;
-		Message?: string;
+		Type?: DashboardErrorType | null;
+		Message?: string | null;
 	}
 
 	export enum DashboardErrorType { ACCESS_DENIED = 0, SOURCE_NOT_FOUND = 1, DATA_SET_NOT_FOUND = 2, INTERNAL_FAILURE = 3, PARAMETER_VALUE_INCOMPATIBLE = 4, PARAMETER_TYPE_INVALID = 5, PARAMETER_NOT_FOUND = 6, COLUMN_TYPE_MISMATCH = 7, COLUMN_GEOGRAPHIC_ROLE_MISMATCH = 8, COLUMN_REPLACEMENT_MISSING = 9 }
 
 	export interface DescribeDashboardPermissionsResponse {
-		DashboardId?: string;
-		DashboardArn?: string;
-		Permissions?: Array<ResourcePermission>;
-		Status?: number;
-		RequestId?: string;
+		DashboardId?: string | null;
+		DashboardArn?: string | null;
+		Permissions?: Array<ResourcePermission> | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 	export interface DescribeDataSetResponse {
 
 		/** Dataset. */
-		DataSet?: DataSet;
-		RequestId?: string;
-		Status?: number;
+		DataSet?: DataSet | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** Dataset. */
 	export interface DataSet {
-		Arn?: string;
-		DataSetId?: string;
-		Name?: string;
-		CreatedTime?: Date;
-		LastUpdatedTime?: Date;
-		PhysicalTableMap?: PhysicalTableMap;
-		LogicalTableMap?: LogicalTableMap;
-		OutputColumns?: Array<OutputColumn>;
-		ImportMode?: DataSetImportMode;
-		ConsumedSpiceCapacityInBytes?: number;
-		ColumnGroups?: Array<ColumnGroup>;
+		Arn?: string | null;
+		DataSetId?: string | null;
+		Name?: string | null;
+		CreatedTime?: Date | null;
+		LastUpdatedTime?: Date | null;
+		PhysicalTableMap?: PhysicalTableMap | null;
+		LogicalTableMap?: LogicalTableMap | null;
+		OutputColumns?: Array<OutputColumn> | null;
+		ImportMode?: DataSetImportMode | null;
+		ConsumedSpiceCapacityInBytes?: number | null;
+		ColumnGroups?: Array<ColumnGroup> | null;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+		RowLevelPermissionDataSet?: RowLevelPermissionDataSet | null;
 	}
 
 	export interface PhysicalTableMap {
@@ -754,8 +754,8 @@ export namespace MyNS {
 
 	/** Output column. */
 	export interface OutputColumn {
-		Name?: string;
-		Type?: CastColumnTypeOperationNewColumnType;
+		Name?: string | null;
+		Type?: CastColumnTypeOperationNewColumnType | null;
 	}
 
 	export enum DataSetImportMode { SPICE = 0, DIRECT_QUERY = 1 }
@@ -768,43 +768,43 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDataSetPermissionsResponse {
-		DataSetArn?: string;
-		DataSetId?: string;
-		Permissions?: Array<ResourcePermission>;
-		RequestId?: string;
-		Status?: number;
+		DataSetArn?: string | null;
+		DataSetId?: string | null;
+		Permissions?: Array<ResourcePermission> | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DescribeDataSourceResponse {
 
 		/** The structure of a data source. */
-		DataSource?: DataSource;
-		RequestId?: string;
-		Status?: number;
+		DataSource?: DataSource | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** The structure of a data source. */
 	export interface DataSource {
-		Arn?: string;
-		DataSourceId?: string;
-		Name?: string;
-		Type?: DataSourceType;
-		Status?: CreateDashboardResponseCreationStatus;
-		CreatedTime?: Date;
-		LastUpdatedTime?: Date;
+		Arn?: string | null;
+		DataSourceId?: string | null;
+		Name?: string | null;
+		Type?: DataSourceType | null;
+		Status?: CreateDashboardResponseCreationStatus | null;
+		CreatedTime?: Date | null;
+		LastUpdatedTime?: Date | null;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: DataSourceParameters;
+		DataSourceParameters?: DataSourceParameters | null;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: VpcConnectionProperties;
+		VpcConnectionProperties?: VpcConnectionProperties | null;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: SslProperties;
+		SslProperties?: SslProperties | null;
 
 		/** Error information for the data source creation or update. */
-		ErrorInfo?: DataSourceErrorInfo;
+		ErrorInfo?: DataSourceErrorInfo | null;
 	}
 
 	export enum DataSourceType { ADOBE_ANALYTICS = 0, AMAZON_ELASTICSEARCH = 1, ATHENA = 2, AURORA = 3, AURORA_POSTGRESQL = 4, AWS_IOT_ANALYTICS = 5, GITHUB = 6, JIRA = 7, MARIADB = 8, MYSQL = 9, POSTGRESQL = 10, PRESTO = 11, REDSHIFT = 12, S3 = 13, SALESFORCE = 14, SERVICENOW = 15, SNOWFLAKE = 16, SPARK = 17, SQLSERVER = 18, TERADATA = 19, TWITTER = 20 }
@@ -814,61 +814,61 @@ export namespace MyNS {
 	export interface DataSourceParameters {
 
 		/** Amazon Elasticsearch Service parameters. */
-		AmazonElasticsearchParameters?: AmazonElasticsearchParameters;
+		AmazonElasticsearchParameters?: AmazonElasticsearchParameters | null;
 
 		/** Amazon Athena parameters. */
-		AthenaParameters?: AthenaParameters;
+		AthenaParameters?: AthenaParameters | null;
 
 		/** Amazon Aurora parameters. */
-		AuroraParameters?: AuroraParameters;
+		AuroraParameters?: AuroraParameters | null;
 
 		/** Amazon Aurora with PostgreSQL compatibility parameters. */
-		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters;
+		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters | null;
 
 		/** AWS IoT Analytics parameters. */
-		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters;
+		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters | null;
 
 		/** Jira parameters. */
-		JiraParameters?: JiraParameters;
+		JiraParameters?: JiraParameters | null;
 
 		/** MariaDB parameters. */
-		MariaDbParameters?: MariaDbParameters;
+		MariaDbParameters?: MariaDbParameters | null;
 
 		/** MySQL parameters. */
-		MySqlParameters?: MySqlParameters;
+		MySqlParameters?: MySqlParameters | null;
 
 		/** PostgreSQL parameters. */
-		PostgreSqlParameters?: PostgreSqlParameters;
+		PostgreSqlParameters?: PostgreSqlParameters | null;
 
 		/** Presto parameters. */
-		PrestoParameters?: PrestoParameters;
+		PrestoParameters?: PrestoParameters | null;
 
 		/** Amazon RDS parameters. */
-		RdsParameters?: RdsParameters;
+		RdsParameters?: RdsParameters | null;
 
 		/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
-		RedshiftParameters?: RedshiftParameters;
+		RedshiftParameters?: RedshiftParameters | null;
 
 		/** S3 parameters. */
-		S3Parameters?: S3Parameters;
+		S3Parameters?: S3Parameters | null;
 
 		/** ServiceNow parameters. */
-		ServiceNowParameters?: ServiceNowParameters;
+		ServiceNowParameters?: ServiceNowParameters | null;
 
 		/** Snowflake parameters. */
-		SnowflakeParameters?: SnowflakeParameters;
+		SnowflakeParameters?: SnowflakeParameters | null;
 
 		/** Spark parameters. */
-		SparkParameters?: SparkParameters;
+		SparkParameters?: SparkParameters | null;
 
 		/** SQL Server parameters. */
-		SqlServerParameters?: SqlServerParameters;
+		SqlServerParameters?: SqlServerParameters | null;
 
 		/** Teradata parameters. */
-		TeradataParameters?: TeradataParameters;
+		TeradataParameters?: TeradataParameters | null;
 
 		/** Twitter parameters. */
-		TwitterParameters?: TwitterParameters;
+		TwitterParameters?: TwitterParameters | null;
 	}
 
 
@@ -880,51 +880,51 @@ export namespace MyNS {
 
 	/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
 	export interface SslProperties {
-		DisableSsl?: boolean;
+		DisableSsl?: boolean | null;
 	}
 
 
 	/** Error information for the data source creation or update. */
 	export interface DataSourceErrorInfo {
-		Type?: DataSourceErrorInfoType;
-		Message?: string;
+		Type?: DataSourceErrorInfoType | null;
+		Message?: string | null;
 	}
 
 	export enum DataSourceErrorInfoType { TIMEOUT = 0, ENGINE_VERSION_NOT_SUPPORTED = 1, UNKNOWN_HOST = 2, GENERIC_SQL_FAILURE = 3, CONFLICT = 4, UNKNOWN = 5 }
 
 	export interface DescribeDataSourcePermissionsResponse {
-		DataSourceArn?: string;
-		DataSourceId?: string;
-		Permissions?: Array<ResourcePermission>;
-		RequestId?: string;
-		Status?: number;
+		DataSourceArn?: string | null;
+		DataSourceId?: string | null;
+		Permissions?: Array<ResourcePermission> | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DescribeGroupResponse {
 
 		/** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups. */
-		Group?: Group;
-		RequestId?: string;
-		Status?: number;
+		Group?: Group | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DescribeIAMPolicyAssignmentResponse {
 
 		/** An IAM policy assignment. */
-		IAMPolicyAssignment?: IAMPolicyAssignment;
-		RequestId?: string;
-		Status?: number;
+		IAMPolicyAssignment?: IAMPolicyAssignment | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** An IAM policy assignment. */
 	export interface IAMPolicyAssignment {
-		AwsAccountId?: string;
-		AssignmentId?: string;
-		AssignmentName?: string;
-		PolicyArn?: string;
-		Identities?: IdentityMap;
-		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus;
+		AwsAccountId?: string | null;
+		AssignmentId?: string | null;
+		AssignmentName?: string | null;
+		PolicyArn?: string | null;
+		Identities?: IdentityMap | null;
+		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 	}
 
 	export interface InvalidNextTokenException {
@@ -933,38 +933,38 @@ export namespace MyNS {
 	export interface DescribeIngestionResponse {
 
 		/** Information about the SPICE ingestion for a dataset. */
-		Ingestion?: Ingestion;
-		RequestId?: string;
-		Status?: number;
+		Ingestion?: Ingestion | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** Information about the SPICE ingestion for a dataset. */
 	export interface Ingestion {
 		Arn: string;
-		IngestionId?: string;
+		IngestionId?: string | null;
 		IngestionStatus: CreateIngestionResponseIngestionStatus;
 
 		/** Error information for the SPICE ingestion of a dataset. */
-		ErrorInfo?: ErrorInfo;
+		ErrorInfo?: ErrorInfo | null;
 
 		/** Information about rows for a data set SPICE ingestion. */
-		RowInfo?: RowInfo;
+		RowInfo?: RowInfo | null;
 
 		/** Information about a queued dataset SPICE ingestion. */
-		QueueInfo?: QueueInfo;
+		QueueInfo?: QueueInfo | null;
 		CreatedTime: Date;
-		IngestionTimeInSeconds?: number;
-		IngestionSizeInBytes?: number;
-		RequestSource?: IngestionRequestSource;
-		RequestType?: IngestionRequestType;
+		IngestionTimeInSeconds?: number | null;
+		IngestionSizeInBytes?: number | null;
+		RequestSource?: IngestionRequestSource | null;
+		RequestType?: IngestionRequestType | null;
 	}
 
 
 	/** Error information for the SPICE ingestion of a dataset. */
 	export interface ErrorInfo {
-		Type?: ErrorInfoType;
-		Message?: string;
+		Type?: ErrorInfoType | null;
+		Message?: string | null;
 	}
 
 	export enum ErrorInfoType { FAILURE_TO_ASSUME_ROLE = 0, INGESTION_SUPERSEDED = 1, INGESTION_CANCELED = 2, DATA_SET_DELETED = 3, DATA_SET_NOT_SPICE = 4, S3_UPLOADED_FILE_DELETED = 5, S3_MANIFEST_ERROR = 6, DATA_TOLERANCE_EXCEPTION = 7, SPICE_TABLE_NOT_FOUND = 8, DATA_SET_SIZE_LIMIT_EXCEEDED = 9, ROW_SIZE_LIMIT_EXCEEDED = 10, ACCOUNT_CAPACITY_LIMIT_EXCEEDED = 11, CUSTOMER_ERROR = 12, DATA_SOURCE_NOT_FOUND = 13, IAM_ROLE_NOT_AVAILABLE = 14, CONNECTION_FAILURE = 15, SQL_TABLE_NOT_FOUND = 16, PERMISSION_DENIED = 17, SSL_CERTIFICATE_VALIDATION_FAILURE = 18, OAUTH_TOKEN_FAILURE = 19, SOURCE_API_LIMIT_EXCEEDED_FAILURE = 20, PASSWORD_AUTHENTICATION_FAILURE = 21, SQL_SCHEMA_MISMATCH_ERROR = 22, INVALID_DATE_FORMAT = 23, INVALID_DATAPREP_SYNTAX = 24, SOURCE_RESOURCE_LIMIT_EXCEEDED = 25, SQL_INVALID_PARAMETER_VALUE = 26, QUERY_TIMEOUT = 27, SQL_NUMERIC_OVERFLOW = 28, UNRESOLVABLE_HOST = 29, UNROUTABLE_HOST = 30, SQL_EXCEPTION = 31, S3_FILE_INACCESSIBLE = 32, IOT_FILE_NOT_FOUND = 33, IOT_DATA_SET_FILE_EMPTY = 34, INVALID_DATA_SOURCE_CONFIG = 35, DATA_SOURCE_AUTH_FAILED = 36, DATA_SOURCE_CONNECTION_FAILED = 37, FAILURE_TO_PROCESS_JSON_FILE = 38, INTERNAL_SERVICE_ERROR = 39 }
@@ -972,8 +972,8 @@ export namespace MyNS {
 
 	/** Information about rows for a data set SPICE ingestion. */
 	export interface RowInfo {
-		RowsIngested?: number;
-		RowsDropped?: number;
+		RowsIngested?: number | null;
+		RowsDropped?: number | null;
 	}
 
 
@@ -990,40 +990,40 @@ export namespace MyNS {
 	export interface DescribeTemplateResponse {
 
 		/** <p>A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.</p> <p>You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.</p> */
-		Template?: Template;
-		Status?: number;
+		Template?: Template | null;
+		Status?: number | null;
 	}
 
 
 	/** <p>A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.</p> <p>You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.</p> */
 	export interface Template {
-		Arn?: string;
-		Name?: string;
+		Arn?: string | null;
+		Name?: string | null;
 
 		/** A version of a template. */
-		Version?: TemplateVersion;
-		TemplateId?: string;
-		LastUpdatedTime?: Date;
-		CreatedTime?: Date;
+		Version?: TemplateVersion | null;
+		TemplateId?: string | null;
+		LastUpdatedTime?: Date | null;
+		CreatedTime?: Date | null;
 	}
 
 
 	/** A version of a template. */
 	export interface TemplateVersion {
-		CreatedTime?: Date;
-		Errors?: Array<TemplateError>;
-		VersionNumber?: number;
-		Status?: CreateDashboardResponseCreationStatus;
-		DataSetConfigurations?: Array<DataSetConfiguration>;
-		Description?: string;
-		SourceEntityArn?: string;
+		CreatedTime?: Date | null;
+		Errors?: Array<TemplateError> | null;
+		VersionNumber?: number | null;
+		Status?: CreateDashboardResponseCreationStatus | null;
+		DataSetConfigurations?: Array<DataSetConfiguration> | null;
+		Description?: string | null;
+		SourceEntityArn?: string | null;
 	}
 
 
 	/** List of errors that occurred when the template version creation failed. */
 	export interface TemplateError {
-		Type?: TemplateErrorType;
-		Message?: string;
+		Type?: TemplateErrorType | null;
+		Message?: string | null;
 	}
 
 	export enum TemplateErrorType { SOURCE_NOT_FOUND = 0, DATA_SET_NOT_FOUND = 1, INTERNAL_FAILURE = 2 }
@@ -1031,74 +1031,74 @@ export namespace MyNS {
 
 	/** Dataset configuration. */
 	export interface DataSetConfiguration {
-		Placeholder?: string;
+		Placeholder?: string | null;
 
 		/** Dataset schema. */
-		DataSetSchema?: DataSetSchema;
-		ColumnGroupSchemaList?: Array<ColumnGroupSchema>;
+		DataSetSchema?: DataSetSchema | null;
+		ColumnGroupSchemaList?: Array<ColumnGroupSchema> | null;
 	}
 
 
 	/** Dataset schema. */
 	export interface DataSetSchema {
-		ColumnSchemaList?: Array<ColumnSchema>;
+		ColumnSchemaList?: Array<ColumnSchema> | null;
 	}
 
 
 	/** The column schema. */
 	export interface ColumnSchema {
-		Name?: string;
-		DataType?: string;
-		GeographicRole?: string;
+		Name?: string | null;
+		DataType?: string | null;
+		GeographicRole?: string | null;
 	}
 
 
 	/** The column group schema. */
 	export interface ColumnGroupSchema {
-		Name?: string;
-		ColumnGroupColumnSchemaList?: Array<ColumnGroupColumnSchema>;
+		Name?: string | null;
+		ColumnGroupColumnSchemaList?: Array<ColumnGroupColumnSchema> | null;
 	}
 
 
 	/** A structure describing the name, data type, and geographic role of the columns. */
 	export interface ColumnGroupColumnSchema {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface DescribeTemplateAliasResponse {
 
 		/** The template alias. */
-		TemplateAlias?: TemplateAlias;
-		Status?: number;
-		RequestId?: string;
+		TemplateAlias?: TemplateAlias | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 	export interface DescribeTemplatePermissionsResponse {
-		TemplateId?: string;
-		TemplateArn?: string;
-		Permissions?: Array<ResourcePermission>;
-		RequestId?: string;
-		Status?: number;
+		TemplateId?: string | null;
+		TemplateArn?: string | null;
+		Permissions?: Array<ResourcePermission> | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface DescribeUserResponse {
 
 		/** A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20 million users. */
-		User?: User;
-		RequestId?: string;
-		Status?: number;
+		User?: User | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20 million users. */
 	export interface User {
-		Arn?: string;
-		UserName?: string;
-		Email?: string;
-		Role?: UserRole;
-		IdentityType?: UserIdentityType;
-		Active?: boolean;
-		PrincipalId?: string;
+		Arn?: string | null;
+		UserName?: string | null;
+		Email?: string | null;
+		Role?: UserRole | null;
+		IdentityType?: UserIdentityType | null;
+		Active?: boolean | null;
+		PrincipalId?: string | null;
 	}
 
 	export enum UserRole { ADMIN = 0, AUTHOR = 1, READER = 2, RESTRICTED_AUTHOR = 3, RESTRICTED_READER = 4 }
@@ -1106,9 +1106,9 @@ export namespace MyNS {
 	export enum UserIdentityType { IAM = 0, QUICKSIGHT = 1 }
 
 	export interface GetDashboardEmbedUrlResponse {
-		EmbedUrl?: string;
-		Status?: number;
-		RequestId?: string;
+		EmbedUrl?: string | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 	export interface DomainNotWhitelistedException {
@@ -1124,203 +1124,203 @@ export namespace MyNS {
 	}
 
 	export interface ListDashboardVersionsResponse {
-		DashboardVersionSummaryList?: Array<DashboardVersionSummary>;
-		NextToken?: string;
-		Status?: number;
-		RequestId?: string;
+		DashboardVersionSummaryList?: Array<DashboardVersionSummary> | null;
+		NextToken?: string | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 
 	/** Dashboard version summary. */
 	export interface DashboardVersionSummary {
-		Arn?: string;
-		CreatedTime?: Date;
-		VersionNumber?: number;
-		Status?: CreateDashboardResponseCreationStatus;
-		SourceEntityArn?: string;
-		Description?: string;
+		Arn?: string | null;
+		CreatedTime?: Date | null;
+		VersionNumber?: number | null;
+		Status?: CreateDashboardResponseCreationStatus | null;
+		SourceEntityArn?: string | null;
+		Description?: string | null;
 	}
 
 	export interface ListDashboardsResponse {
-		DashboardSummaryList?: Array<DashboardSummary>;
-		NextToken?: string;
-		Status?: number;
-		RequestId?: string;
+		DashboardSummaryList?: Array<DashboardSummary> | null;
+		NextToken?: string | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 
 	/** Dashboard summary. */
 	export interface DashboardSummary {
-		Arn?: string;
-		DashboardId?: string;
-		Name?: string;
-		CreatedTime?: Date;
-		LastUpdatedTime?: Date;
-		PublishedVersionNumber?: number;
-		LastPublishedTime?: Date;
+		Arn?: string | null;
+		DashboardId?: string | null;
+		Name?: string | null;
+		CreatedTime?: Date | null;
+		LastUpdatedTime?: Date | null;
+		PublishedVersionNumber?: number | null;
+		LastPublishedTime?: Date | null;
 	}
 
 	export interface ListDataSetsResponse {
-		DataSetSummaries?: Array<DataSetSummary>;
-		NextToken?: string;
-		RequestId?: string;
-		Status?: number;
+		DataSetSummaries?: Array<DataSetSummary> | null;
+		NextToken?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** Dataset summary. */
 	export interface DataSetSummary {
-		Arn?: string;
-		DataSetId?: string;
-		Name?: string;
-		CreatedTime?: Date;
-		LastUpdatedTime?: Date;
-		ImportMode?: DataSetImportMode;
+		Arn?: string | null;
+		DataSetId?: string | null;
+		Name?: string | null;
+		CreatedTime?: Date | null;
+		LastUpdatedTime?: Date | null;
+		ImportMode?: DataSetImportMode | null;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+		RowLevelPermissionDataSet?: RowLevelPermissionDataSet | null;
 	}
 
 	export interface ListDataSourcesResponse {
-		DataSources?: Array<DataSource>;
-		NextToken?: string;
-		RequestId?: string;
-		Status?: number;
+		DataSources?: Array<DataSource> | null;
+		NextToken?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface ListGroupMembershipsResponse {
-		GroupMemberList?: Array<GroupMember>;
-		NextToken?: string;
-		RequestId?: string;
-		Status?: number;
+		GroupMemberList?: Array<GroupMember> | null;
+		NextToken?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface ListGroupsResponse {
-		GroupList?: Array<Group>;
-		NextToken?: string;
-		RequestId?: string;
-		Status?: number;
+		GroupList?: Array<Group> | null;
+		NextToken?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface ListIAMPolicyAssignmentsResponse {
-		IAMPolicyAssignments?: Array<IAMPolicyAssignmentSummary>;
-		NextToken?: string;
-		RequestId?: string;
-		Status?: number;
+		IAMPolicyAssignments?: Array<IAMPolicyAssignmentSummary> | null;
+		NextToken?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** IAM policy assignment summary. */
 	export interface IAMPolicyAssignmentSummary {
-		AssignmentName?: string;
-		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus;
+		AssignmentName?: string | null;
+		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 	}
 
 	export interface ListIAMPolicyAssignmentsForUserResponse {
-		ActiveAssignments?: Array<ActiveIAMPolicyAssignment>;
-		RequestId?: string;
-		NextToken?: string;
-		Status?: number;
+		ActiveAssignments?: Array<ActiveIAMPolicyAssignment> | null;
+		RequestId?: string | null;
+		NextToken?: string | null;
+		Status?: number | null;
 	}
 
 
 	/** The active AWS Identity and Access Management (IAM) policy assignment. */
 	export interface ActiveIAMPolicyAssignment {
-		AssignmentName?: string;
-		PolicyArn?: string;
+		AssignmentName?: string | null;
+		PolicyArn?: string | null;
 	}
 
 	export interface ListIngestionsResponse {
-		Ingestions?: Array<Ingestion>;
-		NextToken?: string;
-		RequestId?: string;
-		Status?: number;
+		Ingestions?: Array<Ingestion> | null;
+		NextToken?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
-		RequestId?: string;
-		Status?: number;
+		Tags?: Array<Tag> | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface ListTemplateAliasesResponse {
-		TemplateAliasList?: Array<TemplateAlias>;
-		Status?: number;
-		RequestId?: string;
-		NextToken?: string;
+		TemplateAliasList?: Array<TemplateAlias> | null;
+		Status?: number | null;
+		RequestId?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTemplateVersionsResponse {
-		TemplateVersionSummaryList?: Array<TemplateVersionSummary>;
-		NextToken?: string;
-		Status?: number;
-		RequestId?: string;
+		TemplateVersionSummaryList?: Array<TemplateVersionSummary> | null;
+		NextToken?: string | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 
 	/** The template version. */
 	export interface TemplateVersionSummary {
-		Arn?: string;
-		VersionNumber?: number;
-		CreatedTime?: Date;
-		Status?: CreateDashboardResponseCreationStatus;
-		Description?: string;
+		Arn?: string | null;
+		VersionNumber?: number | null;
+		CreatedTime?: Date | null;
+		Status?: CreateDashboardResponseCreationStatus | null;
+		Description?: string | null;
 	}
 
 	export interface ListTemplatesResponse {
-		TemplateSummaryList?: Array<TemplateSummary>;
-		NextToken?: string;
-		Status?: number;
-		RequestId?: string;
+		TemplateSummaryList?: Array<TemplateSummary> | null;
+		NextToken?: string | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 
 	/** The template summary. */
 	export interface TemplateSummary {
-		Arn?: string;
-		TemplateId?: string;
-		Name?: string;
-		LatestVersionNumber?: number;
-		CreatedTime?: Date;
-		LastUpdatedTime?: Date;
+		Arn?: string | null;
+		TemplateId?: string | null;
+		Name?: string | null;
+		LatestVersionNumber?: number | null;
+		CreatedTime?: Date | null;
+		LastUpdatedTime?: Date | null;
 	}
 
 	export interface ListUserGroupsResponse {
-		GroupList?: Array<Group>;
-		NextToken?: string;
-		RequestId?: string;
-		Status?: number;
+		GroupList?: Array<Group> | null;
+		NextToken?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface ListUsersResponse {
-		UserList?: Array<User>;
-		NextToken?: string;
-		RequestId?: string;
-		Status?: number;
+		UserList?: Array<User> | null;
+		NextToken?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface RegisterUserResponse {
 
 		/** A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20 million users. */
-		User?: User;
-		UserInvitationUrl?: string;
-		RequestId?: string;
-		Status?: number;
+		User?: User | null;
+		UserInvitationUrl?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface SearchDashboardsResponse {
-		DashboardSummaryList?: Array<DashboardSummary>;
-		NextToken?: string;
-		Status?: number;
-		RequestId?: string;
+		DashboardSummaryList?: Array<DashboardSummary> | null;
+		NextToken?: string | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 
 	/** A filter that you apply when searching for dashboards.  */
 	export interface DashboardSearchFilter {
 		Operator: DashboardSearchFilterOperator;
-		Name?: DashboardSearchFilterName;
-		Value?: string;
+		Name?: DashboardSearchFilterName | null;
+		Value?: string | null;
 	}
 
 	export enum DashboardSearchFilterOperator { StringEquals = 0 }
@@ -1328,119 +1328,119 @@ export namespace MyNS {
 	export enum DashboardSearchFilterName { QUICKSIGHT_USER = 0 }
 
 	export interface TagResourceResponse {
-		RequestId?: string;
-		Status?: number;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UntagResourceResponse {
-		RequestId?: string;
-		Status?: number;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateDashboardResponse {
-		Arn?: string;
-		VersionArn?: string;
-		DashboardId?: string;
-		CreationStatus?: CreateDashboardResponseCreationStatus;
-		Status?: number;
-		RequestId?: string;
+		Arn?: string | null;
+		VersionArn?: string | null;
+		DashboardId?: string | null;
+		CreationStatus?: CreateDashboardResponseCreationStatus | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 	export interface UpdateDashboardPermissionsResponse {
-		DashboardArn?: string;
-		DashboardId?: string;
-		Permissions?: Array<ResourcePermission>;
-		RequestId?: string;
-		Status?: number;
+		DashboardArn?: string | null;
+		DashboardId?: string | null;
+		Permissions?: Array<ResourcePermission> | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateDashboardPublishedVersionResponse {
-		DashboardId?: string;
-		DashboardArn?: string;
-		Status?: number;
-		RequestId?: string;
+		DashboardId?: string | null;
+		DashboardArn?: string | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 	export interface UpdateDataSetResponse {
-		Arn?: string;
-		DataSetId?: string;
-		IngestionArn?: string;
-		IngestionId?: string;
-		RequestId?: string;
-		Status?: number;
+		Arn?: string | null;
+		DataSetId?: string | null;
+		IngestionArn?: string | null;
+		IngestionId?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateDataSetPermissionsResponse {
-		DataSetArn?: string;
-		DataSetId?: string;
-		RequestId?: string;
-		Status?: number;
+		DataSetArn?: string | null;
+		DataSetId?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateDataSourceResponse {
-		Arn?: string;
-		DataSourceId?: string;
-		UpdateStatus?: CreateDashboardResponseCreationStatus;
-		RequestId?: string;
-		Status?: number;
+		Arn?: string | null;
+		DataSourceId?: string | null;
+		UpdateStatus?: CreateDashboardResponseCreationStatus | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateDataSourcePermissionsResponse {
-		DataSourceArn?: string;
-		DataSourceId?: string;
-		RequestId?: string;
-		Status?: number;
+		DataSourceArn?: string | null;
+		DataSourceId?: string | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateGroupResponse {
 
 		/** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups. */
-		Group?: Group;
-		RequestId?: string;
-		Status?: number;
+		Group?: Group | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateIAMPolicyAssignmentResponse {
-		AssignmentName?: string;
-		AssignmentId?: string;
-		PolicyArn?: string;
-		Identities?: IdentityMap;
-		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus;
-		RequestId?: string;
-		Status?: number;
+		AssignmentName?: string | null;
+		AssignmentId?: string | null;
+		PolicyArn?: string | null;
+		Identities?: IdentityMap | null;
+		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateTemplateResponse {
-		TemplateId?: string;
-		Arn?: string;
-		VersionArn?: string;
-		CreationStatus?: CreateDashboardResponseCreationStatus;
-		Status?: number;
-		RequestId?: string;
+		TemplateId?: string | null;
+		Arn?: string | null;
+		VersionArn?: string | null;
+		CreationStatus?: CreateDashboardResponseCreationStatus | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 	export interface UpdateTemplateAliasResponse {
 
 		/** The template alias. */
-		TemplateAlias?: TemplateAlias;
-		Status?: number;
-		RequestId?: string;
+		TemplateAlias?: TemplateAlias | null;
+		Status?: number | null;
+		RequestId?: string | null;
 	}
 
 	export interface UpdateTemplatePermissionsResponse {
-		TemplateId?: string;
-		TemplateArn?: string;
-		Permissions?: Array<ResourcePermission>;
-		RequestId?: string;
-		Status?: number;
+		TemplateId?: string | null;
+		TemplateArn?: string | null;
+		Permissions?: Array<ResourcePermission> | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export interface UpdateUserResponse {
 
 		/** A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20 million users. */
-		User?: User;
-		RequestId?: string;
-		Status?: number;
+		User?: User | null;
+		RequestId?: string | null;
+		Status?: number | null;
 	}
 
 	export enum DashboardBehavior { ENABLED = 0, DISABLED = 1 }
@@ -1457,10 +1457,10 @@ export namespace MyNS {
 
 	/** Parameters. */
 	export interface Parameters {
-		StringParameters?: Array<StringParameter>;
-		IntegerParameters?: Array<IntegerParameter>;
-		DecimalParameters?: Array<DecimalParameter>;
-		DateTimeParameters?: Array<DateTimeParameter>;
+		StringParameters?: Array<StringParameter> | null;
+		IntegerParameters?: Array<IntegerParameter> | null;
+		DecimalParameters?: Array<DecimalParameter> | null;
+		DateTimeParameters?: Array<DateTimeParameter> | null;
 	}
 
 
@@ -1468,7 +1468,7 @@ export namespace MyNS {
 	export interface DashboardSourceEntity {
 
 		/** Dashboard source template. */
-		SourceTemplate?: DashboardSourceTemplate;
+		SourceTemplate?: DashboardSourceTemplate | null;
 	}
 
 
@@ -1476,32 +1476,32 @@ export namespace MyNS {
 	export interface DashboardPublishOptions {
 
 		/** Ad hoc (one-time) filtering option. */
-		AdHocFilteringOption?: AdHocFilteringOption;
+		AdHocFilteringOption?: AdHocFilteringOption | null;
 
 		/** Export to .csv option. */
-		ExportToCSVOption?: ExportToCSVOption;
+		ExportToCSVOption?: ExportToCSVOption | null;
 
 		/** Sheet controls option. */
-		SheetControlsOption?: SheetControlsOption;
+		SheetControlsOption?: SheetControlsOption | null;
 	}
 
 	export interface CreateDashboardRequest {
 		Name: string;
 
 		/** Parameters. */
-		Parameters?: Parameters;
-		Permissions?: Array<ResourcePermission>;
+		Parameters?: Parameters | null;
+		Permissions?: Array<ResourcePermission> | null;
 
 		/**
 		 * Dashboard source entity.
 		 * Required
 		 */
 		SourceEntity: DashboardSourceEntity;
-		Tags?: Array<Tag>;
-		VersionDescription?: string;
+		Tags?: Array<Tag> | null;
+		VersionDescription?: string | null;
 
 		/** Dashboard publish options. */
-		DashboardPublishOptions?: DashboardPublishOptions;
+		DashboardPublishOptions?: DashboardPublishOptions | null;
 	}
 
 	export enum ResourceStatus { CREATION_IN_PROGRESS = 0, CREATION_SUCCESSFUL = 1, CREATION_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_SUCCESSFUL = 4, UPDATE_FAILED = 5 }
@@ -1510,14 +1510,14 @@ export namespace MyNS {
 		DataSetId: string;
 		Name: string;
 		PhysicalTableMap: PhysicalTableMap;
-		LogicalTableMap?: LogicalTableMap;
+		LogicalTableMap?: LogicalTableMap | null;
 		ImportMode: DataSetImportMode;
-		ColumnGroups?: Array<ColumnGroup>;
-		Permissions?: Array<ResourcePermission>;
+		ColumnGroups?: Array<ColumnGroup> | null;
+		Permissions?: Array<ResourcePermission> | null;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
-		Tags?: Array<Tag>;
+		RowLevelPermissionDataSet?: RowLevelPermissionDataSet | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1525,7 +1525,7 @@ export namespace MyNS {
 	export interface DataSourceCredentials {
 
 		/** The combination of user name and password that are used as credentials. */
-		CredentialPair?: CredentialPair;
+		CredentialPair?: CredentialPair | null;
 	}
 
 	export interface CreateDataSourceRequest {
@@ -1534,18 +1534,18 @@ export namespace MyNS {
 		Type: DataSourceType;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: DataSourceParameters;
+		DataSourceParameters?: DataSourceParameters | null;
 
 		/** Data source credentials. */
-		Credentials?: DataSourceCredentials;
-		Permissions?: Array<ResourcePermission>;
+		Credentials?: DataSourceCredentials | null;
+		Permissions?: Array<ResourcePermission> | null;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: VpcConnectionProperties;
+		VpcConnectionProperties?: VpcConnectionProperties | null;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: SslProperties;
-		Tags?: Array<Tag>;
+		SslProperties?: SslProperties | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateGroupMembershipRequest {
@@ -1555,14 +1555,14 @@ export namespace MyNS {
 	/** The request object for this operation.  */
 	export interface CreateGroupRequest {
 		GroupName: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface CreateIAMPolicyAssignmentRequest {
 		AssignmentName: string;
 		AssignmentStatus: CreateIAMPolicyAssignmentResponseAssignmentStatus;
-		PolicyArn?: string;
-		Identities?: IdentityMap;
+		PolicyArn?: string | null;
+		Identities?: IdentityMap | null;
 	}
 
 	export interface CreateIngestionRequest {
@@ -1579,23 +1579,23 @@ export namespace MyNS {
 	export interface TemplateSourceEntity {
 
 		/** The source analysis of the template. */
-		SourceAnalysis?: TemplateSourceAnalysis;
+		SourceAnalysis?: TemplateSourceAnalysis | null;
 
 		/** The source template of the template. */
-		SourceTemplate?: TemplateSourceTemplate;
+		SourceTemplate?: TemplateSourceTemplate | null;
 	}
 
 	export interface CreateTemplateRequest {
-		Name?: string;
-		Permissions?: Array<ResourcePermission>;
+		Name?: string | null;
+		Permissions?: Array<ResourcePermission> | null;
 
 		/**
 		 * The source entity of the template.
 		 * Required
 		 */
 		SourceEntity: TemplateSourceEntity;
-		Tags?: Array<Tag>;
-		VersionDescription?: string;
+		Tags?: Array<Tag> | null;
+		VersionDescription?: string | null;
 	}
 
 	export enum DashboardFilterAttribute { QUICKSIGHT_USER = 0 }
@@ -1712,7 +1712,7 @@ export namespace MyNS {
 	}
 
 	export interface ListIAMPolicyAssignmentsRequest {
-		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus;
+		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 	}
 
 	export interface ListIngestionsRequest {
@@ -1740,15 +1740,15 @@ export namespace MyNS {
 		IdentityType: UserIdentityType;
 		Email: string;
 		UserRole: UserRole;
-		IamArn?: string;
-		SessionName?: string;
-		UserName?: string;
+		IamArn?: string | null;
+		SessionName?: string | null;
+		UserName?: string | null;
 	}
 
 	export interface SearchDashboardsRequest {
 		Filters: Array<DashboardSearchFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface TagResourceRequest {
@@ -1761,8 +1761,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDashboardPermissionsRequest {
-		GrantPermissions?: Array<ResourcePermission>;
-		RevokePermissions?: Array<ResourcePermission>;
+		GrantPermissions?: Array<ResourcePermission> | null;
+		RevokePermissions?: Array<ResourcePermission> | null;
 	}
 
 	export interface UpdateDashboardPublishedVersionRequest {
@@ -1778,58 +1778,58 @@ export namespace MyNS {
 		SourceEntity: DashboardSourceEntity;
 
 		/** Parameters. */
-		Parameters?: Parameters;
-		VersionDescription?: string;
+		Parameters?: Parameters | null;
+		VersionDescription?: string | null;
 
 		/** Dashboard publish options. */
-		DashboardPublishOptions?: DashboardPublishOptions;
+		DashboardPublishOptions?: DashboardPublishOptions | null;
 	}
 
 	export interface UpdateDataSetPermissionsRequest {
-		GrantPermissions?: Array<ResourcePermission>;
-		RevokePermissions?: Array<ResourcePermission>;
+		GrantPermissions?: Array<ResourcePermission> | null;
+		RevokePermissions?: Array<ResourcePermission> | null;
 	}
 
 	export interface UpdateDataSetRequest {
 		Name: string;
 		PhysicalTableMap: PhysicalTableMap;
-		LogicalTableMap?: LogicalTableMap;
+		LogicalTableMap?: LogicalTableMap | null;
 		ImportMode: DataSetImportMode;
-		ColumnGroups?: Array<ColumnGroup>;
+		ColumnGroups?: Array<ColumnGroup> | null;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+		RowLevelPermissionDataSet?: RowLevelPermissionDataSet | null;
 	}
 
 	export interface UpdateDataSourcePermissionsRequest {
-		GrantPermissions?: Array<ResourcePermission>;
-		RevokePermissions?: Array<ResourcePermission>;
+		GrantPermissions?: Array<ResourcePermission> | null;
+		RevokePermissions?: Array<ResourcePermission> | null;
 	}
 
 	export interface UpdateDataSourceRequest {
 		Name: string;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: DataSourceParameters;
+		DataSourceParameters?: DataSourceParameters | null;
 
 		/** Data source credentials. */
-		Credentials?: DataSourceCredentials;
+		Credentials?: DataSourceCredentials | null;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: VpcConnectionProperties;
+		VpcConnectionProperties?: VpcConnectionProperties | null;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: SslProperties;
+		SslProperties?: SslProperties | null;
 	}
 
 	export interface UpdateGroupRequest {
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateIAMPolicyAssignmentRequest {
-		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus;
-		PolicyArn?: string;
-		Identities?: IdentityMap;
+		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
+		PolicyArn?: string | null;
+		Identities?: IdentityMap | null;
 	}
 
 	export interface UpdateTemplateAliasRequest {
@@ -1837,8 +1837,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTemplatePermissionsRequest {
-		GrantPermissions?: Array<ResourcePermission>;
-		RevokePermissions?: Array<ResourcePermission>;
+		GrantPermissions?: Array<ResourcePermission> | null;
+		RevokePermissions?: Array<ResourcePermission> | null;
 	}
 
 	export interface UpdateTemplateRequest {
@@ -1848,8 +1848,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		SourceEntity: TemplateSourceEntity;
-		VersionDescription?: string;
-		Name?: string;
+		VersionDescription?: string | null;
+		Name?: string | null;
 	}
 
 	export interface UpdateUserRequest {
@@ -2674,14 +2674,14 @@ export namespace MyNS {
 		Name: string;
 
 		/** Parameters. */
-		Parameters?: CreateDashboardPostBodyParameters;
+		Parameters?: CreateDashboardPostBodyParameters | null;
 
 		/**
 		 * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions with principal and action information.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		Permissions?: Array<ResourcePermission>;
+		Permissions?: Array<ResourcePermission> | null;
 
 		/**
 		 * Dashboard source entity.
@@ -2694,42 +2694,42 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * A description for the first version of the dashboard being created.
 		 * Max length: 512
 		 * Min length: 1
 		 */
-		VersionDescription?: string;
+		VersionDescription?: string | null;
 
 		/** Dashboard publish options. */
-		DashboardPublishOptions?: CreateDashboardPostBodyDashboardPublishOptions;
+		DashboardPublishOptions?: CreateDashboardPostBodyDashboardPublishOptions | null;
 	}
 
 	export interface CreateDashboardPostBodyParameters {
-		StringParameters?: Array<StringParameter>;
-		IntegerParameters?: Array<IntegerParameter>;
-		DecimalParameters?: Array<DecimalParameter>;
-		DateTimeParameters?: Array<DateTimeParameter>;
+		StringParameters?: Array<StringParameter> | null;
+		IntegerParameters?: Array<IntegerParameter> | null;
+		DecimalParameters?: Array<DecimalParameter> | null;
+		DateTimeParameters?: Array<DateTimeParameter> | null;
 	}
 
 	export interface CreateDashboardPostBodySourceEntity {
 
 		/** Dashboard source template. */
-		SourceTemplate?: DashboardSourceTemplate;
+		SourceTemplate?: DashboardSourceTemplate | null;
 	}
 
 	export interface CreateDashboardPostBodyDashboardPublishOptions {
 
 		/** Ad hoc (one-time) filtering option. */
-		AdHocFilteringOption?: AdHocFilteringOption;
+		AdHocFilteringOption?: AdHocFilteringOption | null;
 
 		/** Export to .csv option. */
-		ExportToCSVOption?: ExportToCSVOption;
+		ExportToCSVOption?: ExportToCSVOption | null;
 
 		/** Sheet controls option. */
-		SheetControlsOption?: SheetControlsOption;
+		SheetControlsOption?: SheetControlsOption | null;
 	}
 
 	export interface UpdateDashboardPutBody {
@@ -2750,42 +2750,42 @@ export namespace MyNS {
 		SourceEntity: UpdateDashboardPutBodySourceEntity;
 
 		/** Parameters. */
-		Parameters?: UpdateDashboardPutBodyParameters;
+		Parameters?: UpdateDashboardPutBodyParameters | null;
 
 		/**
 		 * A description for the first version of the dashboard being created.
 		 * Max length: 512
 		 * Min length: 1
 		 */
-		VersionDescription?: string;
+		VersionDescription?: string | null;
 
 		/** Dashboard publish options. */
-		DashboardPublishOptions?: UpdateDashboardPutBodyDashboardPublishOptions;
+		DashboardPublishOptions?: UpdateDashboardPutBodyDashboardPublishOptions | null;
 	}
 
 	export interface UpdateDashboardPutBodySourceEntity {
 
 		/** Dashboard source template. */
-		SourceTemplate?: DashboardSourceTemplate;
+		SourceTemplate?: DashboardSourceTemplate | null;
 	}
 
 	export interface UpdateDashboardPutBodyParameters {
-		StringParameters?: Array<StringParameter>;
-		IntegerParameters?: Array<IntegerParameter>;
-		DecimalParameters?: Array<DecimalParameter>;
-		DateTimeParameters?: Array<DateTimeParameter>;
+		StringParameters?: Array<StringParameter> | null;
+		IntegerParameters?: Array<IntegerParameter> | null;
+		DecimalParameters?: Array<DecimalParameter> | null;
+		DateTimeParameters?: Array<DateTimeParameter> | null;
 	}
 
 	export interface UpdateDashboardPutBodyDashboardPublishOptions {
 
 		/** Ad hoc (one-time) filtering option. */
-		AdHocFilteringOption?: AdHocFilteringOption;
+		AdHocFilteringOption?: AdHocFilteringOption | null;
 
 		/** Export to .csv option. */
-		ExportToCSVOption?: ExportToCSVOption;
+		ExportToCSVOption?: ExportToCSVOption | null;
 
 		/** Sheet controls option. */
-		SheetControlsOption?: SheetControlsOption;
+		SheetControlsOption?: SheetControlsOption | null;
 	}
 
 	export interface CreateDataSetPostBody {
@@ -2811,7 +2811,7 @@ export namespace MyNS {
 		PhysicalTableMap: {[id: string]: PhysicalTable };
 
 		/** Configures the combination and transformation of the data from the physical tables. */
-		LogicalTableMap?: {[id: string]: LogicalTable };
+		LogicalTableMap?: {[id: string]: LogicalTable } | null;
 
 		/**
 		 * Indicates whether you want to import the data into SPICE.
@@ -2824,29 +2824,29 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 8
 		 */
-		ColumnGroups?: Array<ColumnGroup>;
+		ColumnGroups?: Array<ColumnGroup> | null;
 
 		/**
 		 * A list of resource permissions on the dataset.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		Permissions?: Array<ResourcePermission>;
+		Permissions?: Array<ResourcePermission> | null;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: CreateDataSetPostBodyRowLevelPermissionDataSet;
+		RowLevelPermissionDataSet?: CreateDataSetPostBodyRowLevelPermissionDataSet | null;
 
 		/**
 		 * Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDataSetPostBodyRowLevelPermissionDataSet {
-		Arn?: string;
-		PermissionPolicy?: RowLevelPermissionPolicy;
+		Arn?: string | null;
+		PermissionPolicy?: RowLevelPermissionPolicy | null;
 	}
 
 	export interface CreateDataSourcePostBody {
@@ -2872,104 +2872,104 @@ export namespace MyNS {
 		Type: DataSourceType;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: CreateDataSourcePostBodyDataSourceParameters;
+		DataSourceParameters?: CreateDataSourcePostBodyDataSourceParameters | null;
 
 		/** Data source credentials. */
-		Credentials?: CreateDataSourcePostBodyCredentials;
+		Credentials?: CreateDataSourcePostBodyCredentials | null;
 
 		/**
 		 * A list of resource permissions on the data source.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		Permissions?: Array<ResourcePermission>;
+		Permissions?: Array<ResourcePermission> | null;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: CreateDataSourcePostBodyVpcConnectionProperties;
+		VpcConnectionProperties?: CreateDataSourcePostBodyVpcConnectionProperties | null;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: CreateDataSourcePostBodySslProperties;
+		SslProperties?: CreateDataSourcePostBodySslProperties | null;
 
 		/**
 		 * Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDataSourcePostBodyDataSourceParameters {
 
 		/** Amazon Elasticsearch Service parameters. */
-		AmazonElasticsearchParameters?: AmazonElasticsearchParameters;
+		AmazonElasticsearchParameters?: AmazonElasticsearchParameters | null;
 
 		/** Amazon Athena parameters. */
-		AthenaParameters?: AthenaParameters;
+		AthenaParameters?: AthenaParameters | null;
 
 		/** Amazon Aurora parameters. */
-		AuroraParameters?: AuroraParameters;
+		AuroraParameters?: AuroraParameters | null;
 
 		/** Amazon Aurora with PostgreSQL compatibility parameters. */
-		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters;
+		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters | null;
 
 		/** AWS IoT Analytics parameters. */
-		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters;
+		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters | null;
 
 		/** Jira parameters. */
-		JiraParameters?: JiraParameters;
+		JiraParameters?: JiraParameters | null;
 
 		/** MariaDB parameters. */
-		MariaDbParameters?: MariaDbParameters;
+		MariaDbParameters?: MariaDbParameters | null;
 
 		/** MySQL parameters. */
-		MySqlParameters?: MySqlParameters;
+		MySqlParameters?: MySqlParameters | null;
 
 		/** PostgreSQL parameters. */
-		PostgreSqlParameters?: PostgreSqlParameters;
+		PostgreSqlParameters?: PostgreSqlParameters | null;
 
 		/** Presto parameters. */
-		PrestoParameters?: PrestoParameters;
+		PrestoParameters?: PrestoParameters | null;
 
 		/** Amazon RDS parameters. */
-		RdsParameters?: RdsParameters;
+		RdsParameters?: RdsParameters | null;
 
 		/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
-		RedshiftParameters?: RedshiftParameters;
+		RedshiftParameters?: RedshiftParameters | null;
 
 		/** S3 parameters. */
-		S3Parameters?: S3Parameters;
+		S3Parameters?: S3Parameters | null;
 
 		/** ServiceNow parameters. */
-		ServiceNowParameters?: ServiceNowParameters;
+		ServiceNowParameters?: ServiceNowParameters | null;
 
 		/** Snowflake parameters. */
-		SnowflakeParameters?: SnowflakeParameters;
+		SnowflakeParameters?: SnowflakeParameters | null;
 
 		/** Spark parameters. */
-		SparkParameters?: SparkParameters;
+		SparkParameters?: SparkParameters | null;
 
 		/** SQL Server parameters. */
-		SqlServerParameters?: SqlServerParameters;
+		SqlServerParameters?: SqlServerParameters | null;
 
 		/** Teradata parameters. */
-		TeradataParameters?: TeradataParameters;
+		TeradataParameters?: TeradataParameters | null;
 
 		/** Twitter parameters. */
-		TwitterParameters?: TwitterParameters;
+		TwitterParameters?: TwitterParameters | null;
 	}
 
 	export interface CreateDataSourcePostBodyCredentials {
 
 		/** The combination of user name and password that are used as credentials. */
-		CredentialPair?: CredentialPair;
+		CredentialPair?: CredentialPair | null;
 	}
 
 	export interface CreateDataSourcePostBodyVpcConnectionProperties {
-		VpcConnectionArn?: string;
+		VpcConnectionArn?: string | null;
 	}
 
 	export interface CreateDataSourcePostBodySslProperties {
-		DisableSsl?: boolean;
+		DisableSsl?: boolean | null;
 	}
 
 	export interface CreateGroupPostBody {
@@ -2987,7 +2987,7 @@ export namespace MyNS {
 		 * Max length: 512
 		 * Min length: 1
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface CreateIAMPolicyAssignmentPostBody {
@@ -3007,10 +3007,10 @@ export namespace MyNS {
 		AssignmentStatus: CreateIAMPolicyAssignmentResponseAssignmentStatus;
 
 		/** The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment. */
-		PolicyArn?: string;
+		PolicyArn?: string | null;
 
 		/** The QuickSight users, groups, or both that you want to assign the policy to. */
-		Identities?: {[id: string]: Array<string> };
+		Identities?: {[id: string]: Array<string> } | null;
 	}
 
 	export interface CreateTemplatePostBody {
@@ -3021,14 +3021,14 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\u0020-\u00FF]+
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * A list of resource permissions to be set on the template.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		Permissions?: Array<ResourcePermission>;
+		Permissions?: Array<ResourcePermission> | null;
 
 		/**
 		 * The source entity of the template.
@@ -3041,23 +3041,23 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
 		 * Max length: 512
 		 * Min length: 1
 		 */
-		VersionDescription?: string;
+		VersionDescription?: string | null;
 	}
 
 	export interface CreateTemplatePostBodySourceEntity {
 
 		/** The source analysis of the template. */
-		SourceAnalysis?: TemplateSourceAnalysis;
+		SourceAnalysis?: TemplateSourceAnalysis | null;
 
 		/** The source template of the template. */
-		SourceTemplate?: TemplateSourceTemplate;
+		SourceTemplate?: TemplateSourceTemplate | null;
 	}
 
 	export interface UpdateTemplatePutBody {
@@ -3073,7 +3073,7 @@ export namespace MyNS {
 		 * Max length: 512
 		 * Min length: 1
 		 */
-		VersionDescription?: string;
+		VersionDescription?: string | null;
 
 		/**
 		 * The name for the template.
@@ -3081,16 +3081,16 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\u0020-\u00FF]+
 		 */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateTemplatePutBodySourceEntity {
 
 		/** The source analysis of the template. */
-		SourceAnalysis?: TemplateSourceAnalysis;
+		SourceAnalysis?: TemplateSourceAnalysis | null;
 
 		/** The source template of the template. */
-		SourceTemplate?: TemplateSourceTemplate;
+		SourceTemplate?: TemplateSourceTemplate | null;
 	}
 
 	export interface CreateTemplateAliasPostBody {
@@ -3130,7 +3130,7 @@ export namespace MyNS {
 		PhysicalTableMap: {[id: string]: PhysicalTable };
 
 		/** Configures the combination and transformation of the data from the physical tables. */
-		LogicalTableMap?: {[id: string]: LogicalTable };
+		LogicalTableMap?: {[id: string]: LogicalTable } | null;
 
 		/**
 		 * Indicates whether you want to import the data into SPICE.
@@ -3143,15 +3143,15 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 8
 		 */
-		ColumnGroups?: Array<ColumnGroup>;
+		ColumnGroups?: Array<ColumnGroup> | null;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: UpdateDataSetPutBodyRowLevelPermissionDataSet;
+		RowLevelPermissionDataSet?: UpdateDataSetPutBodyRowLevelPermissionDataSet | null;
 	}
 
 	export interface UpdateDataSetPutBodyRowLevelPermissionDataSet {
-		Arn?: string;
-		PermissionPolicy?: RowLevelPermissionPolicy;
+		Arn?: string | null;
+		PermissionPolicy?: RowLevelPermissionPolicy | null;
 	}
 
 	export interface UpdateDataSourcePutBody {
@@ -3165,90 +3165,90 @@ export namespace MyNS {
 		Name: string;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: UpdateDataSourcePutBodyDataSourceParameters;
+		DataSourceParameters?: UpdateDataSourcePutBodyDataSourceParameters | null;
 
 		/** Data source credentials. */
-		Credentials?: UpdateDataSourcePutBodyCredentials;
+		Credentials?: UpdateDataSourcePutBodyCredentials | null;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: UpdateDataSourcePutBodyVpcConnectionProperties;
+		VpcConnectionProperties?: UpdateDataSourcePutBodyVpcConnectionProperties | null;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: UpdateDataSourcePutBodySslProperties;
+		SslProperties?: UpdateDataSourcePutBodySslProperties | null;
 	}
 
 	export interface UpdateDataSourcePutBodyDataSourceParameters {
 
 		/** Amazon Elasticsearch Service parameters. */
-		AmazonElasticsearchParameters?: AmazonElasticsearchParameters;
+		AmazonElasticsearchParameters?: AmazonElasticsearchParameters | null;
 
 		/** Amazon Athena parameters. */
-		AthenaParameters?: AthenaParameters;
+		AthenaParameters?: AthenaParameters | null;
 
 		/** Amazon Aurora parameters. */
-		AuroraParameters?: AuroraParameters;
+		AuroraParameters?: AuroraParameters | null;
 
 		/** Amazon Aurora with PostgreSQL compatibility parameters. */
-		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters;
+		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters | null;
 
 		/** AWS IoT Analytics parameters. */
-		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters;
+		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters | null;
 
 		/** Jira parameters. */
-		JiraParameters?: JiraParameters;
+		JiraParameters?: JiraParameters | null;
 
 		/** MariaDB parameters. */
-		MariaDbParameters?: MariaDbParameters;
+		MariaDbParameters?: MariaDbParameters | null;
 
 		/** MySQL parameters. */
-		MySqlParameters?: MySqlParameters;
+		MySqlParameters?: MySqlParameters | null;
 
 		/** PostgreSQL parameters. */
-		PostgreSqlParameters?: PostgreSqlParameters;
+		PostgreSqlParameters?: PostgreSqlParameters | null;
 
 		/** Presto parameters. */
-		PrestoParameters?: PrestoParameters;
+		PrestoParameters?: PrestoParameters | null;
 
 		/** Amazon RDS parameters. */
-		RdsParameters?: RdsParameters;
+		RdsParameters?: RdsParameters | null;
 
 		/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
-		RedshiftParameters?: RedshiftParameters;
+		RedshiftParameters?: RedshiftParameters | null;
 
 		/** S3 parameters. */
-		S3Parameters?: S3Parameters;
+		S3Parameters?: S3Parameters | null;
 
 		/** ServiceNow parameters. */
-		ServiceNowParameters?: ServiceNowParameters;
+		ServiceNowParameters?: ServiceNowParameters | null;
 
 		/** Snowflake parameters. */
-		SnowflakeParameters?: SnowflakeParameters;
+		SnowflakeParameters?: SnowflakeParameters | null;
 
 		/** Spark parameters. */
-		SparkParameters?: SparkParameters;
+		SparkParameters?: SparkParameters | null;
 
 		/** SQL Server parameters. */
-		SqlServerParameters?: SqlServerParameters;
+		SqlServerParameters?: SqlServerParameters | null;
 
 		/** Teradata parameters. */
-		TeradataParameters?: TeradataParameters;
+		TeradataParameters?: TeradataParameters | null;
 
 		/** Twitter parameters. */
-		TwitterParameters?: TwitterParameters;
+		TwitterParameters?: TwitterParameters | null;
 	}
 
 	export interface UpdateDataSourcePutBodyCredentials {
 
 		/** The combination of user name and password that are used as credentials. */
-		CredentialPair?: CredentialPair;
+		CredentialPair?: CredentialPair | null;
 	}
 
 	export interface UpdateDataSourcePutBodyVpcConnectionProperties {
-		VpcConnectionArn?: string;
+		VpcConnectionArn?: string | null;
 	}
 
 	export interface UpdateDataSourcePutBodySslProperties {
-		DisableSsl?: boolean;
+		DisableSsl?: boolean | null;
 	}
 
 	export interface UpdateGroupPutBody {
@@ -3258,7 +3258,7 @@ export namespace MyNS {
 		 * Max length: 512
 		 * Min length: 1
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateUserPutBody {
@@ -3283,14 +3283,14 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		GrantPermissions?: Array<ResourcePermission>;
+		GrantPermissions?: Array<ResourcePermission> | null;
 
 		/**
 		 * The permissions that you want to revoke from this resource.
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		RevokePermissions?: Array<ResourcePermission>;
+		RevokePermissions?: Array<ResourcePermission> | null;
 	}
 
 	export interface UpdateDataSetPermissionsPostBody {
@@ -3300,14 +3300,14 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		GrantPermissions?: Array<ResourcePermission>;
+		GrantPermissions?: Array<ResourcePermission> | null;
 
 		/**
 		 * The resource permissions that you want to revoke from the dataset.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		RevokePermissions?: Array<ResourcePermission>;
+		RevokePermissions?: Array<ResourcePermission> | null;
 	}
 
 	export interface UpdateDataSourcePermissionsPostBody {
@@ -3317,26 +3317,26 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		GrantPermissions?: Array<ResourcePermission>;
+		GrantPermissions?: Array<ResourcePermission> | null;
 
 		/**
 		 * A list of resource permissions that you want to revoke on the data source.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		RevokePermissions?: Array<ResourcePermission>;
+		RevokePermissions?: Array<ResourcePermission> | null;
 	}
 
 	export interface UpdateIAMPolicyAssignmentPutBody {
 
 		/** <p>The status of the assignment. Possible values are as follows:</p> <ul> <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> </ul> */
-		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus;
+		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 
 		/** The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment. */
-		PolicyArn?: string;
+		PolicyArn?: string | null;
 
 		/** The QuickSight users, groups, or both that you want to assign the policy to. */
-		Identities?: {[id: string]: Array<string> };
+		Identities?: {[id: string]: Array<string> } | null;
 	}
 
 	export interface UpdateTemplatePermissionsPutBody {
@@ -3346,14 +3346,14 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		GrantPermissions?: Array<ResourcePermission>;
+		GrantPermissions?: Array<ResourcePermission> | null;
 
 		/**
 		 * A list of resource permissions to be revoked from the template.
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		RevokePermissions?: Array<ResourcePermission>;
+		RevokePermissions?: Array<ResourcePermission> | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -3388,7 +3388,7 @@ export namespace MyNS {
 		UserRole: UserRole;
 
 		/** The ARN of the IAM user or role that you are registering with Amazon QuickSight. */
-		IamArn?: string;
+		IamArn?: string | null;
 
 		/**
 		 * You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
@@ -3396,14 +3396,14 @@ export namespace MyNS {
 		 * Min length: 2
 		 * Pattern: [\w+=.@-]*
 		 */
-		SessionName?: string;
+		SessionName?: string | null;
 
 		/**
 		 * The Amazon QuickSight user name that you want to create for the user you are registering.
 		 * Min length: 1
 		 * Pattern: [\u0020-\u00FF]+
 		 */
-		UserName?: string;
+		UserName?: string | null;
 	}
 
 	export interface SearchDashboardsPostBody {
@@ -3416,14 +3416,14 @@ export namespace MyNS {
 		Filters: Array<DashboardSearchFilter>;
 
 		/** The token for the next set of results, or null if there are no more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to be returned per request.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 }

@@ -5,10 +5,10 @@ export namespace MyNS {
 	export interface Activity_3_1 {
 
 		/** The category that this event occurred for. This will be preset for only "category" activity types. */
-		category?: Category;
+		category?: Category | null;
 
 		/** The channel that this event occurred for. This will be present for only "channel" activity types. */
-		channel?: Channel;
+		channel?: Channel | null;
 
 		/**
 		 * Video associated with ths activity.
@@ -17,7 +17,7 @@ export namespace MyNS {
 		clip: Video;
 
 		/** The group that this event occurred for. This will be present for only "group" activity types. */
-		group?: Group;
+		group?: Group | null;
 
 		/**
 		 * The activity's metadata.
@@ -26,7 +26,7 @@ export namespace MyNS {
 		metadata: Activity_3_1Metadata;
 
 		/** The tag that this event occurred for. This will be present for only "tag" activity types. */
-		tag?: Tag;
+		tag?: Tag | null;
 
 		/**
 		 * Time that the event occurred.
@@ -41,13 +41,13 @@ export namespace MyNS {
 		type: Activity_3_1Type;
 
 		/** The user that this event occurred for. This will be present for "like", "appearance", and "share" activity types. */
-		user?: User;
+		user?: User | null;
 	}
 
 	export interface Category {
 
 		/** The active icon for the category. */
-		icon?: Picture;
+		icon?: Picture | null;
 
 		/**
 		 * The last time, in ISO 8601 format, that a video was featured.
@@ -92,7 +92,7 @@ export namespace MyNS {
 		resource_key: string;
 
 		/** All the subcategories that belong to this category, if the current category is a top-level parent. */
-		CategorySubcategories?: Array<CategorySubcategories>;
+		CategorySubcategories?: Array<CategorySubcategories> | null;
 
 		/**
 		 * Whether the category isn't a subcategory of another category.
@@ -116,7 +116,7 @@ export namespace MyNS {
 		active: boolean;
 
 		/** The upload URL for the picture. This field appears when you create the picture resource for the first time. */
-		link?: string;
+		link?: string | null;
 
 		/**
 		 * The picture's resource key string.
@@ -162,7 +162,7 @@ export namespace MyNS {
 		link: string;
 
 		/** The direct link to the image with a play button overlay. */
-		link_with_play_button?: string;
+		link_with_play_button?: string | null;
 
 		/**
 		 * The width of the image.
@@ -782,7 +782,7 @@ export namespace MyNS {
 		 * * `unrated` - No rating.
 		 * * `violence` - Violent or graphic content.
 		 */
-		content_filter?: Array<string>;
+		content_filter?: Array<string> | null;
 
 		/**
 		 * The time in ISO 8601 format when the user account was created.
@@ -791,7 +791,7 @@ export namespace MyNS {
 		created_time: string;
 
 		/** The user's email address. This data requires a bearer token with the `email` scope. */
-		email?: string;
+		email?: string | null;
 
 		/**
 		 * The absolute URL of this user's profile page.
@@ -822,7 +822,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		pictures: Picture;
-		preferences?: UserPreferences;
+		preferences?: UserPreferences | null;
 
 		/**
 		 * The user's resource key string.
@@ -1399,7 +1399,7 @@ export namespace MyNS {
 	}
 
 	export interface UserMetadataInteractions {
-		add_privacy_user?: UserMetadataInteractionsAdd_privacy_user;
+		add_privacy_user?: UserMetadataInteractionsAdd_privacy_user | null;
 
 		/**
 		 * Information related to the block status of this user.
@@ -1423,10 +1423,10 @@ export namespace MyNS {
 	export interface UserMetadataInteractionsAdd_privacy_user {
 
 		/** An array of the HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
-		options?: Array<string>;
+		options?: Array<string> | null;
 
 		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 	export interface UserMetadataInteractionsBlock {
@@ -1499,17 +1499,17 @@ export namespace MyNS {
 	}
 
 	export interface UserPreferences {
-		videos?: UserPreferencesVideos;
+		videos?: UserPreferencesVideos | null;
 	}
 
 	export interface UserPreferencesVideos {
-		privacy?: UserPreferencesVideosPrivacy;
+		privacy?: UserPreferencesVideosPrivacy | null;
 	}
 
 	export interface UserPreferencesVideosPrivacy {
 
 		/** Whether other users can add the user's videos. */
-		add?: boolean;
+		add?: boolean | null;
 
 		/**
 		 * The user's privacy preference for comments:
@@ -1518,10 +1518,10 @@ export namespace MyNS {
 		 * * `contacts` - Only contacts can comment on the user's videos.
 		 * * `nobody` - No one can comment on the user's videos.
 		 */
-		comments?: UserPreferencesVideosPrivacyComments;
+		comments?: UserPreferencesVideosPrivacyComments | null;
 
 		/** Whether other users can download the user's videos. */
-		download?: boolean;
+		download?: boolean | null;
 
 		/**
 		 * The user's privacy preference for embeds:
@@ -1530,7 +1530,7 @@ export namespace MyNS {
 		 * * `public` - Anyone can embed the user's videos.
 		 * * `whitelist` - Only those on the whitelist can embed the user's videos.
 		 */
-		embed?: UserPreferencesVideosPrivacyEmbed;
+		embed?: UserPreferencesVideosPrivacyEmbed | null;
 
 		/**
 		 * The user's privacy preference for views:
@@ -1543,7 +1543,7 @@ export namespace MyNS {
 		 * * `unlisted` - Anybody can view the user's videos if they have a link.
 		 * * `users` - Only other Vimeo members can view the user's videos.
 		 */
-		view?: UserPreferencesVideosPrivacyView;
+		view?: UserPreferencesVideosPrivacyView | null;
 	}
 
 	export enum UserPreferencesVideosPrivacyComments { anybody = 0, contacts = 1, nobody = 2 }
@@ -1728,7 +1728,7 @@ export namespace MyNS {
 		language: string;
 
 		/** The time in ISO 8601 format when the user last modified the video. */
-		last_user_action_event_date?: string;
+		last_user_action_event_date?: string | null;
 
 		/**
 		 * The [Creative Commons](http://creativecommons.org/licenses/) license used for the video:
@@ -1769,10 +1769,10 @@ export namespace MyNS {
 		name: string;
 
 		/** Information about the folder that contains this video. */
-		parent_folder?: Project;
+		parent_folder?: Project | null;
 
 		/** The privacy-enabled password to watch this video. Only users can see their own video passwords. This data requires a bearer token with the `private` scope. */
-		password?: string;
+		password?: string | null;
 
 		/**
 		 * The active picture for this video.
@@ -1930,7 +1930,7 @@ export namespace MyNS {
 		title: Embed_settingsTitle;
 
 		/** The URI of the embed preset. */
-		uri?: string;
+		uri?: string | null;
 
 		/**
 		 * Whether the volume controls appear in the embeddable player for this video.
@@ -2174,13 +2174,13 @@ export namespace MyNS {
 	export interface VideoMetadataConnectionsCredits {
 
 		/** An array of HTTP methods permitted on this URI. */
-		options?: Array<string>;
+		options?: Array<string> | null;
 
 		/** The total number of users on this connection. */
-		total?: number;
+		total?: number | null;
 
 		/** The API URI that resolves to the connection data. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 	export interface VideoMetadataConnectionsLikes {
@@ -2264,19 +2264,19 @@ export namespace MyNS {
 	export interface VideoMetadataConnectionsRecommendations {
 
 		/** An array of HTTP methods allowed on this URI. */
-		options?: Array<string>;
+		options?: Array<string> | null;
 
 		/** The API URI that resolves to the connection data. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 	export interface VideoMetadataConnectionsRelated {
 
 		/** An array of HTTP methods allowed on this URI. */
-		options?: Array<string>;
+		options?: Array<string> | null;
 
 		/** The API URI that resolves to the connection data. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 	export interface VideoMetadataConnectionsSeason {
@@ -2366,7 +2366,7 @@ export namespace MyNS {
 	export interface VideoMetadataConnectionsVersions {
 
 		/** The URI of the current version of the video. */
-		current_uri?: string;
+		current_uri?: string | null;
 
 		/**
 		 * An array of HTTP methods permitted on this URI.
@@ -2420,7 +2420,7 @@ export namespace MyNS {
 		report: VideoMetadataInteractionsReport;
 
 		/** Subscription information for an On Demand video. */
-		subscribe?: VideoMetadataInteractionsSubscribe;
+		subscribe?: VideoMetadataInteractionsSubscribe | null;
 
 		/**
 		 * Information about removing this video from the user's list of watched videos.
@@ -2632,16 +2632,16 @@ export namespace MyNS {
 	export interface VideoMetadataInteractionsSubscribe {
 
 		/** Whether the video has DRM. */
-		drm?: boolean;
+		drm?: boolean | null;
 
 		/** The time in ISO 8601 format when the subscription expires. */
-		expires_time?: string;
+		expires_time?: string | null;
 
 		/** The tine in ISO 8601 format when the subscription was purchased. */
-		purchase_time?: string;
+		purchase_time?: string | null;
 
 		/** The stream type. */
-		stream?: string;
+		stream?: string | null;
 	}
 
 	export interface VideoMetadataInteractionsWatched {
@@ -2872,16 +2872,16 @@ export namespace MyNS {
 	export interface VideoSpatialDirector_timeline {
 
 		/** The director timeline pitch, from -90 (minimum) to 90 (maximum). */
-		pitch?: number;
+		pitch?: number | null;
 
 		/** The director timeline roll. */
-		roll?: number;
+		roll?: number | null;
 
 		/** The director timeline time code. */
-		time_code?: number;
+		time_code?: number | null;
 
 		/** The director timeline yaw, from 0 (minimum) to 360 (maximum). */
-		yaw?: number;
+		yaw?: number | null;
 	}
 
 	export enum VideoSpatialProjection { cubical = 0, cylindrical = 1, dome = 2, equirectangular = 3, pyramid = 4 }
@@ -2902,7 +2902,7 @@ export namespace MyNS {
 	export interface VideoTranscode {
 
 		/** Status code for this video's availability. */
-		status?: VideoTranscodeStatus;
+		status?: VideoTranscodeStatus | null;
 	}
 
 	export enum VideoTranscodeStatus { complete = 0, error = 1, in_progress = 2 }
@@ -2910,22 +2910,22 @@ export namespace MyNS {
 	export interface VideoUpload {
 
 		/** The approach for uploading the video. */
-		approach?: VideoUploadApproach;
+		approach?: VideoUploadApproach | null;
 
 		/** The URI for completing the upload. */
-		complete_uri?: string;
+		complete_uri?: string | null;
 
 		/** The HTML form for uploading a video through the post approach. */
-		form?: string;
+		form?: string | null;
 
 		/** The link of the video to capture through the pull approach. */
-		link?: string;
+		link?: string | null;
 
 		/** The redirect URL for the upload app. */
-		redirect_url?: string;
+		redirect_url?: string | null;
 
 		/** The file size in bytes of the uploaded video. */
-		size?: number;
+		size?: number | null;
 
 		/**
 		 * The status code for the availability of the uploaded video:
@@ -2938,7 +2938,7 @@ export namespace MyNS {
 		status: VideoTranscodeStatus;
 
 		/** The link for sending video file data. */
-		upload_link?: string;
+		upload_link?: string | null;
 	}
 
 	export enum VideoUploadApproach { post = 0, pull = 1, streaming = 2, tus = 3 }
@@ -3006,7 +3006,7 @@ export namespace MyNS {
 		uri: string;
 
 		/** The owner of the group. */
-		user?: User;
+		user?: User | null;
 	}
 
 	export interface GroupMetadata {
@@ -3529,7 +3529,7 @@ export namespace MyNS {
 	export interface AlbumPrivacy {
 
 		/** The privacy-enabled password to see this album. Present only when `privacy.view` is `password`. */
-		password?: string;
+		password?: string | null;
 
 		/**
 		 * Who can view the album:
@@ -3578,10 +3578,10 @@ export namespace MyNS {
 		app: Api_app;
 
 		/** The date and time that the token expires. */
-		expires_on?: string;
+		expires_on?: string | null;
 
 		/** The refresh token string. */
-		refresh_token?: string;
+		refresh_token?: string | null;
 
 		/**
 		 * The scope or scopes that the token supports.
@@ -3598,7 +3598,7 @@ export namespace MyNS {
 		token_type: AuthToken_type;
 
 		/** The user associated with the token. */
-		user?: User;
+		user?: User | null;
 	}
 
 	export enum AuthToken_type { bearer = 0 }
@@ -3778,10 +3778,10 @@ export namespace MyNS {
 		uri: string;
 
 		/** The Vimeo user associated with this credit. */
-		user?: User;
+		user?: User | null;
 
 		/** The video associated with this credit. */
-		video?: Video;
+		video?: Video | null;
 	}
 
 	export interface Domain {
@@ -3984,7 +3984,7 @@ export namespace MyNS {
 		content_rating: Array<string>;
 
 		/** The time in ISO 8601 format when the page was created. */
-		created_time?: string;
+		created_time?: string | null;
 
 		/**
 		 * The description of this On Demand page.
@@ -4005,7 +4005,7 @@ export namespace MyNS {
 		episodes: On_demand_pageEpisodes;
 
 		/** This On Demand page's film, if it is a film. */
-		film?: Video;
+		film?: Video | null;
 
 		/**
 		 * All the genres assigned to this page.
@@ -4026,7 +4026,7 @@ export namespace MyNS {
 		metadata: On_demand_pageMetadata;
 
 		/** he time in ISO 8601 format when the page was last modified. */
-		modified_time?: string;
+		modified_time?: string | null;
 
 		/**
 		 * A descriptive title of this On Demand page.
@@ -4055,7 +4055,7 @@ export namespace MyNS {
 		resource_key: string;
 
 		/** The creator-designated SKU for this On Demand page. */
-		sku?: string;
+		sku?: string | null;
 
 		/**
 		 * Information about subscribing to this On Demand page, if enabled.
@@ -4385,34 +4385,34 @@ export namespace MyNS {
 	export interface Purchase_interaction {
 
 		/** Information on purchasing this video. */
-		buy?: Purchase_interactionBuy;
+		buy?: Purchase_interactionBuy | null;
 
 		/** Information on renting this video. */
-		rent?: string;
+		rent?: string | null;
 
 		/** Information on subscribing to this video. */
-		subscribe?: Purchase_interactionSubscribe;
+		subscribe?: Purchase_interactionSubscribe | null;
 	}
 
 	export interface Purchase_interactionBuy {
 
 		/** Whether the On Demand video for purchase has DRM. */
-		drm?: boolean;
+		drm?: boolean | null;
 	}
 
 	export interface Purchase_interactionSubscribe {
 
 		/** Whether the On Demand subscription has DRM. */
-		drm?: boolean;
+		drm?: boolean | null;
 
 		/** The time in ISO 8601 format when the On Demand video will expire. */
-		expires_time?: string;
+		expires_time?: string | null;
 
 		/** The URL to purchase this On Demand subscription on Vimeo. */
-		link?: string;
+		link?: string | null;
 
 		/** The time in ISO 8601 format when the On Demand was purchased. */
-		purchase_time?: string;
+		purchase_time?: string | null;
 
 		/**
 		 * The user's streaming access to this On Demand subscription:
@@ -4422,10 +4422,10 @@ export namespace MyNS {
 		 * * `restricted` - Streaming for the On Demand subscription is restricted.
 		 * * `unavailable` - The On Demand subscription is unavailable.
 		 */
-		stream?: VideoMetadataInteractionsBuyDownload;
+		stream?: VideoMetadataInteractionsBuyDownload | null;
 
 		/** The On Demand subscription's product URI. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 	export interface On_demand_pagePreorder {
@@ -4485,7 +4485,7 @@ export namespace MyNS {
 		link: string;
 
 		/** The product's rental period. */
-		period?: string;
+		period?: string | null;
 
 		/**
 		 * The accepted currencies and respective pricing for this product.
@@ -4778,13 +4778,13 @@ export namespace MyNS {
 		buy: On_demand_videoBuy;
 
 		/** Description of the On Demand video. */
-		description?: string;
+		description?: string | null;
 
 		/** The duration of the On Demand video. */
-		duration?: string;
+		duration?: string | null;
 
 		/** The episode number of the On Demand video. */
-		episode?: number;
+		episode?: number | null;
 
 		/**
 		 * An object containing information about how the authenticated user can interact with this On Demand page.
@@ -4805,13 +4805,13 @@ export namespace MyNS {
 		metadata: On_demand_videoMetadata;
 
 		/** The title of the On Demand video. */
-		name?: string;
+		name?: string | null;
 
 		/** An array of HTTP methods permitted on this URI. */
-		options?: Array<string>;
+		options?: Array<string> | null;
 
 		/** The active picture for this video. */
-		pictures?: Picture;
+		pictures?: Picture | null;
 
 		/**
 		 * The user's most recent play position in seconds for this video.
@@ -4820,10 +4820,10 @@ export namespace MyNS {
 		play_progress: number;
 
 		/** Describes the manual position of this video relative to the other videos owned by this On Demand page. */
-		position?: number;
+		position?: number | null;
 
 		/** The time in ISO 8601 format when the On Demand video was created or published. */
-		release_date?: string;
+		release_date?: string | null;
 
 		/**
 		 * The year that this On Demand video was released.
@@ -4854,7 +4854,7 @@ export namespace MyNS {
 		uri: string;
 
 		/** The owner of the video. */
-		user?: User;
+		user?: User | null;
 	}
 
 	export interface On_demand_videoBuy {
@@ -4872,7 +4872,7 @@ export namespace MyNS {
 		price: string;
 
 		/** Whether this On Demand video has been purchased. */
-		purchased?: boolean;
+		purchased?: boolean | null;
 	}
 
 	export interface On_demand_videoInteractions {
@@ -5012,7 +5012,7 @@ export namespace MyNS {
 		price: string;
 
 		/** Whether this On Demand video has been rented. */
-		purchased?: boolean;
+		purchased?: boolean | null;
 	}
 
 	export enum On_demand_videoType { extra = 0, main = 1, trailer = 2 }
@@ -5020,7 +5020,7 @@ export namespace MyNS {
 	export interface Play {
 
 		/** Progressive files. */
-		PlayProgressive?: Array<PlayProgressive>;
+		PlayProgressive?: Array<PlayProgressive> | null;
 
 		/**
 		 * The play status of the video:
@@ -5067,7 +5067,7 @@ export namespace MyNS {
 		link_expiration_time: string;
 
 		/** The URLs for logging events. */
-		log?: string;
+		log?: string | null;
 
 		/**
 		 * The MD5 hash of the video file.
@@ -5341,13 +5341,13 @@ export namespace MyNS {
 	export interface PresetsSettingsOutro {
 
 		/** A comma-separated list of video URIs. Present only if the type is `uploaded_clips`. */
-		clips?: string;
+		clips?: string | null;
 
 		/** The outro link settings. Present only if the type is `link`. */
-		link?: PresetsSettingsOutroLink;
+		link?: PresetsSettingsOutroLink | null;
 
 		/** The outro text. Present only if the type is `text`. */
-		text?: string;
+		text?: string | null;
 
 		/**
 		 * The preset outro type:
@@ -5356,16 +5356,16 @@ export namespace MyNS {
 		type: PresetsSettingsOutroType;
 
 		/** A comma-separated list of video URIs. Present only if type is `no idea`. */
-		videos?: string;
+		videos?: string | null;
 	}
 
 	export interface PresetsSettingsOutroLink {
 
 		/** The name of the outro link. */
-		name?: string;
+		name?: string | null;
 
 		/** The URL of the outro link. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum PresetsSettingsOutroType { link = 0, no_idea = 1, text = 2, uploaded_clips = 3, uploaded_videos = 4 }
@@ -5436,13 +5436,13 @@ export namespace MyNS {
 	export interface Upload_attempt {
 
 		/** The video to upload. */
-		clip?: Video;
+		clip?: Video | null;
 
 		/** The completion URI of the upload. */
-		complete_uri?: string;
+		complete_uri?: string | null;
 
 		/** The HTML upload form. */
-		form?: string;
+		form?: string | null;
 
 		/**
 		 * The ticket identifier string for the upload.
@@ -5587,22 +5587,22 @@ export namespace MyNS {
 	export interface Video_versionsUpload {
 
 		/** The approach for uploading the video. */
-		approach?: VideoUploadApproach;
+		approach?: VideoUploadApproach | null;
 
 		/** The URI for completing the upload. */
-		complete_uri?: string;
+		complete_uri?: string | null;
 
 		/** The HTML form for uploading a video through the post approach. */
-		form?: string;
+		form?: string | null;
 
 		/** The link of the video to capture through the pull approach. */
-		link?: string;
+		link?: string | null;
 
 		/** The redirect URL for the upload app. */
-		redirect_url?: string;
+		redirect_url?: string | null;
 
 		/** The file size in bytes of the uploaded video. */
-		size?: number;
+		size?: number | null;
 
 		/**
 		 * The status code for the availability of the uploaded video:
@@ -5615,7 +5615,7 @@ export namespace MyNS {
 		status: VideoTranscodeStatus;
 
 		/** The link for sending video file data. */
-		upload_link?: string;
+		upload_link?: string | null;
 	}
 
 	@Injectable()
@@ -9072,7 +9072,7 @@ export namespace MyNS {
 	export interface Set_video_as_album_thumbnail_alt1PostBody {
 
 		/** The video frame time in seconds to use as the album thumbnail. */
-		time_code?: number;
+		time_code?: number | null;
 	}
 
 	export enum Get_category_subscriptions_alt1Sort { alphabetical = 0, date = 1, name = 2 }
@@ -9112,8 +9112,8 @@ export namespace MyNS {
 		 * * `SEK` - Swedish Krona
 		 * * `USD` - US Dollar
 		 */
-		accepted_currencies?: Create_vod_alt1PostBodyAccepted_currencies;
-		buy?: Create_vod_alt1PostBodyBuy;
+		accepted_currencies?: Create_vod_alt1PostBodyAccepted_currencies | null;
+		buy?: Create_vod_alt1PostBodyBuy | null;
 
 		/**
 		 * One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.
@@ -9128,19 +9128,19 @@ export namespace MyNS {
 		description: string;
 
 		/** The custom domain of the On Demand page. */
-		domain_link?: string;
-		episodes?: Create_vod_alt1PostBodyEpisodes;
+		domain_link?: string | null;
+		episodes?: Create_vod_alt1PostBodyEpisodes | null;
 
 		/** The custom string to use in this On Demand page's Vimeo URL. */
-		link?: string;
+		link?: string | null;
 
 		/**
 		 * The name of the On Demand page.
 		 * Required
 		 */
 		name: string;
-		rent?: Create_vod_alt1PostBodyRent;
-		subscription?: Create_vod_alt1PostBodySubscription;
+		rent?: Create_vod_alt1PostBodyRent | null;
+		subscription?: Create_vod_alt1PostBodySubscription | null;
 
 		/**
 		 * The type of On Demand page.
@@ -9154,81 +9154,81 @@ export namespace MyNS {
 	export interface Create_vod_alt1PostBodyBuy {
 
 		/** Whether the Buy action is active. *Required if `rent.active` is false. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** Whether people who buy the video can download it. To use this field, `type` must be `film`. */
-		download?: boolean;
-		price?: Create_vod_alt1PostBodyBuyPrice;
+		download?: boolean | null;
+		price?: Create_vod_alt1PostBodyBuyPrice | null;
 	}
 
 	export interface Create_vod_alt1PostBodyBuyPrice {
 
 		/** The purchase price of this video in AUD. */
-		AUD?: number;
+		AUD?: number | null;
 
 		/** The purchase price of this video in CAD. */
-		CAD?: number;
+		CAD?: number | null;
 
 		/** The purchase price of this video in CHF. */
-		CHF?: number;
+		CHF?: number | null;
 
 		/** The purchase price of this video in DKK. */
-		DKK?: number;
+		DKK?: number | null;
 
 		/** The purchase price of this video in EUR. */
-		EUR?: number;
+		EUR?: number | null;
 
 		/** The purchase price of this video in GBP. */
-		GBP?: number;
+		GBP?: number | null;
 
 		/** The purchase price of this video in JPY. */
-		JPY?: number;
+		JPY?: number | null;
 
 		/** The purchase price of this video in KRW. */
-		KRW?: number;
+		KRW?: number | null;
 
 		/** The purchase price of this video in NOK. */
-		NOK?: number;
+		NOK?: number | null;
 
 		/** The purchase price of this video in PLN. */
-		PLN?: number;
+		PLN?: number | null;
 
 		/** The purchase price of this video in SEK. */
-		SEK?: number;
+		SEK?: number | null;
 
 		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export interface Create_vod_alt1PostBodyEpisodes {
-		buy?: Create_vod_alt1PostBodyEpisodesBuy;
-		rent?: Create_vod_alt1PostBodyEpisodesRent;
+		buy?: Create_vod_alt1PostBodyEpisodesBuy | null;
+		rent?: Create_vod_alt1PostBodyEpisodesRent | null;
 	}
 
 	export interface Create_vod_alt1PostBodyEpisodesBuy {
 
 		/** Whether episodes can be bought. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** Whether people who buy the episode can download it. To use this field, `type` must be `series`. */
-		download?: boolean;
-		price?: Create_vod_alt1PostBodyEpisodesBuyPrice;
+		download?: boolean | null;
+		price?: Create_vod_alt1PostBodyEpisodesBuyPrice | null;
 	}
 
 	export interface Create_vod_alt1PostBodyEpisodesBuyPrice {
 
 		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export interface Create_vod_alt1PostBodyEpisodesRent {
 
 		/** Whether episodes can be rented */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** The period in which this episode can be rented for. */
-		period?: Create_vod_alt1PostBodyEpisodesRentPeriod;
-		price?: Create_vod_alt1PostBodyEpisodesRentPrice;
+		period?: Create_vod_alt1PostBodyEpisodesRentPeriod | null;
+		price?: Create_vod_alt1PostBodyEpisodesRentPrice | null;
 	}
 
 	export enum Create_vod_alt1PostBodyEpisodesRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
@@ -9236,17 +9236,17 @@ export namespace MyNS {
 	export interface Create_vod_alt1PostBodyEpisodesRentPrice {
 
 		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export interface Create_vod_alt1PostBodyRent {
 
 		/** Whether the video can be rented. *Required if `buy.active` is false. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** The period in which this can be rented for. */
-		period?: Create_vod_alt1PostBodyRentPeriod;
-		price?: Create_vod_alt1PostBodyRentPrice;
+		period?: Create_vod_alt1PostBodyRentPeriod | null;
+		price?: Create_vod_alt1PostBodyRentPrice | null;
 	}
 
 	export enum Create_vod_alt1PostBodyRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
@@ -9254,57 +9254,57 @@ export namespace MyNS {
 	export interface Create_vod_alt1PostBodyRentPrice {
 
 		/** The rental price of this video in AUD. */
-		AUD?: number;
+		AUD?: number | null;
 
 		/** The rental price of this video in CAD. */
-		CAD?: number;
+		CAD?: number | null;
 
 		/** The rental price of this video in CHF. */
-		CHF?: number;
+		CHF?: number | null;
 
 		/** The rental price of this video in DKK. */
-		DKK?: number;
+		DKK?: number | null;
 
 		/** The rental price of this video in EUR. */
-		EUR?: number;
+		EUR?: number | null;
 
 		/** The rental price of this video in GBP. */
-		GBP?: number;
+		GBP?: number | null;
 
 		/** The rental price of this video in JPY. */
-		JPY?: number;
+		JPY?: number | null;
 
 		/** The rental price of this video in KRW. */
-		KRW?: number;
+		KRW?: number | null;
 
 		/** The rental price of this video in NOK. */
-		NOK?: number;
+		NOK?: number | null;
 
 		/** The rental price of this video in PLN. */
-		PLN?: number;
+		PLN?: number | null;
 
 		/** The rental price of this video in SEK. */
-		SEK?: number;
+		SEK?: number | null;
 
 		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export interface Create_vod_alt1PostBodySubscription {
-		monthly?: Create_vod_alt1PostBodySubscriptionMonthly;
+		monthly?: Create_vod_alt1PostBodySubscriptionMonthly | null;
 	}
 
 	export interface Create_vod_alt1PostBodySubscriptionMonthly {
 
 		/** Whether monthly subscription is active. *Required if `rent.active` and `buy.active` are false. */
-		active?: boolean;
-		price?: Create_vod_alt1PostBodySubscriptionMonthlyPrice;
+		active?: boolean | null;
+		price?: Create_vod_alt1PostBodySubscriptionMonthlyPrice | null;
 	}
 
 	export interface Create_vod_alt1PostBodySubscriptionMonthlyPrice {
 
 		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export enum Get_vod_purchasesFilter { all = 0, expiring_soon = 1, film = 2, important = 3, purchased = 4, rented = 5, series = 6, subscription = 7, unwatched = 8, watched = 9 }
@@ -9371,7 +9371,7 @@ export namespace MyNS {
 	export interface Set_video_as_album_thumbnailPostBody {
 
 		/** The video frame time in seconds to use as the album thumbnail. */
-		time_code?: number;
+		time_code?: number | null;
 	}
 
 	export interface Follow_usersPostBody {
@@ -9403,8 +9403,8 @@ export namespace MyNS {
 		 * * `SEK` - Swedish Krona
 		 * * `USD` - US Dollar
 		 */
-		accepted_currencies?: Create_vod_alt1PostBodyAccepted_currencies;
-		buy?: Create_vodPostBodyBuy;
+		accepted_currencies?: Create_vod_alt1PostBodyAccepted_currencies | null;
+		buy?: Create_vodPostBodyBuy | null;
 
 		/**
 		 * One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.
@@ -9419,19 +9419,19 @@ export namespace MyNS {
 		description: string;
 
 		/** The custom domain of the On Demand page. */
-		domain_link?: string;
-		episodes?: Create_vodPostBodyEpisodes;
+		domain_link?: string | null;
+		episodes?: Create_vodPostBodyEpisodes | null;
 
 		/** The custom string to use in this On Demand page's Vimeo URL. */
-		link?: string;
+		link?: string | null;
 
 		/**
 		 * The name of the On Demand page.
 		 * Required
 		 */
 		name: string;
-		rent?: Create_vodPostBodyRent;
-		subscription?: Create_vodPostBodySubscription;
+		rent?: Create_vodPostBodyRent | null;
+		subscription?: Create_vodPostBodySubscription | null;
 
 		/**
 		 * The type of On Demand page.
@@ -9443,81 +9443,81 @@ export namespace MyNS {
 	export interface Create_vodPostBodyBuy {
 
 		/** Whether the Buy action is active. *Required if `rent.active` is false. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** Whether people who buy the video can download it. To use this field, `type` must be `film`. */
-		download?: boolean;
-		price?: Create_vodPostBodyBuyPrice;
+		download?: boolean | null;
+		price?: Create_vodPostBodyBuyPrice | null;
 	}
 
 	export interface Create_vodPostBodyBuyPrice {
 
 		/** The purchase price of this video in AUD. */
-		AUD?: number;
+		AUD?: number | null;
 
 		/** The purchase price of this video in CAD. */
-		CAD?: number;
+		CAD?: number | null;
 
 		/** The purchase price of this video in CHF. */
-		CHF?: number;
+		CHF?: number | null;
 
 		/** The purchase price of this video in DKK. */
-		DKK?: number;
+		DKK?: number | null;
 
 		/** The purchase price of this video in EUR. */
-		EUR?: number;
+		EUR?: number | null;
 
 		/** The purchase price of this video in GBP. */
-		GBP?: number;
+		GBP?: number | null;
 
 		/** The purchase price of this video in JPY. */
-		JPY?: number;
+		JPY?: number | null;
 
 		/** The purchase price of this video in KRW. */
-		KRW?: number;
+		KRW?: number | null;
 
 		/** The purchase price of this video in NOK. */
-		NOK?: number;
+		NOK?: number | null;
 
 		/** The purchase price of this video in PLN. */
-		PLN?: number;
+		PLN?: number | null;
 
 		/** The purchase price of this video in SEK. */
-		SEK?: number;
+		SEK?: number | null;
 
 		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export interface Create_vodPostBodyEpisodes {
-		buy?: Create_vodPostBodyEpisodesBuy;
-		rent?: Create_vodPostBodyEpisodesRent;
+		buy?: Create_vodPostBodyEpisodesBuy | null;
+		rent?: Create_vodPostBodyEpisodesRent | null;
 	}
 
 	export interface Create_vodPostBodyEpisodesBuy {
 
 		/** Whether episodes can be bought. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** Whether people who buy the episode can download it. To use this field, `type` must be `series`. */
-		download?: boolean;
-		price?: Create_vodPostBodyEpisodesBuyPrice;
+		download?: boolean | null;
+		price?: Create_vodPostBodyEpisodesBuyPrice | null;
 	}
 
 	export interface Create_vodPostBodyEpisodesBuyPrice {
 
 		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export interface Create_vodPostBodyEpisodesRent {
 
 		/** Whether episodes can be rented */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** The period in which this episode can be rented for. */
-		period?: Create_vodPostBodyEpisodesRentPeriod;
-		price?: Create_vodPostBodyEpisodesRentPrice;
+		period?: Create_vodPostBodyEpisodesRentPeriod | null;
+		price?: Create_vodPostBodyEpisodesRentPrice | null;
 	}
 
 	export enum Create_vodPostBodyEpisodesRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
@@ -9525,17 +9525,17 @@ export namespace MyNS {
 	export interface Create_vodPostBodyEpisodesRentPrice {
 
 		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export interface Create_vodPostBodyRent {
 
 		/** Whether the video can be rented. *Required if `buy.active` is false. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** The period in which this can be rented for. */
-		period?: Create_vodPostBodyRentPeriod;
-		price?: Create_vodPostBodyRentPrice;
+		period?: Create_vodPostBodyRentPeriod | null;
+		price?: Create_vodPostBodyRentPrice | null;
 	}
 
 	export enum Create_vodPostBodyRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
@@ -9543,57 +9543,57 @@ export namespace MyNS {
 	export interface Create_vodPostBodyRentPrice {
 
 		/** The rental price of this video in AUD. */
-		AUD?: number;
+		AUD?: number | null;
 
 		/** The rental price of this video in CAD. */
-		CAD?: number;
+		CAD?: number | null;
 
 		/** The rental price of this video in CHF. */
-		CHF?: number;
+		CHF?: number | null;
 
 		/** The rental price of this video in DKK. */
-		DKK?: number;
+		DKK?: number | null;
 
 		/** The rental price of this video in EUR. */
-		EUR?: number;
+		EUR?: number | null;
 
 		/** The rental price of this video in GBP. */
-		GBP?: number;
+		GBP?: number | null;
 
 		/** The rental price of this video in JPY. */
-		JPY?: number;
+		JPY?: number | null;
 
 		/** The rental price of this video in KRW. */
-		KRW?: number;
+		KRW?: number | null;
 
 		/** The rental price of this video in NOK. */
-		NOK?: number;
+		NOK?: number | null;
 
 		/** The rental price of this video in PLN. */
-		PLN?: number;
+		PLN?: number | null;
 
 		/** The rental price of this video in SEK. */
-		SEK?: number;
+		SEK?: number | null;
 
 		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export interface Create_vodPostBodySubscription {
-		monthly?: Create_vodPostBodySubscriptionMonthly;
+		monthly?: Create_vodPostBodySubscriptionMonthly | null;
 	}
 
 	export interface Create_vodPostBodySubscriptionMonthly {
 
 		/** Whether monthly subscription is active. *Required if `rent.active` and `buy.active` are false. */
-		active?: boolean;
-		price?: Create_vodPostBodySubscriptionMonthlyPrice;
+		active?: boolean | null;
+		price?: Create_vodPostBodySubscriptionMonthlyPrice | null;
 	}
 
 	export interface Create_vodPostBodySubscriptionMonthlyPrice {
 
 		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
-		USD?: number;
+		USD?: number | null;
 	}
 
 	export enum Get_portfolio_videosSort { alphabetical = 0, comments = 1, date = 2, _default = 3, likes = 4, manual = 5, plays = 6 }

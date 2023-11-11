@@ -5,1392 +5,1392 @@ export namespace MyNS {
 	export interface Annotation {
 
 		/** Anchor text after excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty. */
-		afterSelectedText?: string;
+		afterSelectedText?: string | null;
 
 		/** Anchor text before excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty. */
-		beforeSelectedText?: string;
+		beforeSelectedText?: string | null;
 
 		/** Selection ranges sent from the client. */
-		clientVersionRanges?: AnnotationClientVersionRanges;
+		clientVersionRanges?: AnnotationClientVersionRanges | null;
 
 		/** Timestamp for the created time of this annotation. */
-		created?: Date;
+		created?: Date | null;
 
 		/** Selection ranges for the most recent content version. */
-		currentVersionRanges?: AnnotationCurrentVersionRanges;
+		currentVersionRanges?: AnnotationCurrentVersionRanges | null;
 
 		/** User-created data for this annotation. */
-		data?: string;
+		data?: string | null;
 
 		/** Indicates that this annotation is deleted. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/** The highlight style for this annotation. */
-		highlightStyle?: string;
+		highlightStyle?: string | null;
 
 		/** Id of this annotation, in the form of a GUID. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The layer this annotation is for. */
-		layerId?: string;
-		layerSummary?: AnnotationLayerSummary;
+		layerId?: string | null;
+		layerSummary?: AnnotationLayerSummary | null;
 
 		/** Pages that this annotation spans. */
-		pageIds?: Array<string>;
+		pageIds?: Array<string> | null;
 
 		/** Excerpt from the volume. */
-		selectedText?: string;
+		selectedText?: string | null;
 
 		/** URL to this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Timestamp for the last time this annotation was modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** The volume that this annotation belongs to. */
-		volumeId?: string;
+		volumeId?: string | null;
 	}
 
 	export interface AnnotationClientVersionRanges {
-		cfiRange?: BooksAnnotationsRange;
+		cfiRange?: BooksAnnotationsRange | null;
 
 		/** Content version the client sent in. */
-		contentVersion?: string;
-		gbImageRange?: BooksAnnotationsRange;
-		gbTextRange?: BooksAnnotationsRange;
-		imageCfiRange?: BooksAnnotationsRange;
+		contentVersion?: string | null;
+		gbImageRange?: BooksAnnotationsRange | null;
+		gbTextRange?: BooksAnnotationsRange | null;
+		imageCfiRange?: BooksAnnotationsRange | null;
 	}
 
 	export interface BooksAnnotationsRange {
 
 		/** The offset from the ending position. */
-		endOffset?: string;
+		endOffset?: string | null;
 
 		/** The ending position for the range. */
-		endPosition?: string;
+		endPosition?: string | null;
 
 		/** The offset from the starting position. */
-		startOffset?: string;
+		startOffset?: string | null;
 
 		/** The starting position for the range. */
-		startPosition?: string;
+		startPosition?: string | null;
 	}
 
 	export interface AnnotationCurrentVersionRanges {
-		cfiRange?: BooksAnnotationsRange;
+		cfiRange?: BooksAnnotationsRange | null;
 
 		/** Content version applicable to ranges below. */
-		contentVersion?: string;
-		gbImageRange?: BooksAnnotationsRange;
-		gbTextRange?: BooksAnnotationsRange;
-		imageCfiRange?: BooksAnnotationsRange;
+		contentVersion?: string | null;
+		gbImageRange?: BooksAnnotationsRange | null;
+		gbTextRange?: BooksAnnotationsRange | null;
+		imageCfiRange?: BooksAnnotationsRange | null;
 	}
 
 	export interface AnnotationLayerSummary {
 
 		/** Maximum allowed characters on this layer, especially for the "copy" layer. */
-		allowedCharacterCount?: number;
+		allowedCharacterCount?: number | null;
 
 		/** Type of limitation on this layer. "limited" or "unlimited" for the "copy" layer. */
-		limitType?: string;
+		limitType?: string | null;
 
 		/** Remaining allowed characters on this layer, especially for the "copy" layer. */
-		remainingCharacterCount?: number;
+		remainingCharacterCount?: number | null;
 	}
 
 	export interface Annotationdata {
 
 		/** The type of annotation this data is for. */
-		annotationType?: string;
-		data?: any;
+		annotationType?: string | null;
+		data?: any | null;
 
 		/** Base64 encoded data for this annotation data. */
-		encoded_data?: string;
+		encoded_data?: string | null;
 
 		/** Unique id for this annotation data. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource Type */
-		kind?: string;
+		kind?: string | null;
 
 		/** The Layer id for this data. * */
-		layerId?: string;
+		layerId?: string | null;
 
 		/** URL for this resource. * */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Timestamp for the last time this data was updated. (RFC 3339 UTC date-time format). */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** The volume id for this data. * */
-		volumeId?: string;
+		volumeId?: string | null;
 	}
 
 	export interface Annotations {
 
 		/** A list of annotations. */
-		items?: Array<Annotation>;
+		items?: Array<Annotation> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Total number of annotations found. This may be greater than the number of notes returned in this response if results have been paginated. */
-		totalItems?: number;
+		totalItems?: number | null;
 	}
 
 	export interface AnnotationsSummary {
-		kind?: string;
-		AnnotationsSummaryLayers?: Array<AnnotationsSummaryLayers>;
+		kind?: string | null;
+		AnnotationsSummaryLayers?: Array<AnnotationsSummaryLayers> | null;
 	}
 
 	export interface AnnotationsSummaryLayers {
-		allowedCharacterCount?: number;
-		layerId?: string;
-		limitType?: string;
-		remainingCharacterCount?: number;
-		updated?: Date;
+		allowedCharacterCount?: number | null;
+		layerId?: string | null;
+		limitType?: string | null;
+		remainingCharacterCount?: number | null;
+		updated?: Date | null;
 	}
 
 	export interface Annotationsdata {
 
 		/** A list of Annotation Data. */
-		items?: Array<Annotationdata>;
+		items?: Array<Annotationdata> | null;
 
 		/** Resource type */
-		kind?: string;
+		kind?: string | null;
 
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of volume annotations found. */
-		totalItems?: number;
+		totalItems?: number | null;
 	}
 
 	export interface BooksCloudloadingResource {
-		author?: string;
-		processingState?: string;
-		title?: string;
-		volumeId?: string;
+		author?: string | null;
+		processingState?: string | null;
+		title?: string | null;
+		volumeId?: string | null;
 	}
 
 	export interface BooksSubscriptionReleaseInfo {
 
 		/** Amount in micros of the specified currency code. */
-		amountInMicros?: string;
+		amountInMicros?: string | null;
 
 		/** Currency code of the amount. */
-		currencyCode?: string;
+		currencyCode?: string | null;
 
 		/** The release number of this issue/volume/book. */
-		releaseNumber?: string;
+		releaseNumber?: string | null;
 
 		/** The release date. */
-		releaseTimestampUs?: string;
+		releaseTimestampUs?: string | null;
 	}
 
 	export interface BooksVolumesRecommendedRateResponse {
-		consistency_token?: string;
+		consistency_token?: string | null;
 	}
 
 	export interface Bookshelf {
 
 		/** Whether this bookshelf is PUBLIC or PRIVATE. */
-		access?: string;
+		access?: string | null;
 
 		/** Created time for this bookshelf (formatted UTC timestamp with millisecond resolution). */
-		created?: Date;
+		created?: Date | null;
 
 		/** Description of this bookshelf. */
-		description?: string;
+		description?: string | null;
 
 		/** Id of this bookshelf, only unique by user. */
-		id?: number;
+		id?: number | null;
 
 		/** Resource type for bookshelf metadata. */
-		kind?: string;
+		kind?: string | null;
 
 		/** URL to this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Title of this bookshelf. */
-		title?: string;
+		title?: string | null;
 
 		/** Last modified time of this bookshelf (formatted UTC timestamp with millisecond resolution). */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Number of volumes in this bookshelf. */
-		volumeCount?: number;
+		volumeCount?: number | null;
 
 		/** Last time a volume was added or removed from this bookshelf (formatted UTC timestamp with millisecond resolution). */
-		volumesLastUpdated?: Date;
+		volumesLastUpdated?: Date | null;
 	}
 
 	export interface Bookshelves {
 
 		/** A list of bookshelves. */
-		items?: Array<Bookshelf>;
+		items?: Array<Bookshelf> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface Category {
 
 		/** A list of onboarding categories. */
-		CategoryItems?: Array<CategoryItems>;
+		CategoryItems?: Array<CategoryItems> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface CategoryItems {
-		badgeUrl?: string;
-		categoryId?: string;
-		name?: string;
+		badgeUrl?: string | null;
+		categoryId?: string | null;
+		name?: string | null;
 	}
 
 	export interface ConcurrentAccessRestriction {
 
 		/** Whether access is granted for this (user, device, volume). */
-		deviceAllowed?: boolean;
+		deviceAllowed?: boolean | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The maximum number of concurrent access licenses for this volume. */
-		maxConcurrentDevices?: number;
+		maxConcurrentDevices?: number | null;
 
 		/** Error/warning message. */
-		message?: string;
+		message?: string | null;
 
 		/** Client nonce for verification. Download access and client-validation only. */
-		nonce?: string;
+		nonce?: string | null;
 
 		/** Error/warning reason code. */
-		reasonCode?: string;
+		reasonCode?: string | null;
 
 		/** Whether this volume has any concurrent access restrictions. */
-		restricted?: boolean;
+		restricted?: boolean | null;
 
 		/** Response signature. */
-		signature?: string;
+		signature?: string | null;
 
 		/** Client app identifier for verification. Download access and client-validation only. */
-		source?: string;
+		source?: string | null;
 
 		/** Time in seconds for license auto-expiration. */
-		timeWindowSeconds?: number;
+		timeWindowSeconds?: number | null;
 
 		/** Identifies the volume for which this entry applies. */
-		volumeId?: string;
+		volumeId?: string | null;
 	}
 
 	export interface Dictlayerdata {
-		common?: DictlayerdataCommon;
-		dict?: DictlayerdataDict;
-		kind?: string;
+		common?: DictlayerdataCommon | null;
+		dict?: DictlayerdataDict | null;
+		kind?: string | null;
 	}
 
 	export interface DictlayerdataCommon {
 
 		/** The display title and localized canonical name to use when searching for this entity on Google search. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export interface DictlayerdataDict {
 
 		/** The source, url and attribution for this dictionary data. */
-		source?: DictlayerdataDictSource;
-		DictlayerdataDictWords?: Array<DictlayerdataDictWords>;
+		source?: DictlayerdataDictSource | null;
+		DictlayerdataDictWords?: Array<DictlayerdataDictWords> | null;
 	}
 
 	export interface DictlayerdataDictSource {
-		attribution?: string;
-		url?: string;
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface DictlayerdataDictWords {
-		DictlayerdataDictWordsDerivatives?: Array<DictlayerdataDictWordsDerivatives>;
-		DictlayerdataDictWordsExamples?: Array<DictlayerdataDictWordsExamples>;
-		DictlayerdataDictWordsSenses?: Array<DictlayerdataDictWordsSenses>;
+		DictlayerdataDictWordsDerivatives?: Array<DictlayerdataDictWordsDerivatives> | null;
+		DictlayerdataDictWordsExamples?: Array<DictlayerdataDictWordsExamples> | null;
+		DictlayerdataDictWordsSenses?: Array<DictlayerdataDictWordsSenses> | null;
 
 		/** The words with different meanings but not related words, e.g. "go" (game) and "go" (verb). */
-		source?: DictlayerdataDictSource;
+		source?: DictlayerdataDictSource | null;
 	}
 
 	export interface DictlayerdataDictWordsDerivatives {
-		source?: DictlayerdataDictSource;
-		text?: string;
+		source?: DictlayerdataDictSource | null;
+		text?: string | null;
 	}
 
 	export interface DictlayerdataDictSource {
-		attribution?: string;
-		url?: string;
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface DictlayerdataDictWordsExamples {
-		source?: DictlayerdataDictSource;
-		text?: string;
+		source?: DictlayerdataDictSource | null;
+		text?: string | null;
 	}
 
 	export interface DictlayerdataDictSource {
-		attribution?: string;
-		url?: string;
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface DictlayerdataDictWordsSenses {
-		DictlayerdataDictWordsSensesConjugations?: Array<DictlayerdataDictWordsSensesConjugations>;
-		DictlayerdataDictWordsSensesDefinitions?: Array<DictlayerdataDictWordsSensesDefinitions>;
-		partOfSpeech?: string;
-		pronunciation?: string;
-		pronunciationUrl?: string;
-		source?: DictlayerdataDictSource;
-		syllabification?: string;
-		DictlayerdataDictWordsSensesSynonyms?: Array<DictlayerdataDictWordsSensesSynonyms>;
+		DictlayerdataDictWordsSensesConjugations?: Array<DictlayerdataDictWordsSensesConjugations> | null;
+		DictlayerdataDictWordsSensesDefinitions?: Array<DictlayerdataDictWordsSensesDefinitions> | null;
+		partOfSpeech?: string | null;
+		pronunciation?: string | null;
+		pronunciationUrl?: string | null;
+		source?: DictlayerdataDictSource | null;
+		syllabification?: string | null;
+		DictlayerdataDictWordsSensesSynonyms?: Array<DictlayerdataDictWordsSensesSynonyms> | null;
 	}
 
 	export interface DictlayerdataDictWordsSensesConjugations {
-		type?: string;
-		value?: string;
+		type?: string | null;
+		value?: string | null;
 	}
 
 	export interface DictlayerdataDictWordsSensesDefinitions {
-		definition?: string;
-		DictlayerdataDictWordsSensesDefinitionsExamples?: Array<DictlayerdataDictWordsSensesDefinitionsExamples>;
+		definition?: string | null;
+		DictlayerdataDictWordsSensesDefinitionsExamples?: Array<DictlayerdataDictWordsSensesDefinitionsExamples> | null;
 	}
 
 	export interface DictlayerdataDictWordsSensesDefinitionsExamples {
-		source?: DictlayerdataDictSource;
-		text?: string;
+		source?: DictlayerdataDictSource | null;
+		text?: string | null;
 	}
 
 	export interface DictlayerdataDictSource {
-		attribution?: string;
-		url?: string;
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface DictlayerdataDictSource {
-		attribution?: string;
-		url?: string;
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface DictlayerdataDictWordsSensesSynonyms {
-		source?: DictlayerdataDictSource;
-		text?: string;
+		source?: DictlayerdataDictSource | null;
+		text?: string | null;
 	}
 
 	export interface DictlayerdataDictSource {
-		attribution?: string;
-		url?: string;
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface DictlayerdataDictSource {
-		attribution?: string;
-		url?: string;
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface Discoveryclusters {
-		DiscoveryclustersClusters?: Array<DiscoveryclustersClusters>;
+		DiscoveryclustersClusters?: Array<DiscoveryclustersClusters> | null;
 
 		/** Resorce type. */
-		kind?: string;
-		totalClusters?: number;
+		kind?: string | null;
+		totalClusters?: number | null;
 	}
 
 	export interface DiscoveryclustersClusters {
-		banner_with_content_container?: DiscoveryclustersBanner_with_content_container;
-		subTitle?: string;
-		title?: string;
-		totalVolumes?: number;
-		uid?: string;
-		volumes?: Array<Volume>;
+		banner_with_content_container?: DiscoveryclustersBanner_with_content_container | null;
+		subTitle?: string | null;
+		title?: string | null;
+		totalVolumes?: number | null;
+		uid?: string | null;
+		volumes?: Array<Volume> | null;
 	}
 
 	export interface DiscoveryclustersBanner_with_content_container {
-		fillColorArgb?: string;
-		imageUrl?: string;
-		maskColorArgb?: string;
-		moreButtonText?: string;
-		moreButtonUrl?: string;
-		textColorArgb?: string;
+		fillColorArgb?: string | null;
+		imageUrl?: string | null;
+		maskColorArgb?: string | null;
+		moreButtonText?: string | null;
+		moreButtonUrl?: string | null;
+		textColorArgb?: string | null;
 	}
 
 	export interface Volume {
 
 		/** Any information about a volume related to reading or obtaining that volume text. This information can depend on country (books may be public domain in one country but not in another, e.g.). */
-		accessInfo?: VolumeAccessInfo;
+		accessInfo?: VolumeAccessInfo | null;
 
 		/** Opaque identifier for a specific version of a volume resource. (In LITE projection) */
-		etag?: string;
+		etag?: string | null;
 
 		/** Unique identifier for a volume. (In LITE projection.) */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for a volume. (In LITE projection.) */
-		kind?: string;
+		kind?: string | null;
 
 		/** What layers exist in this volume and high level information about them. */
-		layerInfo?: VolumeLayerInfo;
+		layerInfo?: VolumeLayerInfo | null;
 
 		/** Recommendation related information for this volume. */
-		recommendedInfo?: VolumeRecommendedInfo;
+		recommendedInfo?: VolumeRecommendedInfo | null;
 
 		/** Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries). */
-		saleInfo?: VolumeSaleInfo;
+		saleInfo?: VolumeSaleInfo | null;
 
 		/** Search result information related to this volume. */
-		searchInfo?: VolumeSearchInfo;
+		searchInfo?: VolumeSearchInfo | null;
 
 		/** URL to this resource. (In LITE projection.) */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** User specific information related to this volume. (e.g. page this user last read or whether they purchased this book) */
-		userInfo?: VolumeUserInfo;
+		userInfo?: VolumeUserInfo | null;
 
 		/** General volume information. */
-		volumeInfo?: VolumeVolumeInfo;
+		volumeInfo?: VolumeVolumeInfo | null;
 	}
 
 	export interface VolumeAccessInfo {
 
 		/** Combines the access and viewability of this volume into a single status field for this user. Values can be FULL_PURCHASED, FULL_PUBLIC_DOMAIN, SAMPLE or NONE. (In LITE projection.) */
-		accessViewStatus?: string;
+		accessViewStatus?: string | null;
 
 		/** The two-letter ISO_3166-1 country code for which this access information is valid. (In LITE projection.) */
-		country?: string;
-		downloadAccess?: DownloadAccessRestriction;
+		country?: string | null;
+		downloadAccess?: DownloadAccessRestriction | null;
 
 		/** URL to the Google Drive viewer if this volume is uploaded by the user by selecting the file from Google Drive. */
-		driveImportedContentLink?: string;
+		driveImportedContentLink?: string | null;
 
 		/** Whether this volume can be embedded in a viewport using the Embedded Viewer API. */
-		embeddable?: boolean;
+		embeddable?: boolean | null;
 
 		/** Information about epub content. (In LITE projection.) */
-		epub?: VolumeAccessInfoEpub;
+		epub?: VolumeAccessInfoEpub | null;
 
 		/** Whether this volume requires that the client explicitly request offline download license rather than have it done automatically when loading the content, if the client supports it. */
-		explicitOfflineLicenseManagement?: boolean;
+		explicitOfflineLicenseManagement?: boolean | null;
 
 		/** Information about pdf content. (In LITE projection.) */
-		pdf?: VolumeAccessInfoPdf;
+		pdf?: VolumeAccessInfoPdf | null;
 
 		/** Whether or not this book is public domain in the country listed above. */
-		publicDomain?: boolean;
+		publicDomain?: boolean | null;
 
 		/** Whether quote sharing is allowed for this volume. */
-		quoteSharingAllowed?: boolean;
+		quoteSharingAllowed?: boolean | null;
 
 		/** Whether text-to-speech is permitted for this volume. Values can be ALLOWED, ALLOWED_FOR_ACCESSIBILITY, or NOT_ALLOWED. */
-		textToSpeechPermission?: string;
+		textToSpeechPermission?: string | null;
 
 		/** For ordered but not yet processed orders, we give a URL that can be used to go to the appropriate Google Wallet page. */
-		viewOrderUrl?: string;
+		viewOrderUrl?: string | null;
 
 		/** The read access of a volume. Possible values are PARTIAL, ALL_PAGES, NO_PAGES or UNKNOWN. This value depends on the country listed above. A value of PARTIAL means that the publisher has allowed some portion of the volume to be viewed publicly, without purchase. This can apply to eBooks as well as non-eBooks. Public domain books will always have a value of ALL_PAGES. */
-		viewability?: string;
+		viewability?: string | null;
 
 		/** URL to read this volume on the Google Books site. Link will not allow users to read non-viewable volumes. */
-		webReaderLink?: string;
+		webReaderLink?: string | null;
 	}
 
 	export interface DownloadAccessRestriction {
 
 		/** If restricted, whether access is granted for this (user, device, volume). */
-		deviceAllowed?: boolean;
+		deviceAllowed?: boolean | null;
 
 		/** If restricted, the number of content download licenses already acquired (including the requesting client, if licensed). */
-		downloadsAcquired?: number;
+		downloadsAcquired?: number | null;
 
 		/** If deviceAllowed, whether access was just acquired with this request. */
-		justAcquired?: boolean;
+		justAcquired?: boolean | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** If restricted, the maximum number of content download licenses for this volume. */
-		maxDownloadDevices?: number;
+		maxDownloadDevices?: number | null;
 
 		/** Error/warning message. */
-		message?: string;
+		message?: string | null;
 
 		/** Client nonce for verification. Download access and client-validation only. */
-		nonce?: string;
+		nonce?: string | null;
 
 		/** Error/warning reason code. Additional codes may be added in the future. 0 OK 100 ACCESS_DENIED_PUBLISHER_LIMIT 101 ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS */
-		reasonCode?: string;
+		reasonCode?: string | null;
 
 		/** Whether this volume has any download access restrictions. */
-		restricted?: boolean;
+		restricted?: boolean | null;
 
 		/** Response signature. */
-		signature?: string;
+		signature?: string | null;
 
 		/** Client app identifier for verification. Download access and client-validation only. */
-		source?: string;
+		source?: string | null;
 
 		/** Identifies the volume for which this entry applies. */
-		volumeId?: string;
+		volumeId?: string | null;
 	}
 
 	export interface VolumeAccessInfoEpub {
 
 		/** URL to retrieve ACS token for epub download. (In LITE projection.) */
-		acsTokenLink?: string;
+		acsTokenLink?: string | null;
 
 		/** URL to download epub. (In LITE projection.) */
-		downloadLink?: string;
+		downloadLink?: string | null;
 
 		/** Is a flowing text epub available either as public domain or for purchase. (In LITE projection.) */
-		isAvailable?: boolean;
+		isAvailable?: boolean | null;
 	}
 
 	export interface VolumeAccessInfoPdf {
 
 		/** URL to retrieve ACS token for pdf download. (In LITE projection.) */
-		acsTokenLink?: string;
+		acsTokenLink?: string | null;
 
 		/** URL to download pdf. (In LITE projection.) */
-		downloadLink?: string;
+		downloadLink?: string | null;
 
 		/** Is a scanned image pdf available either as public domain or for purchase. (In LITE projection.) */
-		isAvailable?: boolean;
+		isAvailable?: boolean | null;
 	}
 
 	export interface VolumeLayerInfo {
 
 		/** A layer should appear here if and only if the layer exists for this book. */
-		VolumeLayerInfoLayers?: Array<VolumeLayerInfoLayers>;
+		VolumeLayerInfoLayers?: Array<VolumeLayerInfoLayers> | null;
 	}
 
 	export interface VolumeLayerInfoLayers {
 
 		/** The layer id of this layer (e.g. "geo"). */
-		layerId?: string;
+		layerId?: string | null;
 
 		/** The current version of this layer's volume annotations. Note that this version applies only to the data in the books.layers.volumeAnnotations.* responses. The actual annotation data is versioned separately. */
-		volumeAnnotationsVersion?: string;
+		volumeAnnotationsVersion?: string | null;
 	}
 
 	export interface VolumeRecommendedInfo {
 
 		/** A text explaining why this volume is recommended. */
-		explanation?: string;
+		explanation?: string | null;
 	}
 
 	export interface VolumeSaleInfo {
 
 		/** URL to purchase this volume on the Google Books site. (In LITE projection) */
-		buyLink?: string;
+		buyLink?: string | null;
 
 		/** The two-letter ISO_3166-1 country code for which this sale information is valid. (In LITE projection.) */
-		country?: string;
+		country?: string | null;
 
 		/** Whether or not this volume is an eBook (can be added to the My eBooks shelf). */
-		isEbook?: boolean;
+		isEbook?: boolean | null;
 
 		/** Suggested retail price. (In LITE projection.) */
-		listPrice?: VolumeSaleInfoListPrice;
+		listPrice?: VolumeSaleInfoListPrice | null;
 
 		/** Offers available for this volume (sales and rentals). */
-		VolumeSaleInfoOffers?: Array<VolumeSaleInfoOffers>;
+		VolumeSaleInfoOffers?: Array<VolumeSaleInfoOffers> | null;
 
 		/** The date on which this book is available for sale. */
-		onSaleDate?: Date;
+		onSaleDate?: Date | null;
 
 		/** The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.) */
-		retailPrice?: VolumeSaleInfoRetailPrice;
+		retailPrice?: VolumeSaleInfoRetailPrice | null;
 
 		/** Whether or not this book is available for sale or offered for free in the Google eBookstore for the country listed above. Possible values are FOR_SALE, FOR_RENTAL_ONLY, FOR_SALE_AND_RENTAL, FREE, NOT_FOR_SALE, or FOR_PREORDER. */
-		saleability?: string;
+		saleability?: string | null;
 	}
 
 	export interface VolumeSaleInfoListPrice {
 
 		/** Amount in the currency listed below. (In LITE projection.) */
-		amount?: number;
+		amount?: number | null;
 
 		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
-		currencyCode?: string;
+		currencyCode?: string | null;
 	}
 
 	export interface VolumeSaleInfoOffers {
 
 		/** The finsky offer type (e.g., PURCHASE=0 RENTAL=3) */
-		finskyOfferType?: number;
+		finskyOfferType?: number | null;
 
 		/** Indicates whether the offer is giftable. */
-		giftable?: boolean;
+		giftable?: boolean | null;
 
 		/** Offer list (=undiscounted) price in Micros. */
-		listPrice?: VolumeSaleInfoListPrice;
+		listPrice?: VolumeSaleInfoListPrice | null;
 
 		/** The rental duration (for rental offers only). */
-		rentalDuration?: VolumeSaleInfoRentalDuration;
+		rentalDuration?: VolumeSaleInfoRentalDuration | null;
 
 		/** Offer retail (=discounted) price in Micros */
-		retailPrice?: VolumeSaleInfoRetailPrice;
+		retailPrice?: VolumeSaleInfoRetailPrice | null;
 	}
 
 	export interface VolumeSaleInfoListPrice {
-		amountInMicros?: number;
-		currencyCode?: string;
+		amountInMicros?: number | null;
+		currencyCode?: string | null;
 	}
 
 	export interface VolumeSaleInfoRentalDuration {
-		count?: number;
-		unit?: string;
+		count?: number | null;
+		unit?: string | null;
 	}
 
 	export interface VolumeSaleInfoRetailPrice {
-		amountInMicros?: number;
-		currencyCode?: string;
+		amountInMicros?: number | null;
+		currencyCode?: string | null;
 	}
 
 	export interface VolumeSaleInfoRetailPrice {
 
 		/** Amount in the currency listed below. (In LITE projection.) */
-		amount?: number;
+		amount?: number | null;
 
 		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
-		currencyCode?: string;
+		currencyCode?: string | null;
 	}
 
 	export interface VolumeSearchInfo {
 
 		/** A text snippet containing the search query. */
-		textSnippet?: string;
+		textSnippet?: string | null;
 	}
 
 	export interface VolumeUserInfo {
 
 		/** Timestamp when this volume was acquired by the user. (RFC 3339 UTC date-time format) Acquiring includes purchase, user upload, receiving family sharing, etc. */
-		acquiredTime?: Date;
+		acquiredTime?: Date | null;
 
 		/** How this volume was acquired. */
-		acquisitionType?: number;
+		acquisitionType?: number | null;
 
 		/** Copy/Paste accounting information. */
-		copy?: VolumeUserInfoCopy;
+		copy?: VolumeUserInfoCopy | null;
 
 		/** Whether this volume is purchased, sample, pd download etc. */
-		entitlementType?: number;
+		entitlementType?: number | null;
 
 		/** Information on the ability to share with the family. */
-		familySharing?: VolumeUserInfoFamilySharing;
+		familySharing?: VolumeUserInfoFamilySharing | null;
 
 		/** Whether or not the user shared this volume with the family. */
-		isFamilySharedFromUser?: boolean;
+		isFamilySharedFromUser?: boolean | null;
 
 		/** Whether or not the user received this volume through family sharing. */
-		isFamilySharedToUser?: boolean;
+		isFamilySharedToUser?: boolean | null;
 
 		/** Deprecated: Replaced by familySharing. */
-		isFamilySharingAllowed?: boolean;
+		isFamilySharingAllowed?: boolean | null;
 
 		/** Deprecated: Replaced by familySharing. */
-		isFamilySharingDisabledByFop?: boolean;
+		isFamilySharingDisabledByFop?: boolean | null;
 
 		/** Whether or not this volume is currently in "my books." */
-		isInMyBooks?: boolean;
+		isInMyBooks?: boolean | null;
 
 		/** Whether or not this volume was pre-ordered by the authenticated user making the request. (In LITE projection.) */
-		isPreordered?: boolean;
+		isPreordered?: boolean | null;
 
 		/** Whether or not this volume was purchased by the authenticated user making the request. (In LITE projection.) */
-		isPurchased?: boolean;
+		isPurchased?: boolean | null;
 
 		/** Whether or not this volume was user uploaded. */
-		isUploaded?: boolean;
-		readingPosition?: ReadingPosition;
+		isUploaded?: boolean | null;
+		readingPosition?: ReadingPosition | null;
 
 		/** Period during this book is/was a valid rental. */
-		rentalPeriod?: VolumeUserInfoRentalPeriod;
+		rentalPeriod?: VolumeUserInfoRentalPeriod | null;
 
 		/** Whether this book is an active or an expired rental. */
-		rentalState?: string;
-		review?: Review;
+		rentalState?: string | null;
+		review?: Review | null;
 
 		/** Timestamp when this volume was last modified by a user action, such as a reading position update, volume purchase or writing a review. (RFC 3339 UTC date-time format). */
-		updated?: Date;
-		userUploadedVolumeInfo?: VolumeUserInfoUserUploadedVolumeInfo;
+		updated?: Date | null;
+		userUploadedVolumeInfo?: VolumeUserInfoUserUploadedVolumeInfo | null;
 	}
 
 	export interface VolumeUserInfoCopy {
-		allowedCharacterCount?: number;
-		limitType?: string;
-		remainingCharacterCount?: number;
-		updated?: Date;
+		allowedCharacterCount?: number | null;
+		limitType?: string | null;
+		remainingCharacterCount?: number | null;
+		updated?: Date | null;
 	}
 
 	export interface VolumeUserInfoFamilySharing {
 
 		/** The role of the user in the family. */
-		familyRole?: string;
+		familyRole?: string | null;
 
 		/** Whether or not this volume can be shared with the family by the user. This includes sharing eligibility of both the volume and the user. If the value is true, the user can initiate a family sharing action. */
-		isSharingAllowed?: boolean;
+		isSharingAllowed?: boolean | null;
 
 		/** Whether or not sharing this volume is temporarily disabled due to issues with the Family Wallet. */
-		isSharingDisabledByFop?: boolean;
+		isSharingDisabledByFop?: boolean | null;
 	}
 
 	export interface ReadingPosition {
 
 		/** Position in an EPUB as a CFI. */
-		epubCfiPosition?: string;
+		epubCfiPosition?: string | null;
 
 		/** Position in a volume for image-based content. */
-		gbImagePosition?: string;
+		gbImagePosition?: string | null;
 
 		/** Position in a volume for text-based content. */
-		gbTextPosition?: string;
+		gbTextPosition?: string | null;
 
 		/** Resource type for a reading position. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Position in a PDF file. */
-		pdfPosition?: string;
+		pdfPosition?: string | null;
 
 		/** Timestamp when this reading position was last updated (formatted UTC timestamp with millisecond resolution). */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Volume id associated with this reading position. */
-		volumeId?: string;
+		volumeId?: string | null;
 	}
 
 	export interface VolumeUserInfoRentalPeriod {
-		endUtcSec?: string;
-		startUtcSec?: string;
+		endUtcSec?: string | null;
+		startUtcSec?: string | null;
 	}
 
 	export interface Review {
 
 		/** Author of this review. */
-		author?: ReviewAuthor;
+		author?: ReviewAuthor | null;
 
 		/** Review text. */
-		content?: string;
+		content?: string | null;
 
 		/** Date of this review. */
-		date?: string;
+		date?: string | null;
 
 		/** URL for the full review text, for reviews gathered from the web. */
-		fullTextUrl?: string;
+		fullTextUrl?: string | null;
 
 		/** Resource type for a review. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Star rating for this review. Possible values are ONE, TWO, THREE, FOUR, FIVE or NOT_RATED. */
-		rating?: string;
+		rating?: string | null;
 
 		/** Information regarding the source of this review, when the review is not from a Google Books user. */
-		source?: ReviewSource;
+		source?: ReviewSource | null;
 
 		/** Title for this review. */
-		title?: string;
+		title?: string | null;
 
 		/** Source type for this review. Possible values are EDITORIAL, WEB_USER or GOOGLE_USER. */
-		type?: string;
+		type?: string | null;
 
 		/** Volume that this review is for. */
-		volumeId?: string;
+		volumeId?: string | null;
 	}
 
 	export interface ReviewAuthor {
 
 		/** Name of this person. */
-		displayName?: string;
+		displayName?: string | null;
 	}
 
 	export interface ReviewSource {
 
 		/** Name of the source. */
-		description?: string;
+		description?: string | null;
 
 		/** Extra text about the source of the review. */
-		extraDescription?: string;
+		extraDescription?: string | null;
 
 		/** URL of the source of the review. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface VolumeUserInfoUserUploadedVolumeInfo {
-		processingState?: string;
+		processingState?: string | null;
 	}
 
 	export interface VolumeVolumeInfo {
 
 		/** Whether anonymous logging should be allowed. */
-		allowAnonLogging?: boolean;
+		allowAnonLogging?: boolean | null;
 
 		/** The names of the authors and/or editors for this volume. (In LITE projection) */
-		authors?: Array<string>;
+		authors?: Array<string> | null;
 
 		/** The mean review rating for this volume. (min = 1.0, max = 5.0) */
-		averageRating?: number;
+		averageRating?: number | null;
 
 		/** Canonical URL for a volume. (In LITE projection.) */
-		canonicalVolumeLink?: string;
+		canonicalVolumeLink?: string | null;
 
 		/** A list of subject categories, such as "Fiction", "Suspense", etc. */
-		categories?: Array<string>;
+		categories?: Array<string> | null;
 
 		/** Whether the volume has comics content. */
-		comicsContent?: boolean;
+		comicsContent?: boolean | null;
 
 		/** An identifier for the version of the volume content (text & images). (In LITE projection) */
-		contentVersion?: string;
+		contentVersion?: string | null;
 
 		/** A synopsis of the volume. The text of the description is formatted in HTML and includes simple formatting elements, such as b, i, and br tags. (In LITE projection.) */
-		description?: string;
+		description?: string | null;
 
 		/** Physical dimensions of this volume. */
-		dimensions?: VolumeVolumeInfoDimensions;
+		dimensions?: VolumeVolumeInfoDimensions | null;
 
 		/** A list of image links for all the sizes that are available. (In LITE projection.) */
-		imageLinks?: VolumeVolumeInfoImageLinks;
+		imageLinks?: VolumeVolumeInfoImageLinks | null;
 
 		/** Industry standard identifiers for this volume. */
-		VolumeVolumeInfoIndustryIdentifiers?: Array<VolumeVolumeInfoIndustryIdentifiers>;
+		VolumeVolumeInfoIndustryIdentifiers?: Array<VolumeVolumeInfoIndustryIdentifiers> | null;
 
 		/** URL to view information about this volume on the Google Books site. (In LITE projection) */
-		infoLink?: string;
+		infoLink?: string | null;
 
 		/** Best language for this volume (based on content). It is the two-letter ISO 639-1 code such as 'fr', 'en', etc. */
-		language?: string;
+		language?: string | null;
 
 		/** The main category to which this volume belongs. It will be the category from the categories list returned below that has the highest weight. */
-		mainCategory?: string;
-		maturityRating?: string;
+		mainCategory?: string | null;
+		maturityRating?: string | null;
 
 		/** Total number of pages as per publisher metadata. */
-		pageCount?: number;
+		pageCount?: number | null;
 
 		/** A top-level summary of the panelization info in this volume. */
-		panelizationSummary?: VolumeVolumeInfoPanelizationSummary;
+		panelizationSummary?: VolumeVolumeInfoPanelizationSummary | null;
 
 		/** URL to preview this volume on the Google Books site. */
-		previewLink?: string;
+		previewLink?: string | null;
 
 		/** Type of publication of this volume. Possible values are BOOK or MAGAZINE. */
-		printType?: string;
+		printType?: string | null;
 
 		/** Total number of printed pages in generated pdf representation. */
-		printedPageCount?: number;
+		printedPageCount?: number | null;
 
 		/** Date of publication. (In LITE projection.) */
-		publishedDate?: string;
+		publishedDate?: string | null;
 
 		/** Publisher of this volume. (In LITE projection.) */
-		publisher?: string;
+		publisher?: string | null;
 
 		/** The number of review ratings for this volume. */
-		ratingsCount?: number;
+		ratingsCount?: number | null;
 
 		/** The reading modes available for this volume. */
-		readingModes?: any;
+		readingModes?: any | null;
 
 		/** Total number of sample pages as per publisher metadata. */
-		samplePageCount?: number;
-		seriesInfo?: Volumeseriesinfo;
+		samplePageCount?: number | null;
+		seriesInfo?: Volumeseriesinfo | null;
 
 		/** Volume subtitle. (In LITE projection.) */
-		subtitle?: string;
+		subtitle?: string | null;
 
 		/** Volume title. (In LITE projection.) */
-		title?: string;
+		title?: string | null;
 	}
 
 	export interface VolumeVolumeInfoDimensions {
 
 		/** Height or length of this volume (in cm). */
-		height?: string;
+		height?: string | null;
 
 		/** Thickness of this volume (in cm). */
-		thickness?: string;
+		thickness?: string | null;
 
 		/** Width of this volume (in cm). */
-		width?: string;
+		width?: string | null;
 	}
 
 	export interface VolumeVolumeInfoImageLinks {
 
 		/** Image link for extra large size (width of ~1280 pixels). (In LITE projection) */
-		extraLarge?: string;
+		extraLarge?: string | null;
 
 		/** Image link for large size (width of ~800 pixels). (In LITE projection) */
-		large?: string;
+		large?: string | null;
 
 		/** Image link for medium size (width of ~575 pixels). (In LITE projection) */
-		medium?: string;
+		medium?: string | null;
 
 		/** Image link for small size (width of ~300 pixels). (In LITE projection) */
-		small?: string;
+		small?: string | null;
 
 		/** Image link for small thumbnail size (width of ~80 pixels). (In LITE projection) */
-		smallThumbnail?: string;
+		smallThumbnail?: string | null;
 
 		/** Image link for thumbnail size (width of ~128 pixels). (In LITE projection) */
-		thumbnail?: string;
+		thumbnail?: string | null;
 	}
 
 	export interface VolumeVolumeInfoIndustryIdentifiers {
 
 		/** Industry specific volume identifier. */
-		identifier?: string;
+		identifier?: string | null;
 
 		/** Identifier type. Possible values are ISBN_10, ISBN_13, ISSN and OTHER. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface VolumeVolumeInfoPanelizationSummary {
-		containsEpubBubbles?: boolean;
-		containsImageBubbles?: boolean;
-		epubBubbleVersion?: string;
-		imageBubbleVersion?: string;
+		containsEpubBubbles?: boolean | null;
+		containsImageBubbles?: boolean | null;
+		epubBubbleVersion?: string | null;
+		imageBubbleVersion?: string | null;
 	}
 
 	export interface Volumeseriesinfo {
 
 		/** The display number string. This should be used only for display purposes and the actual sequence should be inferred from the below orderNumber. */
-		bookDisplayNumber?: string;
+		bookDisplayNumber?: string | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Short book title in the context of the series. */
-		shortSeriesBookTitle?: string;
-		VolumeseriesinfoVolumeSeries?: Array<VolumeseriesinfoVolumeSeries>;
+		shortSeriesBookTitle?: string | null;
+		VolumeseriesinfoVolumeSeries?: Array<VolumeseriesinfoVolumeSeries> | null;
 	}
 
 	export interface VolumeseriesinfoVolumeSeries {
 
 		/** List of issues. Applicable only for Collection Edition and Omnibus. */
-		VolumeseriesinfoVolumeSeriesIssue?: Array<VolumeseriesinfoVolumeSeriesIssue>;
+		VolumeseriesinfoVolumeSeriesIssue?: Array<VolumeseriesinfoVolumeSeriesIssue> | null;
 
 		/** The book order number in the series. */
-		orderNumber?: number;
+		orderNumber?: number | null;
 
 		/** The book type in the context of series. Examples - Single Issue, Collection Edition, etc. */
-		seriesBookType?: string;
+		seriesBookType?: string | null;
 
 		/** The series id. */
-		seriesId?: string;
+		seriesId?: string | null;
 	}
 
 	export interface VolumeseriesinfoVolumeSeriesIssue {
-		issueDisplayNumber?: string;
-		issueOrderNumber?: number;
+		issueDisplayNumber?: string | null;
+		issueOrderNumber?: number | null;
 	}
 
 	export interface DownloadAccesses {
 
 		/** A list of download access responses. */
-		downloadAccessList?: Array<DownloadAccessRestriction>;
+		downloadAccessList?: Array<DownloadAccessRestriction> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface FamilyInfo {
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Family membership info of the user that made the request. */
-		membership?: FamilyInfoMembership;
+		membership?: FamilyInfoMembership | null;
 	}
 
 	export interface FamilyInfoMembership {
 
 		/** Restrictions on user buying and acquiring content. */
-		acquirePermission?: string;
+		acquirePermission?: string | null;
 
 		/** The age group of the user. */
-		ageGroup?: string;
+		ageGroup?: string | null;
 
 		/** The maximum allowed maturity rating for the user. */
-		allowedMaturityRating?: string;
-		isInFamily?: boolean;
+		allowedMaturityRating?: string | null;
+		isInFamily?: boolean | null;
 
 		/** The role of the user in the family. */
-		role?: string;
+		role?: string | null;
 	}
 
 	export interface Geolayerdata {
-		common?: GeolayerdataCommon;
-		geo?: GeolayerdataGeo;
-		kind?: string;
+		common?: GeolayerdataCommon | null;
+		geo?: GeolayerdataGeo | null;
+		kind?: string | null;
 	}
 
 	export interface GeolayerdataCommon {
 
 		/** The language of the information url and description. */
-		lang?: string;
+		lang?: string | null;
 
 		/** The URL for the preview image information. */
-		previewImageUrl?: string;
+		previewImageUrl?: string | null;
 
 		/** The description for this location. */
-		snippet?: string;
+		snippet?: string | null;
 
 		/** The URL for information for this location. Ex: wikipedia link. */
-		snippetUrl?: string;
+		snippetUrl?: string | null;
 
 		/** The display title and localized canonical name to use when searching for this entity on Google search. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export interface GeolayerdataGeo {
 
 		/** The boundary of the location as a set of loops containing pairs of latitude, longitude coordinates. */
-		boundary?: Array<string>;
+		boundary?: Array<string> | null;
 
 		/** The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER */
-		cachePolicy?: string;
+		cachePolicy?: string | null;
 
 		/** The country code of the location. */
-		countryCode?: string;
+		countryCode?: string | null;
 
 		/** The latitude of the location. */
-		latitude?: number;
+		latitude?: number | null;
 
 		/** The longitude of the location. */
-		longitude?: number;
+		longitude?: number | null;
 
 		/** The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN */
-		mapType?: string;
+		mapType?: string | null;
 
 		/** The viewport for showing this location. This is a latitude, longitude rectangle. */
-		viewport?: GeolayerdataGeoViewport;
+		viewport?: GeolayerdataGeoViewport | null;
 
 		/** The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) to 21+ (down to individual buildings). See: https://developers.google.com/maps/documentation/staticmaps/#Zoomlevels */
-		zoom?: number;
+		zoom?: number | null;
 	}
 
 	export interface GeolayerdataGeoViewport {
-		hi?: GeolayerdataGeoViewportHi;
-		lo?: GeolayerdataGeoViewportLo;
+		hi?: GeolayerdataGeoViewportHi | null;
+		lo?: GeolayerdataGeoViewportLo | null;
 	}
 
 	export interface GeolayerdataGeoViewportHi {
-		latitude?: number;
-		longitude?: number;
+		latitude?: number | null;
+		longitude?: number | null;
 	}
 
 	export interface GeolayerdataGeoViewportLo {
-		latitude?: number;
-		longitude?: number;
+		latitude?: number | null;
+		longitude?: number | null;
 	}
 
 	export interface Layersummaries {
 
 		/** A list of layer summary items. */
-		items?: Array<Layersummary>;
+		items?: Array<Layersummary> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The total number of layer summaries found. */
-		totalItems?: number;
+		totalItems?: number | null;
 	}
 
 	export interface Layersummary {
 
 		/** The number of annotations for this layer. */
-		annotationCount?: number;
+		annotationCount?: number | null;
 
 		/** The list of annotation types contained for this layer. */
-		annotationTypes?: Array<string>;
+		annotationTypes?: Array<string> | null;
 
 		/** Link to get data for this annotation. */
-		annotationsDataLink?: string;
+		annotationsDataLink?: string | null;
 
 		/** The link to get the annotations for this layer. */
-		annotationsLink?: string;
+		annotationsLink?: string | null;
 
 		/** The content version this resource is for. */
-		contentVersion?: string;
+		contentVersion?: string | null;
 
 		/** The number of data items for this layer. */
-		dataCount?: number;
+		dataCount?: number | null;
 
 		/** Unique id of this layer summary. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource Type */
-		kind?: string;
+		kind?: string | null;
 
 		/** The layer id for this summary. */
-		layerId?: string;
+		layerId?: string | null;
 
 		/** URL to this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Timestamp for the last time an item in this layer was updated. (RFC 3339 UTC date-time format). */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** The current version of this layer's volume annotations. Note that this version applies only to the data in the books.layers.volumeAnnotations.* responses. The actual annotation data is versioned separately. */
-		volumeAnnotationsVersion?: string;
+		volumeAnnotationsVersion?: string | null;
 
 		/** The volume id this resource is for. */
-		volumeId?: string;
+		volumeId?: string | null;
 	}
 
 	export interface Metadata {
 
 		/** A list of offline dictionary metadata. */
-		MetadataItems?: Array<MetadataItems>;
+		MetadataItems?: Array<MetadataItems> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface MetadataItems {
-		download_url?: string;
-		encrypted_key?: string;
-		language?: string;
-		size?: string;
-		version?: string;
+		download_url?: string | null;
+		encrypted_key?: string | null;
+		language?: string | null;
+		size?: string | null;
+		version?: string | null;
 	}
 
 	export interface Notification {
-		body?: string;
+		body?: string | null;
 
 		/** The list of crm experiment ids. */
-		crmExperimentIds?: Array<string>;
-		doc_id?: string;
-		doc_type?: string;
-		dont_show_notification?: boolean;
-		iconUrl?: string;
-		is_document_mature?: boolean;
+		crmExperimentIds?: Array<string> | null;
+		doc_id?: string | null;
+		doc_type?: string | null;
+		dont_show_notification?: boolean | null;
+		iconUrl?: string | null;
+		is_document_mature?: boolean | null;
 
 		/** Resource type. */
-		kind?: string;
-		notificationGroup?: string;
-		notification_type?: string;
-		pcampaign_id?: string;
-		reason?: string;
-		show_notification_settings_action?: boolean;
-		targetUrl?: string;
-		timeToExpireMs?: string;
-		title?: string;
+		kind?: string | null;
+		notificationGroup?: string | null;
+		notification_type?: string | null;
+		pcampaign_id?: string | null;
+		reason?: string | null;
+		show_notification_settings_action?: boolean | null;
+		targetUrl?: string | null;
+		timeToExpireMs?: string | null;
+		title?: string | null;
 	}
 
 	export interface Offers {
 
 		/** A list of offers. */
-		OffersItems?: Array<OffersItems>;
+		OffersItems?: Array<OffersItems> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OffersItems {
-		artUrl?: string;
-		gservicesKey?: string;
-		id?: string;
-		OffersItemsItems?: Array<OffersItemsItems>;
+		artUrl?: string | null;
+		gservicesKey?: string | null;
+		id?: string | null;
+		OffersItemsItems?: Array<OffersItemsItems> | null;
 	}
 
 	export interface OffersItemsItems {
-		author?: string;
-		canonicalVolumeLink?: string;
-		coverUrl?: string;
-		description?: string;
-		title?: string;
-		volumeId?: string;
+		author?: string | null;
+		canonicalVolumeLink?: string | null;
+		coverUrl?: string | null;
+		description?: string | null;
+		title?: string | null;
+		volumeId?: string | null;
 	}
 
 	export interface RequestAccess {
-		concurrentAccess?: ConcurrentAccessRestriction;
-		downloadAccess?: DownloadAccessRestriction;
+		concurrentAccess?: ConcurrentAccessRestriction | null;
+		downloadAccess?: DownloadAccessRestriction | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface Series {
 
 		/** Resource type. */
-		kind?: string;
-		SeriesSeries?: Array<SeriesSeries>;
+		kind?: string | null;
+		SeriesSeries?: Array<SeriesSeries> | null;
 	}
 
 	export interface SeriesSeries {
-		bannerImageUrl?: string;
-		eligibleForSubscription?: boolean;
-		imageUrl?: string;
-		isComplete?: boolean;
-		seriesFormatType?: string;
-		seriesId?: string;
-		seriesSubscriptionReleaseInfo?: SeriesSeriesSubscriptionReleaseInfo;
-		seriesType?: string;
-		subscriptionId?: string;
-		title?: string;
+		bannerImageUrl?: string | null;
+		eligibleForSubscription?: boolean | null;
+		imageUrl?: string | null;
+		isComplete?: boolean | null;
+		seriesFormatType?: string | null;
+		seriesId?: string | null;
+		seriesSubscriptionReleaseInfo?: SeriesSeriesSubscriptionReleaseInfo | null;
+		seriesType?: string | null;
+		subscriptionId?: string | null;
+		title?: string | null;
 	}
 
 	export interface SeriesSeriesSubscriptionReleaseInfo {
 
 		/** Cancellation date of the series subscription (or when it ends). */
-		cancellationTimestampUs?: string;
-		currentReleaseInfo?: BooksSubscriptionReleaseInfo;
-		nextReleaseInfo?: BooksSubscriptionReleaseInfo;
+		cancellationTimestampUs?: string | null;
+		currentReleaseInfo?: BooksSubscriptionReleaseInfo | null;
+		nextReleaseInfo?: BooksSubscriptionReleaseInfo | null;
 
 		/** series subscription type. */
-		seriesSubscriptionType?: string;
+		seriesSubscriptionType?: string | null;
 	}
 
 	export interface Seriesmembership {
 
 		/** Resorce type. */
-		kind?: string;
-		member?: Array<Volume>;
-		nextPageToken?: string;
+		kind?: string | null;
+		member?: Array<Volume> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface Usersettings {
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** User settings in sub-objects, each for different purposes. */
-		notesExport?: UsersettingsNotesExport;
-		notification?: UsersettingsNotification;
+		notesExport?: UsersettingsNotesExport | null;
+		notification?: UsersettingsNotification | null;
 	}
 
 	export interface UsersettingsNotesExport {
-		folderName?: string;
-		isEnabled?: boolean;
+		folderName?: string | null;
+		isEnabled?: boolean | null;
 	}
 
 	export interface UsersettingsNotification {
-		matchMyInterests?: UsersettingsNotificationMatchMyInterests;
-		moreFromAuthors?: UsersettingsNotificationMoreFromAuthors;
-		moreFromSeries?: UsersettingsNotificationMoreFromSeries;
-		priceDrop?: UsersettingsNotificationPriceDrop;
-		rewardExpirations?: UsersettingsNotificationRewardExpirations;
+		matchMyInterests?: UsersettingsNotificationMatchMyInterests | null;
+		moreFromAuthors?: UsersettingsNotificationMoreFromAuthors | null;
+		moreFromSeries?: UsersettingsNotificationMoreFromSeries | null;
+		priceDrop?: UsersettingsNotificationPriceDrop | null;
+		rewardExpirations?: UsersettingsNotificationRewardExpirations | null;
 	}
 
 	export interface UsersettingsNotificationMatchMyInterests {
-		opted_state?: string;
+		opted_state?: string | null;
 	}
 
 	export interface UsersettingsNotificationMoreFromAuthors {
-		opted_state?: string;
+		opted_state?: string | null;
 	}
 
 	export interface UsersettingsNotificationMoreFromSeries {
-		opted_state?: string;
+		opted_state?: string | null;
 	}
 
 	export interface UsersettingsNotificationPriceDrop {
-		opted_state?: string;
+		opted_state?: string | null;
 	}
 
 	export interface UsersettingsNotificationRewardExpirations {
-		opted_state?: string;
+		opted_state?: string | null;
 	}
 
 	export interface Volume2 {
 
 		/** A list of volumes. */
-		items?: Array<Volume>;
+		items?: Array<Volume> | null;
 
 		/** Resource type. */
-		kind?: string;
-		nextPageToken?: string;
+		kind?: string | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface Volumeannotation {
 
 		/** The annotation data id for this volume annotation. */
-		annotationDataId?: string;
+		annotationDataId?: string | null;
 
 		/** Link to get data for this annotation. */
-		annotationDataLink?: string;
+		annotationDataLink?: string | null;
 
 		/** The type of annotation this is. */
-		annotationType?: string;
+		annotationType?: string | null;
 
 		/** The content ranges to identify the selected text. */
-		contentRanges?: VolumeannotationContentRanges;
+		contentRanges?: VolumeannotationContentRanges | null;
 
 		/** Data for this annotation. */
-		data?: string;
+		data?: string | null;
 
 		/** Indicates that this annotation is deleted. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/** Unique id of this volume annotation. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource Type */
-		kind?: string;
+		kind?: string | null;
 
 		/** The Layer this annotation is for. */
-		layerId?: string;
+		layerId?: string | null;
 
 		/** Pages the annotation spans. */
-		pageIds?: Array<string>;
+		pageIds?: Array<string> | null;
 
 		/** Excerpt from the volume. */
-		selectedText?: string;
+		selectedText?: string | null;
 
 		/** URL to this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Timestamp for the last time this anntoation was updated. (RFC 3339 UTC date-time format). */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** The Volume this annotation is for. */
-		volumeId?: string;
+		volumeId?: string | null;
 	}
 
 	export interface VolumeannotationContentRanges {
-		cfiRange?: BooksAnnotationsRange;
+		cfiRange?: BooksAnnotationsRange | null;
 
 		/** Content version applicable to ranges below. */
-		contentVersion?: string;
-		gbImageRange?: BooksAnnotationsRange;
-		gbTextRange?: BooksAnnotationsRange;
+		contentVersion?: string | null;
+		gbImageRange?: BooksAnnotationsRange | null;
+		gbTextRange?: BooksAnnotationsRange | null;
 	}
 
 	export interface Volumeannotations {
 
 		/** A list of volume annotations. */
-		items?: Array<Volumeannotation>;
+		items?: Array<Volumeannotation> | null;
 
 		/** Resource type */
-		kind?: string;
+		kind?: string | null;
 
 		/** Token to pass in for pagination for the next page. This will not be present if this request does not have more results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of volume annotations found. */
-		totalItems?: number;
+		totalItems?: number | null;
 
 		/** The version string for all of the volume annotations in this layer (not just the ones in this response). Note: the version string doesn't apply to the annotation data, just the information in this response (e.g. the location of annotations in the book). */
-		version?: string;
+		version?: string | null;
 	}
 
 	export interface Volumes {
 
 		/** A list of volumes. */
-		items?: Array<Volume>;
+		items?: Array<Volume> | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Total number of volumes found. This might be greater than the number of volumes returned in this response if results have been paginated. */
-		totalItems?: number;
+		totalItems?: number | null;
 	}
 
 	@Injectable()

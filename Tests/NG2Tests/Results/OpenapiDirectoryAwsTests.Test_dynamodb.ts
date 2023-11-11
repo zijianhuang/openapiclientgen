@@ -5,9 +5,9 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetItem</code> operation. */
 	export interface BatchGetItemOutput {
-		Responses?: BatchGetResponseMap;
-		UnprocessedKeys?: BatchGetRequestMap;
-		ConsumedCapacity?: Array<ConsumedCapacity>;
+		Responses?: BatchGetResponseMap | null;
+		UnprocessedKeys?: BatchGetRequestMap | null;
+		ConsumedCapacity?: Array<ConsumedCapacity> | null;
 	}
 
 	export interface BatchGetResponseMap {
@@ -19,23 +19,23 @@ export namespace MyNS {
 
 	/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
 	export interface ConsumedCapacity {
-		TableName?: string;
-		CapacityUnits?: number;
-		ReadCapacityUnits?: number;
-		WriteCapacityUnits?: number;
+		TableName?: string | null;
+		CapacityUnits?: number | null;
+		ReadCapacityUnits?: number | null;
+		WriteCapacityUnits?: number | null;
 
 		/** Represents the amount of provisioned throughput capacity consumed on a table or an index. */
-		Table?: Capacity;
-		LocalSecondaryIndexes?: SecondaryIndexesCapacityMap;
-		GlobalSecondaryIndexes?: SecondaryIndexesCapacityMap;
+		Table?: Capacity | null;
+		LocalSecondaryIndexes?: SecondaryIndexesCapacityMap | null;
+		GlobalSecondaryIndexes?: SecondaryIndexesCapacityMap | null;
 	}
 
 
 	/** Represents the amount of provisioned throughput capacity consumed on a table or an index. */
 	export interface Capacity {
-		ReadCapacityUnits?: number;
-		WriteCapacityUnits?: number;
-		CapacityUnits?: number;
+		ReadCapacityUnits?: number | null;
+		WriteCapacityUnits?: number | null;
+		CapacityUnits?: number | null;
 	}
 
 	export interface SecondaryIndexesCapacityMap {
@@ -47,7 +47,7 @@ export namespace MyNS {
 		RequestItems: BatchGetRequestMap;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
 	}
 
 	export enum BatchGetItemInputReturnConsumedCapacity { INDEXES = 0, TOTAL = 1, NONE = 2 }
@@ -67,9 +67,9 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchWriteItem</code> operation. */
 	export interface BatchWriteItemOutput {
-		UnprocessedItems?: BatchWriteItemRequestMap;
-		ItemCollectionMetrics?: ItemCollectionMetricsPerTable;
-		ConsumedCapacity?: Array<ConsumedCapacity>;
+		UnprocessedItems?: BatchWriteItemRequestMap | null;
+		ItemCollectionMetrics?: ItemCollectionMetricsPerTable | null;
+		ConsumedCapacity?: Array<ConsumedCapacity> | null;
 	}
 
 	export interface BatchWriteItemRequestMap {
@@ -84,8 +84,8 @@ export namespace MyNS {
 		RequestItems: BatchWriteItemRequestMap;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
-		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
 	}
 
 	export enum BatchWriteItemInputReturnItemCollectionMetrics { SIZE = 0, NONE = 1 }
@@ -96,7 +96,7 @@ export namespace MyNS {
 	export interface CreateBackupOutput {
 
 		/** Contains the details of the backup created for the table. */
-		BackupDetails?: BackupDetails;
+		BackupDetails?: BackupDetails | null;
 	}
 
 
@@ -104,11 +104,11 @@ export namespace MyNS {
 	export interface BackupDetails {
 		BackupArn: string;
 		BackupName: string;
-		BackupSizeBytes?: number;
+		BackupSizeBytes?: number | null;
 		BackupStatus: BackupDetailsBackupStatus;
 		BackupType: BackupDetailsBackupType;
 		BackupCreationDateTime: Date;
-		BackupExpiryDateTime?: Date;
+		BackupExpiryDateTime?: Date | null;
 	}
 
 	export enum BackupDetailsBackupStatus { CREATING = 0, DELETED = 1, AVAILABLE = 2 }
@@ -138,31 +138,31 @@ export namespace MyNS {
 	export interface CreateGlobalTableOutput {
 
 		/** Contains details about the global table. */
-		GlobalTableDescription?: GlobalTableDescription;
+		GlobalTableDescription?: GlobalTableDescription | null;
 	}
 
 
 	/** Contains details about the global table. */
 	export interface GlobalTableDescription {
-		ReplicationGroup?: Array<ReplicaDescription>;
-		GlobalTableArn?: string;
-		CreationDateTime?: Date;
-		GlobalTableStatus?: GlobalTableDescriptionGlobalTableStatus;
-		GlobalTableName?: string;
+		ReplicationGroup?: Array<ReplicaDescription> | null;
+		GlobalTableArn?: string | null;
+		CreationDateTime?: Date | null;
+		GlobalTableStatus?: GlobalTableDescriptionGlobalTableStatus | null;
+		GlobalTableName?: string | null;
 	}
 
 
 	/** Contains the details of the replica. */
 	export interface ReplicaDescription {
-		RegionName?: string;
-		ReplicaStatus?: ReplicaDescriptionReplicaStatus;
-		ReplicaStatusDescription?: string;
-		ReplicaStatusPercentProgress?: string;
-		KMSMasterKeyId?: string;
+		RegionName?: string | null;
+		ReplicaStatus?: ReplicaDescriptionReplicaStatus | null;
+		ReplicaStatusDescription?: string | null;
+		ReplicaStatusPercentProgress?: string | null;
+		KMSMasterKeyId?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
-		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndexDescription>;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
+		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndexDescription> | null;
 	}
 
 	export enum ReplicaDescriptionReplicaStatus { CREATING = 0, CREATION_FAILED = 1, UPDATING = 2, DELETING = 3, ACTIVE = 4 }
@@ -170,16 +170,16 @@ export namespace MyNS {
 
 	/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
 	export interface ProvisionedThroughputOverride {
-		ReadCapacityUnits?: number;
+		ReadCapacityUnits?: number | null;
 	}
 
 
 	/** Represents the properties of a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexDescription {
-		IndexName?: string;
+		IndexName?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
 	}
 
 	export enum GlobalTableDescriptionGlobalTableStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, UPDATING = 3 }
@@ -192,7 +192,7 @@ export namespace MyNS {
 
 	/** Represents the properties of a replica. */
 	export interface Replica {
-		RegionName?: string;
+		RegionName?: string | null;
 	}
 
 	export interface GlobalTableAlreadyExistsException {
@@ -203,45 +203,45 @@ export namespace MyNS {
 	export interface CreateTableOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription;
+		TableDescription?: TableDescription | null;
 	}
 
 
 	/** Represents the properties of a table. */
 	export interface TableDescription {
-		AttributeDefinitions?: Array<AttributeDefinition>;
-		TableName?: string;
-		KeySchema?: Array<KeySchemaElement>;
-		TableStatus?: TableDescriptionTableStatus;
-		CreationDateTime?: Date;
+		AttributeDefinitions?: Array<AttributeDefinition> | null;
+		TableName?: string | null;
+		KeySchema?: Array<KeySchemaElement> | null;
+		TableStatus?: TableDescriptionTableStatus | null;
+		CreationDateTime?: Date | null;
 
 		/** Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases. */
-		ProvisionedThroughput?: ProvisionedThroughputDescription;
-		TableSizeBytes?: number;
-		ItemCount?: number;
-		TableArn?: string;
-		TableId?: string;
+		ProvisionedThroughput?: ProvisionedThroughputDescription | null;
+		TableSizeBytes?: number | null;
+		ItemCount?: number | null;
+		TableArn?: string | null;
+		TableId?: string | null;
 
 		/** Contains the details for the read/write capacity mode. */
-		BillingModeSummary?: BillingModeSummary;
-		LocalSecondaryIndexes?: Array<LocalSecondaryIndexDescription>;
-		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndexDescription>;
+		BillingModeSummary?: BillingModeSummary | null;
+		LocalSecondaryIndexes?: Array<LocalSecondaryIndexDescription> | null;
+		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndexDescription> | null;
 
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
-		StreamSpecification?: StreamSpecification;
-		LatestStreamLabel?: string;
-		LatestStreamArn?: string;
-		GlobalTableVersion?: string;
-		Replicas?: Array<ReplicaDescription>;
+		StreamSpecification?: StreamSpecification | null;
+		LatestStreamLabel?: string | null;
+		LatestStreamArn?: string | null;
+		GlobalTableVersion?: string | null;
+		Replicas?: Array<ReplicaDescription> | null;
 
 		/** Contains details for the restore. */
-		RestoreSummary?: RestoreSummary;
+		RestoreSummary?: RestoreSummary | null;
 
 		/** The description of the server-side encryption status on the specified table. */
-		SSEDescription?: SSEDescription;
+		SSEDescription?: SSEDescription | null;
 
 		/** Contains details of a table archival operation. */
-		ArchivalSummary?: ArchivalSummary;
+		ArchivalSummary?: ArchivalSummary | null;
 	}
 
 
@@ -267,18 +267,18 @@ export namespace MyNS {
 
 	/** Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases. */
 	export interface ProvisionedThroughputDescription {
-		LastIncreaseDateTime?: Date;
-		LastDecreaseDateTime?: Date;
-		NumberOfDecreasesToday?: number;
-		ReadCapacityUnits?: number;
-		WriteCapacityUnits?: number;
+		LastIncreaseDateTime?: Date | null;
+		LastDecreaseDateTime?: Date | null;
+		NumberOfDecreasesToday?: number | null;
+		ReadCapacityUnits?: number | null;
+		WriteCapacityUnits?: number | null;
 	}
 
 
 	/** Contains the details for the read/write capacity mode. */
 	export interface BillingModeSummary {
-		BillingMode?: BillingModeSummaryBillingMode;
-		LastUpdateToPayPerRequestDateTime?: Date;
+		BillingMode?: BillingModeSummaryBillingMode | null;
+		LastUpdateToPayPerRequestDateTime?: Date | null;
 	}
 
 	export enum BillingModeSummaryBillingMode { PROVISIONED = 0, PAY_PER_REQUEST = 1 }
@@ -286,21 +286,21 @@ export namespace MyNS {
 
 	/** Represents the properties of a local secondary index. */
 	export interface LocalSecondaryIndexDescription {
-		IndexName?: string;
-		KeySchema?: Array<KeySchemaElement>;
+		IndexName?: string | null;
+		KeySchema?: Array<KeySchemaElement> | null;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
-		Projection?: Projection;
-		IndexSizeBytes?: number;
-		ItemCount?: number;
-		IndexArn?: string;
+		Projection?: Projection | null;
+		IndexSizeBytes?: number | null;
+		ItemCount?: number | null;
+		IndexArn?: string | null;
 	}
 
 
 	/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
 	export interface Projection {
-		ProjectionType?: ProjectionProjectionType;
-		NonKeyAttributes?: Array<string>;
+		ProjectionType?: ProjectionProjectionType | null;
+		NonKeyAttributes?: Array<string> | null;
 	}
 
 	export enum ProjectionProjectionType { ALL = 0, KEYS_ONLY = 1, INCLUDE = 2 }
@@ -308,19 +308,19 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index. */
 	export interface GlobalSecondaryIndexDescription {
-		IndexName?: string;
-		KeySchema?: Array<KeySchemaElement>;
+		IndexName?: string | null;
+		KeySchema?: Array<KeySchemaElement> | null;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
-		Projection?: Projection;
-		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus;
-		Backfilling?: boolean;
+		Projection?: Projection | null;
+		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
+		Backfilling?: boolean | null;
 
 		/** Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases. */
-		ProvisionedThroughput?: ProvisionedThroughputDescription;
-		IndexSizeBytes?: number;
-		ItemCount?: number;
-		IndexArn?: string;
+		ProvisionedThroughput?: ProvisionedThroughputDescription | null;
+		IndexSizeBytes?: number | null;
+		ItemCount?: number | null;
+		IndexArn?: string | null;
 	}
 
 	export enum GlobalSecondaryIndexDescriptionIndexStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3 }
@@ -329,7 +329,7 @@ export namespace MyNS {
 	/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
 	export interface StreamSpecification {
 		StreamEnabled: boolean;
-		StreamViewType?: StreamSpecificationStreamViewType;
+		StreamViewType?: StreamSpecificationStreamViewType | null;
 	}
 
 	export enum StreamSpecificationStreamViewType { NEW_IMAGE = 0, OLD_IMAGE = 1, NEW_AND_OLD_IMAGES = 2, KEYS_ONLY = 3 }
@@ -337,8 +337,8 @@ export namespace MyNS {
 
 	/** Contains details for the restore. */
 	export interface RestoreSummary {
-		SourceBackupArn?: string;
-		SourceTableArn?: string;
+		SourceBackupArn?: string | null;
+		SourceTableArn?: string | null;
 		RestoreDateTime: Date;
 		RestoreInProgress: boolean;
 	}
@@ -346,10 +346,10 @@ export namespace MyNS {
 
 	/** The description of the server-side encryption status on the specified table. */
 	export interface SSEDescription {
-		Status?: SSEDescriptionStatus;
-		SSEType?: SSEDescriptionSSEType;
-		KMSMasterKeyArn?: string;
-		InaccessibleEncryptionDateTime?: Date;
+		Status?: SSEDescriptionStatus | null;
+		SSEType?: SSEDescriptionSSEType | null;
+		KMSMasterKeyArn?: string | null;
+		InaccessibleEncryptionDateTime?: Date | null;
 	}
 
 	export enum SSEDescriptionStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, UPDATING = 4 }
@@ -359,9 +359,9 @@ export namespace MyNS {
 
 	/** Contains details of a table archival operation. */
 	export interface ArchivalSummary {
-		ArchivalDateTime?: Date;
-		ArchivalReason?: string;
-		ArchivalBackupArn?: string;
+		ArchivalDateTime?: Date | null;
+		ArchivalReason?: string | null;
+		ArchivalBackupArn?: string | null;
 	}
 
 
@@ -370,19 +370,19 @@ export namespace MyNS {
 		AttributeDefinitions: Array<AttributeDefinition>;
 		TableName: string;
 		KeySchema: Array<KeySchemaElement>;
-		LocalSecondaryIndexes?: Array<LocalSecondaryIndex>;
-		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndex>;
-		BillingMode?: BillingModeSummaryBillingMode;
+		LocalSecondaryIndexes?: Array<LocalSecondaryIndex> | null;
+		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndex> | null;
+		BillingMode?: BillingModeSummaryBillingMode | null;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput;
+		ProvisionedThroughput?: ProvisionedThroughput | null;
 
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
-		StreamSpecification?: StreamSpecification;
+		StreamSpecification?: StreamSpecification | null;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecification?: SSESpecification;
-		Tags?: Array<Tag>;
+		SSESpecification?: SSESpecification | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -411,7 +411,7 @@ export namespace MyNS {
 		Projection: Projection;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput;
+		ProvisionedThroughput?: ProvisionedThroughput | null;
 	}
 
 
@@ -424,9 +424,9 @@ export namespace MyNS {
 
 	/** Represents the settings used to enable server-side encryption. */
 	export interface SSESpecification {
-		Enabled?: boolean;
-		SSEType?: SSEDescriptionSSEType;
-		KMSMasterKeyId?: string;
+		Enabled?: boolean | null;
+		SSEType?: SSEDescriptionSSEType | null;
+		KMSMasterKeyId?: string | null;
 	}
 
 
@@ -442,7 +442,7 @@ export namespace MyNS {
 	export interface DeleteBackupOutput {
 
 		/** Contains the description of the backup created for the table. */
-		BackupDescription?: BackupDescription;
+		BackupDescription?: BackupDescription | null;
 	}
 
 
@@ -450,13 +450,13 @@ export namespace MyNS {
 	export interface BackupDescription {
 
 		/** Contains the details of the backup created for the table. */
-		BackupDetails?: BackupDetails;
+		BackupDetails?: BackupDetails | null;
 
 		/** Contains the details of the table when the backup was created. */
-		SourceTableDetails?: SourceTableDetails;
+		SourceTableDetails?: SourceTableDetails | null;
 
 		/** Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL. */
-		SourceTableFeatureDetails?: SourceTableFeatureDetails;
+		SourceTableFeatureDetails?: SourceTableFeatureDetails | null;
 	}
 
 
@@ -464,8 +464,8 @@ export namespace MyNS {
 	export interface SourceTableDetails {
 		TableName: string;
 		TableId: string;
-		TableArn?: string;
-		TableSizeBytes?: number;
+		TableArn?: string | null;
+		TableSizeBytes?: number | null;
 		KeySchema: Array<KeySchemaElement>;
 		TableCreationDateTime: Date;
 
@@ -474,54 +474,54 @@ export namespace MyNS {
 		 * Required
 		 */
 		ProvisionedThroughput: ProvisionedThroughput;
-		ItemCount?: number;
-		BillingMode?: BillingModeSummaryBillingMode;
+		ItemCount?: number | null;
+		BillingMode?: BillingModeSummaryBillingMode | null;
 	}
 
 
 	/** Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.  */
 	export interface SourceTableFeatureDetails {
-		LocalSecondaryIndexes?: Array<LocalSecondaryIndexInfo>;
-		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndexInfo>;
+		LocalSecondaryIndexes?: Array<LocalSecondaryIndexInfo> | null;
+		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndexInfo> | null;
 
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
-		StreamDescription?: StreamSpecification;
+		StreamDescription?: StreamSpecification | null;
 
 		/** The description of the Time to Live (TTL) status on the specified table. */
-		TimeToLiveDescription?: TimeToLiveDescription;
+		TimeToLiveDescription?: TimeToLiveDescription | null;
 
 		/** The description of the server-side encryption status on the specified table. */
-		SSEDescription?: SSEDescription;
+		SSEDescription?: SSEDescription | null;
 	}
 
 
 	/** Represents the properties of a local secondary index for the table when the backup was created. */
 	export interface LocalSecondaryIndexInfo {
-		IndexName?: string;
-		KeySchema?: Array<KeySchemaElement>;
+		IndexName?: string | null;
+		KeySchema?: Array<KeySchemaElement> | null;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
-		Projection?: Projection;
+		Projection?: Projection | null;
 	}
 
 
 	/** Represents the properties of a global secondary index for the table when the backup was created. */
 	export interface GlobalSecondaryIndexInfo {
-		IndexName?: string;
-		KeySchema?: Array<KeySchemaElement>;
+		IndexName?: string | null;
+		KeySchema?: Array<KeySchemaElement> | null;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
-		Projection?: Projection;
+		Projection?: Projection | null;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput;
+		ProvisionedThroughput?: ProvisionedThroughput | null;
 	}
 
 
 	/** The description of the Time to Live (TTL) status on the specified table.  */
 	export interface TimeToLiveDescription {
-		TimeToLiveStatus?: TimeToLiveDescriptionTimeToLiveStatus;
-		AttributeName?: string;
+		TimeToLiveStatus?: TimeToLiveDescriptionTimeToLiveStatus | null;
+		AttributeName?: string | null;
 	}
 
 	export enum TimeToLiveDescriptionTimeToLiveStatus { ENABLING = 0, DISABLING = 1, ENABLED = 2, DISABLED = 3 }
@@ -536,13 +536,13 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DeleteItem</code> operation. */
 	export interface DeleteItemOutput {
-		Attributes?: AttributeMap;
+		Attributes?: AttributeMap | null;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity;
+		ConsumedCapacity?: ConsumedCapacity | null;
 
 		/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
-		ItemCollectionMetrics?: ItemCollectionMetrics;
+		ItemCollectionMetrics?: ItemCollectionMetrics | null;
 	}
 
 	export interface AttributeMap {
@@ -551,8 +551,8 @@ export namespace MyNS {
 
 	/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
 	export interface ItemCollectionMetrics {
-		ItemCollectionKey?: ItemCollectionKeyAttributeMap;
-		SizeEstimateRangeGB?: Array<number>;
+		ItemCollectionKey?: ItemCollectionKeyAttributeMap | null;
+		SizeEstimateRangeGB?: Array<number> | null;
 	}
 
 	export interface ItemCollectionKeyAttributeMap {
@@ -563,16 +563,16 @@ export namespace MyNS {
 	export interface DeleteItemInput {
 		TableName: string;
 		Key: Key;
-		Expected?: ExpectedAttributeMap;
-		ConditionalOperator?: DeleteItemInputConditionalOperator;
-		ReturnValues?: DeleteItemInputReturnValues;
+		Expected?: ExpectedAttributeMap | null;
+		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
+		ReturnValues?: DeleteItemInputReturnValues | null;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
-		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics;
-		ConditionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
+		ConditionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
 	}
 
 	export interface Key {
@@ -602,7 +602,7 @@ export namespace MyNS {
 	export interface DeleteTableOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription;
+		TableDescription?: TableDescription | null;
 	}
 
 
@@ -614,7 +614,7 @@ export namespace MyNS {
 	export interface DescribeBackupOutput {
 
 		/** Contains the description of the backup created for the table. */
-		BackupDescription?: BackupDescription;
+		BackupDescription?: BackupDescription | null;
 	}
 
 	export interface DescribeBackupInput {
@@ -624,7 +624,7 @@ export namespace MyNS {
 	export interface DescribeContinuousBackupsOutput {
 
 		/** Represents the continuous backups and point in time recovery settings on the table. */
-		ContinuousBackupsDescription?: ContinuousBackupsDescription;
+		ContinuousBackupsDescription?: ContinuousBackupsDescription | null;
 	}
 
 
@@ -633,7 +633,7 @@ export namespace MyNS {
 		ContinuousBackupsStatus: ContinuousBackupsDescriptionContinuousBackupsStatus;
 
 		/** The description of the point in time settings applied to the table. */
-		PointInTimeRecoveryDescription?: PointInTimeRecoveryDescription;
+		PointInTimeRecoveryDescription?: PointInTimeRecoveryDescription | null;
 	}
 
 	export enum ContinuousBackupsDescriptionContinuousBackupsStatus { ENABLED = 0, DISABLED = 1 }
@@ -641,9 +641,9 @@ export namespace MyNS {
 
 	/** The description of the point in time settings applied to the table. */
 	export interface PointInTimeRecoveryDescription {
-		PointInTimeRecoveryStatus?: ContinuousBackupsDescriptionContinuousBackupsStatus;
-		EarliestRestorableDateTime?: Date;
-		LatestRestorableDateTime?: Date;
+		PointInTimeRecoveryStatus?: ContinuousBackupsDescriptionContinuousBackupsStatus | null;
+		EarliestRestorableDateTime?: Date | null;
+		LatestRestorableDateTime?: Date | null;
 	}
 
 	export interface DescribeContinuousBackupsInput {
@@ -651,14 +651,14 @@ export namespace MyNS {
 	}
 
 	export interface DescribeContributorInsightsOutput {
-		TableName?: string;
-		IndexName?: string;
-		ContributorInsightsRuleList?: Array<string>;
-		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus;
-		LastUpdateDateTime?: Date;
+		TableName?: string | null;
+		IndexName?: string | null;
+		ContributorInsightsRuleList?: Array<string> | null;
+		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
+		LastUpdateDateTime?: Date | null;
 
 		/** Represents a failure a contributor insights operation. */
-		FailureException?: FailureException;
+		FailureException?: FailureException | null;
 	}
 
 	export enum DescribeContributorInsightsOutputContributorInsightsStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, FAILED = 4 }
@@ -666,13 +666,13 @@ export namespace MyNS {
 
 	/** Represents a failure a contributor insights operation. */
 	export interface FailureException {
-		ExceptionName?: string;
-		ExceptionDescription?: string;
+		ExceptionName?: string | null;
+		ExceptionDescription?: string | null;
 	}
 
 	export interface DescribeContributorInsightsInput {
 		TableName: string;
-		IndexName?: string;
+		IndexName?: string | null;
 	}
 
 	export interface DescribeEndpointsResponse {
@@ -692,7 +692,7 @@ export namespace MyNS {
 	export interface DescribeGlobalTableOutput {
 
 		/** Contains details about the global table. */
-		GlobalTableDescription?: GlobalTableDescription;
+		GlobalTableDescription?: GlobalTableDescription | null;
 	}
 
 	export interface DescribeGlobalTableInput {
@@ -703,54 +703,54 @@ export namespace MyNS {
 	}
 
 	export interface DescribeGlobalTableSettingsOutput {
-		GlobalTableName?: string;
-		ReplicaSettings?: Array<ReplicaSettingsDescription>;
+		GlobalTableName?: string | null;
+		ReplicaSettings?: Array<ReplicaSettingsDescription> | null;
 	}
 
 
 	/** Represents the properties of a replica. */
 	export interface ReplicaSettingsDescription {
 		RegionName: string;
-		ReplicaStatus?: ReplicaDescriptionReplicaStatus;
+		ReplicaStatus?: ReplicaDescriptionReplicaStatus | null;
 
 		/** Contains the details for the read/write capacity mode. */
-		ReplicaBillingModeSummary?: BillingModeSummary;
-		ReplicaProvisionedReadCapacityUnits?: number;
+		ReplicaBillingModeSummary?: BillingModeSummary | null;
+		ReplicaProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
-		ReplicaProvisionedWriteCapacityUnits?: number;
+		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ReplicaProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ReplicaProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
-		ReplicaGlobalSecondaryIndexSettings?: Array<ReplicaGlobalSecondaryIndexSettingsDescription>;
+		ReplicaProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ReplicaGlobalSecondaryIndexSettings?: Array<ReplicaGlobalSecondaryIndexSettingsDescription> | null;
 	}
 
 
 	/** Represents the auto scaling settings for a global table or global secondary index. */
 	export interface AutoScalingSettingsDescription {
-		MinimumUnits?: number;
-		MaximumUnits?: number;
-		AutoScalingDisabled?: boolean;
-		AutoScalingRoleArn?: string;
-		ScalingPolicies?: Array<AutoScalingPolicyDescription>;
+		MinimumUnits?: number | null;
+		MaximumUnits?: number | null;
+		AutoScalingDisabled?: boolean | null;
+		AutoScalingRoleArn?: string | null;
+		ScalingPolicies?: Array<AutoScalingPolicyDescription> | null;
 	}
 
 
 	/** Represents the properties of the scaling policy. */
 	export interface AutoScalingPolicyDescription {
-		PolicyName?: string;
+		PolicyName?: string | null;
 
 		/** Represents the properties of a target tracking scaling policy. */
-		TargetTrackingScalingPolicyConfiguration?: AutoScalingTargetTrackingScalingPolicyConfigurationDescription;
+		TargetTrackingScalingPolicyConfiguration?: AutoScalingTargetTrackingScalingPolicyConfigurationDescription | null;
 	}
 
 
 	/** Represents the properties of a target tracking scaling policy. */
 	export interface AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
-		DisableScaleIn?: boolean;
-		ScaleInCooldown?: number;
-		ScaleOutCooldown?: number;
+		DisableScaleIn?: boolean | null;
+		ScaleInCooldown?: number | null;
+		ScaleOutCooldown?: number | null;
 		TargetValue: number;
 	}
 
@@ -758,15 +758,15 @@ export namespace MyNS {
 	/** Represents the properties of a global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexSettingsDescription {
 		IndexName: string;
-		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus;
-		ProvisionedReadCapacityUnits?: number;
+		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
+		ProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
-		ProvisionedWriteCapacityUnits?: number;
+		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+		ProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
 	}
 
 	export interface DescribeGlobalTableSettingsInput {
@@ -776,10 +776,10 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DescribeLimits</code> operation. */
 	export interface DescribeLimitsOutput {
-		AccountMaxReadCapacityUnits?: number;
-		AccountMaxWriteCapacityUnits?: number;
-		TableMaxReadCapacityUnits?: number;
-		TableMaxWriteCapacityUnits?: number;
+		AccountMaxReadCapacityUnits?: number | null;
+		AccountMaxWriteCapacityUnits?: number | null;
+		TableMaxReadCapacityUnits?: number | null;
+		TableMaxWriteCapacityUnits?: number | null;
 	}
 
 
@@ -792,7 +792,7 @@ export namespace MyNS {
 	export interface DescribeTableOutput {
 
 		/** Represents the properties of a table. */
-		Table?: TableDescription;
+		Table?: TableDescription | null;
 	}
 
 
@@ -804,42 +804,42 @@ export namespace MyNS {
 	export interface DescribeTableReplicaAutoScalingOutput {
 
 		/** Represents the auto scaling configuration for a global table. */
-		TableAutoScalingDescription?: TableAutoScalingDescription;
+		TableAutoScalingDescription?: TableAutoScalingDescription | null;
 	}
 
 
 	/** Represents the auto scaling configuration for a global table. */
 	export interface TableAutoScalingDescription {
-		TableName?: string;
-		TableStatus?: TableDescriptionTableStatus;
-		Replicas?: Array<ReplicaAutoScalingDescription>;
+		TableName?: string | null;
+		TableStatus?: TableDescriptionTableStatus | null;
+		Replicas?: Array<ReplicaAutoScalingDescription> | null;
 	}
 
 
 	/** Represents the auto scaling settings of the replica. */
 	export interface ReplicaAutoScalingDescription {
-		RegionName?: string;
-		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndexAutoScalingDescription>;
+		RegionName?: string | null;
+		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndexAutoScalingDescription> | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ReplicaProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
-		ReplicaStatus?: ReplicaDescriptionReplicaStatus;
+		ReplicaProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ReplicaStatus?: ReplicaDescriptionReplicaStatus | null;
 	}
 
 
 	/** Represents the auto scaling configuration for a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexAutoScalingDescription {
-		IndexName?: string;
-		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus;
+		IndexName?: string | null;
+		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+		ProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
 	}
 
 	export interface DescribeTableReplicaAutoScalingInput {
@@ -849,7 +849,7 @@ export namespace MyNS {
 	export interface DescribeTimeToLiveOutput {
 
 		/** The description of the Time to Live (TTL) status on the specified table. */
-		TimeToLiveDescription?: TimeToLiveDescription;
+		TimeToLiveDescription?: TimeToLiveDescription | null;
 	}
 
 	export interface DescribeTimeToLiveInput {
@@ -859,10 +859,10 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetItem</code> operation. */
 	export interface GetItemOutput {
-		Item?: AttributeMap;
+		Item?: AttributeMap | null;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity;
+		ConsumedCapacity?: ConsumedCapacity | null;
 	}
 
 
@@ -870,117 +870,117 @@ export namespace MyNS {
 	export interface GetItemInput {
 		TableName: string;
 		Key: Key;
-		AttributesToGet?: Array<string>;
-		ConsistentRead?: boolean;
+		AttributesToGet?: Array<string> | null;
+		ConsistentRead?: boolean | null;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
-		ProjectionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+		ProjectionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
 	}
 
 	export interface ListBackupsOutput {
-		BackupSummaries?: Array<BackupSummary>;
-		LastEvaluatedBackupArn?: string;
+		BackupSummaries?: Array<BackupSummary> | null;
+		LastEvaluatedBackupArn?: string | null;
 	}
 
 
 	/** Contains details for the backup. */
 	export interface BackupSummary {
-		TableName?: string;
-		TableId?: string;
-		TableArn?: string;
-		BackupArn?: string;
-		BackupName?: string;
-		BackupCreationDateTime?: Date;
-		BackupExpiryDateTime?: Date;
-		BackupStatus?: BackupDetailsBackupStatus;
-		BackupType?: BackupDetailsBackupType;
-		BackupSizeBytes?: number;
+		TableName?: string | null;
+		TableId?: string | null;
+		TableArn?: string | null;
+		BackupArn?: string | null;
+		BackupName?: string | null;
+		BackupCreationDateTime?: Date | null;
+		BackupExpiryDateTime?: Date | null;
+		BackupStatus?: BackupDetailsBackupStatus | null;
+		BackupType?: BackupDetailsBackupType | null;
+		BackupSizeBytes?: number | null;
 	}
 
 	export interface ListBackupsInput {
-		TableName?: string;
-		Limit?: number;
-		TimeRangeLowerBound?: Date;
-		TimeRangeUpperBound?: Date;
-		ExclusiveStartBackupArn?: string;
-		BackupType?: ListBackupsInputBackupType;
+		TableName?: string | null;
+		Limit?: number | null;
+		TimeRangeLowerBound?: Date | null;
+		TimeRangeUpperBound?: Date | null;
+		ExclusiveStartBackupArn?: string | null;
+		BackupType?: ListBackupsInputBackupType | null;
 	}
 
 	export enum ListBackupsInputBackupType { USER = 0, SYSTEM = 1, AWS_BACKUP = 2, ALL = 3 }
 
 	export interface ListContributorInsightsOutput {
-		ContributorInsightsSummaries?: Array<ContributorInsightsSummary>;
-		NextToken?: string;
+		ContributorInsightsSummaries?: Array<ContributorInsightsSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a Contributor Insights summary entry.. */
 	export interface ContributorInsightsSummary {
-		TableName?: string;
-		IndexName?: string;
-		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus;
+		TableName?: string | null;
+		IndexName?: string | null;
+		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
 	}
 
 	export interface ListContributorInsightsInput {
-		TableName?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		TableName?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListGlobalTablesOutput {
-		GlobalTables?: Array<GlobalTable>;
-		LastEvaluatedGlobalTableName?: string;
+		GlobalTables?: Array<GlobalTable> | null;
+		LastEvaluatedGlobalTableName?: string | null;
 	}
 
 
 	/** Represents the properties of a global table. */
 	export interface GlobalTable {
-		GlobalTableName?: string;
-		ReplicationGroup?: Array<Replica>;
+		GlobalTableName?: string | null;
+		ReplicationGroup?: Array<Replica> | null;
 	}
 
 	export interface ListGlobalTablesInput {
-		ExclusiveStartGlobalTableName?: string;
-		Limit?: number;
-		RegionName?: string;
+		ExclusiveStartGlobalTableName?: string | null;
+		Limit?: number | null;
+		RegionName?: string | null;
 	}
 
 
 	/** Represents the output of a <code>ListTables</code> operation. */
 	export interface ListTablesOutput {
-		TableNames?: Array<string>;
-		LastEvaluatedTableName?: string;
+		TableNames?: Array<string> | null;
+		LastEvaluatedTableName?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListTables</code> operation. */
 	export interface ListTablesInput {
-		ExclusiveStartTableName?: string;
-		Limit?: number;
+		ExclusiveStartTableName?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListTagsOfResourceOutput {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsOfResourceInput {
 		ResourceArn: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <code>PutItem</code> operation. */
 	export interface PutItemOutput {
-		Attributes?: AttributeMap;
+		Attributes?: AttributeMap | null;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity;
+		ConsumedCapacity?: ConsumedCapacity | null;
 
 		/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
-		ItemCollectionMetrics?: ItemCollectionMetrics;
+		ItemCollectionMetrics?: ItemCollectionMetrics | null;
 	}
 
 
@@ -988,16 +988,16 @@ export namespace MyNS {
 	export interface PutItemInput {
 		TableName: string;
 		Item: PutItemInputAttributeMap;
-		Expected?: ExpectedAttributeMap;
-		ReturnValues?: DeleteItemInputReturnValues;
+		Expected?: ExpectedAttributeMap | null;
+		ReturnValues?: DeleteItemInputReturnValues | null;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
-		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics;
-		ConditionalOperator?: DeleteItemInputConditionalOperator;
-		ConditionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
+		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
+		ConditionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
 	}
 
 	export interface PutItemInputAttributeMap {
@@ -1006,37 +1006,37 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>Query</code> operation. */
 	export interface QueryOutput {
-		Items?: Array<AttributeMap>;
-		Count?: number;
-		ScannedCount?: number;
-		LastEvaluatedKey?: Key;
+		Items?: Array<AttributeMap> | null;
+		Count?: number | null;
+		ScannedCount?: number | null;
+		LastEvaluatedKey?: Key | null;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity;
+		ConsumedCapacity?: ConsumedCapacity | null;
 	}
 
 
 	/** Represents the input of a <code>Query</code> operation. */
 	export interface QueryInput {
 		TableName: string;
-		IndexName?: string;
-		Select?: QueryInputSelect;
-		AttributesToGet?: Array<string>;
-		Limit?: number;
-		ConsistentRead?: boolean;
-		KeyConditions?: KeyConditions;
-		QueryFilter?: FilterConditionMap;
-		ConditionalOperator?: DeleteItemInputConditionalOperator;
-		ScanIndexForward?: boolean;
-		ExclusiveStartKey?: Key;
+		IndexName?: string | null;
+		Select?: QueryInputSelect | null;
+		AttributesToGet?: Array<string> | null;
+		Limit?: number | null;
+		ConsistentRead?: boolean | null;
+		KeyConditions?: KeyConditions | null;
+		QueryFilter?: FilterConditionMap | null;
+		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
+		ScanIndexForward?: boolean | null;
+		ExclusiveStartKey?: Key | null;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
-		ProjectionExpression?: string;
-		FilterExpression?: string;
-		KeyConditionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+		ProjectionExpression?: string | null;
+		FilterExpression?: string | null;
+		KeyConditionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
 	}
 
 	export enum QueryInputSelect { ALL_ATTRIBUTES = 0, ALL_PROJECTED_ATTRIBUTES = 1, SPECIFIC_ATTRIBUTES = 2, COUNT = 3 }
@@ -1050,21 +1050,21 @@ export namespace MyNS {
 	export interface RestoreTableFromBackupOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription;
+		TableDescription?: TableDescription | null;
 	}
 
 	export interface RestoreTableFromBackupInput {
 		TargetTableName: string;
 		BackupArn: string;
-		BillingModeOverride?: BillingModeSummaryBillingMode;
-		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex>;
-		LocalSecondaryIndexOverride?: Array<LocalSecondaryIndex>;
+		BillingModeOverride?: BillingModeSummaryBillingMode | null;
+		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex> | null;
+		LocalSecondaryIndexOverride?: Array<LocalSecondaryIndex> | null;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughputOverride?: ProvisionedThroughput;
+		ProvisionedThroughputOverride?: ProvisionedThroughput | null;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecificationOverride?: SSESpecification;
+		SSESpecificationOverride?: SSESpecification | null;
 	}
 
 	export interface TableAlreadyExistsException {
@@ -1073,24 +1073,24 @@ export namespace MyNS {
 	export interface RestoreTableToPointInTimeOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription;
+		TableDescription?: TableDescription | null;
 	}
 
 	export interface RestoreTableToPointInTimeInput {
-		SourceTableArn?: string;
-		SourceTableName?: string;
+		SourceTableArn?: string | null;
+		SourceTableName?: string | null;
 		TargetTableName: string;
-		UseLatestRestorableTime?: boolean;
-		RestoreDateTime?: Date;
-		BillingModeOverride?: BillingModeSummaryBillingMode;
-		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex>;
-		LocalSecondaryIndexOverride?: Array<LocalSecondaryIndex>;
+		UseLatestRestorableTime?: boolean | null;
+		RestoreDateTime?: Date | null;
+		BillingModeOverride?: BillingModeSummaryBillingMode | null;
+		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex> | null;
+		LocalSecondaryIndexOverride?: Array<LocalSecondaryIndex> | null;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughputOverride?: ProvisionedThroughput;
+		ProvisionedThroughputOverride?: ProvisionedThroughput | null;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecificationOverride?: SSESpecification;
+		SSESpecificationOverride?: SSESpecification | null;
 	}
 
 	export interface InvalidRestoreTimeException {
@@ -1102,36 +1102,36 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>Scan</code> operation. */
 	export interface ScanOutput {
-		Items?: Array<AttributeMap>;
-		Count?: number;
-		ScannedCount?: number;
-		LastEvaluatedKey?: Key;
+		Items?: Array<AttributeMap> | null;
+		Count?: number | null;
+		ScannedCount?: number | null;
+		LastEvaluatedKey?: Key | null;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity;
+		ConsumedCapacity?: ConsumedCapacity | null;
 	}
 
 
 	/** Represents the input of a <code>Scan</code> operation. */
 	export interface ScanInput {
 		TableName: string;
-		IndexName?: string;
-		AttributesToGet?: Array<string>;
-		Limit?: number;
-		Select?: QueryInputSelect;
-		ScanFilter?: FilterConditionMap;
-		ConditionalOperator?: DeleteItemInputConditionalOperator;
-		ExclusiveStartKey?: Key;
+		IndexName?: string | null;
+		AttributesToGet?: Array<string> | null;
+		Limit?: number | null;
+		Select?: QueryInputSelect | null;
+		ScanFilter?: FilterConditionMap | null;
+		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
+		ExclusiveStartKey?: Key | null;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
-		TotalSegments?: number;
-		Segment?: number;
-		ProjectionExpression?: string;
-		FilterExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
-		ConsistentRead?: boolean;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+		TotalSegments?: number | null;
+		Segment?: number | null;
+		ProjectionExpression?: string | null;
+		FilterExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ConsistentRead?: boolean | null;
 	}
 
 	export interface TagResourceInput {
@@ -1140,21 +1140,21 @@ export namespace MyNS {
 	}
 
 	export interface TransactGetItemsOutput {
-		ConsumedCapacity?: Array<ConsumedCapacity>;
-		Responses?: Array<ItemResponse>;
+		ConsumedCapacity?: Array<ConsumedCapacity> | null;
+		Responses?: Array<ItemResponse> | null;
 	}
 
 
 	/** Details for the requested item. */
 	export interface ItemResponse {
-		Item?: AttributeMap;
+		Item?: AttributeMap | null;
 	}
 
 	export interface TransactGetItemsInput {
 		TransactItems: Array<TransactGetItem>;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
 	}
 
 
@@ -1173,25 +1173,25 @@ export namespace MyNS {
 	export interface Get {
 		Key: Key;
 		TableName: string;
-		ProjectionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ProjectionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
 	}
 
 	export interface TransactionCanceledException {
 	}
 
 	export interface TransactWriteItemsOutput {
-		ConsumedCapacity?: Array<ConsumedCapacity>;
-		ItemCollectionMetrics?: ItemCollectionMetricsPerTable;
+		ConsumedCapacity?: Array<ConsumedCapacity> | null;
+		ItemCollectionMetrics?: ItemCollectionMetricsPerTable | null;
 	}
 
 	export interface TransactWriteItemsInput {
 		TransactItems: Array<TransactWriteItem>;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
-		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics;
-		ClientRequestToken?: string;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
+		ClientRequestToken?: string | null;
 	}
 
 
@@ -1199,16 +1199,16 @@ export namespace MyNS {
 	export interface TransactWriteItem {
 
 		/** Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item. */
-		ConditionCheck?: ConditionCheck;
+		ConditionCheck?: ConditionCheck | null;
 
 		/** Represents a request to perform a <code>PutItem</code> operation. */
-		Put?: Put;
+		Put?: Put | null;
 
 		/** Represents a request to perform a <code>DeleteItem</code> operation. */
-		Delete?: Delete;
+		Delete?: Delete | null;
 
 		/** Represents a request to perform an <code>UpdateItem</code> operation. */
-		Update?: Update;
+		Update?: Update | null;
 	}
 
 
@@ -1217,9 +1217,9 @@ export namespace MyNS {
 		Key: Key;
 		TableName: string;
 		ConditionExpression: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
-		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure | null;
 	}
 
 	export enum ConditionCheckReturnValuesOnConditionCheckFailure { ALL_OLD = 0, NONE = 1 }
@@ -1229,10 +1229,10 @@ export namespace MyNS {
 	export interface Put {
 		Item: PutItemInputAttributeMap;
 		TableName: string;
-		ConditionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
-		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure;
+		ConditionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure | null;
 	}
 
 
@@ -1240,10 +1240,10 @@ export namespace MyNS {
 	export interface Delete {
 		Key: Key;
 		TableName: string;
-		ConditionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
-		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure;
+		ConditionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure | null;
 	}
 
 
@@ -1252,10 +1252,10 @@ export namespace MyNS {
 		Key: Key;
 		UpdateExpression: string;
 		TableName: string;
-		ConditionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
-		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure;
+		ConditionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure | null;
 	}
 
 	export interface TransactionInProgressException {
@@ -1272,7 +1272,7 @@ export namespace MyNS {
 	export interface UpdateContinuousBackupsOutput {
 
 		/** Represents the continuous backups and point in time recovery settings on the table. */
-		ContinuousBackupsDescription?: ContinuousBackupsDescription;
+		ContinuousBackupsDescription?: ContinuousBackupsDescription | null;
 	}
 
 	export interface UpdateContinuousBackupsInput {
@@ -1292,14 +1292,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateContributorInsightsOutput {
-		TableName?: string;
-		IndexName?: string;
-		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus;
+		TableName?: string | null;
+		IndexName?: string | null;
+		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
 	}
 
 	export interface UpdateContributorInsightsInput {
 		TableName: string;
-		IndexName?: string;
+		IndexName?: string | null;
 		ContributorInsightsAction: UpdateContributorInsightsInputContributorInsightsAction;
 	}
 
@@ -1308,7 +1308,7 @@ export namespace MyNS {
 	export interface UpdateGlobalTableOutput {
 
 		/** Contains details about the global table. */
-		GlobalTableDescription?: GlobalTableDescription;
+		GlobalTableDescription?: GlobalTableDescription | null;
 	}
 
 	export interface UpdateGlobalTableInput {
@@ -1321,10 +1321,10 @@ export namespace MyNS {
 	export interface ReplicaUpdate {
 
 		/** Represents a replica to be added. */
-		Create?: CreateReplicaAction;
+		Create?: CreateReplicaAction | null;
 
 		/** Represents a replica to be removed. */
-		Delete?: DeleteReplicaAction;
+		Delete?: DeleteReplicaAction | null;
 	}
 
 
@@ -1346,37 +1346,37 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGlobalTableSettingsOutput {
-		GlobalTableName?: string;
-		ReplicaSettings?: Array<ReplicaSettingsDescription>;
+		GlobalTableName?: string | null;
+		ReplicaSettings?: Array<ReplicaSettingsDescription> | null;
 	}
 
 	export interface UpdateGlobalTableSettingsInput {
 		GlobalTableName: string;
-		GlobalTableBillingMode?: BillingModeSummaryBillingMode;
-		GlobalTableProvisionedWriteCapacityUnits?: number;
+		GlobalTableBillingMode?: BillingModeSummaryBillingMode | null;
+		GlobalTableProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
-		GlobalTableGlobalSecondaryIndexSettingsUpdate?: Array<GlobalTableGlobalSecondaryIndexSettingsUpdate>;
-		ReplicaSettingsUpdate?: Array<ReplicaSettingsUpdate>;
+		GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate | null;
+		GlobalTableGlobalSecondaryIndexSettingsUpdate?: Array<GlobalTableGlobalSecondaryIndexSettingsUpdate> | null;
+		ReplicaSettingsUpdate?: Array<ReplicaSettingsUpdate> | null;
 	}
 
 
 	/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
 	export interface AutoScalingSettingsUpdate {
-		MinimumUnits?: number;
-		MaximumUnits?: number;
-		AutoScalingDisabled?: boolean;
-		AutoScalingRoleArn?: string;
+		MinimumUnits?: number | null;
+		MaximumUnits?: number | null;
+		AutoScalingDisabled?: boolean | null;
+		AutoScalingRoleArn?: string | null;
 
 		/** Represents the auto scaling policy to be modified. */
-		ScalingPolicyUpdate?: AutoScalingPolicyUpdate;
+		ScalingPolicyUpdate?: AutoScalingPolicyUpdate | null;
 	}
 
 
 	/** Represents the auto scaling policy to be modified. */
 	export interface AutoScalingPolicyUpdate {
-		PolicyName?: string;
+		PolicyName?: string | null;
 
 		/**
 		 * Represents the settings of a target tracking scaling policy that will be modified.
@@ -1388,9 +1388,9 @@ export namespace MyNS {
 
 	/** Represents the settings of a target tracking scaling policy that will be modified. */
 	export interface AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
-		DisableScaleIn?: boolean;
-		ScaleInCooldown?: number;
-		ScaleOutCooldown?: number;
+		DisableScaleIn?: boolean | null;
+		ScaleInCooldown?: number | null;
+		ScaleOutCooldown?: number | null;
 		TargetValue: number;
 	}
 
@@ -1398,31 +1398,31 @@ export namespace MyNS {
 	/** Represents the settings of a global secondary index for a global table that will be modified. */
 	export interface GlobalTableGlobalSecondaryIndexSettingsUpdate {
 		IndexName: string;
-		ProvisionedWriteCapacityUnits?: number;
+		ProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+		ProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate | null;
 	}
 
 
 	/** Represents the settings for a global table in a Region that will be modified. */
 	export interface ReplicaSettingsUpdate {
 		RegionName: string;
-		ReplicaProvisionedReadCapacityUnits?: number;
+		ReplicaProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
-		ReplicaGlobalSecondaryIndexSettingsUpdate?: Array<ReplicaGlobalSecondaryIndexSettingsUpdate>;
+		ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate | null;
+		ReplicaGlobalSecondaryIndexSettingsUpdate?: Array<ReplicaGlobalSecondaryIndexSettingsUpdate> | null;
 	}
 
 
 	/** Represents the settings of a global secondary index for a global table that will be modified. */
 	export interface ReplicaGlobalSecondaryIndexSettingsUpdate {
 		IndexName: string;
-		ProvisionedReadCapacityUnits?: number;
+		ProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+		ProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate | null;
 	}
 
 	export interface IndexNotFoundException {
@@ -1431,13 +1431,13 @@ export namespace MyNS {
 
 	/** Represents the output of an <code>UpdateItem</code> operation. */
 	export interface UpdateItemOutput {
-		Attributes?: AttributeMap;
+		Attributes?: AttributeMap | null;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity;
+		ConsumedCapacity?: ConsumedCapacity | null;
 
 		/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
-		ItemCollectionMetrics?: ItemCollectionMetrics;
+		ItemCollectionMetrics?: ItemCollectionMetrics | null;
 	}
 
 
@@ -1445,18 +1445,18 @@ export namespace MyNS {
 	export interface UpdateItemInput {
 		TableName: string;
 		Key: Key;
-		AttributeUpdates?: AttributeUpdates;
-		Expected?: ExpectedAttributeMap;
-		ConditionalOperator?: DeleteItemInputConditionalOperator;
-		ReturnValues?: DeleteItemInputReturnValues;
+		AttributeUpdates?: AttributeUpdates | null;
+		Expected?: ExpectedAttributeMap | null;
+		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
+		ReturnValues?: DeleteItemInputReturnValues | null;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
-		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity;
-		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics;
-		UpdateExpression?: string;
-		ConditionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap;
+		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
+		UpdateExpression?: string | null;
+		ConditionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
 	}
 
 	export interface AttributeUpdates {
@@ -1467,26 +1467,26 @@ export namespace MyNS {
 	export interface UpdateTableOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription;
+		TableDescription?: TableDescription | null;
 	}
 
 
 	/** Represents the input of an <code>UpdateTable</code> operation. */
 	export interface UpdateTableInput {
-		AttributeDefinitions?: Array<AttributeDefinition>;
+		AttributeDefinitions?: Array<AttributeDefinition> | null;
 		TableName: string;
-		BillingMode?: BillingModeSummaryBillingMode;
+		BillingMode?: BillingModeSummaryBillingMode | null;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput;
-		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexUpdate>;
+		ProvisionedThroughput?: ProvisionedThroughput | null;
+		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexUpdate> | null;
 
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
-		StreamSpecification?: StreamSpecification;
+		StreamSpecification?: StreamSpecification | null;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecification?: SSESpecification;
-		ReplicaUpdates?: Array<ReplicationGroupUpdate>;
+		SSESpecification?: SSESpecification | null;
+		ReplicaUpdates?: Array<ReplicationGroupUpdate> | null;
 	}
 
 
@@ -1494,13 +1494,13 @@ export namespace MyNS {
 	export interface GlobalSecondaryIndexUpdate {
 
 		/** Represents the new provisioned throughput settings to be applied to a global secondary index. */
-		Update?: UpdateGlobalSecondaryIndexAction;
+		Update?: UpdateGlobalSecondaryIndexAction | null;
 
 		/** Represents a new global secondary index to be added to an existing table. */
-		Create?: CreateGlobalSecondaryIndexAction;
+		Create?: CreateGlobalSecondaryIndexAction | null;
 
 		/** Represents a global secondary index to be deleted from an existing table. */
-		Delete?: DeleteGlobalSecondaryIndexAction;
+		Delete?: DeleteGlobalSecondaryIndexAction | null;
 	}
 
 
@@ -1528,7 +1528,7 @@ export namespace MyNS {
 		Projection: Projection;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput;
+		ProvisionedThroughput?: ProvisionedThroughput | null;
 	}
 
 
@@ -1542,24 +1542,24 @@ export namespace MyNS {
 	export interface ReplicationGroupUpdate {
 
 		/** Represents a replica to be created. */
-		Create?: CreateReplicationGroupMemberAction;
+		Create?: CreateReplicationGroupMemberAction | null;
 
 		/** Represents a replica to be modified. */
-		Update?: UpdateReplicationGroupMemberAction;
+		Update?: UpdateReplicationGroupMemberAction | null;
 
 		/** Represents a replica to be deleted. */
-		Delete?: DeleteReplicationGroupMemberAction;
+		Delete?: DeleteReplicationGroupMemberAction | null;
 	}
 
 
 	/** Represents a replica to be created. */
 	export interface CreateReplicationGroupMemberAction {
 		RegionName: string;
-		KMSMasterKeyId?: string;
+		KMSMasterKeyId?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
-		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex>;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
+		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex> | null;
 	}
 
 
@@ -1568,18 +1568,18 @@ export namespace MyNS {
 		IndexName: string;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
 	}
 
 
 	/** Represents a replica to be modified. */
 	export interface UpdateReplicationGroupMemberAction {
 		RegionName: string;
-		KMSMasterKeyId?: string;
+		KMSMasterKeyId?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
-		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex>;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
+		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex> | null;
 	}
 
 
@@ -1591,50 +1591,50 @@ export namespace MyNS {
 	export interface UpdateTableReplicaAutoScalingOutput {
 
 		/** Represents the auto scaling configuration for a global table. */
-		TableAutoScalingDescription?: TableAutoScalingDescription;
+		TableAutoScalingDescription?: TableAutoScalingDescription | null;
 	}
 
 	export interface UpdateTableReplicaAutoScalingInput {
-		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexAutoScalingUpdate>;
+		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexAutoScalingUpdate> | null;
 		TableName: string;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
-		ReplicaUpdates?: Array<ReplicaAutoScalingUpdate>;
+		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate | null;
+		ReplicaUpdates?: Array<ReplicaAutoScalingUpdate> | null;
 	}
 
 
 	/** Represents the auto scaling settings of a global secondary index for a global table that will be modified. */
 	export interface GlobalSecondaryIndexAutoScalingUpdate {
-		IndexName?: string;
+		IndexName?: string | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate | null;
 	}
 
 
 	/** Represents the auto scaling settings of a replica that will be modified. */
 	export interface ReplicaAutoScalingUpdate {
 		RegionName: string;
-		ReplicaGlobalSecondaryIndexUpdates?: Array<ReplicaGlobalSecondaryIndexAutoScalingUpdate>;
+		ReplicaGlobalSecondaryIndexUpdates?: Array<ReplicaGlobalSecondaryIndexAutoScalingUpdate> | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ReplicaProvisionedReadCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+		ReplicaProvisionedReadCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate | null;
 	}
 
 
 	/** Represents the auto scaling settings of a global secondary index for a replica that will be modified. */
 	export interface ReplicaGlobalSecondaryIndexAutoScalingUpdate {
-		IndexName?: string;
+		IndexName?: string | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedReadCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+		ProvisionedReadCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate | null;
 	}
 
 	export interface UpdateTimeToLiveOutput {
 
 		/** Represents the settings used to enable or disable Time to Live (TTL) for the specified table. */
-		TimeToLiveSpecification?: TimeToLiveSpecification;
+		TimeToLiveSpecification?: TimeToLiveSpecification | null;
 	}
 
 
@@ -1663,16 +1663,16 @@ export namespace MyNS {
 
 	/** <p>Represents the data for an attribute.</p> <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
 	export interface AttributeValue {
-		S?: string;
-		N?: string;
-		B?: string;
-		SS?: Array<string>;
-		NS?: Array<string>;
-		BS?: Array<string>;
-		M?: MapAttributeValue;
-		L?: Array<AttributeValue>;
-		NULL?: boolean;
-		BOOL?: boolean;
+		S?: string | null;
+		N?: string | null;
+		B?: string | null;
+		SS?: Array<string> | null;
+		NS?: Array<string> | null;
+		BS?: Array<string> | null;
+		M?: MapAttributeValue | null;
+		L?: Array<AttributeValue> | null;
+		NULL?: boolean | null;
+		BOOL?: boolean | null;
 	}
 
 	export interface MapAttributeValue {
@@ -1683,8 +1683,8 @@ export namespace MyNS {
 	export interface AttributeValueUpdate {
 
 		/** <p>Represents the data for an attribute.</p> <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		Value?: AttributeValue;
-		Action?: AttributeAction;
+		Value?: AttributeValue | null;
+		Action?: AttributeAction | null;
 	}
 
 	export enum BackupStatus { CREATING = 0, DELETED = 1, AVAILABLE = 2 }
@@ -1701,10 +1701,10 @@ export namespace MyNS {
 	/** <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p> */
 	export interface KeysAndAttributes {
 		Keys: Array<Key>;
-		AttributesToGet?: Array<string>;
-		ConsistentRead?: boolean;
-		ProjectionExpression?: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		AttributesToGet?: Array<string> | null;
+		ConsistentRead?: boolean | null;
+		ProjectionExpression?: string | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
 	}
 
 	export enum ReturnItemCollectionMetrics { SIZE = 0, NONE = 1 }
@@ -1714,10 +1714,10 @@ export namespace MyNS {
 	export interface WriteRequest {
 
 		/** Represents a request to perform a <code>PutItem</code> operation on an item. */
-		PutRequest?: PutRequest;
+		PutRequest?: PutRequest | null;
 
 		/** Represents a request to perform a <code>DeleteItem</code> operation on an item. */
-		DeleteRequest?: DeleteRequest;
+		DeleteRequest?: DeleteRequest | null;
 	}
 
 
@@ -1739,7 +1739,7 @@ export namespace MyNS {
 
 	/** <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:</p> <ul> <li> <p>For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li> </ul> */
 	export interface Condition {
-		AttributeValueList?: Array<AttributeValue>;
+		AttributeValueList?: Array<AttributeValue> | null;
 		ComparisonOperator: ComparisonOperator;
 	}
 
@@ -1760,10 +1760,10 @@ export namespace MyNS {
 	export interface ExpectedAttributeValue {
 
 		/** <p>Represents the data for an attribute.</p> <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		Value?: AttributeValue;
-		Exists?: boolean;
-		ComparisonOperator?: ComparisonOperator;
-		AttributeValueList?: Array<AttributeValue>;
+		Value?: AttributeValue | null;
+		Exists?: boolean | null;
+		ComparisonOperator?: ComparisonOperator | null;
+		AttributeValueList?: Array<AttributeValue> | null;
 	}
 
 	export enum IndexStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3 }

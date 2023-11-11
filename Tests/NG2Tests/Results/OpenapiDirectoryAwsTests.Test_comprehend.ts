@@ -10,23 +10,23 @@ export namespace MyNS {
 
 	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
 	export interface BatchDetectDominantLanguageItemResult {
-		Index?: number;
-		Languages?: Array<DominantLanguage>;
+		Index?: number | null;
+		Languages?: Array<DominantLanguage> | null;
 	}
 
 
 	/** Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection. */
 	export interface DominantLanguage {
-		LanguageCode?: string;
-		Score?: number;
+		LanguageCode?: string | null;
+		Score?: number | null;
 	}
 
 
 	/** Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error. */
 	export interface BatchItemError {
-		Index?: number;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		Index?: number | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface BatchDetectDominantLanguageRequest {
@@ -53,18 +53,18 @@ export namespace MyNS {
 
 	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
 	export interface BatchDetectEntitiesItemResult {
-		Index?: number;
-		Entities?: Array<Entity>;
+		Index?: number | null;
+		Entities?: Array<Entity> | null;
 	}
 
 
 	/** <p>Provides information about an entity. </p> <p> </p> */
 	export interface Entity {
-		Score?: number;
-		Type?: EntityType;
-		Text?: string;
-		BeginOffset?: number;
-		EndOffset?: number;
+		Score?: number | null;
+		Type?: EntityType | null;
+		Text?: string | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
 	}
 
 	export enum EntityType { PERSON = 0, LOCATION = 1, ORGANIZATION = 2, COMMERCIAL_ITEM = 3, EVENT = 4, DATE = 5, QUANTITY = 6, TITLE = 7, OTHER = 8 }
@@ -87,17 +87,17 @@ export namespace MyNS {
 
 	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
 	export interface BatchDetectKeyPhrasesItemResult {
-		Index?: number;
-		KeyPhrases?: Array<KeyPhrase>;
+		Index?: number | null;
+		KeyPhrases?: Array<KeyPhrase> | null;
 	}
 
 
 	/** Describes a key noun phrase. */
 	export interface KeyPhrase {
-		Score?: number;
-		Text?: string;
-		BeginOffset?: number;
-		EndOffset?: number;
+		Score?: number | null;
+		Text?: string | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
 	}
 
 	export interface BatchDetectKeyPhrasesRequest {
@@ -115,11 +115,11 @@ export namespace MyNS {
 
 	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
 	export interface BatchDetectSentimentItemResult {
-		Index?: number;
-		Sentiment?: BatchDetectSentimentItemResultSentiment;
+		Index?: number | null;
+		Sentiment?: BatchDetectSentimentItemResultSentiment | null;
 
 		/** Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments. */
-		SentimentScore?: SentimentScore;
+		SentimentScore?: SentimentScore | null;
 	}
 
 	export enum BatchDetectSentimentItemResultSentiment { POSITIVE = 0, NEGATIVE = 1, NEUTRAL = 2, MIXED = 3 }
@@ -127,10 +127,10 @@ export namespace MyNS {
 
 	/** Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments. */
 	export interface SentimentScore {
-		Positive?: number;
-		Negative?: number;
-		Neutral?: number;
-		Mixed?: number;
+		Positive?: number | null;
+		Negative?: number | null;
+		Neutral?: number | null;
+		Mixed?: number | null;
 	}
 
 	export interface BatchDetectSentimentRequest {
@@ -148,27 +148,27 @@ export namespace MyNS {
 
 	/** The result of calling the operation. The operation returns one object that is successfully processed by the operation. */
 	export interface BatchDetectSyntaxItemResult {
-		Index?: number;
-		SyntaxTokens?: Array<SyntaxToken>;
+		Index?: number | null;
+		SyntaxTokens?: Array<SyntaxToken> | null;
 	}
 
 
 	/** Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text. */
 	export interface SyntaxToken {
-		TokenId?: number;
-		Text?: string;
-		BeginOffset?: number;
-		EndOffset?: number;
+		TokenId?: number | null;
+		Text?: string | null;
+		BeginOffset?: number | null;
+		EndOffset?: number | null;
 
 		/** Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>. */
-		PartOfSpeech?: PartOfSpeechTag;
+		PartOfSpeech?: PartOfSpeechTag | null;
 	}
 
 
 	/** Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>. */
 	export interface PartOfSpeechTag {
-		Tag?: PartOfSpeechTagTag;
-		Score?: number;
+		Tag?: PartOfSpeechTagTag | null;
+		Score?: number | null;
 	}
 
 	export enum PartOfSpeechTagTag { ADJ = 0, ADP = 1, ADV = 2, AUX = 3, CONJ = 4, CCONJ = 5, DET = 6, INTJ = 7, NOUN = 8, NUM = 9, O = 10, PART = 11, PRON = 12, PROPN = 13, PUNCT = 14, SCONJ = 15, SYM = 16, VERB = 17 }
@@ -181,22 +181,22 @@ export namespace MyNS {
 	export enum BatchDetectSyntaxRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5 }
 
 	export interface ClassifyDocumentResponse {
-		Classes?: Array<DocumentClass>;
-		Labels?: Array<DocumentLabel>;
+		Classes?: Array<DocumentClass> | null;
+		Labels?: Array<DocumentLabel> | null;
 	}
 
 
 	/** Specifies the class that categorizes the document being analyzed */
 	export interface DocumentClass {
-		Name?: string;
-		Score?: number;
+		Name?: string | null;
+		Score?: number | null;
 	}
 
 
 	/** Specifies one of the label or labels that categorize the document being analyzed. */
 	export interface DocumentLabel {
-		Name?: string;
-		Score?: number;
+		Name?: string | null;
+		Score?: number | null;
 	}
 
 	export interface ClassifyDocumentRequest {
@@ -208,13 +208,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateDocumentClassifierResponse {
-		DocumentClassifierArn?: string;
+		DocumentClassifierArn?: string | null;
 	}
 
 	export interface CreateDocumentClassifierRequest {
 		DocumentClassifierName: string;
 		DataAccessRoleArn: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p>
@@ -223,35 +223,35 @@ export namespace MyNS {
 		InputDataConfig: DocumentClassifierInputDataConfig;
 
 		/** Provides output results configuration parameters for custom classifier jobs. */
-		OutputDataConfig?: DocumentClassifierOutputDataConfig;
-		ClientRequestToken?: string;
+		OutputDataConfig?: DocumentClassifierOutputDataConfig | null;
+		ClientRequestToken?: string | null;
 		LanguageCode: CreateDocumentClassifierRequestLanguageCode;
-		VolumeKmsKeyId?: string;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
-		Mode?: CreateDocumentClassifierRequestMode;
+		VpcConfig?: VpcConfig | null;
+		Mode?: CreateDocumentClassifierRequestMode | null;
 	}
 
 
 	/** A key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.  */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 
 	/** <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p> */
 	export interface DocumentClassifierInputDataConfig {
 		S3Uri: string;
-		LabelDelimiter?: string;
+		LabelDelimiter?: string | null;
 	}
 
 
 	/** Provides output results configuration parameters for custom classifier jobs.  */
 	export interface DocumentClassifierOutputDataConfig {
-		S3Uri?: string;
-		KmsKeyId?: string;
+		S3Uri?: string | null;
+		KmsKeyId?: string | null;
 	}
 
 	export enum CreateDocumentClassifierRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -281,40 +281,40 @@ export namespace MyNS {
 	}
 
 	export interface CreateEndpointResponse {
-		EndpointArn?: string;
+		EndpointArn?: string | null;
 	}
 
 	export interface CreateEndpointRequest {
 		EndpointName: string;
 		ModelArn: string;
 		DesiredInferenceUnits: number;
-		ClientRequestToken?: string;
-		Tags?: Array<Tag>;
+		ClientRequestToken?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ResourceNotFoundException {
 	}
 
 	export interface CreateEntityRecognizerResponse {
-		EntityRecognizerArn?: string;
+		EntityRecognizerArn?: string | null;
 	}
 
 	export interface CreateEntityRecognizerRequest {
 		RecognizerName: string;
 		DataAccessRoleArn: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * Specifies the format and location of the input data.
 		 * Required
 		 */
 		InputDataConfig: EntityRecognizerInputDataConfig;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 		LanguageCode: CreateEntityRecognizerRequestLanguageCode;
-		VolumeKmsKeyId?: string;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 
@@ -329,10 +329,10 @@ export namespace MyNS {
 		Documents: EntityRecognizerDocuments;
 
 		/** Describes the annotations associated with a entity recognizer. */
-		Annotations?: EntityRecognizerAnnotations;
+		Annotations?: EntityRecognizerAnnotations | null;
 
 		/** Describes the entity recognizer submitted with an entity recognizer. */
-		EntityList?: EntityRecognizerEntityList;
+		EntityList?: EntityRecognizerEntityList | null;
 	}
 
 
@@ -385,30 +385,30 @@ export namespace MyNS {
 	export interface DescribeDocumentClassificationJobResponse {
 
 		/** Provides information about a document classification job. */
-		DocumentClassificationJobProperties?: DocumentClassificationJobProperties;
+		DocumentClassificationJobProperties?: DocumentClassificationJobProperties | null;
 	}
 
 
 	/** Provides information about a document classification job. */
 	export interface DocumentClassificationJobProperties {
-		JobId?: string;
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
-		DocumentClassifierArn?: string;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
+		DocumentClassifierArn?: string | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig;
-		DataAccessRoleArn?: string;
-		VolumeKmsKeyId?: string;
+		OutputDataConfig?: OutputDataConfig | null;
+		DataAccessRoleArn?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export enum DocumentClassificationJobPropertiesJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3, STOP_REQUESTED = 4, STOPPED = 5 }
@@ -417,7 +417,7 @@ export namespace MyNS {
 	/** The input properties for a topic detection job. */
 	export interface InputDataConfig {
 		S3Uri: string;
-		InputFormat?: InputDataConfigInputFormat;
+		InputFormat?: InputDataConfigInputFormat | null;
 	}
 
 	export enum InputDataConfigInputFormat { ONE_DOC_PER_FILE = 0, ONE_DOC_PER_LINE = 1 }
@@ -426,7 +426,7 @@ export namespace MyNS {
 	/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
 	export interface OutputDataConfig {
 		S3Uri: string;
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 	}
 
 	export interface DescribeDocumentClassificationJobRequest {
@@ -439,35 +439,35 @@ export namespace MyNS {
 	export interface DescribeDocumentClassifierResponse {
 
 		/** Provides information about a document classifier. */
-		DocumentClassifierProperties?: DocumentClassifierProperties;
+		DocumentClassifierProperties?: DocumentClassifierProperties | null;
 	}
 
 
 	/** Provides information about a document classifier. */
 	export interface DocumentClassifierProperties {
-		DocumentClassifierArn?: string;
-		LanguageCode?: DocumentClassifierPropertiesLanguageCode;
-		Status?: DocumentClassifierPropertiesStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
-		TrainingStartTime?: Date;
-		TrainingEndTime?: Date;
+		DocumentClassifierArn?: string | null;
+		LanguageCode?: DocumentClassifierPropertiesLanguageCode | null;
+		Status?: DocumentClassifierPropertiesStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
+		TrainingStartTime?: Date | null;
+		TrainingEndTime?: Date | null;
 
 		/** <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p> */
-		InputDataConfig?: DocumentClassifierInputDataConfig;
+		InputDataConfig?: DocumentClassifierInputDataConfig | null;
 
 		/** Provides output results configuration parameters for custom classifier jobs. */
-		OutputDataConfig?: DocumentClassifierOutputDataConfig;
+		OutputDataConfig?: DocumentClassifierOutputDataConfig | null;
 
 		/** Provides information about a document classifier. */
-		ClassifierMetadata?: ClassifierMetadata;
-		DataAccessRoleArn?: string;
-		VolumeKmsKeyId?: string;
+		ClassifierMetadata?: ClassifierMetadata | null;
+		DataAccessRoleArn?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
-		Mode?: CreateDocumentClassifierRequestMode;
+		VpcConfig?: VpcConfig | null;
+		Mode?: CreateDocumentClassifierRequestMode | null;
 	}
 
 	export enum DocumentClassifierPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -477,25 +477,25 @@ export namespace MyNS {
 
 	/** Provides information about a document classifier. */
 	export interface ClassifierMetadata {
-		NumberOfLabels?: number;
-		NumberOfTrainedDocuments?: number;
-		NumberOfTestDocuments?: number;
+		NumberOfLabels?: number | null;
+		NumberOfTrainedDocuments?: number | null;
+		NumberOfTestDocuments?: number | null;
 
 		/** Describes the result metrics for the test data associated with an documentation classifier. */
-		EvaluationMetrics?: ClassifierEvaluationMetrics;
+		EvaluationMetrics?: ClassifierEvaluationMetrics | null;
 	}
 
 
 	/** Describes the result metrics for the test data associated with an documentation classifier. */
 	export interface ClassifierEvaluationMetrics {
-		Accuracy?: number;
-		Precision?: number;
-		Recall?: number;
-		F1Score?: number;
-		MicroPrecision?: number;
-		MicroRecall?: number;
-		MicroF1Score?: number;
-		HammingLoss?: number;
+		Accuracy?: number | null;
+		Precision?: number | null;
+		Recall?: number | null;
+		F1Score?: number | null;
+		MicroPrecision?: number | null;
+		MicroRecall?: number | null;
+		MicroF1Score?: number | null;
+		HammingLoss?: number | null;
 	}
 
 	export interface DescribeDocumentClassifierRequest {
@@ -505,29 +505,29 @@ export namespace MyNS {
 	export interface DescribeDominantLanguageDetectionJobResponse {
 
 		/** Provides information about a dominant language detection job. */
-		DominantLanguageDetectionJobProperties?: DominantLanguageDetectionJobProperties;
+		DominantLanguageDetectionJobProperties?: DominantLanguageDetectionJobProperties | null;
 	}
 
 
 	/** Provides information about a dominant language detection job. */
 	export interface DominantLanguageDetectionJobProperties {
-		JobId?: string;
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig;
-		DataAccessRoleArn?: string;
-		VolumeKmsKeyId?: string;
+		OutputDataConfig?: OutputDataConfig | null;
+		DataAccessRoleArn?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export interface DescribeDominantLanguageDetectionJobRequest {
@@ -537,20 +537,20 @@ export namespace MyNS {
 	export interface DescribeEndpointResponse {
 
 		/** Specifies information about the specified endpoint. */
-		EndpointProperties?: EndpointProperties;
+		EndpointProperties?: EndpointProperties | null;
 	}
 
 
 	/** Specifies information about the specified endpoint. */
 	export interface EndpointProperties {
-		EndpointArn?: string;
-		Status?: EndpointPropertiesStatus;
-		Message?: string;
-		ModelArn?: string;
-		DesiredInferenceUnits?: number;
-		CurrentInferenceUnits?: number;
-		CreationTime?: Date;
-		LastModifiedTime?: Date;
+		EndpointArn?: string | null;
+		Status?: EndpointPropertiesStatus | null;
+		Message?: string | null;
+		ModelArn?: string | null;
+		DesiredInferenceUnits?: number | null;
+		CurrentInferenceUnits?: number | null;
+		CreationTime?: Date | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export enum EndpointPropertiesStatus { CREATING = 0, DELETING = 1, FAILED = 2, IN_SERVICE = 3, UPDATING = 4 }
@@ -562,31 +562,31 @@ export namespace MyNS {
 	export interface DescribeEntitiesDetectionJobResponse {
 
 		/** Provides information about an entities detection job. */
-		EntitiesDetectionJobProperties?: EntitiesDetectionJobProperties;
+		EntitiesDetectionJobProperties?: EntitiesDetectionJobProperties | null;
 	}
 
 
 	/** Provides information about an entities detection job. */
 	export interface EntitiesDetectionJobProperties {
-		JobId?: string;
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
-		EntityRecognizerArn?: string;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
+		EntityRecognizerArn?: string | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig;
-		LanguageCode?: EntitiesDetectionJobPropertiesLanguageCode;
-		DataAccessRoleArn?: string;
-		VolumeKmsKeyId?: string;
+		OutputDataConfig?: OutputDataConfig | null;
+		LanguageCode?: EntitiesDetectionJobPropertiesLanguageCode | null;
+		DataAccessRoleArn?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export enum EntitiesDetectionJobPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -598,31 +598,31 @@ export namespace MyNS {
 	export interface DescribeEntityRecognizerResponse {
 
 		/** Describes information about an entity recognizer. */
-		EntityRecognizerProperties?: EntityRecognizerProperties;
+		EntityRecognizerProperties?: EntityRecognizerProperties | null;
 	}
 
 
 	/** Describes information about an entity recognizer. */
 	export interface EntityRecognizerProperties {
-		EntityRecognizerArn?: string;
-		LanguageCode?: EntityRecognizerPropertiesLanguageCode;
-		Status?: DocumentClassifierPropertiesStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
-		TrainingStartTime?: Date;
-		TrainingEndTime?: Date;
+		EntityRecognizerArn?: string | null;
+		LanguageCode?: EntityRecognizerPropertiesLanguageCode | null;
+		Status?: DocumentClassifierPropertiesStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
+		TrainingStartTime?: Date | null;
+		TrainingEndTime?: Date | null;
 
 		/** Specifies the format and location of the input data. */
-		InputDataConfig?: EntityRecognizerInputDataConfig;
+		InputDataConfig?: EntityRecognizerInputDataConfig | null;
 
 		/** Detailed information about an entity recognizer. */
-		RecognizerMetadata?: EntityRecognizerMetadata;
-		DataAccessRoleArn?: string;
-		VolumeKmsKeyId?: string;
+		RecognizerMetadata?: EntityRecognizerMetadata | null;
+		DataAccessRoleArn?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export enum EntityRecognizerPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -630,38 +630,38 @@ export namespace MyNS {
 
 	/** Detailed information about an entity recognizer. */
 	export interface EntityRecognizerMetadata {
-		NumberOfTrainedDocuments?: number;
-		NumberOfTestDocuments?: number;
+		NumberOfTrainedDocuments?: number | null;
+		NumberOfTestDocuments?: number | null;
 
 		/** Detailed information about the accuracy of an entity recognizer. */
-		EvaluationMetrics?: EntityRecognizerEvaluationMetrics;
-		EntityTypes?: Array<EntityRecognizerMetadataEntityTypesListItem>;
+		EvaluationMetrics?: EntityRecognizerEvaluationMetrics | null;
+		EntityTypes?: Array<EntityRecognizerMetadataEntityTypesListItem> | null;
 	}
 
 
 	/** Detailed information about the accuracy of an entity recognizer.  */
 	export interface EntityRecognizerEvaluationMetrics {
-		Precision?: number;
-		Recall?: number;
-		F1Score?: number;
+		Precision?: number | null;
+		Recall?: number | null;
+		F1Score?: number | null;
 	}
 
 
 	/** Individual item from the list of entity types in the metadata of an entity recognizer. */
 	export interface EntityRecognizerMetadataEntityTypesListItem {
-		Type?: string;
+		Type?: string | null;
 
 		/** Detailed information about the accuracy of an entity recognizer for a specific entity type. */
-		EvaluationMetrics?: EntityTypesEvaluationMetrics;
-		NumberOfTrainMentions?: number;
+		EvaluationMetrics?: EntityTypesEvaluationMetrics | null;
+		NumberOfTrainMentions?: number | null;
 	}
 
 
 	/** Detailed information about the accuracy of an entity recognizer for a specific entity type.  */
 	export interface EntityTypesEvaluationMetrics {
-		Precision?: number;
-		Recall?: number;
-		F1Score?: number;
+		Precision?: number | null;
+		Recall?: number | null;
+		F1Score?: number | null;
 	}
 
 	export interface DescribeEntityRecognizerRequest {
@@ -671,30 +671,30 @@ export namespace MyNS {
 	export interface DescribeKeyPhrasesDetectionJobResponse {
 
 		/** Provides information about a key phrases detection job. */
-		KeyPhrasesDetectionJobProperties?: KeyPhrasesDetectionJobProperties;
+		KeyPhrasesDetectionJobProperties?: KeyPhrasesDetectionJobProperties | null;
 	}
 
 
 	/** Provides information about a key phrases detection job. */
 	export interface KeyPhrasesDetectionJobProperties {
-		JobId?: string;
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig;
-		LanguageCode?: KeyPhrasesDetectionJobPropertiesLanguageCode;
-		DataAccessRoleArn?: string;
-		VolumeKmsKeyId?: string;
+		OutputDataConfig?: OutputDataConfig | null;
+		LanguageCode?: KeyPhrasesDetectionJobPropertiesLanguageCode | null;
+		DataAccessRoleArn?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export enum KeyPhrasesDetectionJobPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -706,30 +706,30 @@ export namespace MyNS {
 	export interface DescribeSentimentDetectionJobResponse {
 
 		/** Provides information about a sentiment detection job. */
-		SentimentDetectionJobProperties?: SentimentDetectionJobProperties;
+		SentimentDetectionJobProperties?: SentimentDetectionJobProperties | null;
 	}
 
 
 	/** Provides information about a sentiment detection job. */
 	export interface SentimentDetectionJobProperties {
-		JobId?: string;
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig;
-		LanguageCode?: SentimentDetectionJobPropertiesLanguageCode;
-		DataAccessRoleArn?: string;
-		VolumeKmsKeyId?: string;
+		OutputDataConfig?: OutputDataConfig | null;
+		LanguageCode?: SentimentDetectionJobPropertiesLanguageCode | null;
+		DataAccessRoleArn?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export enum SentimentDetectionJobPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -741,30 +741,30 @@ export namespace MyNS {
 	export interface DescribeTopicsDetectionJobResponse {
 
 		/** Provides information about a topic detection job. */
-		TopicsDetectionJobProperties?: TopicsDetectionJobProperties;
+		TopicsDetectionJobProperties?: TopicsDetectionJobProperties | null;
 	}
 
 
 	/** Provides information about a topic detection job. */
 	export interface TopicsDetectionJobProperties {
-		JobId?: string;
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		Message?: string;
-		SubmitTime?: Date;
-		EndTime?: Date;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		Message?: string | null;
+		SubmitTime?: Date | null;
+		EndTime?: Date | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig;
-		NumberOfTopics?: number;
-		DataAccessRoleArn?: string;
-		VolumeKmsKeyId?: string;
+		OutputDataConfig?: OutputDataConfig | null;
+		NumberOfTopics?: number | null;
+		DataAccessRoleArn?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export interface DescribeTopicsDetectionJobRequest {
@@ -772,7 +772,7 @@ export namespace MyNS {
 	}
 
 	export interface DetectDominantLanguageResponse {
-		Languages?: Array<DominantLanguage>;
+		Languages?: Array<DominantLanguage> | null;
 	}
 
 	export interface DetectDominantLanguageRequest {
@@ -780,7 +780,7 @@ export namespace MyNS {
 	}
 
 	export interface DetectEntitiesResponse {
-		Entities?: Array<Entity>;
+		Entities?: Array<Entity> | null;
 	}
 
 	export interface DetectEntitiesRequest {
@@ -791,7 +791,7 @@ export namespace MyNS {
 	export enum DetectEntitiesRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface DetectKeyPhrasesResponse {
-		KeyPhrases?: Array<KeyPhrase>;
+		KeyPhrases?: Array<KeyPhrase> | null;
 	}
 
 	export interface DetectKeyPhrasesRequest {
@@ -802,10 +802,10 @@ export namespace MyNS {
 	export enum DetectKeyPhrasesRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface DetectSentimentResponse {
-		Sentiment?: BatchDetectSentimentItemResultSentiment;
+		Sentiment?: BatchDetectSentimentItemResultSentiment | null;
 
 		/** Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments. */
-		SentimentScore?: SentimentScore;
+		SentimentScore?: SentimentScore | null;
 	}
 
 	export interface DetectSentimentRequest {
@@ -816,7 +816,7 @@ export namespace MyNS {
 	export enum DetectSentimentRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface DetectSyntaxResponse {
-		SyntaxTokens?: Array<SyntaxToken>;
+		SyntaxTokens?: Array<SyntaxToken> | null;
 	}
 
 	export interface DetectSyntaxRequest {
@@ -825,185 +825,185 @@ export namespace MyNS {
 	}
 
 	export interface ListDocumentClassificationJobsResponse {
-		DocumentClassificationJobPropertiesList?: Array<DocumentClassificationJobProperties>;
-		NextToken?: string;
+		DocumentClassificationJobPropertiesList?: Array<DocumentClassificationJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDocumentClassificationJobsRequest {
 
 		/** Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request. */
-		Filter?: DocumentClassificationJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: DocumentClassificationJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request. */
 	export interface DocumentClassificationJobFilter {
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface InvalidFilterException {
 	}
 
 	export interface ListDocumentClassifiersResponse {
-		DocumentClassifierPropertiesList?: Array<DocumentClassifierProperties>;
-		NextToken?: string;
+		DocumentClassifierPropertiesList?: Array<DocumentClassifierProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDocumentClassifiersRequest {
 
 		/** Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation. */
-		Filter?: DocumentClassifierFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: DocumentClassifierFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation. */
 	export interface DocumentClassifierFilter {
-		Status?: DocumentClassifierPropertiesStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		Status?: DocumentClassifierPropertiesStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface ListDominantLanguageDetectionJobsResponse {
-		DominantLanguageDetectionJobPropertiesList?: Array<DominantLanguageDetectionJobProperties>;
-		NextToken?: string;
+		DominantLanguageDetectionJobPropertiesList?: Array<DominantLanguageDetectionJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDominantLanguageDetectionJobsRequest {
 
 		/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
-		Filter?: DominantLanguageDetectionJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: DominantLanguageDetectionJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
 	export interface DominantLanguageDetectionJobFilter {
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface ListEndpointsResponse {
-		EndpointPropertiesList?: Array<EndpointProperties>;
-		NextToken?: string;
+		EndpointPropertiesList?: Array<EndpointProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListEndpointsRequest {
 
 		/** The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time. */
-		Filter?: EndpointFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: EndpointFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time.  */
 	export interface EndpointFilter {
-		ModelArn?: string;
-		Status?: EndpointPropertiesStatus;
-		CreationTimeBefore?: Date;
-		CreationTimeAfter?: Date;
+		ModelArn?: string | null;
+		Status?: EndpointPropertiesStatus | null;
+		CreationTimeBefore?: Date | null;
+		CreationTimeAfter?: Date | null;
 	}
 
 	export interface ListEntitiesDetectionJobsResponse {
-		EntitiesDetectionJobPropertiesList?: Array<EntitiesDetectionJobProperties>;
-		NextToken?: string;
+		EntitiesDetectionJobPropertiesList?: Array<EntitiesDetectionJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListEntitiesDetectionJobsRequest {
 
 		/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
-		Filter?: EntitiesDetectionJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: EntitiesDetectionJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
 	export interface EntitiesDetectionJobFilter {
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface ListEntityRecognizersResponse {
-		EntityRecognizerPropertiesList?: Array<EntityRecognizerProperties>;
-		NextToken?: string;
+		EntityRecognizerPropertiesList?: Array<EntityRecognizerProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListEntityRecognizersRequest {
 
 		/** Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt; */
-		Filter?: EntityRecognizerFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: EntityRecognizerFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt; */
 	export interface EntityRecognizerFilter {
-		Status?: DocumentClassifierPropertiesStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		Status?: DocumentClassifierPropertiesStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface ListKeyPhrasesDetectionJobsResponse {
-		KeyPhrasesDetectionJobPropertiesList?: Array<KeyPhrasesDetectionJobProperties>;
-		NextToken?: string;
+		KeyPhrasesDetectionJobPropertiesList?: Array<KeyPhrasesDetectionJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListKeyPhrasesDetectionJobsRequest {
 
 		/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
-		Filter?: KeyPhrasesDetectionJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: KeyPhrasesDetectionJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
 	export interface KeyPhrasesDetectionJobFilter {
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface ListSentimentDetectionJobsResponse {
-		SentimentDetectionJobPropertiesList?: Array<SentimentDetectionJobProperties>;
-		NextToken?: string;
+		SentimentDetectionJobPropertiesList?: Array<SentimentDetectionJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListSentimentDetectionJobsRequest {
 
 		/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
-		Filter?: SentimentDetectionJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: SentimentDetectionJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
 	export interface SentimentDetectionJobFilter {
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		ResourceArn?: string;
-		Tags?: Array<Tag>;
+		ResourceArn?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -1011,34 +1011,34 @@ export namespace MyNS {
 	}
 
 	export interface ListTopicsDetectionJobsResponse {
-		TopicsDetectionJobPropertiesList?: Array<TopicsDetectionJobProperties>;
-		NextToken?: string;
+		TopicsDetectionJobPropertiesList?: Array<TopicsDetectionJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTopicsDetectionJobsRequest {
 
 		/** Provides information for filtering topic detection jobs. For more information, see . */
-		Filter?: TopicsDetectionJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: TopicsDetectionJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering topic detection jobs. For more information, see . */
 	export interface TopicsDetectionJobFilter {
-		JobName?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
-		SubmitTimeBefore?: Date;
-		SubmitTimeAfter?: Date;
+		JobName?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+		SubmitTimeBefore?: Date | null;
+		SubmitTimeAfter?: Date | null;
 	}
 
 	export interface StartDocumentClassificationJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StartDocumentClassificationJobRequest {
-		JobName?: string;
+		JobName?: string | null;
 		DocumentClassifierArn: string;
 
 		/**
@@ -1053,16 +1053,16 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		ClientRequestToken?: string;
-		VolumeKmsKeyId?: string;
+		ClientRequestToken?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export interface StartDominantLanguageDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StartDominantLanguageDetectionJobRequest {
@@ -1079,17 +1079,17 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
-		ClientRequestToken?: string;
-		VolumeKmsKeyId?: string;
+		JobName?: string | null;
+		ClientRequestToken?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export interface StartEntitiesDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StartEntitiesDetectionJobRequest {
@@ -1106,21 +1106,21 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
-		EntityRecognizerArn?: string;
+		JobName?: string | null;
+		EntityRecognizerArn?: string | null;
 		LanguageCode: StartEntitiesDetectionJobRequestLanguageCode;
-		ClientRequestToken?: string;
-		VolumeKmsKeyId?: string;
+		ClientRequestToken?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export enum StartEntitiesDetectionJobRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface StartKeyPhrasesDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StartKeyPhrasesDetectionJobRequest {
@@ -1137,20 +1137,20 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
+		JobName?: string | null;
 		LanguageCode: StartKeyPhrasesDetectionJobRequestLanguageCode;
-		ClientRequestToken?: string;
-		VolumeKmsKeyId?: string;
+		ClientRequestToken?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export enum StartKeyPhrasesDetectionJobRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface StartSentimentDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StartSentimentDetectionJobRequest {
@@ -1167,20 +1167,20 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
+		JobName?: string | null;
 		LanguageCode: StartSentimentDetectionJobRequestLanguageCode;
-		ClientRequestToken?: string;
-		VolumeKmsKeyId?: string;
+		ClientRequestToken?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export enum StartSentimentDetectionJobRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface StartTopicsDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StartTopicsDetectionJobRequest {
@@ -1197,18 +1197,18 @@ export namespace MyNS {
 		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
-		JobName?: string;
-		NumberOfTopics?: number;
-		ClientRequestToken?: string;
-		VolumeKmsKeyId?: string;
+		JobName?: string | null;
+		NumberOfTopics?: number | null;
+		ClientRequestToken?: string | null;
+		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 	}
 
 	export interface StopDominantLanguageDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StopDominantLanguageDetectionJobRequest {
@@ -1216,8 +1216,8 @@ export namespace MyNS {
 	}
 
 	export interface StopEntitiesDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StopEntitiesDetectionJobRequest {
@@ -1225,8 +1225,8 @@ export namespace MyNS {
 	}
 
 	export interface StopKeyPhrasesDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StopKeyPhrasesDetectionJobRequest {
@@ -1234,8 +1234,8 @@ export namespace MyNS {
 	}
 
 	export interface StopSentimentDetectionJobResponse {
-		JobId?: string;
-		JobStatus?: DocumentClassificationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
 
 	export interface StopSentimentDetectionJobRequest {

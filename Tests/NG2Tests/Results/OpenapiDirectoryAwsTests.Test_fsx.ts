@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CancelDataRepositoryTaskResponse {
-		Lifecycle?: CancelDataRepositoryTaskResponseLifecycle;
-		TaskId?: string;
+		Lifecycle?: CancelDataRepositoryTaskResponseLifecycle | null;
+		TaskId?: string | null;
 	}
 
 	export enum CancelDataRepositoryTaskResponseLifecycle { PENDING = 0, EXECUTING = 1, FAILED = 2, SUCCEEDED = 3, CANCELED = 4, CANCELING = 5 }
@@ -35,7 +35,7 @@ export namespace MyNS {
 	export interface CreateBackupResponse {
 
 		/** A backup of an Amazon FSx for Windows File Server file system. You can create a new file system from a backup to protect against data loss. */
-		Backup?: Backup;
+		Backup?: Backup | null;
 	}
 
 
@@ -58,7 +58,7 @@ export namespace MyNS {
 		Lifecycle: BackupLifecycle;
 
 		/** If backup creation fails, this structure contains the details of that failure. */
-		FailureDetails?: BackupFailureDetails;
+		FailureDetails?: BackupFailureDetails | null;
 
 		/**
 		 * The type of the backup.
@@ -71,7 +71,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		ProgressPercent?: number;
+		ProgressPercent?: number | null;
 
 		/**
 		 * The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.
@@ -85,7 +85,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^.{1,2048}$
 		 */
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
@@ -93,14 +93,14 @@ export namespace MyNS {
 		 * Min length: 8
 		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
 		 */
-		ResourceARN?: string;
+		ResourceARN?: string | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * A description of a specific Amazon FSx file system.
@@ -109,7 +109,7 @@ export namespace MyNS {
 		FileSystem: FileSystem;
 
 		/** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system. */
-		DirectoryInformation?: ActiveDirectoryBackupAttributes;
+		DirectoryInformation?: ActiveDirectoryBackupAttributes | null;
 	}
 
 	export enum BackupLifecycle { AVAILABLE = 0, CREATING = 1, DELETED = 2, FAILED = 3 }
@@ -123,7 +123,7 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		Message?: string;
+		Message?: string | null;
 	}
 
 	export enum BackupType { AUTOMATIC = 0, USER_INITIATED = 1 }
@@ -138,7 +138,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
-		Key?: string;
+		Key?: string | null;
 
 		/**
 		 * A string of 0 to 256 characters that specifies the value for a tag. Tag values can be null and don't have to be unique in a tag set.
@@ -146,7 +146,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
-		Value?: string;
+		Value?: string | null;
 	}
 
 
@@ -159,10 +159,10 @@ export namespace MyNS {
 		 * Min length: 12
 		 * Pattern: ^\d{12}$
 		 */
-		OwnerId?: string;
+		OwnerId?: string | null;
 
 		/** The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time. */
-		CreationTime?: Date;
+		CreationTime?: Date | null;
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
@@ -170,26 +170,26 @@ export namespace MyNS {
 		 * Min length: 11
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
 		 */
-		FileSystemId?: string;
+		FileSystemId?: string | null;
 
 		/** The type of file system. */
-		FileSystemType?: FileSystemFileSystemType;
+		FileSystemType?: FileSystemFileSystemType | null;
 
 		/** The lifecycle status of the file system. */
-		Lifecycle?: FileSystemLifecycle;
+		Lifecycle?: FileSystemLifecycle | null;
 
 		/** A structure providing details of any failures that occur when creating the file system has failed. */
-		FailureDetails?: FileSystemFailureDetails;
+		FailureDetails?: FileSystemFailureDetails | null;
 
 		/**
 		 * The storage capacity for your Amazon FSx file system, in gibibytes.
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
-		StorageCapacity?: number;
+		StorageCapacity?: number | null;
 
 		/** The storage type for your Amazon FSx file system. */
-		StorageType?: FileSystemStorageType;
+		StorageType?: FileSystemStorageType | null;
 
 		/**
 		 * The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the <i>Amazon VPC User Guide</i>.
@@ -197,19 +197,19 @@ export namespace MyNS {
 		 * Min length: 12
 		 * Pattern: ^(vpc-[0-9a-f]{8,})$
 		 */
-		VpcId?: string;
+		VpcId?: string | null;
 
 		/**
 		 * A list of subnet IDs. Currently, you can specify only one subnet ID in a call to the <code>CreateFileSystem</code> operation.
 		 * Maximum items: 50
 		 */
-		SubnetIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
 
 		/**
 		 * A list of network interface IDs.
 		 * Maximum items: 50
 		 */
-		NetworkInterfaceIds?: Array<string>;
+		NetworkInterfaceIds?: Array<string> | null;
 
 		/**
 		 * The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.
@@ -217,7 +217,7 @@ export namespace MyNS {
 		 * Min length: 16
 		 * Pattern: ^(fsi?-[0-9a-f]{8,}\..{4,253})$
 		 */
-		DNSName?: string;
+		DNSName?: string | null;
 
 		/**
 		 * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. In either case, if not specified, the Amazon FSx managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key Management Service API Reference</i>.
@@ -225,7 +225,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^.{1,2048}$
 		 */
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
@@ -233,21 +233,21 @@ export namespace MyNS {
 		 * Min length: 8
 		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
 		 */
-		ResourceARN?: string;
+		ResourceARN?: string | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** The configuration for this Microsoft Windows file system. */
-		WindowsConfiguration?: WindowsFileSystemConfiguration;
+		WindowsConfiguration?: WindowsFileSystemConfiguration | null;
 
 		/** The configuration for the Amazon FSx for Lustre file system. */
-		LustreConfiguration?: LustreFileSystemConfiguration;
-		AdministrativeActions?: Array<AdministrativeAction>;
+		LustreConfiguration?: LustreFileSystemConfiguration | null;
+		AdministrativeActions?: Array<AdministrativeAction> | null;
 	}
 
 	export enum FileSystemFileSystemType { WINDOWS = 0, LUSTRE = 1 }
@@ -263,7 +263,7 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		Message?: string;
+		Message?: string | null;
 	}
 
 	export enum FileSystemStorageType { SSD = 0, HDD = 1 }
@@ -271,11 +271,11 @@ export namespace MyNS {
 
 	/** The configuration for this Microsoft Windows file system. */
 	export interface WindowsFileSystemConfiguration {
-		ActiveDirectoryId?: string;
+		ActiveDirectoryId?: string | null;
 
 		/** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined. */
-		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryAttributes;
-		DeploymentType?: WindowsFileSystemConfigurationDeploymentType;
+		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryAttributes | null;
+		DeploymentType?: WindowsFileSystemConfigurationDeploymentType | null;
 
 		/**
 		 * The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.
@@ -283,7 +283,7 @@ export namespace MyNS {
 		 * Min length: 16
 		 * Pattern: ^(fsi?-[0-9a-f]{8,}\..{4,253})$
 		 */
-		RemoteAdministrationEndpoint?: string;
+		RemoteAdministrationEndpoint?: string | null;
 
 		/**
 		 * The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the <i>Amazon VPC User Guide.</i>
@@ -291,21 +291,21 @@ export namespace MyNS {
 		 * Min length: 15
 		 * Pattern: ^(subnet-[0-9a-f]{8,})$
 		 */
-		PreferredSubnetId?: string;
-		PreferredFileServerIp?: string;
+		PreferredSubnetId?: string | null;
+		PreferredFileServerIp?: string | null;
 
 		/**
 		 * Sustained throughput of an Amazon FSx file system in MBps.
 		 * Minimum: 8
 		 * Maximum: 2048
 		 */
-		ThroughputCapacity?: number;
+		ThroughputCapacity?: number | null;
 
 		/**
 		 * A list of maintenance operations.
 		 * Maximum items: 20
 		 */
-		MaintenanceOperationsInProgress?: Array<FileSystemMaintenanceOperation>;
+		MaintenanceOperationsInProgress?: Array<FileSystemMaintenanceOperation> | null;
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
@@ -313,7 +313,7 @@ export namespace MyNS {
 		 * Min length: 7
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		WeeklyMaintenanceStartTime?: string;
+		WeeklyMaintenanceStartTime?: string | null;
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
@@ -321,25 +321,25 @@ export namespace MyNS {
 		 * Min length: 5
 		 * Pattern: ^([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		DailyAutomaticBackupStartTime?: string;
+		DailyAutomaticBackupStartTime?: string | null;
 
 		/**
 		 * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.
 		 * Minimum: 0
 		 * Maximum: 35
 		 */
-		AutomaticBackupRetentionDays?: number;
-		CopyTagsToBackups?: boolean;
+		AutomaticBackupRetentionDays?: number | null;
+		CopyTagsToBackups?: boolean | null;
 	}
 
 
 	/** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined. */
 	export interface SelfManagedActiveDirectoryAttributes {
-		DomainName?: string;
-		OrganizationalUnitDistinguishedName?: string;
-		FileSystemAdministratorsGroup?: string;
-		UserName?: string;
-		DnsIps?: Array<string>;
+		DomainName?: string | null;
+		OrganizationalUnitDistinguishedName?: string | null;
+		FileSystemAdministratorsGroup?: string | null;
+		UserName?: string | null;
+		DnsIps?: Array<string> | null;
 	}
 
 	export enum WindowsFileSystemConfigurationDeploymentType { MULTI_AZ_1 = 0, SINGLE_AZ_1 = 1, SINGLE_AZ_2 = 2 }
@@ -358,21 +358,21 @@ export namespace MyNS {
 		 * Min length: 7
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		WeeklyMaintenanceStartTime?: string;
+		WeeklyMaintenanceStartTime?: string | null;
 
 		/** The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation. */
-		DataRepositoryConfiguration?: DataRepositoryConfiguration;
-		DeploymentType?: LustreFileSystemConfigurationDeploymentType;
-		PerUnitStorageThroughput?: number;
-		MountName?: string;
+		DataRepositoryConfiguration?: DataRepositoryConfiguration | null;
+		DeploymentType?: LustreFileSystemConfigurationDeploymentType | null;
+		PerUnitStorageThroughput?: number | null;
+		MountName?: string | null;
 	}
 
 
 	/** The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation. */
 	export interface DataRepositoryConfiguration {
-		ImportPath?: string;
-		ExportPath?: string;
-		ImportedFileChunkSize?: number;
+		ImportPath?: string | null;
+		ExportPath?: string | null;
+		ImportedFileChunkSize?: number | null;
 	}
 
 	export enum LustreFileSystemConfigurationDeploymentType { SCRATCH_1 = 0, SCRATCH_2 = 1, PERSISTENT_1 = 2 }
@@ -382,22 +382,22 @@ export namespace MyNS {
 	export interface AdministrativeAction {
 
 		/** <p>Describes the type of administrative action, as follows:</p> <ul> <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system). A</p> </li> <li> <p> <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. Storage optimization is the process of migrating the file system data to the new, larger disks. You can track the storage migration progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage Capacity</a>. </p> </li> </ul> */
-		AdministrativeActionType?: AdministrativeActionAdministrativeActionType;
+		AdministrativeActionType?: AdministrativeActionAdministrativeActionType | null;
 
 		/**
 		 * The current percent of progress of an asynchronous task.
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		ProgressPercent?: number;
-		RequestTime?: Date;
-		Status?: AdministrativeActionStatus;
+		ProgressPercent?: number | null;
+		RequestTime?: Date | null;
+		Status?: AdministrativeActionStatus | null;
 
 		/** A description of a specific Amazon FSx file system. */
-		TargetFileSystemValues?: FileSystem;
+		TargetFileSystemValues?: FileSystem | null;
 
 		/** Provides information about a failed administrative action. */
-		FailureDetails?: AdministrativeActionFailureDetails;
+		FailureDetails?: AdministrativeActionFailureDetails | null;
 	}
 
 	export enum AdministrativeActionAdministrativeActionType { FILE_SYSTEM_UPDATE = 0, STORAGE_OPTIMIZATION = 1 }
@@ -413,14 +413,14 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		Message?: string;
+		Message?: string | null;
 	}
 
 
 	/** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system. */
 	export interface ActiveDirectoryBackupAttributes {
-		DomainName?: string;
-		ActiveDirectoryId?: string;
+		DomainName?: string | null;
+		ActiveDirectoryId?: string | null;
 	}
 
 
@@ -442,14 +442,14 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-za-z0-9_.-]{0,63}$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface FileSystemNotFound {
@@ -467,7 +467,7 @@ export namespace MyNS {
 	export interface CreateDataRepositoryTaskResponse {
 
 		/** A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and its linked data repository. */
-		DataRepositoryTask?: DataRepositoryTask;
+		DataRepositoryTask?: DataRepositoryTask | null;
 	}
 
 
@@ -482,8 +482,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		CreationTime: Date;
-		StartTime?: Date;
-		EndTime?: Date;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
@@ -491,14 +491,14 @@ export namespace MyNS {
 		 * Min length: 8
 		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
 		 */
-		ResourceARN?: string;
+		ResourceARN?: string | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
@@ -508,16 +508,16 @@ export namespace MyNS {
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
 		 */
 		FileSystemId: string;
-		Paths?: Array<string>;
+		Paths?: Array<string> | null;
 
 		/** Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>. */
-		FailureDetails?: DataRepositoryTaskFailureDetails;
+		FailureDetails?: DataRepositoryTaskFailureDetails | null;
 
 		/** Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process. */
-		Status?: DataRepositoryTaskStatus;
+		Status?: DataRepositoryTaskStatus | null;
 
 		/** Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter. */
-		Report?: CompletionReport;
+		Report?: CompletionReport | null;
 	}
 
 	export enum DataRepositoryTaskType { EXPORT_TO_REPOSITORY = 0 }
@@ -531,25 +531,25 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		Message?: string;
+		Message?: string | null;
 	}
 
 
 	/** Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process. */
 	export interface DataRepositoryTaskStatus {
-		TotalCount?: number;
-		SucceededCount?: number;
-		FailedCount?: number;
-		LastUpdatedTime?: Date;
+		TotalCount?: number | null;
+		SucceededCount?: number | null;
+		FailedCount?: number | null;
+		LastUpdatedTime?: Date | null;
 	}
 
 
 	/** Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter. */
 	export interface CompletionReport {
 		Enabled: boolean;
-		Path?: string;
-		Format?: CompletionReportFormat;
-		Scope?: CompletionReportScope;
+		Path?: string | null;
+		Format?: CompletionReportFormat | null;
+		Scope?: CompletionReportScope | null;
 	}
 
 	export enum CompletionReportFormat { REPORT_CSV_20191124 = 0 }
@@ -558,7 +558,7 @@ export namespace MyNS {
 
 	export interface CreateDataRepositoryTaskRequest {
 		Type: DataRepositoryTaskType;
-		Paths?: Array<string>;
+		Paths?: Array<string> | null;
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
@@ -581,14 +581,14 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-za-z0-9_.-]{0,63}$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DataRepositoryTaskExecuting {
@@ -599,7 +599,7 @@ export namespace MyNS {
 	export interface CreateFileSystemResponse {
 
 		/** A description of a specific Amazon FSx file system. */
-		FileSystem?: FileSystem;
+		FileSystem?: FileSystem | null;
 	}
 
 
@@ -612,7 +612,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-za-z0-9_.-]{0,63}$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/**
 		 * The type of file system.
@@ -629,7 +629,7 @@ export namespace MyNS {
 		StorageCapacity: number;
 
 		/** The storage type for your Amazon FSx file system. */
-		StorageType?: FileSystemStorageType;
+		StorageType?: FileSystemStorageType | null;
 
 		/**
 		 * A list of subnet IDs. Currently, you can specify only one subnet ID in a call to the <code>CreateFileSystem</code> operation.
@@ -642,14 +642,14 @@ export namespace MyNS {
 		 * A list of security group IDs.
 		 * Maximum items: 50
 		 */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. In either case, if not specified, the Amazon FSx managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key Management Service API Reference</i>.
@@ -657,23 +657,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^.{1,2048}$
 		 */
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 
 		/** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations. */
-		WindowsConfiguration?: CreateFileSystemWindowsConfiguration;
+		WindowsConfiguration?: CreateFileSystemWindowsConfiguration | null;
 
 		/** The Lustre configuration for the file system being created. */
-		LustreConfiguration?: CreateFileSystemLustreConfiguration;
+		LustreConfiguration?: CreateFileSystemLustreConfiguration | null;
 	}
 
 
 	/** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations. */
 	export interface CreateFileSystemWindowsConfiguration {
-		ActiveDirectoryId?: string;
+		ActiveDirectoryId?: string | null;
 
 		/** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. */
-		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfiguration;
-		DeploymentType?: WindowsFileSystemConfigurationDeploymentType;
+		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfiguration | null;
+		DeploymentType?: WindowsFileSystemConfigurationDeploymentType | null;
 
 		/**
 		 * The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the <i>Amazon VPC User Guide.</i>
@@ -681,7 +681,7 @@ export namespace MyNS {
 		 * Min length: 15
 		 * Pattern: ^(subnet-[0-9a-f]{8,})$
 		 */
-		PreferredSubnetId?: string;
+		PreferredSubnetId?: string | null;
 
 		/**
 		 * Sustained throughput of an Amazon FSx file system in MBps.
@@ -697,7 +697,7 @@ export namespace MyNS {
 		 * Min length: 7
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		WeeklyMaintenanceStartTime?: string;
+		WeeklyMaintenanceStartTime?: string | null;
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
@@ -705,23 +705,23 @@ export namespace MyNS {
 		 * Min length: 5
 		 * Pattern: ^([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		DailyAutomaticBackupStartTime?: string;
+		DailyAutomaticBackupStartTime?: string | null;
 
 		/**
 		 * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.
 		 * Minimum: 0
 		 * Maximum: 35
 		 */
-		AutomaticBackupRetentionDays?: number;
-		CopyTagsToBackups?: boolean;
+		AutomaticBackupRetentionDays?: number | null;
+		CopyTagsToBackups?: boolean | null;
 	}
 
 
 	/** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. */
 	export interface SelfManagedActiveDirectoryConfiguration {
 		DomainName: string;
-		OrganizationalUnitDistinguishedName?: string;
-		FileSystemAdministratorsGroup?: string;
+		OrganizationalUnitDistinguishedName?: string | null;
+		FileSystemAdministratorsGroup?: string | null;
 		UserName: string;
 		Password: string;
 		DnsIps: Array<string>;
@@ -737,12 +737,12 @@ export namespace MyNS {
 		 * Min length: 7
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		WeeklyMaintenanceStartTime?: string;
-		ImportPath?: string;
-		ExportPath?: string;
-		ImportedFileChunkSize?: number;
-		DeploymentType?: LustreFileSystemConfigurationDeploymentType;
-		PerUnitStorageThroughput?: number;
+		WeeklyMaintenanceStartTime?: string | null;
+		ImportPath?: string | null;
+		ExportPath?: string | null;
+		ImportedFileChunkSize?: number | null;
+		DeploymentType?: LustreFileSystemConfigurationDeploymentType | null;
+		PerUnitStorageThroughput?: number | null;
 	}
 
 	export interface ActiveDirectoryError {
@@ -768,7 +768,7 @@ export namespace MyNS {
 	export interface CreateFileSystemFromBackupResponse {
 
 		/** A description of a specific Amazon FSx file system. */
-		FileSystem?: FileSystem;
+		FileSystem?: FileSystem | null;
 	}
 
 
@@ -790,7 +790,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-za-z0-9_.-]{0,63}$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/**
 		 * A list of subnet IDs. Currently, you can specify only one subnet ID in a call to the <code>CreateFileSystem</code> operation.
@@ -803,20 +803,20 @@ export namespace MyNS {
 		 * A list of security group IDs.
 		 * Maximum items: 50
 		 */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations. */
-		WindowsConfiguration?: CreateFileSystemWindowsConfiguration;
+		WindowsConfiguration?: CreateFileSystemWindowsConfiguration | null;
 
 		/** The storage type for your Amazon FSx file system. */
-		StorageType?: FileSystemStorageType;
+		StorageType?: FileSystemStorageType | null;
 	}
 
 	export interface BackupNotFound {
@@ -832,10 +832,10 @@ export namespace MyNS {
 		 * Min length: 12
 		 * Pattern: ^(backup-[0-9a-f]{8,})$
 		 */
-		BackupId?: string;
+		BackupId?: string | null;
 
 		/** The lifecycle status of the backup. */
-		Lifecycle?: BackupLifecycle;
+		Lifecycle?: BackupLifecycle | null;
 	}
 
 
@@ -857,7 +857,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-za-z0-9_.-]{0,63}$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 	export interface BackupRestoring {
@@ -873,13 +873,13 @@ export namespace MyNS {
 		 * Min length: 11
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
 		 */
-		FileSystemId?: string;
+		FileSystemId?: string | null;
 
 		/** The lifecycle status of the file system. */
-		Lifecycle?: FileSystemLifecycle;
+		Lifecycle?: FileSystemLifecycle | null;
 
 		/** The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation. */
-		WindowsResponse?: DeleteFileSystemWindowsResponse;
+		WindowsResponse?: DeleteFileSystemWindowsResponse | null;
 	}
 
 
@@ -892,14 +892,14 @@ export namespace MyNS {
 		 * Min length: 12
 		 * Pattern: ^(backup-[0-9a-f]{8,})$
 		 */
-		FinalBackupId?: string;
+		FinalBackupId?: string | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		FinalBackupTags?: Array<Tag>;
+		FinalBackupTags?: Array<Tag> | null;
 	}
 
 
@@ -921,23 +921,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-za-z0-9_.-]{0,63}$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/** The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation. */
-		WindowsConfiguration?: DeleteFileSystemWindowsConfiguration;
+		WindowsConfiguration?: DeleteFileSystemWindowsConfiguration | null;
 	}
 
 
 	/** The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation. */
 	export interface DeleteFileSystemWindowsConfiguration {
-		SkipFinalBackup?: boolean;
+		SkipFinalBackup?: boolean | null;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		FinalBackupTags?: Array<Tag>;
+		FinalBackupTags?: Array<Tag> | null;
 	}
 
 
@@ -948,7 +948,7 @@ export namespace MyNS {
 		 * A list of backups.
 		 * Maximum items: 50
 		 */
-		Backups?: Array<Backup>;
+		Backups?: Array<Backup> | null;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -956,7 +956,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -967,20 +967,20 @@ export namespace MyNS {
 		 * A list of backup IDs.
 		 * Maximum items: 50
 		 */
-		BackupIds?: Array<string>;
+		BackupIds?: Array<string> | null;
 
 		/**
 		 * A list of <code>Filter</code> elements.
 		 * Maximum items: 10
 		 */
-		Filters?: Array<Filter>;
+		Filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -988,7 +988,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -996,19 +996,19 @@ export namespace MyNS {
 	export interface Filter {
 
 		/** The name for a filter. */
-		Name?: FilterName;
+		Name?: FilterName | null;
 
 		/**
 		 * A list of filter values.
 		 * Maximum items: 20
 		 */
-		Values?: Array<string>;
+		Values?: Array<string> | null;
 	}
 
 	export enum FilterName { file_system_id = 0, backup_type = 1 }
 
 	export interface DescribeDataRepositoryTasksResponse {
-		DataRepositoryTasks?: Array<DataRepositoryTask>;
+		DataRepositoryTasks?: Array<DataRepositoryTask> | null;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1016,19 +1016,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeDataRepositoryTasksRequest {
-		TaskIds?: Array<string>;
-		Filters?: Array<DataRepositoryTaskFilter>;
+		TaskIds?: Array<string> | null;
+		Filters?: Array<DataRepositoryTaskFilter> | null;
 
 		/**
 		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1036,14 +1036,14 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** (Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter. */
 	export interface DataRepositoryTaskFilter {
-		Name?: DataRepositoryTaskFilterName;
-		Values?: Array<string>;
+		Name?: DataRepositoryTaskFilterName | null;
+		Values?: Array<string> | null;
 	}
 
 	export enum DataRepositoryTaskFilterName { file_system_id = 0, task_lifecycle = 1 }
@@ -1056,7 +1056,7 @@ export namespace MyNS {
 		 * A list of file systems.
 		 * Maximum items: 50
 		 */
-		FileSystems?: Array<FileSystem>;
+		FileSystems?: Array<FileSystem> | null;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1064,7 +1064,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1075,14 +1075,14 @@ export namespace MyNS {
 		 * A list of <code>FileSystemId</code>s.
 		 * Maximum items: 50
 		 */
-		FileSystemIds?: Array<string>;
+		FileSystemIds?: Array<string> | null;
 
 		/**
 		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1090,7 +1090,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1102,7 +1102,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1110,7 +1110,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1131,7 +1131,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ResourceNotFound {
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 	export interface UpdateFileSystemResponse {
 
 		/** A description of a specific Amazon FSx file system. */
-		FileSystem?: FileSystem;
+		FileSystem?: FileSystem | null;
 	}
 
 
@@ -1232,20 +1232,20 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-za-z0-9_.-]{0,63}$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/**
 		 * The storage capacity for your Amazon FSx file system, in gibibytes.
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
-		StorageCapacity?: number;
+		StorageCapacity?: number | null;
 
 		/** Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request. */
-		WindowsConfiguration?: UpdateFileSystemWindowsConfiguration;
+		WindowsConfiguration?: UpdateFileSystemWindowsConfiguration | null;
 
 		/** The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation. */
-		LustreConfiguration?: UpdateFileSystemLustreConfiguration;
+		LustreConfiguration?: UpdateFileSystemLustreConfiguration | null;
 	}
 
 
@@ -1258,7 +1258,7 @@ export namespace MyNS {
 		 * Min length: 7
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		WeeklyMaintenanceStartTime?: string;
+		WeeklyMaintenanceStartTime?: string | null;
 
 		/**
 		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
@@ -1266,32 +1266,32 @@ export namespace MyNS {
 		 * Min length: 5
 		 * Pattern: ^([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		DailyAutomaticBackupStartTime?: string;
+		DailyAutomaticBackupStartTime?: string | null;
 
 		/**
 		 * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.
 		 * Minimum: 0
 		 * Maximum: 35
 		 */
-		AutomaticBackupRetentionDays?: number;
+		AutomaticBackupRetentionDays?: number | null;
 
 		/**
 		 * Sustained throughput of an Amazon FSx file system in MBps.
 		 * Minimum: 8
 		 * Maximum: 2048
 		 */
-		ThroughputCapacity?: number;
+		ThroughputCapacity?: number | null;
 
 		/** The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory. */
-		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfigurationUpdates;
+		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfigurationUpdates | null;
 	}
 
 
 	/** The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory. */
 	export interface SelfManagedActiveDirectoryConfigurationUpdates {
-		UserName?: string;
-		Password?: string;
-		DnsIps?: Array<string>;
+		UserName?: string | null;
+		Password?: string | null;
+		DnsIps?: Array<string> | null;
 	}
 
 
@@ -1304,7 +1304,7 @@ export namespace MyNS {
 		 * Min length: 7
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
-		WeeklyMaintenanceStartTime?: string;
+		WeeklyMaintenanceStartTime?: string | null;
 	}
 
 

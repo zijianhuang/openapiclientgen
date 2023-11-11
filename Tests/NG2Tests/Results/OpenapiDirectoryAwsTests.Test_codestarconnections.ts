@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateConnectionOutput {
 		ConnectionArn: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -17,7 +17,7 @@ export namespace MyNS {
 	export interface CreateConnectionInput {
 		ProviderType: CreateConnectionInputProviderType;
 		ConnectionName: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateConnectionInputProviderType { Bitbucket = 0 }
@@ -38,17 +38,17 @@ export namespace MyNS {
 	export interface GetConnectionOutput {
 
 		/** <p>The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like AWS CodePipeline.</p> <p>Note: A connection created through CloudFormation is in `PENDING` status by default. You can make its status `AVAILABLE` by editing the connection in the CodePipeline console.</p> */
-		Connection?: Connection;
+		Connection?: Connection | null;
 	}
 
 
 	/** <p>The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like AWS CodePipeline.</p> <p>Note: A connection created through CloudFormation is in `PENDING` status by default. You can make its status `AVAILABLE` by editing the connection in the CodePipeline console.</p> */
 	export interface Connection {
-		ConnectionName?: string;
-		ConnectionArn?: string;
-		ProviderType?: CreateConnectionInputProviderType;
-		OwnerAccountId?: string;
-		ConnectionStatus?: ConnectionConnectionStatus;
+		ConnectionName?: string | null;
+		ConnectionArn?: string | null;
+		ProviderType?: CreateConnectionInputProviderType | null;
+		OwnerAccountId?: string | null;
+		ConnectionStatus?: ConnectionConnectionStatus | null;
 	}
 
 	export enum ConnectionConnectionStatus { PENDING = 0, AVAILABLE = 1, ERROR = 2 }
@@ -58,18 +58,18 @@ export namespace MyNS {
 	}
 
 	export interface ListConnectionsOutput {
-		Connections?: Array<Connection>;
-		NextToken?: string;
+		Connections?: Array<Connection> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListConnectionsInput {
-		ProviderTypeFilter?: CreateConnectionInputProviderType;
-		MaxResults?: number;
-		NextToken?: string;
+		ProviderTypeFilter?: CreateConnectionInputProviderType | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceInput {

@@ -23,15 +23,15 @@ export namespace MyNS {
 
 	export interface DeletePolicyRequest {
 		PolicyId: string;
-		DeleteAllPolicyResources?: boolean;
+		DeleteAllPolicyResources?: boolean | null;
 	}
 
 	export interface DisassociateAdminAccountRequest {
 	}
 
 	export interface GetAdminAccountResponse {
-		AdminAccount?: string;
-		RoleStatus?: GetAdminAccountResponseRoleStatus;
+		AdminAccount?: string | null;
+		RoleStatus?: GetAdminAccountResponseRoleStatus | null;
 	}
 
 	export enum GetAdminAccountResponseRoleStatus { READY = 0, CREATING = 1, PENDING_DELETION = 2, DELETING = 3, DELETED = 4 }
@@ -42,27 +42,27 @@ export namespace MyNS {
 	export interface GetComplianceDetailResponse {
 
 		/** Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>. */
-		PolicyComplianceDetail?: PolicyComplianceDetail;
+		PolicyComplianceDetail?: PolicyComplianceDetail | null;
 	}
 
 
 	/** Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>. */
 	export interface PolicyComplianceDetail {
-		PolicyOwner?: string;
-		PolicyId?: string;
-		MemberAccount?: string;
-		Violators?: Array<ComplianceViolator>;
-		EvaluationLimitExceeded?: boolean;
-		ExpiredAt?: Date;
-		IssueInfoMap?: IssueInfoMap;
+		PolicyOwner?: string | null;
+		PolicyId?: string | null;
+		MemberAccount?: string | null;
+		Violators?: Array<ComplianceViolator> | null;
+		EvaluationLimitExceeded?: boolean | null;
+		ExpiredAt?: Date | null;
+		IssueInfoMap?: IssueInfoMap | null;
 	}
 
 
 	/** Details of the resource that is not protected by the policy. */
 	export interface ComplianceViolator {
-		ResourceId?: string;
-		ViolationReason?: ComplianceViolatorViolationReason;
-		ResourceType?: string;
+		ResourceId?: string | null;
+		ViolationReason?: ComplianceViolatorViolationReason | null;
+		ResourceType?: string | null;
 	}
 
 	export enum ComplianceViolatorViolationReason { WEB_ACL_MISSING_RULE_GROUP = 0, RESOURCE_MISSING_WEB_ACL = 1, RESOURCE_INCORRECT_WEB_ACL = 2, RESOURCE_MISSING_SHIELD_PROTECTION = 3, RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = 4, RESOURCE_MISSING_SECURITY_GROUP = 5, RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = 6, SECURITY_GROUP_UNUSED = 7, SECURITY_GROUP_REDUNDANT = 8 }
@@ -76,8 +76,8 @@ export namespace MyNS {
 	}
 
 	export interface GetNotificationChannelResponse {
-		SnsTopicArn?: string;
-		SnsRoleName?: string;
+		SnsTopicArn?: string | null;
+		SnsRoleName?: string | null;
 	}
 
 	export interface GetNotificationChannelRequest {
@@ -86,16 +86,16 @@ export namespace MyNS {
 	export interface GetPolicyResponse {
 
 		/** An AWS Firewall Manager policy. */
-		Policy?: Policy;
-		PolicyArn?: string;
+		Policy?: Policy | null;
+		PolicyArn?: string | null;
 	}
 
 
 	/** An AWS Firewall Manager policy. */
 	export interface Policy {
-		PolicyId?: string;
+		PolicyId?: string | null;
 		PolicyName: string;
-		PolicyUpdateToken?: string;
+		PolicyUpdateToken?: string | null;
 
 		/**
 		 * Details about the security service that is being used to protect the resources.
@@ -103,19 +103,19 @@ export namespace MyNS {
 		 */
 		SecurityServicePolicyData: SecurityServicePolicyData;
 		ResourceType: string;
-		ResourceTypeList?: Array<string>;
-		ResourceTags?: Array<ResourceTag>;
+		ResourceTypeList?: Array<string> | null;
+		ResourceTags?: Array<ResourceTag> | null;
 		ExcludeResourceTags: boolean;
 		RemediationEnabled: boolean;
-		IncludeMap?: CustomerPolicyScopeMap;
-		ExcludeMap?: CustomerPolicyScopeMap;
+		IncludeMap?: CustomerPolicyScopeMap | null;
+		ExcludeMap?: CustomerPolicyScopeMap | null;
 	}
 
 
 	/** Details about the security service that is being used to protect the resources. */
 	export interface SecurityServicePolicyData {
 		Type: SecurityServicePolicyDataType;
-		ManagedServiceData?: string;
+		ManagedServiceData?: string | null;
 	}
 
 	export enum SecurityServicePolicyDataType { WAF = 0, WAFV2 = 1, SHIELD_ADVANCED = 2, SECURITY_GROUPS_COMMON = 3, SECURITY_GROUPS_CONTENT_AUDIT = 4, SECURITY_GROUPS_USAGE_AUDIT = 5 }
@@ -124,7 +124,7 @@ export namespace MyNS {
 	/** The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>. */
 	export interface ResourceTag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface CustomerPolicyScopeMap {
@@ -138,90 +138,90 @@ export namespace MyNS {
 	}
 
 	export interface GetProtectionStatusResponse {
-		AdminAccountId?: string;
-		ServiceType?: SecurityServicePolicyDataType;
-		Data?: string;
-		NextToken?: string;
+		AdminAccountId?: string | null;
+		ServiceType?: SecurityServicePolicyDataType | null;
+		Data?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetProtectionStatusRequest {
 		PolicyId: string;
-		MemberAccountId?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		NextToken?: string;
-		MaxResults?: number;
+		MemberAccountId?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListComplianceStatusResponse {
-		PolicyComplianceStatusList?: Array<PolicyComplianceStatus>;
-		NextToken?: string;
+		PolicyComplianceStatusList?: Array<PolicyComplianceStatus> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies. */
 	export interface PolicyComplianceStatus {
-		PolicyOwner?: string;
-		PolicyId?: string;
-		PolicyName?: string;
-		MemberAccount?: string;
-		EvaluationResults?: Array<EvaluationResult>;
-		LastUpdated?: Date;
-		IssueInfoMap?: IssueInfoMap;
+		PolicyOwner?: string | null;
+		PolicyId?: string | null;
+		PolicyName?: string | null;
+		MemberAccount?: string | null;
+		EvaluationResults?: Array<EvaluationResult> | null;
+		LastUpdated?: Date | null;
+		IssueInfoMap?: IssueInfoMap | null;
 	}
 
 
 	/** Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy. */
 	export interface EvaluationResult {
-		ComplianceStatus?: EvaluationResultComplianceStatus;
-		ViolatorCount?: number;
-		EvaluationLimitExceeded?: boolean;
+		ComplianceStatus?: EvaluationResultComplianceStatus | null;
+		ViolatorCount?: number | null;
+		EvaluationLimitExceeded?: boolean | null;
 	}
 
 	export enum EvaluationResultComplianceStatus { COMPLIANT = 0, NON_COMPLIANT = 1 }
 
 	export interface ListComplianceStatusRequest {
 		PolicyId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListMemberAccountsResponse {
-		MemberAccounts?: Array<string>;
-		NextToken?: string;
+		MemberAccounts?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListMemberAccountsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListPoliciesResponse {
-		PolicyList?: Array<PolicySummary>;
-		NextToken?: string;
+		PolicyList?: Array<PolicySummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Details of the AWS Firewall Manager policy.  */
 	export interface PolicySummary {
-		PolicyArn?: string;
-		PolicyId?: string;
-		PolicyName?: string;
-		ResourceType?: string;
-		SecurityServiceType?: SecurityServicePolicyDataType;
-		RemediationEnabled?: boolean;
+		PolicyArn?: string | null;
+		PolicyId?: string | null;
+		PolicyName?: string | null;
+		ResourceType?: string | null;
+		SecurityServiceType?: SecurityServicePolicyDataType | null;
+		RemediationEnabled?: boolean | null;
 	}
 
 	export interface ListPoliciesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface LimitExceededException {
 	}
 
 	export interface ListTagsForResourceResponse {
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 
@@ -243,8 +243,8 @@ export namespace MyNS {
 	export interface PutPolicyResponse {
 
 		/** An AWS Firewall Manager policy. */
-		Policy?: Policy;
-		PolicyArn?: string;
+		Policy?: Policy | null;
+		PolicyArn?: string | null;
 	}
 
 	export interface PutPolicyRequest {
@@ -254,7 +254,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Policy: Policy;
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 	export interface TagResourceResponse {

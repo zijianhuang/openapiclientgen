@@ -509,34 +509,34 @@ export namespace MyNS {
 	export enum Search_versionNumberGeometryFilter__extPostVersionNumber { _2 = 0 }
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBody {
-		Search_versionNumberGeometryFilter__extPostPostBodyGeometryList?: Array<Search_versionNumberGeometryFilter__extPostPostBodyGeometryList>;
-		Search_versionNumberGeometryFilter__extPostPostBodyPoiList?: Array<Search_versionNumberGeometryFilter__extPostPostBodyPoiList>;
+		Search_versionNumberGeometryFilter__extPostPostBodyGeometryList?: Array<Search_versionNumberGeometryFilter__extPostPostBodyGeometryList> | null;
+		Search_versionNumberGeometryFilter__extPostPostBodyPoiList?: Array<Search_versionNumberGeometryFilter__extPostPostBodyPoiList> | null;
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyGeometryList {
-		position?: string;
-		radius?: number;
-		type?: string;
-		vertices?: Array<string>;
+		position?: string | null;
+		radius?: number | null;
+		type?: string | null;
+		vertices?: Array<string> | null;
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyPoiList {
-		address?: Search_versionNumberGeometryFilter__extPostPostBodyAddress;
-		poi?: Search_versionNumberGeometryFilter__extPostPostBodyPoi;
-		position?: Search_versionNumberGeometryFilter__extPostPostBodyPosition;
+		address?: Search_versionNumberGeometryFilter__extPostPostBodyAddress | null;
+		poi?: Search_versionNumberGeometryFilter__extPostPostBodyPoi | null;
+		position?: Search_versionNumberGeometryFilter__extPostPostBodyPosition | null;
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyAddress {
-		freeformAddress?: string;
+		freeformAddress?: string | null;
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyPoi {
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyPosition {
-		lat?: number;
-		lon?: number;
+		lat?: number | null;
+		lon?: number | null;
 	}
 
 	export enum Search_versionNumberGeometrySearch_query__extGetByGeometryListAndLimitAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber { _2 = 0 }
@@ -544,14 +544,14 @@ export namespace MyNS {
 	export enum Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber { _2 = 0 }
 
 	export interface Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBody {
-		Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList?: Array<Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList>;
+		Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList?: Array<Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList> | null;
 	}
 
 	export interface Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList {
-		position?: string;
-		radius?: number;
-		type?: string;
-		vertices?: Array<string>;
+		position?: string | null;
+		radius?: number | null;
+		type?: string | null;
+		vertices?: Array<string> | null;
 	}
 
 	export enum Search_versionNumberNearbySearch__extGetByLatAndLonAndLimitAndOfsAndCountrySetAndRadiusAndTopLeftAndBtmRightAndLanguageAndExtendedPostalCodesForAndMinFuzzyLevelAndMaxFuzzyLevelAndIdxSetAndViewVersionNumber { _2 = 0 }
@@ -567,26 +567,26 @@ export namespace MyNS {
 	export enum Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutVersionNumber { _2 = 0 }
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBody {
-		Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList?: Array<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList>;
+		Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList?: Array<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList> | null;
 	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList {
-		address?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddress;
-		poi?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoi;
-		position?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPosition;
+		address?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddress | null;
+		poi?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoi | null;
+		position?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPosition | null;
 	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddress {
-		freeformAddress?: string;
+		freeformAddress?: string | null;
 	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoi {
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPosition {
-		lat?: number;
-		lon?: number;
+		lat?: number | null;
+		lon?: number | null;
 	}
 
 	export enum Search_versionNumberRoutedSearch_query_position_heading__extGetByTypeaheadAndLimitAndMultiplierAndRoutingTimeoutAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber { _2 = 0 }
@@ -598,16 +598,16 @@ export namespace MyNS {
 	export enum Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitVersionNumber { _2 = 0 }
 
 	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBody {
-		route?: Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoute;
+		route?: Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoute | null;
 	}
 
 	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoute {
-		Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints?: Array<Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints>;
+		Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints?: Array<Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints> | null;
 	}
 
 	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints {
-		lat?: number;
-		lon?: number;
+		lat?: number | null;
+		lon?: number | null;
 	}
 
 	export enum Search_versionNumberStructuredGeocode__extGetByCountryCodeAndLimitAndOfsAndStreetNumberAndStreetNameAndCrossStreetAndMunicipalityAndMunicipalitySubdivisionAndCountryTertiarySubdivisionAndCountrySecondarySubdivisionAndCountrySubdivisionAndPostalCodeAndLanguageAndExtendedPostalCodesForVersionNumber { _2 = 0 }

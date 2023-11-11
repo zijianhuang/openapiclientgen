@@ -59,12 +59,12 @@ export namespace MyNS {
 	/** Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support. */
 	export interface EmergencyContact {
 		EmailAddress: string;
-		PhoneNumber?: string;
-		ContactNotes?: string;
+		PhoneNumber?: string | null;
+		ContactNotes?: string | null;
 	}
 
 	export interface CreateProtectionResponse {
-		ProtectionId?: string;
+		ProtectionId?: string | null;
 	}
 
 	export interface CreateProtectionRequest {
@@ -103,29 +103,29 @@ export namespace MyNS {
 	export interface DescribeAttackResponse {
 
 		/** The details of a DDoS attack. */
-		Attack?: AttackDetail;
+		Attack?: AttackDetail | null;
 	}
 
 
 	/** The details of a DDoS attack. */
 	export interface AttackDetail {
-		AttackId?: string;
-		ResourceArn?: string;
-		SubResources?: Array<SubResourceSummary>;
-		StartTime?: Date;
-		EndTime?: Date;
-		AttackCounters?: Array<SummarizedCounter>;
-		AttackProperties?: Array<AttackProperty>;
-		Mitigations?: Array<Mitigation>;
+		AttackId?: string | null;
+		ResourceArn?: string | null;
+		SubResources?: Array<SubResourceSummary> | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		AttackCounters?: Array<SummarizedCounter> | null;
+		AttackProperties?: Array<AttackProperty> | null;
+		Mitigations?: Array<Mitigation> | null;
 	}
 
 
 	/** The attack information for the specified SubResource. */
 	export interface SubResourceSummary {
-		Type?: SubResourceSummaryType;
-		Id?: string;
-		AttackVectors?: Array<SummarizedAttackVector>;
-		Counters?: Array<SummarizedCounter>;
+		Type?: SubResourceSummaryType | null;
+		Id?: string | null;
+		AttackVectors?: Array<SummarizedAttackVector> | null;
+		Counters?: Array<SummarizedCounter> | null;
 	}
 
 	export enum SubResourceSummaryType { IP = 0, URL = 1 }
@@ -134,28 +134,28 @@ export namespace MyNS {
 	/** A summary of information about the attack. */
 	export interface SummarizedAttackVector {
 		VectorType: string;
-		VectorCounters?: Array<SummarizedCounter>;
+		VectorCounters?: Array<SummarizedCounter> | null;
 	}
 
 
 	/** The counter that describes a DDoS attack. */
 	export interface SummarizedCounter {
-		Name?: string;
-		Max?: number;
-		Average?: number;
-		Sum?: number;
-		N?: number;
-		Unit?: string;
+		Name?: string | null;
+		Max?: number | null;
+		Average?: number | null;
+		Sum?: number | null;
+		N?: number | null;
+		Unit?: string | null;
 	}
 
 
 	/** Details of the described attack. */
 	export interface AttackProperty {
-		AttackLayer?: AttackPropertyAttackLayer;
-		AttackPropertyIdentifier?: AttackPropertyAttackPropertyIdentifier;
-		TopContributors?: Array<Contributor>;
-		Unit?: AttackPropertyUnit;
-		Total?: number;
+		AttackLayer?: AttackPropertyAttackLayer | null;
+		AttackPropertyIdentifier?: AttackPropertyAttackPropertyIdentifier | null;
+		TopContributors?: Array<Contributor> | null;
+		Unit?: AttackPropertyUnit | null;
+		Total?: number | null;
 	}
 
 	export enum AttackPropertyAttackLayer { NETWORK = 0, APPLICATION = 1 }
@@ -165,8 +165,8 @@ export namespace MyNS {
 
 	/** A contributor to the attack and their contribution. */
 	export interface Contributor {
-		Name?: string;
-		Value?: number;
+		Name?: string | null;
+		Value?: number | null;
 	}
 
 	export enum AttackPropertyUnit { BITS = 0, BYTES = 1, PACKETS = 2, REQUESTS = 3 }
@@ -174,7 +174,7 @@ export namespace MyNS {
 
 	/** The mitigation applied to a DDoS attack. */
 	export interface Mitigation {
-		MitigationName?: string;
+		MitigationName?: string | null;
 	}
 
 	export interface DescribeAttackRequest {
@@ -185,15 +185,15 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDRTAccessResponse {
-		RoleArn?: string;
-		LogBucketList?: Array<string>;
+		RoleArn?: string | null;
+		LogBucketList?: Array<string> | null;
 	}
 
 	export interface DescribeDRTAccessRequest {
 	}
 
 	export interface DescribeEmergencyContactSettingsResponse {
-		EmergencyContactList?: Array<EmergencyContact>;
+		EmergencyContactList?: Array<EmergencyContact> | null;
 	}
 
 	export interface DescribeEmergencyContactSettingsRequest {
@@ -202,38 +202,38 @@ export namespace MyNS {
 	export interface DescribeProtectionResponse {
 
 		/** An object that represents a resource that is under DDoS protection. */
-		Protection?: Protection;
+		Protection?: Protection | null;
 	}
 
 
 	/** An object that represents a resource that is under DDoS protection. */
 	export interface Protection {
-		Id?: string;
-		Name?: string;
-		ResourceArn?: string;
-		HealthCheckIds?: Array<string>;
+		Id?: string | null;
+		Name?: string | null;
+		ResourceArn?: string | null;
+		HealthCheckIds?: Array<string> | null;
 	}
 
 	export interface DescribeProtectionRequest {
-		ProtectionId?: string;
-		ResourceArn?: string;
+		ProtectionId?: string | null;
+		ResourceArn?: string | null;
 	}
 
 	export interface DescribeSubscriptionResponse {
 
 		/** Information about the AWS Shield Advanced subscription for an account. */
-		Subscription?: Subscription;
+		Subscription?: Subscription | null;
 	}
 
 
 	/** Information about the AWS Shield Advanced subscription for an account. */
 	export interface Subscription {
-		StartTime?: Date;
-		EndTime?: Date;
-		TimeCommitmentInSeconds?: number;
-		AutoRenew?: SubscriptionAutoRenew;
-		Limits?: Array<Limit>;
-		ProactiveEngagementStatus?: SubscriptionProactiveEngagementStatus;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		TimeCommitmentInSeconds?: number | null;
+		AutoRenew?: SubscriptionAutoRenew | null;
+		Limits?: Array<Limit> | null;
+		ProactiveEngagementStatus?: SubscriptionProactiveEngagementStatus | null;
 	}
 
 	export enum SubscriptionAutoRenew { ENABLED = 0, DISABLED = 1 }
@@ -241,8 +241,8 @@ export namespace MyNS {
 
 	/** Specifies how many protections of a given type you can create. */
 	export interface Limit {
-		Type?: string;
-		Max?: number;
+		Type?: string | null;
+		Max?: number | null;
 	}
 
 	export enum SubscriptionProactiveEngagementStatus { ENABLED = 0, DISABLED = 1, PENDING = 2 }
@@ -293,18 +293,18 @@ export namespace MyNS {
 	}
 
 	export interface ListAttacksResponse {
-		AttackSummaries?: Array<AttackSummary>;
-		NextToken?: string;
+		AttackSummaries?: Array<AttackSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Summarizes all DDoS attacks for a specified time period. */
 	export interface AttackSummary {
-		AttackId?: string;
-		ResourceArn?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		AttackVectors?: Array<AttackVectorDescription>;
+		AttackId?: string | null;
+		ResourceArn?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		AttackVectors?: Array<AttackVectorDescription> | null;
 	}
 
 
@@ -314,32 +314,32 @@ export namespace MyNS {
 	}
 
 	export interface ListAttacksRequest {
-		ResourceArns?: Array<string>;
+		ResourceArns?: Array<string> | null;
 
 		/** The time range. */
-		StartTime?: TimeRange;
+		StartTime?: TimeRange | null;
 
 		/** The time range. */
-		EndTime?: TimeRange;
-		NextToken?: string;
-		MaxResults?: number;
+		EndTime?: TimeRange | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** The time range. */
 	export interface TimeRange {
-		FromInclusive?: Date;
-		ToExclusive?: Date;
+		FromInclusive?: Date | null;
+		ToExclusive?: Date | null;
 	}
 
 	export interface ListProtectionsResponse {
-		Protections?: Array<Protection>;
-		NextToken?: string;
+		Protections?: Array<Protection> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListProtectionsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface InvalidPaginationTokenException {
@@ -349,14 +349,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEmergencyContactSettingsRequest {
-		EmergencyContactList?: Array<EmergencyContact>;
+		EmergencyContactList?: Array<EmergencyContact> | null;
 	}
 
 	export interface UpdateSubscriptionResponse {
 	}
 
 	export interface UpdateSubscriptionRequest {
-		AutoRenew?: SubscriptionAutoRenew;
+		AutoRenew?: SubscriptionAutoRenew | null;
 	}
 
 	export enum AttackLayer { NETWORK = 0, APPLICATION = 1 }

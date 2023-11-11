@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface DeletableItem {
 		Name: string;
-		Attributes?: Array<DeletableAttribute>;
+		Attributes?: Array<DeletableAttribute> | null;
 	}
 
 	export interface DeletableAttribute {
 		Name: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface ReplaceableItem {
@@ -20,146 +20,146 @@ export namespace MyNS {
 	export interface ReplaceableAttribute {
 		Name: string;
 		Value: string;
-		Replace?: boolean;
+		Replace?: boolean | null;
 	}
 
 
 	/** The item name was specified more than once.  */
 	export interface DuplicateItemName {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** The value for a parameter is invalid. */
 	export interface InvalidParameterValue {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** The request must contain the specified missing parameter. */
 	export interface MissingParameter {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** The specified domain does not exist. */
 	export interface NoSuchDomain {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** Too many attributes in this item. */
 	export interface NumberItemAttributesExceeded {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** Too many attributes in this domain. */
 	export interface NumberDomainAttributesExceeded {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** Too many bytes in this domain. */
 	export interface NumberDomainBytesExceeded {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** Too many items exist in a single call. */
 	export interface NumberSubmittedItemsExceeded {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** Too many attributes exist in a single call. */
 	export interface NumberSubmittedAttributesExceeded {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** Too many domains exist per this account. */
 	export interface NumberDomainsExceeded {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** The specified attribute does not exist. */
 	export interface AttributeDoesNotExist {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 	export interface DomainMetadataResult {
-		ItemCount?: number;
-		ItemNamesSizeBytes?: number;
-		AttributeNameCount?: number;
-		AttributeNamesSizeBytes?: number;
-		AttributeValueCount?: number;
-		AttributeValuesSizeBytes?: number;
-		Timestamp?: number;
+		ItemCount?: number | null;
+		ItemNamesSizeBytes?: number | null;
+		AttributeNameCount?: number | null;
+		AttributeNamesSizeBytes?: number | null;
+		AttributeValueCount?: number | null;
+		AttributeValuesSizeBytes?: number | null;
+		Timestamp?: number | null;
 	}
 
 	export interface GetAttributesResult {
-		Attributes?: Array<Attribute>;
+		Attributes?: Array<Attribute> | null;
 	}
 
 	export interface Attribute {
 		Name: string;
-		AlternateNameEncoding?: string;
+		AlternateNameEncoding?: string | null;
 		Value: string;
-		AlternateValueEncoding?: string;
+		AlternateValueEncoding?: string | null;
 	}
 
 	export interface ListDomainsResult {
-		DomainNames?: Array<string>;
-		NextToken?: string;
+		DomainNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The specified NextToken is not valid.  */
 	export interface InvalidNextToken {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 	export interface SelectResult {
-		Items?: Array<Item>;
-		NextToken?: string;
+		Items?: Array<Item> | null;
+		NextToken?: string | null;
 	}
 
 	export interface Item {
 		Name: string;
-		AlternateNameEncoding?: string;
+		AlternateNameEncoding?: string | null;
 		Attributes: Array<Attribute>;
 	}
 
 
 	/** Too many predicates exist in the query expression. */
 	export interface InvalidNumberPredicates {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** Too many predicates exist in the query expression. */
 	export interface InvalidNumberValueTests {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** The specified query expression syntax is not valid. */
 	export interface InvalidQueryExpression {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** A timeout occurred when attempting to query the specified domain with specified query expression. */
 	export interface RequestTimeout {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 
 	/** Too many attributes requested. */
 	export interface TooManyRequestedAttributes {
-		BoxUsage?: number;
+		BoxUsage?: number | null;
 	}
 
 	export interface BatchDeleteAttributesRequest {
@@ -179,18 +179,18 @@ export namespace MyNS {
 
 	/**  Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist.  */
 	export interface UpdateCondition {
-		Name?: string;
-		Value?: string;
-		Exists?: boolean;
+		Name?: string | null;
+		Value?: string | null;
+		Exists?: boolean | null;
 	}
 
 	export interface DeleteAttributesRequest {
 		DomainName: string;
 		ItemName: string;
-		Attributes?: Array<DeletableAttribute>;
+		Attributes?: Array<DeletableAttribute> | null;
 
 		/** Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist. */
-		Expected?: UpdateCondition;
+		Expected?: UpdateCondition | null;
 	}
 
 	export interface DeleteDomainRequest {
@@ -204,13 +204,13 @@ export namespace MyNS {
 	export interface GetAttributesRequest {
 		DomainName: string;
 		ItemName: string;
-		AttributeNames?: Array<string>;
-		ConsistentRead?: boolean;
+		AttributeNames?: Array<string> | null;
+		ConsistentRead?: boolean | null;
 	}
 
 	export interface ListDomainsRequest {
-		MaxNumberOfDomains?: number;
-		NextToken?: string;
+		MaxNumberOfDomains?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface PutAttributesRequest {
@@ -219,13 +219,13 @@ export namespace MyNS {
 		Attributes: Array<ReplaceableAttribute>;
 
 		/** Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist. */
-		Expected?: UpdateCondition;
+		Expected?: UpdateCondition | null;
 	}
 
 	export interface SelectRequest {
 		SelectExpression: string;
-		NextToken?: string;
-		ConsistentRead?: boolean;
+		NextToken?: string | null;
+		ConsistentRead?: boolean | null;
 	}
 
 	@Injectable()
@@ -367,9 +367,9 @@ export namespace MyNS {
 	export enum POST_CreateDomainVersion { _2009_04_15 = 0 }
 
 	export interface GET_DeleteAttributesExpected {
-		Name?: string;
-		Value?: string;
-		Exists?: boolean;
+		Name?: string | null;
+		Value?: string | null;
+		Exists?: boolean | null;
 	}
 
 	export enum GET_DeleteAttributesAction { DeleteAttributes = 0 }
@@ -403,9 +403,9 @@ export namespace MyNS {
 	export enum POST_ListDomainsVersion { _2009_04_15 = 0 }
 
 	export interface GET_PutAttributesExpected {
-		Name?: string;
-		Value?: string;
-		Exists?: boolean;
+		Name?: string | null;
+		Value?: string | null;
+		Exists?: boolean | null;
 	}
 
 	export enum GET_PutAttributesAction { PutAttributes = 0 }

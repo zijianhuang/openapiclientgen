@@ -14,17 +14,17 @@ export namespace MyNS {
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. An AutoText
 		 * may have multiple insertion IDs if it is a nested suggested change. If
 		 * empty, then this is not a suggested insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/** The suggested text style changes to this AutoText, keyed by suggestion ID. */
-		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle };
+		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle } | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -42,10 +42,10 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 
 		/** The type of this auto text. */
-		type?: AutoTextType;
+		type?: AutoTextType | null;
 	}
 
 
@@ -68,13 +68,13 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base TextStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		textStyleSuggestionState?: TextStyleSuggestionState;
+		textStyleSuggestionState?: TextStyleSuggestionState | null;
 	}
 
 
@@ -97,7 +97,7 @@ export namespace MyNS {
 	export interface TextStyle {
 
 		/** A color that can either be fully opaque or fully transparent. */
-		backgroundColor?: OptionalColor;
+		backgroundColor?: OptionalColor | null;
 
 		/**
 		 * The text's vertical offset from its normal position.
@@ -105,34 +105,34 @@ export namespace MyNS {
 		 * rendered in a smaller font size, computed based on the `font_size` field.
 		 * The `font_size` itself is not affected by changes in this field.
 		 */
-		baselineOffset?: TextStyleBaselineOffset;
+		baselineOffset?: TextStyleBaselineOffset | null;
 
 		/** Whether or not the text is rendered as bold. */
-		bold?: boolean;
+		bold?: boolean | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		fontSize?: Dimension;
+		fontSize?: Dimension | null;
 
 		/** A color that can either be fully opaque or fully transparent. */
-		foregroundColor?: OptionalColor;
+		foregroundColor?: OptionalColor | null;
 
 		/** Whether or not the text is italicized. */
-		italic?: boolean;
+		italic?: boolean | null;
 
 		/** A reference to another portion of a document or an external URL resource. */
-		link?: Link;
+		link?: Link | null;
 
 		/** Whether or not the text is in small capital letters. */
-		smallCaps?: boolean;
+		smallCaps?: boolean | null;
 
 		/** Whether or not the text is struck through. */
-		strikethrough?: boolean;
+		strikethrough?: boolean | null;
 
 		/** Whether or not the text is underlined. */
-		underline?: boolean;
+		underline?: boolean | null;
 
 		/** Represents a font family and weight of text. */
-		weightedFontFamily?: WeightedFontFamily;
+		weightedFontFamily?: WeightedFontFamily | null;
 	}
 
 
@@ -140,7 +140,7 @@ export namespace MyNS {
 	export interface OptionalColor {
 
 		/** A solid color. */
-		color?: Color;
+		color?: Color | null;
 	}
 
 
@@ -148,7 +148,7 @@ export namespace MyNS {
 	export interface Color {
 
 		/** An RGB color. */
-		rgbColor?: RgbColor;
+		rgbColor?: RgbColor | null;
 	}
 
 
@@ -156,13 +156,13 @@ export namespace MyNS {
 	export interface RgbColor {
 
 		/** The blue component of the color, from 0.0 to 1.0. */
-		blue?: number;
+		blue?: number | null;
 
 		/** The green component of the color, from 0.0 to 1.0. */
-		green?: number;
+		green?: number | null;
 
 		/** The red component of the color, from 0.0 to 1.0. */
-		red?: number;
+		red?: number | null;
 	}
 
 	export enum TextStyleBaselineOffset { BASELINE_OFFSET_UNSPECIFIED = 0, NONE = 1, SUPERSCRIPT = 2, SUBSCRIPT = 3 }
@@ -172,10 +172,10 @@ export namespace MyNS {
 	export interface Dimension {
 
 		/** The magnitude. */
-		magnitude?: number;
+		magnitude?: number | null;
 
 		/** The units for magnitude. */
-		unit?: DimensionUnit;
+		unit?: DimensionUnit | null;
 	}
 
 	export enum DimensionUnit { UNIT_UNSPECIFIED = 0, PT = 1 }
@@ -185,13 +185,13 @@ export namespace MyNS {
 	export interface Link {
 
 		/** The ID of a bookmark in this document. */
-		bookmarkId?: string;
+		bookmarkId?: string | null;
 
 		/** The ID of a heading in this document. */
-		headingId?: string;
+		headingId?: string | null;
 
 		/** An external URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -204,7 +204,7 @@ export namespace MyNS {
 		 * [Google Fonts] (https://fonts.google.com/). If the font name is
 		 * unrecognized, the text is rendered in `Arial`.
 		 */
-		fontFamily?: string;
+		fontFamily?: string | null;
 
 		/**
 		 * The weight of the font. This field can have any value that is a multiple of
@@ -224,7 +224,7 @@ export namespace MyNS {
 		 * equal to the weight.
 		 * * If the text is not bold, the rendered weight is equal to the weight.
 		 */
-		weight?: number;
+		weight?: number | null;
 	}
 
 
@@ -235,37 +235,37 @@ export namespace MyNS {
 	export interface TextStyleSuggestionState {
 
 		/** Indicates if there was a suggested change to background_color. */
-		backgroundColorSuggested?: boolean;
+		backgroundColorSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to baseline_offset. */
-		baselineOffsetSuggested?: boolean;
+		baselineOffsetSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to bold. */
-		boldSuggested?: boolean;
+		boldSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to font_size. */
-		fontSizeSuggested?: boolean;
+		fontSizeSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to foreground_color. */
-		foregroundColorSuggested?: boolean;
+		foregroundColorSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to italic. */
-		italicSuggested?: boolean;
+		italicSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to link. */
-		linkSuggested?: boolean;
+		linkSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to small_caps. */
-		smallCapsSuggested?: boolean;
+		smallCapsSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to strikethrough. */
-		strikethroughSuggested?: boolean;
+		strikethroughSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to underline. */
-		underlineSuggested?: boolean;
+		underlineSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to weighted_font_family. */
-		weightedFontFamilySuggested?: boolean;
+		weightedFontFamilySuggested?: boolean | null;
 	}
 
 	export enum AutoTextType { TYPE_UNSPECIFIED = 0, PAGE_NUMBER = 1, PAGE_COUNT = 2 }
@@ -275,7 +275,7 @@ export namespace MyNS {
 	export interface Background {
 
 		/** A color that can either be fully opaque or fully transparent. */
-		color?: OptionalColor;
+		color?: OptionalColor | null;
 	}
 
 
@@ -289,7 +289,7 @@ export namespace MyNS {
 		 * Indicates whether the current background color has been modified in this
 		 * suggestion.
 		 */
-		backgroundColorSuggested?: boolean;
+		backgroundColorSuggested?: boolean | null;
 	}
 
 
@@ -297,10 +297,10 @@ export namespace MyNS {
 	export interface BatchUpdateDocumentRequest {
 
 		/** A list of updates to apply to the document. */
-		requests?: Array<Request>;
+		requests?: Array<Request> | null;
 
 		/** Provides control over how write requests are executed. */
-		writeControl?: WriteControl;
+		writeControl?: WriteControl | null;
 	}
 
 
@@ -315,7 +315,7 @@ export namespace MyNS {
 		 * If a footer of the specified type already exists, a 400 bad request error
 		 * is returned.
 		 */
-		createFooter?: CreateFooterRequest;
+		createFooter?: CreateFooterRequest | null;
 
 		/**
 		 * Creates a Footnote segment
@@ -324,7 +324,7 @@ export namespace MyNS {
 		 * The new Footnote segment will contain a
 		 * space followed by a newline character.
 		 */
-		createFootnote?: CreateFootnoteRequest;
+		createFootnote?: CreateFootnoteRequest | null;
 
 		/**
 		 * Creates a Header. The new header is applied to
@@ -334,13 +334,13 @@ export namespace MyNS {
 		 * If a header of the specified type already exists, a 400 bad request error
 		 * is returned.
 		 */
-		createHeader?: CreateHeaderRequest;
+		createHeader?: CreateHeaderRequest | null;
 
 		/**
 		 * Creates a NamedRange referencing the given
 		 * range.
 		 */
-		createNamedRange?: CreateNamedRangeRequest;
+		createNamedRange?: CreateNamedRangeRequest | null;
 
 		/**
 		 * Creates bullets for all of the paragraphs that overlap with the given range.
@@ -352,81 +352,81 @@ export namespace MyNS {
 		 * with a matching preset, the paragraphs being updated are added to that
 		 * preceding list.
 		 */
-		createParagraphBullets?: CreateParagraphBulletsRequest;
+		createParagraphBullets?: CreateParagraphBulletsRequest | null;
 
 		/** Deletes content from the document. */
-		deleteContentRange?: DeleteContentRangeRequest;
+		deleteContentRange?: DeleteContentRangeRequest | null;
 
 		/** Deletes a Footer from the document. */
-		deleteFooter?: DeleteFooterRequest;
+		deleteFooter?: DeleteFooterRequest | null;
 
 		/** Deletes a Header from the document. */
-		deleteHeader?: DeleteHeaderRequest;
+		deleteHeader?: DeleteHeaderRequest | null;
 
 		/** Deletes a NamedRange. */
-		deleteNamedRange?: DeleteNamedRangeRequest;
+		deleteNamedRange?: DeleteNamedRangeRequest | null;
 
 		/**
 		 * Deletes bullets from all of the paragraphs that overlap with the given range.
 		 * The nesting level of each paragraph will be visually preserved by adding
 		 * indent to the start of the corresponding paragraph.
 		 */
-		deleteParagraphBullets?: DeleteParagraphBulletsRequest;
+		deleteParagraphBullets?: DeleteParagraphBulletsRequest | null;
 
 		/**
 		 * Deletes a PositionedObject from the
 		 * document.
 		 */
-		deletePositionedObject?: DeletePositionedObjectRequest;
+		deletePositionedObject?: DeletePositionedObjectRequest | null;
 
 		/** Deletes a column from a table. */
-		deleteTableColumn?: DeleteTableColumnRequest;
+		deleteTableColumn?: DeleteTableColumnRequest | null;
 
 		/** Deletes a row from a table. */
-		deleteTableRow?: DeleteTableRowRequest;
+		deleteTableRow?: DeleteTableRowRequest | null;
 
 		/**
 		 * Inserts an InlineObject containing an
 		 * image at the given location.
 		 */
-		insertInlineImage?: InsertInlineImageRequest;
+		insertInlineImage?: InsertInlineImageRequest | null;
 
 		/** Inserts a page break followed by a newline at the specified location. */
-		insertPageBreak?: InsertPageBreakRequest;
+		insertPageBreak?: InsertPageBreakRequest | null;
 
 		/**
 		 * Inserts a section break at the given location.
 		 * A newline character will be inserted before the section break.
 		 */
-		insertSectionBreak?: InsertSectionBreakRequest;
+		insertSectionBreak?: InsertSectionBreakRequest | null;
 
 		/**
 		 * Inserts a table at the specified location.
 		 * A newline character will be inserted before the inserted table.
 		 */
-		insertTable?: InsertTableRequest;
+		insertTable?: InsertTableRequest | null;
 
 		/** Inserts an empty column into a table. */
-		insertTableColumn?: InsertTableColumnRequest;
+		insertTableColumn?: InsertTableColumnRequest | null;
 
 		/** Inserts an empty row into a table. */
-		insertTableRow?: InsertTableRowRequest;
+		insertTableRow?: InsertTableRowRequest | null;
 
 		/** Inserts text at the specified location. */
-		insertText?: InsertTextRequest;
+		insertText?: InsertTextRequest | null;
 
 		/** Merges cells in a Table. */
-		mergeTableCells?: MergeTableCellsRequest;
+		mergeTableCells?: MergeTableCellsRequest | null;
 
 		/** Replaces all instances of text matching a criteria with replace text. */
-		replaceAllText?: ReplaceAllTextRequest;
+		replaceAllText?: ReplaceAllTextRequest | null;
 
 		/**
 		 * Replaces an existing image with a new image.
 		 * Replacing an image removes some image effects from the existing image in order to
 		 * mirror the behavior of the Docs editor.
 		 */
-		replaceImage?: ReplaceImageRequest;
+		replaceImage?: ReplaceImageRequest | null;
 
 		/**
 		 * Replaces the contents of the specified
@@ -441,38 +441,38 @@ export namespace MyNS {
 		 * In cases where replacing or deleting any ranges would result in an invalid
 		 * document structure, a 400 bad request error is returned.
 		 */
-		replaceNamedRangeContent?: ReplaceNamedRangeContentRequest;
+		replaceNamedRangeContent?: ReplaceNamedRangeContentRequest | null;
 
 		/** Unmerges cells in a Table. */
-		unmergeTableCells?: UnmergeTableCellsRequest;
+		unmergeTableCells?: UnmergeTableCellsRequest | null;
 
 		/** Updates the DocumentStyle. */
-		updateDocumentStyle?: UpdateDocumentStyleRequest;
+		updateDocumentStyle?: UpdateDocumentStyleRequest | null;
 
 		/** Update the styling of all paragraphs that overlap with the given range. */
-		updateParagraphStyle?: UpdateParagraphStyleRequest;
+		updateParagraphStyle?: UpdateParagraphStyleRequest | null;
 
 		/** Updates the SectionStyle. */
-		updateSectionStyle?: UpdateSectionStyleRequest;
+		updateSectionStyle?: UpdateSectionStyleRequest | null;
 
 		/** Updates the style of a range of table cells. */
-		updateTableCellStyle?: UpdateTableCellStyleRequest;
+		updateTableCellStyle?: UpdateTableCellStyleRequest | null;
 
 		/**
 		 * Updates the
 		 * TableColumnProperties of columns
 		 * in a table.
 		 */
-		updateTableColumnProperties?: UpdateTableColumnPropertiesRequest;
+		updateTableColumnProperties?: UpdateTableColumnPropertiesRequest | null;
 
 		/**
 		 * Updates the TableRowStyle of rows in a
 		 * table.
 		 */
-		updateTableRowStyle?: UpdateTableRowStyleRequest;
+		updateTableRowStyle?: UpdateTableRowStyleRequest | null;
 
 		/** Update the styling of text. */
-		updateTextStyle?: UpdateTextStyleRequest;
+		updateTextStyle?: UpdateTextStyleRequest | null;
 	}
 
 
@@ -487,10 +487,10 @@ export namespace MyNS {
 	export interface CreateFooterRequest {
 
 		/** A particular location in the document. */
-		sectionBreakLocation?: Location;
+		sectionBreakLocation?: Location | null;
 
 		/** The type of footer to create. */
-		type?: CreateFooterRequestType;
+		type?: CreateFooterRequestType | null;
 	}
 
 
@@ -502,13 +502,13 @@ export namespace MyNS {
 		 * The index is relative to the beginning of the segment specified by
 		 * segment_id.
 		 */
-		index?: number;
+		index?: number | null;
 
 		/**
 		 * The ID of the header, footer or footnote the location is in. An empty
 		 * segment ID signifies the document's body.
 		 */
-		segmentId?: string;
+		segmentId?: string | null;
 	}
 
 	export enum CreateFooterRequestType { HEADER_FOOTER_TYPE_UNSPECIFIED = 0, DEFAULT = 1 }
@@ -527,10 +527,10 @@ export namespace MyNS {
 		 * Location at the end of a body, header, footer or footnote. The location is
 		 * immediately before the last newline in the document segment.
 		 */
-		endOfSegmentLocation?: EndOfSegmentLocation;
+		endOfSegmentLocation?: EndOfSegmentLocation | null;
 
 		/** A particular location in the document. */
-		location?: Location;
+		location?: Location | null;
 	}
 
 
@@ -544,7 +544,7 @@ export namespace MyNS {
 		 * The ID of the header, footer or footnote the location is in. An empty
 		 * segment ID signifies the document's body.
 		 */
-		segmentId?: string;
+		segmentId?: string | null;
 	}
 
 
@@ -559,10 +559,10 @@ export namespace MyNS {
 	export interface CreateHeaderRequest {
 
 		/** A particular location in the document. */
-		sectionBreakLocation?: Location;
+		sectionBreakLocation?: Location | null;
 
 		/** The type of header to create. */
-		type?: CreateFooterRequestType;
+		type?: CreateFooterRequestType | null;
 	}
 
 
@@ -577,10 +577,10 @@ export namespace MyNS {
 		 * Names must be at least 1 character and no more than 256 characters,
 		 * measured in UTF-16 code units.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Specifies a contiguous range of text. */
-		range?: Range;
+		range?: Range | null;
 	}
 
 
@@ -592,20 +592,20 @@ export namespace MyNS {
 		 * In all current uses, an end index must be provided. This field is an
 		 * Int32Value in order to accommodate future use cases with open-ended ranges.
 		 */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/**
 		 * The ID of the header, footer or footnote that this range is contained in.
 		 * An empty segment ID signifies the document's body.
 		 */
-		segmentId?: string;
+		segmentId?: string | null;
 
 		/**
 		 * The zero-based start index of this range, in UTF-16 code units.
 		 * In all current uses, a start index must be provided. This field is an
 		 * Int32Value in order to accommodate future use cases with open-ended ranges.
 		 */
-		startIndex?: number;
+		startIndex?: number | null;
 	}
 
 
@@ -622,10 +622,10 @@ export namespace MyNS {
 	export interface CreateParagraphBulletsRequest {
 
 		/** The kinds of bullet glyphs to be used. */
-		bulletPreset?: CreateParagraphBulletsRequestBulletPreset;
+		bulletPreset?: CreateParagraphBulletsRequestBulletPreset | null;
 
 		/** Specifies a contiguous range of text. */
-		range?: Range;
+		range?: Range | null;
 	}
 
 	export enum CreateParagraphBulletsRequestBulletPreset { BULLET_GLYPH_PRESET_UNSPECIFIED = 0, BULLET_DISC_CIRCLE_SQUARE = 1, BULLET_DIAMONDX_ARROW3D_SQUARE = 2, BULLET_CHECKBOX = 3, BULLET_ARROW_DIAMOND_DISC = 4, BULLET_STAR_CIRCLE_SQUARE = 5, BULLET_ARROW3D_CIRCLE_SQUARE = 6, BULLET_LEFTTRIANGLE_DIAMOND_DISC = 7, BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE = 8, BULLET_DIAMOND_CIRCLE_SQUARE = 9, NUMBERED_DECIMAL_ALPHA_ROMAN = 10, NUMBERED_DECIMAL_ALPHA_ROMAN_PARENS = 11, NUMBERED_DECIMAL_NESTED = 12, NUMBERED_UPPERALPHA_ALPHA_ROMAN = 13, NUMBERED_UPPERROMAN_UPPERALPHA_DECIMAL = 14, NUMBERED_ZERODECIMAL_ALPHA_ROMAN = 15 }
@@ -635,7 +635,7 @@ export namespace MyNS {
 	export interface DeleteContentRangeRequest {
 
 		/** Specifies a contiguous range of text. */
-		range?: Range;
+		range?: Range | null;
 	}
 
 
@@ -651,7 +651,7 @@ export namespace MyNS {
 		 * footer is removed and the footer of that type is now continued from
 		 * the previous section.
 		 */
-		footerId?: string;
+		footerId?: string | null;
 	}
 
 
@@ -667,7 +667,7 @@ export namespace MyNS {
 		 * header is removed and the header of that type is now continued from
 		 * the previous section.
 		 */
-		headerId?: string;
+		headerId?: string | null;
 	}
 
 
@@ -678,10 +678,10 @@ export namespace MyNS {
 		 * The name of the range(s) to delete. All named ranges with the given
 		 * name will be deleted.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The ID of the named range to delete. */
-		namedRangeId?: string;
+		namedRangeId?: string | null;
 	}
 
 
@@ -693,7 +693,7 @@ export namespace MyNS {
 	export interface DeleteParagraphBulletsRequest {
 
 		/** Specifies a contiguous range of text. */
-		range?: Range;
+		range?: Range | null;
 	}
 
 
@@ -704,7 +704,7 @@ export namespace MyNS {
 	export interface DeletePositionedObjectRequest {
 
 		/** The ID of the positioned object to delete. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -712,7 +712,7 @@ export namespace MyNS {
 	export interface DeleteTableColumnRequest {
 
 		/** Location of a single cell within a table. */
-		tableCellLocation?: TableCellLocation;
+		tableCellLocation?: TableCellLocation | null;
 	}
 
 
@@ -723,16 +723,16 @@ export namespace MyNS {
 		 * The zero-based column index. For example, the second column in the table
 		 * has a column index of 1.
 		 */
-		columnIndex?: number;
+		columnIndex?: number | null;
 
 		/**
 		 * The zero-based row index. For example, the second row in the table has a
 		 * row index of 1.
 		 */
-		rowIndex?: number;
+		rowIndex?: number | null;
 
 		/** A particular location in the document. */
-		tableStartLocation?: Location;
+		tableStartLocation?: Location | null;
 	}
 
 
@@ -740,7 +740,7 @@ export namespace MyNS {
 	export interface DeleteTableRowRequest {
 
 		/** Location of a single cell within a table. */
-		tableCellLocation?: TableCellLocation;
+		tableCellLocation?: TableCellLocation | null;
 	}
 
 
@@ -754,13 +754,13 @@ export namespace MyNS {
 		 * Location at the end of a body, header, footer or footnote. The location is
 		 * immediately before the last newline in the document segment.
 		 */
-		endOfSegmentLocation?: EndOfSegmentLocation;
+		endOfSegmentLocation?: EndOfSegmentLocation | null;
 
 		/** A particular location in the document. */
-		location?: Location;
+		location?: Location | null;
 
 		/** A width and height. */
-		objectSize?: Size;
+		objectSize?: Size | null;
 
 		/**
 		 * The image URI.
@@ -770,7 +770,7 @@ export namespace MyNS {
 		 * The provided URI can be at most 2 kB in length. The URI itself is saved
 		 * with the image, and exposed via the ImageProperties.content_uri field.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -778,10 +778,10 @@ export namespace MyNS {
 	export interface Size {
 
 		/** A magnitude in a single direction in the specified units. */
-		height?: Dimension;
+		height?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		width?: Dimension;
+		width?: Dimension | null;
 	}
 
 
@@ -792,10 +792,10 @@ export namespace MyNS {
 		 * Location at the end of a body, header, footer or footnote. The location is
 		 * immediately before the last newline in the document segment.
 		 */
-		endOfSegmentLocation?: EndOfSegmentLocation;
+		endOfSegmentLocation?: EndOfSegmentLocation | null;
 
 		/** A particular location in the document. */
-		location?: Location;
+		location?: Location | null;
 	}
 
 
@@ -809,13 +809,13 @@ export namespace MyNS {
 		 * Location at the end of a body, header, footer or footnote. The location is
 		 * immediately before the last newline in the document segment.
 		 */
-		endOfSegmentLocation?: EndOfSegmentLocation;
+		endOfSegmentLocation?: EndOfSegmentLocation | null;
 
 		/** A particular location in the document. */
-		location?: Location;
+		location?: Location | null;
 
 		/** The type of section to insert. */
-		sectionType?: InsertSectionBreakRequestSectionType;
+		sectionType?: InsertSectionBreakRequestSectionType | null;
 	}
 
 	export enum InsertSectionBreakRequestSectionType { SECTION_TYPE_UNSPECIFIED = 0, CONTINUOUS = 1, NEXT_PAGE = 2 }
@@ -828,19 +828,19 @@ export namespace MyNS {
 	export interface InsertTableRequest {
 
 		/** The number of columns in the table. */
-		columns?: number;
+		columns?: number | null;
 
 		/**
 		 * Location at the end of a body, header, footer or footnote. The location is
 		 * immediately before the last newline in the document segment.
 		 */
-		endOfSegmentLocation?: EndOfSegmentLocation;
+		endOfSegmentLocation?: EndOfSegmentLocation | null;
 
 		/** A particular location in the document. */
-		location?: Location;
+		location?: Location | null;
 
 		/** The number of rows in the table. */
-		rows?: number;
+		rows?: number | null;
 	}
 
 
@@ -852,10 +852,10 @@ export namespace MyNS {
 		 * - `True`: insert to the right.
 		 * - `False`: insert to the left.
 		 */
-		insertRight?: boolean;
+		insertRight?: boolean | null;
 
 		/** Location of a single cell within a table. */
-		tableCellLocation?: TableCellLocation;
+		tableCellLocation?: TableCellLocation | null;
 	}
 
 
@@ -867,10 +867,10 @@ export namespace MyNS {
 		 * - `True`: insert below the cell.
 		 * - `False`: insert above the cell.
 		 */
-		insertBelow?: boolean;
+		insertBelow?: boolean | null;
 
 		/** Location of a single cell within a table. */
-		tableCellLocation?: TableCellLocation;
+		tableCellLocation?: TableCellLocation | null;
 	}
 
 
@@ -881,10 +881,10 @@ export namespace MyNS {
 		 * Location at the end of a body, header, footer or footnote. The location is
 		 * immediately before the last newline in the document segment.
 		 */
-		endOfSegmentLocation?: EndOfSegmentLocation;
+		endOfSegmentLocation?: EndOfSegmentLocation | null;
 
 		/** A particular location in the document. */
-		location?: Location;
+		location?: Location | null;
 
 		/**
 		 * The text to be inserted.
@@ -900,7 +900,7 @@ export namespace MyNS {
 		 * from the Unicode Basic Multilingual Plane Private Use Area (U+E000-U+F8FF)
 		 * will be stripped out of the inserted text.
 		 */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -919,7 +919,7 @@ export namespace MyNS {
 		 * x     x
 		 * [ x    x    x ]
 		 */
-		tableRange?: TableRange;
+		tableRange?: TableRange | null;
 	}
 
 
@@ -939,13 +939,13 @@ export namespace MyNS {
 	export interface TableRange {
 
 		/** The column span of the table range. */
-		columnSpan?: number;
+		columnSpan?: number | null;
 
 		/** The row span of the table range. */
-		rowSpan?: number;
+		rowSpan?: number | null;
 
 		/** Location of a single cell within a table. */
-		tableCellLocation?: TableCellLocation;
+		tableCellLocation?: TableCellLocation | null;
 	}
 
 
@@ -953,10 +953,10 @@ export namespace MyNS {
 	export interface ReplaceAllTextRequest {
 
 		/** A criteria that matches a specific string of text in the document. */
-		containsText?: SubstringMatchCriteria;
+		containsText?: SubstringMatchCriteria | null;
 
 		/** The text that will replace the matched text. */
-		replaceText?: string;
+		replaceText?: string | null;
 	}
 
 
@@ -968,10 +968,10 @@ export namespace MyNS {
 		 * - `True`: the search is case sensitive.
 		 * - `False`: the search is case insensitive.
 		 */
-		matchCase?: boolean;
+		matchCase?: boolean | null;
 
 		/** The text to search for in the document. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -983,10 +983,10 @@ export namespace MyNS {
 	export interface ReplaceImageRequest {
 
 		/** The ID of the existing image that will be replaced. */
-		imageObjectId?: string;
+		imageObjectId?: string | null;
 
 		/** The replacement method. */
-		imageReplaceMethod?: ReplaceImageRequestImageReplaceMethod;
+		imageReplaceMethod?: ReplaceImageRequestImageReplaceMethod | null;
 
 		/**
 		 * The URI of the new image.
@@ -996,7 +996,7 @@ export namespace MyNS {
 		 * The provided URI can be at most 2 kB in length. The URI itself is saved
 		 * with the image, and exposed via the ImageProperties.source_uri field.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 	export enum ReplaceImageRequestImageReplaceMethod { IMAGE_REPLACE_METHOD_UNSPECIFIED = 0, CENTER_CROP = 1 }
@@ -1022,7 +1022,7 @@ export namespace MyNS {
 		 * If there is no named range with the given ID a 400 bad request error is
 		 * returned.
 		 */
-		namedRangeId?: string;
+		namedRangeId?: string | null;
 
 		/**
 		 * The name of the NamedRanges whose
@@ -1031,10 +1031,10 @@ export namespace MyNS {
 		 * the content of each one will be replaced. If there are no named ranges
 		 * with the given name, then the request will be a no-op.
 		 */
-		namedRangeName?: string;
+		namedRangeName?: string | null;
 
 		/** Replaces the content of the specified named range(s) with the given text. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -1053,7 +1053,7 @@ export namespace MyNS {
 		 * x     x
 		 * [ x    x    x ]
 		 */
-		tableRange?: TableRange;
+		tableRange?: TableRange | null;
 	}
 
 
@@ -1061,7 +1061,7 @@ export namespace MyNS {
 	export interface UpdateDocumentStyleRequest {
 
 		/** The style of the document. */
-		documentStyle?: DocumentStyle;
+		documentStyle?: DocumentStyle | null;
 
 		/**
 		 * The fields that should be updated.
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 		 * short-hand for listing every field.
 		 * For example to update the background, set `fields` to `"background"`.
 		 */
-		fields?: string;
+		fields?: string | null;
 	}
 
 
@@ -1078,19 +1078,19 @@ export namespace MyNS {
 	export interface DocumentStyle {
 
 		/** Represents the background of a document. */
-		background?: Background;
+		background?: Background | null;
 
 		/**
 		 * The ID of the default footer. If not set, there is no default footer.
 		 * This property is read-only.
 		 */
-		defaultFooterId?: string;
+		defaultFooterId?: string | null;
 
 		/**
 		 * The ID of the default header. If not set, there is no default header.
 		 * This property is read-only.
 		 */
-		defaultHeaderId?: string;
+		defaultHeaderId?: string | null;
 
 		/**
 		 * The ID of the footer used only for even pages. The value of
@@ -1099,7 +1099,7 @@ export namespace MyNS {
 		 * footer on even pages. If not set, there is no even page footer.
 		 * This property is read-only.
 		 */
-		evenPageFooterId?: string;
+		evenPageFooterId?: string | null;
 
 		/**
 		 * The ID of the header used only for even pages. The value of
@@ -1108,7 +1108,7 @@ export namespace MyNS {
 		 * header on even pages. If not set, there is no even page header.
 		 * This property is read-only.
 		 */
-		evenPageHeaderId?: string;
+		evenPageHeaderId?: string | null;
 
 		/**
 		 * The ID of the footer used only for the first page. If not set then
@@ -1118,7 +1118,7 @@ export namespace MyNS {
 		 * footer on the first page. If not set, there is no first page footer.
 		 * This property is read-only.
 		 */
-		firstPageFooterId?: string;
+		firstPageFooterId?: string | null;
 
 		/**
 		 * The ID of the header used only for the first page. If not set then
@@ -1128,31 +1128,31 @@ export namespace MyNS {
 		 * header on the first page. If not set, there is no first page header.
 		 * This property is read-only.
 		 */
-		firstPageHeaderId?: string;
+		firstPageHeaderId?: string | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginBottom?: Dimension;
+		marginBottom?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginFooter?: Dimension;
+		marginFooter?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginHeader?: Dimension;
+		marginHeader?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginLeft?: Dimension;
+		marginLeft?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginRight?: Dimension;
+		marginRight?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginTop?: Dimension;
+		marginTop?: Dimension | null;
 
 		/** The page number from which to start counting the number of pages. */
-		pageNumberStart?: number;
+		pageNumberStart?: number | null;
 
 		/** A width and height. */
-		pageSize?: Size;
+		pageSize?: Size | null;
 
 		/**
 		 * Indicates whether DocumentStyle
@@ -1167,19 +1167,19 @@ export namespace MyNS {
 		 * footer margin are used.
 		 * This property is read-only.
 		 */
-		useCustomHeaderFooterMargins?: boolean;
+		useCustomHeaderFooterMargins?: boolean | null;
 
 		/**
 		 * Indicates whether to use the even page header / footer IDs for the even
 		 * pages.
 		 */
-		useEvenPageHeaderFooter?: boolean;
+		useEvenPageHeaderFooter?: boolean | null;
 
 		/**
 		 * Indicates whether to use the first page header / footer IDs for the first
 		 * page.
 		 */
-		useFirstPageHeaderFooter?: boolean;
+		useFirstPageHeaderFooter?: boolean | null;
 	}
 
 
@@ -1195,7 +1195,7 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/**
 		 * Styles that apply to a whole paragraph.
@@ -1213,10 +1213,10 @@ export namespace MyNS {
 		 * If the paragraph style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		paragraphStyle?: ParagraphStyle;
+		paragraphStyle?: ParagraphStyle | null;
 
 		/** Specifies a contiguous range of text. */
-		range?: Range;
+		range?: Range | null;
 	}
 
 
@@ -1239,70 +1239,70 @@ export namespace MyNS {
 	export interface ParagraphStyle {
 
 		/** The text alignment for this paragraph. */
-		alignment?: ParagraphStyleAlignment;
+		alignment?: ParagraphStyleAlignment | null;
 
 		/**
 		 * Whether to avoid widows and orphans for the paragraph. If unset, the value
 		 * is inherited from the parent.
 		 */
-		avoidWidowAndOrphan?: boolean;
+		avoidWidowAndOrphan?: boolean | null;
 
 		/** A border around a paragraph. */
-		borderBetween?: ParagraphBorder;
+		borderBetween?: ParagraphBorder | null;
 
 		/** A border around a paragraph. */
-		borderBottom?: ParagraphBorder;
+		borderBottom?: ParagraphBorder | null;
 
 		/** A border around a paragraph. */
-		borderLeft?: ParagraphBorder;
+		borderLeft?: ParagraphBorder | null;
 
 		/** A border around a paragraph. */
-		borderRight?: ParagraphBorder;
+		borderRight?: ParagraphBorder | null;
 
 		/** A border around a paragraph. */
-		borderTop?: ParagraphBorder;
+		borderTop?: ParagraphBorder | null;
 
 		/**
 		 * The text direction of this paragraph. If unset, the value defaults to
 		 * LEFT_TO_RIGHT since
 		 * paragraph direction is not inherited.
 		 */
-		direction?: ParagraphStyleDirection;
+		direction?: ParagraphStyleDirection | null;
 
 		/**
 		 * The heading ID of the paragraph. If empty, then this paragraph is not a
 		 * heading.
 		 * This property is read-only.
 		 */
-		headingId?: string;
+		headingId?: string | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		indentEnd?: Dimension;
+		indentEnd?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		indentFirstLine?: Dimension;
+		indentFirstLine?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		indentStart?: Dimension;
+		indentStart?: Dimension | null;
 
 		/**
 		 * Whether all lines of the paragraph should be laid out on the same page or
 		 * column if possible. If unset, the value is inherited from the parent.
 		 */
-		keepLinesTogether?: boolean;
+		keepLinesTogether?: boolean | null;
 
 		/**
 		 * Whether at least a part of this paragraph should be laid out on the same
 		 * page or column as the next paragraph if possible. If unset, the value is
 		 * inherited from the parent.
 		 */
-		keepWithNext?: boolean;
+		keepWithNext?: boolean | null;
 
 		/**
 		 * The amount of space between lines, as a percentage of normal, where normal
 		 * is represented as 100.0. If unset, the value is inherited from the parent.
 		 */
-		lineSpacing?: number;
+		lineSpacing?: number | null;
 
 		/**
 		 * The named style type of the paragraph.
@@ -1310,26 +1310,26 @@ export namespace MyNS {
 		 * ParagraphStyle, the named style type is applied before the other properties
 		 * are updated.
 		 */
-		namedStyleType?: ParagraphStyleNamedStyleType;
+		namedStyleType?: ParagraphStyleNamedStyleType | null;
 
 		/** The shading of a paragraph. */
-		shading?: Shading;
+		shading?: Shading | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		spaceAbove?: Dimension;
+		spaceAbove?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		spaceBelow?: Dimension;
+		spaceBelow?: Dimension | null;
 
 		/** The spacing mode for the paragraph. */
-		spacingMode?: ParagraphStyleSpacingMode;
+		spacingMode?: ParagraphStyleSpacingMode | null;
 
 		/**
 		 * A list of the tab stops for this paragraph. The list of tab stops is not
 		 * inherited.
 		 * This property is read-only.
 		 */
-		tabStops?: Array<TabStop>;
+		tabStops?: Array<TabStop> | null;
 	}
 
 	export enum ParagraphStyleAlignment { ALIGNMENT_UNSPECIFIED = 0, START = 1, CENTER = 2, END = 3, JUSTIFIED = 4 }
@@ -1339,16 +1339,16 @@ export namespace MyNS {
 	export interface ParagraphBorder {
 
 		/** A color that can either be fully opaque or fully transparent. */
-		color?: OptionalColor;
+		color?: OptionalColor | null;
 
 		/** The dash style of the border. */
-		dashStyle?: ParagraphBorderDashStyle;
+		dashStyle?: ParagraphBorderDashStyle | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		padding?: Dimension;
+		padding?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		width?: Dimension;
+		width?: Dimension | null;
 	}
 
 	export enum ParagraphBorderDashStyle { DASH_STYLE_UNSPECIFIED = 0, SOLID = 1, DOT = 2, DASH = 3 }
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 	export interface Shading {
 
 		/** A color that can either be fully opaque or fully transparent. */
-		backgroundColor?: OptionalColor;
+		backgroundColor?: OptionalColor | null;
 	}
 
 	export enum ParagraphStyleSpacingMode { SPACING_MODE_UNSPECIFIED = 0, NEVER_COLLAPSE = 1, COLLAPSE_LISTS = 2 }
@@ -1372,10 +1372,10 @@ export namespace MyNS {
 	export interface TabStop {
 
 		/** The alignment of this tab stop. If unset, the value defaults to START. */
-		alignment?: TabStopAlignment;
+		alignment?: TabStopAlignment | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		offset?: Dimension;
+		offset?: Dimension | null;
 	}
 
 	export enum TabStopAlignment { TAB_STOP_ALIGNMENT_UNSPECIFIED = 0, START = 1, CENTER = 2, END = 3 }
@@ -1391,13 +1391,13 @@ export namespace MyNS {
 		 * short-hand for listing every field.
 		 * For example to update the left margin, set `fields` to `"margin_left"`.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** Specifies a contiguous range of text. */
-		range?: Range;
+		range?: Range | null;
 
 		/** The styling that applies to a section. */
-		sectionStyle?: SectionStyle;
+		sectionStyle?: SectionStyle | null;
 	}
 
 
@@ -1412,7 +1412,7 @@ export namespace MyNS {
 		 * When updating this property, setting a concrete value is required.
 		 * Unsetting this property will result in a 400 bad request error.
 		 */
-		columnProperties?: Array<SectionColumnProperties>;
+		columnProperties?: Array<SectionColumnProperties> | null;
 
 		/**
 		 * The style of column separators.
@@ -1420,7 +1420,7 @@ export namespace MyNS {
 		 * When updating this property, setting a concrete value is required.
 		 * Unsetting this property results in a 400 bad request error.
 		 */
-		columnSeparatorStyle?: SectionStyleColumnSeparatorStyle;
+		columnSeparatorStyle?: SectionStyleColumnSeparatorStyle | null;
 
 		/**
 		 * The content direction of this section. If unset, the value defaults to
@@ -1428,7 +1428,7 @@ export namespace MyNS {
 		 * When updating this property, setting a concrete value is required.
 		 * Unsetting this property results in a 400 bad request error.
 		 */
-		contentDirection?: ParagraphStyleDirection;
+		contentDirection?: ParagraphStyleDirection | null;
 
 		/**
 		 * The ID of the default footer. If unset, the value inherits from the
@@ -1437,7 +1437,7 @@ export namespace MyNS {
 		 * DocumentStyle's default_footer_id.
 		 * This property is read-only.
 		 */
-		defaultFooterId?: string;
+		defaultFooterId?: string | null;
 
 		/**
 		 * The ID of the default header. If unset, the value inherits from the
@@ -1446,7 +1446,7 @@ export namespace MyNS {
 		 * DocumentStyle's default_header_id.
 		 * This property is read-only.
 		 */
-		defaultHeaderId?: string;
+		defaultHeaderId?: string | null;
 
 		/**
 		 * The ID of the footer used only for even pages. If the value of
@@ -1458,7 +1458,7 @@ export namespace MyNS {
 		 * even_page_footer_id.
 		 * This property is read-only.
 		 */
-		evenPageFooterId?: string;
+		evenPageFooterId?: string | null;
 
 		/**
 		 * The ID of the header used only for even pages. If the value of
@@ -1470,7 +1470,7 @@ export namespace MyNS {
 		 * even_page_header_id.
 		 * This property is read-only.
 		 */
-		evenPageHeaderId?: string;
+		evenPageHeaderId?: string | null;
 
 		/**
 		 * The ID of the footer used only for the first page of the section.
@@ -1483,7 +1483,7 @@ export namespace MyNS {
 		 * first_page_footer_id.
 		 * This property is read-only.
 		 */
-		firstPageFooterId?: string;
+		firstPageFooterId?: string | null;
 
 		/**
 		 * The ID of the header used only for the first page of the section.
@@ -1496,25 +1496,25 @@ export namespace MyNS {
 		 * first_page_header_id.
 		 * This property is read-only.
 		 */
-		firstPageHeaderId?: string;
+		firstPageHeaderId?: string | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginBottom?: Dimension;
+		marginBottom?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginFooter?: Dimension;
+		marginFooter?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginHeader?: Dimension;
+		marginHeader?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginLeft?: Dimension;
+		marginLeft?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginRight?: Dimension;
+		marginRight?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginTop?: Dimension;
+		marginTop?: Dimension | null;
 
 		/**
 		 * The page number from which to start counting the number of pages for this
@@ -1525,10 +1525,10 @@ export namespace MyNS {
 		 * When updating this property, setting a concrete value is required.
 		 * Unsetting this property results in a 400 bad request error.
 		 */
-		pageNumberStart?: number;
+		pageNumberStart?: number | null;
 
 		/** Output only. The type of section. */
-		sectionType?: InsertSectionBreakRequestSectionType;
+		sectionType?: InsertSectionBreakRequestSectionType | null;
 
 		/**
 		 * Indicates whether to use the first page header / footer IDs for the first
@@ -1539,7 +1539,7 @@ export namespace MyNS {
 		 * When updating this property, setting a concrete value is required.
 		 * Unsetting this property results in a 400 bad request error.
 		 */
-		useFirstPageHeaderFooter?: boolean;
+		useFirstPageHeaderFooter?: boolean | null;
 	}
 
 
@@ -1547,10 +1547,10 @@ export namespace MyNS {
 	export interface SectionColumnProperties {
 
 		/** A magnitude in a single direction in the specified units. */
-		paddingEnd?: Dimension;
+		paddingEnd?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		width?: Dimension;
+		width?: Dimension | null;
 	}
 
 	export enum SectionStyleColumnSeparatorStyle { COLUMN_SEPARATOR_STYLE_UNSPECIFIED = 0, NONE = 1, BETWEEN_EACH_COLUMN = 2 }
@@ -1569,14 +1569,14 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/**
 		 * The style of a TableCell.
 		 * Inherited table cell styles are represented as unset fields in this message.
 		 * A table cell style can inherit from the table's style.
 		 */
-		tableCellStyle?: TableCellStyle;
+		tableCellStyle?: TableCellStyle | null;
 
 		/**
 		 * A table range represents a reference to a subset of a table.
@@ -1590,10 +1590,10 @@ export namespace MyNS {
 		 * x     x
 		 * [ x    x    x ]
 		 */
-		tableRange?: TableRange;
+		tableRange?: TableRange | null;
 
 		/** A particular location in the document. */
-		tableStartLocation?: Location;
+		tableStartLocation?: Location | null;
 	}
 
 
@@ -1605,65 +1605,65 @@ export namespace MyNS {
 	export interface TableCellStyle {
 
 		/** A color that can either be fully opaque or fully transparent. */
-		backgroundColor?: OptionalColor;
+		backgroundColor?: OptionalColor | null;
 
 		/**
 		 * A border around a table cell.
 		 * Table cell borders cannot be transparent. To hide a table cell border, make
 		 * its width 0.
 		 */
-		borderBottom?: TableCellBorder;
+		borderBottom?: TableCellBorder | null;
 
 		/**
 		 * A border around a table cell.
 		 * Table cell borders cannot be transparent. To hide a table cell border, make
 		 * its width 0.
 		 */
-		borderLeft?: TableCellBorder;
+		borderLeft?: TableCellBorder | null;
 
 		/**
 		 * A border around a table cell.
 		 * Table cell borders cannot be transparent. To hide a table cell border, make
 		 * its width 0.
 		 */
-		borderRight?: TableCellBorder;
+		borderRight?: TableCellBorder | null;
 
 		/**
 		 * A border around a table cell.
 		 * Table cell borders cannot be transparent. To hide a table cell border, make
 		 * its width 0.
 		 */
-		borderTop?: TableCellBorder;
+		borderTop?: TableCellBorder | null;
 
 		/**
 		 * The column span of the cell.
 		 * This property is read-only.
 		 */
-		columnSpan?: number;
+		columnSpan?: number | null;
 
 		/**
 		 * The alignment of the content in the table cell. The default alignment
 		 * matches the alignment for newly created table cells in the Docs editor.
 		 */
-		contentAlignment?: TableCellStyleContentAlignment;
+		contentAlignment?: TableCellStyleContentAlignment | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		paddingBottom?: Dimension;
+		paddingBottom?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		paddingLeft?: Dimension;
+		paddingLeft?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		paddingRight?: Dimension;
+		paddingRight?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		paddingTop?: Dimension;
+		paddingTop?: Dimension | null;
 
 		/**
 		 * The row span of the cell.
 		 * This property is read-only.
 		 */
-		rowSpan?: number;
+		rowSpan?: number | null;
 	}
 
 
@@ -1675,13 +1675,13 @@ export namespace MyNS {
 	export interface TableCellBorder {
 
 		/** A color that can either be fully opaque or fully transparent. */
-		color?: OptionalColor;
+		color?: OptionalColor | null;
 
 		/** The dash style of the border. */
-		dashStyle?: ParagraphBorderDashStyle;
+		dashStyle?: ParagraphBorderDashStyle | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		width?: Dimension;
+		width?: Dimension | null;
 	}
 
 	export enum TableCellStyleContentAlignment { CONTENT_ALIGNMENT_UNSPECIFIED = 0, CONTENT_ALIGNMENT_UNSUPPORTED = 1, TOP = 2, MIDDLE = 3, BOTTOM = 4 }
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 		 * The list of zero-based column indices whose property should be updated. If
 		 * no indices are specified, all columns will be updated.
 		 */
-		columnIndices?: Array<number>;
+		columnIndices?: Array<number> | null;
 
 		/**
 		 * The fields that should be updated.
@@ -1707,13 +1707,13 @@ export namespace MyNS {
 		 * short-hand for listing every field.
 		 * For example to update the column width, set `fields` to `"width"`.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The properties of a column in a table. */
-		tableColumnProperties?: TableColumnProperties;
+		tableColumnProperties?: TableColumnProperties | null;
 
 		/** A particular location in the document. */
-		tableStartLocation?: Location;
+		tableStartLocation?: Location | null;
 	}
 
 
@@ -1721,10 +1721,10 @@ export namespace MyNS {
 	export interface TableColumnProperties {
 
 		/** A magnitude in a single direction in the specified units. */
-		width?: Dimension;
+		width?: Dimension | null;
 
 		/** The width type of the column. */
-		widthType?: TableColumnPropertiesWidthType;
+		widthType?: TableColumnPropertiesWidthType | null;
 	}
 
 	export enum TableColumnPropertiesWidthType { WIDTH_TYPE_UNSPECIFIED = 0, EVENLY_DISTRIBUTED = 1, FIXED_WIDTH = 2 }
@@ -1744,19 +1744,19 @@ export namespace MyNS {
 		 * For example to update the minimum row height, set `fields` to
 		 * `"min_row_height"`.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/**
 		 * The list of zero-based row indices whose style should be updated. If no
 		 * indices are specified, all rows will be updated.
 		 */
-		rowIndices?: Array<number>;
+		rowIndices?: Array<number> | null;
 
 		/** Styles that apply to a table row. */
-		tableRowStyle?: TableRowStyle;
+		tableRowStyle?: TableRowStyle | null;
 
 		/** A particular location in the document. */
-		tableStartLocation?: Location;
+		tableStartLocation?: Location | null;
 	}
 
 
@@ -1764,7 +1764,7 @@ export namespace MyNS {
 	export interface TableRowStyle {
 
 		/** A magnitude in a single direction in the specified units. */
-		minRowHeight?: Dimension;
+		minRowHeight?: Dimension | null;
 	}
 
 
@@ -1780,10 +1780,10 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** Specifies a contiguous range of text. */
-		range?: Range;
+		range?: Range | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -1801,7 +1801,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -1816,7 +1816,7 @@ export namespace MyNS {
 		 * When a required revision ID is returned in a response, it indicates the
 		 * revision ID of the document after the request was applied.
 		 */
-		requiredRevisionId?: string;
+		requiredRevisionId?: string | null;
 
 		/**
 		 * The target revision ID of the
@@ -1836,7 +1836,7 @@ export namespace MyNS {
 		 * target revision for several minutes after it is read, but for
 		 * frequently-edited documents this window may be shorter.
 		 */
-		targetRevisionId?: string;
+		targetRevisionId?: string | null;
 	}
 
 
@@ -1844,16 +1844,16 @@ export namespace MyNS {
 	export interface BatchUpdateDocumentResponse {
 
 		/** The ID of the document to which the updates were applied to. */
-		documentId?: string;
+		documentId?: string | null;
 
 		/**
 		 * The reply of the updates. This maps 1:1 with the updates, although replies
 		 * to some requests may be empty.
 		 */
-		replies?: Array<Response>;
+		replies?: Array<Response> | null;
 
 		/** Provides control over how write requests are executed. */
-		writeControl?: WriteControl;
+		writeControl?: WriteControl | null;
 	}
 
 
@@ -1861,25 +1861,25 @@ export namespace MyNS {
 	export interface Response {
 
 		/** The result of creating a footer. */
-		createFooter?: CreateFooterResponse;
+		createFooter?: CreateFooterResponse | null;
 
 		/** The result of creating a footnote. */
-		createFootnote?: CreateFootnoteResponse;
+		createFootnote?: CreateFootnoteResponse | null;
 
 		/** The result of creating a header. */
-		createHeader?: CreateHeaderResponse;
+		createHeader?: CreateHeaderResponse | null;
 
 		/** The result of creating a named range. */
-		createNamedRange?: CreateNamedRangeResponse;
+		createNamedRange?: CreateNamedRangeResponse | null;
 
 		/** The result of inserting an inline image. */
-		insertInlineImage?: InsertInlineImageResponse;
+		insertInlineImage?: InsertInlineImageResponse | null;
 
 		/** The result of inserting an embedded Google Sheets chart. */
-		insertInlineSheetsChart?: InsertInlineSheetsChartResponse;
+		insertInlineSheetsChart?: InsertInlineSheetsChartResponse | null;
 
 		/** The result of replacing text. */
-		replaceAllText?: ReplaceAllTextResponse;
+		replaceAllText?: ReplaceAllTextResponse | null;
 	}
 
 
@@ -1887,7 +1887,7 @@ export namespace MyNS {
 	export interface CreateFooterResponse {
 
 		/** The ID of the created footer. */
-		footerId?: string;
+		footerId?: string | null;
 	}
 
 
@@ -1895,7 +1895,7 @@ export namespace MyNS {
 	export interface CreateFootnoteResponse {
 
 		/** The ID of the created footnote. */
-		footnoteId?: string;
+		footnoteId?: string | null;
 	}
 
 
@@ -1903,7 +1903,7 @@ export namespace MyNS {
 	export interface CreateHeaderResponse {
 
 		/** The ID of the created header. */
-		headerId?: string;
+		headerId?: string | null;
 	}
 
 
@@ -1911,7 +1911,7 @@ export namespace MyNS {
 	export interface CreateNamedRangeResponse {
 
 		/** The ID of the created named range. */
-		namedRangeId?: string;
+		namedRangeId?: string | null;
 	}
 
 
@@ -1919,7 +1919,7 @@ export namespace MyNS {
 	export interface InsertInlineImageResponse {
 
 		/** The ID of the created InlineObject. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -1927,7 +1927,7 @@ export namespace MyNS {
 	export interface InsertInlineSheetsChartResponse {
 
 		/** The object ID of the inserted chart. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -1935,7 +1935,7 @@ export namespace MyNS {
 	export interface ReplaceAllTextResponse {
 
 		/** The number of occurrences changed by replacing all text. */
-		occurrencesChanged?: number;
+		occurrencesChanged?: number | null;
 	}
 
 
@@ -1951,7 +1951,7 @@ export namespace MyNS {
 		 * The contents of the body.
 		 * The indexes for the body's content begin at zero.
 		 */
-		content?: Array<StructuralElement>;
+		content?: Array<StructuralElement> | null;
 	}
 
 
@@ -1965,14 +1965,14 @@ export namespace MyNS {
 		 * The zero-based end index of this structural element, exclusive, in UTF-16
 		 * code units.
 		 */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/**
 		 * A StructuralElement representing a
 		 * paragraph. A paragraph is a range of content that is terminated with a
 		 * newline character.
 		 */
-		paragraph?: Paragraph;
+		paragraph?: Paragraph | null;
 
 		/**
 		 * A StructuralElement representing a
@@ -1982,25 +1982,25 @@ export namespace MyNS {
 		 * after the section break.
 		 * The document body always begins with a section break.
 		 */
-		sectionBreak?: SectionBreak;
+		sectionBreak?: SectionBreak | null;
 
 		/**
 		 * The zero-based start index of this structural element, in UTF-16 code
 		 * units.
 		 */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/**
 		 * A StructuralElement representing a
 		 * table.
 		 */
-		table?: Table;
+		table?: Table | null;
 
 		/**
 		 * A StructuralElement representing
 		 * a table of contents.
 		 */
-		tableOfContents?: TableOfContents;
+		tableOfContents?: TableOfContents | null;
 	}
 
 
@@ -2012,10 +2012,10 @@ export namespace MyNS {
 	export interface Paragraph {
 
 		/** Describes the bullet of a paragraph. */
-		bullet?: Bullet;
+		bullet?: Bullet | null;
 
 		/** The content of the paragraph broken down into its component parts. */
-		elements?: Array<ParagraphElement>;
+		elements?: Array<ParagraphElement> | null;
 
 		/**
 		 * Styles that apply to a whole paragraph.
@@ -2033,25 +2033,25 @@ export namespace MyNS {
 		 * If the paragraph style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		paragraphStyle?: ParagraphStyle;
+		paragraphStyle?: ParagraphStyle | null;
 
 		/** The IDs of the positioned objects tethered to this paragraph. */
-		positionedObjectIds?: Array<string>;
+		positionedObjectIds?: Array<string> | null;
 
 		/** The suggested changes to this paragraph's bullet. */
-		suggestedBulletChanges?: {[id: string]: SuggestedBullet };
+		suggestedBulletChanges?: {[id: string]: SuggestedBullet } | null;
 
 		/**
 		 * The suggested paragraph style changes to this paragraph, keyed by
 		 * suggestion ID.
 		 */
-		suggestedParagraphStyleChanges?: {[id: string]: SuggestedParagraphStyle };
+		suggestedParagraphStyleChanges?: {[id: string]: SuggestedParagraphStyle } | null;
 
 		/**
 		 * The IDs of the positioned objects that are suggested to be attached to this
 		 * paragraph, keyed by suggestion ID.
 		 */
-		suggestedPositionedObjectIds?: {[id: string]: ObjectReferences };
+		suggestedPositionedObjectIds?: {[id: string]: ObjectReferences } | null;
 	}
 
 
@@ -2059,10 +2059,10 @@ export namespace MyNS {
 	export interface Bullet {
 
 		/** The ID of the list this paragraph belongs to. */
-		listId?: string;
+		listId?: string | null;
 
 		/** The nesting level of this paragraph in the list. */
-		nestingLevel?: number;
+		nestingLevel?: number | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -2080,7 +2080,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -2095,61 +2095,61 @@ export namespace MyNS {
 		 * spot in the text that is dynamically replaced with content that can change
 		 * over time, like a page number.
 		 */
-		autoText?: AutoText;
+		autoText?: AutoText | null;
 
 		/**
 		 * A ParagraphElement representing a
 		 * column break. A column break makes the subsequent text start at the top of
 		 * the next column.
 		 */
-		columnBreak?: ColumnBreak;
+		columnBreak?: ColumnBreak | null;
 
 		/**
 		 * The zero-base end index of this paragraph element, exclusive, in UTF-16
 		 * code units.
 		 */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/**
 		 * A ParagraphElement representing an
 		 * equation.
 		 */
-		equation?: Equation;
+		equation?: Equation | null;
 
 		/**
 		 * A ParagraphElement representing a
 		 * footnote reference. A footnote reference is the inline content rendered with
 		 * a number and is used to identify the footnote.
 		 */
-		footnoteReference?: FootnoteReference;
+		footnoteReference?: FootnoteReference | null;
 
 		/**
 		 * A ParagraphElement representing a
 		 * horizontal line.
 		 */
-		horizontalRule?: HorizontalRule;
+		horizontalRule?: HorizontalRule | null;
 
 		/**
 		 * A ParagraphElement that contains
 		 * an InlineObject.
 		 */
-		inlineObjectElement?: InlineObjectElement;
+		inlineObjectElement?: InlineObjectElement | null;
 
 		/**
 		 * A ParagraphElement representing a
 		 * page break. A page break makes the subsequent text start at the top of the
 		 * next page.
 		 */
-		pageBreak?: PageBreak;
+		pageBreak?: PageBreak | null;
 
 		/** The zero-based start index of this paragraph element, in UTF-16 code units. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/**
 		 * A ParagraphElement that represents a
 		 * run of text that all has the same styling.
 		 */
-		textRun?: TextRun;
+		textRun?: TextRun | null;
 	}
 
 
@@ -2164,20 +2164,20 @@ export namespace MyNS {
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A ColumnBreak may have multiple insertion IDs if it is
 		 * a nested suggested change. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/**
 		 * The suggested text style changes to this ColumnBreak, keyed by suggestion
 		 * ID.
 		 */
-		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle };
+		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle } | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -2195,7 +2195,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -2209,14 +2209,14 @@ export namespace MyNS {
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A Equation
 		 * may have multiple insertion IDs if it is a nested suggested change. If
 		 * empty, then this is not a suggested insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 	}
 
 
@@ -2231,29 +2231,29 @@ export namespace MyNS {
 		 * The ID of the footnote that
 		 * contains the content of this footnote reference.
 		 */
-		footnoteId?: string;
+		footnoteId?: string | null;
 
 		/** The rendered number of this footnote. */
-		footnoteNumber?: string;
+		footnoteNumber?: string | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A FootnoteReference may have multiple insertion IDs if
 		 * it is a nested suggested change. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/**
 		 * The suggested text style changes to this FootnoteReference, keyed by
 		 * suggestion ID.
 		 */
-		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle };
+		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle } | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -2271,7 +2271,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -2285,20 +2285,20 @@ export namespace MyNS {
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A HorizontalRule may have multiple insertion IDs if it
 		 * is a nested suggested change. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/**
 		 * The suggested text style changes to this HorizontalRule, keyed by
 		 * suggestion ID.
 		 */
-		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle };
+		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle } | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -2316,7 +2316,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -2330,26 +2330,26 @@ export namespace MyNS {
 		 * The ID of the InlineObject this
 		 * element contains.
 		 */
-		inlineObjectId?: string;
+		inlineObjectId?: string | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. An InlineObjectElement may have multiple insertion IDs
 		 * if it is a nested suggested change. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/**
 		 * The suggested text style changes to this InlineObject, keyed by suggestion
 		 * ID.
 		 */
-		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle };
+		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle } | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -2367,7 +2367,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -2382,17 +2382,17 @@ export namespace MyNS {
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A PageBreak
 		 * may have multiple insertion IDs if it is a nested suggested change. If
 		 * empty, then this is not a suggested insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/** The suggested text style changes to this PageBreak, keyed by suggestion ID. */
-		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle };
+		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle } | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -2410,7 +2410,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -2425,23 +2425,23 @@ export namespace MyNS {
 		 * Any non-text elements in the run are replaced with the Unicode character
 		 * U+E907.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A TextRun may
 		 * have multiple insertion IDs if it is a nested suggested change. If empty,
 		 * then this is not a suggested insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/** The suggested text style changes to this run, keyed by suggestion ID. */
-		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle };
+		suggestedTextStyleChanges?: {[id: string]: SuggestedTextStyle } | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -2459,7 +2459,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -2467,14 +2467,14 @@ export namespace MyNS {
 	export interface SuggestedBullet {
 
 		/** Describes the bullet of a paragraph. */
-		bullet?: Bullet;
+		bullet?: Bullet | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base
 		 * Bullet have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		bulletSuggestionState?: BulletSuggestionState;
+		bulletSuggestionState?: BulletSuggestionState | null;
 	}
 
 
@@ -2489,19 +2489,19 @@ export namespace MyNS {
 		 * Indicates if there was a suggested change to the
 		 * list_id.
 		 */
-		listIdSuggested?: boolean;
+		listIdSuggested?: boolean | null;
 
 		/**
 		 * Indicates if there was a suggested change to the
 		 * nesting_level.
 		 */
-		nestingLevelSuggested?: boolean;
+		nestingLevelSuggested?: boolean | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base TextStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		textStyleSuggestionState?: TextStyleSuggestionState;
+		textStyleSuggestionState?: TextStyleSuggestionState | null;
 	}
 
 
@@ -2527,13 +2527,13 @@ export namespace MyNS {
 		 * If the paragraph style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		paragraphStyle?: ParagraphStyle;
+		paragraphStyle?: ParagraphStyle | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base ParagraphStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		paragraphStyleSuggestionState?: ParagraphStyleSuggestionState;
+		paragraphStyleSuggestionState?: ParagraphStyleSuggestionState | null;
 	}
 
 
@@ -2544,67 +2544,67 @@ export namespace MyNS {
 	export interface ParagraphStyleSuggestionState {
 
 		/** Indicates if there was a suggested change to alignment. */
-		alignmentSuggested?: boolean;
+		alignmentSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to avoid_widow_and_orphan. */
-		avoidWidowAndOrphanSuggested?: boolean;
+		avoidWidowAndOrphanSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_between. */
-		borderBetweenSuggested?: boolean;
+		borderBetweenSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_bottom. */
-		borderBottomSuggested?: boolean;
+		borderBottomSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_left. */
-		borderLeftSuggested?: boolean;
+		borderLeftSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_right. */
-		borderRightSuggested?: boolean;
+		borderRightSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_top. */
-		borderTopSuggested?: boolean;
+		borderTopSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to direction. */
-		directionSuggested?: boolean;
+		directionSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to heading_id. */
-		headingIdSuggested?: boolean;
+		headingIdSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to indent_end. */
-		indentEndSuggested?: boolean;
+		indentEndSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to indent_first_line. */
-		indentFirstLineSuggested?: boolean;
+		indentFirstLineSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to indent_start. */
-		indentStartSuggested?: boolean;
+		indentStartSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to keep_lines_together. */
-		keepLinesTogetherSuggested?: boolean;
+		keepLinesTogetherSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to keep_with_next. */
-		keepWithNextSuggested?: boolean;
+		keepWithNextSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to line_spacing. */
-		lineSpacingSuggested?: boolean;
+		lineSpacingSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to named_style_type. */
-		namedStyleTypeSuggested?: boolean;
+		namedStyleTypeSuggested?: boolean | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base Shading have been changed in this
 		 * suggested change. For any field set to true, there is a new suggested value.
 		 */
-		shadingSuggestionState?: ShadingSuggestionState;
+		shadingSuggestionState?: ShadingSuggestionState | null;
 
 		/** Indicates if there was a suggested change to space_above. */
-		spaceAboveSuggested?: boolean;
+		spaceAboveSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to space_below. */
-		spaceBelowSuggested?: boolean;
+		spaceBelowSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to spacing_mode. */
-		spacingModeSuggested?: boolean;
+		spacingModeSuggested?: boolean | null;
 	}
 
 
@@ -2615,7 +2615,7 @@ export namespace MyNS {
 	export interface ShadingSuggestionState {
 
 		/** Indicates if there was a suggested change to the Shading. */
-		backgroundColorSuggested?: boolean;
+		backgroundColorSuggested?: boolean | null;
 	}
 
 
@@ -2623,7 +2623,7 @@ export namespace MyNS {
 	export interface ObjectReferences {
 
 		/** The object IDs. */
-		objectIds?: Array<string>;
+		objectIds?: Array<string> | null;
 	}
 
 
@@ -2638,20 +2638,20 @@ export namespace MyNS {
 	export interface SectionBreak {
 
 		/** The styling that applies to a section. */
-		sectionStyle?: SectionStyle;
+		sectionStyle?: SectionStyle | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A SectionBreak may have multiple insertion IDs if it is
 		 * a nested suggested change. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 	}
 
 
@@ -2666,29 +2666,29 @@ export namespace MyNS {
 		 * It is possible for a table to be non-rectangular, so some rows may have a
 		 * different number of cells.
 		 */
-		columns?: number;
+		columns?: number | null;
 
 		/** Number of rows in the table. */
-		rows?: number;
+		rows?: number | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A Table may have
 		 * multiple insertion IDs if it is a nested suggested change. If empty, then
 		 * this is not a suggested insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/** The contents and style of each row. */
-		tableRows?: Array<TableRow>;
+		tableRows?: Array<TableRow> | null;
 
 		/** Styles that apply to a table. */
-		tableStyle?: TableStyle;
+		tableStyle?: TableStyle | null;
 	}
 
 
@@ -2696,36 +2696,36 @@ export namespace MyNS {
 	export interface TableRow {
 
 		/** The zero-based end index of this row, exclusive, in UTF-16 code units. */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/** The zero-based start index of this row, in UTF-16 code units. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A TableRow
 		 * may have multiple insertion IDs if it is a nested suggested change. If
 		 * empty, then this is not a suggested insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/** The suggested style changes to this row, keyed by suggestion ID. */
-		suggestedTableRowStyleChanges?: {[id: string]: SuggestedTableRowStyle };
+		suggestedTableRowStyleChanges?: {[id: string]: SuggestedTableRowStyle } | null;
 
 		/**
 		 * The contents and style of each cell in this row.
 		 * It is possible for a table to be non-rectangular, so some rows may have a
 		 * different number of cells than other rows in the same table.
 		 */
-		tableCells?: Array<TableCell>;
+		tableCells?: Array<TableCell> | null;
 
 		/** Styles that apply to a table row. */
-		tableRowStyle?: TableRowStyle;
+		tableRowStyle?: TableRowStyle | null;
 	}
 
 
@@ -2736,13 +2736,13 @@ export namespace MyNS {
 	export interface SuggestedTableRowStyle {
 
 		/** Styles that apply to a table row. */
-		tableRowStyle?: TableRowStyle;
+		tableRowStyle?: TableRowStyle | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base TableRowStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		tableRowStyleSuggestionState?: TableRowStyleSuggestionState;
+		tableRowStyleSuggestionState?: TableRowStyleSuggestionState | null;
 	}
 
 
@@ -2753,7 +2753,7 @@ export namespace MyNS {
 	export interface TableRowStyleSuggestionState {
 
 		/** Indicates if there was a suggested change to min_row_height. */
-		minRowHeightSuggested?: boolean;
+		minRowHeightSuggested?: boolean | null;
 	}
 
 
@@ -2761,36 +2761,36 @@ export namespace MyNS {
 	export interface TableCell {
 
 		/** The content of the cell. */
-		content?: Array<StructuralElement>;
+		content?: Array<StructuralElement> | null;
 
 		/** The zero-based end index of this cell, exclusive, in UTF-16 code units. */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/** The zero-based start index of this cell, in UTF-16 code units. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A TableCell
 		 * may have multiple insertion IDs if it is a nested suggested change. If
 		 * empty, then this is not a suggested insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 
 		/** The suggested changes to the table cell style, keyed by suggestion ID. */
-		suggestedTableCellStyleChanges?: {[id: string]: SuggestedTableCellStyle };
+		suggestedTableCellStyleChanges?: {[id: string]: SuggestedTableCellStyle } | null;
 
 		/**
 		 * The style of a TableCell.
 		 * Inherited table cell styles are represented as unset fields in this message.
 		 * A table cell style can inherit from the table's style.
 		 */
-		tableCellStyle?: TableCellStyle;
+		tableCellStyle?: TableCellStyle | null;
 	}
 
 
@@ -2802,13 +2802,13 @@ export namespace MyNS {
 		 * Inherited table cell styles are represented as unset fields in this message.
 		 * A table cell style can inherit from the table's style.
 		 */
-		tableCellStyle?: TableCellStyle;
+		tableCellStyle?: TableCellStyle | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base TableCellStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		tableCellStyleSuggestionState?: TableCellStyleSuggestionState;
+		tableCellStyleSuggestionState?: TableCellStyleSuggestionState | null;
 	}
 
 
@@ -2819,40 +2819,40 @@ export namespace MyNS {
 	export interface TableCellStyleSuggestionState {
 
 		/** Indicates if there was a suggested change to background_color. */
-		backgroundColorSuggested?: boolean;
+		backgroundColorSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_bottom. */
-		borderBottomSuggested?: boolean;
+		borderBottomSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_left. */
-		borderLeftSuggested?: boolean;
+		borderLeftSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_right. */
-		borderRightSuggested?: boolean;
+		borderRightSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to border_top. */
-		borderTopSuggested?: boolean;
+		borderTopSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to column_span. */
-		columnSpanSuggested?: boolean;
+		columnSpanSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to content_alignment. */
-		contentAlignmentSuggested?: boolean;
+		contentAlignmentSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to padding_bottom. */
-		paddingBottomSuggested?: boolean;
+		paddingBottomSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to padding_left. */
-		paddingLeftSuggested?: boolean;
+		paddingLeftSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to padding_right. */
-		paddingRightSuggested?: boolean;
+		paddingRightSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to padding_top. */
-		paddingTopSuggested?: boolean;
+		paddingTopSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to row_span. */
-		rowSpanSuggested?: boolean;
+		rowSpanSuggested?: boolean | null;
 	}
 
 
@@ -2865,7 +2865,7 @@ export namespace MyNS {
 		 * HTML. So the properties for a row can be found on the row's
 		 * table_row_style.
 		 */
-		tableColumnProperties?: Array<TableColumnProperties>;
+		tableColumnProperties?: Array<TableColumnProperties> | null;
 	}
 
 
@@ -2876,20 +2876,20 @@ export namespace MyNS {
 	export interface TableOfContents {
 
 		/** The content of the table of contents. */
-		content?: Array<StructuralElement>;
+		content?: Array<StructuralElement> | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion IDs. A TableOfContents may have multiple insertion IDs if it
 		 * is a nested suggested change. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionIds?: Array<string>;
+		suggestedInsertionIds?: Array<string> | null;
 	}
 
 
@@ -2909,35 +2909,35 @@ export namespace MyNS {
 		 * The clockwise rotation angle of the crop rectangle around its center, in
 		 * radians. Rotation is applied after the offsets.
 		 */
-		angle?: number;
+		angle?: number | null;
 
 		/**
 		 * The offset specifies how far inwards the bottom edge of the crop rectangle
 		 * is from the bottom edge of the original content as a fraction of the
 		 * original content's height.
 		 */
-		offsetBottom?: number;
+		offsetBottom?: number | null;
 
 		/**
 		 * The offset specifies how far inwards the left edge of the crop rectangle is
 		 * from the left edge of the original content as a fraction of the original
 		 * content's width.
 		 */
-		offsetLeft?: number;
+		offsetLeft?: number | null;
 
 		/**
 		 * The offset specifies how far inwards the right edge of the crop rectangle
 		 * is from the right edge of the original content as a fraction of the
 		 * original content's width.
 		 */
-		offsetRight?: number;
+		offsetRight?: number | null;
 
 		/**
 		 * The offset specifies how far inwards the top edge of the crop rectangle is
 		 * from the top edge of the original content as a fraction of the original
 		 * content's height.
 		 */
-		offsetTop?: number;
+		offsetTop?: number | null;
 	}
 
 
@@ -2948,19 +2948,19 @@ export namespace MyNS {
 	export interface CropPropertiesSuggestionState {
 
 		/** Indicates if there was a suggested change to angle. */
-		angleSuggested?: boolean;
+		angleSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to offset_bottom. */
-		offsetBottomSuggested?: boolean;
+		offsetBottomSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to offset_left. */
-		offsetLeftSuggested?: boolean;
+		offsetLeftSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to offset_right. */
-		offsetRightSuggested?: boolean;
+		offsetRightSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to offset_top. */
-		offsetTopSuggested?: boolean;
+		offsetTopSuggested?: boolean | null;
 	}
 
 
@@ -2973,41 +2973,41 @@ export namespace MyNS {
 		 * headers, footers
 		 * and footnotes.
 		 */
-		body?: Body;
+		body?: Body | null;
 
 		/** Output only. The ID of the document. */
-		documentId?: string;
+		documentId?: string | null;
 
 		/** The style of the document. */
-		documentStyle?: DocumentStyle;
+		documentStyle?: DocumentStyle | null;
 
 		/** Output only. The footers in the document, keyed by footer ID. */
-		footers?: {[id: string]: Footer };
+		footers?: {[id: string]: Footer } | null;
 
 		/** Output only. The footnotes in the document, keyed by footnote ID. */
-		footnotes?: {[id: string]: Footnote };
+		footnotes?: {[id: string]: Footnote } | null;
 
 		/** Output only. The headers in the document, keyed by header ID. */
-		headers?: {[id: string]: Header };
+		headers?: {[id: string]: Header } | null;
 
 		/** Output only. The inline objects in the document, keyed by object ID. */
-		inlineObjects?: {[id: string]: InlineObject };
+		inlineObjects?: {[id: string]: InlineObject } | null;
 
 		/** Output only. The lists in the document, keyed by list ID. */
-		lists?: {[id: string]: List };
+		lists?: {[id: string]: List } | null;
 
 		/** Output only. The named ranges in the document, keyed by name. */
-		namedRanges?: {[id: string]: NamedRanges };
+		namedRanges?: {[id: string]: NamedRanges } | null;
 
 		/**
 		 * The named styles. Paragraphs in the document can inherit their
 		 * TextStyle and
 		 * ParagraphStyle from these named styles.
 		 */
-		namedStyles?: NamedStyles;
+		namedStyles?: NamedStyles | null;
 
 		/** Output only. The positioned objects in the document, keyed by object ID. */
-		positionedObjects?: {[id: string]: PositionedObject };
+		positionedObjects?: {[id: string]: PositionedObject } | null;
 
 		/**
 		 * Output only. The revision ID of the document. Can be used in update
@@ -3022,29 +3022,29 @@ export namespace MyNS {
 		 * document has been updated; however, a changed ID can also be due to
 		 * internal factors such as ID format changes.
 		 */
-		revisionId?: string;
+		revisionId?: string | null;
 
 		/**
 		 * Output only. The suggested changes to the style of the document, keyed by
 		 * suggestion ID.
 		 */
-		suggestedDocumentStyleChanges?: {[id: string]: SuggestedDocumentStyle };
+		suggestedDocumentStyleChanges?: {[id: string]: SuggestedDocumentStyle } | null;
 
 		/**
 		 * Output only. The suggested changes to the named styles of the document,
 		 * keyed by suggestion ID.
 		 */
-		suggestedNamedStylesChanges?: {[id: string]: SuggestedNamedStyles };
+		suggestedNamedStylesChanges?: {[id: string]: SuggestedNamedStyles } | null;
 
 		/**
 		 * Output only. The suggestions view mode applied to the document.
 		 * Note: When editing a document, changes must be based on a document with
 		 * SUGGESTIONS_INLINE.
 		 */
-		suggestionsViewMode?: DocumentSuggestionsViewMode;
+		suggestionsViewMode?: DocumentSuggestionsViewMode | null;
 
 		/** The title of the document. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -3055,10 +3055,10 @@ export namespace MyNS {
 		 * The contents of the footer.
 		 * The indexes for a footer's content begin at zero.
 		 */
-		content?: Array<StructuralElement>;
+		content?: Array<StructuralElement> | null;
 
 		/** The ID of the footer. */
-		footerId?: string;
+		footerId?: string | null;
 	}
 
 
@@ -3069,10 +3069,10 @@ export namespace MyNS {
 		 * The contents of the footnote.
 		 * The indexes for a footnote's content begin at zero.
 		 */
-		content?: Array<StructuralElement>;
+		content?: Array<StructuralElement> | null;
 
 		/** The ID of the footnote. */
-		footnoteId?: string;
+		footnoteId?: string | null;
 	}
 
 
@@ -3083,10 +3083,10 @@ export namespace MyNS {
 		 * The contents of the header.
 		 * The indexes for a header's content begin at zero.
 		 */
-		content?: Array<StructuralElement>;
+		content?: Array<StructuralElement> | null;
 
 		/** The ID of the header. */
-		headerId?: string;
+		headerId?: string | null;
 	}
 
 
@@ -3097,28 +3097,28 @@ export namespace MyNS {
 	export interface InlineObject {
 
 		/** Properties of an InlineObject. */
-		inlineObjectProperties?: InlineObjectProperties;
+		inlineObjectProperties?: InlineObjectProperties | null;
 
 		/** The ID of this inline object. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested changes to the inline object properties, keyed by suggestion
 		 * ID.
 		 */
-		suggestedInlineObjectPropertiesChanges?: {[id: string]: SuggestedInlineObjectProperties };
+		suggestedInlineObjectPropertiesChanges?: {[id: string]: SuggestedInlineObjectProperties } | null;
 
 		/**
 		 * The suggested insertion ID. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionId?: string;
+		suggestedInsertionId?: string | null;
 	}
 
 
@@ -3126,7 +3126,7 @@ export namespace MyNS {
 	export interface InlineObjectProperties {
 
 		/** An embedded object in the document. */
-		embeddedObject?: EmbeddedObject;
+		embeddedObject?: EmbeddedObject | null;
 	}
 
 
@@ -3137,40 +3137,40 @@ export namespace MyNS {
 		 * The description of the embedded object. The `title` and `description` are
 		 * both combined to display alt text.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** The properties of an embedded drawing. */
-		embeddedDrawingProperties?: EmbeddedDrawingProperties;
+		embeddedDrawingProperties?: EmbeddedDrawingProperties | null;
 
 		/** A border around an EmbeddedObject. */
-		embeddedObjectBorder?: EmbeddedObjectBorder;
+		embeddedObjectBorder?: EmbeddedObjectBorder | null;
 
 		/** The properties of an image. */
-		imageProperties?: ImageProperties;
+		imageProperties?: ImageProperties | null;
 
 		/** A reference to the external linked source content. */
-		linkedContentReference?: LinkedContentReference;
+		linkedContentReference?: LinkedContentReference | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginBottom?: Dimension;
+		marginBottom?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginLeft?: Dimension;
+		marginLeft?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginRight?: Dimension;
+		marginRight?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		marginTop?: Dimension;
+		marginTop?: Dimension | null;
 
 		/** A width and height. */
-		size?: Size;
+		size?: Size | null;
 
 		/**
 		 * The title of the embedded object. The `title` and `description` are both
 		 * combined to display alt text.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -3183,16 +3183,16 @@ export namespace MyNS {
 	export interface EmbeddedObjectBorder {
 
 		/** A color that can either be fully opaque or fully transparent. */
-		color?: OptionalColor;
+		color?: OptionalColor | null;
 
 		/** The dash style of the border. */
-		dashStyle?: ParagraphBorderDashStyle;
+		dashStyle?: ParagraphBorderDashStyle | null;
 
 		/** The property state of the border property. */
-		propertyState?: EmbeddedObjectBorderPropertyState;
+		propertyState?: EmbeddedObjectBorderPropertyState | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		width?: Dimension;
+		width?: Dimension | null;
 	}
 
 	export enum EmbeddedObjectBorderPropertyState { RENDERED = 0, NOT_RENDERED = 1 }
@@ -3202,13 +3202,13 @@ export namespace MyNS {
 	export interface ImageProperties {
 
 		/** The clockwise rotation angle of the image, in radians. */
-		angle?: number;
+		angle?: number | null;
 
 		/**
 		 * The brightness effect of the image. The value should be in the interval
 		 * [-1.0, 1.0], where 0 means no effect.
 		 */
-		brightness?: number;
+		brightness?: number | null;
 
 		/**
 		 * A URI to the image with a default lifetime of 30 minutes.
@@ -3216,13 +3216,13 @@ export namespace MyNS {
 		 * effectively accesses the image as the original requester. Access to the
 		 * image may be lost if the document's sharing settings change.
 		 */
-		contentUri?: string;
+		contentUri?: string | null;
 
 		/**
 		 * The contrast effect of the image. The value should be in the interval
 		 * [-1.0, 1.0], where 0 means no effect.
 		 */
-		contrast?: number;
+		contrast?: number | null;
 
 		/**
 		 * The crop properties of an image.
@@ -3234,19 +3234,19 @@ export namespace MyNS {
 		 * rectangle is positioned outside of the image's original bounding rectangle.
 		 * - If all offsets and rotation angle are 0, the image is not cropped.
 		 */
-		cropProperties?: CropProperties;
+		cropProperties?: CropProperties | null;
 
 		/**
 		 * The source URI is the URI used to insert the image. The source URI can be
 		 * empty.
 		 */
-		sourceUri?: string;
+		sourceUri?: string | null;
 
 		/**
 		 * The transparency effect of the image. The value should be in the interval
 		 * [0.0, 1.0], where 0 means no effect and 1 means completely transparent.
 		 */
-		transparency?: number;
+		transparency?: number | null;
 	}
 
 
@@ -3254,7 +3254,7 @@ export namespace MyNS {
 	export interface LinkedContentReference {
 
 		/** A reference to a linked chart embedded from Google Sheets. */
-		sheetsChartReference?: SheetsChartReference;
+		sheetsChartReference?: SheetsChartReference | null;
 	}
 
 
@@ -3265,10 +3265,10 @@ export namespace MyNS {
 		 * The ID of the specific chart in the Google Sheets spreadsheet that is
 		 * embedded.
 		 */
-		chartId?: number;
+		chartId?: number | null;
 
 		/** The ID of the Google Sheets spreadsheet that contains the source chart. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 	}
 
 
@@ -3276,7 +3276,7 @@ export namespace MyNS {
 	export interface SuggestedInlineObjectProperties {
 
 		/** Properties of an InlineObject. */
-		inlineObjectProperties?: InlineObjectProperties;
+		inlineObjectProperties?: InlineObjectProperties | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base
@@ -3284,7 +3284,7 @@ export namespace MyNS {
 		 * been changed in this suggestion. For any field set to true, there is a new
 		 * suggested value.
 		 */
-		inlineObjectPropertiesSuggestionState?: InlineObjectPropertiesSuggestionState;
+		inlineObjectPropertiesSuggestionState?: InlineObjectPropertiesSuggestionState | null;
 	}
 
 
@@ -3300,7 +3300,7 @@ export namespace MyNS {
 		 * A mask that indicates which of the fields on the base EmbeddedObject have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		embeddedObjectSuggestionState?: EmbeddedObjectSuggestionState;
+		embeddedObjectSuggestionState?: EmbeddedObjectSuggestionState | null;
 	}
 
 
@@ -3311,7 +3311,7 @@ export namespace MyNS {
 	export interface EmbeddedObjectSuggestionState {
 
 		/** Indicates if there was a suggested change to description. */
-		descriptionSuggested?: boolean;
+		descriptionSuggested?: boolean | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base
@@ -3319,19 +3319,19 @@ export namespace MyNS {
 		 * have been changed in this suggestion. For any field set to true, there is a
 		 * new suggested value.
 		 */
-		embeddedDrawingPropertiesSuggestionState?: EmbeddedDrawingPropertiesSuggestionState;
+		embeddedDrawingPropertiesSuggestionState?: EmbeddedDrawingPropertiesSuggestionState | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base EmbeddedObjectBorder have been changed in this
 		 * suggestion. For any field set to true, there is a new suggested value.
 		 */
-		embeddedObjectBorderSuggestionState?: EmbeddedObjectBorderSuggestionState;
+		embeddedObjectBorderSuggestionState?: EmbeddedObjectBorderSuggestionState | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base ImageProperties have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		imagePropertiesSuggestionState?: ImagePropertiesSuggestionState;
+		imagePropertiesSuggestionState?: ImagePropertiesSuggestionState | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base
@@ -3339,29 +3339,29 @@ export namespace MyNS {
 		 * been changed in this suggestion. For any field set to true, there is a new
 		 * suggested value.
 		 */
-		linkedContentReferenceSuggestionState?: LinkedContentReferenceSuggestionState;
+		linkedContentReferenceSuggestionState?: LinkedContentReferenceSuggestionState | null;
 
 		/** Indicates if there was a suggested change to margin_bottom. */
-		marginBottomSuggested?: boolean;
+		marginBottomSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_left. */
-		marginLeftSuggested?: boolean;
+		marginLeftSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_right. */
-		marginRightSuggested?: boolean;
+		marginRightSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_top. */
-		marginTopSuggested?: boolean;
+		marginTopSuggested?: boolean | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base Size have been changed in this suggestion.
 		 * For any field set to true, the Size has
 		 * a new suggested value.
 		 */
-		sizeSuggestionState?: SizeSuggestionState;
+		sizeSuggestionState?: SizeSuggestionState | null;
 
 		/** Indicates if there was a suggested change to title. */
-		titleSuggested?: boolean;
+		titleSuggested?: boolean | null;
 	}
 
 
@@ -3382,16 +3382,16 @@ export namespace MyNS {
 	export interface EmbeddedObjectBorderSuggestionState {
 
 		/** Indicates if there was a suggested change to color. */
-		colorSuggested?: boolean;
+		colorSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to dash_style. */
-		dashStyleSuggested?: boolean;
+		dashStyleSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to property_state. */
-		propertyStateSuggested?: boolean;
+		propertyStateSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to width. */
-		widthSuggested?: boolean;
+		widthSuggested?: boolean | null;
 	}
 
 
@@ -3402,31 +3402,31 @@ export namespace MyNS {
 	export interface ImagePropertiesSuggestionState {
 
 		/** Indicates if there was a suggested change to angle. */
-		angleSuggested?: boolean;
+		angleSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to brightness. */
-		brightnessSuggested?: boolean;
+		brightnessSuggested?: boolean | null;
 
 		/**
 		 * Indicates if there was a suggested change to
 		 * content_uri.
 		 */
-		contentUriSuggested?: boolean;
+		contentUriSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to contrast. */
-		contrastSuggested?: boolean;
+		contrastSuggested?: boolean | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base CropProperties have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		cropPropertiesSuggestionState?: CropPropertiesSuggestionState;
+		cropPropertiesSuggestionState?: CropPropertiesSuggestionState | null;
 
 		/** Indicates if there was a suggested change to source_uri. */
-		sourceUriSuggested?: boolean;
+		sourceUriSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to transparency. */
-		transparencySuggested?: boolean;
+		transparencySuggested?: boolean | null;
 	}
 
 
@@ -3442,7 +3442,7 @@ export namespace MyNS {
 		 * A mask that indicates which of the fields on the base SheetsChartReference have been changed in this
 		 * suggestion. For any field set to true, there is a new suggested value.
 		 */
-		sheetsChartReferenceSuggestionState?: SheetsChartReferenceSuggestionState;
+		sheetsChartReferenceSuggestionState?: SheetsChartReferenceSuggestionState | null;
 	}
 
 
@@ -3453,10 +3453,10 @@ export namespace MyNS {
 	export interface SheetsChartReferenceSuggestionState {
 
 		/** Indicates if there was a suggested change to chart_id. */
-		chartIdSuggested?: boolean;
+		chartIdSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to spreadsheet_id. */
-		spreadsheetIdSuggested?: boolean;
+		spreadsheetIdSuggested?: boolean | null;
 	}
 
 
@@ -3468,10 +3468,10 @@ export namespace MyNS {
 	export interface SizeSuggestionState {
 
 		/** Indicates if there was a suggested change to height. */
-		heightSuggested?: boolean;
+		heightSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to width. */
-		widthSuggested?: boolean;
+		widthSuggested?: boolean | null;
 	}
 
 
@@ -3486,25 +3486,25 @@ export namespace MyNS {
 		 * The properties of a list which describe the look
 		 * and feel of bullets belonging to paragraphs associated with a list.
 		 */
-		listProperties?: ListProperties;
+		listProperties?: ListProperties | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this list.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion ID. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionId?: string;
+		suggestedInsertionId?: string | null;
 
 		/**
 		 * The suggested changes to the list properties, keyed by suggestion
 		 * ID.
 		 */
-		suggestedListPropertiesChanges?: {[id: string]: SuggestedListProperties };
+		suggestedListPropertiesChanges?: {[id: string]: SuggestedListProperties } | null;
 	}
 
 
@@ -3521,7 +3521,7 @@ export namespace MyNS {
 		 * the most nested level. The nesting levels are returned in ascending order
 		 * with the least nested returned first.
 		 */
-		nestingLevels?: Array<NestingLevel>;
+		nestingLevels?: Array<NestingLevel> | null;
 	}
 
 
@@ -3535,7 +3535,7 @@ export namespace MyNS {
 		 * The alignment of the bullet within the space allotted for rendering the
 		 * bullet.
 		 */
-		bulletAlignment?: NestingLevelBulletAlignment;
+		bulletAlignment?: NestingLevelBulletAlignment | null;
 
 		/**
 		 * The format string used by bullets at this level of nesting.
@@ -3569,7 +3569,7 @@ export namespace MyNS {
 		 * in the glyph format for a particular paragraph depends on the paragraph's
 		 * order within the list.
 		 */
-		glyphFormat?: string;
+		glyphFormat?: string | null;
 
 		/**
 		 * A custom glyph symbol used by bullets when paragraphs at this level of
@@ -3579,7 +3579,7 @@ export namespace MyNS {
 		 * point and the glyph_format is `%0`, the rendered
 		 * glyph would be the solid circle.
 		 */
-		glyphSymbol?: string;
+		glyphSymbol?: string | null;
 
 		/**
 		 * The type of glyph used by bullets when paragraphs at this level of
@@ -3592,13 +3592,13 @@ export namespace MyNS {
 		 * then the rendered glyph would replace the placeholder `%0` in the glyph
 		 * format with a number corresponding to list item's order within the list.
 		 */
-		glyphType?: NestingLevelGlyphType;
+		glyphType?: NestingLevelGlyphType | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		indentFirstLine?: Dimension;
+		indentFirstLine?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		indentStart?: Dimension;
+		indentStart?: Dimension | null;
 
 		/**
 		 * The number of the first list item at this nesting level.
@@ -3607,7 +3607,7 @@ export namespace MyNS {
 		 * numeraled lists will begin at `a` and `i` respectively.
 		 * This value is ignored for nesting levels with unordered glyphs.
 		 */
-		startNumber?: number;
+		startNumber?: number | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -3625,7 +3625,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 	export enum NestingLevelBulletAlignment { BULLET_ALIGNMENT_UNSPECIFIED = 0, START = 1, CENTER = 2, END = 3 }
@@ -3640,13 +3640,13 @@ export namespace MyNS {
 		 * The properties of a list which describe the look
 		 * and feel of bullets belonging to paragraphs associated with a list.
 		 */
-		listProperties?: ListProperties;
+		listProperties?: ListProperties | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base ListProperties have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		listPropertiesSuggestionState?: ListPropertiesSuggestionState;
+		listPropertiesSuggestionState?: ListPropertiesSuggestionState | null;
 	}
 
 
@@ -3663,7 +3663,7 @@ export namespace MyNS {
 		 * The nesting level suggestion states are returned in ascending order of the
 		 * nesting level with the least nested returned first.
 		 */
-		nestingLevelsSuggestionStates?: Array<NestingLevelSuggestionState>;
+		nestingLevelsSuggestionStates?: Array<NestingLevelSuggestionState> | null;
 	}
 
 
@@ -3677,49 +3677,49 @@ export namespace MyNS {
 		 * Indicates if there was a suggested change to
 		 * bullet_alignment.
 		 */
-		bulletAlignmentSuggested?: boolean;
+		bulletAlignmentSuggested?: boolean | null;
 
 		/**
 		 * Indicates if there was a suggested change to
 		 * glyph_format.
 		 */
-		glyphFormatSuggested?: boolean;
+		glyphFormatSuggested?: boolean | null;
 
 		/**
 		 * Indicates if there was a suggested change to
 		 * glyph_symbol.
 		 */
-		glyphSymbolSuggested?: boolean;
+		glyphSymbolSuggested?: boolean | null;
 
 		/**
 		 * Indicates if there was a suggested change to
 		 * glyph_type.
 		 */
-		glyphTypeSuggested?: boolean;
+		glyphTypeSuggested?: boolean | null;
 
 		/**
 		 * Indicates if there was a suggested change to
 		 * indent_first_line.
 		 */
-		indentFirstLineSuggested?: boolean;
+		indentFirstLineSuggested?: boolean | null;
 
 		/**
 		 * Indicates if there was a suggested change to
 		 * indent_start.
 		 */
-		indentStartSuggested?: boolean;
+		indentStartSuggested?: boolean | null;
 
 		/**
 		 * Indicates if there was a suggested change to
 		 * start_number.
 		 */
-		startNumberSuggested?: boolean;
+		startNumberSuggested?: boolean | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base TextStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		textStyleSuggestionState?: TextStyleSuggestionState;
+		textStyleSuggestionState?: TextStyleSuggestionState | null;
 	}
 
 
@@ -3730,10 +3730,10 @@ export namespace MyNS {
 	export interface NamedRanges {
 
 		/** The name that all the named ranges share. */
-		name?: string;
+		name?: string | null;
 
 		/** The NamedRanges that share the same name. */
-		namedRanges?: Array<NamedRange>;
+		namedRanges?: Array<NamedRange> | null;
 	}
 
 
@@ -3754,13 +3754,13 @@ export namespace MyNS {
 	export interface NamedRange {
 
 		/** The name of the named range. */
-		name?: string;
+		name?: string | null;
 
 		/** The ID of the named range. */
-		namedRangeId?: string;
+		namedRangeId?: string | null;
 
 		/** The ranges that belong to this named range. */
-		ranges?: Array<Range>;
+		ranges?: Array<Range> | null;
 	}
 
 
@@ -3775,7 +3775,7 @@ export namespace MyNS {
 		 * The named styles.
 		 * There is an entry for each of the possible named style types.
 		 */
-		styles?: Array<NamedStyle>;
+		styles?: Array<NamedStyle> | null;
 	}
 
 
@@ -3788,7 +3788,7 @@ export namespace MyNS {
 	export interface NamedStyle {
 
 		/** The type of this named style. */
-		namedStyleType?: ParagraphStyleNamedStyleType;
+		namedStyleType?: ParagraphStyleNamedStyleType | null;
 
 		/**
 		 * Styles that apply to a whole paragraph.
@@ -3806,7 +3806,7 @@ export namespace MyNS {
 		 * If the paragraph style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		paragraphStyle?: ParagraphStyle;
+		paragraphStyle?: ParagraphStyle | null;
 
 		/**
 		 * Represents the styling that can be applied to text.
@@ -3824,7 +3824,7 @@ export namespace MyNS {
 		 * If the text style does not inherit from a parent, unsetting fields will
 		 * revert the style to a value matching the defaults in the Docs editor.
 		 */
-		textStyle?: TextStyle;
+		textStyle?: TextStyle | null;
 	}
 
 
@@ -3837,28 +3837,28 @@ export namespace MyNS {
 	export interface PositionedObject {
 
 		/** The ID of this positioned object. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** Properties of a PositionedObject. */
-		positionedObjectProperties?: PositionedObjectProperties;
+		positionedObjectProperties?: PositionedObjectProperties | null;
 
 		/**
 		 * The suggested deletion IDs. If empty, then there are no suggested deletions
 		 * of this content.
 		 */
-		suggestedDeletionIds?: Array<string>;
+		suggestedDeletionIds?: Array<string> | null;
 
 		/**
 		 * The suggested insertion ID. If empty, then this is not a suggested
 		 * insertion.
 		 */
-		suggestedInsertionId?: string;
+		suggestedInsertionId?: string | null;
 
 		/**
 		 * The suggested changes to the positioned object properties, keyed by
 		 * suggestion ID.
 		 */
-		suggestedPositionedObjectPropertiesChanges?: {[id: string]: SuggestedPositionedObjectProperties };
+		suggestedPositionedObjectPropertiesChanges?: {[id: string]: SuggestedPositionedObjectProperties } | null;
 	}
 
 
@@ -3866,14 +3866,14 @@ export namespace MyNS {
 	export interface PositionedObjectProperties {
 
 		/** An embedded object in the document. */
-		embeddedObject?: EmbeddedObject;
+		embeddedObject?: EmbeddedObject | null;
 
 		/**
 		 * The positioning of a PositionedObject. The positioned object is positioned
 		 * relative to the beginning of the Paragraph
 		 * it is tethered to.
 		 */
-		positioning?: PositionedObjectPositioning;
+		positioning?: PositionedObjectPositioning | null;
 	}
 
 
@@ -3885,13 +3885,13 @@ export namespace MyNS {
 	export interface PositionedObjectPositioning {
 
 		/** The layout of this positioned object. */
-		layout?: PositionedObjectPositioningLayout;
+		layout?: PositionedObjectPositioningLayout | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		leftOffset?: Dimension;
+		leftOffset?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		topOffset?: Dimension;
+		topOffset?: Dimension | null;
 	}
 
 	export enum PositionedObjectPositioningLayout { POSITIONED_OBJECT_LAYOUT_UNSPECIFIED = 0, WRAP_TEXT = 1, BREAK_LEFT = 2, BREAK_RIGHT = 3, BREAK_LEFT_RIGHT = 4, IN_FRONT_OF_TEXT = 5 }
@@ -3901,7 +3901,7 @@ export namespace MyNS {
 	export interface SuggestedPositionedObjectProperties {
 
 		/** Properties of a PositionedObject. */
-		positionedObjectProperties?: PositionedObjectProperties;
+		positionedObjectProperties?: PositionedObjectProperties | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base
@@ -3909,7 +3909,7 @@ export namespace MyNS {
 		 * have been changed in this suggestion. For any field set to true, there is a
 		 * new suggested value.
 		 */
-		positionedObjectPropertiesSuggestionState?: PositionedObjectPropertiesSuggestionState;
+		positionedObjectPropertiesSuggestionState?: PositionedObjectPropertiesSuggestionState | null;
 	}
 
 
@@ -3925,14 +3925,14 @@ export namespace MyNS {
 		 * A mask that indicates which of the fields on the base EmbeddedObject have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		embeddedObjectSuggestionState?: EmbeddedObjectSuggestionState;
+		embeddedObjectSuggestionState?: EmbeddedObjectSuggestionState | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base
 		 * PositionedObjectPositioning have been changed in this
 		 * suggestion. For any field set to true, there is a new suggested value.
 		 */
-		positioningSuggestionState?: PositionedObjectPositioningSuggestionState;
+		positioningSuggestionState?: PositionedObjectPositioningSuggestionState | null;
 	}
 
 
@@ -3944,13 +3944,13 @@ export namespace MyNS {
 	export interface PositionedObjectPositioningSuggestionState {
 
 		/** Indicates if there was a suggested change to layout. */
-		layoutSuggested?: boolean;
+		layoutSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to left_offset. */
-		leftOffsetSuggested?: boolean;
+		leftOffsetSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to top_offset. */
-		topOffsetSuggested?: boolean;
+		topOffsetSuggested?: boolean | null;
 	}
 
 
@@ -3958,13 +3958,13 @@ export namespace MyNS {
 	export interface SuggestedDocumentStyle {
 
 		/** The style of the document. */
-		documentStyle?: DocumentStyle;
+		documentStyle?: DocumentStyle | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base DocumentStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		documentStyleSuggestionState?: DocumentStyleSuggestionState;
+		documentStyleSuggestionState?: DocumentStyleSuggestionState | null;
 	}
 
 
@@ -3978,65 +3978,65 @@ export namespace MyNS {
 		 * A mask that indicates which of the fields on the base Background have been changed in this suggestion.
 		 * For any field set to true, the Backgound has a new suggested value.
 		 */
-		backgroundSuggestionState?: BackgroundSuggestionState;
+		backgroundSuggestionState?: BackgroundSuggestionState | null;
 
 		/** Indicates if there was a suggested change to default_footer_id. */
-		defaultFooterIdSuggested?: boolean;
+		defaultFooterIdSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to default_header_id. */
-		defaultHeaderIdSuggested?: boolean;
+		defaultHeaderIdSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to even_page_footer_id. */
-		evenPageFooterIdSuggested?: boolean;
+		evenPageFooterIdSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to even_page_header_id. */
-		evenPageHeaderIdSuggested?: boolean;
+		evenPageHeaderIdSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to first_page_footer_id. */
-		firstPageFooterIdSuggested?: boolean;
+		firstPageFooterIdSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to first_page_header_id. */
-		firstPageHeaderIdSuggested?: boolean;
+		firstPageHeaderIdSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_bottom. */
-		marginBottomSuggested?: boolean;
+		marginBottomSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_footer. */
-		marginFooterSuggested?: boolean;
+		marginFooterSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_header. */
-		marginHeaderSuggested?: boolean;
+		marginHeaderSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_left. */
-		marginLeftSuggested?: boolean;
+		marginLeftSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_right. */
-		marginRightSuggested?: boolean;
+		marginRightSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to margin_top. */
-		marginTopSuggested?: boolean;
+		marginTopSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to page_number_start. */
-		pageNumberStartSuggested?: boolean;
+		pageNumberStartSuggested?: boolean | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base Size have been changed in this suggestion.
 		 * For any field set to true, the Size has
 		 * a new suggested value.
 		 */
-		pageSizeSuggestionState?: SizeSuggestionState;
+		pageSizeSuggestionState?: SizeSuggestionState | null;
 
 		/**
 		 * Indicates if there was a suggested change to
 		 * use_custom_header_footer_margins.
 		 */
-		useCustomHeaderFooterMarginsSuggested?: boolean;
+		useCustomHeaderFooterMarginsSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to use_even_page_header_footer. */
-		useEvenPageHeaderFooterSuggested?: boolean;
+		useEvenPageHeaderFooterSuggested?: boolean | null;
 
 		/** Indicates if there was a suggested change to use_first_page_header_footer. */
-		useFirstPageHeaderFooterSuggested?: boolean;
+		useFirstPageHeaderFooterSuggested?: boolean | null;
 	}
 
 
@@ -4048,13 +4048,13 @@ export namespace MyNS {
 		 * TextStyle and
 		 * ParagraphStyle from these named styles.
 		 */
-		namedStyles?: NamedStyles;
+		namedStyles?: NamedStyles | null;
 
 		/**
 		 * The suggestion state of a NamedStyles
 		 * message.
 		 */
-		namedStylesSuggestionState?: NamedStylesSuggestionState;
+		namedStylesSuggestionState?: NamedStylesSuggestionState | null;
 	}
 
 
@@ -4070,7 +4070,7 @@ export namespace MyNS {
 		 * The order of these named style suggestion states match the order of the
 		 * corresponding named style within the named styles suggestion.
 		 */
-		stylesSuggestionStates?: Array<NamedStyleSuggestionState>;
+		stylesSuggestionStates?: Array<NamedStyleSuggestionState> | null;
 	}
 
 
@@ -4082,19 +4082,19 @@ export namespace MyNS {
 		 * This field is provided as a convenience for matching the
 		 * NamedStyleSuggestionState with its corresponding NamedStyle.
 		 */
-		namedStyleType?: ParagraphStyleNamedStyleType;
+		namedStyleType?: ParagraphStyleNamedStyleType | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base ParagraphStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		paragraphStyleSuggestionState?: ParagraphStyleSuggestionState;
+		paragraphStyleSuggestionState?: ParagraphStyleSuggestionState | null;
 
 		/**
 		 * A mask that indicates which of the fields on the base TextStyle have been changed in this suggestion.
 		 * For any field set to true, there is a new suggested value.
 		 */
-		textStyleSuggestionState?: TextStyleSuggestionState;
+		textStyleSuggestionState?: TextStyleSuggestionState | null;
 	}
 
 	export enum DocumentSuggestionsViewMode { DEFAULT_FOR_CURRENT_ACCESS = 0, SUGGESTIONS_INLINE = 1, PREVIEW_SUGGESTIONS_ACCEPTED = 2, PREVIEW_WITHOUT_SUGGESTIONS = 3 }

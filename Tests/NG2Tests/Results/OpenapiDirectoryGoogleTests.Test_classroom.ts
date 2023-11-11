@@ -11,71 +11,71 @@ export namespace MyNS {
 		 * This is only populated if `state` is `PUBLISHED`.
 		 * Read-only.
 		 */
-		alternateLink?: string;
+		alternateLink?: string | null;
 
 		/**
 		 * Assignee mode of the announcement.
 		 * If unspecified, the default value is `ALL_STUDENTS`.
 		 */
-		assigneeMode?: AnnouncementAssigneeMode;
+		assigneeMode?: AnnouncementAssigneeMode | null;
 
 		/**
 		 * Identifier of the course.
 		 * Read-only.
 		 */
-		courseId?: string;
+		courseId?: string | null;
 
 		/**
 		 * Timestamp when this announcement was created.
 		 * Read-only.
 		 */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/**
 		 * Identifier for the user that created the announcement.
 		 * Read-only.
 		 */
-		creatorUserId?: string;
+		creatorUserId?: string | null;
 
 		/**
 		 * Classroom-assigned identifier of this announcement, unique per course.
 		 * Read-only.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Assignee details about a coursework/announcement.
 		 * This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
 		 */
-		individualStudentsOptions?: IndividualStudentsOptions;
+		individualStudentsOptions?: IndividualStudentsOptions | null;
 
 		/**
 		 * Additional materials.
 		 * Announcements must have no more than 20 material items.
 		 */
-		materials?: Array<Material>;
+		materials?: Array<Material> | null;
 
 		/** Optional timestamp when this announcement is scheduled to be published. */
-		scheduledTime?: string;
+		scheduledTime?: string | null;
 
 		/**
 		 * Status of this announcement.
 		 * If unspecified, the default state is `DRAFT`.
 		 */
-		state?: AnnouncementState;
+		state?: AnnouncementState | null;
 
 		/**
 		 * Description of this announcement.
 		 * The text must be a valid UTF-8 string containing no more
 		 * than 30,000 characters.
 		 */
-		text?: string;
+		text?: string | null;
 
 		/**
 		 * Timestamp of the most recent change to this announcement.
 		 * Read-only.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 	export enum AnnouncementAssigneeMode { ASSIGNEE_MODE_UNSPECIFIED = 0, ALL_STUDENTS = 1, INDIVIDUAL_STUDENTS = 2 }
@@ -91,7 +91,7 @@ export namespace MyNS {
 		 * Identifiers for the students that have access to the
 		 * coursework/announcement.
 		 */
-		studentIds?: Array<string>;
+		studentIds?: Array<string> | null;
 	}
 
 
@@ -102,16 +102,16 @@ export namespace MyNS {
 	export interface Material {
 
 		/** Drive file that is used as material for course work. */
-		driveFile?: SharedDriveFile;
+		driveFile?: SharedDriveFile | null;
 
 		/** Google Forms item. */
-		form?: Form;
+		form?: Form | null;
 
 		/** URL item. */
-		link?: Link;
+		link?: Link | null;
 
 		/** YouTube video item. */
-		youtubeVideo?: YouTubeVideo;
+		youtubeVideo?: YouTubeVideo | null;
 	}
 
 
@@ -119,10 +119,10 @@ export namespace MyNS {
 	export interface SharedDriveFile {
 
 		/** Representation of a Google Drive file. */
-		driveFile?: DriveFile;
+		driveFile?: DriveFile | null;
 
 		/** Mechanism by which students access the Drive item. */
-		shareMode?: SharedDriveFileShareMode;
+		shareMode?: SharedDriveFileShareMode | null;
 	}
 
 
@@ -133,22 +133,22 @@ export namespace MyNS {
 		 * URL that can be used to access the Drive item.
 		 * Read-only.
 		 */
-		alternateLink?: string;
+		alternateLink?: string | null;
 
 		/** Drive API resource ID. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * URL of a thumbnail image of the Drive item.
 		 * Read-only.
 		 */
-		thumbnailUrl?: string;
+		thumbnailUrl?: string | null;
 
 		/**
 		 * Title of the Drive item.
 		 * Read-only.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 	export enum SharedDriveFileShareMode { UNKNOWN_SHARE_MODE = 0, VIEW = 1, EDIT = 2, STUDENT_COPY = 3 }
@@ -158,7 +158,7 @@ export namespace MyNS {
 	export interface Form {
 
 		/** URL of the form. */
-		formUrl?: string;
+		formUrl?: string | null;
 
 		/**
 		 * URL of the form responses document.
@@ -166,19 +166,19 @@ export namespace MyNS {
 		 * requesting user is an editor of the form.
 		 * Read-only.
 		 */
-		responseUrl?: string;
+		responseUrl?: string | null;
 
 		/**
 		 * URL of a thumbnail image of the Form.
 		 * Read-only.
 		 */
-		thumbnailUrl?: string;
+		thumbnailUrl?: string | null;
 
 		/**
 		 * Title of the Form.
 		 * Read-only.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -189,19 +189,19 @@ export namespace MyNS {
 		 * URL of a thumbnail image of the target URL.
 		 * Read-only.
 		 */
-		thumbnailUrl?: string;
+		thumbnailUrl?: string | null;
 
 		/**
 		 * Title of the target of the URL.
 		 * Read-only.
 		 */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * URL to link to.
 		 * This must be a valid UTF-8 string containing between 1 and 2024 characters.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -212,22 +212,22 @@ export namespace MyNS {
 		 * URL that can be used to view the YouTube video.
 		 * Read-only.
 		 */
-		alternateLink?: string;
+		alternateLink?: string | null;
 
 		/** YouTube API resource ID. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * URL of a thumbnail image of the YouTube video.
 		 * Read-only.
 		 */
-		thumbnailUrl?: string;
+		thumbnailUrl?: string | null;
 
 		/**
 		 * Title of the YouTube video.
 		 * Read-only.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 	export enum AnnouncementState { ANNOUNCEMENT_STATE_UNSPECIFIED = 0, PUBLISHED = 1, DRAFT = 2, DELETED = 3 }
@@ -237,7 +237,7 @@ export namespace MyNS {
 	export interface Assignment {
 
 		/** Representation of a Google Drive folder. */
-		studentWorkFolder?: DriveFolder;
+		studentWorkFolder?: DriveFolder | null;
 	}
 
 
@@ -248,16 +248,16 @@ export namespace MyNS {
 		 * URL that can be used to access the Drive folder.
 		 * Read-only.
 		 */
-		alternateLink?: string;
+		alternateLink?: string | null;
 
 		/** Drive API resource ID. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Title of the Drive folder.
 		 * Read-only.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -273,7 +273,7 @@ export namespace MyNS {
 		 * permission to access it. Identifier and alternate_link fields are always
 		 * available, but others (for example, title) may not be.
 		 */
-		attachments?: Array<Attachment>;
+		attachments?: Array<Attachment> | null;
 	}
 
 
@@ -284,16 +284,16 @@ export namespace MyNS {
 	export interface Attachment {
 
 		/** Representation of a Google Drive file. */
-		driveFile?: DriveFile;
+		driveFile?: DriveFile | null;
 
 		/** Google Forms item. */
-		form?: Form;
+		form?: Form | null;
 
 		/** URL item. */
-		link?: Link;
+		link?: Link | null;
 
 		/** YouTube video item. */
-		youTubeVideo?: YouTubeVideo;
+		youTubeVideo?: YouTubeVideo | null;
 	}
 
 
@@ -309,7 +309,7 @@ export namespace MyNS {
 		 * The `name` field of a Cloud Pub/Sub
 		 * [Topic](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
 		 */
-		topicName?: string;
+		topicName?: string | null;
 	}
 
 
@@ -320,40 +320,40 @@ export namespace MyNS {
 		 * Absolute link to this course in the Classroom web UI.
 		 * Read-only.
 		 */
-		alternateLink?: string;
+		alternateLink?: string | null;
 
 		/**
 		 * The Calendar ID for a calendar that all course members can see, to which
 		 * Classroom adds events for course work and announcements in the course.
 		 * Read-only.
 		 */
-		calendarId?: string;
+		calendarId?: string | null;
 
 		/**
 		 * The email address of a Google group containing all members of the course.
 		 * This group does not accept email and can only be used for permissions.
 		 * Read-only.
 		 */
-		courseGroupEmail?: string;
+		courseGroupEmail?: string | null;
 
 		/**
 		 * Sets of materials that appear on the "about" page of this course.
 		 * Read-only.
 		 */
-		courseMaterialSets?: Array<CourseMaterialSet>;
+		courseMaterialSets?: Array<CourseMaterialSet> | null;
 
 		/**
 		 * State of the course.
 		 * If unspecified, the default state is `PROVISIONED`.
 		 */
-		courseState?: CourseCourseState;
+		courseState?: CourseCourseState | null;
 
 		/**
 		 * Creation time of the course.
 		 * Specifying this field in a course update mask results in an error.
 		 * Read-only.
 		 */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/**
 		 * Optional description.
@@ -363,7 +363,7 @@ export namespace MyNS {
 		 * If set, this field must be a valid UTF-8 string and no longer than 30,000
 		 * characters.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Optional heading for the description.
@@ -371,20 +371,20 @@ export namespace MyNS {
 		 * If set, this field must be a valid UTF-8 string and no longer than 3600
 		 * characters.
 		 */
-		descriptionHeading?: string;
+		descriptionHeading?: string | null;
 
 		/**
 		 * Enrollment code to use when joining this course.
 		 * Specifying this field in a course update mask results in an error.
 		 * Read-only.
 		 */
-		enrollmentCode?: string;
+		enrollmentCode?: string | null;
 
 		/**
 		 * Whether or not guardian notifications are enabled for this course.
 		 * Read-only.
 		 */
-		guardiansEnabled?: boolean;
+		guardiansEnabled?: boolean | null;
 
 		/**
 		 * Identifier for this course assigned by Classroom.
@@ -396,7 +396,7 @@ export namespace MyNS {
 		 * Classroom and cannot be updated after the course is created.
 		 * Specifying this field in a course update mask results in an error.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Name of the course.
@@ -404,7 +404,7 @@ export namespace MyNS {
 		 * The name is required. It must be between 1 and 750 characters and a valid
 		 * UTF-8 string.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The identifier of the owner of a course.
@@ -419,7 +419,7 @@ export namespace MyNS {
 		 * in a patch course request to
 		 * transfer ownership. In other contexts, it is read-only.
 		 */
-		ownerId?: string;
+		ownerId?: string | null;
 
 		/**
 		 * Optional room location.
@@ -427,7 +427,7 @@ export namespace MyNS {
 		 * If set, this field must be a valid UTF-8 string and no longer than 650
 		 * characters.
 		 */
-		room?: string;
+		room?: string | null;
 
 		/**
 		 * Section of the course.
@@ -435,24 +435,24 @@ export namespace MyNS {
 		 * If set, this field must be a valid UTF-8 string and no longer than 2800
 		 * characters.
 		 */
-		section?: string;
+		section?: string | null;
 
 		/** Representation of a Google Drive folder. */
-		teacherFolder?: DriveFolder;
+		teacherFolder?: DriveFolder | null;
 
 		/**
 		 * The email address of a Google group containing all teachers of the course.
 		 * This group does not accept email and can only be used for permissions.
 		 * Read-only.
 		 */
-		teacherGroupEmail?: string;
+		teacherGroupEmail?: string | null;
 
 		/**
 		 * Time of the most recent update to this course.
 		 * Specifying this field in a course update mask results in an error.
 		 * Read-only.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -464,10 +464,10 @@ export namespace MyNS {
 	export interface CourseMaterialSet {
 
 		/** Materials attached to this set. */
-		materials?: Array<CourseMaterial>;
+		materials?: Array<CourseMaterial> | null;
 
 		/** Title for this set. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -475,16 +475,16 @@ export namespace MyNS {
 	export interface CourseMaterial {
 
 		/** Representation of a Google Drive file. */
-		driveFile?: DriveFile;
+		driveFile?: DriveFile | null;
 
 		/** Google Forms item. */
-		form?: Form;
+		form?: Form | null;
 
 		/** URL item. */
-		link?: Link;
+		link?: Link | null;
 
 		/** YouTube video item. */
-		youTubeVideo?: YouTubeVideo;
+		youTubeVideo?: YouTubeVideo | null;
 	}
 
 	export enum CourseCourseState { COURSE_STATE_UNSPECIFIED = 0, ACTIVE = 1, ARCHIVED = 2, PROVISIONED = 3, DECLINED = 4, SUSPENDED = 5 }
@@ -514,7 +514,7 @@ export namespace MyNS {
 		 * Example: `p:abc123`
 		 * This field has a maximum length of 256 characters.
 		 */
-		alias?: string;
+		alias?: string | null;
 	}
 
 
@@ -522,7 +522,7 @@ export namespace MyNS {
 	export interface CourseRosterChangesInfo {
 
 		/** The `course_id` of the course to subscribe to roster changes for. */
-		courseId?: string;
+		courseId?: string | null;
 	}
 
 
@@ -534,16 +534,16 @@ export namespace MyNS {
 		 * This is only populated if `state` is `PUBLISHED`.
 		 * Read-only.
 		 */
-		alternateLink?: string;
+		alternateLink?: string | null;
 
 		/**
 		 * Assignee mode of the coursework.
 		 * If unspecified, the default value is `ALL_STUDENTS`.
 		 */
-		assigneeMode?: AnnouncementAssigneeMode;
+		assigneeMode?: AnnouncementAssigneeMode | null;
 
 		/** Additional details for assignments. */
-		assignment?: Assignment;
+		assignment?: Assignment | null;
 
 		/**
 		 * Whether this course work item is associated with the Developer Console
@@ -552,32 +552,32 @@ export namespace MyNS {
 		 * details.
 		 * Read-only.
 		 */
-		associatedWithDeveloper?: boolean;
+		associatedWithDeveloper?: boolean | null;
 
 		/**
 		 * Identifier of the course.
 		 * Read-only.
 		 */
-		courseId?: string;
+		courseId?: string | null;
 
 		/**
 		 * Timestamp when this course work was created.
 		 * Read-only.
 		 */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/**
 		 * Identifier for the user that created the coursework.
 		 * Read-only.
 		 */
-		creatorUserId?: string;
+		creatorUserId?: string | null;
 
 		/**
 		 * Optional description of this course work.
 		 * If set, the description must be a valid UTF-8 string containing no more
 		 * than 30,000 characters.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
@@ -589,82 +589,82 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		dueDate?: Date;
+		dueDate?: Date | null;
 
 		/**
 		 * Represents a time of day. The date and time zone are either not significant
 		 * or are specified elsewhere. An API may choose to allow leap seconds. Related
 		 * types are google.type.Date and `google.protobuf.Timestamp`.
 		 */
-		dueTime?: TimeOfDay;
+		dueTime?: TimeOfDay | null;
 
 		/**
 		 * Classroom-assigned identifier of this course work, unique per course.
 		 * Read-only.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Assignee details about a coursework/announcement.
 		 * This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
 		 */
-		individualStudentsOptions?: IndividualStudentsOptions;
+		individualStudentsOptions?: IndividualStudentsOptions | null;
 
 		/**
 		 * Additional materials.
 		 * CourseWork must have no more than 20 material items.
 		 */
-		materials?: Array<Material>;
+		materials?: Array<Material> | null;
 
 		/**
 		 * Maximum grade for this course work.
 		 * If zero or unspecified, this assignment is considered ungraded.
 		 * This must be a non-negative integer value.
 		 */
-		maxPoints?: number;
+		maxPoints?: number | null;
 
 		/** Additional details for multiple-choice questions. */
-		multipleChoiceQuestion?: MultipleChoiceQuestion;
+		multipleChoiceQuestion?: MultipleChoiceQuestion | null;
 
 		/** Optional timestamp when this course work is scheduled to be published. */
-		scheduledTime?: string;
+		scheduledTime?: string | null;
 
 		/**
 		 * Status of this course work.
 		 * If unspecified, the default state is `DRAFT`.
 		 */
-		state?: CourseWorkState;
+		state?: CourseWorkState | null;
 
 		/**
 		 * Setting to determine when students are allowed to modify submissions.
 		 * If unspecified, the default value is `MODIFIABLE_UNTIL_TURNED_IN`.
 		 */
-		submissionModificationMode?: CourseWorkSubmissionModificationMode;
+		submissionModificationMode?: CourseWorkSubmissionModificationMode | null;
 
 		/**
 		 * Title of this course work.
 		 * The title must be a valid UTF-8 string containing between 1 and 3000
 		 * characters.
 		 */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * Identifier for the topic that this coursework is associated with.
 		 * Must match an existing topic in the course.
 		 */
-		topicId?: string;
+		topicId?: string | null;
 
 		/**
 		 * Timestamp of the most recent change to this course work.
 		 * Read-only.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/**
 		 * Type of this course work.
 		 * The type is set when the course work is created and cannot be changed.
 		 */
-		workType?: CourseWorkWorkType;
+		workType?: CourseWorkWorkType | null;
 	}
 
 
@@ -685,19 +685,19 @@ export namespace MyNS {
 		 * if specifying a year by itself or a year and month where the day is not
 		 * significant.
 		 */
-		day?: number;
+		day?: number | null;
 
 		/**
 		 * Month of year. Must be from 1 to 12, or 0 if specifying a year without a
 		 * month and day.
 		 */
-		month?: number;
+		month?: number | null;
 
 		/**
 		 * Year of date. Must be from 1 to 9999, or 0 if specifying a date without
 		 * a year.
 		 */
-		year?: number;
+		year?: number | null;
 	}
 
 
@@ -712,19 +712,19 @@ export namespace MyNS {
 		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
 		 * to allow the value "24:00:00" for scenarios like business closing time.
 		 */
-		hours?: number;
+		hours?: number | null;
 
 		/** Minutes of hour of day. Must be from 0 to 59. */
-		minutes?: number;
+		minutes?: number | null;
 
 		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
-		nanos?: number;
+		nanos?: number | null;
 
 		/**
 		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may
 		 * allow the value 60 if it allows leap-seconds.
 		 */
-		seconds?: number;
+		seconds?: number | null;
 	}
 
 
@@ -732,7 +732,7 @@ export namespace MyNS {
 	export interface MultipleChoiceQuestion {
 
 		/** Possible choices. */
-		choices?: Array<string>;
+		choices?: Array<string> | null;
 	}
 
 	export enum CourseWorkState { COURSE_WORK_STATE_UNSPECIFIED = 0, PUBLISHED = 1, DRAFT = 2, DELETED = 3 }
@@ -746,7 +746,7 @@ export namespace MyNS {
 	export interface CourseWorkChangesInfo {
 
 		/** The `course_id` of the course to subscribe to work changes for. */
-		courseId?: string;
+		courseId?: string | null;
 	}
 
 
@@ -770,13 +770,13 @@ export namespace MyNS {
 	export interface Feed {
 
 		/** Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`. */
-		courseRosterChangesInfo?: CourseRosterChangesInfo;
+		courseRosterChangesInfo?: CourseRosterChangesInfo | null;
 
 		/** Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`. */
-		courseWorkChangesInfo?: CourseWorkChangesInfo;
+		courseWorkChangesInfo?: CourseWorkChangesInfo | null;
 
 		/** The type of feed. */
-		feedType?: FeedFeedType;
+		feedType?: FeedFeedType | null;
 	}
 
 	export enum FeedFeedType { FEED_TYPE_UNSPECIFIED = 0, DOMAIN_ROSTER_CHANGES = 1, COURSE_ROSTER_CHANGES = 2, COURSE_WORK_CHANGES = 3 }
@@ -786,7 +786,7 @@ export namespace MyNS {
 	export interface GlobalPermission {
 
 		/** Permission value. */
-		permission?: GlobalPermissionPermission;
+		permission?: GlobalPermissionPermission | null;
 	}
 
 	export enum GlobalPermissionPermission { PERMISSION_UNSPECIFIED = 0, CREATE_COURSE = 1 }
@@ -796,22 +796,22 @@ export namespace MyNS {
 	export interface GradeHistory {
 
 		/** The teacher who made the grade change. */
-		actorUserId?: string;
+		actorUserId?: string | null;
 
 		/** The type of grade change at this time in the submission grade history. */
-		gradeChangeType?: GradeHistoryGradeChangeType;
+		gradeChangeType?: GradeHistoryGradeChangeType | null;
 
 		/** When the grade of the submission was changed. */
-		gradeTimestamp?: string;
+		gradeTimestamp?: string | null;
 
 		/**
 		 * The denominator of the grade at this time in the submission grade
 		 * history.
 		 */
-		maxPoints?: number;
+		maxPoints?: number | null;
 
 		/** The numerator of the grade at this time in the submission grade history. */
-		pointsEarned?: number;
+		pointsEarned?: number | null;
 	}
 
 	export enum GradeHistoryGradeChangeType { UNKNOWN_GRADE_CHANGE_TYPE = 0, DRAFT_GRADE_POINTS_EARNED_CHANGE = 1, ASSIGNED_GRADE_POINTS_EARNED_CHANGE = 2, MAX_POINTS_CHANGE = 3 }
@@ -824,19 +824,19 @@ export namespace MyNS {
 	export interface Guardian {
 
 		/** Identifier for the guardian. */
-		guardianId?: string;
+		guardianId?: string | null;
 
 		/** Global information for a user. */
-		guardianProfile?: UserProfile;
+		guardianProfile?: UserProfile | null;
 
 		/**
 		 * The email address to which the initial guardian invitation was sent.
 		 * This field is only visible to domain administrators.
 		 */
-		invitedEmailAddress?: string;
+		invitedEmailAddress?: string | null;
 
 		/** Identifier for the student to whom the guardian relationship applies. */
-		studentId?: string;
+		studentId?: string | null;
 	}
 
 
@@ -847,28 +847,28 @@ export namespace MyNS {
 		 * Email address of the user.
 		 * Read-only.
 		 */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/**
 		 * Identifier of the user.
 		 * Read-only.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/** Details of the user's name. */
-		name?: Name;
+		name?: Name | null;
 
 		/**
 		 * Global permissions of the user.
 		 * Read-only.
 		 */
-		permissions?: Array<GlobalPermission>;
+		permissions?: Array<GlobalPermission> | null;
 
 		/**
 		 * URL of user's profile photo.
 		 * Read-only.
 		 */
-		photoUrl?: string;
+		photoUrl?: string | null;
 
 		/**
 		 * Represents whether a G Suite for Education user's domain administrator has
@@ -876,7 +876,7 @@ export namespace MyNS {
 		 * a G Suite for Education domain, than this field is always false.
 		 * Read-only
 		 */
-		verifiedTeacher?: boolean;
+		verifiedTeacher?: boolean | null;
 	}
 
 
@@ -887,20 +887,20 @@ export namespace MyNS {
 		 * The user's last name.
 		 * Read-only.
 		 */
-		familyName?: string;
+		familyName?: string | null;
 
 		/**
 		 * The user's full name formed by concatenating the first and last name
 		 * values.
 		 * Read-only.
 		 */
-		fullName?: string;
+		fullName?: string | null;
 
 		/**
 		 * The user's first name.
 		 * Read-only.
 		 */
-		givenName?: string;
+		givenName?: string | null;
 	}
 
 
@@ -914,25 +914,25 @@ export namespace MyNS {
 		 * The time that this invitation was created.
 		 * Read-only.
 		 */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/**
 		 * Unique identifier for this invitation.
 		 * Read-only.
 		 */
-		invitationId?: string;
+		invitationId?: string | null;
 
 		/**
 		 * Email address that the invitation was sent to.
 		 * This field is only visible to domain administrators.
 		 */
-		invitedEmailAddress?: string;
+		invitedEmailAddress?: string | null;
 
 		/** The state that this invitation is in. */
-		state?: GuardianInvitationState;
+		state?: GuardianInvitationState | null;
 
 		/** ID of the student (in standard format) */
-		studentId?: string;
+		studentId?: string | null;
 	}
 
 	export enum GuardianInvitationState { GUARDIAN_INVITATION_STATE_UNSPECIFIED = 0, PENDING = 1, COMPLETE = 2 }
@@ -942,19 +942,19 @@ export namespace MyNS {
 	export interface Invitation {
 
 		/** Identifier of the course to invite the user to. */
-		courseId?: string;
+		courseId?: string | null;
 
 		/**
 		 * Identifier assigned by Classroom.
 		 * Read-only.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Role to invite the user to have.
 		 * Must not be `COURSE_ROLE_UNSPECIFIED`.
 		 */
-		role?: InvitationRole;
+		role?: InvitationRole | null;
 
 		/**
 		 * Identifier of the invited user.
@@ -964,7 +964,7 @@ export namespace MyNS {
 		 * * the email address of the user
 		 * * the string literal `"me"`, indicating the requesting user
 		 */
-		userId?: string;
+		userId?: string | null;
 	}
 
 	export enum InvitationRole { COURSE_ROLE_UNSPECIFIED = 0, STUDENT = 1, TEACHER = 2, OWNER = 3 }
@@ -974,13 +974,13 @@ export namespace MyNS {
 	export interface ListAnnouncementsResponse {
 
 		/** Announcement items that match the request. */
-		announcements?: Array<Announcement>;
+		announcements?: Array<Announcement> | null;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -988,13 +988,13 @@ export namespace MyNS {
 	export interface ListCourseAliasesResponse {
 
 		/** The course aliases. */
-		aliases?: Array<CourseAlias>;
+		aliases?: Array<CourseAlias> | null;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1002,13 +1002,13 @@ export namespace MyNS {
 	export interface ListCourseWorkResponse {
 
 		/** Course work items that match the request. */
-		courseWork?: Array<CourseWork>;
+		courseWork?: Array<CourseWork> | null;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1016,13 +1016,13 @@ export namespace MyNS {
 	export interface ListCoursesResponse {
 
 		/** Courses that match the list request. */
-		courses?: Array<Course>;
+		courses?: Array<Course> | null;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1030,13 +1030,13 @@ export namespace MyNS {
 	export interface ListGuardianInvitationsResponse {
 
 		/** Guardian invitations that matched the list request. */
-		guardianInvitations?: Array<GuardianInvitation>;
+		guardianInvitations?: Array<GuardianInvitation> | null;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1047,13 +1047,13 @@ export namespace MyNS {
 		 * Guardians on this page of results that met the criteria specified in
 		 * the request.
 		 */
-		guardians?: Array<Guardian>;
+		guardians?: Array<Guardian> | null;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1061,13 +1061,13 @@ export namespace MyNS {
 	export interface ListInvitationsResponse {
 
 		/** Invitations that match the list request. */
-		invitations?: Array<Invitation>;
+		invitations?: Array<Invitation> | null;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1078,10 +1078,10 @@ export namespace MyNS {
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Student work that matches the request. */
-		studentSubmissions?: Array<StudentSubmission>;
+		studentSubmissions?: Array<StudentSubmission> | null;
 	}
 
 
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 		 * Absolute link to the submission in the Classroom web UI.
 		 * Read-only.
 		 */
-		alternateLink?: string;
+		alternateLink?: string | null;
 
 		/**
 		 * Optional grade. If unset, no grade was set.
@@ -1105,10 +1105,10 @@ export namespace MyNS {
 		 * allowed, but are rounded to two decimal places.
 		 * This may be modified only by course teachers.
 		 */
-		assignedGrade?: number;
+		assignedGrade?: number | null;
 
 		/** Student work for an assignment. */
-		assignmentSubmission?: AssignmentSubmission;
+		assignmentSubmission?: AssignmentSubmission | null;
 
 		/**
 		 * Whether this student submission is associated with the Developer Console
@@ -1117,32 +1117,32 @@ export namespace MyNS {
 		 * details.
 		 * Read-only.
 		 */
-		associatedWithDeveloper?: boolean;
+		associatedWithDeveloper?: boolean | null;
 
 		/**
 		 * Identifier of the course.
 		 * Read-only.
 		 */
-		courseId?: string;
+		courseId?: string | null;
 
 		/**
 		 * Identifier for the course work this corresponds to.
 		 * Read-only.
 		 */
-		courseWorkId?: string;
+		courseWorkId?: string | null;
 
 		/**
 		 * Type of course work this submission is for.
 		 * Read-only.
 		 */
-		courseWorkType?: CourseWorkWorkType;
+		courseWorkType?: CourseWorkWorkType | null;
 
 		/**
 		 * Creation time of this submission.
 		 * This may be unset if the student has not accessed this item.
 		 * Read-only.
 		 */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/**
 		 * Optional pending grade. If unset, no grade was set.
@@ -1150,51 +1150,51 @@ export namespace MyNS {
 		 * allowed, but are rounded to two decimal places.
 		 * This is only visible to and modifiable by course teachers.
 		 */
-		draftGrade?: number;
+		draftGrade?: number | null;
 
 		/**
 		 * Classroom-assigned Identifier for the student submission.
 		 * This is unique among submissions for the relevant course work.
 		 * Read-only.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Whether this submission is late.
 		 * Read-only.
 		 */
-		late?: boolean;
+		late?: boolean | null;
 
 		/** Student work for a multiple-choice question. */
-		multipleChoiceSubmission?: MultipleChoiceSubmission;
+		multipleChoiceSubmission?: MultipleChoiceSubmission | null;
 
 		/** Student work for a short answer question. */
-		shortAnswerSubmission?: ShortAnswerSubmission;
+		shortAnswerSubmission?: ShortAnswerSubmission | null;
 
 		/**
 		 * State of this submission.
 		 * Read-only.
 		 */
-		state?: StudentSubmissionState;
+		state?: StudentSubmissionState | null;
 
 		/**
 		 * The history of the submission (includes state and grade histories).
 		 * Read-only.
 		 */
-		submissionHistory?: Array<SubmissionHistory>;
+		submissionHistory?: Array<SubmissionHistory> | null;
 
 		/**
 		 * Last update time of this submission.
 		 * This may be unset if the student has not accessed this item.
 		 * Read-only.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/**
 		 * Identifier for the student that owns this submission.
 		 * Read-only.
 		 */
-		userId?: string;
+		userId?: string | null;
 	}
 
 
@@ -1202,7 +1202,7 @@ export namespace MyNS {
 	export interface MultipleChoiceSubmission {
 
 		/** Student's select choice. */
-		answer?: string;
+		answer?: string | null;
 	}
 
 
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 	export interface ShortAnswerSubmission {
 
 		/** Student response to a short-answer question. */
-		answer?: string;
+		answer?: string | null;
 	}
 
 	export enum StudentSubmissionState { SUBMISSION_STATE_UNSPECIFIED = 0, NEW = 1, CREATED = 2, TURNED_IN = 3, RETURNED = 4, RECLAIMED_BY_STUDENT = 5 }
@@ -1223,10 +1223,10 @@ export namespace MyNS {
 	export interface SubmissionHistory {
 
 		/** The history of each grade on this submission. */
-		gradeHistory?: GradeHistory;
+		gradeHistory?: GradeHistory | null;
 
 		/** The history of each state this submission has been in. */
-		stateHistory?: StateHistory;
+		stateHistory?: StateHistory | null;
 	}
 
 
@@ -1234,13 +1234,13 @@ export namespace MyNS {
 	export interface StateHistory {
 
 		/** The teacher or student who made the change. */
-		actorUserId?: string;
+		actorUserId?: string | null;
 
 		/** The workflow pipeline stage. */
-		state?: StateHistoryState;
+		state?: StateHistoryState | null;
 
 		/** When the submission entered this state. */
-		stateTimestamp?: string;
+		stateTimestamp?: string | null;
 	}
 
 	export enum StateHistoryState { STATE_UNSPECIFIED = 0, CREATED = 1, TURNED_IN = 2, RETURNED = 3, RECLAIMED_BY_STUDENT = 4, STUDENT_EDITED_AFTER_TURN_IN = 5 }
@@ -1253,10 +1253,10 @@ export namespace MyNS {
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Students who match the list request. */
-		students?: Array<Student>;
+		students?: Array<Student> | null;
 	}
 
 
@@ -1267,13 +1267,13 @@ export namespace MyNS {
 		 * Identifier of the course.
 		 * Read-only.
 		 */
-		courseId?: string;
+		courseId?: string | null;
 
 		/** Global information for a user. */
-		profile?: UserProfile;
+		profile?: UserProfile | null;
 
 		/** Representation of a Google Drive folder. */
-		studentWorkFolder?: DriveFolder;
+		studentWorkFolder?: DriveFolder | null;
 
 		/**
 		 * Identifier of the user.
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		 * * the email address of the user
 		 * * the string literal `"me"`, indicating the requesting user
 		 */
-		userId?: string;
+		userId?: string | null;
 	}
 
 
@@ -1294,10 +1294,10 @@ export namespace MyNS {
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Teachers who match the list request. */
-		teachers?: Array<Teacher>;
+		teachers?: Array<Teacher> | null;
 	}
 
 
@@ -1308,10 +1308,10 @@ export namespace MyNS {
 		 * Identifier of the course.
 		 * Read-only.
 		 */
-		courseId?: string;
+		courseId?: string | null;
 
 		/** Global information for a user. */
-		profile?: UserProfile;
+		profile?: UserProfile | null;
 
 		/**
 		 * Identifier of the user.
@@ -1321,7 +1321,7 @@ export namespace MyNS {
 		 * * the email address of the user
 		 * * the string literal `"me"`, indicating the requesting user
 		 */
-		userId?: string;
+		userId?: string | null;
 	}
 
 
@@ -1332,10 +1332,10 @@ export namespace MyNS {
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Topic items that match the request. */
-		topic?: Array<Topic>;
+		topic?: Array<Topic> | null;
 	}
 
 
@@ -1346,7 +1346,7 @@ export namespace MyNS {
 		 * Identifier of the course.
 		 * Read-only.
 		 */
-		courseId?: string;
+		courseId?: string | null;
 
 		/**
 		 * The name of the topic, generated by the user.
@@ -1355,19 +1355,19 @@ export namespace MyNS {
 		 * result must be a non-empty string. Topic names are case sensitive, and must
 		 * be no longer than 100 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Unique identifier for the topic.
 		 * Read-only.
 		 */
-		topicId?: string;
+		topicId?: string | null;
 
 		/**
 		 * The time the topic was last updated by the system.
 		 * Read-only.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -1378,13 +1378,13 @@ export namespace MyNS {
 		 * Mode of the announcement describing whether it is accessible by all
 		 * students or specified individual students.
 		 */
-		assigneeMode?: AnnouncementAssigneeMode;
+		assigneeMode?: AnnouncementAssigneeMode | null;
 
 		/**
 		 * Contains fields to add or remove students from a course work or announcement
 		 * where the `assigneeMode` is set to `INDIVIDUAL_STUDENTS`.
 		 */
-		modifyIndividualStudentsOptions?: ModifyIndividualStudentsOptions;
+		modifyIndividualStudentsOptions?: ModifyIndividualStudentsOptions | null;
 	}
 
 
@@ -1398,13 +1398,13 @@ export namespace MyNS {
 		 * IDs of students to be added as having access to this
 		 * coursework/announcement.
 		 */
-		addStudentIds?: Array<string>;
+		addStudentIds?: Array<string> | null;
 
 		/**
 		 * IDs of students to be removed from having access to this
 		 * coursework/announcement.
 		 */
-		removeStudentIds?: Array<string>;
+		removeStudentIds?: Array<string> | null;
 	}
 
 
@@ -1416,7 +1416,7 @@ export namespace MyNS {
 		 * A student submission may not have more than 20 attachments.
 		 * Form attachments are not supported.
 		 */
-		addAttachments?: Array<Attachment>;
+		addAttachments?: Array<Attachment> | null;
 	}
 
 
@@ -1427,13 +1427,13 @@ export namespace MyNS {
 		 * Mode of the coursework describing whether it will be assigned to all
 		 * students or specified individual students.
 		 */
-		assigneeMode?: AnnouncementAssigneeMode;
+		assigneeMode?: AnnouncementAssigneeMode | null;
 
 		/**
 		 * Contains fields to add or remove students from a course work or announcement
 		 * where the `assigneeMode` is set to `INDIVIDUAL_STUDENTS`.
 		 */
-		modifyIndividualStudentsOptions?: ModifyIndividualStudentsOptions;
+		modifyIndividualStudentsOptions?: ModifyIndividualStudentsOptions | null;
 	}
 
 
@@ -1454,25 +1454,25 @@ export namespace MyNS {
 		 * `classroom-notifications@system.gserviceaccount.com` the
 		 * `projects.topics.publish` permission.
 		 */
-		cloudPubsubTopic?: CloudPubsubTopic;
+		cloudPubsubTopic?: CloudPubsubTopic | null;
 
 		/**
 		 * The time until which the `Registration` is effective.
 		 * This is a read-only field assigned by the server.
 		 */
-		expiryTime?: string;
+		expiryTime?: string | null;
 
 		/**
 		 * A class of notifications that an application can register to receive.
 		 * For example: "all roster changes for a domain".
 		 */
-		feed?: Feed;
+		feed?: Feed | null;
 
 		/**
 		 * A server-generated unique identifier for this `Registration`.
 		 * Read-only.
 		 */
-		registrationId?: string;
+		registrationId?: string | null;
 	}
 
 

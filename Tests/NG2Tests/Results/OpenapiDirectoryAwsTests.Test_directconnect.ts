@@ -5,24 +5,24 @@ export namespace MyNS {
 	export interface AcceptDirectConnectGatewayAssociationProposalResult {
 
 		/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
-		directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+		directConnectGatewayAssociation?: DirectConnectGatewayAssociation | null;
 	}
 
 
 	/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
 	export interface DirectConnectGatewayAssociation {
-		directConnectGatewayId?: string;
-		directConnectGatewayOwnerAccount?: string;
-		associationState?: DirectConnectGatewayAssociationAssociationState;
-		stateChangeError?: string;
+		directConnectGatewayId?: string | null;
+		directConnectGatewayOwnerAccount?: string | null;
+		associationState?: DirectConnectGatewayAssociationAssociationState | null;
+		stateChangeError?: string | null;
 
 		/** Information about the associated gateway. */
-		associatedGateway?: AssociatedGateway;
-		associationId?: string;
-		allowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
-		virtualGatewayId?: string;
-		virtualGatewayRegion?: string;
-		virtualGatewayOwnerAccount?: string;
+		associatedGateway?: AssociatedGateway | null;
+		associationId?: string | null;
+		allowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		virtualGatewayId?: string | null;
+		virtualGatewayRegion?: string | null;
+		virtualGatewayOwnerAccount?: string | null;
 	}
 
 	export enum DirectConnectGatewayAssociationAssociationState { associating = 0, associated = 1, disassociating = 2, disassociated = 3, updating = 4 }
@@ -30,10 +30,10 @@ export namespace MyNS {
 
 	/** Information about the associated gateway. */
 	export interface AssociatedGateway {
-		id?: string;
-		type?: AssociatedGatewayType;
-		ownerAccount?: string;
-		region?: string;
+		id?: string | null;
+		type?: AssociatedGatewayType | null;
+		ownerAccount?: string | null;
+		region?: string | null;
 	}
 
 	export enum AssociatedGatewayType { virtualPrivateGateway = 0, transitGateway = 1 }
@@ -41,14 +41,14 @@ export namespace MyNS {
 
 	/** Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface. */
 	export interface RouteFilterPrefix {
-		cidr?: string;
+		cidr?: string | null;
 	}
 
 	export interface AcceptDirectConnectGatewayAssociationProposalRequest {
 		directConnectGatewayId: string;
 		proposalId: string;
 		associatedGatewayOwnerAccount: string;
-		overrideAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+		overrideAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
 	}
 
 	export interface DirectConnectServerException {
@@ -60,23 +60,23 @@ export namespace MyNS {
 
 	/** Information about an AWS Direct Connect connection. */
 	export interface Connection {
-		ownerAccount?: string;
-		connectionId?: string;
-		connectionName?: string;
-		connectionState?: ConnectionConnectionState;
-		region?: string;
-		location?: string;
-		bandwidth?: string;
-		vlan?: number;
-		partnerName?: string;
-		loaIssueTime?: Date;
-		lagId?: string;
-		awsDevice?: string;
-		jumboFrameCapable?: boolean;
-		awsDeviceV2?: string;
-		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy;
-		tags?: Array<Tag>;
-		providerName?: string;
+		ownerAccount?: string | null;
+		connectionId?: string | null;
+		connectionName?: string | null;
+		connectionState?: ConnectionConnectionState | null;
+		region?: string | null;
+		location?: string | null;
+		bandwidth?: string | null;
+		vlan?: number | null;
+		partnerName?: string | null;
+		loaIssueTime?: Date | null;
+		lagId?: string | null;
+		awsDevice?: string | null;
+		jumboFrameCapable?: boolean | null;
+		awsDeviceV2?: string | null;
+		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
+		tags?: Array<Tag> | null;
+		providerName?: string | null;
 	}
 
 	export enum ConnectionConnectionState { ordering = 0, requested = 1, pending = 2, available = 3, down = 4, deleting = 5, deleted = 6, rejected = 7, unknown = 8 }
@@ -87,7 +87,7 @@ export namespace MyNS {
 	/** Information about a tag. */
 	export interface Tag {
 		key: string;
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface AllocateConnectionOnInterconnectRequest {
@@ -104,7 +104,7 @@ export namespace MyNS {
 		bandwidth: string;
 		connectionName: string;
 		vlan: number;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface DuplicateTagKeysException {
@@ -116,30 +116,30 @@ export namespace MyNS {
 
 	/** Information about a virtual interface. */
 	export interface VirtualInterface {
-		ownerAccount?: string;
-		virtualInterfaceId?: string;
-		location?: string;
-		connectionId?: string;
-		virtualInterfaceType?: string;
-		virtualInterfaceName?: string;
-		vlan?: number;
-		asn?: number;
-		amazonSideAsn?: number;
-		authKey?: string;
-		amazonAddress?: string;
-		customerAddress?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState;
-		customerRouterConfig?: string;
-		mtu?: number;
-		jumboFrameCapable?: boolean;
-		virtualGatewayId?: string;
-		directConnectGatewayId?: string;
-		routeFilterPrefixes?: Array<RouteFilterPrefix>;
-		bgpPeers?: Array<BGPPeer>;
-		region?: string;
-		awsDeviceV2?: string;
-		tags?: Array<Tag>;
+		ownerAccount?: string | null;
+		virtualInterfaceId?: string | null;
+		location?: string | null;
+		connectionId?: string | null;
+		virtualInterfaceType?: string | null;
+		virtualInterfaceName?: string | null;
+		vlan?: number | null;
+		asn?: number | null;
+		amazonSideAsn?: number | null;
+		authKey?: string | null;
+		amazonAddress?: string | null;
+		customerAddress?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
+		customerRouterConfig?: string | null;
+		mtu?: number | null;
+		jumboFrameCapable?: boolean | null;
+		virtualGatewayId?: string | null;
+		directConnectGatewayId?: string | null;
+		routeFilterPrefixes?: Array<RouteFilterPrefix> | null;
+		bgpPeers?: Array<BGPPeer> | null;
+		region?: string | null;
+		awsDeviceV2?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum VirtualInterfaceAddressFamily { ipv4 = 0, ipv6 = 1 }
@@ -149,15 +149,15 @@ export namespace MyNS {
 
 	/** Information about a BGP peer. */
 	export interface BGPPeer {
-		bgpPeerId?: string;
-		asn?: number;
-		authKey?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		amazonAddress?: string;
-		customerAddress?: string;
-		bgpPeerState?: BGPPeerBgpPeerState;
-		bgpStatus?: BGPPeerBgpStatus;
-		awsDeviceV2?: string;
+		bgpPeerId?: string | null;
+		asn?: number | null;
+		authKey?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		amazonAddress?: string | null;
+		customerAddress?: string | null;
+		bgpPeerState?: BGPPeerBgpPeerState | null;
+		bgpStatus?: BGPPeerBgpStatus | null;
+		awsDeviceV2?: string | null;
 	}
 
 	export enum BGPPeerBgpPeerState { verifying = 0, pending = 1, available = 2, deleting = 3, deleted = 4 }
@@ -181,12 +181,12 @@ export namespace MyNS {
 		virtualInterfaceName: string;
 		vlan: number;
 		asn: number;
-		mtu?: number;
-		authKey?: string;
-		amazonAddress?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		customerAddress?: string;
-		tags?: Array<Tag>;
+		mtu?: number | null;
+		authKey?: string | null;
+		amazonAddress?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		customerAddress?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface AllocatePublicVirtualInterfaceRequest {
@@ -206,18 +206,18 @@ export namespace MyNS {
 		virtualInterfaceName: string;
 		vlan: number;
 		asn: number;
-		authKey?: string;
-		amazonAddress?: string;
-		customerAddress?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		routeFilterPrefixes?: Array<RouteFilterPrefix>;
-		tags?: Array<Tag>;
+		authKey?: string | null;
+		amazonAddress?: string | null;
+		customerAddress?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		routeFilterPrefixes?: Array<RouteFilterPrefix> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface AllocateTransitVirtualInterfaceResult {
 
 		/** Information about a virtual interface. */
-		virtualInterface?: VirtualInterface;
+		virtualInterface?: VirtualInterface | null;
 	}
 
 	export interface AllocateTransitVirtualInterfaceRequest {
@@ -234,15 +234,15 @@ export namespace MyNS {
 
 	/** Information about a transit virtual interface to be provisioned on a connection. */
 	export interface NewTransitVirtualInterfaceAllocation {
-		virtualInterfaceName?: string;
-		vlan?: number;
-		asn?: number;
-		mtu?: number;
-		authKey?: string;
-		amazonAddress?: string;
-		customerAddress?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		tags?: Array<Tag>;
+		virtualInterfaceName?: string | null;
+		vlan?: number | null;
+		asn?: number | null;
+		mtu?: number | null;
+		authKey?: string | null;
+		amazonAddress?: string | null;
+		customerAddress?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface AssociateConnectionWithLagRequest {
@@ -261,7 +261,7 @@ export namespace MyNS {
 	}
 
 	export interface ConfirmConnectionResponse {
-		connectionState?: ConnectionConnectionState;
+		connectionState?: ConnectionConnectionState | null;
 	}
 
 	export interface ConfirmConnectionRequest {
@@ -269,17 +269,17 @@ export namespace MyNS {
 	}
 
 	export interface ConfirmPrivateVirtualInterfaceResponse {
-		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState;
+		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
 	}
 
 	export interface ConfirmPrivateVirtualInterfaceRequest {
 		virtualInterfaceId: string;
-		virtualGatewayId?: string;
-		directConnectGatewayId?: string;
+		virtualGatewayId?: string | null;
+		directConnectGatewayId?: string | null;
 	}
 
 	export interface ConfirmPublicVirtualInterfaceResponse {
-		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState;
+		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
 	}
 
 	export interface ConfirmPublicVirtualInterfaceRequest {
@@ -287,7 +287,7 @@ export namespace MyNS {
 	}
 
 	export interface ConfirmTransitVirtualInterfaceResponse {
-		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState;
+		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
 	}
 
 	export interface ConfirmTransitVirtualInterfaceRequest {
@@ -298,90 +298,90 @@ export namespace MyNS {
 	export interface CreateBGPPeerResponse {
 
 		/** Information about a virtual interface. */
-		virtualInterface?: VirtualInterface;
+		virtualInterface?: VirtualInterface | null;
 	}
 
 	export interface CreateBGPPeerRequest {
-		virtualInterfaceId?: string;
+		virtualInterfaceId?: string | null;
 
 		/** Information about a new BGP peer. */
-		newBGPPeer?: NewBGPPeer;
+		newBGPPeer?: NewBGPPeer | null;
 	}
 
 
 	/** Information about a new BGP peer. */
 	export interface NewBGPPeer {
-		asn?: number;
-		authKey?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		amazonAddress?: string;
-		customerAddress?: string;
+		asn?: number | null;
+		authKey?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		amazonAddress?: string | null;
+		customerAddress?: string | null;
 	}
 
 	export interface CreateConnectionRequest {
 		location: string;
 		bandwidth: string;
 		connectionName: string;
-		lagId?: string;
-		tags?: Array<Tag>;
-		providerName?: string;
+		lagId?: string | null;
+		tags?: Array<Tag> | null;
+		providerName?: string | null;
 	}
 
 	export interface CreateDirectConnectGatewayResult {
 
 		/** Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways. */
-		directConnectGateway?: DirectConnectGateway;
+		directConnectGateway?: DirectConnectGateway | null;
 	}
 
 
 	/** Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways. */
 	export interface DirectConnectGateway {
-		directConnectGatewayId?: string;
-		directConnectGatewayName?: string;
-		amazonSideAsn?: number;
-		ownerAccount?: string;
-		directConnectGatewayState?: DirectConnectGatewayDirectConnectGatewayState;
-		stateChangeError?: string;
+		directConnectGatewayId?: string | null;
+		directConnectGatewayName?: string | null;
+		amazonSideAsn?: number | null;
+		ownerAccount?: string | null;
+		directConnectGatewayState?: DirectConnectGatewayDirectConnectGatewayState | null;
+		stateChangeError?: string | null;
 	}
 
 	export enum DirectConnectGatewayDirectConnectGatewayState { pending = 0, available = 1, deleting = 2, deleted = 3 }
 
 	export interface CreateDirectConnectGatewayRequest {
 		directConnectGatewayName: string;
-		amazonSideAsn?: number;
+		amazonSideAsn?: number | null;
 	}
 
 	export interface CreateDirectConnectGatewayAssociationResult {
 
 		/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
-		directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+		directConnectGatewayAssociation?: DirectConnectGatewayAssociation | null;
 	}
 
 	export interface CreateDirectConnectGatewayAssociationRequest {
 		directConnectGatewayId: string;
-		gatewayId?: string;
-		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
-		virtualGatewayId?: string;
+		gatewayId?: string | null;
+		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		virtualGatewayId?: string | null;
 	}
 
 	export interface CreateDirectConnectGatewayAssociationProposalResult {
 
 		/** Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway. */
-		directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal;
+		directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal | null;
 	}
 
 
 	/** Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway.  */
 	export interface DirectConnectGatewayAssociationProposal {
-		proposalId?: string;
-		directConnectGatewayId?: string;
-		directConnectGatewayOwnerAccount?: string;
-		proposalState?: DirectConnectGatewayAssociationProposalProposalState;
+		proposalId?: string | null;
+		directConnectGatewayId?: string | null;
+		directConnectGatewayOwnerAccount?: string | null;
+		proposalState?: DirectConnectGatewayAssociationProposalProposalState | null;
 
 		/** Information about the associated gateway. */
-		associatedGateway?: AssociatedGateway;
-		existingAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
-		requestedAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+		associatedGateway?: AssociatedGateway | null;
+		existingAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		requestedAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
 	}
 
 	export enum DirectConnectGatewayAssociationProposalProposalState { requested = 0, accepted = 1, deleted = 2 }
@@ -390,27 +390,27 @@ export namespace MyNS {
 		directConnectGatewayId: string;
 		directConnectGatewayOwnerAccount: string;
 		gatewayId: string;
-		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
-		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
 	}
 
 
 	/** Information about an interconnect. */
 	export interface Interconnect {
-		interconnectId?: string;
-		interconnectName?: string;
-		interconnectState?: InterconnectInterconnectState;
-		region?: string;
-		location?: string;
-		bandwidth?: string;
-		loaIssueTime?: Date;
-		lagId?: string;
-		awsDevice?: string;
-		jumboFrameCapable?: boolean;
-		awsDeviceV2?: string;
-		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy;
-		tags?: Array<Tag>;
-		providerName?: string;
+		interconnectId?: string | null;
+		interconnectName?: string | null;
+		interconnectState?: InterconnectInterconnectState | null;
+		region?: string | null;
+		location?: string | null;
+		bandwidth?: string | null;
+		loaIssueTime?: Date | null;
+		lagId?: string | null;
+		awsDevice?: string | null;
+		jumboFrameCapable?: boolean | null;
+		awsDeviceV2?: string | null;
+		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
+		tags?: Array<Tag> | null;
+		providerName?: string | null;
 	}
 
 	export enum InterconnectInterconnectState { requested = 0, pending = 1, available = 2, down = 3, deleting = 4, deleted = 5, unknown = 6 }
@@ -419,31 +419,31 @@ export namespace MyNS {
 		interconnectName: string;
 		bandwidth: string;
 		location: string;
-		lagId?: string;
-		tags?: Array<Tag>;
-		providerName?: string;
+		lagId?: string | null;
+		tags?: Array<Tag> | null;
+		providerName?: string | null;
 	}
 
 
 	/** Information about a link aggregation group (LAG). */
 	export interface Lag {
-		connectionsBandwidth?: string;
-		numberOfConnections?: number;
-		lagId?: string;
-		ownerAccount?: string;
-		lagName?: string;
-		lagState?: InterconnectInterconnectState;
-		location?: string;
-		region?: string;
-		minimumLinks?: number;
-		awsDevice?: string;
-		awsDeviceV2?: string;
-		connections?: Array<Connection>;
-		allowsHostedConnections?: boolean;
-		jumboFrameCapable?: boolean;
-		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy;
-		tags?: Array<Tag>;
-		providerName?: string;
+		connectionsBandwidth?: string | null;
+		numberOfConnections?: number | null;
+		lagId?: string | null;
+		ownerAccount?: string | null;
+		lagName?: string | null;
+		lagState?: InterconnectInterconnectState | null;
+		location?: string | null;
+		region?: string | null;
+		minimumLinks?: number | null;
+		awsDevice?: string | null;
+		awsDeviceV2?: string | null;
+		connections?: Array<Connection> | null;
+		allowsHostedConnections?: boolean | null;
+		jumboFrameCapable?: boolean | null;
+		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
+		tags?: Array<Tag> | null;
+		providerName?: string | null;
 	}
 
 	export interface CreateLagRequest {
@@ -451,10 +451,10 @@ export namespace MyNS {
 		location: string;
 		connectionsBandwidth: string;
 		lagName: string;
-		connectionId?: string;
-		tags?: Array<Tag>;
-		childConnectionTags?: Array<Tag>;
-		providerName?: string;
+		connectionId?: string | null;
+		tags?: Array<Tag> | null;
+		childConnectionTags?: Array<Tag> | null;
+		providerName?: string | null;
 	}
 
 	export interface CreatePrivateVirtualInterfaceRequest {
@@ -473,14 +473,14 @@ export namespace MyNS {
 		virtualInterfaceName: string;
 		vlan: number;
 		asn: number;
-		mtu?: number;
-		authKey?: string;
-		amazonAddress?: string;
-		customerAddress?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		virtualGatewayId?: string;
-		directConnectGatewayId?: string;
-		tags?: Array<Tag>;
+		mtu?: number | null;
+		authKey?: string | null;
+		amazonAddress?: string | null;
+		customerAddress?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		virtualGatewayId?: string | null;
+		directConnectGatewayId?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreatePublicVirtualInterfaceRequest {
@@ -499,18 +499,18 @@ export namespace MyNS {
 		virtualInterfaceName: string;
 		vlan: number;
 		asn: number;
-		authKey?: string;
-		amazonAddress?: string;
-		customerAddress?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		routeFilterPrefixes?: Array<RouteFilterPrefix>;
-		tags?: Array<Tag>;
+		authKey?: string | null;
+		amazonAddress?: string | null;
+		customerAddress?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		routeFilterPrefixes?: Array<RouteFilterPrefix> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateTransitVirtualInterfaceResult {
 
 		/** Information about a virtual interface. */
-		virtualInterface?: VirtualInterface;
+		virtualInterface?: VirtualInterface | null;
 	}
 
 	export interface CreateTransitVirtualInterfaceRequest {
@@ -526,29 +526,29 @@ export namespace MyNS {
 
 	/** Information about a transit virtual interface. */
 	export interface NewTransitVirtualInterface {
-		virtualInterfaceName?: string;
-		vlan?: number;
-		asn?: number;
-		mtu?: number;
-		authKey?: string;
-		amazonAddress?: string;
-		customerAddress?: string;
-		addressFamily?: VirtualInterfaceAddressFamily;
-		directConnectGatewayId?: string;
-		tags?: Array<Tag>;
+		virtualInterfaceName?: string | null;
+		vlan?: number | null;
+		asn?: number | null;
+		mtu?: number | null;
+		authKey?: string | null;
+		amazonAddress?: string | null;
+		customerAddress?: string | null;
+		addressFamily?: VirtualInterfaceAddressFamily | null;
+		directConnectGatewayId?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface DeleteBGPPeerResponse {
 
 		/** Information about a virtual interface. */
-		virtualInterface?: VirtualInterface;
+		virtualInterface?: VirtualInterface | null;
 	}
 
 	export interface DeleteBGPPeerRequest {
-		virtualInterfaceId?: string;
-		asn?: number;
-		customerAddress?: string;
-		bgpPeerId?: string;
+		virtualInterfaceId?: string | null;
+		asn?: number | null;
+		customerAddress?: string | null;
+		bgpPeerId?: string | null;
 	}
 
 	export interface DeleteConnectionRequest {
@@ -558,7 +558,7 @@ export namespace MyNS {
 	export interface DeleteDirectConnectGatewayResult {
 
 		/** Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways. */
-		directConnectGateway?: DirectConnectGateway;
+		directConnectGateway?: DirectConnectGateway | null;
 	}
 
 	export interface DeleteDirectConnectGatewayRequest {
@@ -568,19 +568,19 @@ export namespace MyNS {
 	export interface DeleteDirectConnectGatewayAssociationResult {
 
 		/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
-		directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+		directConnectGatewayAssociation?: DirectConnectGatewayAssociation | null;
 	}
 
 	export interface DeleteDirectConnectGatewayAssociationRequest {
-		associationId?: string;
-		directConnectGatewayId?: string;
-		virtualGatewayId?: string;
+		associationId?: string | null;
+		directConnectGatewayId?: string | null;
+		virtualGatewayId?: string | null;
 	}
 
 	export interface DeleteDirectConnectGatewayAssociationProposalResult {
 
 		/** Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway. */
-		directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal;
+		directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal | null;
 	}
 
 	export interface DeleteDirectConnectGatewayAssociationProposalRequest {
@@ -588,7 +588,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInterconnectResponse {
-		interconnectState?: InterconnectInterconnectState;
+		interconnectState?: InterconnectInterconnectState | null;
 	}
 
 	export interface DeleteInterconnectRequest {
@@ -600,7 +600,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteVirtualInterfaceResponse {
-		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState;
+		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
 	}
 
 	export interface DeleteVirtualInterfaceRequest {
@@ -610,32 +610,32 @@ export namespace MyNS {
 	export interface DescribeConnectionLoaResponse {
 
 		/** Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection. */
-		loa?: Loa;
+		loa?: Loa | null;
 	}
 
 
 	/** Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection. */
 	export interface Loa {
-		loaContent?: string;
-		loaContentType?: LoaLoaContentType;
+		loaContent?: string | null;
+		loaContentType?: LoaLoaContentType | null;
 	}
 
 	export enum LoaLoaContentType { application_pdf = 0 }
 
 	export interface DescribeConnectionLoaRequest {
 		connectionId: string;
-		providerName?: string;
-		loaContentType?: DescribeConnectionLoaRequestLoaContentType;
+		providerName?: string | null;
+		loaContentType?: DescribeConnectionLoaRequestLoaContentType | null;
 	}
 
 	export enum DescribeConnectionLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Connections {
-		connections?: Array<Connection>;
+		connections?: Array<Connection> | null;
 	}
 
 	export interface DescribeConnectionsRequest {
-		connectionId?: string;
+		connectionId?: string | null;
 	}
 
 	export interface DescribeConnectionsOnInterconnectRequest {
@@ -643,47 +643,47 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDirectConnectGatewayAssociationProposalsResult {
-		directConnectGatewayAssociationProposals?: Array<DirectConnectGatewayAssociationProposal>;
-		nextToken?: string;
+		directConnectGatewayAssociationProposals?: Array<DirectConnectGatewayAssociationProposal> | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeDirectConnectGatewayAssociationProposalsRequest {
-		directConnectGatewayId?: string;
-		proposalId?: string;
-		associatedGatewayId?: string;
-		maxResults?: number;
-		nextToken?: string;
+		directConnectGatewayId?: string | null;
+		proposalId?: string | null;
+		associatedGatewayId?: string | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeDirectConnectGatewayAssociationsResult {
-		directConnectGatewayAssociations?: Array<DirectConnectGatewayAssociation>;
-		nextToken?: string;
+		directConnectGatewayAssociations?: Array<DirectConnectGatewayAssociation> | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeDirectConnectGatewayAssociationsRequest {
-		associationId?: string;
-		associatedGatewayId?: string;
-		directConnectGatewayId?: string;
-		maxResults?: number;
-		nextToken?: string;
-		virtualGatewayId?: string;
+		associationId?: string | null;
+		associatedGatewayId?: string | null;
+		directConnectGatewayId?: string | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
+		virtualGatewayId?: string | null;
 	}
 
 	export interface DescribeDirectConnectGatewayAttachmentsResult {
-		directConnectGatewayAttachments?: Array<DirectConnectGatewayAttachment>;
-		nextToken?: string;
+		directConnectGatewayAttachments?: Array<DirectConnectGatewayAttachment> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about an attachment between a Direct Connect gateway and a virtual interface. */
 	export interface DirectConnectGatewayAttachment {
-		directConnectGatewayId?: string;
-		virtualInterfaceId?: string;
-		virtualInterfaceRegion?: string;
-		virtualInterfaceOwnerAccount?: string;
-		attachmentState?: DirectConnectGatewayAttachmentAttachmentState;
-		attachmentType?: DirectConnectGatewayAttachmentAttachmentType;
-		stateChangeError?: string;
+		directConnectGatewayId?: string | null;
+		virtualInterfaceId?: string | null;
+		virtualInterfaceRegion?: string | null;
+		virtualInterfaceOwnerAccount?: string | null;
+		attachmentState?: DirectConnectGatewayAttachmentAttachmentState | null;
+		attachmentType?: DirectConnectGatewayAttachmentAttachmentType | null;
+		stateChangeError?: string | null;
 	}
 
 	export enum DirectConnectGatewayAttachmentAttachmentState { attaching = 0, attached = 1, detaching = 2, detached = 3 }
@@ -691,21 +691,21 @@ export namespace MyNS {
 	export enum DirectConnectGatewayAttachmentAttachmentType { TransitVirtualInterface = 0, PrivateVirtualInterface = 1 }
 
 	export interface DescribeDirectConnectGatewayAttachmentsRequest {
-		directConnectGatewayId?: string;
-		virtualInterfaceId?: string;
-		maxResults?: number;
-		nextToken?: string;
+		directConnectGatewayId?: string | null;
+		virtualInterfaceId?: string | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeDirectConnectGatewaysResult {
-		directConnectGateways?: Array<DirectConnectGateway>;
-		nextToken?: string;
+		directConnectGateways?: Array<DirectConnectGateway> | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeDirectConnectGatewaysRequest {
-		directConnectGatewayId?: string;
-		maxResults?: number;
-		nextToken?: string;
+		directConnectGatewayId?: string | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeHostedConnectionsRequest {
@@ -715,63 +715,63 @@ export namespace MyNS {
 	export interface DescribeInterconnectLoaResponse {
 
 		/** Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection. */
-		loa?: Loa;
+		loa?: Loa | null;
 	}
 
 	export interface DescribeInterconnectLoaRequest {
 		interconnectId: string;
-		providerName?: string;
-		loaContentType?: DescribeInterconnectLoaRequestLoaContentType;
+		providerName?: string | null;
+		loaContentType?: DescribeInterconnectLoaRequestLoaContentType | null;
 	}
 
 	export enum DescribeInterconnectLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Interconnects {
-		interconnects?: Array<Interconnect>;
+		interconnects?: Array<Interconnect> | null;
 	}
 
 	export interface DescribeInterconnectsRequest {
-		interconnectId?: string;
+		interconnectId?: string | null;
 	}
 
 	export interface Lags {
-		lags?: Array<Lag>;
+		lags?: Array<Lag> | null;
 	}
 
 	export interface DescribeLagsRequest {
-		lagId?: string;
+		lagId?: string | null;
 	}
 
 	export interface DescribeLoaRequest {
 		connectionId: string;
-		providerName?: string;
-		loaContentType?: DescribeLoaRequestLoaContentType;
+		providerName?: string | null;
+		loaContentType?: DescribeLoaRequestLoaContentType | null;
 	}
 
 	export enum DescribeLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Locations {
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 	}
 
 
 	/** Information about an AWS Direct Connect location. */
 	export interface Location {
-		locationCode?: string;
-		region?: string;
-		availablePortSpeeds?: Array<string>;
-		availableProviders?: Array<string>;
+		locationCode?: string | null;
+		region?: string | null;
+		availablePortSpeeds?: Array<string> | null;
+		availableProviders?: Array<string> | null;
 	}
 
 	export interface DescribeTagsResponse {
-		resourceTags?: Array<ResourceTag>;
+		resourceTags?: Array<ResourceTag> | null;
 	}
 
 
 	/** Information about a tag associated with an AWS Direct Connect resource. */
 	export interface ResourceTag {
-		resourceArn?: string;
-		tags?: Array<Tag>;
+		resourceArn?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface DescribeTagsRequest {
@@ -779,23 +779,23 @@ export namespace MyNS {
 	}
 
 	export interface VirtualGateways {
-		virtualGateways?: Array<VirtualGateway>;
+		virtualGateways?: Array<VirtualGateway> | null;
 	}
 
 
 	/** Information about a virtual private gateway for a private virtual interface. */
 	export interface VirtualGateway {
-		virtualGatewayId?: string;
-		virtualGatewayState?: string;
+		virtualGatewayId?: string | null;
+		virtualGatewayState?: string | null;
 	}
 
 	export interface VirtualInterfaces {
-		virtualInterfaces?: Array<VirtualInterface>;
+		virtualInterfaces?: Array<VirtualInterface> | null;
 	}
 
 	export interface DescribeVirtualInterfacesRequest {
-		connectionId?: string;
-		virtualInterfaceId?: string;
+		connectionId?: string | null;
+		virtualInterfaceId?: string | null;
 	}
 
 	export interface DisassociateConnectionFromLagRequest {
@@ -804,48 +804,48 @@ export namespace MyNS {
 	}
 
 	export interface ListVirtualInterfaceTestHistoryResponse {
-		virtualInterfaceTestHistory?: Array<VirtualInterfaceTestHistory>;
-		nextToken?: string;
+		virtualInterfaceTestHistory?: Array<VirtualInterfaceTestHistory> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about the virtual interface failover test. */
 	export interface VirtualInterfaceTestHistory {
-		testId?: string;
-		virtualInterfaceId?: string;
-		bgpPeers?: Array<string>;
-		status?: string;
-		ownerAccount?: string;
-		testDurationInMinutes?: number;
-		startTime?: Date;
-		endTime?: Date;
+		testId?: string | null;
+		virtualInterfaceId?: string | null;
+		bgpPeers?: Array<string> | null;
+		status?: string | null;
+		ownerAccount?: string | null;
+		testDurationInMinutes?: number | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
 	}
 
 	export interface ListVirtualInterfaceTestHistoryRequest {
-		testId?: string;
-		virtualInterfaceId?: string;
-		bgpPeers?: Array<string>;
-		status?: string;
-		maxResults?: number;
-		nextToken?: string;
+		testId?: string | null;
+		virtualInterfaceId?: string | null;
+		bgpPeers?: Array<string> | null;
+		status?: string | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface StartBgpFailoverTestResponse {
 
 		/** Information about the virtual interface failover test. */
-		virtualInterfaceTest?: VirtualInterfaceTestHistory;
+		virtualInterfaceTest?: VirtualInterfaceTestHistory | null;
 	}
 
 	export interface StartBgpFailoverTestRequest {
 		virtualInterfaceId: string;
-		bgpPeers?: Array<string>;
-		testDurationInMinutes?: number;
+		bgpPeers?: Array<string> | null;
+		testDurationInMinutes?: number | null;
 	}
 
 	export interface StopBgpFailoverTestResponse {
 
 		/** Information about the virtual interface failover test. */
-		virtualInterfaceTest?: VirtualInterfaceTestHistory;
+		virtualInterfaceTest?: VirtualInterfaceTestHistory | null;
 	}
 
 	export interface StopBgpFailoverTestRequest {
@@ -871,24 +871,24 @@ export namespace MyNS {
 	export interface UpdateDirectConnectGatewayAssociationResult {
 
 		/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
-		directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+		directConnectGatewayAssociation?: DirectConnectGatewayAssociation | null;
 	}
 
 	export interface UpdateDirectConnectGatewayAssociationRequest {
-		associationId?: string;
-		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
-		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+		associationId?: string | null;
+		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
 	}
 
 	export interface UpdateLagRequest {
 		lagId: string;
-		lagName?: string;
-		minimumLinks?: number;
+		lagName?: string | null;
+		minimumLinks?: number | null;
 	}
 
 	export interface UpdateVirtualInterfaceAttributesRequest {
 		virtualInterfaceId: string;
-		mtu?: number;
+		mtu?: number | null;
 	}
 
 	export enum AddressFamily { ipv4 = 0, ipv6 = 1 }

@@ -5,14 +5,14 @@ export namespace MyNS {
 
 	/** Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations. */
 	export interface TagListMessage {
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 
 	/** A cost allocation Tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. A tag with a null Value is permitted. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface CacheClusterNotFoundFault {
@@ -30,25 +30,25 @@ export namespace MyNS {
 	export interface AuthorizeCacheSecurityGroupIngressResult {
 
 		/** <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> </ul> */
-		CacheSecurityGroup?: CacheSecurityGroup;
+		CacheSecurityGroup?: CacheSecurityGroup | null;
 	}
 
 
 	/** <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> </ul> */
 	export interface CacheSecurityGroup {
-		OwnerId?: string;
-		CacheSecurityGroupName?: string;
-		Description?: string;
-		EC2SecurityGroups?: Array<EC2SecurityGroup>;
-		ARN?: string;
+		OwnerId?: string | null;
+		CacheSecurityGroupName?: string | null;
+		Description?: string | null;
+		EC2SecurityGroups?: Array<EC2SecurityGroup> | null;
+		ARN?: string | null;
 	}
 
 
 	/** Provides ownership and status information for an Amazon EC2 security group. */
 	export interface EC2SecurityGroup {
-		Status?: string;
-		EC2SecurityGroupName?: string;
-		EC2SecurityGroupOwnerId?: string;
+		Status?: string | null;
+		EC2SecurityGroupName?: string | null;
+		EC2SecurityGroupOwnerId?: string | null;
 	}
 
 	export interface CacheSecurityGroupNotFoundFault {
@@ -67,17 +67,17 @@ export namespace MyNS {
 	}
 
 	export interface UpdateActionResultsMessage {
-		ProcessedUpdateActions?: Array<ProcessedUpdateAction>;
-		UnprocessedUpdateActions?: Array<UnprocessedUpdateAction>;
+		ProcessedUpdateActions?: Array<ProcessedUpdateAction> | null;
+		UnprocessedUpdateActions?: Array<UnprocessedUpdateAction> | null;
 	}
 
 
 	/** Update action that has been processed for the corresponding apply/stop request */
 	export interface ProcessedUpdateAction {
-		ReplicationGroupId?: string;
-		CacheClusterId?: string;
-		ServiceUpdateName?: string;
-		UpdateActionStatus?: ProcessedUpdateActionUpdateActionStatus;
+		ReplicationGroupId?: string | null;
+		CacheClusterId?: string | null;
+		ServiceUpdateName?: string | null;
+		UpdateActionStatus?: ProcessedUpdateActionUpdateActionStatus | null;
 	}
 
 	export enum ProcessedUpdateActionUpdateActionStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5, scheduling = 6, scheduled = 7, not_applicable = 8 }
@@ -85,11 +85,11 @@ export namespace MyNS {
 
 	/** Update action that has failed to be processed for the corresponding apply/stop request */
 	export interface UnprocessedUpdateAction {
-		ReplicationGroupId?: string;
-		CacheClusterId?: string;
-		ServiceUpdateName?: string;
-		ErrorType?: string;
-		ErrorMessage?: string;
+		ReplicationGroupId?: string | null;
+		CacheClusterId?: string | null;
+		ServiceUpdateName?: string | null;
+		ErrorType?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface ServiceUpdateNotFoundFault {
@@ -98,57 +98,57 @@ export namespace MyNS {
 	export interface CompleteMigrationResponse {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 
 	/** Contains all of the attributes of a specific Redis replication group. */
 	export interface ReplicationGroup {
-		ReplicationGroupId?: string;
-		Description?: string;
+		ReplicationGroupId?: string | null;
+		Description?: string | null;
 
 		/** The name of the Global Datastore and role of this replication group in the Global Datastore. */
-		GlobalReplicationGroupInfo?: GlobalReplicationGroupInfo;
-		Status?: string;
+		GlobalReplicationGroupInfo?: GlobalReplicationGroupInfo | null;
+		Status?: string | null;
 
 		/** The settings to be applied to the Redis replication group, either immediately or during the next maintenance window. */
-		PendingModifiedValues?: ReplicationGroupPendingModifiedValues;
-		MemberClusters?: Array<string>;
-		NodeGroups?: Array<NodeGroup>;
-		SnapshottingClusterId?: string;
-		AutomaticFailover?: ReplicationGroupAutomaticFailover;
-		MultiAZ?: ReplicationGroupPendingModifiedValuesAutomaticFailoverStatus;
+		PendingModifiedValues?: ReplicationGroupPendingModifiedValues | null;
+		MemberClusters?: Array<string> | null;
+		NodeGroups?: Array<NodeGroup> | null;
+		SnapshottingClusterId?: string | null;
+		AutomaticFailover?: ReplicationGroupAutomaticFailover | null;
+		MultiAZ?: ReplicationGroupPendingModifiedValuesAutomaticFailoverStatus | null;
 
 		/** Represents the information required for client programs to connect to a cache node. */
-		ConfigurationEndpoint?: Endpoint;
-		SnapshotRetentionLimit?: number;
-		SnapshotWindow?: string;
-		ClusterEnabled?: boolean;
-		CacheNodeType?: string;
-		AuthTokenEnabled?: boolean;
-		AuthTokenLastModifiedDate?: Date;
-		TransitEncryptionEnabled?: boolean;
-		AtRestEncryptionEnabled?: boolean;
-		KmsKeyId?: string;
-		ARN?: string;
+		ConfigurationEndpoint?: Endpoint | null;
+		SnapshotRetentionLimit?: number | null;
+		SnapshotWindow?: string | null;
+		ClusterEnabled?: boolean | null;
+		CacheNodeType?: string | null;
+		AuthTokenEnabled?: boolean | null;
+		AuthTokenLastModifiedDate?: Date | null;
+		TransitEncryptionEnabled?: boolean | null;
+		AtRestEncryptionEnabled?: boolean | null;
+		KmsKeyId?: string | null;
+		ARN?: string | null;
 	}
 
 
 	/** The name of the Global Datastore and role of this replication group in the Global Datastore. */
 	export interface GlobalReplicationGroupInfo {
-		GlobalReplicationGroupId?: string;
-		GlobalReplicationGroupMemberRole?: string;
+		GlobalReplicationGroupId?: string | null;
+		GlobalReplicationGroupMemberRole?: string | null;
 	}
 
 
 	/** The settings to be applied to the Redis replication group, either immediately or during the next maintenance window. */
 	export interface ReplicationGroupPendingModifiedValues {
-		PrimaryClusterId?: string;
-		AutomaticFailoverStatus?: ReplicationGroupPendingModifiedValuesAutomaticFailoverStatus;
+		PrimaryClusterId?: string | null;
+		AutomaticFailoverStatus?: ReplicationGroupPendingModifiedValuesAutomaticFailoverStatus | null;
 
 		/** The status of an online resharding operation. */
-		Resharding?: ReshardingStatus;
-		AuthTokenStatus?: ReplicationGroupPendingModifiedValuesAuthTokenStatus;
+		Resharding?: ReshardingStatus | null;
+		AuthTokenStatus?: ReplicationGroupPendingModifiedValuesAuthTokenStatus | null;
 	}
 
 	export enum ReplicationGroupPendingModifiedValuesAutomaticFailoverStatus { enabled = 0, disabled = 1 }
@@ -158,13 +158,13 @@ export namespace MyNS {
 	export interface ReshardingStatus {
 
 		/** Represents the progress of an online resharding operation. */
-		SlotMigration?: SlotMigration;
+		SlotMigration?: SlotMigration | null;
 	}
 
 
 	/** Represents the progress of an online resharding operation. */
 	export interface SlotMigration {
-		ProgressPercentage?: number;
+		ProgressPercentage?: number | null;
 	}
 
 	export enum ReplicationGroupPendingModifiedValuesAuthTokenStatus { SETTING = 0, ROTATING = 1 }
@@ -172,35 +172,35 @@ export namespace MyNS {
 
 	/** Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes. */
 	export interface NodeGroup {
-		NodeGroupId?: string;
-		Status?: string;
+		NodeGroupId?: string | null;
+		Status?: string | null;
 
 		/** Represents the information required for client programs to connect to a cache node. */
-		PrimaryEndpoint?: Endpoint;
+		PrimaryEndpoint?: Endpoint | null;
 
 		/** Represents the information required for client programs to connect to a cache node. */
-		ReaderEndpoint?: Endpoint;
-		Slots?: string;
-		NodeGroupMembers?: Array<NodeGroupMember>;
+		ReaderEndpoint?: Endpoint | null;
+		Slots?: string | null;
+		NodeGroupMembers?: Array<NodeGroupMember> | null;
 	}
 
 
 	/** Represents the information required for client programs to connect to a cache node. */
 	export interface Endpoint {
-		Address?: string;
-		Port?: number;
+		Address?: string | null;
+		Port?: number | null;
 	}
 
 
 	/** Represents a single node within a node group (shard). */
 	export interface NodeGroupMember {
-		CacheClusterId?: string;
-		CacheNodeId?: string;
+		CacheClusterId?: string | null;
+		CacheNodeId?: string | null;
 
 		/** Represents the information required for client programs to connect to a cache node. */
-		ReadEndpoint?: Endpoint;
-		PreferredAvailabilityZone?: string;
-		CurrentRole?: string;
+		ReadEndpoint?: Endpoint | null;
+		PreferredAvailabilityZone?: string | null;
+		CurrentRole?: string | null;
 	}
 
 	export enum ReplicationGroupAutomaticFailover { enabled = 0, disabled = 1, enabling = 2, disabling = 3 }
@@ -217,62 +217,62 @@ export namespace MyNS {
 	export interface CopySnapshotResult {
 
 		/** Represents a copy of an entire Redis cluster as of the time when the snapshot was taken. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 
 	/** Represents a copy of an entire Redis cluster as of the time when the snapshot was taken. */
 	export interface Snapshot {
-		SnapshotName?: string;
-		ReplicationGroupId?: string;
-		ReplicationGroupDescription?: string;
-		CacheClusterId?: string;
-		SnapshotStatus?: string;
-		SnapshotSource?: string;
-		CacheNodeType?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		NumCacheNodes?: number;
-		PreferredAvailabilityZone?: string;
-		CacheClusterCreateTime?: Date;
-		PreferredMaintenanceWindow?: string;
-		TopicArn?: string;
-		Port?: number;
-		CacheParameterGroupName?: string;
-		CacheSubnetGroupName?: string;
-		VpcId?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		SnapshotRetentionLimit?: number;
-		SnapshotWindow?: string;
-		NumNodeGroups?: number;
-		AutomaticFailover?: ReplicationGroupAutomaticFailover;
-		NodeSnapshots?: Array<NodeSnapshot>;
-		KmsKeyId?: string;
-		ARN?: string;
+		SnapshotName?: string | null;
+		ReplicationGroupId?: string | null;
+		ReplicationGroupDescription?: string | null;
+		CacheClusterId?: string | null;
+		SnapshotStatus?: string | null;
+		SnapshotSource?: string | null;
+		CacheNodeType?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		NumCacheNodes?: number | null;
+		PreferredAvailabilityZone?: string | null;
+		CacheClusterCreateTime?: Date | null;
+		PreferredMaintenanceWindow?: string | null;
+		TopicArn?: string | null;
+		Port?: number | null;
+		CacheParameterGroupName?: string | null;
+		CacheSubnetGroupName?: string | null;
+		VpcId?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		SnapshotRetentionLimit?: number | null;
+		SnapshotWindow?: string | null;
+		NumNodeGroups?: number | null;
+		AutomaticFailover?: ReplicationGroupAutomaticFailover | null;
+		NodeSnapshots?: Array<NodeSnapshot> | null;
+		KmsKeyId?: string | null;
+		ARN?: string | null;
 	}
 
 
 	/** Represents an individual cache node in a snapshot of a cluster. */
 	export interface NodeSnapshot {
-		CacheClusterId?: string;
-		NodeGroupId?: string;
-		CacheNodeId?: string;
+		CacheClusterId?: string | null;
+		NodeGroupId?: string | null;
+		CacheNodeId?: string | null;
 
 		/** Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>. */
-		NodeGroupConfiguration?: NodeGroupConfiguration;
-		CacheSize?: string;
-		CacheNodeCreateTime?: Date;
-		SnapshotCreateTime?: Date;
+		NodeGroupConfiguration?: NodeGroupConfiguration | null;
+		CacheSize?: string | null;
+		CacheNodeCreateTime?: Date | null;
+		SnapshotCreateTime?: Date | null;
 	}
 
 
 	/** Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>. */
 	export interface NodeGroupConfiguration {
-		NodeGroupId?: string;
-		Slots?: string;
-		ReplicaCount?: number;
-		PrimaryAvailabilityZone?: string;
-		ReplicaAvailabilityZones?: Array<string>;
+		NodeGroupId?: string | null;
+		Slots?: string | null;
+		ReplicaCount?: number | null;
+		PrimaryAvailabilityZone?: string | null;
+		ReplicaAvailabilityZones?: Array<string> | null;
 	}
 
 	export interface SnapshotAlreadyExistsFault {
@@ -287,100 +287,100 @@ export namespace MyNS {
 	export interface CreateCacheClusterResult {
 
 		/** Contains all of the attributes of a specific cluster. */
-		CacheCluster?: CacheCluster;
+		CacheCluster?: CacheCluster | null;
 	}
 
 
 	/** Contains all of the attributes of a specific cluster. */
 	export interface CacheCluster {
-		CacheClusterId?: string;
+		CacheClusterId?: string | null;
 
 		/** Represents the information required for client programs to connect to a cache node. */
-		ConfigurationEndpoint?: Endpoint;
-		ClientDownloadLandingPage?: string;
-		CacheNodeType?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		CacheClusterStatus?: string;
-		NumCacheNodes?: number;
-		PreferredAvailabilityZone?: string;
-		CacheClusterCreateTime?: Date;
-		PreferredMaintenanceWindow?: string;
+		ConfigurationEndpoint?: Endpoint | null;
+		ClientDownloadLandingPage?: string | null;
+		CacheNodeType?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		CacheClusterStatus?: string | null;
+		NumCacheNodes?: number | null;
+		PreferredAvailabilityZone?: string | null;
+		CacheClusterCreateTime?: Date | null;
+		PreferredMaintenanceWindow?: string | null;
 
 		/** A group of settings that are applied to the cluster in the future, or that are currently being applied. */
-		PendingModifiedValues?: PendingModifiedValues;
+		PendingModifiedValues?: PendingModifiedValues | null;
 
 		/** Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). */
-		NotificationConfiguration?: NotificationConfiguration;
-		CacheSecurityGroups?: Array<CacheSecurityGroupMembership>;
+		NotificationConfiguration?: NotificationConfiguration | null;
+		CacheSecurityGroups?: Array<CacheSecurityGroupMembership> | null;
 
 		/** Status of the cache parameter group. */
-		CacheParameterGroup?: CacheParameterGroupStatus;
-		CacheSubnetGroupName?: string;
-		CacheNodes?: Array<CacheNode>;
-		AutoMinorVersionUpgrade?: boolean;
-		SecurityGroups?: Array<SecurityGroupMembership>;
-		ReplicationGroupId?: string;
-		SnapshotRetentionLimit?: number;
-		SnapshotWindow?: string;
-		AuthTokenEnabled?: boolean;
-		AuthTokenLastModifiedDate?: Date;
-		TransitEncryptionEnabled?: boolean;
-		AtRestEncryptionEnabled?: boolean;
-		ARN?: string;
+		CacheParameterGroup?: CacheParameterGroupStatus | null;
+		CacheSubnetGroupName?: string | null;
+		CacheNodes?: Array<CacheNode> | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		SecurityGroups?: Array<SecurityGroupMembership> | null;
+		ReplicationGroupId?: string | null;
+		SnapshotRetentionLimit?: number | null;
+		SnapshotWindow?: string | null;
+		AuthTokenEnabled?: boolean | null;
+		AuthTokenLastModifiedDate?: Date | null;
+		TransitEncryptionEnabled?: boolean | null;
+		AtRestEncryptionEnabled?: boolean | null;
+		ARN?: string | null;
 	}
 
 
 	/** A group of settings that are applied to the cluster in the future, or that are currently being applied. */
 	export interface PendingModifiedValues {
-		NumCacheNodes?: number;
-		CacheNodeIdsToRemove?: Array<string>;
-		EngineVersion?: string;
-		CacheNodeType?: string;
-		AuthTokenStatus?: ReplicationGroupPendingModifiedValuesAuthTokenStatus;
+		NumCacheNodes?: number | null;
+		CacheNodeIdsToRemove?: Array<string> | null;
+		EngineVersion?: string | null;
+		CacheNodeType?: string | null;
+		AuthTokenStatus?: ReplicationGroupPendingModifiedValuesAuthTokenStatus | null;
 	}
 
 
 	/** Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). */
 	export interface NotificationConfiguration {
-		TopicArn?: string;
-		TopicStatus?: string;
+		TopicArn?: string | null;
+		TopicStatus?: string | null;
 	}
 
 
 	/** Represents a cluster's status within a particular cache security group. */
 	export interface CacheSecurityGroupMembership {
-		CacheSecurityGroupName?: string;
-		Status?: string;
+		CacheSecurityGroupName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Status of the cache parameter group. */
 	export interface CacheParameterGroupStatus {
-		CacheParameterGroupName?: string;
-		ParameterApplyStatus?: string;
-		CacheNodeIdsToReboot?: Array<string>;
+		CacheParameterGroupName?: string | null;
+		ParameterApplyStatus?: string | null;
+		CacheNodeIdsToReboot?: Array<string> | null;
 	}
 
 
 	/** <p>Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.</p> <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li> <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional node type info</b> </p> <ul> <li> <p>All current generation instance types are created in Amazon VPC by default.</p> </li> <li> <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li> <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li> </ul> */
 	export interface CacheNode {
-		CacheNodeId?: string;
-		CacheNodeStatus?: string;
-		CacheNodeCreateTime?: Date;
+		CacheNodeId?: string | null;
+		CacheNodeStatus?: string | null;
+		CacheNodeCreateTime?: Date | null;
 
 		/** Represents the information required for client programs to connect to a cache node. */
-		Endpoint?: Endpoint;
-		ParameterGroupStatus?: string;
-		SourceCacheNodeId?: string;
-		CustomerAvailabilityZone?: string;
+		Endpoint?: Endpoint | null;
+		ParameterGroupStatus?: string | null;
+		SourceCacheNodeId?: string | null;
+		CustomerAvailabilityZone?: string | null;
 	}
 
 
 	/** Represents a single cache security group and its status. */
 	export interface SecurityGroupMembership {
-		SecurityGroupId?: string;
-		Status?: string;
+		SecurityGroupId?: string | null;
+		Status?: string | null;
 	}
 
 	export interface CacheClusterAlreadyExistsFault {
@@ -410,17 +410,17 @@ export namespace MyNS {
 	export interface CreateCacheParameterGroupResult {
 
 		/** Represents the output of a <code>CreateCacheParameterGroup</code> operation. */
-		CacheParameterGroup?: CacheParameterGroup;
+		CacheParameterGroup?: CacheParameterGroup | null;
 	}
 
 
 	/** Represents the output of a <code>CreateCacheParameterGroup</code> operation. */
 	export interface CacheParameterGroup {
-		CacheParameterGroupName?: string;
-		CacheParameterGroupFamily?: string;
-		Description?: string;
-		IsGlobal?: boolean;
-		ARN?: string;
+		CacheParameterGroupName?: string | null;
+		CacheParameterGroupFamily?: string | null;
+		Description?: string | null;
+		IsGlobal?: boolean | null;
+		ARN?: string | null;
 	}
 
 	export interface CacheParameterGroupQuotaExceededFault {
@@ -435,7 +435,7 @@ export namespace MyNS {
 	export interface CreateCacheSecurityGroupResult {
 
 		/** <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> </ul> */
-		CacheSecurityGroup?: CacheSecurityGroup;
+		CacheSecurityGroup?: CacheSecurityGroup | null;
 	}
 
 	export interface CacheSecurityGroupAlreadyExistsFault {
@@ -447,32 +447,32 @@ export namespace MyNS {
 	export interface CreateCacheSubnetGroupResult {
 
 		/** <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> </ul> */
-		CacheSubnetGroup?: CacheSubnetGroup;
+		CacheSubnetGroup?: CacheSubnetGroup | null;
 	}
 
 
 	/** <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> </ul> */
 	export interface CacheSubnetGroup {
-		CacheSubnetGroupName?: string;
-		CacheSubnetGroupDescription?: string;
-		VpcId?: string;
-		Subnets?: Array<Subnet>;
-		ARN?: string;
+		CacheSubnetGroupName?: string | null;
+		CacheSubnetGroupDescription?: string | null;
+		VpcId?: string | null;
+		Subnets?: Array<Subnet> | null;
+		ARN?: string | null;
 	}
 
 
 	/** Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache. */
 	export interface Subnet {
-		SubnetIdentifier?: string;
+		SubnetIdentifier?: string | null;
 
 		/** Describes an Availability Zone in which the cluster is launched. */
-		SubnetAvailabilityZone?: AvailabilityZone;
+		SubnetAvailabilityZone?: AvailabilityZone | null;
 	}
 
 
 	/** Describes an Availability Zone in which the cluster is launched. */
 	export interface AvailabilityZone {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface CacheSubnetGroupAlreadyExistsFault {
@@ -490,42 +490,42 @@ export namespace MyNS {
 	export interface CreateGlobalReplicationGroupResult {
 
 		/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
-		GlobalReplicationGroup?: GlobalReplicationGroup;
+		GlobalReplicationGroup?: GlobalReplicationGroup | null;
 	}
 
 
 	/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
 	export interface GlobalReplicationGroup {
-		GlobalReplicationGroupId?: string;
-		GlobalReplicationGroupDescription?: string;
-		Status?: string;
-		CacheNodeType?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		Members?: Array<GlobalReplicationGroupMember>;
-		ClusterEnabled?: boolean;
-		GlobalNodeGroups?: Array<GlobalNodeGroup>;
-		AuthTokenEnabled?: boolean;
-		TransitEncryptionEnabled?: boolean;
-		AtRestEncryptionEnabled?: boolean;
-		ARN?: string;
+		GlobalReplicationGroupId?: string | null;
+		GlobalReplicationGroupDescription?: string | null;
+		Status?: string | null;
+		CacheNodeType?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		Members?: Array<GlobalReplicationGroupMember> | null;
+		ClusterEnabled?: boolean | null;
+		GlobalNodeGroups?: Array<GlobalNodeGroup> | null;
+		AuthTokenEnabled?: boolean | null;
+		TransitEncryptionEnabled?: boolean | null;
+		AtRestEncryptionEnabled?: boolean | null;
+		ARN?: string | null;
 	}
 
 
 	/** A member of a Global Datastore. It contains the Replication Group Id, the AWS region and the role of the replication group.  */
 	export interface GlobalReplicationGroupMember {
-		ReplicationGroupId?: string;
-		ReplicationGroupRegion?: string;
-		Role?: string;
-		AutomaticFailover?: ReplicationGroupAutomaticFailover;
-		Status?: string;
+		ReplicationGroupId?: string | null;
+		ReplicationGroupRegion?: string | null;
+		Role?: string | null;
+		AutomaticFailover?: ReplicationGroupAutomaticFailover | null;
+		Status?: string | null;
 	}
 
 
 	/** Indicates the slot configuration and global identifier for a slice group. */
 	export interface GlobalNodeGroup {
-		GlobalNodeGroupId?: string;
-		Slots?: string;
+		GlobalNodeGroupId?: string | null;
+		Slots?: string | null;
 	}
 
 	export interface GlobalReplicationGroupAlreadyExistsFault {
@@ -537,7 +537,7 @@ export namespace MyNS {
 	export interface CreateReplicationGroupResult {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 	export interface InvalidCacheClusterStateFault {
@@ -558,7 +558,7 @@ export namespace MyNS {
 	export interface CreateSnapshotResult {
 
 		/** Represents a copy of an entire Redis cluster as of the time when the snapshot was taken. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 	export interface SnapshotFeatureNotSupportedFault {
@@ -567,13 +567,13 @@ export namespace MyNS {
 	export interface DecreaseNodeGroupsInGlobalReplicationGroupResult {
 
 		/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
-		GlobalReplicationGroup?: GlobalReplicationGroup;
+		GlobalReplicationGroup?: GlobalReplicationGroup | null;
 	}
 
 	export interface DecreaseReplicaCountResult {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 
@@ -581,7 +581,7 @@ export namespace MyNS {
 	export interface ConfigureShard {
 		NodeGroupId: string;
 		NewReplicaCount: number;
-		PreferredAvailabilityZones?: Array<string>;
+		PreferredAvailabilityZones?: Array<string> | null;
 	}
 
 	export interface NoOperationFault {
@@ -590,7 +590,7 @@ export namespace MyNS {
 	export interface DeleteCacheClusterResult {
 
 		/** Contains all of the attributes of a specific cluster. */
-		CacheCluster?: CacheCluster;
+		CacheCluster?: CacheCluster | null;
 	}
 
 	export interface CacheSubnetGroupInUse {
@@ -599,72 +599,72 @@ export namespace MyNS {
 	export interface DeleteGlobalReplicationGroupResult {
 
 		/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
-		GlobalReplicationGroup?: GlobalReplicationGroup;
+		GlobalReplicationGroup?: GlobalReplicationGroup | null;
 	}
 
 	export interface DeleteReplicationGroupResult {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 	export interface DeleteSnapshotResult {
 
 		/** Represents a copy of an entire Redis cluster as of the time when the snapshot was taken. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeCacheClusters</code> operation. */
 	export interface CacheClusterMessage {
-		Marker?: string;
-		CacheClusters?: Array<CacheCluster>;
+		Marker?: string | null;
+		CacheClusters?: Array<CacheCluster> | null;
 	}
 
 
 	/** Represents the output of a <a>DescribeCacheEngineVersions</a> operation. */
 	export interface CacheEngineVersionMessage {
-		Marker?: string;
-		CacheEngineVersions?: Array<CacheEngineVersion>;
+		Marker?: string | null;
+		CacheEngineVersions?: Array<CacheEngineVersion> | null;
 	}
 
 
 	/** Provides all of the details about a particular cache engine version. */
 	export interface CacheEngineVersion {
-		Engine?: string;
-		EngineVersion?: string;
-		CacheParameterGroupFamily?: string;
-		CacheEngineDescription?: string;
-		CacheEngineVersionDescription?: string;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		CacheParameterGroupFamily?: string | null;
+		CacheEngineDescription?: string | null;
+		CacheEngineVersionDescription?: string | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeCacheParameterGroups</code> operation. */
 	export interface CacheParameterGroupsMessage {
-		Marker?: string;
-		CacheParameterGroups?: Array<CacheParameterGroup>;
+		Marker?: string | null;
+		CacheParameterGroups?: Array<CacheParameterGroup> | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeCacheParameters</code> operation. */
 	export interface CacheParameterGroupDetails {
-		Marker?: string;
-		Parameters?: Array<Parameter>;
-		CacheNodeTypeSpecificParameters?: Array<CacheNodeTypeSpecificParameter>;
+		Marker?: string | null;
+		Parameters?: Array<Parameter> | null;
+		CacheNodeTypeSpecificParameters?: Array<CacheNodeTypeSpecificParameter> | null;
 	}
 
 
 	/** Describes an individual setting that controls some aspect of ElastiCache behavior. */
 	export interface Parameter {
-		ParameterName?: string;
-		ParameterValue?: string;
-		Description?: string;
-		Source?: string;
-		DataType?: string;
-		AllowedValues?: string;
-		IsModifiable?: boolean;
-		MinimumEngineVersion?: string;
-		ChangeType?: ParameterChangeType;
+		ParameterName?: string | null;
+		ParameterValue?: string | null;
+		Description?: string | null;
+		Source?: string | null;
+		DataType?: string | null;
+		AllowedValues?: string | null;
+		IsModifiable?: boolean | null;
+		MinimumEngineVersion?: string | null;
+		ChangeType?: ParameterChangeType | null;
 	}
 
 	export enum ParameterChangeType { immediate = 0, requires_reboot = 1 }
@@ -672,22 +672,22 @@ export namespace MyNS {
 
 	/** A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type. */
 	export interface CacheNodeTypeSpecificParameter {
-		ParameterName?: string;
-		Description?: string;
-		Source?: string;
-		DataType?: string;
-		AllowedValues?: string;
-		IsModifiable?: boolean;
-		MinimumEngineVersion?: string;
-		CacheNodeTypeSpecificValues?: Array<CacheNodeTypeSpecificValue>;
-		ChangeType?: CacheNodeTypeSpecificParameterChangeType;
+		ParameterName?: string | null;
+		Description?: string | null;
+		Source?: string | null;
+		DataType?: string | null;
+		AllowedValues?: string | null;
+		IsModifiable?: boolean | null;
+		MinimumEngineVersion?: string | null;
+		CacheNodeTypeSpecificValues?: Array<CacheNodeTypeSpecificValue> | null;
+		ChangeType?: CacheNodeTypeSpecificParameterChangeType | null;
 	}
 
 
 	/** A value that applies only to a certain cache node type. */
 	export interface CacheNodeTypeSpecificValue {
-		CacheNodeType?: string;
-		Value?: string;
+		CacheNodeType?: string | null;
+		Value?: string | null;
 	}
 
 	export enum CacheNodeTypeSpecificParameterChangeType { immediate = 0, requires_reboot = 1 }
@@ -695,92 +695,92 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DescribeCacheSecurityGroups</code> operation. */
 	export interface CacheSecurityGroupMessage {
-		Marker?: string;
-		CacheSecurityGroups?: Array<CacheSecurityGroup>;
+		Marker?: string | null;
+		CacheSecurityGroups?: Array<CacheSecurityGroup> | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeCacheSubnetGroups</code> operation. */
 	export interface CacheSubnetGroupMessage {
-		Marker?: string;
-		CacheSubnetGroups?: Array<CacheSubnetGroup>;
+		Marker?: string | null;
+		CacheSubnetGroups?: Array<CacheSubnetGroup> | null;
 	}
 
 	export interface DescribeEngineDefaultParametersResult {
 
 		/** Represents the output of a <code>DescribeEngineDefaultParameters</code> operation. */
-		EngineDefaults?: EngineDefaults;
+		EngineDefaults?: EngineDefaults | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeEngineDefaultParameters</code> operation. */
 	export interface EngineDefaults {
-		CacheParameterGroupFamily?: string;
-		Marker?: string;
-		Parameters?: Array<Parameter>;
-		CacheNodeTypeSpecificParameters?: Array<CacheNodeTypeSpecificParameter>;
+		CacheParameterGroupFamily?: string | null;
+		Marker?: string | null;
+		Parameters?: Array<Parameter> | null;
+		CacheNodeTypeSpecificParameters?: Array<CacheNodeTypeSpecificParameter> | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeEvents</code> operation. */
 	export interface EventsMessage {
-		Marker?: string;
-		Events?: Array<Event>;
+		Marker?: string | null;
+		Events?: Array<Event> | null;
 	}
 
 
 	/** Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster, adding or removing a cache node, or rebooting a node. */
 	export interface Event {
-		SourceIdentifier?: string;
-		SourceType?: EventSourceType;
-		Message?: string;
-		Date?: Date;
+		SourceIdentifier?: string | null;
+		SourceType?: EventSourceType | null;
+		Message?: string | null;
+		Date?: Date | null;
 	}
 
 	export enum EventSourceType { cache_cluster = 0, cache_parameter_group = 1, cache_security_group = 2, cache_subnet_group = 3, replication_group = 4 }
 
 	export interface DescribeGlobalReplicationGroupsResult {
-		Marker?: string;
-		GlobalReplicationGroups?: Array<GlobalReplicationGroup>;
+		Marker?: string | null;
+		GlobalReplicationGroups?: Array<GlobalReplicationGroup> | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeReplicationGroups</code> operation. */
 	export interface ReplicationGroupMessage {
-		Marker?: string;
-		ReplicationGroups?: Array<ReplicationGroup>;
+		Marker?: string | null;
+		ReplicationGroups?: Array<ReplicationGroup> | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeReservedCacheNodes</code> operation. */
 	export interface ReservedCacheNodeMessage {
-		Marker?: string;
-		ReservedCacheNodes?: Array<ReservedCacheNode>;
+		Marker?: string | null;
+		ReservedCacheNodes?: Array<ReservedCacheNode> | null;
 	}
 
 
 	/** Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation. */
 	export interface ReservedCacheNode {
-		ReservedCacheNodeId?: string;
-		ReservedCacheNodesOfferingId?: string;
-		CacheNodeType?: string;
-		StartTime?: Date;
-		Duration?: number;
-		FixedPrice?: number;
-		UsagePrice?: number;
-		CacheNodeCount?: number;
-		ProductDescription?: string;
-		OfferingType?: string;
-		State?: string;
-		RecurringCharges?: Array<RecurringCharge>;
-		ReservationARN?: string;
+		ReservedCacheNodeId?: string | null;
+		ReservedCacheNodesOfferingId?: string | null;
+		CacheNodeType?: string | null;
+		StartTime?: Date | null;
+		Duration?: number | null;
+		FixedPrice?: number | null;
+		UsagePrice?: number | null;
+		CacheNodeCount?: number | null;
+		ProductDescription?: string | null;
+		OfferingType?: string | null;
+		State?: string | null;
+		RecurringCharges?: Array<RecurringCharge> | null;
+		ReservationARN?: string | null;
 	}
 
 
 	/** Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering. */
 	export interface RecurringCharge {
-		RecurringChargeAmount?: number;
-		RecurringChargeFrequency?: string;
+		RecurringChargeAmount?: number | null;
+		RecurringChargeFrequency?: string | null;
 	}
 
 	export interface ReservedCacheNodeNotFoundFault {
@@ -789,46 +789,46 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation. */
 	export interface ReservedCacheNodesOfferingMessage {
-		Marker?: string;
-		ReservedCacheNodesOfferings?: Array<ReservedCacheNodesOffering>;
+		Marker?: string | null;
+		ReservedCacheNodesOfferings?: Array<ReservedCacheNodesOffering> | null;
 	}
 
 
 	/** Describes all of the attributes of a reserved cache node offering. */
 	export interface ReservedCacheNodesOffering {
-		ReservedCacheNodesOfferingId?: string;
-		CacheNodeType?: string;
-		Duration?: number;
-		FixedPrice?: number;
-		UsagePrice?: number;
-		ProductDescription?: string;
-		OfferingType?: string;
-		RecurringCharges?: Array<RecurringCharge>;
+		ReservedCacheNodesOfferingId?: string | null;
+		CacheNodeType?: string | null;
+		Duration?: number | null;
+		FixedPrice?: number | null;
+		UsagePrice?: number | null;
+		ProductDescription?: string | null;
+		OfferingType?: string | null;
+		RecurringCharges?: Array<RecurringCharge> | null;
 	}
 
 	export interface ReservedCacheNodesOfferingNotFoundFault {
 	}
 
 	export interface ServiceUpdatesMessage {
-		Marker?: string;
-		ServiceUpdates?: Array<ServiceUpdate>;
+		Marker?: string | null;
+		ServiceUpdates?: Array<ServiceUpdate> | null;
 	}
 
 
 	/** An update that you can apply to your Redis clusters. */
 	export interface ServiceUpdate {
-		ServiceUpdateName?: string;
-		ServiceUpdateReleaseDate?: Date;
-		ServiceUpdateEndDate?: Date;
-		ServiceUpdateSeverity?: ServiceUpdateServiceUpdateSeverity;
-		ServiceUpdateRecommendedApplyByDate?: Date;
-		ServiceUpdateStatus?: ServiceUpdateServiceUpdateStatus;
-		ServiceUpdateDescription?: string;
-		ServiceUpdateType?: ServiceUpdateServiceUpdateType;
-		Engine?: string;
-		EngineVersion?: string;
-		AutoUpdateAfterRecommendedApplyByDate?: boolean;
-		EstimatedUpdateTime?: string;
+		ServiceUpdateName?: string | null;
+		ServiceUpdateReleaseDate?: Date | null;
+		ServiceUpdateEndDate?: Date | null;
+		ServiceUpdateSeverity?: ServiceUpdateServiceUpdateSeverity | null;
+		ServiceUpdateRecommendedApplyByDate?: Date | null;
+		ServiceUpdateStatus?: ServiceUpdateServiceUpdateStatus | null;
+		ServiceUpdateDescription?: string | null;
+		ServiceUpdateType?: ServiceUpdateServiceUpdateType | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		AutoUpdateAfterRecommendedApplyByDate?: boolean | null;
+		EstimatedUpdateTime?: string | null;
 	}
 
 	export enum ServiceUpdateServiceUpdateSeverity { critical = 0, important = 1, medium = 2, low = 3 }
@@ -842,35 +842,35 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DescribeSnapshots</code> operation. */
 	export interface DescribeSnapshotsListMessage {
-		Marker?: string;
-		Snapshots?: Array<Snapshot>;
+		Marker?: string | null;
+		Snapshots?: Array<Snapshot> | null;
 	}
 
 	export interface UpdateActionsMessage {
-		Marker?: string;
-		UpdateActions?: Array<UpdateAction>;
+		Marker?: string | null;
+		UpdateActions?: Array<UpdateAction> | null;
 	}
 
 
 	/** The status of the service update for a specific replication group */
 	export interface UpdateAction {
-		ReplicationGroupId?: string;
-		CacheClusterId?: string;
-		ServiceUpdateName?: string;
-		ServiceUpdateReleaseDate?: Date;
-		ServiceUpdateSeverity?: ServiceUpdateServiceUpdateSeverity;
-		ServiceUpdateStatus?: ServiceUpdateServiceUpdateStatus;
-		ServiceUpdateRecommendedApplyByDate?: Date;
-		ServiceUpdateType?: UpdateActionServiceUpdateType;
-		UpdateActionAvailableDate?: Date;
-		UpdateActionStatus?: UpdateActionUpdateActionStatus;
-		NodesUpdated?: string;
-		UpdateActionStatusModifiedDate?: Date;
-		SlaMet?: UpdateActionSlaMet;
-		NodeGroupUpdateStatus?: Array<NodeGroupUpdateStatus>;
-		CacheNodeUpdateStatus?: Array<CacheNodeUpdateStatus>;
-		EstimatedUpdateTime?: string;
-		Engine?: string;
+		ReplicationGroupId?: string | null;
+		CacheClusterId?: string | null;
+		ServiceUpdateName?: string | null;
+		ServiceUpdateReleaseDate?: Date | null;
+		ServiceUpdateSeverity?: ServiceUpdateServiceUpdateSeverity | null;
+		ServiceUpdateStatus?: ServiceUpdateServiceUpdateStatus | null;
+		ServiceUpdateRecommendedApplyByDate?: Date | null;
+		ServiceUpdateType?: UpdateActionServiceUpdateType | null;
+		UpdateActionAvailableDate?: Date | null;
+		UpdateActionStatus?: UpdateActionUpdateActionStatus | null;
+		NodesUpdated?: string | null;
+		UpdateActionStatusModifiedDate?: Date | null;
+		SlaMet?: UpdateActionSlaMet | null;
+		NodeGroupUpdateStatus?: Array<NodeGroupUpdateStatus> | null;
+		CacheNodeUpdateStatus?: Array<CacheNodeUpdateStatus> | null;
+		EstimatedUpdateTime?: string | null;
+		Engine?: string | null;
 	}
 
 	export enum UpdateActionServiceUpdateType { security_update = 0 }
@@ -882,22 +882,22 @@ export namespace MyNS {
 
 	/** The status of the service update on the node group  */
 	export interface NodeGroupUpdateStatus {
-		NodeGroupId?: string;
-		NodeGroupMemberUpdateStatus?: Array<NodeGroupMemberUpdateStatus>;
+		NodeGroupId?: string | null;
+		NodeGroupMemberUpdateStatus?: Array<NodeGroupMemberUpdateStatus> | null;
 	}
 
 
 	/** The status of the service update on the node group member  */
 	export interface NodeGroupMemberUpdateStatus {
-		CacheClusterId?: string;
-		CacheNodeId?: string;
-		NodeUpdateStatus?: NodeGroupMemberUpdateStatusNodeUpdateStatus;
-		NodeDeletionDate?: Date;
-		NodeUpdateStartDate?: Date;
-		NodeUpdateEndDate?: Date;
-		NodeUpdateInitiatedBy?: NodeGroupMemberUpdateStatusNodeUpdateInitiatedBy;
-		NodeUpdateInitiatedDate?: Date;
-		NodeUpdateStatusModifiedDate?: Date;
+		CacheClusterId?: string | null;
+		CacheNodeId?: string | null;
+		NodeUpdateStatus?: NodeGroupMemberUpdateStatusNodeUpdateStatus | null;
+		NodeDeletionDate?: Date | null;
+		NodeUpdateStartDate?: Date | null;
+		NodeUpdateEndDate?: Date | null;
+		NodeUpdateInitiatedBy?: NodeGroupMemberUpdateStatusNodeUpdateInitiatedBy | null;
+		NodeUpdateInitiatedDate?: Date | null;
+		NodeUpdateStatusModifiedDate?: Date | null;
 	}
 
 	export enum NodeGroupMemberUpdateStatusNodeUpdateStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5 }
@@ -907,14 +907,14 @@ export namespace MyNS {
 
 	/** The status of the service update on the cache node */
 	export interface CacheNodeUpdateStatus {
-		CacheNodeId?: string;
-		NodeUpdateStatus?: CacheNodeUpdateStatusNodeUpdateStatus;
-		NodeDeletionDate?: Date;
-		NodeUpdateStartDate?: Date;
-		NodeUpdateEndDate?: Date;
-		NodeUpdateInitiatedBy?: NodeGroupMemberUpdateStatusNodeUpdateInitiatedBy;
-		NodeUpdateInitiatedDate?: Date;
-		NodeUpdateStatusModifiedDate?: Date;
+		CacheNodeId?: string | null;
+		NodeUpdateStatus?: CacheNodeUpdateStatusNodeUpdateStatus | null;
+		NodeDeletionDate?: Date | null;
+		NodeUpdateStartDate?: Date | null;
+		NodeUpdateEndDate?: Date | null;
+		NodeUpdateInitiatedBy?: NodeGroupMemberUpdateStatusNodeUpdateInitiatedBy | null;
+		NodeUpdateInitiatedDate?: Date | null;
+		NodeUpdateStatusModifiedDate?: Date | null;
 	}
 
 	export enum CacheNodeUpdateStatusNodeUpdateStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5 }
@@ -924,19 +924,19 @@ export namespace MyNS {
 	export interface DisassociateGlobalReplicationGroupResult {
 
 		/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
-		GlobalReplicationGroup?: GlobalReplicationGroup;
+		GlobalReplicationGroup?: GlobalReplicationGroup | null;
 	}
 
 	export interface FailoverGlobalReplicationGroupResult {
 
 		/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
-		GlobalReplicationGroup?: GlobalReplicationGroup;
+		GlobalReplicationGroup?: GlobalReplicationGroup | null;
 	}
 
 	export interface IncreaseNodeGroupsInGlobalReplicationGroupResult {
 
 		/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
-		GlobalReplicationGroup?: GlobalReplicationGroup;
+		GlobalReplicationGroup?: GlobalReplicationGroup | null;
 	}
 
 
@@ -950,14 +950,14 @@ export namespace MyNS {
 
 	/** A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. */
 	export interface ReshardingConfiguration {
-		NodeGroupId?: string;
-		PreferredAvailabilityZones?: Array<string>;
+		NodeGroupId?: string | null;
+		PreferredAvailabilityZones?: Array<string> | null;
 	}
 
 	export interface IncreaseReplicaCountResult {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 	export interface InvalidKMSKeyFault {
@@ -966,33 +966,33 @@ export namespace MyNS {
 
 	/** Represents the allowed node types you can use to modify your cluster or replication group. */
 	export interface AllowedNodeTypeModificationsMessage {
-		ScaleUpModifications?: Array<string>;
-		ScaleDownModifications?: Array<string>;
+		ScaleUpModifications?: Array<string> | null;
+		ScaleDownModifications?: Array<string> | null;
 	}
 
 	export interface ModifyCacheClusterResult {
 
 		/** Contains all of the attributes of a specific cluster. */
-		CacheCluster?: CacheCluster;
+		CacheCluster?: CacheCluster | null;
 	}
 
 
 	/** <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li> <li> <p> <code>ResetCacheParameterGroup</code> </p> </li> </ul> */
 	export interface CacheParameterGroupNameMessage {
-		CacheParameterGroupName?: string;
+		CacheParameterGroupName?: string | null;
 	}
 
 
 	/** Describes a name-value pair that is used to update the value of a parameter. */
 	export interface ParameterNameValue {
-		ParameterName?: string;
-		ParameterValue?: string;
+		ParameterName?: string | null;
+		ParameterValue?: string | null;
 	}
 
 	export interface ModifyCacheSubnetGroupResult {
 
 		/** <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> </ul> */
-		CacheSubnetGroup?: CacheSubnetGroup;
+		CacheSubnetGroup?: CacheSubnetGroup | null;
 	}
 
 	export interface SubnetInUse {
@@ -1001,25 +1001,25 @@ export namespace MyNS {
 	export interface ModifyGlobalReplicationGroupResult {
 
 		/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
-		GlobalReplicationGroup?: GlobalReplicationGroup;
+		GlobalReplicationGroup?: GlobalReplicationGroup | null;
 	}
 
 	export interface ModifyReplicationGroupResult {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 	export interface ModifyReplicationGroupShardConfigurationResult {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 	export interface PurchaseReservedCacheNodesOfferingResult {
 
 		/** Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation. */
-		ReservedCacheNode?: ReservedCacheNode;
+		ReservedCacheNode?: ReservedCacheNode | null;
 	}
 
 	export interface ReservedCacheNodeAlreadyExistsFault {
@@ -1031,13 +1031,13 @@ export namespace MyNS {
 	export interface RebalanceSlotsInGlobalReplicationGroupResult {
 
 		/** <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to associate a secondary cluster.</p> </li> </ul> */
-		GlobalReplicationGroup?: GlobalReplicationGroup;
+		GlobalReplicationGroup?: GlobalReplicationGroup | null;
 	}
 
 	export interface RebootCacheClusterResult {
 
 		/** Contains all of the attributes of a specific cluster. */
-		CacheCluster?: CacheCluster;
+		CacheCluster?: CacheCluster | null;
 	}
 
 	export interface TagNotFoundFault {
@@ -1046,7 +1046,7 @@ export namespace MyNS {
 	export interface RevokeCacheSecurityGroupIngressResult {
 
 		/** <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> </ul> */
-		CacheSecurityGroup?: CacheSecurityGroup;
+		CacheSecurityGroup?: CacheSecurityGroup | null;
 	}
 
 	export interface AuthorizationNotFoundFault {
@@ -1055,14 +1055,14 @@ export namespace MyNS {
 	export interface StartMigrationResponse {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 
 	/** The endpoint from which data should be migrated. */
 	export interface CustomerNodeEndpoint {
-		Address?: string;
-		Port?: number;
+		Address?: string | null;
+		Port?: number | null;
 	}
 
 	export interface ReplicationGroupAlreadyUnderMigrationFault {
@@ -1071,7 +1071,7 @@ export namespace MyNS {
 	export interface TestFailoverResult {
 
 		/** Contains all of the attributes of a specific Redis replication group. */
-		ReplicationGroup?: ReplicationGroup;
+		ReplicationGroup?: ReplicationGroup | null;
 	}
 
 	export interface APICallRateForCustomerExceededFault {
@@ -1107,14 +1107,14 @@ export namespace MyNS {
 	export enum AutomaticFailoverStatus { enabled = 0, disabled = 1, enabling = 2, disabling = 3 }
 
 	export interface BatchApplyUpdateActionMessage {
-		ReplicationGroupIds?: Array<string>;
-		CacheClusterIds?: Array<string>;
+		ReplicationGroupIds?: Array<string> | null;
+		CacheClusterIds?: Array<string> | null;
 		ServiceUpdateName: string;
 	}
 
 	export interface BatchStopUpdateActionMessage {
-		ReplicationGroupIds?: Array<string>;
-		CacheClusterIds?: Array<string>;
+		ReplicationGroupIds?: Array<string> | null;
+		CacheClusterIds?: Array<string> | null;
 		ServiceUpdateName: string;
 	}
 
@@ -1126,7 +1126,7 @@ export namespace MyNS {
 
 	export interface CompleteMigrationMessage {
 		ReplicationGroupId: string;
-		Force?: boolean;
+		Force?: boolean | null;
 	}
 
 
@@ -1134,36 +1134,36 @@ export namespace MyNS {
 	export interface CopySnapshotMessage {
 		SourceSnapshotName: string;
 		TargetSnapshotName: string;
-		TargetBucket?: string;
-		KmsKeyId?: string;
+		TargetBucket?: string | null;
+		KmsKeyId?: string | null;
 	}
 
 
 	/** Represents the input of a CreateCacheCluster operation. */
 	export interface CreateCacheClusterMessage {
 		CacheClusterId: string;
-		ReplicationGroupId?: string;
-		AZMode?: CreateCacheClusterMessageAZMode;
-		PreferredAvailabilityZone?: string;
-		PreferredAvailabilityZones?: Array<string>;
-		NumCacheNodes?: number;
-		CacheNodeType?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		CacheParameterGroupName?: string;
-		CacheSubnetGroupName?: string;
-		CacheSecurityGroupNames?: Array<string>;
-		SecurityGroupIds?: Array<string>;
-		Tags?: Array<Tag>;
-		SnapshotArns?: Array<string>;
-		SnapshotName?: string;
-		PreferredMaintenanceWindow?: string;
-		Port?: number;
-		NotificationTopicArn?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		SnapshotRetentionLimit?: number;
-		SnapshotWindow?: string;
-		AuthToken?: string;
+		ReplicationGroupId?: string | null;
+		AZMode?: CreateCacheClusterMessageAZMode | null;
+		PreferredAvailabilityZone?: string | null;
+		PreferredAvailabilityZones?: Array<string> | null;
+		NumCacheNodes?: number | null;
+		CacheNodeType?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		CacheParameterGroupName?: string | null;
+		CacheSubnetGroupName?: string | null;
+		CacheSecurityGroupNames?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
+		Tags?: Array<Tag> | null;
+		SnapshotArns?: Array<string> | null;
+		SnapshotName?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		Port?: number | null;
+		NotificationTopicArn?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		SnapshotRetentionLimit?: number | null;
+		SnapshotWindow?: string | null;
+		AuthToken?: string | null;
 	}
 
 	export enum CreateCacheClusterMessageAZMode { single_az = 0, cross_az = 1 }
@@ -1193,7 +1193,7 @@ export namespace MyNS {
 
 	export interface CreateGlobalReplicationGroupMessage {
 		GlobalReplicationGroupIdSuffix: string;
-		GlobalReplicationGroupDescription?: string;
+		GlobalReplicationGroupDescription?: string | null;
 		PrimaryReplicationGroupId: string;
 	}
 
@@ -1202,59 +1202,59 @@ export namespace MyNS {
 	export interface CreateReplicationGroupMessage {
 		ReplicationGroupId: string;
 		ReplicationGroupDescription: string;
-		GlobalReplicationGroupId?: string;
-		PrimaryClusterId?: string;
-		AutomaticFailoverEnabled?: boolean;
-		MultiAZEnabled?: boolean;
-		NumCacheClusters?: number;
-		PreferredCacheClusterAZs?: Array<string>;
-		NumNodeGroups?: number;
-		ReplicasPerNodeGroup?: number;
-		NodeGroupConfiguration?: Array<NodeGroupConfiguration>;
-		CacheNodeType?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		CacheParameterGroupName?: string;
-		CacheSubnetGroupName?: string;
-		CacheSecurityGroupNames?: Array<string>;
-		SecurityGroupIds?: Array<string>;
-		Tags?: Array<Tag>;
-		SnapshotArns?: Array<string>;
-		SnapshotName?: string;
-		PreferredMaintenanceWindow?: string;
-		Port?: number;
-		NotificationTopicArn?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		SnapshotRetentionLimit?: number;
-		SnapshotWindow?: string;
-		AuthToken?: string;
-		TransitEncryptionEnabled?: boolean;
-		AtRestEncryptionEnabled?: boolean;
-		KmsKeyId?: string;
+		GlobalReplicationGroupId?: string | null;
+		PrimaryClusterId?: string | null;
+		AutomaticFailoverEnabled?: boolean | null;
+		MultiAZEnabled?: boolean | null;
+		NumCacheClusters?: number | null;
+		PreferredCacheClusterAZs?: Array<string> | null;
+		NumNodeGroups?: number | null;
+		ReplicasPerNodeGroup?: number | null;
+		NodeGroupConfiguration?: Array<NodeGroupConfiguration> | null;
+		CacheNodeType?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		CacheParameterGroupName?: string | null;
+		CacheSubnetGroupName?: string | null;
+		CacheSecurityGroupNames?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
+		Tags?: Array<Tag> | null;
+		SnapshotArns?: Array<string> | null;
+		SnapshotName?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		Port?: number | null;
+		NotificationTopicArn?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		SnapshotRetentionLimit?: number | null;
+		SnapshotWindow?: string | null;
+		AuthToken?: string | null;
+		TransitEncryptionEnabled?: boolean | null;
+		AtRestEncryptionEnabled?: boolean | null;
+		KmsKeyId?: string | null;
 	}
 
 
 	/** Represents the input of a <code>CreateSnapshot</code> operation. */
 	export interface CreateSnapshotMessage {
-		ReplicationGroupId?: string;
-		CacheClusterId?: string;
+		ReplicationGroupId?: string | null;
+		CacheClusterId?: string | null;
 		SnapshotName: string;
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 	}
 
 	export interface DecreaseNodeGroupsInGlobalReplicationGroupMessage {
 		GlobalReplicationGroupId: string;
 		NodeGroupCount: number;
-		GlobalNodeGroupsToRemove?: Array<string>;
-		GlobalNodeGroupsToRetain?: Array<string>;
+		GlobalNodeGroupsToRemove?: Array<string> | null;
+		GlobalNodeGroupsToRetain?: Array<string> | null;
 		ApplyImmediately: boolean;
 	}
 
 	export interface DecreaseReplicaCountMessage {
 		ReplicationGroupId: string;
-		NewReplicaCount?: number;
-		ReplicaConfiguration?: Array<ConfigureShard>;
-		ReplicasToRemove?: Array<string>;
+		NewReplicaCount?: number | null;
+		ReplicaConfiguration?: Array<ConfigureShard> | null;
+		ReplicasToRemove?: Array<string> | null;
 		ApplyImmediately: boolean;
 	}
 
@@ -1262,7 +1262,7 @@ export namespace MyNS {
 	/** Represents the input of a <code>DeleteCacheCluster</code> operation. */
 	export interface DeleteCacheClusterMessage {
 		CacheClusterId: string;
-		FinalSnapshotIdentifier?: string;
+		FinalSnapshotIdentifier?: string | null;
 	}
 
 
@@ -1292,8 +1292,8 @@ export namespace MyNS {
 	/** Represents the input of a <code>DeleteReplicationGroup</code> operation. */
 	export interface DeleteReplicationGroupMessage {
 		ReplicationGroupId: string;
-		RetainPrimaryCluster?: boolean;
-		FinalSnapshotIdentifier?: string;
+		RetainPrimaryCluster?: boolean | null;
+		FinalSnapshotIdentifier?: string | null;
 	}
 
 
@@ -1305,63 +1305,63 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DescribeCacheClusters</code> operation. */
 	export interface DescribeCacheClustersMessage {
-		CacheClusterId?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		ShowCacheNodeInfo?: boolean;
-		ShowCacheClustersNotInReplicationGroups?: boolean;
+		CacheClusterId?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		ShowCacheNodeInfo?: boolean | null;
+		ShowCacheClustersNotInReplicationGroups?: boolean | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeCacheEngineVersions</code> operation. */
 	export interface DescribeCacheEngineVersionsMessage {
-		Engine?: string;
-		EngineVersion?: string;
-		CacheParameterGroupFamily?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		DefaultOnly?: boolean;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		CacheParameterGroupFamily?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		DefaultOnly?: boolean | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeCacheParameterGroups</code> operation. */
 	export interface DescribeCacheParameterGroupsMessage {
-		CacheParameterGroupName?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		CacheParameterGroupName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeCacheParameters</code> operation. */
 	export interface DescribeCacheParametersMessage {
 		CacheParameterGroupName: string;
-		Source?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		Source?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeCacheSecurityGroups</code> operation. */
 	export interface DescribeCacheSecurityGroupsMessage {
-		CacheSecurityGroupName?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		CacheSecurityGroupName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeCacheSubnetGroups</code> operation. */
 	export interface DescribeCacheSubnetGroupsMessage {
-		CacheSubnetGroupName?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		CacheSubnetGroupName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeEngineDefaultParameters</code> operation. */
 	export interface DescribeEngineDefaultParametersMessage {
 		CacheParameterGroupFamily: string;
-		MaxRecords?: number;
-		Marker?: string;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum SourceType { cache_cluster = 0, cache_parameter_group = 1, cache_security_group = 2, cache_subnet_group = 3, replication_group = 4 }
@@ -1369,96 +1369,96 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DescribeEvents</code> operation. */
 	export interface DescribeEventsMessage {
-		SourceIdentifier?: string;
-		SourceType?: DescribeEventsMessageSourceType;
-		StartTime?: Date;
-		EndTime?: Date;
-		Duration?: number;
-		MaxRecords?: number;
-		Marker?: string;
+		SourceIdentifier?: string | null;
+		SourceType?: DescribeEventsMessageSourceType | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Duration?: number | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum DescribeEventsMessageSourceType { cache_cluster = 0, cache_parameter_group = 1, cache_security_group = 2, cache_subnet_group = 3, replication_group = 4 }
 
 	export interface DescribeGlobalReplicationGroupsMessage {
-		GlobalReplicationGroupId?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		ShowMemberInfo?: boolean;
+		GlobalReplicationGroupId?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		ShowMemberInfo?: boolean | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeReplicationGroups</code> operation. */
 	export interface DescribeReplicationGroupsMessage {
-		ReplicationGroupId?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ReplicationGroupId?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeReservedCacheNodes</code> operation. */
 	export interface DescribeReservedCacheNodesMessage {
-		ReservedCacheNodeId?: string;
-		ReservedCacheNodesOfferingId?: string;
-		CacheNodeType?: string;
-		Duration?: string;
-		ProductDescription?: string;
-		OfferingType?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ReservedCacheNodeId?: string | null;
+		ReservedCacheNodesOfferingId?: string | null;
+		CacheNodeType?: string | null;
+		Duration?: string | null;
+		ProductDescription?: string | null;
+		OfferingType?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeReservedCacheNodesOfferings</code> operation. */
 	export interface DescribeReservedCacheNodesOfferingsMessage {
-		ReservedCacheNodesOfferingId?: string;
-		CacheNodeType?: string;
-		Duration?: string;
-		ProductDescription?: string;
-		OfferingType?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ReservedCacheNodesOfferingId?: string | null;
+		CacheNodeType?: string | null;
+		Duration?: string | null;
+		ProductDescription?: string | null;
+		OfferingType?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeServiceUpdatesMessage {
-		ServiceUpdateName?: string;
-		ServiceUpdateStatus?: Array<ServiceUpdateStatus>;
-		MaxRecords?: number;
-		Marker?: string;
+		ServiceUpdateName?: string | null;
+		ServiceUpdateStatus?: Array<ServiceUpdateStatus> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents the input of a <code>DescribeSnapshotsMessage</code> operation. */
 	export interface DescribeSnapshotsMessage {
-		ReplicationGroupId?: string;
-		CacheClusterId?: string;
-		SnapshotName?: string;
-		SnapshotSource?: string;
-		Marker?: string;
-		MaxRecords?: number;
-		ShowNodeGroupConfig?: boolean;
+		ReplicationGroupId?: string | null;
+		CacheClusterId?: string | null;
+		SnapshotName?: string | null;
+		SnapshotSource?: string | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
+		ShowNodeGroupConfig?: boolean | null;
 	}
 
 
 	/** Filters update actions from the service updates that are in available status during the time range. */
 	export interface TimeRangeFilter {
-		StartTime?: Date;
-		EndTime?: Date;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 	}
 
 	export interface DescribeUpdateActionsMessage {
-		ServiceUpdateName?: string;
-		ReplicationGroupIds?: Array<string>;
-		CacheClusterIds?: Array<string>;
-		Engine?: string;
-		ServiceUpdateStatus?: Array<ServiceUpdateStatus>;
+		ServiceUpdateName?: string | null;
+		ReplicationGroupIds?: Array<string> | null;
+		CacheClusterIds?: Array<string> | null;
+		Engine?: string | null;
+		ServiceUpdateStatus?: Array<ServiceUpdateStatus> | null;
 
 		/** Filters update actions from the service updates that are in available status during the time range. */
-		ServiceUpdateTimeRange?: TimeRangeFilter;
-		UpdateActionStatus?: Array<UpdateActionStatus>;
-		ShowNodeLevelUpdateStatus?: boolean;
-		MaxRecords?: number;
-		Marker?: string;
+		ServiceUpdateTimeRange?: TimeRangeFilter | null;
+		UpdateActionStatus?: Array<UpdateActionStatus> | null;
+		ShowNodeLevelUpdateStatus?: boolean | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DisassociateGlobalReplicationGroupMessage {
@@ -1476,22 +1476,22 @@ export namespace MyNS {
 	export interface IncreaseNodeGroupsInGlobalReplicationGroupMessage {
 		GlobalReplicationGroupId: string;
 		NodeGroupCount: number;
-		RegionalConfigurations?: Array<RegionalConfiguration>;
+		RegionalConfigurations?: Array<RegionalConfiguration> | null;
 		ApplyImmediately: boolean;
 	}
 
 	export interface IncreaseReplicaCountMessage {
 		ReplicationGroupId: string;
-		NewReplicaCount?: number;
-		ReplicaConfiguration?: Array<ConfigureShard>;
+		NewReplicaCount?: number | null;
+		ReplicaConfiguration?: Array<ConfigureShard> | null;
 		ApplyImmediately: boolean;
 	}
 
 
 	/** The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation. */
 	export interface ListAllowedNodeTypeModificationsMessage {
-		CacheClusterId?: string;
-		ReplicationGroupId?: string;
+		CacheClusterId?: string | null;
+		ReplicationGroupId?: string | null;
 	}
 
 
@@ -1504,24 +1504,24 @@ export namespace MyNS {
 	/** Represents the input of a <code>ModifyCacheCluster</code> operation. */
 	export interface ModifyCacheClusterMessage {
 		CacheClusterId: string;
-		NumCacheNodes?: number;
-		CacheNodeIdsToRemove?: Array<string>;
-		AZMode?: ModifyCacheClusterMessageAZMode;
-		NewAvailabilityZones?: Array<string>;
-		CacheSecurityGroupNames?: Array<string>;
-		SecurityGroupIds?: Array<string>;
-		PreferredMaintenanceWindow?: string;
-		NotificationTopicArn?: string;
-		CacheParameterGroupName?: string;
-		NotificationTopicStatus?: string;
-		ApplyImmediately?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		SnapshotRetentionLimit?: number;
-		SnapshotWindow?: string;
-		CacheNodeType?: string;
-		AuthToken?: string;
-		AuthTokenUpdateStrategy?: AuthTokenUpdateStrategyType;
+		NumCacheNodes?: number | null;
+		CacheNodeIdsToRemove?: Array<string> | null;
+		AZMode?: ModifyCacheClusterMessageAZMode | null;
+		NewAvailabilityZones?: Array<string> | null;
+		CacheSecurityGroupNames?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
+		PreferredMaintenanceWindow?: string | null;
+		NotificationTopicArn?: string | null;
+		CacheParameterGroupName?: string | null;
+		NotificationTopicStatus?: string | null;
+		ApplyImmediately?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		SnapshotRetentionLimit?: number | null;
+		SnapshotWindow?: string | null;
+		CacheNodeType?: string | null;
+		AuthToken?: string | null;
+		AuthTokenUpdateStrategy?: AuthTokenUpdateStrategyType | null;
 	}
 
 	export enum ModifyCacheClusterMessageAZMode { single_az = 0, cross_az = 1 }
@@ -1537,43 +1537,43 @@ export namespace MyNS {
 	/** Represents the input of a <code>ModifyCacheSubnetGroup</code> operation. */
 	export interface ModifyCacheSubnetGroupMessage {
 		CacheSubnetGroupName: string;
-		CacheSubnetGroupDescription?: string;
-		SubnetIds?: Array<string>;
+		CacheSubnetGroupDescription?: string | null;
+		SubnetIds?: Array<string> | null;
 	}
 
 	export interface ModifyGlobalReplicationGroupMessage {
 		GlobalReplicationGroupId: string;
 		ApplyImmediately: boolean;
-		CacheNodeType?: string;
-		EngineVersion?: string;
-		GlobalReplicationGroupDescription?: string;
-		AutomaticFailoverEnabled?: boolean;
+		CacheNodeType?: string | null;
+		EngineVersion?: string | null;
+		GlobalReplicationGroupDescription?: string | null;
+		AutomaticFailoverEnabled?: boolean | null;
 	}
 
 
 	/** Represents the input of a <code>ModifyReplicationGroups</code> operation. */
 	export interface ModifyReplicationGroupMessage {
 		ReplicationGroupId: string;
-		ReplicationGroupDescription?: string;
-		PrimaryClusterId?: string;
-		SnapshottingClusterId?: string;
-		AutomaticFailoverEnabled?: boolean;
-		MultiAZEnabled?: boolean;
-		NodeGroupId?: string;
-		CacheSecurityGroupNames?: Array<string>;
-		SecurityGroupIds?: Array<string>;
-		PreferredMaintenanceWindow?: string;
-		NotificationTopicArn?: string;
-		CacheParameterGroupName?: string;
-		NotificationTopicStatus?: string;
-		ApplyImmediately?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		SnapshotRetentionLimit?: number;
-		SnapshotWindow?: string;
-		CacheNodeType?: string;
-		AuthToken?: string;
-		AuthTokenUpdateStrategy?: AuthTokenUpdateStrategyType;
+		ReplicationGroupDescription?: string | null;
+		PrimaryClusterId?: string | null;
+		SnapshottingClusterId?: string | null;
+		AutomaticFailoverEnabled?: boolean | null;
+		MultiAZEnabled?: boolean | null;
+		NodeGroupId?: string | null;
+		CacheSecurityGroupNames?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
+		PreferredMaintenanceWindow?: string | null;
+		NotificationTopicArn?: string | null;
+		CacheParameterGroupName?: string | null;
+		NotificationTopicStatus?: string | null;
+		ApplyImmediately?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		SnapshotRetentionLimit?: number | null;
+		SnapshotWindow?: string | null;
+		CacheNodeType?: string | null;
+		AuthToken?: string | null;
+		AuthTokenUpdateStrategy?: AuthTokenUpdateStrategyType | null;
 	}
 
 
@@ -1582,9 +1582,9 @@ export namespace MyNS {
 		ReplicationGroupId: string;
 		NodeGroupCount: number;
 		ApplyImmediately: boolean;
-		ReshardingConfiguration?: Array<ReshardingConfiguration>;
-		NodeGroupsToRemove?: Array<string>;
-		NodeGroupsToRetain?: Array<string>;
+		ReshardingConfiguration?: Array<ReshardingConfiguration> | null;
+		NodeGroupsToRemove?: Array<string> | null;
+		NodeGroupsToRetain?: Array<string> | null;
 	}
 
 	export enum MultiAZStatus { enabled = 0, disabled = 1 }
@@ -1595,8 +1595,8 @@ export namespace MyNS {
 	/** Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation. */
 	export interface PurchaseReservedCacheNodesOfferingMessage {
 		ReservedCacheNodesOfferingId: string;
-		ReservedCacheNodeId?: string;
-		CacheNodeCount?: number;
+		ReservedCacheNodeId?: string | null;
+		CacheNodeCount?: number | null;
 	}
 
 	export interface RebalanceSlotsInGlobalReplicationGroupMessage {
@@ -1622,8 +1622,8 @@ export namespace MyNS {
 	/** Represents the input of a <code>ResetCacheParameterGroup</code> operation. */
 	export interface ResetCacheParameterGroupMessage {
 		CacheParameterGroupName: string;
-		ResetAllParameters?: boolean;
-		ParameterNameValues?: Array<ParameterNameValue>;
+		ResetAllParameters?: boolean | null;
+		ParameterNameValues?: Array<ParameterNameValue> | null;
 	}
 
 
@@ -2665,8 +2665,8 @@ export namespace MyNS {
 	export enum POST_DescribeSnapshotsVersion { _2015_02_02 = 0 }
 
 	export interface GET_DescribeUpdateActionsServiceUpdateTimeRange {
-		StartTime?: Date;
-		EndTime?: Date;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 	}
 
 	export enum GET_DescribeUpdateActionsAction { DescribeUpdateActions = 0 }

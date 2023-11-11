@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CancelKeyDeletionResponse {
-		KeyId?: string;
+		KeyId?: string | null;
 	}
 
 	export interface CancelKeyDeletionRequest {
@@ -59,7 +59,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateCustomKeyStoreResponse {
-		CustomKeyStoreId?: string;
+		CustomKeyStoreId?: string | null;
 	}
 
 	export interface CreateCustomKeyStoreRequest {
@@ -82,20 +82,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateGrantResponse {
-		GrantToken?: string;
-		GrantId?: string;
+		GrantToken?: string | null;
+		GrantId?: string | null;
 	}
 
 	export interface CreateGrantRequest {
 		KeyId: string;
 		GranteePrincipal: string;
-		RetiringPrincipal?: string;
+		RetiringPrincipal?: string | null;
 		Operations: Array<GrantOperation>;
 
 		/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p> </important> */
-		Constraints?: GrantConstraints;
-		GrantTokens?: Array<string>;
-		Name?: string;
+		Constraints?: GrantConstraints | null;
+		GrantTokens?: Array<string> | null;
+		Name?: string | null;
 	}
 
 	export enum GrantOperation { Decrypt = 0, Encrypt = 1, GenerateDataKey = 2, GenerateDataKeyWithoutPlaintext = 3, ReEncryptFrom = 4, ReEncryptTo = 5, Sign = 6, Verify = 7, GetPublicKey = 8, CreateGrant = 9, RetireGrant = 10, DescribeKey = 11, GenerateDataKeyPair = 12, GenerateDataKeyPairWithoutPlaintext = 13 }
@@ -103,8 +103,8 @@ export namespace MyNS {
 
 	/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p> </important> */
 	export interface GrantConstraints {
-		EncryptionContextSubset?: EncryptionContextType;
-		EncryptionContextEquals?: EncryptionContextType;
+		EncryptionContextSubset?: EncryptionContextType | null;
+		EncryptionContextEquals?: EncryptionContextType | null;
 	}
 
 	export interface EncryptionContextType {
@@ -119,30 +119,30 @@ export namespace MyNS {
 	export interface CreateKeyResponse {
 
 		/** <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p> */
-		KeyMetadata?: KeyMetadata;
+		KeyMetadata?: KeyMetadata | null;
 	}
 
 
 	/** <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p> */
 	export interface KeyMetadata {
-		AWSAccountId?: string;
+		AWSAccountId?: string | null;
 		KeyId: string;
-		Arn?: string;
-		CreationDate?: Date;
-		Enabled?: boolean;
-		Description?: string;
-		KeyUsage?: KeyMetadataKeyUsage;
-		KeyState?: KeyMetadataKeyState;
-		DeletionDate?: Date;
-		ValidTo?: Date;
-		Origin?: KeyMetadataOrigin;
-		CustomKeyStoreId?: string;
-		CloudHsmClusterId?: string;
-		ExpirationModel?: KeyMetadataExpirationModel;
-		KeyManager?: KeyMetadataKeyManager;
-		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec;
-		EncryptionAlgorithms?: Array<EncryptionAlgorithmSpec>;
-		SigningAlgorithms?: Array<SigningAlgorithmSpec>;
+		Arn?: string | null;
+		CreationDate?: Date | null;
+		Enabled?: boolean | null;
+		Description?: string | null;
+		KeyUsage?: KeyMetadataKeyUsage | null;
+		KeyState?: KeyMetadataKeyState | null;
+		DeletionDate?: Date | null;
+		ValidTo?: Date | null;
+		Origin?: KeyMetadataOrigin | null;
+		CustomKeyStoreId?: string | null;
+		CloudHsmClusterId?: string | null;
+		ExpirationModel?: KeyMetadataExpirationModel | null;
+		KeyManager?: KeyMetadataKeyManager | null;
+		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec | null;
+		EncryptionAlgorithms?: Array<EncryptionAlgorithmSpec> | null;
+		SigningAlgorithms?: Array<SigningAlgorithmSpec> | null;
 	}
 
 	export enum KeyMetadataKeyUsage { SIGN_VERIFY = 0, ENCRYPT_DECRYPT = 1 }
@@ -162,14 +162,14 @@ export namespace MyNS {
 	export enum SigningAlgorithmSpec { RSASSA_PSS_SHA_256 = 0, RSASSA_PSS_SHA_384 = 1, RSASSA_PSS_SHA_512 = 2, RSASSA_PKCS1_V1_5_SHA_256 = 3, RSASSA_PKCS1_V1_5_SHA_384 = 4, RSASSA_PKCS1_V1_5_SHA_512 = 5, ECDSA_SHA_256 = 6, ECDSA_SHA_384 = 7, ECDSA_SHA_512 = 8 }
 
 	export interface CreateKeyRequest {
-		Policy?: string;
-		Description?: string;
-		KeyUsage?: KeyMetadataKeyUsage;
-		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec;
-		Origin?: KeyMetadataOrigin;
-		CustomKeyStoreId?: string;
-		BypassPolicyLockoutSafetyCheck?: boolean;
-		Tags?: Array<Tag>;
+		Policy?: string | null;
+		Description?: string | null;
+		KeyUsage?: KeyMetadataKeyUsage | null;
+		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec | null;
+		Origin?: KeyMetadataOrigin | null;
+		CustomKeyStoreId?: string | null;
+		BypassPolicyLockoutSafetyCheck?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -189,17 +189,17 @@ export namespace MyNS {
 	}
 
 	export interface DecryptResponse {
-		KeyId?: string;
-		Plaintext?: string;
-		EncryptionAlgorithm?: EncryptionAlgorithmSpec;
+		KeyId?: string | null;
+		Plaintext?: string | null;
+		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 
 	export interface DecryptRequest {
 		CiphertextBlob: string;
-		EncryptionContext?: EncryptionContextType;
-		GrantTokens?: Array<string>;
-		KeyId?: string;
-		EncryptionAlgorithm?: EncryptionAlgorithmSpec;
+		EncryptionContext?: EncryptionContextType | null;
+		GrantTokens?: Array<string> | null;
+		KeyId?: string | null;
+		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 
 	export interface InvalidCiphertextException {
@@ -233,21 +233,21 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCustomKeyStoresResponse {
-		CustomKeyStores?: Array<CustomKeyStoresListEntry>;
-		NextMarker?: string;
-		Truncated?: boolean;
+		CustomKeyStores?: Array<CustomKeyStoresListEntry> | null;
+		NextMarker?: string | null;
+		Truncated?: boolean | null;
 	}
 
 
 	/** Contains information about each custom key store in the custom key store list. */
 	export interface CustomKeyStoresListEntry {
-		CustomKeyStoreId?: string;
-		CustomKeyStoreName?: string;
-		CloudHsmClusterId?: string;
-		TrustAnchorCertificate?: string;
-		ConnectionState?: CustomKeyStoresListEntryConnectionState;
-		ConnectionErrorCode?: CustomKeyStoresListEntryConnectionErrorCode;
-		CreationDate?: Date;
+		CustomKeyStoreId?: string | null;
+		CustomKeyStoreName?: string | null;
+		CloudHsmClusterId?: string | null;
+		TrustAnchorCertificate?: string | null;
+		ConnectionState?: CustomKeyStoresListEntryConnectionState | null;
+		ConnectionErrorCode?: CustomKeyStoresListEntryConnectionErrorCode | null;
+		CreationDate?: Date | null;
 	}
 
 	export enum CustomKeyStoresListEntryConnectionState { CONNECTED = 0, CONNECTING = 1, FAILED = 2, DISCONNECTED = 3, DISCONNECTING = 4 }
@@ -255,21 +255,21 @@ export namespace MyNS {
 	export enum CustomKeyStoresListEntryConnectionErrorCode { INVALID_CREDENTIALS = 0, CLUSTER_NOT_FOUND = 1, NETWORK_ERRORS = 2, INTERNAL_ERROR = 3, INSUFFICIENT_CLOUDHSM_HSMS = 4, USER_LOCKED_OUT = 5, USER_NOT_FOUND = 6, USER_LOGGED_IN = 7, SUBNET_NOT_FOUND = 8 }
 
 	export interface DescribeCustomKeyStoresRequest {
-		CustomKeyStoreId?: string;
-		CustomKeyStoreName?: string;
-		Limit?: number;
-		Marker?: string;
+		CustomKeyStoreId?: string | null;
+		CustomKeyStoreName?: string | null;
+		Limit?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeKeyResponse {
 
 		/** <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p> */
-		KeyMetadata?: KeyMetadata;
+		KeyMetadata?: KeyMetadata | null;
 	}
 
 	export interface DescribeKeyRequest {
 		KeyId: string;
-		GrantTokens?: Array<string>;
+		GrantTokens?: Array<string> | null;
 	}
 
 	export interface DisableKeyRequest {
@@ -296,90 +296,90 @@ export namespace MyNS {
 	}
 
 	export interface EncryptResponse {
-		CiphertextBlob?: string;
-		KeyId?: string;
-		EncryptionAlgorithm?: EncryptionAlgorithmSpec;
+		CiphertextBlob?: string | null;
+		KeyId?: string | null;
+		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 
 	export interface EncryptRequest {
 		KeyId: string;
 		Plaintext: string;
-		EncryptionContext?: EncryptionContextType;
-		GrantTokens?: Array<string>;
-		EncryptionAlgorithm?: EncryptionAlgorithmSpec;
+		EncryptionContext?: EncryptionContextType | null;
+		GrantTokens?: Array<string> | null;
+		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 
 	export interface GenerateDataKeyResponse {
-		CiphertextBlob?: string;
-		Plaintext?: string;
-		KeyId?: string;
+		CiphertextBlob?: string | null;
+		Plaintext?: string | null;
+		KeyId?: string | null;
 	}
 
 	export interface GenerateDataKeyRequest {
 		KeyId: string;
-		EncryptionContext?: EncryptionContextType;
-		NumberOfBytes?: number;
-		KeySpec?: GenerateDataKeyRequestKeySpec;
-		GrantTokens?: Array<string>;
+		EncryptionContext?: EncryptionContextType | null;
+		NumberOfBytes?: number | null;
+		KeySpec?: GenerateDataKeyRequestKeySpec | null;
+		GrantTokens?: Array<string> | null;
 	}
 
 	export enum GenerateDataKeyRequestKeySpec { AES_256 = 0, AES_128 = 1 }
 
 	export interface GenerateDataKeyPairResponse {
-		PrivateKeyCiphertextBlob?: string;
-		PrivateKeyPlaintext?: string;
-		PublicKey?: string;
-		KeyId?: string;
-		KeyPairSpec?: GenerateDataKeyPairResponseKeyPairSpec;
+		PrivateKeyCiphertextBlob?: string | null;
+		PrivateKeyPlaintext?: string | null;
+		PublicKey?: string | null;
+		KeyId?: string | null;
+		KeyPairSpec?: GenerateDataKeyPairResponseKeyPairSpec | null;
 	}
 
 	export enum GenerateDataKeyPairResponseKeyPairSpec { RSA_2048 = 0, RSA_3072 = 1, RSA_4096 = 2, ECC_NIST_P256 = 3, ECC_NIST_P384 = 4, ECC_NIST_P521 = 5, ECC_SECG_P256K1 = 6 }
 
 	export interface GenerateDataKeyPairRequest {
-		EncryptionContext?: EncryptionContextType;
+		EncryptionContext?: EncryptionContextType | null;
 		KeyId: string;
 		KeyPairSpec: GenerateDataKeyPairResponseKeyPairSpec;
-		GrantTokens?: Array<string>;
+		GrantTokens?: Array<string> | null;
 	}
 
 	export interface GenerateDataKeyPairWithoutPlaintextResponse {
-		PrivateKeyCiphertextBlob?: string;
-		PublicKey?: string;
-		KeyId?: string;
-		KeyPairSpec?: GenerateDataKeyPairResponseKeyPairSpec;
+		PrivateKeyCiphertextBlob?: string | null;
+		PublicKey?: string | null;
+		KeyId?: string | null;
+		KeyPairSpec?: GenerateDataKeyPairResponseKeyPairSpec | null;
 	}
 
 	export interface GenerateDataKeyPairWithoutPlaintextRequest {
-		EncryptionContext?: EncryptionContextType;
+		EncryptionContext?: EncryptionContextType | null;
 		KeyId: string;
 		KeyPairSpec: GenerateDataKeyPairResponseKeyPairSpec;
-		GrantTokens?: Array<string>;
+		GrantTokens?: Array<string> | null;
 	}
 
 	export interface GenerateDataKeyWithoutPlaintextResponse {
-		CiphertextBlob?: string;
-		KeyId?: string;
+		CiphertextBlob?: string | null;
+		KeyId?: string | null;
 	}
 
 	export interface GenerateDataKeyWithoutPlaintextRequest {
 		KeyId: string;
-		EncryptionContext?: EncryptionContextType;
-		KeySpec?: GenerateDataKeyRequestKeySpec;
-		NumberOfBytes?: number;
-		GrantTokens?: Array<string>;
+		EncryptionContext?: EncryptionContextType | null;
+		KeySpec?: GenerateDataKeyRequestKeySpec | null;
+		NumberOfBytes?: number | null;
+		GrantTokens?: Array<string> | null;
 	}
 
 	export interface GenerateRandomResponse {
-		Plaintext?: string;
+		Plaintext?: string | null;
 	}
 
 	export interface GenerateRandomRequest {
-		NumberOfBytes?: number;
-		CustomKeyStoreId?: string;
+		NumberOfBytes?: number | null;
+		CustomKeyStoreId?: string | null;
 	}
 
 	export interface GetKeyPolicyResponse {
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 	export interface GetKeyPolicyRequest {
@@ -388,7 +388,7 @@ export namespace MyNS {
 	}
 
 	export interface GetKeyRotationStatusResponse {
-		KeyRotationEnabled?: boolean;
+		KeyRotationEnabled?: boolean | null;
 	}
 
 	export interface GetKeyRotationStatusRequest {
@@ -396,10 +396,10 @@ export namespace MyNS {
 	}
 
 	export interface GetParametersForImportResponse {
-		KeyId?: string;
-		ImportToken?: string;
-		PublicKey?: string;
-		ParametersValidTo?: Date;
+		KeyId?: string | null;
+		ImportToken?: string | null;
+		PublicKey?: string | null;
+		ParametersValidTo?: Date | null;
 	}
 
 	export interface GetParametersForImportRequest {
@@ -413,17 +413,17 @@ export namespace MyNS {
 	export enum GetParametersForImportRequestWrappingKeySpec { RSA_2048 = 0 }
 
 	export interface GetPublicKeyResponse {
-		KeyId?: string;
-		PublicKey?: string;
-		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec;
-		KeyUsage?: KeyMetadataKeyUsage;
-		EncryptionAlgorithms?: Array<EncryptionAlgorithmSpec>;
-		SigningAlgorithms?: Array<SigningAlgorithmSpec>;
+		KeyId?: string | null;
+		PublicKey?: string | null;
+		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec | null;
+		KeyUsage?: KeyMetadataKeyUsage | null;
+		EncryptionAlgorithms?: Array<EncryptionAlgorithmSpec> | null;
+		SigningAlgorithms?: Array<SigningAlgorithmSpec> | null;
 	}
 
 	export interface GetPublicKeyRequest {
 		KeyId: string;
-		GrantTokens?: Array<string>;
+		GrantTokens?: Array<string> | null;
 	}
 
 	export interface ImportKeyMaterialResponse {
@@ -433,8 +433,8 @@ export namespace MyNS {
 		KeyId: string;
 		ImportToken: string;
 		EncryptedKeyMaterial: string;
-		ValidTo?: Date;
-		ExpirationModel?: KeyMetadataExpirationModel;
+		ValidTo?: Date | null;
+		ExpirationModel?: KeyMetadataExpirationModel | null;
 	}
 
 	export interface IncorrectKeyMaterialException {
@@ -447,101 +447,101 @@ export namespace MyNS {
 	}
 
 	export interface ListAliasesResponse {
-		Aliases?: Array<AliasListEntry>;
-		NextMarker?: string;
-		Truncated?: boolean;
+		Aliases?: Array<AliasListEntry> | null;
+		NextMarker?: string | null;
+		Truncated?: boolean | null;
 	}
 
 
 	/** Contains information about an alias. */
 	export interface AliasListEntry {
-		AliasName?: string;
-		AliasArn?: string;
-		TargetKeyId?: string;
+		AliasName?: string | null;
+		AliasArn?: string | null;
+		TargetKeyId?: string | null;
 	}
 
 	export interface ListAliasesRequest {
-		KeyId?: string;
-		Limit?: number;
-		Marker?: string;
+		KeyId?: string | null;
+		Limit?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface InvalidMarkerException {
 	}
 
 	export interface ListGrantsResponse {
-		Grants?: Array<GrantListEntry>;
-		NextMarker?: string;
-		Truncated?: boolean;
+		Grants?: Array<GrantListEntry> | null;
+		NextMarker?: string | null;
+		Truncated?: boolean | null;
 	}
 
 
 	/** Contains information about a grant. */
 	export interface GrantListEntry {
-		KeyId?: string;
-		GrantId?: string;
-		Name?: string;
-		CreationDate?: Date;
-		GranteePrincipal?: string;
-		RetiringPrincipal?: string;
-		IssuingAccount?: string;
-		Operations?: Array<GrantOperation>;
+		KeyId?: string | null;
+		GrantId?: string | null;
+		Name?: string | null;
+		CreationDate?: Date | null;
+		GranteePrincipal?: string | null;
+		RetiringPrincipal?: string | null;
+		IssuingAccount?: string | null;
+		Operations?: Array<GrantOperation> | null;
 
 		/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p> </important> */
-		Constraints?: GrantConstraints;
+		Constraints?: GrantConstraints | null;
 	}
 
 	export interface ListGrantsRequest {
-		Limit?: number;
-		Marker?: string;
+		Limit?: number | null;
+		Marker?: string | null;
 		KeyId: string;
 	}
 
 	export interface ListKeyPoliciesResponse {
-		PolicyNames?: Array<string>;
-		NextMarker?: string;
-		Truncated?: boolean;
+		PolicyNames?: Array<string> | null;
+		NextMarker?: string | null;
+		Truncated?: boolean | null;
 	}
 
 	export interface ListKeyPoliciesRequest {
 		KeyId: string;
-		Limit?: number;
-		Marker?: string;
+		Limit?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface ListKeysResponse {
-		Keys?: Array<KeyListEntry>;
-		NextMarker?: string;
-		Truncated?: boolean;
+		Keys?: Array<KeyListEntry> | null;
+		NextMarker?: string | null;
+		Truncated?: boolean | null;
 	}
 
 
 	/** Contains information about each entry in the key list. */
 	export interface KeyListEntry {
-		KeyId?: string;
-		KeyArn?: string;
+		KeyId?: string | null;
+		KeyArn?: string | null;
 	}
 
 	export interface ListKeysRequest {
-		Limit?: number;
-		Marker?: string;
+		Limit?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface ListResourceTagsResponse {
-		Tags?: Array<Tag>;
-		NextMarker?: string;
-		Truncated?: boolean;
+		Tags?: Array<Tag> | null;
+		NextMarker?: string | null;
+		Truncated?: boolean | null;
 	}
 
 	export interface ListResourceTagsRequest {
 		KeyId: string;
-		Limit?: number;
-		Marker?: string;
+		Limit?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface ListRetirableGrantsRequest {
-		Limit?: number;
-		Marker?: string;
+		Limit?: number | null;
+		Marker?: string | null;
 		RetiringPrincipal: string;
 	}
 
@@ -549,32 +549,32 @@ export namespace MyNS {
 		KeyId: string;
 		PolicyName: string;
 		Policy: string;
-		BypassPolicyLockoutSafetyCheck?: boolean;
+		BypassPolicyLockoutSafetyCheck?: boolean | null;
 	}
 
 	export interface ReEncryptResponse {
-		CiphertextBlob?: string;
-		SourceKeyId?: string;
-		KeyId?: string;
-		SourceEncryptionAlgorithm?: EncryptionAlgorithmSpec;
-		DestinationEncryptionAlgorithm?: EncryptionAlgorithmSpec;
+		CiphertextBlob?: string | null;
+		SourceKeyId?: string | null;
+		KeyId?: string | null;
+		SourceEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
+		DestinationEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 
 	export interface ReEncryptRequest {
 		CiphertextBlob: string;
-		SourceEncryptionContext?: EncryptionContextType;
-		SourceKeyId?: string;
+		SourceEncryptionContext?: EncryptionContextType | null;
+		SourceKeyId?: string | null;
 		DestinationKeyId: string;
-		DestinationEncryptionContext?: EncryptionContextType;
-		SourceEncryptionAlgorithm?: EncryptionAlgorithmSpec;
-		DestinationEncryptionAlgorithm?: EncryptionAlgorithmSpec;
-		GrantTokens?: Array<string>;
+		DestinationEncryptionContext?: EncryptionContextType | null;
+		SourceEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
+		DestinationEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
+		GrantTokens?: Array<string> | null;
 	}
 
 	export interface RetireGrantRequest {
-		GrantToken?: string;
-		KeyId?: string;
-		GrantId?: string;
+		GrantToken?: string | null;
+		KeyId?: string | null;
+		GrantId?: string | null;
 	}
 
 	export interface InvalidGrantIdException {
@@ -586,26 +586,26 @@ export namespace MyNS {
 	}
 
 	export interface ScheduleKeyDeletionResponse {
-		KeyId?: string;
-		DeletionDate?: Date;
+		KeyId?: string | null;
+		DeletionDate?: Date | null;
 	}
 
 	export interface ScheduleKeyDeletionRequest {
 		KeyId: string;
-		PendingWindowInDays?: number;
+		PendingWindowInDays?: number | null;
 	}
 
 	export interface SignResponse {
-		KeyId?: string;
-		Signature?: string;
-		SigningAlgorithm?: SigningAlgorithmSpec;
+		KeyId?: string | null;
+		Signature?: string | null;
+		SigningAlgorithm?: SigningAlgorithmSpec | null;
 	}
 
 	export interface SignRequest {
 		KeyId: string;
 		Message: string;
-		MessageType?: SignRequestMessageType;
-		GrantTokens?: Array<string>;
+		MessageType?: SignRequestMessageType | null;
+		GrantTokens?: Array<string> | null;
 		SigningAlgorithm: SigningAlgorithmSpec;
 	}
 
@@ -631,9 +631,9 @@ export namespace MyNS {
 
 	export interface UpdateCustomKeyStoreRequest {
 		CustomKeyStoreId: string;
-		NewCustomKeyStoreName?: string;
-		KeyStorePassword?: string;
-		CloudHsmClusterId?: string;
+		NewCustomKeyStoreName?: string | null;
+		KeyStorePassword?: string | null;
+		CloudHsmClusterId?: string | null;
 	}
 
 	export interface CloudHsmClusterNotRelatedException {
@@ -645,18 +645,18 @@ export namespace MyNS {
 	}
 
 	export interface VerifyResponse {
-		KeyId?: string;
-		SignatureValid?: boolean;
-		SigningAlgorithm?: SigningAlgorithmSpec;
+		KeyId?: string | null;
+		SignatureValid?: boolean | null;
+		SigningAlgorithm?: SigningAlgorithmSpec | null;
 	}
 
 	export interface VerifyRequest {
 		KeyId: string;
 		Message: string;
-		MessageType?: SignRequestMessageType;
+		MessageType?: SignRequestMessageType | null;
 		Signature: string;
 		SigningAlgorithm: SigningAlgorithmSpec;
-		GrantTokens?: Array<string>;
+		GrantTokens?: Array<string> | null;
 	}
 
 	export interface KMSInvalidSignatureException {

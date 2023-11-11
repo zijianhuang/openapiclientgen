@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AddListenerCertificatesOutput {
-		Certificates?: Array<Certificate>;
+		Certificates?: Array<Certificate> | null;
 	}
 
 
 	/** Information about an SSL server certificate. */
 	export interface Certificate {
-		CertificateArn?: string;
-		IsDefault?: boolean;
+		CertificateArn?: string | null;
+		IsDefault?: boolean | null;
 	}
 
 	export interface ListenerNotFoundException {
@@ -29,7 +29,7 @@ export namespace MyNS {
 	/** Information about a tag. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface DuplicateTagKeysException {
@@ -45,20 +45,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateListenerOutput {
-		Listeners?: Array<Listener>;
+		Listeners?: Array<Listener> | null;
 	}
 
 
 	/** Information about a listener. */
 	export interface Listener {
-		ListenerArn?: string;
-		LoadBalancerArn?: string;
-		Port?: number;
-		Protocol?: ListenerProtocol;
-		Certificates?: Array<Certificate>;
-		SslPolicy?: string;
-		DefaultActions?: Array<Action>;
-		AlpnPolicy?: Array<string>;
+		ListenerArn?: string | null;
+		LoadBalancerArn?: string | null;
+		Port?: number | null;
+		Protocol?: ListenerProtocol | null;
+		Certificates?: Array<Certificate> | null;
+		SslPolicy?: string | null;
+		DefaultActions?: Array<Action> | null;
+		AlpnPolicy?: Array<string> | null;
 	}
 
 	export enum ListenerProtocol { HTTP = 0, HTTPS = 1, TCP = 2, TLS = 3, UDP = 4, TCP_UDP = 5 }
@@ -67,23 +67,23 @@ export namespace MyNS {
 	/** Information about an action. */
 	export interface Action {
 		Type: ActionType;
-		TargetGroupArn?: string;
+		TargetGroupArn?: string | null;
 
 		/** Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users. */
-		AuthenticateOidcConfig?: AuthenticateOidcActionConfig;
+		AuthenticateOidcConfig?: AuthenticateOidcActionConfig | null;
 
 		/** Request parameters to use when integrating with Amazon Cognito to authenticate users. */
-		AuthenticateCognitoConfig?: AuthenticateCognitoActionConfig;
-		Order?: number;
+		AuthenticateCognitoConfig?: AuthenticateCognitoActionConfig | null;
+		Order?: number | null;
 
 		/** <p>Information about a redirect action.</p> <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p> <p>You can reuse URI components using the following reserved keywords:</p> <ul> <li> <p>#{protocol}</p> </li> <li> <p>#{host}</p> </li> <li> <p>#{port}</p> </li> <li> <p>#{path} (the leading "/" is removed)</p> </li> <li> <p>#{query}</p> </li> </ul> <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p> */
-		RedirectConfig?: RedirectActionConfig;
+		RedirectConfig?: RedirectActionConfig | null;
 
 		/** Information about an action that returns a custom HTTP response. */
-		FixedResponseConfig?: FixedResponseActionConfig;
+		FixedResponseConfig?: FixedResponseActionConfig | null;
 
 		/** Information about a forward action. */
-		ForwardConfig?: ForwardActionConfig;
+		ForwardConfig?: ForwardActionConfig | null;
 	}
 
 	export enum ActionType { forward = 0, authenticate_oidc = 1, authenticate_cognito = 2, redirect = 3, fixed_response = 4 }
@@ -96,13 +96,13 @@ export namespace MyNS {
 		TokenEndpoint: string;
 		UserInfoEndpoint: string;
 		ClientId: string;
-		ClientSecret?: string;
-		SessionCookieName?: string;
-		Scope?: string;
-		SessionTimeout?: number;
-		AuthenticationRequestExtraParams?: AuthenticateOidcActionAuthenticationRequestExtraParams;
-		OnUnauthenticatedRequest?: AuthenticateOidcActionConfigOnUnauthenticatedRequest;
-		UseExistingClientSecret?: boolean;
+		ClientSecret?: string | null;
+		SessionCookieName?: string | null;
+		Scope?: string | null;
+		SessionTimeout?: number | null;
+		AuthenticationRequestExtraParams?: AuthenticateOidcActionAuthenticationRequestExtraParams | null;
+		OnUnauthenticatedRequest?: AuthenticateOidcActionConfigOnUnauthenticatedRequest | null;
+		UseExistingClientSecret?: boolean | null;
 	}
 
 	export interface AuthenticateOidcActionAuthenticationRequestExtraParams {
@@ -116,11 +116,11 @@ export namespace MyNS {
 		UserPoolArn: string;
 		UserPoolClientId: string;
 		UserPoolDomain: string;
-		SessionCookieName?: string;
-		Scope?: string;
-		SessionTimeout?: number;
-		AuthenticationRequestExtraParams?: AuthenticateCognitoActionAuthenticationRequestExtraParams;
-		OnUnauthenticatedRequest?: AuthenticateOidcActionConfigOnUnauthenticatedRequest;
+		SessionCookieName?: string | null;
+		Scope?: string | null;
+		SessionTimeout?: number | null;
+		AuthenticationRequestExtraParams?: AuthenticateCognitoActionAuthenticationRequestExtraParams | null;
+		OnUnauthenticatedRequest?: AuthenticateOidcActionConfigOnUnauthenticatedRequest | null;
 	}
 
 	export interface AuthenticateCognitoActionAuthenticationRequestExtraParams {
@@ -129,11 +129,11 @@ export namespace MyNS {
 
 	/** <p>Information about a redirect action.</p> <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p> <p>You can reuse URI components using the following reserved keywords:</p> <ul> <li> <p>#{protocol}</p> </li> <li> <p>#{host}</p> </li> <li> <p>#{port}</p> </li> <li> <p>#{path} (the leading "/" is removed)</p> </li> <li> <p>#{query}</p> </li> </ul> <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p> */
 	export interface RedirectActionConfig {
-		Protocol?: string;
-		Port?: string;
-		Host?: string;
-		Path?: string;
-		Query?: string;
+		Protocol?: string | null;
+		Port?: string | null;
+		Host?: string | null;
+		Path?: string | null;
+		Query?: string | null;
 		StatusCode: RedirectActionConfigStatusCode;
 	}
 
@@ -142,32 +142,32 @@ export namespace MyNS {
 
 	/** Information about an action that returns a custom HTTP response. */
 	export interface FixedResponseActionConfig {
-		MessageBody?: string;
+		MessageBody?: string | null;
 		StatusCode: string;
-		ContentType?: string;
+		ContentType?: string | null;
 	}
 
 
 	/** Information about a forward action. */
 	export interface ForwardActionConfig {
-		TargetGroups?: Array<TargetGroupTuple>;
+		TargetGroups?: Array<TargetGroupTuple> | null;
 
 		/** Information about the target group stickiness for a rule. */
-		TargetGroupStickinessConfig?: TargetGroupStickinessConfig;
+		TargetGroupStickinessConfig?: TargetGroupStickinessConfig | null;
 	}
 
 
 	/** Information about how traffic will be distributed between multiple target groups in a forward rule. */
 	export interface TargetGroupTuple {
-		TargetGroupArn?: string;
-		Weight?: number;
+		TargetGroupArn?: string | null;
+		Weight?: number | null;
 	}
 
 
 	/** Information about the target group stickiness for a rule. */
 	export interface TargetGroupStickinessConfig {
-		Enabled?: boolean;
-		DurationSeconds?: number;
+		Enabled?: boolean | null;
+		DurationSeconds?: number | null;
 	}
 
 	export interface DuplicateListenerException {
@@ -210,26 +210,26 @@ export namespace MyNS {
 	}
 
 	export interface CreateLoadBalancerOutput {
-		LoadBalancers?: Array<LoadBalancer>;
+		LoadBalancers?: Array<LoadBalancer> | null;
 	}
 
 
 	/** Information about a load balancer. */
 	export interface LoadBalancer {
-		LoadBalancerArn?: string;
-		DNSName?: string;
-		CanonicalHostedZoneId?: string;
-		CreatedTime?: Date;
-		LoadBalancerName?: string;
-		Scheme?: LoadBalancerScheme;
-		VpcId?: string;
+		LoadBalancerArn?: string | null;
+		DNSName?: string | null;
+		CanonicalHostedZoneId?: string | null;
+		CreatedTime?: Date | null;
+		LoadBalancerName?: string | null;
+		Scheme?: LoadBalancerScheme | null;
+		VpcId?: string | null;
 
 		/** Information about the state of the load balancer. */
-		State?: LoadBalancerState;
-		Type?: LoadBalancerType;
-		AvailabilityZones?: Array<AvailabilityZone>;
-		SecurityGroups?: Array<string>;
-		IpAddressType?: LoadBalancerIpAddressType;
+		State?: LoadBalancerState | null;
+		Type?: LoadBalancerType | null;
+		AvailabilityZones?: Array<AvailabilityZone> | null;
+		SecurityGroups?: Array<string> | null;
+		IpAddressType?: LoadBalancerIpAddressType | null;
 	}
 
 	export enum LoadBalancerScheme { internet_facing = 0, _internal = 1 }
@@ -237,8 +237,8 @@ export namespace MyNS {
 
 	/** Information about the state of the load balancer. */
 	export interface LoadBalancerState {
-		Code?: LoadBalancerStateCode;
-		Reason?: string;
+		Code?: LoadBalancerStateCode | null;
+		Reason?: string | null;
 	}
 
 	export enum LoadBalancerStateCode { active = 0, provisioning = 1, active_impaired = 2, failed = 3 }
@@ -248,17 +248,17 @@ export namespace MyNS {
 
 	/** Information about an Availability Zone. */
 	export interface AvailabilityZone {
-		ZoneName?: string;
-		SubnetId?: string;
-		LoadBalancerAddresses?: Array<LoadBalancerAddress>;
+		ZoneName?: string | null;
+		SubnetId?: string | null;
+		LoadBalancerAddresses?: Array<LoadBalancerAddress> | null;
 	}
 
 
 	/** Information about a static IP address for a load balancer. */
 	export interface LoadBalancerAddress {
-		IpAddress?: string;
-		AllocationId?: string;
-		PrivateIPv4Address?: string;
+		IpAddress?: string | null;
+		AllocationId?: string | null;
+		PrivateIPv4Address?: string | null;
 	}
 
 	export enum LoadBalancerIpAddressType { ipv4 = 0, dualstack = 1 }
@@ -266,9 +266,9 @@ export namespace MyNS {
 
 	/** Information about a subnet mapping. */
 	export interface SubnetMapping {
-		SubnetId?: string;
-		AllocationId?: string;
-		PrivateIPv4Address?: string;
+		SubnetId?: string | null;
+		AllocationId?: string | null;
+		PrivateIPv4Address?: string | null;
 	}
 
 	export interface DuplicateLoadBalancerNameException {
@@ -302,86 +302,86 @@ export namespace MyNS {
 	}
 
 	export interface CreateRuleOutput {
-		Rules?: Array<Rule>;
+		Rules?: Array<Rule> | null;
 	}
 
 
 	/** Information about a rule. */
 	export interface Rule {
-		RuleArn?: string;
-		Priority?: string;
-		Conditions?: Array<RuleCondition>;
-		Actions?: Array<Action>;
-		IsDefault?: boolean;
+		RuleArn?: string | null;
+		Priority?: string | null;
+		Conditions?: Array<RuleCondition> | null;
+		Actions?: Array<Action> | null;
+		IsDefault?: boolean | null;
 	}
 
 
 	/** Information about a condition for a rule. */
 	export interface RuleCondition {
-		Field?: string;
-		Values?: Array<string>;
+		Field?: string | null;
+		Values?: Array<string> | null;
 
 		/** Information about a host header condition. */
-		HostHeaderConfig?: HostHeaderConditionConfig;
+		HostHeaderConfig?: HostHeaderConditionConfig | null;
 
 		/** Information about a path pattern condition. */
-		PathPatternConfig?: PathPatternConditionConfig;
+		PathPatternConfig?: PathPatternConditionConfig | null;
 
 		/** <p>Information about an HTTP header condition.</p> <p>There is a set of standard HTTP header fields. You can also define custom HTTP header fields.</p> */
-		HttpHeaderConfig?: HttpHeaderConditionConfig;
+		HttpHeaderConfig?: HttpHeaderConditionConfig | null;
 
 		/** <p>Information about a query string condition.</p> <p>The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.</p> */
-		QueryStringConfig?: QueryStringConditionConfig;
+		QueryStringConfig?: QueryStringConditionConfig | null;
 
 		/** <p>Information about an HTTP method condition.</p> <p>HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the <a href="https://www.iana.org/assignments/http-methods/http-methods.xhtml">HTTP Method Registry</a>. You can also define custom HTTP methods.</p> */
-		HttpRequestMethodConfig?: HttpRequestMethodConditionConfig;
+		HttpRequestMethodConfig?: HttpRequestMethodConditionConfig | null;
 
 		/** <p>Information about a source IP condition.</p> <p>You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.</p> */
-		SourceIpConfig?: SourceIpConditionConfig;
+		SourceIpConfig?: SourceIpConditionConfig | null;
 	}
 
 
 	/** Information about a host header condition. */
 	export interface HostHeaderConditionConfig {
-		Values?: Array<string>;
+		Values?: Array<string> | null;
 	}
 
 
 	/** Information about a path pattern condition. */
 	export interface PathPatternConditionConfig {
-		Values?: Array<string>;
+		Values?: Array<string> | null;
 	}
 
 
 	/** <p>Information about an HTTP header condition.</p> <p>There is a set of standard HTTP header fields. You can also define custom HTTP header fields.</p> */
 	export interface HttpHeaderConditionConfig {
-		HttpHeaderName?: string;
-		Values?: Array<string>;
+		HttpHeaderName?: string | null;
+		Values?: Array<string> | null;
 	}
 
 
 	/** <p>Information about a query string condition.</p> <p>The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.</p> */
 	export interface QueryStringConditionConfig {
-		Values?: Array<QueryStringKeyValuePair>;
+		Values?: Array<QueryStringKeyValuePair> | null;
 	}
 
 
 	/** Information about a key/value pair. */
 	export interface QueryStringKeyValuePair {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
 	/** <p>Information about an HTTP method condition.</p> <p>HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the <a href="https://www.iana.org/assignments/http-methods/http-methods.xhtml">HTTP Method Registry</a>. You can also define custom HTTP methods.</p> */
 	export interface HttpRequestMethodConditionConfig {
-		Values?: Array<string>;
+		Values?: Array<string> | null;
 	}
 
 
 	/** <p>Information about a source IP condition.</p> <p>You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.</p> */
 	export interface SourceIpConditionConfig {
-		Values?: Array<string>;
+		Values?: Array<string> | null;
 	}
 
 	export interface PriorityInUseException {
@@ -394,30 +394,30 @@ export namespace MyNS {
 	}
 
 	export interface CreateTargetGroupOutput {
-		TargetGroups?: Array<TargetGroup>;
+		TargetGroups?: Array<TargetGroup> | null;
 	}
 
 
 	/** Information about a target group. */
 	export interface TargetGroup {
-		TargetGroupArn?: string;
-		TargetGroupName?: string;
-		Protocol?: ListenerProtocol;
-		Port?: number;
-		VpcId?: string;
-		HealthCheckProtocol?: ListenerProtocol;
-		HealthCheckPort?: string;
-		HealthCheckEnabled?: boolean;
-		HealthCheckIntervalSeconds?: number;
-		HealthCheckTimeoutSeconds?: number;
-		HealthyThresholdCount?: number;
-		UnhealthyThresholdCount?: number;
-		HealthCheckPath?: string;
+		TargetGroupArn?: string | null;
+		TargetGroupName?: string | null;
+		Protocol?: ListenerProtocol | null;
+		Port?: number | null;
+		VpcId?: string | null;
+		HealthCheckProtocol?: ListenerProtocol | null;
+		HealthCheckPort?: string | null;
+		HealthCheckEnabled?: boolean | null;
+		HealthCheckIntervalSeconds?: number | null;
+		HealthCheckTimeoutSeconds?: number | null;
+		HealthyThresholdCount?: number | null;
+		UnhealthyThresholdCount?: number | null;
+		HealthCheckPath?: string | null;
 
 		/** Information to use when checking for a successful response from a target. */
-		Matcher?: Matcher;
-		LoadBalancerArns?: Array<string>;
-		TargetType?: TargetGroupTargetType;
+		Matcher?: Matcher | null;
+		LoadBalancerArns?: Array<string> | null;
+		TargetType?: TargetGroupTargetType | null;
 	}
 
 
@@ -453,105 +453,105 @@ export namespace MyNS {
 	/** Information about a target. */
 	export interface TargetDescription {
 		Id: string;
-		Port?: number;
-		AvailabilityZone?: string;
+		Port?: number | null;
+		AvailabilityZone?: string | null;
 	}
 
 	export interface InvalidTargetException {
 	}
 
 	export interface DescribeAccountLimitsOutput {
-		Limits?: Array<Limit>;
-		NextMarker?: string;
+		Limits?: Array<Limit> | null;
+		NextMarker?: string | null;
 	}
 
 
 	/** Information about an Elastic Load Balancing resource limit for your AWS account. */
 	export interface Limit {
-		Name?: string;
-		Max?: string;
+		Name?: string | null;
+		Max?: string | null;
 	}
 
 	export interface DescribeListenerCertificatesOutput {
-		Certificates?: Array<Certificate>;
-		NextMarker?: string;
+		Certificates?: Array<Certificate> | null;
+		NextMarker?: string | null;
 	}
 
 	export interface DescribeListenersOutput {
-		Listeners?: Array<Listener>;
-		NextMarker?: string;
+		Listeners?: Array<Listener> | null;
+		NextMarker?: string | null;
 	}
 
 	export interface DescribeLoadBalancerAttributesOutput {
-		Attributes?: Array<LoadBalancerAttribute>;
+		Attributes?: Array<LoadBalancerAttribute> | null;
 	}
 
 
 	/** Information about a load balancer attribute. */
 	export interface LoadBalancerAttribute {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface DescribeLoadBalancersOutput {
-		LoadBalancers?: Array<LoadBalancer>;
-		NextMarker?: string;
+		LoadBalancers?: Array<LoadBalancer> | null;
+		NextMarker?: string | null;
 	}
 
 	export interface DescribeRulesOutput {
-		Rules?: Array<Rule>;
-		NextMarker?: string;
+		Rules?: Array<Rule> | null;
+		NextMarker?: string | null;
 	}
 
 	export interface DescribeSSLPoliciesOutput {
-		SslPolicies?: Array<SslPolicy>;
-		NextMarker?: string;
+		SslPolicies?: Array<SslPolicy> | null;
+		NextMarker?: string | null;
 	}
 
 
 	/** Information about a policy used for SSL negotiation. */
 	export interface SslPolicy {
-		SslProtocols?: Array<string>;
-		Ciphers?: Array<Cipher>;
-		Name?: string;
+		SslProtocols?: Array<string> | null;
+		Ciphers?: Array<Cipher> | null;
+		Name?: string | null;
 	}
 
 
 	/** Information about a cipher used in a policy. */
 	export interface Cipher {
-		Name?: string;
-		Priority?: number;
+		Name?: string | null;
+		Priority?: number | null;
 	}
 
 	export interface DescribeTagsOutput {
-		TagDescriptions?: Array<TagDescription>;
+		TagDescriptions?: Array<TagDescription> | null;
 	}
 
 
 	/** The tags associated with a resource. */
 	export interface TagDescription {
-		ResourceArn?: string;
-		Tags?: Array<Tag>;
+		ResourceArn?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DescribeTargetGroupAttributesOutput {
-		Attributes?: Array<TargetGroupAttribute>;
+		Attributes?: Array<TargetGroupAttribute> | null;
 	}
 
 
 	/** Information about a target group attribute. */
 	export interface TargetGroupAttribute {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface DescribeTargetGroupsOutput {
-		TargetGroups?: Array<TargetGroup>;
-		NextMarker?: string;
+		TargetGroups?: Array<TargetGroup> | null;
+		NextMarker?: string | null;
 	}
 
 	export interface DescribeTargetHealthOutput {
-		TargetHealthDescriptions?: Array<TargetHealthDescription>;
+		TargetHealthDescriptions?: Array<TargetHealthDescription> | null;
 	}
 
 
@@ -559,19 +559,19 @@ export namespace MyNS {
 	export interface TargetHealthDescription {
 
 		/** Information about a target. */
-		Target?: TargetDescription;
-		HealthCheckPort?: string;
+		Target?: TargetDescription | null;
+		HealthCheckPort?: string | null;
 
 		/** Information about the current health of a target. */
-		TargetHealth?: TargetHealth;
+		TargetHealth?: TargetHealth | null;
 	}
 
 
 	/** Information about the current health of a target. */
 	export interface TargetHealth {
-		State?: TargetHealthState;
-		Reason?: TargetHealthReason;
-		Description?: string;
+		State?: TargetHealthState | null;
+		Reason?: TargetHealthReason | null;
+		Description?: string | null;
 	}
 
 	export enum TargetHealthState { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }
@@ -582,23 +582,23 @@ export namespace MyNS {
 	}
 
 	export interface ModifyListenerOutput {
-		Listeners?: Array<Listener>;
+		Listeners?: Array<Listener> | null;
 	}
 
 	export interface ModifyLoadBalancerAttributesOutput {
-		Attributes?: Array<LoadBalancerAttribute>;
+		Attributes?: Array<LoadBalancerAttribute> | null;
 	}
 
 	export interface ModifyRuleOutput {
-		Rules?: Array<Rule>;
+		Rules?: Array<Rule> | null;
 	}
 
 	export interface ModifyTargetGroupOutput {
-		TargetGroups?: Array<TargetGroup>;
+		TargetGroups?: Array<TargetGroup> | null;
 	}
 
 	export interface ModifyTargetGroupAttributesOutput {
-		Attributes?: Array<TargetGroupAttribute>;
+		Attributes?: Array<TargetGroupAttribute> | null;
 	}
 
 	export interface RegisterTargetsOutput {
@@ -611,26 +611,26 @@ export namespace MyNS {
 	}
 
 	export interface SetIpAddressTypeOutput {
-		IpAddressType?: LoadBalancerIpAddressType;
+		IpAddressType?: LoadBalancerIpAddressType | null;
 	}
 
 	export interface SetRulePrioritiesOutput {
-		Rules?: Array<Rule>;
+		Rules?: Array<Rule> | null;
 	}
 
 
 	/** Information about the priorities for the rules for a listener. */
 	export interface RulePriorityPair {
-		RuleArn?: string;
-		Priority?: number;
+		RuleArn?: string | null;
+		Priority?: number | null;
 	}
 
 	export interface SetSecurityGroupsOutput {
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface SetSubnetsOutput {
-		AvailabilityZones?: Array<AvailabilityZone>;
+		AvailabilityZones?: Array<AvailabilityZone> | null;
 	}
 
 	export enum ActionTypeEnum { forward = 0, authenticate_oidc = 1, authenticate_cognito = 2, redirect = 3, fixed_response = 4 }
@@ -655,10 +655,10 @@ export namespace MyNS {
 		LoadBalancerArn: string;
 		Protocol: ListenerProtocol;
 		Port: number;
-		SslPolicy?: string;
-		Certificates?: Array<Certificate>;
+		SslPolicy?: string | null;
+		Certificates?: Array<Certificate> | null;
 		DefaultActions: Array<Action>;
-		AlpnPolicy?: Array<string>;
+		AlpnPolicy?: Array<string> | null;
 	}
 
 	export enum LoadBalancerSchemeEnum { internet_facing = 0, _internal = 1 }
@@ -669,13 +669,13 @@ export namespace MyNS {
 
 	export interface CreateLoadBalancerInput {
 		Name: string;
-		Subnets?: Array<string>;
-		SubnetMappings?: Array<SubnetMapping>;
-		SecurityGroups?: Array<string>;
-		Scheme?: CreateLoadBalancerInputScheme;
-		Tags?: Array<Tag>;
-		Type?: LoadBalancerType;
-		IpAddressType?: LoadBalancerIpAddressType;
+		Subnets?: Array<string> | null;
+		SubnetMappings?: Array<SubnetMapping> | null;
+		SecurityGroups?: Array<string> | null;
+		Scheme?: CreateLoadBalancerInputScheme | null;
+		Tags?: Array<Tag> | null;
+		Type?: LoadBalancerType | null;
+		IpAddressType?: LoadBalancerIpAddressType | null;
 	}
 
 	export enum CreateLoadBalancerInputScheme { internet_facing = 0, _internal = 1 }
@@ -691,21 +691,21 @@ export namespace MyNS {
 
 	export interface CreateTargetGroupInput {
 		Name: string;
-		Protocol?: ListenerProtocol;
-		Port?: number;
-		VpcId?: string;
-		HealthCheckProtocol?: ListenerProtocol;
-		HealthCheckPort?: string;
-		HealthCheckEnabled?: boolean;
-		HealthCheckPath?: string;
-		HealthCheckIntervalSeconds?: number;
-		HealthCheckTimeoutSeconds?: number;
-		HealthyThresholdCount?: number;
-		UnhealthyThresholdCount?: number;
+		Protocol?: ListenerProtocol | null;
+		Port?: number | null;
+		VpcId?: string | null;
+		HealthCheckProtocol?: ListenerProtocol | null;
+		HealthCheckPort?: string | null;
+		HealthCheckEnabled?: boolean | null;
+		HealthCheckPath?: string | null;
+		HealthCheckIntervalSeconds?: number | null;
+		HealthCheckTimeoutSeconds?: number | null;
+		HealthyThresholdCount?: number | null;
+		UnhealthyThresholdCount?: number | null;
 
 		/** Information to use when checking for a successful response from a target. */
-		Matcher?: Matcher;
-		TargetType?: TargetGroupTargetType;
+		Matcher?: Matcher | null;
+		TargetType?: TargetGroupTargetType | null;
 	}
 
 	export interface DeleteListenerInput {
@@ -730,21 +730,21 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAccountLimitsInput {
-		Marker?: string;
-		PageSize?: number;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeListenerCertificatesInput {
 		ListenerArn: string;
-		Marker?: string;
-		PageSize?: number;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeListenersInput {
-		LoadBalancerArn?: string;
-		ListenerArns?: Array<string>;
-		Marker?: string;
-		PageSize?: number;
+		LoadBalancerArn?: string | null;
+		ListenerArns?: Array<string> | null;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeLoadBalancerAttributesInput {
@@ -752,23 +752,23 @@ export namespace MyNS {
 	}
 
 	export interface DescribeLoadBalancersInput {
-		LoadBalancerArns?: Array<string>;
-		Names?: Array<string>;
-		Marker?: string;
-		PageSize?: number;
+		LoadBalancerArns?: Array<string> | null;
+		Names?: Array<string> | null;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeRulesInput {
-		ListenerArn?: string;
-		RuleArns?: Array<string>;
-		Marker?: string;
-		PageSize?: number;
+		ListenerArn?: string | null;
+		RuleArns?: Array<string> | null;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeSSLPoliciesInput {
-		Names?: Array<string>;
-		Marker?: string;
-		PageSize?: number;
+		Names?: Array<string> | null;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeTagsInput {
@@ -780,28 +780,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTargetGroupsInput {
-		LoadBalancerArn?: string;
-		TargetGroupArns?: Array<string>;
-		Names?: Array<string>;
-		Marker?: string;
-		PageSize?: number;
+		LoadBalancerArn?: string | null;
+		TargetGroupArns?: Array<string> | null;
+		Names?: Array<string> | null;
+		Marker?: string | null;
+		PageSize?: number | null;
 	}
 
 	export interface DescribeTargetHealthInput {
 		TargetGroupArn: string;
-		Targets?: Array<TargetDescription>;
+		Targets?: Array<TargetDescription> | null;
 	}
 
 	export enum LoadBalancerStateEnum { active = 0, provisioning = 1, active_impaired = 2, failed = 3 }
 
 	export interface ModifyListenerInput {
 		ListenerArn: string;
-		Port?: number;
-		Protocol?: ListenerProtocol;
-		SslPolicy?: string;
-		Certificates?: Array<Certificate>;
-		DefaultActions?: Array<Action>;
-		AlpnPolicy?: Array<string>;
+		Port?: number | null;
+		Protocol?: ListenerProtocol | null;
+		SslPolicy?: string | null;
+		Certificates?: Array<Certificate> | null;
+		DefaultActions?: Array<Action> | null;
+		AlpnPolicy?: Array<string> | null;
 	}
 
 	export interface ModifyLoadBalancerAttributesInput {
@@ -811,8 +811,8 @@ export namespace MyNS {
 
 	export interface ModifyRuleInput {
 		RuleArn: string;
-		Conditions?: Array<RuleCondition>;
-		Actions?: Array<Action>;
+		Conditions?: Array<RuleCondition> | null;
+		Actions?: Array<Action> | null;
 	}
 
 	export interface ModifyTargetGroupAttributesInput {
@@ -822,17 +822,17 @@ export namespace MyNS {
 
 	export interface ModifyTargetGroupInput {
 		TargetGroupArn: string;
-		HealthCheckProtocol?: ListenerProtocol;
-		HealthCheckPort?: string;
-		HealthCheckPath?: string;
-		HealthCheckEnabled?: boolean;
-		HealthCheckIntervalSeconds?: number;
-		HealthCheckTimeoutSeconds?: number;
-		HealthyThresholdCount?: number;
-		UnhealthyThresholdCount?: number;
+		HealthCheckProtocol?: ListenerProtocol | null;
+		HealthCheckPort?: string | null;
+		HealthCheckPath?: string | null;
+		HealthCheckEnabled?: boolean | null;
+		HealthCheckIntervalSeconds?: number | null;
+		HealthCheckTimeoutSeconds?: number | null;
+		HealthyThresholdCount?: number | null;
+		UnhealthyThresholdCount?: number | null;
 
 		/** Information to use when checking for a successful response from a target. */
-		Matcher?: Matcher;
+		Matcher?: Matcher | null;
 	}
 
 	export enum RedirectActionStatusCodeEnum { HTTP_301 = 0, HTTP_302 = 1 }
@@ -868,8 +868,8 @@ export namespace MyNS {
 
 	export interface SetSubnetsInput {
 		LoadBalancerArn: string;
-		Subnets?: Array<string>;
-		SubnetMappings?: Array<SubnetMapping>;
+		Subnets?: Array<string> | null;
+		SubnetMappings?: Array<SubnetMapping> | null;
 	}
 
 	export enum TargetHealthStateEnum { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }

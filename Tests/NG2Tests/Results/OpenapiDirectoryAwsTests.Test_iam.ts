@@ -50,7 +50,7 @@ export namespace MyNS {
 		AccessKeyId: string;
 		Status: AccessKeyStatus;
 		SecretAccessKey: string;
-		CreateDate?: Date;
+		CreateDate?: Date | null;
 	}
 
 	export enum AccessKeyStatus { Active = 0, Inactive = 1 }
@@ -132,29 +132,29 @@ export namespace MyNS {
 		 */
 		Arn: string;
 		CreateDate: Date;
-		AssumeRolePolicyDocument?: string;
-		Description?: string;
-		MaxSessionDuration?: number;
+		AssumeRolePolicyDocument?: string | null;
+		Description?: string | null;
+		MaxSessionDuration?: number | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: AttachedPermissionsBoundary | null;
+		Tags?: Array<Tag> | null;
 
 		/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
-		RoleLastUsed?: RoleLastUsed;
+		RoleLastUsed?: RoleLastUsed | null;
 	}
 
 
 	/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 	export interface AttachedPermissionsBoundary {
-		PermissionsBoundaryType?: AttachedPermissionsBoundaryPermissionsBoundaryType;
+		PermissionsBoundaryType?: AttachedPermissionsBoundaryPermissionsBoundaryType | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PermissionsBoundaryArn?: string;
+		PermissionsBoundaryArn?: string | null;
 	}
 
 	export enum AttachedPermissionsBoundaryPermissionsBoundaryType { PermissionsBoundaryPolicy = 0 }
@@ -169,8 +169,8 @@ export namespace MyNS {
 
 	/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
 	export interface RoleLastUsed {
-		LastUsedDate?: Date;
-		Region?: string;
+		LastUsedDate?: Date | null;
+		Region?: string | null;
 	}
 
 
@@ -189,7 +189,7 @@ export namespace MyNS {
 	export interface LoginProfile {
 		UserName: string;
 		CreateDate: Date;
-		PasswordResetRequired?: boolean;
+		PasswordResetRequired?: boolean | null;
 	}
 
 
@@ -201,7 +201,7 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		OpenIDConnectProviderArn?: string;
+		OpenIDConnectProviderArn?: string | null;
 	}
 
 
@@ -209,29 +209,29 @@ export namespace MyNS {
 	export interface CreatePolicyResponse {
 
 		/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		Policy?: Policy;
+		Policy?: Policy | null;
 	}
 
 
 	/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface Policy {
-		PolicyName?: string;
-		PolicyId?: string;
+		PolicyName?: string | null;
+		PolicyId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		Path?: string;
-		DefaultVersionId?: string;
-		AttachmentCount?: number;
-		PermissionsBoundaryUsageCount?: number;
-		IsAttachable?: boolean;
-		Description?: string;
-		CreateDate?: Date;
-		UpdateDate?: Date;
+		Arn?: string | null;
+		Path?: string | null;
+		DefaultVersionId?: string | null;
+		AttachmentCount?: number | null;
+		PermissionsBoundaryUsageCount?: number | null;
+		IsAttachable?: boolean | null;
+		Description?: string | null;
+		CreateDate?: Date | null;
+		UpdateDate?: Date | null;
 	}
 
 	export interface MalformedPolicyDocumentException {
@@ -242,16 +242,16 @@ export namespace MyNS {
 	export interface CreatePolicyVersionResponse {
 
 		/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		PolicyVersion?: PolicyVersion;
+		PolicyVersion?: PolicyVersion | null;
 	}
 
 
 	/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyVersion {
-		Document?: string;
-		VersionId?: string;
-		IsDefaultVersion?: boolean;
-		CreateDate?: Date;
+		Document?: string | null;
+		VersionId?: string | null;
+		IsDefaultVersion?: boolean | null;
+		CreateDate?: Date | null;
 	}
 
 
@@ -277,19 +277,19 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		SAMLProviderArn?: string;
+		SAMLProviderArn?: string | null;
 	}
 
 	export interface CreateServiceLinkedRoleResponse {
 
 		/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
-		Role?: Role;
+		Role?: Role | null;
 	}
 
 	export interface CreateServiceSpecificCredentialResponse {
 
 		/** Contains the details of a service-specific credential. */
-		ServiceSpecificCredential?: ServiceSpecificCredential;
+		ServiceSpecificCredential?: ServiceSpecificCredential | null;
 	}
 
 
@@ -312,7 +312,7 @@ export namespace MyNS {
 	export interface CreateUserResponse {
 
 		/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
-		User?: User;
+		User?: User | null;
 	}
 
 
@@ -330,11 +330,11 @@ export namespace MyNS {
 		 */
 		Arn: string;
 		CreateDate: Date;
-		PasswordLastUsed?: Date;
+		PasswordLastUsed?: Date | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: AttachedPermissionsBoundary | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -352,12 +352,12 @@ export namespace MyNS {
 	/** Contains information about a virtual MFA device. */
 	export interface VirtualMFADevice {
 		SerialNumber: string;
-		Base32StringSeed?: string;
-		QRCodePNG?: string;
+		Base32StringSeed?: string | null;
+		QRCodePNG?: string | null;
 
 		/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
-		User?: User;
-		EnableDate?: Date;
+		User?: User | null;
+		EnableDate?: Date | null;
 	}
 
 	export interface DeleteConflictException {
@@ -373,30 +373,30 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GenerateCredentialReport</a> request.  */
 	export interface GenerateCredentialReportResponse {
-		State?: GenerateCredentialReportResponseState;
-		Description?: string;
+		State?: GenerateCredentialReportResponseState | null;
+		Description?: string | null;
 	}
 
 	export enum GenerateCredentialReportResponseState { STARTED = 0, INPROGRESS = 1, COMPLETE = 2 }
 
 	export interface GenerateOrganizationsAccessReportResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface ReportGenerationLimitExceededException {
 	}
 
 	export interface GenerateServiceLastAccessedDetailsResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action. */
 	export interface GetAccessKeyLastUsedResponse {
-		UserName?: string;
+		UserName?: string | null;
 
 		/** <p>Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.</p> */
-		AccessKeyLastUsed?: AccessKeyLastUsed;
+		AccessKeyLastUsed?: AccessKeyLastUsed | null;
 	}
 
 
@@ -410,125 +410,125 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request.  */
 	export interface GetAccountAuthorizationDetailsResponse {
-		UserDetailList?: Array<UserDetail>;
-		GroupDetailList?: Array<GroupDetail>;
-		RoleDetailList?: Array<RoleDetail>;
-		Policies?: Array<ManagedPolicyDetail>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		UserDetailList?: Array<UserDetail> | null;
+		GroupDetailList?: Array<GroupDetail> | null;
+		RoleDetailList?: Array<RoleDetail> | null;
+		Policies?: Array<ManagedPolicyDetail> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface UserDetail {
-		Path?: string;
-		UserName?: string;
-		UserId?: string;
+		Path?: string | null;
+		UserName?: string | null;
+		UserId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		CreateDate?: Date;
-		UserPolicyList?: Array<PolicyDetail>;
-		GroupList?: Array<string>;
-		AttachedManagedPolicies?: Array<AttachedPolicy>;
+		Arn?: string | null;
+		CreateDate?: Date | null;
+		UserPolicyList?: Array<PolicyDetail> | null;
+		GroupList?: Array<string> | null;
+		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: AttachedPermissionsBoundary | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** <p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface PolicyDetail {
-		PolicyName?: string;
-		PolicyDocument?: string;
+		PolicyName?: string | null;
+		PolicyDocument?: string | null;
 	}
 
 
 	/** <p>Contains information about an attached policy.</p> <p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface AttachedPolicy {
-		PolicyName?: string;
+		PolicyName?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PolicyArn?: string;
+		PolicyArn?: string | null;
 	}
 
 
 	/** <p>Contains information about an IAM group, including all of the group's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface GroupDetail {
-		Path?: string;
-		GroupName?: string;
-		GroupId?: string;
+		Path?: string | null;
+		GroupName?: string | null;
+		GroupId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		CreateDate?: Date;
-		GroupPolicyList?: Array<PolicyDetail>;
-		AttachedManagedPolicies?: Array<AttachedPolicy>;
+		Arn?: string | null;
+		CreateDate?: Date | null;
+		GroupPolicyList?: Array<PolicyDetail> | null;
+		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
 	}
 
 
 	/** <p>Contains information about an IAM role, including all of the role's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface RoleDetail {
-		Path?: string;
-		RoleName?: string;
-		RoleId?: string;
+		Path?: string | null;
+		RoleName?: string | null;
+		RoleId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		CreateDate?: Date;
-		AssumeRolePolicyDocument?: string;
+		Arn?: string | null;
+		CreateDate?: Date | null;
+		AssumeRolePolicyDocument?: string | null;
 
 		/** Contains a list of instance profiles. */
-		InstanceProfileList?: Array<InstanceProfile>;
-		RolePolicyList?: Array<PolicyDetail>;
-		AttachedManagedPolicies?: Array<AttachedPolicy>;
+		InstanceProfileList?: Array<InstanceProfile> | null;
+		RolePolicyList?: Array<PolicyDetail> | null;
+		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: AttachedPermissionsBoundary | null;
+		Tags?: Array<Tag> | null;
 
 		/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
-		RoleLastUsed?: RoleLastUsed;
+		RoleLastUsed?: RoleLastUsed | null;
 	}
 
 
 	/** <p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface ManagedPolicyDetail {
-		PolicyName?: string;
-		PolicyId?: string;
+		PolicyName?: string | null;
+		PolicyId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		Path?: string;
-		DefaultVersionId?: string;
-		AttachmentCount?: number;
-		PermissionsBoundaryUsageCount?: number;
-		IsAttachable?: boolean;
-		Description?: string;
-		CreateDate?: Date;
-		UpdateDate?: Date;
-		PolicyVersionList?: Array<PolicyVersion>;
+		Arn?: string | null;
+		Path?: string | null;
+		DefaultVersionId?: string | null;
+		AttachmentCount?: number | null;
+		PermissionsBoundaryUsageCount?: number | null;
+		IsAttachable?: boolean | null;
+		Description?: string | null;
+		CreateDate?: Date | null;
+		UpdateDate?: Date | null;
+		PolicyVersionList?: Array<PolicyVersion> | null;
 	}
 
 	export enum EntityType { User = 0, Role = 1, Group = 2, LocalManagedPolicy = 3, AWSManagedPolicy = 4 }
@@ -547,22 +547,22 @@ export namespace MyNS {
 
 	/** <p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation. </p> */
 	export interface PasswordPolicy {
-		MinimumPasswordLength?: number;
-		RequireSymbols?: boolean;
-		RequireNumbers?: boolean;
-		RequireUppercaseCharacters?: boolean;
-		RequireLowercaseCharacters?: boolean;
-		AllowUsersToChangePassword?: boolean;
-		ExpirePasswords?: boolean;
-		MaxPasswordAge?: number;
-		PasswordReusePrevention?: number;
-		HardExpiry?: boolean;
+		MinimumPasswordLength?: number | null;
+		RequireSymbols?: boolean | null;
+		RequireNumbers?: boolean | null;
+		RequireUppercaseCharacters?: boolean | null;
+		RequireLowercaseCharacters?: boolean | null;
+		AllowUsersToChangePassword?: boolean | null;
+		ExpirePasswords?: boolean | null;
+		MaxPasswordAge?: number | null;
+		PasswordReusePrevention?: number | null;
+		HardExpiry?: boolean | null;
 	}
 
 
 	/** Contains the response to a successful <a>GetAccountSummary</a> request.  */
 	export interface GetAccountSummaryResponse {
-		SummaryMap?: SummaryMapType;
+		SummaryMap?: SummaryMapType | null;
 	}
 
 	export interface SummaryMapType {
@@ -571,15 +571,15 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request.  */
 	export interface GetContextKeysForPolicyResponse {
-		ContextKeyNames?: Array<string>;
+		ContextKeyNames?: Array<string> | null;
 	}
 
 
 	/** Contains the response to a successful <a>GetCredentialReport</a> request.  */
 	export interface GetCredentialReportResponse {
-		Content?: string;
-		ReportFormat?: GetCredentialReportResponseReportFormat;
-		GeneratedTime?: Date;
+		Content?: string | null;
+		ReportFormat?: GetCredentialReportResponseReportFormat | null;
+		GeneratedTime?: Date | null;
 	}
 
 	export enum GetCredentialReportResponseReportFormat { text_csv = 0 }
@@ -608,8 +608,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Users: Array<User>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -651,26 +651,26 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		Url?: string;
-		ClientIDList?: Array<string>;
+		Url?: string | null;
+		ClientIDList?: Array<string> | null;
 
 		/** Contains a list of thumbprints of identity provider server certificates. */
-		ThumbprintList?: Array<string>;
-		CreateDate?: Date;
+		ThumbprintList?: Array<string> | null;
+		CreateDate?: Date | null;
 	}
 
 	export interface GetOrganizationsAccessReportResponse {
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
 		JobCreationDate: Date;
-		JobCompletionDate?: Date;
-		NumberOfServicesAccessible?: number;
-		NumberOfServicesNotAccessed?: number;
-		AccessDetails?: Array<AccessDetail>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		JobCompletionDate?: Date | null;
+		NumberOfServicesAccessible?: number | null;
+		NumberOfServicesNotAccessed?: number | null;
+		AccessDetails?: Array<AccessDetail> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		ErrorDetails?: ErrorDetails;
+		ErrorDetails?: ErrorDetails | null;
 	}
 
 	export enum GetOrganizationsAccessReportResponseJobStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
@@ -680,10 +680,10 @@ export namespace MyNS {
 	export interface AccessDetail {
 		ServiceName: string;
 		ServiceNamespace: string;
-		Region?: string;
-		EntityPath?: string;
-		LastAuthenticatedTime?: Date;
-		TotalAuthenticatedEntities?: number;
+		Region?: string | null;
+		EntityPath?: string | null;
+		LastAuthenticatedTime?: Date | null;
+		TotalAuthenticatedEntities?: number | null;
 	}
 
 
@@ -698,7 +698,7 @@ export namespace MyNS {
 	export interface GetPolicyResponse {
 
 		/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		Policy?: Policy;
+		Policy?: Policy | null;
 	}
 
 
@@ -706,7 +706,7 @@ export namespace MyNS {
 	export interface GetPolicyVersionResponse {
 
 		/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		PolicyVersion?: PolicyVersion;
+		PolicyVersion?: PolicyVersion | null;
 	}
 
 
@@ -731,9 +731,9 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetSAMLProvider</a> request.  */
 	export interface GetSAMLProviderResponse {
-		SAMLMetadataDocument?: string;
-		CreateDate?: Date;
-		ValidUntil?: Date;
+		SAMLMetadataDocument?: string | null;
+		CreateDate?: Date | null;
+		ValidUntil?: Date | null;
 	}
 
 
@@ -741,7 +741,7 @@ export namespace MyNS {
 	export interface GetSSHPublicKeyResponse {
 
 		/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
-		SSHPublicKey?: SSHPublicKey;
+		SSHPublicKey?: SSHPublicKey | null;
 	}
 
 
@@ -752,7 +752,7 @@ export namespace MyNS {
 		Fingerprint: string;
 		SSHPublicKeyBody: string;
 		Status: AccessKeyStatus;
-		UploadDate?: Date;
+		UploadDate?: Date | null;
 	}
 
 	export interface UnrecognizedPublicKeyEncodingException {
@@ -779,7 +779,7 @@ export namespace MyNS {
 		 */
 		ServerCertificateMetadata: ServerCertificateMetadata;
 		CertificateBody: string;
-		CertificateChain?: string;
+		CertificateChain?: string | null;
 	}
 
 
@@ -796,21 +796,21 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
-		UploadDate?: Date;
-		Expiration?: Date;
+		UploadDate?: Date | null;
+		Expiration?: Date | null;
 	}
 
 	export interface GetServiceLastAccessedDetailsResponse {
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
-		JobType?: GetServiceLastAccessedDetailsResponseJobType;
+		JobType?: GetServiceLastAccessedDetailsResponseJobType | null;
 		JobCreationDate: Date;
 		ServicesLastAccessed: Array<ServiceLastAccessed>;
 		JobCompletionDate: Date;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		Error?: ErrorDetails;
+		Error?: ErrorDetails | null;
 	}
 
 	export enum GetServiceLastAccessedDetailsResponseJobType { SERVICE_LEVEL = 0, ACTION_LEVEL = 1 }
@@ -819,7 +819,7 @@ export namespace MyNS {
 	/** <p>Contains details about the most recent attempt to access the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
 	export interface ServiceLastAccessed {
 		ServiceName: string;
-		LastAuthenticated?: Date;
+		LastAuthenticated?: Date | null;
 		ServiceNamespace: string;
 
 		/**
@@ -827,25 +827,25 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		LastAuthenticatedEntity?: string;
-		LastAuthenticatedRegion?: string;
-		TotalAuthenticatedEntities?: number;
-		TrackedActionsLastAccessed?: Array<TrackedActionLastAccessed>;
+		LastAuthenticatedEntity?: string | null;
+		LastAuthenticatedRegion?: string | null;
+		TotalAuthenticatedEntities?: number | null;
+		TrackedActionsLastAccessed?: Array<TrackedActionLastAccessed> | null;
 	}
 
 
 	/** <p>Contains details about the most recent attempt to access an action within the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
 	export interface TrackedActionLastAccessed {
-		ActionName?: string;
+		ActionName?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		LastAccessedEntity?: string;
-		LastAccessedTime?: Date;
-		LastAccessedRegion?: string;
+		LastAccessedEntity?: string | null;
+		LastAccessedTime?: Date | null;
+		LastAccessedRegion?: string | null;
 	}
 
 	export interface GetServiceLastAccessedDetailsWithEntitiesResponse {
@@ -853,11 +853,11 @@ export namespace MyNS {
 		JobCreationDate: Date;
 		JobCompletionDate: Date;
 		EntityDetailsList: Array<EntityDetails>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		Error?: ErrorDetails;
+		Error?: ErrorDetails | null;
 	}
 
 
@@ -869,7 +869,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		EntityInfo: EntityInfo;
-		LastAuthenticated?: Date;
+		LastAuthenticated?: Date | null;
 	}
 
 
@@ -886,7 +886,7 @@ export namespace MyNS {
 		Name: string;
 		Type: EntityInfoType;
 		Id: string;
-		Path?: string;
+		Path?: string | null;
 	}
 
 	export enum EntityInfoType { USER = 0, ROLE = 1, GROUP = 2 }
@@ -895,7 +895,7 @@ export namespace MyNS {
 		Status: GetServiceLinkedRoleDeletionStatusResponseStatus;
 
 		/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
-		Reason?: DeletionTaskFailureReasonType;
+		Reason?: DeletionTaskFailureReasonType | null;
 	}
 
 	export enum GetServiceLinkedRoleDeletionStatusResponseStatus { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2, NOT_STARTED = 3 }
@@ -903,15 +903,15 @@ export namespace MyNS {
 
 	/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface DeletionTaskFailureReasonType {
-		Reason?: string;
-		RoleUsageList?: Array<RoleUsageType>;
+		Reason?: string | null;
+		RoleUsageList?: Array<RoleUsageType> | null;
 	}
 
 
 	/** <p>An object that contains details about how a service-linked role is used, if that information is returned by the service.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface RoleUsageType {
-		Region?: string;
-		Resources?: Array<string>;
+		Region?: string | null;
+		Resources?: Array<string> | null;
 	}
 
 
@@ -942,80 +942,80 @@ export namespace MyNS {
 		 * Required
 		 */
 		AccessKeyMetadata: Array<AccessKeyMetadata>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> operation.</p> */
 	export interface AccessKeyMetadata {
-		UserName?: string;
-		AccessKeyId?: string;
-		Status?: AccessKeyStatus;
-		CreateDate?: Date;
+		UserName?: string | null;
+		AccessKeyId?: string | null;
+		Status?: AccessKeyStatus | null;
+		CreateDate?: Date | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListAccountAliases</a> request.  */
 	export interface ListAccountAliasesResponse {
 		AccountAliases: Array<string>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListAttachedGroupPolicies</a> request.  */
 	export interface ListAttachedGroupPoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		AttachedPolicies?: Array<AttachedPolicy> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListAttachedRolePolicies</a> request.  */
 	export interface ListAttachedRolePoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		AttachedPolicies?: Array<AttachedPolicy> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListAttachedUserPolicies</a> request.  */
 	export interface ListAttachedUserPoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		AttachedPolicies?: Array<AttachedPolicy> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListEntitiesForPolicy</a> request.  */
 	export interface ListEntitiesForPolicyResponse {
-		PolicyGroups?: Array<PolicyGroup>;
-		PolicyUsers?: Array<PolicyUser>;
-		PolicyRoles?: Array<PolicyRole>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		PolicyGroups?: Array<PolicyGroup> | null;
+		PolicyUsers?: Array<PolicyUser> | null;
+		PolicyRoles?: Array<PolicyRole> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyGroup {
-		GroupName?: string;
-		GroupId?: string;
+		GroupName?: string | null;
+		GroupId?: string | null;
 	}
 
 
 	/** <p>Contains information about a user that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyUser {
-		UserName?: string;
-		UserId?: string;
+		UserName?: string | null;
+		UserId?: string | null;
 	}
 
 
 	/** <p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyRole {
-		RoleName?: string;
-		RoleId?: string;
+		RoleName?: string | null;
+		RoleId?: string | null;
 	}
 
 
@@ -1027,8 +1027,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyNames: Array<string>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1040,8 +1040,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Groups: Array<Group>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1053,8 +1053,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Groups: Array<Group>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1066,8 +1066,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		InstanceProfiles: Array<InstanceProfile>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1079,8 +1079,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		InstanceProfiles: Array<InstanceProfile>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1092,8 +1092,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		MFADevices: Array<MFADevice>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1109,7 +1109,7 @@ export namespace MyNS {
 	export interface ListOpenIDConnectProvidersResponse {
 
 		/** Contains a list of IAM OpenID Connect providers. */
-		OpenIDConnectProviderList?: Array<OpenIDConnectProviderListEntry>;
+		OpenIDConnectProviderList?: Array<OpenIDConnectProviderListEntry> | null;
 	}
 
 
@@ -1121,28 +1121,28 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListPolicies</a> request.  */
 	export interface ListPoliciesResponse {
-		Policies?: Array<Policy>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		Policies?: Array<Policy> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ListPoliciesGrantingServiceAccessResponse {
 		PoliciesGrantingServiceAccess: Array<ListPoliciesGrantingServiceAccessEntry>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.</p> */
 	export interface ListPoliciesGrantingServiceAccessEntry {
-		ServiceNamespace?: string;
-		Policies?: Array<PolicyGrantingServiceAccess>;
+		ServiceNamespace?: string | null;
+		Policies?: Array<PolicyGrantingServiceAccess> | null;
 	}
 
 
@@ -1156,9 +1156,9 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PolicyArn?: string;
-		EntityType?: EntityInfoType;
-		EntityName?: string;
+		PolicyArn?: string | null;
+		EntityType?: EntityInfoType | null;
+		EntityName?: string | null;
 	}
 
 	export enum PolicyGrantingServiceAccessPolicyType { INLINE = 0, MANAGED = 1 }
@@ -1166,9 +1166,9 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>ListPolicyVersions</a> request.  */
 	export interface ListPolicyVersionsResponse {
-		Versions?: Array<PolicyVersion>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		Versions?: Array<PolicyVersion> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1180,14 +1180,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyNames: Array<string>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ListRoleTagsResponse {
 		Tags: Array<Tag>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1199,14 +1199,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		Roles: Array<Role>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListSAMLProviders</a> request.  */
 	export interface ListSAMLProvidersResponse {
-		SAMLProviderList?: Array<SAMLProviderListEntry>;
+		SAMLProviderList?: Array<SAMLProviderListEntry> | null;
 	}
 
 
@@ -1218,17 +1218,17 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		ValidUntil?: Date;
-		CreateDate?: Date;
+		Arn?: string | null;
+		ValidUntil?: Date | null;
+		CreateDate?: Date | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListSSHPublicKeys</a> request. */
 	export interface ListSSHPublicKeysResponse {
-		SSHPublicKeys?: Array<SSHPublicKeyMetadata>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		SSHPublicKeys?: Array<SSHPublicKeyMetadata> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1244,12 +1244,12 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListServerCertificates</a> request.  */
 	export interface ListServerCertificatesResponse {
 		ServerCertificateMetadataList: Array<ServerCertificateMetadata>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ListServiceSpecificCredentialsResponse {
-		ServiceSpecificCredentials?: Array<ServiceSpecificCredentialMetadata>;
+		ServiceSpecificCredentials?: Array<ServiceSpecificCredentialMetadata> | null;
 	}
 
 
@@ -1272,8 +1272,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Certificates: Array<SigningCertificate>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		CertificateId: string;
 		CertificateBody: string;
 		Status: AccessKeyStatus;
-		UploadDate?: Date;
+		UploadDate?: Date | null;
 	}
 
 
@@ -1295,14 +1295,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyNames: Array<string>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ListUserTagsResponse {
 		Tags: Array<Tag>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1314,48 +1314,48 @@ export namespace MyNS {
 		 * Required
 		 */
 		Users: Array<User>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListVirtualMFADevices</a> request.  */
 	export interface ListVirtualMFADevicesResponse {
 		VirtualMFADevices: Array<VirtualMFADevice>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ResetServiceSpecificCredentialResponse {
 
 		/** Contains the details of a service-specific credential. */
-		ServiceSpecificCredential?: ServiceSpecificCredential;
+		ServiceSpecificCredential?: ServiceSpecificCredential | null;
 	}
 
 
 	/** Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request. */
 	export interface SimulatePolicyResponse {
-		EvaluationResults?: Array<EvaluationResult>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		EvaluationResults?: Array<EvaluationResult> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains the results of a simulation.</p> <p>This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.</p> */
 	export interface EvaluationResult {
 		EvalActionName: string;
-		EvalResourceName?: string;
+		EvalResourceName?: string | null;
 		EvalDecision: EvaluationResultEvalDecision;
-		MatchedStatements?: Array<Statement>;
-		MissingContextValues?: Array<string>;
+		MatchedStatements?: Array<Statement> | null;
+		MissingContextValues?: Array<string> | null;
 
 		/** Contains information about the effect that Organizations has on a policy simulation. */
-		OrganizationsDecisionDetail?: OrganizationsDecisionDetail;
+		OrganizationsDecisionDetail?: OrganizationsDecisionDetail | null;
 
 		/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
-		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail;
-		EvalDecisionDetails?: EvalDecisionDetailsType;
-		ResourceSpecificResults?: Array<ResourceSpecificResult>;
+		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail | null;
+		EvalDecisionDetails?: EvalDecisionDetailsType | null;
+		ResourceSpecificResults?: Array<ResourceSpecificResult> | null;
 	}
 
 	export enum EvaluationResultEvalDecision { allowed = 0, explicitDeny = 1, implicitDeny = 2 }
@@ -1363,14 +1363,14 @@ export namespace MyNS {
 
 	/** <p>Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation.</p> <p>This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code> type.</p> */
 	export interface Statement {
-		SourcePolicyId?: string;
-		SourcePolicyType?: StatementSourcePolicyType;
+		SourcePolicyId?: string | null;
+		SourcePolicyType?: StatementSourcePolicyType | null;
 
 		/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
-		StartPosition?: Position;
+		StartPosition?: Position | null;
 
 		/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
-		EndPosition?: Position;
+		EndPosition?: Position | null;
 	}
 
 	export enum StatementSourcePolicyType { user = 0, group = 1, role = 2, aws_managed = 3, user_managed = 4, resource = 5, none = 6 }
@@ -1378,20 +1378,20 @@ export namespace MyNS {
 
 	/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
 	export interface Position {
-		Line?: number;
-		Column?: number;
+		Line?: number | null;
+		Column?: number | null;
 	}
 
 
 	/** Contains information about the effect that Organizations has on a policy simulation. */
 	export interface OrganizationsDecisionDetail {
-		AllowedByOrganizations?: boolean;
+		AllowedByOrganizations?: boolean | null;
 	}
 
 
 	/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
 	export interface PermissionsBoundaryDecisionDetail {
-		AllowedByPermissionsBoundary?: boolean;
+		AllowedByPermissionsBoundary?: boolean | null;
 	}
 
 	export interface EvalDecisionDetailsType {
@@ -1402,20 +1402,20 @@ export namespace MyNS {
 	export interface ResourceSpecificResult {
 		EvalResourceName: string;
 		EvalResourceDecision: EvaluationResultEvalDecision;
-		MatchedStatements?: Array<Statement>;
-		MissingContextValues?: Array<string>;
-		EvalDecisionDetails?: EvalDecisionDetailsType;
+		MatchedStatements?: Array<Statement> | null;
+		MissingContextValues?: Array<string> | null;
+		EvalDecisionDetails?: EvalDecisionDetailsType | null;
 
 		/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
-		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail;
+		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail | null;
 	}
 
 
 	/** <p>Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.</p> <p>This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.</p> */
 	export interface ContextEntry {
-		ContextKeyName?: string;
-		ContextKeyValues?: Array<string>;
-		ContextKeyType?: ContextEntryContextKeyType;
+		ContextKeyName?: string | null;
+		ContextKeyValues?: Array<string> | null;
+		ContextKeyType?: ContextEntryContextKeyType | null;
 	}
 
 	export enum ContextEntryContextKeyType { _string = 0, stringList = 1, numeric = 2, numericList = 3, boolean = 4, booleanList = 5, ip = 6, ipList = 7, binary = 8, binaryList = 9, date = 10, dateList = 11 }
@@ -1429,7 +1429,7 @@ export namespace MyNS {
 	export interface UpdateRoleDescriptionResponse {
 
 		/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
-		Role?: Role;
+		Role?: Role | null;
 	}
 
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		SAMLProviderArn?: string;
+		SAMLProviderArn?: string | null;
 	}
 
 
@@ -1449,7 +1449,7 @@ export namespace MyNS {
 	export interface UploadSSHPublicKeyResponse {
 
 		/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
-		SSHPublicKey?: SSHPublicKey;
+		SSHPublicKey?: SSHPublicKey | null;
 	}
 
 	export interface InvalidPublicKeyException {
@@ -1463,7 +1463,7 @@ export namespace MyNS {
 	export interface UploadServerCertificateResponse {
 
 		/** <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations. </p> */
-		ServerCertificateMetadata?: ServerCertificateMetadata;
+		ServerCertificateMetadata?: ServerCertificateMetadata | null;
 	}
 
 	export interface MalformedCertificateException {
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 	export enum ContextKeyTypeEnum { _string = 0, stringList = 1, numeric = 2, numericList = 3, boolean = 4, booleanList = 5, ip = 6, ipList = 7, binary = 8, binaryList = 9, date = 10, dateList = 11 }
 
 	export interface CreateAccessKeyRequest {
-		UserName?: string;
+		UserName?: string | null;
 	}
 
 	export interface CreateAccountAliasRequest {
@@ -1569,19 +1569,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupRequest {
-		Path?: string;
+		Path?: string | null;
 		GroupName: string;
 	}
 
 	export interface CreateInstanceProfileRequest {
 		InstanceProfileName: string;
-		Path?: string;
+		Path?: string | null;
 	}
 
 	export interface CreateLoginProfileRequest {
 		UserName: string;
 		Password: string;
-		PasswordResetRequired?: boolean;
+		PasswordResetRequired?: boolean | null;
 	}
 
 	export interface CreateOpenIDConnectProviderRequest {
@@ -1593,7 +1593,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Url: string;
-		ClientIDList?: Array<string>;
+		ClientIDList?: Array<string> | null;
 
 		/**
 		 * Contains a list of thumbprints of identity provider server certificates.
@@ -1604,9 +1604,9 @@ export namespace MyNS {
 
 	export interface CreatePolicyRequest {
 		PolicyName: string;
-		Path?: string;
+		Path?: string | null;
 		PolicyDocument: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface CreatePolicyVersionRequest {
@@ -1619,23 +1619,23 @@ export namespace MyNS {
 		 */
 		PolicyArn: string;
 		PolicyDocument: string;
-		SetAsDefault?: boolean;
+		SetAsDefault?: boolean | null;
 	}
 
 	export interface CreateRoleRequest {
-		Path?: string;
+		Path?: string | null;
 		RoleName: string;
 		AssumeRolePolicyDocument: string;
-		Description?: string;
-		MaxSessionDuration?: number;
+		Description?: string | null;
+		MaxSessionDuration?: number | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PermissionsBoundary?: string;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateSAMLProviderRequest {
@@ -1645,8 +1645,8 @@ export namespace MyNS {
 
 	export interface CreateServiceLinkedRoleRequest {
 		AWSServiceName: string;
-		Description?: string;
-		CustomSuffix?: string;
+		Description?: string | null;
+		CustomSuffix?: string | null;
 	}
 
 	export interface CreateServiceSpecificCredentialRequest {
@@ -1655,7 +1655,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserRequest {
-		Path?: string;
+		Path?: string | null;
 		UserName: string;
 
 		/**
@@ -1663,12 +1663,12 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PermissionsBoundary?: string;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateVirtualMFADeviceRequest {
-		Path?: string;
+		Path?: string | null;
 		VirtualMFADeviceName: string;
 	}
 
@@ -1678,7 +1678,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAccessKeyRequest {
-		UserName?: string;
+		UserName?: string | null;
 		AccessKeyId: string;
 	}
 
@@ -1775,12 +1775,12 @@ export namespace MyNS {
 	}
 
 	export interface DeleteServiceSpecificCredentialRequest {
-		UserName?: string;
+		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
 	}
 
 	export interface DeleteSigningCertificateRequest {
-		UserName?: string;
+		UserName?: string | null;
 		CertificateId: string;
 	}
 
@@ -1854,7 +1854,7 @@ export namespace MyNS {
 
 	export interface GenerateOrganizationsAccessReportRequest {
 		EntityPath: string;
-		OrganizationsPolicyId?: string;
+		OrganizationsPolicyId?: string | null;
 	}
 
 	export interface GenerateServiceLastAccessedDetailsRequest {
@@ -1866,7 +1866,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
-		Granularity?: GetServiceLastAccessedDetailsResponseJobType;
+		Granularity?: GetServiceLastAccessedDetailsResponseJobType | null;
 	}
 
 	export interface GetAccessKeyLastUsedRequest {
@@ -1874,9 +1874,9 @@ export namespace MyNS {
 	}
 
 	export interface GetAccountAuthorizationDetailsRequest {
-		Filter?: Array<EntityType>;
-		MaxItems?: number;
-		Marker?: string;
+		Filter?: Array<EntityType> | null;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface GetContextKeysForCustomPolicyRequest {
@@ -1892,7 +1892,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicySourceArn: string;
-		PolicyInputList?: Array<string>;
+		PolicyInputList?: Array<string> | null;
 	}
 
 	export enum ReportFormatType { text_csv = 0 }
@@ -1904,8 +1904,8 @@ export namespace MyNS {
 
 	export interface GetGroupRequest {
 		GroupName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface GetInstanceProfileRequest {
@@ -1931,9 +1931,9 @@ export namespace MyNS {
 
 	export interface GetOrganizationsAccessReportRequest {
 		JobId: string;
-		MaxItems?: number;
-		Marker?: string;
-		SortKey?: SortKeyType;
+		MaxItems?: number | null;
+		Marker?: string | null;
+		SortKey?: SortKeyType | null;
 	}
 
 	export enum JobStatusType { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
@@ -1995,15 +1995,15 @@ export namespace MyNS {
 
 	export interface GetServiceLastAccessedDetailsRequest {
 		JobId: string;
-		MaxItems?: number;
-		Marker?: string;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface GetServiceLastAccessedDetailsWithEntitiesRequest {
 		JobId: string;
 		ServiceNamespace: string;
-		MaxItems?: number;
-		Marker?: string;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface GetServiceLinkedRoleDeletionStatusRequest {
@@ -2016,39 +2016,39 @@ export namespace MyNS {
 	}
 
 	export interface GetUserRequest {
-		UserName?: string;
+		UserName?: string | null;
 	}
 
 	export interface ListAccessKeysRequest {
-		UserName?: string;
-		Marker?: string;
-		MaxItems?: number;
+		UserName?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListAccountAliasesRequest {
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListAttachedGroupPoliciesRequest {
 		GroupName: string;
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListAttachedRolePoliciesRequest {
 		RoleName: string;
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListAttachedUserPoliciesRequest {
 		UserName: string;
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 
@@ -2064,56 +2064,56 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
-		EntityFilter?: EntityType;
-		PathPrefix?: string;
+		EntityFilter?: EntityType | null;
+		PathPrefix?: string | null;
 
 		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PolicyUsageFilter?: PolicyUsageType;
-		Marker?: string;
-		MaxItems?: number;
+		PolicyUsageFilter?: PolicyUsageType | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListGroupPoliciesRequest {
 		GroupName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListGroupsForUserRequest {
 		UserName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListGroupsRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListInstanceProfilesForRoleRequest {
 		RoleName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListInstanceProfilesRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListMFADevicesRequest {
-		UserName?: string;
-		Marker?: string;
-		MaxItems?: number;
+		UserName?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListOpenIDConnectProvidersRequest {
 	}
 
 	export interface ListPoliciesGrantingServiceAccessRequest {
-		Marker?: string;
+		Marker?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
@@ -2128,14 +2128,14 @@ export namespace MyNS {
 	export enum PolicyScopeType { All = 0, AWS = 1, Local = 2 }
 
 	export interface ListPoliciesRequest {
-		Scope?: PolicyScopeType;
-		OnlyAttached?: boolean;
-		PathPrefix?: string;
+		Scope?: PolicyScopeType | null;
+		OnlyAttached?: boolean | null;
+		PathPrefix?: string | null;
 
 		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PolicyUsageFilter?: PolicyUsageType;
-		Marker?: string;
-		MaxItems?: number;
+		PolicyUsageFilter?: PolicyUsageType | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListPolicyVersionsRequest {
@@ -2147,78 +2147,78 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListRolePoliciesRequest {
 		RoleName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListRoleTagsRequest {
 		RoleName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListRolesRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListSAMLProvidersRequest {
 	}
 
 	export interface ListSSHPublicKeysRequest {
-		UserName?: string;
-		Marker?: string;
-		MaxItems?: number;
+		UserName?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListServerCertificatesRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListServiceSpecificCredentialsRequest {
-		UserName?: string;
-		ServiceName?: string;
+		UserName?: string | null;
+		ServiceName?: string | null;
 	}
 
 	export interface ListSigningCertificatesRequest {
-		UserName?: string;
-		Marker?: string;
-		MaxItems?: number;
+		UserName?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListUserPoliciesRequest {
 		UserName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListUserTagsRequest {
 		UserName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListUsersRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export enum AssignmentStatusType { Assigned = 0, Unassigned = 1, Any = 2 }
 
 	export interface ListVirtualMFADevicesRequest {
-		AssignmentStatus?: AssignmentStatusType;
-		Marker?: string;
-		MaxItems?: number;
+		AssignmentStatus?: AssignmentStatusType | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export enum PolicyType { INLINE = 0, MANAGED = 1 }
@@ -2290,7 +2290,7 @@ export namespace MyNS {
 	}
 
 	export interface ResetServiceSpecificCredentialRequest {
-		UserName?: string;
+		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
 	}
 
@@ -2321,16 +2321,16 @@ export namespace MyNS {
 
 	export interface SimulateCustomPolicyRequest {
 		PolicyInputList: Array<string>;
-		PermissionsBoundaryPolicyInputList?: Array<string>;
+		PermissionsBoundaryPolicyInputList?: Array<string> | null;
 		ActionNames: Array<string>;
-		ResourceArns?: Array<string>;
-		ResourcePolicy?: string;
-		ResourceOwner?: string;
-		CallerArn?: string;
-		ContextEntries?: Array<ContextEntry>;
-		ResourceHandlingOption?: string;
-		MaxItems?: number;
-		Marker?: string;
+		ResourceArns?: Array<string> | null;
+		ResourcePolicy?: string | null;
+		ResourceOwner?: string | null;
+		CallerArn?: string | null;
+		ContextEntries?: Array<ContextEntry> | null;
+		ResourceHandlingOption?: string | null;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface SimulatePrincipalPolicyRequest {
@@ -2342,17 +2342,17 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicySourceArn: string;
-		PolicyInputList?: Array<string>;
-		PermissionsBoundaryPolicyInputList?: Array<string>;
+		PolicyInputList?: Array<string> | null;
+		PermissionsBoundaryPolicyInputList?: Array<string> | null;
 		ActionNames: Array<string>;
-		ResourceArns?: Array<string>;
-		ResourcePolicy?: string;
-		ResourceOwner?: string;
-		CallerArn?: string;
-		ContextEntries?: Array<ContextEntry>;
-		ResourceHandlingOption?: string;
-		MaxItems?: number;
-		Marker?: string;
+		ResourceArns?: Array<string> | null;
+		ResourcePolicy?: string | null;
+		ResourceOwner?: string | null;
+		CallerArn?: string | null;
+		ContextEntries?: Array<ContextEntry> | null;
+		ResourceHandlingOption?: string | null;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface TagRoleRequest {
@@ -2376,21 +2376,21 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAccessKeyRequest {
-		UserName?: string;
+		UserName?: string | null;
 		AccessKeyId: string;
 		Status: AccessKeyStatus;
 	}
 
 	export interface UpdateAccountPasswordPolicyRequest {
-		MinimumPasswordLength?: number;
-		RequireSymbols?: boolean;
-		RequireNumbers?: boolean;
-		RequireUppercaseCharacters?: boolean;
-		RequireLowercaseCharacters?: boolean;
-		AllowUsersToChangePassword?: boolean;
-		MaxPasswordAge?: number;
-		PasswordReusePrevention?: number;
-		HardExpiry?: boolean;
+		MinimumPasswordLength?: number | null;
+		RequireSymbols?: boolean | null;
+		RequireNumbers?: boolean | null;
+		RequireUppercaseCharacters?: boolean | null;
+		RequireLowercaseCharacters?: boolean | null;
+		AllowUsersToChangePassword?: boolean | null;
+		MaxPasswordAge?: number | null;
+		PasswordReusePrevention?: number | null;
+		HardExpiry?: boolean | null;
 	}
 
 	export interface UpdateAssumeRolePolicyRequest {
@@ -2400,14 +2400,14 @@ export namespace MyNS {
 
 	export interface UpdateGroupRequest {
 		GroupName: string;
-		NewPath?: string;
-		NewGroupName?: string;
+		NewPath?: string | null;
+		NewGroupName?: string | null;
 	}
 
 	export interface UpdateLoginProfileRequest {
 		UserName: string;
-		Password?: string;
-		PasswordResetRequired?: boolean;
+		Password?: string | null;
+		PasswordResetRequired?: boolean | null;
 	}
 
 	export interface UpdateOpenIDConnectProviderThumbprintRequest {
@@ -2434,8 +2434,8 @@ export namespace MyNS {
 
 	export interface UpdateRoleRequest {
 		RoleName: string;
-		Description?: string;
-		MaxSessionDuration?: number;
+		Description?: string | null;
+		MaxSessionDuration?: number | null;
 	}
 
 	export interface UpdateSAMLProviderRequest {
@@ -2458,26 +2458,26 @@ export namespace MyNS {
 
 	export interface UpdateServerCertificateRequest {
 		ServerCertificateName: string;
-		NewPath?: string;
-		NewServerCertificateName?: string;
+		NewPath?: string | null;
+		NewServerCertificateName?: string | null;
 	}
 
 	export interface UpdateServiceSpecificCredentialRequest {
-		UserName?: string;
+		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
 		Status: AccessKeyStatus;
 	}
 
 	export interface UpdateSigningCertificateRequest {
-		UserName?: string;
+		UserName?: string | null;
 		CertificateId: string;
 		Status: AccessKeyStatus;
 	}
 
 	export interface UpdateUserRequest {
 		UserName: string;
-		NewPath?: string;
-		NewUserName?: string;
+		NewPath?: string | null;
+		NewUserName?: string | null;
 	}
 
 	export interface UploadSSHPublicKeyRequest {
@@ -2486,15 +2486,15 @@ export namespace MyNS {
 	}
 
 	export interface UploadServerCertificateRequest {
-		Path?: string;
+		Path?: string | null;
 		ServerCertificateName: string;
 		CertificateBody: string;
 		PrivateKey: string;
-		CertificateChain?: string;
+		CertificateChain?: string | null;
 	}
 
 	export interface UploadSigningCertificateRequest {
-		UserName?: string;
+		UserName?: string | null;
 		CertificateBody: string;
 	}
 

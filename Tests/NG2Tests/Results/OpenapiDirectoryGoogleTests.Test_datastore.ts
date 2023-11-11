@@ -10,7 +10,7 @@ export namespace MyNS {
 		 * Required. A list of keys with incomplete key paths for which to allocate IDs.
 		 * No key may be reserved/read-only.
 		 */
-		keys?: Array<Key>;
+		keys?: Array<Key> | null;
 	}
 
 
@@ -39,7 +39,7 @@ export namespace MyNS {
 		 * not match the context project ID ) are discouraged.
 		 * Reads and writes of foreign partition IDs may fail if the project is not in an active state.
 		 */
-		partitionId?: PartitionId;
+		partitionId?: PartitionId | null;
 
 		/**
 		 * The entity path.
@@ -57,7 +57,7 @@ export namespace MyNS {
 		 * identifier.
 		 * A path can never be empty, and a path can have at most 100 elements.
 		 */
-		path?: Array<PathElement>;
+		path?: Array<PathElement> | null;
 	}
 
 
@@ -81,10 +81,10 @@ export namespace MyNS {
 	export interface PartitionId {
 
 		/** If not empty, the ID of the namespace to which the entities belong. */
-		namespaceId?: string;
+		namespaceId?: string | null;
 
 		/** The ID of the project to which the entities belong. */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -100,7 +100,7 @@ export namespace MyNS {
 		 * Never equal to zero. Values less than zero are discouraged and may not
 		 * be supported in the future.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * The kind of the entity.
@@ -108,7 +108,7 @@ export namespace MyNS {
 		 * A kind must not contain more than 1500 bytes when UTF-8 encoded.
 		 * Cannot be `""`.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The name of the entity.
@@ -116,7 +116,7 @@ export namespace MyNS {
 		 * A name must not be more than 1500 bytes when UTF-8 encoded.
 		 * Cannot be `""`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -127,7 +127,7 @@ export namespace MyNS {
 		 * The keys specified in the request (in the same order), each with
 		 * its key path completed with a newly allocated ID.
 		 */
-		keys?: Array<Key>;
+		keys?: Array<Key> | null;
 	}
 
 
@@ -139,7 +139,7 @@ export namespace MyNS {
 		 * The order of values in an array is preserved as long as all values have
 		 * identical settings for 'exclude_from_indexes'.
 		 */
-		values?: Array<Value>;
+		values?: Array<Value> | null;
 	}
 
 
@@ -150,7 +150,7 @@ export namespace MyNS {
 	export interface Value {
 
 		/** An array value. */
-		arrayValue?: ArrayValue;
+		arrayValue?: ArrayValue | null;
 
 		/**
 		 * A blob value.
@@ -158,13 +158,13 @@ export namespace MyNS {
 		 * When `exclude_from_indexes` is false, may have at most 1500 bytes.
 		 * In JSON requests, must be base64-encoded.
 		 */
-		blobValue?: string;
+		blobValue?: string | null;
 
 		/** A boolean value. */
-		booleanValue?: boolean;
+		booleanValue?: boolean | null;
 
 		/** A double value. */
-		doubleValue?: number;
+		doubleValue?: number | null;
 
 		/**
 		 * A Datastore data object.
@@ -172,13 +172,13 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		entityValue?: Entity;
+		entityValue?: Entity | null;
 
 		/**
 		 * If the value should be excluded from all indexes including those defined
 		 * explicitly.
 		 */
-		excludeFromIndexes?: boolean;
+		excludeFromIndexes?: boolean | null;
 
 		/**
 		 * An object representing a latitude/longitude pair. This is expressed as a pair
@@ -187,10 +187,10 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		geoPointValue?: LatLng;
+		geoPointValue?: LatLng | null;
 
 		/** An integer value. */
-		integerValue?: string;
+		integerValue?: string | null;
 
 		/**
 		 * A unique identifier for an entity.
@@ -198,27 +198,27 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		keyValue?: Key;
+		keyValue?: Key | null;
 
 		/** The `meaning` field should only be populated for backwards compatibility. */
-		meaning?: number;
+		meaning?: number | null;
 
 		/** A null value. */
-		nullValue?: ValueNullValue;
+		nullValue?: ValueNullValue | null;
 
 		/**
 		 * A UTF-8 encoded string value.
 		 * When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
 		 * Otherwise, may be set to at least 1,000,000 bytes.
 		 */
-		stringValue?: string;
+		stringValue?: string | null;
 
 		/**
 		 * A timestamp value.
 		 * When stored in the Datastore, precise only to microseconds;
 		 * any additional precision is rounded down.
 		 */
-		timestampValue?: string;
+		timestampValue?: string | null;
 	}
 
 
@@ -236,7 +236,7 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		key?: Key;
+		key?: Key | null;
 
 		/**
 		 * The entity's properties.
@@ -246,7 +246,7 @@ export namespace MyNS {
 		 * The name must not contain more than 500 characters.
 		 * The name cannot be `""`.
 		 */
-		properties?: {[id: string]: Value };
+		properties?: {[id: string]: Value } | null;
 	}
 
 
@@ -260,10 +260,10 @@ export namespace MyNS {
 	export interface LatLng {
 
 		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
-		latitude?: number;
+		latitude?: number | null;
 
 		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
-		longitude?: number;
+		longitude?: number | null;
 	}
 
 	export enum ValueNullValue { NULL_VALUE = 0 }
@@ -278,7 +278,7 @@ export namespace MyNS {
 		 * Datastore.BeginTransaction or implicitly by setting
 		 * ReadOptions.new_transaction in read requests.
 		 */
-		transactionOptions?: TransactionOptions;
+		transactionOptions?: TransactionOptions | null;
 	}
 
 
@@ -291,10 +291,10 @@ export namespace MyNS {
 	export interface TransactionOptions {
 
 		/** Options specific to read-only transactions. */
-		readOnly?: ReadOnly;
+		readOnly?: ReadOnly | null;
 
 		/** Options specific to read / write transactions. */
-		readWrite?: ReadWrite;
+		readWrite?: ReadWrite | null;
 	}
 
 
@@ -307,7 +307,7 @@ export namespace MyNS {
 	export interface ReadWrite {
 
 		/** The transaction identifier of the transaction being retried. */
-		previousTransaction?: string;
+		previousTransaction?: string | null;
 	}
 
 
@@ -315,7 +315,7 @@ export namespace MyNS {
 	export interface BeginTransactionResponse {
 
 		/** The transaction identifier (always present). */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 
@@ -323,7 +323,7 @@ export namespace MyNS {
 	export interface CommitRequest {
 
 		/** The type of commit to perform. Defaults to `TRANSACTIONAL`. */
-		mode?: CommitRequestMode;
+		mode?: CommitRequestMode | null;
 
 		/**
 		 * The mutations to perform.
@@ -337,14 +337,14 @@ export namespace MyNS {
 		 * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
 		 * entity.
 		 */
-		mutations?: Array<Mutation>;
+		mutations?: Array<Mutation> | null;
 
 		/**
 		 * The identifier of the transaction associated with the commit. A
 		 * transaction identifier is returned by a call to
 		 * Datastore.BeginTransaction.
 		 */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 	export enum CommitRequestMode { MODE_UNSPECIFIED = 0, TRANSACTIONAL = 1, NON_TRANSACTIONAL = 2 }
@@ -357,7 +357,7 @@ export namespace MyNS {
 		 * The version of the entity that this mutation is being applied to. If this
 		 * does not match the current version on the server, the mutation conflicts.
 		 */
-		baseVersion?: string;
+		baseVersion?: string | null;
 
 		/**
 		 * A unique identifier for an entity.
@@ -365,7 +365,7 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		delete?: Key;
+		delete?: Key | null;
 
 		/**
 		 * A Datastore data object.
@@ -373,7 +373,7 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		insert?: Entity;
+		insert?: Entity | null;
 
 		/**
 		 * A Datastore data object.
@@ -381,7 +381,7 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		update?: Entity;
+		update?: Entity | null;
 
 		/**
 		 * A Datastore data object.
@@ -389,7 +389,7 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		upsert?: Entity;
+		upsert?: Entity | null;
 	}
 
 
@@ -400,13 +400,13 @@ export namespace MyNS {
 		 * The number of index entries updated during the commit, or zero if none were
 		 * updated.
 		 */
-		indexUpdates?: number;
+		indexUpdates?: number | null;
 
 		/**
 		 * The result of performing the mutations.
 		 * The i-th mutation result corresponds to the i-th mutation in the request.
 		 */
-		mutationResults?: Array<MutationResult>;
+		mutationResults?: Array<MutationResult> | null;
 	}
 
 
@@ -417,7 +417,7 @@ export namespace MyNS {
 		 * Whether a conflict was detected for this mutation. Always false when a
 		 * conflict detection strategy field is not set in the mutation.
 		 */
-		conflictDetected?: boolean;
+		conflictDetected?: boolean | null;
 
 		/**
 		 * A unique identifier for an entity.
@@ -425,7 +425,7 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		key?: Key;
+		key?: Key | null;
 
 		/**
 		 * The version of the entity on the server after processing the mutation. If
@@ -434,7 +434,7 @@ export namespace MyNS {
 		 * that is strictly greater than the version of any previous entity and less
 		 * than the version of any possible future entity.
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -445,10 +445,10 @@ export namespace MyNS {
 		 * The list of filters to combine.
 		 * Must contain at least one filter.
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/** The operator for combining multiple filters. */
-		op?: CompositeFilterOp;
+		op?: CompositeFilterOp | null;
 	}
 
 
@@ -456,10 +456,10 @@ export namespace MyNS {
 	export interface Filter {
 
 		/** A filter that merges multiple other filters using the given operator. */
-		compositeFilter?: CompositeFilter;
+		compositeFilter?: CompositeFilter | null;
 
 		/** A filter on a specific property. */
-		propertyFilter?: PropertyFilter;
+		propertyFilter?: PropertyFilter | null;
 	}
 
 
@@ -467,16 +467,16 @@ export namespace MyNS {
 	export interface PropertyFilter {
 
 		/** The operator to filter by. */
-		op?: PropertyFilterOp;
+		op?: PropertyFilterOp | null;
 
 		/** A reference to a property relative to the kind expressions. */
-		property?: PropertyReference;
+		property?: PropertyReference | null;
 
 		/**
 		 * A message that can hold any of the supported value types and associated
 		 * metadata.
 		 */
-		value?: Value;
+		value?: Value | null;
 	}
 
 	export enum PropertyFilterOp { OPERATOR_UNSPECIFIED = 0, LESS_THAN = 1, LESS_THAN_OR_EQUAL = 2, GREATER_THAN = 3, GREATER_THAN_OR_EQUAL = 4, EQUAL = 5, HAS_ANCESTOR = 6 }
@@ -489,7 +489,7 @@ export namespace MyNS {
 		 * The name of the property.
 		 * If name includes "."s, it may be interpreted as a property name path.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum CompositeFilterOp { OPERATOR_UNSPECIFIED = 0, AND = 1 }
@@ -515,7 +515,7 @@ export namespace MyNS {
 		 * A cursor that points to the position after the result entity.
 		 * Set only when the `EntityResult` is part of a `QueryResultBatch` message.
 		 */
-		cursor?: string;
+		cursor?: string | null;
 
 		/**
 		 * A Datastore data object.
@@ -523,7 +523,7 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		entity?: Entity;
+		entity?: Entity | null;
 
 		/**
 		 * The version of the entity, a strictly positive number that monotonically
@@ -534,7 +534,7 @@ export namespace MyNS {
 		 * is the version of the snapshot that was used to look up the entity, and it
 		 * is always set except for eventually consistent reads.
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -542,25 +542,25 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1CommonMetadata {
 
 		/** The time the operation ended, either successfully or otherwise. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * The client-assigned labels which were provided when the operation was
 		 * created. May also include additional labels.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The type of the operation. Can be used as a filter in
 		 * ListOperationsRequest.
 		 */
-		operationType?: GoogleDatastoreAdminV1CommonMetadataOperationType;
+		operationType?: GoogleDatastoreAdminV1CommonMetadataOperationType | null;
 
 		/** The time that work began on the operation. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The current state of the Operation. */
-		state?: GoogleDatastoreAdminV1CommonMetadataState;
+		state?: GoogleDatastoreAdminV1CommonMetadataState | null;
 	}
 
 	export enum GoogleDatastoreAdminV1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, EXPORT_ENTITIES = 1, IMPORT_ENTITIES = 2, CREATE_INDEX = 3, DELETE_INDEX = 4 }
@@ -587,7 +587,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1EntityFilter {
 
 		/** If empty, then this represents all kinds. */
-		kinds?: Array<string>;
+		kinds?: Array<string> | null;
 
 		/**
 		 * An empty list represents all namespaces. This is the preferred
@@ -597,7 +597,7 @@ export namespace MyNS {
 		 * include them.
 		 * Each namespace in this list must be unique.
 		 */
-		namespaceIds?: Array<string>;
+		namespaceIds?: Array<string> | null;
 	}
 
 
@@ -605,7 +605,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1ExportEntitiesMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1CommonMetadata;
+		common?: GoogleDatastoreAdminV1CommonMetadata | null;
 
 		/**
 		 * Identifies a subset of entities in a project. This is specified as
@@ -623,7 +623,7 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
+		entityFilter?: GoogleDatastoreAdminV1EntityFilter | null;
 
 		/**
 		 * Location for the export metadata and data files. This will be the same
@@ -632,13 +632,13 @@ export namespace MyNS {
 		 * field. The final output location is provided in
 		 * google.datastore.admin.v1.ExportEntitiesResponse.output_url.
 		 */
-		outputUrlPrefix?: string;
+		outputUrlPrefix?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressBytes?: GoogleDatastoreAdminV1Progress;
+		progressBytes?: GoogleDatastoreAdminV1Progress | null;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1Progress;
+		progressEntities?: GoogleDatastoreAdminV1Progress | null;
 	}
 
 
@@ -649,13 +649,13 @@ export namespace MyNS {
 		 * The amount of work that has been completed. Note that this may be greater
 		 * than work_estimated.
 		 */
-		workCompleted?: string;
+		workCompleted?: string | null;
 
 		/**
 		 * An estimate of how much work needs to be performed. May be zero if the
 		 * work estimate is unavailable.
 		 */
-		workEstimated?: string;
+		workEstimated?: string | null;
 	}
 
 
@@ -681,10 +681,10 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
+		entityFilter?: GoogleDatastoreAdminV1EntityFilter | null;
 
 		/** Client-assigned labels. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Required. Location for the export metadata and data files.
@@ -703,7 +703,7 @@ export namespace MyNS {
 		 * By nesting the data files deeper, the same Cloud Storage bucket can be used
 		 * in multiple ExportEntities operations without conflict.
 		 */
-		outputUrlPrefix?: string;
+		outputUrlPrefix?: string | null;
 	}
 
 
@@ -719,7 +719,7 @@ export namespace MyNS {
 		 * google.datastore.admin.v1.ImportEntitiesRequest.input_url.
 		 * Only present if the operation completed successfully.
 		 */
-		outputUrl?: string;
+		outputUrl?: string | null;
 	}
 
 
@@ -727,7 +727,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1ImportEntitiesMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1CommonMetadata;
+		common?: GoogleDatastoreAdminV1CommonMetadata | null;
 
 		/**
 		 * Identifies a subset of entities in a project. This is specified as
@@ -745,19 +745,19 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
+		entityFilter?: GoogleDatastoreAdminV1EntityFilter | null;
 
 		/**
 		 * The location of the import metadata file. This will be the same value as
 		 * the google.datastore.admin.v1.ExportEntitiesResponse.output_url field.
 		 */
-		inputUrl?: string;
+		inputUrl?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressBytes?: GoogleDatastoreAdminV1Progress;
+		progressBytes?: GoogleDatastoreAdminV1Progress | null;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1Progress;
+		progressEntities?: GoogleDatastoreAdminV1Progress | null;
 	}
 
 
@@ -783,7 +783,7 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
+		entityFilter?: GoogleDatastoreAdminV1EntityFilter | null;
 
 		/**
 		 * Required. The full resource URL of the external storage location. Currently, only
@@ -799,10 +799,10 @@ export namespace MyNS {
 		 * For more information, see
 		 * google.datastore.admin.v1.ExportEntitiesResponse.output_url.
 		 */
-		inputUrl?: string;
+		inputUrl?: string | null;
 
 		/** Client-assigned labels. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 	}
 
 
@@ -810,22 +810,22 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1Index {
 
 		/** Required. The index's ancestor mode.  Must not be ANCESTOR_MODE_UNSPECIFIED. */
-		ancestor?: GoogleDatastoreAdminV1IndexAncestor;
+		ancestor?: GoogleDatastoreAdminV1IndexAncestor | null;
 
 		/** Output only. The resource ID of the index. */
-		indexId?: string;
+		indexId?: string | null;
 
 		/** Required. The entity kind to which this index applies. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Output only. Project ID. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Required. An ordered sequence of property names and their index attributes. */
-		properties?: Array<GoogleDatastoreAdminV1IndexedProperty>;
+		properties?: Array<GoogleDatastoreAdminV1IndexedProperty> | null;
 
 		/** Output only. The state of the index. */
-		state?: GoogleDatastoreAdminV1IndexState;
+		state?: GoogleDatastoreAdminV1IndexState | null;
 	}
 
 	export enum GoogleDatastoreAdminV1IndexAncestor { ANCESTOR_MODE_UNSPECIFIED = 0, NONE = 1, ALL_ANCESTORS = 2 }
@@ -835,10 +835,10 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1IndexedProperty {
 
 		/** Required. The indexed property's direction.  Must not be DIRECTION_UNSPECIFIED. */
-		direction?: GoogleDatastoreAdminV1IndexedPropertyDirection;
+		direction?: GoogleDatastoreAdminV1IndexedPropertyDirection | null;
 
 		/** Required. The property name to index. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum GoogleDatastoreAdminV1IndexedPropertyDirection { DIRECTION_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
@@ -850,13 +850,13 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1IndexOperationMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1CommonMetadata;
+		common?: GoogleDatastoreAdminV1CommonMetadata | null;
 
 		/** The index resource ID that this operation is acting on. */
-		indexId?: string;
+		indexId?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1Progress;
+		progressEntities?: GoogleDatastoreAdminV1Progress | null;
 	}
 
 
@@ -867,10 +867,10 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1ListIndexesResponse {
 
 		/** The indexes. */
-		indexes?: Array<GoogleDatastoreAdminV1Index>;
+		indexes?: Array<GoogleDatastoreAdminV1Index> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -878,25 +878,25 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1beta1CommonMetadata {
 
 		/** The time the operation ended, either successfully or otherwise. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * The client-assigned labels which were provided when the operation was
 		 * created. May also include additional labels.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The type of the operation. Can be used as a filter in
 		 * ListOperationsRequest.
 		 */
-		operationType?: GoogleDatastoreAdminV1beta1CommonMetadataOperationType;
+		operationType?: GoogleDatastoreAdminV1beta1CommonMetadataOperationType | null;
 
 		/** The time that work began on the operation. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The current state of the Operation. */
-		state?: GoogleDatastoreAdminV1CommonMetadataState;
+		state?: GoogleDatastoreAdminV1CommonMetadataState | null;
 	}
 
 	export enum GoogleDatastoreAdminV1beta1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, EXPORT_ENTITIES = 1, IMPORT_ENTITIES = 2 }
@@ -921,7 +921,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1beta1EntityFilter {
 
 		/** If empty, then this represents all kinds. */
-		kinds?: Array<string>;
+		kinds?: Array<string> | null;
 
 		/**
 		 * An empty list represents all namespaces. This is the preferred
@@ -931,7 +931,7 @@ export namespace MyNS {
 		 * include them.
 		 * Each namespace in this list must be unique.
 		 */
-		namespaceIds?: Array<string>;
+		namespaceIds?: Array<string> | null;
 	}
 
 
@@ -939,7 +939,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1beta1ExportEntitiesMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1beta1CommonMetadata;
+		common?: GoogleDatastoreAdminV1beta1CommonMetadata | null;
 
 		/**
 		 * Identifies a subset of entities in a project. This is specified as
@@ -957,7 +957,7 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1beta1EntityFilter;
+		entityFilter?: GoogleDatastoreAdminV1beta1EntityFilter | null;
 
 		/**
 		 * Location for the export metadata and data files. This will be the same
@@ -966,13 +966,13 @@ export namespace MyNS {
 		 * field. The final output location is provided in
 		 * google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url.
 		 */
-		outputUrlPrefix?: string;
+		outputUrlPrefix?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressBytes?: GoogleDatastoreAdminV1beta1Progress;
+		progressBytes?: GoogleDatastoreAdminV1beta1Progress | null;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1beta1Progress;
+		progressEntities?: GoogleDatastoreAdminV1beta1Progress | null;
 	}
 
 
@@ -983,13 +983,13 @@ export namespace MyNS {
 		 * The amount of work that has been completed. Note that this may be greater
 		 * than work_estimated.
 		 */
-		workCompleted?: string;
+		workCompleted?: string | null;
 
 		/**
 		 * An estimate of how much work needs to be performed. May be zero if the
 		 * work estimate is unavailable.
 		 */
-		workEstimated?: string;
+		workEstimated?: string | null;
 	}
 
 
@@ -1005,7 +1005,7 @@ export namespace MyNS {
 		 * google.datastore.admin.v1beta1.ImportEntitiesRequest.input_url.
 		 * Only present if the operation completed successfully.
 		 */
-		outputUrl?: string;
+		outputUrl?: string | null;
 	}
 
 
@@ -1013,7 +1013,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1beta1ImportEntitiesMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1beta1CommonMetadata;
+		common?: GoogleDatastoreAdminV1beta1CommonMetadata | null;
 
 		/**
 		 * Identifies a subset of entities in a project. This is specified as
@@ -1031,20 +1031,20 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1beta1EntityFilter;
+		entityFilter?: GoogleDatastoreAdminV1beta1EntityFilter | null;
 
 		/**
 		 * The location of the import metadata file. This will be the same value as
 		 * the google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url
 		 * field.
 		 */
-		inputUrl?: string;
+		inputUrl?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressBytes?: GoogleDatastoreAdminV1beta1Progress;
+		progressBytes?: GoogleDatastoreAdminV1beta1Progress | null;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1beta1Progress;
+		progressEntities?: GoogleDatastoreAdminV1beta1Progress | null;
 	}
 
 
@@ -1052,10 +1052,10 @@ export namespace MyNS {
 	export interface GoogleLongrunningListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<GoogleLongrunningOperation>;
+		operations?: Array<GoogleLongrunningOperation> | null;
 	}
 
 
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1080,7 +1080,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -1088,14 +1088,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -1107,7 +1107,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -1122,20 +1122,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -1151,7 +1151,7 @@ export namespace MyNS {
 		 * `SELECT * FROM Kind WHERE a = 'string literal'` is not allowed, while
 		 * `SELECT * FROM Kind WHERE a = @value` is.
 		 */
-		allowLiterals?: boolean;
+		allowLiterals?: boolean | null;
 
 		/**
 		 * For each non-reserved named binding site in the query string, there must be
@@ -1159,7 +1159,7 @@ export namespace MyNS {
 		 * Key must match regex `A-Za-z_$*`, must not match regex
 		 * `__.*__`, and must not be `""`.
 		 */
-		namedBindings?: {[id: string]: GqlQueryParameter };
+		namedBindings?: {[id: string]: GqlQueryParameter } | null;
 
 		/**
 		 * Numbered binding site @1 references the first numbered parameter,
@@ -1167,13 +1167,13 @@ export namespace MyNS {
 		 * For each binding site numbered i in `query_string`, there must be an i-th
 		 * numbered parameter. The inverse must also be true.
 		 */
-		positionalBindings?: Array<GqlQueryParameter>;
+		positionalBindings?: Array<GqlQueryParameter> | null;
 
 		/**
 		 * A string of the format described
 		 * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
 		 */
-		queryString?: string;
+		queryString?: string | null;
 	}
 
 
@@ -1184,13 +1184,13 @@ export namespace MyNS {
 		 * A query cursor. Query cursors are returned in query
 		 * result batches.
 		 */
-		cursor?: string;
+		cursor?: string | null;
 
 		/**
 		 * A message that can hold any of the supported value types and associated
 		 * metadata.
 		 */
-		value?: Value;
+		value?: Value | null;
 	}
 
 
@@ -1198,7 +1198,7 @@ export namespace MyNS {
 	export interface KindExpression {
 
 		/** The name of the kind. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1206,10 +1206,10 @@ export namespace MyNS {
 	export interface LookupRequest {
 
 		/** Required. Keys of entities to look up. */
-		keys?: Array<Key>;
+		keys?: Array<Key> | null;
 
 		/** The options shared by read requests. */
-		readOptions?: ReadOptions;
+		readOptions?: ReadOptions | null;
 	}
 
 
@@ -1220,14 +1220,14 @@ export namespace MyNS {
 		 * The non-transactional read consistency to use.
 		 * Cannot be set to `STRONG` for global queries.
 		 */
-		readConsistency?: ReadOptionsReadConsistency;
+		readConsistency?: ReadOptionsReadConsistency | null;
 
 		/**
 		 * The identifier of the transaction in which to read. A
 		 * transaction identifier is returned by a call to
 		 * Datastore.BeginTransaction.
 		 */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 	export enum ReadOptionsReadConsistency { READ_CONSISTENCY_UNSPECIFIED = 0, STRONG = 1, EVENTUAL = 2 }
@@ -1241,21 +1241,21 @@ export namespace MyNS {
 		 * order of results in this field is undefined and has no relation to the
 		 * order of the keys in the input.
 		 */
-		deferred?: Array<Key>;
+		deferred?: Array<Key> | null;
 
 		/**
 		 * Entities found as `ResultType.FULL` entities. The order of results in this
 		 * field is undefined and has no relation to the order of the keys in the
 		 * input.
 		 */
-		found?: Array<EntityResult>;
+		found?: Array<EntityResult> | null;
 
 		/**
 		 * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
 		 * in this field is undefined and has no relation to the order of the keys
 		 * in the input.
 		 */
-		missing?: Array<EntityResult>;
+		missing?: Array<EntityResult> | null;
 	}
 
 
@@ -1263,7 +1263,7 @@ export namespace MyNS {
 	export interface Projection {
 
 		/** A reference to a property relative to the kind expressions. */
-		property?: PropertyReference;
+		property?: PropertyReference | null;
 	}
 
 
@@ -1271,10 +1271,10 @@ export namespace MyNS {
 	export interface PropertyOrder {
 
 		/** The direction to order by. Defaults to `ASCENDING`. */
-		direction?: GoogleDatastoreAdminV1IndexedPropertyDirection;
+		direction?: GoogleDatastoreAdminV1IndexedPropertyDirection | null;
 
 		/** A reference to a property relative to the kind expressions. */
-		property?: PropertyReference;
+		property?: PropertyReference | null;
 	}
 
 
@@ -1286,7 +1286,7 @@ export namespace MyNS {
 		 * result for each distinct combination of values for the given properties
 		 * (if empty, all results are returned).
 		 */
-		distinctOn?: Array<PropertyReference>;
+		distinctOn?: Array<PropertyReference> | null;
 
 		/**
 		 * An ending point for the query results. Query cursors are
@@ -1294,16 +1294,16 @@ export namespace MyNS {
 		 * [can only be used to limit the same
 		 * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
 		 */
-		endCursor?: string;
+		endCursor?: string | null;
 
 		/** A holder for any type of filter. */
-		filter?: Filter;
+		filter?: Filter | null;
 
 		/**
 		 * The kinds to query (if empty, returns entities of all kinds).
 		 * Currently at most 1 kind may be specified.
 		 */
-		kind?: Array<KindExpression>;
+		kind?: Array<KindExpression> | null;
 
 		/**
 		 * The maximum number of results to return. Applies after all other
@@ -1311,19 +1311,19 @@ export namespace MyNS {
 		 * Unspecified is interpreted as no limit.
 		 * Must be >= 0 if specified.
 		 */
-		limit?: number;
+		limit?: number | null;
 
 		/**
 		 * The number of results to skip. Applies before limit, but after all other
 		 * constraints. Optional. Must be >= 0 if specified.
 		 */
-		offset?: number;
+		offset?: number | null;
 
 		/** The order to apply to the query results (if empty, order is unspecified). */
-		order?: Array<PropertyOrder>;
+		order?: Array<PropertyOrder> | null;
 
 		/** The projection to return. Defaults to returning all properties. */
-		projection?: Array<Projection>;
+		projection?: Array<Projection> | null;
 
 		/**
 		 * A starting point for the query results. Query cursors are
@@ -1331,7 +1331,7 @@ export namespace MyNS {
 		 * [can only be used to continue the same
 		 * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
 		 */
-		startCursor?: string;
+		startCursor?: string | null;
 	}
 
 
@@ -1339,25 +1339,25 @@ export namespace MyNS {
 	export interface QueryResultBatch {
 
 		/** A cursor that points to the position after the last result in the batch. */
-		endCursor?: string;
+		endCursor?: string | null;
 
 		/** The result type for every entity in `entity_results`. */
-		entityResultType?: QueryResultBatchEntityResultType;
+		entityResultType?: QueryResultBatchEntityResultType | null;
 
 		/** The results for this batch. */
-		entityResults?: Array<EntityResult>;
+		entityResults?: Array<EntityResult> | null;
 
 		/** The state of the query after the current batch. */
-		moreResults?: QueryResultBatchMoreResults;
+		moreResults?: QueryResultBatchMoreResults | null;
 
 		/**
 		 * A cursor that points to the position after the last skipped result.
 		 * Will be set when `skipped_results` != 0.
 		 */
-		skippedCursor?: string;
+		skippedCursor?: string | null;
 
 		/** The number of results skipped, typically because of an offset. */
-		skippedResults?: number;
+		skippedResults?: number | null;
 
 		/**
 		 * The version number of the snapshot this batch was returned from.
@@ -1369,7 +1369,7 @@ export namespace MyNS {
 		 * is valid for all preceding batches.
 		 * The value will be zero for eventually consistent queries.
 		 */
-		snapshotVersion?: string;
+		snapshotVersion?: string | null;
 	}
 
 	export enum QueryResultBatchEntityResultType { RESULT_TYPE_UNSPECIFIED = 0, FULL = 1, PROJECTION = 2, KEY_ONLY = 3 }
@@ -1381,13 +1381,13 @@ export namespace MyNS {
 	export interface ReserveIdsRequest {
 
 		/** If not empty, the ID of the database against which to make the request. */
-		databaseId?: string;
+		databaseId?: string | null;
 
 		/**
 		 * Required. A list of keys with complete key paths whose numeric IDs should not be
 		 * auto-allocated.
 		 */
-		keys?: Array<Key>;
+		keys?: Array<Key> | null;
 	}
 
 
@@ -1403,7 +1403,7 @@ export namespace MyNS {
 		 * Required. The transaction identifier, returned by a call to
 		 * Datastore.BeginTransaction.
 		 */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 
@@ -1422,7 +1422,7 @@ export namespace MyNS {
 		 * A [GQL
 		 * query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
 		 */
-		gqlQuery?: GqlQuery;
+		gqlQuery?: GqlQuery | null;
 
 		/**
 		 * A partition ID identifies a grouping of entities. The grouping is always
@@ -1441,13 +1441,13 @@ export namespace MyNS {
 		 * not match the context project ID ) are discouraged.
 		 * Reads and writes of foreign partition IDs may fail if the project is not in an active state.
 		 */
-		partitionId?: PartitionId;
+		partitionId?: PartitionId | null;
 
 		/** A query for entities. */
-		query?: Query;
+		query?: Query | null;
 
 		/** The options shared by read requests. */
-		readOptions?: ReadOptions;
+		readOptions?: ReadOptions | null;
 	}
 
 
@@ -1455,10 +1455,10 @@ export namespace MyNS {
 	export interface RunQueryResponse {
 
 		/** A batch of results produced by a query. */
-		batch?: QueryResultBatch;
+		batch?: QueryResultBatch | null;
 
 		/** A query for entities. */
-		query?: Query;
+		query?: Query | null;
 	}
 
 	@Injectable()

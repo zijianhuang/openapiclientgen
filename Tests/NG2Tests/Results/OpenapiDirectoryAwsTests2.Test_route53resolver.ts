@@ -5,24 +5,24 @@ export namespace MyNS {
 	export interface AssociateResolverEndpointIpAddressResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint;
+		ResolverEndpoint?: ResolverEndpoint | null;
 	}
 
 
 	/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
 	export interface ResolverEndpoint {
-		Id?: string;
-		CreatorRequestId?: string;
-		Arn?: string;
-		Name?: string;
-		SecurityGroupIds?: Array<string>;
-		Direction?: ResolverEndpointDirection;
-		IpAddressCount?: number;
-		HostVPCId?: string;
-		Status?: ResolverEndpointStatus;
-		StatusMessage?: string;
-		CreationTime?: string;
-		ModificationTime?: string;
+		Id?: string | null;
+		CreatorRequestId?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		SecurityGroupIds?: Array<string> | null;
+		Direction?: ResolverEndpointDirection | null;
+		IpAddressCount?: number | null;
+		HostVPCId?: string | null;
+		Status?: ResolverEndpointStatus | null;
+		StatusMessage?: string | null;
+		CreationTime?: string | null;
+		ModificationTime?: string | null;
 	}
 
 	export enum ResolverEndpointDirection { INBOUND = 0, OUTBOUND = 1 }
@@ -42,9 +42,9 @@ export namespace MyNS {
 
 	/** In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update. */
 	export interface IpAddressUpdate {
-		IpId?: string;
-		SubnetId?: string;
-		Ip?: string;
+		IpId?: string | null;
+		SubnetId?: string | null;
+		Ip?: string | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -71,25 +71,25 @@ export namespace MyNS {
 	export interface AssociateResolverRuleResponse {
 
 		/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
-		ResolverRuleAssociation?: ResolverRuleAssociation;
+		ResolverRuleAssociation?: ResolverRuleAssociation | null;
 	}
 
 
 	/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
 	export interface ResolverRuleAssociation {
-		Id?: string;
-		ResolverRuleId?: string;
-		Name?: string;
-		VPCId?: string;
-		Status?: ResolverRuleAssociationStatus;
-		StatusMessage?: string;
+		Id?: string | null;
+		ResolverRuleId?: string | null;
+		Name?: string | null;
+		VPCId?: string | null;
+		Status?: ResolverRuleAssociationStatus | null;
+		StatusMessage?: string | null;
 	}
 
 	export enum ResolverRuleAssociationStatus { CREATING = 0, COMPLETE = 1, DELETING = 2, FAILED = 3, OVERRIDDEN = 4 }
 
 	export interface AssociateResolverRuleRequest {
 		ResolverRuleId: string;
-		Name?: string;
+		Name?: string | null;
 		VPCId: string;
 	}
 
@@ -99,53 +99,53 @@ export namespace MyNS {
 	export interface CreateResolverEndpointResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint;
+		ResolverEndpoint?: ResolverEndpoint | null;
 	}
 
 	export interface CreateResolverEndpointRequest {
 		CreatorRequestId: string;
-		Name?: string;
+		Name?: string | null;
 		SecurityGroupIds: Array<string>;
 		Direction: ResolverEndpointDirection;
 		IpAddresses: Array<IpAddressRequest>;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries. */
 	export interface IpAddressRequest {
 		SubnetId: string;
-		Ip?: string;
+		Ip?: string | null;
 	}
 
 
 	/** One tag that you want to add to the specified resource. A tag consists of a <code>Key</code> (a name for the tag) and a <code>Value</code>. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface CreateResolverRuleResponse {
 
 		/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
-		ResolverRule?: ResolverRule;
+		ResolverRule?: ResolverRule | null;
 	}
 
 
 	/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
 	export interface ResolverRule {
-		Id?: string;
-		CreatorRequestId?: string;
-		Arn?: string;
-		DomainName?: string;
-		Status?: ResolverRuleStatus;
-		StatusMessage?: string;
-		RuleType?: ResolverRuleRuleType;
-		Name?: string;
-		TargetIps?: Array<TargetAddress>;
-		ResolverEndpointId?: string;
-		OwnerId?: string;
-		ShareStatus?: ResolverRuleShareStatus;
+		Id?: string | null;
+		CreatorRequestId?: string | null;
+		Arn?: string | null;
+		DomainName?: string | null;
+		Status?: ResolverRuleStatus | null;
+		StatusMessage?: string | null;
+		RuleType?: ResolverRuleRuleType | null;
+		Name?: string | null;
+		TargetIps?: Array<TargetAddress> | null;
+		ResolverEndpointId?: string | null;
+		OwnerId?: string | null;
+		ShareStatus?: ResolverRuleShareStatus | null;
 	}
 
 	export enum ResolverRuleStatus { COMPLETE = 0, DELETING = 1, UPDATING = 2, FAILED = 3 }
@@ -156,25 +156,25 @@ export namespace MyNS {
 	/** In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to. */
 	export interface TargetAddress {
 		Ip: string;
-		Port?: number;
+		Port?: number | null;
 	}
 
 	export enum ResolverRuleShareStatus { NOT_SHARED = 0, SHARED_WITH_ME = 1, SHARED_BY_ME = 2 }
 
 	export interface CreateResolverRuleRequest {
 		CreatorRequestId: string;
-		Name?: string;
+		Name?: string | null;
 		RuleType: ResolverRuleRuleType;
 		DomainName: string;
-		TargetIps?: Array<TargetAddress>;
-		ResolverEndpointId?: string;
-		Tags?: Array<Tag>;
+		TargetIps?: Array<TargetAddress> | null;
+		ResolverEndpointId?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DeleteResolverEndpointResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint;
+		ResolverEndpoint?: ResolverEndpoint | null;
 	}
 
 	export interface DeleteResolverEndpointRequest {
@@ -184,7 +184,7 @@ export namespace MyNS {
 	export interface DeleteResolverRuleResponse {
 
 		/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
-		ResolverRule?: ResolverRule;
+		ResolverRule?: ResolverRule | null;
 	}
 
 	export interface DeleteResolverRuleRequest {
@@ -197,7 +197,7 @@ export namespace MyNS {
 	export interface DisassociateResolverEndpointIpAddressResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint;
+		ResolverEndpoint?: ResolverEndpoint | null;
 	}
 
 	export interface DisassociateResolverEndpointIpAddressRequest {
@@ -213,7 +213,7 @@ export namespace MyNS {
 	export interface DisassociateResolverRuleResponse {
 
 		/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
-		ResolverRuleAssociation?: ResolverRuleAssociation;
+		ResolverRuleAssociation?: ResolverRuleAssociation | null;
 	}
 
 	export interface DisassociateResolverRuleRequest {
@@ -224,7 +224,7 @@ export namespace MyNS {
 	export interface GetResolverEndpointResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint;
+		ResolverEndpoint?: ResolverEndpoint | null;
 	}
 
 	export interface GetResolverEndpointRequest {
@@ -234,7 +234,7 @@ export namespace MyNS {
 	export interface GetResolverRuleResponse {
 
 		/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
-		ResolverRule?: ResolverRule;
+		ResolverRule?: ResolverRule | null;
 	}
 
 	export interface GetResolverRuleRequest {
@@ -244,7 +244,7 @@ export namespace MyNS {
 	export interface GetResolverRuleAssociationResponse {
 
 		/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
-		ResolverRuleAssociation?: ResolverRuleAssociation;
+		ResolverRuleAssociation?: ResolverRuleAssociation | null;
 	}
 
 	export interface GetResolverRuleAssociationRequest {
@@ -252,7 +252,7 @@ export namespace MyNS {
 	}
 
 	export interface GetResolverRulePolicyResponse {
-		ResolverRulePolicy?: string;
+		ResolverRulePolicy?: string | null;
 	}
 
 	export interface GetResolverRulePolicyRequest {
@@ -263,92 +263,92 @@ export namespace MyNS {
 	}
 
 	export interface ListResolverEndpointIpAddressesResponse {
-		NextToken?: string;
-		MaxResults?: number;
-		IpAddresses?: Array<IpAddressResponse>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		IpAddresses?: Array<IpAddressResponse> | null;
 	}
 
 
 	/** In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver endpoint uses for DNS queries. */
 	export interface IpAddressResponse {
-		IpId?: string;
-		SubnetId?: string;
-		Ip?: string;
-		Status?: IpAddressResponseStatus;
-		StatusMessage?: string;
-		CreationTime?: string;
-		ModificationTime?: string;
+		IpId?: string | null;
+		SubnetId?: string | null;
+		Ip?: string | null;
+		Status?: IpAddressResponseStatus | null;
+		StatusMessage?: string | null;
+		CreationTime?: string | null;
+		ModificationTime?: string | null;
 	}
 
 	export enum IpAddressResponseStatus { CREATING = 0, FAILED_CREATION = 1, ATTACHING = 2, ATTACHED = 3, REMAP_DETACHING = 4, REMAP_ATTACHING = 5, DETACHING = 6, FAILED_RESOURCE_GONE = 7, DELETING = 8, DELETE_FAILED_FAS_EXPIRED = 9 }
 
 	export interface ListResolverEndpointIpAddressesRequest {
 		ResolverEndpointId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListResolverEndpointsResponse {
-		NextToken?: string;
-		MaxResults?: number;
-		ResolverEndpoints?: Array<ResolverEndpoint>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		ResolverEndpoints?: Array<ResolverEndpoint> | null;
 	}
 
 	export interface ListResolverEndpointsRequest {
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<Filter>;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 
 	/** For <code>List</code> operations, an optional specification to return a subset of objects, such as resolver endpoints or resolver rules. */
 	export interface Filter {
-		Name?: string;
-		Values?: Array<string>;
+		Name?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface ListResolverRuleAssociationsResponse {
-		NextToken?: string;
-		MaxResults?: number;
-		ResolverRuleAssociations?: Array<ResolverRuleAssociation>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		ResolverRuleAssociations?: Array<ResolverRuleAssociation> | null;
 	}
 
 	export interface ListResolverRuleAssociationsRequest {
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<Filter>;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface ListResolverRulesResponse {
-		NextToken?: string;
-		MaxResults?: number;
-		ResolverRules?: Array<ResolverRule>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		ResolverRules?: Array<ResolverRule> | null;
 	}
 
 	export interface ListResolverRulesRequest {
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<Filter>;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The response to a <code>PutResolverRulePolicy</code> request. */
 	export interface PutResolverRulePolicyResponse {
-		ReturnValue?: boolean;
+		ReturnValue?: boolean | null;
 	}
 
 	export interface PutResolverRulePolicyRequest {
@@ -381,18 +381,18 @@ export namespace MyNS {
 	export interface UpdateResolverEndpointResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint;
+		ResolverEndpoint?: ResolverEndpoint | null;
 	}
 
 	export interface UpdateResolverEndpointRequest {
 		ResolverEndpointId: string;
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateResolverRuleResponse {
 
 		/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
-		ResolverRule?: ResolverRule;
+		ResolverRule?: ResolverRule | null;
 	}
 
 	export interface UpdateResolverRuleRequest {
@@ -408,9 +408,9 @@ export namespace MyNS {
 
 	/** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make. */
 	export interface ResolverRuleConfig {
-		Name?: string;
-		TargetIps?: Array<TargetAddress>;
-		ResolverEndpointId?: string;
+		Name?: string | null;
+		TargetIps?: Array<TargetAddress> | null;
+		ResolverEndpointId?: string | null;
 	}
 
 	export enum RuleTypeOption { FORWARD = 0, SYSTEM = 1, RECURSIVE = 2 }

@@ -7,16 +7,16 @@ export namespace MyNS {
 	export interface Activities {
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Each activity record in the response. */
-		items?: Array<Activity>;
+		items?: Array<Activity> | null;
 
 		/** The type of API resource. For an activity report, the value is reports#activities. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Token for retrieving the follow-on next page of the report. The nextPageToken value is used in the request's pageToken query string. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -24,40 +24,40 @@ export namespace MyNS {
 	export interface Activity {
 
 		/** User doing the action. */
-		actor?: ActivityActor;
+		actor?: ActivityActor | null;
 
 		/** ETag of the entry. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Activity events in the report. */
-		ActivityEvents?: Array<ActivityEvents>;
+		ActivityEvents?: Array<ActivityEvents> | null;
 
 		/** Unique identifier for each activity record. */
-		id?: ActivityId;
+		id?: ActivityId | null;
 
 		/** IP address of the user doing the action. This is the Internet Protocol (IP) address of the user when logging into G Suite which may or may not reflect the user's physical location. For example, the IP address can be the user's proxy server's address or a virtual private network (VPN) address. The API supports IPv4 and IPv6. */
-		ipAddress?: string;
+		ipAddress?: string | null;
 
 		/** The type of API resource. For an activity report, the value is audit#activity. */
-		kind?: string;
+		kind?: string | null;
 
 		/** This is the domain that is affected by the report's event. For example domain of Admin console or the Drive application's document owner. */
-		ownerDomain?: string;
+		ownerDomain?: string | null;
 	}
 
 	export interface ActivityActor {
 
 		/** The type of actor. */
-		callerType?: string;
+		callerType?: string | null;
 
 		/** The primary email address of the actor. May be absent if there is no email address associated with the actor. */
-		email?: string;
+		email?: string | null;
 
 		/** Only present when callerType is KEY. Can be the consumer_key of the requestor for OAuth 2LO API requests or an identifier for robot accounts. */
-		key?: string;
+		key?: string | null;
 
 		/** The unique G Suite profile ID of the actor. May be absent if the actor is not a G Suite user. */
-		profileId?: string;
+		profileId?: string | null;
 	}
 
 	export interface ActivityEvents {
@@ -69,46 +69,46 @@ export namespace MyNS {
 		 * - When you request an eventName, the API's response returns all activities which contain that eventName. It is possible that the returned activities will have other eventName properties in addition to the one requested.
 		 * For more information about eventName properties, see the list of event names for various applications above in applicationName.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Parameter value pairs for various applications. For more information about eventName parameters, see the list of event names for various applications above in applicationName. */
-		ActivityEventsParameters?: Array<ActivityEventsParameters>;
+		ActivityEventsParameters?: Array<ActivityEventsParameters> | null;
 
 		/** Type of event. The G Suite service or feature that an administrator changes is identified in the type property which identifies an event using the eventName property. For a full list of the API's type categories, see the list of event names for various applications above in applicationName. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface ActivityEventsParameters {
 
 		/** Boolean value of the parameter. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** Integer value of the parameter. */
-		intValue?: string;
+		intValue?: string | null;
 
 		/** Nested parameter value pairs associated with this parameter. Complex value type for a parameter are returned as a list of parameter values. For example, the address parameter may have a value as [{parameter: [{name: city, value: abc}]}] */
-		messageValue?: ActivityMessageValue;
+		messageValue?: ActivityMessageValue | null;
 
 		/** Integer values of the parameter. */
-		multiIntValue?: Array<string>;
+		multiIntValue?: Array<string> | null;
 
 		/** List of messageValue objects. */
-		ActivityEventsParametersMultiMessageValue?: Array<ActivityEventsParametersMultiMessageValue>;
+		ActivityEventsParametersMultiMessageValue?: Array<ActivityEventsParametersMultiMessageValue> | null;
 
 		/** String values of the parameter. */
-		multiValue?: Array<string>;
+		multiValue?: Array<string> | null;
 
 		/** The name of the parameter. */
-		name?: string;
+		name?: string | null;
 
 		/** String value of the parameter. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface ActivityMessageValue {
 
 		/** Parameter values */
-		parameter?: Array<NestedParameter>;
+		parameter?: Array<NestedParameter> | null;
 	}
 
 
@@ -116,46 +116,46 @@ export namespace MyNS {
 	export interface NestedParameter {
 
 		/** Boolean value of the parameter. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** Integer value of the parameter. */
-		intValue?: string;
+		intValue?: string | null;
 
 		/** Multiple boolean values of the parameter. */
-		multiBoolValue?: Array<boolean>;
+		multiBoolValue?: Array<boolean> | null;
 
 		/** Multiple integer values of the parameter. */
-		multiIntValue?: Array<string>;
+		multiIntValue?: Array<string> | null;
 
 		/** Multiple string values of the parameter. */
-		multiValue?: Array<string>;
+		multiValue?: Array<string> | null;
 
 		/** The name of the parameter. */
-		name?: string;
+		name?: string | null;
 
 		/** String value of the parameter. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface ActivityEventsParametersMultiMessageValue {
 
 		/** Parameter values */
-		parameter?: Array<NestedParameter>;
+		parameter?: Array<NestedParameter> | null;
 	}
 
 	export interface ActivityId {
 
 		/** Application name to which the event belongs. For possible values see the list of applications above in applicationName. */
-		applicationName?: string;
+		applicationName?: string | null;
 
 		/** The unique identifier for a G suite account. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/** Time of occurrence of the activity. This is in UNIX epoch time in seconds. */
-		time?: Date;
+		time?: Date | null;
 
 		/** Unique qualifier if multiple events have the same time. */
-		uniqueQualifier?: string;
+		uniqueQualifier?: string | null;
 	}
 
 
@@ -163,34 +163,34 @@ export namespace MyNS {
 	export interface Channel {
 
 		/** The address where notifications are delivered for this channel. */
-		address?: string;
+		address?: string | null;
 
 		/** Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional. */
-		expiration?: string;
+		expiration?: string | null;
 
 		/** A UUID or similar unique string that identifies this channel. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies this as a notification channel used to watch for changes to a resource, which is "api#channel". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Additional parameters controlling delivery channel behavior. Optional. */
-		params?: {[id: string]: string };
+		params?: {[id: string]: string } | null;
 
 		/** A Boolean value to indicate whether payload is wanted. Optional. */
-		payload?: boolean;
+		payload?: boolean | null;
 
 		/** An opaque ID that identifies the resource being watched on this channel. Stable across different API versions. */
-		resourceId?: string;
+		resourceId?: string | null;
 
 		/** A version-specific identifier for the watched resource. */
-		resourceUri?: string;
+		resourceUri?: string | null;
 
 		/** An arbitrary string delivered to the target address with each notification delivered over this channel. Optional. */
-		token?: string;
+		token?: string | null;
 
 		/** The type of delivery mechanism used for this channel. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -198,99 +198,99 @@ export namespace MyNS {
 	export interface UsageReport {
 
 		/** The date of the report request. */
-		date?: string;
+		date?: string | null;
 
 		/** Information about the type of the item. */
-		entity?: UsageReportEntity;
+		entity?: UsageReportEntity | null;
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The type of API resource. For a usage report, the value is admin#reports#usageReport. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Parameter value pairs for various applications. For the Customers usage report parameters and values, see the customer usage parameters reference. */
-		UsageReportParameters?: Array<UsageReportParameters>;
+		UsageReportParameters?: Array<UsageReportParameters> | null;
 	}
 
 	export interface UsageReportEntity {
 
 		/** The unique identifier of the customer's account. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/** Object key. Only relevant if entity.type = "OBJECT" Note: external-facing name of report is "Entities" rather than "Objects". */
-		entityId?: string;
+		entityId?: string | null;
 
 		/** The user's immutable G Suite profile identifier. */
-		profileId?: string;
+		profileId?: string | null;
 
 		/** The type of item. The value is customer. */
-		type?: string;
+		type?: string | null;
 
 		/** The user's email address. Only relevant if entity.type = "USER" */
-		userEmail?: string;
+		userEmail?: string | null;
 	}
 
 	export interface UsageReportParameters {
 
 		/** Boolean value of the parameter. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** The RFC 3339 formatted value of the parameter, for example 2010-10-28T10:26:35.000Z. */
-		datetimeValue?: Date;
+		datetimeValue?: Date | null;
 
 		/** Integer value of the parameter. */
-		intValue?: string;
+		intValue?: string | null;
 
 		/** Nested message value of the parameter. */
-		msgValue?: Array<string>;
-		name?: string;
+		msgValue?: Array<string> | null;
+		name?: string | null;
 
 		/** String value of the parameter. */
-		stringValue?: string;
+		stringValue?: string | null;
 	}
 
 	export interface UsageReports {
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The type of API resource. For a usage report, the value is admin#reports#usageReports. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Token to specify next page. A report with multiple pages has a nextPageToken property in the response. For your follow-on requests getting all of the report's pages, enter the nextPageToken value in the pageToken query string. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Various application parameter records. */
-		usageReports?: Array<UsageReport>;
+		usageReports?: Array<UsageReport> | null;
 
 		/** Warnings, if any. */
-		UsageReportsWarnings?: Array<UsageReportsWarnings>;
+		UsageReportsWarnings?: Array<UsageReportsWarnings> | null;
 	}
 
 	export interface UsageReportsWarnings {
 
 		/** Machine readable code or warning type. The warning code value is 200. */
-		code?: string;
+		code?: string | null;
 
 		/** Key-value pairs to give detailed information on the warning. */
-		UsageReportsWarningsData?: Array<UsageReportsWarningsData>;
+		UsageReportsWarningsData?: Array<UsageReportsWarningsData> | null;
 
 		/**
 		 * The human readable messages for a warning are:
 		 * - Data is not available warning - Sorry, data for date yyyy-mm-dd for application "application name" is not available.
 		 * - Partial data is available warning - Data for date yyyy-mm-dd for application "application name" is not available right now, please try again after a few hours.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 	export interface UsageReportsWarningsData {
 
 		/** Key associated with a key-value pair to give detailed information on the warning. */
-		key?: string;
+		key?: string | null;
 
 		/** Value associated with a key-value pair to give detailed information on the warning. */
-		value?: string;
+		value?: string | null;
 	}
 
 	@Injectable()

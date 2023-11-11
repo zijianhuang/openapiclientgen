@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface SendSSHPublicKeyResponse {
-		RequestId?: string;
-		Success?: boolean;
+		RequestId?: string | null;
+		Success?: boolean | null;
 	}
 
 	export interface SendSSHPublicKeyRequest {

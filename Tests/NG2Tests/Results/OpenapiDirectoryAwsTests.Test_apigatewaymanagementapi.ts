@@ -12,9 +12,9 @@ export namespace MyNS {
 	}
 
 	export interface GetConnectionResponse {
-		ConnectedAt?: Date;
-		Identity?: Identity;
-		LastActiveAt?: Date;
+		ConnectedAt?: Date | null;
+		Identity?: Identity | null;
+		LastActiveAt?: Date | null;
 	}
 
 	export interface Identity {

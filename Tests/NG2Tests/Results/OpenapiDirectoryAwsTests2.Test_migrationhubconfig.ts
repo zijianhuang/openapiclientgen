@@ -5,25 +5,25 @@ export namespace MyNS {
 	export interface CreateHomeRegionControlResult {
 
 		/** A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set. */
-		HomeRegionControl?: HomeRegionControl;
+		HomeRegionControl?: HomeRegionControl | null;
 	}
 
 
 	/** A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set. */
 	export interface HomeRegionControl {
-		ControlId?: string;
-		HomeRegion?: string;
+		ControlId?: string | null;
+		HomeRegion?: string | null;
 
 		/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
-		Target?: Target;
-		RequestedTime?: Date;
+		Target?: Target | null;
+		RequestedTime?: Date | null;
 	}
 
 
 	/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
 	export interface Target {
 		Type: TargetType;
-		Id?: string;
+		Id?: string | null;
 	}
 
 	export enum TargetType { ACCOUNT = 0 }
@@ -36,7 +36,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Target: Target;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface InternalServerError {
@@ -58,22 +58,22 @@ export namespace MyNS {
 	}
 
 	export interface DescribeHomeRegionControlsResult {
-		HomeRegionControls?: Array<HomeRegionControl>;
-		NextToken?: string;
+		HomeRegionControls?: Array<HomeRegionControl> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeHomeRegionControlsRequest {
-		ControlId?: string;
-		HomeRegion?: string;
+		ControlId?: string | null;
+		HomeRegion?: string | null;
 
 		/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
-		Target?: Target;
-		MaxResults?: number;
-		NextToken?: string;
+		Target?: Target | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetHomeRegionResult {
-		HomeRegion?: string;
+		HomeRegion?: string | null;
 	}
 
 	export interface GetHomeRegionRequest {

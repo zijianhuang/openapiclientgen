@@ -6,36 +6,36 @@ export namespace MyNS {
 	/** Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a>  */
 	export interface WorkflowExecutionCount {
 		count: number;
-		truncated?: boolean;
+		truncated?: boolean | null;
 	}
 
 	export interface CountClosedWorkflowExecutionsInput {
 		domain: string;
 
 		/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> */
-		startTimeFilter?: ExecutionTimeFilter;
+		startTimeFilter?: ExecutionTimeFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> */
-		closeTimeFilter?: ExecutionTimeFilter;
+		closeTimeFilter?: ExecutionTimeFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>. */
-		executionFilter?: WorkflowExecutionFilter;
+		executionFilter?: WorkflowExecutionFilter | null;
 
 		/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
-		typeFilter?: WorkflowTypeFilter;
+		typeFilter?: WorkflowTypeFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs based on a tag. */
-		tagFilter?: TagFilter;
+		tagFilter?: TagFilter | null;
 
 		/** Used to filter the closed workflow executions in visibility APIs by their close status. */
-		closeStatusFilter?: CloseStatusFilter;
+		closeStatusFilter?: CloseStatusFilter | null;
 	}
 
 
 	/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code>  */
 	export interface ExecutionTimeFilter {
 		oldestDate: Date;
-		latestDate?: Date;
+		latestDate?: Date | null;
 	}
 
 
@@ -48,7 +48,7 @@ export namespace MyNS {
 	/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
 	export interface WorkflowTypeFilter {
 		name: string;
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -81,20 +81,20 @@ export namespace MyNS {
 		startTimeFilter: ExecutionTimeFilter;
 
 		/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
-		typeFilter?: WorkflowTypeFilter;
+		typeFilter?: WorkflowTypeFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs based on a tag. */
-		tagFilter?: TagFilter;
+		tagFilter?: TagFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>. */
-		executionFilter?: WorkflowExecutionFilter;
+		executionFilter?: WorkflowExecutionFilter | null;
 	}
 
 
 	/** Contains the count of tasks in a task list. */
 	export interface PendingTaskCount {
 		count: number;
-		truncated?: boolean;
+		truncated?: boolean | null;
 	}
 
 	export interface CountPendingActivityTasksInput {
@@ -194,9 +194,9 @@ export namespace MyNS {
 		 */
 		activityType: ActivityType;
 		status: ActivityTypeInfoStatus;
-		description?: string;
+		description?: string | null;
 		creationDate: Date;
-		deprecationDate?: Date;
+		deprecationDate?: Date | null;
 	}
 
 	export enum ActivityTypeInfoStatus { REGISTERED = 0, DEPRECATED = 1 }
@@ -204,14 +204,14 @@ export namespace MyNS {
 
 	/** Configuration settings registered with the activity type. */
 	export interface ActivityTypeConfiguration {
-		defaultTaskStartToCloseTimeout?: string;
-		defaultTaskHeartbeatTimeout?: string;
+		defaultTaskStartToCloseTimeout?: string | null;
+		defaultTaskHeartbeatTimeout?: string | null;
 
 		/** Represents a task list. */
-		defaultTaskList?: TaskList;
-		defaultTaskPriority?: string;
-		defaultTaskScheduleToStartTimeout?: string;
-		defaultTaskScheduleToCloseTimeout?: string;
+		defaultTaskList?: TaskList | null;
+		defaultTaskPriority?: string | null;
+		defaultTaskScheduleToStartTimeout?: string | null;
+		defaultTaskScheduleToCloseTimeout?: string | null;
 	}
 
 	export interface DescribeActivityTypeInput {
@@ -246,8 +246,8 @@ export namespace MyNS {
 	export interface DomainInfo {
 		name: string;
 		status: ActivityTypeInfoStatus;
-		description?: string;
-		arn?: string;
+		description?: string | null;
+		arn?: string | null;
 	}
 
 
@@ -281,8 +281,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		openCounts: WorkflowExecutionOpenCounts;
-		latestActivityTaskTimestamp?: Date;
-		latestExecutionContext?: string;
+		latestActivityTaskTimestamp?: Date | null;
+		latestExecutionContext?: string | null;
 	}
 
 
@@ -301,14 +301,14 @@ export namespace MyNS {
 		 */
 		workflowType: WorkflowType;
 		startTimestamp: Date;
-		closeTimestamp?: Date;
+		closeTimestamp?: Date | null;
 		executionStatus: WorkflowExecutionInfoExecutionStatus;
-		closeStatus?: CloseStatusFilterStatus;
+		closeStatus?: CloseStatusFilterStatus | null;
 
 		/** Represents a workflow execution. */
-		parent?: WorkflowExecution;
-		tagList?: Array<string>;
-		cancelRequested?: boolean;
+		parent?: WorkflowExecution | null;
+		tagList?: Array<string> | null;
+		cancelRequested?: boolean | null;
 	}
 
 
@@ -331,9 +331,9 @@ export namespace MyNS {
 		 * Required
 		 */
 		taskList: TaskList;
-		taskPriority?: string;
+		taskPriority?: string | null;
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
-		lambdaRole?: string;
+		lambdaRole?: string | null;
 	}
 
 	export enum WorkflowExecutionConfigurationChildPolicy { TERMINATE = 0, REQUEST_CANCEL = 1, ABANDON = 2 }
@@ -345,7 +345,7 @@ export namespace MyNS {
 		openDecisionTasks: number;
 		openTimers: number;
 		openChildWorkflowExecutions: number;
-		openLambdaFunctions?: number;
+		openLambdaFunctions?: number | null;
 	}
 
 	export interface DescribeWorkflowExecutionInput {
@@ -385,22 +385,22 @@ export namespace MyNS {
 		 */
 		workflowType: WorkflowType;
 		status: ActivityTypeInfoStatus;
-		description?: string;
+		description?: string | null;
 		creationDate: Date;
-		deprecationDate?: Date;
+		deprecationDate?: Date | null;
 	}
 
 
 	/** The configuration settings of a workflow type. */
 	export interface WorkflowTypeConfiguration {
-		defaultTaskStartToCloseTimeout?: string;
-		defaultExecutionStartToCloseTimeout?: string;
+		defaultTaskStartToCloseTimeout?: string | null;
+		defaultExecutionStartToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
-		defaultTaskList?: TaskList;
-		defaultTaskPriority?: string;
-		defaultChildPolicy?: WorkflowExecutionConfigurationChildPolicy;
-		defaultLambdaRole?: string;
+		defaultTaskList?: TaskList | null;
+		defaultTaskPriority?: string | null;
+		defaultChildPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+		defaultLambdaRole?: string | null;
 	}
 
 	export interface DescribeWorkflowTypeInput {
@@ -417,7 +417,7 @@ export namespace MyNS {
 	/** Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution. */
 	export interface History {
 		events: Array<HistoryEvent>;
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -428,166 +428,166 @@ export namespace MyNS {
 		eventId: number;
 
 		/** Provides details of <code>WorkflowExecutionStarted</code> event. */
-		workflowExecutionStartedEventAttributes?: WorkflowExecutionStartedEventAttributes;
+		workflowExecutionStartedEventAttributes?: WorkflowExecutionStartedEventAttributes | null;
 
 		/** Provides the details of the <code>WorkflowExecutionCompleted</code> event. */
-		workflowExecutionCompletedEventAttributes?: WorkflowExecutionCompletedEventAttributes;
+		workflowExecutionCompletedEventAttributes?: WorkflowExecutionCompletedEventAttributes | null;
 
 		/** Provides the details of the <code>CompleteWorkflowExecutionFailed</code> event. */
-		completeWorkflowExecutionFailedEventAttributes?: CompleteWorkflowExecutionFailedEventAttributes;
+		completeWorkflowExecutionFailedEventAttributes?: CompleteWorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>WorkflowExecutionFailed</code> event. */
-		workflowExecutionFailedEventAttributes?: WorkflowExecutionFailedEventAttributes;
+		workflowExecutionFailedEventAttributes?: WorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>FailWorkflowExecutionFailed</code> event. */
-		failWorkflowExecutionFailedEventAttributes?: FailWorkflowExecutionFailedEventAttributes;
+		failWorkflowExecutionFailedEventAttributes?: FailWorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>WorkflowExecutionTimedOut</code> event. */
-		workflowExecutionTimedOutEventAttributes?: WorkflowExecutionTimedOutEventAttributes;
+		workflowExecutionTimedOutEventAttributes?: WorkflowExecutionTimedOutEventAttributes | null;
 
 		/** Provides the details of the <code>WorkflowExecutionCanceled</code> event. */
-		workflowExecutionCanceledEventAttributes?: WorkflowExecutionCanceledEventAttributes;
+		workflowExecutionCanceledEventAttributes?: WorkflowExecutionCanceledEventAttributes | null;
 
 		/** Provides the details of the <code>CancelWorkflowExecutionFailed</code> event. */
-		cancelWorkflowExecutionFailedEventAttributes?: CancelWorkflowExecutionFailedEventAttributes;
+		cancelWorkflowExecutionFailedEventAttributes?: CancelWorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event. */
-		workflowExecutionContinuedAsNewEventAttributes?: WorkflowExecutionContinuedAsNewEventAttributes;
+		workflowExecutionContinuedAsNewEventAttributes?: WorkflowExecutionContinuedAsNewEventAttributes | null;
 
 		/** Provides the details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event. */
-		continueAsNewWorkflowExecutionFailedEventAttributes?: ContinueAsNewWorkflowExecutionFailedEventAttributes;
+		continueAsNewWorkflowExecutionFailedEventAttributes?: ContinueAsNewWorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>WorkflowExecutionTerminated</code> event. */
-		workflowExecutionTerminatedEventAttributes?: WorkflowExecutionTerminatedEventAttributes;
+		workflowExecutionTerminatedEventAttributes?: WorkflowExecutionTerminatedEventAttributes | null;
 
 		/** Provides the details of the <code>WorkflowExecutionCancelRequested</code> event. */
-		workflowExecutionCancelRequestedEventAttributes?: WorkflowExecutionCancelRequestedEventAttributes;
+		workflowExecutionCancelRequestedEventAttributes?: WorkflowExecutionCancelRequestedEventAttributes | null;
 
 		/** Provides details about the <code>DecisionTaskScheduled</code> event. */
-		decisionTaskScheduledEventAttributes?: DecisionTaskScheduledEventAttributes;
+		decisionTaskScheduledEventAttributes?: DecisionTaskScheduledEventAttributes | null;
 
 		/** Provides the details of the <code>DecisionTaskStarted</code> event. */
-		decisionTaskStartedEventAttributes?: DecisionTaskStartedEventAttributes;
+		decisionTaskStartedEventAttributes?: DecisionTaskStartedEventAttributes | null;
 
 		/** Provides the details of the <code>DecisionTaskCompleted</code> event. */
-		decisionTaskCompletedEventAttributes?: DecisionTaskCompletedEventAttributes;
+		decisionTaskCompletedEventAttributes?: DecisionTaskCompletedEventAttributes | null;
 
 		/** Provides the details of the <code>DecisionTaskTimedOut</code> event. */
-		decisionTaskTimedOutEventAttributes?: DecisionTaskTimedOutEventAttributes;
+		decisionTaskTimedOutEventAttributes?: DecisionTaskTimedOutEventAttributes | null;
 
 		/** Provides the details of the <code>ActivityTaskScheduled</code> event. */
-		activityTaskScheduledEventAttributes?: ActivityTaskScheduledEventAttributes;
+		activityTaskScheduledEventAttributes?: ActivityTaskScheduledEventAttributes | null;
 
 		/** Provides the details of the <code>ActivityTaskStarted</code> event. */
-		activityTaskStartedEventAttributes?: ActivityTaskStartedEventAttributes;
+		activityTaskStartedEventAttributes?: ActivityTaskStartedEventAttributes | null;
 
 		/** Provides the details of the <code>ActivityTaskCompleted</code> event. */
-		activityTaskCompletedEventAttributes?: ActivityTaskCompletedEventAttributes;
+		activityTaskCompletedEventAttributes?: ActivityTaskCompletedEventAttributes | null;
 
 		/** Provides the details of the <code>ActivityTaskFailed</code> event. */
-		activityTaskFailedEventAttributes?: ActivityTaskFailedEventAttributes;
+		activityTaskFailedEventAttributes?: ActivityTaskFailedEventAttributes | null;
 
 		/** Provides the details of the <code>ActivityTaskTimedOut</code> event. */
-		activityTaskTimedOutEventAttributes?: ActivityTaskTimedOutEventAttributes;
+		activityTaskTimedOutEventAttributes?: ActivityTaskTimedOutEventAttributes | null;
 
 		/** Provides the details of the <code>ActivityTaskCanceled</code> event. */
-		activityTaskCanceledEventAttributes?: ActivityTaskCanceledEventAttributes;
+		activityTaskCanceledEventAttributes?: ActivityTaskCanceledEventAttributes | null;
 
 		/** Provides the details of the <code>ActivityTaskCancelRequested</code> event. */
-		activityTaskCancelRequestedEventAttributes?: ActivityTaskCancelRequestedEventAttributes;
+		activityTaskCancelRequestedEventAttributes?: ActivityTaskCancelRequestedEventAttributes | null;
 
 		/** Provides the details of the <code>WorkflowExecutionSignaled</code> event. */
-		workflowExecutionSignaledEventAttributes?: WorkflowExecutionSignaledEventAttributes;
+		workflowExecutionSignaledEventAttributes?: WorkflowExecutionSignaledEventAttributes | null;
 
 		/** Provides the details of the <code>MarkerRecorded</code> event. */
-		markerRecordedEventAttributes?: MarkerRecordedEventAttributes;
+		markerRecordedEventAttributes?: MarkerRecordedEventAttributes | null;
 
 		/** Provides the details of the <code>RecordMarkerFailed</code> event. */
-		recordMarkerFailedEventAttributes?: RecordMarkerFailedEventAttributes;
+		recordMarkerFailedEventAttributes?: RecordMarkerFailedEventAttributes | null;
 
 		/** Provides the details of the <code>TimerStarted</code> event. */
-		timerStartedEventAttributes?: TimerStartedEventAttributes;
+		timerStartedEventAttributes?: TimerStartedEventAttributes | null;
 
 		/** Provides the details of the <code>TimerFired</code> event. */
-		timerFiredEventAttributes?: TimerFiredEventAttributes;
+		timerFiredEventAttributes?: TimerFiredEventAttributes | null;
 
 		/** Provides the details of the <code>TimerCanceled</code> event. */
-		timerCanceledEventAttributes?: TimerCanceledEventAttributes;
+		timerCanceledEventAttributes?: TimerCanceledEventAttributes | null;
 
 		/** Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event. */
-		startChildWorkflowExecutionInitiatedEventAttributes?: StartChildWorkflowExecutionInitiatedEventAttributes;
+		startChildWorkflowExecutionInitiatedEventAttributes?: StartChildWorkflowExecutionInitiatedEventAttributes | null;
 
 		/** Provides the details of the <code>ChildWorkflowExecutionStarted</code> event. */
-		childWorkflowExecutionStartedEventAttributes?: ChildWorkflowExecutionStartedEventAttributes;
+		childWorkflowExecutionStartedEventAttributes?: ChildWorkflowExecutionStartedEventAttributes | null;
 
 		/** Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event. */
-		childWorkflowExecutionCompletedEventAttributes?: ChildWorkflowExecutionCompletedEventAttributes;
+		childWorkflowExecutionCompletedEventAttributes?: ChildWorkflowExecutionCompletedEventAttributes | null;
 
 		/** Provides the details of the <code>ChildWorkflowExecutionFailed</code> event. */
-		childWorkflowExecutionFailedEventAttributes?: ChildWorkflowExecutionFailedEventAttributes;
+		childWorkflowExecutionFailedEventAttributes?: ChildWorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event. */
-		childWorkflowExecutionTimedOutEventAttributes?: ChildWorkflowExecutionTimedOutEventAttributes;
+		childWorkflowExecutionTimedOutEventAttributes?: ChildWorkflowExecutionTimedOutEventAttributes | null;
 
 		/** Provide details of the <code>ChildWorkflowExecutionCanceled</code> event. */
-		childWorkflowExecutionCanceledEventAttributes?: ChildWorkflowExecutionCanceledEventAttributes;
+		childWorkflowExecutionCanceledEventAttributes?: ChildWorkflowExecutionCanceledEventAttributes | null;
 
 		/** Provides the details of the <code>ChildWorkflowExecutionTerminated</code> event. */
-		childWorkflowExecutionTerminatedEventAttributes?: ChildWorkflowExecutionTerminatedEventAttributes;
+		childWorkflowExecutionTerminatedEventAttributes?: ChildWorkflowExecutionTerminatedEventAttributes | null;
 
 		/** Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event. */
-		signalExternalWorkflowExecutionInitiatedEventAttributes?: SignalExternalWorkflowExecutionInitiatedEventAttributes;
+		signalExternalWorkflowExecutionInitiatedEventAttributes?: SignalExternalWorkflowExecutionInitiatedEventAttributes | null;
 
 		/** Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event. */
-		externalWorkflowExecutionSignaledEventAttributes?: ExternalWorkflowExecutionSignaledEventAttributes;
+		externalWorkflowExecutionSignaledEventAttributes?: ExternalWorkflowExecutionSignaledEventAttributes | null;
 
 		/** Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event. */
-		signalExternalWorkflowExecutionFailedEventAttributes?: SignalExternalWorkflowExecutionFailedEventAttributes;
+		signalExternalWorkflowExecutionFailedEventAttributes?: SignalExternalWorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event. */
-		externalWorkflowExecutionCancelRequestedEventAttributes?: ExternalWorkflowExecutionCancelRequestedEventAttributes;
+		externalWorkflowExecutionCancelRequestedEventAttributes?: ExternalWorkflowExecutionCancelRequestedEventAttributes | null;
 
 		/** Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event. */
-		requestCancelExternalWorkflowExecutionInitiatedEventAttributes?: RequestCancelExternalWorkflowExecutionInitiatedEventAttributes;
+		requestCancelExternalWorkflowExecutionInitiatedEventAttributes?: RequestCancelExternalWorkflowExecutionInitiatedEventAttributes | null;
 
 		/** Provides the details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event. */
-		requestCancelExternalWorkflowExecutionFailedEventAttributes?: RequestCancelExternalWorkflowExecutionFailedEventAttributes;
+		requestCancelExternalWorkflowExecutionFailedEventAttributes?: RequestCancelExternalWorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>ScheduleActivityTaskFailed</code> event. */
-		scheduleActivityTaskFailedEventAttributes?: ScheduleActivityTaskFailedEventAttributes;
+		scheduleActivityTaskFailedEventAttributes?: ScheduleActivityTaskFailedEventAttributes | null;
 
 		/** Provides the details of the <code>RequestCancelActivityTaskFailed</code> event. */
-		requestCancelActivityTaskFailedEventAttributes?: RequestCancelActivityTaskFailedEventAttributes;
+		requestCancelActivityTaskFailedEventAttributes?: RequestCancelActivityTaskFailedEventAttributes | null;
 
 		/** Provides the details of the <code>StartTimerFailed</code> event. */
-		startTimerFailedEventAttributes?: StartTimerFailedEventAttributes;
+		startTimerFailedEventAttributes?: StartTimerFailedEventAttributes | null;
 
 		/** Provides the details of the <code>CancelTimerFailed</code> event. */
-		cancelTimerFailedEventAttributes?: CancelTimerFailedEventAttributes;
+		cancelTimerFailedEventAttributes?: CancelTimerFailedEventAttributes | null;
 
 		/** Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event. */
-		startChildWorkflowExecutionFailedEventAttributes?: StartChildWorkflowExecutionFailedEventAttributes;
+		startChildWorkflowExecutionFailedEventAttributes?: StartChildWorkflowExecutionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types. */
-		lambdaFunctionScheduledEventAttributes?: LambdaFunctionScheduledEventAttributes;
+		lambdaFunctionScheduledEventAttributes?: LambdaFunctionScheduledEventAttributes | null;
 
 		/** Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types. */
-		lambdaFunctionStartedEventAttributes?: LambdaFunctionStartedEventAttributes;
+		lambdaFunctionStartedEventAttributes?: LambdaFunctionStartedEventAttributes | null;
 
 		/** Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types. */
-		lambdaFunctionCompletedEventAttributes?: LambdaFunctionCompletedEventAttributes;
+		lambdaFunctionCompletedEventAttributes?: LambdaFunctionCompletedEventAttributes | null;
 
 		/** Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types. */
-		lambdaFunctionFailedEventAttributes?: LambdaFunctionFailedEventAttributes;
+		lambdaFunctionFailedEventAttributes?: LambdaFunctionFailedEventAttributes | null;
 
 		/** Provides details of the <code>LambdaFunctionTimedOut</code> event. */
-		lambdaFunctionTimedOutEventAttributes?: LambdaFunctionTimedOutEventAttributes;
+		lambdaFunctionTimedOutEventAttributes?: LambdaFunctionTimedOutEventAttributes | null;
 
 		/** Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types. */
-		scheduleLambdaFunctionFailedEventAttributes?: ScheduleLambdaFunctionFailedEventAttributes;
+		scheduleLambdaFunctionFailedEventAttributes?: ScheduleLambdaFunctionFailedEventAttributes | null;
 
 		/** Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types. */
-		startLambdaFunctionFailedEventAttributes?: StartLambdaFunctionFailedEventAttributes;
+		startLambdaFunctionFailedEventAttributes?: StartLambdaFunctionFailedEventAttributes | null;
 	}
 
 	export enum HistoryEventEventType { WorkflowExecutionStarted = 0, WorkflowExecutionCancelRequested = 1, WorkflowExecutionCompleted = 2, CompleteWorkflowExecutionFailed = 3, WorkflowExecutionFailed = 4, FailWorkflowExecutionFailed = 5, WorkflowExecutionTimedOut = 6, WorkflowExecutionCanceled = 7, CancelWorkflowExecutionFailed = 8, WorkflowExecutionContinuedAsNew = 9, ContinueAsNewWorkflowExecutionFailed = 10, WorkflowExecutionTerminated = 11, DecisionTaskScheduled = 12, DecisionTaskStarted = 13, DecisionTaskCompleted = 14, DecisionTaskTimedOut = 15, ActivityTaskScheduled = 16, ScheduleActivityTaskFailed = 17, ActivityTaskStarted = 18, ActivityTaskCompleted = 19, ActivityTaskFailed = 20, ActivityTaskTimedOut = 21, ActivityTaskCanceled = 22, ActivityTaskCancelRequested = 23, RequestCancelActivityTaskFailed = 24, WorkflowExecutionSignaled = 25, MarkerRecorded = 26, RecordMarkerFailed = 27, TimerStarted = 28, StartTimerFailed = 29, TimerFired = 30, TimerCanceled = 31, CancelTimerFailed = 32, StartChildWorkflowExecutionInitiated = 33, StartChildWorkflowExecutionFailed = 34, ChildWorkflowExecutionStarted = 35, ChildWorkflowExecutionCompleted = 36, ChildWorkflowExecutionFailed = 37, ChildWorkflowExecutionTimedOut = 38, ChildWorkflowExecutionCanceled = 39, ChildWorkflowExecutionTerminated = 40, SignalExternalWorkflowExecutionInitiated = 41, SignalExternalWorkflowExecutionFailed = 42, ExternalWorkflowExecutionSignaled = 43, RequestCancelExternalWorkflowExecutionInitiated = 44, RequestCancelExternalWorkflowExecutionFailed = 45, ExternalWorkflowExecutionCancelRequested = 46, LambdaFunctionScheduled = 47, LambdaFunctionStarted = 48, LambdaFunctionCompleted = 49, LambdaFunctionFailed = 50, LambdaFunctionTimedOut = 51, ScheduleLambdaFunctionFailed = 52, StartLambdaFunctionFailed = 53 }
@@ -595,9 +595,9 @@ export namespace MyNS {
 
 	/** Provides details of <code>WorkflowExecutionStarted</code> event. */
 	export interface WorkflowExecutionStartedEventAttributes {
-		input?: string;
-		executionStartToCloseTimeout?: string;
-		taskStartToCloseTimeout?: string;
+		input?: string | null;
+		executionStartToCloseTimeout?: string | null;
+		taskStartToCloseTimeout?: string | null;
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
 
 		/**
@@ -605,26 +605,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		taskList: TaskList;
-		taskPriority?: string;
+		taskPriority?: string | null;
 
 		/**
 		 * Represents a workflow type.
 		 * Required
 		 */
 		workflowType: WorkflowType;
-		tagList?: Array<string>;
-		continuedExecutionRunId?: string;
+		tagList?: Array<string> | null;
+		continuedExecutionRunId?: string | null;
 
 		/** Represents a workflow execution. */
-		parentWorkflowExecution?: WorkflowExecution;
-		parentInitiatedEventId?: number;
-		lambdaRole?: string;
+		parentWorkflowExecution?: WorkflowExecution | null;
+		parentInitiatedEventId?: number | null;
+		lambdaRole?: string | null;
 	}
 
 
 	/** Provides the details of the <code>WorkflowExecutionCompleted</code> event. */
 	export interface WorkflowExecutionCompletedEventAttributes {
-		result?: string;
+		result?: string | null;
 		decisionTaskCompletedEventId: number;
 	}
 
@@ -640,8 +640,8 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionFailed</code> event. */
 	export interface WorkflowExecutionFailedEventAttributes {
-		reason?: string;
-		details?: string;
+		reason?: string | null;
+		details?: string | null;
 		decisionTaskCompletedEventId: number;
 	}
 
@@ -664,7 +664,7 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionCanceled</code> event. */
 	export interface WorkflowExecutionCanceledEventAttributes {
-		details?: string;
+		details?: string | null;
 		decisionTaskCompletedEventId: number;
 	}
 
@@ -678,27 +678,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event. */
 	export interface WorkflowExecutionContinuedAsNewEventAttributes {
-		input?: string;
+		input?: string | null;
 		decisionTaskCompletedEventId: number;
 		newExecutionRunId: string;
-		executionStartToCloseTimeout?: string;
+		executionStartToCloseTimeout?: string | null;
 
 		/**
 		 * Represents a task list.
 		 * Required
 		 */
 		taskList: TaskList;
-		taskPriority?: string;
-		taskStartToCloseTimeout?: string;
+		taskPriority?: string | null;
+		taskStartToCloseTimeout?: string | null;
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
-		tagList?: Array<string>;
+		tagList?: Array<string> | null;
 
 		/**
 		 * Represents a workflow type.
 		 * Required
 		 */
 		workflowType: WorkflowType;
-		lambdaRole?: string;
+		lambdaRole?: string | null;
 	}
 
 
@@ -713,10 +713,10 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionTerminated</code> event. */
 	export interface WorkflowExecutionTerminatedEventAttributes {
-		reason?: string;
-		details?: string;
+		reason?: string | null;
+		details?: string | null;
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
-		cause?: WorkflowExecutionTerminatedEventAttributesCause;
+		cause?: WorkflowExecutionTerminatedEventAttributesCause | null;
 	}
 
 	export enum WorkflowExecutionTerminatedEventAttributesCause { CHILD_POLICY_APPLIED = 0, EVENT_LIMIT_EXCEEDED = 1, OPERATOR_INITIATED = 2 }
@@ -726,9 +726,9 @@ export namespace MyNS {
 	export interface WorkflowExecutionCancelRequestedEventAttributes {
 
 		/** Represents a workflow execution. */
-		externalWorkflowExecution?: WorkflowExecution;
-		externalInitiatedEventId?: number;
-		cause?: WorkflowExecutionCancelRequestedEventAttributesCause;
+		externalWorkflowExecution?: WorkflowExecution | null;
+		externalInitiatedEventId?: number | null;
+		cause?: WorkflowExecutionCancelRequestedEventAttributesCause | null;
 	}
 
 	export enum WorkflowExecutionCancelRequestedEventAttributesCause { CHILD_POLICY_APPLIED = 0 }
@@ -742,21 +742,21 @@ export namespace MyNS {
 		 * Required
 		 */
 		taskList: TaskList;
-		taskPriority?: string;
-		startToCloseTimeout?: string;
+		taskPriority?: string | null;
+		startToCloseTimeout?: string | null;
 	}
 
 
 	/** Provides the details of the <code>DecisionTaskStarted</code> event. */
 	export interface DecisionTaskStartedEventAttributes {
-		identity?: string;
+		identity?: string | null;
 		scheduledEventId: number;
 	}
 
 
 	/** Provides the details of the <code>DecisionTaskCompleted</code> event. */
 	export interface DecisionTaskCompletedEventAttributes {
-		executionContext?: string;
+		executionContext?: string | null;
 		scheduledEventId: number;
 		startedEventId: number;
 	}
@@ -779,33 +779,33 @@ export namespace MyNS {
 		 */
 		activityType: ActivityType;
 		activityId: string;
-		input?: string;
-		control?: string;
-		scheduleToStartTimeout?: string;
-		scheduleToCloseTimeout?: string;
-		startToCloseTimeout?: string;
+		input?: string | null;
+		control?: string | null;
+		scheduleToStartTimeout?: string | null;
+		scheduleToCloseTimeout?: string | null;
+		startToCloseTimeout?: string | null;
 
 		/**
 		 * Represents a task list.
 		 * Required
 		 */
 		taskList: TaskList;
-		taskPriority?: string;
+		taskPriority?: string | null;
 		decisionTaskCompletedEventId: number;
-		heartbeatTimeout?: string;
+		heartbeatTimeout?: string | null;
 	}
 
 
 	/** Provides the details of the <code>ActivityTaskStarted</code> event. */
 	export interface ActivityTaskStartedEventAttributes {
-		identity?: string;
+		identity?: string | null;
 		scheduledEventId: number;
 	}
 
 
 	/** Provides the details of the <code>ActivityTaskCompleted</code> event. */
 	export interface ActivityTaskCompletedEventAttributes {
-		result?: string;
+		result?: string | null;
 		scheduledEventId: number;
 		startedEventId: number;
 	}
@@ -813,8 +813,8 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ActivityTaskFailed</code> event. */
 	export interface ActivityTaskFailedEventAttributes {
-		reason?: string;
-		details?: string;
+		reason?: string | null;
+		details?: string | null;
 		scheduledEventId: number;
 		startedEventId: number;
 	}
@@ -825,7 +825,7 @@ export namespace MyNS {
 		timeoutType: ActivityTaskTimedOutEventAttributesTimeoutType;
 		scheduledEventId: number;
 		startedEventId: number;
-		details?: string;
+		details?: string | null;
 	}
 
 	export enum ActivityTaskTimedOutEventAttributesTimeoutType { START_TO_CLOSE = 0, SCHEDULE_TO_START = 1, SCHEDULE_TO_CLOSE = 2, HEARTBEAT = 3 }
@@ -833,10 +833,10 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ActivityTaskCanceled</code> event. */
 	export interface ActivityTaskCanceledEventAttributes {
-		details?: string;
+		details?: string | null;
 		scheduledEventId: number;
 		startedEventId: number;
-		latestCancelRequestedEventId?: number;
+		latestCancelRequestedEventId?: number | null;
 	}
 
 
@@ -850,18 +850,18 @@ export namespace MyNS {
 	/** Provides the details of the <code>WorkflowExecutionSignaled</code> event. */
 	export interface WorkflowExecutionSignaledEventAttributes {
 		signalName: string;
-		input?: string;
+		input?: string | null;
 
 		/** Represents a workflow execution. */
-		externalWorkflowExecution?: WorkflowExecution;
-		externalInitiatedEventId?: number;
+		externalWorkflowExecution?: WorkflowExecution | null;
+		externalInitiatedEventId?: number | null;
 	}
 
 
 	/** Provides the details of the <code>MarkerRecorded</code> event. */
 	export interface MarkerRecordedEventAttributes {
 		markerName: string;
-		details?: string;
+		details?: string | null;
 		decisionTaskCompletedEventId: number;
 	}
 
@@ -879,7 +879,7 @@ export namespace MyNS {
 	/** Provides the details of the <code>TimerStarted</code> event. */
 	export interface TimerStartedEventAttributes {
 		timerId: string;
-		control?: string;
+		control?: string | null;
 		startToFireTimeout: string;
 		decisionTaskCompletedEventId: number;
 	}
@@ -909,21 +909,21 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
-		control?: string;
-		input?: string;
-		executionStartToCloseTimeout?: string;
+		control?: string | null;
+		input?: string | null;
+		executionStartToCloseTimeout?: string | null;
 
 		/**
 		 * Represents a task list.
 		 * Required
 		 */
 		taskList: TaskList;
-		taskPriority?: string;
+		taskPriority?: string | null;
 		decisionTaskCompletedEventId: number;
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
-		taskStartToCloseTimeout?: string;
-		tagList?: Array<string>;
-		lambdaRole?: string;
+		taskStartToCloseTimeout?: string | null;
+		tagList?: Array<string> | null;
+		lambdaRole?: string | null;
 	}
 
 
@@ -959,7 +959,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
-		result?: string;
+		result?: string | null;
 		initiatedEventId: number;
 		startedEventId: number;
 	}
@@ -979,8 +979,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
-		reason?: string;
-		details?: string;
+		reason?: string | null;
+		details?: string | null;
 		initiatedEventId: number;
 		startedEventId: number;
 	}
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
-		details?: string;
+		details?: string | null;
 		initiatedEventId: number;
 		startedEventId: number;
 	}
@@ -1048,11 +1048,11 @@ export namespace MyNS {
 	/** Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event. */
 	export interface SignalExternalWorkflowExecutionInitiatedEventAttributes {
 		workflowId: string;
-		runId?: string;
+		runId?: string | null;
 		signalName: string;
-		input?: string;
+		input?: string | null;
 		decisionTaskCompletedEventId: number;
-		control?: string;
+		control?: string | null;
 	}
 
 
@@ -1071,11 +1071,11 @@ export namespace MyNS {
 	/** Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event. */
 	export interface SignalExternalWorkflowExecutionFailedEventAttributes {
 		workflowId: string;
-		runId?: string;
+		runId?: string | null;
 		cause: SignalExternalWorkflowExecutionFailedEventAttributesCause;
 		initiatedEventId: number;
 		decisionTaskCompletedEventId: number;
-		control?: string;
+		control?: string | null;
 	}
 
 	export enum SignalExternalWorkflowExecutionFailedEventAttributesCause { UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = 0, SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = 1, OPERATION_NOT_PERMITTED = 2 }
@@ -1096,20 +1096,20 @@ export namespace MyNS {
 	/** Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event. */
 	export interface RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
 		workflowId: string;
-		runId?: string;
+		runId?: string | null;
 		decisionTaskCompletedEventId: number;
-		control?: string;
+		control?: string | null;
 	}
 
 
 	/** Provides the details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event. */
 	export interface RequestCancelExternalWorkflowExecutionFailedEventAttributes {
 		workflowId: string;
-		runId?: string;
+		runId?: string | null;
 		cause: RequestCancelExternalWorkflowExecutionFailedEventAttributesCause;
 		initiatedEventId: number;
 		decisionTaskCompletedEventId: number;
-		control?: string;
+		control?: string | null;
 	}
 
 	export enum RequestCancelExternalWorkflowExecutionFailedEventAttributesCause { UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = 0, REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = 1, OPERATION_NOT_PERMITTED = 2 }
@@ -1173,7 +1173,7 @@ export namespace MyNS {
 		workflowId: string;
 		initiatedEventId: number;
 		decisionTaskCompletedEventId: number;
-		control?: string;
+		control?: string | null;
 	}
 
 	export enum StartChildWorkflowExecutionFailedEventAttributesCause { WORKFLOW_TYPE_DOES_NOT_EXIST = 0, WORKFLOW_TYPE_DEPRECATED = 1, OPEN_CHILDREN_LIMIT_EXCEEDED = 2, OPEN_WORKFLOWS_LIMIT_EXCEEDED = 3, CHILD_CREATION_RATE_EXCEEDED = 4, WORKFLOW_ALREADY_RUNNING = 5, DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = 6, DEFAULT_TASK_LIST_UNDEFINED = 7, DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED = 8, DEFAULT_CHILD_POLICY_UNDEFINED = 9, OPERATION_NOT_PERMITTED = 10 }
@@ -1183,9 +1183,9 @@ export namespace MyNS {
 	export interface LambdaFunctionScheduledEventAttributes {
 		id: string;
 		name: string;
-		control?: string;
-		input?: string;
-		startToCloseTimeout?: string;
+		control?: string | null;
+		input?: string | null;
+		startToCloseTimeout?: string | null;
 		decisionTaskCompletedEventId: number;
 	}
 
@@ -1200,7 +1200,7 @@ export namespace MyNS {
 	export interface LambdaFunctionCompletedEventAttributes {
 		scheduledEventId: number;
 		startedEventId: number;
-		result?: string;
+		result?: string | null;
 	}
 
 
@@ -1208,8 +1208,8 @@ export namespace MyNS {
 	export interface LambdaFunctionFailedEventAttributes {
 		scheduledEventId: number;
 		startedEventId: number;
-		reason?: string;
-		details?: string;
+		reason?: string | null;
+		details?: string | null;
 	}
 
 
@@ -1217,7 +1217,7 @@ export namespace MyNS {
 	export interface LambdaFunctionTimedOutEventAttributes {
 		scheduledEventId: number;
 		startedEventId: number;
-		timeoutType?: WorkflowExecutionTimedOutEventAttributesTimeoutType;
+		timeoutType?: WorkflowExecutionTimedOutEventAttributesTimeoutType | null;
 	}
 
 
@@ -1234,9 +1234,9 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types. */
 	export interface StartLambdaFunctionFailedEventAttributes {
-		scheduledEventId?: number;
-		cause?: StartLambdaFunctionFailedEventAttributesCause;
-		message?: string;
+		scheduledEventId?: number | null;
+		cause?: StartLambdaFunctionFailedEventAttributesCause | null;
+		message?: string | null;
 	}
 
 	export enum StartLambdaFunctionFailedEventAttributesCause { ASSUME_ROLE_FAILED = 0 }
@@ -1249,71 +1249,71 @@ export namespace MyNS {
 		 * Required
 		 */
 		execution: WorkflowExecution;
-		nextPageToken?: string;
-		maximumPageSize?: number;
-		reverseOrder?: boolean;
+		nextPageToken?: string | null;
+		maximumPageSize?: number | null;
+		reverseOrder?: boolean | null;
 	}
 
 
 	/** Contains a paginated list of activity type information structures. */
 	export interface ActivityTypeInfos {
 		typeInfos: Array<ActivityTypeInfo>;
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface ListActivityTypesInput {
 		domain: string;
-		name?: string;
+		name?: string | null;
 		registrationStatus: ActivityTypeInfoStatus;
-		nextPageToken?: string;
-		maximumPageSize?: number;
-		reverseOrder?: boolean;
+		nextPageToken?: string | null;
+		maximumPageSize?: number | null;
+		reverseOrder?: boolean | null;
 	}
 
 
 	/** Contains a paginated list of information about workflow executions. */
 	export interface WorkflowExecutionInfos {
 		executionInfos: Array<WorkflowExecutionInfo>;
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface ListClosedWorkflowExecutionsInput {
 		domain: string;
 
 		/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> */
-		startTimeFilter?: ExecutionTimeFilter;
+		startTimeFilter?: ExecutionTimeFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> */
-		closeTimeFilter?: ExecutionTimeFilter;
+		closeTimeFilter?: ExecutionTimeFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>. */
-		executionFilter?: WorkflowExecutionFilter;
+		executionFilter?: WorkflowExecutionFilter | null;
 
 		/** Used to filter the closed workflow executions in visibility APIs by their close status. */
-		closeStatusFilter?: CloseStatusFilter;
+		closeStatusFilter?: CloseStatusFilter | null;
 
 		/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
-		typeFilter?: WorkflowTypeFilter;
+		typeFilter?: WorkflowTypeFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs based on a tag. */
-		tagFilter?: TagFilter;
-		nextPageToken?: string;
-		maximumPageSize?: number;
-		reverseOrder?: boolean;
+		tagFilter?: TagFilter | null;
+		nextPageToken?: string | null;
+		maximumPageSize?: number | null;
+		reverseOrder?: boolean | null;
 	}
 
 
 	/** Contains a paginated collection of DomainInfo structures. */
 	export interface DomainInfos {
 		domainInfos: Array<DomainInfo>;
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface ListDomainsInput {
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 		registrationStatus: ActivityTypeInfoStatus;
-		maximumPageSize?: number;
-		reverseOrder?: boolean;
+		maximumPageSize?: number | null;
+		reverseOrder?: boolean | null;
 	}
 
 	export interface ListOpenWorkflowExecutionsInput {
@@ -1326,27 +1326,27 @@ export namespace MyNS {
 		startTimeFilter: ExecutionTimeFilter;
 
 		/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
-		typeFilter?: WorkflowTypeFilter;
+		typeFilter?: WorkflowTypeFilter | null;
 
 		/** Used to filter the workflow executions in visibility APIs based on a tag. */
-		tagFilter?: TagFilter;
-		nextPageToken?: string;
-		maximumPageSize?: number;
-		reverseOrder?: boolean;
+		tagFilter?: TagFilter | null;
+		nextPageToken?: string | null;
+		maximumPageSize?: number | null;
+		reverseOrder?: boolean | null;
 
 		/** Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>. */
-		executionFilter?: WorkflowExecutionFilter;
+		executionFilter?: WorkflowExecutionFilter | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		tags?: Array<ResourceTag>;
+		tags?: Array<ResourceTag> | null;
 	}
 
 
 	/** <p>Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.</p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p> */
 	export interface ResourceTag {
 		key: string;
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface ListTagsForResourceInput {
@@ -1360,16 +1360,16 @@ export namespace MyNS {
 	/** Contains a paginated list of information structures about workflow types. */
 	export interface WorkflowTypeInfos {
 		typeInfos: Array<WorkflowTypeInfo>;
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface ListWorkflowTypesInput {
 		domain: string;
-		name?: string;
+		name?: string | null;
 		registrationStatus: ActivityTypeInfoStatus;
-		nextPageToken?: string;
-		maximumPageSize?: number;
-		reverseOrder?: boolean;
+		nextPageToken?: string | null;
+		maximumPageSize?: number | null;
+		reverseOrder?: boolean | null;
 	}
 
 
@@ -1390,7 +1390,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		activityType: ActivityType;
-		input?: string;
+		input?: string | null;
 	}
 
 	export interface PollForActivityTaskInput {
@@ -1401,7 +1401,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		taskList: TaskList;
-		identity?: string;
+		identity?: string | null;
 	}
 
 
@@ -1422,8 +1422,8 @@ export namespace MyNS {
 		 */
 		workflowType: WorkflowType;
 		events: Array<HistoryEvent>;
-		nextPageToken?: string;
-		previousStartedEventId?: number;
+		nextPageToken?: string | null;
+		previousStartedEventId?: number | null;
 	}
 
 	export interface PollForDecisionTaskInput {
@@ -1434,10 +1434,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		taskList: TaskList;
-		identity?: string;
-		nextPageToken?: string;
-		maximumPageSize?: number;
-		reverseOrder?: boolean;
+		identity?: string | null;
+		nextPageToken?: string | null;
+		maximumPageSize?: number | null;
+		reverseOrder?: boolean | null;
 	}
 
 
@@ -1448,22 +1448,22 @@ export namespace MyNS {
 
 	export interface RecordActivityTaskHeartbeatInput {
 		taskToken: string;
-		details?: string;
+		details?: string | null;
 	}
 
 	export interface RegisterActivityTypeInput {
 		domain: string;
 		name: string;
 		version: string;
-		description?: string;
-		defaultTaskStartToCloseTimeout?: string;
-		defaultTaskHeartbeatTimeout?: string;
+		description?: string | null;
+		defaultTaskStartToCloseTimeout?: string | null;
+		defaultTaskHeartbeatTimeout?: string | null;
 
 		/** Represents a task list. */
-		defaultTaskList?: TaskList;
-		defaultTaskPriority?: string;
-		defaultTaskScheduleToStartTimeout?: string;
-		defaultTaskScheduleToCloseTimeout?: string;
+		defaultTaskList?: TaskList | null;
+		defaultTaskPriority?: string | null;
+		defaultTaskScheduleToStartTimeout?: string | null;
+		defaultTaskScheduleToCloseTimeout?: string | null;
 	}
 
 	export interface TypeAlreadyExistsFault {
@@ -1471,9 +1471,9 @@ export namespace MyNS {
 
 	export interface RegisterDomainInput {
 		name: string;
-		description?: string;
+		description?: string | null;
 		workflowExecutionRetentionPeriodInDays: string;
-		tags?: Array<ResourceTag>;
+		tags?: Array<ResourceTag> | null;
 	}
 
 	export interface DomainAlreadyExistsFault {
@@ -1486,45 +1486,45 @@ export namespace MyNS {
 		domain: string;
 		name: string;
 		version: string;
-		description?: string;
-		defaultTaskStartToCloseTimeout?: string;
-		defaultExecutionStartToCloseTimeout?: string;
+		description?: string | null;
+		defaultTaskStartToCloseTimeout?: string | null;
+		defaultExecutionStartToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
-		defaultTaskList?: TaskList;
-		defaultTaskPriority?: string;
-		defaultChildPolicy?: WorkflowExecutionConfigurationChildPolicy;
-		defaultLambdaRole?: string;
+		defaultTaskList?: TaskList | null;
+		defaultTaskPriority?: string | null;
+		defaultChildPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+		defaultLambdaRole?: string | null;
 	}
 
 	export interface RequestCancelWorkflowExecutionInput {
 		domain: string;
 		workflowId: string;
-		runId?: string;
+		runId?: string | null;
 	}
 
 	export interface RespondActivityTaskCanceledInput {
 		taskToken: string;
-		details?: string;
+		details?: string | null;
 	}
 
 	export interface RespondActivityTaskCompletedInput {
 		taskToken: string;
-		result?: string;
+		result?: string | null;
 	}
 
 	export interface RespondActivityTaskFailedInput {
 		taskToken: string;
-		reason?: string;
-		details?: string;
+		reason?: string | null;
+		details?: string | null;
 	}
 
 
 	/** Input data for a TaskCompleted response to a decision task. */
 	export interface RespondDecisionTaskCompletedInput {
 		taskToken: string;
-		decisions?: Array<Decision>;
-		executionContext?: string;
+		decisions?: Array<Decision> | null;
+		executionContext?: string | null;
 	}
 
 
@@ -1533,43 +1533,43 @@ export namespace MyNS {
 		decisionType: DecisionDecisionType;
 
 		/** <p>Provides the details of the <code>ScheduleActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p> <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		scheduleActivityTaskDecisionAttributes?: ScheduleActivityTaskDecisionAttributes;
+		scheduleActivityTaskDecisionAttributes?: ScheduleActivityTaskDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>RequestCancelActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		requestCancelActivityTaskDecisionAttributes?: RequestCancelActivityTaskDecisionAttributes;
+		requestCancelActivityTaskDecisionAttributes?: RequestCancelActivityTaskDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		completeWorkflowExecutionDecisionAttributes?: CompleteWorkflowExecutionDecisionAttributes;
+		completeWorkflowExecutionDecisionAttributes?: CompleteWorkflowExecutionDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>FailWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		failWorkflowExecutionDecisionAttributes?: FailWorkflowExecutionDecisionAttributes;
+		failWorkflowExecutionDecisionAttributes?: FailWorkflowExecutionDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>CancelWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		cancelWorkflowExecutionDecisionAttributes?: CancelWorkflowExecutionDecisionAttributes;
+		cancelWorkflowExecutionDecisionAttributes?: CancelWorkflowExecutionDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tag</code> – A tag used to identify the workflow execution</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		continueAsNewWorkflowExecutionDecisionAttributes?: ContinueAsNewWorkflowExecutionDecisionAttributes;
+		continueAsNewWorkflowExecutionDecisionAttributes?: ContinueAsNewWorkflowExecutionDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>RecordMarker</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		recordMarkerDecisionAttributes?: RecordMarkerDecisionAttributes;
+		recordMarkerDecisionAttributes?: RecordMarkerDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>StartTimer</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		startTimerDecisionAttributes?: StartTimerDecisionAttributes;
+		startTimerDecisionAttributes?: StartTimerDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>CancelTimer</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		cancelTimerDecisionAttributes?: CancelTimerDecisionAttributes;
+		cancelTimerDecisionAttributes?: CancelTimerDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		signalExternalWorkflowExecutionDecisionAttributes?: SignalExternalWorkflowExecutionDecisionAttributes;
+		signalExternalWorkflowExecutionDecisionAttributes?: SignalExternalWorkflowExecutionDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		requestCancelExternalWorkflowExecutionDecisionAttributes?: RequestCancelExternalWorkflowExecutionDecisionAttributes;
+		requestCancelExternalWorkflowExecutionDecisionAttributes?: RequestCancelExternalWorkflowExecutionDecisionAttributes | null;
 
 		/** <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tagList.member.N</code> – The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
-		startChildWorkflowExecutionDecisionAttributes?: StartChildWorkflowExecutionDecisionAttributes;
+		startChildWorkflowExecutionDecisionAttributes?: StartChildWorkflowExecutionDecisionAttributes | null;
 
 		/** Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>. */
-		scheduleLambdaFunctionDecisionAttributes?: ScheduleLambdaFunctionDecisionAttributes;
+		scheduleLambdaFunctionDecisionAttributes?: ScheduleLambdaFunctionDecisionAttributes | null;
 	}
 
 	export enum DecisionDecisionType { ScheduleActivityTask = 0, RequestCancelActivityTask = 1, CompleteWorkflowExecution = 2, FailWorkflowExecution = 3, CancelWorkflowExecution = 4, ContinueAsNewWorkflowExecution = 5, RecordMarker = 6, StartTimer = 7, CancelTimer = 8, SignalExternalWorkflowExecution = 9, RequestCancelExternalWorkflowExecution = 10, StartChildWorkflowExecution = 11, ScheduleLambdaFunction = 12 }
@@ -1584,16 +1584,16 @@ export namespace MyNS {
 		 */
 		activityType: ActivityType;
 		activityId: string;
-		control?: string;
-		input?: string;
-		scheduleToCloseTimeout?: string;
+		control?: string | null;
+		input?: string | null;
+		scheduleToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
-		taskList?: TaskList;
-		taskPriority?: string;
-		scheduleToStartTimeout?: string;
-		startToCloseTimeout?: string;
-		heartbeatTimeout?: string;
+		taskList?: TaskList | null;
+		taskPriority?: string | null;
+		scheduleToStartTimeout?: string | null;
+		startToCloseTimeout?: string | null;
+		heartbeatTimeout?: string | null;
 	}
 
 
@@ -1605,50 +1605,50 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface CompleteWorkflowExecutionDecisionAttributes {
-		result?: string;
+		result?: string | null;
 	}
 
 
 	/** <p>Provides the details of the <code>FailWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface FailWorkflowExecutionDecisionAttributes {
-		reason?: string;
-		details?: string;
+		reason?: string | null;
+		details?: string | null;
 	}
 
 
 	/** <p>Provides the details of the <code>CancelWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface CancelWorkflowExecutionDecisionAttributes {
-		details?: string;
+		details?: string | null;
 	}
 
 
 	/** <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tag</code> – A tag used to identify the workflow execution</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface ContinueAsNewWorkflowExecutionDecisionAttributes {
-		input?: string;
-		executionStartToCloseTimeout?: string;
+		input?: string | null;
+		executionStartToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
-		taskList?: TaskList;
-		taskPriority?: string;
-		taskStartToCloseTimeout?: string;
-		childPolicy?: WorkflowExecutionConfigurationChildPolicy;
-		tagList?: Array<string>;
-		workflowTypeVersion?: string;
-		lambdaRole?: string;
+		taskList?: TaskList | null;
+		taskPriority?: string | null;
+		taskStartToCloseTimeout?: string | null;
+		childPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+		tagList?: Array<string> | null;
+		workflowTypeVersion?: string | null;
+		lambdaRole?: string | null;
 	}
 
 
 	/** <p>Provides the details of the <code>RecordMarker</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface RecordMarkerDecisionAttributes {
 		markerName: string;
-		details?: string;
+		details?: string | null;
 	}
 
 
 	/** <p>Provides the details of the <code>StartTimer</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface StartTimerDecisionAttributes {
 		timerId: string;
-		control?: string;
+		control?: string | null;
 		startToFireTimeout: string;
 	}
 
@@ -1662,18 +1662,18 @@ export namespace MyNS {
 	/** <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface SignalExternalWorkflowExecutionDecisionAttributes {
 		workflowId: string;
-		runId?: string;
+		runId?: string | null;
 		signalName: string;
-		input?: string;
-		control?: string;
+		input?: string | null;
+		control?: string | null;
 	}
 
 
 	/** <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface RequestCancelExternalWorkflowExecutionDecisionAttributes {
 		workflowId: string;
-		runId?: string;
-		control?: string;
+		runId?: string | null;
+		control?: string | null;
 	}
 
 
@@ -1686,17 +1686,17 @@ export namespace MyNS {
 		 */
 		workflowType: WorkflowType;
 		workflowId: string;
-		control?: string;
-		input?: string;
-		executionStartToCloseTimeout?: string;
+		control?: string | null;
+		input?: string | null;
+		executionStartToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
-		taskList?: TaskList;
-		taskPriority?: string;
-		taskStartToCloseTimeout?: string;
-		childPolicy?: WorkflowExecutionConfigurationChildPolicy;
-		tagList?: Array<string>;
-		lambdaRole?: string;
+		taskList?: TaskList | null;
+		taskPriority?: string | null;
+		taskStartToCloseTimeout?: string | null;
+		childPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+		tagList?: Array<string> | null;
+		lambdaRole?: string | null;
 	}
 
 
@@ -1704,23 +1704,23 @@ export namespace MyNS {
 	export interface ScheduleLambdaFunctionDecisionAttributes {
 		id: string;
 		name: string;
-		control?: string;
-		input?: string;
-		startToCloseTimeout?: string;
+		control?: string | null;
+		input?: string | null;
+		startToCloseTimeout?: string | null;
 	}
 
 	export interface SignalWorkflowExecutionInput {
 		domain: string;
 		workflowId: string;
-		runId?: string;
+		runId?: string | null;
 		signalName: string;
-		input?: string;
+		input?: string | null;
 	}
 
 
 	/** Specifies the <code>runId</code> of a workflow execution. */
 	export interface Run {
-		runId?: string;
+		runId?: string | null;
 	}
 
 	export interface StartWorkflowExecutionInput {
@@ -1734,14 +1734,14 @@ export namespace MyNS {
 		workflowType: WorkflowType;
 
 		/** Represents a task list. */
-		taskList?: TaskList;
-		taskPriority?: string;
-		input?: string;
-		executionStartToCloseTimeout?: string;
-		tagList?: Array<string>;
-		taskStartToCloseTimeout?: string;
-		childPolicy?: WorkflowExecutionConfigurationChildPolicy;
-		lambdaRole?: string;
+		taskList?: TaskList | null;
+		taskPriority?: string | null;
+		input?: string | null;
+		executionStartToCloseTimeout?: string | null;
+		tagList?: Array<string> | null;
+		taskStartToCloseTimeout?: string | null;
+		childPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+		lambdaRole?: string | null;
 	}
 
 	export interface WorkflowExecutionAlreadyStartedFault {
@@ -1758,10 +1758,10 @@ export namespace MyNS {
 	export interface TerminateWorkflowExecutionInput {
 		domain: string;
 		workflowId: string;
-		runId?: string;
-		reason?: string;
-		details?: string;
-		childPolicy?: WorkflowExecutionConfigurationChildPolicy;
+		runId?: string | null;
+		reason?: string | null;
+		details?: string | null;
+		childPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
 	}
 
 	export interface UndeprecateActivityTypeInput {

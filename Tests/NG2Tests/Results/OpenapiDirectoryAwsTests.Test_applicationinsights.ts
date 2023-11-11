@@ -5,26 +5,26 @@ export namespace MyNS {
 	export interface CreateApplicationResponse {
 
 		/** Describes the status of the application. */
-		ApplicationInfo?: ApplicationInfo;
+		ApplicationInfo?: ApplicationInfo | null;
 	}
 
 
 	/** Describes the status of the application. */
 	export interface ApplicationInfo {
-		ResourceGroupName?: string;
-		LifeCycle?: string;
-		OpsItemSNSTopicArn?: string;
-		OpsCenterEnabled?: boolean;
-		CWEMonitorEnabled?: boolean;
-		Remarks?: string;
+		ResourceGroupName?: string | null;
+		LifeCycle?: string | null;
+		OpsItemSNSTopicArn?: string | null;
+		OpsCenterEnabled?: boolean | null;
+		CWEMonitorEnabled?: boolean | null;
+		Remarks?: string | null;
 	}
 
 	export interface CreateApplicationRequest {
 		ResourceGroupName: string;
-		OpsCenterEnabled?: boolean;
-		CWEMonitorEnabled?: boolean;
-		OpsItemSNSTopicArn?: string;
-		Tags?: Array<Tag>;
+		OpsCenterEnabled?: boolean | null;
+		CWEMonitorEnabled?: boolean | null;
+		OpsItemSNSTopicArn?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -61,17 +61,17 @@ export namespace MyNS {
 	export interface CreateLogPatternResponse {
 
 		/** An object that defines the log patterns that belongs to a <code>LogPatternSet</code>. */
-		LogPattern?: LogPattern;
-		ResourceGroupName?: string;
+		LogPattern?: LogPattern | null;
+		ResourceGroupName?: string | null;
 	}
 
 
 	/** An object that defines the log patterns that belongs to a <code>LogPatternSet</code>. */
 	export interface LogPattern {
-		PatternSetName?: string;
-		PatternName?: string;
-		Pattern?: string;
-		Rank?: number;
+		PatternSetName?: string | null;
+		PatternName?: string | null;
+		Pattern?: string | null;
+		Rank?: number | null;
 	}
 
 	export interface CreateLogPatternRequest {
@@ -112,7 +112,7 @@ export namespace MyNS {
 	export interface DescribeApplicationResponse {
 
 		/** Describes the status of the application. */
-		ApplicationInfo?: ApplicationInfo;
+		ApplicationInfo?: ApplicationInfo | null;
 	}
 
 	export interface DescribeApplicationRequest {
@@ -122,17 +122,17 @@ export namespace MyNS {
 	export interface DescribeComponentResponse {
 
 		/** Describes a standalone resource or similarly grouped resources that the application is made up of. */
-		ApplicationComponent?: ApplicationComponent;
-		ResourceList?: Array<string>;
+		ApplicationComponent?: ApplicationComponent | null;
+		ResourceList?: Array<string> | null;
 	}
 
 
 	/** Describes a standalone resource or similarly grouped resources that the application is made up of. */
 	export interface ApplicationComponent {
-		ComponentName?: string;
-		ResourceType?: string;
-		Tier?: ApplicationComponentTier;
-		Monitor?: boolean;
+		ComponentName?: string | null;
+		ResourceType?: string | null;
+		Tier?: ApplicationComponentTier | null;
+		Monitor?: boolean | null;
 	}
 
 	export enum ApplicationComponentTier { DEFAULT = 0, DOT_NET_CORE = 1, DOT_NET_WORKER = 2, DOT_NET_WEB = 3, SQL_SERVER = 4 }
@@ -143,9 +143,9 @@ export namespace MyNS {
 	}
 
 	export interface DescribeComponentConfigurationResponse {
-		Monitor?: boolean;
-		Tier?: ApplicationComponentTier;
-		ComponentConfiguration?: string;
+		Monitor?: boolean | null;
+		Tier?: ApplicationComponentTier | null;
+		ComponentConfiguration?: string | null;
 	}
 
 	export interface DescribeComponentConfigurationRequest {
@@ -154,7 +154,7 @@ export namespace MyNS {
 	}
 
 	export interface DescribeComponentConfigurationRecommendationResponse {
-		ComponentConfiguration?: string;
+		ComponentConfiguration?: string | null;
 	}
 
 	export interface DescribeComponentConfigurationRecommendationRequest {
@@ -164,10 +164,10 @@ export namespace MyNS {
 	}
 
 	export interface DescribeLogPatternResponse {
-		ResourceGroupName?: string;
+		ResourceGroupName?: string | null;
 
 		/** An object that defines the log patterns that belongs to a <code>LogPatternSet</code>. */
-		LogPattern?: LogPattern;
+		LogPattern?: LogPattern | null;
 	}
 
 	export interface DescribeLogPatternRequest {
@@ -179,46 +179,46 @@ export namespace MyNS {
 	export interface DescribeObservationResponse {
 
 		/** Describes an anomaly or error with the application. */
-		Observation?: Observation;
+		Observation?: Observation | null;
 	}
 
 
 	/** Describes an anomaly or error with the application. */
 	export interface Observation {
-		Id?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		SourceType?: string;
-		SourceARN?: string;
-		LogGroup?: string;
-		LineTime?: Date;
-		LogText?: string;
-		LogFilter?: ObservationLogFilter;
-		MetricNamespace?: string;
-		MetricName?: string;
-		Unit?: string;
-		Value?: number;
-		CloudWatchEventId?: string;
-		CloudWatchEventSource?: ObservationCloudWatchEventSource;
-		CloudWatchEventDetailType?: string;
-		HealthEventArn?: string;
-		HealthService?: string;
-		HealthEventTypeCode?: string;
-		HealthEventTypeCategory?: string;
-		HealthEventDescription?: string;
-		CodeDeployDeploymentId?: string;
-		CodeDeployDeploymentGroup?: string;
-		CodeDeployState?: string;
-		CodeDeployApplication?: string;
-		CodeDeployInstanceGroupId?: string;
-		Ec2State?: string;
-		XRayFaultPercent?: number;
-		XRayThrottlePercent?: number;
-		XRayErrorPercent?: number;
-		XRayRequestCount?: number;
-		XRayRequestAverageLatency?: number;
-		XRayNodeName?: string;
-		XRayNodeType?: string;
+		Id?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		SourceType?: string | null;
+		SourceARN?: string | null;
+		LogGroup?: string | null;
+		LineTime?: Date | null;
+		LogText?: string | null;
+		LogFilter?: ObservationLogFilter | null;
+		MetricNamespace?: string | null;
+		MetricName?: string | null;
+		Unit?: string | null;
+		Value?: number | null;
+		CloudWatchEventId?: string | null;
+		CloudWatchEventSource?: ObservationCloudWatchEventSource | null;
+		CloudWatchEventDetailType?: string | null;
+		HealthEventArn?: string | null;
+		HealthService?: string | null;
+		HealthEventTypeCode?: string | null;
+		HealthEventTypeCategory?: string | null;
+		HealthEventDescription?: string | null;
+		CodeDeployDeploymentId?: string | null;
+		CodeDeployDeploymentGroup?: string | null;
+		CodeDeployState?: string | null;
+		CodeDeployApplication?: string | null;
+		CodeDeployInstanceGroupId?: string | null;
+		Ec2State?: string | null;
+		XRayFaultPercent?: number | null;
+		XRayThrottlePercent?: number | null;
+		XRayErrorPercent?: number | null;
+		XRayRequestCount?: number | null;
+		XRayRequestAverageLatency?: number | null;
+		XRayNodeName?: string | null;
+		XRayNodeType?: string | null;
 	}
 
 	export enum ObservationLogFilter { ERROR = 0, WARN = 1, INFO = 2 }
@@ -232,22 +232,22 @@ export namespace MyNS {
 	export interface DescribeProblemResponse {
 
 		/** Describes a problem that is detected by correlating observations. */
-		Problem?: Problem;
+		Problem?: Problem | null;
 	}
 
 
 	/** Describes a problem that is detected by correlating observations. */
 	export interface Problem {
-		Id?: string;
-		Title?: string;
-		Insights?: string;
-		Status?: ProblemStatus;
-		AffectedResource?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		SeverityLevel?: ProblemSeverityLevel;
-		ResourceGroupName?: string;
-		Feedback?: Feedback;
+		Id?: string | null;
+		Title?: string | null;
+		Insights?: string | null;
+		Status?: ProblemStatus | null;
+		AffectedResource?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		SeverityLevel?: ProblemSeverityLevel | null;
+		ResourceGroupName?: string | null;
+		Feedback?: Feedback | null;
 	}
 
 	export enum ProblemStatus { IGNORE = 0, RESOLVED = 1, PENDING = 2 }
@@ -264,13 +264,13 @@ export namespace MyNS {
 	export interface DescribeProblemObservationsResponse {
 
 		/** Describes observations related to the problem. */
-		RelatedObservations?: RelatedObservations;
+		RelatedObservations?: RelatedObservations | null;
 	}
 
 
 	/** Describes observations related to the problem. */
 	export interface RelatedObservations {
-		ObservationList?: Array<Observation>;
+		ObservationList?: Array<Observation> | null;
 	}
 
 	export interface DescribeProblemObservationsRequest {
@@ -278,40 +278,40 @@ export namespace MyNS {
 	}
 
 	export interface ListApplicationsResponse {
-		ApplicationInfoList?: Array<ApplicationInfo>;
-		NextToken?: string;
+		ApplicationInfoList?: Array<ApplicationInfo> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListApplicationsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListComponentsResponse {
-		ApplicationComponentList?: Array<ApplicationComponent>;
-		NextToken?: string;
+		ApplicationComponentList?: Array<ApplicationComponent> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListComponentsRequest {
 		ResourceGroupName: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListConfigurationHistoryResponse {
-		EventList?: Array<ConfigurationEvent>;
-		NextToken?: string;
+		EventList?: Array<ConfigurationEvent> | null;
+		NextToken?: string | null;
 	}
 
 
 	/**  The event information.  */
 	export interface ConfigurationEvent {
-		MonitoredResourceARN?: string;
-		EventStatus?: ConfigurationEventEventStatus;
-		EventResourceType?: ConfigurationEventEventResourceType;
-		EventTime?: Date;
-		EventDetail?: string;
-		EventResourceName?: string;
+		MonitoredResourceARN?: string | null;
+		EventStatus?: ConfigurationEventEventStatus | null;
+		EventResourceType?: ConfigurationEventEventResourceType | null;
+		EventTime?: Date | null;
+		EventDetail?: string | null;
+		EventResourceName?: string | null;
 	}
 
 	export enum ConfigurationEventEventStatus { INFO = 0, WARN = 1, ERROR = 2 }
@@ -319,54 +319,54 @@ export namespace MyNS {
 	export enum ConfigurationEventEventResourceType { CLOUDWATCH_ALARM = 0, CLOUDFORMATION = 1, SSM_ASSOCIATION = 2 }
 
 	export interface ListConfigurationHistoryRequest {
-		ResourceGroupName?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		EventStatus?: ConfigurationEventEventStatus;
-		MaxResults?: number;
-		NextToken?: string;
+		ResourceGroupName?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		EventStatus?: ConfigurationEventEventStatus | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListLogPatternSetsResponse {
-		ResourceGroupName?: string;
-		LogPatternSets?: Array<string>;
-		NextToken?: string;
+		ResourceGroupName?: string | null;
+		LogPatternSets?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListLogPatternSetsRequest {
 		ResourceGroupName: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListLogPatternsResponse {
-		ResourceGroupName?: string;
-		LogPatterns?: Array<LogPattern>;
-		NextToken?: string;
+		ResourceGroupName?: string | null;
+		LogPatterns?: Array<LogPattern> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListLogPatternsRequest {
 		ResourceGroupName: string;
-		PatternSetName?: string;
-		MaxResults?: number;
-		NextToken?: string;
+		PatternSetName?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListProblemsResponse {
-		ProblemList?: Array<Problem>;
-		NextToken?: string;
+		ProblemList?: Array<Problem> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListProblemsRequest {
-		ResourceGroupName?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		MaxResults?: number;
-		NextToken?: string;
+		ResourceGroupName?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -395,15 +395,15 @@ export namespace MyNS {
 	export interface UpdateApplicationResponse {
 
 		/** Describes the status of the application. */
-		ApplicationInfo?: ApplicationInfo;
+		ApplicationInfo?: ApplicationInfo | null;
 	}
 
 	export interface UpdateApplicationRequest {
 		ResourceGroupName: string;
-		OpsCenterEnabled?: boolean;
-		CWEMonitorEnabled?: boolean;
-		OpsItemSNSTopicArn?: string;
-		RemoveSNSTopic?: boolean;
+		OpsCenterEnabled?: boolean | null;
+		CWEMonitorEnabled?: boolean | null;
+		OpsItemSNSTopicArn?: string | null;
+		RemoveSNSTopic?: boolean | null;
 	}
 
 	export interface UpdateComponentResponse {
@@ -412,8 +412,8 @@ export namespace MyNS {
 	export interface UpdateComponentRequest {
 		ResourceGroupName: string;
 		ComponentName: string;
-		NewComponentName?: string;
-		ResourceList?: Array<string>;
+		NewComponentName?: string | null;
+		ResourceList?: Array<string> | null;
 	}
 
 	export interface UpdateComponentConfigurationResponse {
@@ -422,24 +422,24 @@ export namespace MyNS {
 	export interface UpdateComponentConfigurationRequest {
 		ResourceGroupName: string;
 		ComponentName: string;
-		Monitor?: boolean;
-		Tier?: ApplicationComponentTier;
-		ComponentConfiguration?: string;
+		Monitor?: boolean | null;
+		Tier?: ApplicationComponentTier | null;
+		ComponentConfiguration?: string | null;
 	}
 
 	export interface UpdateLogPatternResponse {
-		ResourceGroupName?: string;
+		ResourceGroupName?: string | null;
 
 		/** An object that defines the log patterns that belongs to a <code>LogPatternSet</code>. */
-		LogPattern?: LogPattern;
+		LogPattern?: LogPattern | null;
 	}
 
 	export interface UpdateLogPatternRequest {
 		ResourceGroupName: string;
 		PatternSetName: string;
 		PatternName: string;
-		Pattern?: string;
-		Rank?: number;
+		Pattern?: string | null;
+		Rank?: number | null;
 	}
 
 	export enum Tier { DEFAULT = 0, DOT_NET_CORE = 1, DOT_NET_WORKER = 2, DOT_NET_WEB = 3, SQL_SERVER = 4 }

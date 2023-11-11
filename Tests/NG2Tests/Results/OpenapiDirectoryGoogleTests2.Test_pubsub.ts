@@ -10,7 +10,7 @@ export namespace MyNS {
 		 * Required. The acknowledgment ID for the messages being acknowledged that was returned
 		 * by the Pub/Sub system in the `Pull` response. Must not be empty.
 		 */
-		ackIds?: Array<string>;
+		ackIds?: Array<string> | null;
 	}
 
 
@@ -41,7 +41,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -76,13 +76,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -116,26 +116,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -146,7 +146,7 @@ export namespace MyNS {
 		 * See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
 		 * managing labels</a>.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Required. The subscription whose backlog the snapshot retains.
@@ -159,7 +159,7 @@ export namespace MyNS {
 		 * successful completion of the CreateSnapshot request.
 		 * Format is `projects/{project}/subscriptions/{sub}`.
 		 */
-		subscription?: string;
+		subscription?: string | null;
 	}
 
 
@@ -181,7 +181,7 @@ export namespace MyNS {
 		 * Users should ensure that there is a subscription attached to this topic
 		 * since messages published to a topic with no subscriptions are lost.
 		 */
-		deadLetterTopic?: string;
+		deadLetterTopic?: string | null;
 
 		/**
 		 * The maximum number of delivery attempts for any message. The value must be
@@ -194,7 +194,7 @@ export namespace MyNS {
 		 * This field will be honored on a best effort basis.
 		 * If this parameter is 0, a default value of 5 is used.
 		 */
-		maxDeliveryAttempts?: number;
+		maxDeliveryAttempts?: number | null;
 	}
 
 
@@ -225,7 +225,7 @@ export namespace MyNS {
 		 * resource, as well. If `ttl` is not set, the associated resource never
 		 * expires.
 		 */
-		ttl?: string;
+		ttl?: string | null;
 	}
 
 
@@ -236,10 +236,10 @@ export namespace MyNS {
 		 * If not empty, indicates that there may be more snapshot that match the
 		 * request; this value should be passed in a new `ListSnapshotsRequest`.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The resulting snapshots. */
-		snapshots?: Array<Snapshot>;
+		snapshots?: Array<Snapshot> | null;
 	}
 
 
@@ -265,19 +265,19 @@ export namespace MyNS {
 		 * exists -- will expire in 4 days. The service will refuse to create a
 		 * snapshot that would expire in less than 1 hour after creation.
 		 */
-		expireTime?: string;
+		expireTime?: string | null;
 
 		/**
 		 * See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
 		 * managing labels</a>.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The name of the snapshot. */
-		name?: string;
+		name?: string | null;
 
 		/** The name of the topic from which this snapshot is retaining messages. */
-		topic?: string;
+		topic?: string | null;
 	}
 
 
@@ -289,10 +289,10 @@ export namespace MyNS {
 		 * the request; this value should be passed in a new
 		 * `ListSubscriptionsRequest` to get more subscriptions.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The subscriptions that match the request. */
-		subscriptions?: Array<Subscription>;
+		subscriptions?: Array<Subscription> | null;
 	}
 
 
@@ -318,7 +318,7 @@ export namespace MyNS {
 		 * If the subscriber never acknowledges the message, the Pub/Sub
 		 * system will eventually redeliver the message.
 		 */
-		ackDeadlineSeconds?: number;
+		ackDeadlineSeconds?: number | null;
 
 		/**
 		 * Dead lettering is done on a best effort basis. The same message might be
@@ -326,19 +326,19 @@ export namespace MyNS {
 		 * If validation on any of the fields fails at subscription creation/updation,
 		 * the create/update subscription request will fail.
 		 */
-		deadLetterPolicy?: DeadLetterPolicy;
+		deadLetterPolicy?: DeadLetterPolicy | null;
 
 		/**
 		 * A policy that specifies the conditions for resource expiration (i.e.,
 		 * automatic resource deletion).
 		 */
-		expirationPolicy?: ExpirationPolicy;
+		expirationPolicy?: ExpirationPolicy | null;
 
 		/**
 		 * See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
 		 * managing labels</a>.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * How long to retain unacknowledged messages in the subscription's backlog,
@@ -348,7 +348,7 @@ export namespace MyNS {
 		 * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
 		 * minutes.
 		 */
-		messageRetentionDuration?: string;
+		messageRetentionDuration?: string | null;
 
 		/**
 		 * Required. The name of the subscription. It must have the format
@@ -358,10 +358,10 @@ export namespace MyNS {
 		 * plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters
 		 * in length, and it must not start with `"goog"`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Configuration for a push delivery endpoint. */
-		pushConfig?: PushConfig;
+		pushConfig?: PushConfig | null;
 
 		/**
 		 * Indicates whether to retain acknowledged messages. If true, then
@@ -372,7 +372,7 @@ export namespace MyNS {
 		 * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time">
 		 * Seek to a timestamp</a>.
 		 */
-		retainAckedMessages?: boolean;
+		retainAckedMessages?: boolean | null;
 
 		/**
 		 * Required. The name of the topic from which this subscription is receiving messages.
@@ -380,7 +380,7 @@ export namespace MyNS {
 		 * The value of this field will be `_deleted-topic_` if the topic has been
 		 * deleted.
 		 */
-		topic?: string;
+		topic?: string | null;
 	}
 
 
@@ -405,20 +405,20 @@ export namespace MyNS {
 		 * For example:
 		 * <pre><code>attributes { "x-goog-version": "v1" } </code></pre>
 		 */
-		attributes?: {[id: string]: string };
+		attributes?: {[id: string]: string } | null;
 
 		/**
 		 * Contains information needed for generating an
 		 * [OpenID Connect
 		 * token](https://developers.google.com/identity/protocols/OpenIDConnect).
 		 */
-		oidcToken?: OidcToken;
+		oidcToken?: OidcToken | null;
 
 		/**
 		 * A URL locating the endpoint to which messages should be pushed.
 		 * For example, a Webhook endpoint might use "https://example.com/push".
 		 */
-		pushEndpoint?: string;
+		pushEndpoint?: string | null;
 	}
 
 
@@ -437,7 +437,7 @@ export namespace MyNS {
 		 * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
 		 * Note: if not specified, the Push endpoint URL will be used.
 		 */
-		audience?: string;
+		audience?: string | null;
 
 		/**
 		 * [Service account
@@ -446,7 +446,7 @@ export namespace MyNS {
 		 * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
 		 * have the iam.serviceAccounts.actAs permission for the service account.
 		 */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 	}
 
 
@@ -458,10 +458,10 @@ export namespace MyNS {
 		 * the request; this value should be passed in a new
 		 * `ListTopicSnapshotsRequest` to get more snapshots.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The names of the snapshots that match the request. */
-		snapshots?: Array<string>;
+		snapshots?: Array<string> | null;
 	}
 
 
@@ -473,10 +473,10 @@ export namespace MyNS {
 		 * the request; this value should be passed in a new
 		 * `ListTopicSubscriptionsRequest` to get more subscriptions.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The names of the subscriptions that match the request. */
-		subscriptions?: Array<string>;
+		subscriptions?: Array<string> | null;
 	}
 
 
@@ -487,10 +487,10 @@ export namespace MyNS {
 		 * If not empty, indicates that there may be more topics that match the
 		 * request; this value should be passed in a new `ListTopicsRequest`.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The resulting topics. */
-		topics?: Array<Topic>;
+		topics?: Array<Topic> | null;
 	}
 
 
@@ -502,14 +502,14 @@ export namespace MyNS {
 		 * to messages published on this topic.
 		 * The expected format is `projects/locations/keyRings/cryptoKeys/*`.
 		 */
-		kmsKeyName?: string;
+		kmsKeyName?: string | null;
 
 		/**
 		 * See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
 		 * managing labels</a>.
 		 */
-		labels?: {[id: string]: string };
-		messageStoragePolicy?: MessageStoragePolicy;
+		labels?: {[id: string]: string } | null;
+		messageStoragePolicy?: MessageStoragePolicy | null;
 
 		/**
 		 * Required. The name of the topic. It must have the format
@@ -519,7 +519,7 @@ export namespace MyNS {
 		 * signs (`%`). It must be between 3 and 255 characters in length, and it
 		 * must not start with `"goog"`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface MessageStoragePolicy {
@@ -531,7 +531,7 @@ export namespace MyNS {
 		 * routed for storage in one of the allowed regions. An empty list means that
 		 * no regions are allowed, and is not a valid configuration.
 		 */
-		allowedPersistenceRegions?: Array<string>;
+		allowedPersistenceRegions?: Array<string> | null;
 	}
 
 
@@ -548,10 +548,10 @@ export namespace MyNS {
 		 * The minimum deadline you can specify is 0 seconds.
 		 * The maximum deadline you can specify is 600 seconds (10 minutes).
 		 */
-		ackDeadlineSeconds?: number;
+		ackDeadlineSeconds?: number | null;
 
 		/** Required. List of acknowledgment IDs. */
-		ackIds?: Array<string>;
+		ackIds?: Array<string> | null;
 	}
 
 
@@ -559,7 +559,7 @@ export namespace MyNS {
 	export interface ModifyPushConfigRequest {
 
 		/** Configuration for a push delivery endpoint. */
-		pushConfig?: PushConfig;
+		pushConfig?: PushConfig | null;
 	}
 
 
@@ -627,7 +627,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -642,7 +642,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -662,7 +662,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -670,7 +670,7 @@ export namespace MyNS {
 	export interface PublishRequest {
 
 		/** Required. The messages to publish. */
-		messages?: Array<PubsubMessage>;
+		messages?: Array<PubsubMessage> | null;
 	}
 
 
@@ -690,13 +690,13 @@ export namespace MyNS {
 		 * Attributes for this message. If this field is empty, the message must
 		 * contain non-empty data.
 		 */
-		attributes?: {[id: string]: string };
+		attributes?: {[id: string]: string } | null;
 
 		/**
 		 * The message data field. If this field is empty, the message must contain
 		 * at least one attribute.
 		 */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * ID of this message, assigned by the server when the message is published.
@@ -704,14 +704,14 @@ export namespace MyNS {
 		 * subscriber that receives a `PubsubMessage` via a `Pull` call or a push
 		 * delivery. It must not be populated by the publisher in a `Publish` call.
 		 */
-		messageId?: string;
+		messageId?: string | null;
 
 		/**
 		 * The time at which the message was published, populated by the server when
 		 * it receives the `Publish` call. It must not be populated by the
 		 * publisher in a `Publish` call.
 		 */
-		publishTime?: string;
+		publishTime?: string | null;
 	}
 
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 		 * the messages in the request. IDs are guaranteed to be unique within
 		 * the topic.
 		 */
-		messageIds?: Array<string>;
+		messageIds?: Array<string> | null;
 	}
 
 
@@ -735,7 +735,7 @@ export namespace MyNS {
 		 * positive integer. The Pub/Sub system may return fewer than the number
 		 * specified.
 		 */
-		maxMessages?: number;
+		maxMessages?: number | null;
 
 		/**
 		 * Optional. If this field set to true, the system will respond immediately even if
@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * the performance of `Pull` operations. We recommend that users do not set
 		 * this field.
 		 */
-		returnImmediately?: boolean;
+		returnImmediately?: boolean | null;
 	}
 
 
@@ -759,7 +759,7 @@ export namespace MyNS {
 		 * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
 		 * even if there are more messages available in the backlog.
 		 */
-		receivedMessages?: Array<ReceivedMessage>;
+		receivedMessages?: Array<ReceivedMessage> | null;
 	}
 
 
@@ -767,7 +767,7 @@ export namespace MyNS {
 	export interface ReceivedMessage {
 
 		/** This ID can be used to acknowledge the received message. */
-		ackId?: string;
+		ackId?: string | null;
 
 		/**
 		 * Delivery attempt counter is 1 + (the sum of number of NACKs and number of
@@ -784,7 +784,7 @@ export namespace MyNS {
 		 * API might be changed in backward-incompatible ways and is not recommended
 		 * for production use. It is not subject to any SLA or deprecation policy.
 		 */
-		deliveryAttempt?: number;
+		deliveryAttempt?: number | null;
 
 		/**
 		 * A message that is published by publishers and consumed by subscribers. The
@@ -796,7 +796,7 @@ export namespace MyNS {
 		 * <a href="https://cloud.google.com/pubsub/quotas">Quotas and limits</a>
 		 * for more information about message limits.
 		 */
-		message?: PubsubMessage;
+		message?: PubsubMessage | null;
 	}
 
 
@@ -808,7 +808,7 @@ export namespace MyNS {
 		 * the provided subscription.
 		 * Format is `projects/{project}/snapshots/{snap}`.
 		 */
-		snapshot?: string;
+		snapshot?: string | null;
 
 		/**
 		 * The time to seek to.
@@ -823,7 +823,7 @@ export namespace MyNS {
 		 * creation time), only retained messages will be marked as unacknowledged,
 		 * and already-expunged messages will not be restored.
 		 */
-		time?: string;
+		time?: string | null;
 	}
 
 
@@ -892,7 +892,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 	}
 
 
@@ -905,7 +905,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -916,7 +916,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -931,13 +931,13 @@ export namespace MyNS {
 		 * acknowledgment state of messages in an existing subscription to the state
 		 * captured by a snapshot.
 		 */
-		snapshot?: Snapshot;
+		snapshot?: Snapshot | null;
 
 		/**
 		 * Required. Indicates which fields in the provided snapshot to update.
 		 * Must be specified and non-empty.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -945,13 +945,13 @@ export namespace MyNS {
 	export interface UpdateSubscriptionRequest {
 
 		/** A subscription resource. */
-		subscription?: Subscription;
+		subscription?: Subscription | null;
 
 		/**
 		 * Required. Indicates which fields in the provided subscription to update.
 		 * Must be specified and non-empty.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -959,7 +959,7 @@ export namespace MyNS {
 	export interface UpdateTopicRequest {
 
 		/** A topic resource. */
-		topic?: Topic;
+		topic?: Topic | null;
 
 		/**
 		 * Required. Indicates which fields in the provided topic to update. Must be specified
@@ -968,7 +968,7 @@ export namespace MyNS {
 		 * the `topic` provided above, then the updated value is determined by the
 		 * policy configured at the project or organization level.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 	@Injectable()

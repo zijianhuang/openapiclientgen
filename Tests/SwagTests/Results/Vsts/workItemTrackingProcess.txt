@@ -1533,6 +1533,66 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get list of all processes including system and inherited.
+		/// Processes_List {organization}/_apis/work/processes
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ProcessInfo[]> Processes_ListAsync(string organization, Processes_ListExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessInfo[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get list of all processes including system and inherited.
+		/// Processes_List {organization}/_apis/work/processes
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public ProcessInfo[] Processes_List(string organization, Processes_ListExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessInfo[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Creates a process.
 		/// Processes_Create {organization}/_apis/work/processes
 		/// </summary>
@@ -1609,15 +1669,16 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get list of all processes including system and inherited.
-		/// Processes_List {organization}/_apis/work/processes
+		/// Returns a list of all behaviors in the process.
+		/// Behaviors_List {organization}/_apis/work/processes/{processId}/behaviors
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessInfo[]> Processes_ListAsync(string organization, Processes_ListExpand expand, string api_version)
+		public async Task<ProcessBehavior[]> Behaviors_ListAsync(string organization, string processId, Behaviors_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1628,7 +1689,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessInfo[]>(jsonReader);
+				return serializer.Deserialize<ProcessBehavior[]>(jsonReader);
 				}
 			}
 			finally
@@ -1639,15 +1700,16 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get list of all processes including system and inherited.
-		/// Processes_List {organization}/_apis/work/processes
+		/// Returns a list of all behaviors in the process.
+		/// Behaviors_List {organization}/_apis/work/processes/{processId}/behaviors
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessInfo[] Processes_List(string organization, Processes_ListExpand expand, string api_version)
+		public ProcessBehavior[] Behaviors_List(string organization, string processId, Behaviors_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1658,7 +1720,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessInfo[]>(jsonReader);
+				return serializer.Deserialize<ProcessBehavior[]>(jsonReader);
 				}
 			}
 			finally
@@ -1740,120 +1802,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all behaviors in the process.
-		/// Behaviors_List {organization}/_apis/work/processes/{processId}/behaviors
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<ProcessBehavior[]> Behaviors_ListAsync(string organization, string processId, Behaviors_ListExpand expand, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessBehavior[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all behaviors in the process.
-		/// Behaviors_List {organization}/_apis/work/processes/{processId}/behaviors
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public ProcessBehavior[] Behaviors_List(string organization, string processId, Behaviors_ListExpand expand, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessBehavior[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a behavior in the process.
-		/// Behaviors_Delete {organization}/_apis/work/processes/{processId}/behaviors/{behaviorRefName}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="behaviorRefName">The reference name of the behavior</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Behaviors_DeleteAsync(string organization, string processId, string behaviorRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a behavior in the process.
-		/// Behaviors_Delete {organization}/_apis/work/processes/{processId}/behaviors/{behaviorRefName}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="behaviorRefName">The reference name of the behavior</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Behaviors_Delete(string organization, string processId, string behaviorRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -2001,6 +1949,122 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Removes a behavior in the process.
+		/// Behaviors_Delete {organization}/_apis/work/processes/{processId}/behaviors/{behaviorRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="behaviorRefName">The reference name of the behavior</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Behaviors_DeleteAsync(string organization, string processId, string behaviorRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes a behavior in the process.
+		/// Behaviors_Delete {organization}/_apis/work/processes/{processId}/behaviors/{behaviorRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="behaviorRefName">The reference name of the behavior</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Behaviors_Delete(string organization, string processId, string behaviorRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns a list of all work item types in a process.
+		/// Work_Item_Types_List {organization}/_apis/work/processes/{processId}/workitemtypes
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="expand">Flag to determine what properties of work item type to return</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ProcessWorkItemType[]> Work_Item_Types_ListAsync(string organization, string processId, Work_Item_Types_ListExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessWorkItemType[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns a list of all work item types in a process.
+		/// Work_Item_Types_List {organization}/_apis/work/processes/{processId}/workitemtypes
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="expand">Flag to determine what properties of work item type to return</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public ProcessWorkItemType[] Work_Item_Types_List(string organization, string processId, Work_Item_Types_ListExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessWorkItemType[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Creates a work item type in the process.
 		/// Work_Item_Types_Create {organization}/_apis/work/processes/{processId}/workitemtypes
 		/// </summary>
@@ -2077,122 +2141,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Returns a list of all work item types in a process.
-		/// Work_Item_Types_List {organization}/_apis/work/processes/{processId}/workitemtypes
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="expand">Flag to determine what properties of work item type to return</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<ProcessWorkItemType[]> Work_Item_Types_ListAsync(string organization, string processId, Work_Item_Types_ListExpand expand, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessWorkItemType[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all work item types in a process.
-		/// Work_Item_Types_List {organization}/_apis/work/processes/{processId}/workitemtypes
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="expand">Flag to determine what properties of work item type to return</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public ProcessWorkItemType[] Work_Item_Types_List(string organization, string processId, Work_Item_Types_ListExpand expand, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessWorkItemType[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a work itewm type in the process.
-		/// Work_Item_Types_Delete {organization}/_apis/work/processes/{processId}/workitemtypes/{witRefName}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process.</param>
-		/// <param name="witRefName">The reference name of the work item type.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Work_Item_Types_DeleteAsync(string organization, string processId, string witRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a work itewm type in the process.
-		/// Work_Item_Types_Delete {organization}/_apis/work/processes/{processId}/workitemtypes/{witRefName}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process.</param>
-		/// <param name="witRefName">The reference name of the work item type.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Work_Item_Types_Delete(string organization, string processId, string witRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Returns a single work item type in a process.
 		/// Work_Item_Types_Get {organization}/_apis/work/processes/{processId}/workitemtypes/{witRefName}
 		/// </summary>
@@ -2250,6 +2198,58 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProcessWorkItemType>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes a work itewm type in the process.
+		/// Work_Item_Types_Delete {organization}/_apis/work/processes/{processId}/workitemtypes/{witRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Work_Item_Types_DeleteAsync(string organization, string processId, string witRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes a work itewm type in the process.
+		/// Work_Item_Types_Delete {organization}/_apis/work/processes/{processId}/workitemtypes/{witRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Work_Item_Types_Delete(string organization, string processId, string witRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -2337,6 +2337,70 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Returns a list of all fields in a work item type.
+		/// Fields_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/fields
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ProcessWorkItemTypeField[]> Fields_ListAsync(string organization, string processId, string witRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessWorkItemTypeField[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns a list of all fields in a work item type.
+		/// Fields_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/fields
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public ProcessWorkItemTypeField[] Fields_List(string organization, string processId, string witRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessWorkItemTypeField[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Adds a field to a work item type.
 		/// Fields_Add {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/fields
 		/// </summary>
@@ -2410,70 +2474,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all fields in a work item type.
-		/// Fields_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/fields
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process.</param>
-		/// <param name="witRefName">The reference name of the work item type.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<ProcessWorkItemTypeField[]> Fields_ListAsync(string organization, string processId, string witRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessWorkItemTypeField[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all fields in a work item type.
-		/// Fields_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/fields
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process.</param>
-		/// <param name="witRefName">The reference name of the work item type.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public ProcessWorkItemTypeField[] Fields_List(string organization, string processId, string witRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessWorkItemTypeField[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -3791,6 +3791,70 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Returns a list of all rules in the work item type of the process.
+		/// Rules_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ProcessRule[]> Rules_ListAsync(string organization, string processId, string witRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/rules&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessRule[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns a list of all rules in the work item type of the process.
+		/// Rules_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public ProcessRule[] Rules_List(string organization, string processId, string witRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/rules&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessRule[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Adds a rule to work item type in the process.
 		/// Rules_Add {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules
 		/// </summary>
@@ -3864,124 +3928,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all rules in the work item type of the process.
-		/// Rules_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="witRefName">The reference name of the work item type</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<ProcessRule[]> Rules_ListAsync(string organization, string processId, string witRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/rules&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessRule[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all rules in the work item type of the process.
-		/// Rules_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="witRefName">The reference name of the work item type</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public ProcessRule[] Rules_List(string organization, string processId, string witRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/rules&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessRule[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a rule from the work item type in the process.
-		/// Rules_Delete {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules/{ruleId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="witRefName">The reference name of the work item type</param>
-		/// <param name="ruleId">The ID of the rule</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Rules_DeleteAsync(string organization, string processId, string witRefName, string ruleId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a rule from the work item type in the process.
-		/// Rules_Delete {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules/{ruleId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="witRefName">The reference name of the work item type</param>
-		/// <param name="ruleId">The ID of the rule</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Rules_Delete(string organization, string processId, string witRefName, string ruleId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -4133,6 +4079,124 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Removes a rule from the work item type in the process.
+		/// Rules_Delete {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules/{ruleId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="ruleId">The ID of the rule</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Rules_DeleteAsync(string organization, string processId, string witRefName, string ruleId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes a rule from the work item type in the process.
+		/// Rules_Delete {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/rules/{ruleId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="ruleId">The ID of the rule</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Rules_Delete(string organization, string processId, string witRefName, string ruleId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns a list of all state definitions in a work item type of the process.
+		/// States_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WorkItemStateResultModel[]> States_ListAsync(string organization, string processId, string witRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemStateResultModel[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns a list of all state definitions in a work item type of the process.
+		/// States_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WorkItemStateResultModel[] States_List(string organization, string processId, string witRefName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemStateResultModel[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Creates a state definition in the work item type of the process.
 		/// States_Create {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states
 		/// </summary>
@@ -4206,124 +4270,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all state definitions in a work item type of the process.
-		/// States_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="witRefName">The reference name of the work item type</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WorkItemStateResultModel[]> States_ListAsync(string organization, string processId, string witRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemStateResultModel[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all state definitions in a work item type of the process.
-		/// States_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="witRefName">The reference name of the work item type</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WorkItemStateResultModel[] States_List(string organization, string processId, string witRefName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemStateResultModel[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a state definition in the work item type of the process.
-		/// States_Delete {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states/{stateId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">ID of the process</param>
-		/// <param name="witRefName">The reference name of the work item type</param>
-		/// <param name="stateId">ID of the state</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task States_DeleteAsync(string organization, string processId, string witRefName, string stateId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a state definition in the work item type of the process.
-		/// States_Delete {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states/{stateId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">ID of the process</param>
-		/// <param name="witRefName">The reference name of the work item type</param>
-		/// <param name="stateId">ID of the state</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void States_Delete(string organization, string processId, string witRefName, string stateId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -4475,6 +4421,60 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Removes a state definition in the work item type of the process.
+		/// States_Delete {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states/{stateId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="stateId">ID of the state</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task States_DeleteAsync(string organization, string processId, string witRefName, string stateId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes a state definition in the work item type of the process.
+		/// States_Delete {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states/{stateId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="stateId">ID of the state</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void States_Delete(string organization, string processId, string witRefName, string stateId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Updates a given state definition in the work item type of the process.
 		/// States_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states/{stateId}
 		/// </summary>
@@ -4555,6 +4555,70 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Returns a list of all behaviors for the work item type of the process.
+		/// Work_Item_Types_Behaviors_List {organization}/_apis/work/processes/{processId}/workitemtypesbehaviors/{witRefNameForBehaviors}/behaviors
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefNameForBehaviors">Work item type reference name for the behavior</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WorkItemTypeBehavior[]> Work_Item_Types_Behaviors_ListAsync(string organization, string processId, string witRefNameForBehaviors, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemTypeBehavior[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns a list of all behaviors for the work item type of the process.
+		/// Work_Item_Types_Behaviors_List {organization}/_apis/work/processes/{processId}/workitemtypesbehaviors/{witRefNameForBehaviors}/behaviors
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefNameForBehaviors">Work item type reference name for the behavior</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WorkItemTypeBehavior[] Work_Item_Types_Behaviors_List(string organization, string processId, string witRefNameForBehaviors, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemTypeBehavior[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Adds a behavior to the work item type of the process.
 		/// Work_Item_Types_Behaviors_Add {organization}/_apis/work/processes/{processId}/workitemtypesbehaviors/{witRefNameForBehaviors}/behaviors
 		/// </summary>
@@ -4628,70 +4692,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all behaviors for the work item type of the process.
-		/// Work_Item_Types_Behaviors_List {organization}/_apis/work/processes/{processId}/workitemtypesbehaviors/{witRefNameForBehaviors}/behaviors
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="witRefNameForBehaviors">Work item type reference name for the behavior</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WorkItemTypeBehavior[]> Work_Item_Types_Behaviors_ListAsync(string organization, string processId, string witRefNameForBehaviors, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemTypeBehavior[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of all behaviors for the work item type of the process.
-		/// Work_Item_Types_Behaviors_List {organization}/_apis/work/processes/{processId}/workitemtypesbehaviors/{witRefNameForBehaviors}/behaviors
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="processId">The ID of the process</param>
-		/// <param name="witRefNameForBehaviors">Work item type reference name for the behavior</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WorkItemTypeBehavior[] Work_Item_Types_Behaviors_List(string organization, string processId, string witRefNameForBehaviors, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemTypeBehavior[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -4895,6 +4895,66 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get a single process of a specified ID.
+		/// Processes_Get {organization}/_apis/work/processes/{processTypeId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ProcessInfo> Processes_GetAsync(string organization, string processTypeId, Processes_ListExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessInfo>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a single process of a specified ID.
+		/// Processes_Get {organization}/_apis/work/processes/{processTypeId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public ProcessInfo Processes_Get(string organization, string processTypeId, Processes_ListExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ProcessInfo>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Removes a process of a specific ID.
 		/// Processes_Delete {organization}/_apis/work/processes/{processTypeId}
 		/// </summary>
@@ -5017,15 +5077,15 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a single process of a specified ID.
-		/// Processes_Get {organization}/_apis/work/processes/{processTypeId}
+		/// Returns meta data of the picklist.
+		/// Lists_List {organization}/_apis/work/processes/lists
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessInfo> Processes_GetAsync(string organization, string processTypeId, Processes_ListExpand expand, string api_version)
+		public async Task<PickListMetadata[]> Lists_ListAsync(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/lists&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -5036,7 +5096,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessInfo>(jsonReader);
+				return serializer.Deserialize<PickListMetadata[]>(jsonReader);
 				}
 			}
 			finally
@@ -5047,15 +5107,15 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a single process of a specified ID.
-		/// Processes_Get {organization}/_apis/work/processes/{processTypeId}
+		/// Returns meta data of the picklist.
+		/// Lists_List {organization}/_apis/work/processes/lists
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessInfo Processes_Get(string organization, string processTypeId, Processes_ListExpand expand, string api_version)
+		public PickListMetadata[] Lists_List(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/lists&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -5066,7 +5126,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ProcessInfo>(jsonReader);
+				return serializer.Deserialize<PickListMetadata[]>(jsonReader);
 				}
 			}
 			finally
@@ -5148,116 +5208,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns meta data of the picklist.
-		/// Lists_List {organization}/_apis/work/processes/lists
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<PickListMetadata[]> Lists_ListAsync(string organization, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/lists&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<PickListMetadata[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns meta data of the picklist.
-		/// Lists_List {organization}/_apis/work/processes/lists
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public PickListMetadata[] Lists_List(string organization, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/lists&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<PickListMetadata[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a picklist.
-		/// Lists_Delete {organization}/_apis/work/processes/lists/{listId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="listId">The ID of the list</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Lists_DeleteAsync(string organization, string listId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes a picklist.
-		/// Lists_Delete {organization}/_apis/work/processes/lists/{listId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="listId">The ID of the list</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Lists_Delete(string organization, string listId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -5396,6 +5346,56 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes a picklist.
+		/// Lists_Delete {organization}/_apis/work/processes/lists/{listId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="listId">The ID of the list</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Lists_DeleteAsync(string organization, string listId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes a picklist.
+		/// Lists_Delete {organization}/_apis/work/processes/lists/{listId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="listId">The ID of the list</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Lists_Delete(string organization, string listId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
 			}
 			}
 		}

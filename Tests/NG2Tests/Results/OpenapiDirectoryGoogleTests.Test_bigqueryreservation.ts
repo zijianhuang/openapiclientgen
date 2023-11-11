@@ -13,19 +13,19 @@ export namespace MyNS {
 		 * The resource which will use the reservation. E.g.
 		 * projects/myproject, folders/123, organizations/456.
 		 */
-		assignee?: string;
+		assignee?: string | null;
 
 		/** Which type of jobs will use the reservation. */
-		jobType?: AssignmentJobType;
+		jobType?: AssignmentJobType | null;
 
 		/**
 		 * Output only. Name of the resource. E.g.:
 		 * projects/myproject/locations/US/reservations/team1-prod/assignments/123.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. State of the assignment. */
-		state?: AssignmentState;
+		state?: AssignmentState | null;
 	}
 
 	export enum AssignmentJobType { JOB_TYPE_UNSPECIFIED = 0, PIPELINE = 1, QUERY = 2 }
@@ -41,13 +41,13 @@ export namespace MyNS {
 		 * Reservation names have the form
 		 * `projects/{project_id}/locations/{location_id}/bireservation`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Size of a reservation, in bytes. */
-		size?: string;
+		size?: string | null;
 
 		/** Output only. The last update timestamp of a reservation. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -66,7 +66,7 @@ export namespace MyNS {
 		 * Output only. The end of the current commitment period. It is applicable only for ACTIVE
 		 * capacity commitments.
 		 */
-		commitmentEndTime?: string;
+		commitmentEndTime?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -76,29 +76,29 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		failureStatus?: Status;
+		failureStatus?: Status | null;
 
 		/**
 		 * Output only. The resource name of the capacity commitment, e.g.,
 		 * projects/myproject/locations/US/capacityCommitments/123
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Capacity commitment commitment plan. */
-		plan?: CapacityCommitmentPlan;
+		plan?: CapacityCommitmentPlan | null;
 
 		/**
 		 * The plan this capacity commitment is converted to after commitment_end_time
 		 * passes. Once the plan is changed, committed period is extended according to
 		 * commitment plan. Only applicable for ANNUAL commitments.
 		 */
-		renewalPlan?: CapacityCommitmentPlan;
+		renewalPlan?: CapacityCommitmentPlan | null;
 
 		/** Number of slots in this commitment. */
-		slotCount?: string;
+		slotCount?: string | null;
 
 		/** Output only. State of the commitment. */
-		state?: CapacityCommitmentState;
+		state?: CapacityCommitmentState | null;
 	}
 
 
@@ -113,20 +113,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum CapacityCommitmentPlan { COMMITMENT_PLAN_UNSPECIFIED = 0, FLEX = 1, MONTHLY = 2, ANNUAL = 3 }
@@ -144,7 +144,7 @@ export namespace MyNS {
 		 * Resource name of the slot pool that is being created. E.g.,
 		 * projects/myproject/locations/us-central1/reservations/foo/slotPools/123
 		 */
-		slotPool?: string;
+		slotPool?: string | null;
 	}
 
 
@@ -165,13 +165,13 @@ export namespace MyNS {
 	export interface ListAssignmentsResponse {
 
 		/** List of assignments visible to the user. */
-		assignments?: Array<Assignment>;
+		assignments?: Array<Assignment> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -179,13 +179,13 @@ export namespace MyNS {
 	export interface ListCapacityCommitmentsResponse {
 
 		/** List of capacity commitments visible to the user. */
-		capacityCommitments?: Array<CapacityCommitment>;
+		capacityCommitments?: Array<CapacityCommitment> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -193,10 +193,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -211,7 +211,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -221,7 +221,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -229,14 +229,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -248,7 +248,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -259,10 +259,10 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of reservations visible to the user. */
-		reservations?: Array<Reservation>;
+		reservations?: Array<Reservation> | null;
 	}
 
 
@@ -274,13 +274,13 @@ export namespace MyNS {
 		 * reservations within the same admin project. If true, a query using this
 		 * reservation will execute with the slot capacity specified above at most.
 		 */
-		ignoreIdleSlots?: boolean;
+		ignoreIdleSlots?: boolean | null;
 
 		/**
 		 * The resource name of the reservation, e.g.,
 		 * "projects/locations/reservations/team1-prod".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Minimum slots available to this reservation. A slot is a unit of
@@ -292,7 +292,7 @@ export namespace MyNS {
 		 * parent's slot capacity, the request will fail with
 		 * `google.rpc.Code.RESOURCE_EXHAUSTED`.
 		 */
-		slotCapacity?: string;
+		slotCapacity?: string | null;
 	}
 
 
@@ -304,7 +304,7 @@ export namespace MyNS {
 		 * These capacity commitments must exist under admin project and location
 		 * specified in the parent.
 		 */
-		capacityCommitmentIds?: Array<string>;
+		capacityCommitmentIds?: Array<string> | null;
 	}
 
 
@@ -322,7 +322,7 @@ export namespace MyNS {
 		 * The new reservation ID, e.g.:
 		 * projects/myotherproject/locations/US/reservations/team2-prod
 		 */
-		destinationId?: string;
+		destinationId?: string | null;
 	}
 
 
@@ -330,13 +330,13 @@ export namespace MyNS {
 	export interface SearchAssignmentsResponse {
 
 		/** List of assignments visible to the user. */
-		assignments?: Array<Assignment>;
+		assignments?: Array<Assignment> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -344,7 +344,7 @@ export namespace MyNS {
 	export interface SplitCapacityCommitmentRequest {
 
 		/** Number of slots in the capacity commitment after the split. */
-		slotCount?: string;
+		slotCount?: string | null;
 	}
 
 
@@ -360,7 +360,7 @@ export namespace MyNS {
 		 * A capacity commitment resource exists as a child resource of the admin
 		 * project.
 		 */
-		first?: CapacityCommitment;
+		first?: CapacityCommitment | null;
 
 		/**
 		 * Capacity commitment is a way to purchase compute capacity for BigQuery jobs
@@ -371,7 +371,7 @@ export namespace MyNS {
 		 * A capacity commitment resource exists as a child resource of the admin
 		 * project.
 		 */
-		second?: CapacityCommitment;
+		second?: CapacityCommitment | null;
 	}
 
 	@Injectable()

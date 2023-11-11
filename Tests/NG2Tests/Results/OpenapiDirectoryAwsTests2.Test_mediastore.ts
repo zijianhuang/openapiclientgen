@@ -14,26 +14,26 @@ export namespace MyNS {
 
 	/** This section describes operations that you can perform on an AWS Elemental MediaStore container. */
 	export interface Container {
-		Endpoint?: string;
-		CreationTime?: Date;
-		ARN?: string;
-		Name?: string;
-		Status?: ContainerStatus;
-		AccessLoggingEnabled?: boolean;
+		Endpoint?: string | null;
+		CreationTime?: Date | null;
+		ARN?: string | null;
+		Name?: string | null;
+		Status?: ContainerStatus | null;
+		AccessLoggingEnabled?: boolean | null;
 	}
 
 	export enum ContainerStatus { ACTIVE = 0, CREATING = 1, DELETING = 2 }
 
 	export interface CreateContainerInput {
 		ContainerName: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface ContainerInUseException {
@@ -92,11 +92,11 @@ export namespace MyNS {
 	export interface DescribeContainerOutput {
 
 		/** This section describes operations that you can perform on an AWS Elemental MediaStore container. */
-		Container?: Container;
+		Container?: Container | null;
 	}
 
 	export interface DescribeContainerInput {
-		ContainerName?: string;
+		ContainerName?: string | null;
 	}
 
 	export interface GetContainerPolicyOutput {
@@ -122,10 +122,10 @@ export namespace MyNS {
 	/** A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed. */
 	export interface CorsRule {
 		AllowedOrigins: Array<string>;
-		AllowedMethods?: Array<MethodName>;
+		AllowedMethods?: Array<MethodName> | null;
 		AllowedHeaders: Array<string>;
-		MaxAgeSeconds?: number;
-		ExposeHeaders?: Array<string>;
+		MaxAgeSeconds?: number | null;
+		ExposeHeaders?: Array<string> | null;
 	}
 
 	export enum MethodName { PUT = 0, GET = 1, DELETE = 2, HEAD = 3 }
@@ -155,7 +155,7 @@ export namespace MyNS {
 	/** <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p> */
 	export interface MetricPolicy {
 		ContainerLevelMetrics: MetricPolicyContainerLevelMetrics;
-		MetricPolicyRules?: Array<MetricPolicyRule>;
+		MetricPolicyRules?: Array<MetricPolicyRule> | null;
 	}
 
 	export enum MetricPolicyContainerLevelMetrics { ENABLED = 0, DISABLED = 1 }
@@ -173,16 +173,16 @@ export namespace MyNS {
 
 	export interface ListContainersOutput {
 		Containers: Array<Container>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListContainersInput {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceInput {

@@ -17,8 +17,8 @@ export namespace MyNS {
 
 	/** <p>A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following:</p> <ul> <li> <p> <code>AddTagsToResource</code> </p> </li> <li> <p> <code>ListTagsForResource</code> </p> </li> <li> <p> <code>RemoveTagsFromResource</code> </p> </li> </ul> */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface ResourceNotFoundFault {
@@ -29,25 +29,25 @@ export namespace MyNS {
 	export interface ApplyPendingMaintenanceActionResponse {
 
 		/** Identifies an AWS DMS resource and any pending actions for it. */
-		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions;
+		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions | null;
 	}
 
 
 	/** Identifies an AWS DMS resource and any pending actions for it. */
 	export interface ResourcePendingMaintenanceActions {
-		ResourceIdentifier?: string;
-		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction>;
+		ResourceIdentifier?: string | null;
+		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction> | null;
 	}
 
 
 	/** Describes a maintenance action pending for an AWS DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation. */
 	export interface PendingMaintenanceAction {
-		Action?: string;
-		AutoAppliedAfterDate?: Date;
-		ForcedApplyDate?: Date;
-		OptInStatus?: string;
-		CurrentApplyDate?: Date;
-		Description?: string;
+		Action?: string | null;
+		AutoAppliedAfterDate?: Date | null;
+		ForcedApplyDate?: Date | null;
+		OptInStatus?: string | null;
+		CurrentApplyDate?: Date | null;
+		Description?: string | null;
 	}
 
 
@@ -63,56 +63,56 @@ export namespace MyNS {
 	export interface CreateEndpointResponse {
 
 		/** <p>Describes an endpoint of a database instance in response to operations such as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpointTypes</code> </p> </li> <li> <p> <code>ModifyEndpoint</code> </p> </li> </ul> */
-		Endpoint?: Endpoint;
+		Endpoint?: Endpoint | null;
 	}
 
 
 	/** <p>Describes an endpoint of a database instance in response to operations such as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpointTypes</code> </p> </li> <li> <p> <code>ModifyEndpoint</code> </p> </li> </ul> */
 	export interface Endpoint {
-		EndpointIdentifier?: string;
-		EndpointType?: EndpointEndpointType;
-		EngineName?: string;
-		EngineDisplayName?: string;
-		Username?: string;
-		ServerName?: string;
-		Port?: number;
-		DatabaseName?: string;
-		ExtraConnectionAttributes?: string;
-		Status?: string;
-		KmsKeyId?: string;
-		EndpointArn?: string;
-		CertificateArn?: string;
-		SslMode?: EndpointSslMode;
-		ServiceAccessRoleArn?: string;
-		ExternalTableDefinition?: string;
-		ExternalId?: string;
+		EndpointIdentifier?: string | null;
+		EndpointType?: EndpointEndpointType | null;
+		EngineName?: string | null;
+		EngineDisplayName?: string | null;
+		Username?: string | null;
+		ServerName?: string | null;
+		Port?: number | null;
+		DatabaseName?: string | null;
+		ExtraConnectionAttributes?: string | null;
+		Status?: string | null;
+		KmsKeyId?: string | null;
+		EndpointArn?: string | null;
+		CertificateArn?: string | null;
+		SslMode?: EndpointSslMode | null;
+		ServiceAccessRoleArn?: string | null;
+		ExternalTableDefinition?: string | null;
+		ExternalId?: string | null;
 
 		/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
-		DynamoDbSettings?: DynamoDbSettings;
+		DynamoDbSettings?: DynamoDbSettings | null;
 
 		/** Settings for exporting data to Amazon S3. */
-		S3Settings?: S3Settings;
+		S3Settings?: S3Settings | null;
 
 		/** The settings in JSON format for the DMS Transfer type source endpoint. */
-		DmsTransferSettings?: DmsTransferSettings;
+		DmsTransferSettings?: DmsTransferSettings | null;
 
 		/** Provides information that defines a MongoDB endpoint. */
-		MongoDbSettings?: MongoDbSettings;
+		MongoDbSettings?: MongoDbSettings | null;
 
 		/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KinesisSettings?: KinesisSettings;
+		KinesisSettings?: KinesisSettings | null;
 
 		/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KafkaSettings?: KafkaSettings;
+		KafkaSettings?: KafkaSettings | null;
 
 		/** Provides information that defines an Elasticsearch endpoint. */
-		ElasticsearchSettings?: ElasticsearchSettings;
+		ElasticsearchSettings?: ElasticsearchSettings | null;
 
 		/** Provides information that defines an Amazon Neptune endpoint. */
-		NeptuneSettings?: NeptuneSettings;
+		NeptuneSettings?: NeptuneSettings | null;
 
 		/** Provides information that defines an Amazon Redshift endpoint. */
-		RedshiftSettings?: RedshiftSettings;
+		RedshiftSettings?: RedshiftSettings | null;
 	}
 
 	export enum EndpointEndpointType { source = 0, target = 1 }
@@ -128,27 +128,27 @@ export namespace MyNS {
 
 	/** Settings for exporting data to Amazon S3.  */
 	export interface S3Settings {
-		ServiceAccessRoleArn?: string;
-		ExternalTableDefinition?: string;
-		CsvRowDelimiter?: string;
-		CsvDelimiter?: string;
-		BucketFolder?: string;
-		BucketName?: string;
-		CompressionType?: S3SettingsCompressionType;
-		EncryptionMode?: S3SettingsEncryptionMode;
-		ServerSideEncryptionKmsKeyId?: string;
-		DataFormat?: S3SettingsDataFormat;
-		EncodingType?: S3SettingsEncodingType;
-		DictPageSizeLimit?: number;
-		RowGroupLength?: number;
-		DataPageSize?: number;
-		ParquetVersion?: S3SettingsParquetVersion;
-		EnableStatistics?: boolean;
-		IncludeOpForFullLoad?: boolean;
-		CdcInsertsOnly?: boolean;
-		TimestampColumnName?: string;
-		ParquetTimestampInMillisecond?: boolean;
-		CdcInsertsAndUpdates?: boolean;
+		ServiceAccessRoleArn?: string | null;
+		ExternalTableDefinition?: string | null;
+		CsvRowDelimiter?: string | null;
+		CsvDelimiter?: string | null;
+		BucketFolder?: string | null;
+		BucketName?: string | null;
+		CompressionType?: S3SettingsCompressionType | null;
+		EncryptionMode?: S3SettingsEncryptionMode | null;
+		ServerSideEncryptionKmsKeyId?: string | null;
+		DataFormat?: S3SettingsDataFormat | null;
+		EncodingType?: S3SettingsEncodingType | null;
+		DictPageSizeLimit?: number | null;
+		RowGroupLength?: number | null;
+		DataPageSize?: number | null;
+		ParquetVersion?: S3SettingsParquetVersion | null;
+		EnableStatistics?: boolean | null;
+		IncludeOpForFullLoad?: boolean | null;
+		CdcInsertsOnly?: boolean | null;
+		TimestampColumnName?: string | null;
+		ParquetTimestampInMillisecond?: boolean | null;
+		CdcInsertsAndUpdates?: boolean | null;
 	}
 
 	export enum S3SettingsCompressionType { none = 0, gzip = 1 }
@@ -164,25 +164,25 @@ export namespace MyNS {
 
 	/**  The settings in JSON format for the DMS Transfer type source endpoint.  */
 	export interface DmsTransferSettings {
-		ServiceAccessRoleArn?: string;
-		BucketName?: string;
+		ServiceAccessRoleArn?: string | null;
+		BucketName?: string | null;
 	}
 
 
 	/** Provides information that defines a MongoDB endpoint. */
 	export interface MongoDbSettings {
-		Username?: string;
-		Password?: string;
-		ServerName?: string;
-		Port?: number;
-		DatabaseName?: string;
-		AuthType?: MongoDbSettingsAuthType;
-		AuthMechanism?: MongoDbSettingsAuthMechanism;
-		NestingLevel?: MongoDbSettingsNestingLevel;
-		ExtractDocId?: string;
-		DocsToInvestigate?: string;
-		AuthSource?: string;
-		KmsKeyId?: string;
+		Username?: string | null;
+		Password?: string | null;
+		ServerName?: string | null;
+		Port?: number | null;
+		DatabaseName?: string | null;
+		AuthType?: MongoDbSettingsAuthType | null;
+		AuthMechanism?: MongoDbSettingsAuthMechanism | null;
+		NestingLevel?: MongoDbSettingsNestingLevel | null;
+		ExtractDocId?: string | null;
+		DocsToInvestigate?: string | null;
+		AuthSource?: string | null;
+		KmsKeyId?: string | null;
 	}
 
 	export enum MongoDbSettingsAuthType { no = 0, password = 1 }
@@ -194,14 +194,14 @@ export namespace MyNS {
 
 	/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
 	export interface KinesisSettings {
-		StreamArn?: string;
-		MessageFormat?: KinesisSettingsMessageFormat;
-		ServiceAccessRoleArn?: string;
-		IncludeTransactionDetails?: boolean;
-		IncludePartitionValue?: boolean;
-		PartitionIncludeSchemaTable?: boolean;
-		IncludeTableAlterOperations?: boolean;
-		IncludeControlDetails?: boolean;
+		StreamArn?: string | null;
+		MessageFormat?: KinesisSettingsMessageFormat | null;
+		ServiceAccessRoleArn?: string | null;
+		IncludeTransactionDetails?: boolean | null;
+		IncludePartitionValue?: boolean | null;
+		PartitionIncludeSchemaTable?: boolean | null;
+		IncludeTableAlterOperations?: boolean | null;
+		IncludeControlDetails?: boolean | null;
 	}
 
 	export enum KinesisSettingsMessageFormat { json = 0, json_unformatted = 1 }
@@ -209,8 +209,8 @@ export namespace MyNS {
 
 	/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
 	export interface KafkaSettings {
-		Broker?: string;
-		Topic?: string;
+		Broker?: string | null;
+		Topic?: string | null;
 	}
 
 
@@ -218,50 +218,50 @@ export namespace MyNS {
 	export interface ElasticsearchSettings {
 		ServiceAccessRoleArn: string;
 		EndpointUri: string;
-		FullLoadErrorPercentage?: number;
-		ErrorRetryDuration?: number;
+		FullLoadErrorPercentage?: number | null;
+		ErrorRetryDuration?: number | null;
 	}
 
 
 	/** Provides information that defines an Amazon Neptune endpoint. */
 	export interface NeptuneSettings {
-		ServiceAccessRoleArn?: string;
+		ServiceAccessRoleArn?: string | null;
 		S3BucketName: string;
 		S3BucketFolder: string;
-		ErrorRetryDuration?: number;
-		MaxFileSize?: number;
-		MaxRetryCount?: number;
-		IamAuthEnabled?: boolean;
+		ErrorRetryDuration?: number | null;
+		MaxFileSize?: number | null;
+		MaxRetryCount?: number | null;
+		IamAuthEnabled?: boolean | null;
 	}
 
 
 	/** Provides information that defines an Amazon Redshift endpoint. */
 	export interface RedshiftSettings {
-		AcceptAnyDate?: boolean;
-		AfterConnectScript?: string;
-		BucketFolder?: string;
-		BucketName?: string;
-		ConnectionTimeout?: number;
-		DatabaseName?: string;
-		DateFormat?: string;
-		EmptyAsNull?: boolean;
-		EncryptionMode?: RedshiftSettingsEncryptionMode;
-		FileTransferUploadStreams?: number;
-		LoadTimeout?: number;
-		MaxFileSize?: number;
-		Password?: string;
-		Port?: number;
-		RemoveQuotes?: boolean;
-		ReplaceInvalidChars?: string;
-		ReplaceChars?: string;
-		ServerName?: string;
-		ServiceAccessRoleArn?: string;
-		ServerSideEncryptionKmsKeyId?: string;
-		TimeFormat?: string;
-		TrimBlanks?: boolean;
-		TruncateColumns?: boolean;
-		Username?: string;
-		WriteBufferSize?: number;
+		AcceptAnyDate?: boolean | null;
+		AfterConnectScript?: string | null;
+		BucketFolder?: string | null;
+		BucketName?: string | null;
+		ConnectionTimeout?: number | null;
+		DatabaseName?: string | null;
+		DateFormat?: string | null;
+		EmptyAsNull?: boolean | null;
+		EncryptionMode?: RedshiftSettingsEncryptionMode | null;
+		FileTransferUploadStreams?: number | null;
+		LoadTimeout?: number | null;
+		MaxFileSize?: number | null;
+		Password?: string | null;
+		Port?: number | null;
+		RemoveQuotes?: boolean | null;
+		ReplaceInvalidChars?: string | null;
+		ReplaceChars?: string | null;
+		ServerName?: string | null;
+		ServiceAccessRoleArn?: string | null;
+		ServerSideEncryptionKmsKeyId?: string | null;
+		TimeFormat?: string | null;
+		TrimBlanks?: boolean | null;
+		TruncateColumns?: boolean | null;
+		Username?: string | null;
+		WriteBufferSize?: number | null;
 	}
 
 	export enum RedshiftSettingsEncryptionMode { sse_s3 = 0, sse_kms = 1 }
@@ -272,45 +272,45 @@ export namespace MyNS {
 		EndpointIdentifier: string;
 		EndpointType: EndpointEndpointType;
 		EngineName: string;
-		Username?: string;
-		Password?: string;
-		ServerName?: string;
-		Port?: number;
-		DatabaseName?: string;
-		ExtraConnectionAttributes?: string;
-		KmsKeyId?: string;
-		Tags?: Array<Tag>;
-		CertificateArn?: string;
-		SslMode?: CreateEndpointMessageSslMode;
-		ServiceAccessRoleArn?: string;
-		ExternalTableDefinition?: string;
+		Username?: string | null;
+		Password?: string | null;
+		ServerName?: string | null;
+		Port?: number | null;
+		DatabaseName?: string | null;
+		ExtraConnectionAttributes?: string | null;
+		KmsKeyId?: string | null;
+		Tags?: Array<Tag> | null;
+		CertificateArn?: string | null;
+		SslMode?: CreateEndpointMessageSslMode | null;
+		ServiceAccessRoleArn?: string | null;
+		ExternalTableDefinition?: string | null;
 
 		/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
-		DynamoDbSettings?: DynamoDbSettings;
+		DynamoDbSettings?: DynamoDbSettings | null;
 
 		/** Settings for exporting data to Amazon S3. */
-		S3Settings?: S3Settings;
+		S3Settings?: S3Settings | null;
 
 		/** The settings in JSON format for the DMS Transfer type source endpoint. */
-		DmsTransferSettings?: DmsTransferSettings;
+		DmsTransferSettings?: DmsTransferSettings | null;
 
 		/** Provides information that defines a MongoDB endpoint. */
-		MongoDbSettings?: MongoDbSettings;
+		MongoDbSettings?: MongoDbSettings | null;
 
 		/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KinesisSettings?: KinesisSettings;
+		KinesisSettings?: KinesisSettings | null;
 
 		/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KafkaSettings?: KafkaSettings;
+		KafkaSettings?: KafkaSettings | null;
 
 		/** Provides information that defines an Elasticsearch endpoint. */
-		ElasticsearchSettings?: ElasticsearchSettings;
+		ElasticsearchSettings?: ElasticsearchSettings | null;
 
 		/** Provides information that defines an Amazon Neptune endpoint. */
-		NeptuneSettings?: NeptuneSettings;
+		NeptuneSettings?: NeptuneSettings | null;
 
 		/** Provides information that defines an Amazon Redshift endpoint. */
-		RedshiftSettings?: RedshiftSettings;
+		RedshiftSettings?: RedshiftSettings | null;
 	}
 
 	export enum CreateEndpointMessageSslMode { none = 0, require = 1, verify_ca = 2, verify_full = 3 }
@@ -335,21 +335,21 @@ export namespace MyNS {
 	export interface CreateEventSubscriptionResponse {
 
 		/** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 
 	/** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation. */
 	export interface EventSubscription {
-		CustomerAwsId?: string;
-		CustSubscriptionId?: string;
-		SnsTopicArn?: string;
-		Status?: string;
-		SubscriptionCreationTime?: string;
-		SourceType?: string;
-		SourceIdsList?: Array<string>;
-		EventCategoriesList?: Array<string>;
-		Enabled?: boolean;
+		CustomerAwsId?: string | null;
+		CustSubscriptionId?: string | null;
+		SnsTopicArn?: string | null;
+		Status?: string | null;
+		SubscriptionCreationTime?: string | null;
+		SourceType?: string | null;
+		SourceIdsList?: Array<string> | null;
+		EventCategoriesList?: Array<string> | null;
+		Enabled?: boolean | null;
 	}
 
 
@@ -357,11 +357,11 @@ export namespace MyNS {
 	export interface CreateEventSubscriptionMessage {
 		SubscriptionName: string;
 		SnsTopicArn: string;
-		SourceType?: string;
-		EventCategories?: Array<string>;
-		SourceIds?: Array<string>;
-		Enabled?: boolean;
-		Tags?: Array<Tag>;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
+		SourceIds?: Array<string> | null;
+		Enabled?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface SNSInvalidTopicFault {
@@ -390,100 +390,100 @@ export namespace MyNS {
 	export interface CreateReplicationInstanceResponse {
 
 		/** Provides information that defines a replication instance. */
-		ReplicationInstance?: ReplicationInstance;
+		ReplicationInstance?: ReplicationInstance | null;
 	}
 
 
 	/** Provides information that defines a replication instance. */
 	export interface ReplicationInstance {
-		ReplicationInstanceIdentifier?: string;
-		ReplicationInstanceClass?: string;
-		ReplicationInstanceStatus?: string;
-		AllocatedStorage?: number;
-		InstanceCreateTime?: Date;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
-		AvailabilityZone?: string;
+		ReplicationInstanceIdentifier?: string | null;
+		ReplicationInstanceClass?: string | null;
+		ReplicationInstanceStatus?: string | null;
+		AllocatedStorage?: number | null;
+		InstanceCreateTime?: Date | null;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
+		AvailabilityZone?: string | null;
 
 		/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
-		ReplicationSubnetGroup?: ReplicationSubnetGroup;
-		PreferredMaintenanceWindow?: string;
+		ReplicationSubnetGroup?: ReplicationSubnetGroup | null;
+		PreferredMaintenanceWindow?: string | null;
 
 		/** Provides information about the values of pending modifications to a replication instance. This data type is an object of the <code>ReplicationInstance</code> user-defined data type. */
-		PendingModifiedValues?: ReplicationPendingModifiedValues;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		KmsKeyId?: string;
-		ReplicationInstanceArn?: string;
-		ReplicationInstancePublicIpAddress?: string;
-		ReplicationInstancePrivateIpAddress?: string;
-		ReplicationInstancePublicIpAddresses?: Array<string>;
-		ReplicationInstancePrivateIpAddresses?: Array<string>;
-		PubliclyAccessible?: boolean;
-		SecondaryAvailabilityZone?: string;
-		FreeUntil?: Date;
-		DnsNameServers?: string;
+		PendingModifiedValues?: ReplicationPendingModifiedValues | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		KmsKeyId?: string | null;
+		ReplicationInstanceArn?: string | null;
+		ReplicationInstancePublicIpAddress?: string | null;
+		ReplicationInstancePrivateIpAddress?: string | null;
+		ReplicationInstancePublicIpAddresses?: Array<string> | null;
+		ReplicationInstancePrivateIpAddresses?: Array<string> | null;
+		PubliclyAccessible?: boolean | null;
+		SecondaryAvailabilityZone?: string | null;
+		FreeUntil?: Date | null;
+		DnsNameServers?: string | null;
 	}
 
 
 	/** Describes status of a security group associated with the virtual private cloud hosting your replication and DB instances. */
 	export interface VpcSecurityGroupMembership {
-		VpcSecurityGroupId?: string;
-		Status?: string;
+		VpcSecurityGroupId?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
 	export interface ReplicationSubnetGroup {
-		ReplicationSubnetGroupIdentifier?: string;
-		ReplicationSubnetGroupDescription?: string;
-		VpcId?: string;
-		SubnetGroupStatus?: string;
-		Subnets?: Array<Subnet>;
+		ReplicationSubnetGroupIdentifier?: string | null;
+		ReplicationSubnetGroupDescription?: string | null;
+		VpcId?: string | null;
+		SubnetGroupStatus?: string | null;
+		Subnets?: Array<Subnet> | null;
 	}
 
 
 	/** In response to a request by the <code>DescribeReplicationSubnetGroup</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status. */
 	export interface Subnet {
-		SubnetIdentifier?: string;
+		SubnetIdentifier?: string | null;
 
 		/** The name of the Availability Zone for use during database migration. */
-		SubnetAvailabilityZone?: AvailabilityZone;
-		SubnetStatus?: string;
+		SubnetAvailabilityZone?: AvailabilityZone | null;
+		SubnetStatus?: string | null;
 	}
 
 
 	/** The name of the Availability Zone for use during database migration. */
 	export interface AvailabilityZone {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/** Provides information about the values of pending modifications to a replication instance. This data type is an object of the <code>ReplicationInstance</code> user-defined data type.  */
 	export interface ReplicationPendingModifiedValues {
-		ReplicationInstanceClass?: string;
-		AllocatedStorage?: number;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
+		ReplicationInstanceClass?: string | null;
+		AllocatedStorage?: number | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateReplicationInstanceMessage {
 		ReplicationInstanceIdentifier: string;
-		AllocatedStorage?: number;
+		AllocatedStorage?: number | null;
 		ReplicationInstanceClass: string;
-		VpcSecurityGroupIds?: Array<string>;
-		AvailabilityZone?: string;
-		ReplicationSubnetGroupIdentifier?: string;
-		PreferredMaintenanceWindow?: string;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		Tags?: Array<Tag>;
-		KmsKeyId?: string;
-		PubliclyAccessible?: boolean;
-		DnsNameServers?: string;
+		VpcSecurityGroupIds?: Array<string> | null;
+		AvailabilityZone?: string | null;
+		ReplicationSubnetGroupIdentifier?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		Tags?: Array<Tag> | null;
+		KmsKeyId?: string | null;
+		PubliclyAccessible?: boolean | null;
+		DnsNameServers?: string | null;
 	}
 
 	export interface InsufficientResourceCapacityFault {
@@ -503,7 +503,7 @@ export namespace MyNS {
 	export interface CreateReplicationSubnetGroupResponse {
 
 		/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
-		ReplicationSubnetGroup?: ReplicationSubnetGroup;
+		ReplicationSubnetGroup?: ReplicationSubnetGroup | null;
 	}
 
 
@@ -512,7 +512,7 @@ export namespace MyNS {
 		ReplicationSubnetGroupIdentifier: string;
 		ReplicationSubnetGroupDescription: string;
 		SubnetIds: Array<string>;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -520,32 +520,32 @@ export namespace MyNS {
 	export interface CreateReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask;
+		ReplicationTask?: ReplicationTask | null;
 	}
 
 
 	/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
 	export interface ReplicationTask {
-		ReplicationTaskIdentifier?: string;
-		SourceEndpointArn?: string;
-		TargetEndpointArn?: string;
-		ReplicationInstanceArn?: string;
-		MigrationType?: ReplicationTaskMigrationType;
-		TableMappings?: string;
-		ReplicationTaskSettings?: string;
-		Status?: string;
-		LastFailureMessage?: string;
-		StopReason?: string;
-		ReplicationTaskCreationDate?: Date;
-		ReplicationTaskStartDate?: Date;
-		CdcStartPosition?: string;
-		CdcStopPosition?: string;
-		RecoveryCheckpoint?: string;
-		ReplicationTaskArn?: string;
+		ReplicationTaskIdentifier?: string | null;
+		SourceEndpointArn?: string | null;
+		TargetEndpointArn?: string | null;
+		ReplicationInstanceArn?: string | null;
+		MigrationType?: ReplicationTaskMigrationType | null;
+		TableMappings?: string | null;
+		ReplicationTaskSettings?: string | null;
+		Status?: string | null;
+		LastFailureMessage?: string | null;
+		StopReason?: string | null;
+		ReplicationTaskCreationDate?: Date | null;
+		ReplicationTaskStartDate?: Date | null;
+		CdcStartPosition?: string | null;
+		CdcStopPosition?: string | null;
+		RecoveryCheckpoint?: string | null;
+		ReplicationTaskArn?: string | null;
 
 		/** In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task. */
-		ReplicationTaskStats?: ReplicationTaskStats;
-		TaskData?: string;
+		ReplicationTaskStats?: ReplicationTaskStats | null;
+		TaskData?: string | null;
 	}
 
 	export enum ReplicationTaskMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
@@ -553,17 +553,17 @@ export namespace MyNS {
 
 	/** In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task. */
 	export interface ReplicationTaskStats {
-		FullLoadProgressPercent?: number;
-		ElapsedTimeMillis?: number;
-		TablesLoaded?: number;
-		TablesLoading?: number;
-		TablesQueued?: number;
-		TablesErrored?: number;
-		FreshStartDate?: Date;
-		StartDate?: Date;
-		StopDate?: Date;
-		FullLoadStartDate?: Date;
-		FullLoadFinishDate?: Date;
+		FullLoadProgressPercent?: number | null;
+		ElapsedTimeMillis?: number | null;
+		TablesLoaded?: number | null;
+		TablesLoading?: number | null;
+		TablesQueued?: number | null;
+		TablesErrored?: number | null;
+		FreshStartDate?: Date | null;
+		StartDate?: Date | null;
+		StopDate?: Date | null;
+		FullLoadStartDate?: Date | null;
+		FullLoadFinishDate?: Date | null;
 	}
 
 
@@ -575,12 +575,12 @@ export namespace MyNS {
 		ReplicationInstanceArn: string;
 		MigrationType: CreateReplicationTaskMessageMigrationType;
 		TableMappings: string;
-		ReplicationTaskSettings?: string;
-		CdcStartTime?: Date;
-		CdcStartPosition?: string;
-		CdcStopPosition?: string;
-		Tags?: Array<Tag>;
-		TaskData?: string;
+		ReplicationTaskSettings?: string | null;
+		CdcStartTime?: Date | null;
+		CdcStartPosition?: string | null;
+		CdcStopPosition?: string | null;
+		Tags?: Array<Tag> | null;
+		TaskData?: string | null;
 	}
 
 	export enum CreateReplicationTaskMessageMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
@@ -588,22 +588,22 @@ export namespace MyNS {
 	export interface DeleteCertificateResponse {
 
 		/** The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance. */
-		Certificate?: Certificate;
+		Certificate?: Certificate | null;
 	}
 
 
 	/** The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance. */
 	export interface Certificate {
-		CertificateIdentifier?: string;
-		CertificateCreationDate?: Date;
-		CertificatePem?: string;
-		CertificateWallet?: string;
-		CertificateArn?: string;
-		CertificateOwner?: string;
-		ValidFromDate?: Date;
-		ValidToDate?: Date;
-		SigningAlgorithm?: string;
-		KeyLength?: number;
+		CertificateIdentifier?: string | null;
+		CertificateCreationDate?: Date | null;
+		CertificatePem?: string | null;
+		CertificateWallet?: string | null;
+		CertificateArn?: string | null;
+		CertificateOwner?: string | null;
+		ValidFromDate?: Date | null;
+		ValidToDate?: Date | null;
+		SigningAlgorithm?: string | null;
+		KeyLength?: number | null;
 	}
 
 	export interface DeleteCertificateMessage {
@@ -615,18 +615,18 @@ export namespace MyNS {
 	export interface DeleteConnectionResponse {
 
 		/** Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued. */
-		Connection?: Connection;
+		Connection?: Connection | null;
 	}
 
 
 	/** Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued. */
 	export interface Connection {
-		ReplicationInstanceArn?: string;
-		EndpointArn?: string;
-		Status?: string;
-		LastFailureMessage?: string;
-		EndpointIdentifier?: string;
-		ReplicationInstanceIdentifier?: string;
+		ReplicationInstanceArn?: string | null;
+		EndpointArn?: string | null;
+		Status?: string | null;
+		LastFailureMessage?: string | null;
+		EndpointIdentifier?: string | null;
+		ReplicationInstanceIdentifier?: string | null;
 	}
 
 
@@ -641,7 +641,7 @@ export namespace MyNS {
 	export interface DeleteEndpointResponse {
 
 		/** <p>Describes an endpoint of a database instance in response to operations such as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpointTypes</code> </p> </li> <li> <p> <code>ModifyEndpoint</code> </p> </li> </ul> */
-		Endpoint?: Endpoint;
+		Endpoint?: Endpoint | null;
 	}
 
 
@@ -655,7 +655,7 @@ export namespace MyNS {
 	export interface DeleteEventSubscriptionResponse {
 
 		/** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 
@@ -669,7 +669,7 @@ export namespace MyNS {
 	export interface DeleteReplicationInstanceResponse {
 
 		/** Provides information that defines a replication instance. */
-		ReplicationInstance?: ReplicationInstance;
+		ReplicationInstance?: ReplicationInstance | null;
 	}
 
 
@@ -694,7 +694,7 @@ export namespace MyNS {
 	export interface DeleteReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask;
+		ReplicationTask?: ReplicationTask | null;
 	}
 
 
@@ -706,16 +706,16 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeAccountAttributesResponse {
-		AccountQuotas?: Array<AccountQuota>;
-		UniqueAccountIdentifier?: string;
+		AccountQuotas?: Array<AccountQuota> | null;
+		UniqueAccountIdentifier?: string | null;
 	}
 
 
 	/** Describes a quota for an AWS account, for example, the number of replication instances allowed. */
 	export interface AccountQuota {
-		AccountQuotaName?: string;
-		Used?: number;
-		Max?: number;
+		AccountQuotaName?: string | null;
+		Used?: number | null;
+		Max?: number | null;
 	}
 
 
@@ -724,14 +724,14 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCertificatesResponse {
-		Marker?: string;
-		Certificates?: Array<Certificate>;
+		Marker?: string | null;
+		Certificates?: Array<Certificate> | null;
 	}
 
 	export interface DescribeCertificatesMessage {
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
@@ -744,109 +744,109 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeConnectionsResponse {
-		Marker?: string;
-		Connections?: Array<Connection>;
+		Marker?: string | null;
+		Connections?: Array<Connection> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeConnectionsMessage {
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEndpointTypesResponse {
-		Marker?: string;
-		SupportedEndpointTypes?: Array<SupportedEndpointType>;
+		Marker?: string | null;
+		SupportedEndpointTypes?: Array<SupportedEndpointType> | null;
 	}
 
 
 	/** Provides information about types of supported endpoints in response to a request by the <code>DescribeEndpointTypes</code> operation. This information includes the type of endpoint, the database engine name, and whether change data capture (CDC) is supported. */
 	export interface SupportedEndpointType {
-		EngineName?: string;
-		SupportsCDC?: boolean;
-		EndpointType?: EndpointEndpointType;
-		ReplicationInstanceEngineMinimumVersion?: string;
-		EngineDisplayName?: string;
+		EngineName?: string | null;
+		SupportsCDC?: boolean | null;
+		EndpointType?: EndpointEndpointType | null;
+		ReplicationInstanceEngineMinimumVersion?: string | null;
+		EngineDisplayName?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEndpointTypesMessage {
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEndpointsResponse {
-		Marker?: string;
-		Endpoints?: Array<Endpoint>;
+		Marker?: string | null;
+		Endpoints?: Array<Endpoint> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEndpointsMessage {
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventCategoriesResponse {
-		EventCategoryGroupList?: Array<EventCategoryGroup>;
+		EventCategoryGroupList?: Array<EventCategoryGroup> | null;
 	}
 
 
 	/** Lists categories of events subscribed to, and generated by, the applicable AWS DMS resource type. */
 	export interface EventCategoryGroup {
-		SourceType?: string;
-		EventCategories?: Array<string>;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventCategoriesMessage {
-		SourceType?: string;
-		Filters?: Array<Filter>;
+		SourceType?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventSubscriptionsResponse {
-		Marker?: string;
-		EventSubscriptionsList?: Array<EventSubscription>;
+		Marker?: string | null;
+		EventSubscriptionsList?: Array<EventSubscription> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventSubscriptionsMessage {
-		SubscriptionName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		SubscriptionName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventsResponse {
-		Marker?: string;
-		Events?: Array<Event>;
+		Marker?: string | null;
+		Events?: Array<Event> | null;
 	}
 
 
 	/** Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the AWS DMS resource type. */
 	export interface Event {
-		SourceIdentifier?: string;
-		SourceType?: EventSourceType;
-		Message?: string;
-		EventCategories?: Array<string>;
-		Date?: Date;
+		SourceIdentifier?: string | null;
+		SourceType?: EventSourceType | null;
+		Message?: string | null;
+		EventCategories?: Array<string> | null;
+		Date?: Date | null;
 	}
 
 	export enum EventSourceType { replication_instance = 0 }
@@ -854,15 +854,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeEventsMessage {
-		SourceIdentifier?: string;
-		SourceType?: DescribeEventsMessageSourceType;
-		StartTime?: Date;
-		EndTime?: Date;
-		Duration?: number;
-		EventCategories?: Array<string>;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		SourceIdentifier?: string | null;
+		SourceType?: DescribeEventsMessageSourceType | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Duration?: number | null;
+		EventCategories?: Array<string> | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum DescribeEventsMessageSourceType { replication_instance = 0 }
@@ -870,22 +870,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeOrderableReplicationInstancesResponse {
-		OrderableReplicationInstances?: Array<OrderableReplicationInstance>;
-		Marker?: string;
+		OrderableReplicationInstances?: Array<OrderableReplicationInstance> | null;
+		Marker?: string | null;
 	}
 
 
 	/** In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage. */
 	export interface OrderableReplicationInstance {
-		EngineVersion?: string;
-		ReplicationInstanceClass?: string;
-		StorageType?: string;
-		MinAllocatedStorage?: number;
-		MaxAllocatedStorage?: number;
-		DefaultAllocatedStorage?: number;
-		IncludedAllocatedStorage?: number;
-		AvailabilityZones?: Array<string>;
-		ReleaseStatus?: OrderableReplicationInstanceReleaseStatus;
+		EngineVersion?: string | null;
+		ReplicationInstanceClass?: string | null;
+		StorageType?: string | null;
+		MinAllocatedStorage?: number | null;
+		MaxAllocatedStorage?: number | null;
+		DefaultAllocatedStorage?: number | null;
+		IncludedAllocatedStorage?: number | null;
+		AvailabilityZones?: Array<string> | null;
+		ReleaseStatus?: OrderableReplicationInstanceReleaseStatus | null;
 	}
 
 	export enum OrderableReplicationInstanceReleaseStatus { beta = 0 }
@@ -893,24 +893,24 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeOrderableReplicationInstancesMessage {
-		MaxRecords?: number;
-		Marker?: string;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribePendingMaintenanceActionsResponse {
-		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions>;
-		Marker?: string;
+		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions> | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribePendingMaintenanceActionsMessage {
-		ReplicationInstanceArn?: string;
-		Filters?: Array<Filter>;
-		Marker?: string;
-		MaxRecords?: number;
+		ReplicationInstanceArn?: string | null;
+		Filters?: Array<Filter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 
@@ -918,17 +918,17 @@ export namespace MyNS {
 	export interface DescribeRefreshSchemasStatusResponse {
 
 		/** Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation. */
-		RefreshSchemasStatus?: RefreshSchemasStatus;
+		RefreshSchemasStatus?: RefreshSchemasStatus | null;
 	}
 
 
 	/** Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation. */
 	export interface RefreshSchemasStatus {
-		EndpointArn?: string;
-		ReplicationInstanceArn?: string;
-		Status?: RefreshSchemasStatusStatus;
-		LastRefreshDate?: Date;
-		LastFailureMessage?: string;
+		EndpointArn?: string | null;
+		ReplicationInstanceArn?: string | null;
+		Status?: RefreshSchemasStatusStatus | null;
+		LastRefreshDate?: Date | null;
+		LastFailureMessage?: string | null;
 	}
 
 	export enum RefreshSchemasStatusStatus { successful = 0, failed = 1, refreshing = 2 }
@@ -940,166 +940,166 @@ export namespace MyNS {
 	}
 
 	export interface DescribeReplicationInstanceTaskLogsResponse {
-		ReplicationInstanceArn?: string;
-		ReplicationInstanceTaskLogs?: Array<ReplicationInstanceTaskLog>;
-		Marker?: string;
+		ReplicationInstanceArn?: string | null;
+		ReplicationInstanceTaskLogs?: Array<ReplicationInstanceTaskLog> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains metadata for a replication instance task log. */
 	export interface ReplicationInstanceTaskLog {
-		ReplicationTaskName?: string;
-		ReplicationTaskArn?: string;
-		ReplicationInstanceTaskLogSize?: number;
+		ReplicationTaskName?: string | null;
+		ReplicationTaskArn?: string | null;
+		ReplicationInstanceTaskLogSize?: number | null;
 	}
 
 	export interface DescribeReplicationInstanceTaskLogsMessage {
 		ReplicationInstanceArn: string;
-		MaxRecords?: number;
-		Marker?: string;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationInstancesResponse {
-		Marker?: string;
-		ReplicationInstances?: Array<ReplicationInstance>;
+		Marker?: string | null;
+		ReplicationInstances?: Array<ReplicationInstance> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationInstancesMessage {
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationSubnetGroupsResponse {
-		Marker?: string;
-		ReplicationSubnetGroups?: Array<ReplicationSubnetGroup>;
+		Marker?: string | null;
+		ReplicationSubnetGroups?: Array<ReplicationSubnetGroup> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationSubnetGroupsMessage {
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationTaskAssessmentResultsResponse {
-		Marker?: string;
-		BucketName?: string;
-		ReplicationTaskAssessmentResults?: Array<ReplicationTaskAssessmentResult>;
+		Marker?: string | null;
+		BucketName?: string | null;
+		ReplicationTaskAssessmentResults?: Array<ReplicationTaskAssessmentResult> | null;
 	}
 
 
 	/**  The task assessment report in JSON format.  */
 	export interface ReplicationTaskAssessmentResult {
-		ReplicationTaskIdentifier?: string;
-		ReplicationTaskArn?: string;
-		ReplicationTaskLastAssessmentDate?: Date;
-		AssessmentStatus?: string;
-		AssessmentResultsFile?: string;
-		AssessmentResults?: string;
-		S3ObjectUrl?: string;
+		ReplicationTaskIdentifier?: string | null;
+		ReplicationTaskArn?: string | null;
+		ReplicationTaskLastAssessmentDate?: Date | null;
+		AssessmentStatus?: string | null;
+		AssessmentResultsFile?: string | null;
+		AssessmentResults?: string | null;
+		S3ObjectUrl?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationTaskAssessmentResultsMessage {
-		ReplicationTaskArn?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ReplicationTaskArn?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationTasksResponse {
-		Marker?: string;
-		ReplicationTasks?: Array<ReplicationTask>;
+		Marker?: string | null;
+		ReplicationTasks?: Array<ReplicationTask> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationTasksMessage {
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
-		WithoutSettings?: boolean;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		WithoutSettings?: boolean | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeSchemasResponse {
-		Marker?: string;
-		Schemas?: Array<string>;
+		Marker?: string | null;
+		Schemas?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeSchemasMessage {
 		EndpointArn: string;
-		MaxRecords?: number;
-		Marker?: string;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeTableStatisticsResponse {
-		ReplicationTaskArn?: string;
-		TableStatistics?: Array<TableStatistics>;
-		Marker?: string;
+		ReplicationTaskArn?: string | null;
+		TableStatistics?: Array<TableStatistics> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation. */
 	export interface TableStatistics {
-		SchemaName?: string;
-		TableName?: string;
-		Inserts?: number;
-		Deletes?: number;
-		Updates?: number;
-		Ddls?: number;
-		FullLoadRows?: number;
-		FullLoadCondtnlChkFailedRows?: number;
-		FullLoadErrorRows?: number;
-		FullLoadStartTime?: Date;
-		FullLoadEndTime?: Date;
-		FullLoadReloaded?: boolean;
-		LastUpdateTime?: Date;
-		TableState?: string;
-		ValidationPendingRecords?: number;
-		ValidationFailedRecords?: number;
-		ValidationSuspendedRecords?: number;
-		ValidationState?: string;
-		ValidationStateDetails?: string;
+		SchemaName?: string | null;
+		TableName?: string | null;
+		Inserts?: number | null;
+		Deletes?: number | null;
+		Updates?: number | null;
+		Ddls?: number | null;
+		FullLoadRows?: number | null;
+		FullLoadCondtnlChkFailedRows?: number | null;
+		FullLoadErrorRows?: number | null;
+		FullLoadStartTime?: Date | null;
+		FullLoadEndTime?: Date | null;
+		FullLoadReloaded?: boolean | null;
+		LastUpdateTime?: Date | null;
+		TableState?: string | null;
+		ValidationPendingRecords?: number | null;
+		ValidationFailedRecords?: number | null;
+		ValidationSuspendedRecords?: number | null;
+		ValidationState?: string | null;
+		ValidationStateDetails?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeTableStatisticsMessage {
 		ReplicationTaskArn: string;
-		MaxRecords?: number;
-		Marker?: string;
-		Filters?: Array<Filter>;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface ImportCertificateResponse {
 
 		/** The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance. */
-		Certificate?: Certificate;
+		Certificate?: Certificate | null;
 	}
 
 	export interface ImportCertificateMessage {
 		CertificateIdentifier: string;
-		CertificatePem?: string;
-		CertificateWallet?: string;
-		Tags?: Array<Tag>;
+		CertificatePem?: string | null;
+		CertificateWallet?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface InvalidCertificateFault {
@@ -1108,7 +1108,7 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListTagsForResourceResponse {
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 
@@ -1122,53 +1122,53 @@ export namespace MyNS {
 	export interface ModifyEndpointResponse {
 
 		/** <p>Describes an endpoint of a database instance in response to operations such as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpointTypes</code> </p> </li> <li> <p> <code>ModifyEndpoint</code> </p> </li> </ul> */
-		Endpoint?: Endpoint;
+		Endpoint?: Endpoint | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyEndpointMessage {
 		EndpointArn: string;
-		EndpointIdentifier?: string;
-		EndpointType?: EndpointEndpointType;
-		EngineName?: string;
-		Username?: string;
-		Password?: string;
-		ServerName?: string;
-		Port?: number;
-		DatabaseName?: string;
-		ExtraConnectionAttributes?: string;
-		CertificateArn?: string;
-		SslMode?: ModifyEndpointMessageSslMode;
-		ServiceAccessRoleArn?: string;
-		ExternalTableDefinition?: string;
+		EndpointIdentifier?: string | null;
+		EndpointType?: EndpointEndpointType | null;
+		EngineName?: string | null;
+		Username?: string | null;
+		Password?: string | null;
+		ServerName?: string | null;
+		Port?: number | null;
+		DatabaseName?: string | null;
+		ExtraConnectionAttributes?: string | null;
+		CertificateArn?: string | null;
+		SslMode?: ModifyEndpointMessageSslMode | null;
+		ServiceAccessRoleArn?: string | null;
+		ExternalTableDefinition?: string | null;
 
 		/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
-		DynamoDbSettings?: DynamoDbSettings;
+		DynamoDbSettings?: DynamoDbSettings | null;
 
 		/** Settings for exporting data to Amazon S3. */
-		S3Settings?: S3Settings;
+		S3Settings?: S3Settings | null;
 
 		/** The settings in JSON format for the DMS Transfer type source endpoint. */
-		DmsTransferSettings?: DmsTransferSettings;
+		DmsTransferSettings?: DmsTransferSettings | null;
 
 		/** Provides information that defines a MongoDB endpoint. */
-		MongoDbSettings?: MongoDbSettings;
+		MongoDbSettings?: MongoDbSettings | null;
 
 		/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KinesisSettings?: KinesisSettings;
+		KinesisSettings?: KinesisSettings | null;
 
 		/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KafkaSettings?: KafkaSettings;
+		KafkaSettings?: KafkaSettings | null;
 
 		/** Provides information that defines an Elasticsearch endpoint. */
-		ElasticsearchSettings?: ElasticsearchSettings;
+		ElasticsearchSettings?: ElasticsearchSettings | null;
 
 		/** Provides information that defines an Amazon Neptune endpoint. */
-		NeptuneSettings?: NeptuneSettings;
+		NeptuneSettings?: NeptuneSettings | null;
 
 		/** Provides information that defines an Amazon Redshift endpoint. */
-		RedshiftSettings?: RedshiftSettings;
+		RedshiftSettings?: RedshiftSettings | null;
 	}
 
 	export enum ModifyEndpointMessageSslMode { none = 0, require = 1, verify_ca = 2, verify_full = 3 }
@@ -1178,17 +1178,17 @@ export namespace MyNS {
 	export interface ModifyEventSubscriptionResponse {
 
 		/** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessage {
 		SubscriptionName: string;
-		SnsTopicArn?: string;
-		SourceType?: string;
-		EventCategories?: Array<string>;
-		Enabled?: boolean;
+		SnsTopicArn?: string | null;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
+		Enabled?: boolean | null;
 	}
 
 
@@ -1196,23 +1196,23 @@ export namespace MyNS {
 	export interface ModifyReplicationInstanceResponse {
 
 		/** Provides information that defines a replication instance. */
-		ReplicationInstance?: ReplicationInstance;
+		ReplicationInstance?: ReplicationInstance | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyReplicationInstanceMessage {
 		ReplicationInstanceArn: string;
-		AllocatedStorage?: number;
-		ApplyImmediately?: boolean;
-		ReplicationInstanceClass?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		PreferredMaintenanceWindow?: string;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AllowMajorVersionUpgrade?: boolean;
-		AutoMinorVersionUpgrade?: boolean;
-		ReplicationInstanceIdentifier?: string;
+		AllocatedStorage?: number | null;
+		ApplyImmediately?: boolean | null;
+		ReplicationInstanceClass?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		PreferredMaintenanceWindow?: string | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AllowMajorVersionUpgrade?: boolean | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		ReplicationInstanceIdentifier?: string | null;
 	}
 
 	export interface UpgradeDependencyFailureFault {
@@ -1223,14 +1223,14 @@ export namespace MyNS {
 	export interface ModifyReplicationSubnetGroupResponse {
 
 		/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
-		ReplicationSubnetGroup?: ReplicationSubnetGroup;
+		ReplicationSubnetGroup?: ReplicationSubnetGroup | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyReplicationSubnetGroupMessage {
 		ReplicationSubnetGroupIdentifier: string;
-		ReplicationSubnetGroupDescription?: string;
+		ReplicationSubnetGroupDescription?: string | null;
 		SubnetIds: Array<string>;
 	}
 
@@ -1242,21 +1242,21 @@ export namespace MyNS {
 	export interface ModifyReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask;
+		ReplicationTask?: ReplicationTask | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyReplicationTaskMessage {
 		ReplicationTaskArn: string;
-		ReplicationTaskIdentifier?: string;
-		MigrationType?: ModifyReplicationTaskMessageMigrationType;
-		TableMappings?: string;
-		ReplicationTaskSettings?: string;
-		CdcStartTime?: Date;
-		CdcStartPosition?: string;
-		CdcStopPosition?: string;
-		TaskData?: string;
+		ReplicationTaskIdentifier?: string | null;
+		MigrationType?: ModifyReplicationTaskMessageMigrationType | null;
+		TableMappings?: string | null;
+		ReplicationTaskSettings?: string | null;
+		CdcStartTime?: Date | null;
+		CdcStartPosition?: string | null;
+		CdcStopPosition?: string | null;
+		TaskData?: string | null;
 	}
 
 	export enum ModifyReplicationTaskMessageMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
@@ -1264,12 +1264,12 @@ export namespace MyNS {
 	export interface RebootReplicationInstanceResponse {
 
 		/** Provides information that defines a replication instance. */
-		ReplicationInstance?: ReplicationInstance;
+		ReplicationInstance?: ReplicationInstance | null;
 	}
 
 	export interface RebootReplicationInstanceMessage {
 		ReplicationInstanceArn: string;
-		ForceFailover?: boolean;
+		ForceFailover?: boolean | null;
 	}
 
 
@@ -1277,7 +1277,7 @@ export namespace MyNS {
 	export interface RefreshSchemasResponse {
 
 		/** Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation. */
-		RefreshSchemasStatus?: RefreshSchemasStatus;
+		RefreshSchemasStatus?: RefreshSchemasStatus | null;
 	}
 
 
@@ -1288,20 +1288,20 @@ export namespace MyNS {
 	}
 
 	export interface ReloadTablesResponse {
-		ReplicationTaskArn?: string;
+		ReplicationTaskArn?: string | null;
 	}
 
 	export interface ReloadTablesMessage {
 		ReplicationTaskArn: string;
 		TablesToReload: Array<TableToReload>;
-		ReloadOption?: ReloadTablesMessageReloadOption;
+		ReloadOption?: ReloadTablesMessageReloadOption | null;
 	}
 
 
 	/** Provides the name of the schema and table to be reloaded. */
 	export interface TableToReload {
-		SchemaName?: string;
-		TableName?: string;
+		SchemaName?: string | null;
+		TableName?: string | null;
 	}
 
 	export enum ReloadTablesMessageReloadOption { data_reload = 0, validate_only = 1 }
@@ -1323,7 +1323,7 @@ export namespace MyNS {
 	export interface StartReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask;
+		ReplicationTask?: ReplicationTask | null;
 	}
 
 
@@ -1331,9 +1331,9 @@ export namespace MyNS {
 	export interface StartReplicationTaskMessage {
 		ReplicationTaskArn: string;
 		StartReplicationTaskType: StartReplicationTaskMessageStartReplicationTaskType;
-		CdcStartTime?: Date;
-		CdcStartPosition?: string;
-		CdcStopPosition?: string;
+		CdcStartTime?: Date | null;
+		CdcStartPosition?: string | null;
+		CdcStopPosition?: string | null;
 	}
 
 	export enum StartReplicationTaskMessageStartReplicationTaskType { start_replication = 0, resume_processing = 1, reload_target = 2 }
@@ -1343,7 +1343,7 @@ export namespace MyNS {
 	export interface StartReplicationTaskAssessmentResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask;
+		ReplicationTask?: ReplicationTask | null;
 	}
 
 
@@ -1357,7 +1357,7 @@ export namespace MyNS {
 	export interface StopReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask;
+		ReplicationTask?: ReplicationTask | null;
 	}
 
 
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 	export interface TestConnectionResponse {
 
 		/** Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued. */
-		Connection?: Connection;
+		Connection?: Connection | null;
 	}
 
 

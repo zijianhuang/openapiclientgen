@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface GetPersonalizedRankingResponse {
-		personalizedRanking?: Array<PredictedItem>;
+		personalizedRanking?: Array<PredictedItem> | null;
 	}
 
 
 	/** <p>An object that identifies an item.</p> <p>The and APIs return a list of <code>PredictedItem</code>s.</p> */
 	export interface PredictedItem {
-		itemId?: string;
-		score?: number;
+		itemId?: string | null;
+		score?: number | null;
 	}
 
 	export interface InvalidInputException {
@@ -20,7 +20,7 @@ export namespace MyNS {
 	}
 
 	export interface GetRecommendationsResponse {
-		itemList?: Array<PredictedItem>;
+		itemList?: Array<PredictedItem> | null;
 	}
 
 	export interface Context {
@@ -30,16 +30,16 @@ export namespace MyNS {
 		campaignArn: string;
 		inputList: Array<string>;
 		userId: string;
-		context?: Context;
+		context?: Context | null;
 	}
 
 	export interface GetRecommendationsRequest {
 		campaignArn: string;
-		itemId?: string;
-		userId?: string;
-		numResults?: number;
-		context?: Context;
-		filterArn?: string;
+		itemId?: string | null;
+		userId?: string | null;
+		numResults?: number | null;
+		context?: Context | null;
+		filterArn?: string | null;
 	}
 
 	@Injectable()
@@ -90,7 +90,7 @@ export namespace MyNS {
 		userId: string;
 
 		/** The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type. */
-		context?: {[id: string]: string };
+		context?: {[id: string]: string } | null;
 	}
 
 	export interface GetRecommendationsPostBody {
@@ -107,29 +107,29 @@ export namespace MyNS {
 		 * <p>The item ID to provide recommendations for.</p> <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>
 		 * Max length: 256
 		 */
-		itemId?: string;
+		itemId?: string | null;
 
 		/**
 		 * <p>The user ID to provide recommendations for.</p> <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
 		 * Max length: 256
 		 */
-		userId?: string;
+		userId?: string | null;
 
 		/**
 		 * The number of results to return. The default is 25. The maximum is 500.
 		 * Minimum: 0
 		 */
-		numResults?: number;
+		numResults?: number | null;
 
 		/** The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type. */
-		context?: {[id: string]: string };
+		context?: {[id: string]: string } | null;
 
 		/**
 		 * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.
 		 * Max length: 256
 		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
-		filterArn?: string;
+		filterArn?: string | null;
 	}
 
 }

@@ -7,18 +7,18 @@ export namespace MyNS {
 	export interface CreateApiCacheResponse {
 
 		/** The <code>ApiCache</code> object. */
-		apiCache?: ApiCache;
+		apiCache?: ApiCache | null;
 	}
 
 
 	/** The <code>ApiCache</code> object. */
 	export interface ApiCache {
-		ttl?: number;
-		apiCachingBehavior?: ApiCacheApiCachingBehavior;
-		transitEncryptionEnabled?: boolean;
-		atRestEncryptionEnabled?: boolean;
-		type?: ApiCacheType;
-		status?: ApiCacheStatus;
+		ttl?: number | null;
+		apiCachingBehavior?: ApiCacheApiCachingBehavior | null;
+		transitEncryptionEnabled?: boolean | null;
+		atRestEncryptionEnabled?: boolean | null;
+		type?: ApiCacheType | null;
+		status?: ApiCacheStatus | null;
 	}
 
 	export enum ApiCacheApiCachingBehavior { FULL_REQUEST_CACHING = 0, PER_RESOLVER_CACHING = 1 }
@@ -45,15 +45,15 @@ export namespace MyNS {
 	export interface CreateApiKeyResponse {
 
 		/** <p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as seconds.</p> </li> </ul> */
-		apiKey?: ApiKey;
+		apiKey?: ApiKey | null;
 	}
 
 
 	/** <p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as seconds.</p> </li> </ul> */
 	export interface ApiKey {
-		id?: string;
-		description?: string;
-		expires?: number;
+		id?: string | null;
+		description?: string | null;
+		expires?: number | null;
 	}
 
 	export interface LimitExceededException {
@@ -68,32 +68,32 @@ export namespace MyNS {
 	export interface CreateDataSourceResponse {
 
 		/** Describes a data source. */
-		dataSource?: DataSource;
+		dataSource?: DataSource | null;
 	}
 
 
 	/** Describes a data source. */
 	export interface DataSource {
-		dataSourceArn?: string;
-		name?: string;
-		description?: string;
-		type?: DataSourceType;
-		serviceRoleArn?: string;
+		dataSourceArn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		type?: DataSourceType | null;
+		serviceRoleArn?: string | null;
 
 		/** Describes an Amazon DynamoDB data source configuration. */
-		dynamodbConfig?: DynamodbDataSourceConfig;
+		dynamodbConfig?: DynamodbDataSourceConfig | null;
 
 		/** Describes an AWS Lambda data source configuration. */
-		lambdaConfig?: LambdaDataSourceConfig;
+		lambdaConfig?: LambdaDataSourceConfig | null;
 
 		/** Describes an Elasticsearch data source configuration. */
-		elasticsearchConfig?: ElasticsearchDataSourceConfig;
+		elasticsearchConfig?: ElasticsearchDataSourceConfig | null;
 
 		/** Describes an HTTP data source configuration. */
-		httpConfig?: HttpDataSourceConfig;
+		httpConfig?: HttpDataSourceConfig | null;
 
 		/** Describes a relational database data source configuration. */
-		relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
+		relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig | null;
 	}
 
 	export enum DataSourceType { AWS_LAMBDA = 0, AMAZON_DYNAMODB = 1, AMAZON_ELASTICSEARCH = 2, NONE = 3, HTTP = 4, RELATIONAL_DATABASE = 5 }
@@ -103,19 +103,19 @@ export namespace MyNS {
 	export interface DynamodbDataSourceConfig {
 		tableName: string;
 		awsRegion: string;
-		useCallerCredentials?: boolean;
+		useCallerCredentials?: boolean | null;
 
 		/** Describes a Delta Sync configuration. */
-		deltaSyncConfig?: DeltaSyncConfig;
-		versioned?: boolean;
+		deltaSyncConfig?: DeltaSyncConfig | null;
+		versioned?: boolean | null;
 	}
 
 
 	/** Describes a Delta Sync configuration. */
 	export interface DeltaSyncConfig {
-		baseTableTTL?: number;
-		deltaSyncTableName?: string;
-		deltaSyncTableTTL?: number;
+		baseTableTTL?: number | null;
+		deltaSyncTableName?: string | null;
+		deltaSyncTableTTL?: number | null;
 	}
 
 
@@ -134,10 +134,10 @@ export namespace MyNS {
 
 	/** Describes an HTTP data source configuration. */
 	export interface HttpDataSourceConfig {
-		endpoint?: string;
+		endpoint?: string | null;
 
 		/** The authorization config in case the HTTP endpoint requires authorization. */
-		authorizationConfig?: AuthorizationConfig;
+		authorizationConfig?: AuthorizationConfig | null;
 	}
 
 
@@ -146,7 +146,7 @@ export namespace MyNS {
 		authorizationType: AuthorizationConfigAuthorizationType;
 
 		/** The AWS IAM configuration. */
-		awsIamConfig?: AwsIamConfig;
+		awsIamConfig?: AwsIamConfig | null;
 	}
 
 	export enum AuthorizationConfigAuthorizationType { AWS_IAM = 0 }
@@ -154,17 +154,17 @@ export namespace MyNS {
 
 	/** The AWS IAM configuration. */
 	export interface AwsIamConfig {
-		signingRegion?: string;
-		signingServiceName?: string;
+		signingRegion?: string | null;
+		signingServiceName?: string | null;
 	}
 
 
 	/** Describes a relational database data source configuration. */
 	export interface RelationalDatabaseDataSourceConfig {
-		relationalDatabaseSourceType?: RelationalDatabaseDataSourceConfigRelationalDatabaseSourceType;
+		relationalDatabaseSourceType?: RelationalDatabaseDataSourceConfigRelationalDatabaseSourceType | null;
 
 		/** The Amazon RDS HTTP endpoint configuration. */
-		rdsHttpEndpointConfig?: RdsHttpEndpointConfig;
+		rdsHttpEndpointConfig?: RdsHttpEndpointConfig | null;
 	}
 
 	export enum RelationalDatabaseDataSourceConfigRelationalDatabaseSourceType { RDS_HTTP_ENDPOINT = 0 }
@@ -172,11 +172,11 @@ export namespace MyNS {
 
 	/** The Amazon RDS HTTP endpoint configuration. */
 	export interface RdsHttpEndpointConfig {
-		awsRegion?: string;
-		dbClusterIdentifier?: string;
-		databaseName?: string;
-		schema?: string;
-		awsSecretStoreArn?: string;
+		awsRegion?: string | null;
+		dbClusterIdentifier?: string | null;
+		databaseName?: string | null;
+		schema?: string | null;
+		awsSecretStoreArn?: string | null;
 	}
 
 	export enum RelationalDatabaseSourceType { RDS_HTTP_ENDPOINT = 0 }
@@ -184,50 +184,50 @@ export namespace MyNS {
 	export interface CreateFunctionResponse {
 
 		/** A function is a reusable entity. Multiple functions can be used to compose the resolver logic. */
-		functionConfiguration?: FunctionConfiguration;
+		functionConfiguration?: FunctionConfiguration | null;
 	}
 
 
 	/** A function is a reusable entity. Multiple functions can be used to compose the resolver logic. */
 	export interface FunctionConfiguration {
-		functionId?: string;
-		functionArn?: string;
-		name?: string;
-		description?: string;
-		dataSourceName?: string;
-		requestMappingTemplate?: string;
-		responseMappingTemplate?: string;
-		functionVersion?: string;
+		functionId?: string | null;
+		functionArn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		dataSourceName?: string | null;
+		requestMappingTemplate?: string | null;
+		responseMappingTemplate?: string | null;
+		functionVersion?: string | null;
 	}
 
 	export interface CreateGraphqlApiResponse {
 
 		/** Describes a GraphQL API. */
-		graphqlApi?: GraphqlApi;
+		graphqlApi?: GraphqlApi | null;
 	}
 
 
 	/** Describes a GraphQL API. */
 	export interface GraphqlApi {
-		name?: string;
-		apiId?: string;
-		authenticationType?: GraphqlApiAuthenticationType;
+		name?: string | null;
+		apiId?: string | null;
+		authenticationType?: GraphqlApiAuthenticationType | null;
 
 		/** The CloudWatch Logs configuration. */
-		logConfig?: LogConfig;
+		logConfig?: LogConfig | null;
 
 		/** Describes an Amazon Cognito user pool configuration. */
-		userPoolConfig?: UserPoolConfig;
+		userPoolConfig?: UserPoolConfig | null;
 
 		/** Describes an OpenID Connect configuration. */
-		openIDConnectConfig?: OpenIDConnectConfig;
-		arn?: string;
-		uris?: MapOfStringToString;
+		openIDConnectConfig?: OpenIDConnectConfig | null;
+		arn?: string | null;
+		uris?: MapOfStringToString | null;
 
 		/** A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects. */
-		tags?: TagMap;
-		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider>;
-		xrayEnabled?: boolean;
+		tags?: TagMap | null;
+		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider> | null;
+		xrayEnabled?: boolean | null;
 	}
 
 	export enum GraphqlApiAuthenticationType { API_KEY = 0, AWS_IAM = 1, AMAZON_COGNITO_USER_POOLS = 2, OPENID_CONNECT = 3 }
@@ -237,7 +237,7 @@ export namespace MyNS {
 	export interface LogConfig {
 		fieldLogLevel: LogConfigFieldLogLevel;
 		cloudWatchLogsRoleArn: string;
-		excludeVerboseContent?: boolean;
+		excludeVerboseContent?: boolean | null;
 	}
 
 	export enum LogConfigFieldLogLevel { NONE = 0, ERROR = 1, ALL = 2 }
@@ -248,7 +248,7 @@ export namespace MyNS {
 		userPoolId: string;
 		awsRegion: string;
 		defaultAction: UserPoolConfigDefaultAction;
-		appIdClientRegex?: string;
+		appIdClientRegex?: string | null;
 	}
 
 	export enum UserPoolConfigDefaultAction { ALLOW = 0, DENY = 1 }
@@ -257,9 +257,9 @@ export namespace MyNS {
 	/** Describes an OpenID Connect configuration. */
 	export interface OpenIDConnectConfig {
 		issuer: string;
-		clientId?: string;
-		iatTTL?: number;
-		authTTL?: number;
+		clientId?: string | null;
+		iatTTL?: number | null;
+		authTTL?: number | null;
 	}
 
 	export interface MapOfStringToString {
@@ -273,13 +273,13 @@ export namespace MyNS {
 
 	/** Describes an additional authentication provider. */
 	export interface AdditionalAuthenticationProvider {
-		authenticationType?: GraphqlApiAuthenticationType;
+		authenticationType?: GraphqlApiAuthenticationType | null;
 
 		/** Describes an OpenID Connect configuration. */
-		openIDConnectConfig?: OpenIDConnectConfig;
+		openIDConnectConfig?: OpenIDConnectConfig | null;
 
 		/** Describes an Amazon Cognito user pool configuration. */
-		userPoolConfig?: CognitoUserPoolConfig;
+		userPoolConfig?: CognitoUserPoolConfig | null;
 	}
 
 
@@ -287,7 +287,7 @@ export namespace MyNS {
 	export interface CognitoUserPoolConfig {
 		userPoolId: string;
 		awsRegion: string;
-		appIdClientRegex?: string;
+		appIdClientRegex?: string | null;
 	}
 
 	export enum FieldLogLevel { NONE = 0, ERROR = 1, ALL = 2 }
@@ -300,28 +300,28 @@ export namespace MyNS {
 	export interface CreateResolverResponse {
 
 		/** Describes a resolver. */
-		resolver?: Resolver;
+		resolver?: Resolver | null;
 	}
 
 
 	/** Describes a resolver. */
 	export interface Resolver {
-		typeName?: string;
-		fieldName?: string;
-		dataSourceName?: string;
-		resolverArn?: string;
-		requestMappingTemplate?: string;
-		responseMappingTemplate?: string;
-		kind?: ResolverKind;
+		typeName?: string | null;
+		fieldName?: string | null;
+		dataSourceName?: string | null;
+		resolverArn?: string | null;
+		requestMappingTemplate?: string | null;
+		responseMappingTemplate?: string | null;
+		kind?: ResolverKind | null;
 
 		/** The pipeline configuration for a resolver of kind <code>PIPELINE</code>. */
-		pipelineConfig?: PipelineConfig;
+		pipelineConfig?: PipelineConfig | null;
 
 		/** <p>Describes a Sync configuration for a resolver.</p> <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p> */
-		syncConfig?: SyncConfig;
+		syncConfig?: SyncConfig | null;
 
 		/** The caching configuration for a resolver that has caching enabled. */
-		cachingConfig?: CachingConfig;
+		cachingConfig?: CachingConfig | null;
 	}
 
 	export enum ResolverKind { UNIT = 0, PIPELINE = 1 }
@@ -329,17 +329,17 @@ export namespace MyNS {
 
 	/** The pipeline configuration for a resolver of kind <code>PIPELINE</code>. */
 	export interface PipelineConfig {
-		functions?: Array<string>;
+		functions?: Array<string> | null;
 	}
 
 
 	/** <p>Describes a Sync configuration for a resolver.</p> <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p> */
 	export interface SyncConfig {
-		conflictHandler?: SyncConfigConflictHandler;
-		conflictDetection?: SyncConfigConflictDetection;
+		conflictHandler?: SyncConfigConflictHandler | null;
+		conflictDetection?: SyncConfigConflictDetection | null;
 
 		/** The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the Conflict Handler. */
-		lambdaConflictHandlerConfig?: LambdaConflictHandlerConfig;
+		lambdaConflictHandlerConfig?: LambdaConflictHandlerConfig | null;
 	}
 
 	export enum SyncConfigConflictHandler { OPTIMISTIC_CONCURRENCY = 0, LAMBDA = 1, AUTOMERGE = 2, NONE = 3 }
@@ -349,14 +349,14 @@ export namespace MyNS {
 
 	/** The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the Conflict Handler. */
 	export interface LambdaConflictHandlerConfig {
-		lambdaConflictHandlerArn?: string;
+		lambdaConflictHandlerArn?: string | null;
 	}
 
 
 	/** The caching configuration for a resolver that has caching enabled. */
 	export interface CachingConfig {
-		ttl?: number;
-		cachingKeys?: Array<string>;
+		ttl?: number | null;
+		cachingKeys?: Array<string> | null;
 	}
 
 	export enum ConflictHandlerType { OPTIMISTIC_CONCURRENCY = 0, LAMBDA = 1, AUTOMERGE = 2, NONE = 3 }
@@ -366,17 +366,17 @@ export namespace MyNS {
 	export interface CreateTypeResponse {
 
 		/** Describes a type. */
-		type?: Type;
+		type?: Type | null;
 	}
 
 
 	/** Describes a type. */
 	export interface Type {
-		name?: string;
-		description?: string;
-		arn?: string;
-		definition?: string;
-		format?: TypeFormat;
+		name?: string | null;
+		description?: string | null;
+		arn?: string | null;
+		definition?: string | null;
+		format?: TypeFormat | null;
 	}
 
 	export enum TypeFormat { SDL = 0, JSON = 1 }
@@ -417,29 +417,29 @@ export namespace MyNS {
 	export interface GetApiCacheResponse {
 
 		/** The <code>ApiCache</code> object. */
-		apiCache?: ApiCache;
+		apiCache?: ApiCache | null;
 	}
 
 	export interface GetDataSourceResponse {
 
 		/** Describes a data source. */
-		dataSource?: DataSource;
+		dataSource?: DataSource | null;
 	}
 
 	export interface GetFunctionResponse {
 
 		/** A function is a reusable entity. Multiple functions can be used to compose the resolver logic. */
-		functionConfiguration?: FunctionConfiguration;
+		functionConfiguration?: FunctionConfiguration | null;
 	}
 
 	export interface GetGraphqlApiResponse {
 
 		/** Describes a GraphQL API. */
-		graphqlApi?: GraphqlApi;
+		graphqlApi?: GraphqlApi | null;
 	}
 
 	export interface GetIntrospectionSchemaResponse {
-		schema?: string;
+		schema?: string | null;
 	}
 
 	export interface GraphQLSchemaException {
@@ -448,12 +448,12 @@ export namespace MyNS {
 	export interface GetResolverResponse {
 
 		/** Describes a resolver. */
-		resolver?: Resolver;
+		resolver?: Resolver | null;
 	}
 
 	export interface GetSchemaCreationStatusResponse {
-		status?: GetSchemaCreationStatusResponseStatus;
-		details?: string;
+		status?: GetSchemaCreationStatusResponseStatus | null;
+		details?: string | null;
 	}
 
 	export enum GetSchemaCreationStatusResponseStatus { PROCESSING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, SUCCESS = 4, NOT_APPLICABLE = 5 }
@@ -461,52 +461,52 @@ export namespace MyNS {
 	export interface GetTypeResponse {
 
 		/** Describes a type. */
-		type?: Type;
+		type?: Type | null;
 	}
 
 	export interface ListApiKeysResponse {
-		apiKeys?: Array<ApiKey>;
-		nextToken?: string;
+		apiKeys?: Array<ApiKey> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListDataSourcesResponse {
-		dataSources?: Array<DataSource>;
-		nextToken?: string;
+		dataSources?: Array<DataSource> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListFunctionsResponse {
-		functions?: Array<FunctionConfiguration>;
-		nextToken?: string;
+		functions?: Array<FunctionConfiguration> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListGraphqlApisResponse {
-		graphqlApis?: Array<GraphqlApi>;
-		nextToken?: string;
+		graphqlApis?: Array<GraphqlApi> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListResolversResponse {
-		resolvers?: Array<Resolver>;
-		nextToken?: string;
+		resolvers?: Array<Resolver> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListResolversByFunctionResponse {
-		resolvers?: Array<Resolver>;
-		nextToken?: string;
+		resolvers?: Array<Resolver> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
 
 		/** A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects. */
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface ListTypesResponse {
-		types?: Array<Type>;
-		nextToken?: string;
+		types?: Array<Type> | null;
+		nextToken?: string | null;
 	}
 
 	export interface StartSchemaCreationResponse {
-		status?: GetSchemaCreationStatusResponseStatus;
+		status?: GetSchemaCreationStatusResponseStatus | null;
 	}
 
 	export interface TagResourceResponse {
@@ -520,43 +520,43 @@ export namespace MyNS {
 	export interface UpdateApiCacheResponse {
 
 		/** The <code>ApiCache</code> object. */
-		apiCache?: ApiCache;
+		apiCache?: ApiCache | null;
 	}
 
 	export interface UpdateApiKeyResponse {
 
 		/** <p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as seconds.</p> </li> </ul> */
-		apiKey?: ApiKey;
+		apiKey?: ApiKey | null;
 	}
 
 	export interface UpdateDataSourceResponse {
 
 		/** Describes a data source. */
-		dataSource?: DataSource;
+		dataSource?: DataSource | null;
 	}
 
 	export interface UpdateFunctionResponse {
 
 		/** A function is a reusable entity. Multiple functions can be used to compose the resolver logic. */
-		functionConfiguration?: FunctionConfiguration;
+		functionConfiguration?: FunctionConfiguration | null;
 	}
 
 	export interface UpdateGraphqlApiResponse {
 
 		/** Describes a GraphQL API. */
-		graphqlApi?: GraphqlApi;
+		graphqlApi?: GraphqlApi | null;
 	}
 
 	export interface UpdateResolverResponse {
 
 		/** Describes a resolver. */
-		resolver?: Resolver;
+		resolver?: Resolver | null;
 	}
 
 	export interface UpdateTypeResponse {
 
 		/** Describes a type. */
-		type?: Type;
+		type?: Type | null;
 	}
 
 	export enum AuthenticationType { API_KEY = 0, AWS_IAM = 1, AMAZON_COGNITO_USER_POOLS = 2, OPENID_CONNECT = 3 }
@@ -569,45 +569,45 @@ export namespace MyNS {
 	/** Represents the input of a <code>CreateApiCache</code> operation. */
 	export interface CreateApiCacheRequest {
 		ttl: number;
-		transitEncryptionEnabled?: boolean;
-		atRestEncryptionEnabled?: boolean;
+		transitEncryptionEnabled?: boolean | null;
+		atRestEncryptionEnabled?: boolean | null;
 		apiCachingBehavior: ApiCacheApiCachingBehavior;
 		type: ApiCacheType;
 	}
 
 	export interface CreateApiKeyRequest {
-		description?: string;
-		expires?: number;
+		description?: string | null;
+		expires?: number | null;
 	}
 
 	export interface CreateDataSourceRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 		type: DataSourceType;
-		serviceRoleArn?: string;
+		serviceRoleArn?: string | null;
 
 		/** Describes an Amazon DynamoDB data source configuration. */
-		dynamodbConfig?: DynamodbDataSourceConfig;
+		dynamodbConfig?: DynamodbDataSourceConfig | null;
 
 		/** Describes an AWS Lambda data source configuration. */
-		lambdaConfig?: LambdaDataSourceConfig;
+		lambdaConfig?: LambdaDataSourceConfig | null;
 
 		/** Describes an Elasticsearch data source configuration. */
-		elasticsearchConfig?: ElasticsearchDataSourceConfig;
+		elasticsearchConfig?: ElasticsearchDataSourceConfig | null;
 
 		/** Describes an HTTP data source configuration. */
-		httpConfig?: HttpDataSourceConfig;
+		httpConfig?: HttpDataSourceConfig | null;
 
 		/** Describes a relational database data source configuration. */
-		relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
+		relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig | null;
 	}
 
 	export interface CreateFunctionRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 		dataSourceName: string;
 		requestMappingTemplate: string;
-		responseMappingTemplate?: string;
+		responseMappingTemplate?: string | null;
 		functionVersion: string;
 	}
 
@@ -615,36 +615,36 @@ export namespace MyNS {
 		name: string;
 
 		/** The CloudWatch Logs configuration. */
-		logConfig?: LogConfig;
+		logConfig?: LogConfig | null;
 		authenticationType: GraphqlApiAuthenticationType;
 
 		/** Describes an Amazon Cognito user pool configuration. */
-		userPoolConfig?: UserPoolConfig;
+		userPoolConfig?: UserPoolConfig | null;
 
 		/** Describes an OpenID Connect configuration. */
-		openIDConnectConfig?: OpenIDConnectConfig;
+		openIDConnectConfig?: OpenIDConnectConfig | null;
 
 		/** A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects. */
-		tags?: TagMap;
-		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider>;
-		xrayEnabled?: boolean;
+		tags?: TagMap | null;
+		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider> | null;
+		xrayEnabled?: boolean | null;
 	}
 
 	export interface CreateResolverRequest {
 		fieldName: string;
-		dataSourceName?: string;
+		dataSourceName?: string | null;
 		requestMappingTemplate: string;
-		responseMappingTemplate?: string;
-		kind?: ResolverKind;
+		responseMappingTemplate?: string | null;
+		kind?: ResolverKind | null;
 
 		/** The pipeline configuration for a resolver of kind <code>PIPELINE</code>. */
-		pipelineConfig?: PipelineConfig;
+		pipelineConfig?: PipelineConfig | null;
 
 		/** <p>Describes a Sync configuration for a resolver.</p> <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p> */
-		syncConfig?: SyncConfig;
+		syncConfig?: SyncConfig | null;
 
 		/** The caching configuration for a resolver that has caching enabled. */
-		cachingConfig?: CachingConfig;
+		cachingConfig?: CachingConfig | null;
 	}
 
 	export enum TypeDefinitionFormat { SDL = 0, JSON = 1 }
@@ -761,37 +761,37 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApiKeyRequest {
-		description?: string;
-		expires?: number;
+		description?: string | null;
+		expires?: number | null;
 	}
 
 	export interface UpdateDataSourceRequest {
-		description?: string;
+		description?: string | null;
 		type: DataSourceType;
-		serviceRoleArn?: string;
+		serviceRoleArn?: string | null;
 
 		/** Describes an Amazon DynamoDB data source configuration. */
-		dynamodbConfig?: DynamodbDataSourceConfig;
+		dynamodbConfig?: DynamodbDataSourceConfig | null;
 
 		/** Describes an AWS Lambda data source configuration. */
-		lambdaConfig?: LambdaDataSourceConfig;
+		lambdaConfig?: LambdaDataSourceConfig | null;
 
 		/** Describes an Elasticsearch data source configuration. */
-		elasticsearchConfig?: ElasticsearchDataSourceConfig;
+		elasticsearchConfig?: ElasticsearchDataSourceConfig | null;
 
 		/** Describes an HTTP data source configuration. */
-		httpConfig?: HttpDataSourceConfig;
+		httpConfig?: HttpDataSourceConfig | null;
 
 		/** Describes a relational database data source configuration. */
-		relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
+		relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig | null;
 	}
 
 	export interface UpdateFunctionRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 		dataSourceName: string;
 		requestMappingTemplate: string;
-		responseMappingTemplate?: string;
+		responseMappingTemplate?: string | null;
 		functionVersion: string;
 	}
 
@@ -799,36 +799,36 @@ export namespace MyNS {
 		name: string;
 
 		/** The CloudWatch Logs configuration. */
-		logConfig?: LogConfig;
-		authenticationType?: GraphqlApiAuthenticationType;
+		logConfig?: LogConfig | null;
+		authenticationType?: GraphqlApiAuthenticationType | null;
 
 		/** Describes an Amazon Cognito user pool configuration. */
-		userPoolConfig?: UserPoolConfig;
+		userPoolConfig?: UserPoolConfig | null;
 
 		/** Describes an OpenID Connect configuration. */
-		openIDConnectConfig?: OpenIDConnectConfig;
-		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider>;
-		xrayEnabled?: boolean;
+		openIDConnectConfig?: OpenIDConnectConfig | null;
+		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider> | null;
+		xrayEnabled?: boolean | null;
 	}
 
 	export interface UpdateResolverRequest {
-		dataSourceName?: string;
+		dataSourceName?: string | null;
 		requestMappingTemplate: string;
-		responseMappingTemplate?: string;
-		kind?: ResolverKind;
+		responseMappingTemplate?: string | null;
+		kind?: ResolverKind | null;
 
 		/** The pipeline configuration for a resolver of kind <code>PIPELINE</code>. */
-		pipelineConfig?: PipelineConfig;
+		pipelineConfig?: PipelineConfig | null;
 
 		/** <p>Describes a Sync configuration for a resolver.</p> <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p> */
-		syncConfig?: SyncConfig;
+		syncConfig?: SyncConfig | null;
 
 		/** The caching configuration for a resolver that has caching enabled. */
-		cachingConfig?: CachingConfig;
+		cachingConfig?: CachingConfig | null;
 	}
 
 	export interface UpdateTypeRequest {
-		definition?: string;
+		definition?: string | null;
 		format: TypeFormat;
 	}
 
@@ -1294,10 +1294,10 @@ export namespace MyNS {
 		ttl: number;
 
 		/** Transit encryption flag when connecting to cache. This setting cannot be updated after creation. */
-		transitEncryptionEnabled?: boolean;
+		transitEncryptionEnabled?: boolean | null;
 
 		/** At rest encryption flag for cache. This setting cannot be updated after creation. */
-		atRestEncryptionEnabled?: boolean;
+		atRestEncryptionEnabled?: boolean | null;
 
 		/**
 		 * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.</p> </li> </ul>
@@ -1315,10 +1315,10 @@ export namespace MyNS {
 	export interface CreateApiKeyPostBody {
 
 		/** A description of the purpose of the API key. */
-		description?: string;
+		description?: string | null;
 
 		/** The time from creation time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see . */
-		expires?: number;
+		expires?: number | null;
 	}
 
 	export interface CreateDataSourcePostBody {
@@ -1333,7 +1333,7 @@ export namespace MyNS {
 		name: string;
 
 		/** A description of the <code>DataSource</code>. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The type of the <code>DataSource</code>.
@@ -1342,55 +1342,55 @@ export namespace MyNS {
 		type: DataSourceType;
 
 		/** The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data source. */
-		serviceRoleArn?: string;
+		serviceRoleArn?: string | null;
 
 		/** Describes an Amazon DynamoDB data source configuration. */
-		dynamodbConfig?: CreateDataSourcePostBodyDynamodbConfig;
+		dynamodbConfig?: CreateDataSourcePostBodyDynamodbConfig | null;
 
 		/** Describes an AWS Lambda data source configuration. */
-		lambdaConfig?: CreateDataSourcePostBodyLambdaConfig;
+		lambdaConfig?: CreateDataSourcePostBodyLambdaConfig | null;
 
 		/** Describes an Elasticsearch data source configuration. */
-		elasticsearchConfig?: CreateDataSourcePostBodyElasticsearchConfig;
+		elasticsearchConfig?: CreateDataSourcePostBodyElasticsearchConfig | null;
 
 		/** Describes an HTTP data source configuration. */
-		httpConfig?: CreateDataSourcePostBodyHttpConfig;
+		httpConfig?: CreateDataSourcePostBodyHttpConfig | null;
 
 		/** Describes a relational database data source configuration. */
-		relationalDatabaseConfig?: CreateDataSourcePostBodyRelationalDatabaseConfig;
+		relationalDatabaseConfig?: CreateDataSourcePostBodyRelationalDatabaseConfig | null;
 	}
 
 	export interface CreateDataSourcePostBodyDynamodbConfig {
-		tableName?: string;
-		awsRegion?: string;
-		useCallerCredentials?: boolean;
+		tableName?: string | null;
+		awsRegion?: string | null;
+		useCallerCredentials?: boolean | null;
 
 		/** Describes a Delta Sync configuration. */
-		deltaSyncConfig?: DeltaSyncConfig;
-		versioned?: boolean;
+		deltaSyncConfig?: DeltaSyncConfig | null;
+		versioned?: boolean | null;
 	}
 
 	export interface CreateDataSourcePostBodyLambdaConfig {
-		lambdaFunctionArn?: string;
+		lambdaFunctionArn?: string | null;
 	}
 
 	export interface CreateDataSourcePostBodyElasticsearchConfig {
-		endpoint?: string;
-		awsRegion?: string;
+		endpoint?: string | null;
+		awsRegion?: string | null;
 	}
 
 	export interface CreateDataSourcePostBodyHttpConfig {
-		endpoint?: string;
+		endpoint?: string | null;
 
 		/** The authorization config in case the HTTP endpoint requires authorization. */
-		authorizationConfig?: AuthorizationConfig;
+		authorizationConfig?: AuthorizationConfig | null;
 	}
 
 	export interface CreateDataSourcePostBodyRelationalDatabaseConfig {
-		relationalDatabaseSourceType?: RelationalDatabaseDataSourceConfigRelationalDatabaseSourceType;
+		relationalDatabaseSourceType?: RelationalDatabaseDataSourceConfigRelationalDatabaseSourceType | null;
 
 		/** The Amazon RDS HTTP endpoint configuration. */
-		rdsHttpEndpointConfig?: RdsHttpEndpointConfig;
+		rdsHttpEndpointConfig?: RdsHttpEndpointConfig | null;
 	}
 
 	export interface CreateFunctionPostBody {
@@ -1405,7 +1405,7 @@ export namespace MyNS {
 		name: string;
 
 		/** The <code>Function</code> description. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The <code>Function</code> <code>DataSource</code> name.
@@ -1429,7 +1429,7 @@ export namespace MyNS {
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		responseMappingTemplate?: string;
+		responseMappingTemplate?: string | null;
 
 		/**
 		 * The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29.
@@ -1447,7 +1447,7 @@ export namespace MyNS {
 		name: string;
 
 		/** The CloudWatch Logs configuration. */
-		logConfig?: CreateGraphqlApiPostBodyLogConfig;
+		logConfig?: CreateGraphqlApiPostBodyLogConfig | null;
 
 		/**
 		 * The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools.
@@ -1456,39 +1456,39 @@ export namespace MyNS {
 		authenticationType: GraphqlApiAuthenticationType;
 
 		/** Describes an Amazon Cognito user pool configuration. */
-		userPoolConfig?: CreateGraphqlApiPostBodyUserPoolConfig;
+		userPoolConfig?: CreateGraphqlApiPostBodyUserPoolConfig | null;
 
 		/** Describes an OpenID Connect configuration. */
-		openIDConnectConfig?: CreateGraphqlApiPostBodyOpenIDConnectConfig;
+		openIDConnectConfig?: CreateGraphqlApiPostBodyOpenIDConnectConfig | null;
 
 		/** A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/** A list of additional authentication providers for the <code>GraphqlApi</code> API. */
-		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider>;
+		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider> | null;
 
 		/** A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>. */
-		xrayEnabled?: boolean;
+		xrayEnabled?: boolean | null;
 	}
 
 	export interface CreateGraphqlApiPostBodyLogConfig {
-		fieldLogLevel?: LogConfigFieldLogLevel;
-		cloudWatchLogsRoleArn?: string;
-		excludeVerboseContent?: boolean;
+		fieldLogLevel?: LogConfigFieldLogLevel | null;
+		cloudWatchLogsRoleArn?: string | null;
+		excludeVerboseContent?: boolean | null;
 	}
 
 	export interface CreateGraphqlApiPostBodyUserPoolConfig {
-		userPoolId?: string;
-		awsRegion?: string;
-		defaultAction?: UserPoolConfigDefaultAction;
-		appIdClientRegex?: string;
+		userPoolId?: string | null;
+		awsRegion?: string | null;
+		defaultAction?: UserPoolConfigDefaultAction | null;
+		appIdClientRegex?: string | null;
 	}
 
 	export interface CreateGraphqlApiPostBodyOpenIDConnectConfig {
-		issuer?: string;
-		clientId?: string;
-		iatTTL?: number;
-		authTTL?: number;
+		issuer?: string | null;
+		clientId?: string | null;
+		iatTTL?: number | null;
+		authTTL?: number | null;
 	}
 
 	export interface CreateResolverPostBody {
@@ -1508,7 +1508,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
 		 */
-		dataSourceName?: string;
+		dataSourceName?: string | null;
 
 		/**
 		 * <p>The mapping template to be used for requests.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
@@ -1523,36 +1523,36 @@ export namespace MyNS {
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		responseMappingTemplate?: string;
+		responseMappingTemplate?: string | null;
 
 		/** <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li> </ul> */
-		kind?: ResolverKind;
+		kind?: ResolverKind | null;
 
 		/** The pipeline configuration for a resolver of kind <code>PIPELINE</code>. */
-		pipelineConfig?: CreateResolverPostBodyPipelineConfig;
+		pipelineConfig?: CreateResolverPostBodyPipelineConfig | null;
 
 		/** <p>Describes a Sync configuration for a resolver.</p> <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p> */
-		syncConfig?: CreateResolverPostBodySyncConfig;
+		syncConfig?: CreateResolverPostBodySyncConfig | null;
 
 		/** The caching configuration for a resolver that has caching enabled. */
-		cachingConfig?: CreateResolverPostBodyCachingConfig;
+		cachingConfig?: CreateResolverPostBodyCachingConfig | null;
 	}
 
 	export interface CreateResolverPostBodyPipelineConfig {
-		functions?: Array<string>;
+		functions?: Array<string> | null;
 	}
 
 	export interface CreateResolverPostBodySyncConfig {
-		conflictHandler?: SyncConfigConflictHandler;
-		conflictDetection?: SyncConfigConflictDetection;
+		conflictHandler?: SyncConfigConflictHandler | null;
+		conflictDetection?: SyncConfigConflictDetection | null;
 
 		/** The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the Conflict Handler. */
-		lambdaConflictHandlerConfig?: LambdaConflictHandlerConfig;
+		lambdaConflictHandlerConfig?: LambdaConflictHandlerConfig | null;
 	}
 
 	export interface CreateResolverPostBodyCachingConfig {
-		ttl?: number;
-		cachingKeys?: Array<string>;
+		ttl?: number | null;
+		cachingKeys?: Array<string> | null;
 	}
 
 	export interface CreateTypePostBody {
@@ -1573,16 +1573,16 @@ export namespace MyNS {
 	export interface UpdateApiKeyPostBody {
 
 		/** A description of the purpose of the API key. */
-		description?: string;
+		description?: string | null;
 
 		/** The time from update time after which the API key expires. The date is represented as seconds since the epoch. For more information, see . */
-		expires?: number;
+		expires?: number | null;
 	}
 
 	export interface UpdateDataSourcePostBody {
 
 		/** The new description for the data source. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The new data source type.
@@ -1591,55 +1591,55 @@ export namespace MyNS {
 		type: DataSourceType;
 
 		/** The new service role ARN for the data source. */
-		serviceRoleArn?: string;
+		serviceRoleArn?: string | null;
 
 		/** Describes an Amazon DynamoDB data source configuration. */
-		dynamodbConfig?: UpdateDataSourcePostBodyDynamodbConfig;
+		dynamodbConfig?: UpdateDataSourcePostBodyDynamodbConfig | null;
 
 		/** Describes an AWS Lambda data source configuration. */
-		lambdaConfig?: UpdateDataSourcePostBodyLambdaConfig;
+		lambdaConfig?: UpdateDataSourcePostBodyLambdaConfig | null;
 
 		/** Describes an Elasticsearch data source configuration. */
-		elasticsearchConfig?: UpdateDataSourcePostBodyElasticsearchConfig;
+		elasticsearchConfig?: UpdateDataSourcePostBodyElasticsearchConfig | null;
 
 		/** Describes an HTTP data source configuration. */
-		httpConfig?: UpdateDataSourcePostBodyHttpConfig;
+		httpConfig?: UpdateDataSourcePostBodyHttpConfig | null;
 
 		/** Describes a relational database data source configuration. */
-		relationalDatabaseConfig?: UpdateDataSourcePostBodyRelationalDatabaseConfig;
+		relationalDatabaseConfig?: UpdateDataSourcePostBodyRelationalDatabaseConfig | null;
 	}
 
 	export interface UpdateDataSourcePostBodyDynamodbConfig {
-		tableName?: string;
-		awsRegion?: string;
-		useCallerCredentials?: boolean;
+		tableName?: string | null;
+		awsRegion?: string | null;
+		useCallerCredentials?: boolean | null;
 
 		/** Describes a Delta Sync configuration. */
-		deltaSyncConfig?: DeltaSyncConfig;
-		versioned?: boolean;
+		deltaSyncConfig?: DeltaSyncConfig | null;
+		versioned?: boolean | null;
 	}
 
 	export interface UpdateDataSourcePostBodyLambdaConfig {
-		lambdaFunctionArn?: string;
+		lambdaFunctionArn?: string | null;
 	}
 
 	export interface UpdateDataSourcePostBodyElasticsearchConfig {
-		endpoint?: string;
-		awsRegion?: string;
+		endpoint?: string | null;
+		awsRegion?: string | null;
 	}
 
 	export interface UpdateDataSourcePostBodyHttpConfig {
-		endpoint?: string;
+		endpoint?: string | null;
 
 		/** The authorization config in case the HTTP endpoint requires authorization. */
-		authorizationConfig?: AuthorizationConfig;
+		authorizationConfig?: AuthorizationConfig | null;
 	}
 
 	export interface UpdateDataSourcePostBodyRelationalDatabaseConfig {
-		relationalDatabaseSourceType?: RelationalDatabaseDataSourceConfigRelationalDatabaseSourceType;
+		relationalDatabaseSourceType?: RelationalDatabaseDataSourceConfigRelationalDatabaseSourceType | null;
 
 		/** The Amazon RDS HTTP endpoint configuration. */
-		rdsHttpEndpointConfig?: RdsHttpEndpointConfig;
+		rdsHttpEndpointConfig?: RdsHttpEndpointConfig | null;
 	}
 
 	export interface UpdateFunctionPostBody {
@@ -1654,7 +1654,7 @@ export namespace MyNS {
 		name: string;
 
 		/** The <code>Function</code> description. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The <code>Function</code> <code>DataSource</code> name.
@@ -1678,7 +1678,7 @@ export namespace MyNS {
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		responseMappingTemplate?: string;
+		responseMappingTemplate?: string | null;
 
 		/**
 		 * The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29.
@@ -1696,42 +1696,42 @@ export namespace MyNS {
 		name: string;
 
 		/** The CloudWatch Logs configuration. */
-		logConfig?: UpdateGraphqlApiPostBodyLogConfig;
+		logConfig?: UpdateGraphqlApiPostBodyLogConfig | null;
 
 		/** The new authentication type for the <code>GraphqlApi</code> object. */
-		authenticationType?: GraphqlApiAuthenticationType;
+		authenticationType?: GraphqlApiAuthenticationType | null;
 
 		/** Describes an Amazon Cognito user pool configuration. */
-		userPoolConfig?: UpdateGraphqlApiPostBodyUserPoolConfig;
+		userPoolConfig?: UpdateGraphqlApiPostBodyUserPoolConfig | null;
 
 		/** Describes an OpenID Connect configuration. */
-		openIDConnectConfig?: UpdateGraphqlApiPostBodyOpenIDConnectConfig;
+		openIDConnectConfig?: UpdateGraphqlApiPostBodyOpenIDConnectConfig | null;
 
 		/** A list of additional authentication providers for the <code>GraphqlApi</code> API. */
-		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider>;
+		additionalAuthenticationProviders?: Array<AdditionalAuthenticationProvider> | null;
 
 		/** A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>. */
-		xrayEnabled?: boolean;
+		xrayEnabled?: boolean | null;
 	}
 
 	export interface UpdateGraphqlApiPostBodyLogConfig {
-		fieldLogLevel?: LogConfigFieldLogLevel;
-		cloudWatchLogsRoleArn?: string;
-		excludeVerboseContent?: boolean;
+		fieldLogLevel?: LogConfigFieldLogLevel | null;
+		cloudWatchLogsRoleArn?: string | null;
+		excludeVerboseContent?: boolean | null;
 	}
 
 	export interface UpdateGraphqlApiPostBodyUserPoolConfig {
-		userPoolId?: string;
-		awsRegion?: string;
-		defaultAction?: UserPoolConfigDefaultAction;
-		appIdClientRegex?: string;
+		userPoolId?: string | null;
+		awsRegion?: string | null;
+		defaultAction?: UserPoolConfigDefaultAction | null;
+		appIdClientRegex?: string | null;
 	}
 
 	export interface UpdateGraphqlApiPostBodyOpenIDConnectConfig {
-		issuer?: string;
-		clientId?: string;
-		iatTTL?: number;
-		authTTL?: number;
+		issuer?: string | null;
+		clientId?: string | null;
+		iatTTL?: number | null;
+		authTTL?: number | null;
 	}
 
 	export interface UpdateResolverPostBody {
@@ -1742,7 +1742,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
 		 */
-		dataSourceName?: string;
+		dataSourceName?: string | null;
 
 		/**
 		 * The new request mapping template.
@@ -1757,42 +1757,42 @@ export namespace MyNS {
 		 * Max length: 65536
 		 * Min length: 1
 		 */
-		responseMappingTemplate?: string;
+		responseMappingTemplate?: string | null;
 
 		/** <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li> </ul> */
-		kind?: ResolverKind;
+		kind?: ResolverKind | null;
 
 		/** The pipeline configuration for a resolver of kind <code>PIPELINE</code>. */
-		pipelineConfig?: UpdateResolverPostBodyPipelineConfig;
+		pipelineConfig?: UpdateResolverPostBodyPipelineConfig | null;
 
 		/** <p>Describes a Sync configuration for a resolver.</p> <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p> */
-		syncConfig?: UpdateResolverPostBodySyncConfig;
+		syncConfig?: UpdateResolverPostBodySyncConfig | null;
 
 		/** The caching configuration for a resolver that has caching enabled. */
-		cachingConfig?: UpdateResolverPostBodyCachingConfig;
+		cachingConfig?: UpdateResolverPostBodyCachingConfig | null;
 	}
 
 	export interface UpdateResolverPostBodyPipelineConfig {
-		functions?: Array<string>;
+		functions?: Array<string> | null;
 	}
 
 	export interface UpdateResolverPostBodySyncConfig {
-		conflictHandler?: SyncConfigConflictHandler;
-		conflictDetection?: SyncConfigConflictDetection;
+		conflictHandler?: SyncConfigConflictHandler | null;
+		conflictDetection?: SyncConfigConflictDetection | null;
 
 		/** The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the Conflict Handler. */
-		lambdaConflictHandlerConfig?: LambdaConflictHandlerConfig;
+		lambdaConflictHandlerConfig?: LambdaConflictHandlerConfig | null;
 	}
 
 	export interface UpdateResolverPostBodyCachingConfig {
-		ttl?: number;
-		cachingKeys?: Array<string>;
+		ttl?: number | null;
+		cachingKeys?: Array<string> | null;
 	}
 
 	export interface UpdateTypePostBody {
 
 		/** The new definition. */
-		definition?: string;
+		definition?: string | null;
 
 		/**
 		 * The new type format: SDL or JSON.

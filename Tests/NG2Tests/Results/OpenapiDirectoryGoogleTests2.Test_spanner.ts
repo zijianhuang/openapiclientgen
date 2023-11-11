@@ -12,7 +12,7 @@ export namespace MyNS {
 		 * `create_time`. `create_time` is approximately the time the
 		 * CreateBackup request is received.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Required for the CreateBackup operation.
@@ -21,7 +21,7 @@ export namespace MyNS {
 		 * Values are of the form
 		 * `projects/<project>/instances/<instance>/databases/<database>`.
 		 */
-		database?: string;
+		database?: string | null;
 
 		/**
 		 * Required for the CreateBackup
@@ -31,7 +31,7 @@ export namespace MyNS {
 		 * has passed, the backup is eligible to be automatically deleted by Cloud
 		 * Spanner to free the resources used by the backup.
 		 */
-		expireTime?: string;
+		expireTime?: string | null;
 
 		/**
 		 * Output only for the CreateBackup operation.
@@ -46,7 +46,7 @@ export namespace MyNS {
 		 * by the prefix of the backup name of the form
 		 * `projects/<project>/instances/<instance>`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. The names of the restored databases that reference the backup.
@@ -57,13 +57,13 @@ export namespace MyNS {
 		 * restored database from the backup enters the `READY` state, the reference
 		 * to the backup is removed.
 		 */
-		referencingDatabases?: Array<string>;
+		referencingDatabases?: Array<string> | null;
 
 		/** Output only. Size of the backup in bytes. */
-		sizeBytes?: string;
+		sizeBytes?: string | null;
 
 		/** Output only. The current state of the backup. */
-		state?: BackupState;
+		state?: BackupState | null;
 	}
 
 	export enum BackupState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2 }
@@ -73,16 +73,16 @@ export namespace MyNS {
 	export interface BackupInfo {
 
 		/** Name of the backup. */
-		backup?: string;
+		backup?: string | null;
 
 		/**
 		 * The backup contains an externally consistent copy of `source_database` at
 		 * the timestamp specified by `create_time`.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Name of the database the backup was created from. */
-		sourceDatabase?: string;
+		sourceDatabase?: string | null;
 	}
 
 
@@ -96,10 +96,10 @@ export namespace MyNS {
 		 * calls to BatchCreateSessions (adjusting
 		 * session_count as necessary).
 		 */
-		sessionCount?: number;
+		sessionCount?: number | null;
 
 		/** A session in the Cloud Spanner API. */
-		sessionTemplate?: Session;
+		sessionTemplate?: Session | null;
 	}
 
 
@@ -110,10 +110,10 @@ export namespace MyNS {
 		 * Output only. The approximate timestamp when the session is last used. It is
 		 * typically earlier than the actual last use time.
 		 */
-		approximateLastUseTime?: string;
+		approximateLastUseTime?: string | null;
 
 		/** Output only. The timestamp when the session is created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * The labels for the session.
@@ -124,13 +124,13 @@ export namespace MyNS {
 		 * * No more than 64 labels can be associated with a given session.
 		 * See https://goo.gl/xmQnxf for more information on and examples of labels.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The name of the session. This is always system-assigned; values provided
 		 * when creating a session are ignored.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -138,7 +138,7 @@ export namespace MyNS {
 	export interface BatchCreateSessionsResponse {
 
 		/** The freshly created sessions. */
-		session?: Array<Session>;
+		session?: Array<Session> | null;
 	}
 
 
@@ -362,7 +362,7 @@ export namespace MyNS {
 		 * operations that are idempotent, such as deleting old rows from a very large
 		 * table.
 		 */
-		options?: TransactionOptions;
+		options?: TransactionOptions | null;
 	}
 
 
@@ -586,16 +586,16 @@ export namespace MyNS {
 	export interface TransactionOptions {
 
 		/** Message type to initiate a Partitioned DML transaction. */
-		partitionedDml?: PartitionedDml;
+		partitionedDml?: PartitionedDml | null;
 
 		/** Message type to initiate a read-only transaction. */
-		readOnly?: ReadOnly;
+		readOnly?: ReadOnly | null;
 
 		/**
 		 * Message type to initiate a read-write transaction. Currently this
 		 * transaction type has no options.
 		 */
-		readWrite?: ReadWrite;
+		readWrite?: ReadWrite | null;
 	}
 
 
@@ -618,7 +618,7 @@ export namespace MyNS {
 		 * Useful for reading at nearby replicas without the distributed
 		 * timestamp negotiation overhead of `max_staleness`.
 		 */
-		exactStaleness?: string;
+		exactStaleness?: string | null;
 
 		/**
 		 * Read data at a timestamp >= `NOW - max_staleness`
@@ -633,7 +633,7 @@ export namespace MyNS {
 		 * Note that this option can only be used in single-use
 		 * transactions.
 		 */
-		maxStaleness?: string;
+		maxStaleness?: string | null;
 
 		/**
 		 * Executes all reads at a timestamp >= `min_read_timestamp`.
@@ -644,7 +644,7 @@ export namespace MyNS {
 		 * A timestamp in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds.
 		 * Example: `"2014-10-02T15:01:23.045123456Z"`.
 		 */
-		minReadTimestamp?: string;
+		minReadTimestamp?: string | null;
 
 		/**
 		 * Executes all reads at the given timestamp. Unlike other modes,
@@ -658,19 +658,19 @@ export namespace MyNS {
 		 * A timestamp in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds.
 		 * Example: `"2014-10-02T15:01:23.045123456Z"`.
 		 */
-		readTimestamp?: string;
+		readTimestamp?: string | null;
 
 		/**
 		 * If true, the Cloud Spanner-selected read timestamp is included in
 		 * the Transaction message that describes the transaction.
 		 */
-		returnReadTimestamp?: boolean;
+		returnReadTimestamp?: boolean | null;
 
 		/**
 		 * Read at a timestamp where all previously committed transactions
 		 * are visible.
 		 */
-		strong?: boolean;
+		strong?: boolean | null;
 	}
 
 
@@ -709,7 +709,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -744,13 +744,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -784,26 +784,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -814,7 +814,7 @@ export namespace MyNS {
 	export interface ChildLink {
 
 		/** The node to which the link points. */
-		childIndex?: number;
+		childIndex?: number | null;
 
 		/**
 		 * The type of the link. For example, in Hash Joins this could be used to
@@ -822,7 +822,7 @@ export namespace MyNS {
 		 * of the child being an output variable, to represent the tag associated
 		 * with the output variable.
 		 */
-		type?: string;
+		type?: string | null;
 
 		/**
 		 * Only present if the child node is SCALAR and corresponds
@@ -834,7 +834,7 @@ export namespace MyNS {
 		 * `variable` fields will be set to the variable names assigned to the
 		 * columns.
 		 */
-		variable?: string;
+		variable?: string | null;
 	}
 
 
@@ -846,7 +846,7 @@ export namespace MyNS {
 		 * mutations are applied atomically, in the order they appear in
 		 * this list.
 		 */
-		mutations?: Array<Mutation>;
+		mutations?: Array<Mutation> | null;
 
 		/**
 		 * # Transactions
@@ -1065,10 +1065,10 @@ export namespace MyNS {
 		 * operations that are idempotent, such as deleting old rows from a very large
 		 * table.
 		 */
-		singleUseTransaction?: TransactionOptions;
+		singleUseTransaction?: TransactionOptions | null;
 
 		/** Commit a previously-started transaction. */
-		transactionId?: string;
+		transactionId?: string | null;
 	}
 
 
@@ -1080,31 +1080,31 @@ export namespace MyNS {
 	export interface Mutation {
 
 		/** Arguments to delete operations. */
-		delete?: Delete;
+		delete?: Delete | null;
 
 		/**
 		 * Arguments to insert, update, insert_or_update, and
 		 * replace operations.
 		 */
-		insert?: Write;
+		insert?: Write | null;
 
 		/**
 		 * Arguments to insert, update, insert_or_update, and
 		 * replace operations.
 		 */
-		insertOrUpdate?: Write;
+		insertOrUpdate?: Write | null;
 
 		/**
 		 * Arguments to insert, update, insert_or_update, and
 		 * replace operations.
 		 */
-		replace?: Write;
+		replace?: Write | null;
 
 		/**
 		 * Arguments to insert, update, insert_or_update, and
 		 * replace operations.
 		 */
-		update?: Write;
+		update?: Write | null;
 	}
 
 
@@ -1119,10 +1119,10 @@ export namespace MyNS {
 		 * if two ranges, two keys, or a key and a range overlap), Cloud Spanner
 		 * behaves as if the key were only specified once.
 		 */
-		keySet?: KeySet;
+		keySet?: KeySet | null;
 
 		/** Required. The table whose rows will be deleted. */
-		table?: string;
+		table?: string | null;
 	}
 
 
@@ -1141,7 +1141,7 @@ export namespace MyNS {
 		 * `KeySet` matches all keys in the table or index. Note that any keys
 		 * specified in `keys` or `ranges` are only yielded once.
 		 */
-		all?: boolean;
+		all?: boolean | null;
 
 		/**
 		 * A list of specific keys. Entries in `keys` should have exactly as
@@ -1149,13 +1149,13 @@ export namespace MyNS {
 		 * with which this `KeySet` is used.  Individual key values are
 		 * encoded as described here.
 		 */
-		keys?: Array<string>;
+		keys?: Array<string> | null;
 
 		/**
 		 * A list of key ranges. See KeyRange for more information about
 		 * key range specifications.
 		 */
-		ranges?: Array<KeyRange>;
+		ranges?: Array<KeyRange> | null;
 	}
 
 
@@ -1227,25 +1227,25 @@ export namespace MyNS {
 		 * If the end is closed, then the range includes all rows whose
 		 * first `len(end_closed)` key columns exactly match `end_closed`.
 		 */
-		endClosed?: Array<string>;
+		endClosed?: Array<string> | null;
 
 		/**
 		 * If the end is open, then the range excludes rows whose first
 		 * `len(end_open)` key columns exactly match `end_open`.
 		 */
-		endOpen?: Array<string>;
+		endOpen?: Array<string> | null;
 
 		/**
 		 * If the start is closed, then the range includes all rows whose
 		 * first `len(start_closed)` key columns exactly match `start_closed`.
 		 */
-		startClosed?: Array<string>;
+		startClosed?: Array<string> | null;
 
 		/**
 		 * If the start is open, then the range excludes rows whose first
 		 * `len(start_open)` key columns exactly match `start_open`.
 		 */
-		startOpen?: Array<string>;
+		startOpen?: Array<string> | null;
 	}
 
 
@@ -1261,10 +1261,10 @@ export namespace MyNS {
 		 * Cloud Spanner to derive values for all primary key columns in the
 		 * row(s) to be modified.
 		 */
-		columns?: Array<string>;
+		columns?: Array<string> | null;
 
 		/** Required. The table whose rows will be written. */
-		table?: string;
+		table?: string | null;
 
 		/**
 		 * The values to be written. `values` can contain more than one
@@ -1276,7 +1276,7 @@ export namespace MyNS {
 		 * table and columns. Individual values in each list are
 		 * encoded as described here.
 		 */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
@@ -1284,7 +1284,7 @@ export namespace MyNS {
 	export interface CommitResponse {
 
 		/** The Cloud Spanner timestamp at which the transaction committed. */
-		commitTimestamp?: string;
+		commitTimestamp?: string | null;
 	}
 
 
@@ -1307,19 +1307,19 @@ export namespace MyNS {
 		 * an Operation.error value with a google.rpc.Status.code of 1,
 		 * corresponding to `Code.CANCELLED`.
 		 */
-		cancelTime?: string;
+		cancelTime?: string | null;
 
 		/** The name of the database the backup is created from. */
-		database?: string;
+		database?: string | null;
 
 		/** The name of the backup being created. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Encapsulates progress related information for a Cloud Spanner long
 		 * running operation.
 		 */
-		progress?: OperationProgress;
+		progress?: OperationProgress | null;
 	}
 
 
@@ -1333,16 +1333,16 @@ export namespace MyNS {
 		 * If set, the time at which this operation failed or was completed
 		 * successfully.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Percent completion of the operation.
 		 * Values are between 0 and 100 inclusive.
 		 */
-		progressPercent?: number;
+		progressPercent?: number | null;
 
 		/** Time the request was received. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -1353,7 +1353,7 @@ export namespace MyNS {
 	export interface CreateDatabaseMetadata {
 
 		/** The database being created. */
-		database?: string;
+		database?: string | null;
 	}
 
 
@@ -1367,7 +1367,7 @@ export namespace MyNS {
 		 * If the database ID is a reserved word or if it contains a hyphen, the
 		 * database ID must be enclosed in backticks (`` ` ``).
 		 */
-		createStatement?: string;
+		createStatement?: string | null;
 
 		/**
 		 * Optional. A list of DDL statements to run inside the newly created
@@ -1375,7 +1375,7 @@ export namespace MyNS {
 		 * statements execute atomically with the creation of the database:
 		 * if there is an error in any statement, the database is not created.
 		 */
-		extraStatements?: Array<string>;
+		extraStatements?: Array<string> | null;
 	}
 
 
@@ -1390,20 +1390,20 @@ export namespace MyNS {
 		 * in the process of undoing itself (which is guaranteed to succeed) and
 		 * cannot be cancelled again.
 		 */
-		cancelTime?: string;
+		cancelTime?: string | null;
 
 		/** The time at which this operation failed or was completed successfully. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** An isolated set of Cloud Spanner resources on which databases can be hosted. */
-		instance?: Instance;
+		instance?: Instance | null;
 
 		/**
 		 * The time at which the
 		 * CreateInstance request was
 		 * received.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -1416,16 +1416,16 @@ export namespace MyNS {
 		 * also InstanceConfig and
 		 * ListInstanceConfigs.
 		 */
-		config?: string;
+		config?: string | null;
 
 		/**
 		 * Required. The descriptive name for this instance as it appears in UIs.
 		 * Must be unique per project and between 4 and 30 characters in length.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Deprecated. This field is not populated. */
-		endpointUris?: Array<string>;
+		endpointUris?: Array<string> | null;
 
 		/**
 		 * Cloud Labels are a flexible and lightweight mechanism for organizing cloud
@@ -1447,7 +1447,7 @@ export namespace MyNS {
 		 * as the string:  name + "_" + value  would prove problematic if we were to
 		 * allow "_" in a future release.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Required. A unique identifier for the instance, which cannot be changed
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 		 * `projects/<project>/instances/a-z*[a-z0-9]`. The final
 		 * segment of the name must be between 2 and 64 characters in length.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The number of nodes allocated to this instance. This
@@ -1465,7 +1465,7 @@ export namespace MyNS {
 		 * documentation](https://cloud.google.com/spanner/docs/instances#node_count)
 		 * for more information about nodes.
 		 */
-		nodeCount?: number;
+		nodeCount?: number | null;
 
 		/**
 		 * Output only. The current instance state. For
@@ -1474,7 +1474,7 @@ export namespace MyNS {
 		 * UpdateInstance, the state must be
 		 * either omitted or set to `READY`.
 		 */
-		state?: BackupState;
+		state?: BackupState | null;
 	}
 
 
@@ -1482,14 +1482,14 @@ export namespace MyNS {
 	export interface CreateInstanceRequest {
 
 		/** An isolated set of Cloud Spanner resources on which databases can be hosted. */
-		instance?: Instance;
+		instance?: Instance | null;
 
 		/**
 		 * Required. The ID of the instance to create.  Valid identifiers are of the
 		 * form `a-z*[a-z0-9]` and must be between 2 and 64 characters in
 		 * length.
 		 */
-		instanceId?: string;
+		instanceId?: string | null;
 	}
 
 
@@ -1497,7 +1497,7 @@ export namespace MyNS {
 	export interface CreateSessionRequest {
 
 		/** A session in the Cloud Spanner API. */
-		session?: Session;
+		session?: Session | null;
 	}
 
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 	export interface Database {
 
 		/** Output only. If exists, the time at which the database creation started. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Required. The name of the database. Values are of the form
@@ -1514,13 +1514,13 @@ export namespace MyNS {
 		 * statement. This name can be passed to other API methods to
 		 * identify the database.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Information about the database restore. */
-		restoreInfo?: RestoreInfo;
+		restoreInfo?: RestoreInfo | null;
 
 		/** Output only. The current database state. */
-		state?: DatabaseState;
+		state?: DatabaseState | null;
 	}
 
 
@@ -1528,10 +1528,10 @@ export namespace MyNS {
 	export interface RestoreInfo {
 
 		/** Information about a backup. */
-		backupInfo?: BackupInfo;
+		backupInfo?: BackupInfo | null;
 
 		/** The type of the restore source. */
-		sourceType?: RestoreInfoSourceType;
+		sourceType?: RestoreInfoSourceType | null;
 	}
 
 	export enum RestoreInfoSourceType { TYPE_UNSPECIFIED = 0, BACKUP = 1 }
@@ -1564,7 +1564,7 @@ export namespace MyNS {
 		 * sequence number, the transaction may be aborted. Replays of previously
 		 * handled requests will yield the same response as the first execution.
 		 */
-		seqno?: string;
+		seqno?: string | null;
 
 		/**
 		 * Required. The list of statements to execute in this batch. Statements are executed
@@ -1573,7 +1573,7 @@ export namespace MyNS {
 		 * first failed statement; the remaining statements are not executed.
 		 * Callers must provide at least one statement.
 		 */
-		statements?: Array<Statement>;
+		statements?: Array<Statement> | null;
 
 		/**
 		 * This message is used to select the transaction in which a
@@ -1581,7 +1581,7 @@ export namespace MyNS {
 		 * ExecuteSql call runs.
 		 * See TransactionOptions for more information about transactions.
 		 */
-		transaction?: TransactionSelector;
+		transaction?: TransactionSelector | null;
 	}
 
 
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 		 * definition of Type for more information
 		 * about SQL types.
 		 */
-		paramTypes?: {[id: string]: Type };
+		paramTypes?: {[id: string]: Type } | null;
 
 		/**
 		 * Parameter names and values that bind to placeholders in the DML string.
@@ -1609,10 +1609,10 @@ export namespace MyNS {
 		 * `"WHERE id > @msg_id AND id < @msg_id + 100"`
 		 * It is an error to execute a SQL statement with unbound parameters.
 		 */
-		params?: {[id: string]: any };
+		params?: {[id: string]: any } | null;
 
 		/** Required. The DML string. */
-		sql?: string;
+		sql?: string | null;
 	}
 
 
@@ -1626,13 +1626,13 @@ export namespace MyNS {
 		 * `Type` indicates the type of a Cloud Spanner value, as might be stored in a
 		 * table cell or returned from an SQL query.
 		 */
-		arrayElementType?: Type;
+		arrayElementType?: Type | null;
 
 		/** Required. The TypeCode for this type. */
-		code?: TypeCode;
+		code?: TypeCode | null;
 
 		/** `StructType` defines the fields of a STRUCT type. */
-		structType?: StructType;
+		structType?: StructType | null;
 	}
 
 	export enum TypeCode { TYPE_CODE_UNSPECIFIED = 0, BOOL = 1, INT64 = 2, FLOAT64 = 3, TIMESTAMP = 4, DATE = 5, STRING = 6, BYTES = 7, ARRAY = 8, STRUCT = 9 }
@@ -1649,7 +1649,7 @@ export namespace MyNS {
 		 * matches the order of columns in a read request, or the order of
 		 * fields in the `SELECT` clause of a query.
 		 */
-		fields?: Array<Field>;
+		fields?: Array<Field> | null;
 	}
 
 
@@ -1665,13 +1665,13 @@ export namespace MyNS {
 		 * UPPER(ColName)"`). Note that a query result can contain
 		 * multiple fields with the same name.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * `Type` indicates the type of a Cloud Spanner value, as might be stored in a
 		 * table cell or returned from an SQL query.
 		 */
-		type?: Type;
+		type?: Type | null;
 	}
 
 
@@ -1900,10 +1900,10 @@ export namespace MyNS {
 		 * operations that are idempotent, such as deleting old rows from a very large
 		 * table.
 		 */
-		begin?: TransactionOptions;
+		begin?: TransactionOptions | null;
 
 		/** Execute the read or SQL query in a previously-started transaction. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * # Transactions
@@ -2122,7 +2122,7 @@ export namespace MyNS {
 		 * operations that are idempotent, such as deleting old rows from a very large
 		 * table.
 		 */
-		singleUse?: TransactionOptions;
+		singleUse?: TransactionOptions | null;
 	}
 
 
@@ -2156,7 +2156,7 @@ export namespace MyNS {
 		 * Only the first ResultSet in the response contains valid
 		 * ResultSetMetadata.
 		 */
-		resultSets?: Array<ResultSet>;
+		resultSets?: Array<ResultSet> | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -2166,7 +2166,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 	}
 
 
@@ -2177,7 +2177,7 @@ export namespace MyNS {
 	export interface ResultSet {
 
 		/** Metadata about a ResultSet or PartialResultSet. */
-		metadata?: ResultSetMetadata;
+		metadata?: ResultSetMetadata | null;
 
 		/**
 		 * Each element in `rows` is a row whose format is defined by
@@ -2187,10 +2187,10 @@ export namespace MyNS {
 		 * encoded based on type as described
 		 * here.
 		 */
-		rows?: Array<string>;
+		rows?: Array<string> | null;
 
 		/** Additional statistics about a ResultSet or PartialResultSet. */
-		stats?: ResultSetStats;
+		stats?: ResultSetStats | null;
 	}
 
 
@@ -2198,10 +2198,10 @@ export namespace MyNS {
 	export interface ResultSetMetadata {
 
 		/** `StructType` defines the fields of a STRUCT type. */
-		rowType?: StructType;
+		rowType?: StructType | null;
 
 		/** A transaction. */
-		transaction?: Transaction;
+		transaction?: Transaction | null;
 	}
 
 
@@ -2217,7 +2217,7 @@ export namespace MyNS {
 		 * Single-use read-only transactions do not have IDs, because
 		 * single-use transactions do not support multiple requests.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * For snapshot read-only transactions, the read timestamp chosen
@@ -2226,7 +2226,7 @@ export namespace MyNS {
 		 * A timestamp in RFC3339 UTC \"Zulu\" format, accurate to nanoseconds.
 		 * Example: `"2014-10-02T15:01:23.045123456Z"`.
 		 */
-		readTimestamp?: string;
+		readTimestamp?: string | null;
 	}
 
 
@@ -2234,7 +2234,7 @@ export namespace MyNS {
 	export interface ResultSetStats {
 
 		/** Contains an ordered list of nodes appearing in the query plan. */
-		queryPlan?: QueryPlan;
+		queryPlan?: QueryPlan | null;
 
 		/**
 		 * Aggregated statistics from the execution of the query. Only present when
@@ -2246,16 +2246,16 @@ export namespace MyNS {
 		 * "cpu_time": "1.19 secs"
 		 * }
 		 */
-		queryStats?: {[id: string]: any };
+		queryStats?: {[id: string]: any } | null;
 
 		/** Standard DML returns an exact count of rows that were modified. */
-		rowCountExact?: string;
+		rowCountExact?: string | null;
 
 		/**
 		 * Partitioned DML does not offer exactly-once semantics, so it
 		 * returns a lower bound of the rows modified.
 		 */
-		rowCountLowerBound?: string;
+		rowCountLowerBound?: string | null;
 	}
 
 
@@ -2267,7 +2267,7 @@ export namespace MyNS {
 		 * with the plan root. Each PlanNode's `id` corresponds to its index in
 		 * `plan_nodes`.
 		 */
-		planNodes?: Array<PlanNode>;
+		planNodes?: Array<PlanNode> | null;
 	}
 
 
@@ -2275,10 +2275,10 @@ export namespace MyNS {
 	export interface PlanNode {
 
 		/** List of child node `index`es and their relationship to this parent. */
-		childLinks?: Array<ChildLink>;
+		childLinks?: Array<ChildLink> | null;
 
 		/** The display name for the node. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The execution statistics associated with the node, contained in a group of
@@ -2286,10 +2286,10 @@ export namespace MyNS {
 		 * profile query. For example, number of executions, number of rows/time per
 		 * execution etc.
 		 */
-		executionStats?: {[id: string]: any };
+		executionStats?: {[id: string]: any } | null;
 
 		/** The `PlanNode`'s index in node list. */
-		index?: number;
+		index?: number | null;
 
 		/**
 		 * Used to determine the type of node. May be needed for visualizing
@@ -2298,7 +2298,7 @@ export namespace MyNS {
 		 * which can be used to directly embed a description of the node in its
 		 * parent.
 		 */
-		kind?: PlanNodeKind;
+		kind?: PlanNodeKind | null;
 
 		/**
 		 * Attributes relevant to the node contained in a group of key-value pairs.
@@ -2309,13 +2309,13 @@ export namespace MyNS {
 		 * "parameter_type": "array"
 		 * }
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Condensed representation of a node and its subtree. Only present for
 		 * `SCALAR` PlanNode(s).
 		 */
-		shortRepresentation?: ShortRepresentation;
+		shortRepresentation?: ShortRepresentation | null;
 	}
 
 	export enum PlanNodeKind { KIND_UNSPECIFIED = 0, RELATIONAL = 1, SCALAR = 2 }
@@ -2328,7 +2328,7 @@ export namespace MyNS {
 	export interface ShortRepresentation {
 
 		/** A string representation of the expression subtree rooted at this node. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * A mapping of (subquery variable name) -> (subquery node id) for cases
@@ -2337,7 +2337,7 @@ export namespace MyNS {
 		 * referenced `SCALAR` subquery may not necessarily be a direct child of
 		 * this node.
 		 */
-		subqueries?: {[id: string]: number };
+		subqueries?: {[id: string]: number } | null;
 	}
 
 
@@ -2352,20 +2352,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -2384,7 +2384,7 @@ export namespace MyNS {
 		 * definition of Type for more information
 		 * about SQL types.
 		 */
-		paramTypes?: {[id: string]: Type };
+		paramTypes?: {[id: string]: Type } | null;
 
 		/**
 		 * Parameter names and values that bind to placeholders in the SQL string.
@@ -2396,7 +2396,7 @@ export namespace MyNS {
 		 * `"WHERE id > @msg_id AND id < @msg_id + 100"`
 		 * It is an error to execute a SQL statement with unbound parameters.
 		 */
-		params?: {[id: string]: any };
+		params?: {[id: string]: any } | null;
 
 		/**
 		 * If present, results will be restricted to the specified partition
@@ -2404,17 +2404,17 @@ export namespace MyNS {
 		 * match for the values of fields common to this message and the
 		 * PartitionQueryRequest message used to create this partition_token.
 		 */
-		partitionToken?: string;
+		partitionToken?: string | null;
 
 		/**
 		 * Used to control the amount of debugging information returned in
 		 * ResultSetStats. If partition_token is set, query_mode can only
 		 * be set to QueryMode.NORMAL.
 		 */
-		queryMode?: ExecuteSqlRequestQueryMode;
+		queryMode?: ExecuteSqlRequestQueryMode | null;
 
 		/** Query optimizer configuration. */
-		queryOptions?: QueryOptions;
+		queryOptions?: QueryOptions | null;
 
 		/**
 		 * If this request is resuming a previously interrupted SQL statement
@@ -2424,7 +2424,7 @@ export namespace MyNS {
 		 * off. The rest of the request parameters must exactly match the
 		 * request that yielded this token.
 		 */
-		resumeToken?: string;
+		resumeToken?: string | null;
 
 		/**
 		 * A per-transaction sequence number used to identify this request. This field
@@ -2436,10 +2436,10 @@ export namespace MyNS {
 		 * handled requests will yield the same response as the first execution.
 		 * Required for DML statements. Ignored for queries.
 		 */
-		seqno?: string;
+		seqno?: string | null;
 
 		/** Required. The SQL string. */
-		sql?: string;
+		sql?: string | null;
 
 		/**
 		 * This message is used to select the transaction in which a
@@ -2447,7 +2447,7 @@ export namespace MyNS {
 		 * ExecuteSql call runs.
 		 * See TransactionOptions for more information about transactions.
 		 */
-		transaction?: TransactionSelector;
+		transaction?: TransactionSelector | null;
 	}
 
 	export enum ExecuteSqlRequestQueryMode { NORMAL = 0, PLAN = 1, PROFILE = 2 }
@@ -2471,7 +2471,7 @@ export namespace MyNS {
 		 * (`INVALID_ARGUMENT`) status.
 		 * The `optimizer_version` statement hint has precedence over this setting.
 		 */
-		optimizerVersion?: string;
+		optimizerVersion?: string | null;
 	}
 
 
@@ -2482,7 +2482,7 @@ export namespace MyNS {
 		 * A list of formatted DDL statements defining the schema of the database
 		 * specified in the request.
 		 */
-		statements?: Array<string>;
+		statements?: Array<string> | null;
 	}
 
 
@@ -2490,7 +2490,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -2505,7 +2505,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -2516,20 +2516,20 @@ export namespace MyNS {
 	export interface InstanceConfig {
 
 		/** The name of this instance configuration as it appears in UIs. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * A unique identifier for the instance configuration.  Values
 		 * are of the form
 		 * `projects/<project>/instanceConfigs/a-z*`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The geographic placement of nodes in this instance configuration and their
 		 * replication properties.
 		 */
-		replicas?: Array<ReplicaInfo>;
+		replicas?: Array<ReplicaInfo> | null;
 	}
 
 	export interface ReplicaInfo {
@@ -2540,13 +2540,13 @@ export namespace MyNS {
 		 * documentation](https://cloud.google.com/spanner/docs/instances#region_types)
 		 * for more details.
 		 */
-		defaultLeaderLocation?: boolean;
+		defaultLeaderLocation?: boolean | null;
 
 		/** The location of the serving resources, e.g. "us-central1". */
-		location?: string;
+		location?: string | null;
 
 		/** The type of replica. */
-		type?: ReplicaInfoType;
+		type?: ReplicaInfoType | null;
 	}
 
 	export enum ReplicaInfoType { TYPE_UNSPECIFIED = 0, READ_WRITE = 1, READ_ONLY = 2, WITNESS = 3 }
@@ -2563,7 +2563,7 @@ export namespace MyNS {
 		 * ListBackupOperations
 		 * call to fetch more of the matching metadata.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * The list of matching backup long-running
@@ -2576,7 +2576,7 @@ export namespace MyNS {
 		 * `operation.metadata.value.progress.start_time` in descending order starting
 		 * from the most recently started operation.
 		 */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -2591,7 +2591,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -2601,7 +2601,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -2609,14 +2609,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -2628,7 +2628,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -2639,14 +2639,14 @@ export namespace MyNS {
 		 * The list of matching backups. Backups returned are ordered by `create_time`
 		 * in descending order, starting from the most recent `create_time`.
 		 */
-		backups?: Array<Backup>;
+		backups?: Array<Backup> | null;
 
 		/**
 		 * `next_page_token` can be sent in a subsequent
 		 * ListBackups call to fetch more
 		 * of the matching backups.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -2661,7 +2661,7 @@ export namespace MyNS {
 		 * ListDatabaseOperations
 		 * call to fetch more of the matching metadata.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * The list of matching database long-running
@@ -2670,7 +2670,7 @@ export namespace MyNS {
 		 * metadata field type
 		 * `metadata.type_url` describes the type of the metadata.
 		 */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -2678,14 +2678,14 @@ export namespace MyNS {
 	export interface ListDatabasesResponse {
 
 		/** Databases that matched the request. */
-		databases?: Array<Database>;
+		databases?: Array<Database> | null;
 
 		/**
 		 * `next_page_token` can be sent in a subsequent
 		 * ListDatabases call to fetch more
 		 * of the matching databases.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -2693,14 +2693,14 @@ export namespace MyNS {
 	export interface ListInstanceConfigsResponse {
 
 		/** The list of requested instance configurations. */
-		instanceConfigs?: Array<InstanceConfig>;
+		instanceConfigs?: Array<InstanceConfig> | null;
 
 		/**
 		 * `next_page_token` can be sent in a subsequent
 		 * ListInstanceConfigs call to
 		 * fetch more of the matching instance configurations.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -2708,14 +2708,14 @@ export namespace MyNS {
 	export interface ListInstancesResponse {
 
 		/** The list of requested instances. */
-		instances?: Array<Instance>;
+		instances?: Array<Instance> | null;
 
 		/**
 		 * `next_page_token` can be sent in a subsequent
 		 * ListInstances call to fetch more
 		 * of the matching instances.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -2723,10 +2723,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -2738,10 +2738,10 @@ export namespace MyNS {
 		 * ListSessions call to fetch more of the matching
 		 * sessions.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of requested sessions. */
-		sessions?: Array<Session>;
+		sessions?: Array<Session> | null;
 	}
 
 
@@ -2754,13 +2754,13 @@ export namespace MyNS {
 	export interface OptimizeRestoredDatabaseMetadata {
 
 		/** Name of the restored database being optimized. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Encapsulates progress related information for a Cloud Spanner long
 		 * running operation.
 		 */
-		progress?: OperationProgress;
+		progress?: OperationProgress | null;
 	}
 
 
@@ -2776,10 +2776,10 @@ export namespace MyNS {
 		 * be combined with more values from subsequent `PartialResultSet`s
 		 * to obtain a complete field value.
 		 */
-		chunkedValue?: boolean;
+		chunkedValue?: boolean | null;
 
 		/** Metadata about a ResultSet or PartialResultSet. */
-		metadata?: ResultSetMetadata;
+		metadata?: ResultSetMetadata | null;
 
 		/**
 		 * Streaming calls might be interrupted for a variety of reasons, such
@@ -2788,10 +2788,10 @@ export namespace MyNS {
 		 * `resume_token`. Note that executing any other transaction in the
 		 * same session invalidates the token.
 		 */
-		resumeToken?: string;
+		resumeToken?: string | null;
 
 		/** Additional statistics about a ResultSet or PartialResultSet. */
-		stats?: ResultSetStats;
+		stats?: ResultSetStats | null;
 
 		/**
 		 * A streamed result set consists of a stream of values, which might
@@ -2854,7 +2854,7 @@ export namespace MyNS {
 		 * containing the field value `"Hello"`, and a second containing the
 		 * field value `"World" = "W" + "orl" + "d"`.
 		 */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
@@ -2869,7 +2869,7 @@ export namespace MyNS {
 		 * ExecuteStreamingSql requests to restrict the results to those identified by
 		 * this partition token.
 		 */
-		partitionToken?: string;
+		partitionToken?: string | null;
 	}
 
 
@@ -2888,7 +2888,7 @@ export namespace MyNS {
 		 * a hint.  The actual number of partitions returned may be smaller or larger
 		 * than this maximum count request.
 		 */
-		maxPartitions?: string;
+		maxPartitions?: string | null;
 
 		/**
 		 * **Note:** This hint is currently ignored by PartitionQuery and
@@ -2897,7 +2897,7 @@ export namespace MyNS {
 		 * option is currently 1 GiB.  This is only a hint. The actual size of each
 		 * partition may be smaller or larger than this size request.
 		 */
-		partitionSizeBytes?: string;
+		partitionSizeBytes?: string | null;
 	}
 
 
@@ -2913,7 +2913,7 @@ export namespace MyNS {
 		 * definition of Type for more information
 		 * about SQL types.
 		 */
-		paramTypes?: {[id: string]: Type };
+		paramTypes?: {[id: string]: Type } | null;
 
 		/**
 		 * Parameter names and values that bind to placeholders in the SQL string.
@@ -2925,13 +2925,13 @@ export namespace MyNS {
 		 * `"WHERE id > @msg_id AND id < @msg_id + 100"`
 		 * It is an error to execute a SQL statement with unbound parameters.
 		 */
-		params?: {[id: string]: any };
+		params?: {[id: string]: any } | null;
 
 		/**
 		 * Options for a PartitionQueryRequest and
 		 * PartitionReadRequest.
 		 */
-		partitionOptions?: PartitionOptions;
+		partitionOptions?: PartitionOptions | null;
 
 		/**
 		 * Required. The query request to generate partitions for. The request will fail if
@@ -2944,7 +2944,7 @@ export namespace MyNS {
 		 * DELETE. Use ExecuteStreamingSql with a
 		 * PartitionedDml transaction for large, partition-friendly DML operations.
 		 */
-		sql?: string;
+		sql?: string | null;
 
 		/**
 		 * This message is used to select the transaction in which a
@@ -2952,7 +2952,7 @@ export namespace MyNS {
 		 * ExecuteSql call runs.
 		 * See TransactionOptions for more information about transactions.
 		 */
-		transaction?: TransactionSelector;
+		transaction?: TransactionSelector | null;
 	}
 
 
@@ -2963,14 +2963,14 @@ export namespace MyNS {
 		 * The columns of table to be returned for each row matching
 		 * this request.
 		 */
-		columns?: Array<string>;
+		columns?: Array<string> | null;
 
 		/**
 		 * If non-empty, the name of an index on table. This index is
 		 * used instead of the table primary key when interpreting key_set
 		 * and sorting result rows. See key_set for further information.
 		 */
-		index?: string;
+		index?: string | null;
 
 		/**
 		 * `KeySet` defines a collection of Cloud Spanner keys and/or key ranges. All
@@ -2980,16 +2980,16 @@ export namespace MyNS {
 		 * if two ranges, two keys, or a key and a range overlap), Cloud Spanner
 		 * behaves as if the key were only specified once.
 		 */
-		keySet?: KeySet;
+		keySet?: KeySet | null;
 
 		/**
 		 * Options for a PartitionQueryRequest and
 		 * PartitionReadRequest.
 		 */
-		partitionOptions?: PartitionOptions;
+		partitionOptions?: PartitionOptions | null;
 
 		/** Required. The name of the table in the database to be read. */
-		table?: string;
+		table?: string | null;
 
 		/**
 		 * This message is used to select the transaction in which a
@@ -2997,7 +2997,7 @@ export namespace MyNS {
 		 * ExecuteSql call runs.
 		 * See TransactionOptions for more information about transactions.
 		 */
-		transaction?: TransactionSelector;
+		transaction?: TransactionSelector | null;
 	}
 
 
@@ -3008,10 +3008,10 @@ export namespace MyNS {
 	export interface PartitionResponse {
 
 		/** Partitions created by this request. */
-		partitions?: Array<Partition>;
+		partitions?: Array<Partition> | null;
 
 		/** A transaction. */
-		transaction?: Transaction;
+		transaction?: Transaction | null;
 	}
 
 
@@ -3079,7 +3079,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -3094,7 +3094,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -3114,7 +3114,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -3128,14 +3128,14 @@ export namespace MyNS {
 		 * Required. The columns of table to be returned for each row matching
 		 * this request.
 		 */
-		columns?: Array<string>;
+		columns?: Array<string> | null;
 
 		/**
 		 * If non-empty, the name of an index on table. This index is
 		 * used instead of the table primary key when interpreting key_set
 		 * and sorting result rows. See key_set for further information.
 		 */
-		index?: string;
+		index?: string | null;
 
 		/**
 		 * `KeySet` defines a collection of Cloud Spanner keys and/or key ranges. All
@@ -3145,14 +3145,14 @@ export namespace MyNS {
 		 * if two ranges, two keys, or a key and a range overlap), Cloud Spanner
 		 * behaves as if the key were only specified once.
 		 */
-		keySet?: KeySet;
+		keySet?: KeySet | null;
 
 		/**
 		 * If greater than zero, only the first `limit` rows are yielded. If `limit`
 		 * is zero, the default is no limit. A limit cannot be specified if
 		 * `partition_token` is set.
 		 */
-		limit?: string;
+		limit?: string | null;
 
 		/**
 		 * If present, results will be restricted to the specified partition
@@ -3160,7 +3160,7 @@ export namespace MyNS {
 		 * match for the values of fields common to this message and the
 		 * PartitionReadRequest message used to create this partition_token.
 		 */
-		partitionToken?: string;
+		partitionToken?: string | null;
 
 		/**
 		 * If this request is resuming a previously interrupted read,
@@ -3170,10 +3170,10 @@ export namespace MyNS {
 		 * rest of the request parameters must exactly match the request
 		 * that yielded this token.
 		 */
-		resumeToken?: string;
+		resumeToken?: string | null;
 
 		/** Required. The name of the table in the database to be read. */
-		table?: string;
+		table?: string | null;
 
 		/**
 		 * This message is used to select the transaction in which a
@@ -3181,7 +3181,7 @@ export namespace MyNS {
 		 * ExecuteSql call runs.
 		 * See TransactionOptions for more information about transactions.
 		 */
-		transaction?: TransactionSelector;
+		transaction?: TransactionSelector | null;
 	}
 
 
@@ -3192,7 +3192,7 @@ export namespace MyNS {
 	export interface RestoreDatabaseMetadata {
 
 		/** Information about a backup. */
-		backupInfo?: BackupInfo;
+		backupInfo?: BackupInfo | null;
 
 		/**
 		 * The time at which cancellation of this operation was received.
@@ -3207,10 +3207,10 @@ export namespace MyNS {
 		 * an Operation.error value with a
 		 * google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 		 */
-		cancelTime?: string;
+		cancelTime?: string | null;
 
 		/** Name of the database being created and restored to. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * If exists, the name of the long-running operation that will be used to
@@ -3225,16 +3225,16 @@ export namespace MyNS {
 		 * operation completes successfully. This operation will not be created if the
 		 * restore was not successful.
 		 */
-		optimizeDatabaseOperationName?: string;
+		optimizeDatabaseOperationName?: string | null;
 
 		/**
 		 * Encapsulates progress related information for a Cloud Spanner long
 		 * running operation.
 		 */
-		progress?: OperationProgress;
+		progress?: OperationProgress | null;
 
 		/** The type of the restore source. */
-		sourceType?: RestoreInfoSourceType;
+		sourceType?: RestoreInfoSourceType | null;
 	}
 
 
@@ -3248,7 +3248,7 @@ export namespace MyNS {
 		 * Name of the backup from which to restore.  Values are of the form
 		 * `projects/<project>/instances/<instance>/backups/<backup>`.
 		 */
-		backup?: string;
+		backup?: string | null;
 
 		/**
 		 * Required. The id of the database to create and restore to. This
@@ -3256,7 +3256,7 @@ export namespace MyNS {
 		 * `parent` forms the full database name of the form
 		 * `projects/<project>/instances/<instance>/databases/<database_id>`.
 		 */
-		databaseId?: string;
+		databaseId?: string | null;
 	}
 
 
@@ -3264,7 +3264,7 @@ export namespace MyNS {
 	export interface RollbackRequest {
 
 		/** Required. The transaction to roll back. */
-		transactionId?: string;
+		transactionId?: string | null;
 	}
 
 
@@ -3328,7 +3328,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 	}
 
 
@@ -3339,7 +3339,7 @@ export namespace MyNS {
 		 * REQUIRED: The set of permissions to check for 'resource'.
 		 * Permissions with wildcards (such as '*', 'spanner.*', 'spanner.instances.*') are not allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -3350,7 +3350,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -3365,16 +3365,16 @@ export namespace MyNS {
 		 * succeeded so far, where `commit_timestamps[i]` is the commit
 		 * timestamp for the statement `statements[i]`.
 		 */
-		commitTimestamps?: Array<string>;
+		commitTimestamps?: Array<string> | null;
 
 		/** The database being modified. */
-		database?: string;
+		database?: string | null;
 
 		/**
 		 * For an update this list contains all the statements. For an
 		 * individual statement, this list contains only that statement.
 		 */
-		statements?: Array<string>;
+		statements?: Array<string> | null;
 	}
 
 
@@ -3416,10 +3416,10 @@ export namespace MyNS {
 		 * UpdateDatabaseDdl returns
 		 * `ALREADY_EXISTS`.
 		 */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** Required. DDL statements to be applied to the database. */
-		statements?: Array<string>;
+		statements?: Array<string> | null;
 	}
 
 
@@ -3434,19 +3434,19 @@ export namespace MyNS {
 		 * in the process of undoing itself (which is guaranteed to succeed) and
 		 * cannot be cancelled again.
 		 */
-		cancelTime?: string;
+		cancelTime?: string | null;
 
 		/** The time at which this operation failed or was completed successfully. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** An isolated set of Cloud Spanner resources on which databases can be hosted. */
-		instance?: Instance;
+		instance?: Instance | null;
 
 		/**
 		 * The time at which UpdateInstance
 		 * request was received.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -3459,10 +3459,10 @@ export namespace MyNS {
 		 * Instance from being erased accidentally by clients that do not know
 		 * about them.
 		 */
-		fieldMask?: string;
+		fieldMask?: string | null;
 
 		/** An isolated set of Cloud Spanner resources on which databases can be hosted. */
-		instance?: Instance;
+		instance?: Instance | null;
 	}
 
 	@Injectable()

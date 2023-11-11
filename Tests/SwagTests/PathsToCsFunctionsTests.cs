@@ -450,7 +450,7 @@ namespace SwagTests
 		/// <summary>
 		/// OpenApi v3.1
 		/// </summary>
-		[Fact]
+		[Fact(Skip ="Until OpenApi v3.1 is supported by Microsoft.OpenApi.Readers")]
 		public void Testwebhook31()
 		{
 			helper.GenerateAndAssertAndBuild("SwagMock\\webhook31.yaml", "Results\\webhook31.txt");

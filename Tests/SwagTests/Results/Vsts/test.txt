@@ -7468,74 +7468,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Add test cases to suite.
-		/// Test__Suites_Add {organization}/{project}/_apis/test/Plans/{planId}/suites/{suiteId}/testcases/{testCaseIds}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="planId">ID of the test plan that contains the suite.</param>
-		/// <param name="suiteId">ID of the test suite to which the test cases must be added.</param>
-		/// <param name="testCaseIds">IDs of the test cases to add to the suite. Ids are specified in comma separated format.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<SuiteTestCase[]> Test__Suites_AddAsync(string organization, string project, int planId, int suiteId, string testCaseIds, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Plans/"+planId+"/suites/"+suiteId+"/testcases/"+ (testCaseIds==null? "" : Uri.EscapeDataString(testCaseIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<SuiteTestCase[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Add test cases to suite.
-		/// Test__Suites_Add {organization}/{project}/_apis/test/Plans/{planId}/suites/{suiteId}/testcases/{testCaseIds}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="planId">ID of the test plan that contains the suite.</param>
-		/// <param name="suiteId">ID of the test suite to which the test cases must be added.</param>
-		/// <param name="testCaseIds">IDs of the test cases to add to the suite. Ids are specified in comma separated format.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public SuiteTestCase[] Test__Suites_Add(string organization, string project, int planId, int suiteId, string testCaseIds, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Plans/"+planId+"/suites/"+suiteId+"/testcases/"+ (testCaseIds==null? "" : Uri.EscapeDataString(testCaseIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<SuiteTestCase[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a specific test case in a test suite with test case id.
 		/// Test__Suites_Get {organization}/{project}/_apis/test/Plans/{planId}/suites/{suiteId}/testcases/{testCaseIds}
 		/// </summary>
@@ -7594,6 +7526,74 @@ namespace MyNS
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SuiteTestCase>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Add test cases to suite.
+		/// Test__Suites_Add {organization}/{project}/_apis/test/Plans/{planId}/suites/{suiteId}/testcases/{testCaseIds}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="planId">ID of the test plan that contains the suite.</param>
+		/// <param name="suiteId">ID of the test suite to which the test cases must be added.</param>
+		/// <param name="testCaseIds">IDs of the test cases to add to the suite. Ids are specified in comma separated format.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<SuiteTestCase[]> Test__Suites_AddAsync(string organization, string project, int planId, int suiteId, string testCaseIds, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Plans/"+planId+"/suites/"+suiteId+"/testcases/"+ (testCaseIds==null? "" : Uri.EscapeDataString(testCaseIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<SuiteTestCase[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Add test cases to suite.
+		/// Test__Suites_Add {organization}/{project}/_apis/test/Plans/{planId}/suites/{suiteId}/testcases/{testCaseIds}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="planId">ID of the test plan that contains the suite.</param>
+		/// <param name="suiteId">ID of the test suite to which the test cases must be added.</param>
+		/// <param name="testCaseIds">IDs of the test cases to add to the suite. Ids are specified in comma separated format.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public SuiteTestCase[] Test__Suites_Add(string organization, string project, int planId, int suiteId, string testCaseIds, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Plans/"+planId+"/suites/"+suiteId+"/testcases/"+ (testCaseIds==null? "" : Uri.EscapeDataString(testCaseIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<SuiteTestCase[]>(jsonReader);
 				}
 			}
 			finally
@@ -8044,6 +8044,82 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get a list of test runs.
+		/// Runs_List {organization}/{project}/_apis/test/runs
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="buildUri">URI of the build that the runs used.</param>
+		/// <param name="owner">Team foundation ID of the owner of the runs.</param>
+		/// <param name="planId">ID of the test plan that the runs are a part of.</param>
+		/// <param name="includeRunDetails">If true, include all the properties of the runs.</param>
+		/// <param name="automated">If true, only returns automated runs.</param>
+		/// <param name="skip">Number of test runs to skip.</param>
+		/// <param name="top">Number of test runs to return.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<TestRun[]> Runs_ListAsync(string organization, string project, string buildUri, string owner, string tmiRunId, int planId, bool includeRunDetails, bool automated, int skip, int top, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/runs&buildUri=" + (buildUri==null? "" : Uri.EscapeDataString(buildUri))+"&owner=" + (owner==null? "" : Uri.EscapeDataString(owner))+"&tmiRunId=" + (tmiRunId==null? "" : Uri.EscapeDataString(tmiRunId))+"&planId="+planId+"&includeRunDetails="+includeRunDetails+"&automated="+automated+"&$skip="+skip+"&$top="+top+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestRun[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of test runs.
+		/// Runs_List {organization}/{project}/_apis/test/runs
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="buildUri">URI of the build that the runs used.</param>
+		/// <param name="owner">Team foundation ID of the owner of the runs.</param>
+		/// <param name="planId">ID of the test plan that the runs are a part of.</param>
+		/// <param name="includeRunDetails">If true, include all the properties of the runs.</param>
+		/// <param name="automated">If true, only returns automated runs.</param>
+		/// <param name="skip">Number of test runs to skip.</param>
+		/// <param name="top">Number of test runs to return.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public TestRun[] Runs_List(string organization, string project, string buildUri, string owner, string tmiRunId, int planId, bool includeRunDetails, bool automated, int skip, int top, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/runs&buildUri=" + (buildUri==null? "" : Uri.EscapeDataString(buildUri))+"&owner=" + (owner==null? "" : Uri.EscapeDataString(owner))+"&tmiRunId=" + (tmiRunId==null? "" : Uri.EscapeDataString(tmiRunId))+"&planId="+planId+"&includeRunDetails="+includeRunDetails+"&automated="+automated+"&$skip="+skip+"&$top="+top+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestRun[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create new test run.
 		/// Runs_Create {organization}/{project}/_apis/test/runs
 		/// </summary>
@@ -8122,134 +8198,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a list of test runs.
-		/// Runs_List {organization}/{project}/_apis/test/runs
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="buildUri">URI of the build that the runs used.</param>
-		/// <param name="owner">Team foundation ID of the owner of the runs.</param>
-		/// <param name="planId">ID of the test plan that the runs are a part of.</param>
-		/// <param name="includeRunDetails">If true, include all the properties of the runs.</param>
-		/// <param name="automated">If true, only returns automated runs.</param>
-		/// <param name="skip">Number of test runs to skip.</param>
-		/// <param name="top">Number of test runs to return.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TestRun[]> Runs_ListAsync(string organization, string project, string buildUri, string owner, string tmiRunId, int planId, bool includeRunDetails, bool automated, int skip, int top, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/runs&buildUri=" + (buildUri==null? "" : Uri.EscapeDataString(buildUri))+"&owner=" + (owner==null? "" : Uri.EscapeDataString(owner))+"&tmiRunId=" + (tmiRunId==null? "" : Uri.EscapeDataString(tmiRunId))+"&planId="+planId+"&includeRunDetails="+includeRunDetails+"&automated="+automated+"&$skip="+skip+"&$top="+top+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestRun[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of test runs.
-		/// Runs_List {organization}/{project}/_apis/test/runs
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="buildUri">URI of the build that the runs used.</param>
-		/// <param name="owner">Team foundation ID of the owner of the runs.</param>
-		/// <param name="planId">ID of the test plan that the runs are a part of.</param>
-		/// <param name="includeRunDetails">If true, include all the properties of the runs.</param>
-		/// <param name="automated">If true, only returns automated runs.</param>
-		/// <param name="skip">Number of test runs to skip.</param>
-		/// <param name="top">Number of test runs to return.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TestRun[] Runs_List(string organization, string project, string buildUri, string owner, string tmiRunId, int planId, bool includeRunDetails, bool automated, int skip, int top, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/runs&buildUri=" + (buildUri==null? "" : Uri.EscapeDataString(buildUri))+"&owner=" + (owner==null? "" : Uri.EscapeDataString(owner))+"&tmiRunId=" + (tmiRunId==null? "" : Uri.EscapeDataString(tmiRunId))+"&planId="+planId+"&includeRunDetails="+includeRunDetails+"&automated="+automated+"&$skip="+skip+"&$top="+top+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestRun[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a test run by its ID.
-		/// Runs_Delete {organization}/{project}/_apis/test/runs/{runId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="runId">ID of the run to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Runs_DeleteAsync(string organization, string project, int runId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/runs/"+runId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a test run by its ID.
-		/// Runs_Delete {organization}/{project}/_apis/test/runs/{runId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="runId">ID of the run to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Runs_Delete(string organization, string project, int runId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/runs/"+runId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a test run by its ID.
 		/// Runs_Get_Test_Run_By_Id {organization}/{project}/_apis/test/runs/{runId}
 		/// </summary>
@@ -8307,6 +8255,58 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestRun>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a test run by its ID.
+		/// Runs_Delete {organization}/{project}/_apis/test/runs/{runId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="runId">ID of the run to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Runs_DeleteAsync(string organization, string project, int runId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/runs/"+runId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a test run by its ID.
+		/// Runs_Delete {organization}/{project}/_apis/test/runs/{runId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="runId">ID of the run to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Runs_Delete(string organization, string project, int runId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/runs/"+runId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -8396,6 +8396,70 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get list of test run attachments reference.
+		/// Attachments_Get_Test_Run_Attachments {organization}/{project}/_apis/test/Runs/{runId}/attachments
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="runId">ID of the test run.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<TestAttachment[]> Attachments_Get_Test_Run_AttachmentsAsync(string organization, string project, int runId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/attachments&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestAttachment[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get list of test run attachments reference.
+		/// Attachments_Get_Test_Run_Attachments {organization}/{project}/_apis/test/Runs/{runId}/attachments
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="runId">ID of the test run.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public TestAttachment[] Attachments_Get_Test_Run_Attachments(string organization, string project, int runId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/attachments&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestAttachment[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Attach a file to a test run.
 		/// Attachments_Create_Test_Run_Attachment {organization}/{project}/_apis/test/Runs/{runId}/attachments
 		/// </summary>
@@ -8471,70 +8535,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get list of test run attachments reference.
-		/// Attachments_Get_Test_Run_Attachments {organization}/{project}/_apis/test/Runs/{runId}/attachments
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="runId">ID of the test run.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TestAttachment[]> Attachments_Get_Test_Run_AttachmentsAsync(string organization, string project, int runId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/attachments&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestAttachment[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get list of test run attachments reference.
-		/// Attachments_Get_Test_Run_Attachments {organization}/{project}/_apis/test/Runs/{runId}/attachments
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="runId">ID of the test run.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TestAttachment[] Attachments_Get_Test_Run_Attachments(string organization, string project, int runId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/attachments&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestAttachment[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -8660,6 +8660,78 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get test results for a test run.
+		/// Results_List {organization}/{project}/_apis/test/Runs/{runId}/results
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="runId">Test run ID of test results to fetch.</param>
+		/// <param name="detailsToInclude">Details to include with test results. Default is None. Other values are Iterations and WorkItems.</param>
+		/// <param name="skip">Number of test results to skip from beginning.</param>
+		/// <param name="top">Number of test results to return. Maximum is 1000 when detailsToInclude is None and 200 otherwise.</param>
+		/// <param name="outcomes">Comma separated list of test outcomes to filter test results.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.6' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<TestCaseResult[]> Results_ListAsync(string organization, string project, int runId, Results_ListDetailsToInclude detailsToInclude, int skip, int top, string outcomes, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results&detailsToInclude=" + detailsToInclude+"&$skip="+skip+"&$top="+top+"&outcomes=" + (outcomes==null? "" : Uri.EscapeDataString(outcomes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestCaseResult[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get test results for a test run.
+		/// Results_List {organization}/{project}/_apis/test/Runs/{runId}/results
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="runId">Test run ID of test results to fetch.</param>
+		/// <param name="detailsToInclude">Details to include with test results. Default is None. Other values are Iterations and WorkItems.</param>
+		/// <param name="skip">Number of test results to skip from beginning.</param>
+		/// <param name="top">Number of test results to return. Maximum is 1000 when detailsToInclude is None and 200 otherwise.</param>
+		/// <param name="outcomes">Comma separated list of test outcomes to filter test results.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.6' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public TestCaseResult[] Results_List(string organization, string project, int runId, Results_ListDetailsToInclude detailsToInclude, int skip, int top, string outcomes, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results&detailsToInclude=" + detailsToInclude+"&$skip="+skip+"&$top="+top+"&outcomes=" + (outcomes==null? "" : Uri.EscapeDataString(outcomes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestCaseResult[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Add test results to a test run.
 		/// Results_Add {organization}/{project}/_apis/test/Runs/{runId}/results
 		/// </summary>
@@ -8735,78 +8807,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get test results for a test run.
-		/// Results_List {organization}/{project}/_apis/test/Runs/{runId}/results
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="runId">Test run ID of test results to fetch.</param>
-		/// <param name="detailsToInclude">Details to include with test results. Default is None. Other values are Iterations and WorkItems.</param>
-		/// <param name="skip">Number of test results to skip from beginning.</param>
-		/// <param name="top">Number of test results to return. Maximum is 1000 when detailsToInclude is None and 200 otherwise.</param>
-		/// <param name="outcomes">Comma separated list of test outcomes to filter test results.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.6' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TestCaseResult[]> Results_ListAsync(string organization, string project, int runId, Results_ListDetailsToInclude detailsToInclude, int skip, int top, string outcomes, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results&detailsToInclude=" + detailsToInclude+"&$skip="+skip+"&$top="+top+"&outcomes=" + (outcomes==null? "" : Uri.EscapeDataString(outcomes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestCaseResult[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get test results for a test run.
-		/// Results_List {organization}/{project}/_apis/test/Runs/{runId}/results
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="runId">Test run ID of test results to fetch.</param>
-		/// <param name="detailsToInclude">Details to include with test results. Default is None. Other values are Iterations and WorkItems.</param>
-		/// <param name="skip">Number of test results to skip from beginning.</param>
-		/// <param name="top">Number of test results to return. Maximum is 1000 when detailsToInclude is None and 200 otherwise.</param>
-		/// <param name="outcomes">Comma separated list of test outcomes to filter test results.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.6' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TestCaseResult[] Results_List(string organization, string project, int runId, Results_ListDetailsToInclude detailsToInclude, int skip, int top, string outcomes, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results&detailsToInclude=" + detailsToInclude+"&$skip="+skip+"&$top="+top+"&outcomes=" + (outcomes==null? "" : Uri.EscapeDataString(outcomes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestCaseResult[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -8960,6 +8960,72 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get list of test result attachments reference.
+		/// Attachments_Get_Test_Result_Attachments {organization}/{project}/_apis/test/Runs/{runId}/Results/{testCaseResultId}/attachments
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="runId">ID of the test run that contains the result.</param>
+		/// <param name="testCaseResultId">ID of the test result.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<TestAttachment[]> Attachments_Get_Test_Result_AttachmentsAsync(string organization, string project, int runId, int testCaseResultId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/Results/"+testCaseResultId+"/attachments&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestAttachment[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get list of test result attachments reference.
+		/// Attachments_Get_Test_Result_Attachments {organization}/{project}/_apis/test/Runs/{runId}/Results/{testCaseResultId}/attachments
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="runId">ID of the test run that contains the result.</param>
+		/// <param name="testCaseResultId">ID of the test result.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public TestAttachment[] Attachments_Get_Test_Result_Attachments(string organization, string project, int runId, int testCaseResultId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/Results/"+testCaseResultId+"/attachments&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestAttachment[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Attach a file to a test result.
 		/// Attachments_Create_Test_Result_Attachment {organization}/{project}/_apis/test/Runs/{runId}/Results/{testCaseResultId}/attachments
 		/// </summary>
@@ -9037,72 +9103,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get list of test result attachments reference.
-		/// Attachments_Get_Test_Result_Attachments {organization}/{project}/_apis/test/Runs/{runId}/Results/{testCaseResultId}/attachments
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="runId">ID of the test run that contains the result.</param>
-		/// <param name="testCaseResultId">ID of the test result.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TestAttachment[]> Attachments_Get_Test_Result_AttachmentsAsync(string organization, string project, int runId, int testCaseResultId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/Results/"+testCaseResultId+"/attachments&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestAttachment[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get list of test result attachments reference.
-		/// Attachments_Get_Test_Result_Attachments {organization}/{project}/_apis/test/Runs/{runId}/Results/{testCaseResultId}/attachments
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="runId">ID of the test run that contains the result.</param>
-		/// <param name="testCaseResultId">ID of the test result.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TestAttachment[] Attachments_Get_Test_Result_Attachments(string organization, string project, int runId, int testCaseResultId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/Results/"+testCaseResultId+"/attachments&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestAttachment[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -9558,6 +9558,80 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get a list of test sessions
+		/// Session_List {organization}/{project}/{team}/_apis/test/session
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="period">Period in days from now, for which test sessions are fetched.</param>
+		/// <param name="allSessions">If false, returns test sessions for current user. Otherwise, it returns test sessions for all users</param>
+		/// <param name="includeAllProperties">If true, it returns all properties of the test sessions. Otherwise, it returns the skinny version.</param>
+		/// <param name="source">Source of the test session.</param>
+		/// <param name="includeOnlyCompletedSessions">If true, it returns test sessions in completed state. Otherwise, it returns test sessions for all states</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<TestSession[]> Session_ListAsync(string organization, string project, string team, int period, bool allSessions, bool includeAllProperties, TestSessionSource source, bool includeOnlyCompletedSessions, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/test/session&period="+period+"&allSessions="+allSessions+"&includeAllProperties="+includeAllProperties+"&source=" + source+"&includeOnlyCompletedSessions="+includeOnlyCompletedSessions+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestSession[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of test sessions
+		/// Session_List {organization}/{project}/{team}/_apis/test/session
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="period">Period in days from now, for which test sessions are fetched.</param>
+		/// <param name="allSessions">If false, returns test sessions for current user. Otherwise, it returns test sessions for all users</param>
+		/// <param name="includeAllProperties">If true, it returns all properties of the test sessions. Otherwise, it returns the skinny version.</param>
+		/// <param name="source">Source of the test session.</param>
+		/// <param name="includeOnlyCompletedSessions">If true, it returns test sessions in completed state. Otherwise, it returns test sessions for all states</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public TestSession[] Session_List(string organization, string project, string team, int period, bool allSessions, bool includeAllProperties, TestSessionSource source, bool includeOnlyCompletedSessions, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/test/session&period="+period+"&allSessions="+allSessions+"&includeAllProperties="+includeAllProperties+"&source=" + source+"&includeOnlyCompletedSessions="+includeOnlyCompletedSessions+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TestSession[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create a test session
 		/// Session_Create {organization}/{project}/{team}/_apis/test/session
 		/// </summary>
@@ -9633,80 +9707,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of test sessions
-		/// Session_List {organization}/{project}/{team}/_apis/test/session
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="period">Period in days from now, for which test sessions are fetched.</param>
-		/// <param name="allSessions">If false, returns test sessions for current user. Otherwise, it returns test sessions for all users</param>
-		/// <param name="includeAllProperties">If true, it returns all properties of the test sessions. Otherwise, it returns the skinny version.</param>
-		/// <param name="source">Source of the test session.</param>
-		/// <param name="includeOnlyCompletedSessions">If true, it returns test sessions in completed state. Otherwise, it returns test sessions for all states</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TestSession[]> Session_ListAsync(string organization, string project, string team, int period, bool allSessions, bool includeAllProperties, TestSessionSource source, bool includeOnlyCompletedSessions, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/test/session&period="+period+"&allSessions="+allSessions+"&includeAllProperties="+includeAllProperties+"&source=" + source+"&includeOnlyCompletedSessions="+includeOnlyCompletedSessions+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestSession[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of test sessions
-		/// Session_List {organization}/{project}/{team}/_apis/test/session
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="period">Period in days from now, for which test sessions are fetched.</param>
-		/// <param name="allSessions">If false, returns test sessions for current user. Otherwise, it returns test sessions for all users</param>
-		/// <param name="includeAllProperties">If true, it returns all properties of the test sessions. Otherwise, it returns the skinny version.</param>
-		/// <param name="source">Source of the test session.</param>
-		/// <param name="includeOnlyCompletedSessions">If true, it returns test sessions in completed state. Otherwise, it returns test sessions for all states</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TestSession[] Session_List(string organization, string project, string team, int period, bool allSessions, bool includeAllProperties, TestSessionSource source, bool includeOnlyCompletedSessions, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/test/session&period="+period+"&allSessions="+allSessions+"&includeAllProperties="+includeAllProperties+"&source=" + source+"&includeOnlyCompletedSessions="+includeOnlyCompletedSessions+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TestSession[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}

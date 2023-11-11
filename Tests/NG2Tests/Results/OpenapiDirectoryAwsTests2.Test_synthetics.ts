@@ -5,68 +5,68 @@ export namespace MyNS {
 	export interface CreateCanaryResponse {
 
 		/** This structure contains all information about one canary in your account. */
-		Canary?: Canary;
+		Canary?: Canary | null;
 	}
 
 
 	/** This structure contains all information about one canary in your account. */
 	export interface Canary {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 
 		/** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics. */
-		Code?: CanaryCodeOutput;
-		ExecutionRoleArn?: string;
+		Code?: CanaryCodeOutput | null;
+		ExecutionRoleArn?: string | null;
 
 		/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
-		Schedule?: CanaryScheduleOutput;
+		Schedule?: CanaryScheduleOutput | null;
 
 		/** A structure that contains information for a canary run. */
-		RunConfig?: CanaryRunConfigOutput;
-		SuccessRetentionPeriodInDays?: number;
-		FailureRetentionPeriodInDays?: number;
+		RunConfig?: CanaryRunConfigOutput | null;
+		SuccessRetentionPeriodInDays?: number | null;
+		FailureRetentionPeriodInDays?: number | null;
 
 		/** A structure that contains the current state of the canary. */
-		Status?: CanaryStatus;
+		Status?: CanaryStatus | null;
 
 		/** This structure contains information about when the canary was created and modified. */
-		Timeline?: CanaryTimeline;
-		ArtifactS3Location?: string;
-		EngineArn?: string;
-		RuntimeVersion?: string;
+		Timeline?: CanaryTimeline | null;
+		ArtifactS3Location?: string | null;
+		EngineArn?: string | null;
+		RuntimeVersion?: string | null;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: VpcConfigOutput;
-		Tags?: TagMap;
+		VpcConfig?: VpcConfigOutput | null;
+		Tags?: TagMap | null;
 	}
 
 
 	/** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics. */
 	export interface CanaryCodeOutput {
-		SourceLocationArn?: string;
-		Handler?: string;
+		SourceLocationArn?: string | null;
+		Handler?: string | null;
 	}
 
 
 	/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
 	export interface CanaryScheduleOutput {
-		Expression?: string;
-		DurationInSeconds?: number;
+		Expression?: string | null;
+		DurationInSeconds?: number | null;
 	}
 
 
 	/** A structure that contains information for a canary run. */
 	export interface CanaryRunConfigOutput {
-		TimeoutInSeconds?: number;
-		MemoryInMB?: number;
+		TimeoutInSeconds?: number | null;
+		MemoryInMB?: number | null;
 	}
 
 
 	/** A structure that contains the current state of the canary. */
 	export interface CanaryStatus {
-		State?: CanaryStatusState;
-		StateReason?: string;
-		StateReasonCode?: CanaryStatusStateReasonCode;
+		State?: CanaryStatusState | null;
+		StateReason?: string | null;
+		StateReasonCode?: CanaryStatusStateReasonCode | null;
 	}
 
 	export enum CanaryStatusState { CREATING = 0, READY = 1, STARTING = 2, RUNNING = 3, UPDATING = 4, STOPPING = 5, STOPPED = 6, ERROR = 7, DELETING = 8 }
@@ -76,18 +76,18 @@ export namespace MyNS {
 
 	/** This structure contains information about when the canary was created and modified. */
 	export interface CanaryTimeline {
-		Created?: Date;
-		LastModified?: Date;
-		LastStarted?: Date;
-		LastStopped?: Date;
+		Created?: Date | null;
+		LastModified?: Date | null;
+		LastStarted?: Date | null;
+		LastStopped?: Date | null;
 	}
 
 
 	/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
 	export interface VpcConfigOutput {
-		VpcId?: string;
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		VpcId?: string | null;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface TagMap {
@@ -109,43 +109,43 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCanariesResponse {
-		Canaries?: Array<Canary>;
-		NextToken?: string;
+		Canaries?: Array<Canary> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeCanariesLastRunResponse {
-		CanariesLastRun?: Array<CanaryLastRun>;
-		NextToken?: string;
+		CanariesLastRun?: Array<CanaryLastRun> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** This structure contains information about the most recent run of a single canary. */
 	export interface CanaryLastRun {
-		CanaryName?: string;
+		CanaryName?: string | null;
 
 		/** This structure contains the details about one run of one canary. */
-		LastRun?: CanaryRun;
+		LastRun?: CanaryRun | null;
 	}
 
 
 	/** This structure contains the details about one run of one canary. */
 	export interface CanaryRun {
-		Name?: string;
+		Name?: string | null;
 
 		/** This structure contains the status information about a canary run. */
-		Status?: CanaryRunStatus;
+		Status?: CanaryRunStatus | null;
 
 		/** This structure contains the start and end times of a single canary run. */
-		Timeline?: CanaryRunTimeline;
-		ArtifactS3Location?: string;
+		Timeline?: CanaryRunTimeline | null;
+		ArtifactS3Location?: string | null;
 	}
 
 
 	/** This structure contains the status information about a canary run. */
 	export interface CanaryRunStatus {
-		State?: CanaryRunStatusState;
-		StateReason?: string;
-		StateReasonCode?: CanaryRunStatusStateReasonCode;
+		State?: CanaryRunStatusState | null;
+		StateReason?: string | null;
+		StateReasonCode?: CanaryRunStatusStateReasonCode | null;
 	}
 
 	export enum CanaryRunStatusState { RUNNING = 0, PASSED = 1, FAILED = 2 }
@@ -155,37 +155,37 @@ export namespace MyNS {
 
 	/** This structure contains the start and end times of a single canary run. */
 	export interface CanaryRunTimeline {
-		Started?: Date;
-		Completed?: Date;
+		Started?: Date | null;
+		Completed?: Date | null;
 	}
 
 	export interface DescribeRuntimeVersionsResponse {
-		RuntimeVersions?: Array<RuntimeVersion>;
-		NextToken?: string;
+		RuntimeVersions?: Array<RuntimeVersion> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** This structure contains information about one canary runtime version. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>. */
 	export interface RuntimeVersion {
-		VersionName?: string;
-		Description?: string;
-		ReleaseDate?: Date;
-		DeprecationDate?: Date;
+		VersionName?: string | null;
+		Description?: string | null;
+		ReleaseDate?: Date | null;
+		DeprecationDate?: Date | null;
 	}
 
 	export interface GetCanaryResponse {
 
 		/** This structure contains all information about one canary in your account. */
-		Canary?: Canary;
+		Canary?: Canary | null;
 	}
 
 	export interface GetCanaryRunsResponse {
-		CanaryRuns?: Array<CanaryRun>;
-		NextToken?: string;
+		CanaryRuns?: Array<CanaryRun> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface StartCanaryResponse {
@@ -206,10 +206,10 @@ export namespace MyNS {
 
 	/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.  */
 	export interface CanaryCodeInput {
-		S3Bucket?: string;
-		S3Key?: string;
-		S3Version?: string;
-		ZipFile?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3Version?: string | null;
+		ZipFile?: string | null;
 		Handler: string;
 	}
 
@@ -217,7 +217,7 @@ export namespace MyNS {
 	/** A structure that contains input information for a canary run. */
 	export interface CanaryRunConfigInput {
 		TimeoutInSeconds: number;
-		MemoryInMB?: number;
+		MemoryInMB?: number | null;
 	}
 
 	export enum CanaryRunState { RUNNING = 0, PASSED = 1, FAILED = 2 }
@@ -228,7 +228,7 @@ export namespace MyNS {
 	/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
 	export interface CanaryScheduleInput {
 		Expression: string;
-		DurationInSeconds?: number;
+		DurationInSeconds?: number | null;
 	}
 
 	export enum CanaryState { CREATING = 0, READY = 1, STARTING = 2, RUNNING = 3, UPDATING = 4, STOPPING = 5, STOPPED = 6, ERROR = 7, DELETING = 8 }
@@ -238,8 +238,8 @@ export namespace MyNS {
 
 	/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
 	export interface VpcConfigInput {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface CreateCanaryRequest {
@@ -260,40 +260,40 @@ export namespace MyNS {
 		Schedule: CanaryScheduleInput;
 
 		/** A structure that contains input information for a canary run. */
-		RunConfig?: CanaryRunConfigInput;
-		SuccessRetentionPeriodInDays?: number;
-		FailureRetentionPeriodInDays?: number;
+		RunConfig?: CanaryRunConfigInput | null;
+		SuccessRetentionPeriodInDays?: number | null;
+		FailureRetentionPeriodInDays?: number | null;
 		RuntimeVersion: string;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: VpcConfigInput;
-		Tags?: TagMap;
+		VpcConfig?: VpcConfigInput | null;
+		Tags?: TagMap | null;
 	}
 
 	export interface DeleteCanaryRequest {
 	}
 
 	export interface DescribeCanariesLastRunRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeCanariesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeRuntimeVersionsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetCanaryRequest {
 	}
 
 	export interface GetCanaryRunsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -315,20 +315,20 @@ export namespace MyNS {
 	export interface UpdateCanaryRequest {
 
 		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
-		Code?: CanaryCodeInput;
-		ExecutionRoleArn?: string;
-		RuntimeVersion?: string;
+		Code?: CanaryCodeInput | null;
+		ExecutionRoleArn?: string | null;
+		RuntimeVersion?: string | null;
 
 		/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
-		Schedule?: CanaryScheduleInput;
+		Schedule?: CanaryScheduleInput | null;
 
 		/** A structure that contains input information for a canary run. */
-		RunConfig?: CanaryRunConfigInput;
-		SuccessRetentionPeriodInDays?: number;
-		FailureRetentionPeriodInDays?: number;
+		RunConfig?: CanaryRunConfigInput | null;
+		SuccessRetentionPeriodInDays?: number | null;
+		FailureRetentionPeriodInDays?: number | null;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: VpcConfigInput;
+		VpcConfig?: VpcConfigInput | null;
 	}
 
 	@Injectable()
@@ -511,21 +511,21 @@ export namespace MyNS {
 		Schedule: CreateCanaryPostBodySchedule;
 
 		/** A structure that contains input information for a canary run. */
-		RunConfig?: CreateCanaryPostBodyRunConfig;
+		RunConfig?: CreateCanaryPostBodyRunConfig | null;
 
 		/**
 		 * The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
 		 * Minimum: 1
 		 * Maximum: 1024
 		 */
-		SuccessRetentionPeriodInDays?: number;
+		SuccessRetentionPeriodInDays?: number | null;
 
 		/**
 		 * The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
 		 * Minimum: 1
 		 * Maximum: 1024
 		 */
-		FailureRetentionPeriodInDays?: number;
+		FailureRetentionPeriodInDays?: number | null;
 
 		/**
 		 * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
@@ -536,98 +536,98 @@ export namespace MyNS {
 		RuntimeVersion: string;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: CreateCanaryPostBodyVpcConfig;
+		VpcConfig?: CreateCanaryPostBodyVpcConfig | null;
 
 		/** <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateCanaryPostBodyCode {
-		S3Bucket?: string;
-		S3Key?: string;
-		S3Version?: string;
-		ZipFile?: string;
-		Handler?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3Version?: string | null;
+		ZipFile?: string | null;
+		Handler?: string | null;
 	}
 
 	export interface CreateCanaryPostBodySchedule {
-		Expression?: string;
-		DurationInSeconds?: number;
+		Expression?: string | null;
+		DurationInSeconds?: number | null;
 	}
 
 	export interface CreateCanaryPostBodyRunConfig {
-		TimeoutInSeconds?: number;
-		MemoryInMB?: number;
+		TimeoutInSeconds?: number | null;
+		MemoryInMB?: number | null;
 	}
 
 	export interface CreateCanaryPostBodyVpcConfig {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface UpdateCanaryPatchBody {
 
 		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
-		Code?: UpdateCanaryPatchBodyCode;
+		Code?: UpdateCanaryPatchBodyCode | null;
 
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
 		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
 		 */
-		ExecutionRoleArn?: string;
+		ExecutionRoleArn?: string | null;
 
 		/**
 		 * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		RuntimeVersion?: string;
+		RuntimeVersion?: string | null;
 
 		/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
-		Schedule?: UpdateCanaryPatchBodySchedule;
+		Schedule?: UpdateCanaryPatchBodySchedule | null;
 
 		/** A structure that contains input information for a canary run. */
-		RunConfig?: UpdateCanaryPatchBodyRunConfig;
+		RunConfig?: UpdateCanaryPatchBodyRunConfig | null;
 
 		/**
 		 * The number of days to retain data about successful runs of this canary.
 		 * Minimum: 1
 		 * Maximum: 1024
 		 */
-		SuccessRetentionPeriodInDays?: number;
+		SuccessRetentionPeriodInDays?: number | null;
 
 		/**
 		 * The number of days to retain data about failed runs of this canary.
 		 * Minimum: 1
 		 * Maximum: 1024
 		 */
-		FailureRetentionPeriodInDays?: number;
+		FailureRetentionPeriodInDays?: number | null;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: UpdateCanaryPatchBodyVpcConfig;
+		VpcConfig?: UpdateCanaryPatchBodyVpcConfig | null;
 	}
 
 	export interface UpdateCanaryPatchBodyCode {
-		S3Bucket?: string;
-		S3Key?: string;
-		S3Version?: string;
-		ZipFile?: string;
-		Handler?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3Version?: string | null;
+		ZipFile?: string | null;
+		Handler?: string | null;
 	}
 
 	export interface UpdateCanaryPatchBodySchedule {
-		Expression?: string;
-		DurationInSeconds?: number;
+		Expression?: string | null;
+		DurationInSeconds?: number | null;
 	}
 
 	export interface UpdateCanaryPatchBodyRunConfig {
-		TimeoutInSeconds?: number;
-		MemoryInMB?: number;
+		TimeoutInSeconds?: number | null;
+		MemoryInMB?: number | null;
 	}
 
 	export interface UpdateCanaryPatchBodyVpcConfig {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface DescribeCanariesPostBody {
@@ -636,14 +636,14 @@ export namespace MyNS {
 		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
 		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.
 		 * Minimum: 1
 		 * Maximum: 20
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeCanariesLastRunPostBody {
@@ -652,14 +652,14 @@ export namespace MyNS {
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.
 		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeRuntimeVersionsPostBody {
@@ -668,14 +668,14 @@ export namespace MyNS {
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.
 		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface GetCanaryRunsPostBody {
@@ -684,14 +684,14 @@ export namespace MyNS {
 		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.
 		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * Specify this parameter to limit how many runs are returned each time you use the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface TagResourcePostBody {

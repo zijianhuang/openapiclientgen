@@ -30,15 +30,15 @@ export namespace MyNS {
 
 	/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
 	export interface CloudWatchLogsDestination {
-		IamRoleArn?: string;
-		LogGroupArn?: string;
+		IamRoleArn?: string | null;
+		LogGroupArn?: string | null;
 	}
 
 
 	/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
 	export interface KinesisFirehoseDestination {
-		DeliveryStreamArn?: string;
-		IamRoleArn?: string;
+		DeliveryStreamArn?: string | null;
+		IamRoleArn?: string | null;
 	}
 
 
@@ -48,7 +48,7 @@ export namespace MyNS {
 
 	/** An object that contains information about an event destination that sends data to Amazon SNS. */
 	export interface SnsDestination {
-		TopicArn?: string;
+		TopicArn?: string | null;
 	}
 
 	export interface NotFoundException {
@@ -69,7 +69,7 @@ export namespace MyNS {
 	export interface GetConfigurationSetEventDestinationsResponse {
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		EventDestinations?: Array<EventDestination>;
+		EventDestinations?: Array<EventDestination> | null;
 	}
 
 
@@ -77,18 +77,18 @@ export namespace MyNS {
 	export interface EventDestination {
 
 		/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
-		CloudWatchLogsDestination?: CloudWatchLogsDestination;
-		Enabled?: boolean;
+		CloudWatchLogsDestination?: CloudWatchLogsDestination | null;
+		Enabled?: boolean | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		MatchingEventTypes?: Array<EventType>;
-		Name?: string;
+		MatchingEventTypes?: Array<EventType> | null;
+		Name?: string | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon SNS. */
-		SnsDestination?: SnsDestination;
+		SnsDestination?: SnsDestination | null;
 	}
 
 
@@ -96,36 +96,36 @@ export namespace MyNS {
 	export interface ListConfigurationSetsResponse {
 
 		/** An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region. */
-		ConfigurationSets?: Array<string>;
-		NextToken?: string;
+		ConfigurationSets?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An object that that contains the Message ID of a Voice message that was sent successfully. */
 	export interface SendVoiceMessageResponse {
-		MessageId?: string;
+		MessageId?: string | null;
 	}
 
 
 	/** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup. */
 	export interface CallInstructionsMessageType {
-		Text?: string;
+		Text?: string | null;
 	}
 
 
 	/** An object that defines a message that contains unformatted text. */
 	export interface PlainTextMessageType {
-		LanguageCode?: string;
-		Text?: string;
-		VoiceId?: string;
+		LanguageCode?: string | null;
+		Text?: string | null;
+		VoiceId?: string | null;
 	}
 
 
 	/** An object that defines a message that contains SSML-formatted text. */
 	export interface SSMLMessageType {
-		LanguageCode?: string;
-		Text?: string;
-		VoiceId?: string;
+		LanguageCode?: string | null;
+		Text?: string | null;
+		VoiceId?: string | null;
 	}
 
 
@@ -138,17 +138,17 @@ export namespace MyNS {
 	export interface EventDestinationDefinition {
 
 		/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
-		CloudWatchLogsDestination?: CloudWatchLogsDestination;
-		Enabled?: boolean;
+		CloudWatchLogsDestination?: CloudWatchLogsDestination | null;
+		Enabled?: boolean | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		MatchingEventTypes?: Array<EventType>;
+		MatchingEventTypes?: Array<EventType> | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon SNS. */
-		SnsDestination?: SnsDestination;
+		SnsDestination?: SnsDestination | null;
 	}
 
 
@@ -156,14 +156,14 @@ export namespace MyNS {
 	export interface CreateConfigurationSetEventDestinationRequest {
 
 		/** An object that defines a single event destination. */
-		EventDestination?: EventDestinationDefinition;
-		EventDestinationName?: string;
+		EventDestination?: EventDestinationDefinition | null;
+		EventDestinationName?: string | null;
 	}
 
 
 	/** A request to create a new configuration set. */
 	export interface CreateConfigurationSetRequest {
-		ConfigurationSetName?: string;
+		ConfigurationSetName?: string | null;
 	}
 
 	export interface DeleteConfigurationSetEventDestinationRequest {
@@ -183,25 +183,25 @@ export namespace MyNS {
 	export interface VoiceMessageContent {
 
 		/** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup. */
-		CallInstructionsMessage?: CallInstructionsMessageType;
+		CallInstructionsMessage?: CallInstructionsMessageType | null;
 
 		/** An object that defines a message that contains unformatted text. */
-		PlainTextMessage?: PlainTextMessageType;
+		PlainTextMessage?: PlainTextMessageType | null;
 
 		/** An object that defines a message that contains SSML-formatted text. */
-		SSMLMessage?: SSMLMessageType;
+		SSMLMessage?: SSMLMessageType | null;
 	}
 
 
 	/** SendVoiceMessageRequest */
 	export interface SendVoiceMessageRequest {
-		CallerId?: string;
-		ConfigurationSetName?: string;
+		CallerId?: string | null;
+		ConfigurationSetName?: string | null;
 
 		/** An object that contains a voice message and information about the recipient that you want to send it to. */
-		Content?: VoiceMessageContent;
-		DestinationPhoneNumber?: string;
-		OriginationPhoneNumber?: string;
+		Content?: VoiceMessageContent | null;
+		DestinationPhoneNumber?: string | null;
+		OriginationPhoneNumber?: string | null;
 	}
 
 
@@ -209,7 +209,7 @@ export namespace MyNS {
 	export interface UpdateConfigurationSetEventDestinationRequest {
 
 		/** An object that defines a single event destination. */
-		EventDestination?: EventDestinationDefinition;
+		EventDestination?: EventDestinationDefinition | null;
 	}
 
 	@Injectable()
@@ -302,84 +302,84 @@ export namespace MyNS {
 	export interface CreateConfigurationSetPostBody {
 
 		/** The name that you want to give the configuration set. */
-		ConfigurationSetName?: string;
+		ConfigurationSetName?: string | null;
 	}
 
 	export interface CreateConfigurationSetEventDestinationPostBody {
 
 		/** An object that defines a single event destination. */
-		EventDestination?: CreateConfigurationSetEventDestinationPostBodyEventDestination;
+		EventDestination?: CreateConfigurationSetEventDestinationPostBodyEventDestination | null;
 
 		/** A name that identifies the event destination. */
-		EventDestinationName?: string;
+		EventDestinationName?: string | null;
 	}
 
 	export interface CreateConfigurationSetEventDestinationPostBodyEventDestination {
 
 		/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
-		CloudWatchLogsDestination?: CloudWatchLogsDestination;
-		Enabled?: boolean;
+		CloudWatchLogsDestination?: CloudWatchLogsDestination | null;
+		Enabled?: boolean | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		MatchingEventTypes?: Array<EventType>;
+		MatchingEventTypes?: Array<EventType> | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon SNS. */
-		SnsDestination?: SnsDestination;
+		SnsDestination?: SnsDestination | null;
 	}
 
 	export interface UpdateConfigurationSetEventDestinationPutBody {
 
 		/** An object that defines a single event destination. */
-		EventDestination?: UpdateConfigurationSetEventDestinationPutBodyEventDestination;
+		EventDestination?: UpdateConfigurationSetEventDestinationPutBodyEventDestination | null;
 	}
 
 	export interface UpdateConfigurationSetEventDestinationPutBodyEventDestination {
 
 		/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
-		CloudWatchLogsDestination?: CloudWatchLogsDestination;
-		Enabled?: boolean;
+		CloudWatchLogsDestination?: CloudWatchLogsDestination | null;
+		Enabled?: boolean | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		MatchingEventTypes?: Array<EventType>;
+		MatchingEventTypes?: Array<EventType> | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon SNS. */
-		SnsDestination?: SnsDestination;
+		SnsDestination?: SnsDestination | null;
 	}
 
 	export interface SendVoiceMessagePostBody {
 
 		/** The phone number that appears on recipients' devices when they receive the message. */
-		CallerId?: string;
+		CallerId?: string | null;
 
 		/** The name of the configuration set that you want to use to send the message. */
-		ConfigurationSetName?: string;
+		ConfigurationSetName?: string | null;
 
 		/** An object that contains a voice message and information about the recipient that you want to send it to. */
-		Content?: SendVoiceMessagePostBodyContent;
+		Content?: SendVoiceMessagePostBodyContent | null;
 
 		/** The phone number that you want to send the voice message to. */
-		DestinationPhoneNumber?: string;
+		DestinationPhoneNumber?: string | null;
 
 		/** The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request. */
-		OriginationPhoneNumber?: string;
+		OriginationPhoneNumber?: string | null;
 	}
 
 	export interface SendVoiceMessagePostBodyContent {
 
 		/** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup. */
-		CallInstructionsMessage?: CallInstructionsMessageType;
+		CallInstructionsMessage?: CallInstructionsMessageType | null;
 
 		/** An object that defines a message that contains unformatted text. */
-		PlainTextMessage?: PlainTextMessageType;
+		PlainTextMessage?: PlainTextMessageType | null;
 
 		/** An object that defines a message that contains SSML-formatted text. */
-		SSMLMessage?: SSMLMessageType;
+		SSMLMessage?: SSMLMessageType | null;
 	}
 
 }

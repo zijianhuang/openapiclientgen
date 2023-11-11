@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AssociateRoleToGroupResponse {
-		AssociatedAt?: string;
+		AssociatedAt?: string | null;
 	}
 
 	export interface BadRequestException {
@@ -13,17 +13,17 @@ export namespace MyNS {
 	}
 
 	export interface AssociateServiceRoleToAccountResponse {
-		AssociatedAt?: string;
+		AssociatedAt?: string | null;
 	}
 
 	export interface CreateConnectorDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 
@@ -31,27 +31,27 @@ export namespace MyNS {
 	export interface Connector {
 		ConnectorArn: string;
 		Id: string;
-		Parameters?: __mapOf__string;
+		Parameters?: __mapOf__string | null;
 	}
 
 	export interface __mapOf__string {
 	}
 
 	export interface CreateConnectorDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface CreateCoreDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 
@@ -59,30 +59,30 @@ export namespace MyNS {
 	export interface Core {
 		CertificateArn: string;
 		Id: string;
-		SyncShadow?: boolean;
+		SyncShadow?: boolean | null;
 		ThingArn: string;
 	}
 
 	export interface CreateCoreDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface CreateDeploymentResponse {
-		DeploymentArn?: string;
-		DeploymentId?: string;
+		DeploymentArn?: string | null;
+		DeploymentId?: string | null;
 	}
 
 	export interface CreateDeviceDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 
@@ -90,25 +90,25 @@ export namespace MyNS {
 	export interface Device {
 		CertificateArn: string;
 		Id: string;
-		SyncShadow?: boolean;
+		SyncShadow?: boolean | null;
 		ThingArn: string;
 	}
 
 	export interface CreateDeviceDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface CreateFunctionDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 
@@ -116,7 +116,7 @@ export namespace MyNS {
 	export interface FunctionDefaultConfig {
 
 		/** Configuration information that specifies how a Lambda function runs. */
-		Execution?: FunctionDefaultExecutionConfig;
+		Execution?: FunctionDefaultExecutionConfig | null;
 	}
 
 
@@ -124,10 +124,10 @@ export namespace MyNS {
 	export interface FunctionDefaultExecutionConfig {
 
 		/** Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group. */
-		IsolationMode?: FunctionDefaultExecutionConfigIsolationMode;
+		IsolationMode?: FunctionDefaultExecutionConfigIsolationMode | null;
 
 		/** Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''. */
-		RunAs?: FunctionRunAsConfig;
+		RunAs?: FunctionRunAsConfig | null;
 	}
 
 	export enum FunctionDefaultExecutionConfigIsolationMode { GreengrassContainer = 0, NoContainer = 1 }
@@ -135,32 +135,32 @@ export namespace MyNS {
 
 	/** Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''. */
 	export interface FunctionRunAsConfig {
-		Gid?: number;
-		Uid?: number;
+		Gid?: number | null;
+		Uid?: number | null;
 	}
 
 
 	/** Information about a Lambda function. */
 	export interface Function {
-		FunctionArn?: string;
+		FunctionArn?: string | null;
 
 		/** The configuration of the Lambda function. */
-		FunctionConfiguration?: FunctionConfiguration;
+		FunctionConfiguration?: FunctionConfiguration | null;
 		Id: string;
 	}
 
 
 	/** The configuration of the Lambda function. */
 	export interface FunctionConfiguration {
-		EncodingType?: FunctionConfigurationEncodingType;
+		EncodingType?: FunctionConfigurationEncodingType | null;
 
 		/** The environment configuration of the function. */
-		Environment?: FunctionConfigurationEnvironment;
-		ExecArgs?: string;
-		Executable?: string;
-		MemorySize?: number;
-		Pinned?: boolean;
-		Timeout?: number;
+		Environment?: FunctionConfigurationEnvironment | null;
+		ExecArgs?: string | null;
+		Executable?: string | null;
+		MemorySize?: number | null;
+		Pinned?: boolean | null;
+		Timeout?: number | null;
 	}
 
 	export enum FunctionConfigurationEncodingType { binary = 0, json = 1 }
@@ -168,12 +168,12 @@ export namespace MyNS {
 
 	/** The environment configuration of the function. */
 	export interface FunctionConfigurationEnvironment {
-		AccessSysfs?: boolean;
+		AccessSysfs?: boolean | null;
 
 		/** Configuration information that specifies how a Lambda function runs. */
-		Execution?: FunctionExecutionConfig;
-		ResourceAccessPolicies?: Array<ResourceAccessPolicy>;
-		Variables?: __mapOf__string;
+		Execution?: FunctionExecutionConfig | null;
+		ResourceAccessPolicies?: Array<ResourceAccessPolicy> | null;
+		Variables?: __mapOf__string | null;
 	}
 
 
@@ -181,10 +181,10 @@ export namespace MyNS {
 	export interface FunctionExecutionConfig {
 
 		/** Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group. */
-		IsolationMode?: FunctionDefaultExecutionConfigIsolationMode;
+		IsolationMode?: FunctionDefaultExecutionConfigIsolationMode | null;
 
 		/** Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''. */
-		RunAs?: FunctionRunAsConfig;
+		RunAs?: FunctionRunAsConfig | null;
 	}
 
 
@@ -192,48 +192,48 @@ export namespace MyNS {
 	export interface ResourceAccessPolicy {
 
 		/** The type of permission a function has to access a resource. */
-		Permission?: ResourceAccessPolicyPermission;
+		Permission?: ResourceAccessPolicyPermission | null;
 		ResourceId: string;
 	}
 
 	export enum ResourceAccessPolicyPermission { ro = 0, rw = 1 }
 
 	export interface CreateFunctionDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface CreateGroupResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface CreateGroupCertificateAuthorityResponse {
-		GroupCertificateAuthorityArn?: string;
+		GroupCertificateAuthorityArn?: string | null;
 	}
 
 	export interface CreateGroupVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface CreateLoggerDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 
@@ -242,7 +242,7 @@ export namespace MyNS {
 		Component: LoggerComponent;
 		Id: string;
 		Level: LoggerLevel;
-		Space?: number;
+		Space?: number | null;
 		Type: LoggerType;
 	}
 
@@ -253,20 +253,20 @@ export namespace MyNS {
 	export enum LoggerType { FileSystem = 0, AWSCloudWatch = 1 }
 
 	export interface CreateLoggerDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface CreateResourceDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 
@@ -287,19 +287,19 @@ export namespace MyNS {
 	export interface ResourceDataContainer {
 
 		/** Attributes that define a local device resource. */
-		LocalDeviceResourceData?: LocalDeviceResourceData;
+		LocalDeviceResourceData?: LocalDeviceResourceData | null;
 
 		/** Attributes that define a local volume resource. */
-		LocalVolumeResourceData?: LocalVolumeResourceData;
+		LocalVolumeResourceData?: LocalVolumeResourceData | null;
 
 		/** Attributes that define an Amazon S3 machine learning resource. */
-		S3MachineLearningModelResourceData?: S3MachineLearningModelResourceData;
+		S3MachineLearningModelResourceData?: S3MachineLearningModelResourceData | null;
 
 		/** Attributes that define an Amazon SageMaker machine learning resource. */
-		SageMakerMachineLearningModelResourceData?: SageMakerMachineLearningModelResourceData;
+		SageMakerMachineLearningModelResourceData?: SageMakerMachineLearningModelResourceData | null;
 
 		/** Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions. */
-		SecretsManagerSecretResourceData?: SecretsManagerSecretResourceData;
+		SecretsManagerSecretResourceData?: SecretsManagerSecretResourceData | null;
 	}
 
 
@@ -307,35 +307,35 @@ export namespace MyNS {
 	export interface LocalDeviceResourceData {
 
 		/** Group owner related settings for local resources. */
-		GroupOwnerSetting?: GroupOwnerSetting;
-		SourcePath?: string;
+		GroupOwnerSetting?: GroupOwnerSetting | null;
+		SourcePath?: string | null;
 	}
 
 
 	/** Group owner related settings for local resources. */
 	export interface GroupOwnerSetting {
-		AutoAddGroupOwner?: boolean;
-		GroupOwner?: string;
+		AutoAddGroupOwner?: boolean | null;
+		GroupOwner?: string | null;
 	}
 
 
 	/** Attributes that define a local volume resource. */
 	export interface LocalVolumeResourceData {
-		DestinationPath?: string;
+		DestinationPath?: string | null;
 
 		/** Group owner related settings for local resources. */
-		GroupOwnerSetting?: GroupOwnerSetting;
-		SourcePath?: string;
+		GroupOwnerSetting?: GroupOwnerSetting | null;
+		SourcePath?: string | null;
 	}
 
 
 	/** Attributes that define an Amazon S3 machine learning resource. */
 	export interface S3MachineLearningModelResourceData {
-		DestinationPath?: string;
+		DestinationPath?: string | null;
 
 		/** The owner setting for downloaded machine learning resources. */
-		OwnerSetting?: ResourceDownloadOwnerSetting;
-		S3Uri?: string;
+		OwnerSetting?: ResourceDownloadOwnerSetting | null;
+		S3Uri?: string | null;
 	}
 
 
@@ -353,41 +353,41 @@ export namespace MyNS {
 
 	/** Attributes that define an Amazon SageMaker machine learning resource. */
 	export interface SageMakerMachineLearningModelResourceData {
-		DestinationPath?: string;
+		DestinationPath?: string | null;
 
 		/** The owner setting for downloaded machine learning resources. */
-		OwnerSetting?: ResourceDownloadOwnerSetting;
-		SageMakerJobArn?: string;
+		OwnerSetting?: ResourceDownloadOwnerSetting | null;
+		SageMakerJobArn?: string | null;
 	}
 
 
 	/** Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions. */
 	export interface SecretsManagerSecretResourceData {
-		ARN?: string;
-		AdditionalStagingLabelsToDownload?: Array<string>;
+		ARN?: string | null;
+		AdditionalStagingLabelsToDownload?: Array<string> | null;
 	}
 
 	export interface CreateResourceDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface CreateSoftwareUpdateJobResponse {
-		IotJobArn?: string;
-		IotJobId?: string;
-		PlatformSoftwareVersion?: string;
+		IotJobArn?: string | null;
+		IotJobId?: string | null;
+		PlatformSoftwareVersion?: string | null;
 	}
 
 	export interface CreateSubscriptionDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 
@@ -400,10 +400,10 @@ export namespace MyNS {
 	}
 
 	export interface CreateSubscriptionDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface DeleteConnectorDefinitionResponse {
@@ -431,41 +431,41 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateRoleFromGroupResponse {
-		DisassociatedAt?: string;
+		DisassociatedAt?: string | null;
 	}
 
 	export interface DisassociateServiceRoleFromAccountResponse {
-		DisassociatedAt?: string;
+		DisassociatedAt?: string | null;
 	}
 
 	export interface GetAssociatedRoleResponse {
-		AssociatedAt?: string;
-		RoleArn?: string;
+		AssociatedAt?: string | null;
+		RoleArn?: string | null;
 	}
 
 	export interface GetBulkDeploymentStatusResponse {
 
 		/** Relevant metrics on input records processed during bulk deployment. */
-		BulkDeploymentMetrics?: BulkDeploymentMetrics;
+		BulkDeploymentMetrics?: BulkDeploymentMetrics | null;
 
 		/** The current status of the bulk deployment. */
-		BulkDeploymentStatus?: GetBulkDeploymentStatusResponseBulkDeploymentStatus;
-		CreatedAt?: string;
+		BulkDeploymentStatus?: GetBulkDeploymentStatusResponseBulkDeploymentStatus | null;
+		CreatedAt?: string | null;
 
 		/** A list of error details. */
-		ErrorDetails?: Array<ErrorDetail>;
-		ErrorMessage?: string;
+		ErrorDetails?: Array<ErrorDetail> | null;
+		ErrorMessage?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 
 	/** Relevant metrics on input records processed during bulk deployment. */
 	export interface BulkDeploymentMetrics {
-		InvalidInputRecords?: number;
-		RecordsProcessed?: number;
-		RetryAttempts?: number;
+		InvalidInputRecords?: number | null;
+		RecordsProcessed?: number | null;
+		RetryAttempts?: number | null;
 	}
 
 	export enum GetBulkDeploymentStatusResponseBulkDeploymentStatus { Initializing = 0, Running = 1, Completed = 2, Stopping = 3, Stopped = 4, Failed = 5 }
@@ -473,8 +473,8 @@ export namespace MyNS {
 
 	/** Details about the error. */
 	export interface ErrorDetail {
-		DetailedErrorCode?: string;
-		DetailedErrorMessage?: string;
+		DetailedErrorCode?: string | null;
+		DetailedErrorMessage?: string | null;
 	}
 
 
@@ -483,145 +483,145 @@ export namespace MyNS {
 	}
 
 	export interface GetConnectivityInfoResponse {
-		ConnectivityInfo?: Array<ConnectivityInfo>;
-		Message?: string;
+		ConnectivityInfo?: Array<ConnectivityInfo> | null;
+		Message?: string | null;
 	}
 
 
 	/** Information about a Greengrass core's connectivity. */
 	export interface ConnectivityInfo {
-		HostAddress?: string;
-		Id?: string;
-		Metadata?: string;
-		PortNumber?: number;
+		HostAddress?: string | null;
+		Id?: string | null;
+		Metadata?: string | null;
+		PortNumber?: number | null;
 	}
 
 	export interface GetConnectorDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface GetConnectorDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
 
 		/** Information about the connector definition version, which is a container for connectors. */
-		Definition?: ConnectorDefinitionVersion;
-		Id?: string;
-		NextToken?: string;
-		Version?: string;
+		Definition?: ConnectorDefinitionVersion | null;
+		Id?: string | null;
+		NextToken?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** Information about the connector definition version, which is a container for connectors. */
 	export interface ConnectorDefinitionVersion {
-		Connectors?: Array<Connector>;
+		Connectors?: Array<Connector> | null;
 	}
 
 	export interface GetCoreDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface GetCoreDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
 
 		/** Information about a core definition version. */
-		Definition?: CoreDefinitionVersion;
-		Id?: string;
-		NextToken?: string;
-		Version?: string;
+		Definition?: CoreDefinitionVersion | null;
+		Id?: string | null;
+		NextToken?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** Information about a core definition version. */
 	export interface CoreDefinitionVersion {
-		Cores?: Array<Core>;
+		Cores?: Array<Core> | null;
 	}
 
 	export interface GetDeploymentStatusResponse {
-		DeploymentStatus?: string;
+		DeploymentStatus?: string | null;
 
 		/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
-		DeploymentType?: GetDeploymentStatusResponseDeploymentType;
+		DeploymentType?: GetDeploymentStatusResponseDeploymentType | null;
 
 		/** A list of error details. */
-		ErrorDetails?: Array<ErrorDetail>;
-		ErrorMessage?: string;
-		UpdatedAt?: string;
+		ErrorDetails?: Array<ErrorDetail> | null;
+		ErrorMessage?: string | null;
+		UpdatedAt?: string | null;
 	}
 
 	export enum GetDeploymentStatusResponseDeploymentType { NewDeployment = 0, Redeployment = 1, ResetDeployment = 2, ForceResetDeployment = 3 }
 
 	export interface GetDeviceDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface GetDeviceDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
 
 		/** Information about a device definition version. */
-		Definition?: DeviceDefinitionVersion;
-		Id?: string;
-		NextToken?: string;
-		Version?: string;
+		Definition?: DeviceDefinitionVersion | null;
+		Id?: string | null;
+		NextToken?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** Information about a device definition version. */
 	export interface DeviceDefinitionVersion {
-		Devices?: Array<Device>;
+		Devices?: Array<Device> | null;
 	}
 
 	export interface GetFunctionDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface GetFunctionDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
 
 		/** Information about a function definition version. */
-		Definition?: FunctionDefinitionVersion;
-		Id?: string;
-		NextToken?: string;
-		Version?: string;
+		Definition?: FunctionDefinitionVersion | null;
+		Id?: string | null;
+		NextToken?: string | null;
+		Version?: string | null;
 	}
 
 
@@ -629,351 +629,351 @@ export namespace MyNS {
 	export interface FunctionDefinitionVersion {
 
 		/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
-		DefaultConfig?: FunctionDefaultConfig;
-		Functions?: Array<Function>;
+		DefaultConfig?: FunctionDefaultConfig | null;
+		Functions?: Array<Function> | null;
 	}
 
 	export interface GetGroupResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface GetGroupCertificateAuthorityResponse {
-		GroupCertificateAuthorityArn?: string;
-		GroupCertificateAuthorityId?: string;
-		PemEncodedCertificate?: string;
+		GroupCertificateAuthorityArn?: string | null;
+		GroupCertificateAuthorityId?: string | null;
+		PemEncodedCertificate?: string | null;
 	}
 
 	export interface GetGroupCertificateConfigurationResponse {
-		CertificateAuthorityExpiryInMilliseconds?: string;
-		CertificateExpiryInMilliseconds?: string;
-		GroupId?: string;
+		CertificateAuthorityExpiryInMilliseconds?: string | null;
+		CertificateExpiryInMilliseconds?: string | null;
+		GroupId?: string | null;
 	}
 
 	export interface GetGroupVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
 
 		/** Information about a group version. */
-		Definition?: GroupVersion;
-		Id?: string;
-		Version?: string;
+		Definition?: GroupVersion | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** Information about a group version. */
 	export interface GroupVersion {
-		ConnectorDefinitionVersionArn?: string;
-		CoreDefinitionVersionArn?: string;
-		DeviceDefinitionVersionArn?: string;
-		FunctionDefinitionVersionArn?: string;
-		LoggerDefinitionVersionArn?: string;
-		ResourceDefinitionVersionArn?: string;
-		SubscriptionDefinitionVersionArn?: string;
+		ConnectorDefinitionVersionArn?: string | null;
+		CoreDefinitionVersionArn?: string | null;
+		DeviceDefinitionVersionArn?: string | null;
+		FunctionDefinitionVersionArn?: string | null;
+		LoggerDefinitionVersionArn?: string | null;
+		ResourceDefinitionVersionArn?: string | null;
+		SubscriptionDefinitionVersionArn?: string | null;
 	}
 
 	export interface GetLoggerDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface GetLoggerDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
 
 		/** Information about a logger definition version. */
-		Definition?: LoggerDefinitionVersion;
-		Id?: string;
-		Version?: string;
+		Definition?: LoggerDefinitionVersion | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** Information about a logger definition version. */
 	export interface LoggerDefinitionVersion {
-		Loggers?: Array<Logger>;
+		Loggers?: Array<Logger> | null;
 	}
 
 	export interface GetResourceDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface GetResourceDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
 
 		/** Information about a resource definition version. */
-		Definition?: ResourceDefinitionVersion;
-		Id?: string;
-		Version?: string;
+		Definition?: ResourceDefinitionVersion | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** Information about a resource definition version. */
 	export interface ResourceDefinitionVersion {
-		Resources?: Array<Resource>;
+		Resources?: Array<Resource> | null;
 	}
 
 	export interface GetServiceRoleForAccountResponse {
-		AssociatedAt?: string;
-		RoleArn?: string;
+		AssociatedAt?: string | null;
+		RoleArn?: string | null;
 	}
 
 	export interface GetSubscriptionDefinitionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface GetSubscriptionDefinitionVersionResponse {
-		Arn?: string;
-		CreationTimestamp?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
 
 		/** Information about a subscription definition version. */
-		Definition?: SubscriptionDefinitionVersion;
-		Id?: string;
-		NextToken?: string;
-		Version?: string;
+		Definition?: SubscriptionDefinitionVersion | null;
+		Id?: string | null;
+		NextToken?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** Information about a subscription definition version. */
 	export interface SubscriptionDefinitionVersion {
-		Subscriptions?: Array<Subscription>;
+		Subscriptions?: Array<Subscription> | null;
 	}
 
 	export interface ListBulkDeploymentDetailedReportsResponse {
-		Deployments?: Array<BulkDeploymentResult>;
-		NextToken?: string;
+		Deployments?: Array<BulkDeploymentResult> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about an individual group deployment in a bulk deployment operation. */
 	export interface BulkDeploymentResult {
-		CreatedAt?: string;
-		DeploymentArn?: string;
-		DeploymentId?: string;
-		DeploymentStatus?: string;
+		CreatedAt?: string | null;
+		DeploymentArn?: string | null;
+		DeploymentId?: string | null;
+		DeploymentStatus?: string | null;
 
 		/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
-		DeploymentType?: GetDeploymentStatusResponseDeploymentType;
+		DeploymentType?: GetDeploymentStatusResponseDeploymentType | null;
 
 		/** A list of error details. */
-		ErrorDetails?: Array<ErrorDetail>;
-		ErrorMessage?: string;
-		GroupArn?: string;
+		ErrorDetails?: Array<ErrorDetail> | null;
+		ErrorMessage?: string | null;
+		GroupArn?: string | null;
 	}
 
 	export interface ListBulkDeploymentsResponse {
-		BulkDeployments?: Array<BulkDeployment>;
-		NextToken?: string;
+		BulkDeployments?: Array<BulkDeployment> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state. */
 	export interface BulkDeployment {
-		BulkDeploymentArn?: string;
-		BulkDeploymentId?: string;
-		CreatedAt?: string;
+		BulkDeploymentArn?: string | null;
+		BulkDeploymentId?: string | null;
+		CreatedAt?: string | null;
 	}
 
 	export interface ListConnectorDefinitionVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionInformation>;
+		NextToken?: string | null;
+		Versions?: Array<VersionInformation> | null;
 	}
 
 
 	/** Information about a version. */
 	export interface VersionInformation {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		Version?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		Version?: string | null;
 	}
 
 	export interface ListConnectorDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation>;
-		NextToken?: string;
+		Definitions?: Array<DefinitionInformation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a definition. */
 	export interface DefinitionInformation {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListCoreDefinitionVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionInformation>;
+		NextToken?: string | null;
+		Versions?: Array<VersionInformation> | null;
 	}
 
 	export interface ListCoreDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation>;
-		NextToken?: string;
+		Definitions?: Array<DefinitionInformation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDeploymentsResponse {
-		Deployments?: Array<Deployment>;
-		NextToken?: string;
+		Deployments?: Array<Deployment> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a deployment. */
 	export interface Deployment {
-		CreatedAt?: string;
-		DeploymentArn?: string;
-		DeploymentId?: string;
+		CreatedAt?: string | null;
+		DeploymentArn?: string | null;
+		DeploymentId?: string | null;
 
 		/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
-		DeploymentType?: GetDeploymentStatusResponseDeploymentType;
-		GroupArn?: string;
+		DeploymentType?: GetDeploymentStatusResponseDeploymentType | null;
+		GroupArn?: string | null;
 	}
 
 	export interface ListDeviceDefinitionVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionInformation>;
+		NextToken?: string | null;
+		Versions?: Array<VersionInformation> | null;
 	}
 
 	export interface ListDeviceDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation>;
-		NextToken?: string;
+		Definitions?: Array<DefinitionInformation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListFunctionDefinitionVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionInformation>;
+		NextToken?: string | null;
+		Versions?: Array<VersionInformation> | null;
 	}
 
 	export interface ListFunctionDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation>;
-		NextToken?: string;
+		Definitions?: Array<DefinitionInformation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListGroupCertificateAuthoritiesResponse {
-		GroupCertificateAuthorities?: Array<GroupCertificateAuthorityProperties>;
+		GroupCertificateAuthorities?: Array<GroupCertificateAuthorityProperties> | null;
 	}
 
 
 	/** Information about a certificate authority for a group. */
 	export interface GroupCertificateAuthorityProperties {
-		GroupCertificateAuthorityArn?: string;
-		GroupCertificateAuthorityId?: string;
+		GroupCertificateAuthorityArn?: string | null;
+		GroupCertificateAuthorityId?: string | null;
 	}
 
 	export interface ListGroupVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionInformation>;
+		NextToken?: string | null;
+		Versions?: Array<VersionInformation> | null;
 	}
 
 	export interface ListGroupsResponse {
-		Groups?: Array<GroupInformation>;
-		NextToken?: string;
+		Groups?: Array<GroupInformation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a group. */
 	export interface GroupInformation {
-		Arn?: string;
-		CreationTimestamp?: string;
-		Id?: string;
-		LastUpdatedTimestamp?: string;
-		LatestVersion?: string;
-		LatestVersionArn?: string;
-		Name?: string;
+		Arn?: string | null;
+		CreationTimestamp?: string | null;
+		Id?: string | null;
+		LastUpdatedTimestamp?: string | null;
+		LatestVersion?: string | null;
+		LatestVersionArn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface ListLoggerDefinitionVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionInformation>;
+		NextToken?: string | null;
+		Versions?: Array<VersionInformation> | null;
 	}
 
 	export interface ListLoggerDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation>;
-		NextToken?: string;
+		Definitions?: Array<DefinitionInformation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListResourceDefinitionVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionInformation>;
+		NextToken?: string | null;
+		Versions?: Array<VersionInformation> | null;
 	}
 
 	export interface ListResourceDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation>;
-		NextToken?: string;
+		Definitions?: Array<DefinitionInformation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListSubscriptionDefinitionVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionInformation>;
+		NextToken?: string | null;
+		Versions?: Array<VersionInformation> | null;
 	}
 
 	export interface ListSubscriptionDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation>;
-		NextToken?: string;
+		Definitions?: Array<DefinitionInformation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface ResetDeploymentsResponse {
-		DeploymentArn?: string;
-		DeploymentId?: string;
+		DeploymentArn?: string | null;
+		DeploymentId?: string | null;
 	}
 
 	export interface StartBulkDeploymentResponse {
-		BulkDeploymentArn?: string;
-		BulkDeploymentId?: string;
+		BulkDeploymentArn?: string | null;
+		BulkDeploymentId?: string | null;
 	}
 
 	export interface StopBulkDeploymentResponse {
 	}
 
 	export interface UpdateConnectivityInfoResponse {
-		Message?: string;
-		Version?: string;
+		Message?: string | null;
+		Version?: string | null;
 	}
 
 	export interface UpdateConnectorDefinitionResponse {
@@ -992,9 +992,9 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGroupCertificateConfigurationResponse {
-		CertificateAuthorityExpiryInMilliseconds?: string;
-		CertificateExpiryInMilliseconds?: string;
-		GroupId?: string;
+		CertificateAuthorityExpiryInMilliseconds?: string | null;
+		CertificateExpiryInMilliseconds?: string | null;
+		GroupId?: string | null;
 	}
 
 	export interface UpdateLoggerDefinitionResponse {
@@ -1025,15 +1025,15 @@ export namespace MyNS {
 	export interface CreateConnectorDefinitionRequest {
 
 		/** Information about the connector definition version, which is a container for connectors. */
-		InitialVersion?: ConnectorDefinitionVersion;
-		Name?: string;
+		InitialVersion?: ConnectorDefinitionVersion | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface CreateConnectorDefinitionVersionRequest {
-		Connectors?: Array<Connector>;
+		Connectors?: Array<Connector> | null;
 	}
 
 
@@ -1041,50 +1041,50 @@ export namespace MyNS {
 	export interface CreateCoreDefinitionRequest {
 
 		/** Information about a core definition version. */
-		InitialVersion?: CoreDefinitionVersion;
-		Name?: string;
+		InitialVersion?: CoreDefinitionVersion | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface CreateCoreDefinitionVersionRequest {
-		Cores?: Array<Core>;
+		Cores?: Array<Core> | null;
 	}
 
 	export interface CreateDeploymentRequest {
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/**
 		 * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
 		 * Required
 		 */
 		DeploymentType: GetDeploymentStatusResponseDeploymentType;
-		GroupVersionId?: string;
+		GroupVersionId?: string | null;
 	}
 
 	export interface CreateDeviceDefinitionRequest {
 
 		/** Information about a device definition version. */
-		InitialVersion?: DeviceDefinitionVersion;
-		Name?: string;
+		InitialVersion?: DeviceDefinitionVersion | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface CreateDeviceDefinitionVersionRequest {
-		Devices?: Array<Device>;
+		Devices?: Array<Device> | null;
 	}
 
 	export interface CreateFunctionDefinitionRequest {
 
 		/** Information about a function definition version. */
-		InitialVersion?: FunctionDefinitionVersion;
-		Name?: string;
+		InitialVersion?: FunctionDefinitionVersion | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 
@@ -1092,8 +1092,8 @@ export namespace MyNS {
 	export interface CreateFunctionDefinitionVersionRequest {
 
 		/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
-		DefaultConfig?: FunctionDefaultConfig;
-		Functions?: Array<Function>;
+		DefaultConfig?: FunctionDefaultConfig | null;
+		Functions?: Array<Function> | null;
 	}
 
 	export interface CreateGroupCertificateAuthorityRequest {
@@ -1102,49 +1102,49 @@ export namespace MyNS {
 	export interface CreateGroupRequest {
 
 		/** Information about a group version. */
-		InitialVersion?: GroupVersion;
-		Name?: string;
+		InitialVersion?: GroupVersion | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface CreateGroupVersionRequest {
-		ConnectorDefinitionVersionArn?: string;
-		CoreDefinitionVersionArn?: string;
-		DeviceDefinitionVersionArn?: string;
-		FunctionDefinitionVersionArn?: string;
-		LoggerDefinitionVersionArn?: string;
-		ResourceDefinitionVersionArn?: string;
-		SubscriptionDefinitionVersionArn?: string;
+		ConnectorDefinitionVersionArn?: string | null;
+		CoreDefinitionVersionArn?: string | null;
+		DeviceDefinitionVersionArn?: string | null;
+		FunctionDefinitionVersionArn?: string | null;
+		LoggerDefinitionVersionArn?: string | null;
+		ResourceDefinitionVersionArn?: string | null;
+		SubscriptionDefinitionVersionArn?: string | null;
 	}
 
 	export interface CreateLoggerDefinitionRequest {
 
 		/** Information about a logger definition version. */
-		InitialVersion?: LoggerDefinitionVersion;
-		Name?: string;
+		InitialVersion?: LoggerDefinitionVersion | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface CreateLoggerDefinitionVersionRequest {
-		Loggers?: Array<Logger>;
+		Loggers?: Array<Logger> | null;
 	}
 
 	export interface CreateResourceDefinitionRequest {
 
 		/** Information about a resource definition version. */
-		InitialVersion?: ResourceDefinitionVersion;
-		Name?: string;
+		InitialVersion?: ResourceDefinitionVersion | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface CreateResourceDefinitionVersionRequest {
-		Resources?: Array<Resource>;
+		Resources?: Array<Resource> | null;
 	}
 
 
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 		SoftwareToUpdate: SoftwareToUpdate;
 
 		/** The minimum level of log statements that should be logged by the OTA Agent during an update. */
-		UpdateAgentLogLevel?: UpdateAgentLogLevel;
+		UpdateAgentLogLevel?: UpdateAgentLogLevel | null;
 
 		/**
 		 * The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
@@ -1202,15 +1202,15 @@ export namespace MyNS {
 	export interface CreateSubscriptionDefinitionRequest {
 
 		/** Information about a subscription definition version. */
-		InitialVersion?: SubscriptionDefinitionVersion;
-		Name?: string;
+		InitialVersion?: SubscriptionDefinitionVersion | null;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface CreateSubscriptionDefinitionVersionRequest {
-		Subscriptions?: Array<Subscription>;
+		Subscriptions?: Array<Subscription> | null;
 	}
 
 	export interface DeleteConnectorDefinitionRequest {
@@ -1388,7 +1388,7 @@ export namespace MyNS {
 
 	/** Information needed to reset deployments. */
 	export interface ResetDeploymentsRequest {
-		Force?: boolean;
+		Force?: boolean | null;
 	}
 
 	export interface StartBulkDeploymentRequest {
@@ -1396,7 +1396,7 @@ export namespace MyNS {
 		InputFileUri: string;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface StopBulkDeploymentRequest {
@@ -1407,7 +1407,7 @@ export namespace MyNS {
 	export interface TagResourceRequest {
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface UntagResourceRequest {
@@ -1416,43 +1416,43 @@ export namespace MyNS {
 
 	/** Connectivity information. */
 	export interface UpdateConnectivityInfoRequest {
-		ConnectivityInfo?: Array<ConnectivityInfo>;
+		ConnectivityInfo?: Array<ConnectivityInfo> | null;
 	}
 
 	export interface UpdateConnectorDefinitionRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateCoreDefinitionRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateDeviceDefinitionRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateFunctionDefinitionRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateGroupCertificateConfigurationRequest {
-		CertificateExpiryInMilliseconds?: string;
+		CertificateExpiryInMilliseconds?: string | null;
 	}
 
 	export interface UpdateGroupRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateLoggerDefinitionRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateResourceDefinitionRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateSubscriptionDefinitionRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	@Injectable()
@@ -2414,51 +2414,51 @@ export namespace MyNS {
 	export interface CreateConnectorDefinitionPostBody {
 
 		/** Information about the connector definition version, which is a container for connectors. */
-		InitialVersion?: CreateConnectorDefinitionPostBodyInitialVersion;
+		InitialVersion?: CreateConnectorDefinitionPostBodyInitialVersion | null;
 
 		/** The name of the connector definition. */
-		Name?: string;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateConnectorDefinitionPostBodyInitialVersion {
-		Connectors?: Array<Connector>;
+		Connectors?: Array<Connector> | null;
 	}
 
 	export interface CreateConnectorDefinitionVersionPostBody {
 
 		/** A list of references to connectors in this version, with their corresponding configuration settings. */
-		Connectors?: Array<Connector>;
+		Connectors?: Array<Connector> | null;
 	}
 
 	export interface CreateCoreDefinitionPostBody {
 
 		/** Information about a core definition version. */
-		InitialVersion?: CreateCoreDefinitionPostBodyInitialVersion;
+		InitialVersion?: CreateCoreDefinitionPostBodyInitialVersion | null;
 
 		/** The name of the core definition. */
-		Name?: string;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateCoreDefinitionPostBodyInitialVersion {
-		Cores?: Array<Core>;
+		Cores?: Array<Core> | null;
 	}
 
 	export interface CreateCoreDefinitionVersionPostBody {
 
 		/** A list of cores in the core definition version. */
-		Cores?: Array<Core>;
+		Cores?: Array<Core> | null;
 	}
 
 	export interface CreateDeploymentPostBody {
 
 		/** The ID of the deployment if you wish to redeploy a previous deployment. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/**
 		 * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
@@ -2467,153 +2467,153 @@ export namespace MyNS {
 		DeploymentType: GetDeploymentStatusResponseDeploymentType;
 
 		/** The ID of the group version to be deployed. */
-		GroupVersionId?: string;
+		GroupVersionId?: string | null;
 	}
 
 	export interface CreateDeviceDefinitionPostBody {
 
 		/** Information about a device definition version. */
-		InitialVersion?: CreateDeviceDefinitionPostBodyInitialVersion;
+		InitialVersion?: CreateDeviceDefinitionPostBodyInitialVersion | null;
 
 		/** The name of the device definition. */
-		Name?: string;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateDeviceDefinitionPostBodyInitialVersion {
-		Devices?: Array<Device>;
+		Devices?: Array<Device> | null;
 	}
 
 	export interface CreateDeviceDefinitionVersionPostBody {
 
 		/** A list of devices in the definition version. */
-		Devices?: Array<Device>;
+		Devices?: Array<Device> | null;
 	}
 
 	export interface CreateFunctionDefinitionPostBody {
 
 		/** Information about a function definition version. */
-		InitialVersion?: CreateFunctionDefinitionPostBodyInitialVersion;
+		InitialVersion?: CreateFunctionDefinitionPostBodyInitialVersion | null;
 
 		/** The name of the function definition. */
-		Name?: string;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateFunctionDefinitionPostBodyInitialVersion {
 
 		/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
-		DefaultConfig?: FunctionDefaultConfig;
-		Functions?: Array<Function>;
+		DefaultConfig?: FunctionDefaultConfig | null;
+		Functions?: Array<Function> | null;
 	}
 
 	export interface CreateFunctionDefinitionVersionPostBody {
 
 		/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
-		DefaultConfig?: CreateFunctionDefinitionVersionPostBodyDefaultConfig;
+		DefaultConfig?: CreateFunctionDefinitionVersionPostBodyDefaultConfig | null;
 
 		/** A list of Lambda functions in this function definition version. */
-		Functions?: Array<Function>;
+		Functions?: Array<Function> | null;
 	}
 
 	export interface CreateFunctionDefinitionVersionPostBodyDefaultConfig {
 
 		/** Configuration information that specifies how a Lambda function runs. */
-		Execution?: FunctionDefaultExecutionConfig;
+		Execution?: FunctionDefaultExecutionConfig | null;
 	}
 
 	export interface CreateGroupPostBody {
 
 		/** Information about a group version. */
-		InitialVersion?: CreateGroupPostBodyInitialVersion;
+		InitialVersion?: CreateGroupPostBodyInitialVersion | null;
 
 		/** The name of the group. */
-		Name?: string;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateGroupPostBodyInitialVersion {
-		ConnectorDefinitionVersionArn?: string;
-		CoreDefinitionVersionArn?: string;
-		DeviceDefinitionVersionArn?: string;
-		FunctionDefinitionVersionArn?: string;
-		LoggerDefinitionVersionArn?: string;
-		ResourceDefinitionVersionArn?: string;
-		SubscriptionDefinitionVersionArn?: string;
+		ConnectorDefinitionVersionArn?: string | null;
+		CoreDefinitionVersionArn?: string | null;
+		DeviceDefinitionVersionArn?: string | null;
+		FunctionDefinitionVersionArn?: string | null;
+		LoggerDefinitionVersionArn?: string | null;
+		ResourceDefinitionVersionArn?: string | null;
+		SubscriptionDefinitionVersionArn?: string | null;
 	}
 
 	export interface CreateGroupVersionPostBody {
 
 		/** The ARN of the connector definition version for this group. */
-		ConnectorDefinitionVersionArn?: string;
+		ConnectorDefinitionVersionArn?: string | null;
 
 		/** The ARN of the core definition version for this group. */
-		CoreDefinitionVersionArn?: string;
+		CoreDefinitionVersionArn?: string | null;
 
 		/** The ARN of the device definition version for this group. */
-		DeviceDefinitionVersionArn?: string;
+		DeviceDefinitionVersionArn?: string | null;
 
 		/** The ARN of the function definition version for this group. */
-		FunctionDefinitionVersionArn?: string;
+		FunctionDefinitionVersionArn?: string | null;
 
 		/** The ARN of the logger definition version for this group. */
-		LoggerDefinitionVersionArn?: string;
+		LoggerDefinitionVersionArn?: string | null;
 
 		/** The ARN of the resource definition version for this group. */
-		ResourceDefinitionVersionArn?: string;
+		ResourceDefinitionVersionArn?: string | null;
 
 		/** The ARN of the subscription definition version for this group. */
-		SubscriptionDefinitionVersionArn?: string;
+		SubscriptionDefinitionVersionArn?: string | null;
 	}
 
 	export interface CreateLoggerDefinitionPostBody {
 
 		/** Information about a logger definition version. */
-		InitialVersion?: CreateLoggerDefinitionPostBodyInitialVersion;
+		InitialVersion?: CreateLoggerDefinitionPostBodyInitialVersion | null;
 
 		/** The name of the logger definition. */
-		Name?: string;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateLoggerDefinitionPostBodyInitialVersion {
-		Loggers?: Array<Logger>;
+		Loggers?: Array<Logger> | null;
 	}
 
 	export interface CreateLoggerDefinitionVersionPostBody {
 
 		/** A list of loggers. */
-		Loggers?: Array<Logger>;
+		Loggers?: Array<Logger> | null;
 	}
 
 	export interface CreateResourceDefinitionPostBody {
 
 		/** Information about a resource definition version. */
-		InitialVersion?: CreateResourceDefinitionPostBodyInitialVersion;
+		InitialVersion?: CreateResourceDefinitionPostBodyInitialVersion | null;
 
 		/** The name of the resource definition. */
-		Name?: string;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateResourceDefinitionPostBodyInitialVersion {
-		Resources?: Array<Resource>;
+		Resources?: Array<Resource> | null;
 	}
 
 	export interface CreateResourceDefinitionVersionPostBody {
 
 		/** A list of resources. */
-		Resources?: Array<Resource>;
+		Resources?: Array<Resource> | null;
 	}
 
 	export interface CreateSoftwareUpdateJobPostBody {
@@ -2631,7 +2631,7 @@ export namespace MyNS {
 		SoftwareToUpdate: SoftwareToUpdate;
 
 		/** The minimum level of log statements that should be logged by the OTA Agent during an update. */
-		UpdateAgentLogLevel?: UpdateAgentLogLevel;
+		UpdateAgentLogLevel?: UpdateAgentLogLevel | null;
 
 		/**
 		 * The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
@@ -2655,83 +2655,83 @@ export namespace MyNS {
 	export interface CreateSubscriptionDefinitionPostBody {
 
 		/** Information about a subscription definition version. */
-		InitialVersion?: CreateSubscriptionDefinitionPostBodyInitialVersion;
+		InitialVersion?: CreateSubscriptionDefinitionPostBodyInitialVersion | null;
 
 		/** The name of the subscription definition. */
-		Name?: string;
+		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateSubscriptionDefinitionPostBodyInitialVersion {
-		Subscriptions?: Array<Subscription>;
+		Subscriptions?: Array<Subscription> | null;
 	}
 
 	export interface CreateSubscriptionDefinitionVersionPostBody {
 
 		/** A list of subscriptions. */
-		Subscriptions?: Array<Subscription>;
+		Subscriptions?: Array<Subscription> | null;
 	}
 
 	export interface UpdateConnectorDefinitionPutBody {
 
 		/** The name of the definition. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateCoreDefinitionPutBody {
 
 		/** The name of the definition. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateDeviceDefinitionPutBody {
 
 		/** The name of the definition. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateFunctionDefinitionPutBody {
 
 		/** The name of the definition. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateGroupPutBody {
 
 		/** The name of the definition. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateLoggerDefinitionPutBody {
 
 		/** The name of the definition. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateResourceDefinitionPutBody {
 
 		/** The name of the definition. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateSubscriptionDefinitionPutBody {
 
 		/** The name of the definition. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateConnectivityInfoPutBody {
 
 		/** A list of connectivity info. */
-		ConnectivityInfo?: Array<ConnectivityInfo>;
+		ConnectivityInfo?: Array<ConnectivityInfo> | null;
 	}
 
 	export interface UpdateGroupCertificateConfigurationPutBody {
 
 		/** The amount of time remaining before the certificate expires, in milliseconds. */
-		CertificateExpiryInMilliseconds?: string;
+		CertificateExpiryInMilliseconds?: string | null;
 	}
 
 	export interface StartBulkDeploymentPostBody {
@@ -2749,19 +2749,19 @@ export namespace MyNS {
 		InputFileUri: string;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface TagResourcePostBody {
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface ResetDeploymentsPostBody {
 
 		/** If true, performs a best-effort only core reset. */
-		Force?: boolean;
+		Force?: boolean | null;
 	}
 
 }

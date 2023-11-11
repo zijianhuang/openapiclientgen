@@ -1087,6 +1087,66 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get the group entitlements for an account.
+		/// Group_Entitlements_List {organization}/_apis/groupentitlements
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<GroupEntitlement[]> Group_Entitlements_ListAsync(string organization, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<GroupEntitlement[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get the group entitlements for an account.
+		/// Group_Entitlements_List {organization}/_apis/groupentitlements
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public GroupEntitlement[] Group_Entitlements_List(string organization, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<GroupEntitlement[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create a group entitlement with license rule, extension rule.
 		/// Group_Entitlements_Add {organization}/_apis/groupentitlements
 		/// </summary>
@@ -1151,15 +1211,18 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get the group entitlements for an account.
-		/// Group_Entitlements_List {organization}/_apis/groupentitlements
+		/// Get a group entitlement.
+		/// 
+		/// If the group entitlement does not exist, returns null.
+		/// Group_Entitlements_Get {organization}/_apis/groupentitlements/{groupId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="groupId">ID of the group.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<GroupEntitlement[]> Group_Entitlements_ListAsync(string organization, string api_version)
+		public async Task<GroupEntitlement> Group_Entitlements_GetAsync(string organization, string groupId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1170,7 +1233,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GroupEntitlement[]>(jsonReader);
+				return serializer.Deserialize<GroupEntitlement>(jsonReader);
 				}
 			}
 			finally
@@ -1181,15 +1244,18 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get the group entitlements for an account.
-		/// Group_Entitlements_List {organization}/_apis/groupentitlements
+		/// Get a group entitlement.
+		/// 
+		/// If the group entitlement does not exist, returns null.
+		/// Group_Entitlements_Get {organization}/_apis/groupentitlements/{groupId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="groupId">ID of the group.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public GroupEntitlement[] Group_Entitlements_List(string organization, string api_version)
+		public GroupEntitlement Group_Entitlements_Get(string organization, string groupId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1200,7 +1266,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GroupEntitlement[]>(jsonReader);
+				return serializer.Deserialize<GroupEntitlement>(jsonReader);
 				}
 			}
 			finally
@@ -1267,72 +1333,6 @@ namespace MyNS
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GroupEntitlementOperationReference>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a group entitlement.
-		/// 
-		/// If the group entitlement does not exist, returns null.
-		/// Group_Entitlements_Get {organization}/_apis/groupentitlements/{groupId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="groupId">ID of the group.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<GroupEntitlement> Group_Entitlements_GetAsync(string organization, string groupId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GroupEntitlement>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a group entitlement.
-		/// 
-		/// If the group entitlement does not exist, returns null.
-		/// Group_Entitlements_Get {organization}/_apis/groupentitlements/{groupId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="groupId">ID of the group.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public GroupEntitlement Group_Entitlements_Get(string organization, string groupId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GroupEntitlement>(jsonReader);
 				}
 			}
 			finally
@@ -1513,6 +1513,74 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get a paged set of user entitlements matching the filter and sort criteria built with properties that match the select input.
+		/// User_Entitlements_Search_User_Entitlements {organization}/_apis/userentitlements
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="continuationToken">Continuation token for getting the next page of data set. If null is passed, gets the first page.</param>
+		/// <param name="select">Comma (",") separated list of properties to select in the result entitlements. names of the properties are - 'Projects, 'Extensions' and 'Grouprules'.</param>
+		/// <param name="filter">Equality operators relating to searching user entitlements seperated by and clauses. Valid filters include: licenseId, licenseStatus, userType, and name. licenseId: filters based on license assignment using license names. i.e. licenseId eq 'Account-Stakeholder' or licenseId eq 'Account-Express'. licenseStatus: filters based on license status. currently only supports disabled. i.e. licenseStatus eq 'Disabled'. To get disabled basic licenses, you would pass (licenseId eq 'Account-Express' and licenseStatus eq 'Disabled') userType: filters off identity type. Suppored types are member or guest i.e. userType eq 'member'. name: filters on if the user's display name or email contians given input. i.e. get all users with "test" in email or displayname is "name eq 'test'". A valid query could be: (licenseId eq 'Account-Stakeholder' or (licenseId eq 'Account-Express' and licenseStatus eq 'Disabled')) and name eq 'test' and userType eq 'guest'.</param>
+		/// <param name="orderBy">PropertyName and Order (separated by a space ( )) to sort on (e.g. lastAccessed desc). Order defaults to ascending. valid properties to order by are dateCreated, lastAccessed, and name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<PagedGraphMemberList> User_Entitlements_Search_User_EntitlementsAsync(string organization, string continuationToken, User_Entitlements_Search_User_EntitlementsSelect select, string filter, string orderBy, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<PagedGraphMemberList>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a paged set of user entitlements matching the filter and sort criteria built with properties that match the select input.
+		/// User_Entitlements_Search_User_Entitlements {organization}/_apis/userentitlements
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="continuationToken">Continuation token for getting the next page of data set. If null is passed, gets the first page.</param>
+		/// <param name="select">Comma (",") separated list of properties to select in the result entitlements. names of the properties are - 'Projects, 'Extensions' and 'Grouprules'.</param>
+		/// <param name="filter">Equality operators relating to searching user entitlements seperated by and clauses. Valid filters include: licenseId, licenseStatus, userType, and name. licenseId: filters based on license assignment using license names. i.e. licenseId eq 'Account-Stakeholder' or licenseId eq 'Account-Express'. licenseStatus: filters based on license status. currently only supports disabled. i.e. licenseStatus eq 'Disabled'. To get disabled basic licenses, you would pass (licenseId eq 'Account-Express' and licenseStatus eq 'Disabled') userType: filters off identity type. Suppored types are member or guest i.e. userType eq 'member'. name: filters on if the user's display name or email contians given input. i.e. get all users with "test" in email or displayname is "name eq 'test'". A valid query could be: (licenseId eq 'Account-Stakeholder' or (licenseId eq 'Account-Express' and licenseStatus eq 'Disabled')) and name eq 'test' and userType eq 'guest'.</param>
+		/// <param name="orderBy">PropertyName and Order (separated by a space ( )) to sort on (e.g. lastAccessed desc). Order defaults to ascending. valid properties to order by are dateCreated, lastAccessed, and name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public PagedGraphMemberList User_Entitlements_Search_User_Entitlements(string organization, string continuationToken, User_Entitlements_Search_User_EntitlementsSelect select, string filter, string orderBy, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<PagedGraphMemberList>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Add a user, assign license and extensions and make them a member of a project group in an account.
 		/// User_Entitlements_Add {organization}/_apis/userentitlements
 		/// </summary>
@@ -1589,19 +1657,16 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a paged set of user entitlements matching the filter and sort criteria built with properties that match the select input.
-		/// User_Entitlements_Search_User_Entitlements {organization}/_apis/userentitlements
+		/// Get User Entitlement for a user.
+		/// User_Entitlements_Get {organization}/_apis/userentitlements/{userId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="continuationToken">Continuation token for getting the next page of data set. If null is passed, gets the first page.</param>
-		/// <param name="select">Comma (",") separated list of properties to select in the result entitlements. names of the properties are - 'Projects, 'Extensions' and 'Grouprules'.</param>
-		/// <param name="filter">Equality operators relating to searching user entitlements seperated by and clauses. Valid filters include: licenseId, licenseStatus, userType, and name. licenseId: filters based on license assignment using license names. i.e. licenseId eq 'Account-Stakeholder' or licenseId eq 'Account-Express'. licenseStatus: filters based on license status. currently only supports disabled. i.e. licenseStatus eq 'Disabled'. To get disabled basic licenses, you would pass (licenseId eq 'Account-Express' and licenseStatus eq 'Disabled') userType: filters off identity type. Suppored types are member or guest i.e. userType eq 'member'. name: filters on if the user's display name or email contians given input. i.e. get all users with "test" in email or displayname is "name eq 'test'". A valid query could be: (licenseId eq 'Account-Stakeholder' or (licenseId eq 'Account-Express' and licenseStatus eq 'Disabled')) and name eq 'test' and userType eq 'guest'.</param>
-		/// <param name="orderBy">PropertyName and Order (separated by a space ( )) to sort on (e.g. lastAccessed desc). Order defaults to ascending. valid properties to order by are dateCreated, lastAccessed, and name</param>
+		/// <param name="userId">ID of the user.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<PagedGraphMemberList> User_Entitlements_Search_User_EntitlementsAsync(string organization, string continuationToken, User_Entitlements_Search_User_EntitlementsSelect select, string filter, string orderBy, string api_version)
+		public async Task<UserEntitlement> User_Entitlements_GetAsync(string organization, string userId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1612,7 +1677,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<PagedGraphMemberList>(jsonReader);
+				return serializer.Deserialize<UserEntitlement>(jsonReader);
 				}
 			}
 			finally
@@ -1623,19 +1688,16 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a paged set of user entitlements matching the filter and sort criteria built with properties that match the select input.
-		/// User_Entitlements_Search_User_Entitlements {organization}/_apis/userentitlements
+		/// Get User Entitlement for a user.
+		/// User_Entitlements_Get {organization}/_apis/userentitlements/{userId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="continuationToken">Continuation token for getting the next page of data set. If null is passed, gets the first page.</param>
-		/// <param name="select">Comma (",") separated list of properties to select in the result entitlements. names of the properties are - 'Projects, 'Extensions' and 'Grouprules'.</param>
-		/// <param name="filter">Equality operators relating to searching user entitlements seperated by and clauses. Valid filters include: licenseId, licenseStatus, userType, and name. licenseId: filters based on license assignment using license names. i.e. licenseId eq 'Account-Stakeholder' or licenseId eq 'Account-Express'. licenseStatus: filters based on license status. currently only supports disabled. i.e. licenseStatus eq 'Disabled'. To get disabled basic licenses, you would pass (licenseId eq 'Account-Express' and licenseStatus eq 'Disabled') userType: filters off identity type. Suppored types are member or guest i.e. userType eq 'member'. name: filters on if the user's display name or email contians given input. i.e. get all users with "test" in email or displayname is "name eq 'test'". A valid query could be: (licenseId eq 'Account-Stakeholder' or (licenseId eq 'Account-Express' and licenseStatus eq 'Disabled')) and name eq 'test' and userType eq 'guest'.</param>
-		/// <param name="orderBy">PropertyName and Order (separated by a space ( )) to sort on (e.g. lastAccessed desc). Order defaults to ascending. valid properties to order by are dateCreated, lastAccessed, and name</param>
+		/// <param name="userId">ID of the user.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public PagedGraphMemberList User_Entitlements_Search_User_Entitlements(string organization, string continuationToken, User_Entitlements_Search_User_EntitlementsSelect select, string filter, string orderBy, string api_version)
+		public UserEntitlement User_Entitlements_Get(string organization, string userId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1646,7 +1708,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<PagedGraphMemberList>(jsonReader);
+				return serializer.Deserialize<UserEntitlement>(jsonReader);
 				}
 			}
 			finally
@@ -1704,68 +1766,6 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get User Entitlement for a user.
-		/// User_Entitlements_Get {organization}/_apis/userentitlements/{userId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="userId">ID of the user.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<UserEntitlement> User_Entitlements_GetAsync(string organization, string userId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<UserEntitlement>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get User Entitlement for a user.
-		/// User_Entitlements_Get {organization}/_apis/userentitlements/{userId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="userId">ID of the user.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public UserEntitlement User_Entitlements_Get(string organization, string userId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<UserEntitlement>(jsonReader);
-				}
 			}
 			finally
 			{

@@ -11,10 +11,10 @@ export namespace MyNS {
 		 * this annotation pertains to. The annotation spec comes from either an
 		 * ancestor dataset, or the dataset that was used to train the model in use.
 		 */
-		annotationSpecId?: string;
+		annotationSpecId?: string | null;
 
 		/** Contains annotation details specific to classification. */
-		classification?: ClassificationAnnotation;
+		classification?: ClassificationAnnotation | null;
 
 		/**
 		 * Output only. The value of
@@ -24,28 +24,28 @@ export namespace MyNS {
 		 * returned value could be different as model owner could update the
 		 * `display_name` between any two model training.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Annotation details for image object detection. */
-		imageObjectDetection?: ImageObjectDetectionAnnotation;
+		imageObjectDetection?: ImageObjectDetectionAnnotation | null;
 
 		/** Contains annotation details specific to Tables. */
-		tables?: TablesAnnotation;
+		tables?: TablesAnnotation | null;
 
 		/** Annotation for identifying spans of text. */
-		textExtraction?: TextExtractionAnnotation;
+		textExtraction?: TextExtractionAnnotation | null;
 
 		/** Contains annotation details specific to text sentiment. */
-		textSentiment?: TextSentimentAnnotation;
+		textSentiment?: TextSentimentAnnotation | null;
 
 		/** Annotation details specific to translation. */
-		translation?: TranslationAnnotation;
+		translation?: TranslationAnnotation | null;
 
 		/** Contains annotation details specific to video classification. */
-		videoClassification?: VideoClassificationAnnotation;
+		videoClassification?: VideoClassificationAnnotation | null;
 
 		/** Annotation details for video object tracking. */
-		videoObjectTracking?: VideoObjectTrackingAnnotation;
+		videoObjectTracking?: VideoObjectTrackingAnnotation | null;
 	}
 
 
@@ -59,7 +59,7 @@ export namespace MyNS {
 		 * unchanged. If a user creates an annotation, the score is 0 for negative or
 		 * 1 for positive.
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -71,13 +71,13 @@ export namespace MyNS {
 		 * On output both vertices and normalized_vertices are provided.
 		 * The polygon is formed by connecting vertices in the order they are listed.
 		 */
-		boundingBox?: BoundingPoly;
+		boundingBox?: BoundingPoly | null;
 
 		/**
 		 * Output only. The confidence that this annotation is positive for the parent example,
 		 * value in [0, 1], higher means higher positivity confidence.
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -89,7 +89,7 @@ export namespace MyNS {
 	export interface BoundingPoly {
 
 		/** Output only . The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<NormalizedVertex>;
+		normalizedVertices?: Array<NormalizedVertex> | null;
 	}
 
 
@@ -103,10 +103,10 @@ export namespace MyNS {
 	export interface NormalizedVertex {
 
 		/** Required. Horizontal coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Required. Vertical coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -122,10 +122,10 @@ export namespace MyNS {
 		 * the baseline example. For classification models, this holds the baseline
 		 * prediction for the baseline example for the argmax class.
 		 */
-		baselineScore?: number;
+		baselineScore?: number | null;
 
 		/** A range between two double numbers. */
-		predictionInterval?: DoubleRange;
+		predictionInterval?: DoubleRange | null;
 
 		/**
 		 * Output only. A confidence estimate between 0.0 and 1.0, inclusive. A higher
@@ -134,7 +134,7 @@ export namespace MyNS {
 		 * target_column_spec
 		 * of FLOAT64 data type the score is not populated.
 		 */
-		score?: number;
+		score?: number | null;
 
 		/**
 		 * Output only. Auxiliary information for each of the model's
@@ -146,7 +146,7 @@ export namespace MyNS {
 		 * column_display_name
 		 * would be populated, then this whole field is not.
 		 */
-		tablesModelColumnInfo?: Array<TablesModelColumnInfo>;
+		tablesModelColumnInfo?: Array<TablesModelColumnInfo> | null;
 
 		/**
 		 * The predicted value of the row's
@@ -156,7 +156,7 @@ export namespace MyNS {
 		 * value.
 		 * * FLOAT64 - the predicted (with above `prediction_interval`) FLOAT64 value.
 		 */
-		value?: any;
+		value?: any | null;
 	}
 
 
@@ -164,10 +164,10 @@ export namespace MyNS {
 	export interface DoubleRange {
 
 		/** End of the range, exclusive. */
-		end?: number;
+		end?: number | null;
 
 		/** Start of the range, inclusive. */
-		start?: number;
+		start?: number | null;
 	}
 
 
@@ -181,13 +181,13 @@ export namespace MyNS {
 		 * Output only. The display name of the column (same as the display_name of
 		 * its ColumnSpec).
 		 */
-		columnDisplayName?: string;
+		columnDisplayName?: string | null;
 
 		/**
 		 * Output only. The name of the ColumnSpec describing the column. Not
 		 * populated when this proto is outputted to BigQuery.
 		 */
-		columnSpecName?: string;
+		columnSpecName?: string | null;
 
 		/**
 		 * Output only. When given as part of a Model (always populated):
@@ -207,7 +207,7 @@ export namespace MyNS {
 		 * score compared to the baseline score. These values are computed using the
 		 * Sampled Shapley method.
 		 */
-		featureImportance?: number;
+		featureImportance?: number | null;
 	}
 
 
@@ -218,10 +218,10 @@ export namespace MyNS {
 		 * Output only. A confidence estimate between 0.0 and 1.0. A higher value
 		 * means greater confidence in correctness of the annotation.
 		 */
-		score?: number;
+		score?: number | null;
 
 		/** A contiguous part of a text (string), assuming it has an UTF-8 NFC encoding. */
-		textSegment?: TextSegment;
+		textSegment?: TextSegment | null;
 	}
 
 
@@ -229,20 +229,20 @@ export namespace MyNS {
 	export interface TextSegment {
 
 		/** Output only. The content of the TextSegment. */
-		content?: string;
+		content?: string | null;
 
 		/**
 		 * Required. Zero-based character index of the first character past the end of
 		 * the text segment (counting character from the beginning of the text).
 		 * The character at the end_offset is NOT included in the text segment.
 		 */
-		endOffset?: string;
+		endOffset?: string | null;
 
 		/**
 		 * Required. Zero-based character index of the first character of the text
 		 * segment (counting characters from the beginning of the text).
 		 */
-		startOffset?: string;
+		startOffset?: string | null;
 	}
 
 
@@ -263,7 +263,7 @@ export namespace MyNS {
 		 * The sentiment shouldn't be confused with "score" or "magnitude"
 		 * from the previous Natural Language Sentiment Analysis API.
 		 */
-		sentiment?: number;
+		sentiment?: number | null;
 	}
 
 
@@ -271,7 +271,7 @@ export namespace MyNS {
 	export interface TranslationAnnotation {
 
 		/** A representation of a text snippet. */
-		translatedContent?: TextSnippet;
+		translatedContent?: TextSnippet | null;
 	}
 
 
@@ -282,17 +282,17 @@ export namespace MyNS {
 		 * Required. The content of the text snippet as a string. Up to 250000
 		 * characters long.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/** Output only. HTTP URI where you can download the content. */
-		contentUri?: string;
+		contentUri?: string | null;
 
 		/**
 		 * Optional. The format of content. Currently the only two allowed
 		 * values are "text/html" and "text/plain". If left blank, the format is
 		 * automatically determined from the type of the uploaded content.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -300,10 +300,10 @@ export namespace MyNS {
 	export interface VideoClassificationAnnotation {
 
 		/** Contains annotation details specific to classification. */
-		classificationAnnotation?: ClassificationAnnotation;
+		classificationAnnotation?: ClassificationAnnotation | null;
 
 		/** A time period inside of an example that has a time dimension (e.g. video). */
-		timeSegment?: TimeSegment;
+		timeSegment?: TimeSegment | null;
 
 		/**
 		 * Output only. Expresses the type of video classification. Possible values:
@@ -327,7 +327,7 @@ export namespace MyNS {
 		 * the quality of it depends on training data, but there are no
 		 * metrics provided to describe that quality.
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -338,13 +338,13 @@ export namespace MyNS {
 		 * End of the time segment (exclusive), represented as the duration since the
 		 * example start.
 		 */
-		endTimeOffset?: string;
+		endTimeOffset?: string | null;
 
 		/**
 		 * Start of the time segment (inclusive), represented as the duration since
 		 * the example start.
 		 */
-		startTimeOffset?: string;
+		startTimeOffset?: string | null;
 	}
 
 
@@ -356,7 +356,7 @@ export namespace MyNS {
 		 * On output both vertices and normalized_vertices are provided.
 		 * The polygon is formed by connecting vertices in the order they are listed.
 		 */
-		boundingBox?: BoundingPoly;
+		boundingBox?: BoundingPoly | null;
 
 		/**
 		 * Optional. The instance of the object, expressed as a positive integer. Used to tell
@@ -367,7 +367,7 @@ export namespace MyNS {
 		 * off-screen for a longer time (minutes), when it comes back it may be given
 		 * a new instance ID.
 		 */
-		instanceId?: string;
+		instanceId?: string | null;
 
 		/**
 		 * Output only. The confidence that this annotation is positive for the video at
@@ -376,13 +376,13 @@ export namespace MyNS {
 		 * user approves an annotation, the original float score is kept (and not
 		 * changed to 1).
 		 */
-		score?: number;
+		score?: number | null;
 
 		/**
 		 * Required. A time (frame) of a video to which this annotation pertains.
 		 * Represented as the duration since the video's start.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -393,20 +393,20 @@ export namespace MyNS {
 		 * Required. The name of the annotation spec to show in the interface. The name can be
 		 * up to 32 characters long and must match the regexp `[a-zA-Z0-9_]+`.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Output only. The number of examples in the parent dataset
 		 * labeled by the annotation spec.
 		 */
-		exampleCount?: number;
+		exampleCount?: number | null;
 
 		/**
 		 * Output only. Resource name of the annotation spec.
 		 * Form:
 		 * 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}'
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -414,7 +414,7 @@ export namespace MyNS {
 	export interface ArrayStats {
 
 		/** The data statistics of a series of values that share the same DataType. */
-		memberStats?: DataStats;
+		memberStats?: DataStats | null;
 	}
 
 
@@ -422,31 +422,31 @@ export namespace MyNS {
 	export interface DataStats {
 
 		/** The data statistics of a series of ARRAY values. */
-		arrayStats?: ArrayStats;
+		arrayStats?: ArrayStats | null;
 
 		/** The data statistics of a series of CATEGORY values. */
-		categoryStats?: CategoryStats;
+		categoryStats?: CategoryStats | null;
 
 		/** The number of distinct values. */
-		distinctValueCount?: string;
+		distinctValueCount?: string | null;
 
 		/** The data statistics of a series of FLOAT64 values. */
-		float64Stats?: Float64Stats;
+		float64Stats?: Float64Stats | null;
 
 		/** The number of values that are null. */
-		nullValueCount?: string;
+		nullValueCount?: string | null;
 
 		/** The data statistics of a series of STRING values. */
-		stringStats?: StringStats;
+		stringStats?: StringStats | null;
 
 		/** The data statistics of a series of STRUCT values. */
-		structStats?: StructStats;
+		structStats?: StructStats | null;
 
 		/** The data statistics of a series of TIMESTAMP values. */
-		timestampStats?: TimestampStats;
+		timestampStats?: TimestampStats | null;
 
 		/** The number of values that are valid. */
-		validValueCount?: string;
+		validValueCount?: string | null;
 	}
 
 
@@ -457,7 +457,7 @@ export namespace MyNS {
 		 * The statistics of the top 20 CATEGORY values, ordered by
 		 * count.
 		 */
-		topCategoryStats?: Array<SingleCategoryStats>;
+		topCategoryStats?: Array<SingleCategoryStats> | null;
 	}
 
 
@@ -465,10 +465,10 @@ export namespace MyNS {
 	export interface SingleCategoryStats {
 
 		/** The number of occurrences of this value in the series. */
-		count?: string;
+		count?: string | null;
 
 		/** The CATEGORY value. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -482,10 +482,10 @@ export namespace MyNS {
 		 * FLOAT64 range with min of first bucket being `"-Infinity"`, and max of
 		 * the last one being `"Infinity"`.
 		 */
-		histogramBuckets?: Array<HistogramBucket>;
+		histogramBuckets?: Array<HistogramBucket> | null;
 
 		/** The mean of the series. */
-		mean?: number;
+		mean?: number | null;
 
 		/**
 		 * Ordered from 0 to k k-quantile values of the data series of n values.
@@ -493,10 +493,10 @@ export namespace MyNS {
 		 * series; for i = 0 and i = k these are, respectively, the min and max
 		 * values.
 		 */
-		quantiles?: Array<number>;
+		quantiles?: Array<number> | null;
 
 		/** The standard deviation of the series. */
-		standardDeviation?: number;
+		standardDeviation?: number | null;
 	}
 
 
@@ -507,16 +507,16 @@ export namespace MyNS {
 		 * The number of data values that are in the bucket, i.e. are between
 		 * min and max values.
 		 */
-		count?: string;
+		count?: string | null;
 
 		/**
 		 * The maximum value of the bucket, exclusive unless max = `"Infinity"`, in
 		 * which case it's inclusive.
 		 */
-		max?: number;
+		max?: number | null;
 
 		/** The minimum value of the bucket, inclusive. */
-		min?: number;
+		min?: number | null;
 	}
 
 
@@ -527,7 +527,7 @@ export namespace MyNS {
 		 * The statistics of the top 20 unigrams, ordered by
 		 * count.
 		 */
-		topUnigramStats?: Array<UnigramStats>;
+		topUnigramStats?: Array<UnigramStats> | null;
 	}
 
 
@@ -535,10 +535,10 @@ export namespace MyNS {
 	export interface UnigramStats {
 
 		/** The number of occurrences of this unigram in the series. */
-		count?: string;
+		count?: string | null;
 
 		/** The unigram. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -549,7 +549,7 @@ export namespace MyNS {
 		 * Map from a field name of the struct to data stats aggregated over series
 		 * of all data in that field across all the structs.
 		 */
-		fieldStats?: {[id: string]: DataStats };
+		fieldStats?: {[id: string]: DataStats } | null;
 	}
 
 
@@ -563,7 +563,7 @@ export namespace MyNS {
 		 * populated (e.g. if timestamps are at day granularity, then hour_of_day
 		 * is not populated).
 		 */
-		granularStats?: {[id: string]: GranularStats };
+		granularStats?: {[id: string]: GranularStats } | null;
 	}
 
 
@@ -574,7 +574,7 @@ export namespace MyNS {
 		 * A map from granularity key to example count for that key.
 		 * E.g. for hour_of_day `13` means 1pm, or for month_of_year `5` means May).
 		 */
-		buckets?: {[id: string]: string };
+		buckets?: {[id: string]: string } | null;
 	}
 
 
@@ -774,10 +774,10 @@ export namespace MyNS {
 	export interface BatchPredictInputConfig {
 
 		/** The BigQuery location for the input content. */
-		bigquerySource?: BigQuerySource;
+		bigquerySource?: BigQuerySource | null;
 
 		/** The Google Cloud Storage location for the input content. */
-		gcsSource?: GcsSource;
+		gcsSource?: GcsSource | null;
 	}
 
 
@@ -789,7 +789,7 @@ export namespace MyNS {
 		 * Accepted forms:
 		 * *  BigQuery path e.g. bq://projectId.bqDatasetId.bqTableId
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 	}
 
 
@@ -801,7 +801,7 @@ export namespace MyNS {
 		 * long. Accepted forms:
 		 * * Full object path, e.g. gs://bucket/directory/object.csv
 		 */
-		inputUris?: Array<string>;
+		inputUris?: Array<string> | null;
 	}
 
 
@@ -1001,14 +1001,14 @@ export namespace MyNS {
 		 * per-row failures, up to a certain count cap, will be listed in
 		 * Operation.metadata.partial_failures.
 		 */
-		inputConfig?: BatchPredictInputConfig;
+		inputConfig?: BatchPredictInputConfig | null;
 
 		/**
 		 * Further describes this batch predict's output.
 		 * Supplements
 		 * BatchPredictOutputConfig.
 		 */
-		outputInfo?: BatchPredictOutputInfo;
+		outputInfo?: BatchPredictOutputInfo | null;
 	}
 
 
@@ -1023,13 +1023,13 @@ export namespace MyNS {
 		 * The path of the BigQuery dataset created, in bq://projectId.bqDatasetId
 		 * format, into which the prediction output is written.
 		 */
-		bigqueryOutputDataset?: string;
+		bigqueryOutputDataset?: string | null;
 
 		/**
 		 * The full path of the Google Cloud Storage directory created, into which
 		 * the prediction output is written.
 		 */
-		gcsOutputDirectory?: string;
+		gcsOutputDirectory?: string | null;
 	}
 
 
@@ -1279,10 +1279,10 @@ export namespace MyNS {
 	export interface BatchPredictOutputConfig {
 
 		/** The BigQuery location for the output content. */
-		bigqueryDestination?: BigQueryDestination;
+		bigqueryDestination?: BigQueryDestination | null;
 
 		/** The Google Cloud Storage location where the output is to be written to. */
-		gcsDestination?: GcsDestination;
+		gcsDestination?: GcsDestination | null;
 	}
 
 
@@ -1294,7 +1294,7 @@ export namespace MyNS {
 		 * Accepted forms:
 		 * *  BigQuery path e.g. bq://projectId
 		 */
-		outputUri?: string;
+		outputUri?: string | null;
 	}
 
 
@@ -1309,7 +1309,7 @@ export namespace MyNS {
 		 * The requesting user must have write permission to the bucket.
 		 * The directory is created if it doesn't exist.
 		 */
-		outputUriPrefix?: string;
+		outputUriPrefix?: string | null;
 	}
 
 
@@ -1509,7 +1509,7 @@ export namespace MyNS {
 		 * per-row failures, up to a certain count cap, will be listed in
 		 * Operation.metadata.partial_failures.
 		 */
-		inputConfig?: BatchPredictInputConfig;
+		inputConfig?: BatchPredictInputConfig | null;
 
 		/**
 		 * Output configuration for BatchPredict Action.
@@ -1754,7 +1754,7 @@ export namespace MyNS {
 		 * //github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
 		 * represented as a STRUCT, and containing only `code` and `message`.
 		 */
-		outputConfig?: BatchPredictOutputConfig;
+		outputConfig?: BatchPredictOutputConfig | null;
 
 		/**
 		 * Required. Additional domain-specific parameters for the predictions, any string must
@@ -1816,7 +1816,7 @@ export namespace MyNS {
 		 * at least that long as a relative value of video frame size will be
 		 * returned. Value in 0 to 1 range. Default is 0.
 		 */
-		params?: {[id: string]: string };
+		params?: {[id: string]: string } | null;
 	}
 
 
@@ -1836,7 +1836,7 @@ export namespace MyNS {
 		 * `max_bounding_box_count` - (int64) At most that many bounding boxes per
 		 * frame could have been returned.
 		 */
-		metadata?: {[id: string]: string };
+		metadata?: {[id: string]: string } | null;
 	}
 
 
@@ -1867,7 +1867,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -1902,13 +1902,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -1942,26 +1942,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -1976,16 +1976,16 @@ export namespace MyNS {
 		 * 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99. Precision-recall curve is
 		 * derived from them.
 		 */
-		confidenceMetricsEntries?: Array<BoundingBoxMetricsEntryConfidenceMetricsEntry>;
+		confidenceMetricsEntries?: Array<BoundingBoxMetricsEntryConfidenceMetricsEntry> | null;
 
 		/**
 		 * Output only. The intersection-over-union threshold value used to compute
 		 * this metrics entry.
 		 */
-		iouThreshold?: number;
+		iouThreshold?: number | null;
 
 		/** Output only. The mean average precision, most often close to au_prc. */
-		meanAveragePrecision?: number;
+		meanAveragePrecision?: number | null;
 	}
 
 
@@ -1993,16 +1993,16 @@ export namespace MyNS {
 	export interface BoundingBoxMetricsEntryConfidenceMetricsEntry {
 
 		/** Output only. The confidence threshold value used to compute the metrics. */
-		confidenceThreshold?: number;
+		confidenceThreshold?: number | null;
 
 		/** Output only. The harmonic mean of recall and precision. */
-		f1Score?: number;
+		f1Score?: number | null;
 
 		/** Output only. Precision under the given confidence threshold. */
-		precision?: number;
+		precision?: number | null;
 
 		/** Output only. Recall under the given confidence threshold. */
-		recall?: number;
+		recall?: number | null;
 	}
 
 
@@ -2019,26 +2019,26 @@ export namespace MyNS {
 	export interface ClassificationEvaluationMetrics {
 
 		/** Output only. The annotation spec ids used for this evaluation. */
-		annotationSpecId?: Array<string>;
+		annotationSpecId?: Array<string> | null;
 
 		/**
 		 * Output only. The Area Under Precision-Recall Curve metric. Micro-averaged
 		 * for the overall evaluation.
 		 */
-		auPrc?: number;
+		auPrc?: number | null;
 
 		/**
 		 * Output only. The Area Under Receiver Operating Characteristic curve metric.
 		 * Micro-averaged for the overall evaluation.
 		 */
-		auRoc?: number;
+		auRoc?: number | null;
 
 		/**
 		 * Output only. The Area Under Precision-Recall Curve metric based on priors.
 		 * Micro-averaged for the overall evaluation.
 		 * Deprecated.
 		 */
-		baseAuPrc?: number;
+		baseAuPrc?: number | null;
 
 		/**
 		 * Output only. Metrics for each confidence_threshold in
@@ -2049,13 +2049,13 @@ export namespace MyNS {
 		 * additional values of position_threshold, but from these no aggregated
 		 * metrics are computed.
 		 */
-		confidenceMetricsEntry?: Array<ClassificationEvaluationMetricsConfidenceMetricsEntry>;
+		confidenceMetricsEntry?: Array<ClassificationEvaluationMetricsConfidenceMetricsEntry> | null;
 
 		/** Confusion matrix of the model running the classification. */
-		confusionMatrix?: ConfusionMatrix;
+		confusionMatrix?: ConfusionMatrix | null;
 
 		/** Output only. The Log Loss metric. */
-		logLoss?: number;
+		logLoss?: number | null;
 	}
 
 
@@ -2066,77 +2066,77 @@ export namespace MyNS {
 		 * Output only. Metrics are computed with an assumption that the model
 		 * never returns predictions with score lower than this value.
 		 */
-		confidenceThreshold?: number;
+		confidenceThreshold?: number | null;
 
 		/** Output only. The harmonic mean of recall and precision. */
-		f1Score?: number;
+		f1Score?: number | null;
 
 		/** Output only. The harmonic mean of recall_at1 and precision_at1. */
-		f1ScoreAt1?: number;
+		f1ScoreAt1?: number | null;
 
 		/**
 		 * Output only. The number of ground truth labels that are not matched
 		 * by a model created label.
 		 */
-		falseNegativeCount?: string;
+		falseNegativeCount?: string | null;
 
 		/**
 		 * Output only. The number of model created labels that do not match a
 		 * ground truth label.
 		 */
-		falsePositiveCount?: string;
+		falsePositiveCount?: string | null;
 
 		/** Output only. False Positive Rate for the given confidence threshold. */
-		falsePositiveRate?: number;
+		falsePositiveRate?: number | null;
 
 		/**
 		 * Output only. The False Positive Rate when only considering the label that
 		 * has the highest prediction score and not below the confidence threshold
 		 * for each example.
 		 */
-		falsePositiveRateAt1?: number;
+		falsePositiveRateAt1?: number | null;
 
 		/**
 		 * Output only. Metrics are computed with an assumption that the model
 		 * always returns at most this many predictions (ordered by their score,
 		 * descendingly), but they all still need to meet the confidence_threshold.
 		 */
-		positionThreshold?: number;
+		positionThreshold?: number | null;
 
 		/** Output only. Precision for the given confidence threshold. */
-		precision?: number;
+		precision?: number | null;
 
 		/**
 		 * Output only. The precision when only considering the label that has the
 		 * highest prediction score and not below the confidence threshold for each
 		 * example.
 		 */
-		precisionAt1?: number;
+		precisionAt1?: number | null;
 
 		/**
 		 * Output only. Recall (True Positive Rate) for the given confidence
 		 * threshold.
 		 */
-		recall?: number;
+		recall?: number | null;
 
 		/**
 		 * Output only. The Recall (True Positive Rate) when only considering the
 		 * label that has the highest prediction score and not below the confidence
 		 * threshold for each example.
 		 */
-		recallAt1?: number;
+		recallAt1?: number | null;
 
 		/**
 		 * Output only. The number of labels that were not created by the model,
 		 * but if they would, they would not match a ground truth label.
 		 */
-		trueNegativeCount?: string;
+		trueNegativeCount?: string | null;
 
 		/**
 		 * Output only. The number of model created labels that match a ground truth
 		 * label.
 		 */
-		truePositiveCount?: string;
+		truePositiveCount?: string | null;
 	}
 
 
@@ -2149,7 +2149,7 @@ export namespace MyNS {
 		 * prediction_type
 		 * only list of annotation_spec_display_name-s is populated.
 		 */
-		annotationSpecId?: Array<string>;
+		annotationSpecId?: Array<string> | null;
 
 		/**
 		 * Output only. Display name of the annotation specs used in the confusion
@@ -2159,7 +2159,7 @@ export namespace MyNS {
 		 * distinct values of the target column at the moment of the model
 		 * evaluation are populated here.
 		 */
-		displayName?: Array<string>;
+		displayName?: Array<string> | null;
 
 		/**
 		 * Output only. Rows in the confusion matrix. The number of rows is equal to
@@ -2168,7 +2168,7 @@ export namespace MyNS {
 		 * truth of the `annotation_spec_id[i]` and are predicted as
 		 * `annotation_spec_id[j]` by the model being evaluated.
 		 */
-		row?: Array<ClassificationEvaluationMetricsConfusionMatrixRow>;
+		row?: Array<ClassificationEvaluationMetricsConfusionMatrixRow> | null;
 	}
 
 
@@ -2181,7 +2181,7 @@ export namespace MyNS {
 		 * to the length of the `annotation_spec_id` field or, if that one is not
 		 * populated, length of the display_name field.
 		 */
-		exampleCount?: Array<number>;
+		exampleCount?: Array<number> | null;
 	}
 
 
@@ -2194,13 +2194,13 @@ export namespace MyNS {
 	export interface ColumnSpec {
 
 		/** The data statistics of a series of values that share the same DataType. */
-		dataStats?: DataStats;
+		dataStats?: DataStats | null;
 
 		/**
 		 * Indicated the type of data that can be stored in a structured data entity
 		 * (e.g. a table).
 		 */
-		dataType?: DataType;
+		dataType?: DataType | null;
 
 		/**
 		 * Output only. The name of the column to show in the interface. The name can
@@ -2208,23 +2208,23 @@ export namespace MyNS {
 		 * A-Z and a-z, ASCII digits 0-9, underscores(_), and forward slashes(/), and
 		 * must start with a letter or a digit.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Used to perform consistent read-modify-write updates. If not set, a blind
 		 * "overwrite" update happens.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Output only. The resource name of the column specs.
 		 * Form:
 		 * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}/columnSpecs/{column_spec_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Deprecated. */
-		topCorrelatedColumns?: Array<CorrelatedColumn>;
+		topCorrelatedColumns?: Array<CorrelatedColumn> | null;
 	}
 
 
@@ -2238,16 +2238,16 @@ export namespace MyNS {
 		 * Indicated the type of data that can be stored in a structured data entity
 		 * (e.g. a table).
 		 */
-		listElementType?: DataType;
+		listElementType?: DataType | null;
 
 		/**
 		 * If true, this DataType can also be `NULL`. In .CSV files `NULL` value is
 		 * expressed as an empty string.
 		 */
-		nullable?: boolean;
+		nullable?: boolean | null;
 
 		/** `StructType` defines the DataType-s of a STRUCT type. */
-		structType?: StructType;
+		structType?: StructType | null;
 
 		/**
 		 * If type_code == TIMESTAMP
@@ -2262,10 +2262,10 @@ export namespace MyNS {
 		 * or be written in `strftime` syntax. If time_format is not set, then the
 		 * default format as described on the type_code is used.
 		 */
-		timeFormat?: string;
+		timeFormat?: string | null;
 
 		/** Required. The TypeCode for this type. */
-		typeCode?: DataTypeTypeCode;
+		typeCode?: DataTypeTypeCode | null;
 	}
 
 
@@ -2277,7 +2277,7 @@ export namespace MyNS {
 		 * Fields cannot be added or removed via Update. Their names and
 		 * data types are still mutable.
 		 */
-		fields?: {[id: string]: DataType };
+		fields?: {[id: string]: DataType } | null;
 	}
 
 	export enum DataTypeTypeCode { TYPE_CODE_UNSPECIFIED = 0, FLOAT64 = 1, TIMESTAMP = 2, STRING = 3, ARRAY = 4, STRUCT = 5, CATEGORY = 6 }
@@ -2293,14 +2293,14 @@ export namespace MyNS {
 		 * The column_spec_id of the correlated column, which belongs to the same
 		 * table as the in-context column.
 		 */
-		columnSpecId?: string;
+		columnSpecId?: string | null;
 
 		/**
 		 * A correlation statistics between two series of DataType values. The series
 		 * may have differing DataType-s, but within a single series the DataType must
 		 * be the same.
 		 */
-		correlationStats?: CorrelationStats;
+		correlationStats?: CorrelationStats | null;
 	}
 
 
@@ -2312,7 +2312,7 @@ export namespace MyNS {
 	export interface CorrelationStats {
 
 		/** The correlation value using the Cramer's V measure. */
-		cramersV?: number;
+		cramersV?: number | null;
 	}
 
 
@@ -2328,13 +2328,13 @@ export namespace MyNS {
 	export interface Dataset {
 
 		/** Output only. Timestamp when this dataset was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * User-provided description of the dataset. The description can be up to
 		 * 25000 characters long.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Required. The name of the dataset to show in the interface. The name can be
@@ -2342,52 +2342,52 @@ export namespace MyNS {
 		 * and a-z, underscores
 		 * (_), and ASCII digits 0-9.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Used to perform consistent read-modify-write updates. If not set, a blind
 		 * "overwrite" update happens.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/** Output only. The number of examples in the dataset. */
-		exampleCount?: number;
+		exampleCount?: number | null;
 
 		/** Dataset metadata that is specific to image classification. */
-		imageClassificationDatasetMetadata?: ImageClassificationDatasetMetadata;
+		imageClassificationDatasetMetadata?: ImageClassificationDatasetMetadata | null;
 
 		/** Dataset metadata specific to image object detection. */
-		imageObjectDetectionDatasetMetadata?: ImageObjectDetectionDatasetMetadata;
+		imageObjectDetectionDatasetMetadata?: ImageObjectDetectionDatasetMetadata | null;
 
 		/**
 		 * Output only. The resource name of the dataset.
 		 * Form: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Metadata for a dataset used for AutoML Tables. */
-		tablesDatasetMetadata?: TablesDatasetMetadata;
+		tablesDatasetMetadata?: TablesDatasetMetadata | null;
 
 		/** Dataset metadata for classification. */
-		textClassificationDatasetMetadata?: TextClassificationDatasetMetadata;
+		textClassificationDatasetMetadata?: TextClassificationDatasetMetadata | null;
 
 		/** Dataset metadata that is specific to text extraction */
-		textExtractionDatasetMetadata?: TextExtractionDatasetMetadata;
+		textExtractionDatasetMetadata?: TextExtractionDatasetMetadata | null;
 
 		/** Dataset metadata for text sentiment. */
-		textSentimentDatasetMetadata?: TextSentimentDatasetMetadata;
+		textSentimentDatasetMetadata?: TextSentimentDatasetMetadata | null;
 
 		/** Dataset metadata that is specific to translation. */
-		translationDatasetMetadata?: TranslationDatasetMetadata;
+		translationDatasetMetadata?: TranslationDatasetMetadata | null;
 
 		/**
 		 * Dataset metadata specific to video classification.
 		 * All Video Classification datasets are treated as multi label.
 		 */
-		videoClassificationDatasetMetadata?: VideoClassificationDatasetMetadata;
+		videoClassificationDatasetMetadata?: VideoClassificationDatasetMetadata | null;
 
 		/** Dataset metadata specific to video object tracking. */
-		videoObjectTrackingDatasetMetadata?: VideoObjectTrackingDatasetMetadata;
+		videoObjectTrackingDatasetMetadata?: VideoObjectTrackingDatasetMetadata | null;
 	}
 
 
@@ -2395,7 +2395,7 @@ export namespace MyNS {
 	export interface ImageClassificationDatasetMetadata {
 
 		/** Required. Type of the classification problem. */
-		classificationType?: ImageClassificationDatasetMetadataClassificationType;
+		classificationType?: ImageClassificationDatasetMetadataClassificationType | null;
 	}
 
 	export enum ImageClassificationDatasetMetadataClassificationType { CLASSIFICATION_TYPE_UNSPECIFIED = 0, MULTICLASS = 1, MULTILABEL = 2 }
@@ -2424,10 +2424,10 @@ export namespace MyNS {
 		 * NOTE: Updates of this field will instantly affect any other users
 		 * concurrently working with the dataset.
 		 */
-		mlUseColumnSpecId?: string;
+		mlUseColumnSpecId?: string | null;
 
 		/** Output only. The table_spec_id of the primary table of this dataset. */
-		primaryTableSpecId?: string;
+		primaryTableSpecId?: string | null;
 
 		/**
 		 * Output only. The most recent timestamp when target_column_correlations
@@ -2437,7 +2437,7 @@ export namespace MyNS {
 		 * fields values. The regeneration happens in the background on a best effort
 		 * basis.
 		 */
-		statsUpdateTime?: string;
+		statsUpdateTime?: string | null;
 
 		/**
 		 * Output only. Correlations between
@@ -2449,7 +2449,7 @@ export namespace MyNS {
 		 * This field may be stale, see the stats_update_time field for
 		 * for the timestamp at which these stats were last updated.
 		 */
-		targetColumnCorrelations?: {[id: string]: CorrelationStats };
+		targetColumnCorrelations?: {[id: string]: CorrelationStats } | null;
 
 		/**
 		 * column_spec_id of the primary table's column that should be used as the
@@ -2463,7 +2463,7 @@ export namespace MyNS {
 		 * NOTE: Updates of this field will instantly affect any other users
 		 * concurrently working with the dataset.
 		 */
-		targetColumnSpecId?: string;
+		targetColumnSpecId?: string | null;
 
 		/**
 		 * column_spec_id of the primary table's column that should be used as the
@@ -2476,7 +2476,7 @@ export namespace MyNS {
 		 * NOTE: Updates of this field will instantly affect any other users
 		 * concurrently working with the dataset.
 		 */
-		weightColumnSpecId?: string;
+		weightColumnSpecId?: string | null;
 	}
 
 
@@ -2484,7 +2484,7 @@ export namespace MyNS {
 	export interface TextClassificationDatasetMetadata {
 
 		/** Required. Type of the classification problem. */
-		classificationType?: ImageClassificationDatasetMetadataClassificationType;
+		classificationType?: ImageClassificationDatasetMetadataClassificationType | null;
 	}
 
 
@@ -2504,7 +2504,7 @@ export namespace MyNS {
 		 * created.
 		 * sentiment_max value must be between 1 and 10 (inclusive).
 		 */
-		sentimentMax?: number;
+		sentimentMax?: number | null;
 	}
 
 
@@ -2512,10 +2512,10 @@ export namespace MyNS {
 	export interface TranslationDatasetMetadata {
 
 		/** Required. The BCP-47 language code of the source language. */
-		sourceLanguageCode?: string;
+		sourceLanguageCode?: string | null;
 
 		/** Required. The BCP-47 language code of the target language. */
-		targetLanguageCode?: string;
+		targetLanguageCode?: string | null;
 	}
 
 
@@ -2546,10 +2546,10 @@ export namespace MyNS {
 	export interface DeployModelRequest {
 
 		/** Model deployment metadata specific to Image Classification. */
-		imageClassificationModelDeploymentMetadata?: ImageClassificationModelDeploymentMetadata;
+		imageClassificationModelDeploymentMetadata?: ImageClassificationModelDeploymentMetadata | null;
 
 		/** Model deployment metadata specific to Image Object Detection. */
-		imageObjectDetectionModelDeploymentMetadata?: ImageObjectDetectionModelDeploymentMetadata;
+		imageObjectDetectionModelDeploymentMetadata?: ImageObjectDetectionModelDeploymentMetadata | null;
 	}
 
 
@@ -2563,7 +2563,7 @@ export namespace MyNS {
 		 * node_qps.
 		 * Must be between 1 and 100, inclusive on both ends.
 		 */
-		nodeCount?: string;
+		nodeCount?: string | null;
 	}
 
 
@@ -2577,7 +2577,7 @@ export namespace MyNS {
 		 * qps_per_node.
 		 * Must be between 1 and 100, inclusive on both ends.
 		 */
-		nodeCount?: string;
+		nodeCount?: string | null;
 	}
 
 
@@ -2585,22 +2585,22 @@ export namespace MyNS {
 	export interface Document {
 
 		/** Message that describes dimension of a document. */
-		documentDimensions?: DocumentDimensions;
+		documentDimensions?: DocumentDimensions | null;
 
 		/** A representation of a text snippet. */
-		documentText?: TextSnippet;
+		documentText?: TextSnippet | null;
 
 		/** Input configuration of a Document. */
-		inputConfig?: DocumentInputConfig;
+		inputConfig?: DocumentInputConfig | null;
 
 		/**
 		 * Describes the layout of the document.
 		 * Sorted by page_number.
 		 */
-		layout?: Array<Layout>;
+		layout?: Array<Layout> | null;
 
 		/** Number of pages in the document. */
-		pageCount?: number;
+		pageCount?: number | null;
 	}
 
 
@@ -2608,13 +2608,13 @@ export namespace MyNS {
 	export interface DocumentDimensions {
 
 		/** Height value of the document, works together with the unit. */
-		height?: number;
+		height?: number | null;
 
 		/** Unit of the dimension. */
-		unit?: DocumentDimensionsUnit;
+		unit?: DocumentDimensionsUnit | null;
 
 		/** Width value of the document, works together with the unit. */
-		width?: number;
+		width?: number | null;
 	}
 
 	export enum DocumentDimensionsUnit { DOCUMENT_DIMENSION_UNIT_UNSPECIFIED = 0, INCH = 1, CENTIMETER = 2, POINT = 3 }
@@ -2624,7 +2624,7 @@ export namespace MyNS {
 	export interface DocumentInputConfig {
 
 		/** The Google Cloud Storage location for the input content. */
-		gcsSource?: GcsSource;
+		gcsSource?: GcsSource | null;
 	}
 
 
@@ -2636,19 +2636,19 @@ export namespace MyNS {
 		 * On output both vertices and normalized_vertices are provided.
 		 * The polygon is formed by connecting vertices in the order they are listed.
 		 */
-		boundingPoly?: BoundingPoly;
+		boundingPoly?: BoundingPoly | null;
 
 		/**
 		 * Page number of the text_segment in the original document, starts
 		 * from 1.
 		 */
-		pageNumber?: number;
+		pageNumber?: number | null;
 
 		/** A contiguous part of a text (string), assuming it has an UTF-8 NFC encoding. */
-		textSegment?: TextSegment;
+		textSegment?: TextSegment | null;
 
 		/** The type of the text_segment in document. */
-		textSegmentType?: LayoutTextSegmentType;
+		textSegmentType?: LayoutTextSegmentType | null;
 	}
 
 	export enum LayoutTextSegmentType { TEXT_SEGMENT_TYPE_UNSPECIFIED = 0, TOKEN = 1, PARAGRAPH = 2, FORM_FIELD = 3, FORM_FIELD_NAME = 4, FORM_FIELD_CONTENTS = 5, TABLE = 6, TABLE_HEADER = 7, TABLE_ROW = 8, TABLE_CELL = 9 }
@@ -2671,19 +2671,19 @@ export namespace MyNS {
 	export interface ExamplePayload {
 
 		/** A structured text document e.g. a PDF. */
-		document?: Document;
+		document?: Document | null;
 
 		/**
 		 * A representation of an image.
 		 * Only images up to 30MB in size are supported.
 		 */
-		image?: Image;
+		image?: Image | null;
 
 		/** A representation of a row in a relational table. */
-		row?: Row;
+		row?: Row | null;
 
 		/** A representation of a text snippet. */
-		textSnippet?: TextSnippet;
+		textSnippet?: TextSnippet | null;
 	}
 
 
@@ -2698,7 +2698,7 @@ export namespace MyNS {
 		 * Note: As with all `bytes` fields, protobuffers use a pure binary
 		 * representation, whereas JSON representations use base64.
 		 */
-		imageBytes?: string;
+		imageBytes?: string | null;
 
 		/**
 		 * Input configuration for ImportData Action.
@@ -3044,10 +3044,10 @@ export namespace MyNS {
 		 * failures, up to a certain count cap, is listed in
 		 * Operation.metadata.partial_failures.
 		 */
-		inputConfig?: InputConfig;
+		inputConfig?: InputConfig | null;
 
 		/** Output only. HTTP URI to the thumbnail image. */
-		thumbnailUri?: string;
+		thumbnailUri?: string | null;
 	}
 
 
@@ -3398,10 +3398,10 @@ export namespace MyNS {
 	export interface InputConfig {
 
 		/** The BigQuery location for the input content. */
-		bigquerySource?: BigQuerySource;
+		bigquerySource?: BigQuerySource | null;
 
 		/** The Google Cloud Storage location for the input content. */
-		gcsSource?: GcsSource;
+		gcsSource?: GcsSource | null;
 
 		/**
 		 * Additional domain-specific parameters describing the semantic of the
@@ -3413,7 +3413,7 @@ export namespace MyNS {
 		 * schema (columns' DataTypes) of the table the data is being imported
 		 * into. Allowed values: "1".
 		 */
-		params?: {[id: string]: string };
+		params?: {[id: string]: string } | null;
 	}
 
 
@@ -3429,7 +3429,7 @@ export namespace MyNS {
 		 * Note: The below `values` field must match order of this field, if this
 		 * field is set.
 		 */
-		columnSpecIds?: Array<string>;
+		columnSpecIds?: Array<string> | null;
 
 		/**
 		 * Required. The values of the row cells, given in the same order as the
@@ -3438,7 +3438,7 @@ export namespace MyNS {
 		 * column_specs
 		 * of the Model this row is being passed to.
 		 */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
@@ -3450,7 +3450,7 @@ export namespace MyNS {
 		 * Supplements
 		 * OutputConfig.
 		 */
-		outputInfo?: ExportDataOutputInfo;
+		outputInfo?: ExportDataOutputInfo | null;
 	}
 
 
@@ -3465,13 +3465,13 @@ export namespace MyNS {
 		 * The path of the BigQuery dataset created, in bq://projectId.bqDatasetId
 		 * format, into which the exported data is written.
 		 */
-		bigqueryOutputDataset?: string;
+		bigqueryOutputDataset?: string | null;
 
 		/**
 		 * The full path of the Google Cloud Storage directory created, into which
 		 * the exported data is written.
 		 */
-		gcsOutputDirectory?: string;
+		gcsOutputDirectory?: string | null;
 	}
 
 
@@ -3507,7 +3507,7 @@ export namespace MyNS {
 		 * dataset a new table called `primary_table` will be created, and
 		 * filled with precisely the same data as this obtained on import.
 		 */
-		outputConfig?: OutputConfig;
+		outputConfig?: OutputConfig | null;
 	}
 
 
@@ -3543,10 +3543,10 @@ export namespace MyNS {
 	export interface OutputConfig {
 
 		/** The BigQuery location for the output content. */
-		bigqueryDestination?: BigQueryDestination;
+		bigqueryDestination?: BigQueryDestination | null;
 
 		/** The Google Cloud Storage location where the output is to be written to. */
-		gcsDestination?: GcsDestination;
+		gcsDestination?: GcsDestination | null;
 	}
 
 
@@ -3558,7 +3558,7 @@ export namespace MyNS {
 		 * Supplements
 		 * ExportEvaluatedExamplesOutputConfig.
 		 */
-		outputInfo?: ExportEvaluatedExamplesOutputInfo;
+		outputInfo?: ExportEvaluatedExamplesOutputInfo | null;
 	}
 
 
@@ -3573,7 +3573,7 @@ export namespace MyNS {
 		 * The path of the BigQuery dataset created, in bq://projectId.bqDatasetId
 		 * format, into which the output of export evaluated examples is written.
 		 */
-		bigqueryOutputDataset?: string;
+		bigqueryOutputDataset?: string | null;
 	}
 
 
@@ -3607,7 +3607,7 @@ export namespace MyNS {
 	export interface ExportEvaluatedExamplesOutputConfig {
 
 		/** The BigQuery location for the output content. */
-		bigqueryDestination?: BigQueryDestination;
+		bigqueryDestination?: BigQueryDestination | null;
 	}
 
 
@@ -3641,7 +3641,7 @@ export namespace MyNS {
 		 * represented as STRUCT-s, containing
 		 * TablesAnnotation.
 		 */
-		outputConfig?: ExportEvaluatedExamplesOutputConfig;
+		outputConfig?: ExportEvaluatedExamplesOutputConfig | null;
 	}
 
 
@@ -3653,7 +3653,7 @@ export namespace MyNS {
 		 * Supplements
 		 * ModelExportOutputConfig.
 		 */
-		outputInfo?: ExportModelOutputInfo;
+		outputInfo?: ExportModelOutputInfo | null;
 	}
 
 
@@ -3668,7 +3668,7 @@ export namespace MyNS {
 		 * The full path of the Google Cloud Storage directory created, into which
 		 * the model will be exported.
 		 */
-		gcsOutputDirectory?: string;
+		gcsOutputDirectory?: string | null;
 	}
 
 
@@ -3680,7 +3680,7 @@ export namespace MyNS {
 	export interface ExportModelRequest {
 
 		/** Output configuration for ModelExport Action. */
-		outputConfig?: ModelExportOutputConfig;
+		outputConfig?: ModelExportOutputConfig | null;
 	}
 
 
@@ -3688,10 +3688,10 @@ export namespace MyNS {
 	export interface ModelExportOutputConfig {
 
 		/** The GCR location where the image must be pushed to. */
-		gcrDestination?: GcrDestination;
+		gcrDestination?: GcrDestination | null;
 
 		/** The Google Cloud Storage location where the output is to be written to. */
-		gcsDestination?: GcsDestination;
+		gcsDestination?: GcsDestination | null;
 
 		/**
 		 * The format in which the model must be exported. The available, and default,
@@ -3720,7 +3720,7 @@ export namespace MyNS {
 		 * //cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
 		 * * core_ml - Used for iOS mobile devices.
 		 */
-		modelFormat?: string;
+		modelFormat?: string | null;
 
 		/**
 		 * Additional model-type and format specific parameters describing the
@@ -3730,7 +3730,7 @@ export namespace MyNS {
 		 * `cpu_architecture` - (string) "x86_64" (default).
 		 * `gpu_architecture` - (string) "none" (default), "nvidia".
 		 */
-		params?: {[id: string]: string };
+		params?: {[id: string]: string } | null;
 	}
 
 
@@ -3748,7 +3748,7 @@ export namespace MyNS {
 		 * * [HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG]
 		 * The requesting user must have permission to push images the project.
 		 */
-		outputUri?: string;
+		outputUri?: string | null;
 	}
 
 
@@ -3762,7 +3762,7 @@ export namespace MyNS {
 		 * `project` and `location` as the new model to create, and have the same
 		 * `model_type`.
 		 */
-		baseModelId?: string;
+		baseModelId?: string | null;
 
 		/**
 		 * Optional. Type of the model. The available values are:
@@ -3799,39 +3799,39 @@ export namespace MyNS {
 		 * should also have a higher prediction quality than other
 		 * models.
 		 */
-		modelType?: string;
+		modelType?: string | null;
 
 		/**
 		 * Output only. The number of nodes this model is deployed on. A node is an
 		 * abstraction of a machine resource, which can handle online prediction QPS
 		 * as given in the node_qps field.
 		 */
-		nodeCount?: string;
+		nodeCount?: string | null;
 
 		/**
 		 * Output only. An approximate number of online prediction QPS that can
 		 * be supported by this model per each node on which it is deployed.
 		 */
-		nodeQps?: number;
+		nodeQps?: number | null;
 
 		/**
 		 * Output only. The reason that this create model operation stopped,
 		 * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
 		 */
-		stopReason?: string;
+		stopReason?: string | null;
 
 		/**
 		 * Required. The train budget of creating this model, expressed in hours. The
 		 * actual `train_cost` will be equal or less than this value.
 		 */
-		trainBudget?: string;
+		trainBudget?: string | null;
 
 		/**
 		 * Output only. The actual train cost of creating this model, expressed in
 		 * hours. If this model is created from a `base` model, the train cost used
 		 * to create the `base` model are not included.
 		 */
-		trainCost?: string;
+		trainCost?: string | null;
 	}
 
 
@@ -3845,7 +3845,7 @@ export namespace MyNS {
 		 * Output only. The single metric for bounding boxes evaluation:
 		 * the mean_average_precision averaged over all bounding_box_metrics_entries.
 		 */
-		boundingBoxMeanAveragePrecision?: number;
+		boundingBoxMeanAveragePrecision?: number | null;
 
 		/**
 		 * Output only. The bounding boxes match metrics for each
@@ -3853,13 +3853,13 @@ export namespace MyNS {
 		 * and each label confidence threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99
 		 * pair.
 		 */
-		boundingBoxMetricsEntries?: Array<BoundingBoxMetricsEntry>;
+		boundingBoxMetricsEntries?: Array<BoundingBoxMetricsEntry> | null;
 
 		/**
 		 * Output only. The total number of bounding boxes (i.e. summed over all
 		 * images) the ground truth used to create this evaluation had.
 		 */
-		evaluatedBoundingBoxCount?: number;
+		evaluatedBoundingBoxCount?: number | null;
 	}
 
 
@@ -3891,26 +3891,26 @@ export namespace MyNS {
 		 * latency, but should also have a higher prediction quality
 		 * than other models.
 		 */
-		modelType?: string;
+		modelType?: string | null;
 
 		/**
 		 * Output only. The number of nodes this model is deployed on. A node is an
 		 * abstraction of a machine resource, which can handle online prediction QPS
 		 * as given in the qps_per_node field.
 		 */
-		nodeCount?: string;
+		nodeCount?: string | null;
 
 		/**
 		 * Output only. An approximate number of online prediction QPS that can
 		 * be supported by this model per each node on which it is deployed.
 		 */
-		nodeQps?: number;
+		nodeQps?: number | null;
 
 		/**
 		 * Output only. The reason that this create model operation stopped,
 		 * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
 		 */
-		stopReason?: string;
+		stopReason?: string | null;
 
 		/**
 		 * The train budget of creating this model, expressed in milli node
@@ -3929,14 +3929,14 @@ export namespace MyNS {
 		 * budget must be between 1,000 and 100,000 milli node hours, inclusive.
 		 * The default value is 24, 000 which represents one day in wall time.
 		 */
-		trainBudgetMilliNodeHours?: string;
+		trainBudgetMilliNodeHours?: string | null;
 
 		/**
 		 * Output only. The actual train cost of creating this model, expressed in
 		 * milli node hours, i.e. 1,000 value in this field means 1 node hour.
 		 * Guaranteed to not exceed the train budget.
 		 */
-		trainCostMilliNodeHours?: string;
+		trainCostMilliNodeHours?: string | null;
 	}
 
 
@@ -4292,7 +4292,7 @@ export namespace MyNS {
 		 * failures, up to a certain count cap, is listed in
 		 * Operation.metadata.partial_failures.
 		 */
-		inputConfig?: InputConfig;
+		inputConfig?: InputConfig | null;
 	}
 
 
@@ -4300,13 +4300,13 @@ export namespace MyNS {
 	export interface ListColumnSpecsResponse {
 
 		/** The column specs read. */
-		columnSpecs?: Array<ColumnSpec>;
+		columnSpecs?: Array<ColumnSpec> | null;
 
 		/**
 		 * A token to retrieve next page of results.
 		 * Pass to ListColumnSpecsRequest.page_token to obtain that page.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4314,13 +4314,13 @@ export namespace MyNS {
 	export interface ListDatasetsResponse {
 
 		/** The datasets read. */
-		datasets?: Array<Dataset>;
+		datasets?: Array<Dataset> | null;
 
 		/**
 		 * A token to retrieve next page of results.
 		 * Pass to ListDatasetsRequest.page_token to obtain that page.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4328,10 +4328,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4342,28 +4342,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -4371,14 +4371,14 @@ export namespace MyNS {
 	export interface ListModelEvaluationsResponse {
 
 		/** List of model evaluations in the requested page. */
-		modelEvaluation?: Array<ModelEvaluation>;
+		modelEvaluation?: Array<ModelEvaluation> | null;
 
 		/**
 		 * A token to retrieve next page of results.
 		 * Pass to the ListModelEvaluationsRequest.page_token field of a new
 		 * AutoMl.ListModelEvaluations request to obtain that page.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4395,17 +4395,17 @@ export namespace MyNS {
 		 * display_name
 		 * field is used.
 		 */
-		annotationSpecId?: string;
+		annotationSpecId?: string | null;
 
 		/**
 		 * Model evaluation metrics for classification problems.
 		 * Note: For Video Classification this metrics only describe quality of the
 		 * Video Classification predictions of "segment_classification" type.
 		 */
-		classificationEvaluationMetrics?: ClassificationEvaluationMetrics;
+		classificationEvaluationMetrics?: ClassificationEvaluationMetrics | null;
 
 		/** Output only. Timestamp when this model evaluation was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The value of
@@ -4420,7 +4420,7 @@ export namespace MyNS {
 		 * are populated here.
 		 * The display_name is empty for the overall model evaluation.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Output only. The number of examples used for model evaluation, i.e. for
@@ -4432,39 +4432,39 @@ export namespace MyNS {
 		 * truth were annotated by the
 		 * annotation_spec_id.
 		 */
-		evaluatedExampleCount?: number;
+		evaluatedExampleCount?: number | null;
 
 		/**
 		 * Model evaluation metrics for image object detection problems.
 		 * Evaluates prediction quality of labeled bounding boxes.
 		 */
-		imageObjectDetectionEvaluationMetrics?: ImageObjectDetectionEvaluationMetrics;
+		imageObjectDetectionEvaluationMetrics?: ImageObjectDetectionEvaluationMetrics | null;
 
 		/**
 		 * Output only. Resource name of the model evaluation.
 		 * Format:
 		 * `projects/{project_id}/locations/{location_id}/models/{model_id}/modelEvaluations/{model_evaluation_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Metrics for regression problems. */
-		regressionEvaluationMetrics?: RegressionEvaluationMetrics;
+		regressionEvaluationMetrics?: RegressionEvaluationMetrics | null;
 
 		/** Model evaluation metrics for text extraction problems. */
-		textExtractionEvaluationMetrics?: TextExtractionEvaluationMetrics;
+		textExtractionEvaluationMetrics?: TextExtractionEvaluationMetrics | null;
 
 		/** Model evaluation metrics for text sentiment problems. */
-		textSentimentEvaluationMetrics?: TextSentimentEvaluationMetrics;
+		textSentimentEvaluationMetrics?: TextSentimentEvaluationMetrics | null;
 
 		/** Evaluation metrics for the dataset. */
-		translationEvaluationMetrics?: TranslationEvaluationMetrics;
+		translationEvaluationMetrics?: TranslationEvaluationMetrics | null;
 
 		/**
 		 * Model evaluation metrics for video object tracking problems.
 		 * Evaluates prediction quality of both labeled bounding boxes and labeled
 		 * tracks (i.e. series of bounding boxes sharing same label and instance ID).
 		 */
-		videoObjectTrackingEvaluationMetrics?: VideoObjectTrackingEvaluationMetrics;
+		videoObjectTrackingEvaluationMetrics?: VideoObjectTrackingEvaluationMetrics | null;
 	}
 
 
@@ -4472,22 +4472,22 @@ export namespace MyNS {
 	export interface RegressionEvaluationMetrics {
 
 		/** Output only. Mean Absolute Error (MAE). */
-		meanAbsoluteError?: number;
+		meanAbsoluteError?: number | null;
 
 		/**
 		 * Output only. Mean absolute percentage error. Only set if all ground truth
 		 * values are are positive.
 		 */
-		meanAbsolutePercentageError?: number;
+		meanAbsolutePercentageError?: number | null;
 
 		/** Output only. R squared. */
-		rSquared?: number;
+		rSquared?: number | null;
 
 		/** Output only. Root Mean Squared Error (RMSE). */
-		rootMeanSquaredError?: number;
+		rootMeanSquaredError?: number | null;
 
 		/** Output only. Root mean squared log error. */
-		rootMeanSquaredLogError?: number;
+		rootMeanSquaredLogError?: number | null;
 	}
 
 
@@ -4495,13 +4495,13 @@ export namespace MyNS {
 	export interface TextExtractionEvaluationMetrics {
 
 		/** Output only. The Area under precision recall curve metric. */
-		auPrc?: number;
+		auPrc?: number | null;
 
 		/**
 		 * Output only. Metrics that have confidence thresholds.
 		 * Precision-recall curve can be derived from it.
 		 */
-		confidenceMetricsEntries?: Array<TextExtractionEvaluationMetricsConfidenceMetricsEntry>;
+		confidenceMetricsEntries?: Array<TextExtractionEvaluationMetricsConfidenceMetricsEntry> | null;
 	}
 
 
@@ -4513,16 +4513,16 @@ export namespace MyNS {
 		 * Only annotations with score of at least this threshold are considered to
 		 * be ones the model would return.
 		 */
-		confidenceThreshold?: number;
+		confidenceThreshold?: number | null;
 
 		/** Output only. The harmonic mean of recall and precision. */
-		f1Score?: number;
+		f1Score?: number | null;
 
 		/** Output only. Precision under the given confidence threshold. */
-		precision?: number;
+		precision?: number | null;
 
 		/** Output only. Recall under the given confidence threshold. */
-		recall?: number;
+		recall?: number | null;
 	}
 
 
@@ -4533,43 +4533,43 @@ export namespace MyNS {
 		 * Output only. The annotation spec ids used for this evaluation.
 		 * Deprecated .
 		 */
-		annotationSpecId?: Array<string>;
+		annotationSpecId?: Array<string> | null;
 
 		/** Confusion matrix of the model running the classification. */
-		confusionMatrix?: ConfusionMatrix;
+		confusionMatrix?: ConfusionMatrix | null;
 
 		/** Output only. The harmonic mean of recall and precision. */
-		f1Score?: number;
+		f1Score?: number | null;
 
 		/**
 		 * Output only. Linear weighted kappa. Only set for the overall model
 		 * evaluation, not for evaluation of a single annotation spec.
 		 */
-		linearKappa?: number;
+		linearKappa?: number | null;
 
 		/**
 		 * Output only. Mean absolute error. Only set for the overall model
 		 * evaluation, not for evaluation of a single annotation spec.
 		 */
-		meanAbsoluteError?: number;
+		meanAbsoluteError?: number | null;
 
 		/**
 		 * Output only. Mean squared error. Only set for the overall model
 		 * evaluation, not for evaluation of a single annotation spec.
 		 */
-		meanSquaredError?: number;
+		meanSquaredError?: number | null;
 
 		/** Output only. Precision. */
-		precision?: number;
+		precision?: number | null;
 
 		/**
 		 * Output only. Quadratic weighted kappa. Only set for the overall model
 		 * evaluation, not for evaluation of a single annotation spec.
 		 */
-		quadraticKappa?: number;
+		quadraticKappa?: number | null;
 
 		/** Output only. Recall. */
-		recall?: number;
+		recall?: number | null;
 	}
 
 
@@ -4577,10 +4577,10 @@ export namespace MyNS {
 	export interface TranslationEvaluationMetrics {
 
 		/** Output only. BLEU score for base model. */
-		baseBleuScore?: number;
+		baseBleuScore?: number | null;
 
 		/** Output only. BLEU score. */
-		bleuScore?: number;
+		bleuScore?: number | null;
 	}
 
 
@@ -4595,7 +4595,7 @@ export namespace MyNS {
 		 * Output only. The single metric for bounding boxes evaluation:
 		 * the mean_average_precision averaged over all bounding_box_metrics_entries.
 		 */
-		boundingBoxMeanAveragePrecision?: number;
+		boundingBoxMeanAveragePrecision?: number | null;
 
 		/**
 		 * Output only. The bounding boxes match metrics for each
@@ -4603,16 +4603,16 @@ export namespace MyNS {
 		 * and each label confidence threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99
 		 * pair.
 		 */
-		boundingBoxMetricsEntries?: Array<BoundingBoxMetricsEntry>;
+		boundingBoxMetricsEntries?: Array<BoundingBoxMetricsEntry> | null;
 
 		/**
 		 * Output only. The total number of bounding boxes (i.e. summed over all
 		 * frames) the ground truth used to create this evaluation had.
 		 */
-		evaluatedBoundingBoxCount?: number;
+		evaluatedBoundingBoxCount?: number | null;
 
 		/** Output only. The number of video frames used to create this evaluation. */
-		evaluatedFrameCount?: number;
+		evaluatedFrameCount?: number | null;
 	}
 
 
@@ -4620,13 +4620,13 @@ export namespace MyNS {
 	export interface ListModelsResponse {
 
 		/** List of models in the requested page. */
-		model?: Array<Model>;
+		model?: Array<Model> | null;
 
 		/**
 		 * A token to retrieve next page of results.
 		 * Pass to ListModelsRequest.page_token to obtain that page.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4634,19 +4634,19 @@ export namespace MyNS {
 	export interface Model {
 
 		/** Output only. Timestamp when the model training finished  and can be used for prediction. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Required. The resource ID of the dataset used to create the model. The dataset must
 		 * come from the same ancestor project and location.
 		 */
-		datasetId?: string;
+		datasetId?: string | null;
 
 		/**
 		 * Output only. Deployment state of the model. A model can only serve
 		 * prediction requests after it gets deployed.
 		 */
-		deploymentState?: ModelDeploymentState;
+		deploymentState?: ModelDeploymentState | null;
 
 		/**
 		 * Required. The name of the model to show in the interface. The name can be
@@ -4654,43 +4654,43 @@ export namespace MyNS {
 		 * and a-z, underscores
 		 * (_), and ASCII digits 0-9. It must start with a letter.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Model metadata for image classification. */
-		imageClassificationModelMetadata?: ImageClassificationModelMetadata;
+		imageClassificationModelMetadata?: ImageClassificationModelMetadata | null;
 
 		/** Model metadata specific to image object detection. */
-		imageObjectDetectionModelMetadata?: ImageObjectDetectionModelMetadata;
+		imageObjectDetectionModelMetadata?: ImageObjectDetectionModelMetadata | null;
 
 		/**
 		 * Output only. Resource name of the model.
 		 * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Model metadata specific to AutoML Tables. */
-		tablesModelMetadata?: TablesModelMetadata;
+		tablesModelMetadata?: TablesModelMetadata | null;
 
 		/** Model metadata that is specific to text classification. */
-		textClassificationModelMetadata?: TextClassificationModelMetadata;
+		textClassificationModelMetadata?: TextClassificationModelMetadata | null;
 
 		/** Model metadata that is specific to text extraction. */
-		textExtractionModelMetadata?: TextExtractionModelMetadata;
+		textExtractionModelMetadata?: TextExtractionModelMetadata | null;
 
 		/** Model metadata that is specific to text sentiment. */
-		textSentimentModelMetadata?: TextSentimentModelMetadata;
+		textSentimentModelMetadata?: TextSentimentModelMetadata | null;
 
 		/** Model metadata that is specific to translation. */
-		translationModelMetadata?: TranslationModelMetadata;
+		translationModelMetadata?: TranslationModelMetadata | null;
 
 		/** Output only. Timestamp when this model was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** Model metadata specific to video classification. */
-		videoClassificationModelMetadata?: VideoClassificationModelMetadata;
+		videoClassificationModelMetadata?: VideoClassificationModelMetadata | null;
 
 		/** Model metadata specific to video object tracking. */
-		videoObjectTrackingModelMetadata?: VideoObjectTrackingModelMetadata;
+		videoObjectTrackingModelMetadata?: VideoObjectTrackingModelMetadata | null;
 	}
 
 	export enum ModelDeploymentState { DEPLOYMENT_STATE_UNSPECIFIED = 0, DEPLOYED = 1, UNDEPLOYED = 2 }
@@ -4704,7 +4704,7 @@ export namespace MyNS {
 		 * By default, the early stopping feature is enabled, which means that AutoML
 		 * Tables might stop training before the entire training budget has been used.
 		 */
-		disableEarlyStopping?: boolean;
+		disableEarlyStopping?: boolean | null;
 
 		/**
 		 * Column specs of the dataset's primary table's columns, on which
@@ -4723,7 +4723,7 @@ export namespace MyNS {
 		 * * display_name - Output only.
 		 * * data_type - Output only.
 		 */
-		inputFeatureColumnSpecs?: Array<ColumnSpec>;
+		inputFeatureColumnSpecs?: Array<ColumnSpec> | null;
 
 		/**
 		 * Objective function the model is optimizing towards. The training process
@@ -4747,25 +4747,25 @@ export namespace MyNS {
 		 * "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
 		 * "MINIMIZE_RMSLE" - Minimize root-mean-squared log error (RMSLE).
 		 */
-		optimizationObjective?: string;
+		optimizationObjective?: string | null;
 
 		/**
 		 * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
 		 * Must be between 0 and 1, inclusive.
 		 */
-		optimizationObjectivePrecisionValue?: number;
+		optimizationObjectivePrecisionValue?: number | null;
 
 		/**
 		 * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
 		 * Must be between 0 and 1, inclusive.
 		 */
-		optimizationObjectiveRecallValue?: number;
+		optimizationObjectiveRecallValue?: number | null;
 
 		/**
 		 * Output only. Auxiliary information for each of the
 		 * input_feature_column_specs with respect to this particular model.
 		 */
-		tablesModelColumnInfo?: Array<TablesModelColumnInfo>;
+		tablesModelColumnInfo?: Array<TablesModelColumnInfo> | null;
 
 		/**
 		 * A representation of a column in a relational table. When listing them, column specs are returned in the same order in which they were
@@ -4773,7 +4773,7 @@ export namespace MyNS {
 		 * Used by:
 		 * *   Tables
 		 */
-		targetColumnSpec?: ColumnSpec;
+		targetColumnSpec?: ColumnSpec | null;
 
 		/**
 		 * Required. The train budget of creating this model, expressed in milli node
@@ -4788,14 +4788,14 @@ export namespace MyNS {
 		 * The train budget must be between 1,000 and 72,000 milli node hours,
 		 * inclusive.
 		 */
-		trainBudgetMilliNodeHours?: string;
+		trainBudgetMilliNodeHours?: string | null;
 
 		/**
 		 * Output only. The actual training cost of the model, expressed in milli
 		 * node hours, i.e. 1,000 value in this field means 1 node hour. Guaranteed
 		 * to not exceed the train budget.
 		 */
-		trainCostMilliNodeHours?: string;
+		trainCostMilliNodeHours?: string | null;
 	}
 
 
@@ -4803,7 +4803,7 @@ export namespace MyNS {
 	export interface TextClassificationModelMetadata {
 
 		/** Output only. Classification type of the dataset used to train this model. */
-		classificationType?: ImageClassificationDatasetMetadataClassificationType;
+		classificationType?: ImageClassificationDatasetMetadataClassificationType | null;
 	}
 
 
@@ -4826,19 +4826,19 @@ export namespace MyNS {
 		 * Translate. Format:
 		 * `projects/{project_id}/locations/{location_id}/models/{model_id}`
 		 */
-		baseModel?: string;
+		baseModel?: string | null;
 
 		/**
 		 * Output only. Inferred from the dataset.
 		 * The source languge (The BCP-47 language code) that is used for training.
 		 */
-		sourceLanguageCode?: string;
+		sourceLanguageCode?: string | null;
 
 		/**
 		 * Output only. The target languge (The BCP-47 language code) that is used for
 		 * training.
 		 */
-		targetLanguageCode?: string;
+		targetLanguageCode?: string | null;
 	}
 
 
@@ -4856,10 +4856,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -4874,7 +4874,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -4884,7 +4884,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -4892,14 +4892,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -4911,7 +4911,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -4926,20 +4926,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -4950,10 +4950,10 @@ export namespace MyNS {
 		 * A token to retrieve next page of results.
 		 * Pass to ListTableSpecsRequest.page_token to obtain that page.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The table specs read. */
-		tableSpecs?: Array<TableSpec>;
+		tableSpecs?: Array<TableSpec> | null;
 	}
 
 
@@ -4974,29 +4974,29 @@ export namespace MyNS {
 		 * Output only. The number of columns of the table. That is, the number of
 		 * child ColumnSpec-s.
 		 */
-		columnCount?: string;
+		columnCount?: string | null;
 
 		/**
 		 * Used to perform consistent read-modify-write updates. If not set, a blind
 		 * "overwrite" update happens.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Output only. Input configs via which data currently residing in the table
 		 * had been imported.
 		 */
-		inputConfigs?: Array<InputConfig>;
+		inputConfigs?: Array<InputConfig> | null;
 
 		/**
 		 * Output only. The resource name of the table spec.
 		 * Form:
 		 * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The number of rows (i.e. examples) in the table. */
-		rowCount?: string;
+		rowCount?: string | null;
 
 		/**
 		 * column_spec_id of the time column. Only used if the parent dataset's
@@ -5008,13 +5008,13 @@ export namespace MyNS {
 		 * will be assigned by AutoML. NOTE: Updates of this field will instantly
 		 * affect any other users concurrently working with the dataset.
 		 */
-		timeColumnSpecId?: string;
+		timeColumnSpecId?: string | null;
 
 		/**
 		 * Output only. The number of valid rows (i.e. without values that don't match
 		 * DataType-s of their columns).
 		 */
-		validRowCount?: string;
+		validRowCount?: string | null;
 	}
 
 
@@ -5022,31 +5022,31 @@ export namespace MyNS {
 	export interface OperationMetadata {
 
 		/** Details of BatchPredict operation. */
-		batchPredictDetails?: BatchPredictOperationMetadata;
+		batchPredictDetails?: BatchPredictOperationMetadata | null;
 
 		/** Details of CreateModel operation. */
-		createModelDetails?: CreateModelOperationMetadata;
+		createModelDetails?: CreateModelOperationMetadata | null;
 
 		/** Output only. Time when the operation was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Details of operations that perform deletes of any entities. */
-		deleteDetails?: DeleteOperationMetadata;
+		deleteDetails?: DeleteOperationMetadata | null;
 
 		/** Details of DeployModel operation. */
-		deployModelDetails?: DeployModelOperationMetadata;
+		deployModelDetails?: DeployModelOperationMetadata | null;
 
 		/** Details of ExportData operation. */
-		exportDataDetails?: ExportDataOperationMetadata;
+		exportDataDetails?: ExportDataOperationMetadata | null;
 
 		/** Details of EvaluatedExamples operation. */
-		exportEvaluatedExamplesDetails?: ExportEvaluatedExamplesOperationMetadata;
+		exportEvaluatedExamplesDetails?: ExportEvaluatedExamplesOperationMetadata | null;
 
 		/** Details of ExportModel operation. */
-		exportModelDetails?: ExportModelOperationMetadata;
+		exportModelDetails?: ExportModelOperationMetadata | null;
 
 		/** Details of ImportData operation. */
-		importDataDetails?: ImportDataOperationMetadata;
+		importDataDetails?: ImportDataOperationMetadata | null;
 
 		/**
 		 * Output only. Partial failures encountered.
@@ -5054,19 +5054,19 @@ export namespace MyNS {
 		 * This field should never exceed 20 entries.
 		 * Status details field will contain standard GCP error details.
 		 */
-		partialFailures?: Array<Status>;
+		partialFailures?: Array<Status> | null;
 
 		/**
 		 * Output only. Progress of operation. Range: [0, 100].
 		 * Not used currently.
 		 */
-		progressPercent?: number;
+		progressPercent?: number | null;
 
 		/** Details of UndeployModel operation. */
-		undeployModelDetails?: UndeployModelOperationMetadata;
+		undeployModelDetails?: UndeployModelOperationMetadata | null;
 
 		/** Output only. Time when the operation was updated for the last time. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -5139,7 +5139,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -5154,7 +5154,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -5174,7 +5174,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -5200,10 +5200,10 @@ export namespace MyNS {
 		 * should be populated in the returned TablesAnnotation.
 		 * The default is false.
 		 */
-		params?: {[id: string]: string };
+		params?: {[id: string]: string } | null;
 
 		/** Example data used for training or prediction. */
-		payload?: ExamplePayload;
+		payload?: ExamplePayload | null;
 	}
 
 
@@ -5225,16 +5225,16 @@ export namespace MyNS {
 		 * The sentiment_score shouldn't be confused with "score" or "magnitude"
 		 * from the previous Natural Language Sentiment Analysis API.
 		 */
-		metadata?: {[id: string]: string };
+		metadata?: {[id: string]: string } | null;
 
 		/**
 		 * Prediction result.
 		 * Translation and Text Sentiment will return precisely one payload.
 		 */
-		payload?: Array<AnnotationPayload>;
+		payload?: Array<AnnotationPayload> | null;
 
 		/** Example data used for training or prediction. */
-		preprocessedInput?: ExamplePayload;
+		preprocessedInput?: ExamplePayload | null;
 	}
 
 
@@ -5298,7 +5298,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 	}
 
 
@@ -5311,7 +5311,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -5322,7 +5322,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -5339,7 +5339,7 @@ export namespace MyNS {
 		 * will be at most the time permitted by the underlying HTTP/RPC protocol.
 		 * If RPC context deadline is also specified, the shorter one will be used.
 		 */
-		timeout?: string;
+		timeout?: string | null;
 	}
 
 	@Injectable()

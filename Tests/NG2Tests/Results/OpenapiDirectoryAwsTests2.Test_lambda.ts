@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AddLayerVersionPermissionResponse {
-		Statement?: string;
-		RevisionId?: string;
+		Statement?: string | null;
+		RevisionId?: string | null;
 	}
 
 	export interface ServiceException {
@@ -29,26 +29,26 @@ export namespace MyNS {
 	}
 
 	export interface AddPermissionResponse {
-		Statement?: string;
+		Statement?: string | null;
 	}
 
 
 	/** Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>. */
 	export interface AliasConfiguration {
-		AliasArn?: string;
-		Name?: string;
-		FunctionVersion?: string;
-		Description?: string;
+		AliasArn?: string | null;
+		Name?: string | null;
+		FunctionVersion?: string | null;
+		Description?: string | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
-		RoutingConfig?: AliasRoutingConfiguration;
-		RevisionId?: string;
+		RoutingConfig?: AliasRoutingConfiguration | null;
+		RevisionId?: string | null;
 	}
 
 
 	/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
 	export interface AliasRoutingConfiguration {
-		AdditionalVersionWeights?: AdditionalVersionWeights;
+		AdditionalVersionWeights?: AdditionalVersionWeights | null;
 	}
 
 	export interface AdditionalVersionWeights {
@@ -57,22 +57,22 @@ export namespace MyNS {
 
 	/** A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details. */
 	export interface EventSourceMappingConfiguration {
-		UUID?: string;
-		BatchSize?: number;
-		MaximumBatchingWindowInSeconds?: number;
-		ParallelizationFactor?: number;
-		EventSourceArn?: string;
-		FunctionArn?: string;
-		LastModified?: Date;
-		LastProcessingResult?: string;
-		State?: string;
-		StateTransitionReason?: string;
+		UUID?: string | null;
+		BatchSize?: number | null;
+		MaximumBatchingWindowInSeconds?: number | null;
+		ParallelizationFactor?: number | null;
+		EventSourceArn?: string | null;
+		FunctionArn?: string | null;
+		LastModified?: Date | null;
+		LastProcessingResult?: string | null;
+		State?: string | null;
+		StateTransitionReason?: string | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: DestinationConfig;
-		MaximumRecordAgeInSeconds?: number;
-		BisectBatchOnFunctionError?: boolean;
-		MaximumRetryAttempts?: number;
+		DestinationConfig?: DestinationConfig | null;
+		MaximumRecordAgeInSeconds?: number | null;
+		BisectBatchOnFunctionError?: boolean | null;
+		MaximumRetryAttempts?: number | null;
 	}
 
 
@@ -80,61 +80,61 @@ export namespace MyNS {
 	export interface DestinationConfig {
 
 		/** A destination for events that were processed successfully. */
-		OnSuccess?: OnSuccess;
+		OnSuccess?: OnSuccess | null;
 
 		/** A destination for events that failed processing. */
-		OnFailure?: OnFailure;
+		OnFailure?: OnFailure | null;
 	}
 
 
 	/** A destination for events that were processed successfully. */
 	export interface OnSuccess {
-		Destination?: string;
+		Destination?: string | null;
 	}
 
 
 	/** A destination for events that failed processing. */
 	export interface OnFailure {
-		Destination?: string;
+		Destination?: string | null;
 	}
 
 
 	/** Details about a function's configuration. */
 	export interface FunctionConfiguration {
-		FunctionName?: string;
-		FunctionArn?: string;
-		Runtime?: FunctionConfigurationRuntime;
-		Role?: string;
-		Handler?: string;
-		CodeSize?: number;
-		Description?: string;
-		Timeout?: number;
-		MemorySize?: number;
-		LastModified?: string;
-		CodeSha256?: string;
-		Version?: string;
+		FunctionName?: string | null;
+		FunctionArn?: string | null;
+		Runtime?: FunctionConfigurationRuntime | null;
+		Role?: string | null;
+		Handler?: string | null;
+		CodeSize?: number | null;
+		Description?: string | null;
+		Timeout?: number | null;
+		MemorySize?: number | null;
+		LastModified?: string | null;
+		CodeSha256?: string | null;
+		Version?: string | null;
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. */
-		VpcConfig?: VpcConfigResponse;
+		VpcConfig?: VpcConfigResponse | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
-		DeadLetterConfig?: DeadLetterConfig;
+		DeadLetterConfig?: DeadLetterConfig | null;
 
 		/** The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error. */
-		Environment?: EnvironmentResponse;
-		KMSKeyArn?: string;
+		Environment?: EnvironmentResponse | null;
+		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. */
-		TracingConfig?: TracingConfigResponse;
-		MasterArn?: string;
-		RevisionId?: string;
-		Layers?: Array<Layer>;
-		State?: FunctionConfigurationState;
-		StateReason?: string;
-		StateReasonCode?: FunctionConfigurationStateReasonCode;
-		LastUpdateStatus?: FunctionConfigurationLastUpdateStatus;
-		LastUpdateStatusReason?: string;
-		LastUpdateStatusReasonCode?: FunctionConfigurationLastUpdateStatusReasonCode;
+		TracingConfig?: TracingConfigResponse | null;
+		MasterArn?: string | null;
+		RevisionId?: string | null;
+		Layers?: Array<Layer> | null;
+		State?: FunctionConfigurationState | null;
+		StateReason?: string | null;
+		StateReasonCode?: FunctionConfigurationStateReasonCode | null;
+		LastUpdateStatus?: FunctionConfigurationLastUpdateStatus | null;
+		LastUpdateStatusReason?: string | null;
+		LastUpdateStatusReasonCode?: FunctionConfigurationLastUpdateStatusReasonCode | null;
 	}
 
 	export enum FunctionConfigurationRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
@@ -142,24 +142,24 @@ export namespace MyNS {
 
 	/** The VPC security groups and subnets that are attached to a Lambda function. */
 	export interface VpcConfigResponse {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
-		VpcId?: string;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
+		VpcId?: string | null;
 	}
 
 
 	/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
 	export interface DeadLetterConfig {
-		TargetArn?: string;
+		TargetArn?: string | null;
 	}
 
 
 	/** The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error. */
 	export interface EnvironmentResponse {
-		Variables?: EnvironmentVariables;
+		Variables?: EnvironmentVariables | null;
 
 		/** Error messages for environment variables that couldn't be applied. */
-		Error?: EnvironmentError;
+		Error?: EnvironmentError | null;
 	}
 
 	export interface EnvironmentVariables {
@@ -168,14 +168,14 @@ export namespace MyNS {
 
 	/** Error messages for environment variables that couldn't be applied. */
 	export interface EnvironmentError {
-		ErrorCode?: string;
-		Message?: string;
+		ErrorCode?: string | null;
+		Message?: string | null;
 	}
 
 
 	/** The function's AWS X-Ray tracing configuration. */
 	export interface TracingConfigResponse {
-		Mode?: TracingConfigResponseMode;
+		Mode?: TracingConfigResponseMode | null;
 	}
 
 	export enum TracingConfigResponseMode { Active = 0, PassThrough = 1 }
@@ -183,8 +183,8 @@ export namespace MyNS {
 
 	/** An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface Layer {
-		Arn?: string;
-		CodeSize?: number;
+		Arn?: string | null;
+		CodeSize?: number | null;
 	}
 
 	export enum FunctionConfigurationState { Pending = 0, Active = 1, Inactive = 2, Failed = 3 }
@@ -206,108 +206,108 @@ export namespace MyNS {
 	export interface GetAccountSettingsResponse {
 
 		/** Limits that are related to concurrency and storage. All file and storage sizes are in bytes. */
-		AccountLimit?: AccountLimit;
+		AccountLimit?: AccountLimit | null;
 
 		/** The number of functions and amount of storage in use. */
-		AccountUsage?: AccountUsage;
+		AccountUsage?: AccountUsage | null;
 	}
 
 
 	/** Limits that are related to concurrency and storage. All file and storage sizes are in bytes. */
 	export interface AccountLimit {
-		TotalCodeSize?: number;
-		CodeSizeUnzipped?: number;
-		CodeSizeZipped?: number;
-		ConcurrentExecutions?: number;
-		UnreservedConcurrentExecutions?: number;
+		TotalCodeSize?: number | null;
+		CodeSizeUnzipped?: number | null;
+		CodeSizeZipped?: number | null;
+		ConcurrentExecutions?: number | null;
+		UnreservedConcurrentExecutions?: number | null;
 	}
 
 
 	/** The number of functions and amount of storage in use. */
 	export interface AccountUsage {
-		TotalCodeSize?: number;
-		FunctionCount?: number;
+		TotalCodeSize?: number | null;
+		FunctionCount?: number | null;
 	}
 
 	export interface GetFunctionResponse {
 
 		/** Details about a function's configuration. */
-		Configuration?: FunctionConfiguration;
+		Configuration?: FunctionConfiguration | null;
 
 		/** Details about a function's deployment package. */
-		Code?: FunctionCodeLocation;
-		Tags?: Tags;
-		Concurrency?: Concurrency;
+		Code?: FunctionCodeLocation | null;
+		Tags?: Tags | null;
+		Concurrency?: Concurrency | null;
 	}
 
 
 	/** Details about a function's deployment package. */
 	export interface FunctionCodeLocation {
-		RepositoryType?: string;
-		Location?: string;
+		RepositoryType?: string | null;
+		Location?: string | null;
 	}
 
 	export interface Tags {
 	}
 
 	export interface Concurrency {
-		ReservedConcurrentExecutions?: number;
+		ReservedConcurrentExecutions?: number | null;
 	}
 
 	export interface GetFunctionConcurrencyResponse {
-		ReservedConcurrentExecutions?: number;
+		ReservedConcurrentExecutions?: number | null;
 	}
 
 	export interface FunctionEventInvokeConfig {
-		LastModified?: Date;
-		FunctionArn?: string;
-		MaximumRetryAttempts?: number;
-		MaximumEventAgeInSeconds?: number;
+		LastModified?: Date | null;
+		FunctionArn?: string | null;
+		MaximumRetryAttempts?: number | null;
+		MaximumEventAgeInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: DestinationConfig;
+		DestinationConfig?: DestinationConfig | null;
 	}
 
 	export interface GetLayerVersionResponse {
 
 		/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
-		Content?: LayerVersionContentOutput;
-		LayerArn?: string;
-		LayerVersionArn?: string;
-		Description?: string;
-		CreatedDate?: string;
-		Version?: number;
-		CompatibleRuntimes?: Array<Runtime>;
-		LicenseInfo?: string;
+		Content?: LayerVersionContentOutput | null;
+		LayerArn?: string | null;
+		LayerVersionArn?: string | null;
+		Description?: string | null;
+		CreatedDate?: string | null;
+		Version?: number | null;
+		CompatibleRuntimes?: Array<Runtime> | null;
+		LicenseInfo?: string | null;
 	}
 
 
 	/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface LayerVersionContentOutput {
-		Location?: string;
-		CodeSha256?: string;
-		CodeSize?: number;
+		Location?: string | null;
+		CodeSha256?: string | null;
+		CodeSize?: number | null;
 	}
 
 	export enum Runtime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
 
 	export interface GetLayerVersionPolicyResponse {
-		Policy?: string;
-		RevisionId?: string;
+		Policy?: string | null;
+		RevisionId?: string | null;
 	}
 
 	export interface GetPolicyResponse {
-		Policy?: string;
-		RevisionId?: string;
+		Policy?: string | null;
+		RevisionId?: string | null;
 	}
 
 	export interface GetProvisionedConcurrencyConfigResponse {
-		RequestedProvisionedConcurrentExecutions?: number;
-		AvailableProvisionedConcurrentExecutions?: number;
-		AllocatedProvisionedConcurrentExecutions?: number;
-		Status?: GetProvisionedConcurrencyConfigResponseStatus;
-		StatusReason?: string;
-		LastModified?: string;
+		RequestedProvisionedConcurrentExecutions?: number | null;
+		AvailableProvisionedConcurrentExecutions?: number | null;
+		AllocatedProvisionedConcurrentExecutions?: number | null;
+		Status?: GetProvisionedConcurrencyConfigResponseStatus | null;
+		StatusReason?: string | null;
+		LastModified?: string | null;
 	}
 
 	export enum GetProvisionedConcurrencyConfigResponseStatus { IN_PROGRESS = 0, READY = 1, FAILED = 2 }
@@ -316,8 +316,8 @@ export namespace MyNS {
 	}
 
 	export interface InvocationResponse {
-		StatusCode?: number;
-		Payload?: string;
+		StatusCode?: number | null;
+		Payload?: string | null;
 	}
 
 	export interface InvalidRequestContentException {
@@ -374,134 +374,134 @@ export namespace MyNS {
 
 	/** A success response (<code>202 Accepted</code>) indicates that the request is queued for invocation.  */
 	export interface InvokeAsyncResponse {
-		Status?: number;
+		Status?: number | null;
 	}
 
 	export interface ListAliasesResponse {
-		NextMarker?: string;
-		Aliases?: Array<AliasConfiguration>;
+		NextMarker?: string | null;
+		Aliases?: Array<AliasConfiguration> | null;
 	}
 
 	export interface ListEventSourceMappingsResponse {
-		NextMarker?: string;
-		EventSourceMappings?: Array<EventSourceMappingConfiguration>;
+		NextMarker?: string | null;
+		EventSourceMappings?: Array<EventSourceMappingConfiguration> | null;
 	}
 
 	export interface ListFunctionEventInvokeConfigsResponse {
-		FunctionEventInvokeConfigs?: Array<FunctionEventInvokeConfig>;
-		NextMarker?: string;
+		FunctionEventInvokeConfigs?: Array<FunctionEventInvokeConfig> | null;
+		NextMarker?: string | null;
 	}
 
 
 	/** A list of Lambda functions. */
 	export interface ListFunctionsResponse {
-		NextMarker?: string;
-		Functions?: Array<FunctionConfiguration>;
+		NextMarker?: string | null;
+		Functions?: Array<FunctionConfiguration> | null;
 	}
 
 	export interface ListLayerVersionsResponse {
-		NextMarker?: string;
-		LayerVersions?: Array<LayerVersionsListItem>;
+		NextMarker?: string | null;
+		LayerVersions?: Array<LayerVersionsListItem> | null;
 	}
 
 
 	/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface LayerVersionsListItem {
-		LayerVersionArn?: string;
-		Version?: number;
-		Description?: string;
-		CreatedDate?: string;
-		CompatibleRuntimes?: Array<Runtime>;
-		LicenseInfo?: string;
+		LayerVersionArn?: string | null;
+		Version?: number | null;
+		Description?: string | null;
+		CreatedDate?: string | null;
+		CompatibleRuntimes?: Array<Runtime> | null;
+		LicenseInfo?: string | null;
 	}
 
 	export interface ListLayersResponse {
-		NextMarker?: string;
-		Layers?: Array<LayersListItem>;
+		NextMarker?: string | null;
+		Layers?: Array<LayersListItem> | null;
 	}
 
 
 	/** Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface LayersListItem {
-		LayerName?: string;
-		LayerArn?: string;
+		LayerName?: string | null;
+		LayerArn?: string | null;
 
 		/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
-		LatestMatchingVersion?: LayerVersionsListItem;
+		LatestMatchingVersion?: LayerVersionsListItem | null;
 	}
 
 	export interface ListProvisionedConcurrencyConfigsResponse {
-		ProvisionedConcurrencyConfigs?: Array<ProvisionedConcurrencyConfigListItem>;
-		NextMarker?: string;
+		ProvisionedConcurrencyConfigs?: Array<ProvisionedConcurrencyConfigListItem> | null;
+		NextMarker?: string | null;
 	}
 
 
 	/** Details about the provisioned concurrency configuration for a function alias or version. */
 	export interface ProvisionedConcurrencyConfigListItem {
-		FunctionArn?: string;
-		RequestedProvisionedConcurrentExecutions?: number;
-		AvailableProvisionedConcurrentExecutions?: number;
-		AllocatedProvisionedConcurrentExecutions?: number;
-		Status?: GetProvisionedConcurrencyConfigResponseStatus;
-		StatusReason?: string;
-		LastModified?: string;
+		FunctionArn?: string | null;
+		RequestedProvisionedConcurrentExecutions?: number | null;
+		AvailableProvisionedConcurrentExecutions?: number | null;
+		AllocatedProvisionedConcurrentExecutions?: number | null;
+		Status?: GetProvisionedConcurrencyConfigResponseStatus | null;
+		StatusReason?: string | null;
+		LastModified?: string | null;
 	}
 
 	export interface ListTagsResponse {
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListVersionsByFunctionResponse {
-		NextMarker?: string;
-		Versions?: Array<FunctionConfiguration>;
+		NextMarker?: string | null;
+		Versions?: Array<FunctionConfiguration> | null;
 	}
 
 	export interface PublishLayerVersionResponse {
 
 		/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
-		Content?: LayerVersionContentOutput;
-		LayerArn?: string;
-		LayerVersionArn?: string;
-		Description?: string;
-		CreatedDate?: string;
-		Version?: number;
-		CompatibleRuntimes?: Array<Runtime>;
-		LicenseInfo?: string;
+		Content?: LayerVersionContentOutput | null;
+		LayerArn?: string | null;
+		LayerVersionArn?: string | null;
+		Description?: string | null;
+		CreatedDate?: string | null;
+		Version?: number | null;
+		CompatibleRuntimes?: Array<Runtime> | null;
+		LicenseInfo?: string | null;
 	}
 
 	export interface PutProvisionedConcurrencyConfigResponse {
-		RequestedProvisionedConcurrentExecutions?: number;
-		AvailableProvisionedConcurrentExecutions?: number;
-		AllocatedProvisionedConcurrentExecutions?: number;
-		Status?: GetProvisionedConcurrencyConfigResponseStatus;
-		StatusReason?: string;
-		LastModified?: string;
+		RequestedProvisionedConcurrentExecutions?: number | null;
+		AvailableProvisionedConcurrentExecutions?: number | null;
+		AllocatedProvisionedConcurrentExecutions?: number | null;
+		Status?: GetProvisionedConcurrencyConfigResponseStatus | null;
+		StatusReason?: string | null;
+		LastModified?: string | null;
 	}
 
 	export interface AddLayerVersionPermissionRequest {
 		StatementId: string;
 		Action: string;
 		Principal: string;
-		OrganizationId?: string;
+		OrganizationId?: string | null;
 	}
 
 	export interface AddPermissionRequest {
 		StatementId: string;
 		Action: string;
 		Principal: string;
-		SourceArn?: string;
-		SourceAccount?: string;
-		EventSourceToken?: string;
-		RevisionId?: string;
+		SourceArn?: string | null;
+		SourceAccount?: string | null;
+		EventSourceToken?: string | null;
+		RevisionId?: string | null;
 	}
 
 	export interface CreateAliasRequest {
 		Name: string;
 		FunctionVersion: string;
-		Description?: string;
+		Description?: string | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
-		RoutingConfig?: AliasRoutingConfiguration;
+		RoutingConfig?: AliasRoutingConfiguration | null;
 	}
 
 	export enum EventSourcePosition { TRIM_HORIZON = 0, LATEST = 1, AT_TIMESTAMP = 2 }
@@ -509,46 +509,46 @@ export namespace MyNS {
 	export interface CreateEventSourceMappingRequest {
 		EventSourceArn: string;
 		FunctionName: string;
-		Enabled?: boolean;
-		BatchSize?: number;
-		MaximumBatchingWindowInSeconds?: number;
-		ParallelizationFactor?: number;
-		StartingPosition?: EventSourcePosition;
-		StartingPositionTimestamp?: Date;
+		Enabled?: boolean | null;
+		BatchSize?: number | null;
+		MaximumBatchingWindowInSeconds?: number | null;
+		ParallelizationFactor?: number | null;
+		StartingPosition?: EventSourcePosition | null;
+		StartingPositionTimestamp?: Date | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: DestinationConfig;
-		MaximumRecordAgeInSeconds?: number;
-		BisectBatchOnFunctionError?: boolean;
-		MaximumRetryAttempts?: number;
+		DestinationConfig?: DestinationConfig | null;
+		MaximumRecordAgeInSeconds?: number | null;
+		BisectBatchOnFunctionError?: boolean | null;
+		MaximumRetryAttempts?: number | null;
 	}
 
 
 	/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
 	export interface FunctionCode {
-		ZipFile?: string;
-		S3Bucket?: string;
-		S3Key?: string;
-		S3ObjectVersion?: string;
+		ZipFile?: string | null;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3ObjectVersion?: string | null;
 	}
 
 
 	/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>. */
 	export interface VpcConfig {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 
 	/** A function's environment variable settings. */
 	export interface Environment {
-		Variables?: EnvironmentVariables;
+		Variables?: EnvironmentVariables | null;
 	}
 
 
 	/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
 	export interface TracingConfig {
-		Mode?: TracingConfigResponseMode;
+		Mode?: TracingConfigResponseMode | null;
 	}
 
 	export interface CreateFunctionRequest {
@@ -562,25 +562,25 @@ export namespace MyNS {
 		 * Required
 		 */
 		Code: FunctionCode;
-		Description?: string;
-		Timeout?: number;
-		MemorySize?: number;
-		Publish?: boolean;
+		Description?: string | null;
+		Timeout?: number | null;
+		MemorySize?: number | null;
+		Publish?: boolean | null;
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
-		DeadLetterConfig?: DeadLetterConfig;
+		DeadLetterConfig?: DeadLetterConfig | null;
 
 		/** A function's environment variable settings. */
-		Environment?: Environment;
-		KMSKeyArn?: string;
+		Environment?: Environment | null;
+		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
-		TracingConfig?: TracingConfig;
-		Tags?: Tags;
-		Layers?: Array<string>;
+		TracingConfig?: TracingConfig | null;
+		Tags?: Tags | null;
+		Layers?: Array<string> | null;
 	}
 
 	export enum CreateFunctionRequestRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
@@ -659,7 +659,7 @@ export namespace MyNS {
 	export enum LogType { None = 0, Tail = 1 }
 
 	export interface InvocationRequest {
-		Payload?: string;
+		Payload?: string | null;
 	}
 
 	export interface InvokeAsyncRequest {
@@ -669,10 +669,10 @@ export namespace MyNS {
 
 	/** A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly. */
 	export interface LayerVersionContentInput {
-		S3Bucket?: string;
-		S3Key?: string;
-		S3ObjectVersion?: string;
-		ZipFile?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3ObjectVersion?: string | null;
+		ZipFile?: string | null;
 	}
 
 	export interface ListAliasesRequest {
@@ -703,21 +703,21 @@ export namespace MyNS {
 	}
 
 	export interface PublishLayerVersionRequest {
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly.
 		 * Required
 		 */
 		Content: LayerVersionContentInput;
-		CompatibleRuntimes?: Array<Runtime>;
-		LicenseInfo?: string;
+		CompatibleRuntimes?: Array<Runtime> | null;
+		LicenseInfo?: string | null;
 	}
 
 	export interface PublishVersionRequest {
-		CodeSha256?: string;
-		Description?: string;
-		RevisionId?: string;
+		CodeSha256?: string | null;
+		Description?: string | null;
+		RevisionId?: string | null;
 	}
 
 	export interface PutFunctionConcurrencyRequest {
@@ -725,11 +725,11 @@ export namespace MyNS {
 	}
 
 	export interface PutFunctionEventInvokeConfigRequest {
-		MaximumRetryAttempts?: number;
-		MaximumEventAgeInSeconds?: number;
+		MaximumRetryAttempts?: number | null;
+		MaximumEventAgeInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: DestinationConfig;
+		DestinationConfig?: DestinationConfig | null;
 	}
 
 	export interface PutProvisionedConcurrencyConfigRequest {
@@ -750,70 +750,70 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAliasRequest {
-		FunctionVersion?: string;
-		Description?: string;
+		FunctionVersion?: string | null;
+		Description?: string | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
-		RoutingConfig?: AliasRoutingConfiguration;
-		RevisionId?: string;
+		RoutingConfig?: AliasRoutingConfiguration | null;
+		RevisionId?: string | null;
 	}
 
 	export interface UpdateEventSourceMappingRequest {
-		FunctionName?: string;
-		Enabled?: boolean;
-		BatchSize?: number;
-		MaximumBatchingWindowInSeconds?: number;
+		FunctionName?: string | null;
+		Enabled?: boolean | null;
+		BatchSize?: number | null;
+		MaximumBatchingWindowInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: DestinationConfig;
-		MaximumRecordAgeInSeconds?: number;
-		BisectBatchOnFunctionError?: boolean;
-		MaximumRetryAttempts?: number;
-		ParallelizationFactor?: number;
+		DestinationConfig?: DestinationConfig | null;
+		MaximumRecordAgeInSeconds?: number | null;
+		BisectBatchOnFunctionError?: boolean | null;
+		MaximumRetryAttempts?: number | null;
+		ParallelizationFactor?: number | null;
 	}
 
 	export interface UpdateFunctionCodeRequest {
-		ZipFile?: string;
-		S3Bucket?: string;
-		S3Key?: string;
-		S3ObjectVersion?: string;
-		Publish?: boolean;
-		DryRun?: boolean;
-		RevisionId?: string;
+		ZipFile?: string | null;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3ObjectVersion?: string | null;
+		Publish?: boolean | null;
+		DryRun?: boolean | null;
+		RevisionId?: string | null;
 	}
 
 	export interface UpdateFunctionConfigurationRequest {
-		Role?: string;
-		Handler?: string;
-		Description?: string;
-		Timeout?: number;
-		MemorySize?: number;
+		Role?: string | null;
+		Handler?: string | null;
+		Description?: string | null;
+		Timeout?: number | null;
+		MemorySize?: number | null;
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>. */
-		VpcConfig?: VpcConfig;
+		VpcConfig?: VpcConfig | null;
 
 		/** A function's environment variable settings. */
-		Environment?: Environment;
-		Runtime?: UpdateFunctionConfigurationRequestRuntime;
+		Environment?: Environment | null;
+		Runtime?: UpdateFunctionConfigurationRequestRuntime | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
-		DeadLetterConfig?: DeadLetterConfig;
-		KMSKeyArn?: string;
+		DeadLetterConfig?: DeadLetterConfig | null;
+		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
-		TracingConfig?: TracingConfig;
-		RevisionId?: string;
-		Layers?: Array<string>;
+		TracingConfig?: TracingConfig | null;
+		RevisionId?: string | null;
+		Layers?: Array<string> | null;
 	}
 
 	export enum UpdateFunctionConfigurationRequestRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
 
 	export interface UpdateFunctionEventInvokeConfigRequest {
-		MaximumRetryAttempts?: number;
-		MaximumEventAgeInSeconds?: number;
+		MaximumRetryAttempts?: number | null;
+		MaximumEventAgeInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: DestinationConfig;
+		DestinationConfig?: DestinationConfig | null;
 	}
 
 	@Injectable()
@@ -1386,7 +1386,7 @@ export namespace MyNS {
 		 * With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.
 		 * Pattern: o-[a-z0-9]{10,32}
 		 */
-		OrganizationId?: string;
+		OrganizationId?: string | null;
 	}
 
 	export interface AddPermissionPostBody {
@@ -1418,13 +1418,13 @@ export namespace MyNS {
 		 * For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
 		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
 		 */
-		SourceArn?: string;
+		SourceArn?: string | null;
 
 		/**
 		 * For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.
 		 * Pattern: \d{12}
 		 */
-		SourceAccount?: string;
+		SourceAccount?: string | null;
 
 		/**
 		 * For Alexa Smart Home functions, a token that must be supplied by the invoker.
@@ -1432,10 +1432,10 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: [a-zA-Z0-9._\-]+
 		 */
-		EventSourceToken?: string;
+		EventSourceToken?: string | null;
 
 		/** Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it. */
-		RevisionId?: string;
+		RevisionId?: string | null;
 	}
 
 	export interface CreateAliasPostBody {
@@ -1463,14 +1463,14 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
-		RoutingConfig?: CreateAliasPostBodyRoutingConfig;
+		RoutingConfig?: CreateAliasPostBodyRoutingConfig | null;
 	}
 
 	export interface CreateAliasPostBodyRoutingConfig {
-		AdditionalVersionWeights?: AdditionalVersionWeights;
+		AdditionalVersionWeights?: AdditionalVersionWeights | null;
 	}
 
 	export interface CreateEventSourceMappingPostBody {
@@ -1492,63 +1492,63 @@ export namespace MyNS {
 		FunctionName: string;
 
 		/** Disables the event source mapping to pause polling and invocation. */
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 
 		/**
 		 * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
 		 * Minimum: 1
 		 * Maximum: 10000
 		 */
-		BatchSize?: number;
+		BatchSize?: number | null;
 
 		/**
 		 * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
 		 * Minimum: 0
 		 * Maximum: 300
 		 */
-		MaximumBatchingWindowInSeconds?: number;
+		MaximumBatchingWindowInSeconds?: number | null;
 
 		/**
 		 * (Streams) The number of batches to process from each shard concurrently.
 		 * Minimum: 1
 		 * Maximum: 10
 		 */
-		ParallelizationFactor?: number;
+		ParallelizationFactor?: number | null;
 
 		/** The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams. */
-		StartingPosition?: EventSourcePosition;
+		StartingPosition?: EventSourcePosition | null;
 
 		/** With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. */
-		StartingPositionTimestamp?: Date;
+		StartingPositionTimestamp?: Date | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: CreateEventSourceMappingPostBodyDestinationConfig;
+		DestinationConfig?: CreateEventSourceMappingPostBodyDestinationConfig | null;
 
 		/**
 		 * (Streams) The maximum age of a record that Lambda sends to a function for processing.
 		 * Minimum: 60
 		 * Maximum: 604800
 		 */
-		MaximumRecordAgeInSeconds?: number;
+		MaximumRecordAgeInSeconds?: number | null;
 
 		/** (Streams) If the function returns an error, split the batch in two and retry. */
-		BisectBatchOnFunctionError?: boolean;
+		BisectBatchOnFunctionError?: boolean | null;
 
 		/**
 		 * (Streams) The maximum number of times to retry when the function returns an error.
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		MaximumRetryAttempts?: number;
+		MaximumRetryAttempts?: number | null;
 	}
 
 	export interface CreateEventSourceMappingPostBodyDestinationConfig {
 
 		/** A destination for events that were processed successfully. */
-		OnSuccess?: OnSuccess;
+		OnSuccess?: OnSuccess | null;
 
 		/** A destination for events that failed processing. */
-		OnFailure?: OnFailure;
+		OnFailure?: OnFailure | null;
 	}
 
 	export interface CreateFunctionPostBody {
@@ -1594,73 +1594,73 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
 		 * Minimum: 1
 		 */
-		Timeout?: number;
+		Timeout?: number | null;
 
 		/**
 		 * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
 		 * Minimum: 128
 		 * Maximum: 3008
 		 */
-		MemorySize?: number;
+		MemorySize?: number | null;
 
 		/** Set to true to publish the first version of the function during creation. */
-		Publish?: boolean;
+		Publish?: boolean | null;
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>. */
-		VpcConfig?: CreateFunctionPostBodyVpcConfig;
+		VpcConfig?: CreateFunctionPostBodyVpcConfig | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
-		DeadLetterConfig?: CreateFunctionPostBodyDeadLetterConfig;
+		DeadLetterConfig?: CreateFunctionPostBodyDeadLetterConfig | null;
 
 		/** A function's environment variable settings. */
-		Environment?: CreateFunctionPostBodyEnvironment;
+		Environment?: CreateFunctionPostBodyEnvironment | null;
 
 		/**
 		 * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key.
 		 * Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()
 		 */
-		KMSKeyArn?: string;
+		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
-		TracingConfig?: CreateFunctionPostBodyTracingConfig;
+		TracingConfig?: CreateFunctionPostBodyTracingConfig | null;
 
 		/** A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 
 		/** A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version. */
-		Layers?: Array<string>;
+		Layers?: Array<string> | null;
 	}
 
 	export enum CreateFunctionPostBodyRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
 
 	export interface CreateFunctionPostBodyCode {
-		ZipFile?: string;
-		S3Bucket?: string;
-		S3Key?: string;
-		S3ObjectVersion?: string;
+		ZipFile?: string | null;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3ObjectVersion?: string | null;
 	}
 
 	export interface CreateFunctionPostBodyVpcConfig {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface CreateFunctionPostBodyDeadLetterConfig {
-		TargetArn?: string;
+		TargetArn?: string | null;
 	}
 
 	export interface CreateFunctionPostBodyEnvironment {
-		Variables?: EnvironmentVariables;
+		Variables?: EnvironmentVariables | null;
 	}
 
 	export interface CreateFunctionPostBodyTracingConfig {
-		Mode?: TracingConfigResponseMode;
+		Mode?: TracingConfigResponseMode | null;
 	}
 
 	export interface UpdateAliasPutBody {
@@ -1671,24 +1671,24 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: (\$LATEST|[0-9]+)
 		 */
-		FunctionVersion?: string;
+		FunctionVersion?: string | null;
 
 		/**
 		 * A description of the alias.
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
-		RoutingConfig?: UpdateAliasPutBodyRoutingConfig;
+		RoutingConfig?: UpdateAliasPutBodyRoutingConfig | null;
 
 		/** Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it. */
-		RevisionId?: string;
+		RevisionId?: string | null;
 	}
 
 	export interface UpdateAliasPutBodyRoutingConfig {
-		AdditionalVersionWeights?: AdditionalVersionWeights;
+		AdditionalVersionWeights?: AdditionalVersionWeights | null;
 	}
 
 	export interface UpdateEventSourceMappingPutBody {
@@ -1699,60 +1699,60 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
-		FunctionName?: string;
+		FunctionName?: string | null;
 
 		/** Disables the event source mapping to pause polling and invocation. */
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 
 		/**
 		 * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
 		 * Minimum: 1
 		 * Maximum: 10000
 		 */
-		BatchSize?: number;
+		BatchSize?: number | null;
 
 		/**
 		 * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
 		 * Minimum: 0
 		 * Maximum: 300
 		 */
-		MaximumBatchingWindowInSeconds?: number;
+		MaximumBatchingWindowInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: UpdateEventSourceMappingPutBodyDestinationConfig;
+		DestinationConfig?: UpdateEventSourceMappingPutBodyDestinationConfig | null;
 
 		/**
 		 * (Streams) The maximum age of a record that Lambda sends to a function for processing.
 		 * Minimum: 60
 		 * Maximum: 604800
 		 */
-		MaximumRecordAgeInSeconds?: number;
+		MaximumRecordAgeInSeconds?: number | null;
 
 		/** (Streams) If the function returns an error, split the batch in two and retry. */
-		BisectBatchOnFunctionError?: boolean;
+		BisectBatchOnFunctionError?: boolean | null;
 
 		/**
 		 * (Streams) The maximum number of times to retry when the function returns an error.
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		MaximumRetryAttempts?: number;
+		MaximumRetryAttempts?: number | null;
 
 		/**
 		 * (Streams) The number of batches to process from each shard concurrently.
 		 * Minimum: 1
 		 * Maximum: 10
 		 */
-		ParallelizationFactor?: number;
+		ParallelizationFactor?: number | null;
 	}
 
 	export interface UpdateEventSourceMappingPutBodyDestinationConfig {
 
 		/** A destination for events that were processed successfully. */
-		OnSuccess?: OnSuccess;
+		OnSuccess?: OnSuccess | null;
 
 		/** A destination for events that failed processing. */
-		OnFailure?: OnFailure;
+		OnFailure?: OnFailure | null;
 	}
 
 	export interface PutFunctionConcurrencyPutBody {
@@ -1772,26 +1772,26 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 2
 		 */
-		MaximumRetryAttempts?: number;
+		MaximumRetryAttempts?: number | null;
 
 		/**
 		 * The maximum age of a request that Lambda sends to a function for processing.
 		 * Minimum: 60
 		 * Maximum: 21600
 		 */
-		MaximumEventAgeInSeconds?: number;
+		MaximumEventAgeInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: PutFunctionEventInvokeConfigPutBodyDestinationConfig;
+		DestinationConfig?: PutFunctionEventInvokeConfigPutBodyDestinationConfig | null;
 	}
 
 	export interface PutFunctionEventInvokeConfigPutBodyDestinationConfig {
 
 		/** A destination for events that were processed successfully. */
-		OnSuccess?: OnSuccess;
+		OnSuccess?: OnSuccess | null;
 
 		/** A destination for events that failed processing. */
-		OnFailure?: OnFailure;
+		OnFailure?: OnFailure | null;
 	}
 
 	export interface UpdateFunctionEventInvokeConfigPostBody {
@@ -1801,26 +1801,26 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 2
 		 */
-		MaximumRetryAttempts?: number;
+		MaximumRetryAttempts?: number | null;
 
 		/**
 		 * The maximum age of a request that Lambda sends to a function for processing.
 		 * Minimum: 60
 		 * Maximum: 21600
 		 */
-		MaximumEventAgeInSeconds?: number;
+		MaximumEventAgeInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
-		DestinationConfig?: UpdateFunctionEventInvokeConfigPostBodyDestinationConfig;
+		DestinationConfig?: UpdateFunctionEventInvokeConfigPostBodyDestinationConfig | null;
 	}
 
 	export interface UpdateFunctionEventInvokeConfigPostBodyDestinationConfig {
 
 		/** A destination for events that were processed successfully. */
-		OnSuccess?: OnSuccess;
+		OnSuccess?: OnSuccess | null;
 
 		/** A destination for events that failed processing. */
-		OnFailure?: OnFailure;
+		OnFailure?: OnFailure | null;
 	}
 
 	export interface PutProvisionedConcurrencyConfigPutBody {
@@ -1839,80 +1839,80 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the function's execution role.
 		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
 		 */
-		Role?: string;
+		Role?: string | null;
 
 		/**
 		 * The name of the method within your code that Lambda calls to execute your function. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
 		 * Max length: 128
 		 * Pattern: [^\s]+
 		 */
-		Handler?: string;
+		Handler?: string | null;
 
 		/**
 		 * A description of the function.
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
 		 * Minimum: 1
 		 */
-		Timeout?: number;
+		Timeout?: number | null;
 
 		/**
 		 * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
 		 * Minimum: 128
 		 * Maximum: 3008
 		 */
-		MemorySize?: number;
+		MemorySize?: number | null;
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>. */
-		VpcConfig?: UpdateFunctionConfigurationPutBodyVpcConfig;
+		VpcConfig?: UpdateFunctionConfigurationPutBodyVpcConfig | null;
 
 		/** A function's environment variable settings. */
-		Environment?: UpdateFunctionConfigurationPutBodyEnvironment;
+		Environment?: UpdateFunctionConfigurationPutBodyEnvironment | null;
 
 		/** The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. */
-		Runtime?: UpdateFunctionConfigurationPutBodyRuntime;
+		Runtime?: UpdateFunctionConfigurationPutBodyRuntime | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
-		DeadLetterConfig?: UpdateFunctionConfigurationPutBodyDeadLetterConfig;
+		DeadLetterConfig?: UpdateFunctionConfigurationPutBodyDeadLetterConfig | null;
 
 		/**
 		 * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key.
 		 * Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()
 		 */
-		KMSKeyArn?: string;
+		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
-		TracingConfig?: UpdateFunctionConfigurationPutBodyTracingConfig;
+		TracingConfig?: UpdateFunctionConfigurationPutBodyTracingConfig | null;
 
 		/** Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it. */
-		RevisionId?: string;
+		RevisionId?: string | null;
 
 		/** A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version. */
-		Layers?: Array<string>;
+		Layers?: Array<string> | null;
 	}
 
 	export interface UpdateFunctionConfigurationPutBodyVpcConfig {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface UpdateFunctionConfigurationPutBodyEnvironment {
-		Variables?: EnvironmentVariables;
+		Variables?: EnvironmentVariables | null;
 	}
 
 	export enum UpdateFunctionConfigurationPutBodyRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
 
 	export interface UpdateFunctionConfigurationPutBodyDeadLetterConfig {
-		TargetArn?: string;
+		TargetArn?: string | null;
 	}
 
 	export interface UpdateFunctionConfigurationPutBodyTracingConfig {
-		Mode?: TracingConfigResponseMode;
+		Mode?: TracingConfigResponseMode | null;
 	}
 
 	export enum GetLayerVersionByArnFind { LayerVersion = 0 }
@@ -1920,7 +1920,7 @@ export namespace MyNS {
 	export interface InvokePostBody {
 
 		/** The JSON that you want to provide to your Lambda function as input. */
-		Payload?: string;
+		Payload?: string | null;
 	}
 
 	export interface InvokeAsyncPostBody {
@@ -1941,7 +1941,7 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly.
@@ -1953,20 +1953,20 @@ export namespace MyNS {
 		 * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
 		 * Maximum items: 5
 		 */
-		CompatibleRuntimes?: Array<Runtime>;
+		CompatibleRuntimes?: Array<Runtime> | null;
 
 		/**
 		 * <p>The layer's software license. It can be any of the following:</p> <ul> <li> <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p> </li> <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li> <li> <p>The full text of the license.</p> </li> </ul>
 		 * Max length: 512
 		 */
-		LicenseInfo?: string;
+		LicenseInfo?: string | null;
 	}
 
 	export interface PublishLayerVersionPostBodyContent {
-		S3Bucket?: string;
-		S3Key?: string;
-		S3ObjectVersion?: string;
-		ZipFile?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3ObjectVersion?: string | null;
+		ZipFile?: string | null;
 	}
 
 	export enum ListLayersCompatibleRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
@@ -1983,23 +1983,23 @@ export namespace MyNS {
 	export interface PublishVersionPostBody {
 
 		/** Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <a>UpdateFunctionCode</a>. */
-		CodeSha256?: string;
+		CodeSha256?: string | null;
 
 		/**
 		 * A description for the version to override the description in the function configuration.
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it. */
-		RevisionId?: string;
+		RevisionId?: string | null;
 	}
 
 	export interface UpdateFunctionCodePutBody {
 
 		/** The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you. */
-		ZipFile?: string;
+		ZipFile?: string | null;
 
 		/**
 		 * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
@@ -2007,30 +2007,30 @@ export namespace MyNS {
 		 * Min length: 3
 		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
-		S3Bucket?: string;
+		S3Bucket?: string | null;
 
 		/**
 		 * The Amazon S3 key of the deployment package.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		S3Key?: string;
+		S3Key?: string | null;
 
 		/**
 		 * For versioned objects, the version of the deployment package object to use.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		S3ObjectVersion?: string;
+		S3ObjectVersion?: string | null;
 
 		/** Set to true to publish a new version of the function after updating the code. This has the same effect as calling <a>PublishVersion</a> separately. */
-		Publish?: boolean;
+		Publish?: boolean | null;
 
 		/** Set to true to validate the request parameters and access permissions without modifying the function code. */
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 
 		/** Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it. */
-		RevisionId?: string;
+		RevisionId?: string | null;
 	}
 
 }

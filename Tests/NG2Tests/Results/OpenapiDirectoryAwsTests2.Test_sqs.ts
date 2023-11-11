@@ -30,7 +30,7 @@ export namespace MyNS {
 		Id: string;
 		SenderFault: boolean;
 		Code: string;
-		Message?: string;
+		Message?: string | null;
 	}
 
 
@@ -38,7 +38,7 @@ export namespace MyNS {
 	export interface ChangeMessageVisibilityBatchRequestEntry {
 		Id: string;
 		ReceiptHandle: string;
-		VisibilityTimeout?: number;
+		VisibilityTimeout?: number | null;
 	}
 
 	export interface TooManyEntriesInBatchRequest {
@@ -56,7 +56,7 @@ export namespace MyNS {
 
 	/** Returns the <code>QueueUrl</code> attribute of the created queue. */
 	export interface CreateQueueResult {
-		QueueUrl?: string;
+		QueueUrl?: string | null;
 	}
 
 	export interface QueueDeletedRecently {
@@ -91,7 +91,7 @@ export namespace MyNS {
 
 	/** A list of returned queue attributes. */
 	export interface GetQueueAttributesResult {
-		Attributes?: QueueAttributeMap;
+		Attributes?: QueueAttributeMap | null;
 	}
 
 	export interface QueueAttributeMap {
@@ -105,7 +105,7 @@ export namespace MyNS {
 
 	/** For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting Responses</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. */
 	export interface GetQueueUrlResult {
-		QueueUrl?: string;
+		QueueUrl?: string | null;
 	}
 
 	export interface QueueDoesNotExist {
@@ -118,7 +118,7 @@ export namespace MyNS {
 	}
 
 	export interface ListQueueTagsResult {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface TagMap {
@@ -127,7 +127,7 @@ export namespace MyNS {
 
 	/** A list of your queues. */
 	export interface ListQueuesResult {
-		QueueUrls?: Array<string>;
+		QueueUrls?: Array<string> | null;
 	}
 
 	export interface PurgeQueueInProgress {
@@ -136,19 +136,19 @@ export namespace MyNS {
 
 	/** A list of received messages. */
 	export interface ReceiveMessageResult {
-		Messages?: Array<Message>;
+		Messages?: Array<Message> | null;
 	}
 
 
 	/** An Amazon SQS message. */
 	export interface Message {
-		MessageId?: string;
-		ReceiptHandle?: string;
-		MD5OfBody?: string;
-		Body?: string;
-		Attributes?: MessageSystemAttributeMap;
-		MD5OfMessageAttributes?: string;
-		MessageAttributes?: MessageBodyAttributeMap;
+		MessageId?: string | null;
+		ReceiptHandle?: string | null;
+		MD5OfBody?: string | null;
+		Body?: string | null;
+		Attributes?: MessageSystemAttributeMap | null;
+		MD5OfMessageAttributes?: string | null;
+		MessageAttributes?: MessageBodyAttributeMap | null;
 	}
 
 	export interface MessageSystemAttributeMap {
@@ -160,30 +160,30 @@ export namespace MyNS {
 
 	/** The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements. */
 	export interface SendMessageResult {
-		MD5OfMessageBody?: string;
-		MD5OfMessageAttributes?: string;
-		MD5OfMessageSystemAttributes?: string;
-		MessageId?: string;
-		SequenceNumber?: string;
+		MD5OfMessageBody?: string | null;
+		MD5OfMessageAttributes?: string | null;
+		MD5OfMessageSystemAttributes?: string | null;
+		MessageId?: string | null;
+		SequenceNumber?: string | null;
 	}
 
 
 	/** <p>The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code> </p> <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).</p> */
 	export interface MessageAttributeValue {
-		StringValue?: string;
-		BinaryValue?: string;
-		StringListValues?: Array<string>;
-		BinaryListValues?: Array<string>;
+		StringValue?: string | null;
+		BinaryValue?: string | null;
+		StringListValues?: Array<string> | null;
+		BinaryListValues?: Array<string> | null;
 		DataType: string;
 	}
 
 
 	/** <p>The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code> </p> <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.</p> */
 	export interface MessageSystemAttributeValue {
-		StringValue?: string;
-		BinaryValue?: string;
-		StringListValues?: Array<string>;
-		BinaryListValues?: Array<string>;
+		StringValue?: string | null;
+		BinaryValue?: string | null;
+		StringListValues?: Array<string> | null;
+		BinaryListValues?: Array<string> | null;
 		DataType: string;
 	}
 
@@ -206,9 +206,9 @@ export namespace MyNS {
 		Id: string;
 		MessageId: string;
 		MD5OfMessageBody: string;
-		MD5OfMessageAttributes?: string;
-		MD5OfMessageSystemAttributes?: string;
-		SequenceNumber?: string;
+		MD5OfMessageAttributes?: string | null;
+		MD5OfMessageSystemAttributes?: string | null;
+		SequenceNumber?: string | null;
 	}
 
 
@@ -216,11 +216,11 @@ export namespace MyNS {
 	export interface SendMessageBatchRequestEntry {
 		Id: string;
 		MessageBody: string;
-		DelaySeconds?: number;
-		MessageAttributes?: MessageBodyAttributeMap;
-		MessageSystemAttributes?: MessageBodySystemAttributeMap;
-		MessageDeduplicationId?: string;
-		MessageGroupId?: string;
+		DelaySeconds?: number | null;
+		MessageAttributes?: MessageBodyAttributeMap | null;
+		MessageSystemAttributes?: MessageBodySystemAttributeMap | null;
+		MessageDeduplicationId?: string | null;
+		MessageGroupId?: string | null;
 	}
 
 	export interface MessageBodySystemAttributeMap {
@@ -255,8 +255,8 @@ export namespace MyNS {
 	/** <p/> */
 	export interface CreateQueueRequest {
 		QueueName: string;
-		Attributes?: QueueAttributeMap;
-		tags?: TagMap;
+		Attributes?: QueueAttributeMap | null;
+		tags?: TagMap | null;
 	}
 
 
@@ -283,14 +283,14 @@ export namespace MyNS {
 	/** <p/> */
 	export interface GetQueueAttributesRequest {
 		QueueUrl: string;
-		AttributeNames?: Array<QueueAttributeName>;
+		AttributeNames?: Array<QueueAttributeName> | null;
 	}
 
 
 	/** <p/> */
 	export interface GetQueueUrlRequest {
 		QueueName: string;
-		QueueOwnerAWSAccountId?: string;
+		QueueOwnerAWSAccountId?: string | null;
 	}
 
 
@@ -306,7 +306,7 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListQueuesRequest {
-		QueueNamePrefix?: string;
+		QueueNamePrefix?: string | null;
 	}
 
 	export enum MessageSystemAttributeName { SenderId = 0, SentTimestamp = 1, ApproximateReceiveCount = 2, ApproximateFirstReceiveTimestamp = 3, SequenceNumber = 4, MessageDeduplicationId = 5, MessageGroupId = 6, AWSTraceHeader = 7 }
@@ -323,12 +323,12 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ReceiveMessageRequest {
 		QueueUrl: string;
-		AttributeNames?: Array<QueueAttributeName>;
-		MessageAttributeNames?: Array<string>;
-		MaxNumberOfMessages?: number;
-		VisibilityTimeout?: number;
-		WaitTimeSeconds?: number;
-		ReceiveRequestAttemptId?: string;
+		AttributeNames?: Array<QueueAttributeName> | null;
+		MessageAttributeNames?: Array<string> | null;
+		MaxNumberOfMessages?: number | null;
+		VisibilityTimeout?: number | null;
+		WaitTimeSeconds?: number | null;
+		ReceiveRequestAttemptId?: string | null;
 	}
 
 
@@ -350,11 +350,11 @@ export namespace MyNS {
 	export interface SendMessageRequest {
 		QueueUrl: string;
 		MessageBody: string;
-		DelaySeconds?: number;
-		MessageAttributes?: MessageBodyAttributeMap;
-		MessageSystemAttributes?: MessageBodySystemAttributeMap;
-		MessageDeduplicationId?: string;
-		MessageGroupId?: string;
+		DelaySeconds?: number | null;
+		MessageAttributes?: MessageBodyAttributeMap | null;
+		MessageSystemAttributes?: MessageBodySystemAttributeMap | null;
+		MessageDeduplicationId?: string | null;
+		MessageGroupId?: string | null;
 	}
 
 

@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateUserResponse {
-		UserId?: string;
-		UserArn?: string;
+		UserId?: string | null;
+		UserArn?: string | null;
 	}
 
 	export enum PhoneType { SOFT_PHONE = 0, DESK_PHONE = 1 }
@@ -33,43 +33,43 @@ export namespace MyNS {
 	export interface DescribeUserResponse {
 
 		/** Contains information about a user account for a Amazon Connect instance. */
-		User?: User;
+		User?: User | null;
 	}
 
 
 	/** Contains information about a user account for a Amazon Connect instance. */
 	export interface User {
-		Id?: string;
-		Arn?: string;
-		Username?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Username?: string | null;
 
 		/** Contains information about the identity of a user. */
-		IdentityInfo?: UserIdentityInfo;
+		IdentityInfo?: UserIdentityInfo | null;
 
 		/** Contains information about the phone configuration settings for a user. */
-		PhoneConfig?: UserPhoneConfig;
-		DirectoryUserId?: string;
-		SecurityProfileIds?: Array<string>;
-		RoutingProfileId?: string;
-		HierarchyGroupId?: string;
-		Tags?: TagMap;
+		PhoneConfig?: UserPhoneConfig | null;
+		DirectoryUserId?: string | null;
+		SecurityProfileIds?: Array<string> | null;
+		RoutingProfileId?: string | null;
+		HierarchyGroupId?: string | null;
+		Tags?: TagMap | null;
 	}
 
 
 	/** Contains information about the identity of a user. */
 	export interface UserIdentityInfo {
-		FirstName?: string;
-		LastName?: string;
-		Email?: string;
+		FirstName?: string | null;
+		LastName?: string | null;
+		Email?: string | null;
 	}
 
 
 	/** Contains information about the phone configuration settings for a user. */
 	export interface UserPhoneConfig {
 		PhoneType: PhoneType;
-		AutoAccept?: boolean;
-		AfterContactWorkTimeLimit?: number;
-		DeskPhoneNumber?: string;
+		AutoAccept?: boolean | null;
+		AfterContactWorkTimeLimit?: number | null;
+		DeskPhoneNumber?: string | null;
 	}
 
 	export interface TagMap {
@@ -78,19 +78,19 @@ export namespace MyNS {
 	export interface DescribeUserHierarchyGroupResponse {
 
 		/** Contains information about a hierarchy group. */
-		HierarchyGroup?: HierarchyGroup;
+		HierarchyGroup?: HierarchyGroup | null;
 	}
 
 
 	/** Contains information about a hierarchy group. */
 	export interface HierarchyGroup {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		LevelId?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		LevelId?: string | null;
 
 		/** Contains information about the levels of a hierarchy group. */
-		HierarchyPath?: HierarchyPath;
+		HierarchyPath?: HierarchyPath | null;
 	}
 
 
@@ -98,33 +98,33 @@ export namespace MyNS {
 	export interface HierarchyPath {
 
 		/** Contains summary information about a hierarchy group. */
-		LevelOne?: HierarchyGroupSummary;
+		LevelOne?: HierarchyGroupSummary | null;
 
 		/** Contains summary information about a hierarchy group. */
-		LevelTwo?: HierarchyGroupSummary;
+		LevelTwo?: HierarchyGroupSummary | null;
 
 		/** Contains summary information about a hierarchy group. */
-		LevelThree?: HierarchyGroupSummary;
+		LevelThree?: HierarchyGroupSummary | null;
 
 		/** Contains summary information about a hierarchy group. */
-		LevelFour?: HierarchyGroupSummary;
+		LevelFour?: HierarchyGroupSummary | null;
 
 		/** Contains summary information about a hierarchy group. */
-		LevelFive?: HierarchyGroupSummary;
+		LevelFive?: HierarchyGroupSummary | null;
 	}
 
 
 	/** Contains summary information about a hierarchy group. */
 	export interface HierarchyGroupSummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface DescribeUserHierarchyStructureResponse {
 
 		/** Contains information about a hierarchy structure. */
-		HierarchyStructure?: HierarchyStructure;
+		HierarchyStructure?: HierarchyStructure | null;
 	}
 
 
@@ -132,40 +132,40 @@ export namespace MyNS {
 	export interface HierarchyStructure {
 
 		/** Contains information about a hierarchy level. */
-		LevelOne?: HierarchyLevel;
+		LevelOne?: HierarchyLevel | null;
 
 		/** Contains information about a hierarchy level. */
-		LevelTwo?: HierarchyLevel;
+		LevelTwo?: HierarchyLevel | null;
 
 		/** Contains information about a hierarchy level. */
-		LevelThree?: HierarchyLevel;
+		LevelThree?: HierarchyLevel | null;
 
 		/** Contains information about a hierarchy level. */
-		LevelFour?: HierarchyLevel;
+		LevelFour?: HierarchyLevel | null;
 
 		/** Contains information about a hierarchy level. */
-		LevelFive?: HierarchyLevel;
+		LevelFive?: HierarchyLevel | null;
 	}
 
 
 	/** Contains information about a hierarchy level. */
 	export interface HierarchyLevel {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface GetContactAttributesResponse {
-		Attributes?: Attributes;
+		Attributes?: Attributes | null;
 	}
 
 	export interface Attributes {
 	}
 
 	export interface GetCurrentMetricDataResponse {
-		NextToken?: string;
-		MetricResults?: Array<CurrentMetricResult>;
-		DataSnapshotTime?: Date;
+		NextToken?: string | null;
+		MetricResults?: Array<CurrentMetricResult> | null;
+		DataSnapshotTime?: Date | null;
 	}
 
 
@@ -173,8 +173,8 @@ export namespace MyNS {
 	export interface CurrentMetricResult {
 
 		/** Contains information about the dimensions for a set of metrics. */
-		Dimensions?: Dimensions;
-		Collections?: Array<CurrentMetricData>;
+		Dimensions?: Dimensions | null;
+		Collections?: Array<CurrentMetricData> | null;
 	}
 
 
@@ -182,15 +182,15 @@ export namespace MyNS {
 	export interface Dimensions {
 
 		/** Contains information about a queue resource for which metrics are returned. */
-		Queue?: QueueReference;
-		Channel?: DimensionsChannel;
+		Queue?: QueueReference | null;
+		Channel?: DimensionsChannel | null;
 	}
 
 
 	/** Contains information about a queue resource for which metrics are returned. */
 	export interface QueueReference {
-		Id?: string;
-		Arn?: string;
+		Id?: string | null;
+		Arn?: string | null;
 	}
 
 	export enum DimensionsChannel { VOICE = 0, CHAT = 1 }
@@ -200,8 +200,8 @@ export namespace MyNS {
 	export interface CurrentMetricData {
 
 		/** Contains information about a real-time metric. */
-		Metric?: CurrentMetric;
-		Value?: number;
+		Metric?: CurrentMetric | null;
+		Value?: number | null;
 	}
 
 
@@ -209,8 +209,8 @@ export namespace MyNS {
 	export interface CurrentMetric {
 
 		/** The current metric names. */
-		Name?: CurrentMetricName;
-		Unit?: CurrentMetricUnit;
+		Name?: CurrentMetricName | null;
+		Unit?: CurrentMetricUnit | null;
 	}
 
 	export enum CurrentMetricName { AGENTS_ONLINE = 0, AGENTS_AVAILABLE = 1, AGENTS_ON_CALL = 2, AGENTS_NON_PRODUCTIVE = 3, AGENTS_AFTER_CONTACT_WORK = 4, AGENTS_ERROR = 5, AGENTS_STAFFED = 6, CONTACTS_IN_QUEUE = 7, OLDEST_CONTACT_AGE = 8, CONTACTS_SCHEDULED = 9, AGENTS_ON_CONTACT = 10, SLOTS_ACTIVE = 11, SLOTS_AVAILABLE = 12 }
@@ -224,24 +224,24 @@ export namespace MyNS {
 	export interface GetFederationTokenResponse {
 
 		/** Contains credentials to use for federation. */
-		Credentials?: Credentials;
+		Credentials?: Credentials | null;
 	}
 
 
 	/** Contains credentials to use for federation. */
 	export interface Credentials {
-		AccessToken?: string;
-		AccessTokenExpiration?: Date;
-		RefreshToken?: string;
-		RefreshTokenExpiration?: Date;
+		AccessToken?: string | null;
+		AccessTokenExpiration?: Date | null;
+		RefreshToken?: string | null;
+		RefreshTokenExpiration?: Date | null;
 	}
 
 	export interface UserNotFoundException {
 	}
 
 	export interface GetMetricDataResponse {
-		NextToken?: string;
-		MetricResults?: Array<HistoricalMetricResult>;
+		NextToken?: string | null;
+		MetricResults?: Array<HistoricalMetricResult> | null;
 	}
 
 
@@ -249,8 +249,8 @@ export namespace MyNS {
 	export interface HistoricalMetricResult {
 
 		/** Contains information about the dimensions for a set of metrics. */
-		Dimensions?: Dimensions;
-		Collections?: Array<HistoricalMetricData>;
+		Dimensions?: Dimensions | null;
+		Collections?: Array<HistoricalMetricData> | null;
 	}
 
 
@@ -258,8 +258,8 @@ export namespace MyNS {
 	export interface HistoricalMetricData {
 
 		/** Contains information about a historical metric. */
-		Metric?: HistoricalMetric;
-		Value?: number;
+		Metric?: HistoricalMetric | null;
+		Value?: number | null;
 	}
 
 
@@ -267,12 +267,12 @@ export namespace MyNS {
 	export interface HistoricalMetric {
 
 		/** The historical metric names. */
-		Name?: HistoricalMetricName;
+		Name?: HistoricalMetricName | null;
 
 		/** Contains information about the threshold for service level metrics. */
-		Threshold?: Threshold;
-		Statistic?: HistoricalMetricStatistic;
-		Unit?: CurrentMetricUnit;
+		Threshold?: Threshold | null;
+		Statistic?: HistoricalMetricStatistic | null;
+		Unit?: CurrentMetricUnit | null;
 	}
 
 	export enum HistoricalMetricName { CONTACTS_QUEUED = 0, CONTACTS_HANDLED = 1, CONTACTS_ABANDONED = 2, CONTACTS_CONSULTED = 3, CONTACTS_AGENT_HUNG_UP_FIRST = 4, CONTACTS_HANDLED_INCOMING = 5, CONTACTS_HANDLED_OUTBOUND = 6, CONTACTS_HOLD_ABANDONS = 7, CONTACTS_TRANSFERRED_IN = 8, CONTACTS_TRANSFERRED_OUT = 9, CONTACTS_TRANSFERRED_IN_FROM_QUEUE = 10, CONTACTS_TRANSFERRED_OUT_FROM_QUEUE = 11, CONTACTS_MISSED = 12, CALLBACK_CONTACTS_HANDLED = 13, API_CONTACTS_HANDLED = 14, OCCUPANCY = 15, HANDLE_TIME = 16, AFTER_CONTACT_WORK_TIME = 17, QUEUED_TIME = 18, ABANDON_TIME = 19, QUEUE_ANSWER_TIME = 20, HOLD_TIME = 21, INTERACTION_TIME = 22, INTERACTION_AND_HOLD_TIME = 23, SERVICE_LEVEL = 24 }
@@ -280,8 +280,8 @@ export namespace MyNS {
 
 	/** Contains information about the threshold for service level metrics. */
 	export interface Threshold {
-		Comparison?: ThresholdComparison;
-		ThresholdValue?: number;
+		Comparison?: ThresholdComparison | null;
+		ThresholdValue?: number | null;
 	}
 
 	export enum ThresholdComparison { LT = 0 }
@@ -289,17 +289,17 @@ export namespace MyNS {
 	export enum HistoricalMetricStatistic { SUM = 0, MAX = 1, AVG = 2 }
 
 	export interface ListContactFlowsResponse {
-		ContactFlowSummaryList?: Array<ContactFlowSummary>;
-		NextToken?: string;
+		ContactFlowSummaryList?: Array<ContactFlowSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains summary information about a contact flow. */
 	export interface ContactFlowSummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		ContactFlowType?: ContactFlowSummaryContactFlowType;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		ContactFlowType?: ContactFlowSummaryContactFlowType | null;
 	}
 
 	export enum ContactFlowSummaryContactFlowType { CONTACT_FLOW = 0, CUSTOMER_QUEUE = 1, CUSTOMER_HOLD = 2, CUSTOMER_WHISPER = 3, AGENT_HOLD = 4, AGENT_WHISPER = 5, OUTBOUND_WHISPER = 6, AGENT_TRANSFER = 7, QUEUE_TRANSFER = 8 }
@@ -307,31 +307,31 @@ export namespace MyNS {
 	export enum ContactFlowType { CONTACT_FLOW = 0, CUSTOMER_QUEUE = 1, CUSTOMER_HOLD = 2, CUSTOMER_WHISPER = 3, AGENT_HOLD = 4, AGENT_WHISPER = 5, OUTBOUND_WHISPER = 6, AGENT_TRANSFER = 7, QUEUE_TRANSFER = 8 }
 
 	export interface ListHoursOfOperationsResponse {
-		HoursOfOperationSummaryList?: Array<HoursOfOperationSummary>;
-		NextToken?: string;
+		HoursOfOperationSummaryList?: Array<HoursOfOperationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains summary information about hours of operation for a contact center. */
 	export interface HoursOfOperationSummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface ListPhoneNumbersResponse {
-		PhoneNumberSummaryList?: Array<PhoneNumberSummary>;
-		NextToken?: string;
+		PhoneNumberSummaryList?: Array<PhoneNumberSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains summary information about a phone number for a contact center. */
 	export interface PhoneNumberSummary {
-		Id?: string;
-		Arn?: string;
-		PhoneNumber?: string;
-		PhoneNumberType?: PhoneNumberSummaryPhoneNumberType;
-		PhoneNumberCountryCode?: PhoneNumberSummaryPhoneNumberCountryCode;
+		Id?: string | null;
+		Arn?: string | null;
+		PhoneNumber?: string | null;
+		PhoneNumberType?: PhoneNumberSummaryPhoneNumberType | null;
+		PhoneNumberCountryCode?: PhoneNumberSummaryPhoneNumberCountryCode | null;
 	}
 
 	export enum PhoneNumberSummaryPhoneNumberType { TOLL_FREE = 0, DID = 1 }
@@ -343,17 +343,17 @@ export namespace MyNS {
 	export enum PhoneNumberCountryCode { AF = 0, AL = 1, DZ = 2, AS = 3, AD = 4, AO = 5, AI = 6, AQ = 7, AG = 8, AR = 9, AM = 10, AW = 11, AU = 12, AT = 13, AZ = 14, BS = 15, BH = 16, BD = 17, BB = 18, BY = 19, BE = 20, BZ = 21, BJ = 22, BM = 23, BT = 24, BO = 25, BA = 26, BW = 27, BR = 28, IO = 29, VG = 30, BN = 31, BG = 32, BF = 33, BI = 34, KH = 35, CM = 36, CA = 37, CV = 38, KY = 39, CF = 40, TD = 41, CL = 42, CN = 43, CX = 44, CC = 45, CO = 46, KM = 47, CK = 48, CR = 49, HR = 50, CU = 51, CW = 52, CY = 53, CZ = 54, CD = 55, DK = 56, DJ = 57, DM = 58, DO = 59, TL = 60, EC = 61, EG = 62, SV = 63, GQ = 64, ER = 65, EE = 66, ET = 67, FK = 68, FO = 69, FJ = 70, FI = 71, FR = 72, PF = 73, GA = 74, GM = 75, GE = 76, DE = 77, GH = 78, GI = 79, GR = 80, GL = 81, GD = 82, GU = 83, GT = 84, GG = 85, GN = 86, GW = 87, GY = 88, HT = 89, HN = 90, HK = 91, HU = 92, IS = 93, IN = 94, ID = 95, IR = 96, IQ = 97, IE = 98, IM = 99, IL = 100, IT = 101, CI = 102, JM = 103, JP = 104, JE = 105, JO = 106, KZ = 107, KE = 108, KI = 109, KW = 110, KG = 111, LA = 112, LV = 113, LB = 114, LS = 115, LR = 116, LY = 117, LI = 118, LT = 119, LU = 120, MO = 121, MK = 122, MG = 123, MW = 124, MY = 125, MV = 126, ML = 127, MT = 128, MH = 129, MR = 130, MU = 131, YT = 132, MX = 133, FM = 134, MD = 135, MC = 136, MN = 137, ME = 138, MS = 139, MA = 140, MZ = 141, MM = 142, NA = 143, NR = 144, NP = 145, NL = 146, AN = 147, NC = 148, NZ = 149, NI = 150, NE = 151, NG = 152, NU = 153, KP = 154, MP = 155, NO = 156, OM = 157, PK = 158, PW = 159, PA = 160, PG = 161, PY = 162, PE = 163, PH = 164, PN = 165, PL = 166, PT = 167, PR = 168, QA = 169, CG = 170, RE = 171, RO = 172, RU = 173, RW = 174, BL = 175, SH = 176, KN = 177, LC = 178, MF = 179, PM = 180, VC = 181, WS = 182, SM = 183, ST = 184, SA = 185, SN = 186, RS = 187, SC = 188, SL = 189, SG = 190, SX = 191, SK = 192, SI = 193, SB = 194, SO = 195, ZA = 196, KR = 197, ES = 198, LK = 199, SD = 200, SR = 201, SJ = 202, SZ = 203, SE = 204, CH = 205, SY = 206, TW = 207, TJ = 208, TZ = 209, TH = 210, TG = 211, TK = 212, TO = 213, TT = 214, TN = 215, TR = 216, TM = 217, TC = 218, TV = 219, VI = 220, UG = 221, UA = 222, AE = 223, GB = 224, US = 225, UY = 226, UZ = 227, VU = 228, VA = 229, VE = 230, VN = 231, WF = 232, EH = 233, YE = 234, ZM = 235, ZW = 236 }
 
 	export interface ListQueuesResponse {
-		QueueSummaryList?: Array<QueueSummary>;
-		NextToken?: string;
+		QueueSummaryList?: Array<QueueSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains summary information about a queue. */
 	export interface QueueSummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		QueueType?: QueueSummaryQueueType;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		QueueType?: QueueSummaryQueueType | null;
 	}
 
 	export enum QueueSummaryQueueType { STANDARD = 0, AGENT = 1 }
@@ -361,61 +361,61 @@ export namespace MyNS {
 	export enum QueueType { STANDARD = 0, AGENT = 1 }
 
 	export interface ListRoutingProfilesResponse {
-		RoutingProfileSummaryList?: Array<RoutingProfileSummary>;
-		NextToken?: string;
+		RoutingProfileSummaryList?: Array<RoutingProfileSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains summary information about a routing profile. */
 	export interface RoutingProfileSummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface ListSecurityProfilesResponse {
-		SecurityProfileSummaryList?: Array<SecurityProfileSummary>;
-		NextToken?: string;
+		SecurityProfileSummaryList?: Array<SecurityProfileSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about a security profile. */
 	export interface SecurityProfileSummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface ListUserHierarchyGroupsResponse {
-		UserHierarchyGroupSummaryList?: Array<HierarchyGroupSummary>;
-		NextToken?: string;
+		UserHierarchyGroupSummaryList?: Array<HierarchyGroupSummary> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListUsersResponse {
-		UserSummaryList?: Array<UserSummary>;
-		NextToken?: string;
+		UserSummaryList?: Array<UserSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains summary information about a user. */
 	export interface UserSummary {
-		Id?: string;
-		Arn?: string;
-		Username?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Username?: string | null;
 	}
 
 	export interface StartChatContactResponse {
-		ContactId?: string;
-		ParticipantId?: string;
-		ParticipantToken?: string;
+		ContactId?: string | null;
+		ParticipantId?: string | null;
+		ParticipantToken?: string | null;
 	}
 
 	export interface StartOutboundVoiceContactResponse {
-		ContactId?: string;
+		ContactId?: string | null;
 	}
 
 	export interface DestinationNotAllowedException {
@@ -444,21 +444,21 @@ export namespace MyNS {
 
 	export interface CreateUserRequest {
 		Username: string;
-		Password?: string;
+		Password?: string | null;
 
 		/** Contains information about the identity of a user. */
-		IdentityInfo?: UserIdentityInfo;
+		IdentityInfo?: UserIdentityInfo | null;
 
 		/**
 		 * Contains information about the phone configuration settings for a user.
 		 * Required
 		 */
 		PhoneConfig: UserPhoneConfig;
-		DirectoryUserId?: string;
+		DirectoryUserId?: string | null;
 		SecurityProfileIds: Array<string>;
 		RoutingProfileId: string;
-		HierarchyGroupId?: string;
-		Tags?: TagMap;
+		HierarchyGroupId?: string | null;
+		Tags?: TagMap | null;
 	}
 
 	export enum Unit { SECONDS = 0, COUNT = 1, PERCENT = 2 }
@@ -478,8 +478,8 @@ export namespace MyNS {
 
 	/** Contains the filter to apply when retrieving metrics. */
 	export interface Filters {
-		Queues?: Array<string>;
-		Channels?: Array<Channel>;
+		Queues?: Array<string> | null;
+		Channels?: Array<Channel> | null;
 	}
 
 	export interface GetContactAttributesRequest {
@@ -492,10 +492,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		Filters: Filters;
-		Groupings?: Array<Grouping>;
+		Groupings?: Array<Grouping> | null;
 		CurrentMetrics: Array<CurrentMetric>;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetFederationTokenRequest {
@@ -510,10 +510,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		Filters: Filters;
-		Groupings?: Array<Grouping>;
+		Groupings?: Array<Grouping> | null;
 		HistoricalMetrics: Array<HistoricalMetric>;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export enum Statistic { SUM = 0, MAX = 1, AVG = 2 }
@@ -554,7 +554,7 @@ export namespace MyNS {
 	export interface StartChatContactRequest {
 		InstanceId: string;
 		ContactFlowId: string;
-		Attributes?: Attributes;
+		Attributes?: Attributes | null;
 
 		/**
 		 * The customer's details.
@@ -563,18 +563,18 @@ export namespace MyNS {
 		ParticipantDetails: ParticipantDetails;
 
 		/** A chat message. */
-		InitialMessage?: ChatMessage;
-		ClientToken?: string;
+		InitialMessage?: ChatMessage | null;
+		ClientToken?: string | null;
 	}
 
 	export interface StartOutboundVoiceContactRequest {
 		DestinationPhoneNumber: string;
 		ContactFlowId: string;
 		InstanceId: string;
-		ClientToken?: string;
-		SourcePhoneNumber?: string;
-		QueueId?: string;
-		Attributes?: Attributes;
+		ClientToken?: string | null;
+		SourcePhoneNumber?: string | null;
+		QueueId?: string | null;
+		Attributes?: Attributes | null;
 	}
 
 	export interface StopContactRequest {
@@ -596,7 +596,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUserHierarchyRequest {
-		HierarchyGroupId?: string;
+		HierarchyGroupId?: string | null;
 	}
 
 	export interface UpdateUserIdentityInfoRequest {
@@ -981,10 +981,10 @@ export namespace MyNS {
 		 * The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.
 		 * Pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/
 		 */
-		Password?: string;
+		Password?: string | null;
 
 		/** Contains information about the identity of a user. */
-		IdentityInfo?: CreateUserPutBodyIdentityInfo;
+		IdentityInfo?: CreateUserPutBodyIdentityInfo | null;
 
 		/**
 		 * Contains information about the phone configuration settings for a user.
@@ -993,7 +993,7 @@ export namespace MyNS {
 		PhoneConfig: CreateUserPutBodyPhoneConfig;
 
 		/** <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p> <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p> */
-		DirectoryUserId?: string;
+		DirectoryUserId?: string | null;
 
 		/**
 		 * The identifier of the security profile for the user.
@@ -1010,23 +1010,23 @@ export namespace MyNS {
 		RoutingProfileId: string;
 
 		/** The identifier of the hierarchy group for the user. */
-		HierarchyGroupId?: string;
+		HierarchyGroupId?: string | null;
 
 		/** One or more tags. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateUserPutBodyIdentityInfo {
-		FirstName?: string;
-		LastName?: string;
-		Email?: string;
+		FirstName?: string | null;
+		LastName?: string | null;
+		Email?: string | null;
 	}
 
 	export interface CreateUserPutBodyPhoneConfig {
-		PhoneType?: PhoneType;
-		AutoAccept?: boolean;
-		AfterContactWorkTimeLimit?: number;
-		DeskPhoneNumber?: string;
+		PhoneType?: PhoneType | null;
+		AutoAccept?: boolean | null;
+		AfterContactWorkTimeLimit?: number | null;
+		DeskPhoneNumber?: string | null;
 	}
 
 	export interface GetCurrentMetricDataPostBody {
@@ -1041,7 +1041,7 @@ export namespace MyNS {
 		 * <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. The only supported channel is <code>VOICE</code>.</p> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
 		 * Maximum items: 2
 		 */
-		Groupings?: Array<Grouping>;
+		Groupings?: Array<Grouping> | null;
 
 		/**
 		 * <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> </dl>
@@ -1050,19 +1050,19 @@ export namespace MyNS {
 		CurrentMetrics: Array<CurrentMetric>;
 
 		/** <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p> */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximimum number of results to return per page.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface GetCurrentMetricDataPostBodyFilters {
-		Queues?: Array<string>;
-		Channels?: Array<Channel>;
+		Queues?: Array<string> | null;
+		Channels?: Array<Channel> | null;
 	}
 
 	export interface GetMetricDataPostBody {
@@ -1089,7 +1089,7 @@ export namespace MyNS {
 		 * <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p> <p>The only supported grouping is <code>QUEUE</code>.</p> <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
 		 * Maximum items: 2
 		 */
-		Groupings?: Array<Grouping>;
+		Groupings?: Array<Grouping> | null;
 
 		/**
 		 * <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available:</p> <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_MISSED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>HANDLE_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>HOLD_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>INTERACTION_AND_HOLD_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>INTERACTION_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>OCCUPANCY</dt> <dd> <p>Unit: PERCENT</p> <p>Statistic: AVG</p> </dd> <dt>QUEUE_ANSWER_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>QUEUED_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: MAX</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>Unit: PERCENT</p> <p>Statistic: AVG</p> <p>Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15, 20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600</p> </dd> </dl>
@@ -1098,19 +1098,19 @@ export namespace MyNS {
 		HistoricalMetrics: Array<HistoricalMetric>;
 
 		/** The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximimum number of results to return per page.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface GetMetricDataPostBodyFilters {
-		Queues?: Array<string>;
-		Channels?: Array<Channel>;
+		Queues?: Array<string> | null;
+		Channels?: Array<Channel> | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -1140,7 +1140,7 @@ export namespace MyNS {
 		ContactFlowId: string;
 
 		/** <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p> */
-		Attributes?: {[id: string]: string };
+		Attributes?: {[id: string]: string } | null;
 
 		/**
 		 * The customer's details.
@@ -1149,22 +1149,22 @@ export namespace MyNS {
 		ParticipantDetails: StartChatContactPutBodyParticipantDetails;
 
 		/** A chat message. */
-		InitialMessage?: StartChatContactPutBodyInitialMessage;
+		InitialMessage?: StartChatContactPutBodyInitialMessage | null;
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Max length: 500
 		 */
-		ClientToken?: string;
+		ClientToken?: string | null;
 	}
 
 	export interface StartChatContactPutBodyParticipantDetails {
-		DisplayName?: string;
+		DisplayName?: string | null;
 	}
 
 	export interface StartChatContactPutBodyInitialMessage {
-		ContentType?: string;
-		Content?: string;
+		ContentType?: string | null;
+		Content?: string | null;
 	}
 
 	export interface StartOutboundVoiceContactPutBody {
@@ -1194,16 +1194,16 @@ export namespace MyNS {
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. If the contact is disconnected, a new contact is started.
 		 * Max length: 500
 		 */
-		ClientToken?: string;
+		ClientToken?: string | null;
 
 		/** The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue. */
-		SourcePhoneNumber?: string;
+		SourcePhoneNumber?: string | null;
 
 		/** The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number. */
-		QueueId?: string;
+		QueueId?: string | null;
 
 		/** <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p> */
-		Attributes?: {[id: string]: string };
+		Attributes?: {[id: string]: string } | null;
 	}
 
 	export interface StopContactPostBody {
@@ -1253,7 +1253,7 @@ export namespace MyNS {
 	export interface UpdateUserHierarchyPostBody {
 
 		/** The identifier of the hierarchy group. */
-		HierarchyGroupId?: string;
+		HierarchyGroupId?: string | null;
 	}
 
 	export interface UpdateUserIdentityInfoPostBody {
@@ -1266,9 +1266,9 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUserIdentityInfoPostBodyIdentityInfo {
-		FirstName?: string;
-		LastName?: string;
-		Email?: string;
+		FirstName?: string | null;
+		LastName?: string | null;
+		Email?: string | null;
 	}
 
 	export interface UpdateUserPhoneConfigPostBody {
@@ -1281,10 +1281,10 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUserPhoneConfigPostBodyPhoneConfig {
-		PhoneType?: PhoneType;
-		AutoAccept?: boolean;
-		AfterContactWorkTimeLimit?: number;
-		DeskPhoneNumber?: string;
+		PhoneType?: PhoneType | null;
+		AutoAccept?: boolean | null;
+		AfterContactWorkTimeLimit?: number | null;
+		DeskPhoneNumber?: string | null;
 	}
 
 	export interface UpdateUserRoutingProfilePostBody {

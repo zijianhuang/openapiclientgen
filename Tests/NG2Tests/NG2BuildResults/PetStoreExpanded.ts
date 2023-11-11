@@ -8,7 +8,7 @@ export namespace MyNS {
 
 	export interface NewPet {
 		name: string;
-		tag?: string;
+		tag?: string | null;
 	}
 
 	export interface Error {

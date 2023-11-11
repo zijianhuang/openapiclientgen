@@ -19,7 +19,7 @@ export namespace MyNS {
 	export interface CheckValidCredsResponse {
 
 		/** If set to `true`, the credentials exist and are valid. */
-		hasValidCreds?: boolean;
+		hasValidCreds?: boolean | null;
 	}
 
 
@@ -30,10 +30,10 @@ export namespace MyNS {
 	export interface DataSource {
 
 		/** Indicates the type of authorization. */
-		authorizationType?: DataSourceAuthorizationType;
+		authorizationType?: DataSourceAuthorizationType | null;
 
 		/** Data source client id which should be used to receive refresh token. */
-		clientId?: string;
+		clientId?: string | null;
 
 		/**
 		 * Specifies whether the data source supports automatic data refresh for the
@@ -41,16 +41,16 @@ export namespace MyNS {
 		 * For some data sources, data might not be complete until a few days later,
 		 * so it's useful to refresh data automatically.
 		 */
-		dataRefreshType?: DataSourceDataRefreshType;
+		dataRefreshType?: DataSourceDataRefreshType | null;
 
 		/** Data source id. */
-		dataSourceId?: string;
+		dataSourceId?: string | null;
 
 		/**
 		 * Default data refresh window on days.
 		 * Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
 		 */
-		defaultDataRefreshWindowDays?: number;
+		defaultDataRefreshWindowDays?: number | null;
 
 		/**
 		 * Default data transfer schedule.
@@ -59,57 +59,57 @@ export namespace MyNS {
 		 * `every wed,fri of jan,jun 13:15`, and
 		 * `first sunday of quarter 00:00`.
 		 */
-		defaultSchedule?: string;
+		defaultSchedule?: string | null;
 
 		/** User friendly data source description string. */
-		description?: string;
+		description?: string | null;
 
 		/** User friendly data source name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Url for the help document for this data source. */
-		helpUrl?: string;
+		helpUrl?: string | null;
 
 		/**
 		 * Disables backfilling and manual run scheduling
 		 * for the data source.
 		 */
-		manualRunsDisabled?: boolean;
+		manualRunsDisabled?: boolean | null;
 
 		/** The minimum interval for scheduler to schedule runs. */
-		minimumScheduleInterval?: string;
+		minimumScheduleInterval?: string | null;
 
 		/** Output only. Data source resource name. */
-		name?: string;
+		name?: string | null;
 
 		/** Data source parameters. */
-		parameters?: Array<DataSourceParameter>;
+		parameters?: Array<DataSourceParameter> | null;
 
 		/**
 		 * Api auth scopes for which refresh token needs to be obtained. These are
 		 * scopes needed by a data source to prepare data and ingest them into
 		 * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
 		 */
-		scopes?: Array<string>;
+		scopes?: Array<string> | null;
 
 		/**
 		 * Specifies whether the data source supports a user defined schedule, or
 		 * operates on the default schedule.
 		 * When set to `true`, user can override default schedule.
 		 */
-		supportsCustomSchedule?: boolean;
+		supportsCustomSchedule?: boolean | null;
 
 		/** Deprecated. This field has no effect. */
-		supportsMultipleTransfers?: boolean;
+		supportsMultipleTransfers?: boolean | null;
 
 		/** Deprecated. This field has no effect. */
-		transferType?: DataSourceTransferType;
+		transferType?: DataSourceTransferType | null;
 
 		/**
 		 * The number of seconds to wait for an update from the data source
 		 * before the Data Transfer Service marks the transfer as FAILED.
 		 */
-		updateDeadlineSeconds?: number;
+		updateDeadlineSeconds?: number | null;
 	}
 
 	export enum DataSourceAuthorizationType { AUTHORIZATION_TYPE_UNSPECIFIED = 0, AUTHORIZATION_CODE = 1, GOOGLE_PLUS_AUTHORIZATION_CODE = 2, FIRST_PARTY_OAUTH = 3 }
@@ -128,58 +128,58 @@ export namespace MyNS {
 	export interface DataSourceParameter {
 
 		/** All possible values for the parameter. */
-		allowedValues?: Array<string>;
+		allowedValues?: Array<string> | null;
 
 		/**
 		 * If true, it should not be used in new transfers, and it should not be
 		 * visible to users.
 		 */
-		deprecated?: boolean;
+		deprecated?: boolean | null;
 
 		/** Parameter description. */
-		description?: string;
+		description?: string | null;
 
 		/** Parameter display name in the user interface. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Deprecated. This field has no effect. */
-		fields?: Array<DataSourceParameter>;
+		fields?: Array<DataSourceParameter> | null;
 
 		/** Cannot be changed after initial creation. */
-		immutable?: boolean;
+		immutable?: boolean | null;
 
 		/** For integer and double values specifies maxminum allowed value. */
-		maxValue?: number;
+		maxValue?: number | null;
 
 		/** For integer and double values specifies minimum allowed value. */
-		minValue?: number;
+		minValue?: number | null;
 
 		/** Parameter identifier. */
-		paramId?: string;
+		paramId?: string | null;
 
 		/** Deprecated. This field has no effect. */
-		recurse?: boolean;
+		recurse?: boolean | null;
 
 		/** Deprecated. This field has no effect. */
-		repeated?: boolean;
+		repeated?: boolean | null;
 
 		/** Is parameter required. */
-		required?: boolean;
+		required?: boolean | null;
 
 		/** Parameter type. */
-		type?: DataSourceParameterType;
+		type?: DataSourceParameterType | null;
 
 		/**
 		 * Description of the requirements for this field, in case the user input does
 		 * not fulfill the regex pattern or min/max values.
 		 */
-		validationDescription?: string;
+		validationDescription?: string | null;
 
 		/** URL to a help document to further explain the naming requirements. */
-		validationHelpUrl?: string;
+		validationHelpUrl?: string | null;
 
 		/** Regular expression which can be used for parameter validation. */
-		validationRegex?: string;
+		validationRegex?: string | null;
 	}
 
 	export enum DataSourceParameterType { TYPE_UNSPECIFIED = 0, STRING = 1, INTEGER = 2, DOUBLE = 3, BOOLEAN = 4, RECORD = 5, PLUS_PAGE = 6 }
@@ -194,7 +194,7 @@ export namespace MyNS {
 	export interface EmailPreferences {
 
 		/** If true, email notifications will be sent on transfer run failures. */
-		enableFailureEmail?: boolean;
+		enableFailureEmail?: boolean | null;
 	}
 
 
@@ -215,7 +215,7 @@ export namespace MyNS {
 	export interface ListDataSourcesResponse {
 
 		/** List of supported data sources and their transfer settings. */
-		dataSources?: Array<DataSource>;
+		dataSources?: Array<DataSource> | null;
 
 		/**
 		 * Output only. The next-pagination token. For multiple-page list results,
@@ -223,7 +223,7 @@ export namespace MyNS {
 		 * `ListDataSourcesRequest.page_token`
 		 * to request the next page of list results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -231,10 +231,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -245,28 +245,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -279,10 +279,10 @@ export namespace MyNS {
 		 * `ListTransferConfigsRequest.page_token`
 		 * to request the next page of list results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Output only. The stored pipeline transfer configurations. */
-		transferConfigs?: Array<TransferConfig>;
+		transferConfigs?: Array<TransferConfig> | null;
 	}
 
 
@@ -304,31 +304,31 @@ export namespace MyNS {
 		 * Only valid if the data source supports the feature. Set the value to  0
 		 * to use the default value.
 		 */
-		dataRefreshWindowDays?: number;
+		dataRefreshWindowDays?: number | null;
 
 		/** Data source id. Cannot be changed once data transfer is created. */
-		dataSourceId?: string;
+		dataSourceId?: string | null;
 
 		/** Output only. Region in which BigQuery dataset is located. */
-		datasetRegion?: string;
+		datasetRegion?: string | null;
 
 		/** The BigQuery target dataset id. */
-		destinationDatasetId?: string;
+		destinationDatasetId?: string | null;
 
 		/**
 		 * Is this config disabled. When set to true, no runs are scheduled
 		 * for a given transfer.
 		 */
-		disabled?: boolean;
+		disabled?: boolean | null;
 
 		/** User specified display name for the data transfer. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Represents preferences for sending email notifications for transfer run
 		 * events.
 		 */
-		emailPreferences?: EmailPreferences;
+		emailPreferences?: EmailPreferences | null;
 
 		/**
 		 * The resource name of the transfer config.
@@ -339,19 +339,19 @@ export namespace MyNS {
 		 * is not provided, usually a uuid, even though it is not guaranteed or
 		 * required, will be generated for config_id.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. Next time when data transfer will run. */
-		nextRunTime?: string;
+		nextRunTime?: string | null;
 
 		/**
 		 * Pub/Sub topic where notifications will be sent after transfer runs
 		 * associated with this transfer config finish.
 		 */
-		notificationPubsubTopic?: string;
+		notificationPubsubTopic?: string | null;
 
 		/** Data transfer specific parameters. */
-		params?: {[id: string]: any };
+		params?: {[id: string]: any } | null;
 
 		/**
 		 * Data transfer schedule.
@@ -367,19 +367,19 @@ export namespace MyNS {
 		 * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
 		 * NOTE: the granularity should be at least 8 hours, or less frequent.
 		 */
-		schedule?: string;
+		schedule?: string | null;
 
 		/** Options customizing the data transfer schedule. */
-		scheduleOptions?: ScheduleOptions;
+		scheduleOptions?: ScheduleOptions | null;
 
 		/** Output only. State of the most recently updated transfer run. */
-		state?: TransferConfigState;
+		state?: TransferConfigState | null;
 
 		/** Output only. Data transfer modification time. Ignored by server on input. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** Deprecated. Unique ID of the user on whose behalf transfer is done. */
-		userId?: string;
+		userId?: string | null;
 	}
 
 
@@ -392,7 +392,7 @@ export namespace MyNS {
 		 * StartManualTransferRuns API. When automatic scheduling is disabled, the
 		 * TransferConfig.schedule field will be ignored.
 		 */
-		disableAutoScheduling?: boolean;
+		disableAutoScheduling?: boolean | null;
 
 		/**
 		 * Defines time to stop scheduling transfer runs. A transfer run cannot be
@@ -400,7 +400,7 @@ export namespace MyNS {
 		 * moment. The time when a data transfer can be trigerred manually is not
 		 * limited by this option.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Specifies time to start scheduling transfer runs. The first run will be
@@ -409,7 +409,7 @@ export namespace MyNS {
 		 * moment. The time when a data transfer can be trigerred manually is not
 		 * limited by this option.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 	export enum TransferConfigState { TRANSFER_STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4, CANCELLED = 5 }
@@ -424,10 +424,10 @@ export namespace MyNS {
 		 * `GetTransferRunLogRequest.page_token`
 		 * to request the next page of list results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Output only. The stored pipeline transfer messages. */
-		transferMessages?: Array<TransferMessage>;
+		transferMessages?: Array<TransferMessage> | null;
 	}
 
 
@@ -435,13 +435,13 @@ export namespace MyNS {
 	export interface TransferMessage {
 
 		/** Message text. */
-		messageText?: string;
+		messageText?: string | null;
 
 		/** Time when message was logged. */
-		messageTime?: string;
+		messageTime?: string | null;
 
 		/** Message severity. */
-		severity?: TransferMessageSeverity;
+		severity?: TransferMessageSeverity | null;
 	}
 
 	export enum TransferMessageSeverity { MESSAGE_SEVERITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, ERROR = 3 }
@@ -456,10 +456,10 @@ export namespace MyNS {
 		 * `ListTransferRunsRequest.page_token`
 		 * to request the next page of list results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Output only. The stored pipeline transfer runs. */
-		transferRuns?: Array<TransferRun>;
+		transferRuns?: Array<TransferRun> | null;
 	}
 
 
@@ -467,22 +467,22 @@ export namespace MyNS {
 	export interface TransferRun {
 
 		/** Output only. Data source id. */
-		dataSourceId?: string;
+		dataSourceId?: string | null;
 
 		/** Output only. The BigQuery target dataset id. */
-		destinationDatasetId?: string;
+		destinationDatasetId?: string | null;
 
 		/**
 		 * Represents preferences for sending email notifications for transfer run
 		 * events.
 		 */
-		emailPreferences?: EmailPreferences;
+		emailPreferences?: EmailPreferences | null;
 
 		/**
 		 * Output only. Time when transfer run ended.
 		 * Parameter ignored by server for input requests.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -492,7 +492,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		errorStatus?: Status;
+		errorStatus?: Status | null;
 
 		/**
 		 * The resource name of the transfer run.
@@ -500,22 +500,22 @@ export namespace MyNS {
 		 * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
 		 * The name is ignored when creating a transfer run.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. Pub/Sub topic where a notification will be sent after this
 		 * transfer run finishes
 		 */
-		notificationPubsubTopic?: string;
+		notificationPubsubTopic?: string | null;
 
 		/** Output only. Data transfer specific parameters. */
-		params?: {[id: string]: any };
+		params?: {[id: string]: any } | null;
 
 		/**
 		 * For batch transfer runs, specifies the date and time of the data should be
 		 * ingested.
 		 */
-		runTime?: string;
+		runTime?: string | null;
 
 		/**
 		 * Output only. Describes the schedule of this transfer run if it was
@@ -524,25 +524,25 @@ export namespace MyNS {
 		 * NOTE: the system might choose to delay the schedule depending on the
 		 * current load, so `schedule_time` doesn't always match this.
 		 */
-		schedule?: string;
+		schedule?: string | null;
 
 		/** Minimum time after which a transfer run can be started. */
-		scheduleTime?: string;
+		scheduleTime?: string | null;
 
 		/**
 		 * Output only. Time when transfer run was started.
 		 * Parameter ignored by server for input requests.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Data transfer run state. Ignored for input requests. */
-		state?: TransferConfigState;
+		state?: TransferConfigState | null;
 
 		/** Output only. Last time the data transfer run state was updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** Deprecated. Unique ID of the user on whose behalf transfer is done. */
-		userId?: string;
+		userId?: string | null;
 	}
 
 
@@ -557,20 +557,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -581,13 +581,13 @@ export namespace MyNS {
 		 * Required. End time of the range of transfer runs. For example,
 		 * `"2017-05-30T00:00:00+00:00"`.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Required. Start time of the range of transfer runs. For example,
 		 * `"2017-05-25T00:00:00+00:00"`.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -595,7 +595,7 @@ export namespace MyNS {
 	export interface ScheduleTransferRunsResponse {
 
 		/** The transfer runs that were scheduled. */
-		runs?: Array<TransferRun>;
+		runs?: Array<TransferRun> | null;
 	}
 
 
@@ -606,13 +606,13 @@ export namespace MyNS {
 		 * Specific run_time for a transfer run to be started. The
 		 * requested_run_time must not be in the future.
 		 */
-		requestedRunTime?: string;
+		requestedRunTime?: string | null;
 
 		/**
 		 * A specification for a time range, this will request transfer runs with
 		 * run_time between start_time (inclusive) and end_time (exclusive).
 		 */
-		requestedTimeRange?: TimeRange;
+		requestedTimeRange?: TimeRange | null;
 	}
 
 
@@ -628,7 +628,7 @@ export namespace MyNS {
 		 * Creates transfer runs where run_time is in the range betwen start_time
 		 * (inclusive) and end_time (exlusive).
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Start time of the range of transfer runs. For example,
@@ -636,7 +636,7 @@ export namespace MyNS {
 		 * the end_time. Creates transfer runs where run_time is in the range betwen
 		 * start_time (inclusive) and end_time (exlusive).
 		 */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -644,7 +644,7 @@ export namespace MyNS {
 	export interface StartManualTransferRunsResponse {
 
 		/** The transfer runs that were created. */
-		runs?: Array<TransferRun>;
+		runs?: Array<TransferRun> | null;
 	}
 
 	@Injectable()

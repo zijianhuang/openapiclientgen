@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -25,7 +25,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -35,7 +35,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -43,14 +43,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -62,7 +62,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -77,20 +77,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -102,22 +102,22 @@ export namespace MyNS {
 	export interface LongRunningRecognizeMetadata {
 
 		/** Time of the most recent processing update. */
-		lastUpdateTime?: string;
+		lastUpdateTime?: string | null;
 
 		/**
 		 * Approximate percentage of audio processed thus far. Guaranteed to be 100
 		 * when the audio is fully processed and the results are available.
 		 */
-		progressPercent?: number;
+		progressPercent?: number | null;
 
 		/** Time when the request was received. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/**
 		 * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
 		 * as byte content.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -133,13 +133,13 @@ export namespace MyNS {
 		 * returns google.rpc.Code.INVALID_ARGUMENT. See
 		 * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
 		 */
-		audio?: RecognitionAudio;
+		audio?: RecognitionAudio | null;
 
 		/**
 		 * Provides information to the recognizer that specifies how to process the
 		 * request.
 		 */
-		config?: RecognitionConfig;
+		config?: RecognitionConfig | null;
 	}
 
 
@@ -156,7 +156,7 @@ export namespace MyNS {
 		 * `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
 		 * pure binary representation, whereas JSON representations use base64.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/**
 		 * URI that points to a file that contains audio data bytes as specified in
@@ -167,7 +167,7 @@ export namespace MyNS {
 		 * google.rpc.Code.INVALID_ARGUMENT). For more information, see
 		 * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -188,10 +188,10 @@ export namespace MyNS {
 		 * To perform independent recognition on each channel set
 		 * `enable_separate_recognition_per_channel` to 'true'.
 		 */
-		audioChannelCount?: number;
+		audioChannelCount?: number | null;
 
 		/** Config to enable speaker diarization. */
-		diarizationConfig?: SpeakerDiarizationConfig;
+		diarizationConfig?: SpeakerDiarizationConfig | null;
 
 		/**
 		 * If 'true', adds punctuation to recognition result hypotheses.
@@ -199,7 +199,7 @@ export namespace MyNS {
 		 * requests in other languages has no effect at all.
 		 * The default 'false' value does not add punctuation to result hypotheses.
 		 */
-		enableAutomaticPunctuation?: boolean;
+		enableAutomaticPunctuation?: boolean | null;
 
 		/**
 		 * This needs to be set to `true` explicitly and `audio_channel_count` > 1
@@ -209,7 +209,7 @@ export namespace MyNS {
 		 * request is billed cumulatively for all channels recognized:
 		 * `audio_channel_count` multiplied by the length of the audio.
 		 */
-		enableSeparateRecognitionPerChannel?: boolean;
+		enableSeparateRecognitionPerChannel?: boolean | null;
 
 		/**
 		 * If `true`, the top result includes a list of words and
@@ -217,14 +217,14 @@ export namespace MyNS {
 		 * `false`, no word-level time offset information is returned. The default is
 		 * `false`.
 		 */
-		enableWordTimeOffsets?: boolean;
+		enableWordTimeOffsets?: boolean | null;
 
 		/**
 		 * Encoding of audio data sent in all `RecognitionAudio` messages.
 		 * This field is optional for `FLAC` and `WAV` audio files and required
 		 * for all other audio formats. For details, see AudioEncoding.
 		 */
-		encoding?: RecognitionConfigEncoding;
+		encoding?: RecognitionConfigEncoding | null;
 
 		/**
 		 * Required. The language of the supplied audio as a
@@ -234,7 +234,7 @@ export namespace MyNS {
 		 * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
 		 * of the currently supported language codes.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/**
 		 * Maximum number of recognition hypotheses to be returned.
@@ -244,10 +244,10 @@ export namespace MyNS {
 		 * Valid values are `0`-`30`. A value of `0` or `1` will return a maximum of
 		 * one. If omitted, will return a maximum of one.
 		 */
-		maxAlternatives?: number;
+		maxAlternatives?: number | null;
 
 		/** Description of audio data to be recognized. */
-		metadata?: RecognitionMetadata;
+		metadata?: RecognitionMetadata | null;
 
 		/**
 		 * Which model to select for the given request. Select the model
@@ -283,7 +283,7 @@ export namespace MyNS {
 		 * </tr>
 		 * </table>
 		 */
-		model?: string;
+		model?: string | null;
 
 		/**
 		 * If set to `true`, the server will attempt to filter out
@@ -291,7 +291,7 @@ export namespace MyNS {
 		 * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
 		 * won't be filtered out.
 		 */
-		profanityFilter?: boolean;
+		profanityFilter?: boolean | null;
 
 		/**
 		 * Sample rate in Hertz of the audio data sent in all
@@ -302,7 +302,7 @@ export namespace MyNS {
 		 * This field is optional for FLAC and WAV audio files, but is
 		 * required for all other audio formats. For details, see AudioEncoding.
 		 */
-		sampleRateHertz?: number;
+		sampleRateHertz?: number | null;
 
 		/**
 		 * Array of SpeechContext.
@@ -311,7 +311,7 @@ export namespace MyNS {
 		 * [speech
 		 * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
 		 */
-		speechContexts?: Array<SpeechContext>;
+		speechContexts?: Array<SpeechContext> | null;
 
 		/**
 		 * Set to true to use an enhanced model for speech recognition.
@@ -322,7 +322,7 @@ export namespace MyNS {
 		 * does not exist, then the speech is recognized using the standard version
 		 * of the specified model.
 		 */
-		useEnhanced?: boolean;
+		useEnhanced?: boolean | null;
 	}
 
 
@@ -334,24 +334,24 @@ export namespace MyNS {
 		 * the top alternative of the recognition result using a speaker_tag provided
 		 * in the WordInfo.
 		 */
-		enableSpeakerDiarization?: boolean;
+		enableSpeakerDiarization?: boolean | null;
 
 		/**
 		 * Maximum number of speakers in the conversation. This range gives you more
 		 * flexibility by allowing the system to automatically determine the correct
 		 * number of speakers. If not set, the default value is 6.
 		 */
-		maxSpeakerCount?: number;
+		maxSpeakerCount?: number | null;
 
 		/**
 		 * Minimum number of speakers in the conversation. This range gives you more
 		 * flexibility by allowing the system to automatically determine the correct
 		 * number of speakers. If not set, the default value is 2.
 		 */
-		minSpeakerCount?: number;
+		minSpeakerCount?: number | null;
 
 		/** Output only. Unused. */
-		speakerTag?: number;
+		speakerTag?: number | null;
 	}
 
 	export enum RecognitionConfigEncoding { ENCODING_UNSPECIFIED = 0, LINEAR16 = 1, FLAC = 2, MULAW = 3, AMR = 4, AMR_WB = 5, OGG_OPUS = 6, SPEEX_WITH_HEADER_BYTE = 7 }
@@ -364,7 +364,7 @@ export namespace MyNS {
 		 * Description of the content. Eg. "Recordings of federal supreme court
 		 * hearings from 2012".
 		 */
-		audioTopic?: string;
+		audioTopic?: string | null;
 
 		/**
 		 * The industry vertical to which this speech recognition request most
@@ -372,16 +372,16 @@ export namespace MyNS {
 		 * in the audio.  Use the 6-digit NAICS code to identify the industry
 		 * vertical - see https://www.naics.com/search/.
 		 */
-		industryNaicsCodeOfAudio?: string;
+		industryNaicsCodeOfAudio?: string | null;
 
 		/** The use case most closely describing the audio content to be recognized. */
-		interactionType?: RecognitionMetadataInteractionType;
+		interactionType?: RecognitionMetadataInteractionType | null;
 
 		/** The audio type that most closely describes the audio being recognized. */
-		microphoneDistance?: RecognitionMetadataMicrophoneDistance;
+		microphoneDistance?: RecognitionMetadataMicrophoneDistance | null;
 
 		/** The original media the speech was recorded on. */
-		originalMediaType?: RecognitionMetadataOriginalMediaType;
+		originalMediaType?: RecognitionMetadataOriginalMediaType | null;
 
 		/**
 		 * Mime type of the original audio file.  For example `audio/m4a`,
@@ -389,17 +389,17 @@ export namespace MyNS {
 		 * A list of possible audio mime types is maintained at
 		 * http://www.iana.org/assignments/media-types/media-types.xhtml#audio
 		 */
-		originalMimeType?: string;
+		originalMimeType?: string | null;
 
 		/**
 		 * The device used to make the recording.  Examples 'Nexus 5X' or
 		 * 'Polycom SoundStation IP 6000' or 'POTS' or 'VoIP' or
 		 * 'Cardioid Microphone'.
 		 */
-		recordingDeviceName?: string;
+		recordingDeviceName?: string | null;
 
 		/** The type of device the speech was recorded with. */
-		recordingDeviceType?: RecognitionMetadataRecordingDeviceType;
+		recordingDeviceType?: RecognitionMetadataRecordingDeviceType | null;
 	}
 
 	export enum RecognitionMetadataInteractionType { INTERACTION_TYPE_UNSPECIFIED = 0, DISCUSSION = 1, PRESENTATION = 2, PHONE_CALL = 3, VOICEMAIL = 4, PROFESSIONALLY_PRODUCED = 5, VOICE_SEARCH = 6, VOICE_COMMAND = 7, DICTATION = 8 }
@@ -430,7 +430,7 @@ export namespace MyNS {
 		 * improves the likelihood of correctly transcribing audio that includes
 		 * months.
 		 */
-		phrases?: Array<string>;
+		phrases?: Array<string> | null;
 	}
 
 
@@ -447,7 +447,7 @@ export namespace MyNS {
 		 * Sequential list of transcription results corresponding to
 		 * sequential portions of audio.
 		 */
-		results?: Array<SpeechRecognitionResult>;
+		results?: Array<SpeechRecognitionResult> | null;
 	}
 
 
@@ -460,14 +460,14 @@ export namespace MyNS {
 		 * These alternatives are ordered in terms of accuracy, with the top (first)
 		 * alternative being the most probable, as ranked by the recognizer.
 		 */
-		alternatives?: Array<SpeechRecognitionAlternative>;
+		alternatives?: Array<SpeechRecognitionAlternative> | null;
 
 		/**
 		 * For multi-channel audio, this is the channel number corresponding to the
 		 * recognized result for the audio from that channel.
 		 * For audio_channel_count = N, its output values can range from '1' to 'N'.
 		 */
-		channelTag?: number;
+		channelTag?: number | null;
 	}
 
 
@@ -483,17 +483,17 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
-		transcript?: string;
+		transcript?: string | null;
 
 		/**
 		 * A list of word-specific information for each recognized word.
 		 * Note: When `enable_speaker_diarization` is true, you will see all the words
 		 * from the beginning of the audio.
 		 */
-		words?: Array<WordInfo>;
+		words?: Array<WordInfo> | null;
 	}
 
 
@@ -508,7 +508,7 @@ export namespace MyNS {
 		 * This is an experimental feature and the accuracy of the time offset can
 		 * vary.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Output only. A distinct integer value is assigned for every speaker within
@@ -517,7 +517,7 @@ export namespace MyNS {
 		 * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
 		 * top alternative.
 		 */
-		speakerTag?: number;
+		speakerTag?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio,
@@ -527,10 +527,10 @@ export namespace MyNS {
 		 * This is an experimental feature and the accuracy of the time offset can
 		 * vary.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The word corresponding to this set of information. */
-		word?: string;
+		word?: string | null;
 	}
 
 
@@ -543,13 +543,13 @@ export namespace MyNS {
 		 * returns google.rpc.Code.INVALID_ARGUMENT. See
 		 * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
 		 */
-		audio?: RecognitionAudio;
+		audio?: RecognitionAudio | null;
 
 		/**
 		 * Provides information to the recognizer that specifies how to process the
 		 * request.
 		 */
-		config?: RecognitionConfig;
+		config?: RecognitionConfig | null;
 	}
 
 
@@ -564,7 +564,7 @@ export namespace MyNS {
 		 * Sequential list of transcription results corresponding to
 		 * sequential portions of audio.
 		 */
-		results?: Array<SpeechRecognitionResult>;
+		results?: Array<SpeechRecognitionResult> | null;
 	}
 
 	@Injectable()

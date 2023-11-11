@@ -55,14 +55,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -92,10 +92,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -128,7 +128,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -163,13 +163,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -203,26 +203,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -230,10 +230,10 @@ export namespace MyNS {
 	export interface CloudSqlCredential {
 
 		/** The password for the credential. */
-		password?: string;
+		password?: string | null;
 
 		/** The username for the credential. */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -241,16 +241,16 @@ export namespace MyNS {
 	export interface CloudSqlProperties {
 
 		/** Credential info for the Cloud SQL. */
-		credential?: CloudSqlCredential;
+		credential?: CloudSqlCredential | null;
 
 		/** Database name. */
-		database?: string;
+		database?: string | null;
 
 		/** Cloud SQL instance ID in the form `project:location:instance`. */
-		instanceId?: string;
+		instanceId?: string | null;
 
 		/** Type of the Cloud SQL database. */
-		type?: CloudSqlPropertiesType;
+		type?: CloudSqlPropertiesType | null;
 	}
 
 	export enum CloudSqlPropertiesType { DATABASE_TYPE_UNSPECIFIED = 0, POSTGRES = 1, MYSQL = 2 }
@@ -263,28 +263,28 @@ export namespace MyNS {
 	export interface Connection {
 
 		/** Connection properties specific to the Cloud SQL. */
-		cloudSql?: CloudSqlProperties;
+		cloudSql?: CloudSqlProperties | null;
 
 		/** Output only. The creation timestamp of the connection. */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/** User provided description. */
-		description?: string;
+		description?: string | null;
 
 		/** User provided display name for the connection. */
-		friendlyName?: string;
+		friendlyName?: string | null;
 
 		/** Output only. True, if credential is configured for this connection. */
-		hasCredential?: boolean;
+		hasCredential?: boolean | null;
 
 		/** Output only. The last update timestamp of the connection. */
-		lastModifiedTime?: string;
+		lastModifiedTime?: string | null;
 
 		/**
 		 * The resource name of the connection in the form of:
 		 * `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -292,7 +292,7 @@ export namespace MyNS {
 	export interface ConnectionCredential {
 
 		/** Credential info for the Cloud SQL. */
-		cloudSql?: CloudSqlCredential;
+		cloudSql?: CloudSqlCredential | null;
 	}
 
 
@@ -313,7 +313,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -336,10 +336,10 @@ export namespace MyNS {
 	export interface ListConnectionsResponse {
 
 		/** List of connections. */
-		connections?: Array<Connection>;
+		connections?: Array<Connection> | null;
 
 		/** Next page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -403,14 +403,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -425,7 +425,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -509,7 +509,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -518,7 +518,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -531,7 +531,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -542,7 +542,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()

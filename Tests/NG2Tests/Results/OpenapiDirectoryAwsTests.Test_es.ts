@@ -7,22 +7,22 @@ export namespace MyNS {
 	export interface AcceptInboundCrossClusterSearchConnectionResponse {
 
 		/** Specifies details of an inbound connection. */
-		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection;
+		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection | null;
 	}
 
 
 	/** Specifies details of an inbound connection. */
 	export interface InboundCrossClusterSearchConnection {
-		SourceDomainInfo?: DomainInformation;
-		DestinationDomainInfo?: DomainInformation;
-		CrossClusterSearchConnectionId?: string;
+		SourceDomainInfo?: DomainInformation | null;
+		DestinationDomainInfo?: DomainInformation | null;
+		CrossClusterSearchConnectionId?: string | null;
 
 		/** Specifies the coonection status of an inbound cross-cluster search connection. */
-		ConnectionStatus?: InboundCrossClusterSearchConnectionStatus;
+		ConnectionStatus?: InboundCrossClusterSearchConnectionStatus | null;
 	}
 
 	export interface DomainInformation {
-		OwnerId?: string;
+		OwnerId?: string | null;
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
@@ -32,14 +32,14 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		Region?: string;
+		Region?: string | null;
 	}
 
 
 	/** Specifies the coonection status of an inbound cross-cluster search connection. */
 	export interface InboundCrossClusterSearchConnectionStatus {
-		StatusCode?: InboundCrossClusterSearchConnectionStatusStatusCode;
-		Message?: string;
+		StatusCode?: InboundCrossClusterSearchConnectionStatusStatusCode | null;
+		Message?: string | null;
 	}
 
 	export enum InboundCrossClusterSearchConnectionStatusStatusCode { PENDING_ACCEPTANCE = 0, APPROVED = 1, REJECTING = 2, REJECTED = 3, DELETING = 4, DELETED = 5 }
@@ -88,16 +88,16 @@ export namespace MyNS {
 	export interface AssociatePackageResponse {
 
 		/** Information on a package that is associated with a domain. */
-		DomainPackageDetails?: DomainPackageDetails;
+		DomainPackageDetails?: DomainPackageDetails | null;
 	}
 
 
 	/** Information on a package that is associated with a domain. */
 	export interface DomainPackageDetails {
-		PackageID?: string;
-		PackageName?: string;
-		PackageType?: DomainPackageDetailsPackageType;
-		LastUpdated?: Date;
+		PackageID?: string | null;
+		PackageName?: string | null;
+		PackageType?: DomainPackageDetailsPackageType | null;
+		LastUpdated?: Date | null;
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
@@ -105,10 +105,10 @@ export namespace MyNS {
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
-		DomainName?: string;
-		DomainPackageStatus?: DomainPackageDetailsDomainPackageStatus;
-		ReferencePath?: string;
-		ErrorDetails?: ErrorDetails;
+		DomainName?: string | null;
+		DomainPackageStatus?: DomainPackageDetailsDomainPackageStatus | null;
+		ReferencePath?: string | null;
+		ErrorDetails?: ErrorDetails | null;
 	}
 
 	export enum DomainPackageDetailsPackageType { TXT_DICTIONARY = 0 }
@@ -116,8 +116,8 @@ export namespace MyNS {
 	export enum DomainPackageDetailsDomainPackageStatus { ASSOCIATING = 0, ASSOCIATION_FAILED = 1, ACTIVE = 2, DISSOCIATING = 3, DISSOCIATION_FAILED = 4 }
 
 	export interface ErrorDetails {
-		ErrorType?: string;
-		ErrorMessage?: string;
+		ErrorType?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface AccessDeniedException {
@@ -131,20 +131,20 @@ export namespace MyNS {
 	export interface CancelElasticsearchServiceSoftwareUpdateResponse {
 
 		/** The current options of an Elasticsearch domain service software options. */
-		ServiceSoftwareOptions?: ServiceSoftwareOptions;
+		ServiceSoftwareOptions?: ServiceSoftwareOptions | null;
 	}
 
 
 	/** The current options of an Elasticsearch domain service software options. */
 	export interface ServiceSoftwareOptions {
-		CurrentVersion?: string;
-		NewVersion?: string;
-		UpdateAvailable?: boolean;
-		Cancellable?: boolean;
-		UpdateStatus?: ServiceSoftwareOptionsUpdateStatus;
-		Description?: string;
-		AutomatedUpdateDate?: Date;
-		OptionalDeployment?: boolean;
+		CurrentVersion?: string | null;
+		NewVersion?: string | null;
+		UpdateAvailable?: boolean | null;
+		Cancellable?: boolean | null;
+		UpdateStatus?: ServiceSoftwareOptionsUpdateStatus | null;
+		Description?: string | null;
+		AutomatedUpdateDate?: Date | null;
+		OptionalDeployment?: boolean | null;
 	}
 
 	export enum ServiceSoftwareOptionsUpdateStatus { PENDING_UPDATE = 0, IN_PROGRESS = 1, COMPLETED = 2, NOT_ELIGIBLE = 3, ELIGIBLE = 4 }
@@ -154,7 +154,7 @@ export namespace MyNS {
 	export interface CreateElasticsearchDomainResponse {
 
 		/** The current status of an Elasticsearch domain. */
-		DomainStatus?: ElasticsearchDomainStatus;
+		DomainStatus?: ElasticsearchDomainStatus | null;
 	}
 
 
@@ -183,15 +183,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		ARN: string;
-		Created?: boolean;
-		Deleted?: boolean;
+		Created?: boolean | null;
+		Deleted?: boolean | null;
 
 		/** The endpoint to which service requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.es.amazonaws.com</code>. */
-		Endpoint?: string;
-		Endpoints?: EndpointsMap;
-		Processing?: boolean;
-		UpgradeProcessing?: boolean;
-		ElasticsearchVersion?: string;
+		Endpoint?: string | null;
+		Endpoints?: EndpointsMap | null;
+		Processing?: boolean | null;
+		UpgradeProcessing?: boolean | null;
+		ElasticsearchVersion?: string | null;
 
 		/**
 		 * Specifies the configuration for the domain cluster, such as the type and number of instances.
@@ -200,38 +200,38 @@ export namespace MyNS {
 		ElasticsearchClusterConfig: ElasticsearchClusterConfig;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: EBSOptions;
+		EBSOptions?: EBSOptions | null;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
-		AccessPolicies?: string;
+		AccessPolicies?: string | null;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: SnapshotOptions;
+		SnapshotOptions?: SnapshotOptions | null;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: VPCDerivedInfo;
+		VPCOptions?: VPCDerivedInfo | null;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: CognitoOptions;
+		CognitoOptions?: CognitoOptions | null;
 
 		/** Specifies the Encryption At Rest Options. */
-		EncryptionAtRestOptions?: EncryptionAtRestOptions;
+		EncryptionAtRestOptions?: EncryptionAtRestOptions | null;
 
 		/** Specifies the node-to-node encryption options. */
-		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions;
+		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions | null;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: AdvancedOptions;
-		LogPublishingOptions?: LogPublishingOptions;
+		AdvancedOptions?: AdvancedOptions | null;
+		LogPublishingOptions?: LogPublishingOptions | null;
 
 		/** The current options of an Elasticsearch domain service software options. */
-		ServiceSoftwareOptions?: ServiceSoftwareOptions;
+		ServiceSoftwareOptions?: ServiceSoftwareOptions | null;
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: DomainEndpointOptions;
+		DomainEndpointOptions?: DomainEndpointOptions | null;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. */
-		AdvancedSecurityOptions?: AdvancedSecurityOptions;
+		AdvancedSecurityOptions?: AdvancedSecurityOptions | null;
 	}
 
 	export interface EndpointsMap {
@@ -240,18 +240,18 @@ export namespace MyNS {
 
 	/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
 	export interface ElasticsearchClusterConfig {
-		InstanceType?: ElasticsearchClusterConfigInstanceType;
-		InstanceCount?: number;
-		DedicatedMasterEnabled?: boolean;
-		ZoneAwarenessEnabled?: boolean;
+		InstanceType?: ElasticsearchClusterConfigInstanceType | null;
+		InstanceCount?: number | null;
+		DedicatedMasterEnabled?: boolean | null;
+		ZoneAwarenessEnabled?: boolean | null;
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
-		ZoneAwarenessConfig?: ZoneAwarenessConfig;
-		DedicatedMasterType?: ElasticsearchClusterConfigDedicatedMasterType;
-		DedicatedMasterCount?: number;
-		WarmEnabled?: boolean;
-		WarmType?: ElasticsearchClusterConfigWarmType;
-		WarmCount?: number;
+		ZoneAwarenessConfig?: ZoneAwarenessConfig | null;
+		DedicatedMasterType?: ElasticsearchClusterConfigDedicatedMasterType | null;
+		DedicatedMasterCount?: number | null;
+		WarmEnabled?: boolean | null;
+		WarmType?: ElasticsearchClusterConfigWarmType | null;
+		WarmCount?: number | null;
 	}
 
 	export enum ElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -259,7 +259,7 @@ export namespace MyNS {
 
 	/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
 	export interface ZoneAwarenessConfig {
-		AvailabilityZoneCount?: number;
+		AvailabilityZoneCount?: number | null;
 	}
 
 	export enum ElasticsearchClusterConfigDedicatedMasterType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -269,12 +269,12 @@ export namespace MyNS {
 
 	/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
 	export interface EBSOptions {
-		EBSEnabled?: boolean;
+		EBSEnabled?: boolean | null;
 
 		/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information. */
-		VolumeType?: EBSOptionsVolumeType;
-		VolumeSize?: number;
-		Iops?: number;
+		VolumeType?: EBSOptionsVolumeType | null;
+		VolumeSize?: number | null;
+		Iops?: number | null;
 	}
 
 	export enum EBSOptionsVolumeType { standard = 0, gp2 = 1, io1 = 2 }
@@ -282,38 +282,38 @@ export namespace MyNS {
 
 	/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
 	export interface SnapshotOptions {
-		AutomatedSnapshotStartHour?: number;
+		AutomatedSnapshotStartHour?: number | null;
 	}
 
 
 	/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
 	export interface VPCDerivedInfo {
-		VPCId?: string;
-		SubnetIds?: Array<string>;
-		AvailabilityZones?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		VPCId?: string | null;
+		SubnetIds?: Array<string> | null;
+		AvailabilityZones?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 
 	/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
 	export interface CognitoOptions {
-		Enabled?: boolean;
-		UserPoolId?: string;
-		IdentityPoolId?: string;
-		RoleArn?: string;
+		Enabled?: boolean | null;
+		UserPoolId?: string | null;
+		IdentityPoolId?: string | null;
+		RoleArn?: string | null;
 	}
 
 
 	/** Specifies the Encryption At Rest Options. */
 	export interface EncryptionAtRestOptions {
-		Enabled?: boolean;
-		KmsKeyId?: string;
+		Enabled?: boolean | null;
+		KmsKeyId?: string | null;
 	}
 
 
 	/** Specifies the node-to-node encryption options. */
 	export interface NodeToNodeEncryptionOptions {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 
@@ -327,8 +327,8 @@ export namespace MyNS {
 
 	/** Options to configure endpoint for the Elasticsearch domain. */
 	export interface DomainEndpointOptions {
-		EnforceHTTPS?: boolean;
-		TLSSecurityPolicy?: DomainEndpointOptionsTLSSecurityPolicy;
+		EnforceHTTPS?: boolean | null;
+		TLSSecurityPolicy?: DomainEndpointOptionsTLSSecurityPolicy | null;
 	}
 
 	export enum DomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
@@ -336,8 +336,8 @@ export namespace MyNS {
 
 	/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. */
 	export interface AdvancedSecurityOptions {
-		Enabled?: boolean;
-		InternalUserDatabaseEnabled?: boolean;
+		Enabled?: boolean | null;
+		InternalUserDatabaseEnabled?: boolean | null;
 	}
 
 	export enum ESPartitionInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -353,8 +353,8 @@ export namespace MyNS {
 	export interface LogPublishingOption {
 
 		/** ARN of the Cloudwatch log group to which log needs to be published. */
-		CloudWatchLogsLogGroupArn?: string;
-		Enabled?: boolean;
+		CloudWatchLogsLogGroupArn?: string | null;
+		Enabled?: boolean | null;
 	}
 
 	export enum TLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
@@ -364,9 +364,9 @@ export namespace MyNS {
 	export interface MasterUserOptions {
 
 		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
-		MasterUserARN?: string;
-		MasterUserName?: string;
-		MasterUserPassword?: string;
+		MasterUserARN?: string | null;
+		MasterUserName?: string | null;
+		MasterUserPassword?: string | null;
 	}
 
 	export interface InvalidTypeException {
@@ -378,20 +378,20 @@ export namespace MyNS {
 
 	/** The result of a <code><a>CreateOutboundCrossClusterSearchConnection</a></code> request. Contains the details of the newly created cross-cluster search connection. */
 	export interface CreateOutboundCrossClusterSearchConnectionResponse {
-		SourceDomainInfo?: DomainInformation;
-		DestinationDomainInfo?: DomainInformation;
-		ConnectionAlias?: string;
+		SourceDomainInfo?: DomainInformation | null;
+		DestinationDomainInfo?: DomainInformation | null;
+		ConnectionAlias?: string | null;
 
 		/** Specifies the connection status of an outbound cross-cluster search connection. */
-		ConnectionStatus?: OutboundCrossClusterSearchConnectionStatus;
-		CrossClusterSearchConnectionId?: string;
+		ConnectionStatus?: OutboundCrossClusterSearchConnectionStatus | null;
+		CrossClusterSearchConnectionId?: string | null;
 	}
 
 
 	/** Specifies the connection status of an outbound cross-cluster search connection. */
 	export interface OutboundCrossClusterSearchConnectionStatus {
-		StatusCode?: OutboundCrossClusterSearchConnectionStatusStatusCode;
-		Message?: string;
+		StatusCode?: OutboundCrossClusterSearchConnectionStatusStatusCode | null;
+		Message?: string | null;
 	}
 
 	export enum OutboundCrossClusterSearchConnectionStatusStatusCode { PENDING_ACCEPTANCE = 0, VALIDATING = 1, VALIDATION_FAILED = 2, PROVISIONING = 3, ACTIVE = 4, REJECTED = 5, DELETING = 6, DELETED = 7 }
@@ -401,19 +401,19 @@ export namespace MyNS {
 	export interface CreatePackageResponse {
 
 		/** Basic information about a package. */
-		PackageDetails?: PackageDetails;
+		PackageDetails?: PackageDetails | null;
 	}
 
 
 	/** Basic information about a package. */
 	export interface PackageDetails {
-		PackageID?: string;
-		PackageName?: string;
-		PackageType?: PackageDetailsPackageType;
-		PackageDescription?: string;
-		PackageStatus?: PackageDetailsPackageStatus;
-		CreatedAt?: Date;
-		ErrorDetails?: ErrorDetails;
+		PackageID?: string | null;
+		PackageName?: string | null;
+		PackageType?: PackageDetailsPackageType | null;
+		PackageDescription?: string | null;
+		PackageStatus?: PackageDetailsPackageStatus | null;
+		CreatedAt?: Date | null;
+		ErrorDetails?: ErrorDetails | null;
 	}
 
 	export enum PackageDetailsPackageType { TXT_DICTIONARY = 0 }
@@ -425,7 +425,7 @@ export namespace MyNS {
 	export interface DeleteElasticsearchDomainResponse {
 
 		/** The current status of an Elasticsearch domain. */
-		DomainStatus?: ElasticsearchDomainStatus;
+		DomainStatus?: ElasticsearchDomainStatus | null;
 	}
 
 
@@ -433,7 +433,7 @@ export namespace MyNS {
 	export interface DeleteInboundCrossClusterSearchConnectionResponse {
 
 		/** Specifies details of an inbound connection. */
-		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection;
+		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection | null;
 	}
 
 
@@ -441,19 +441,19 @@ export namespace MyNS {
 	export interface DeleteOutboundCrossClusterSearchConnectionResponse {
 
 		/** Specifies details of an outbound connection. */
-		CrossClusterSearchConnection?: OutboundCrossClusterSearchConnection;
+		CrossClusterSearchConnection?: OutboundCrossClusterSearchConnection | null;
 	}
 
 
 	/** Specifies details of an outbound connection. */
 	export interface OutboundCrossClusterSearchConnection {
-		SourceDomainInfo?: DomainInformation;
-		DestinationDomainInfo?: DomainInformation;
-		CrossClusterSearchConnectionId?: string;
-		ConnectionAlias?: string;
+		SourceDomainInfo?: DomainInformation | null;
+		DestinationDomainInfo?: DomainInformation | null;
+		CrossClusterSearchConnectionId?: string | null;
+		ConnectionAlias?: string | null;
 
 		/** Specifies the connection status of an outbound cross-cluster search connection. */
-		ConnectionStatus?: OutboundCrossClusterSearchConnectionStatus;
+		ConnectionStatus?: OutboundCrossClusterSearchConnectionStatus | null;
 	}
 
 
@@ -461,7 +461,7 @@ export namespace MyNS {
 	export interface DeletePackageResponse {
 
 		/** Basic information about a package. */
-		PackageDetails?: PackageDetails;
+		PackageDetails?: PackageDetails | null;
 	}
 
 
@@ -491,43 +491,43 @@ export namespace MyNS {
 	export interface ElasticsearchDomainConfig {
 
 		/** Status of the Elasticsearch version options for the specified Elasticsearch domain. */
-		ElasticsearchVersion?: ElasticsearchVersionStatus;
+		ElasticsearchVersion?: ElasticsearchVersionStatus | null;
 
 		/** Specifies the configuration status for the specified Elasticsearch domain. */
-		ElasticsearchClusterConfig?: ElasticsearchClusterConfigStatus;
+		ElasticsearchClusterConfig?: ElasticsearchClusterConfigStatus | null;
 
 		/** Status of the EBS options for the specified Elasticsearch domain. */
-		EBSOptions?: EBSOptionsStatus;
+		EBSOptions?: EBSOptionsStatus | null;
 
 		/** The configured access rules for the domain's document and search endpoints, and the current status of those rules. */
-		AccessPolicies?: AccessPoliciesStatus;
+		AccessPolicies?: AccessPoliciesStatus | null;
 
 		/** Status of a daily automated snapshot. */
-		SnapshotOptions?: SnapshotOptionsStatus;
+		SnapshotOptions?: SnapshotOptionsStatus | null;
 
 		/** Status of the VPC options for the specified Elasticsearch domain. */
-		VPCOptions?: VPCDerivedInfoStatus;
+		VPCOptions?: VPCDerivedInfoStatus | null;
 
 		/** Status of the Cognito options for the specified Elasticsearch domain. */
-		CognitoOptions?: CognitoOptionsStatus;
+		CognitoOptions?: CognitoOptionsStatus | null;
 
 		/** Status of the Encryption At Rest options for the specified Elasticsearch domain. */
-		EncryptionAtRestOptions?: EncryptionAtRestOptionsStatus;
+		EncryptionAtRestOptions?: EncryptionAtRestOptionsStatus | null;
 
 		/** Status of the node-to-node encryption options for the specified Elasticsearch domain. */
-		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptionsStatus;
+		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptionsStatus | null;
 
 		/** <p> Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: AdvancedOptionsStatus;
+		AdvancedOptions?: AdvancedOptionsStatus | null;
 
 		/** The configured log publishing options for the domain and their current status. */
-		LogPublishingOptions?: LogPublishingOptionsStatus;
+		LogPublishingOptions?: LogPublishingOptionsStatus | null;
 
 		/** The configured endpoint options for the domain and their current status. */
-		DomainEndpointOptions?: DomainEndpointOptionsStatus;
+		DomainEndpointOptions?: DomainEndpointOptionsStatus | null;
 
 		/** Specifies the status of advanced security options for the specified Elasticsearch domain. */
-		AdvancedSecurityOptions?: AdvancedSecurityOptionsStatus;
+		AdvancedSecurityOptions?: AdvancedSecurityOptionsStatus | null;
 	}
 
 
@@ -547,14 +547,14 @@ export namespace MyNS {
 	export interface OptionStatus {
 		CreationDate: Date;
 		UpdateDate: Date;
-		UpdateVersion?: number;
+		UpdateVersion?: number | null;
 
 		/**
 		 * <p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul>
 		 * Required
 		 */
 		State: OptionStatusState;
-		PendingDeletion?: boolean;
+		PendingDeletion?: boolean | null;
 	}
 
 	export enum OptionStatusState { RequiresIndexDocuments = 0, Processing = 1, Active = 2 }
@@ -715,10 +715,10 @@ export namespace MyNS {
 
 	/** The configured log publishing options for the domain and their current status. */
 	export interface LogPublishingOptionsStatus {
-		Options?: LogPublishingOptions;
+		Options?: LogPublishingOptions | null;
 
 		/** Provides the current status of the entity. */
-		Status?: OptionStatus;
+		Status?: OptionStatus | null;
 	}
 
 
@@ -771,7 +771,7 @@ export namespace MyNS {
 	export interface DescribeElasticsearchInstanceTypeLimitsResponse {
 
 		/** Map of Role of the Instance and Limits that are applicable. Role performed by given Instance in Elasticsearch can be one of the following: <ul> <li>data: If the given InstanceType is used as data node</li> <li>master: If the given InstanceType is used as master node</li> <li>ultra_warm: If the given InstanceType is used as warm node</li> </ul> */
-		LimitsByRole?: LimitsByRole;
+		LimitsByRole?: LimitsByRole | null;
 	}
 
 
@@ -782,17 +782,17 @@ export namespace MyNS {
 
 	/** The result of a <code><a>DescribeInboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria. */
 	export interface DescribeInboundCrossClusterSearchConnectionsResponse {
-		CrossClusterSearchConnections?: Array<InboundCrossClusterSearchConnection>;
+		CrossClusterSearchConnections?: Array<InboundCrossClusterSearchConnection> | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/**  A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation.  */
 	export interface Filter {
-		Name?: string;
-		Values?: Array<string>;
+		Name?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface InvalidPaginationTokenException {
@@ -801,24 +801,24 @@ export namespace MyNS {
 
 	/** The result of a <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria. */
 	export interface DescribeOutboundCrossClusterSearchConnectionsResponse {
-		CrossClusterSearchConnections?: Array<OutboundCrossClusterSearchConnection>;
+		CrossClusterSearchConnections?: Array<OutboundCrossClusterSearchConnection> | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/**  Container for response returned by <code> <a>DescribePackages</a> </code> operation.  */
 	export interface DescribePackagesResponse {
-		PackageDetailsList?: Array<PackageDetails>;
-		NextToken?: string;
+		PackageDetailsList?: Array<PackageDetails> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Filter to apply in <code>DescribePackage</code> response. */
 	export interface DescribePackagesFilter {
-		Name?: DescribePackagesFilterName;
-		Value?: Array<string>;
+		Name?: DescribePackagesFilterName | null;
+		Value?: Array<string> | null;
 	}
 
 	export enum DescribePackagesFilterName { PackageID = 0, PackageName = 1, PackageStatus = 2 }
@@ -828,21 +828,21 @@ export namespace MyNS {
 	export interface DescribeReservedElasticsearchInstanceOfferingsResponse {
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
-		ReservedElasticsearchInstanceOfferings?: Array<ReservedElasticsearchInstanceOffering>;
+		NextToken?: string | null;
+		ReservedElasticsearchInstanceOfferings?: Array<ReservedElasticsearchInstanceOffering> | null;
 	}
 
 
 	/** Details of a reserved Elasticsearch instance offering. */
 	export interface ReservedElasticsearchInstanceOffering {
-		ReservedElasticsearchInstanceOfferingId?: string;
-		ElasticsearchInstanceType?: ReservedElasticsearchInstanceOfferingElasticsearchInstanceType;
-		Duration?: number;
-		FixedPrice?: number;
-		UsagePrice?: number;
-		CurrencyCode?: string;
-		PaymentOption?: ReservedElasticsearchInstanceOfferingPaymentOption;
-		RecurringCharges?: Array<RecurringCharge>;
+		ReservedElasticsearchInstanceOfferingId?: string | null;
+		ElasticsearchInstanceType?: ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null;
+		Duration?: number | null;
+		FixedPrice?: number | null;
+		UsagePrice?: number | null;
+		CurrencyCode?: string | null;
+		PaymentOption?: ReservedElasticsearchInstanceOfferingPaymentOption | null;
+		RecurringCharges?: Array<RecurringCharge> | null;
 	}
 
 	export enum ReservedElasticsearchInstanceOfferingElasticsearchInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -852,33 +852,33 @@ export namespace MyNS {
 
 	/** Contains the specific price and frequency of a recurring charges for a reserved Elasticsearch instance, or for a reserved Elasticsearch instance offering. */
 	export interface RecurringCharge {
-		RecurringChargeAmount?: number;
-		RecurringChargeFrequency?: string;
+		RecurringChargeAmount?: number | null;
+		RecurringChargeFrequency?: string | null;
 	}
 
 
 	/** Container for results from <code>DescribeReservedElasticsearchInstances</code> */
 	export interface DescribeReservedElasticsearchInstancesResponse {
-		NextToken?: string;
-		ReservedElasticsearchInstances?: Array<ReservedElasticsearchInstance>;
+		NextToken?: string | null;
+		ReservedElasticsearchInstances?: Array<ReservedElasticsearchInstance> | null;
 	}
 
 
 	/** Details of a reserved Elasticsearch instance. */
 	export interface ReservedElasticsearchInstance {
-		ReservationName?: string;
-		ReservedElasticsearchInstanceId?: string;
-		ReservedElasticsearchInstanceOfferingId?: string;
-		ElasticsearchInstanceType?: ReservedElasticsearchInstanceElasticsearchInstanceType;
-		StartTime?: Date;
-		Duration?: number;
-		FixedPrice?: number;
-		UsagePrice?: number;
-		CurrencyCode?: string;
-		ElasticsearchInstanceCount?: number;
-		State?: string;
-		PaymentOption?: ReservedElasticsearchInstanceOfferingPaymentOption;
-		RecurringCharges?: Array<RecurringCharge>;
+		ReservationName?: string | null;
+		ReservedElasticsearchInstanceId?: string | null;
+		ReservedElasticsearchInstanceOfferingId?: string | null;
+		ElasticsearchInstanceType?: ReservedElasticsearchInstanceElasticsearchInstanceType | null;
+		StartTime?: Date | null;
+		Duration?: number | null;
+		FixedPrice?: number | null;
+		UsagePrice?: number | null;
+		CurrencyCode?: string | null;
+		ElasticsearchInstanceCount?: number | null;
+		State?: string | null;
+		PaymentOption?: ReservedElasticsearchInstanceOfferingPaymentOption | null;
+		RecurringCharges?: Array<RecurringCharge> | null;
 	}
 
 	export enum ReservedElasticsearchInstanceElasticsearchInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -888,38 +888,38 @@ export namespace MyNS {
 	export interface DissociatePackageResponse {
 
 		/** Information on a package that is associated with a domain. */
-		DomainPackageDetails?: DomainPackageDetails;
+		DomainPackageDetails?: DomainPackageDetails | null;
 	}
 
 
 	/**  Container for response returned by <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.  */
 	export interface GetCompatibleElasticsearchVersionsResponse {
-		CompatibleElasticsearchVersions?: Array<CompatibleVersionsMap>;
+		CompatibleElasticsearchVersions?: Array<CompatibleVersionsMap> | null;
 	}
 
 
 	/**  A map from an <code> <a>ElasticsearchVersion</a> </code> to a list of compatible <code> <a>ElasticsearchVersion</a> </code> s to which the domain can be upgraded.  */
 	export interface CompatibleVersionsMap {
-		SourceVersion?: string;
+		SourceVersion?: string | null;
 
 		/** List of supported elastic search versions. */
-		TargetVersions?: Array<string>;
+		TargetVersions?: Array<string> | null;
 	}
 
 
 	/**  Container for response returned by <code> <a>GetUpgradeHistory</a> </code> operation.  */
 	export interface GetUpgradeHistoryResponse {
-		UpgradeHistories?: Array<UpgradeHistory>;
-		NextToken?: string;
+		UpgradeHistories?: Array<UpgradeHistory> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** History of the last 10 Upgrades and Upgrade Eligibility Checks. */
 	export interface UpgradeHistory {
-		UpgradeName?: string;
-		StartTimestamp?: Date;
-		UpgradeStatus?: UpgradeHistoryUpgradeStatus;
-		StepsList?: Array<UpgradeStepItem>;
+		UpgradeName?: string | null;
+		StartTimestamp?: Date | null;
+		UpgradeStatus?: UpgradeHistoryUpgradeStatus | null;
+		StepsList?: Array<UpgradeStepItem> | null;
 	}
 
 	export enum UpgradeHistoryUpgradeStatus { IN_PROGRESS = 0, SUCCEEDED = 1, SUCCEEDED_WITH_ISSUES = 2, FAILED = 3 }
@@ -927,10 +927,10 @@ export namespace MyNS {
 
 	/** Represents a single step of the Upgrade or Upgrade Eligibility Check workflow. */
 	export interface UpgradeStepItem {
-		UpgradeStep?: UpgradeStepItemUpgradeStep;
-		UpgradeStepStatus?: UpgradeHistoryUpgradeStatus;
-		Issues?: Array<string>;
-		ProgressPercent?: number;
+		UpgradeStep?: UpgradeStepItemUpgradeStep | null;
+		UpgradeStepStatus?: UpgradeHistoryUpgradeStatus | null;
+		Issues?: Array<string> | null;
+		ProgressPercent?: number | null;
 	}
 
 	export enum UpgradeStepItemUpgradeStep { PRE_UPGRADE_CHECK = 0, SNAPSHOT = 1, UPGRADE = 2 }
@@ -938,9 +938,9 @@ export namespace MyNS {
 
 	/**  Container for response returned by <code> <a>GetUpgradeStatus</a> </code> operation.  */
 	export interface GetUpgradeStatusResponse {
-		UpgradeStep?: UpgradeStepItemUpgradeStep;
-		StepStatus?: UpgradeHistoryUpgradeStatus;
-		UpgradeName?: string;
+		UpgradeStep?: UpgradeStepItemUpgradeStep | null;
+		StepStatus?: UpgradeHistoryUpgradeStatus | null;
+		UpgradeName?: string | null;
 	}
 
 
@@ -948,7 +948,7 @@ export namespace MyNS {
 	export interface ListDomainNamesResponse {
 
 		/** Contains the list of Elasticsearch domain information. */
-		DomainNames?: Array<DomainInfo>;
+		DomainNames?: Array<DomainInfo> | null;
 	}
 
 	export interface DomainInfo {
@@ -959,14 +959,14 @@ export namespace MyNS {
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
-		DomainName?: string;
+		DomainName?: string | null;
 	}
 
 
 	/**  Container for response parameters to <code> <a>ListDomainsForPackage</a> </code> operation.  */
 	export interface ListDomainsForPackageResponse {
-		DomainPackageDetailsList?: Array<DomainPackageDetails>;
-		NextToken?: string;
+		DomainPackageDetailsList?: Array<DomainPackageDetails> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -974,10 +974,10 @@ export namespace MyNS {
 	export interface ListElasticsearchInstanceTypesResponse {
 
 		/** List of instance types supported by Amazon Elasticsearch service. */
-		ElasticsearchInstanceTypes?: Array<ESPartitionInstanceType>;
+		ElasticsearchInstanceTypes?: Array<ESPartitionInstanceType> | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -985,17 +985,17 @@ export namespace MyNS {
 	export interface ListElasticsearchVersionsResponse {
 
 		/** List of supported elastic search versions. */
-		ElasticsearchVersions?: Array<string>;
+		ElasticsearchVersions?: Array<string> | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/**  Container for response parameters to <code> <a>ListPackagesForDomain</a> </code> operation.  */
 	export interface ListPackagesForDomainResponse {
-		DomainPackageDetailsList?: Array<DomainPackageDetails>;
-		NextToken?: string;
+		DomainPackageDetailsList?: Array<DomainPackageDetails> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1003,14 +1003,14 @@ export namespace MyNS {
 	export interface ListTagsResponse {
 
 		/** A list of <code>Tag</code> */
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 
 	/** Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation. */
 	export interface PurchaseReservedElasticsearchInstanceOfferingResponse {
-		ReservedElasticsearchInstanceId?: string;
-		ReservationName?: string;
+		ReservedElasticsearchInstanceId?: string | null;
+		ReservationName?: string | null;
 	}
 
 
@@ -1018,7 +1018,7 @@ export namespace MyNS {
 	export interface RejectInboundCrossClusterSearchConnectionResponse {
 
 		/** Specifies details of an inbound connection. */
-		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection;
+		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection | null;
 	}
 
 
@@ -1026,7 +1026,7 @@ export namespace MyNS {
 	export interface StartElasticsearchServiceSoftwareUpdateResponse {
 
 		/** The current options of an Elasticsearch domain service software options. */
-		ServiceSoftwareOptions?: ServiceSoftwareOptions;
+		ServiceSoftwareOptions?: ServiceSoftwareOptions | null;
 	}
 
 
@@ -1050,9 +1050,9 @@ export namespace MyNS {
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
-		DomainName?: string;
-		TargetVersion?: string;
-		PerformCheckOnly?: boolean;
+		DomainName?: string | null;
+		TargetVersion?: string | null;
+		PerformCheckOnly?: boolean | null;
 	}
 
 
@@ -1080,18 +1080,18 @@ export namespace MyNS {
 
 	/**  List of limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> .  */
 	export interface AdditionalLimit {
-		LimitName?: string;
-		LimitValues?: Array<string>;
+		LimitName?: string | null;
+		LimitValues?: Array<string> | null;
 	}
 
 
 	/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
 	export interface AdvancedSecurityOptionsInput {
-		Enabled?: boolean;
-		InternalUserDatabaseEnabled?: boolean;
+		Enabled?: boolean | null;
+		InternalUserDatabaseEnabled?: boolean | null;
 
 		/** Credentials for the master user: username and password, ARN, or both. */
-		MasterUserOptions?: MasterUserOptions;
+		MasterUserOptions?: MasterUserOptions | null;
 	}
 
 
@@ -1116,8 +1116,8 @@ export namespace MyNS {
 
 	/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
 	export interface VPCOptions {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface CreateElasticsearchDomainRequest {
@@ -1130,41 +1130,41 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		ElasticsearchVersion?: string;
+		ElasticsearchVersion?: string | null;
 
 		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
-		ElasticsearchClusterConfig?: ElasticsearchClusterConfig;
+		ElasticsearchClusterConfig?: ElasticsearchClusterConfig | null;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: EBSOptions;
+		EBSOptions?: EBSOptions | null;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
-		AccessPolicies?: string;
+		AccessPolicies?: string | null;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: SnapshotOptions;
+		SnapshotOptions?: SnapshotOptions | null;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: VPCOptions;
+		VPCOptions?: VPCOptions | null;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: CognitoOptions;
+		CognitoOptions?: CognitoOptions | null;
 
 		/** Specifies the Encryption At Rest Options. */
-		EncryptionAtRestOptions?: EncryptionAtRestOptions;
+		EncryptionAtRestOptions?: EncryptionAtRestOptions | null;
 
 		/** Specifies the node-to-node encryption options. */
-		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions;
+		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions | null;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: AdvancedOptions;
-		LogPublishingOptions?: LogPublishingOptions;
+		AdvancedOptions?: AdvancedOptions | null;
+		LogPublishingOptions?: LogPublishingOptions | null;
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: DomainEndpointOptions;
+		DomainEndpointOptions?: DomainEndpointOptions | null;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
-		AdvancedSecurityOptions?: AdvancedSecurityOptionsInput;
+		AdvancedSecurityOptions?: AdvancedSecurityOptionsInput | null;
 	}
 
 
@@ -1180,8 +1180,8 @@ export namespace MyNS {
 
 	/** The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> */
 	export interface PackageSource {
-		S3BucketName?: string;
-		S3Key?: string;
+		S3BucketName?: string | null;
+		S3Key?: string | null;
 	}
 
 
@@ -1189,7 +1189,7 @@ export namespace MyNS {
 	export interface CreatePackageRequest {
 		PackageName: string;
 		PackageType: CreatePackageRequestPackageType;
-		PackageDescription?: string;
+		PackageDescription?: string | null;
 
 		/**
 		 * The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code>
@@ -1251,31 +1251,31 @@ export namespace MyNS {
 
 	/** Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code> operation. */
 	export interface DescribeInboundCrossClusterSearchConnectionsRequest {
-		Filters?: Array<Filter>;
+		Filters?: Array<Filter> | null;
 
 		/**
 		 * Set this value to limit the number of results returned.
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> operation. */
 	export interface DescribeOutboundCrossClusterSearchConnectionsRequest {
-		Filters?: Array<Filter>;
+		Filters?: Array<Filter> | null;
 
 		/**
 		 * Set this value to limit the number of results returned.
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1283,16 +1283,16 @@ export namespace MyNS {
 	export interface DescribePackagesRequest {
 
 		/** A list of <code>DescribePackagesFilter</code> to filter the packages included in a <code>DescribePackages</code> response. */
-		Filters?: Array<DescribePackagesFilter>;
+		Filters?: Array<DescribePackagesFilter> | null;
 
 		/**
 		 * Set this value to limit the number of results returned.
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1338,10 +1338,10 @@ export namespace MyNS {
 	export interface InstanceCountLimits {
 
 		/** Minimum number of Instances that can be instantiated for given InstanceType. */
-		MinimumInstanceCount?: number;
+		MinimumInstanceCount?: number | null;
 
 		/** Maximum number of Instances that can be instantiated for given InstanceType. */
-		MaximumInstanceCount?: number;
+		MaximumInstanceCount?: number | null;
 	}
 
 
@@ -1349,7 +1349,7 @@ export namespace MyNS {
 	export interface InstanceLimits {
 
 		/** InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. */
-		InstanceCountLimits?: InstanceCountLimits;
+		InstanceCountLimits?: InstanceCountLimits | null;
 	}
 
 
@@ -1357,28 +1357,28 @@ export namespace MyNS {
 	export interface StorageType {
 
 		/** Type of the storage. List of available storage options: <ol> <li>instance</li> Inbuilt storage available for the given Instance <li>ebs</li> Elastic block storage that would be attached to the given Instance </ol> */
-		StorageTypeName?: string;
+		StorageTypeName?: string | null;
 
 		/** SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes <ol> <li>standard</li> <li>gp2</li> <li>io1</li> </ol> Refer <code><a>VolumeType</a></code> for more information regarding above EBS storage options. */
-		StorageSubTypeName?: string;
-		StorageTypeLimits?: Array<StorageTypeLimit>;
+		StorageSubTypeName?: string | null;
+		StorageTypeLimits?: Array<StorageTypeLimit> | null;
 	}
 
 
 	/** Limits that are applicable for given storage type.  */
 	export interface StorageTypeLimit {
-		LimitName?: string;
-		LimitValues?: Array<string>;
+		LimitName?: string | null;
+		LimitValues?: Array<string> | null;
 	}
 
 
 	/**  Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code> <a>AdditionalLimits</a> </code>  */
 	export interface Limits {
-		StorageTypes?: Array<StorageType>;
+		StorageTypes?: Array<StorageType> | null;
 
 		/** InstanceLimits represents the list of instance related attributes that are available for given InstanceType. */
-		InstanceLimits?: InstanceLimits;
-		AdditionalLimits?: Array<AdditionalLimit>;
+		InstanceLimits?: InstanceLimits | null;
+		AdditionalLimits?: Array<AdditionalLimit> | null;
 	}
 
 
@@ -1428,7 +1428,7 @@ export namespace MyNS {
 		 * Specifies the number of EC2 instances in the Elasticsearch domain.
 		 * Minimum: 1
 		 */
-		InstanceCount?: number;
+		InstanceCount?: number | null;
 	}
 
 
@@ -1469,32 +1469,32 @@ export namespace MyNS {
 	export interface UpdateElasticsearchDomainConfigRequest {
 
 		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
-		ElasticsearchClusterConfig?: ElasticsearchClusterConfig;
+		ElasticsearchClusterConfig?: ElasticsearchClusterConfig | null;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: EBSOptions;
+		EBSOptions?: EBSOptions | null;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: SnapshotOptions;
+		SnapshotOptions?: SnapshotOptions | null;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: VPCOptions;
+		VPCOptions?: VPCOptions | null;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: CognitoOptions;
+		CognitoOptions?: CognitoOptions | null;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: AdvancedOptions;
+		AdvancedOptions?: AdvancedOptions | null;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
-		AccessPolicies?: string;
-		LogPublishingOptions?: LogPublishingOptions;
+		AccessPolicies?: string | null;
+		LogPublishingOptions?: LogPublishingOptions | null;
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: DomainEndpointOptions;
+		DomainEndpointOptions?: DomainEndpointOptions | null;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
-		AdvancedSecurityOptions?: AdvancedSecurityOptionsInput;
+		AdvancedSecurityOptions?: AdvancedSecurityOptionsInput | null;
 	}
 
 
@@ -1510,7 +1510,7 @@ export namespace MyNS {
 		 */
 		DomainName: string;
 		TargetVersion: string;
-		PerformCheckOnly?: boolean;
+		PerformCheckOnly?: boolean | null;
 	}
 
 	@Injectable()
@@ -1945,58 +1945,58 @@ export namespace MyNS {
 		DomainName: string;
 
 		/** String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. */
-		ElasticsearchVersion?: string;
+		ElasticsearchVersion?: string | null;
 
 		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
-		ElasticsearchClusterConfig?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfig;
+		ElasticsearchClusterConfig?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfig | null;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: CreateElasticsearchDomainPostBodyEBSOptions;
+		EBSOptions?: CreateElasticsearchDomainPostBodyEBSOptions | null;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
-		AccessPolicies?: string;
+		AccessPolicies?: string | null;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: CreateElasticsearchDomainPostBodySnapshotOptions;
+		SnapshotOptions?: CreateElasticsearchDomainPostBodySnapshotOptions | null;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: CreateElasticsearchDomainPostBodyVPCOptions;
+		VPCOptions?: CreateElasticsearchDomainPostBodyVPCOptions | null;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: CreateElasticsearchDomainPostBodyCognitoOptions;
+		CognitoOptions?: CreateElasticsearchDomainPostBodyCognitoOptions | null;
 
 		/** Specifies the Encryption At Rest Options. */
-		EncryptionAtRestOptions?: CreateElasticsearchDomainPostBodyEncryptionAtRestOptions;
+		EncryptionAtRestOptions?: CreateElasticsearchDomainPostBodyEncryptionAtRestOptions | null;
 
 		/** Specifies the node-to-node encryption options. */
-		NodeToNodeEncryptionOptions?: CreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptions;
+		NodeToNodeEncryptionOptions?: CreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptions | null;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: {[id: string]: string };
+		AdvancedOptions?: {[id: string]: string } | null;
 
 		/** Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log. */
-		LogPublishingOptions?: {[id: string]: LogPublishingOption };
+		LogPublishingOptions?: {[id: string]: LogPublishingOption } | null;
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: CreateElasticsearchDomainPostBodyDomainEndpointOptions;
+		DomainEndpointOptions?: CreateElasticsearchDomainPostBodyDomainEndpointOptions | null;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
-		AdvancedSecurityOptions?: CreateElasticsearchDomainPostBodyAdvancedSecurityOptions;
+		AdvancedSecurityOptions?: CreateElasticsearchDomainPostBodyAdvancedSecurityOptions | null;
 	}
 
 	export interface CreateElasticsearchDomainPostBodyElasticsearchClusterConfig {
-		InstanceType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType;
-		InstanceCount?: number;
-		DedicatedMasterEnabled?: boolean;
-		ZoneAwarenessEnabled?: boolean;
+		InstanceType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType | null;
+		InstanceCount?: number | null;
+		DedicatedMasterEnabled?: boolean | null;
+		ZoneAwarenessEnabled?: boolean | null;
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
-		ZoneAwarenessConfig?: ZoneAwarenessConfig;
-		DedicatedMasterType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType;
-		DedicatedMasterCount?: number;
-		WarmEnabled?: boolean;
-		WarmType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType;
-		WarmCount?: number;
+		ZoneAwarenessConfig?: ZoneAwarenessConfig | null;
+		DedicatedMasterType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType | null;
+		DedicatedMasterCount?: number | null;
+		WarmEnabled?: boolean | null;
+		WarmType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType | null;
+		WarmCount?: number | null;
 	}
 
 	export enum CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -2006,52 +2006,52 @@ export namespace MyNS {
 	export enum CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType { ultrawarm1_medium_elasticsearch = 0, ultrawarm1_large_elasticsearch = 1 }
 
 	export interface CreateElasticsearchDomainPostBodyEBSOptions {
-		EBSEnabled?: boolean;
+		EBSEnabled?: boolean | null;
 
 		/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information. */
-		VolumeType?: EBSOptionsVolumeType;
-		VolumeSize?: number;
-		Iops?: number;
+		VolumeType?: EBSOptionsVolumeType | null;
+		VolumeSize?: number | null;
+		Iops?: number | null;
 	}
 
 	export interface CreateElasticsearchDomainPostBodySnapshotOptions {
-		AutomatedSnapshotStartHour?: number;
+		AutomatedSnapshotStartHour?: number | null;
 	}
 
 	export interface CreateElasticsearchDomainPostBodyVPCOptions {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface CreateElasticsearchDomainPostBodyCognitoOptions {
-		Enabled?: boolean;
-		UserPoolId?: string;
-		IdentityPoolId?: string;
-		RoleArn?: string;
+		Enabled?: boolean | null;
+		UserPoolId?: string | null;
+		IdentityPoolId?: string | null;
+		RoleArn?: string | null;
 	}
 
 	export interface CreateElasticsearchDomainPostBodyEncryptionAtRestOptions {
-		Enabled?: boolean;
-		KmsKeyId?: string;
+		Enabled?: boolean | null;
+		KmsKeyId?: string | null;
 	}
 
 	export interface CreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptions {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export interface CreateElasticsearchDomainPostBodyDomainEndpointOptions {
-		EnforceHTTPS?: boolean;
-		TLSSecurityPolicy?: CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy;
+		EnforceHTTPS?: boolean | null;
+		TLSSecurityPolicy?: CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy | null;
 	}
 
 	export enum CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
 
 	export interface CreateElasticsearchDomainPostBodyAdvancedSecurityOptions {
-		Enabled?: boolean;
-		InternalUserDatabaseEnabled?: boolean;
+		Enabled?: boolean | null;
+		InternalUserDatabaseEnabled?: boolean | null;
 
 		/** Credentials for the master user: username and password, ARN, or both. */
-		MasterUserOptions?: MasterUserOptions;
+		MasterUserOptions?: MasterUserOptions | null;
 	}
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBody {
@@ -2077,7 +2077,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfo {
-		OwnerId?: string;
+		OwnerId?: string | null;
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
@@ -2085,12 +2085,12 @@ export namespace MyNS {
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
-		DomainName?: string;
-		Region?: string;
+		DomainName?: string | null;
+		Region?: string | null;
 	}
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfo {
-		OwnerId?: string;
+		OwnerId?: string | null;
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
@@ -2098,8 +2098,8 @@ export namespace MyNS {
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
-		DomainName?: string;
-		Region?: string;
+		DomainName?: string | null;
+		Region?: string | null;
 	}
 
 	export interface CreatePackagePostBody {
@@ -2123,7 +2123,7 @@ export namespace MyNS {
 		 * Description of the package.
 		 * Max length: 1024
 		 */
-		PackageDescription?: string;
+		PackageDescription?: string | null;
 
 		/**
 		 * The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code>
@@ -2135,56 +2135,56 @@ export namespace MyNS {
 	export enum CreatePackagePostBodyPackageType { TXT_DICTIONARY = 0 }
 
 	export interface CreatePackagePostBodyPackageSource {
-		S3BucketName?: string;
-		S3Key?: string;
+		S3BucketName?: string | null;
+		S3Key?: string | null;
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBody {
 
 		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
-		ElasticsearchClusterConfig?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfig;
+		ElasticsearchClusterConfig?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfig | null;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: UpdateElasticsearchDomainConfigPostBodyEBSOptions;
+		EBSOptions?: UpdateElasticsearchDomainConfigPostBodyEBSOptions | null;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: UpdateElasticsearchDomainConfigPostBodySnapshotOptions;
+		SnapshotOptions?: UpdateElasticsearchDomainConfigPostBodySnapshotOptions | null;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: UpdateElasticsearchDomainConfigPostBodyVPCOptions;
+		VPCOptions?: UpdateElasticsearchDomainConfigPostBodyVPCOptions | null;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: UpdateElasticsearchDomainConfigPostBodyCognitoOptions;
+		CognitoOptions?: UpdateElasticsearchDomainConfigPostBodyCognitoOptions | null;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: {[id: string]: string };
+		AdvancedOptions?: {[id: string]: string } | null;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
-		AccessPolicies?: string;
+		AccessPolicies?: string | null;
 
 		/** Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log. */
-		LogPublishingOptions?: {[id: string]: LogPublishingOption };
+		LogPublishingOptions?: {[id: string]: LogPublishingOption } | null;
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptions;
+		DomainEndpointOptions?: UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptions | null;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
-		AdvancedSecurityOptions?: UpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptions;
+		AdvancedSecurityOptions?: UpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptions | null;
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfig {
-		InstanceType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType;
-		InstanceCount?: number;
-		DedicatedMasterEnabled?: boolean;
-		ZoneAwarenessEnabled?: boolean;
+		InstanceType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType | null;
+		InstanceCount?: number | null;
+		DedicatedMasterEnabled?: boolean | null;
+		ZoneAwarenessEnabled?: boolean | null;
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
-		ZoneAwarenessConfig?: ZoneAwarenessConfig;
-		DedicatedMasterType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType;
-		DedicatedMasterCount?: number;
-		WarmEnabled?: boolean;
-		WarmType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType;
-		WarmCount?: number;
+		ZoneAwarenessConfig?: ZoneAwarenessConfig | null;
+		DedicatedMasterType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType | null;
+		DedicatedMasterCount?: number | null;
+		WarmEnabled?: boolean | null;
+		WarmType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType | null;
+		WarmCount?: number | null;
 	}
 
 	export enum UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -2194,43 +2194,43 @@ export namespace MyNS {
 	export enum UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType { ultrawarm1_medium_elasticsearch = 0, ultrawarm1_large_elasticsearch = 1 }
 
 	export interface UpdateElasticsearchDomainConfigPostBodyEBSOptions {
-		EBSEnabled?: boolean;
+		EBSEnabled?: boolean | null;
 
 		/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information. */
-		VolumeType?: EBSOptionsVolumeType;
-		VolumeSize?: number;
-		Iops?: number;
+		VolumeType?: EBSOptionsVolumeType | null;
+		VolumeSize?: number | null;
+		Iops?: number | null;
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodySnapshotOptions {
-		AutomatedSnapshotStartHour?: number;
+		AutomatedSnapshotStartHour?: number | null;
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyVPCOptions {
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyCognitoOptions {
-		Enabled?: boolean;
-		UserPoolId?: string;
-		IdentityPoolId?: string;
-		RoleArn?: string;
+		Enabled?: boolean | null;
+		UserPoolId?: string | null;
+		IdentityPoolId?: string | null;
+		RoleArn?: string | null;
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptions {
-		EnforceHTTPS?: boolean;
-		TLSSecurityPolicy?: UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy;
+		EnforceHTTPS?: boolean | null;
+		TLSSecurityPolicy?: UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy | null;
 	}
 
 	export enum UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
 
 	export interface UpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptions {
-		Enabled?: boolean;
-		InternalUserDatabaseEnabled?: boolean;
+		Enabled?: boolean | null;
+		InternalUserDatabaseEnabled?: boolean | null;
 
 		/** Credentials for the master user: username and password, ARN, or both. */
-		MasterUserOptions?: MasterUserOptions;
+		MasterUserOptions?: MasterUserOptions | null;
 	}
 
 	export interface DescribeElasticsearchDomainsPostBody {
@@ -2247,46 +2247,46 @@ export namespace MyNS {
 	export interface DescribeInboundCrossClusterSearchConnectionsPostBody {
 
 		/** A list of filters used to match properties for inbound cross-cluster search connection. Available <code><a>Filter</a></code> names for this operation are: <ul> <li>cross-cluster-search-connection-id</li> <li>source-domain-info.domain-name</li> <li>source-domain-info.owner-id</li> <li>source-domain-info.region</li> <li>destination-domain-info.domain-name</li> </ul> */
-		Filters?: Array<Filter>;
+		Filters?: Array<Filter> | null;
 
 		/**
 		 * Set this value to limit the number of results returned.
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeOutboundCrossClusterSearchConnectionsPostBody {
 
 		/** A list of filters used to match properties for outbound cross-cluster search connection. Available <code><a>Filter</a></code> names for this operation are: <ul> <li>cross-cluster-search-connection-id</li> <li>destination-domain-info.domain-name</li> <li>destination-domain-info.owner-id</li> <li>destination-domain-info.region</li> <li>source-domain-info.domain-name</li> </ul> */
-		Filters?: Array<Filter>;
+		Filters?: Array<Filter> | null;
 
 		/**
 		 * Set this value to limit the number of results returned.
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface DescribePackagesPostBody {
 
 		/** A list of <code>DescribePackagesFilter</code> to filter the packages included in a <code>DescribePackages</code> response. */
-		Filters?: Array<DescribePackagesFilter>;
+		Filters?: Array<DescribePackagesFilter> | null;
 
 		/**
 		 * Set this value to limit the number of results returned.
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface PurchaseReservedElasticsearchInstanceOfferingPostBody {
@@ -2310,7 +2310,7 @@ export namespace MyNS {
 		 * Specifies the number of EC2 instances in the Elasticsearch domain.
 		 * Minimum: 1
 		 */
-		InstanceCount?: number;
+		InstanceCount?: number | null;
 	}
 
 	export interface RemoveTagsPostBody {
@@ -2358,7 +2358,7 @@ export namespace MyNS {
 		TargetVersion: string;
 
 		/** This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. */
-		PerformCheckOnly?: boolean;
+		PerformCheckOnly?: boolean | null;
 	}
 
 }

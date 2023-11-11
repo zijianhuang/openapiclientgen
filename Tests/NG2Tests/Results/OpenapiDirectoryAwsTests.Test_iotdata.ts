@@ -11,73 +11,73 @@ export namespace MyNS {
 
 	/** The specified resource does not exist. */
 	export interface ResourceNotFoundException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The request is not valid. */
 	export interface InvalidRequestException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The rate exceeds the limit. */
 	export interface ThrottlingException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** You are not authorized to perform this operation. */
 	export interface UnauthorizedException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The service is temporarily unavailable. */
 	export interface ServiceUnavailableException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** An unexpected error has occurred. */
 	export interface InternalFailureException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The specified combination of HTTP verb and URI is not supported. */
 	export interface MethodNotAllowedException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The document encoding is not supported. */
 	export interface UnsupportedDocumentEncodingException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The output from the GetThingShadow operation. */
 	export interface GetThingShadowResponse {
-		payload?: string;
+		payload?: string | null;
 	}
 
 
 	/** The output from the UpdateThingShadow operation. */
 	export interface UpdateThingShadowResponse {
-		payload?: string;
+		payload?: string | null;
 	}
 
 
 	/** The specified version does not match the version of the document. */
 	export interface ConflictException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The payload exceeds the maximum size allowed. */
 	export interface RequestEntityTooLargeException {
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	/** The input for the Publish operation. */
 	export interface PublishRequest {
-		payload?: string;
+		payload?: string | null;
 	}
 
 
@@ -161,7 +161,7 @@ export namespace MyNS {
 	export interface PublishPostBody {
 
 		/** The state information, in JSON format. */
-		payload?: string;
+		payload?: string | null;
 	}
 
 }

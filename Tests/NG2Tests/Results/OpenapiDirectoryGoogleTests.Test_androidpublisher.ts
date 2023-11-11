@@ -5,13 +5,13 @@ export namespace MyNS {
 	export interface Apk {
 
 		/** Represents the binary payload of an APK. */
-		binary?: ApkBinary;
+		binary?: ApkBinary | null;
 
 		/** Represents the binary payload of an APK. */
-		testBinary?: ApkBinary;
+		testBinary?: ApkBinary | null;
 
 		/** The version code of the APK, as specified in the APK's manifest file. */
-		versionCode?: number;
+		versionCode?: number | null;
 	}
 
 
@@ -19,16 +19,16 @@ export namespace MyNS {
 	export interface ApkBinary {
 
 		/** A sha1 hash of the APK payload, encoded as a hex string and matching the output of the sha1sum command. */
-		sha1?: string;
+		sha1?: string | null;
 
 		/** A sha256 hash of the APK payload, encoded as a hex string and matching the output of the sha256sum command. */
-		sha256?: string;
+		sha256?: string | null;
 	}
 
 	export interface ApksAddExternallyHostedRequest {
 
 		/** Defines an APK available for this application that is hosted externally and not uploaded to Google Play. This function is only available to enterprises who are using Google Play for Work, and whos application is restricted to the enterprise private channel */
-		externallyHostedApk?: ExternallyHostedApk;
+		externallyHostedApk?: ExternallyHostedApk | null;
 	}
 
 
@@ -36,49 +36,49 @@ export namespace MyNS {
 	export interface ExternallyHostedApk {
 
 		/** The application label. */
-		applicationLabel?: string;
+		applicationLabel?: string | null;
 
 		/** A certificate (or array of certificates if a certificate-chain is used) used to signed this APK, represented as a base64 encoded byte array. */
-		certificateBase64s?: Array<string>;
+		certificateBase64s?: Array<string> | null;
 
 		/** The URL at which the APK is hosted. This must be an https URL. */
-		externallyHostedUrl?: string;
+		externallyHostedUrl?: string | null;
 
 		/** The SHA1 checksum of this APK, represented as a base64 encoded byte array. */
-		fileSha1Base64?: string;
+		fileSha1Base64?: string | null;
 
 		/** The SHA256 checksum of this APK, represented as a base64 encoded byte array. */
-		fileSha256Base64?: string;
+		fileSha256Base64?: string | null;
 
 		/** The file size in bytes of this APK. */
-		fileSize?: string;
+		fileSize?: string | null;
 
 		/** The icon image from the APK, as a base64 encoded byte array. */
-		iconBase64?: string;
+		iconBase64?: string | null;
 
 		/** The maximum SDK supported by this APK (optional). */
-		maximumSdk?: number;
+		maximumSdk?: number | null;
 
 		/** The minimum SDK targeted by this APK. */
-		minimumSdk?: number;
+		minimumSdk?: number | null;
 
 		/** The native code environments supported by this APK (optional). */
-		nativeCodes?: Array<string>;
+		nativeCodes?: Array<string> | null;
 
 		/** The package name. */
-		packageName?: string;
+		packageName?: string | null;
 
 		/** The features required by this APK (optional). */
-		usesFeatures?: Array<string>;
+		usesFeatures?: Array<string> | null;
 
 		/** The permissions requested by this APK. */
-		usesPermissions?: Array<ExternallyHostedApkUsesPermission>;
+		usesPermissions?: Array<ExternallyHostedApkUsesPermission> | null;
 
 		/** The version code of this APK. */
-		versionCode?: number;
+		versionCode?: number | null;
 
 		/** The version name of this APK. */
-		versionName?: string;
+		versionName?: string | null;
 	}
 
 
@@ -86,38 +86,38 @@ export namespace MyNS {
 	export interface ExternallyHostedApkUsesPermission {
 
 		/** Optionally, the maximum SDK version for which the permission is required. */
-		maxSdkVersion?: number;
+		maxSdkVersion?: number | null;
 
 		/** The name of the permission requested. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface ApksAddExternallyHostedResponse {
 
 		/** Defines an APK available for this application that is hosted externally and not uploaded to Google Play. This function is only available to enterprises who are using Google Play for Work, and whos application is restricted to the enterprise private channel */
-		externallyHostedApk?: ExternallyHostedApk;
+		externallyHostedApk?: ExternallyHostedApk | null;
 	}
 
 	export interface ApksListResponse {
-		apks?: Array<Apk>;
+		apks?: Array<Apk> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#apksListResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AppDetails {
 
 		/** The user-visible support email for this app. */
-		contactEmail?: string;
+		contactEmail?: string | null;
 
 		/** The user-visible support telephone number for this app. */
-		contactPhone?: string;
+		contactPhone?: string | null;
 
 		/** The user-visible website for this app. */
-		contactWebsite?: string;
+		contactWebsite?: string | null;
 
 		/** Default language code, in BCP 47 format (eg "en-US"). */
-		defaultLanguage?: string;
+		defaultLanguage?: string | null;
 	}
 
 
@@ -125,142 +125,142 @@ export namespace MyNS {
 	export interface AppEdit {
 
 		/** The time at which the edit will expire and will be no longer valid for use in any subsequent API calls (encoded as seconds since the Epoch). */
-		expiryTimeSeconds?: string;
+		expiryTimeSeconds?: string | null;
 
 		/** The ID of the edit that can be used in subsequent API calls. */
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface Bundle {
 
 		/** A sha1 hash of the upload payload, encoded as a hex string and matching the output of the sha1sum command. */
-		sha1?: string;
+		sha1?: string | null;
 
 		/** A sha256 hash of the upload payload, encoded as a hex string and matching the output of the sha256sum command. */
-		sha256?: string;
+		sha256?: string | null;
 
 		/** The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file. */
-		versionCode?: number;
+		versionCode?: number | null;
 	}
 
 	export interface BundlesListResponse {
-		bundles?: Array<Bundle>;
+		bundles?: Array<Bundle> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#bundlesListResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface Comment {
-		developerComment?: DeveloperComment;
-		userComment?: UserComment;
+		developerComment?: DeveloperComment | null;
+		userComment?: UserComment | null;
 	}
 
 	export interface DeveloperComment {
-		lastModified?: Timestamp;
+		lastModified?: Timestamp | null;
 
 		/** The content of the comment, i.e. reply body. */
-		text?: string;
+		text?: string | null;
 	}
 
 	export interface Timestamp {
-		nanos?: number;
-		seconds?: string;
+		nanos?: number | null;
+		seconds?: string | null;
 	}
 
 	export interface UserComment {
 
 		/** Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent. */
-		androidOsVersion?: number;
+		androidOsVersion?: number | null;
 
 		/** Integer version code of the app as installed at the time the review was written. May be absent. */
-		appVersionCode?: number;
+		appVersionCode?: number | null;
 
 		/** String version name of the app as installed at the time the review was written. May be absent. */
-		appVersionName?: string;
+		appVersionName?: string | null;
 
 		/** Codename for the reviewer's device, e.g. klte, flounder. May be absent. */
-		device?: string;
-		deviceMetadata?: DeviceMetadata;
-		lastModified?: Timestamp;
+		device?: string | null;
+		deviceMetadata?: DeviceMetadata | null;
+		lastModified?: Timestamp | null;
 
 		/** Untranslated text of the review, in the case where the review has been translated. If the review has not been translated this is left blank. */
-		originalText?: string;
+		originalText?: string | null;
 
 		/** Language code for the reviewer. This is taken from the device settings so is not guaranteed to match the language the review is written in. May be absent. */
-		reviewerLanguage?: string;
+		reviewerLanguage?: string | null;
 
 		/** The star rating associated with the review, from 1 to 5. */
-		starRating?: number;
+		starRating?: number | null;
 
 		/** The content of the comment, i.e. review body. In some cases users have been able to write a review with separate title and body; in those cases the title and body are concatenated and separated by a tab character. */
-		text?: string;
+		text?: string | null;
 
 		/** Number of users who have given this review a thumbs down */
-		thumbsDownCount?: number;
+		thumbsDownCount?: number | null;
 
 		/** Number of users who have given this review a thumbs up */
-		thumbsUpCount?: number;
+		thumbsUpCount?: number | null;
 	}
 
 	export interface DeviceMetadata {
 
 		/** Device CPU make e.g. "Qualcomm" */
-		cpuMake?: string;
+		cpuMake?: string | null;
 
 		/** Device CPU model e.g. "MSM8974" */
-		cpuModel?: string;
+		cpuModel?: string | null;
 
 		/** Device class (e.g. tablet) */
-		deviceClass?: string;
+		deviceClass?: string | null;
 
 		/** OpenGL version */
-		glEsVersion?: number;
+		glEsVersion?: number | null;
 
 		/** Device manufacturer (e.g. Motorola) */
-		manufacturer?: string;
+		manufacturer?: string | null;
 
 		/** Comma separated list of native platforms (e.g. "arm", "arm7") */
-		nativePlatform?: string;
+		nativePlatform?: string | null;
 
 		/** Device model name (e.g. Droid) */
-		productName?: string;
+		productName?: string | null;
 
 		/** Device RAM in Megabytes e.g. "2048" */
-		ramMb?: number;
+		ramMb?: number | null;
 
 		/** Screen density in DPI */
-		screenDensityDpi?: number;
+		screenDensityDpi?: number | null;
 
 		/** Screen height in pixels */
-		screenHeightPx?: number;
+		screenHeightPx?: number | null;
 
 		/** Screen width in pixels */
-		screenWidthPx?: number;
+		screenWidthPx?: number | null;
 	}
 
 	export interface Control {
-		modRanges?: Array<ModRange>;
-		stratifiedSamplings?: Array<StratifiedSampling>;
-		versionCodes?: Array<string>;
+		modRanges?: Array<ModRange> | null;
+		stratifiedSamplings?: Array<StratifiedSampling> | null;
+		versionCodes?: Array<string> | null;
 	}
 
 	export interface ModRange {
-		end?: string;
-		start?: string;
+		end?: string | null;
+		start?: string | null;
 	}
 
 	export interface StratifiedSampling {
-		modRanges?: Array<ModRange>;
-		stratum?: Stratum;
+		modRanges?: Array<ModRange> | null;
+		stratum?: Stratum | null;
 	}
 
 	export interface Stratum {
-		brand?: string;
+		brand?: string | null;
 	}
 
 	export interface CountryTargeting {
-		countries?: Array<string>;
-		includeRestOfWorld?: boolean;
+		countries?: Array<string> | null;
+		includeRestOfWorld?: boolean | null;
 	}
 
 
@@ -268,125 +268,125 @@ export namespace MyNS {
 	export interface DeobfuscationFile {
 
 		/** The type of the deobfuscation file. */
-		symbolType?: string;
+		symbolType?: string | null;
 	}
 
 	export interface DeobfuscationFilesUploadResponse {
 
 		/** Represents a deobfuscation file. */
-		deobfuscationFile?: DeobfuscationFile;
+		deobfuscationFile?: DeobfuscationFile | null;
 	}
 
 	export interface DeviceSpec {
-		screenDensity?: string;
-		supportedAbis?: Array<string>;
-		supportedLocales?: Array<string>;
+		screenDensity?: string | null;
+		supportedAbis?: Array<string> | null;
+		supportedLocales?: Array<string> | null;
 	}
 
 	export interface ExpansionFile {
 
 		/** If set this field indicates that this APK has an Expansion File uploaded to it: this APK does not reference another APK's Expansion File. The field's value is the size of the uploaded Expansion File in bytes. */
-		fileSize?: string;
+		fileSize?: string | null;
 
 		/** If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set. */
-		referencesVersion?: number;
+		referencesVersion?: number | null;
 	}
 
 	export interface ExpansionFilesUploadResponse {
-		expansionFile?: ExpansionFile;
+		expansionFile?: ExpansionFile | null;
 	}
 
 	export interface Image {
 
 		/** A unique id representing this image. */
-		id?: string;
+		id?: string | null;
 
 		/** A sha1 hash of the image that was uploaded. */
-		sha1?: string;
+		sha1?: string | null;
 
 		/** A sha256 hash of the image that was uploaded. */
-		sha256?: string;
+		sha256?: string | null;
 
 		/** A URL that will serve a preview of the image. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface ImagesDeleteAllResponse {
-		deleted?: Array<Image>;
+		deleted?: Array<Image> | null;
 	}
 
 	export interface ImagesListResponse {
-		images?: Array<Image>;
+		images?: Array<Image> | null;
 	}
 
 	export interface ImagesUploadResponse {
-		image?: Image;
+		image?: Image | null;
 	}
 
 	export interface InAppProduct {
 
 		/** The default language of the localized data, as defined by BCP 47. e.g. "en-US", "en-GB". */
-		defaultLanguage?: string;
-		defaultPrice?: Price;
+		defaultLanguage?: string | null;
+		defaultPrice?: Price | null;
 
 		/** Grace period of the subscription, specified in ISO 8601 format. It will allow developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values = "P3D" (three days), "P7D" (seven days), "P14D" (fourteen days), and "P30D" (thirty days) */
-		gracePeriod?: string;
+		gracePeriod?: string | null;
 
 		/** List of localized title and description data. */
-		listings?: {[id: string]: InAppProductListing };
+		listings?: {[id: string]: InAppProductListing } | null;
 
 		/** The package name of the parent app. */
-		packageName?: string;
+		packageName?: string | null;
 
 		/** Prices per buyer region. None of these prices should be zero. In-app products can never be free. */
-		prices?: {[id: string]: Price };
+		prices?: {[id: string]: Price } | null;
 
 		/** Purchase type enum value. Unmodifiable after creation. */
-		purchaseType?: string;
+		purchaseType?: string | null;
 
 		/** The stock-keeping-unit (SKU) of the product, unique within an app. */
-		sku?: string;
-		status?: string;
+		sku?: string | null;
+		status?: string | null;
 
 		/** Subscription period, specified in ISO 8601 format. Acceptable values are "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year). */
-		subscriptionPeriod?: string;
+		subscriptionPeriod?: string | null;
 
 		/** Trial period, specified in ISO 8601 format. Acceptable values are anything between "P7D" (seven days) and "P999D" (999 days). Seasonal subscriptions cannot have a trial period. */
-		trialPeriod?: string;
+		trialPeriod?: string | null;
 	}
 
 	export interface Price {
 
 		/** 3 letter Currency code, as defined by ISO 4217. */
-		currency?: string;
+		currency?: string | null;
 
 		/** The price in millionths of the currency base unit represented as a string. */
-		priceMicros?: string;
+		priceMicros?: string | null;
 	}
 
 	export interface InAppProductListing {
-		description?: string;
-		title?: string;
+		description?: string | null;
+		title?: string | null;
 	}
 
 	export interface InappproductsListResponse {
-		inappproduct?: Array<InAppProduct>;
+		inappproduct?: Array<InAppProduct> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#inappproductsListResponse". */
-		kind?: string;
-		pageInfo?: PageInfo;
-		tokenPagination?: TokenPagination;
+		kind?: string | null;
+		pageInfo?: PageInfo | null;
+		tokenPagination?: TokenPagination | null;
 	}
 
 	export interface PageInfo {
-		resultPerPage?: number;
-		startIndex?: number;
-		totalResults?: number;
+		resultPerPage?: number | null;
+		startIndex?: number | null;
+		totalResults?: number | null;
 	}
 
 	export interface TokenPagination {
-		nextPageToken?: string;
-		previousPageToken?: string;
+		nextPageToken?: string | null;
+		previousPageToken?: string | null;
 	}
 
 
@@ -394,13 +394,13 @@ export namespace MyNS {
 	export interface InternalAppSharingArtifact {
 
 		/** The SHA256 fingerprint of the certificate used to signed the generated artifact. */
-		certificateFingerprint?: string;
+		certificateFingerprint?: string | null;
 
 		/** The download URL generated for the uploaded artifact. Users that are authorized to download can follow the link to the Play Store app to install it. */
-		downloadUrl?: string;
+		downloadUrl?: string | null;
 
 		/** The SHA-256 hash of the artifact represented as a lowercase hexadecimal number, matching the output of the sha256sum command. */
-		sha256?: string;
+		sha256?: string | null;
 	}
 
 
@@ -408,50 +408,50 @@ export namespace MyNS {
 	export interface IntroductoryPriceInfo {
 
 		/** Introductory price of the subscription, not including tax. The currency is the same as price_currency_code. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000. */
-		introductoryPriceAmountMicros?: string;
+		introductoryPriceAmountMicros?: string | null;
 
 		/** ISO 4217 currency code for the introductory subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP". */
-		introductoryPriceCurrencyCode?: string;
+		introductoryPriceCurrencyCode?: string | null;
 
 		/** The number of billing period to offer introductory pricing. */
-		introductoryPriceCycles?: number;
+		introductoryPriceCycles?: number | null;
 
 		/** Introductory price period, specified in ISO 8601 format. Common values are (but not limited to) "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year). */
-		introductoryPricePeriod?: string;
+		introductoryPricePeriod?: string | null;
 	}
 
 	export interface Listing {
 
 		/** Full description of the app; this may be up to 4000 characters in length. */
-		fullDescription?: string;
+		fullDescription?: string | null;
 
 		/** Language localization code (for example, "de-AT" for Austrian German). */
-		language?: string;
+		language?: string | null;
 
 		/** Short description of the app (previously known as promo text); this may be up to 80 characters in length. */
-		shortDescription?: string;
+		shortDescription?: string | null;
 
 		/** App's localized title. */
-		title?: string;
+		title?: string | null;
 
 		/** URL of a promotional YouTube video for the app. */
-		video?: string;
+		video?: string | null;
 	}
 
 	export interface ListingsListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#listingsListResponse". */
-		kind?: string;
-		listings?: Array<Listing>;
+		kind?: string | null;
+		listings?: Array<Listing> | null;
 	}
 
 	export interface LocalizedText {
 
 		/** The language code, in BCP 47 format (eg "en-US"). */
-		language?: string;
+		language?: string | null;
 
 		/** The text in the given `language`. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -463,26 +463,26 @@ export namespace MyNS {
 		 * - Yet to be acknowledged
 		 * - Acknowledged
 		 */
-		acknowledgementState?: number;
+		acknowledgementState?: number | null;
 
 		/**
 		 * The consumption state of the inapp product. Possible values are:
 		 * - Yet to be consumed
 		 * - Consumed
 		 */
-		consumptionState?: number;
+		consumptionState?: number | null;
 
 		/** A developer-specified string that contains supplemental information about an order. */
-		developerPayload?: string;
+		developerPayload?: string | null;
 
 		/** This kind represents an inappPurchase object in the androidpublisher service. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The order id associated with the purchase of the inapp product. */
-		orderId?: string;
+		orderId?: string | null;
 
 		/** The inapp product SKU. */
-		productId?: string;
+		productId?: string | null;
 
 		/**
 		 * The purchase state of the order. Possible values are:
@@ -490,13 +490,13 @@ export namespace MyNS {
 		 * - Canceled
 		 * - Pending
 		 */
-		purchaseState?: number;
+		purchaseState?: number | null;
 
 		/** The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970). */
-		purchaseTimeMillis?: string;
+		purchaseTimeMillis?: string | null;
 
 		/** The purchase token generated to identify this purchase. */
-		purchaseToken?: string;
+		purchaseToken?: string | null;
 
 		/**
 		 * The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:
@@ -504,59 +504,59 @@ export namespace MyNS {
 		 * - Promo (i.e. purchased using a promo code)
 		 * - Rewarded (i.e. from watching a video ad instead of paying)
 		 */
-		purchaseType?: number;
+		purchaseType?: number | null;
 
 		/** The quantity associated with the purchase of the inapp product. */
-		quantity?: number;
+		quantity?: number | null;
 	}
 
 	export interface ProductPurchasesAcknowledgeRequest {
 
 		/** Payload to attach to the purchase. */
-		developerPayload?: string;
+		developerPayload?: string | null;
 	}
 
 	export interface Review {
 
 		/** The name of the user who wrote the review. */
-		authorName?: string;
+		authorName?: string | null;
 
 		/** A repeated field containing comments for the review. */
-		comments?: Array<Comment>;
+		comments?: Array<Comment> | null;
 
 		/** Unique identifier for this review. */
-		reviewId?: string;
+		reviewId?: string | null;
 	}
 
 	export interface ReviewReplyResult {
-		lastEdited?: Timestamp;
+		lastEdited?: Timestamp | null;
 
 		/** The reply text that was applied. */
-		replyText?: string;
+		replyText?: string | null;
 	}
 
 	export interface ReviewsListResponse {
-		pageInfo?: PageInfo;
-		reviews?: Array<Review>;
-		tokenPagination?: TokenPagination;
+		pageInfo?: PageInfo | null;
+		reviews?: Array<Review> | null;
+		tokenPagination?: TokenPagination | null;
 	}
 
 	export interface ReviewsReplyRequest {
 
 		/** The text to set as the reply. Replies of more than approximately 350 characters will be rejected. HTML tags will be stripped. */
-		replyText?: string;
+		replyText?: string | null;
 	}
 
 	export interface ReviewsReplyResponse {
-		result?: ReviewReplyResult;
+		result?: ReviewReplyResult | null;
 	}
 
 	export interface Sampling {
-		modRanges?: Array<ModRange>;
-		modulus?: string;
-		salt?: number;
-		stratifiedSamplings?: Array<StratifiedSampling>;
-		useAndroidId?: boolean;
+		modRanges?: Array<ModRange> | null;
+		modulus?: string | null;
+		salt?: number | null;
+		stratifiedSamplings?: Array<StratifiedSampling> | null;
+		useAndroidId?: boolean | null;
 	}
 
 
@@ -571,10 +571,10 @@ export namespace MyNS {
 		 * - Cost-related reasons
 		 * - I found a better app
 		 */
-		cancelSurveyReason?: number;
+		cancelSurveyReason?: number | null;
 
 		/** The customized input cancel reason from the user. Only present when cancelReason is 0. */
-		userInputCancelReason?: string;
+		userInputCancelReason?: string | null;
 	}
 
 
@@ -582,23 +582,23 @@ export namespace MyNS {
 	export interface SubscriptionDeferralInfo {
 
 		/** The desired next expiry time to assign to the subscription, in milliseconds since the Epoch. The given time must be later/greater than the current expiry time for the subscription. */
-		desiredExpiryTimeMillis?: string;
+		desiredExpiryTimeMillis?: string | null;
 
 		/** The expected expiry time for the subscription. If the current expiry time for the subscription is not the value specified here, the deferral will not occur. */
-		expectedExpiryTimeMillis?: string;
+		expectedExpiryTimeMillis?: string | null;
 	}
 
 
 	/** Contains the price change information for a subscription that can be used to control the user journey for the price change in the app. This can be in the form of seeking confirmation from the user or tailoring the experience for a successful conversion. */
 	export interface SubscriptionPriceChange {
-		newPrice?: Price;
+		newPrice?: Price | null;
 
 		/**
 		 * The current state of the price change. Possible values are:
 		 * - Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API.
 		 * - Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next.
 		 */
-		state?: number;
+		state?: number | null;
 	}
 
 
@@ -610,13 +610,13 @@ export namespace MyNS {
 		 * - Yet to be acknowledged
 		 * - Acknowledged
 		 */
-		acknowledgementState?: number;
+		acknowledgementState?: number | null;
 
 		/** Whether the subscription will automatically be renewed when it reaches its current expiry time. */
-		autoRenewing?: boolean;
+		autoRenewing?: boolean | null;
 
 		/** Time at which the subscription will be automatically resumed, in milliseconds since the Epoch. Only present if the user has requested to pause the subscription. */
-		autoResumeTimeMillis?: string;
+		autoResumeTimeMillis?: string | null;
 
 		/**
 		 * The reason why a subscription was canceled or is not auto-renewing. Possible values are:
@@ -625,47 +625,47 @@ export namespace MyNS {
 		 * - Subscription was replaced with a new subscription
 		 * - Subscription was canceled by the developer
 		 */
-		cancelReason?: number;
+		cancelReason?: number | null;
 
 		/** Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey). */
-		cancelSurveyResult?: SubscriptionCancelSurveyResult;
+		cancelSurveyResult?: SubscriptionCancelSurveyResult | null;
 
 		/** ISO 3166-1 alpha-2 billing country/region code of the user at the time the subscription was granted. */
-		countryCode?: string;
+		countryCode?: string | null;
 
 		/** A developer-specified string that contains supplemental information about an order. */
-		developerPayload?: string;
+		developerPayload?: string | null;
 
 		/** The email address of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/** Time at which the subscription will expire, in milliseconds since the Epoch. */
-		expiryTimeMillis?: string;
+		expiryTimeMillis?: string | null;
 
 		/** User account identifier in the third-party service. Only present if account linking happened as part of the subscription purchase flow. */
-		externalAccountId?: string;
+		externalAccountId?: string | null;
 
 		/** The family name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
-		familyName?: string;
+		familyName?: string | null;
 
 		/** The given name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
-		givenName?: string;
+		givenName?: string | null;
 
 		/** Contains the introductory price information for a subscription. */
-		introductoryPriceInfo?: IntroductoryPriceInfo;
+		introductoryPriceInfo?: IntroductoryPriceInfo | null;
 
 		/** This kind represents a subscriptionPurchase object in the androidpublisher service. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The purchase token of the originating purchase if this subscription is one of the following:
 		 * - Re-signup of a canceled but non-lapsed subscription
 		 * - Upgrade/downgrade from a previous subscription  For example, suppose a user originally signs up and you receive purchase token X, then the user cancels and goes through the resignup flow (before their subscription lapses) and you receive purchase token Y, and finally the user upgrades their subscription and you receive purchase token Z. If you call this API with purchase token Z, this field will be set to Y. If you call this API with purchase token Y, this field will be set to X. If you call this API with purchase token X, this field will not be set.
 		 */
-		linkedPurchaseToken?: string;
+		linkedPurchaseToken?: string | null;
 
 		/** The order id of the latest recurring order associated with the purchase of the subscription. */
-		orderId?: string;
+		orderId?: string | null;
 
 		/**
 		 * The payment state of the subscription. Possible values are:
@@ -674,147 +674,147 @@ export namespace MyNS {
 		 * - Free trial
 		 * - Pending deferred upgrade/downgrade
 		 */
-		paymentState?: number;
+		paymentState?: number | null;
 
 		/** Price of the subscription, not including tax. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000. */
-		priceAmountMicros?: string;
+		priceAmountMicros?: string | null;
 
 		/** Contains the price change information for a subscription that can be used to control the user journey for the price change in the app. This can be in the form of seeking confirmation from the user or tailoring the experience for a successful conversion. */
-		priceChange?: SubscriptionPriceChange;
+		priceChange?: SubscriptionPriceChange | null;
 
 		/** ISO 4217 currency code for the subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP". */
-		priceCurrencyCode?: string;
+		priceCurrencyCode?: string | null;
 
 		/** The Google profile id of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
-		profileId?: string;
+		profileId?: string | null;
 
 		/** The profile name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
-		profileName?: string;
+		profileName?: string | null;
 
 		/** The promotion code applied on this purchase. This field is only set if a vanity code promotion is applied when the subscription was purchased. */
-		promotionCode?: string;
+		promotionCode?: string | null;
 
 		/**
 		 * The type of promotion applied on this purchase. This field is only set if a promotion is applied when the subscription was purchased. Possible values are:
 		 * - One time code
 		 * - Vanity code
 		 */
-		promotionType?: number;
+		promotionType?: number | null;
 
 		/**
 		 * The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:
 		 * - Test (i.e. purchased from a license testing account)
 		 * - Promo (i.e. purchased using a promo code)
 		 */
-		purchaseType?: number;
+		purchaseType?: number | null;
 
 		/** Time at which the subscription was granted, in milliseconds since the Epoch. */
-		startTimeMillis?: string;
+		startTimeMillis?: string | null;
 
 		/** The time at which the subscription was canceled by the user, in milliseconds since the epoch. Only present if cancelReason is 0. */
-		userCancellationTimeMillis?: string;
+		userCancellationTimeMillis?: string | null;
 	}
 
 	export interface SubscriptionPurchasesAcknowledgeRequest {
 
 		/** Payload to attach to the purchase. */
-		developerPayload?: string;
+		developerPayload?: string | null;
 	}
 
 	export interface SubscriptionPurchasesDeferRequest {
 
 		/** A SubscriptionDeferralInfo contains the data needed to defer a subscription purchase to a future expiry time. */
-		deferralInfo?: SubscriptionDeferralInfo;
+		deferralInfo?: SubscriptionDeferralInfo | null;
 	}
 
 	export interface SubscriptionPurchasesDeferResponse {
 
 		/** The new expiry time for the subscription in milliseconds since the Epoch. */
-		newExpiryTimeMillis?: string;
+		newExpiryTimeMillis?: string | null;
 	}
 
 	export interface SystemApkVariantsCreateRequest {
-		deviceSpec?: DeviceSpec;
+		deviceSpec?: DeviceSpec | null;
 	}
 
 	export interface SystemApkVariantsListResponse {
-		variants?: Array<Variant>;
+		variants?: Array<Variant> | null;
 	}
 
 
 	/** Represents the variant of a generated system APK from an uploaded App Bundle. */
 	export interface Variant {
-		deviceSpec?: DeviceSpec;
-		variantId?: string;
+		deviceSpec?: DeviceSpec | null;
+		variantId?: string | null;
 	}
 
 	export interface Testers {
-		autoEnrolledAndroidGroups?: Array<string>;
-		autoEnrolledGoogleGroups?: Array<string>;
-		excludedGoogleGroups?: Array<string>;
+		autoEnrolledAndroidGroups?: Array<string> | null;
+		autoEnrolledGoogleGroups?: Array<string> | null;
+		excludedGoogleGroups?: Array<string> | null;
 
 		/** A list of all Google Groups, as email addresses, that define testers for this track. */
-		googleGroups?: Array<string>;
+		googleGroups?: Array<string> | null;
 	}
 
 	export interface Track {
 
 		/** A list of all active releases in this track during a read request. On an update request, it represents desired changes. */
-		releases?: Array<TrackRelease>;
+		releases?: Array<TrackRelease> | null;
 
 		/** Identifier for this track. */
-		track?: string;
+		track?: string | null;
 	}
 
 	export interface TrackRelease {
-		controls?: Array<Control>;
-		countryTargeting?: CountryTargeting;
+		controls?: Array<Control> | null;
+		countryTargeting?: CountryTargeting | null;
 
 		/** In-app update priority of the release. All newly added APKs in the release will be considered at this priority. in_app_update_priority can take values between [0, 5]. 5 is the highest priority. Default priority is 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates. */
-		inAppUpdatePriority?: number;
+		inAppUpdatePriority?: number | null;
 
 		/** The release name, used to identify this release in the Play Console UI. Not required to be unique. This is optional, if not set it will be generated from the version_name in the APKs. */
-		name?: string;
-		pinnedVersions?: Array<TrackReleasePin>;
+		name?: string | null;
+		pinnedVersions?: Array<TrackReleasePin> | null;
 
 		/** The description of what is new in the app in this release. */
-		releaseNotes?: Array<LocalizedText>;
-		rollbackEnabled?: boolean;
-		sampling?: Sampling;
+		releaseNotes?: Array<LocalizedText> | null;
+		rollbackEnabled?: boolean | null;
+		sampling?: Sampling | null;
 
 		/** The desired status of this release. */
-		status?: string;
+		status?: string | null;
 
 		/** Fraction of users who are eligible to receive the release. 0 < fraction < 1. To be set, release status must be "inProgress" or "halted". */
-		userFraction?: number;
+		userFraction?: number | null;
 
 		/** A list of all version codes of APKs that will be exposed to the users of this track when this release is rolled out. Note that this list should contain all versions you wish to be active, including those you wish to retain from previous releases. */
-		versionCodes?: Array<string>;
+		versionCodes?: Array<string> | null;
 	}
 
 	export interface TrackReleasePin {
-		targetings?: Array<TrackReleasePinPinTargeting>;
-		versionCodes?: Array<string>;
+		targetings?: Array<TrackReleasePinPinTargeting> | null;
+		versionCodes?: Array<string> | null;
 	}
 
 	export interface TrackReleasePinPinTargeting {
-		countryCodes?: Array<string>;
-		devices?: Array<TrackReleasePinPinTargetingDevicePin>;
-		phoneskyVersions?: Array<string>;
-		sdkVersions?: Array<number>;
+		countryCodes?: Array<string> | null;
+		devices?: Array<TrackReleasePinPinTargetingDevicePin> | null;
+		phoneskyVersions?: Array<string> | null;
+		sdkVersions?: Array<number> | null;
 	}
 
 	export interface TrackReleasePinPinTargetingDevicePin {
-		brand?: string;
-		device?: string;
-		product?: string;
+		brand?: string | null;
+		device?: string | null;
+		product?: string | null;
 	}
 
 	export interface TracksListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#tracksListResponse". */
-		kind?: string;
-		tracks?: Array<Track>;
+		kind?: string | null;
+		tracks?: Array<Track> | null;
 	}
 
 
@@ -822,16 +822,16 @@ export namespace MyNS {
 	export interface VoidedPurchase {
 
 		/** This kind represents a voided purchase object in the androidpublisher service. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The order id which uniquely identifies a one-time purchase, subscription purchase, or subscription renewal. */
-		orderId?: string;
+		orderId?: string | null;
 
 		/** The time at which the purchase was made, in milliseconds since the epoch (Jan 1, 1970). */
-		purchaseTimeMillis?: string;
+		purchaseTimeMillis?: string | null;
 
 		/** The token which uniquely identifies a one-time purchase or subscription. To uniquely identify subscription renewals use order_id (available starting from version 3 of the API). */
-		purchaseToken?: string;
+		purchaseToken?: string | null;
 
 		/**
 		 * The reason why the purchase was voided, possible values are:
@@ -844,7 +844,7 @@ export namespace MyNS {
 		 * - Friendly_fraud
 		 * - Chargeback
 		 */
-		voidedReason?: number;
+		voidedReason?: number | null;
 
 		/**
 		 * The initiator of voided purchase, possible values are:
@@ -852,16 +852,16 @@ export namespace MyNS {
 		 * - Developer
 		 * - Google
 		 */
-		voidedSource?: number;
+		voidedSource?: number | null;
 
 		/** The time at which the purchase was canceled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970). */
-		voidedTimeMillis?: string;
+		voidedTimeMillis?: string | null;
 	}
 
 	export interface VoidedPurchasesListResponse {
-		pageInfo?: PageInfo;
-		tokenPagination?: TokenPagination;
-		voidedPurchases?: Array<VoidedPurchase>;
+		pageInfo?: PageInfo | null;
+		tokenPagination?: TokenPagination | null;
+		voidedPurchases?: Array<VoidedPurchase> | null;
 	}
 
 	@Injectable()

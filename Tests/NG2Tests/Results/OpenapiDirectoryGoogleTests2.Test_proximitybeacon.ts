@@ -14,13 +14,13 @@ export namespace MyNS {
 		 * hex) representation thereof.
 		 * Required.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Specifies the identifier type.
 		 * Required.
 		 */
-		type?: AdvertisedIdType;
+		type?: AdvertisedIdType | null;
 	}
 
 	export enum AdvertisedIdType { TYPE_UNSPECIFIED = 0, EDDYSTONE = 1, IBEACON = 2, ALTBEACON = 3, EDDYSTONE_EID = 4 }
@@ -34,7 +34,7 @@ export namespace MyNS {
 	export interface AttachmentInfo {
 
 		/** An opaque data container for client-provided data. */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * The distance away from the beacon at which this attachment should be
@@ -49,14 +49,14 @@ export namespace MyNS {
 		 * Optional. When not set or zero, the attachment should be delivered at the
 		 * beacon's outer limit of detection.
 		 */
-		maxDistanceMeters?: number;
+		maxDistanceMeters?: number | null;
 
 		/**
 		 * Specifies what kind of attachment this is. Tells a client how to
 		 * interpret the `data` field. Format is <var>namespace/type</var>, for
 		 * example <code>scrupulous-wombat-12345/welcome-message</code>
 		 */
-		namespacedType?: string;
+		namespacedType?: string | null;
 	}
 
 
@@ -64,7 +64,7 @@ export namespace MyNS {
 	export interface Beacon {
 
 		/** Defines a unique identifier of a beacon as broadcast by the device. */
-		advertisedId?: AdvertisedId;
+		advertisedId?: AdvertisedId | null;
 
 		/**
 		 * Resource name of this beacon. A beacon name has the format
@@ -74,14 +74,14 @@ export namespace MyNS {
 		 * This field must be left empty when registering. After reading a beacon,
 		 * clients can use the name for future operations.
 		 */
-		beaconName?: string;
+		beaconName?: string | null;
 
 		/**
 		 * Free text used to identify and describe the beacon. Maximum length 140
 		 * characters.
 		 * Optional.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Write-only registration parameters for beacons using Eddystone-EID format.
@@ -106,20 +106,20 @@ export namespace MyNS {
 		 * specification](https://github.com/google/eddystone/tree/master/eddystone-eid)
 		 * at GitHub.
 		 */
-		ephemeralIdRegistration?: EphemeralIdRegistration;
+		ephemeralIdRegistration?: EphemeralIdRegistration | null;
 
 		/**
 		 * Expected location stability. This is set when the beacon is registered or
 		 * updated, not automatically detected in any way.
 		 * Optional.
 		 */
-		expectedStability?: BeaconExpectedStability;
+		expectedStability?: BeaconExpectedStability | null;
 
 		/**
 		 * Indoor level, a human-readable string as returned by Google Maps APIs,
 		 * useful to indicate which floor of a building a beacon is located on.
 		 */
-		indoorLevel?: IndoorLevel;
+		indoorLevel?: IndoorLevel | null;
 
 		/**
 		 * An object representing a latitude/longitude pair. This is expressed as a pair
@@ -128,7 +128,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng;
+		latLng?: LatLng | null;
 
 		/**
 		 * The [Google Places API](/places/place-id) Place ID of the place where
@@ -136,14 +136,14 @@ export namespace MyNS {
 		 * updated, not automatically detected in any way.
 		 * Optional.
 		 */
-		placeId?: string;
+		placeId?: string | null;
 
 		/**
 		 * Properties of the beacon device, for example battery type or firmware
 		 * version.
 		 * Optional.
 		 */
-		properties?: {[id: string]: string };
+		properties?: {[id: string]: string } | null;
 
 		/**
 		 * Some beacons may require a user to provide an authorization key before
@@ -155,13 +155,13 @@ export namespace MyNS {
 		 * the service considers them authorized to configure the beacon. Note
 		 * that this key grants nothing on the service, only on the beacon itself.
 		 */
-		provisioningKey?: string;
+		provisioningKey?: string | null;
 
 		/**
 		 * Current status of the beacon.
 		 * Required.
 		 */
-		status?: BeaconStatus;
+		status?: BeaconStatus | null;
 	}
 
 
@@ -195,14 +195,14 @@ export namespace MyNS {
 		 * key exchange. When this field is populated, `service_ecdh_public_key`
 		 * must also be populated, and `beacon_identity_key` must not be.
 		 */
-		beaconEcdhPublicKey?: string;
+		beaconEcdhPublicKey?: string | null;
 
 		/**
 		 * The private key of the beacon. If this field is populated,
 		 * `beacon_ecdh_public_key` and `service_ecdh_public_key` must not be
 		 * populated.
 		 */
-		beaconIdentityKey?: string;
+		beaconIdentityKey?: string | null;
 
 		/**
 		 * The initial clock value of the beacon. The beacon's clock must have
@@ -211,7 +211,7 @@ export namespace MyNS {
 		 * value to the service risks registration or resolution failures. If a
 		 * value is not provided, the default is zero.
 		 */
-		initialClockValue?: string;
+		initialClockValue?: string | null;
 
 		/**
 		 * An initial ephemeral ID calculated using the clock value submitted as
@@ -220,7 +220,7 @@ export namespace MyNS {
 		 * `service_ecdh_public_key`. This initial EID value will be used by the
 		 * service to confirm that the key exchange process was successful.
 		 */
-		initialEid?: string;
+		initialEid?: string | null;
 
 		/**
 		 * Indicates the nominal period between each rotation of the beacon's
@@ -231,14 +231,14 @@ export namespace MyNS {
 		 * beacon's clock: when the scaler value is K, the beacon will begin
 		 * broadcasting a new ephemeral ID on average every 2^K seconds.
 		 */
-		rotationPeriodExponent?: string;
+		rotationPeriodExponent?: string | null;
 
 		/**
 		 * The service's public key used for the Elliptic curve Diffie-Hellman
 		 * key exchange. When this field is populated, `beacon_ecdh_public_key`
 		 * must also be populated, and `beacon_identity_key` must not be.
 		 */
-		serviceEcdhPublicKey?: string;
+		serviceEcdhPublicKey?: string | null;
 	}
 
 	export enum BeaconExpectedStability { STABILITY_UNSPECIFIED = 0, STABLE = 1, PORTABLE = 2, MOBILE = 3, ROVING = 4 }
@@ -251,7 +251,7 @@ export namespace MyNS {
 	export interface IndoorLevel {
 
 		/** The name of this level. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -265,10 +265,10 @@ export namespace MyNS {
 	export interface LatLng {
 
 		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
-		latitude?: number;
+		latitude?: number | null;
 
 		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
-		longitude?: number;
+		longitude?: number | null;
 	}
 
 	export enum BeaconStatus { STATUS_UNSPECIFIED = 0, ACTIVE = 1, DECOMMISSIONED = 2, INACTIVE = 3 }
@@ -282,13 +282,13 @@ export namespace MyNS {
 		 * <code>beacons/<var>beacon_id</var>/attachments/<var>attachment_id</var></code>.
 		 * Leave this empty on creation.
 		 */
-		attachmentName?: string;
+		attachmentName?: string | null;
 
 		/**
 		 * The UTC time when this attachment was created, in milliseconds since the
 		 * UNIX epoch.
 		 */
-		creationTimeMs?: string;
+		creationTimeMs?: string | null;
 
 		/**
 		 * An opaque data container for client-provided data. Must be
@@ -296,7 +296,7 @@ export namespace MyNS {
 		 * requests, and will be so encoded (with padding) in responses.
 		 * Required.
 		 */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * The distance away from the beacon at which this attachment should be
@@ -312,7 +312,7 @@ export namespace MyNS {
 		 * beacon's outer limit of detection.
 		 * Negative values are invalid and return an error.
 		 */
-		maxDistanceMeters?: number;
+		maxDistanceMeters?: number | null;
 
 		/**
 		 * Specifies what kind of attachment this is. Tells a client how to
@@ -321,7 +321,7 @@ export namespace MyNS {
 		 * `data`, for use by the client when parsing the `data` field.
 		 * Required.
 		 */
-		namespacedType?: string;
+		namespacedType?: string | null;
 	}
 
 
@@ -332,16 +332,16 @@ export namespace MyNS {
 	export interface BeaconInfo {
 
 		/** Defines a unique identifier of a beacon as broadcast by the device. */
-		advertisedId?: AdvertisedId;
+		advertisedId?: AdvertisedId | null;
 
 		/**
 		 * Attachments matching the type(s) requested.
 		 * May be empty if no attachment types were requested.
 		 */
-		attachments?: Array<AttachmentInfo>;
+		attachments?: Array<AttachmentInfo> | null;
 
 		/** The name under which the beacon is registered. */
-		beaconName?: string;
+		beaconName?: string | null;
 	}
 
 
@@ -362,19 +362,19 @@ export namespace MyNS {
 		 * if specifying a year by itself or a year and month where the day is not
 		 * significant.
 		 */
-		day?: number;
+		day?: number | null;
 
 		/**
 		 * Month of year. Must be from 1 to 12, or 0 if specifying a year without a
 		 * month and day.
 		 */
-		month?: number;
+		month?: number | null;
 
 		/**
 		 * Year of date. Must be from 1 to 9999, or 0 if specifying a date without
 		 * a year.
 		 */
-		year?: number;
+		year?: number | null;
 	}
 
 
@@ -382,7 +382,7 @@ export namespace MyNS {
 	export interface DeleteAttachmentsResponse {
 
 		/** The number of attachments that were deleted. */
-		numDeleted?: number;
+		numDeleted?: number | null;
 	}
 
 
@@ -390,13 +390,13 @@ export namespace MyNS {
 	export interface Diagnostics {
 
 		/** An unordered list of Alerts that the beacon has. */
-		alerts?: Array<string>;
+		alerts?: Array<string> | null;
 
 		/**
 		 * Resource name of the beacon. For Eddystone-EID beacons, this may
 		 * be the beacon's current EID, or the beacon's "stable" Eddystone-UID.
 		 */
-		beaconName?: string;
+		beaconName?: string | null;
 
 		/**
 		 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
@@ -408,7 +408,7 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		estimatedLowBatteryDate?: Date;
+		estimatedLowBatteryDate?: Date | null;
 	}
 
 
@@ -440,20 +440,20 @@ export namespace MyNS {
 		 * See
 		 * EddystoneEidRegistration.rotation_period_exponent
 		 */
-		maxRotationPeriodExponent?: string;
+		maxRotationPeriodExponent?: string | null;
 
 		/**
 		 * Indicates the minimum rotation period supported by the service.
 		 * See
 		 * EddystoneEidRegistration.rotation_period_exponent
 		 */
-		minRotationPeriodExponent?: string;
+		minRotationPeriodExponent?: string | null;
 
 		/**
 		 * The beacon service's public key for use by a beacon to derive its
 		 * Identity Key using Elliptic Curve Diffie-Hellman key exchange.
 		 */
-		serviceEcdhPublicKey?: string;
+		serviceEcdhPublicKey?: string | null;
 	}
 
 
@@ -471,13 +471,13 @@ export namespace MyNS {
 		 * all namespaces owned by the client.
 		 * Optional.
 		 */
-		namespacedTypes?: Array<string>;
+		namespacedTypes?: Array<string> | null;
 
 		/**
 		 * The beacons that the client has encountered.
 		 * At least one must be given.
 		 */
-		observations?: Array<Observation>;
+		observations?: Array<Observation> | null;
 	}
 
 
@@ -485,17 +485,17 @@ export namespace MyNS {
 	export interface Observation {
 
 		/** Defines a unique identifier of a beacon as broadcast by the device. */
-		advertisedId?: AdvertisedId;
+		advertisedId?: AdvertisedId | null;
 
 		/**
 		 * The array of telemetry bytes received from the beacon. The server is
 		 * responsible for parsing it. This field may frequently be empty, as
 		 * with a beacon that transmits telemetry only occasionally.
 		 */
-		telemetry?: string;
+		telemetry?: string | null;
 
 		/** Time when the beacon was observed. */
-		timestampMs?: string;
+		timestampMs?: string | null;
 	}
 
 
@@ -509,7 +509,7 @@ export namespace MyNS {
 		 * Public information about beacons.
 		 * May be empty if the request matched no beacons.
 		 */
-		beacons?: Array<BeaconInfo>;
+		beacons?: Array<BeaconInfo> | null;
 	}
 
 
@@ -517,7 +517,7 @@ export namespace MyNS {
 	export interface ListBeaconAttachmentsResponse {
 
 		/** The attachments that corresponded to the request params. */
-		attachments?: Array<BeaconAttachment>;
+		attachments?: Array<BeaconAttachment> | null;
 	}
 
 
@@ -525,19 +525,19 @@ export namespace MyNS {
 	export interface ListBeaconsResponse {
 
 		/** The beacons that matched the search criteria. */
-		beacons?: Array<Beacon>;
+		beacons?: Array<Beacon> | null;
 
 		/**
 		 * An opaque pagination token that the client may provide in their next
 		 * request to retrieve the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * Estimate of the total number of beacons matched by the query. Higher
 		 * values may be less accurate.
 		 */
-		totalCount?: string;
+		totalCount?: string | null;
 	}
 
 
@@ -545,13 +545,13 @@ export namespace MyNS {
 	export interface ListDiagnosticsResponse {
 
 		/** The diagnostics matching the given request. */
-		diagnostics?: Array<Diagnostics>;
+		diagnostics?: Array<Diagnostics> | null;
 
 		/**
 		 * Token that can be used for pagination. Returned only if the
 		 * request matches more beacons than can be returned in this response.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -559,7 +559,7 @@ export namespace MyNS {
 	export interface ListNamespacesResponse {
 
 		/** The attachments that corresponded to the request params. */
-		namespaces?: Array<Namespace>;
+		namespaces?: Array<Namespace> | null;
 	}
 
 
@@ -574,13 +574,13 @@ export namespace MyNS {
 		 * Resource name of this namespace. Namespaces names have the format:
 		 * <code>namespaces/<var>namespace</var></code>.
 		 */
-		namespaceName?: string;
+		namespaceName?: string | null;
 
 		/**
 		 * Specifies what clients may receive attachments under this namespace
 		 * via `beaconinfo.getforobserved`.
 		 */
-		servingVisibility?: NamespaceServingVisibility;
+		servingVisibility?: NamespaceServingVisibility | null;
 	}
 
 	export enum NamespaceServingVisibility { VISIBILITY_UNSPECIFIED = 0, UNLISTED = 1, PUBLIC = 2 }

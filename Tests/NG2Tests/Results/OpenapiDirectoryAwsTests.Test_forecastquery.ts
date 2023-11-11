@@ -5,13 +5,13 @@ export namespace MyNS {
 	export interface QueryForecastResponse {
 
 		/** Provides information about a forecast. Returned as part of the <a>QueryForecast</a> response. */
-		Forecast?: Forecast;
+		Forecast?: Forecast | null;
 	}
 
 
 	/** Provides information about a forecast. Returned as part of the <a>QueryForecast</a> response. */
 	export interface Forecast {
-		Predictions?: Predictions;
+		Predictions?: Predictions | null;
 	}
 
 	export interface Predictions {
@@ -19,10 +19,10 @@ export namespace MyNS {
 
 	export interface QueryForecastRequest {
 		ForecastArn: string;
-		StartDate?: string;
-		EndDate?: string;
+		StartDate?: string | null;
+		EndDate?: string | null;
 		Filters: Filters;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface Filters {
@@ -46,8 +46,8 @@ export namespace MyNS {
 
 	/** The forecast value for a specific date. Part of the <a>Forecast</a> object. */
 	export interface DataPoint {
-		Timestamp?: string;
-		Value?: number;
+		Timestamp?: string | null;
+		Value?: number | null;
 	}
 
 	@Injectable()

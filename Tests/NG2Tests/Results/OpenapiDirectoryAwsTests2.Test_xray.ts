@@ -3,24 +3,24 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchGetTracesResult {
-		Traces?: Array<Trace>;
-		UnprocessedTraceIds?: Array<string>;
-		NextToken?: string;
+		Traces?: Array<Trace> | null;
+		UnprocessedTraceIds?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A collection of segment documents with matching trace IDs. */
 	export interface Trace {
-		Id?: string;
-		Duration?: number;
-		Segments?: Array<Segment>;
+		Id?: string | null;
+		Duration?: number | null;
+		Segments?: Array<Segment> | null;
 	}
 
 
 	/** <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p> <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> */
 	export interface Segment {
-		Id?: string;
-		Document?: string;
+		Id?: string | null;
+		Document?: string | null;
 	}
 
 	export interface InvalidRequestException {
@@ -32,21 +32,21 @@ export namespace MyNS {
 	export interface CreateGroupResult {
 
 		/** Details and metadata for a group. */
-		Group?: Group;
+		Group?: Group | null;
 	}
 
 
 	/** Details and metadata for a group. */
 	export interface Group {
-		GroupName?: string;
-		GroupARN?: string;
-		FilterExpression?: string;
+		GroupName?: string | null;
+		GroupARN?: string | null;
+		FilterExpression?: string | null;
 	}
 
 	export interface CreateSamplingRuleResult {
 
 		/** A <a>SamplingRule</a> and its metadata. */
-		SamplingRuleRecord?: SamplingRuleRecord;
+		SamplingRuleRecord?: SamplingRuleRecord | null;
 	}
 
 
@@ -54,16 +54,16 @@ export namespace MyNS {
 	export interface SamplingRuleRecord {
 
 		/** A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties. */
-		SamplingRule?: SamplingRule;
-		CreatedAt?: Date;
-		ModifiedAt?: Date;
+		SamplingRule?: SamplingRule | null;
+		CreatedAt?: Date | null;
+		ModifiedAt?: Date | null;
 	}
 
 
 	/** A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties. */
 	export interface SamplingRule {
-		RuleName?: string;
-		RuleARN?: string;
+		RuleName?: string | null;
+		RuleARN?: string | null;
 		ResourceARN: string;
 		Priority: number;
 		FixedRate: number;
@@ -74,7 +74,7 @@ export namespace MyNS {
 		HTTPMethod: string;
 		URLPath: string;
 		Version: number;
-		Attributes?: AttributeMap;
+		Attributes?: AttributeMap | null;
 	}
 
 	export interface AttributeMap {
@@ -89,21 +89,21 @@ export namespace MyNS {
 	export interface DeleteSamplingRuleResult {
 
 		/** A <a>SamplingRule</a> and its metadata. */
-		SamplingRuleRecord?: SamplingRuleRecord;
+		SamplingRuleRecord?: SamplingRuleRecord | null;
 	}
 
 	export interface GetEncryptionConfigResult {
 
 		/** A configuration document that specifies encryption configuration settings. */
-		EncryptionConfig?: EncryptionConfig;
+		EncryptionConfig?: EncryptionConfig | null;
 	}
 
 
 	/** A configuration document that specifies encryption configuration settings. */
 	export interface EncryptionConfig {
-		KeyId?: string;
-		Status?: EncryptionConfigStatus;
-		Type?: EncryptionConfigType;
+		KeyId?: string | null;
+		Status?: EncryptionConfigStatus | null;
+		Type?: EncryptionConfigType | null;
 	}
 
 	export enum EncryptionConfigStatus { UPDATING = 0, ACTIVE = 1 }
@@ -113,64 +113,64 @@ export namespace MyNS {
 	export interface GetGroupResult {
 
 		/** Details and metadata for a group. */
-		Group?: Group;
+		Group?: Group | null;
 	}
 
 	export interface GetGroupsResult {
-		Groups?: Array<GroupSummary>;
-		NextToken?: string;
+		Groups?: Array<GroupSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Details for a group without metadata. */
 	export interface GroupSummary {
-		GroupName?: string;
-		GroupARN?: string;
-		FilterExpression?: string;
+		GroupName?: string | null;
+		GroupARN?: string | null;
+		FilterExpression?: string | null;
 	}
 
 	export interface GetSamplingRulesResult {
-		SamplingRuleRecords?: Array<SamplingRuleRecord>;
-		NextToken?: string;
+		SamplingRuleRecords?: Array<SamplingRuleRecord> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetSamplingStatisticSummariesResult {
-		SamplingStatisticSummaries?: Array<SamplingStatisticSummary>;
-		NextToken?: string;
+		SamplingStatisticSummaries?: Array<SamplingStatisticSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Aggregated request sampling data for a sampling rule across all services for a 10 second window. */
 	export interface SamplingStatisticSummary {
-		RuleName?: string;
-		Timestamp?: Date;
-		RequestCount?: number;
-		BorrowCount?: number;
-		SampledCount?: number;
+		RuleName?: string | null;
+		Timestamp?: Date | null;
+		RequestCount?: number | null;
+		BorrowCount?: number | null;
+		SampledCount?: number | null;
 	}
 
 	export interface GetSamplingTargetsResult {
-		SamplingTargetDocuments?: Array<SamplingTargetDocument>;
-		LastRuleModification?: Date;
-		UnprocessedStatistics?: Array<UnprocessedStatistics>;
+		SamplingTargetDocuments?: Array<SamplingTargetDocument> | null;
+		LastRuleModification?: Date | null;
+		UnprocessedStatistics?: Array<UnprocessedStatistics> | null;
 	}
 
 
 	/** Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a>GetSamplingTargets</a>. */
 	export interface SamplingTargetDocument {
-		RuleName?: string;
-		FixedRate?: number;
-		ReservoirQuota?: number;
-		ReservoirQuotaTTL?: Date;
-		Interval?: number;
+		RuleName?: string | null;
+		FixedRate?: number | null;
+		ReservoirQuota?: number | null;
+		ReservoirQuotaTTL?: Date | null;
+		Interval?: number | null;
 	}
 
 
 	/** Sampling statistics from a call to <a>GetSamplingTargets</a> that X-Ray could not process. */
 	export interface UnprocessedStatistics {
-		RuleName?: string;
-		ErrorCode?: string;
-		Message?: string;
+		RuleName?: string | null;
+		ErrorCode?: string | null;
+		Message?: string | null;
 	}
 
 
@@ -181,176 +181,176 @@ export namespace MyNS {
 		Timestamp: Date;
 		RequestCount: number;
 		SampledCount: number;
-		BorrowCount?: number;
+		BorrowCount?: number | null;
 	}
 
 	export interface GetServiceGraphResult {
-		StartTime?: Date;
-		EndTime?: Date;
-		Services?: Array<Service>;
-		ContainsOldGroupVersions?: boolean;
-		NextToken?: string;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Services?: Array<Service> | null;
+		ContainsOldGroupVersions?: boolean | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about an application that processed requests, users that made requests, or downstream services, resources and applications that an application used. */
 	export interface Service {
-		ReferenceId?: number;
-		Name?: string;
-		Names?: Array<string>;
-		Root?: boolean;
-		AccountId?: string;
-		Type?: string;
-		State?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		Edges?: Array<Edge>;
+		ReferenceId?: number | null;
+		Name?: string | null;
+		Names?: Array<string> | null;
+		Root?: boolean | null;
+		AccountId?: string | null;
+		Type?: string | null;
+		State?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Edges?: Array<Edge> | null;
 
 		/** Response statistics for a service. */
-		SummaryStatistics?: ServiceStatistics;
-		DurationHistogram?: Array<HistogramEntry>;
-		ResponseTimeHistogram?: Array<HistogramEntry>;
+		SummaryStatistics?: ServiceStatistics | null;
+		DurationHistogram?: Array<HistogramEntry> | null;
+		ResponseTimeHistogram?: Array<HistogramEntry> | null;
 	}
 
 
 	/** Information about a connection between two services. */
 	export interface Edge {
-		ReferenceId?: number;
-		StartTime?: Date;
-		EndTime?: Date;
+		ReferenceId?: number | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 
 		/** Response statistics for an edge. */
-		SummaryStatistics?: EdgeStatistics;
-		ResponseTimeHistogram?: Array<HistogramEntry>;
-		Aliases?: Array<Alias>;
+		SummaryStatistics?: EdgeStatistics | null;
+		ResponseTimeHistogram?: Array<HistogramEntry> | null;
+		Aliases?: Array<Alias> | null;
 	}
 
 
 	/** Response statistics for an edge. */
 	export interface EdgeStatistics {
-		OkCount?: number;
+		OkCount?: number | null;
 
 		/** Information about requests that failed with a 4xx Client Error status code. */
-		ErrorStatistics?: ErrorStatistics;
+		ErrorStatistics?: ErrorStatistics | null;
 
 		/** Information about requests that failed with a 5xx Server Error status code. */
-		FaultStatistics?: FaultStatistics;
-		TotalCount?: number;
-		TotalResponseTime?: number;
+		FaultStatistics?: FaultStatistics | null;
+		TotalCount?: number | null;
+		TotalResponseTime?: number | null;
 	}
 
 
 	/** Information about requests that failed with a 4xx Client Error status code. */
 	export interface ErrorStatistics {
-		ThrottleCount?: number;
-		OtherCount?: number;
-		TotalCount?: number;
+		ThrottleCount?: number | null;
+		OtherCount?: number | null;
+		TotalCount?: number | null;
 	}
 
 
 	/** Information about requests that failed with a 5xx Server Error status code. */
 	export interface FaultStatistics {
-		OtherCount?: number;
-		TotalCount?: number;
+		OtherCount?: number | null;
+		TotalCount?: number | null;
 	}
 
 
 	/** An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis. */
 	export interface HistogramEntry {
-		Value?: number;
-		Count?: number;
+		Value?: number | null;
+		Count?: number | null;
 	}
 
 
 	/** An alias for an edge. */
 	export interface Alias {
-		Name?: string;
-		Names?: Array<string>;
-		Type?: string;
+		Name?: string | null;
+		Names?: Array<string> | null;
+		Type?: string | null;
 	}
 
 
 	/** Response statistics for a service. */
 	export interface ServiceStatistics {
-		OkCount?: number;
+		OkCount?: number | null;
 
 		/** Information about requests that failed with a 4xx Client Error status code. */
-		ErrorStatistics?: ErrorStatistics;
+		ErrorStatistics?: ErrorStatistics | null;
 
 		/** Information about requests that failed with a 5xx Server Error status code. */
-		FaultStatistics?: FaultStatistics;
-		TotalCount?: number;
-		TotalResponseTime?: number;
+		FaultStatistics?: FaultStatistics | null;
+		TotalCount?: number | null;
+		TotalResponseTime?: number | null;
 	}
 
 	export interface GetTimeSeriesServiceStatisticsResult {
-		TimeSeriesServiceStatistics?: Array<TimeSeriesServiceStatistics>;
-		ContainsOldGroupVersions?: boolean;
-		NextToken?: string;
+		TimeSeriesServiceStatistics?: Array<TimeSeriesServiceStatistics> | null;
+		ContainsOldGroupVersions?: boolean | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A list of TimeSeriesStatistic structures. */
 	export interface TimeSeriesServiceStatistics {
-		Timestamp?: Date;
+		Timestamp?: Date | null;
 
 		/** Response statistics for an edge. */
-		EdgeSummaryStatistics?: EdgeStatistics;
+		EdgeSummaryStatistics?: EdgeStatistics | null;
 
 		/** Response statistics for a service. */
-		ServiceSummaryStatistics?: ServiceStatistics;
-		ResponseTimeHistogram?: Array<HistogramEntry>;
+		ServiceSummaryStatistics?: ServiceStatistics | null;
+		ResponseTimeHistogram?: Array<HistogramEntry> | null;
 	}
 
 	export interface GetTraceGraphResult {
-		Services?: Array<Service>;
-		NextToken?: string;
+		Services?: Array<Service> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetTraceSummariesResult {
-		TraceSummaries?: Array<TraceSummary>;
-		ApproximateTime?: Date;
-		TracesProcessedCount?: number;
-		NextToken?: string;
+		TraceSummaries?: Array<TraceSummary> | null;
+		ApproximateTime?: Date | null;
+		TracesProcessedCount?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Metadata generated from the segment documents in a trace. */
 	export interface TraceSummary {
-		Id?: string;
-		Duration?: number;
-		ResponseTime?: number;
-		HasFault?: boolean;
-		HasError?: boolean;
-		HasThrottle?: boolean;
-		IsPartial?: boolean;
+		Id?: string | null;
+		Duration?: number | null;
+		ResponseTime?: number | null;
+		HasFault?: boolean | null;
+		HasError?: boolean | null;
+		HasThrottle?: boolean | null;
+		IsPartial?: boolean | null;
 
 		/** Information about an HTTP request. */
-		Http?: Http;
-		Annotations?: Annotations;
-		Users?: Array<TraceUser>;
-		ServiceIds?: Array<ServiceId>;
-		ResourceARNs?: Array<ResourceARNDetail>;
-		InstanceIds?: Array<InstanceIdDetail>;
-		AvailabilityZones?: Array<AvailabilityZoneDetail>;
+		Http?: Http | null;
+		Annotations?: Annotations | null;
+		Users?: Array<TraceUser> | null;
+		ServiceIds?: Array<ServiceId> | null;
+		ResourceARNs?: Array<ResourceARNDetail> | null;
+		InstanceIds?: Array<InstanceIdDetail> | null;
+		AvailabilityZones?: Array<AvailabilityZoneDetail> | null;
 
 		/** <p/> */
-		EntryPoint?: ServiceId;
-		FaultRootCauses?: Array<FaultRootCause>;
-		ErrorRootCauses?: Array<ErrorRootCause>;
-		ResponseTimeRootCauses?: Array<ResponseTimeRootCause>;
-		Revision?: number;
-		MatchedEventTime?: Date;
+		EntryPoint?: ServiceId | null;
+		FaultRootCauses?: Array<FaultRootCause> | null;
+		ErrorRootCauses?: Array<ErrorRootCause> | null;
+		ResponseTimeRootCauses?: Array<ResponseTimeRootCause> | null;
+		Revision?: number | null;
+		MatchedEventTime?: Date | null;
 	}
 
 
 	/** Information about an HTTP request. */
 	export interface Http {
-		HttpURL?: string;
-		HttpStatus?: number;
-		HttpMethod?: string;
-		UserAgent?: string;
-		ClientIp?: string;
+		HttpURL?: string | null;
+		HttpStatus?: number | null;
+		HttpMethod?: string | null;
+		UserAgent?: string | null;
+		ClientIp?: string | null;
 	}
 
 	export interface Annotations {
@@ -359,120 +359,120 @@ export namespace MyNS {
 
 	/** Information about a user recorded in segment documents. */
 	export interface TraceUser {
-		UserName?: string;
-		ServiceIds?: Array<ServiceId>;
+		UserName?: string | null;
+		ServiceIds?: Array<ServiceId> | null;
 	}
 
 
 	/** <p/> */
 	export interface ServiceId {
-		Name?: string;
-		Names?: Array<string>;
-		AccountId?: string;
-		Type?: string;
+		Name?: string | null;
+		Names?: Array<string> | null;
+		AccountId?: string | null;
+		Type?: string | null;
 	}
 
 
 	/** A list of resources ARNs corresponding to the segments in a trace. */
 	export interface ResourceARNDetail {
-		ARN?: string;
+		ARN?: string | null;
 	}
 
 
 	/** A list of EC2 instance IDs corresponding to the segments in a trace.  */
 	export interface InstanceIdDetail {
-		Id?: string;
+		Id?: string | null;
 	}
 
 
 	/** A list of availability zones corresponding to the segments in a trace. */
 	export interface AvailabilityZoneDetail {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/** The root cause information for a trace summary fault. */
 	export interface FaultRootCause {
-		Services?: Array<FaultRootCauseService>;
-		ClientImpacting?: boolean;
+		Services?: Array<FaultRootCauseService> | null;
+		ClientImpacting?: boolean | null;
 	}
 
 
 	/** A collection of fields identifying the services in a trace summary fault. */
 	export interface FaultRootCauseService {
-		Name?: string;
-		Names?: Array<string>;
-		Type?: string;
-		AccountId?: string;
-		EntityPath?: Array<FaultRootCauseEntity>;
-		Inferred?: boolean;
+		Name?: string | null;
+		Names?: Array<string> | null;
+		Type?: string | null;
+		AccountId?: string | null;
+		EntityPath?: Array<FaultRootCauseEntity> | null;
+		Inferred?: boolean | null;
 	}
 
 
 	/** A collection of segments and corresponding subsegments associated to a trace summary fault error. */
 	export interface FaultRootCauseEntity {
-		Name?: string;
-		Exceptions?: Array<RootCauseException>;
-		Remote?: boolean;
+		Name?: string | null;
+		Exceptions?: Array<RootCauseException> | null;
+		Remote?: boolean | null;
 	}
 
 
 	/** The exception associated with a root cause. */
 	export interface RootCauseException {
-		Name?: string;
-		Message?: string;
+		Name?: string | null;
+		Message?: string | null;
 	}
 
 
 	/** The root cause of a trace summary error. */
 	export interface ErrorRootCause {
-		Services?: Array<ErrorRootCauseService>;
-		ClientImpacting?: boolean;
+		Services?: Array<ErrorRootCauseService> | null;
+		ClientImpacting?: boolean | null;
 	}
 
 
 	/** A collection of fields identifying the services in a trace summary error. */
 	export interface ErrorRootCauseService {
-		Name?: string;
-		Names?: Array<string>;
-		Type?: string;
-		AccountId?: string;
-		EntityPath?: Array<ErrorRootCauseEntity>;
-		Inferred?: boolean;
+		Name?: string | null;
+		Names?: Array<string> | null;
+		Type?: string | null;
+		AccountId?: string | null;
+		EntityPath?: Array<ErrorRootCauseEntity> | null;
+		Inferred?: boolean | null;
 	}
 
 
 	/** A collection of segments and corresponding subsegments associated to a trace summary error. */
 	export interface ErrorRootCauseEntity {
-		Name?: string;
-		Exceptions?: Array<RootCauseException>;
-		Remote?: boolean;
+		Name?: string | null;
+		Exceptions?: Array<RootCauseException> | null;
+		Remote?: boolean | null;
 	}
 
 
 	/** The root cause information for a response time warning. */
 	export interface ResponseTimeRootCause {
-		Services?: Array<ResponseTimeRootCauseService>;
-		ClientImpacting?: boolean;
+		Services?: Array<ResponseTimeRootCauseService> | null;
+		ClientImpacting?: boolean | null;
 	}
 
 
 	/** A collection of fields identifying the service in a response time warning. */
 	export interface ResponseTimeRootCauseService {
-		Name?: string;
-		Names?: Array<string>;
-		Type?: string;
-		AccountId?: string;
-		EntityPath?: Array<ResponseTimeRootCauseEntity>;
-		Inferred?: boolean;
+		Name?: string | null;
+		Names?: Array<string> | null;
+		Type?: string | null;
+		AccountId?: string | null;
+		EntityPath?: Array<ResponseTimeRootCauseEntity> | null;
+		Inferred?: boolean | null;
 	}
 
 
 	/** A collection of segments and corresponding subsegments associated to a response time warning. */
 	export interface ResponseTimeRootCauseEntity {
-		Name?: string;
-		Coverage?: number;
-		Remote?: boolean;
+		Name?: string | null;
+		Coverage?: number | null;
+		Remote?: boolean | null;
 	}
 
 	export enum SamplingStrategyName { PartialScan = 0, FixedRate = 1 }
@@ -480,7 +480,7 @@ export namespace MyNS {
 	export interface PutEncryptionConfigResult {
 
 		/** A configuration document that specifies encryption configuration settings. */
-		EncryptionConfig?: EncryptionConfig;
+		EncryptionConfig?: EncryptionConfig | null;
 	}
 
 	export interface PutTelemetryRecordsResult {
@@ -490,56 +490,56 @@ export namespace MyNS {
 	/** <p/> */
 	export interface TelemetryRecord {
 		Timestamp: Date;
-		SegmentsReceivedCount?: number;
-		SegmentsSentCount?: number;
-		SegmentsSpilloverCount?: number;
-		SegmentsRejectedCount?: number;
+		SegmentsReceivedCount?: number | null;
+		SegmentsSentCount?: number | null;
+		SegmentsSpilloverCount?: number | null;
+		SegmentsRejectedCount?: number | null;
 
 		/** <p/> */
-		BackendConnectionErrors?: BackendConnectionErrors;
+		BackendConnectionErrors?: BackendConnectionErrors | null;
 	}
 
 
 	/** <p/> */
 	export interface BackendConnectionErrors {
-		TimeoutCount?: number;
-		ConnectionRefusedCount?: number;
-		HTTPCode4XXCount?: number;
-		HTTPCode5XXCount?: number;
-		UnknownHostCount?: number;
-		OtherCount?: number;
+		TimeoutCount?: number | null;
+		ConnectionRefusedCount?: number | null;
+		HTTPCode4XXCount?: number | null;
+		HTTPCode5XXCount?: number | null;
+		UnknownHostCount?: number | null;
+		OtherCount?: number | null;
 	}
 
 	export interface PutTraceSegmentsResult {
-		UnprocessedTraceSegments?: Array<UnprocessedTraceSegment>;
+		UnprocessedTraceSegments?: Array<UnprocessedTraceSegment> | null;
 	}
 
 
 	/** Information about a segment that failed processing. */
 	export interface UnprocessedTraceSegment {
-		Id?: string;
-		ErrorCode?: string;
-		Message?: string;
+		Id?: string | null;
+		ErrorCode?: string | null;
+		Message?: string | null;
 	}
 
 	export interface UpdateGroupResult {
 
 		/** Details and metadata for a group. */
-		Group?: Group;
+		Group?: Group | null;
 	}
 
 	export interface UpdateSamplingRuleResult {
 
 		/** A <a>SamplingRule</a> and its metadata. */
-		SamplingRuleRecord?: SamplingRuleRecord;
+		SamplingRuleRecord?: SamplingRuleRecord | null;
 	}
 
 
 	/** Value of a segment annotation. Has one of three value types: Number, Boolean or String. */
 	export interface AnnotationValue {
-		NumberValue?: number;
-		BooleanValue?: boolean;
-		StringValue?: string;
+		NumberValue?: number | null;
+		BooleanValue?: boolean | null;
+		StringValue?: string | null;
 	}
 
 
@@ -547,18 +547,18 @@ export namespace MyNS {
 	export interface ValueWithServiceIds {
 
 		/** Value of a segment annotation. Has one of three value types: Number, Boolean or String. */
-		AnnotationValue?: AnnotationValue;
-		ServiceIds?: Array<ServiceId>;
+		AnnotationValue?: AnnotationValue | null;
+		ServiceIds?: Array<ServiceId> | null;
 	}
 
 	export interface BatchGetTracesRequest {
 		TraceIds: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface CreateGroupRequest {
 		GroupName: string;
-		FilterExpression?: string;
+		FilterExpression?: string | null;
 	}
 
 	export interface CreateSamplingRuleRequest {
@@ -571,13 +571,13 @@ export namespace MyNS {
 	}
 
 	export interface DeleteGroupRequest {
-		GroupName?: string;
-		GroupARN?: string;
+		GroupName?: string | null;
+		GroupARN?: string | null;
 	}
 
 	export interface DeleteSamplingRuleRequest {
-		RuleName?: string;
-		RuleARN?: string;
+		RuleName?: string | null;
+		RuleARN?: string | null;
 	}
 
 	export enum EncryptionStatus { UPDATING = 0, ACTIVE = 1 }
@@ -588,20 +588,20 @@ export namespace MyNS {
 	}
 
 	export interface GetGroupRequest {
-		GroupName?: string;
-		GroupARN?: string;
+		GroupName?: string | null;
+		GroupARN?: string | null;
 	}
 
 	export interface GetGroupsRequest {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetSamplingRulesRequest {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetSamplingStatisticSummariesRequest {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetSamplingTargetsRequest {
@@ -611,24 +611,24 @@ export namespace MyNS {
 	export interface GetServiceGraphRequest {
 		StartTime: Date;
 		EndTime: Date;
-		GroupName?: string;
-		GroupARN?: string;
-		NextToken?: string;
+		GroupName?: string | null;
+		GroupARN?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetTimeSeriesServiceStatisticsRequest {
 		StartTime: Date;
 		EndTime: Date;
-		GroupName?: string;
-		GroupARN?: string;
-		EntitySelectorExpression?: string;
-		Period?: number;
-		NextToken?: string;
+		GroupName?: string | null;
+		GroupARN?: string | null;
+		EntitySelectorExpression?: string | null;
+		Period?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetTraceGraphRequest {
 		TraceIds: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export enum TimeRangeType { TraceId = 0, Event = 1 }
@@ -636,32 +636,32 @@ export namespace MyNS {
 
 	/** The name and value of a sampling rule to apply to a trace summary. */
 	export interface SamplingStrategy {
-		Name?: SamplingStrategyName;
-		Value?: number;
+		Name?: SamplingStrategyName | null;
+		Value?: number | null;
 	}
 
 	export interface GetTraceSummariesRequest {
 		StartTime: Date;
 		EndTime: Date;
-		TimeRangeType?: TimeRangeType;
-		Sampling?: boolean;
+		TimeRangeType?: TimeRangeType | null;
+		Sampling?: boolean | null;
 
 		/** The name and value of a sampling rule to apply to a trace summary. */
-		SamplingStrategy?: SamplingStrategy;
-		FilterExpression?: string;
-		NextToken?: string;
+		SamplingStrategy?: SamplingStrategy | null;
+		FilterExpression?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface PutEncryptionConfigRequest {
-		KeyId?: string;
+		KeyId?: string | null;
 		Type: EncryptionConfigType;
 	}
 
 	export interface PutTelemetryRecordsRequest {
 		TelemetryRecords: Array<TelemetryRecord>;
-		EC2InstanceId?: string;
-		Hostname?: string;
-		ResourceARN?: string;
+		EC2InstanceId?: string | null;
+		Hostname?: string | null;
+		ResourceARN?: string | null;
 	}
 
 	export interface PutTraceSegmentsRequest {
@@ -671,24 +671,24 @@ export namespace MyNS {
 
 	/** A document specifying changes to a sampling rule's configuration. */
 	export interface SamplingRuleUpdate {
-		RuleName?: string;
-		RuleARN?: string;
-		ResourceARN?: string;
-		Priority?: number;
-		FixedRate?: number;
-		ReservoirSize?: number;
-		Host?: string;
-		ServiceName?: string;
-		ServiceType?: string;
-		HTTPMethod?: string;
-		URLPath?: string;
-		Attributes?: AttributeMap;
+		RuleName?: string | null;
+		RuleARN?: string | null;
+		ResourceARN?: string | null;
+		Priority?: number | null;
+		FixedRate?: number | null;
+		ReservoirSize?: number | null;
+		Host?: string | null;
+		ServiceName?: string | null;
+		ServiceType?: string | null;
+		HTTPMethod?: string | null;
+		URLPath?: string | null;
+		Attributes?: AttributeMap | null;
 	}
 
 	export interface UpdateGroupRequest {
-		GroupName?: string;
-		GroupARN?: string;
-		FilterExpression?: string;
+		GroupName?: string | null;
+		GroupARN?: string | null;
+		FilterExpression?: string | null;
 	}
 
 	export interface UpdateSamplingRuleRequest {
@@ -903,7 +903,7 @@ export namespace MyNS {
 		TraceIds: Array<string>;
 
 		/** Pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface CreateGroupPostBody {
@@ -917,7 +917,7 @@ export namespace MyNS {
 		GroupName: string;
 
 		/** The filter expression defining criteria by which to group traces. */
-		FilterExpression?: string;
+		FilterExpression?: string | null;
 	}
 
 	export interface CreateSamplingRulePostBody {
@@ -930,19 +930,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateSamplingRulePostBodySamplingRule {
-		RuleName?: string;
-		RuleARN?: string;
-		ResourceARN?: string;
-		Priority?: number;
-		FixedRate?: number;
-		ReservoirSize?: number;
-		ServiceName?: string;
-		ServiceType?: string;
-		Host?: string;
-		HTTPMethod?: string;
-		URLPath?: string;
-		Version?: number;
-		Attributes?: AttributeMap;
+		RuleName?: string | null;
+		RuleARN?: string | null;
+		ResourceARN?: string | null;
+		Priority?: number | null;
+		FixedRate?: number | null;
+		ReservoirSize?: number | null;
+		ServiceName?: string | null;
+		ServiceType?: string | null;
+		Host?: string | null;
+		HTTPMethod?: string | null;
+		URLPath?: string | null;
+		Version?: number | null;
+		Attributes?: AttributeMap | null;
 	}
 
 	export interface DeleteGroupPostBody {
@@ -952,23 +952,23 @@ export namespace MyNS {
 		 * Max length: 32
 		 * Min length: 1
 		 */
-		GroupName?: string;
+		GroupName?: string | null;
 
 		/**
 		 * The ARN of the group that was generated on creation.
 		 * Max length: 400
 		 * Min length: 1
 		 */
-		GroupARN?: string;
+		GroupARN?: string | null;
 	}
 
 	export interface DeleteSamplingRulePostBody {
 
 		/** The name of the sampling rule. Specify a rule by either name or ARN, but not both. */
-		RuleName?: string;
+		RuleName?: string | null;
 
 		/** The ARN of the sampling rule. Specify a rule by either name or ARN, but not both. */
-		RuleARN?: string;
+		RuleARN?: string | null;
 	}
 
 	export interface GetGroupPostBody {
@@ -978,14 +978,14 @@ export namespace MyNS {
 		 * Max length: 32
 		 * Min length: 1
 		 */
-		GroupName?: string;
+		GroupName?: string | null;
 
 		/**
 		 * The ARN of the group that was generated on creation.
 		 * Max length: 400
 		 * Min length: 1
 		 */
-		GroupARN?: string;
+		GroupARN?: string | null;
 	}
 
 	export interface GetGroupsPostBody {
@@ -995,19 +995,19 @@ export namespace MyNS {
 		 * Max length: 100
 		 * Min length: 1
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetSamplingRulesPostBody {
 
 		/** Pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetSamplingStatisticSummariesPostBody {
 
 		/** Pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetSamplingTargetsPostBody {
@@ -1039,17 +1039,17 @@ export namespace MyNS {
 		 * Max length: 32
 		 * Min length: 1
 		 */
-		GroupName?: string;
+		GroupName?: string | null;
 
 		/**
 		 * The ARN of a group to generate a graph based on.
 		 * Max length: 400
 		 * Min length: 1
 		 */
-		GroupARN?: string;
+		GroupARN?: string | null;
 
 		/** Pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetTimeSeriesServiceStatisticsPostBody {
@@ -1071,27 +1071,27 @@ export namespace MyNS {
 		 * Max length: 32
 		 * Min length: 1
 		 */
-		GroupName?: string;
+		GroupName?: string | null;
 
 		/**
 		 * The ARN of the group for which to pull statistics from.
 		 * Max length: 400
 		 * Min length: 1
 		 */
-		GroupARN?: string;
+		GroupARN?: string | null;
 
 		/**
 		 * A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.
 		 * Max length: 500
 		 * Min length: 1
 		 */
-		EntitySelectorExpression?: string;
+		EntitySelectorExpression?: string | null;
 
 		/** Aggregation period in seconds. */
-		Period?: number;
+		Period?: number | null;
 
 		/** Pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetTraceGraphPostBody {
@@ -1103,7 +1103,7 @@ export namespace MyNS {
 		TraceIds: Array<string>;
 
 		/** Pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetTraceSummariesPostBody {
@@ -1121,24 +1121,24 @@ export namespace MyNS {
 		EndTime: Date;
 
 		/** A parameter to indicate whether to query trace summaries by TraceId or Event time. */
-		TimeRangeType?: TimeRangeType;
+		TimeRangeType?: TimeRangeType | null;
 
 		/** Set to <code>true</code> to get summaries for only a subset of available traces. */
-		Sampling?: boolean;
+		Sampling?: boolean | null;
 
 		/** The name and value of a sampling rule to apply to a trace summary. */
-		SamplingStrategy?: GetTraceSummariesPostBodySamplingStrategy;
+		SamplingStrategy?: GetTraceSummariesPostBodySamplingStrategy | null;
 
 		/** Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements. */
-		FilterExpression?: string;
+		FilterExpression?: string | null;
 
 		/** Specify the pagination token returned by a previous request to retrieve the next page of results. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetTraceSummariesPostBodySamplingStrategy {
-		Name?: SamplingStrategyName;
-		Value?: number;
+		Name?: SamplingStrategyName | null;
+		Value?: number | null;
 	}
 
 	export interface PutEncryptionConfigPostBody {
@@ -1148,7 +1148,7 @@ export namespace MyNS {
 		 * Max length: 3000
 		 * Min length: 1
 		 */
-		KeyId?: string;
+		KeyId?: string | null;
 
 		/**
 		 * The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.
@@ -1169,19 +1169,19 @@ export namespace MyNS {
 		 * <p/>
 		 * Max length: 20
 		 */
-		EC2InstanceId?: string;
+		EC2InstanceId?: string | null;
 
 		/**
 		 * <p/>
 		 * Max length: 255
 		 */
-		Hostname?: string;
+		Hostname?: string | null;
 
 		/**
 		 * <p/>
 		 * Max length: 500
 		 */
-		ResourceARN?: string;
+		ResourceARN?: string | null;
 	}
 
 	export interface PutTraceSegmentsPostBody {
@@ -1200,17 +1200,17 @@ export namespace MyNS {
 		 * Max length: 32
 		 * Min length: 1
 		 */
-		GroupName?: string;
+		GroupName?: string | null;
 
 		/**
 		 * The ARN that was generated upon creation.
 		 * Max length: 400
 		 * Min length: 1
 		 */
-		GroupARN?: string;
+		GroupARN?: string | null;
 
 		/** The updated filter expression defining criteria by which to group traces. */
-		FilterExpression?: string;
+		FilterExpression?: string | null;
 	}
 
 	export interface UpdateSamplingRulePostBody {
@@ -1223,18 +1223,18 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSamplingRulePostBodySamplingRuleUpdate {
-		RuleName?: string;
-		RuleARN?: string;
-		ResourceARN?: string;
-		Priority?: number;
-		FixedRate?: number;
-		ReservoirSize?: number;
-		Host?: string;
-		ServiceName?: string;
-		ServiceType?: string;
-		HTTPMethod?: string;
-		URLPath?: string;
-		Attributes?: AttributeMap;
+		RuleName?: string | null;
+		RuleARN?: string | null;
+		ResourceARN?: string | null;
+		Priority?: number | null;
+		FixedRate?: number | null;
+		ReservoirSize?: number | null;
+		Host?: string | null;
+		ServiceName?: string | null;
+		ServiceType?: string | null;
+		HTTPMethod?: string | null;
+		URLPath?: string | null;
+		Attributes?: AttributeMap | null;
 	}
 
 }

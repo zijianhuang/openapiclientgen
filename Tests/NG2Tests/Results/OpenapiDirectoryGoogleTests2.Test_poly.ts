@@ -15,34 +15,34 @@ export namespace MyNS {
 		 * The author's publicly visible name. Use this name when giving credit to the
 		 * author. For more information, see [Licensing](/poly/discover/licensing).
 		 */
-		authorName?: string;
+		authorName?: string | null;
 
 		/**
 		 * For published assets, the time when the asset was published.
 		 * For unpublished assets, the time when the asset was created.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** The human-readable description, set by the asset's author. */
-		description?: string;
+		description?: string | null;
 
 		/** The human-readable name, set by the asset's author. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * A list of Formats where each
 		 * format describes one representation of the asset.
 		 */
-		formats?: Array<Format>;
+		formats?: Array<Format> | null;
 
 		/** Whether this asset has been curated by the Poly team. */
-		isCurated?: boolean;
+		isCurated?: boolean | null;
 
 		/**
 		 * The license under which the author has made the asset available
 		 * for use, if any.
 		 */
-		license?: AssetLicense;
+		license?: AssetLicense | null;
 
 		/**
 		 * Application-defined opaque metadata for this asset. This field is only
@@ -50,41 +50,41 @@ export namespace MyNS {
 		 * assets. This string is limited to 1K chars. It is up to the creator of
 		 * the asset to define the format for this string (for example, JSON).
 		 */
-		metadata?: string;
+		metadata?: string | null;
 
 		/**
 		 * The unique identifier for the asset in the form:
 		 * `assets/{ASSET_ID}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Hints for displaying the asset, based on information available when the asset
 		 * was uploaded.
 		 */
-		presentationParams?: PresentationParams;
+		presentationParams?: PresentationParams | null;
 
 		/**
 		 * Info about the sources of this asset (i.e. assets that were remixed to
 		 * create this asset).
 		 */
-		remixInfo?: RemixInfo;
+		remixInfo?: RemixInfo | null;
 
 		/**
 		 * Represents a file in Poly, which can be a root,
 		 * resource, or thumbnail file.
 		 */
-		thumbnail?: File;
+		thumbnail?: File | null;
 
 		/**
 		 * The time when the asset was last modified. For published assets, whose
 		 * contents are immutable, the update time changes only when metadata
 		 * properties, such as visibility, are updated.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** The visibility of the asset and who can access it. */
-		visibility?: AssetVisibility;
+		visibility?: AssetVisibility | null;
 	}
 
 
@@ -99,25 +99,25 @@ export namespace MyNS {
 	export interface Format {
 
 		/** Information on the complexity of this Format. */
-		formatComplexity?: FormatComplexity;
+		formatComplexity?: FormatComplexity | null;
 
 		/**
 		 * A short string that identifies the format type of this representation.
 		 * Possible values are: `FBX`, `GLTF`, `GLTF2`, `OBJ`, and `TILT`.
 		 */
-		formatType?: string;
+		formatType?: string | null;
 
 		/**
 		 * A list of dependencies of the root element. May include, but is not
 		 * limited to, materials, textures, and shader programs.
 		 */
-		resources?: Array<File>;
+		resources?: Array<File> | null;
 
 		/**
 		 * Represents a file in Poly, which can be a root,
 		 * resource, or thumbnail file.
 		 */
-		root?: File;
+		root?: File | null;
 	}
 
 
@@ -131,10 +131,10 @@ export namespace MyNS {
 		 * This hint allows you to sort formats from the most-detailed (0) to
 		 * least-detailed (integers greater than 0).
 		 */
-		lodHint?: number;
+		lodHint?: number | null;
 
 		/** The estimated number of triangles. */
-		triangleCount?: string;
+		triangleCount?: string | null;
 	}
 
 
@@ -150,17 +150,17 @@ export namespace MyNS {
 		 * [MIME
 		 * types](//developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types).
 		 */
-		contentType?: string;
+		contentType?: string | null;
 
 		/**
 		 * The path of the resource file relative to the
 		 * root file. For root or thumbnail files,
 		 * this is just the filename.
 		 */
-		relativePath?: string;
+		relativePath?: string | null;
 
 		/** The URL where the file data can be retrieved. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum AssetLicense { UNKNOWN = 0, CREATIVE_COMMONS_BY = 1, ALL_RIGHTS_RESERVED = 2 }
@@ -179,20 +179,20 @@ export namespace MyNS {
 		 * This is represented as a six-digit hexademical triplet specifying the
 		 * RGB components of the background color, e.g. #FF0000 for Red.
 		 */
-		backgroundColor?: string;
+		backgroundColor?: string | null;
 
 		/**
 		 * The materials' diffuse/albedo color. This does not apply to vertex colors
 		 * or texture maps.
 		 */
-		colorSpace?: PresentationParamsColorSpace;
+		colorSpace?: PresentationParamsColorSpace | null;
 
 		/**
 		 * A [Quaternion](//en.wikipedia.org/wiki/Quaternion). Please note: if in the
 		 * response you see "w: 1" and nothing else this is the default value of
 		 * [0, 0, 0, 1] where x,y, and z are 0.
 		 */
-		orientingRotation?: Quaternion;
+		orientingRotation?: Quaternion | null;
 	}
 
 	export enum PresentationParamsColorSpace { UNKNOWN = 0, LINEAR = 1, GAMMA = 2 }
@@ -206,16 +206,16 @@ export namespace MyNS {
 	export interface Quaternion {
 
 		/** The scalar component. */
-		w?: number;
+		w?: number | null;
 
 		/** The x component. */
-		x?: number;
+		x?: number | null;
 
 		/** The y component. */
-		y?: number;
+		y?: number | null;
 
 		/** The z component. */
-		z?: number;
+		z?: number | null;
 	}
 
 
@@ -229,7 +229,7 @@ export namespace MyNS {
 		 * Resource ids for the sources of this remix, of the form:
 		 * `assets/{ASSET_ID}`
 		 */
-		sourceAsset?: Array<string>;
+		sourceAsset?: Array<string> | null;
 	}
 
 	export enum AssetVisibility { VISIBILITY_UNSPECIFIED = 0, PRIVATE = 1, UNLISTED = 2, PUBLIC = 3 }
@@ -239,16 +239,16 @@ export namespace MyNS {
 	export interface AssetImportMessage {
 
 		/** The code associated with this message. */
-		code?: AssetImportMessageCode;
+		code?: AssetImportMessageCode | null;
 
 		/** An optional file path. Only present for those error codes that specify it. */
-		filePath?: string;
+		filePath?: string | null;
 
 		/** A message resulting from reading an image file. */
-		imageError?: ImageError;
+		imageError?: ImageError | null;
 
 		/** Details of an error resulting from parsing an OBJ file */
-		objParseError?: ObjParseError;
+		objParseError?: ObjParseError | null;
 	}
 
 	export enum AssetImportMessageCode { CODE_UNSPECIFIED = 0, NO_IMPORTABLE_FILE = 1, EMPTY_MODEL = 2, OBJ_PARSE_ERROR = 3, EXPIRED = 4, IMAGE_ERROR = 5, EXTRA_FILES_WITH_ARCHIVE = 6, DEFAULT_MATERIALS = 7, FATAL_ERROR = 8, INVALID_ELEMENT_TYPE = 9 }
@@ -258,10 +258,10 @@ export namespace MyNS {
 	export interface ImageError {
 
 		/** The type of image error encountered. Optional for older image errors. */
-		code?: ImageErrorCode;
+		code?: ImageErrorCode | null;
 
 		/** The file path in the import of the image that was rejected. */
-		filePath?: string;
+		filePath?: string | null;
 	}
 
 	export enum ImageErrorCode { CODE_UNSPECIFIED = 0, INVALID_IMAGE = 1, IMAGE_TOO_BIG = 2, WRONG_IMAGE_TYPE = 3 }
@@ -271,25 +271,25 @@ export namespace MyNS {
 	export interface ObjParseError {
 
 		/** The type of problem found (required). */
-		code?: ObjParseErrorCode;
+		code?: ObjParseErrorCode | null;
 
 		/** The ending character index at which the problem was found. */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/** The file path in which the problem was found. */
-		filePath?: string;
+		filePath?: string | null;
 
 		/**
 		 * The text of the line. Note that this may be truncated if the line was very
 		 * long. This may not include the error if it occurs after line truncation.
 		 */
-		line?: string;
+		line?: string | null;
 
 		/** Line number at which the problem was found. */
-		lineNumber?: number;
+		lineNumber?: number | null;
 
 		/** The starting character index at which the problem was found. */
-		startIndex?: number;
+		startIndex?: number | null;
 	}
 
 	export enum ObjParseErrorCode { CODE_UNSPECIFIED = 0, INCONSISTENT_VERTEX_REFS = 1, INVALID_COMMAND = 2, INVALID_NUMBER = 3, INVALID_VERTEX_REF = 4, MISSING_GEOMETRIC_VERTEX = 5, MISSING_TOKEN = 6, TOO_FEW_DIMENSIONS = 7, TOO_FEW_VERTICES = 8, TOO_MANY_DIMENSIONS = 9, UNSUPPORTED_COMMAND = 10, UNUSED_TOKENS = 11, VERTEX_NOT_FOUND = 12, NUMBER_OUT_OF_RANGE = 13, INVALID_VALUE = 14, INVALID_TEXTURE_OPTION = 15, TOO_MANY_PROBLEMS = 16, MISSING_FILE_NAME = 17, FILE_NOT_FOUND = 18, UNKNOWN_MATERIAL = 19, NO_MATERIAL_DEFINED = 20, INVALID_SMOOTHING_GROUP = 21, MISSING_VERTEX_COLORS = 22, FILE_SUBSTITUTION = 23, LINE_TOO_LONG = 24, INVALID_FILE_PATH = 25 }
@@ -299,7 +299,7 @@ export namespace MyNS {
 	export interface ListAssetsResponse {
 
 		/** A list of assets that match the criteria specified in the request. */
-		assets?: Array<Asset>;
+		assets?: Array<Asset> | null;
 
 		/**
 		 * The continuation token for retrieving the next page. If empty,
@@ -307,10 +307,10 @@ export namespace MyNS {
 		 * same request specifying this value as the
 		 * page_token.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of assets in the list, without pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -318,7 +318,7 @@ export namespace MyNS {
 	export interface ListLikedAssetsResponse {
 
 		/** A list of assets that match the criteria specified in the request. */
-		assets?: Array<Asset>;
+		assets?: Array<Asset> | null;
 
 		/**
 		 * The continuation token for retrieving the next page. If empty,
@@ -326,10 +326,10 @@ export namespace MyNS {
 		 * same request specifying this value as the
 		 * page_token.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of assets in the list, without pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -342,13 +342,13 @@ export namespace MyNS {
 		 * same request specifying this value as the
 		 * page_token.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of assets in the list, without pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 
 		/** A list of UserAssets matching the request. */
-		userAssets?: Array<UserAsset>;
+		userAssets?: Array<UserAsset> | null;
 	}
 
 
@@ -361,7 +361,7 @@ export namespace MyNS {
 		 * [Blocks](//vr.google.com/blocks/), or any 3D program that produces a file
 		 * that can be upload to Poly.
 		 */
-		asset?: Asset;
+		asset?: Asset | null;
 	}
 
 
@@ -377,19 +377,19 @@ export namespace MyNS {
 		 * complete it means the import failed. Please refer to the
 		 * assetImportMessages field to understand what went wrong.
 		 */
-		assetId?: string;
+		assetId?: string | null;
 
 		/** The id of the asset import. */
-		assetImportId?: string;
+		assetImportId?: string | null;
 
 		/**
 		 * The message from the asset import. This will contain any warnings
 		 * (or - in the case of failure - errors) that occurred during import.
 		 */
-		assetImportMessages?: Array<AssetImportMessage>;
+		assetImportMessages?: Array<AssetImportMessage> | null;
 
 		/** The publish URL for the asset. */
-		publishUrl?: string;
+		publishUrl?: string | null;
 	}
 
 	@Injectable()

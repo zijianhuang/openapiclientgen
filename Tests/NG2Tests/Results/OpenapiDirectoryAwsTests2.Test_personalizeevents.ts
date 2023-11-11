@@ -5,7 +5,7 @@ export namespace MyNS {
 
 	/** Represents user interaction event information sent using the <code>PutEvents</code> API. */
 	export interface Event {
-		eventId?: string;
+		eventId?: string | null;
 		eventType: string;
 		properties: string;
 		sentAt: Date;
@@ -16,7 +16,7 @@ export namespace MyNS {
 
 	export interface PutEventsRequest {
 		trackingId: string;
-		userId?: string;
+		userId?: string | null;
 		sessionId: string;
 		eventList: Array<Event>;
 	}
@@ -51,7 +51,7 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		userId?: string;
+		userId?: string | null;
 
 		/**
 		 * The session ID associated with the user's visit.

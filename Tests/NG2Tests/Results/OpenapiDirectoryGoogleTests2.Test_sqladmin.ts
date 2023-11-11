@@ -11,16 +11,16 @@ export namespace MyNS {
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		expirationTime?: string;
+		expirationTime?: string | null;
 
 		/** This is always <code>sql#aclEntry</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Optional. A label to identify this entry. */
-		name?: string;
+		name?: string | null;
 
 		/** The whitelisted value for the access control list. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -28,10 +28,10 @@ export namespace MyNS {
 	export interface ApiWarning {
 
 		/** Code to uniquely identify the warning type. */
-		code?: ApiWarningCode;
+		code?: ApiWarningCode | null;
 
 		/** The warning message. */
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum ApiWarningCode { SQL_API_WARNING_CODE_UNSPECIFIED = 0, REGION_UNREACHABLE = 1 }
@@ -44,28 +44,28 @@ export namespace MyNS {
 		 * (MySQL only) Whether binary log is enabled. If backup configuration is
 		 * disabled, binarylog must be disabled as well.
 		 */
-		binaryLogEnabled?: boolean;
+		binaryLogEnabled?: boolean | null;
 
 		/** Whether this configuration is enabled. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/** This is always <code>sql#backupConfiguration</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Location of the backup */
-		location?: string;
+		location?: string | null;
 
 		/** Reserved for future use. */
-		pointInTimeRecoveryEnabled?: boolean;
+		pointInTimeRecoveryEnabled?: boolean | null;
 
 		/** Reserved for future use. */
-		replicationLogArchivingEnabled?: boolean;
+		replicationLogArchivingEnabled?: boolean | null;
 
 		/**
 		 * Start time for the daily backup configuration in UTC timezone in the 24
 		 * hour format - <code>HH:MM</code>.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -73,68 +73,68 @@ export namespace MyNS {
 	export interface BackupRun {
 
 		/** The description of this run, only applicable to on-demand backups. */
-		description?: string;
+		description?: string | null;
 
 		/** Disk encryption configuration for an instance. */
-		diskEncryptionConfiguration?: DiskEncryptionConfiguration;
+		diskEncryptionConfiguration?: DiskEncryptionConfiguration | null;
 
 		/** Disk encryption status for an instance. */
-		diskEncryptionStatus?: DiskEncryptionStatus;
+		diskEncryptionStatus?: DiskEncryptionStatus | null;
 
 		/**
 		 * The time the backup operation completed in UTC timezone in <a
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * The time the run was enqueued in UTC timezone in <a
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		enqueuedTime?: string;
+		enqueuedTime?: string | null;
 
 		/** Database instance operation error. */
-		error?: OperationError;
+		error?: OperationError | null;
 
 		/**
 		 * The identifier for this backup run. Unique only for a specific Cloud SQL
 		 * instance.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/** Name of the database instance. */
-		instance?: string;
+		instance?: string | null;
 
 		/** This is always <code>sql#backupRun</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Location of the backups. */
-		location?: string;
+		location?: string | null;
 
 		/** The URI of this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/**
 		 * The time the backup operation actually started in UTC timezone in <a
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The status of this run. */
-		status?: BackupRunStatus;
+		status?: BackupRunStatus | null;
 
 		/** The type of this run; can be either "AUTOMATED" or "ON_DEMAND". */
-		type?: BackupRunType;
+		type?: BackupRunType | null;
 
 		/**
 		 * The start time of the backup window during which this the backup was
 		 * attempted in <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>
 		 * format, for example <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		windowStartTime?: string;
+		windowStartTime?: string | null;
 	}
 
 
@@ -142,10 +142,10 @@ export namespace MyNS {
 	export interface DiskEncryptionConfiguration {
 
 		/** This is always <code>sql#diskEncryptionConfiguration</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Resource name of KMS key for disk encryption */
-		kmsKeyName?: string;
+		kmsKeyName?: string | null;
 	}
 
 
@@ -153,10 +153,10 @@ export namespace MyNS {
 	export interface DiskEncryptionStatus {
 
 		/** This is always <code>sql#diskEncryptionStatus</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** KMS key version used to encrypt the Cloud SQL instance resource */
-		kmsKeyVersionName?: string;
+		kmsKeyVersionName?: string | null;
 	}
 
 
@@ -164,13 +164,13 @@ export namespace MyNS {
 	export interface OperationError {
 
 		/** Identifies the specific error that occurred. */
-		code?: string;
+		code?: string | null;
 
 		/** This is always <code>sql#operationError</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Additional information about the error encountered. */
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum BackupRunStatus { SQL_BACKUP_RUN_STATUS_UNSPECIFIED = 0, ENQUEUED = 1, OVERDUE = 2, RUNNING = 3, FAILED = 4, SUCCESSFUL = 5, SKIPPED = 6, DELETION_PENDING = 7, DELETION_FAILED = 8, DELETED = 9 }
@@ -182,16 +182,16 @@ export namespace MyNS {
 	export interface BackupRunsListResponse {
 
 		/** A list of backup runs in reverse chronological order of the enqueued time. */
-		items?: Array<BackupRun>;
+		items?: Array<BackupRun> | null;
 
 		/** This is always <code>sql#backupRunsList</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The continuation token, used to page through large result sets. Provide
 		 * this value in a subsequent request to return the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -199,13 +199,13 @@ export namespace MyNS {
 	export interface BinLogCoordinates {
 
 		/** Name of the binary log file for a Cloud SQL instance. */
-		binLogFileName?: string;
+		binLogFileName?: string | null;
 
 		/** Position (offset) within the binary log file. */
-		binLogPosition?: string;
+		binLogPosition?: string | null;
 
 		/** This is always <code>sql#binLogCoordinates</code>. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -213,19 +213,19 @@ export namespace MyNS {
 	export interface CloneContext {
 
 		/** Binary log coordinates. */
-		binLogCoordinates?: BinLogCoordinates;
+		binLogCoordinates?: BinLogCoordinates | null;
 
 		/** Name of the Cloud SQL instance to be created as a clone. */
-		destinationInstanceName?: string;
+		destinationInstanceName?: string | null;
 
 		/** This is always <code>sql#cloneContext</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Reserved for future use. */
-		pitrTimestampMs?: string;
+		pitrTimestampMs?: string | null;
 
 		/** Reserved for future use. */
-		pointInTime?: string;
+		pointInTime?: string | null;
 	}
 
 
@@ -233,40 +233,40 @@ export namespace MyNS {
 	export interface Database {
 
 		/** The MySQL charset value. */
-		charset?: string;
+		charset?: string | null;
 
 		/** The MySQL collation value. */
-		collation?: string;
+		collation?: string | null;
 
 		/**
 		 * This field is deprecated and will be removed from a future version of the
 		 * API.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/** The name of the Cloud SQL instance. This does not include the project ID. */
-		instance?: string;
+		instance?: string | null;
 
 		/** This is always <code>sql#database</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The name of the database in the Cloud SQL instance. This does not include
 		 * the project ID or instance name.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The project ID of the project containing the Cloud SQL database. The Google
 		 * apps domain is prefixed if applicable.
 		 */
-		project?: string;
+		project?: string | null;
 
 		/** The URI of this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Represents a Sql Server database on the Cloud SQL instance. */
-		sqlserverDatabaseDetails?: SqlServerDatabaseDetails;
+		sqlserverDatabaseDetails?: SqlServerDatabaseDetails | null;
 	}
 
 
@@ -274,10 +274,10 @@ export namespace MyNS {
 	export interface SqlServerDatabaseDetails {
 
 		/** The version of SQL Server with which the database is to be made compatible */
-		compatibilityLevel?: number;
+		compatibilityLevel?: number | null;
 
 		/** The recovery model of a SQL Server database */
-		recoveryModel?: string;
+		recoveryModel?: string | null;
 	}
 
 
@@ -291,14 +291,14 @@ export namespace MyNS {
 		 * href="/sql/docs/mysql/flags">Configuring Database Flags</a> in the Cloud
 		 * SQL documentation.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The value of the flag. Booleans should be set to <code>on</code> for true
 		 * and <code>off</code> for false. This field must be omitted if the flag
 		 * doesn't take a value.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -313,10 +313,10 @@ export namespace MyNS {
 		 * <code>tier</code> property in the <code>settings</code> object to determine
 		 * the database type and Second or First Generation.
 		 */
-		backendType?: DatabaseInstanceBackendType;
+		backendType?: DatabaseInstanceBackendType | null;
 
 		/** Connection name of the Cloud SQL instance used in connection strings. */
-		connectionName?: string;
+		connectionName?: string | null;
 
 		/**
 		 * The current disk usage of the instance in bytes. This property has been
@@ -326,7 +326,7 @@ export namespace MyNS {
 		 * href="https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ">this
 		 * announcement</a> for details.
 		 */
-		currentDiskSize?: string;
+		currentDiskSize?: string | null;
 
 		/**
 		 * The database engine type and version. The <code>databaseVersion</code>
@@ -336,32 +336,32 @@ export namespace MyNS {
 		 * <code>POSTGRES_11 Beta</code> MySQL First Generation
 		 * instances: <code>MYSQL_5_6</code> (default) or <code>MYSQL_5_5</code>
 		 */
-		databaseVersion?: DatabaseInstanceDatabaseVersion;
+		databaseVersion?: DatabaseInstanceDatabaseVersion | null;
 
 		/** Disk encryption configuration for an instance. */
-		diskEncryptionConfiguration?: DiskEncryptionConfiguration;
+		diskEncryptionConfiguration?: DiskEncryptionConfiguration | null;
 
 		/** Disk encryption status for an instance. */
-		diskEncryptionStatus?: DiskEncryptionStatus;
+		diskEncryptionStatus?: DiskEncryptionStatus | null;
 
 		/**
 		 * This field is deprecated and will be removed from a future version of the
 		 * API. Use the <code>settings.settingsVersion</code> field instead.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * The name and status of the failover replica. This property is applicable
 		 * only to Second Generation instances.
 		 */
-		failoverReplica?: DatabaseInstanceFailoverReplica;
+		failoverReplica?: DatabaseInstanceFailoverReplica | null;
 
 		/**
 		 * The Compute Engine zone that the instance is currently serving from. This
 		 * value could be different from the zone that was specified when the instance
 		 * was created if the instance has failed over to its secondary zone.
 		 */
-		gceZone?: string;
+		gceZone?: string | null;
 
 		/**
 		 * The instance type. This can be one of the following.
@@ -371,37 +371,37 @@ export namespace MyNS {
 		 * customer's premises. <br><code>READ_REPLICA_INSTANCE</code>: A Cloud SQL
 		 * instance configured as a read-replica.
 		 */
-		instanceType?: DatabaseInstanceInstanceType;
+		instanceType?: DatabaseInstanceInstanceType | null;
 
 		/** The assigned IP addresses for the instance. */
-		ipAddresses?: Array<IpMapping>;
+		ipAddresses?: Array<IpMapping> | null;
 
 		/**
 		 * The IPv6 address assigned to the instance. This property is applicable only
 		 * to First Generation instances.
 		 */
-		ipv6Address?: string;
+		ipv6Address?: string | null;
 
 		/** This is always <code>sql#instance</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The name of the instance which will act as master in the replication setup. */
-		masterInstanceName?: string;
+		masterInstanceName?: string | null;
 
 		/** The maximum disk size of the instance in bytes. */
-		maxDiskSize?: string;
+		maxDiskSize?: string | null;
 
 		/** Name of the Cloud SQL instance. This does not include the project ID. */
-		name?: string;
+		name?: string | null;
 
 		/** On-premises instance configuration. */
-		onPremisesConfiguration?: OnPremisesConfiguration;
+		onPremisesConfiguration?: OnPremisesConfiguration | null;
 
 		/**
 		 * The project ID of the project containing the Cloud SQL instance. The Google
 		 * apps domain is prefixed if applicable.
 		 */
-		project?: string;
+		project?: string | null;
 
 		/**
 		 * The geographical region. Can be <code>us-central</code>
@@ -412,34 +412,34 @@ export namespace MyNS {
 		 * or Second Generation). The region can not be changed after instance
 		 * creation.
 		 */
-		region?: string;
+		region?: string | null;
 
 		/** Read-replica configuration for connecting to the master. */
-		replicaConfiguration?: ReplicaConfiguration;
+		replicaConfiguration?: ReplicaConfiguration | null;
 
 		/** The replicas of the instance. */
-		replicaNames?: Array<string>;
+		replicaNames?: Array<string> | null;
 
 		/** Initial root password. Use only on creation. */
-		rootPassword?: string;
+		rootPassword?: string | null;
 
 		/** Any scheduled maintenancce for this instance. */
-		scheduledMaintenance?: SqlScheduledMaintenance;
+		scheduledMaintenance?: SqlScheduledMaintenance | null;
 
 		/** The URI of this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** SslCerts Resource */
-		serverCaCert?: SslCert;
+		serverCaCert?: SslCert | null;
 
 		/**
 		 * The service account email address assigned to the instance. This property
 		 * is applicable only to Second Generation instances.
 		 */
-		serviceAccountEmailAddress?: string;
+		serviceAccountEmailAddress?: string | null;
 
 		/** Database instance settings. */
-		settings?: Settings;
+		settings?: Settings | null;
 
 		/**
 		 * The current serving state of the Cloud SQL instance. This can be one of the
@@ -451,10 +451,10 @@ export namespace MyNS {
 		 * <br><code>FAILED</code>: The instance creation failed.
 		 * <br><code>UNKNOWN_STATE</code>: The state of the instance is unknown.
 		 */
-		state?: DatabaseInstanceState;
+		state?: DatabaseInstanceState | null;
 
 		/** If the instance state is SUSPENDED, the reason for the suspension. */
-		suspensionReason?: Array<string>;
+		suspensionReason?: Array<string> | null;
 	}
 
 	export enum DatabaseInstanceBackendType { SQL_BACKEND_TYPE_UNSPECIFIED = 0, FIRST_GEN = 1, SECOND_GEN = 2, EXTERNAL = 3 }
@@ -468,7 +468,7 @@ export namespace MyNS {
 		 * that the failover replica is out of sync. The master can only failover to
 		 * the failover replica when the status is true.
 		 */
-		available?: boolean;
+		available?: boolean | null;
 
 		/**
 		 * The name of the failover replica. If specified at instance creation, a
@@ -476,7 +476,7 @@ export namespace MyNS {
 		 * doesn't include the project ID. This property is applicable only to
 		 * Second Generation instances.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum DatabaseInstanceInstanceType { SQL_INSTANCE_TYPE_UNSPECIFIED = 0, CLOUD_SQL_INSTANCE = 1, ON_PREMISES_INSTANCE = 2, READ_REPLICA_INSTANCE = 3 }
@@ -486,7 +486,7 @@ export namespace MyNS {
 	export interface IpMapping {
 
 		/** The IP address assigned. */
-		ipAddress?: string;
+		ipAddress?: string | null;
 
 		/**
 		 * The due time for this IP to be retired in <a
@@ -494,7 +494,7 @@ export namespace MyNS {
 		 * <code>2012-11-15T16:19:00.094Z</code>. This field is only available when
 		 * the IP is scheduled to be retired.
 		 */
-		timeToRetire?: string;
+		timeToRetire?: string | null;
 
 		/**
 		 * The type of this IP address. A <code>PRIMARY</code> address is a public
@@ -503,7 +503,7 @@ export namespace MyNS {
 		 * <code>OUTGOING</code> address is the source address of connections
 		 * originating from the instance, if supported.
 		 */
-		type?: IpMappingType;
+		type?: IpMappingType | null;
 	}
 
 	export enum IpMappingType { SQL_IP_ADDRESS_TYPE_UNSPECIFIED = 0, PRIMARY = 1, OUTGOING = 2, PRIVATE = 3, MIGRATED_1ST_GEN = 4 }
@@ -513,31 +513,31 @@ export namespace MyNS {
 	export interface OnPremisesConfiguration {
 
 		/** PEM representation of the trusted CA's x509 certificate. */
-		caCertificate?: string;
+		caCertificate?: string | null;
 
 		/** PEM representation of the slave's x509 certificate. */
-		clientCertificate?: string;
+		clientCertificate?: string | null;
 
 		/**
 		 * PEM representation of the slave's private key. The corresponsing public key
 		 * is encoded in the client's certificate.
 		 */
-		clientKey?: string;
+		clientKey?: string | null;
 
 		/** The dump file to create the Cloud SQL replica. */
-		dumpFilePath?: string;
+		dumpFilePath?: string | null;
 
 		/** The host and port of the on-premises instance in host:port format */
-		hostPort?: string;
+		hostPort?: string | null;
 
 		/** This is always <code>sql#onPremisesConfiguration</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The password for connecting to on-premises instance. */
-		password?: string;
+		password?: string | null;
 
 		/** The username for connecting to on-premises instance. */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -552,13 +552,13 @@ export namespace MyNS {
 		 * target, and the replica has to be in different zone with the master
 		 * instance.
 		 */
-		failoverTarget?: boolean;
+		failoverTarget?: boolean | null;
 
 		/** This is always <code>sql#replicaConfiguration</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Read-replica configuration specific to MySQL databases. */
-		mysqlReplicaConfiguration?: MySqlReplicaConfiguration;
+		mysqlReplicaConfiguration?: MySqlReplicaConfiguration | null;
 	}
 
 
@@ -566,19 +566,19 @@ export namespace MyNS {
 	export interface MySqlReplicaConfiguration {
 
 		/** PEM representation of the trusted CA's x509 certificate. */
-		caCertificate?: string;
+		caCertificate?: string | null;
 
 		/** PEM representation of the slave's x509 certificate. */
-		clientCertificate?: string;
+		clientCertificate?: string | null;
 
 		/**
 		 * PEM representation of the slave's private key. The corresponsing public key
 		 * is encoded in the client's certificate.
 		 */
-		clientKey?: string;
+		clientKey?: string | null;
 
 		/** Seconds to wait between connect retries. MySQL's default is 60 seconds. */
-		connectRetryInterval?: number;
+		connectRetryInterval?: number | null;
 
 		/**
 		 * Path to a SQL dump file in Google Cloud Storage from which the slave
@@ -588,40 +588,40 @@ export namespace MyNS {
 		 * // begin. This can be accomplished by setting --master-data to 1 when using
 		 * // mysqldump.
 		 */
-		dumpFilePath?: string;
+		dumpFilePath?: string | null;
 
 		/** This is always <code>sql#mysqlReplicaConfiguration</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Interval in milliseconds between replication heartbeats. */
-		masterHeartbeatPeriod?: string;
+		masterHeartbeatPeriod?: string | null;
 
 		/** The password for the replication connection. */
-		password?: string;
+		password?: string | null;
 
 		/** A list of permissible ciphers to use for SSL encryption. */
-		sslCipher?: string;
+		sslCipher?: string | null;
 
 		/** The username for the replication connection. */
-		username?: string;
+		username?: string | null;
 
 		/**
 		 * Whether or not to check the master's Common Name value in the certificate
 		 * that it sends during the SSL handshake.
 		 */
-		verifyServerCertificate?: boolean;
+		verifyServerCertificate?: boolean | null;
 	}
 
 
 	/** Any scheduled maintenancce for this instance. */
 	export interface SqlScheduledMaintenance {
-		canDefer?: boolean;
+		canDefer?: boolean | null;
 
 		/** If the scheduled maintenance can be rescheduled. */
-		canReschedule?: boolean;
+		canReschedule?: boolean | null;
 
 		/** The start time of any upcoming scheduled maintenance for this instance. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -629,39 +629,39 @@ export namespace MyNS {
 	export interface SslCert {
 
 		/** PEM representation. */
-		cert?: string;
+		cert?: string | null;
 
 		/** Serial number, as extracted from the certificate. */
-		certSerialNumber?: string;
+		certSerialNumber?: string | null;
 
 		/** User supplied name.  Constrained to [a-zA-Z.-_ ]+. */
-		commonName?: string;
+		commonName?: string | null;
 
 		/**
 		 * The time when the certificate was created in <a
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * The time when the certificate expires in <a
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		expirationTime?: string;
+		expirationTime?: string | null;
 
 		/** Name of the database instance. */
-		instance?: string;
+		instance?: string | null;
 
 		/** This is always <code>sql#sslCert</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The URI of this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Sha1 Fingerprint. */
-		sha1Fingerprint?: string;
+		sha1Fingerprint?: string | null;
 	}
 
 
@@ -680,13 +680,13 @@ export namespace MyNS {
 		 * inactivity. Instances with <code>PER_PACKAGE</code> pricing turn off after
 		 * 12 hours of inactivity.
 		 */
-		activationPolicy?: SettingsActivationPolicy;
+		activationPolicy?: SettingsActivationPolicy | null;
 
 		/**
 		 * The App Engine app IDs that can access this instance. First Generation
 		 * instances only.
 		 */
-		authorizedGaeApplications?: Array<string>;
+		authorizedGaeApplications?: Array<string> | null;
 
 		/**
 		 * Availability type (PostgreSQL and MySQL instances only). Potential values:
@@ -697,44 +697,44 @@ export namespace MyNS {
 		 * href="https://cloud.google.com/sql/docs/postgres/high-availability">Overview
 		 * of the High Availability Configuration</a>.
 		 */
-		availabilityType?: SettingsAvailabilityType;
+		availabilityType?: SettingsAvailabilityType | null;
 
 		/** Database instance backup configuration. */
-		backupConfiguration?: BackupConfiguration;
+		backupConfiguration?: BackupConfiguration | null;
 
 		/**
 		 * Configuration specific to read replica instances. Indicates whether
 		 * database flags for crash-safe replication are enabled. This property is
 		 * only applicable to First Generation instances.
 		 */
-		crashSafeReplicationEnabled?: boolean;
+		crashSafeReplicationEnabled?: boolean | null;
 
 		/**
 		 * The size of data disk, in GB. The data disk size minimum is 10GB. Not used
 		 * for First Generation instances.
 		 */
-		dataDiskSizeGb?: string;
+		dataDiskSizeGb?: string | null;
 
 		/**
 		 * The type of data disk: <code>PD_SSD</code> (default) or
 		 * <code>PD_HDD</code>. Not used for First Generation instances.
 		 */
-		dataDiskType?: SettingsDataDiskType;
+		dataDiskType?: SettingsDataDiskType | null;
 
 		/** The database flags passed to the instance at startup. */
-		databaseFlags?: Array<DatabaseFlags>;
+		databaseFlags?: Array<DatabaseFlags> | null;
 
 		/**
 		 * Configuration specific to read replica instances. Indicates whether
 		 * replication is enabled or not.
 		 */
-		databaseReplicationEnabled?: boolean;
+		databaseReplicationEnabled?: boolean | null;
 
 		/** IP Management configuration. */
-		ipConfiguration?: IpConfiguration;
+		ipConfiguration?: IpConfiguration | null;
 
 		/** This is always <code>sql#settings</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * Preferred location. This specifies where a Cloud SQL instance should
@@ -743,27 +743,27 @@ export namespace MyNS {
 		 * location is not available, the instance will be located as close as possible
 		 * within the region. Only one location may be specified.
 		 */
-		locationPreference?: LocationPreference;
+		locationPreference?: LocationPreference | null;
 
 		/**
 		 * Maintenance window. This specifies when a v2 Cloud SQL instance should
 		 * preferably be restarted for system maintenance purposes.
 		 */
-		maintenanceWindow?: MaintenanceWindow;
+		maintenanceWindow?: MaintenanceWindow | null;
 
 		/**
 		 * The pricing plan for this instance. This can be either <code>PER_USE</code>
 		 * or <code>PACKAGE</code>. Only <code>PER_USE</code> is supported for Second
 		 * Generation instances.
 		 */
-		pricingPlan?: SettingsPricingPlan;
+		pricingPlan?: SettingsPricingPlan | null;
 
 		/**
 		 * The type of replication this instance uses. This can be either
 		 * <code>ASYNCHRONOUS</code> or <code>SYNCHRONOUS</code>. This property is
 		 * only applicable to First Generation instances.
 		 */
-		replicationType?: SettingsReplicationType;
+		replicationType?: SettingsReplicationType | null;
 
 		/**
 		 * The version of instance settings. This is a required field for update
@@ -771,20 +771,20 @@ export namespace MyNS {
 		 * use the most recent settingsVersion value for this instance and do not try
 		 * to update this value.
 		 */
-		settingsVersion?: string;
+		settingsVersion?: string | null;
 
 		/**
 		 * Configuration to increase storage size automatically. The default value is
 		 * true. Not used for First Generation instances.
 		 */
-		storageAutoResize?: boolean;
+		storageAutoResize?: boolean | null;
 
 		/**
 		 * The maximum size to which storage capacity can be automatically increased.
 		 * The default value is 0, which specifies that there is no limit. Not used
 		 * for First Generation instances.
 		 */
-		storageAutoResizeLimit?: string;
+		storageAutoResizeLimit?: string | null;
 
 		/**
 		 * The tier (or machine type) for this instance, for example
@@ -794,13 +794,13 @@ export namespace MyNS {
 		 * Generation. For more information, see <a
 		 * href="/sql/docs/db_path/instance-settings">Instance Settings</a>.
 		 */
-		tier?: string;
+		tier?: string | null;
 
 		/**
 		 * User-provided labels, represented as a dictionary where each label is a
 		 * single key value pair.
 		 */
-		userLabels?: {[id: string]: string };
+		userLabels?: {[id: string]: string } | null;
 	}
 
 	export enum SettingsActivationPolicy { SQL_ACTIVATION_POLICY_UNSPECIFIED = 0, ALWAYS = 1, NEVER = 2, ON_DEMAND = 3 }
@@ -820,10 +820,10 @@ export namespace MyNS {
 		 * notation</a>, also known as 'slash' notation (e.g.
 		 * <code>192.168.100.0/24</code>).
 		 */
-		authorizedNetworks?: Array<AclEntry>;
+		authorizedNetworks?: Array<AclEntry> | null;
 
 		/** Whether the instance should be assigned an IP address or not. */
-		ipv4Enabled?: boolean;
+		ipv4Enabled?: boolean | null;
 
 		/**
 		 * The resource link for the VPC network from which the Cloud SQL instance is
@@ -831,10 +831,10 @@ export namespace MyNS {
 		 * <code>/projects/myProject/global/networks/default</code>. This setting can
 		 * be updated, but it cannot be removed after it is set.
 		 */
-		privateNetwork?: string;
+		privateNetwork?: string | null;
 
 		/** Whether SSL connections over IP should be enforced or not. */
-		requireSsl?: boolean;
+		requireSsl?: boolean | null;
 	}
 
 
@@ -851,16 +851,16 @@ export namespace MyNS {
 		 * The AppEngine application to follow, it must be in the same region as the
 		 * Cloud SQL instance.
 		 */
-		followGaeApplication?: string;
+		followGaeApplication?: string | null;
 
 		/** This is always <code>sql#locationPreference</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The preferred Compute Engine zone (e.g. us-central1-a, us-central1-b,
 		 * etc.).
 		 */
-		zone?: string;
+		zone?: string | null;
 	}
 
 
@@ -871,13 +871,13 @@ export namespace MyNS {
 	export interface MaintenanceWindow {
 
 		/** day of week (1-7), starting on Monday. */
-		day?: number;
+		day?: number | null;
 
 		/** hour of day - 0 to 23. */
-		hour?: number;
+		hour?: number | null;
 
 		/** This is always <code>sql#maintenanceWindow</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * Maintenance timing setting: <code>canary</code> (Earlier) or
@@ -885,7 +885,7 @@ export namespace MyNS {
 		 * href="/sql/docs/db_path/instance-settings#maintenance-timing-2ndgen">
 		 * Learn more</a>.
 		 */
-		updateTrack?: MaintenanceWindowUpdateTrack;
+		updateTrack?: MaintenanceWindowUpdateTrack | null;
 	}
 
 	export enum MaintenanceWindowUpdateTrack { SQL_UPDATE_TRACK_UNSPECIFIED = 0, canary = 1, stable = 2 }
@@ -901,10 +901,10 @@ export namespace MyNS {
 	export interface DatabasesListResponse {
 
 		/** List of database resources in the instance. */
-		items?: Array<Database>;
+		items?: Array<Database> | null;
 
 		/** This is always <code>sql#databasesList</code>. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -912,10 +912,10 @@ export namespace MyNS {
 	export interface DemoteMasterConfiguration {
 
 		/** This is always <code>sql#demoteMasterConfiguration</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Read-replica configuration specific to MySQL databases. */
-		mysqlReplicaConfiguration?: DemoteMasterMySqlReplicaConfiguration;
+		mysqlReplicaConfiguration?: DemoteMasterMySqlReplicaConfiguration | null;
 	}
 
 
@@ -923,26 +923,26 @@ export namespace MyNS {
 	export interface DemoteMasterMySqlReplicaConfiguration {
 
 		/** PEM representation of the trusted CA's x509 certificate. */
-		caCertificate?: string;
+		caCertificate?: string | null;
 
 		/** PEM representation of the slave's x509 certificate. */
-		clientCertificate?: string;
+		clientCertificate?: string | null;
 
 		/**
 		 * PEM representation of the slave's private key. The corresponsing public key
 		 * is encoded in the client's certificate. The format of the slave's private
 		 * key can be either PKCS #1 or PKCS #8.
 		 */
-		clientKey?: string;
+		clientKey?: string | null;
 
 		/** This is always <code>sql#demoteMasterMysqlReplicaConfiguration</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The password for the replication connection. */
-		password?: string;
+		password?: string | null;
 
 		/** The username for the replication connection. */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -950,16 +950,16 @@ export namespace MyNS {
 	export interface DemoteMasterContext {
 
 		/** This is always <code>sql#demoteMasterContext</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The name of the instance which will act as on-premises master in the
 		 * replication setup.
 		 */
-		masterInstanceName?: string;
+		masterInstanceName?: string | null;
 
 		/** Read-replica configuration for connecting to the on-premises master. */
-		replicaConfiguration?: DemoteMasterConfiguration;
+		replicaConfiguration?: DemoteMasterConfiguration | null;
 
 		/**
 		 * Verify GTID consistency for demote operation. Default value:
@@ -970,7 +970,7 @@ export namespace MyNS {
 		 * only if you know the reason for the GTID divergence and are confident that
 		 * doing so will not cause any replication issues.
 		 */
-		verifyGtidConsistency?: boolean;
+		verifyGtidConsistency?: boolean | null;
 	}
 
 
@@ -978,7 +978,7 @@ export namespace MyNS {
 	export interface ExportContext {
 
 		/** Options for exporting data as CSV. */
-		csvExportOptions?: ExportContextCsvExportOptions;
+		csvExportOptions?: ExportContextCsvExportOptions | null;
 
 		/**
 		 * Databases to be exported. <br /> <b>MySQL instances:</b> If
@@ -992,19 +992,19 @@ export namespace MyNS {
 		 * this database must match the one specified in the
 		 * <code>csvExportOptions.selectQuery</code> property.
 		 */
-		databases?: Array<string>;
+		databases?: Array<string> | null;
 
 		/**
 		 * The file type for the specified uri. <br><code>SQL</code>: The file
 		 * contains SQL statements. <br><code>CSV</code>: The file contains CSV data.
 		 */
-		fileType?: ExportContextFileType;
+		fileType?: ExportContextFileType | null;
 
 		/** This is always <code>sql#exportContext</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Options for exporting data as SQL statements. */
-		sqlExportOptions?: ExportContextSqlExportOptions;
+		sqlExportOptions?: ExportContextSqlExportOptions | null;
 
 		/**
 		 * The path to the file in Google Cloud Storage where the export will be
@@ -1014,13 +1014,13 @@ export namespace MyNS {
 		 * // <code>SQL</code> and the filename ends with .gz, the contents are
 		 * // compressed.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 	export interface ExportContextCsvExportOptions {
 
 		/** The select query used to extract the data. */
-		selectQuery?: string;
+		selectQuery?: string | null;
 	}
 
 	export enum ExportContextFileType { SQL_FILE_TYPE_UNSPECIFIED = 0, SQL = 1, CSV = 2, BAK = 3 }
@@ -1028,17 +1028,17 @@ export namespace MyNS {
 	export interface ExportContextSqlExportOptions {
 
 		/** Options for exporting from MySQL. */
-		mysqlExportOptions?: ExportContextSqlExportOptionsMysqlExportOptions;
+		mysqlExportOptions?: ExportContextSqlExportOptionsMysqlExportOptions | null;
 
 		/** Export only schemas. */
-		schemaOnly?: boolean;
+		schemaOnly?: boolean | null;
 
 		/**
 		 * Tables to export, or that were exported, from the specified database. If
 		 * you specify tables, specify one and only one database. For PostgreSQL
 		 * instances, you can specify only one table.
 		 */
-		tables?: Array<string>;
+		tables?: Array<string> | null;
 	}
 
 	export interface ExportContextSqlExportOptionsMysqlExportOptions {
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 		 * a SQL comment, and has no effect.
 		 * All other values are ignored.
 		 */
-		masterData?: number;
+		masterData?: number | null;
 	}
 
 
@@ -1059,13 +1059,13 @@ export namespace MyNS {
 	export interface FailoverContext {
 
 		/** This is always <code>sql#failoverContext</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The current settings version of this instance. Request will be rejected if
 		 * this version doesn't match the current settings version.
 		 */
-		settingsVersion?: string;
+		settingsVersion?: string | null;
 	}
 
 
@@ -1076,44 +1076,44 @@ export namespace MyNS {
 		 * Use this field if only certain integers are accepted. Can be combined
 		 * with min_value and max_value to add additional values.
 		 */
-		allowedIntValues?: Array<string>;
+		allowedIntValues?: Array<string> | null;
 
 		/**
 		 * For <code>STRING</code> flags, a list of strings that the value can be set
 		 * to.
 		 */
-		allowedStringValues?: Array<string>;
+		allowedStringValues?: Array<string> | null;
 
 		/**
 		 * The database version this flag applies to. Can be <code>MYSQL_5_5</code>,
 		 * <code>MYSQL_5_6</code>, or <code>MYSQL_5_7</code>. <code>MYSQL_5_7</code>
 		 * is applicable only to Second Generation instances.
 		 */
-		appliesTo?: Array<DatabaseInstanceDatabaseVersion>;
+		appliesTo?: Array<DatabaseInstanceDatabaseVersion> | null;
 
 		/** Whether or not the flag is considered in beta. */
-		inBeta?: boolean;
+		inBeta?: boolean | null;
 
 		/** This is always <code>sql#flag</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** For <code>INTEGER</code> flags, the maximum allowed value. */
-		maxValue?: string;
+		maxValue?: string | null;
 
 		/** For <code>INTEGER</code> flags, the minimum allowed value. */
-		minValue?: string;
+		minValue?: string | null;
 
 		/**
 		 * This is the name of the flag. Flag names always use underscores, not
 		 * hyphens, e.g. <code>max_allowed_packet</code>
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Indicates whether changing this flag will trigger a database restart. Only
 		 * applicable to Second Generation instances.
 		 */
-		requiresRestart?: boolean;
+		requiresRestart?: boolean | null;
 
 		/**
 		 * The type of the flag. Flags are typed to being <code>BOOLEAN</code>,
@@ -1121,7 +1121,7 @@ export namespace MyNS {
 		 * <code>NONE</code> is used for flags which do not take a value, such as
 		 * <code>skip_grant_tables</code>.
 		 */
-		type?: FlagType;
+		type?: FlagType | null;
 	}
 
 	export enum FlagType { SQL_FLAG_TYPE_UNSPECIFIED = 0, BOOLEAN = 1, STRING = 2, INTEGER = 3, NONE = 4, MYSQL_TIMEZONE_OFFSET = 5, FLOAT = 6, REPEATED_STRING = 7 }
@@ -1131,10 +1131,10 @@ export namespace MyNS {
 	export interface FlagsListResponse {
 
 		/** List of flags. */
-		items?: Array<Flag>;
+		items?: Array<Flag> | null;
 
 		/** This is always <code>sql#flagsList</code>. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1142,10 +1142,10 @@ export namespace MyNS {
 	export interface ImportContext {
 
 		/** Import parameters specific to SQL Server .BAK files */
-		bakImportOptions?: ImportContextBakImportOptions;
+		bakImportOptions?: ImportContextBakImportOptions | null;
 
 		/** Options for importing data as CSV. */
-		csvImportOptions?: ImportContextCsvImportOptions;
+		csvImportOptions?: ImportContextCsvImportOptions | null;
 
 		/**
 		 * The target database for the import. If <code>fileType</code> is
@@ -1154,19 +1154,19 @@ export namespace MyNS {
 		 * import file. If <code>fileType</code> is <code>CSV</code>, one database
 		 * must be specified.
 		 */
-		database?: string;
+		database?: string | null;
 
 		/**
 		 * The file type for the specified uri. <br><code>SQL</code>: The file
 		 * contains SQL statements. <br><code>CSV</code>: The file contains CSV data.
 		 */
-		fileType?: ExportContextFileType;
+		fileType?: ExportContextFileType | null;
 
 		/** The PostgreSQL user for this import operation. PostgreSQL instances only. */
-		importUser?: string;
+		importUser?: string | null;
 
 		/** This is always <code>sql#importContext</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * Path to the import file in Cloud Storage, in the form
@@ -1175,11 +1175,11 @@ export namespace MyNS {
 		 * // when <code>fileType</code> is <code>SQL</code>. The instance must have
 		 * // write permissions to the bucket and read access to the file.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 	export interface ImportContextBakImportOptions {
-		encryptionOptions?: ImportContextBakImportOptionsEncryptionOptions;
+		encryptionOptions?: ImportContextBakImportOptionsEncryptionOptions | null;
 	}
 
 	export interface ImportContextBakImportOptionsEncryptionOptions {
@@ -1189,17 +1189,17 @@ export namespace MyNS {
 		 * <code>gs://bucketName/fileName</code>. The instance must have
 		 * write permissions to the bucket and read access to the file.
 		 */
-		certPath?: string;
+		certPath?: string | null;
 
 		/** Password that encrypts the private key */
-		pvkPassword?: string;
+		pvkPassword?: string | null;
 
 		/**
 		 * Path to the Certificate Private Key (.pvk)  in Cloud Storage, in the
 		 * form <code>gs://bucketName/fileName</code>. The instance must have
 		 * write permissions to the bucket and read access to the file.
 		 */
-		pvkPath?: string;
+		pvkPath?: string | null;
 	}
 
 	export interface ImportContextCsvImportOptions {
@@ -1208,10 +1208,10 @@ export namespace MyNS {
 		 * The columns to which CSV data is imported. If not specified, all columns
 		 * of the database table are loaded with CSV data.
 		 */
-		columns?: Array<string>;
+		columns?: Array<string> | null;
 
 		/** The table to which CSV data is imported. */
-		table?: string;
+		table?: string | null;
 	}
 
 
@@ -1219,7 +1219,7 @@ export namespace MyNS {
 	export interface InstancesCloneRequest {
 
 		/** Database instance clone context. */
-		cloneContext?: CloneContext;
+		cloneContext?: CloneContext | null;
 	}
 
 
@@ -1227,7 +1227,7 @@ export namespace MyNS {
 	export interface InstancesDemoteMasterRequest {
 
 		/** Database instance demote master context. */
-		demoteMasterContext?: DemoteMasterContext;
+		demoteMasterContext?: DemoteMasterContext | null;
 	}
 
 
@@ -1235,7 +1235,7 @@ export namespace MyNS {
 	export interface InstancesExportRequest {
 
 		/** Database instance export context. */
-		exportContext?: ExportContext;
+		exportContext?: ExportContext | null;
 	}
 
 
@@ -1243,7 +1243,7 @@ export namespace MyNS {
 	export interface InstancesFailoverRequest {
 
 		/** Database instance failover context. */
-		failoverContext?: FailoverContext;
+		failoverContext?: FailoverContext | null;
 	}
 
 
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 	export interface InstancesImportRequest {
 
 		/** Database instance import context. */
-		importContext?: ImportContext;
+		importContext?: ImportContext | null;
 	}
 
 
@@ -1259,31 +1259,31 @@ export namespace MyNS {
 	export interface InstancesListResponse {
 
 		/** List of database instance resources. */
-		items?: Array<DatabaseInstance>;
+		items?: Array<DatabaseInstance> | null;
 
 		/** This is always <code>sql#instancesList</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The continuation token, used to page through large result sets. Provide
 		 * this value in a subsequent request to return the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of warnings that occurred while handling the request. */
-		warnings?: Array<ApiWarning>;
+		warnings?: Array<ApiWarning> | null;
 	}
 
 
 	/** Instances ListServerCas response. */
 	export interface InstancesListServerCasResponse {
-		activeVersion?: string;
+		activeVersion?: string | null;
 
 		/** List of server CA certificates for the instance. */
-		certs?: Array<SslCert>;
+		certs?: Array<SslCert> | null;
 
 		/** This is always <code>sql#instancesListServerCas</code>. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1294,7 +1294,7 @@ export namespace MyNS {
 		 * Database instance restore from backup context.
 		 * Backup context contains source instance id and project id.
 		 */
-		restoreBackupContext?: RestoreBackupContext;
+		restoreBackupContext?: RestoreBackupContext | null;
 	}
 
 
@@ -1305,16 +1305,16 @@ export namespace MyNS {
 	export interface RestoreBackupContext {
 
 		/** The ID of the backup run to restore from. */
-		backupRunId?: string;
+		backupRunId?: string | null;
 
 		/** The ID of the instance that the backup was taken from. */
-		instanceId?: string;
+		instanceId?: string | null;
 
 		/** This is always <code>sql#restoreBackupContext</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The full project ID of the source instance. */
-		project?: string;
+		project?: string | null;
 	}
 
 
@@ -1322,7 +1322,7 @@ export namespace MyNS {
 	export interface InstancesRotateServerCaRequest {
 
 		/** Instance rotate server CA context. */
-		rotateServerCaContext?: RotateServerCaContext;
+		rotateServerCaContext?: RotateServerCaContext | null;
 	}
 
 
@@ -1330,13 +1330,13 @@ export namespace MyNS {
 	export interface RotateServerCaContext {
 
 		/** This is always <code>sql#rotateServerCaContext</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The fingerprint of the next version to be rotated to. If left unspecified,
 		 * will be rotated to the most recently added server CA version.
 		 */
-		nextVersion?: string;
+		nextVersion?: string | null;
 	}
 
 
@@ -1344,7 +1344,7 @@ export namespace MyNS {
 	export interface InstancesTruncateLogRequest {
 
 		/** Database Instance truncate log context. */
-		truncateLogContext?: TruncateLogContext;
+		truncateLogContext?: TruncateLogContext | null;
 	}
 
 
@@ -1352,13 +1352,13 @@ export namespace MyNS {
 	export interface TruncateLogContext {
 
 		/** This is always <code>sql#truncateLogContext</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The type of log to truncate. Valid values are
 		 * <code>MYSQL_GENERAL_TABLE</code> and <code>MYSQL_SLOW_TABLE</code>.
 		 */
-		logType?: string;
+		logType?: string | null;
 	}
 
 
@@ -1374,33 +1374,33 @@ export namespace MyNS {
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Database instance operation errors list wrapper. */
-		error?: OperationErrors;
+		error?: OperationErrors | null;
 
 		/** Database instance export context. */
-		exportContext?: ExportContext;
+		exportContext?: ExportContext | null;
 
 		/** Database instance import context. */
-		importContext?: ImportContext;
+		importContext?: ImportContext | null;
 
 		/**
 		 * The time this operation was enqueued in UTC timezone in <a
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		insertTime?: string;
+		insertTime?: string | null;
 
 		/** This is always <code>sql#operation</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * An identifier that uniquely identifies the operation. You can use this
 		 * identifier to retrieve the Operations resource that has information about
 		 * the operation.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The type of the operation. Valid values are <code>CREATE</code>,
@@ -1410,34 +1410,34 @@ export namespace MyNS {
 		 * <code>DELETE_USER</code>, <code>CREATE_DATABASE</code>,
 		 * <code>DELETE_DATABASE</code> .
 		 */
-		operationType?: OperationOperationType;
+		operationType?: OperationOperationType | null;
 
 		/** The URI of this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/**
 		 * The time this operation actually started in UTC timezone in <a
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
 		 * <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/**
 		 * The status of an operation. Valid values are <code>PENDING</code>,
 		 * <code>RUNNING</code>, <code>DONE</code>,
 		 * <code>SQL_OPERATION_STATUS_UNSPECIFIED</code>.
 		 */
-		status?: OperationStatus;
+		status?: OperationStatus | null;
 
 		/** Name of the database instance related to this operation. */
-		targetId?: string;
-		targetLink?: string;
+		targetId?: string | null;
+		targetLink?: string | null;
 
 		/** The project ID of the target instance related to this operation. */
-		targetProject?: string;
+		targetProject?: string | null;
 
 		/** The email address of the user who initiated this operation. */
-		user?: string;
+		user?: string | null;
 	}
 
 
@@ -1445,10 +1445,10 @@ export namespace MyNS {
 	export interface OperationErrors {
 
 		/** The list of errors encountered while processing this operation. */
-		errors?: Array<OperationError>;
+		errors?: Array<OperationError> | null;
 
 		/** This is always <code>sql#operationErrors</code>. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export enum OperationOperationType { SQL_OPERATION_TYPE_UNSPECIFIED = 0, IMPORT = 1, EXPORT = 2, CREATE = 3, UPDATE = 4, DELETE = 5, RESTART = 6, BACKUP = 7, SNAPSHOT = 8, BACKUP_VOLUME = 9, DELETE_VOLUME = 10, RESTORE_VOLUME = 11, INJECT_USER = 12, CLONE = 13, STOP_REPLICA = 14, START_REPLICA = 15, PROMOTE_REPLICA = 16, CREATE_REPLICA = 17, CREATE_USER = 18, DELETE_USER = 19, UPDATE_USER = 20, CREATE_DATABASE = 21, DELETE_DATABASE = 22, UPDATE_DATABASE = 23, FAILOVER = 24, DELETE_BACKUP = 25, RECREATE_REPLICA = 26, TRUNCATE_LOG = 27, DEMOTE_MASTER = 28, MAINTENANCE = 29, ENABLE_PRIVATE_IP = 30, DEFER_MAINTENANCE = 31, CREATE_CLONE = 32, RESCHEDULE_MAINTENANCE = 33, START_EXTERNAL_SYNC = 34 }
@@ -1460,22 +1460,22 @@ export namespace MyNS {
 	export interface OperationsListResponse {
 
 		/** List of operation resources. */
-		items?: Array<Operation>;
+		items?: Array<Operation> | null;
 
 		/** This is always <code>sql#operationsList</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The continuation token, used to page through large result sets. Provide
 		 * this value in a subsequent request to return the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface Reschedule {
 
 		/** Required. The type of the reschedule. */
-		rescheduleType?: RescheduleRescheduleType;
+		rescheduleType?: RescheduleRescheduleType | null;
 
 		/**
 		 * Optional. Timestamp when the maintenance shall be rescheduled to if
@@ -1483,7 +1483,7 @@ export namespace MyNS {
 		 * href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for
 		 * example <code>2012-11-15T16:19:00.094Z</code>.
 		 */
-		scheduleTime?: string;
+		scheduleTime?: string | null;
 	}
 
 	export enum RescheduleRescheduleType { RESCHEDULE_TYPE_UNSPECIFIED = 0, IMMEDIATE = 1, NEXT_AVAILABLE_WINDOW = 2, SPECIFIC_TIME = 3 }
@@ -1493,13 +1493,13 @@ export namespace MyNS {
 	export interface SqlExternalSyncSettingError {
 
 		/** Additional information about the error encountered. */
-		detail?: string;
+		detail?: string | null;
 
 		/** This is always <code>sql#migrationSettingError</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Identifies the specific error that occurred. */
-		type?: SqlExternalSyncSettingErrorType;
+		type?: SqlExternalSyncSettingErrorType | null;
 	}
 
 	export enum SqlExternalSyncSettingErrorType { SQL_EXTERNAL_SYNC_SETTING_ERROR_TYPE_UNSPECIFIED = 0, CONNECTION_FAILURE = 1, BINLOG_NOT_ENABLED = 2, INCOMPATIBLE_DATABASE_VERSION = 3, REPLICA_ALREADY_SETUP = 4, INSUFFICIENT_PRIVILEGE = 5, UNSUPPORTED_MIGRATION_TYPE = 6, NO_PGLOGICAL_INSTALLED = 7, PGLOGICAL_NODE_ALREADY_EXISTS = 8 }
@@ -1507,7 +1507,7 @@ export namespace MyNS {
 
 	/** Reschedule options for maintenance windows. */
 	export interface SqlInstancesRescheduleMaintenanceRequestBody {
-		reschedule?: Reschedule;
+		reschedule?: Reschedule | null;
 	}
 
 
@@ -1515,10 +1515,10 @@ export namespace MyNS {
 	export interface SqlInstancesVerifyExternalSyncSettingsResponse {
 
 		/** List of migration violations. */
-		errors?: Array<SqlExternalSyncSettingError>;
+		errors?: Array<SqlExternalSyncSettingError> | null;
 
 		/** This is always <code>sql#migrationSettingErrorList</code>. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1526,10 +1526,10 @@ export namespace MyNS {
 	export interface SqlServerUserDetails {
 
 		/** If the user has been disabled */
-		disabled?: boolean;
+		disabled?: boolean | null;
 
 		/** The server roles for this user */
-		serverRoles?: Array<string>;
+		serverRoles?: Array<string> | null;
 	}
 
 
@@ -1537,13 +1537,13 @@ export namespace MyNS {
 	export interface SslCertDetail {
 
 		/** SslCerts Resource */
-		certInfo?: SslCert;
+		certInfo?: SslCert | null;
 
 		/**
 		 * The private key for the client cert, in pem format.  Keep private in order
 		 * to protect your security.
 		 */
-		certPrivateKey?: string;
+		certPrivateKey?: string | null;
 	}
 
 
@@ -1551,7 +1551,7 @@ export namespace MyNS {
 	export interface SslCertsCreateEphemeralRequest {
 
 		/** PEM encoded public key to include in the signed certificate. */
-		public_key?: string;
+		public_key?: string | null;
 	}
 
 
@@ -1562,7 +1562,7 @@ export namespace MyNS {
 		 * User supplied name.  Must be a distinct name from the other certificates
 		 * for this instance.
 		 */
-		commonName?: string;
+		commonName?: string | null;
 	}
 
 
@@ -1570,20 +1570,20 @@ export namespace MyNS {
 	export interface SslCertsInsertResponse {
 
 		/** SslCertDetail. */
-		clientCert?: SslCertDetail;
+		clientCert?: SslCertDetail | null;
 
 		/** This is always <code>sql#sslCertsInsert</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * An Operation resource.&nbsp;For successful operations that return an
 		 * Operation resource, only the fields relevant to the operation are populated
 		 * in the resource.
 		 */
-		operation?: Operation;
+		operation?: Operation | null;
 
 		/** SslCerts Resource */
-		serverCaCert?: SslCert;
+		serverCaCert?: SslCert | null;
 	}
 
 
@@ -1591,10 +1591,10 @@ export namespace MyNS {
 	export interface SslCertsListResponse {
 
 		/** List of client certificates for the instance. */
-		items?: Array<SslCert>;
+		items?: Array<SslCert> | null;
 
 		/** This is always <code>sql#sslCertsList</code>. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1602,22 +1602,22 @@ export namespace MyNS {
 	export interface Tier {
 
 		/** The maximum disk size of this tier in bytes. */
-		DiskQuota?: string;
+		DiskQuota?: string | null;
 
 		/** The maximum RAM usage of this tier in bytes. */
-		RAM?: string;
+		RAM?: string | null;
 
 		/** This is always <code>sql#tier</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The applicable regions for this tier. */
-		region?: Array<string>;
+		region?: Array<string> | null;
 
 		/**
 		 * An identifier for the machine type, for example, db-n1-standard-1. For
 		 * related information, see <a href="/sql/pricing">Pricing</a>.
 		 */
-		tier?: string;
+		tier?: string | null;
 	}
 
 
@@ -1625,10 +1625,10 @@ export namespace MyNS {
 	export interface TiersListResponse {
 
 		/** List of tiers. */
-		items?: Array<Tier>;
+		items?: Array<Tier> | null;
 
 		/** This is always <code>sql#tiersList</code>. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1639,7 +1639,7 @@ export namespace MyNS {
 		 * This field is deprecated and will be removed from a future version of the
 		 * API.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * The host name from which the user can connect. For <code>insert</code>
@@ -1647,36 +1647,36 @@ export namespace MyNS {
 		 * operations, host is specified as part of the request URL. The host name
 		 * cannot be updated after insertion.
 		 */
-		host?: string;
+		host?: string | null;
 
 		/**
 		 * The name of the Cloud SQL instance. This does not include the project ID.
 		 * Can be omitted for <code>update</code> since it is already specified on the
 		 * URL.
 		 */
-		instance?: string;
+		instance?: string | null;
 
 		/** This is always <code>sql#user</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The name of the user in the Cloud SQL instance. Can be omitted for
 		 * <code>update</code> since it is already specified in the URL.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The password for the user. */
-		password?: string;
+		password?: string | null;
 
 		/**
 		 * The project ID of the project containing the Cloud SQL database. The Google
 		 * apps domain is prefixed if applicable. Can be omitted for
 		 * <code>update</code> since it is already specified on the URL.
 		 */
-		project?: string;
+		project?: string | null;
 
 		/** Represents a Sql Server user on the Cloud SQL instance. */
-		sqlserverUserDetails?: SqlServerUserDetails;
+		sqlserverUserDetails?: SqlServerUserDetails | null;
 	}
 
 
@@ -1684,17 +1684,17 @@ export namespace MyNS {
 	export interface UsersListResponse {
 
 		/** List of user resources in the instance. */
-		items?: Array<User>;
+		items?: Array<User> | null;
 
 		/** This is always <code>sql#usersList</code>. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * An identifier that uniquely identifies the operation. You can use this
 		 * identifier to retrieve the Operations resource that has information about
 		 * the operation.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()

@@ -39,27 +39,27 @@ export namespace MyNS {
 
 	/** Describes a rule for an IP access control group. */
 	export interface IpRuleItem {
-		ipRule?: string;
-		ruleDesc?: string;
+		ipRule?: string | null;
+		ruleDesc?: string | null;
 	}
 
 	export interface CopyWorkspaceImageResult {
-		ImageId?: string;
+		ImageId?: string | null;
 	}
 
 	export interface CopyWorkspaceImageRequest {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		SourceImageId: string;
 		SourceRegion: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Describes a tag. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface ResourceAlreadyExistsException {
@@ -69,14 +69,14 @@ export namespace MyNS {
 	}
 
 	export interface CreateIpGroupResult {
-		GroupId?: string;
+		GroupId?: string | null;
 	}
 
 	export interface CreateIpGroupRequest {
 		GroupName: string;
-		GroupDesc?: string;
-		UserRules?: Array<IpRuleItem>;
-		Tags?: Array<Tag>;
+		GroupDesc?: string | null;
+		UserRules?: Array<IpRuleItem> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ResourceCreationFailedException {
@@ -91,8 +91,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateWorkspacesResult {
-		FailedRequests?: Array<FailedCreateWorkspaceRequest>;
-		PendingRequests?: Array<Workspace>;
+		FailedRequests?: Array<FailedCreateWorkspaceRequest> | null;
+		PendingRequests?: Array<Workspace> | null;
 	}
 
 
@@ -100,9 +100,9 @@ export namespace MyNS {
 	export interface FailedCreateWorkspaceRequest {
 
 		/** Describes the information used to create a WorkSpace. */
-		WorkspaceRequest?: WorkspaceRequest;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		WorkspaceRequest?: WorkspaceRequest | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 
@@ -111,23 +111,23 @@ export namespace MyNS {
 		DirectoryId: string;
 		UserName: string;
 		BundleId: string;
-		VolumeEncryptionKey?: string;
-		UserVolumeEncryptionEnabled?: boolean;
-		RootVolumeEncryptionEnabled?: boolean;
+		VolumeEncryptionKey?: string | null;
+		UserVolumeEncryptionEnabled?: boolean | null;
+		RootVolumeEncryptionEnabled?: boolean | null;
 
 		/** Describes a WorkSpace. */
-		WorkspaceProperties?: WorkspaceProperties;
-		Tags?: Array<Tag>;
+		WorkspaceProperties?: WorkspaceProperties | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Describes a WorkSpace. */
 	export interface WorkspaceProperties {
-		RunningMode?: WorkspacePropertiesRunningMode;
-		RunningModeAutoStopTimeoutInMinutes?: number;
-		RootVolumeSizeGib?: number;
-		UserVolumeSizeGib?: number;
-		ComputeTypeName?: WorkspacePropertiesComputeTypeName;
+		RunningMode?: WorkspacePropertiesRunningMode | null;
+		RunningModeAutoStopTimeoutInMinutes?: number | null;
+		RootVolumeSizeGib?: number | null;
+		UserVolumeSizeGib?: number | null;
+		ComputeTypeName?: WorkspacePropertiesComputeTypeName | null;
 	}
 
 	export enum WorkspacePropertiesRunningMode { AUTO_STOP = 0, ALWAYS_ON = 1 }
@@ -137,23 +137,23 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace. */
 	export interface Workspace {
-		WorkspaceId?: string;
-		DirectoryId?: string;
-		UserName?: string;
-		IpAddress?: string;
-		State?: WorkspaceState;
-		BundleId?: string;
-		SubnetId?: string;
-		ErrorMessage?: string;
-		ErrorCode?: string;
-		ComputerName?: string;
-		VolumeEncryptionKey?: string;
-		UserVolumeEncryptionEnabled?: boolean;
-		RootVolumeEncryptionEnabled?: boolean;
+		WorkspaceId?: string | null;
+		DirectoryId?: string | null;
+		UserName?: string | null;
+		IpAddress?: string | null;
+		State?: WorkspaceState | null;
+		BundleId?: string | null;
+		SubnetId?: string | null;
+		ErrorMessage?: string | null;
+		ErrorCode?: string | null;
+		ComputerName?: string | null;
+		VolumeEncryptionKey?: string | null;
+		UserVolumeEncryptionEnabled?: boolean | null;
+		RootVolumeEncryptionEnabled?: boolean | null;
 
 		/** Describes a WorkSpace. */
-		WorkspaceProperties?: WorkspaceProperties;
-		ModificationStates?: Array<ModificationState>;
+		WorkspaceProperties?: WorkspaceProperties | null;
+		ModificationStates?: Array<ModificationState> | null;
 	}
 
 	export enum WorkspaceState { PENDING = 0, AVAILABLE = 1, IMPAIRED = 2, UNHEALTHY = 3, REBOOTING = 4, STARTING = 5, REBUILDING = 6, RESTORING = 7, MAINTENANCE = 8, ADMIN_MAINTENANCE = 9, TERMINATING = 10, TERMINATED = 11, SUSPENDED = 12, UPDATING = 13, STOPPING = 14, STOPPED = 15, ERROR = 16 }
@@ -161,8 +161,8 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace modification. */
 	export interface ModificationState {
-		Resource?: ModificationStateResource;
-		State?: ModificationStateState;
+		Resource?: ModificationStateResource | null;
+		State?: ModificationStateState | null;
 	}
 
 	export enum ModificationStateResource { ROOT_VOLUME = 0, USER_VOLUME = 1, COMPUTE_TYPE = 2 }
@@ -206,8 +206,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAccountResult {
-		DedicatedTenancySupport?: DescribeAccountResultDedicatedTenancySupport;
-		DedicatedTenancyManagementCidrRange?: string;
+		DedicatedTenancySupport?: DescribeAccountResultDedicatedTenancySupport | null;
+		DedicatedTenancyManagementCidrRange?: string | null;
 	}
 
 	export enum DescribeAccountResultDedicatedTenancySupport { ENABLED = 0, DISABLED = 1 }
@@ -216,44 +216,44 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAccountModificationsResult {
-		AccountModifications?: Array<AccountModification>;
-		NextToken?: string;
+		AccountModifications?: Array<AccountModification> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account.  */
 	export interface AccountModification {
-		ModificationState?: AccountModificationModificationState;
-		DedicatedTenancySupport?: DescribeAccountResultDedicatedTenancySupport;
-		DedicatedTenancyManagementCidrRange?: string;
-		StartTime?: Date;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		ModificationState?: AccountModificationModificationState | null;
+		DedicatedTenancySupport?: DescribeAccountResultDedicatedTenancySupport | null;
+		DedicatedTenancyManagementCidrRange?: string | null;
+		StartTime?: Date | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum AccountModificationModificationState { PENDING = 0, COMPLETED = 1, FAILED = 2 }
 
 	export interface DescribeAccountModificationsRequest {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeClientPropertiesResult {
-		ClientPropertiesList?: Array<ClientPropertiesResult>;
+		ClientPropertiesList?: Array<ClientPropertiesResult> | null;
 	}
 
 
 	/** Information about the Amazon WorkSpaces client. */
 	export interface ClientPropertiesResult {
-		ResourceId?: string;
+		ResourceId?: string | null;
 
 		/** Describes an Amazon WorkSpaces client. */
-		ClientProperties?: ClientProperties;
+		ClientProperties?: ClientProperties | null;
 	}
 
 
 	/** Describes an Amazon WorkSpaces client. */
 	export interface ClientProperties {
-		ReconnectEnabled?: DescribeAccountResultDedicatedTenancySupport;
+		ReconnectEnabled?: DescribeAccountResultDedicatedTenancySupport | null;
 	}
 
 	export interface DescribeClientPropertiesRequest {
@@ -261,27 +261,27 @@ export namespace MyNS {
 	}
 
 	export interface DescribeIpGroupsResult {
-		Result?: Array<WorkspacesIpGroup>;
-		NextToken?: string;
+		Result?: Array<WorkspacesIpGroup> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes an IP access control group. */
 	export interface WorkspacesIpGroup {
-		groupId?: string;
-		groupName?: string;
-		groupDesc?: string;
-		userRules?: Array<IpRuleItem>;
+		groupId?: string | null;
+		groupName?: string | null;
+		groupDesc?: string | null;
+		userRules?: Array<IpRuleItem> | null;
 	}
 
 	export interface DescribeIpGroupsRequest {
-		GroupIds?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		GroupIds?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeTagsResult {
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 	export interface DescribeTagsRequest {
@@ -289,84 +289,84 @@ export namespace MyNS {
 	}
 
 	export interface DescribeWorkspaceBundlesResult {
-		Bundles?: Array<WorkspaceBundle>;
-		NextToken?: string;
+		Bundles?: Array<WorkspaceBundle> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a WorkSpace bundle. */
 	export interface WorkspaceBundle {
-		BundleId?: string;
-		Name?: string;
-		Owner?: string;
-		Description?: string;
-		ImageId?: string;
+		BundleId?: string | null;
+		Name?: string | null;
+		Owner?: string | null;
+		Description?: string | null;
+		ImageId?: string | null;
 
 		/** Describes the root volume for a WorkSpace bundle. */
-		RootStorage?: RootStorage;
+		RootStorage?: RootStorage | null;
 
 		/** Describes the user storage for a WorkSpace bundle. */
-		UserStorage?: UserStorage;
+		UserStorage?: UserStorage | null;
 
 		/** Describes the compute type. */
-		ComputeType?: ComputeType;
-		LastUpdatedTime?: Date;
+		ComputeType?: ComputeType | null;
+		LastUpdatedTime?: Date | null;
 	}
 
 
 	/** Describes the root volume for a WorkSpace bundle. */
 	export interface RootStorage {
-		Capacity?: string;
+		Capacity?: string | null;
 	}
 
 
 	/** Describes the user storage for a WorkSpace bundle. */
 	export interface UserStorage {
-		Capacity?: string;
+		Capacity?: string | null;
 	}
 
 
 	/** Describes the compute type. */
 	export interface ComputeType {
-		Name?: WorkspacePropertiesComputeTypeName;
+		Name?: WorkspacePropertiesComputeTypeName | null;
 	}
 
 	export interface DescribeWorkspaceBundlesRequest {
-		BundleIds?: Array<string>;
-		Owner?: string;
-		NextToken?: string;
+		BundleIds?: Array<string> | null;
+		Owner?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeWorkspaceDirectoriesResult {
-		Directories?: Array<WorkspaceDirectory>;
-		NextToken?: string;
+		Directories?: Array<WorkspaceDirectory> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a directory that is used with Amazon WorkSpaces. */
 	export interface WorkspaceDirectory {
-		DirectoryId?: string;
-		Alias?: string;
-		DirectoryName?: string;
-		RegistrationCode?: string;
-		SubnetIds?: Array<string>;
-		DnsIpAddresses?: Array<string>;
-		CustomerUserName?: string;
-		IamRoleId?: string;
-		DirectoryType?: WorkspaceDirectoryDirectoryType;
-		WorkspaceSecurityGroupId?: string;
-		State?: WorkspaceDirectoryState;
+		DirectoryId?: string | null;
+		Alias?: string | null;
+		DirectoryName?: string | null;
+		RegistrationCode?: string | null;
+		SubnetIds?: Array<string> | null;
+		DnsIpAddresses?: Array<string> | null;
+		CustomerUserName?: string | null;
+		IamRoleId?: string | null;
+		DirectoryType?: WorkspaceDirectoryDirectoryType | null;
+		WorkspaceSecurityGroupId?: string | null;
+		State?: WorkspaceDirectoryState | null;
 
 		/** Describes the default values that are used to create WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>. */
-		WorkspaceCreationProperties?: DefaultWorkspaceCreationProperties;
-		ipGroupIds?: Array<string>;
+		WorkspaceCreationProperties?: DefaultWorkspaceCreationProperties | null;
+		ipGroupIds?: Array<string> | null;
 
 		/** The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>. */
-		WorkspaceAccessProperties?: WorkspaceAccessProperties;
-		Tenancy?: WorkspaceDirectoryTenancy;
+		WorkspaceAccessProperties?: WorkspaceAccessProperties | null;
+		Tenancy?: WorkspaceDirectoryTenancy | null;
 
 		/** Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>. */
-		SelfservicePermissions?: SelfservicePermissions;
+		SelfservicePermissions?: SelfservicePermissions | null;
 	}
 
 	export enum WorkspaceDirectoryDirectoryType { SIMPLE_AD = 0, AD_CONNECTOR = 1 }
@@ -376,24 +376,24 @@ export namespace MyNS {
 
 	/** Describes the default values that are used to create WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>. */
 	export interface DefaultWorkspaceCreationProperties {
-		EnableWorkDocs?: boolean;
-		EnableInternetAccess?: boolean;
-		DefaultOu?: string;
-		CustomSecurityGroupId?: string;
-		UserEnabledAsLocalAdministrator?: boolean;
-		EnableMaintenanceMode?: boolean;
+		EnableWorkDocs?: boolean | null;
+		EnableInternetAccess?: boolean | null;
+		DefaultOu?: string | null;
+		CustomSecurityGroupId?: string | null;
+		UserEnabledAsLocalAdministrator?: boolean | null;
+		EnableMaintenanceMode?: boolean | null;
 	}
 
 
 	/** The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>. */
 	export interface WorkspaceAccessProperties {
-		DeviceTypeWindows?: WorkspaceAccessPropertiesDeviceTypeWindows;
-		DeviceTypeOsx?: WorkspaceAccessPropertiesDeviceTypeWindows;
-		DeviceTypeWeb?: WorkspaceAccessPropertiesDeviceTypeWindows;
-		DeviceTypeIos?: WorkspaceAccessPropertiesDeviceTypeWindows;
-		DeviceTypeAndroid?: WorkspaceAccessPropertiesDeviceTypeWindows;
-		DeviceTypeChromeOs?: WorkspaceAccessPropertiesDeviceTypeWindows;
-		DeviceTypeZeroClient?: WorkspaceAccessPropertiesDeviceTypeWindows;
+		DeviceTypeWindows?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
+		DeviceTypeOsx?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
+		DeviceTypeWeb?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
+		DeviceTypeIos?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
+		DeviceTypeAndroid?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
+		DeviceTypeChromeOs?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
+		DeviceTypeZeroClient?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
 	}
 
 	export enum WorkspaceAccessPropertiesDeviceTypeWindows { ALLOW = 0, DENY = 1 }
@@ -403,43 +403,43 @@ export namespace MyNS {
 
 	/** Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>. */
 	export interface SelfservicePermissions {
-		RestartWorkspace?: DescribeAccountResultDedicatedTenancySupport;
-		IncreaseVolumeSize?: DescribeAccountResultDedicatedTenancySupport;
-		ChangeComputeType?: DescribeAccountResultDedicatedTenancySupport;
-		SwitchRunningMode?: DescribeAccountResultDedicatedTenancySupport;
-		RebuildWorkspace?: DescribeAccountResultDedicatedTenancySupport;
+		RestartWorkspace?: DescribeAccountResultDedicatedTenancySupport | null;
+		IncreaseVolumeSize?: DescribeAccountResultDedicatedTenancySupport | null;
+		ChangeComputeType?: DescribeAccountResultDedicatedTenancySupport | null;
+		SwitchRunningMode?: DescribeAccountResultDedicatedTenancySupport | null;
+		RebuildWorkspace?: DescribeAccountResultDedicatedTenancySupport | null;
 	}
 
 	export interface DescribeWorkspaceDirectoriesRequest {
-		DirectoryIds?: Array<string>;
-		Limit?: number;
-		NextToken?: string;
+		DirectoryIds?: Array<string> | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeWorkspaceImagesResult {
-		Images?: Array<WorkspaceImage>;
-		NextToken?: string;
+		Images?: Array<WorkspaceImage> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a WorkSpace image. */
 	export interface WorkspaceImage {
-		ImageId?: string;
-		Name?: string;
-		Description?: string;
+		ImageId?: string | null;
+		Name?: string | null;
+		Description?: string | null;
 
 		/** The operating system that the image is running. */
-		OperatingSystem?: OperatingSystem;
-		State?: WorkspaceImageState;
-		RequiredTenancy?: WorkspaceImageRequiredTenancy;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		OperatingSystem?: OperatingSystem | null;
+		State?: WorkspaceImageState | null;
+		RequiredTenancy?: WorkspaceImageRequiredTenancy | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 
 	/** The operating system that the image is running. */
 	export interface OperatingSystem {
-		Type?: OperatingSystemType;
+		Type?: OperatingSystemType | null;
 	}
 
 	export enum OperatingSystemType { WINDOWS = 0, LINUX = 1 }
@@ -449,20 +449,20 @@ export namespace MyNS {
 	export enum WorkspaceImageRequiredTenancy { DEFAULT = 0, DEDICATED = 1 }
 
 	export interface DescribeWorkspaceImagesRequest {
-		ImageIds?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		ImageIds?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeWorkspaceSnapshotsResult {
-		RebuildSnapshots?: Array<Snapshot>;
-		RestoreSnapshots?: Array<Snapshot>;
+		RebuildSnapshots?: Array<Snapshot> | null;
+		RestoreSnapshots?: Array<Snapshot> | null;
 	}
 
 
 	/** Describes a snapshot. */
 	export interface Snapshot {
-		SnapshotTime?: Date;
+		SnapshotTime?: Date | null;
 	}
 
 	export interface DescribeWorkspaceSnapshotsRequest {
@@ -470,38 +470,38 @@ export namespace MyNS {
 	}
 
 	export interface DescribeWorkspacesResult {
-		Workspaces?: Array<Workspace>;
-		NextToken?: string;
+		Workspaces?: Array<Workspace> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeWorkspacesRequest {
-		WorkspaceIds?: Array<string>;
-		DirectoryId?: string;
-		UserName?: string;
-		BundleId?: string;
-		Limit?: number;
-		NextToken?: string;
+		WorkspaceIds?: Array<string> | null;
+		DirectoryId?: string | null;
+		UserName?: string | null;
+		BundleId?: string | null;
+		Limit?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeWorkspacesConnectionStatusResult {
-		WorkspacesConnectionStatus?: Array<WorkspaceConnectionStatus>;
-		NextToken?: string;
+		WorkspacesConnectionStatus?: Array<WorkspaceConnectionStatus> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes the connection status of a WorkSpace. */
 	export interface WorkspaceConnectionStatus {
-		WorkspaceId?: string;
-		ConnectionState?: WorkspaceConnectionStatusConnectionState;
-		ConnectionStateCheckTimestamp?: Date;
-		LastKnownUserConnectionTimestamp?: Date;
+		WorkspaceId?: string | null;
+		ConnectionState?: WorkspaceConnectionStatusConnectionState | null;
+		ConnectionStateCheckTimestamp?: Date | null;
+		LastKnownUserConnectionTimestamp?: Date | null;
 	}
 
 	export enum WorkspaceConnectionStatusConnectionState { CONNECTED = 0, DISCONNECTED = 1, UNKNOWN = 2 }
 
 	export interface DescribeWorkspacesConnectionStatusRequest {
-		WorkspaceIds?: Array<string>;
-		NextToken?: string;
+		WorkspaceIds?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DisassociateIpGroupsResult {
@@ -513,7 +513,7 @@ export namespace MyNS {
 	}
 
 	export interface ImportWorkspaceImageResult {
-		ImageId?: string;
+		ImageId?: string | null;
 	}
 
 	export interface ImportWorkspaceImageRequest {
@@ -521,25 +521,25 @@ export namespace MyNS {
 		IngestionProcess: ImportWorkspaceImageRequestIngestionProcess;
 		ImageName: string;
 		ImageDescription: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum ImportWorkspaceImageRequestIngestionProcess { BYOL_REGULAR = 0, BYOL_GRAPHICS = 1, BYOL_GRAPHICSPRO = 2 }
 
 	export interface ListAvailableManagementCidrRangesResult {
-		ManagementCidrRanges?: Array<string>;
-		NextToken?: string;
+		ManagementCidrRanges?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAvailableManagementCidrRangesRequest {
 		ManagementCidrRangeConstraint: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface MigrateWorkspaceResult {
-		SourceWorkspaceId?: string;
-		TargetWorkspaceId?: string;
+		SourceWorkspaceId?: string | null;
+		TargetWorkspaceId?: string | null;
 	}
 
 	export interface MigrateWorkspaceRequest {
@@ -554,8 +554,8 @@ export namespace MyNS {
 	}
 
 	export interface ModifyAccountRequest {
-		DedicatedTenancySupport?: ModifyAccountRequestDedicatedTenancySupport;
-		DedicatedTenancyManagementCidrRange?: string;
+		DedicatedTenancySupport?: ModifyAccountRequestDedicatedTenancySupport | null;
+		DedicatedTenancyManagementCidrRange?: string | null;
 	}
 
 	export enum ModifyAccountRequestDedicatedTenancySupport { ENABLED = 0 }
@@ -615,11 +615,11 @@ export namespace MyNS {
 
 	/** Describes the default properties that are used for creating WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>.  */
 	export interface WorkspaceCreationProperties {
-		EnableInternetAccess?: boolean;
-		DefaultOu?: string;
-		CustomSecurityGroupId?: string;
-		UserEnabledAsLocalAdministrator?: boolean;
-		EnableMaintenanceMode?: boolean;
+		EnableInternetAccess?: boolean | null;
+		DefaultOu?: string | null;
+		CustomSecurityGroupId?: string | null;
+		UserEnabledAsLocalAdministrator?: boolean | null;
+		EnableMaintenanceMode?: boolean | null;
 	}
 
 	export interface ModifyWorkspacePropertiesResult {
@@ -649,15 +649,15 @@ export namespace MyNS {
 	export enum ModifyWorkspaceStateRequestWorkspaceState { AVAILABLE = 0, ADMIN_MAINTENANCE = 1 }
 
 	export interface RebootWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
 	}
 
 
 	/** Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>). */
 	export interface FailedWorkspaceChangeRequest {
-		WorkspaceId?: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		WorkspaceId?: string | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface RebootWorkspacesRequest {
@@ -671,7 +671,7 @@ export namespace MyNS {
 	}
 
 	export interface RebuildWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
 	}
 
 	export interface RebuildWorkspacesRequest {
@@ -689,11 +689,11 @@ export namespace MyNS {
 
 	export interface RegisterWorkspaceDirectoryRequest {
 		DirectoryId: string;
-		SubnetIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
 		EnableWorkDocs: boolean;
-		EnableSelfService?: boolean;
-		Tenancy?: WorkspaceDirectoryTenancy;
-		Tags?: Array<Tag>;
+		EnableSelfService?: boolean | null;
+		Tenancy?: WorkspaceDirectoryTenancy | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface WorkspacesDefaultRoleNotFoundException {
@@ -718,7 +718,7 @@ export namespace MyNS {
 	}
 
 	export interface StartWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
 	}
 
 	export interface StartWorkspacesRequest {
@@ -728,11 +728,11 @@ export namespace MyNS {
 
 	/** Information used to start a WorkSpace. */
 	export interface StartRequest {
-		WorkspaceId?: string;
+		WorkspaceId?: string | null;
 	}
 
 	export interface StopWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
 	}
 
 	export interface StopWorkspacesRequest {
@@ -742,11 +742,11 @@ export namespace MyNS {
 
 	/** Describes the information used to stop a WorkSpace. */
 	export interface StopRequest {
-		WorkspaceId?: string;
+		WorkspaceId?: string | null;
 	}
 
 	export interface TerminateWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
 	}
 
 	export interface TerminateWorkspacesRequest {

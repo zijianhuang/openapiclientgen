@@ -55,14 +55,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -92,10 +92,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -128,7 +128,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -163,13 +163,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -203,26 +203,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -233,7 +233,7 @@ export namespace MyNS {
 	export interface Folder {
 
 		/** Output only. Timestamp when the Folder was created. Assigned by the server. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * The folder’s display name.
@@ -244,7 +244,7 @@ export namespace MyNS {
 		 * than 30 characters. This is captured by the regular expression:
 		 * [\p{L}\p{N}]([\p{L}\p{N}_- ]{0,28}[\p{L}\p{N}])?.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Output only. The lifecycle state of the folder.
@@ -252,20 +252,20 @@ export namespace MyNS {
 		 * DeleteFolder and
 		 * UndeleteFolder.
 		 */
-		lifecycleState?: FolderLifecycleState;
+		lifecycleState?: FolderLifecycleState | null;
 
 		/**
 		 * Output only. The resource name of the Folder.
 		 * Its format is `folders/{folder_id}`, for example: "folders/1234".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. The Folder’s parent's resource name.
 		 * Updates to the folder's parent must be performed via
 		 * MoveFolder.
 		 */
-		parent?: string;
+		parent?: string | null;
 	}
 
 	export enum FolderLifecycleState { LIFECYCLE_STATE_UNSPECIFIED = 0, ACTIVE = 1, DELETE_REQUESTED = 2 }
@@ -278,19 +278,19 @@ export namespace MyNS {
 		 * The resource name of the folder or organization we are either creating
 		 * the folder under or moving the folder to.
 		 */
-		destinationParent?: string;
+		destinationParent?: string | null;
 
 		/** The display name of the folder. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The type of this operation. */
-		operationType?: FolderOperationOperationType;
+		operationType?: FolderOperationOperationType | null;
 
 		/**
 		 * The resource name of the folder's parent.
 		 * Only applicable when the operation_type is MOVE.
 		 */
-		sourceParent?: string;
+		sourceParent?: string | null;
 	}
 
 	export enum FolderOperationOperationType { OPERATION_TYPE_UNSPECIFIED = 0, CREATE = 1, MOVE = 2 }
@@ -300,7 +300,7 @@ export namespace MyNS {
 	export interface FolderOperationError {
 
 		/** The type of operation error experienced. */
-		errorMessageId?: FolderOperationErrorErrorMessageId;
+		errorMessageId?: FolderOperationErrorErrorMessageId | null;
 	}
 
 	export enum FolderOperationErrorErrorMessageId { ERROR_TYPE_UNSPECIFIED = 0, ACTIVE_FOLDER_HEIGHT_VIOLATION = 1, MAX_CHILD_FOLDERS_VIOLATION = 2, FOLDER_NAME_UNIQUENESS_VIOLATION = 3, RESOURCE_DELETED_VIOLATION = 4, PARENT_DELETED_VIOLATION = 5, CYCLE_INTRODUCED_VIOLATION = 6, FOLDER_BEING_MOVED_VIOLATION = 7, FOLDER_TO_DELETE_NON_EMPTY_VIOLATION = 8, DELETED_FOLDER_HEIGHT_VIOLATION = 9 }
@@ -310,7 +310,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -325,7 +325,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -336,13 +336,13 @@ export namespace MyNS {
 		 * A possibly paginated list of Folders that are direct descendants of
 		 * the specified parent resource.
 		 */
-		folders?: Array<Folder>;
+		folders?: Array<Folder> | null;
 
 		/**
 		 * A pagination token returned from a previous call to `ListFolders`
 		 * that indicates from where listing should continue.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -354,7 +354,7 @@ export namespace MyNS {
 		 * the folder under.
 		 * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
 		 */
-		destinationParent?: string;
+		destinationParent?: string | null;
 	}
 
 
@@ -369,7 +369,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -379,7 +379,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -387,14 +387,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -406,7 +406,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -421,20 +421,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -498,14 +498,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -520,7 +520,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -540,7 +540,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -552,17 +552,17 @@ export namespace MyNS {
 	export interface ProjectCreationStatus {
 
 		/** Creation time of the project creation workflow. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * True if the project can be retrieved using GetProject. No other operations
 		 * on the project are guaranteed to work until the project creation is
 		 * complete.
 		 */
-		gettable?: boolean;
+		gettable?: boolean | null;
 
 		/** True if the project creation process is complete. */
-		ready?: boolean;
+		ready?: boolean | null;
 	}
 
 
@@ -570,13 +570,13 @@ export namespace MyNS {
 	export interface SearchFoldersRequest {
 
 		/** Optional. The maximum number of folders to return in the response. */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * Optional. A pagination token returned from a previous call to `SearchFolders`
 		 * that indicates from where search should continue.
 		 */
-		pageToken?: string;
+		pageToken?: string | null;
 
 		/**
 		 * Search criteria used to select the Folders to return.
@@ -599,7 +599,7 @@ export namespace MyNS {
 		 * * Query `displayName=\\"Test String\\"` returns Folder resources with
 		 * display names that include both "Test" and "String".
 		 */
-		query?: string;
+		query?: string | null;
 	}
 
 
@@ -610,13 +610,13 @@ export namespace MyNS {
 		 * A possibly paginated folder search results.
 		 * the specified parent resource.
 		 */
-		folders?: Array<Folder>;
+		folders?: Array<Folder> | null;
 
 		/**
 		 * A pagination token returned from a previous call to `SearchFolders`
 		 * that indicates from where searching should continue.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -680,7 +680,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -688,7 +688,7 @@ export namespace MyNS {
 		 * following default mask is used:
 		 * `paths: "bindings, etag"`
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -701,7 +701,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -712,7 +712,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 

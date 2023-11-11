@@ -7,16 +7,16 @@ export namespace MyNS {
 	export interface Aggregation {
 
 		/** The alignment_period specifies a time interval, in seconds, that is used to divide the data in all the time series into consistent blocks of time. This will be done before the per-series aligner can be applied to the data.The value must be at least 60 seconds. If a per-series aligner other than ALIGN_NONE is specified, this field is required or an error is returned. If no per-series aligner is specified, or the aligner ALIGN_NONE is specified, then this field is ignored. */
-		alignmentPeriod?: string;
+		alignmentPeriod?: string | null;
 
 		/** The reduction operation to be used to combine time series into a single time series, where the value of each data point in the resulting series is a function of all the already aligned values in the input time series.Not all reducer operations can be applied to all time series. The valid choices depend on the metric_kind and the value_type of the original time series. Reduction can yield a time series with a different metric_kind or value_type than the input time series.Time series data must first be aligned (see per_series_aligner) in order to perform cross-time series reduction. If cross_series_reducer is specified, then per_series_aligner must be specified, and must not be ALIGN_NONE. An alignment_period must also be specified; otherwise, an error is returned. */
-		crossSeriesReducer?: AggregationCrossSeriesReducer;
+		crossSeriesReducer?: AggregationCrossSeriesReducer | null;
 
 		/** The set of fields to preserve when cross_series_reducer is specified. The group_by_fields determine how the time series are partitioned into subsets prior to applying the aggregation operation. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The cross_series_reducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in group_by_fields are aggregated away. If group_by_fields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If cross_series_reducer is not defined, this field is ignored. */
-		groupByFields?: Array<string>;
+		groupByFields?: Array<string> | null;
 
 		/** An Aligner describes how to bring the data points in a single time series into temporal alignment. Except for ALIGN_NONE, all alignments cause all the data points in an alignment_period to be mathematically grouped together, resulting in a single data point for each alignment_period with end timestamp at the end of the period.Not all alignment operations may be applied to all time series. The valid choices depend on the metric_kind and value_type of the original time series. Alignment can change the metric_kind or the value_type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If cross_series_reducer is specified, then per_series_aligner must be specified and not equal to ALIGN_NONE and alignment_period must be specified; otherwise, an error is returned. */
-		perSeriesAligner?: AggregationPerSeriesAligner;
+		perSeriesAligner?: AggregationPerSeriesAligner | null;
 	}
 
 	export enum AggregationCrossSeriesReducer { REDUCE_NONE = 0, REDUCE_MEAN = 1, REDUCE_MIN = 2, REDUCE_MAX = 3, REDUCE_SUM = 4, REDUCE_STDDEV = 5, REDUCE_COUNT = 6, REDUCE_COUNT_TRUE = 7, REDUCE_COUNT_FALSE = 8, REDUCE_FRACTION_TRUE = 9, REDUCE_PERCENTILE_99 = 10, REDUCE_PERCENTILE_95 = 11, REDUCE_PERCENTILE_50 = 12, REDUCE_PERCENTILE_05 = 13 }
@@ -28,44 +28,44 @@ export namespace MyNS {
 	export interface AlertPolicy {
 
 		/** How to combine the results of multiple conditions to determine if an incident should be opened. If condition_time_series_query_language is present, this must be COMBINE_UNSPECIFIED. */
-		combiner?: AlertPolicyCombiner;
+		combiner?: AlertPolicyCombiner | null;
 
 		/** A list of conditions for the policy. The conditions are combined by AND or OR according to the combiner field. If the combined conditions evaluate to true, then an incident is created. A policy can have from one to six conditions. If condition_time_series_query_language is present, it must be the only condition. */
-		conditions?: Array<Condition>;
+		conditions?: Array<Condition> | null;
 
 		/** Describes a change made to a configuration. */
-		creationRecord?: MutationRecord;
+		creationRecord?: MutationRecord | null;
 
 		/** A short name or phrase used to identify the policy in dashboards, notifications, and incidents. To avoid confusion, don't use the same display name for multiple policies in the same project. The name is limited to 512 Unicode characters. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** A content string and a MIME type that describes the content string's format. */
-		documentation?: Documentation;
+		documentation?: Documentation | null;
 
 		/** Whether or not the policy is enabled. On write, the default interpretation if unset is that the policy is enabled. On read, clients should not make any assumption about the state if it has not been populated. The field should always be populated on List and Get operations, unless a field projection has been specified that strips it out. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/** Describes a change made to a configuration. */
-		mutationRecord?: MutationRecord;
+		mutationRecord?: MutationRecord | null;
 
 		/**
 		 * Required if the policy exists. The resource name for this policy. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
 		 * [ALERT_POLICY_ID] is assigned by Stackdriver Monitoring when the policy is created. When calling the alertPolicies.create method, do not include the name field in the alerting policy passed as part of the request.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Identifies the notification channels to which notifications should be sent when incidents are opened or closed or when new violations occur on an already opened incident. Each element of this array corresponds to the name field in each of the NotificationChannel objects that are returned from the ListNotificationChannels method. The format of the entries in this field is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
 		 */
-		notificationChannels?: Array<string>;
+		notificationChannels?: Array<string> | null;
 
 		/** User-supplied key/value data to be used for organizing and identifying the AlertPolicy objects.The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter. */
-		userLabels?: {[id: string]: string };
+		userLabels?: {[id: string]: string } | null;
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
-		validity?: Status;
+		validity?: Status | null;
 	}
 
 	export enum AlertPolicyCombiner { COMBINE_UNSPECIFIED = 0, AND = 1, OR = 2, AND_WITH_MATCHING_RESOURCE = 3 }
@@ -75,20 +75,20 @@ export namespace MyNS {
 	export interface Condition {
 
 		/** A condition type that checks that monitored resources are reporting data. The configuration defines a metric and a set of monitored resources. The predicate is considered in violation when a time series for the specified metric of a monitored resource does not include any data in the specified duration. */
-		conditionAbsent?: MetricAbsence;
+		conditionAbsent?: MetricAbsence | null;
 
 		/** A condition type that compares a collection of time series against a threshold. */
-		conditionThreshold?: MetricThreshold;
+		conditionThreshold?: MetricThreshold | null;
 
 		/** A short name or phrase used to identify the condition in dashboards, notifications, and incidents. To avoid confusion, don't use the same display name for multiple conditions in the same policy. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Required if the condition exists. The unique resource name for this condition. Its format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
 		 * [CONDITION_ID] is assigned by Stackdriver Monitoring when the condition is created as part of a new or updated alerting policy.When calling the alertPolicies.create method, do not include the name field in the conditions of the requested alerting policy. Stackdriver Monitoring creates the condition identifiers and includes them in the new policy.When calling the alertPolicies.update method to update a policy, including a condition name causes the existing condition to be updated. Conditions without names are added to the updated policy. Existing conditions are deleted if they are not updated.Best practice is to preserve [CONDITION_ID] if you make only small changes, such as those to condition thresholds, durations, or trigger values. Otherwise, treat the change as a new condition and let the existing condition be deleted.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -96,16 +96,16 @@ export namespace MyNS {
 	export interface MetricAbsence {
 
 		/** Specifies the alignment of data points in individual time series as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resrouces). Multiple aggregations are applied in the order specified.This field is similar to the one in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It is advisable to use the ListTimeSeries method when debugging this field. */
-		aggregations?: Array<Aggregation>;
+		aggregations?: Array<Aggregation> | null;
 
 		/** The amount of time that a time series must fail to report new data to be considered failing. Currently, only values that are a multiple of a minute--e.g. 60, 120, or 300 seconds--are supported. If an invalid value is given, an error will be returned. The Duration.nanos field is ignored. */
-		duration?: string;
+		duration?: string | null;
 
 		/** A filter (https://cloud.google.com/monitoring/api/v3/filters) that identifies which time series should be compared with the threshold.The filter is similar to the one that is specified in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that call is useful to verify the time series that will be retrieved / processed) and must specify the metric type and optionally may contain restrictions on resource type, resource labels, and metric labels. This field may not exceed 2048 Unicode characters in length. */
-		filter?: string;
+		filter?: string | null;
 
 		/** Specifies how many time series must fail a predicate to trigger a condition. If not specified, then a {count: 1} trigger is used. */
-		trigger?: Trigger;
+		trigger?: Trigger | null;
 	}
 
 
@@ -113,10 +113,10 @@ export namespace MyNS {
 	export interface Trigger {
 
 		/** The absolute number of time series that must fail the predicate for the condition to be triggered. */
-		count?: number;
+		count?: number | null;
 
 		/** The percentage of time series that must fail the predicate for the condition to be triggered. */
-		percent?: number;
+		percent?: number | null;
 	}
 
 
@@ -124,28 +124,28 @@ export namespace MyNS {
 	export interface MetricThreshold {
 
 		/** Specifies the alignment of data points in individual time series as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resrouces). Multiple aggregations are applied in the order specified.This field is similar to the one in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It is advisable to use the ListTimeSeries method when debugging this field. */
-		aggregations?: Array<Aggregation>;
+		aggregations?: Array<Aggregation> | null;
 
 		/** The comparison to apply between the time series (indicated by filter and aggregation) and the threshold (indicated by threshold_value). The comparison is applied on each time series, with the time series on the left-hand side and the threshold on the right-hand side.Only COMPARISON_LT and COMPARISON_GT are supported currently. */
-		comparison?: MetricThresholdComparison;
+		comparison?: MetricThresholdComparison | null;
 
 		/** Specifies the alignment of data points in individual time series selected by denominatorFilter as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resources).When computing ratios, the aggregations and denominator_aggregations fields must use the same alignment period and produce time series that have the same periodicity and labels. */
-		denominatorAggregations?: Array<Aggregation>;
+		denominatorAggregations?: Array<Aggregation> | null;
 
 		/** A filter (https://cloud.google.com/monitoring/api/v3/filters) that identifies a time series that should be used as the denominator of a ratio that will be compared with the threshold. If a denominator_filter is specified, the time series specified by the filter field will be used as the numerator.The filter must specify the metric type and optionally may contain restrictions on resource type, resource labels, and metric labels. This field may not exceed 2048 Unicode characters in length. */
-		denominatorFilter?: string;
+		denominatorFilter?: string | null;
 
 		/** The amount of time that a time series must violate the threshold to be considered failing. Currently, only values that are a multiple of a minute--e.g., 0, 60, 120, or 300 seconds--are supported. If an invalid value is given, an error will be returned. When choosing a duration, it is useful to keep in mind the frequency of the underlying time series data (which may also be affected by any alignments specified in the aggregations field); a good duration is long enough so that a single outlier does not generate spurious alerts, but short enough that unhealthy states are detected and alerted on quickly. */
-		duration?: string;
+		duration?: string | null;
 
 		/** A filter (https://cloud.google.com/monitoring/api/v3/filters) that identifies which time series should be compared with the threshold.The filter is similar to the one that is specified in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that call is useful to verify the time series that will be retrieved / processed) and must specify the metric type and optionally may contain restrictions on resource type, resource labels, and metric labels. This field may not exceed 2048 Unicode characters in length. */
-		filter?: string;
+		filter?: string | null;
 
 		/** A value against which to compare the time series. */
-		thresholdValue?: number;
+		thresholdValue?: number | null;
 
 		/** Specifies how many time series must fail a predicate to trigger a condition. If not specified, then a {count: 1} trigger is used. */
-		trigger?: Trigger;
+		trigger?: Trigger | null;
 	}
 
 	export enum MetricThresholdComparison { COMPARISON_UNSPECIFIED = 0, COMPARISON_GT = 1, COMPARISON_GE = 2, COMPARISON_LT = 3, COMPARISON_LE = 4, COMPARISON_EQ = 5, COMPARISON_NE = 6 }
@@ -155,10 +155,10 @@ export namespace MyNS {
 	export interface MutationRecord {
 
 		/** When the change occurred. */
-		mutateTime?: string;
+		mutateTime?: string | null;
 
 		/** The email address of the user making the change. */
-		mutatedBy?: string;
+		mutatedBy?: string | null;
 	}
 
 
@@ -166,10 +166,10 @@ export namespace MyNS {
 	export interface Documentation {
 
 		/** The text of the documentation, interpreted according to mime_type. The content may not exceed 8,192 Unicode characters and may not exceed more than 10,240 bytes when encoded in UTF-8 format, whichever is smaller. */
-		content?: string;
+		content?: string | null;
 
 		/** The format of the content field. Presently, only the value "text/markdown" is supported. See Markdown (https://en.wikipedia.org/wiki/Markdown) for more information. */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -177,13 +177,13 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -191,7 +191,7 @@ export namespace MyNS {
 	export interface AppEngine {
 
 		/** The ID of the App Engine module underlying this service. Corresponds to the module_id resource label in the gae_app monitored resource: https://cloud.google.com/monitoring/api/resources#tag_gae_app */
-		moduleId?: string;
+		moduleId?: string | null;
 	}
 
 
@@ -204,10 +204,10 @@ export namespace MyNS {
 	export interface BasicAuthentication {
 
 		/** The password to use when authenticating with the HTTP server. */
-		password?: string;
+		password?: string | null;
 
 		/** The username to use when authenticating with the HTTP server. */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -215,19 +215,19 @@ export namespace MyNS {
 	export interface BasicSli {
 
 		/** Future parameters for the availability SLI. */
-		availability?: AvailabilityCriteria;
+		availability?: AvailabilityCriteria | null;
 
 		/** Parameters for a latency threshold SLI. */
-		latency?: LatencyCriteria;
+		latency?: LatencyCriteria | null;
 
 		/** OPTIONAL: The set of locations to which this SLI is relevant. Telemetry from other locations will not be used to calculate performance for this SLI. If omitted, this SLI applies to all locations in which the Service has activity. For service types that don't support breaking down by location, setting this field will result in an error. */
-		location?: Array<string>;
+		location?: Array<string> | null;
 
 		/** OPTIONAL: The set of RPCs to which this SLI is relevant. Telemetry from other methods will not be used to calculate performance for this SLI. If omitted, this SLI applies to all the Service's methods. For service types that don't support breaking down by method, setting this field will result in an error. */
-		method?: Array<string>;
+		method?: Array<string> | null;
 
 		/** OPTIONAL: The set of API versions to which this SLI is relevant. Telemetry from other API versions will not be used to calculate performance for this SLI. If omitted, this SLI applies to all API versions. For service types that don't support breaking down by version, setting this field will result in an error. */
-		version?: Array<string>;
+		version?: Array<string> | null;
 	}
 
 
@@ -235,7 +235,7 @@ export namespace MyNS {
 	export interface LatencyCriteria {
 
 		/** Good service is defined to be the count of requests made to this service that return in no more than threshold. */
-		threshold?: string;
+		threshold?: string | null;
 	}
 
 
@@ -243,13 +243,13 @@ export namespace MyNS {
 	export interface BucketOptions {
 
 		/** Specifies a set of buckets with arbitrary widths.There are size(bounds) + 1 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): boundsi  Lower bound (1 <= i < N); boundsi - 1The bounds field must contain at least one element. If bounds has only one element, then there are no finite buckets, and that single element is the common boundary of the overflow and underflow buckets. */
-		explicitBuckets?: Explicit;
+		explicitBuckets?: Explicit | null;
 
 		/** Specifies an exponential sequence of buckets that have a width that is proportional to the value of the lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): scale * (growth_factor ^ i).  Lower bound (1 <= i < N): scale * (growth_factor ^ (i - 1)). */
-		exponentialBuckets?: Exponential;
+		exponentialBuckets?: Exponential | null;
 
 		/** Specifies a linear sequence of buckets that all have the same width (except overflow and underflow). Each bucket represents a constant absolute uncertainty on the specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): offset + (width * i).  Lower bound (1 <= i < N): offset + (width * (i - 1)). */
-		linearBuckets?: Linear;
+		linearBuckets?: Linear | null;
 	}
 
 
@@ -257,7 +257,7 @@ export namespace MyNS {
 	export interface Explicit {
 
 		/** The values must be monotonically increasing. */
-		bounds?: Array<number>;
+		bounds?: Array<number> | null;
 	}
 
 
@@ -265,13 +265,13 @@ export namespace MyNS {
 	export interface Exponential {
 
 		/** Must be greater than 1. */
-		growthFactor?: number;
+		growthFactor?: number | null;
 
 		/** Must be greater than 0. */
-		numFiniteBuckets?: number;
+		numFiniteBuckets?: number | null;
 
 		/** Must be greater than 0. */
-		scale?: number;
+		scale?: number | null;
 	}
 
 
@@ -279,13 +279,13 @@ export namespace MyNS {
 	export interface Linear {
 
 		/** Must be greater than 0. */
-		numFiniteBuckets?: number;
+		numFiniteBuckets?: number | null;
 
 		/** Lower bound of the first bucket. */
-		offset?: number;
+		offset?: number | null;
 
 		/** Must be greater than 0. */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -293,7 +293,7 @@ export namespace MyNS {
 	export interface CloudEndpoints {
 
 		/** The name of the Cloud Endpoints service underlying this service. Corresponds to the service resource label in the api monitored resource: https://cloud.google.com/monitoring/api/resources#tag_api */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -301,16 +301,16 @@ export namespace MyNS {
 	export interface ClusterIstio {
 
 		/** The name of the Kubernetes cluster in which this Istio service is defined. Corresponds to the cluster_name resource label in k8s_cluster resources. */
-		clusterName?: string;
+		clusterName?: string | null;
 
 		/** The location of the Kubernetes cluster in which this Istio service is defined. Corresponds to the location resource label in k8s_cluster resources. */
-		location?: string;
+		location?: string | null;
 
 		/** The name of the Istio service underlying this service. Corresponds to the destination_service_name metric label in Istio metrics. */
-		serviceName?: string;
+		serviceName?: string | null;
 
 		/** The namespace of the Istio service underlying this service. Corresponds to the destination_service_namespace metric label in Istio metrics. */
-		serviceNamespace?: string;
+		serviceNamespace?: string | null;
 	}
 
 
@@ -318,28 +318,28 @@ export namespace MyNS {
 	export interface CollectdPayload {
 
 		/** The end time of the interval. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The measurement metadata. Example: "process_id" -> 12345 */
-		metadata?: {[id: string]: TypedValue };
+		metadata?: {[id: string]: TypedValue } | null;
 
 		/** The name of the plugin. Example: "disk". */
-		plugin?: string;
+		plugin?: string | null;
 
 		/** The instance name of the plugin Example: "hdcl". */
-		pluginInstance?: string;
+		pluginInstance?: string | null;
 
 		/** The start time of the interval. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The measurement type. Example: "memory". */
-		type?: string;
+		type?: string | null;
 
 		/** The measurement type instance. Example: "used". */
-		typeInstance?: string;
+		typeInstance?: string | null;
 
 		/** The measured values during this time interval. Each value must have a different dataSourceName. */
-		values?: Array<CollectdValue>;
+		values?: Array<CollectdValue> | null;
 	}
 
 
@@ -347,19 +347,19 @@ export namespace MyNS {
 	export interface TypedValue {
 
 		/** A Boolean value: true or false. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** Distribution contains summary statistics for a population of values. It optionally contains a histogram representing the distribution of those values across a set of buckets.The summary statistics are the count, mean, sum of the squared deviation from the mean, the minimum, and the maximum of the set of population of values. The histogram is based on a sequence of buckets and gives a count of values that fall into each bucket. The boundaries of the buckets are given either explicitly or by formulas for buckets of fixed or exponentially increasing widths.Although it is not forbidden, it is generally a bad idea to include non-finite values (infinities or NaNs) in the population of values, as this will render the mean and sum_of_squared_deviation fields meaningless. */
-		distributionValue?: Distribution;
+		distributionValue?: Distribution | null;
 
 		/** A 64-bit double-precision floating-point number. Its magnitude is approximately &plusmn;10<sup>&plusmn;300</sup> and it has 16 significant digits of precision. */
-		doubleValue?: number;
+		doubleValue?: number | null;
 
 		/** A 64-bit integer. Its range is approximately &plusmn;9.2x10<sup>18</sup>. */
-		int64Value?: string;
+		int64Value?: string | null;
 
 		/** A variable-length string value. */
-		stringValue?: string;
+		stringValue?: string | null;
 	}
 
 
@@ -367,29 +367,29 @@ export namespace MyNS {
 	export interface Distribution {
 
 		/** Required in the Cloud Monitoring API v3. The values for each bucket specified in bucket_options. The sum of the values in bucketCounts must equal the value in the count field of the Distribution object. The order of the bucket counts follows the numbering schemes described for the three bucket types. The underflow bucket has number 0; the finite buckets, if any, have numbers 1 through N-2; and the overflow bucket has number N-1. The size of bucket_counts must not be greater than N. If the size is less than N, then the remaining buckets are assigned values of zero. */
-		bucketCounts?: Array<string>;
+		bucketCounts?: Array<string> | null;
 
 		/** BucketOptions describes the bucket boundaries used to create a histogram for the distribution. The buckets can be in a linear sequence, an exponential sequence, or each bucket can be specified explicitly. BucketOptions does not include the number of values in each bucket.A bucket has an inclusive lower bound and exclusive upper bound for the values that are counted for that bucket. The upper bound of a bucket must be strictly greater than the lower bound. The sequence of N buckets for a distribution consists of an underflow bucket (number 0), zero or more finite buckets (number 1 through N - 2) and an overflow bucket (number N - 1). The buckets are contiguous: the lower bound of bucket i (i > 0) is the same as the upper bound of bucket i - 1. The buckets span the whole range of finite values: lower bound of the underflow bucket is -infinity and the upper bound of the overflow bucket is +infinity. The finite buckets are so-called because both bounds are finite. */
-		bucketOptions?: BucketOptions;
+		bucketOptions?: BucketOptions | null;
 
 		/** The number of values in the population. Must be non-negative. This value must equal the sum of the values in bucket_counts if a histogram is provided. */
-		count?: string;
+		count?: string | null;
 
 		/** Must be in increasing order of value field. */
-		exemplars?: Array<Exemplar>;
+		exemplars?: Array<Exemplar> | null;
 
 		/** The arithmetic mean of the values in the population. If count is zero then this field must be zero. */
-		mean?: number;
+		mean?: number | null;
 
 		/** The range of the population values. */
-		range?: Range;
+		range?: Range | null;
 
 		/**
 		 * The sum of squared deviations from the mean of the values in the population. For values x_i this is:
 		 * Sum[i=1..n]((x_i - mean)^2)
 		 * Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition describes Welford's method for accumulating this sum in one pass.If count is zero then this field must be zero.
 		 */
-		sumOfSquaredDeviation?: number;
+		sumOfSquaredDeviation?: number | null;
 	}
 
 
@@ -397,13 +397,13 @@ export namespace MyNS {
 	export interface Exemplar {
 
 		/** Contextual information about the example value. Examples are:Trace: type.googleapis.com/google.monitoring.v3.SpanContextLiteral string: type.googleapis.com/google.protobuf.StringValueLabels dropped during aggregation:  type.googleapis.com/google.monitoring.v3.DroppedLabelsThere may be only a single attachment of any given message type in a single exemplar, and this is enforced by the system. */
-		attachments?: Array<string>;
+		attachments?: Array<string> | null;
 
 		/** The observation (sampling) time of the above value. */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/** Value of the exemplar point. This value determines to which bucket the exemplar belongs. */
-		value?: number;
+		value?: number | null;
 	}
 
 
@@ -411,10 +411,10 @@ export namespace MyNS {
 	export interface Range {
 
 		/** The maximum of the population values. */
-		max?: number;
+		max?: number | null;
 
 		/** The minimum of the population values. */
-		min?: number;
+		min?: number | null;
 	}
 
 
@@ -422,13 +422,13 @@ export namespace MyNS {
 	export interface CollectdValue {
 
 		/** The data source for the collectd value. For example there are two data sources for network measurements: "rx" and "tx". */
-		dataSourceName?: string;
+		dataSourceName?: string | null;
 
 		/** The type of measurement. */
-		dataSourceType?: CollectdValueDataSourceType;
+		dataSourceType?: CollectdValueDataSourceType | null;
 
 		/** A single strongly-typed value. */
-		value?: TypedValue;
+		value?: TypedValue | null;
 	}
 
 	export enum CollectdValueDataSourceType { UNSPECIFIED_DATA_SOURCE_TYPE = 0, GAUGE = 1, COUNTER = 2, DERIVE = 3, ABSOLUTE = 4 }
@@ -438,13 +438,13 @@ export namespace MyNS {
 	export interface CollectdPayloadError {
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
-		error?: Status;
+		error?: Status | null;
 
 		/** The zero-based index in CreateCollectdTimeSeriesRequest.collectd_payloads. */
-		index?: number;
+		index?: number | null;
 
 		/** Records the error status for values that were not written due to an error.Failed payloads for which nothing is written will not include partial value errors. */
-		valueErrors?: Array<CollectdValueError>;
+		valueErrors?: Array<CollectdValueError> | null;
 	}
 
 
@@ -452,10 +452,10 @@ export namespace MyNS {
 	export interface CollectdValueError {
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
-		error?: Status;
+		error?: Status | null;
 
 		/** The zero-based index in CollectdPayload.values within the parent CreateCollectdTimeSeriesRequest.collectd_payloads. */
-		index?: number;
+		index?: number | null;
 	}
 
 
@@ -463,10 +463,10 @@ export namespace MyNS {
 	export interface ContentMatcher {
 
 		/** String or regex content to match. Maximum 1024 bytes. An empty content string indicates no content matching is to be performed. */
-		content?: string;
+		content?: string | null;
 
 		/** The type of content matcher that will be applied to the server output, compared to the content string when the check is run. */
-		matcher?: ContentMatcherMatcher;
+		matcher?: ContentMatcherMatcher | null;
 	}
 
 	export enum ContentMatcherMatcher { CONTENT_MATCHER_OPTION_UNSPECIFIED = 0, CONTAINS_STRING = 1, NOT_CONTAINS_STRING = 2, MATCHES_REGEX = 3, NOT_MATCHES_REGEX = 4 }
@@ -476,10 +476,10 @@ export namespace MyNS {
 	export interface CreateCollectdTimeSeriesRequest {
 
 		/** The collectd payloads representing the time series data. You must not include more than a single point for each time series, so no two payloads can have the same values for all of the fields plugin, plugin_instance, type, and type_instance. */
-		collectdPayloads?: Array<CollectdPayload>;
+		collectdPayloads?: Array<CollectdPayload> | null;
 
 		/** The version of collectd that collected the data. Example: "5.3.0-192.el6". */
-		collectdVersion?: string;
+		collectdVersion?: string | null;
 
 		/**
 		 * An object representing a resource that can be used for monitoring, logging, billing, or other purposes. Examples include virtual machine instances, databases, and storage devices such as disks. The type field identifies a MonitoredResourceDescriptor object that describes the resource's schema. Information in the labels field identifies the actual resource and its attributes according to the schema. For example, a particular Compute Engine VM instance could be represented by the following object, because the MonitoredResourceDescriptor for "gce_instance" has labels "instance_id" and "zone":
@@ -487,7 +487,7 @@ export namespace MyNS {
 		 * "labels": { "instance_id": "12345678901234",
 		 * "zone": "us-central1-a" }}
 		 */
-		resource?: MonitoredResource;
+		resource?: MonitoredResource | null;
 	}
 
 
@@ -500,10 +500,10 @@ export namespace MyNS {
 	export interface MonitoredResource {
 
 		/** Required. Values for all of the labels listed in the associated monitored resource descriptor. For example, Compute Engine VM instances use the labels "project_id", "instance_id", and "zone". */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Required. The monitored resource type. This field must match the type field of a MonitoredResourceDescriptor object. For example, the type of a Compute Engine VM instance is gce_instance. For a list of types, see Monitoring resource types and Logging resource types. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -511,10 +511,10 @@ export namespace MyNS {
 	export interface CreateCollectdTimeSeriesResponse {
 
 		/** Records the error status for points that were not written due to an error in the request.Failed requests for which nothing is written will return an error response instead. Requests where data points were rejected by the backend will set summary instead. */
-		payloadErrors?: Array<CollectdPayloadError>;
+		payloadErrors?: Array<CollectdPayloadError> | null;
 
 		/** Summary of the result of a failed request to write data to a time series. */
-		summary?: CreateTimeSeriesSummary;
+		summary?: CreateTimeSeriesSummary | null;
 	}
 
 
@@ -522,13 +522,13 @@ export namespace MyNS {
 	export interface CreateTimeSeriesSummary {
 
 		/** The number of points that failed to be written. Order is not guaranteed. */
-		errors?: Array<Error>;
+		errors?: Array<Error> | null;
 
 		/** The number of points that were successfully written. */
-		successPointCount?: number;
+		successPointCount?: number | null;
 
 		/** The number of points in the request. */
-		totalPointCount?: number;
+		totalPointCount?: number | null;
 	}
 
 
@@ -536,10 +536,10 @@ export namespace MyNS {
 	export interface Error {
 
 		/** The number of points that couldn't be written because of status. */
-		pointCount?: number;
+		pointCount?: number | null;
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
-		status?: Status;
+		status?: Status | null;
 	}
 
 
@@ -547,7 +547,7 @@ export namespace MyNS {
 	export interface CreateTimeSeriesRequest {
 
 		/** Required. The new data to be added to a list of time series. Adds at most one data point to each of several time series. The new data point must be more recent than any other point in its time series. Each TimeSeries value must fully specify a unique time series by supplying all label values for the metric and the monitored resource.The maximum number of TimeSeries objects per Create request is 200. */
-		timeSeries?: Array<TimeSeries>;
+		timeSeries?: Array<TimeSeries> | null;
 	}
 
 
@@ -555,16 +555,16 @@ export namespace MyNS {
 	export interface TimeSeries {
 
 		/** Auxiliary metadata for a MonitoredResource object. MonitoredResource objects contain the minimum set of information to uniquely identify a monitored resource instance. There is some other useful auxiliary metadata. Monitoring and Logging use an ingestion pipeline to extract metadata for cloud resources of all types, and store the metadata in this message. */
-		metadata?: MonitoredResourceMetadata;
+		metadata?: MonitoredResourceMetadata | null;
 
 		/** A specific metric, identified by specifying values for all of the labels of a MetricDescriptor. */
-		metric?: Metric;
+		metric?: Metric | null;
 
 		/** The metric kind of the time series. When listing time series, this metric kind might be different from the metric kind of the associated metric if this time series is an alignment or reduction of other time series.When creating a time series, this field is optional. If present, it must be the same as the metric kind of the associated metric. If the associated metric's descriptor must be auto-created, then this field specifies the metric kind of the new descriptor and must be either GAUGE (the default) or CUMULATIVE. */
-		metricKind?: TimeSeriesMetricKind;
+		metricKind?: TimeSeriesMetricKind | null;
 
 		/** The data points of this time series. When listing time series, points are returned in reverse time order.When creating a time series, this field must contain exactly one point and the point's type must be the same as the value type of the associated metric. If the associated metric's descriptor must be auto-created, then the value type of the descriptor is determined by the point's type, which must be BOOL, INT64, DOUBLE, or DISTRIBUTION. */
-		points?: Array<Point>;
+		points?: Array<Point> | null;
 
 		/**
 		 * An object representing a resource that can be used for monitoring, logging, billing, or other purposes. Examples include virtual machine instances, databases, and storage devices such as disks. The type field identifies a MonitoredResourceDescriptor object that describes the resource's schema. Information in the labels field identifies the actual resource and its attributes according to the schema. For example, a particular Compute Engine VM instance could be represented by the following object, because the MonitoredResourceDescriptor for "gce_instance" has labels "instance_id" and "zone":
@@ -572,10 +572,10 @@ export namespace MyNS {
 		 * "labels": { "instance_id": "12345678901234",
 		 * "zone": "us-central1-a" }}
 		 */
-		resource?: MonitoredResource;
+		resource?: MonitoredResource | null;
 
 		/** The value type of the time series. When listing time series, this value type might be different from the value type of the associated metric if this time series is an alignment or reduction of other time series.When creating a time series, this field is optional. If present, it must be the same as the type of the data in the points field. */
-		valueType?: TimeSeriesValueType;
+		valueType?: TimeSeriesValueType | null;
 	}
 
 
@@ -588,10 +588,10 @@ export namespace MyNS {
 		 * "security_group": ["a", "b", "c"],
 		 * "spot_instance": false }
 		 */
-		systemLabels?: {[id: string]: any };
+		systemLabels?: {[id: string]: any } | null;
 
 		/** Output only. A map of user-defined metadata labels. */
-		userLabels?: {[id: string]: string };
+		userLabels?: {[id: string]: string } | null;
 	}
 
 
@@ -599,10 +599,10 @@ export namespace MyNS {
 	export interface Metric {
 
 		/** The set of label values that uniquely identify this metric. All labels listed in the MetricDescriptor must be assigned values. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** An existing metric type, see google.api.MetricDescriptor. For example, custom.googleapis.com/invoice/paid/amount. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export enum TimeSeriesMetricKind { METRIC_KIND_UNSPECIFIED = 0, GAUGE = 1, DELTA = 2, CUMULATIVE = 3 }
@@ -617,10 +617,10 @@ export namespace MyNS {
 		 * For DELTA and CUMULATIVE metrics, the start time must be earlier  than the end time.
 		 * In all cases, the start time of the next interval must be  at least a microsecond after the end time of the previous interval.  Because the interval is closed, if the start time of a new interval  is the same as the end time of the previous interval, data written  at the new start time could overwrite data written at the previous  end time.
 		 */
-		interval?: TimeInterval;
+		interval?: TimeInterval | null;
 
 		/** A single strongly-typed value. */
-		value?: TypedValue;
+		value?: TypedValue | null;
 	}
 
 
@@ -633,10 +633,10 @@ export namespace MyNS {
 	export interface TimeInterval {
 
 		/** Required. The end of the time interval. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 	export enum TimeSeriesValueType { VALUE_TYPE_UNSPECIFIED = 0, BOOL = 1, INT64 = 2, DOUBLE = 3, STRING = 4, DISTRIBUTION = 5, MONEY = 6 }
@@ -657,10 +657,10 @@ export namespace MyNS {
 		 * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) specifying a TimeSeries aggregating values. Must have ValueType =
 		 * DISTRIBUTION and MetricKind = DELTA or MetricKind = CUMULATIVE.
 		 */
-		distributionFilter?: string;
+		distributionFilter?: string | null;
 
 		/** Range of numerical values, inclusive of min and exclusive of max. If the open range "< range.max" is desired, set range.min = -infinity. If the open range ">= range.min" is desired, set range.max = infinity. */
-		range?: GoogleMonitoringV3Range;
+		range?: GoogleMonitoringV3Range | null;
 	}
 
 
@@ -668,10 +668,10 @@ export namespace MyNS {
 	export interface GoogleMonitoringV3Range {
 
 		/** Range maximum. */
-		max?: number;
+		max?: number | null;
 
 		/** Range minimum. */
-		min?: number;
+		min?: number | null;
 	}
 
 
@@ -679,7 +679,7 @@ export namespace MyNS {
 	export interface DroppedLabels {
 
 		/** Map from label to its value, for all labels dropped in any aggregation. */
-		label?: {[id: string]: string };
+		label?: {[id: string]: string } | null;
 	}
 
 
@@ -698,34 +698,34 @@ export namespace MyNS {
 	export interface Field {
 
 		/** The field cardinality. */
-		cardinality?: FieldCardinality;
+		cardinality?: FieldCardinality | null;
 
 		/** The string value of the default value of this field. Proto2 syntax only. */
-		defaultValue?: string;
+		defaultValue?: string | null;
 
 		/** The field JSON name. */
-		jsonName?: string;
+		jsonName?: string | null;
 
 		/** The field type. */
-		kind?: FieldKind;
+		kind?: FieldKind | null;
 
 		/** The field name. */
-		name?: string;
+		name?: string | null;
 
 		/** The field number. */
-		number?: number;
+		number?: number | null;
 
 		/** The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
-		oneofIndex?: number;
+		oneofIndex?: number | null;
 
 		/** The protocol buffer options. */
-		options?: Array<Option>;
+		options?: Array<Option> | null;
 
 		/** Whether to use alternative packed wire representation. */
-		packed?: boolean;
+		packed?: boolean | null;
 
 		/** The field type URL, without the scheme, for message or enumeration types. Example: "type.googleapis.com/google.protobuf.Timestamp". */
-		typeUrl?: string;
+		typeUrl?: string | null;
 	}
 
 	export enum FieldCardinality { CARDINALITY_UNKNOWN = 0, CARDINALITY_OPTIONAL = 1, CARDINALITY_REQUIRED = 2, CARDINALITY_REPEATED = 3 }
@@ -737,10 +737,10 @@ export namespace MyNS {
 	export interface Option {
 
 		/** The option's name. For protobuf built-in options (options defined in descriptor.proto), this is the short name. For example, "map_entry". For custom options, it should be the fully-qualified name. For example, "google.api.http". */
-		name?: string;
+		name?: string | null;
 
 		/** The option's value packed in an Any message. If the value is a primitive, the corresponding wrapper type defined in google/protobuf/wrappers.proto should be used. If the value is an enum, it should be stored as an int32 value using the google.protobuf.Int32Value type. */
-		value?: {[id: string]: any };
+		value?: {[id: string]: any } | null;
 	}
 
 
@@ -748,7 +748,7 @@ export namespace MyNS {
 	export interface GetNotificationChannelVerificationCodeRequest {
 
 		/** The desired expiration time. If specified, the API will guarantee that the returned code will not be valid after the specified timestamp; however, the API cannot guarantee that the returned code will be valid for at least as long as the requested time (the API puts an upper bound on the amount of time for which a code may be valid). If omitted, a default expiration will be used, which may be less than the max permissible expiration (so specifying an expiration may extend the code's lifetime over omitting an expiration, even though the API does impose an upper limit on the maximum expiration that is permitted). */
-		expireTime?: string;
+		expireTime?: string | null;
 	}
 
 
@@ -756,10 +756,10 @@ export namespace MyNS {
 	export interface GetNotificationChannelVerificationCodeResponse {
 
 		/** The verification code, which may be used to verify other channels that have an equivalent identity (i.e. other channels of the same type with the same fingerprint such as other email channels with the same email address or other sms channels with the same number). */
-		code?: string;
+		code?: string | null;
 
 		/** The expiration time associated with the code that was returned. If an expiration was provided in the request, this is the minimum of the requested expiration in the request and the max permitted expiration. */
-		expireTime?: string;
+		expireTime?: string | null;
 	}
 
 
@@ -767,27 +767,27 @@ export namespace MyNS {
 	export interface Group {
 
 		/** A user-assigned name for this group, used only for display purposes. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The filter used to determine which monitored resources belong to this group. */
-		filter?: string;
+		filter?: string | null;
 
 		/** If true, the members of this group are considered to be a cluster. The system can perform additional analysis on groups that are clusters. */
-		isCluster?: boolean;
+		isCluster?: boolean | null;
 
 		/**
 		 * Output only. The name of this group. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
 		 * When creating a group, this field is ignored and a new name is created consisting of the project specified in the call to CreateGroup and a unique [GROUP_ID] that is generated automatically.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The name of the group's parent, if it has one. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
 		 * For groups with no parent, parent_name is the empty string, "".
 		 */
-		parentName?: string;
+		parentName?: string | null;
 	}
 
 
@@ -795,25 +795,25 @@ export namespace MyNS {
 	export interface HttpCheck {
 
 		/** The authentication parameters to provide to the specified resource or URL that requires a username and password. Currently, only Basic HTTP authentication (https://tools.ietf.org/html/rfc7617) is supported in Uptime checks. */
-		authInfo?: BasicAuthentication;
+		authInfo?: BasicAuthentication | null;
 
 		/** The list of headers to send as part of the Uptime check request. If two headers have the same key and different values, they should be entered as a single header, with the value being a comma-separated list of all the desired values as described at https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31). Entering two separate headers with the same key in a Create call will cause the first to be overwritten by the second. The maximum number of headers allowed is 100. */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/** Boolean specifiying whether to encrypt the header information. Encryption should be specified for any headers related to authentication that you do not wish to be seen when retrieving the configuration. The server will be responsible for encrypting the headers. On Get/List calls, if mask_headers is set to true then the headers will be obscured with ******. */
-		maskHeaders?: boolean;
+		maskHeaders?: boolean | null;
 
 		/** Optional (defaults to "/"). The path to the page against which to run the check. Will be combined with the host (specified within the monitored_resource) and port to construct the full URL. If the provided path does not begin with "/", a "/" will be prepended automatically. */
-		path?: string;
+		path?: string | null;
 
 		/** Optional (defaults to 80 when use_ssl is false, and 443 when use_ssl is true). The TCP port on the HTTP server against which to run the check. Will be combined with host (specified within the monitored_resource) and path to construct the full URL. */
-		port?: number;
+		port?: number | null;
 
 		/** If true, use HTTPS instead of HTTP to run the check. */
-		useSsl?: boolean;
+		useSsl?: boolean | null;
 
 		/** Boolean specifying whether to include SSL certificate validation as a part of the Uptime check. Only applies to checks where monitored_resource is set to uptime_url. If use_ssl is false, setting validate_ssl to true has no effect. */
-		validateSsl?: boolean;
+		validateSsl?: boolean | null;
 	}
 
 
@@ -821,26 +821,26 @@ export namespace MyNS {
 	export interface InternalChecker {
 
 		/** The checker's human-readable name. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The GCP zone the Uptime check should egress from. Only respected for internal Uptime checks, where internal_network is specified. */
-		gcpZone?: string;
+		gcpZone?: string | null;
 
 		/**
 		 * A unique resource name for this InternalChecker. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
 		 * [PROJECT_ID_OR_NUMBER] is the Stackdriver Workspace project for the Uptime check config associated with the internal checker.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The GCP VPC network (https://cloud.google.com/vpc/docs/vpc) where the internal resource lives (ex: "default"). */
-		network?: string;
+		network?: string | null;
 
 		/** The GCP project ID where the internal checker lives. Not necessary the same as the Workspace project. */
-		peerProjectId?: string;
+		peerProjectId?: string | null;
 
 		/** The current operational state of the internal checker. */
-		state?: InternalCheckerState;
+		state?: InternalCheckerState | null;
 	}
 
 	export enum InternalCheckerState { UNSPECIFIED = 0, CREATING = 1, RUNNING = 2 }
@@ -850,7 +850,7 @@ export namespace MyNS {
 	export interface LabelDescriptor {
 
 		/** A human-readable description for the label. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The key for this label. The key must meet the following criteria:
@@ -859,10 +859,10 @@ export namespace MyNS {
 		 * The first character must be an upper- or lower-case letter.
 		 * The remaining characters must be letters, digits, or underscores.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/** The type of data that can be assigned to the label. */
-		valueType?: LabelDescriptorValueType;
+		valueType?: LabelDescriptorValueType | null;
 	}
 
 	export enum LabelDescriptorValueType { STRING = 0, BOOL = 1, INT64 = 2 }
@@ -872,13 +872,13 @@ export namespace MyNS {
 	export interface LabelValue {
 
 		/** A bool label value. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** An int64 label value. */
-		int64Value?: string;
+		int64Value?: string | null;
 
 		/** A string label value. */
-		stringValue?: string;
+		stringValue?: string | null;
 	}
 
 
@@ -886,10 +886,10 @@ export namespace MyNS {
 	export interface ListAlertPoliciesResponse {
 
 		/** The returned alert policies. */
-		alertPolicies?: Array<AlertPolicy>;
+		alertPolicies?: Array<AlertPolicy> | null;
 
 		/** If there might be more results than were returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -897,13 +897,13 @@ export namespace MyNS {
 	export interface ListGroupMembersResponse {
 
 		/** A set of monitored resources in the group. */
-		members?: Array<MonitoredResource>;
+		members?: Array<MonitoredResource> | null;
 
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of elements matching this request. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -911,10 +911,10 @@ export namespace MyNS {
 	export interface ListGroupsResponse {
 
 		/** The groups that match the specified filters. */
-		group?: Array<Group>;
+		group?: Array<Group> | null;
 
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -922,10 +922,10 @@ export namespace MyNS {
 	export interface ListMetricDescriptorsResponse {
 
 		/** The metric descriptors that are available to the project and that match the value of filter, if present. */
-		metricDescriptors?: Array<MetricDescriptor>;
+		metricDescriptors?: Array<MetricDescriptor> | null;
 
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -933,28 +933,28 @@ export namespace MyNS {
 	export interface MetricDescriptor {
 
 		/** A detailed description of the metric, which can be used in documentation. */
-		description?: string;
+		description?: string | null;
 
 		/** A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example "Request count". This field is optional but it is recommended to be set for any metrics associated with user-visible concepts, such as Quota. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The set of labels that can be used to describe a specific instance of this metric type. For example, the appengine.googleapis.com/http/server/response_latencies metric type has a label for the HTTP response code, response_code, so you can look at latencies for successful responses or just for responses that failed. */
-		labels?: Array<LabelDescriptor>;
+		labels?: Array<LabelDescriptor> | null;
 
 		/** Optional. The launch stage of the metric definition. */
-		launchStage?: MetricDescriptorLaunchStage;
+		launchStage?: MetricDescriptorLaunchStage | null;
 
 		/** Additional annotations that can be used to guide the usage of a metric. */
-		metadata?: MetricDescriptorMetadata;
+		metadata?: MetricDescriptorMetadata | null;
 
 		/** Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metric_kind and value_type might not be supported. */
-		metricKind?: TimeSeriesMetricKind;
+		metricKind?: TimeSeriesMetricKind | null;
 
 		/** Read-only. If present, then a time series, which is identified partially by a metric type and a MonitoredResourceDescriptor, that is associated with this metric type can only be associated with one of the monitored resource types listed here. */
-		monitoredResourceTypes?: Array<string>;
+		monitoredResourceTypes?: Array<string> | null;
 
 		/** The resource name of the metric descriptor. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The metric type, including its DNS name prefix. The type is not URL-encoded. All user-defined metric types have the DNS name custom.googleapis.com or external.googleapis.com. Metric types should use a natural hierarchical grouping. For example:
@@ -962,7 +962,7 @@ export namespace MyNS {
 		 * "external.googleapis.com/prometheus/up"
 		 * "appengine.googleapis.com/http/server/response_latencies"
 		 */
-		type?: string;
+		type?: string | null;
 
 		/**
 		 * The units in which the metric value is reported. It is only applicable if the value_type is INT64, DOUBLE, or DISTRIBUTION. The unit defines the representation of the stored metric values.Different systems may scale the values to be more easily displayed (so a value of 0.02KBy might be displayed as 20By, and a value of 3523KBy might be displayed as 3.5MBy). However, if the unit is KBy, then the value of the metric is always in thousands of bytes, no matter how it may be displayed..If you want a custom metric to record the exact number of CPU-seconds used by a job, you can create an INT64 CUMULATIVE metric whose unit is s{CPU} (or equivalently 1s{CPU} or just s). If the job uses 12,005 CPU-seconds, then the value is written as 12005.Alternatively, if you want a custom metric to record data in a more granular way, you can create a DOUBLE CUMULATIVE metric whose unit is ks{CPU}, and then write the value 12.005 (which is 12005/1000), or use Kis{CPU} and write 11.723 (which is 12005/1024).The supported units are a subset of The Unified Code for Units of Measure (http://unitsofmeasure.org/ucum.html) standard:Basic units (UNIT)
@@ -1008,10 +1008,10 @@ export namespace MyNS {
 		 * % represents dimensionless value of 1/100, and annotates values giving  a percentage (so the metric values are typically in the range of 0..100,  and a metric value 3 means "3 percent").
 		 * 10^2.% indicates a metric contains a ratio, typically in the range  0..1, that will be multiplied by 100 and displayed as a percentage  (so a metric value 0.03 means "3 percent").
 		 */
-		unit?: string;
+		unit?: string | null;
 
 		/** Whether the measurement is an integer, a floating-point number, etc. Some combinations of metric_kind and value_type might not be supported. */
-		valueType?: TimeSeriesValueType;
+		valueType?: TimeSeriesValueType | null;
 	}
 
 	export enum MetricDescriptorLaunchStage { LAUNCH_STAGE_UNSPECIFIED = 0, UNIMPLEMENTED = 1, PRELAUNCH = 2, EARLY_ACCESS = 3, ALPHA = 4, BETA = 5, GA = 6, DEPRECATED = 7 }
@@ -1021,13 +1021,13 @@ export namespace MyNS {
 	export interface MetricDescriptorMetadata {
 
 		/** The delay of data points caused by ingestion. Data points older than this age are guaranteed to be ingested and available to be read, excluding data loss due to errors. */
-		ingestDelay?: string;
+		ingestDelay?: string | null;
 
 		/** Deprecated. Must use the MetricDescriptor.launch_stage instead. */
-		launchStage?: MetricDescriptorLaunchStage;
+		launchStage?: MetricDescriptorLaunchStage | null;
 
 		/** The sampling period of metric data points. For metrics which are written periodically, consecutive data points are stored at this time interval, excluding data loss due to errors. Metrics with a higher granularity have a smaller sampling period. */
-		samplePeriod?: string;
+		samplePeriod?: string | null;
 	}
 
 
@@ -1035,10 +1035,10 @@ export namespace MyNS {
 	export interface ListMonitoredResourceDescriptorsResponse {
 
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The monitored resource descriptors that are available to this project and that match filter, if present. */
-		resourceDescriptors?: Array<MonitoredResourceDescriptor>;
+		resourceDescriptors?: Array<MonitoredResourceDescriptor> | null;
 	}
 
 
@@ -1046,22 +1046,22 @@ export namespace MyNS {
 	export interface MonitoredResourceDescriptor {
 
 		/** Optional. A detailed description of the monitored resource type that might be used in documentation. */
-		description?: string;
+		description?: string | null;
 
 		/** Optional. A concise name for the monitored resource type that might be displayed in user interfaces. It should be a Title Cased Noun Phrase, without any article or other determiners. For example, "Google Cloud SQL Database". */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Required. A set of labels used to describe instances of this monitored resource type. For example, an individual Google Cloud SQL database is identified by values for the labels "database_id" and "zone". */
-		labels?: Array<LabelDescriptor>;
+		labels?: Array<LabelDescriptor> | null;
 
 		/** Optional. The launch stage of the monitored resource definition. */
-		launchStage?: MetricDescriptorLaunchStage;
+		launchStage?: MetricDescriptorLaunchStage | null;
 
 		/** Optional. The resource name of the monitored resource descriptor: "projects/{project_id}/monitoredResourceDescriptors/{type}" where {type} is the value of the type field in this object and {project_id} is a project ID that provides API-specific context for accessing the type. APIs that do not use project information can use the resource name format "monitoredResourceDescriptors/{type}". */
-		name?: string;
+		name?: string | null;
 
 		/** Required. The monitored resource type. For example, the type "cloudsql_database" represents databases in Google Cloud SQL. The maximum length of this value is 256 characters. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -1069,10 +1069,10 @@ export namespace MyNS {
 	export interface ListNotificationChannelDescriptorsResponse {
 
 		/** The monitored resource descriptors supported for the specified project, optionally filtered. */
-		channelDescriptors?: Array<NotificationChannelDescriptor>;
+		channelDescriptors?: Array<NotificationChannelDescriptor> | null;
 
 		/** If not empty, indicates that there may be more results that match the request. Use the value in the page_token field in a subsequent request to fetch the next set of results. If empty, all results have been returned. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1080,26 +1080,26 @@ export namespace MyNS {
 	export interface NotificationChannelDescriptor {
 
 		/** A human-readable description of the notification channel type. The description may include a description of the properties of the channel and pointers to external documentation. */
-		description?: string;
+		description?: string | null;
 
 		/** A human-readable name for the notification channel type. This form of the name is suitable for a user interface. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The set of labels that must be defined to identify a particular channel of the corresponding type. Each label includes a description for how that field should be populated. */
-		labels?: Array<LabelDescriptor>;
+		labels?: Array<LabelDescriptor> | null;
 
 		/** The product launch stage for channels of this type. */
-		launchStage?: MetricDescriptorLaunchStage;
+		launchStage?: MetricDescriptorLaunchStage | null;
 
 		/**
 		 * The full REST resource name for this descriptor. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
 		 * In the above, [TYPE] is the value of the type field.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The type of notification channel, such as "email", "sms", etc. Notification channel types are globally unique. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -1107,10 +1107,10 @@ export namespace MyNS {
 	export interface ListNotificationChannelsResponse {
 
 		/** If not empty, indicates that there may be more results that match the request. Use the value in the page_token field in a subsequent request to fetch the next set of results. If empty, all results have been returned. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The notification channels defined for the specified project. */
-		notificationChannels?: Array<NotificationChannel>;
+		notificationChannels?: Array<NotificationChannel> | null;
 	}
 
 
@@ -1118,32 +1118,32 @@ export namespace MyNS {
 	export interface NotificationChannel {
 
 		/** An optional human-readable description of this notification channel. This description may provide additional details, beyond the display name, for the channel. This may not exceed 1024 Unicode characters. */
-		description?: string;
+		description?: string | null;
 
 		/** An optional human-readable name for this notification channel. It is recommended that you specify a non-empty and unique name in order to make it easier to identify the channels in your project, though this is not enforced. The display name is limited to 512 Unicode characters. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Whether notifications are forwarded to the described channel. This makes it possible to disable delivery of notifications to a particular channel without removing the channel from all alerting policies that reference the channel. This is a more convenient approach when the change is temporary and you want to receive notifications from the same set of alerting policies on the channel at some point in the future. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/** Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the NotificationChannelDescriptor.labels of the NotificationChannelDescriptor corresponding to the type field. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The full REST resource name for this channel. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
 		 * The [CHANNEL_ID] is automatically assigned by the server on creation.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The type of the notification channel. This field matches the value of the NotificationChannelDescriptor.type field. */
-		type?: string;
+		type?: string | null;
 
 		/** User-supplied key/value data that does not need to conform to the corresponding NotificationChannelDescriptor's schema, unlike the labels field. This field is intended to be used for organizing and identifying the NotificationChannel objects.The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter. */
-		userLabels?: {[id: string]: string };
+		userLabels?: {[id: string]: string } | null;
 
 		/** Indicates whether this channel has been verified or not. On a ListNotificationChannels or GetNotificationChannel operation, this field is expected to be populated.If the value is UNVERIFIED, then it indicates that the channel is non-functioning (it both requires verification and lacks verification); otherwise, it is assumed that the channel works.If the channel is neither VERIFIED nor UNVERIFIED, it implies that the channel is of a type that does not require verification or that this specific channel has been exempted from verification because it was created prior to verification being required for channels of this type.This field cannot be modified using a standard UpdateNotificationChannel operation. To change the value of this field, you must call VerifyNotificationChannel. */
-		verificationStatus?: NotificationChannelVerificationStatus;
+		verificationStatus?: NotificationChannelVerificationStatus | null;
 	}
 
 	export enum NotificationChannelVerificationStatus { VERIFICATION_STATUS_UNSPECIFIED = 0, UNVERIFIED = 1, VERIFIED = 2 }
@@ -1153,10 +1153,10 @@ export namespace MyNS {
 	export interface ListServiceLevelObjectivesResponse {
 
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The ServiceLevelObjectives matching the specified filter. */
-		serviceLevelObjectives?: Array<ServiceLevelObjective>;
+		serviceLevelObjectives?: Array<ServiceLevelObjective> | null;
 	}
 
 
@@ -1164,28 +1164,28 @@ export namespace MyNS {
 	export interface ServiceLevelObjective {
 
 		/** A calendar period, semantically "since the start of the current <calendar_period>". At this time, only DAY, WEEK, FORTNIGHT, and MONTH are supported. */
-		calendarPeriod?: ServiceLevelObjectiveCalendarPeriod;
+		calendarPeriod?: ServiceLevelObjectiveCalendarPeriod | null;
 
 		/** Name used for UI elements listing this SLO. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The fraction of service that must be good in order for this objective to be met. 0 < goal <= 0.999. */
-		goal?: number;
+		goal?: number | null;
 
 		/**
 		 * Resource name for this ServiceLevelObjective. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** A rolling time period, semantically "in the past <rolling_period>". Must be an integer multiple of 1 day no larger than 30 days. */
-		rollingPeriod?: string;
+		rollingPeriod?: string | null;
 
 		/**
 		 * A Service-Level Indicator (SLI) describes the "performance" of a service. For some services, the SLI is well-defined. In such cases, the SLI can be described easily by referencing the well-known SLI and providing the needed parameters. Alternatively, a "custom" SLI can be defined with a query to the underlying metric store. An SLI is defined to be good_service /
 		 * total_service over any queried time interval. The value of performance always falls into the range 0 <= performance <= 1. A custom SLI describes how to compute this ratio, whether this is by dividing values from a pair of time series, cutting a Distribution into good and bad counts, or counting time windows in which the service complies with a criterion. For separation of concerns, a single Service-Level Indicator measures performance for only one aspect of service quality, such as fraction of successful queries or fast-enough queries.
 		 */
-		serviceLevelIndicator?: ServiceLevelIndicator;
+		serviceLevelIndicator?: ServiceLevelIndicator | null;
 	}
 
 	export enum ServiceLevelObjectiveCalendarPeriod { CALENDAR_PERIOD_UNSPECIFIED = 0, DAY = 1, WEEK = 2, FORTNIGHT = 3, MONTH = 4, QUARTER = 5, HALF = 6, YEAR = 7 }
@@ -1198,13 +1198,13 @@ export namespace MyNS {
 	export interface ServiceLevelIndicator {
 
 		/** An SLI measuring performance on a well-known service type. Performance will be computed on the basis of pre-defined metrics. The type of the service_resource determines the metrics to use and the service_resource.labels and metric_labels are used to construct a monitoring filter to filter that metric down to just the data relevant to this service. */
-		basicSli?: BasicSli;
+		basicSli?: BasicSli | null;
 
 		/** Service Level Indicators for which atomic units of service are counted directly. */
-		requestBased?: RequestBasedSli;
+		requestBased?: RequestBasedSli | null;
 
 		/** A WindowsBasedSli defines good_service as the count of time windows for which the provided service was of good quality. Criteria for determining if service was good are embedded in the window_criterion. */
-		windowsBased?: WindowsBasedSli;
+		windowsBased?: WindowsBasedSli | null;
 	}
 
 
@@ -1215,14 +1215,14 @@ export namespace MyNS {
 		 * A DistributionCut defines a TimeSeries and thresholds used for measuring good service and total service. The TimeSeries must have ValueType =
 		 * DISTRIBUTION and MetricKind = DELTA or MetricKind = CUMULATIVE. The computed good_service will be the count of values x in the Distribution such that range.min <= x < range.max.
 		 */
-		distributionCut?: DistributionCut;
+		distributionCut?: DistributionCut | null;
 
 		/**
 		 * A TimeSeriesRatio specifies two TimeSeries to use for computing the good_service / total_service ratio. The specified TimeSeries must have ValueType = DOUBLE or ValueType = INT64 and must have MetricKind =
 		 * DELTA or MetricKind = CUMULATIVE. The TimeSeriesRatio must specify exactly two of good, bad, and total, and the relationship good_service +
 		 * bad_service = total_service will be assumed.
 		 */
-		goodTotalRatio?: TimeSeriesRatio;
+		goodTotalRatio?: TimeSeriesRatio | null;
 	}
 
 
@@ -1234,19 +1234,19 @@ export namespace MyNS {
 	export interface TimeSeriesRatio {
 
 		/** A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) specifying a TimeSeries quantifying bad service, either demanded service that was not provided or demanded service that was of inadequate quality. Must have ValueType = DOUBLE or ValueType = INT64 and must have MetricKind = DELTA or MetricKind = CUMULATIVE. */
-		badServiceFilter?: string;
+		badServiceFilter?: string | null;
 
 		/**
 		 * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) specifying a TimeSeries quantifying good service provided. Must have ValueType = DOUBLE or ValueType = INT64 and must have MetricKind =
 		 * DELTA or MetricKind = CUMULATIVE.
 		 */
-		goodServiceFilter?: string;
+		goodServiceFilter?: string | null;
 
 		/**
 		 * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) specifying a TimeSeries quantifying total demanded service. Must have ValueType = DOUBLE or ValueType = INT64 and must have MetricKind =
 		 * DELTA or MetricKind = CUMULATIVE.
 		 */
-		totalServiceFilter?: string;
+		totalServiceFilter?: string | null;
 	}
 
 
@@ -1254,19 +1254,19 @@ export namespace MyNS {
 	export interface WindowsBasedSli {
 
 		/** A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) specifying a TimeSeries with ValueType = BOOL. The window is good if any true values appear in the window. */
-		goodBadMetricFilter?: string;
+		goodBadMetricFilter?: string | null;
 
 		/** A PerformanceThreshold is used when each window is good when that window has a sufficiently high performance. */
-		goodTotalRatioThreshold?: PerformanceThreshold;
+		goodTotalRatioThreshold?: PerformanceThreshold | null;
 
 		/** A MetricRange is used when each window is good when the value x of a single TimeSeries satisfies range.min <= x < range.max. The provided TimeSeries must have ValueType = INT64 or ValueType = DOUBLE and MetricKind = GAUGE. */
-		metricMeanInRange?: MetricRange;
+		metricMeanInRange?: MetricRange | null;
 
 		/** A MetricRange is used when each window is good when the value x of a single TimeSeries satisfies range.min <= x < range.max. The provided TimeSeries must have ValueType = INT64 or ValueType = DOUBLE and MetricKind = GAUGE. */
-		metricSumInRange?: MetricRange;
+		metricSumInRange?: MetricRange | null;
 
 		/** Duration over which window quality is evaluated. Must be an integer fraction of a day and at least 60s. */
-		windowPeriod?: string;
+		windowPeriod?: string | null;
 	}
 
 
@@ -1274,13 +1274,13 @@ export namespace MyNS {
 	export interface PerformanceThreshold {
 
 		/** An SLI measuring performance on a well-known service type. Performance will be computed on the basis of pre-defined metrics. The type of the service_resource determines the metrics to use and the service_resource.labels and metric_labels are used to construct a monitoring filter to filter that metric down to just the data relevant to this service. */
-		basicSliPerformance?: BasicSli;
+		basicSliPerformance?: BasicSli | null;
 
 		/** Service Level Indicators for which atomic units of service are counted directly. */
-		performance?: RequestBasedSli;
+		performance?: RequestBasedSli | null;
 
 		/** If window performance >= threshold, the window is counted as good. */
-		threshold?: number;
+		threshold?: number | null;
 	}
 
 
@@ -1288,10 +1288,10 @@ export namespace MyNS {
 	export interface MetricRange {
 
 		/** Range of numerical values, inclusive of min and exclusive of max. If the open range "< range.max" is desired, set range.min = -infinity. If the open range ">= range.min" is desired, set range.max = infinity. */
-		range?: GoogleMonitoringV3Range;
+		range?: GoogleMonitoringV3Range | null;
 
 		/** A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) specifying the TimeSeries to use for evaluating window quality. */
-		timeSeries?: string;
+		timeSeries?: string | null;
 	}
 
 
@@ -1299,10 +1299,10 @@ export namespace MyNS {
 	export interface ListServicesResponse {
 
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The Services matching the specified filter. */
-		services?: Array<Service>;
+		services?: Array<Service> | null;
 	}
 
 
@@ -1310,31 +1310,31 @@ export namespace MyNS {
 	export interface Service {
 
 		/** App Engine service. Learn more at https://cloud.google.com/appengine. */
-		appEngine?: AppEngine;
+		appEngine?: AppEngine | null;
 
 		/** Cloud Endpoints service. Learn more at https://cloud.google.com/endpoints. */
-		cloudEndpoints?: CloudEndpoints;
+		cloudEndpoints?: CloudEndpoints | null;
 
 		/** Istio service scoped to a single Kubernetes cluster. Learn more at http://istio.io. */
-		clusterIstio?: ClusterIstio;
+		clusterIstio?: ClusterIstio | null;
 
 		/** Custom view of service telemetry. Currently a place-holder pending final design. */
-		custom?: Custom;
+		custom?: Custom | null;
 
 		/** Name used for UI elements listing this Service. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Istio service scoped to an Istio mesh */
-		meshIstio?: MeshIstio;
+		meshIstio?: MeshIstio | null;
 
 		/**
 		 * Resource name for this Service. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Configuration for how to query telemetry on a Service. */
-		telemetry?: Telemetry;
+		telemetry?: Telemetry | null;
 	}
 
 
@@ -1342,13 +1342,13 @@ export namespace MyNS {
 	export interface MeshIstio {
 
 		/** Identifier for the mesh in which this Istio service is defined. Corresponds to the mesh_uid metric label in Istio metrics. */
-		meshUid?: string;
+		meshUid?: string | null;
 
 		/** The name of the Istio service underlying this service. Corresponds to the destination_service_name metric label in Istio metrics. */
-		serviceName?: string;
+		serviceName?: string | null;
 
 		/** The namespace of the Istio service underlying this service. Corresponds to the destination_service_namespace metric label in Istio metrics. */
-		serviceNamespace?: string;
+		serviceNamespace?: string | null;
 	}
 
 
@@ -1356,7 +1356,7 @@ export namespace MyNS {
 	export interface Telemetry {
 
 		/** The full name of the resource that defines this service. Formatted as described in https://cloud.google.com/apis/design/resource_names. */
-		resourceName?: string;
+		resourceName?: string | null;
 	}
 
 
@@ -1364,13 +1364,13 @@ export namespace MyNS {
 	export interface ListTimeSeriesResponse {
 
 		/** Query execution errors that may have caused the time series data returned to be incomplete. */
-		executionErrors?: Array<Status>;
+		executionErrors?: Array<Status> | null;
 
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** One or more time series that match the filter included in the request. */
-		timeSeries?: Array<TimeSeries>;
+		timeSeries?: Array<TimeSeries> | null;
 	}
 
 
@@ -1378,13 +1378,13 @@ export namespace MyNS {
 	export interface ListUptimeCheckConfigsResponse {
 
 		/** This field represents the pagination token to retrieve the next page of results. If the value is empty, it means no further results for the request. To retrieve the next page of results, the value of the next_page_token is passed to the subsequent List method call (in the request message's page_token field). */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of Uptime check configurations for the project, irrespective of any pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 
 		/** The returned Uptime check configurations. */
-		uptimeCheckConfigs?: Array<UptimeCheckConfig>;
+		uptimeCheckConfigs?: Array<UptimeCheckConfig> | null;
 	}
 
 
@@ -1392,19 +1392,19 @@ export namespace MyNS {
 	export interface UptimeCheckConfig {
 
 		/** The content that is expected to appear in the data returned by the target server against which the check is run. Currently, only the first entry in the content_matchers list is supported, and additional entries will be ignored. This field is optional and should only be specified if a content match is required as part of the/ Uptime check. */
-		contentMatchers?: Array<ContentMatcher>;
+		contentMatchers?: Array<ContentMatcher> | null;
 
 		/** A human-friendly name for the Uptime check configuration. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced. Required. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Information involved in an HTTP/HTTPS Uptime check request. */
-		httpCheck?: HttpCheck;
+		httpCheck?: HttpCheck | null;
 
 		/** The internal checkers that this check will egress from. If is_internal is true and this list is empty, the check will egress from all the InternalCheckers configured for the project that owns this UptimeCheckConfig. */
-		internalCheckers?: Array<InternalChecker>;
+		internalCheckers?: Array<InternalChecker> | null;
 
 		/** If this is true, then checks are made only from the 'internal_checkers'. If it is false, then checks are made only from the 'selected_regions'. It is an error to provide 'selected_regions' when is_internal is true, or to provide 'internal_checkers' when is_internal is false. */
-		isInternal?: boolean;
+		isInternal?: boolean | null;
 
 		/**
 		 * An object representing a resource that can be used for monitoring, logging, billing, or other purposes. Examples include virtual machine instances, databases, and storage devices such as disks. The type field identifies a MonitoredResourceDescriptor object that describes the resource's schema. Information in the labels field identifies the actual resource and its attributes according to the schema. For example, a particular Compute Engine VM instance could be represented by the following object, because the MonitoredResourceDescriptor for "gce_instance" has labels "instance_id" and "zone":
@@ -1412,29 +1412,29 @@ export namespace MyNS {
 		 * "labels": { "instance_id": "12345678901234",
 		 * "zone": "us-central1-a" }}
 		 */
-		monitoredResource?: MonitoredResource;
+		monitoredResource?: MonitoredResource | null;
 
 		/**
 		 * A unique resource name for this Uptime check configuration. The format is:
 		 * projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
 		 * This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** How often, in seconds, the Uptime check is performed. Currently, the only supported values are 60s (1 minute), 300s (5 minutes), 600s (10 minutes), and 900s (15 minutes). Optional, defaults to 60s. */
-		period?: string;
+		period?: string | null;
 
 		/** The resource submessage for group checks. It can be used instead of a monitored resource, when multiple resources are being monitored. */
-		resourceGroup?: ResourceGroup;
+		resourceGroup?: ResourceGroup | null;
 
 		/** The list of regions from which the check will be run. Some regions contain one location, and others contain more than one. If this field is specified, enough regions must be provided to include a minimum of 3 locations. Not specifying this field will result in Uptime checks running from all available regions. */
-		selectedRegions?: Array<string>;
+		selectedRegions?: Array<string> | null;
 
 		/** Information required for a TCP Uptime check request. */
-		tcpCheck?: TcpCheck;
+		tcpCheck?: TcpCheck | null;
 
 		/** The maximum amount of time to wait for the request to complete (must be between 1 and 60 seconds). Required. */
-		timeout?: string;
+		timeout?: string | null;
 	}
 
 
@@ -1442,10 +1442,10 @@ export namespace MyNS {
 	export interface ResourceGroup {
 
 		/** The group of resources being monitored. Should be only the [GROUP_ID], and not the full-path projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]. */
-		groupId?: string;
+		groupId?: string | null;
 
 		/** The resource type of the group members. */
-		resourceType?: ResourceGroupResourceType;
+		resourceType?: ResourceGroupResourceType | null;
 	}
 
 	export enum ResourceGroupResourceType { RESOURCE_TYPE_UNSPECIFIED = 0, INSTANCE = 1, AWS_ELB_LOAD_BALANCER = 2 }
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 	export interface TcpCheck {
 
 		/** The TCP port on the server against which to run the check. Will be combined with host (specified within the monitored_resource) to construct the full URL. Required. */
-		port?: number;
+		port?: number | null;
 	}
 
 
@@ -1463,10 +1463,10 @@ export namespace MyNS {
 	export interface ListUptimeCheckIpsResponse {
 
 		/** This field represents the pagination token to retrieve the next page of results. If the value is empty, it means no further results for the request. To retrieve the next page of results, the value of the next_page_token is passed to the subsequent List method call (in the request message's page_token field). NOTE: this field is not yet implemented */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The returned list of IP addresses (including region and location) that the checkers run from. */
-		uptimeCheckIps?: Array<UptimeCheckIp>;
+		uptimeCheckIps?: Array<UptimeCheckIp> | null;
 	}
 
 
@@ -1474,13 +1474,13 @@ export namespace MyNS {
 	export interface UptimeCheckIp {
 
 		/** The IP address from which the Uptime check originates. This is a fully specified IP address (not an IP address range). Most IP addresses, as of this publication, are in IPv4 format; however, one should not rely on the IP addresses being in IPv4 format indefinitely, and should support interpreting this field in either IPv4 or IPv6 format. */
-		ipAddress?: string;
+		ipAddress?: string | null;
 
 		/** A more specific location within the region that typically encodes a particular city/town/metro (and its containing state/province or country) within the broader umbrella region category. */
-		location?: string;
+		location?: string | null;
 
 		/** A broad region category in which the IP address is located. */
-		region?: UptimeCheckIpRegion;
+		region?: UptimeCheckIpRegion | null;
 	}
 
 	export enum UptimeCheckIpRegion { REGION_UNSPECIFIED = 0, USA = 1, EUROPE = 2, SOUTH_AMERICA = 3, ASIA_PACIFIC = 4 }
@@ -1495,10 +1495,10 @@ export namespace MyNS {
 		 * For DELTA and CUMULATIVE metrics, the start time must be earlier  than the end time.
 		 * In all cases, the start time of the next interval must be  at least a microsecond after the end time of the previous interval.  Because the interval is closed, if the start time of a new interval  is the same as the end time of the previous interval, data written  at the new start time could overwrite data written at the previous  end time.
 		 */
-		timeInterval?: TimeInterval;
+		timeInterval?: TimeInterval | null;
 
 		/** The values that make up the point. */
-		values?: Array<TypedValue>;
+		values?: Array<TypedValue> | null;
 	}
 
 
@@ -1506,13 +1506,13 @@ export namespace MyNS {
 	export interface QueryTimeSeriesRequest {
 
 		/** A positive number that is the maximum number of time_series_data to return. */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/** If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call. */
-		pageToken?: string;
+		pageToken?: string | null;
 
 		/** Required. The query in the monitoring query language format. The default time zone is in UTC. */
-		query?: string;
+		query?: string | null;
 	}
 
 
@@ -1520,16 +1520,16 @@ export namespace MyNS {
 	export interface QueryTimeSeriesResponse {
 
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Query execution errors that may have caused the time series data returned to be incomplete. The available data will be available in the response. */
-		partialErrors?: Array<Status>;
+		partialErrors?: Array<Status> | null;
 
 		/** The time series data. */
-		timeSeriesData?: Array<TimeSeriesData>;
+		timeSeriesData?: Array<TimeSeriesData> | null;
 
 		/** A descriptor for the labels and points in a timeseries. */
-		timeSeriesDescriptor?: TimeSeriesDescriptor;
+		timeSeriesDescriptor?: TimeSeriesDescriptor | null;
 	}
 
 
@@ -1537,10 +1537,10 @@ export namespace MyNS {
 	export interface TimeSeriesData {
 
 		/** The values of the labels in the time series identifier, given in the same order as the label_descriptors field of the TimeSeriesDescriptor associated with this object. Each value must have a value of the type given in the corresponding entry of label_descriptors. */
-		labelValues?: Array<LabelValue>;
+		labelValues?: Array<LabelValue> | null;
 
 		/** The points in the time series. */
-		pointData?: Array<PointData>;
+		pointData?: Array<PointData> | null;
 	}
 
 
@@ -1548,10 +1548,10 @@ export namespace MyNS {
 	export interface TimeSeriesDescriptor {
 
 		/** Descriptors for the labels. */
-		labelDescriptors?: Array<LabelDescriptor>;
+		labelDescriptors?: Array<LabelDescriptor> | null;
 
 		/** Descriptors for the point data value columns. */
-		pointDescriptors?: Array<ValueDescriptor>;
+		pointDescriptors?: Array<ValueDescriptor> | null;
 	}
 
 
@@ -1559,13 +1559,13 @@ export namespace MyNS {
 	export interface ValueDescriptor {
 
 		/** The value key. */
-		key?: string;
+		key?: string | null;
 
 		/** The value stream kind. */
-		metricKind?: TimeSeriesMetricKind;
+		metricKind?: TimeSeriesMetricKind | null;
 
 		/** The value type. */
-		valueType?: TimeSeriesValueType;
+		valueType?: TimeSeriesValueType | null;
 	}
 
 
@@ -1578,7 +1578,7 @@ export namespace MyNS {
 	export interface SourceContext {
 
 		/** The path-qualified name of the .proto file that contained the associated protobuf element. For example: "google/protobuf/source_context.proto". */
-		fileName?: string;
+		fileName?: string | null;
 	}
 
 
@@ -1593,7 +1593,7 @@ export namespace MyNS {
 		 * projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID]
 		 * [TRACE_ID] is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array.[SPAN_ID] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array.
 		 */
-		spanName?: string;
+		spanName?: string | null;
 	}
 
 
@@ -1601,22 +1601,22 @@ export namespace MyNS {
 	export interface Type {
 
 		/** The list of fields. */
-		fields?: Array<Field>;
+		fields?: Array<Field> | null;
 
 		/** The fully qualified message name. */
-		name?: string;
+		name?: string | null;
 
 		/** The list of types appearing in oneof definitions in this type. */
-		oneofs?: Array<string>;
+		oneofs?: Array<string> | null;
 
 		/** The protocol buffer options. */
-		options?: Array<Option>;
+		options?: Array<Option> | null;
 
 		/** SourceContext represents information about the source of a protobuf element, like the file in which it is defined. */
-		sourceContext?: SourceContext;
+		sourceContext?: SourceContext | null;
 
 		/** The source syntax. */
-		syntax?: TypeSyntax;
+		syntax?: TypeSyntax | null;
 	}
 
 	export enum TypeSyntax { SYNTAX_PROTO2 = 0, SYNTAX_PROTO3 = 1 }
@@ -1626,7 +1626,7 @@ export namespace MyNS {
 	export interface VerifyNotificationChannelRequest {
 
 		/** Required. The verification code that was delivered to the channel as a result of invoking the SendNotificationChannelVerificationCode API method or that was retrieved from a verified channel via GetNotificationChannelVerificationCode. For example, one might have "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that the code is valid UTF-8; one should not make any assumptions regarding the structure or format of the code). */
-		code?: string;
+		code?: string | null;
 	}
 
 	@Injectable()

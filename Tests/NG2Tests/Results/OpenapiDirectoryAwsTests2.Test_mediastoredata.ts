@@ -18,35 +18,35 @@ export namespace MyNS {
 	}
 
 	export interface GetObjectResponse {
-		Body?: string;
-		StatusCode?: number;
+		Body?: string | null;
+		StatusCode?: number | null;
 	}
 
 	export interface RequestedRangeNotSatisfiableException {
 	}
 
 	export interface ListItemsResponse {
-		Items?: Array<Item>;
-		NextToken?: string;
+		Items?: Array<Item> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A metadata entry for a folder or object. */
 	export interface Item {
-		Name?: string;
-		Type?: ItemType;
-		ETag?: string;
-		LastModified?: Date;
-		ContentType?: string;
-		ContentLength?: number;
+		Name?: string | null;
+		Type?: ItemType | null;
+		ETag?: string | null;
+		LastModified?: Date | null;
+		ContentType?: string | null;
+		ContentLength?: number | null;
 	}
 
 	export enum ItemType { OBJECT = 0, FOLDER = 1 }
 
 	export interface PutObjectResponse {
-		ContentSHA256?: string;
-		ETag?: string;
-		StorageClass?: PutObjectResponseStorageClass;
+		ContentSHA256?: string | null;
+		ETag?: string | null;
+		StorageClass?: PutObjectResponseStorageClass | null;
 	}
 
 	export enum PutObjectResponseStorageClass { TEMPORAL = 0 }

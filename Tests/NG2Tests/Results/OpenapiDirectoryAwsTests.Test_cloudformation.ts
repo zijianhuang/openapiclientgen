@@ -13,17 +13,17 @@ export namespace MyNS {
 
 	/** The output for the <a>CreateChangeSet</a> action. */
 	export interface CreateChangeSetOutput {
-		Id?: string;
-		StackId?: string;
+		Id?: string | null;
+		StackId?: string | null;
 	}
 
 
 	/** The Parameter data type. */
 	export interface Parameter {
-		ParameterKey?: string;
-		ParameterValue?: string;
-		UsePreviousValue?: boolean;
-		ResolvedValue?: string;
+		ParameterKey?: string | null;
+		ParameterValue?: string | null;
+		UsePreviousValue?: boolean | null;
+		ResolvedValue?: string | null;
 	}
 
 	export enum Capability { CAPABILITY_IAM = 0, CAPABILITY_NAMED_IAM = 1, CAPABILITY_AUTO_EXPAND = 2 }
@@ -65,11 +65,11 @@ export namespace MyNS {
 
 	/** The output for a <a>CreateStack</a> action. */
 	export interface CreateStackOutput {
-		StackId?: string;
+		StackId?: string | null;
 	}
 
 	export interface CreateStackInstancesOutput {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface StackSetNotFoundException {
@@ -88,7 +88,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateStackSetOutput {
-		StackSetId?: string;
+		StackSetId?: string | null;
 	}
 
 	export interface NameAlreadyExistsException {
@@ -106,7 +106,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteStackInstancesOutput {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface DeleteStackSetOutput {
@@ -127,38 +127,38 @@ export namespace MyNS {
 
 	/** The output for the <a>DescribeAccountLimits</a> action. */
 	export interface DescribeAccountLimitsOutput {
-		AccountLimits?: Array<AccountLimit>;
-		NextToken?: string;
+		AccountLimits?: Array<AccountLimit> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>The AccountLimit data type. </p> <p>CloudFormation has the following limits per account:</p> <ul> <li> <p>Number of concurrent resources</p> </li> <li> <p>Number of stacks</p> </li> <li> <p>Number of stack outputs</p> </li> </ul> <p>For more information about these account limits, and other CloudFormation limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS CloudFormation Limits</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
 	export interface AccountLimit {
-		Name?: string;
-		Value?: number;
+		Name?: string | null;
+		Value?: number | null;
 	}
 
 
 	/** The output for the <a>DescribeChangeSet</a> action. */
 	export interface DescribeChangeSetOutput {
-		ChangeSetName?: string;
-		ChangeSetId?: string;
-		StackId?: string;
-		StackName?: string;
-		Description?: string;
-		Parameters?: Array<Parameter>;
-		CreationTime?: Date;
-		ExecutionStatus?: DescribeChangeSetOutputExecutionStatus;
-		Status?: DescribeChangeSetOutputStatus;
-		StatusReason?: string;
-		NotificationARNs?: Array<string>;
+		ChangeSetName?: string | null;
+		ChangeSetId?: string | null;
+		StackId?: string | null;
+		StackName?: string | null;
+		Description?: string | null;
+		Parameters?: Array<Parameter> | null;
+		CreationTime?: Date | null;
+		ExecutionStatus?: DescribeChangeSetOutputExecutionStatus | null;
+		Status?: DescribeChangeSetOutputStatus | null;
+		StatusReason?: string | null;
+		NotificationARNs?: Array<string> | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration;
-		Capabilities?: Array<Capability>;
-		Tags?: Array<Tag>;
-		Changes?: Array<Change>;
-		NextToken?: string;
+		RollbackConfiguration?: RollbackConfiguration | null;
+		Capabilities?: Array<Capability> | null;
+		Tags?: Array<Tag> | null;
+		Changes?: Array<Change> | null;
+		NextToken?: string | null;
 	}
 
 	export enum DescribeChangeSetOutputExecutionStatus { UNAVAILABLE = 0, AVAILABLE = 1, EXECUTE_IN_PROGRESS = 2, EXECUTE_COMPLETE = 3, EXECUTE_FAILED = 4, OBSOLETE = 5 }
@@ -168,17 +168,17 @@ export namespace MyNS {
 
 	/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 	export interface RollbackConfiguration {
-		RollbackTriggers?: Array<RollbackTrigger>;
-		MonitoringTimeInMinutes?: number;
+		RollbackTriggers?: Array<RollbackTrigger> | null;
+		MonitoringTimeInMinutes?: number | null;
 	}
 
 
 	/** The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change set. */
 	export interface Change {
-		Type?: ChangeType;
+		Type?: ChangeType | null;
 
 		/** The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set. */
-		ResourceChange?: ResourceChange;
+		ResourceChange?: ResourceChange | null;
 	}
 
 	export enum ChangeType { Resource = 0 }
@@ -186,13 +186,13 @@ export namespace MyNS {
 
 	/** The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set. */
 	export interface ResourceChange {
-		Action?: ResourceChangeAction;
-		LogicalResourceId?: string;
-		PhysicalResourceId?: string;
-		ResourceType?: string;
-		Replacement?: ResourceChangeReplacement;
-		Scope?: Array<ResourceAttribute>;
-		Details?: Array<ResourceChangeDetail>;
+		Action?: ResourceChangeAction | null;
+		LogicalResourceId?: string | null;
+		PhysicalResourceId?: string | null;
+		ResourceType?: string | null;
+		Replacement?: ResourceChangeReplacement | null;
+		Scope?: Array<ResourceAttribute> | null;
+		Details?: Array<ResourceChangeDetail> | null;
 	}
 
 	export enum ResourceChangeAction { Add = 0, Modify = 1, Remove = 2, Import = 3 }
@@ -206,18 +206,18 @@ export namespace MyNS {
 	export interface ResourceChangeDetail {
 
 		/** The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated. */
-		Target?: ResourceTargetDefinition;
-		Evaluation?: ResourceChangeDetailEvaluation;
-		ChangeSource?: ResourceChangeDetailChangeSource;
-		CausingEntity?: string;
+		Target?: ResourceTargetDefinition | null;
+		Evaluation?: ResourceChangeDetailEvaluation | null;
+		ChangeSource?: ResourceChangeDetailChangeSource | null;
+		CausingEntity?: string | null;
 	}
 
 
 	/** The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated. */
 	export interface ResourceTargetDefinition {
-		Attribute?: ResourceAttribute;
-		Name?: string;
-		RequiresRecreation?: ResourceTargetDefinitionRequiresRecreation;
+		Attribute?: ResourceAttribute | null;
+		Name?: string | null;
+		RequiresRecreation?: ResourceTargetDefinitionRequiresRecreation | null;
 	}
 
 	export enum ResourceTargetDefinitionRequiresRecreation { Never = 0, Conditionally = 1, Always = 2 }
@@ -232,10 +232,10 @@ export namespace MyNS {
 	export interface DescribeStackDriftDetectionStatusOutput {
 		StackId: string;
 		StackDriftDetectionId: string;
-		StackDriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
+		StackDriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus | null;
 		DetectionStatus: DescribeStackDriftDetectionStatusOutputDetectionStatus;
-		DetectionStatusReason?: string;
-		DriftedStackResourceCount?: number;
+		DetectionStatusReason?: string | null;
+		DriftedStackResourceCount?: number | null;
 		Timestamp: Date;
 	}
 
@@ -246,8 +246,8 @@ export namespace MyNS {
 
 	/** The output for a <a>DescribeStackEvents</a> action. */
 	export interface DescribeStackEventsOutput {
-		StackEvents?: Array<StackEvent>;
-		NextToken?: string;
+		StackEvents?: Array<StackEvent> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -256,14 +256,14 @@ export namespace MyNS {
 		StackId: string;
 		EventId: string;
 		StackName: string;
-		LogicalResourceId?: string;
-		PhysicalResourceId?: string;
-		ResourceType?: string;
+		LogicalResourceId?: string | null;
+		PhysicalResourceId?: string | null;
+		ResourceType?: string | null;
 		Timestamp: Date;
-		ResourceStatus?: StackEventResourceStatus;
-		ResourceStatusReason?: string;
-		ResourceProperties?: string;
-		ClientRequestToken?: string;
+		ResourceStatus?: StackEventResourceStatus | null;
+		ResourceStatusReason?: string | null;
+		ResourceProperties?: string | null;
+		ClientRequestToken?: string | null;
 	}
 
 	export enum StackEventResourceStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, CREATE_COMPLETE = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4, DELETE_COMPLETE = 5, DELETE_SKIPPED = 6, UPDATE_IN_PROGRESS = 7, UPDATE_FAILED = 8, UPDATE_COMPLETE = 9, IMPORT_FAILED = 10, IMPORT_COMPLETE = 11, IMPORT_IN_PROGRESS = 12, IMPORT_ROLLBACK_IN_PROGRESS = 13, IMPORT_ROLLBACK_FAILED = 14, IMPORT_ROLLBACK_COMPLETE = 15 }
@@ -271,22 +271,22 @@ export namespace MyNS {
 	export interface DescribeStackInstanceOutput {
 
 		/** An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. */
-		StackInstance?: StackInstance;
+		StackInstance?: StackInstance | null;
 	}
 
 
 	/** An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. */
 	export interface StackInstance {
-		StackSetId?: string;
-		Region?: string;
-		Account?: string;
-		StackId?: string;
-		ParameterOverrides?: Array<Parameter>;
-		Status?: StackInstanceStatus;
-		StatusReason?: string;
-		OrganizationalUnitId?: string;
-		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
-		LastDriftCheckTimestamp?: Date;
+		StackSetId?: string | null;
+		Region?: string | null;
+		Account?: string | null;
+		StackId?: string | null;
+		ParameterOverrides?: Array<Parameter> | null;
+		Status?: StackInstanceStatus | null;
+		StatusReason?: string | null;
+		OrganizationalUnitId?: string | null;
+		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus | null;
+		LastDriftCheckTimestamp?: Date | null;
 	}
 
 	export enum StackInstanceStatus { CURRENT = 0, OUTDATED = 1, INOPERABLE = 2 }
@@ -299,39 +299,39 @@ export namespace MyNS {
 	export interface DescribeStackResourceOutput {
 
 		/** Contains detailed information about the specified stack resource. */
-		StackResourceDetail?: StackResourceDetail;
+		StackResourceDetail?: StackResourceDetail | null;
 	}
 
 
 	/** Contains detailed information about the specified stack resource. */
 	export interface StackResourceDetail {
-		StackName?: string;
-		StackId?: string;
+		StackName?: string | null;
+		StackId?: string | null;
 		LogicalResourceId: string;
-		PhysicalResourceId?: string;
+		PhysicalResourceId?: string | null;
 		ResourceType: string;
 		LastUpdatedTimestamp: Date;
 		ResourceStatus: StackEventResourceStatus;
-		ResourceStatusReason?: string;
-		Description?: string;
-		Metadata?: string;
+		ResourceStatusReason?: string | null;
+		Description?: string | null;
+		Metadata?: string | null;
 
 		/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
-		DriftInformation?: StackResourceDriftInformation;
+		DriftInformation?: StackResourceDriftInformation | null;
 	}
 
 
 	/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
 	export interface StackResourceDriftInformation {
 		StackResourceDriftStatus: StackResourceDriftInformationStackResourceDriftStatus;
-		LastCheckTimestamp?: Date;
+		LastCheckTimestamp?: Date | null;
 	}
 
 	export enum StackResourceDriftInformationStackResourceDriftStatus { IN_SYNC = 0, MODIFIED = 1, DELETED = 2, NOT_CHECKED = 3 }
 
 	export interface DescribeStackResourceDriftsOutput {
 		StackResourceDrifts: Array<StackResourceDrift>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -339,12 +339,12 @@ export namespace MyNS {
 	export interface StackResourceDrift {
 		StackId: string;
 		LogicalResourceId: string;
-		PhysicalResourceId?: string;
-		PhysicalResourceIdContext?: Array<PhysicalResourceIdContextKeyValuePair>;
+		PhysicalResourceId?: string | null;
+		PhysicalResourceIdContext?: Array<PhysicalResourceIdContextKeyValuePair> | null;
 		ResourceType: string;
-		ExpectedProperties?: string;
-		ActualProperties?: string;
-		PropertyDifferences?: Array<PropertyDifference>;
+		ExpectedProperties?: string | null;
+		ActualProperties?: string | null;
+		PropertyDifferences?: Array<PropertyDifference> | null;
 		StackResourceDriftStatus: StackResourceDriftInformationStackResourceDriftStatus;
 		Timestamp: Date;
 	}
@@ -372,54 +372,54 @@ export namespace MyNS {
 
 	/** The output for a <a>DescribeStackResources</a> action. */
 	export interface DescribeStackResourcesOutput {
-		StackResources?: Array<StackResource>;
+		StackResources?: Array<StackResource> | null;
 	}
 
 
 	/** The StackResource data type. */
 	export interface StackResource {
-		StackName?: string;
-		StackId?: string;
+		StackName?: string | null;
+		StackId?: string | null;
 		LogicalResourceId: string;
-		PhysicalResourceId?: string;
+		PhysicalResourceId?: string | null;
 		ResourceType: string;
 		Timestamp: Date;
 		ResourceStatus: StackEventResourceStatus;
-		ResourceStatusReason?: string;
-		Description?: string;
+		ResourceStatusReason?: string | null;
+		Description?: string | null;
 
 		/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
-		DriftInformation?: StackResourceDriftInformation;
+		DriftInformation?: StackResourceDriftInformation | null;
 	}
 
 	export interface DescribeStackSetOutput {
 
 		/** A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires. */
-		StackSet?: StackSet;
+		StackSet?: StackSet | null;
 	}
 
 
 	/** A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.  */
 	export interface StackSet {
-		StackSetName?: string;
-		StackSetId?: string;
-		Description?: string;
-		Status?: StackSetStatus;
-		TemplateBody?: string;
-		Parameters?: Array<Parameter>;
-		Capabilities?: Array<Capability>;
-		Tags?: Array<Tag>;
-		StackSetARN?: string;
-		AdministrationRoleARN?: string;
-		ExecutionRoleName?: string;
+		StackSetName?: string | null;
+		StackSetId?: string | null;
+		Description?: string | null;
+		Status?: StackSetStatus | null;
+		TemplateBody?: string | null;
+		Parameters?: Array<Parameter> | null;
+		Capabilities?: Array<Capability> | null;
+		Tags?: Array<Tag> | null;
+		StackSetARN?: string | null;
+		AdministrationRoleARN?: string | null;
+		ExecutionRoleName?: string | null;
 
 		/** <p>Detailed information about the drift status of the stack set.</p> <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. </p> <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
-		StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails;
+		StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails | null;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
-		AutoDeployment?: AutoDeployment;
-		PermissionModel?: StackSetPermissionModel;
-		OrganizationalUnitIds?: Array<string>;
+		AutoDeployment?: AutoDeployment | null;
+		PermissionModel?: StackSetPermissionModel | null;
+		OrganizationalUnitIds?: Array<string> | null;
 	}
 
 	export enum StackSetStatus { ACTIVE = 0, DELETED = 1 }
@@ -427,14 +427,14 @@ export namespace MyNS {
 
 	/** <p>Detailed information about the drift status of the stack set.</p> <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. </p> <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
 	export interface StackSetDriftDetectionDetails {
-		DriftStatus?: StackSetDriftDetectionDetailsDriftStatus;
-		DriftDetectionStatus?: StackSetDriftDetectionDetailsDriftDetectionStatus;
-		LastDriftCheckTimestamp?: Date;
-		TotalStackInstancesCount?: number;
-		DriftedStackInstancesCount?: number;
-		InSyncStackInstancesCount?: number;
-		InProgressStackInstancesCount?: number;
-		FailedStackInstancesCount?: number;
+		DriftStatus?: StackSetDriftDetectionDetailsDriftStatus | null;
+		DriftDetectionStatus?: StackSetDriftDetectionDetailsDriftDetectionStatus | null;
+		LastDriftCheckTimestamp?: Date | null;
+		TotalStackInstancesCount?: number | null;
+		DriftedStackInstancesCount?: number | null;
+		InSyncStackInstancesCount?: number | null;
+		InProgressStackInstancesCount?: number | null;
+		FailedStackInstancesCount?: number | null;
 	}
 
 	export enum StackSetDriftDetectionDetailsDriftStatus { DRIFTED = 0, IN_SYNC = 1, NOT_CHECKED = 2 }
@@ -444,8 +444,8 @@ export namespace MyNS {
 
 	/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
 	export interface AutoDeployment {
-		Enabled?: boolean;
-		RetainStacksOnAccountRemoval?: boolean;
+		Enabled?: boolean | null;
+		RetainStacksOnAccountRemoval?: boolean | null;
 	}
 
 	export enum StackSetPermissionModel { SERVICE_MANAGED = 0, SELF_MANAGED = 1 }
@@ -453,30 +453,30 @@ export namespace MyNS {
 	export interface DescribeStackSetOperationOutput {
 
 		/** The structure that contains information about a stack set operation. */
-		StackSetOperation?: StackSetOperation;
+		StackSetOperation?: StackSetOperation | null;
 	}
 
 
 	/** The structure that contains information about a stack set operation.  */
 	export interface StackSetOperation {
-		OperationId?: string;
-		StackSetId?: string;
-		Action?: StackSetOperationAction;
-		Status?: StackSetOperationStatus;
+		OperationId?: string | null;
+		StackSetId?: string | null;
+		Action?: StackSetOperationAction | null;
+		Status?: StackSetOperationStatus | null;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences;
-		RetainStacks?: boolean;
-		AdministrationRoleARN?: string;
-		ExecutionRoleName?: string;
-		CreationTimestamp?: Date;
-		EndTimestamp?: Date;
+		OperationPreferences?: StackSetOperationPreferences | null;
+		RetainStacks?: boolean | null;
+		AdministrationRoleARN?: string | null;
+		ExecutionRoleName?: string | null;
+		CreationTimestamp?: Date | null;
+		EndTimestamp?: Date | null;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets;
+		DeploymentTargets?: DeploymentTargets | null;
 
 		/** <p>Detailed information about the drift status of the stack set.</p> <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. </p> <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
-		StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails;
+		StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails | null;
 	}
 
 	export enum StackSetOperationAction { CREATE = 0, UPDATE = 1, DELETE = 2, DETECT_DRIFT = 3 }
@@ -486,18 +486,18 @@ export namespace MyNS {
 
 	/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 	export interface StackSetOperationPreferences {
-		RegionOrder?: Array<string>;
-		FailureToleranceCount?: number;
-		FailureTolerancePercentage?: number;
-		MaxConcurrentCount?: number;
-		MaxConcurrentPercentage?: number;
+		RegionOrder?: Array<string> | null;
+		FailureToleranceCount?: number | null;
+		FailureTolerancePercentage?: number | null;
+		MaxConcurrentCount?: number | null;
+		MaxConcurrentPercentage?: number | null;
 	}
 
 
 	/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
 	export interface DeploymentTargets {
-		Accounts?: Array<string>;
-		OrganizationalUnitIds?: Array<string>;
+		Accounts?: Array<string> | null;
+		OrganizationalUnitIds?: Array<string> | null;
 	}
 
 	export interface OperationNotFoundException {
@@ -506,39 +506,39 @@ export namespace MyNS {
 
 	/** The output for a <a>DescribeStacks</a> action. */
 	export interface DescribeStacksOutput {
-		Stacks?: Array<Stack>;
-		NextToken?: string;
+		Stacks?: Array<Stack> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The Stack data type. */
 	export interface Stack {
-		StackId?: string;
+		StackId?: string | null;
 		StackName: string;
-		ChangeSetId?: string;
-		Description?: string;
-		Parameters?: Array<Parameter>;
+		ChangeSetId?: string | null;
+		Description?: string | null;
+		Parameters?: Array<Parameter> | null;
 		CreationTime: Date;
-		DeletionTime?: Date;
-		LastUpdatedTime?: Date;
+		DeletionTime?: Date | null;
+		LastUpdatedTime?: Date | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration;
+		RollbackConfiguration?: RollbackConfiguration | null;
 		StackStatus: StackStackStatus;
-		StackStatusReason?: string;
-		DisableRollback?: boolean;
-		NotificationARNs?: Array<string>;
-		TimeoutInMinutes?: number;
-		Capabilities?: Array<Capability>;
-		Outputs?: Array<Output>;
-		RoleARN?: string;
-		Tags?: Array<Tag>;
-		EnableTerminationProtection?: boolean;
-		ParentId?: string;
-		RootId?: string;
+		StackStatusReason?: string | null;
+		DisableRollback?: boolean | null;
+		NotificationARNs?: Array<string> | null;
+		TimeoutInMinutes?: number | null;
+		Capabilities?: Array<Capability> | null;
+		Outputs?: Array<Output> | null;
+		RoleARN?: string | null;
+		Tags?: Array<Tag> | null;
+		EnableTerminationProtection?: boolean | null;
+		ParentId?: string | null;
+		RootId?: string | null;
 
 		/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
-		DriftInformation?: StackDriftInformation;
+		DriftInformation?: StackDriftInformation | null;
 	}
 
 	export enum StackStackStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, CREATE_COMPLETE = 2, ROLLBACK_IN_PROGRESS = 3, ROLLBACK_FAILED = 4, ROLLBACK_COMPLETE = 5, DELETE_IN_PROGRESS = 6, DELETE_FAILED = 7, DELETE_COMPLETE = 8, UPDATE_IN_PROGRESS = 9, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = 10, UPDATE_COMPLETE = 11, UPDATE_ROLLBACK_IN_PROGRESS = 12, UPDATE_ROLLBACK_FAILED = 13, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = 14, UPDATE_ROLLBACK_COMPLETE = 15, REVIEW_IN_PROGRESS = 16, IMPORT_IN_PROGRESS = 17, IMPORT_COMPLETE = 18, IMPORT_ROLLBACK_IN_PROGRESS = 19, IMPORT_ROLLBACK_FAILED = 20, IMPORT_ROLLBACK_COMPLETE = 21 }
@@ -546,38 +546,38 @@ export namespace MyNS {
 
 	/** The Output data type. */
 	export interface Output {
-		OutputKey?: string;
-		OutputValue?: string;
-		Description?: string;
-		ExportName?: string;
+		OutputKey?: string | null;
+		OutputValue?: string | null;
+		Description?: string | null;
+		ExportName?: string | null;
 	}
 
 
 	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
 	export interface StackDriftInformation {
 		StackDriftStatus: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
-		LastCheckTimestamp?: Date;
+		LastCheckTimestamp?: Date | null;
 	}
 
 	export interface DescribeTypeOutput {
-		Arn?: string;
-		Type?: DescribeTypeOutputType;
-		TypeName?: string;
-		DefaultVersionId?: string;
-		IsDefaultVersion?: boolean;
-		Description?: string;
-		Schema?: string;
-		ProvisioningType?: DescribeTypeOutputProvisioningType;
-		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus;
+		Arn?: string | null;
+		Type?: DescribeTypeOutputType | null;
+		TypeName?: string | null;
+		DefaultVersionId?: string | null;
+		IsDefaultVersion?: boolean | null;
+		Description?: string | null;
+		Schema?: string | null;
+		ProvisioningType?: DescribeTypeOutputProvisioningType | null;
+		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
 
 		/** Contains logging configuration information for a type. */
-		LoggingConfig?: LoggingConfig;
-		ExecutionRoleArn?: string;
-		Visibility?: DescribeTypeOutputVisibility;
-		SourceUrl?: string;
-		DocumentationUrl?: string;
-		LastUpdated?: Date;
-		TimeCreated?: Date;
+		LoggingConfig?: LoggingConfig | null;
+		ExecutionRoleArn?: string | null;
+		Visibility?: DescribeTypeOutputVisibility | null;
+		SourceUrl?: string | null;
+		DocumentationUrl?: string | null;
+		LastUpdated?: Date | null;
+		TimeCreated?: Date | null;
 	}
 
 	export enum DescribeTypeOutputType { RESOURCE = 0 }
@@ -596,10 +596,10 @@ export namespace MyNS {
 	export enum DescribeTypeOutputVisibility { PUBLIC = 0, PRIVATE = 1 }
 
 	export interface DescribeTypeRegistrationOutput {
-		ProgressStatus?: DescribeTypeRegistrationOutputProgressStatus;
-		Description?: string;
-		TypeArn?: string;
-		TypeVersionArn?: string;
+		ProgressStatus?: DescribeTypeRegistrationOutputProgressStatus | null;
+		Description?: string | null;
+		TypeArn?: string | null;
+		TypeVersionArn?: string | null;
 	}
 
 	export enum DescribeTypeRegistrationOutputProgressStatus { COMPLETE = 0, IN_PROGRESS = 1, FAILED = 2 }
@@ -618,13 +618,13 @@ export namespace MyNS {
 	}
 
 	export interface DetectStackSetDriftOutput {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 
 	/** The output for a <a>EstimateTemplateCost</a> action. */
 	export interface EstimateTemplateCostOutput {
-		Url?: string;
+		Url?: string | null;
 	}
 
 
@@ -635,14 +635,14 @@ export namespace MyNS {
 
 	/** The output for the <a>GetStackPolicy</a> action. */
 	export interface GetStackPolicyOutput {
-		StackPolicyBody?: string;
+		StackPolicyBody?: string | null;
 	}
 
 
 	/** The output for <a>GetTemplate</a> action. */
 	export interface GetTemplateOutput {
-		TemplateBody?: string;
-		StagesAvailable?: Array<TemplateStage>;
+		TemplateBody?: string | null;
+		StagesAvailable?: Array<TemplateStage> | null;
 	}
 
 	export enum TemplateStage { Original = 0, Processed = 1 }
@@ -650,146 +650,146 @@ export namespace MyNS {
 
 	/** The output for the <a>GetTemplateSummary</a> action. */
 	export interface GetTemplateSummaryOutput {
-		Parameters?: Array<ParameterDeclaration>;
-		Description?: string;
-		Capabilities?: Array<Capability>;
-		CapabilitiesReason?: string;
-		ResourceTypes?: Array<string>;
-		Version?: string;
-		Metadata?: string;
-		DeclaredTransforms?: Array<string>;
-		ResourceIdentifierSummaries?: Array<ResourceIdentifierSummary>;
+		Parameters?: Array<ParameterDeclaration> | null;
+		Description?: string | null;
+		Capabilities?: Array<Capability> | null;
+		CapabilitiesReason?: string | null;
+		ResourceTypes?: Array<string> | null;
+		Version?: string | null;
+		Metadata?: string | null;
+		DeclaredTransforms?: Array<string> | null;
+		ResourceIdentifierSummaries?: Array<ResourceIdentifierSummary> | null;
 	}
 
 
 	/** The ParameterDeclaration data type. */
 	export interface ParameterDeclaration {
-		ParameterKey?: string;
-		DefaultValue?: string;
-		ParameterType?: string;
-		NoEcho?: boolean;
-		Description?: string;
+		ParameterKey?: string | null;
+		DefaultValue?: string | null;
+		ParameterType?: string | null;
+		NoEcho?: boolean | null;
+		Description?: string | null;
 
 		/** A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property. */
-		ParameterConstraints?: ParameterConstraints;
+		ParameterConstraints?: ParameterConstraints | null;
 	}
 
 
 	/** A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property. */
 	export interface ParameterConstraints {
-		AllowedValues?: Array<string>;
+		AllowedValues?: Array<string> | null;
 	}
 
 
 	/** Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type. */
 	export interface ResourceIdentifierSummary {
-		ResourceType?: string;
-		LogicalResourceIds?: Array<string>;
-		ResourceIdentifiers?: Array<string>;
+		ResourceType?: string | null;
+		LogicalResourceIds?: Array<string> | null;
+		ResourceIdentifiers?: Array<string> | null;
 	}
 
 
 	/** The output for the <a>ListChangeSets</a> action. */
 	export interface ListChangeSetsOutput {
-		Summaries?: Array<ChangeSetSummary>;
-		NextToken?: string;
+		Summaries?: Array<ChangeSetSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated. */
 	export interface ChangeSetSummary {
-		StackId?: string;
-		StackName?: string;
-		ChangeSetId?: string;
-		ChangeSetName?: string;
-		ExecutionStatus?: DescribeChangeSetOutputExecutionStatus;
-		Status?: DescribeChangeSetOutputStatus;
-		StatusReason?: string;
-		CreationTime?: Date;
-		Description?: string;
+		StackId?: string | null;
+		StackName?: string | null;
+		ChangeSetId?: string | null;
+		ChangeSetName?: string | null;
+		ExecutionStatus?: DescribeChangeSetOutputExecutionStatus | null;
+		Status?: DescribeChangeSetOutputStatus | null;
+		StatusReason?: string | null;
+		CreationTime?: Date | null;
+		Description?: string | null;
 	}
 
 	export interface ListExportsOutput {
-		Exports?: Array<Export>;
-		NextToken?: string;
+		Exports?: Array<Export> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The <code>Export</code> structure describes the exported output values for a stack. */
 	export interface Export {
-		ExportingStackId?: string;
-		Name?: string;
-		Value?: string;
+		ExportingStackId?: string | null;
+		Name?: string | null;
+		Value?: string | null;
 	}
 
 	export interface ListImportsOutput {
-		Imports?: Array<string>;
-		NextToken?: string;
+		Imports?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListStackInstancesOutput {
-		Summaries?: Array<StackInstanceSummary>;
-		NextToken?: string;
+		Summaries?: Array<StackInstanceSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The structure that contains summary information about a stack instance. */
 	export interface StackInstanceSummary {
-		StackSetId?: string;
-		Region?: string;
-		Account?: string;
-		StackId?: string;
-		Status?: StackInstanceStatus;
-		StatusReason?: string;
-		OrganizationalUnitId?: string;
-		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
-		LastDriftCheckTimestamp?: Date;
+		StackSetId?: string | null;
+		Region?: string | null;
+		Account?: string | null;
+		StackId?: string | null;
+		Status?: StackInstanceStatus | null;
+		StatusReason?: string | null;
+		OrganizationalUnitId?: string | null;
+		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus | null;
+		LastDriftCheckTimestamp?: Date | null;
 	}
 
 
 	/** The output for a <a>ListStackResources</a> action. */
 	export interface ListStackResourcesOutput {
-		StackResourceSummaries?: Array<StackResourceSummary>;
-		NextToken?: string;
+		StackResourceSummaries?: Array<StackResourceSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains high-level information about the specified stack resource. */
 	export interface StackResourceSummary {
 		LogicalResourceId: string;
-		PhysicalResourceId?: string;
+		PhysicalResourceId?: string | null;
 		ResourceType: string;
 		LastUpdatedTimestamp: Date;
 		ResourceStatus: StackEventResourceStatus;
-		ResourceStatusReason?: string;
+		ResourceStatusReason?: string | null;
 
 		/** Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
-		DriftInformation?: StackResourceDriftInformationSummary;
+		DriftInformation?: StackResourceDriftInformationSummary | null;
 	}
 
 
 	/** Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
 	export interface StackResourceDriftInformationSummary {
 		StackResourceDriftStatus: StackResourceDriftInformationStackResourceDriftStatus;
-		LastCheckTimestamp?: Date;
+		LastCheckTimestamp?: Date | null;
 	}
 
 	export interface ListStackSetOperationResultsOutput {
-		Summaries?: Array<StackSetOperationResultSummary>;
-		NextToken?: string;
+		Summaries?: Array<StackSetOperationResultSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The structure that contains information about a specified operation's results for a given account in a given Region. */
 	export interface StackSetOperationResultSummary {
-		Account?: string;
-		Region?: string;
-		Status?: StackSetOperationResultSummaryStatus;
-		StatusReason?: string;
+		Account?: string | null;
+		Region?: string | null;
+		Status?: StackSetOperationResultSummaryStatus | null;
+		StatusReason?: string | null;
 
 		/** <p>Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.</p> <p>For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p> */
-		AccountGateResult?: AccountGateResult;
-		OrganizationalUnitId?: string;
+		AccountGateResult?: AccountGateResult | null;
+		OrganizationalUnitId?: string | null;
 	}
 
 	export enum StackSetOperationResultSummaryStatus { PENDING = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4 }
@@ -797,117 +797,117 @@ export namespace MyNS {
 
 	/** <p>Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.</p> <p>For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p> */
 	export interface AccountGateResult {
-		Status?: AccountGateResultStatus;
-		StatusReason?: string;
+		Status?: AccountGateResultStatus | null;
+		StatusReason?: string | null;
 	}
 
 	export enum AccountGateResultStatus { SUCCEEDED = 0, FAILED = 1, SKIPPED = 2 }
 
 	export interface ListStackSetOperationsOutput {
-		Summaries?: Array<StackSetOperationSummary>;
-		NextToken?: string;
+		Summaries?: Array<StackSetOperationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The structures that contain summary information about the specified operation. */
 	export interface StackSetOperationSummary {
-		OperationId?: string;
-		Action?: StackSetOperationAction;
-		Status?: StackSetOperationStatus;
-		CreationTimestamp?: Date;
-		EndTimestamp?: Date;
+		OperationId?: string | null;
+		Action?: StackSetOperationAction | null;
+		Status?: StackSetOperationStatus | null;
+		CreationTimestamp?: Date | null;
+		EndTimestamp?: Date | null;
 	}
 
 	export interface ListStackSetsOutput {
-		Summaries?: Array<StackSetSummary>;
-		NextToken?: string;
+		Summaries?: Array<StackSetSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The structures that contain summary information about the specified stack set. */
 	export interface StackSetSummary {
-		StackSetName?: string;
-		StackSetId?: string;
-		Description?: string;
-		Status?: StackSetStatus;
+		StackSetName?: string | null;
+		StackSetId?: string | null;
+		Description?: string | null;
+		Status?: StackSetStatus | null;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
-		AutoDeployment?: AutoDeployment;
-		PermissionModel?: StackSetPermissionModel;
-		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
-		LastDriftCheckTimestamp?: Date;
+		AutoDeployment?: AutoDeployment | null;
+		PermissionModel?: StackSetPermissionModel | null;
+		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus | null;
+		LastDriftCheckTimestamp?: Date | null;
 	}
 
 
 	/** The output for <a>ListStacks</a> action. */
 	export interface ListStacksOutput {
-		StackSummaries?: Array<StackSummary>;
-		NextToken?: string;
+		StackSummaries?: Array<StackSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The StackSummary Data Type */
 	export interface StackSummary {
-		StackId?: string;
+		StackId?: string | null;
 		StackName: string;
-		TemplateDescription?: string;
+		TemplateDescription?: string | null;
 		CreationTime: Date;
-		LastUpdatedTime?: Date;
-		DeletionTime?: Date;
+		LastUpdatedTime?: Date | null;
+		DeletionTime?: Date | null;
 		StackStatus: StackStackStatus;
-		StackStatusReason?: string;
-		ParentId?: string;
-		RootId?: string;
+		StackStatusReason?: string | null;
+		ParentId?: string | null;
+		RootId?: string | null;
 
 		/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
-		DriftInformation?: StackDriftInformationSummary;
+		DriftInformation?: StackDriftInformationSummary | null;
 	}
 
 
 	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
 	export interface StackDriftInformationSummary {
 		StackDriftStatus: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
-		LastCheckTimestamp?: Date;
+		LastCheckTimestamp?: Date | null;
 	}
 
 	export enum StackStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, CREATE_COMPLETE = 2, ROLLBACK_IN_PROGRESS = 3, ROLLBACK_FAILED = 4, ROLLBACK_COMPLETE = 5, DELETE_IN_PROGRESS = 6, DELETE_FAILED = 7, DELETE_COMPLETE = 8, UPDATE_IN_PROGRESS = 9, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = 10, UPDATE_COMPLETE = 11, UPDATE_ROLLBACK_IN_PROGRESS = 12, UPDATE_ROLLBACK_FAILED = 13, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = 14, UPDATE_ROLLBACK_COMPLETE = 15, REVIEW_IN_PROGRESS = 16, IMPORT_IN_PROGRESS = 17, IMPORT_COMPLETE = 18, IMPORT_ROLLBACK_IN_PROGRESS = 19, IMPORT_ROLLBACK_FAILED = 20, IMPORT_ROLLBACK_COMPLETE = 21 }
 
 	export interface ListTypeRegistrationsOutput {
-		RegistrationTokenList?: Array<string>;
-		NextToken?: string;
+		RegistrationTokenList?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTypeVersionsOutput {
-		TypeVersionSummaries?: Array<TypeVersionSummary>;
-		NextToken?: string;
+		TypeVersionSummaries?: Array<TypeVersionSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains summary information about a specific version of a CloudFormation type. */
 	export interface TypeVersionSummary {
-		Type?: DescribeTypeOutputType;
-		TypeName?: string;
-		VersionId?: string;
-		IsDefaultVersion?: boolean;
-		Arn?: string;
-		TimeCreated?: Date;
-		Description?: string;
+		Type?: DescribeTypeOutputType | null;
+		TypeName?: string | null;
+		VersionId?: string | null;
+		IsDefaultVersion?: boolean | null;
+		Arn?: string | null;
+		TimeCreated?: Date | null;
+		Description?: string | null;
 	}
 
 	export interface ListTypesOutput {
-		TypeSummaries?: Array<TypeSummary>;
-		NextToken?: string;
+		TypeSummaries?: Array<TypeSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains summary information about the specified CloudFormation type. */
 	export interface TypeSummary {
-		Type?: DescribeTypeOutputType;
-		TypeName?: string;
-		DefaultVersionId?: string;
-		TypeArn?: string;
-		LastUpdated?: Date;
-		Description?: string;
+		Type?: DescribeTypeOutputType | null;
+		TypeName?: string | null;
+		DefaultVersionId?: string | null;
+		TypeArn?: string | null;
+		LastUpdated?: Date | null;
+		Description?: string | null;
 	}
 
 	export interface RecordHandlerProgressOutput {
@@ -920,7 +920,7 @@ export namespace MyNS {
 	}
 
 	export interface RegisterTypeOutput {
-		RegistrationToken?: string;
+		RegistrationToken?: string | null;
 	}
 
 	export interface SetTypeDefaultVersionOutput {
@@ -932,38 +932,38 @@ export namespace MyNS {
 
 	/** The output for an <a>UpdateStack</a> action. */
 	export interface UpdateStackOutput {
-		StackId?: string;
+		StackId?: string | null;
 	}
 
 	export interface UpdateStackInstancesOutput {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface UpdateStackSetOutput {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface UpdateTerminationProtectionOutput {
-		StackId?: string;
+		StackId?: string | null;
 	}
 
 
 	/** The output for <a>ValidateTemplate</a> action. */
 	export interface ValidateTemplateOutput {
-		Parameters?: Array<TemplateParameter>;
-		Description?: string;
-		Capabilities?: Array<Capability>;
-		CapabilitiesReason?: string;
-		DeclaredTransforms?: Array<string>;
+		Parameters?: Array<TemplateParameter> | null;
+		Description?: string | null;
+		Capabilities?: Array<Capability> | null;
+		CapabilitiesReason?: string | null;
+		DeclaredTransforms?: Array<string> | null;
 	}
 
 
 	/** The TemplateParameter data type. */
 	export interface TemplateParameter {
-		ParameterKey?: string;
-		DefaultValue?: string;
-		NoEcho?: boolean;
-		Description?: string;
+		ParameterKey?: string | null;
+		DefaultValue?: string | null;
+		NoEcho?: boolean | null;
+		Description?: string | null;
 	}
 
 	export enum AccountGateStatus { SUCCEEDED = 0, FAILED = 1, SKIPPED = 2 }
@@ -972,7 +972,7 @@ export namespace MyNS {
 	/** The input for the <a>CancelUpdateStack</a> action. */
 	export interface CancelUpdateStackInput {
 		StackName: string;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 	export enum ChangeAction { Add = 0, Modify = 1, Remove = 2, Import = 3 }
@@ -989,32 +989,32 @@ export namespace MyNS {
 	/** The input for the <a>ContinueUpdateRollback</a> action. */
 	export interface ContinueUpdateRollbackInput {
 		StackName: string;
-		RoleARN?: string;
-		ResourcesToSkip?: Array<string>;
-		ClientRequestToken?: string;
+		RoleARN?: string | null;
+		ResourcesToSkip?: Array<string> | null;
+		ClientRequestToken?: string | null;
 	}
 
 
 	/** The input for the <a>CreateChangeSet</a> action. */
 	export interface CreateChangeSetInput {
 		StackName: string;
-		TemplateBody?: string;
-		TemplateURL?: string;
-		UsePreviousTemplate?: boolean;
-		Parameters?: Array<Parameter>;
-		Capabilities?: Array<Capability>;
-		ResourceTypes?: Array<string>;
-		RoleARN?: string;
+		TemplateBody?: string | null;
+		TemplateURL?: string | null;
+		UsePreviousTemplate?: boolean | null;
+		Parameters?: Array<Parameter> | null;
+		Capabilities?: Array<Capability> | null;
+		ResourceTypes?: Array<string> | null;
+		RoleARN?: string | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration;
-		NotificationARNs?: Array<string>;
-		Tags?: Array<Tag>;
+		RollbackConfiguration?: RollbackConfiguration | null;
+		NotificationARNs?: Array<string> | null;
+		Tags?: Array<Tag> | null;
 		ChangeSetName: string;
-		ClientToken?: string;
-		Description?: string;
-		ChangeSetType?: ChangeSetType;
-		ResourcesToImport?: Array<ResourceToImport>;
+		ClientToken?: string | null;
+		Description?: string | null;
+		ChangeSetType?: ChangeSetType | null;
+		ResourcesToImport?: Array<ResourceToImport> | null;
 	}
 
 	export enum OnFailure { DO_NOTHING = 0, ROLLBACK = 1, DELETE = 2 }
@@ -1023,87 +1023,87 @@ export namespace MyNS {
 	/** The input for <a>CreateStack</a> action. */
 	export interface CreateStackInput {
 		StackName: string;
-		TemplateBody?: string;
-		TemplateURL?: string;
-		Parameters?: Array<Parameter>;
-		DisableRollback?: boolean;
+		TemplateBody?: string | null;
+		TemplateURL?: string | null;
+		Parameters?: Array<Parameter> | null;
+		DisableRollback?: boolean | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration;
-		TimeoutInMinutes?: number;
-		NotificationARNs?: Array<string>;
-		Capabilities?: Array<Capability>;
-		ResourceTypes?: Array<string>;
-		RoleARN?: string;
-		OnFailure?: OnFailure;
-		StackPolicyBody?: string;
-		StackPolicyURL?: string;
-		Tags?: Array<Tag>;
-		ClientRequestToken?: string;
-		EnableTerminationProtection?: boolean;
+		RollbackConfiguration?: RollbackConfiguration | null;
+		TimeoutInMinutes?: number | null;
+		NotificationARNs?: Array<string> | null;
+		Capabilities?: Array<Capability> | null;
+		ResourceTypes?: Array<string> | null;
+		RoleARN?: string | null;
+		OnFailure?: OnFailure | null;
+		StackPolicyBody?: string | null;
+		StackPolicyURL?: string | null;
+		Tags?: Array<Tag> | null;
+		ClientRequestToken?: string | null;
+		EnableTerminationProtection?: boolean | null;
 	}
 
 	export interface CreateStackInstancesInput {
 		StackSetName: string;
-		Accounts?: Array<string>;
+		Accounts?: Array<string> | null;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets;
+		DeploymentTargets?: DeploymentTargets | null;
 		Regions: Array<string>;
-		ParameterOverrides?: Array<Parameter>;
+		ParameterOverrides?: Array<Parameter> | null;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences;
-		OperationId?: string;
+		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationId?: string | null;
 	}
 
 	export enum PermissionModels { SERVICE_MANAGED = 0, SELF_MANAGED = 1 }
 
 	export interface CreateStackSetInput {
 		StackSetName: string;
-		Description?: string;
-		TemplateBody?: string;
-		TemplateURL?: string;
-		Parameters?: Array<Parameter>;
-		Capabilities?: Array<Capability>;
-		Tags?: Array<Tag>;
-		AdministrationRoleARN?: string;
-		ExecutionRoleName?: string;
-		PermissionModel?: StackSetPermissionModel;
+		Description?: string | null;
+		TemplateBody?: string | null;
+		TemplateURL?: string | null;
+		Parameters?: Array<Parameter> | null;
+		Capabilities?: Array<Capability> | null;
+		Tags?: Array<Tag> | null;
+		AdministrationRoleARN?: string | null;
+		ExecutionRoleName?: string | null;
+		PermissionModel?: StackSetPermissionModel | null;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
-		AutoDeployment?: AutoDeployment;
-		ClientRequestToken?: string;
+		AutoDeployment?: AutoDeployment | null;
+		ClientRequestToken?: string | null;
 	}
 
 
 	/** The input for the <a>DeleteChangeSet</a> action. */
 	export interface DeleteChangeSetInput {
 		ChangeSetName: string;
-		StackName?: string;
+		StackName?: string | null;
 	}
 
 
 	/** The input for <a>DeleteStack</a> action. */
 	export interface DeleteStackInput {
 		StackName: string;
-		RetainResources?: Array<string>;
-		RoleARN?: string;
-		ClientRequestToken?: string;
+		RetainResources?: Array<string> | null;
+		RoleARN?: string | null;
+		ClientRequestToken?: string | null;
 	}
 
 	export interface DeleteStackInstancesInput {
 		StackSetName: string;
-		Accounts?: Array<string>;
+		Accounts?: Array<string> | null;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets;
+		DeploymentTargets?: DeploymentTargets | null;
 		Regions: Array<string>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences;
+		OperationPreferences?: StackSetOperationPreferences | null;
 		RetainStacks: boolean;
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface DeleteStackSetInput {
@@ -1115,24 +1115,24 @@ export namespace MyNS {
 	export enum RegistryType { RESOURCE = 0 }
 
 	export interface DeregisterTypeInput {
-		Arn?: string;
-		Type?: DescribeTypeOutputType;
-		TypeName?: string;
-		VersionId?: string;
+		Arn?: string | null;
+		Type?: DescribeTypeOutputType | null;
+		TypeName?: string | null;
+		VersionId?: string | null;
 	}
 
 
 	/** The input for the <a>DescribeAccountLimits</a> action. */
 	export interface DescribeAccountLimitsInput {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** The input for the <a>DescribeChangeSet</a> action. */
 	export interface DescribeChangeSetInput {
 		ChangeSetName: string;
-		StackName?: string;
-		NextToken?: string;
+		StackName?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeStackDriftDetectionStatusInput {
@@ -1146,8 +1146,8 @@ export namespace MyNS {
 
 	/** The input for <a>DescribeStackEvents</a> action. */
 	export interface DescribeStackEventsInput {
-		StackName?: string;
-		NextToken?: string;
+		StackName?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeStackInstanceInput {
@@ -1158,9 +1158,9 @@ export namespace MyNS {
 
 	export interface DescribeStackResourceDriftsInput {
 		StackName: string;
-		StackResourceDriftStatusFilters?: Array<StackResourceDriftStatus>;
-		NextToken?: string;
-		MaxResults?: number;
+		StackResourceDriftStatusFilters?: Array<StackResourceDriftStatus> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -1173,9 +1173,9 @@ export namespace MyNS {
 
 	/** The input for <a>DescribeStackResources</a> action. */
 	export interface DescribeStackResourcesInput {
-		StackName?: string;
-		LogicalResourceId?: string;
-		PhysicalResourceId?: string;
+		StackName?: string | null;
+		LogicalResourceId?: string | null;
+		PhysicalResourceId?: string | null;
 	}
 
 	export interface DescribeStackSetInput {
@@ -1190,15 +1190,15 @@ export namespace MyNS {
 
 	/** The input for <a>DescribeStacks</a> action. */
 	export interface DescribeStacksInput {
-		StackName?: string;
-		NextToken?: string;
+		StackName?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeTypeInput {
-		Type?: DescribeTypeOutputType;
-		TypeName?: string;
-		Arn?: string;
-		VersionId?: string;
+		Type?: DescribeTypeOutputType | null;
+		TypeName?: string | null;
+		Arn?: string | null;
+		VersionId?: string | null;
 	}
 
 	export enum ProvisioningType { NON_PROVISIONABLE = 0, IMMUTABLE = 1, FULLY_MUTABLE = 2 }
@@ -1213,7 +1213,7 @@ export namespace MyNS {
 
 	export interface DetectStackDriftInput {
 		StackName: string;
-		LogicalResourceIds?: Array<string>;
+		LogicalResourceIds?: Array<string> | null;
 	}
 
 	export interface DetectStackResourceDriftInput {
@@ -1225,8 +1225,8 @@ export namespace MyNS {
 		StackSetName: string;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences;
-		OperationId?: string;
+		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationId?: string | null;
 	}
 
 	export enum DifferenceType { ADD = 0, REMOVE = 1, NOT_EQUAL = 2 }
@@ -1234,9 +1234,9 @@ export namespace MyNS {
 
 	/** The input for an <a>EstimateTemplateCost</a> action. */
 	export interface EstimateTemplateCostInput {
-		TemplateBody?: string;
-		TemplateURL?: string;
-		Parameters?: Array<Parameter>;
+		TemplateBody?: string | null;
+		TemplateURL?: string | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 	export enum EvaluationType { Static = 0, Dynamic = 1 }
@@ -1245,8 +1245,8 @@ export namespace MyNS {
 	/** The input for the <a>ExecuteChangeSet</a> action. */
 	export interface ExecuteChangeSetInput {
 		ChangeSetName: string;
-		StackName?: string;
-		ClientRequestToken?: string;
+		StackName?: string | null;
+		ClientRequestToken?: string | null;
 	}
 
 
@@ -1258,18 +1258,18 @@ export namespace MyNS {
 
 	/** The input for a <a>GetTemplate</a> action. */
 	export interface GetTemplateInput {
-		StackName?: string;
-		ChangeSetName?: string;
-		TemplateStage?: TemplateStage;
+		StackName?: string | null;
+		ChangeSetName?: string | null;
+		TemplateStage?: TemplateStage | null;
 	}
 
 
 	/** The input for the <a>GetTemplateSummary</a> action. */
 	export interface GetTemplateSummaryInput {
-		TemplateBody?: string;
-		TemplateURL?: string;
-		StackName?: string;
-		StackSetName?: string;
+		TemplateBody?: string | null;
+		TemplateURL?: string | null;
+		StackName?: string | null;
+		StackSetName?: string | null;
 	}
 
 	export enum HandlerErrorCode { NotUpdatable = 0, InvalidRequest = 1, AccessDenied = 2, InvalidCredentials = 3, AlreadyExists = 4, NotFound = 5, ResourceConflict = 6, Throttling = 7, ServiceLimitExceeded = 8, NotStabilized = 9, GeneralServiceException = 10, ServiceInternalError = 11, NetworkFailure = 12, InternalFailure = 13 }
@@ -1278,83 +1278,83 @@ export namespace MyNS {
 	/** The input for the <a>ListChangeSets</a> action. */
 	export interface ListChangeSetsInput {
 		StackName: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListExportsInput {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListImportsInput {
 		ExportName: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListStackInstancesInput {
 		StackSetName: string;
-		NextToken?: string;
-		MaxResults?: number;
-		StackInstanceAccount?: string;
-		StackInstanceRegion?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		StackInstanceAccount?: string | null;
+		StackInstanceRegion?: string | null;
 	}
 
 
 	/** The input for the <a>ListStackResource</a> action. */
 	export interface ListStackResourcesInput {
 		StackName: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListStackSetOperationResultsInput {
 		StackSetName: string;
 		OperationId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListStackSetOperationsInput {
 		StackSetName: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListStackSetsInput {
-		NextToken?: string;
-		MaxResults?: number;
-		Status?: StackSetStatus;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Status?: StackSetStatus | null;
 	}
 
 
 	/** The input for <a>ListStacks</a> action. */
 	export interface ListStacksInput {
-		NextToken?: string;
-		StackStatusFilter?: Array<StackStatus>;
+		NextToken?: string | null;
+		StackStatusFilter?: Array<StackStatus> | null;
 	}
 
 	export interface ListTypeRegistrationsInput {
-		Type?: DescribeTypeOutputType;
-		TypeName?: string;
-		TypeArn?: string;
-		RegistrationStatusFilter?: DescribeTypeRegistrationOutputProgressStatus;
-		MaxResults?: number;
-		NextToken?: string;
+		Type?: DescribeTypeOutputType | null;
+		TypeName?: string | null;
+		TypeArn?: string | null;
+		RegistrationStatusFilter?: DescribeTypeRegistrationOutputProgressStatus | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTypeVersionsInput {
-		Type?: DescribeTypeOutputType;
-		TypeName?: string;
-		Arn?: string;
-		MaxResults?: number;
-		NextToken?: string;
-		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus;
+		Type?: DescribeTypeOutputType | null;
+		TypeName?: string | null;
+		Arn?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
 	}
 
 	export interface ListTypesInput {
-		Visibility?: DescribeTypeOutputVisibility;
-		ProvisioningType?: DescribeTypeOutputProvisioningType;
-		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus;
-		MaxResults?: number;
-		NextToken?: string;
+		Visibility?: DescribeTypeOutputVisibility | null;
+		ProvisioningType?: DescribeTypeOutputProvisioningType | null;
+		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum OperationStatus { PENDING = 0, IN_PROGRESS = 1, SUCCESS = 2, FAILED = 3 }
@@ -1362,22 +1362,22 @@ export namespace MyNS {
 	export interface RecordHandlerProgressInput {
 		BearerToken: string;
 		OperationStatus: OperationStatus;
-		CurrentOperationStatus?: OperationStatus;
-		StatusMessage?: string;
-		ErrorCode?: HandlerErrorCode;
-		ResourceModel?: string;
-		ClientRequestToken?: string;
+		CurrentOperationStatus?: OperationStatus | null;
+		StatusMessage?: string | null;
+		ErrorCode?: HandlerErrorCode | null;
+		ResourceModel?: string | null;
+		ClientRequestToken?: string | null;
 	}
 
 	export interface RegisterTypeInput {
-		Type?: DescribeTypeOutputType;
+		Type?: DescribeTypeOutputType | null;
 		TypeName: string;
 		SchemaHandlerPackage: string;
 
 		/** Contains logging configuration information for a type. */
-		LoggingConfig?: LoggingConfig;
-		ExecutionRoleArn?: string;
-		ClientRequestToken?: string;
+		LoggingConfig?: LoggingConfig | null;
+		ExecutionRoleArn?: string | null;
+		ClientRequestToken?: string | null;
 	}
 
 	export enum Replacement { True = 0, False = 1, Conditional = 2 }
@@ -1392,15 +1392,15 @@ export namespace MyNS {
 	/** The input for the <a>SetStackPolicy</a> action. */
 	export interface SetStackPolicyInput {
 		StackName: string;
-		StackPolicyBody?: string;
-		StackPolicyURL?: string;
+		StackPolicyBody?: string | null;
+		StackPolicyURL?: string | null;
 	}
 
 	export interface SetTypeDefaultVersionInput {
-		Arn?: string;
-		Type?: DescribeTypeOutputType;
-		TypeName?: string;
-		VersionId?: string;
+		Arn?: string | null;
+		Type?: DescribeTypeOutputType | null;
+		TypeName?: string | null;
+		VersionId?: string | null;
 	}
 
 
@@ -1427,63 +1427,63 @@ export namespace MyNS {
 	/** The input for an <a>UpdateStack</a> action. */
 	export interface UpdateStackInput {
 		StackName: string;
-		TemplateBody?: string;
-		TemplateURL?: string;
-		UsePreviousTemplate?: boolean;
-		StackPolicyDuringUpdateBody?: string;
-		StackPolicyDuringUpdateURL?: string;
-		Parameters?: Array<Parameter>;
-		Capabilities?: Array<Capability>;
-		ResourceTypes?: Array<string>;
-		RoleARN?: string;
+		TemplateBody?: string | null;
+		TemplateURL?: string | null;
+		UsePreviousTemplate?: boolean | null;
+		StackPolicyDuringUpdateBody?: string | null;
+		StackPolicyDuringUpdateURL?: string | null;
+		Parameters?: Array<Parameter> | null;
+		Capabilities?: Array<Capability> | null;
+		ResourceTypes?: Array<string> | null;
+		RoleARN?: string | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration;
-		StackPolicyBody?: string;
-		StackPolicyURL?: string;
-		NotificationARNs?: Array<string>;
-		Tags?: Array<Tag>;
-		ClientRequestToken?: string;
+		RollbackConfiguration?: RollbackConfiguration | null;
+		StackPolicyBody?: string | null;
+		StackPolicyURL?: string | null;
+		NotificationARNs?: Array<string> | null;
+		Tags?: Array<Tag> | null;
+		ClientRequestToken?: string | null;
 	}
 
 	export interface UpdateStackInstancesInput {
 		StackSetName: string;
-		Accounts?: Array<string>;
+		Accounts?: Array<string> | null;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets;
+		DeploymentTargets?: DeploymentTargets | null;
 		Regions: Array<string>;
-		ParameterOverrides?: Array<Parameter>;
+		ParameterOverrides?: Array<Parameter> | null;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences;
-		OperationId?: string;
+		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationId?: string | null;
 	}
 
 	export interface UpdateStackSetInput {
 		StackSetName: string;
-		Description?: string;
-		TemplateBody?: string;
-		TemplateURL?: string;
-		UsePreviousTemplate?: boolean;
-		Parameters?: Array<Parameter>;
-		Capabilities?: Array<Capability>;
-		Tags?: Array<Tag>;
+		Description?: string | null;
+		TemplateBody?: string | null;
+		TemplateURL?: string | null;
+		UsePreviousTemplate?: boolean | null;
+		Parameters?: Array<Parameter> | null;
+		Capabilities?: Array<Capability> | null;
+		Tags?: Array<Tag> | null;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences;
-		AdministrationRoleARN?: string;
-		ExecutionRoleName?: string;
+		OperationPreferences?: StackSetOperationPreferences | null;
+		AdministrationRoleARN?: string | null;
+		ExecutionRoleName?: string | null;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets;
-		PermissionModel?: StackSetPermissionModel;
+		DeploymentTargets?: DeploymentTargets | null;
+		PermissionModel?: StackSetPermissionModel | null;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
-		AutoDeployment?: AutoDeployment;
-		OperationId?: string;
-		Accounts?: Array<string>;
-		Regions?: Array<string>;
+		AutoDeployment?: AutoDeployment | null;
+		OperationId?: string | null;
+		Accounts?: Array<string> | null;
+		Regions?: Array<string> | null;
 	}
 
 	export interface UpdateTerminationProtectionInput {
@@ -1494,8 +1494,8 @@ export namespace MyNS {
 
 	/** The input for <a>ValidateTemplate</a> action. */
 	export interface ValidateTemplateInput {
-		TemplateBody?: string;
-		TemplateURL?: string;
+		TemplateBody?: string | null;
+		TemplateURL?: string | null;
 	}
 
 	@Injectable()
@@ -2248,8 +2248,8 @@ export namespace MyNS {
 	export enum POST_ContinueUpdateRollbackVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateChangeSetRollbackConfiguration {
-		RollbackTriggers?: Array<RollbackTrigger>;
-		MonitoringTimeInMinutes?: number;
+		RollbackTriggers?: Array<RollbackTrigger> | null;
+		MonitoringTimeInMinutes?: number | null;
 	}
 
 	export enum GET_CreateChangeSetAction { CreateChangeSet = 0 }
@@ -2259,8 +2259,8 @@ export namespace MyNS {
 	export enum POST_CreateChangeSetVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateStackRollbackConfiguration {
-		RollbackTriggers?: Array<RollbackTrigger>;
-		MonitoringTimeInMinutes?: number;
+		RollbackTriggers?: Array<RollbackTrigger> | null;
+		MonitoringTimeInMinutes?: number | null;
 	}
 
 	export enum GET_CreateStackAction { CreateStack = 0 }
@@ -2270,16 +2270,16 @@ export namespace MyNS {
 	export enum POST_CreateStackVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateStackInstancesDeploymentTargets {
-		Accounts?: Array<string>;
-		OrganizationalUnitIds?: Array<string>;
+		Accounts?: Array<string> | null;
+		OrganizationalUnitIds?: Array<string> | null;
 	}
 
 	export interface GET_CreateStackInstancesOperationPreferences {
-		RegionOrder?: Array<string>;
-		FailureToleranceCount?: number;
-		FailureTolerancePercentage?: number;
-		MaxConcurrentCount?: number;
-		MaxConcurrentPercentage?: number;
+		RegionOrder?: Array<string> | null;
+		FailureToleranceCount?: number | null;
+		FailureTolerancePercentage?: number | null;
+		MaxConcurrentCount?: number | null;
+		MaxConcurrentPercentage?: number | null;
 	}
 
 	export enum GET_CreateStackInstancesAction { CreateStackInstances = 0 }
@@ -2289,8 +2289,8 @@ export namespace MyNS {
 	export enum POST_CreateStackInstancesVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateStackSetAutoDeployment {
-		Enabled?: boolean;
-		RetainStacksOnAccountRemoval?: boolean;
+		Enabled?: boolean | null;
+		RetainStacksOnAccountRemoval?: boolean | null;
 	}
 
 	export enum GET_CreateStackSetAction { CreateStackSet = 0 }
@@ -2312,16 +2312,16 @@ export namespace MyNS {
 	export enum POST_DeleteStackVersion { _2010_05_15 = 0 }
 
 	export interface GET_DeleteStackInstancesDeploymentTargets {
-		Accounts?: Array<string>;
-		OrganizationalUnitIds?: Array<string>;
+		Accounts?: Array<string> | null;
+		OrganizationalUnitIds?: Array<string> | null;
 	}
 
 	export interface GET_DeleteStackInstancesOperationPreferences {
-		RegionOrder?: Array<string>;
-		FailureToleranceCount?: number;
-		FailureTolerancePercentage?: number;
-		MaxConcurrentCount?: number;
-		MaxConcurrentPercentage?: number;
+		RegionOrder?: Array<string> | null;
+		FailureToleranceCount?: number | null;
+		FailureTolerancePercentage?: number | null;
+		MaxConcurrentCount?: number | null;
+		MaxConcurrentPercentage?: number | null;
 	}
 
 	export enum GET_DeleteStackInstancesAction { DeleteStackInstances = 0 }
@@ -2433,11 +2433,11 @@ export namespace MyNS {
 	export enum POST_DetectStackResourceDriftVersion { _2010_05_15 = 0 }
 
 	export interface GET_DetectStackSetDriftOperationPreferences {
-		RegionOrder?: Array<string>;
-		FailureToleranceCount?: number;
-		FailureTolerancePercentage?: number;
-		MaxConcurrentCount?: number;
-		MaxConcurrentPercentage?: number;
+		RegionOrder?: Array<string> | null;
+		FailureToleranceCount?: number | null;
+		FailureTolerancePercentage?: number | null;
+		MaxConcurrentCount?: number | null;
+		MaxConcurrentPercentage?: number | null;
 	}
 
 	export enum GET_DetectStackSetDriftAction { DetectStackSetDrift = 0 }
@@ -2590,8 +2590,8 @@ export namespace MyNS {
 	export enum POST_StopStackSetOperationVersion { _2010_05_15 = 0 }
 
 	export interface GET_UpdateStackRollbackConfiguration {
-		RollbackTriggers?: Array<RollbackTrigger>;
-		MonitoringTimeInMinutes?: number;
+		RollbackTriggers?: Array<RollbackTrigger> | null;
+		MonitoringTimeInMinutes?: number | null;
 	}
 
 	export enum GET_UpdateStackAction { UpdateStack = 0 }
@@ -2601,16 +2601,16 @@ export namespace MyNS {
 	export enum POST_UpdateStackVersion { _2010_05_15 = 0 }
 
 	export interface GET_UpdateStackInstancesDeploymentTargets {
-		Accounts?: Array<string>;
-		OrganizationalUnitIds?: Array<string>;
+		Accounts?: Array<string> | null;
+		OrganizationalUnitIds?: Array<string> | null;
 	}
 
 	export interface GET_UpdateStackInstancesOperationPreferences {
-		RegionOrder?: Array<string>;
-		FailureToleranceCount?: number;
-		FailureTolerancePercentage?: number;
-		MaxConcurrentCount?: number;
-		MaxConcurrentPercentage?: number;
+		RegionOrder?: Array<string> | null;
+		FailureToleranceCount?: number | null;
+		FailureTolerancePercentage?: number | null;
+		MaxConcurrentCount?: number | null;
+		MaxConcurrentPercentage?: number | null;
 	}
 
 	export enum GET_UpdateStackInstancesAction { UpdateStackInstances = 0 }
@@ -2620,21 +2620,21 @@ export namespace MyNS {
 	export enum POST_UpdateStackInstancesVersion { _2010_05_15 = 0 }
 
 	export interface GET_UpdateStackSetOperationPreferences {
-		RegionOrder?: Array<string>;
-		FailureToleranceCount?: number;
-		FailureTolerancePercentage?: number;
-		MaxConcurrentCount?: number;
-		MaxConcurrentPercentage?: number;
+		RegionOrder?: Array<string> | null;
+		FailureToleranceCount?: number | null;
+		FailureTolerancePercentage?: number | null;
+		MaxConcurrentCount?: number | null;
+		MaxConcurrentPercentage?: number | null;
 	}
 
 	export interface GET_UpdateStackSetDeploymentTargets {
-		Accounts?: Array<string>;
-		OrganizationalUnitIds?: Array<string>;
+		Accounts?: Array<string> | null;
+		OrganizationalUnitIds?: Array<string> | null;
 	}
 
 	export interface GET_UpdateStackSetAutoDeployment {
-		Enabled?: boolean;
-		RetainStacksOnAccountRemoval?: boolean;
+		Enabled?: boolean | null;
+		RetainStacksOnAccountRemoval?: boolean | null;
 	}
 
 	export enum GET_UpdateStackSetAction { UpdateStackSet = 0 }

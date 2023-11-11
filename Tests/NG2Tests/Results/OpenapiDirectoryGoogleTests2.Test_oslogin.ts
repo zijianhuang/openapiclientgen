@@ -23,7 +23,7 @@ export namespace MyNS {
 		 * The user profile information used for logging in to a virtual machine on
 		 * Google Compute Engine.
 		 */
-		loginProfile?: LoginProfile;
+		loginProfile?: LoginProfile | null;
 	}
 
 
@@ -34,13 +34,13 @@ export namespace MyNS {
 	export interface LoginProfile {
 
 		/** Required. A unique user ID. */
-		name?: string;
+		name?: string | null;
 
 		/** The list of POSIX accounts associated with the user. */
-		posixAccounts?: Array<PosixAccount>;
+		posixAccounts?: Array<PosixAccount> | null;
 
 		/** A map from SSH public key fingerprint to the associated key object. */
-		sshPublicKeys?: {[id: string]: SshPublicKey };
+		sshPublicKeys?: {[id: string]: SshPublicKey } | null;
 	}
 
 
@@ -48,40 +48,40 @@ export namespace MyNS {
 	export interface PosixAccount {
 
 		/** Output only. A POSIX account identifier. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** The GECOS (user information) entry for this account. */
-		gecos?: string;
+		gecos?: string | null;
 
 		/** The default group ID. */
-		gid?: string;
+		gid?: string | null;
 
 		/** The path to the home directory for this account. */
-		homeDirectory?: string;
+		homeDirectory?: string | null;
 
 		/** Output only. The canonical resource name. */
-		name?: string;
+		name?: string | null;
 
 		/** The operating system type where this account applies. */
-		operatingSystemType?: PosixAccountOperatingSystemType;
+		operatingSystemType?: PosixAccountOperatingSystemType | null;
 
 		/** Only one POSIX account can be marked as primary. */
-		primary?: boolean;
+		primary?: boolean | null;
 
 		/** The path to the logic shell for this account. */
-		shell?: string;
+		shell?: string | null;
 
 		/**
 		 * System identifier for which account the username or uid applies to.
 		 * By default, the empty value is used.
 		 */
-		systemId?: string;
+		systemId?: string | null;
 
 		/** The user ID. */
-		uid?: string;
+		uid?: string | null;
 
 		/** The username of the POSIX account. */
-		username?: string;
+		username?: string | null;
 	}
 
 	export enum PosixAccountOperatingSystemType { OPERATING_SYSTEM_TYPE_UNSPECIFIED = 0, LINUX = 1, WINDOWS = 2 }
@@ -91,20 +91,20 @@ export namespace MyNS {
 	export interface SshPublicKey {
 
 		/** An expiration time in microseconds since epoch. */
-		expirationTimeUsec?: string;
+		expirationTimeUsec?: string | null;
 
 		/** Output only. The SHA-256 fingerprint of the SSH public key. */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/**
 		 * Public key text in SSH format, defined by
 		 * <a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank">RFC4253</a>
 		 * section 6.6.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/** Output only. The canonical resource name. */
-		name?: string;
+		name?: string | null;
 	}
 
 	@Injectable()

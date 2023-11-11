@@ -7,16 +7,16 @@ export namespace MyNS {
 	export interface AutoForwarding {
 
 		/** The state that a message should be left in after it has been forwarded. */
-		disposition?: AutoForwardingDisposition;
+		disposition?: AutoForwardingDisposition | null;
 
 		/**
 		 * Email address to which all incoming messages are forwarded.  This email
 		 * address must be a verified member of the forwarding addresses.
 		 */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/** Whether all incoming mail is automatically forwarded to another address. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 	}
 
 	export enum AutoForwardingDisposition { dispositionUnspecified = 0, leaveInInbox = 1, archive = 2, trash = 3, markRead = 4 }
@@ -24,22 +24,22 @@ export namespace MyNS {
 	export interface BatchDeleteMessagesRequest {
 
 		/** The IDs of the messages to delete. */
-		ids?: Array<string>;
+		ids?: Array<string> | null;
 	}
 
 	export interface BatchModifyMessagesRequest {
 
 		/** A list of label IDs to add to messages. */
-		addLabelIds?: Array<string>;
+		addLabelIds?: Array<string> | null;
 
 		/**
 		 * The IDs of the messages to modify. There is a limit of 1000 ids per
 		 * request.
 		 */
-		ids?: Array<string>;
+		ids?: Array<string> | null;
 
 		/** A list of label IDs to remove from messages. */
-		removeLabelIds?: Array<string>;
+		removeLabelIds?: Array<string> | null;
 	}
 
 
@@ -52,13 +52,13 @@ export namespace MyNS {
 	export interface Delegate {
 
 		/** The email address of the delegate. */
-		delegateEmail?: string;
+		delegateEmail?: string | null;
 
 		/**
 		 * Indicates whether this address has been verified and can act as a delegate
 		 * for the account.  Read-only.
 		 */
-		verificationStatus?: DelegateVerificationStatus;
+		verificationStatus?: DelegateVerificationStatus | null;
 	}
 
 	export enum DelegateVerificationStatus { verificationStatusUnspecified = 0, accepted = 1, pending = 2, rejected = 3, expired = 4 }
@@ -68,10 +68,10 @@ export namespace MyNS {
 	export interface Draft {
 
 		/** The immutable ID of the draft. */
-		id?: string;
+		id?: string | null;
 
 		/** An email message. */
-		message?: Message;
+		message?: Message | null;
 	}
 
 
@@ -79,10 +79,10 @@ export namespace MyNS {
 	export interface Message {
 
 		/** The ID of the last history record that modified this message. */
-		historyId?: string;
+		historyId?: string | null;
 
 		/** The immutable ID of the message. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * The internal message creation timestamp (epoch ms), which determines
@@ -91,16 +91,16 @@ export namespace MyNS {
 		 * than the <code>Date</code> header. However, for API-migrated mail, it can
 		 * be configured by client to be based on the <code>Date</code> header.
 		 */
-		internalDate?: string;
+		internalDate?: string | null;
 
 		/**
 		 * List of IDs of labels applied to this message.
 		 * @mutable gmail.users.messages.insert gmail.users.messages.modify
 		 */
-		labelIds?: Array<string>;
+		labelIds?: Array<string> | null;
 
 		/** A single MIME message part. */
-		payload?: MessagePart;
+		payload?: MessagePart | null;
 
 		/**
 		 * The entire email message in an RFC 2822 formatted and base64url
@@ -110,13 +110,13 @@ export namespace MyNS {
 		 * @mutable gmail.users.messages.insert gmail.users.messages.send
 		 * @mutable gmail.users.drafts.create gmail.users.drafts.update
 		 */
-		raw?: string;
+		raw?: string | null;
 
 		/** Estimated size in bytes of the message. */
-		sizeEstimate?: number;
+		sizeEstimate?: number | null;
 
 		/** A short part of the message text. */
-		snippet?: string;
+		snippet?: string | null;
 
 		/**
 		 * The ID of the thread the message belongs to. To add a message or draft to
@@ -131,7 +131,7 @@ export namespace MyNS {
 		 * @mutable gmail.users.messages.insert gmail.users.messages.send
 		 * @mutable gmail.users.drafts.create gmail.users.drafts.update
 		 */
-		threadId?: string;
+		threadId?: string | null;
 	}
 
 
@@ -139,13 +139,13 @@ export namespace MyNS {
 	export interface MessagePart {
 
 		/** The body of a single MIME message part. */
-		body?: MessagePartBody;
+		body?: MessagePartBody | null;
 
 		/**
 		 * The filename of the attachment. Only present if this message part
 		 * represents an attachment.
 		 */
-		filename?: string;
+		filename?: string | null;
 
 		/**
 		 * List of headers on this message part. For the top-level message part,
@@ -153,13 +153,13 @@ export namespace MyNS {
 		 * RFC 2822 email headers such as <code>To</code>, <code>From</code>, and
 		 * <code>Subject</code>.
 		 */
-		headers?: Array<MessagePartHeader>;
+		headers?: Array<MessagePartHeader> | null;
 
 		/** The MIME type of the message part. */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** The immutable ID of the message part. */
-		partId?: string;
+		partId?: string | null;
 
 		/**
 		 * The child MIME message parts of this part. This only applies to container
@@ -168,7 +168,7 @@ export namespace MyNS {
 		 * field is empty. For more information, see
 		 * <a href="http://www.ietf.org/rfc/rfc1521.txt">RFC 1521</a>.
 		 */
-		parts?: Array<MessagePart>;
+		parts?: Array<MessagePart> | null;
 	}
 
 
@@ -181,7 +181,7 @@ export namespace MyNS {
 		 * When not present, the entire content of the message part body is
 		 * contained in the data field.
 		 */
-		attachmentId?: string;
+		attachmentId?: string | null;
 
 		/**
 		 * The body data of a MIME message part as a base64url encoded string.
@@ -190,10 +190,10 @@ export namespace MyNS {
 		 * separate attachment. An attachment ID is present if the body data is
 		 * contained in a separate attachment.
 		 */
-		data?: string;
+		data?: string | null;
 
 		/** Number of bytes for the message part data (encoding notwithstanding). */
-		size?: number;
+		size?: number | null;
 	}
 
 	export interface MessagePartHeader {
@@ -202,13 +202,13 @@ export namespace MyNS {
 		 * The name of the header before the <code>:</code> separator. For
 		 * example, <code>To</code>.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The value of the header after the <code>:</code> separator. For example,
 		 * <code>someuser@example.com</code>.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -219,13 +219,13 @@ export namespace MyNS {
 	export interface Filter {
 
 		/** A set of actions to perform on a message. */
-		action?: FilterAction;
+		action?: FilterAction | null;
 
 		/** Message matching criteria. */
-		criteria?: FilterCriteria;
+		criteria?: FilterCriteria | null;
 
 		/** The server assigned ID of the filter. */
-		id?: string;
+		id?: string | null;
 	}
 
 
@@ -233,13 +233,13 @@ export namespace MyNS {
 	export interface FilterAction {
 
 		/** List of labels to add to the message. */
-		addLabelIds?: Array<string>;
+		addLabelIds?: Array<string> | null;
 
 		/** Email address that the message should be forwarded to. */
-		forward?: string;
+		forward?: string | null;
 
 		/** List of labels to remove from the message. */
-		removeLabelIds?: Array<string>;
+		removeLabelIds?: Array<string> | null;
 	}
 
 
@@ -247,13 +247,13 @@ export namespace MyNS {
 	export interface FilterCriteria {
 
 		/** Whether the response should exclude chats. */
-		excludeChats?: boolean;
+		excludeChats?: boolean | null;
 
 		/** The sender's display name or email address. */
-		from?: string;
+		from?: string | null;
 
 		/** Whether the message has any attachment. */
-		hasAttachment?: boolean;
+		hasAttachment?: boolean | null;
 
 		/**
 		 * Only return messages not matching the specified query. Supports the same
@@ -261,7 +261,7 @@ export namespace MyNS {
 		 * <code>"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
 		 * is:unread"</code>.
 		 */
-		negatedQuery?: string;
+		negatedQuery?: string | null;
 
 		/**
 		 * Only return messages matching the specified query. Supports the same
@@ -269,22 +269,22 @@ export namespace MyNS {
 		 * <code>"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
 		 * is:unread"</code>.
 		 */
-		query?: string;
+		query?: string | null;
 
 		/**
 		 * The size of the entire RFC822 message in bytes, including all headers and
 		 * attachments.
 		 */
-		size?: number;
+		size?: number | null;
 
 		/** How the message size in bytes should be in relation to the size field. */
-		sizeComparison?: FilterCriteriaSizeComparison;
+		sizeComparison?: FilterCriteriaSizeComparison | null;
 
 		/**
 		 * Case-insensitive phrase found in the message's subject. Trailing and
 		 * leading whitespace are be trimmed and adjacent spaces are collapsed.
 		 */
-		subject?: string;
+		subject?: string | null;
 
 		/**
 		 * The recipient's display name or email address. Includes recipients in the
@@ -292,7 +292,7 @@ export namespace MyNS {
 		 * the email address. For example, "example" and "example@" both match
 		 * "example@gmail.com". This field is case-insensitive.
 		 */
-		to?: string;
+		to?: string | null;
 	}
 
 	export enum FilterCriteriaSizeComparison { unspecified = 0, smaller = 1, larger = 2 }
@@ -302,13 +302,13 @@ export namespace MyNS {
 	export interface ForwardingAddress {
 
 		/** An email address to which messages can be forwarded. */
-		forwardingEmail?: string;
+		forwardingEmail?: string | null;
 
 		/**
 		 * Indicates whether this address has been verified and is usable for
 		 * forwarding.  Read-only.
 		 */
-		verificationStatus?: ForwardingAddressVerificationStatus;
+		verificationStatus?: ForwardingAddressVerificationStatus | null;
 	}
 
 	export enum ForwardingAddressVerificationStatus { verificationStatusUnspecified = 0, accepted = 1, pending = 2 }
@@ -321,13 +321,13 @@ export namespace MyNS {
 	export interface History {
 
 		/** The mailbox sequence ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Labels added to messages in this history record. */
-		labelsAdded?: Array<HistoryLabelAdded>;
+		labelsAdded?: Array<HistoryLabelAdded> | null;
 
 		/** Labels removed from messages in this history record. */
-		labelsRemoved?: Array<HistoryLabelRemoved>;
+		labelsRemoved?: Array<HistoryLabelRemoved> | null;
 
 		/**
 		 * List of messages changed in this history record.  The fields for specific
@@ -335,43 +335,43 @@ export namespace MyNS {
 		 * this field.  We recommend using the specific change-type fields instead
 		 * of this.
 		 */
-		messages?: Array<Message>;
+		messages?: Array<Message> | null;
 
 		/** Messages added to the mailbox in this history record. */
-		messagesAdded?: Array<HistoryMessageAdded>;
+		messagesAdded?: Array<HistoryMessageAdded> | null;
 
 		/** Messages deleted (not Trashed) from the mailbox in this history record. */
-		messagesDeleted?: Array<HistoryMessageDeleted>;
+		messagesDeleted?: Array<HistoryMessageDeleted> | null;
 	}
 
 	export interface HistoryLabelAdded {
 
 		/** Label IDs added to the message. */
-		labelIds?: Array<string>;
+		labelIds?: Array<string> | null;
 
 		/** An email message. */
-		message?: Message;
+		message?: Message | null;
 	}
 
 	export interface HistoryLabelRemoved {
 
 		/** Label IDs removed from the message. */
-		labelIds?: Array<string>;
+		labelIds?: Array<string> | null;
 
 		/** An email message. */
-		message?: Message;
+		message?: Message | null;
 	}
 
 	export interface HistoryMessageAdded {
 
 		/** An email message. */
-		message?: Message;
+		message?: Message | null;
 	}
 
 	export interface HistoryMessageDeleted {
 
 		/** An email message. */
-		message?: Message;
+		message?: Message | null;
 	}
 
 
@@ -383,23 +383,23 @@ export namespace MyNS {
 		 * marked as deleted in IMAP.  Otherwise, Gmail will wait for an update from
 		 * the client before expunging messages marked as deleted.
 		 */
-		autoExpunge?: boolean;
+		autoExpunge?: boolean | null;
 
 		/** Whether IMAP is enabled for the account. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/**
 		 * The action that will be executed on a message when it is marked as deleted
 		 * and expunged from the last visible IMAP folder.
 		 */
-		expungeBehavior?: ImapSettingsExpungeBehavior;
+		expungeBehavior?: ImapSettingsExpungeBehavior | null;
 
 		/**
 		 * An optional limit on the number of messages that an IMAP folder may
 		 * contain.  Legal values are 0, 1000, 2000, 5000 or 10000.  A value of zero
 		 * is interpreted to mean that there is no limit.
 		 */
-		maxFolderSize?: number;
+		maxFolderSize?: number | null;
 	}
 
 	export enum ImapSettingsExpungeBehavior { expungeBehaviorUnspecified = 0, archive = 1, trash = 2, deleteForever = 3 }
@@ -410,41 +410,41 @@ export namespace MyNS {
 	 * user's mailbox.
 	 */
 	export interface Label {
-		color?: LabelColor;
+		color?: LabelColor | null;
 
 		/** The immutable ID of the label. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * The visibility of the label in the label list in the Gmail web interface.
 		 * @mutable gmail.users.labels.create gmail.users.labels.update
 		 */
-		labelListVisibility?: LabelLabelListVisibility;
+		labelListVisibility?: LabelLabelListVisibility | null;
 
 		/**
 		 * The visibility of the label in the message list in the
 		 * Gmail web interface.
 		 * @mutable gmail.users.labels.create gmail.users.labels.update
 		 */
-		messageListVisibility?: LabelMessageListVisibility;
+		messageListVisibility?: LabelMessageListVisibility | null;
 
 		/** The total number of messages with the label. */
-		messagesTotal?: number;
+		messagesTotal?: number | null;
 
 		/** The number of unread messages with the label. */
-		messagesUnread?: number;
+		messagesUnread?: number | null;
 
 		/**
 		 * The display name of the label.
 		 * @mutable gmail.users.labels.create gmail.users.labels.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The total number of threads with the label. */
-		threadsTotal?: number;
+		threadsTotal?: number | null;
 
 		/** The number of unread threads with the label. */
-		threadsUnread?: number;
+		threadsUnread?: number | null;
 
 		/**
 		 * The owner type for the label. User labels are created by the user and
@@ -457,7 +457,7 @@ export namespace MyNS {
 		 * threads, but cannot apply or remove the <code>DRAFTS</code> or
 		 * <code>SENT</code> labels from messages or threads.
 		 */
-		type?: LabelType;
+		type?: LabelType | null;
 	}
 
 	export interface LabelColor {
@@ -482,7 +482,7 @@ export namespace MyNS {
 		 * # 662e37, #ebdbde, #cca6ac, #094228, #42d692, #16a765
 		 * @mutable gmail.users.labels.create gmail.users.labels.update
 		 */
-		backgroundColor?: string;
+		backgroundColor?: string | null;
 
 		/**
 		 * The text color of the label, represented as hex string.
@@ -504,7 +504,7 @@ export namespace MyNS {
 		 * # 662e37, #ebdbde, #cca6ac, #094228, #42d692, #16a765
 		 * @mutable gmail.users.labels.create gmail.users.labels.update
 		 */
-		textColor?: string;
+		textColor?: string | null;
 	}
 
 	export enum LabelLabelListVisibility { labelShow = 0, labelShowIfUnread = 1, labelHide = 2 }
@@ -539,7 +539,7 @@ export namespace MyNS {
 		 * client, said client automatically chooses to display in the closest
 		 * supported variant (or a reasonable default).
 		 */
-		displayLanguage?: string;
+		displayLanguage?: string | null;
 	}
 
 
@@ -547,7 +547,7 @@ export namespace MyNS {
 	export interface ListDelegatesResponse {
 
 		/** List of the user's delegates (with any verification status). */
-		delegates?: Array<Delegate>;
+		delegates?: Array<Delegate> | null;
 	}
 
 	export interface ListDraftsResponse {
@@ -559,13 +559,13 @@ export namespace MyNS {
 		 * <a href="/gmail/api/v1/reference/users/messages/get">messages.get</a>
 		 * method can fetch additional message details.
 		 */
-		drafts?: Array<Draft>;
+		drafts?: Array<Draft> | null;
 
 		/** Token to retrieve the next page of results in the list. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Estimated total number of results. */
-		resultSizeEstimate?: string;
+		resultSizeEstimate?: string | null;
 	}
 
 
@@ -573,7 +573,7 @@ export namespace MyNS {
 	export interface ListFiltersResponse {
 
 		/** List of a user's filters. */
-		filter?: Array<Filter>;
+		filter?: Array<Filter> | null;
 	}
 
 
@@ -581,7 +581,7 @@ export namespace MyNS {
 	export interface ListForwardingAddressesResponse {
 
 		/** List of addresses that may be used for forwarding. */
-		forwardingAddresses?: Array<ForwardingAddress>;
+		forwardingAddresses?: Array<ForwardingAddress> | null;
 	}
 
 	export interface ListHistoryResponse {
@@ -591,13 +591,13 @@ export namespace MyNS {
 		 * response will typically only have <code>id</code> and
 		 * <code>threadId</code> fields populated.
 		 */
-		history?: Array<History>;
+		history?: Array<History> | null;
 
 		/** The ID of the mailbox's current history record. */
-		historyId?: string;
+		historyId?: string | null;
 
 		/** Page token to retrieve the next page of results in the list. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface ListLabelsResponse {
@@ -609,7 +609,7 @@ export namespace MyNS {
 		 * <a href="/gmail/api/v1/reference/users/labels/get">labels.get</a> method
 		 * can fetch additional label details.
 		 */
-		labels?: Array<Label>;
+		labels?: Array<Label> | null;
 	}
 
 	export interface ListMessagesResponse {
@@ -621,13 +621,13 @@ export namespace MyNS {
 		 * <a href="/gmail/api/v1/reference/users/messages/get">messages.get</a>
 		 * method.
 		 */
-		messages?: Array<Message>;
+		messages?: Array<Message> | null;
 
 		/** Token to retrieve the next page of results in the list. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Estimated total number of results. */
-		resultSizeEstimate?: string;
+		resultSizeEstimate?: string | null;
 	}
 
 
@@ -635,7 +635,7 @@ export namespace MyNS {
 	export interface ListSendAsResponse {
 
 		/** List of send-as aliases. */
-		sendAs?: Array<SendAs>;
+		sendAs?: Array<SendAs> | null;
 	}
 
 
@@ -657,7 +657,7 @@ export namespace MyNS {
 		 * format, requests to update this field for the primary login will silently
 		 * fail.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Whether this address is selected as the default "From:" address in
@@ -668,49 +668,49 @@ export namespace MyNS {
 		 * <code>true</code> for an address will result in this field becoming
 		 * <code>false</code> for the other previous default address.
 		 */
-		isDefault?: boolean;
+		isDefault?: boolean | null;
 
 		/**
 		 * Whether this address is the primary address used to login to the account.
 		 * Every Gmail account has exactly one primary address, and it cannot be
 		 * deleted from the collection of send-as aliases.  This field is read-only.
 		 */
-		isPrimary?: boolean;
+		isPrimary?: boolean | null;
 
 		/**
 		 * An optional email address that is included in a "Reply-To:" header for mail
 		 * sent using this alias.  If this is empty, Gmail will not generate a
 		 * "Reply-To:" header.
 		 */
-		replyToAddress?: string;
+		replyToAddress?: string | null;
 
 		/**
 		 * The email address that appears in the "From:" header for mail sent using
 		 * this alias.  This is read-only for all operations except create.
 		 */
-		sendAsEmail?: string;
+		sendAsEmail?: string | null;
 
 		/**
 		 * An optional HTML signature that is included in messages composed with this
 		 * alias in the Gmail web UI.
 		 */
-		signature?: string;
+		signature?: string | null;
 
 		/** Configuration for communication with an SMTP service. */
-		smtpMsa?: SmtpMsa;
+		smtpMsa?: SmtpMsa | null;
 
 		/**
 		 * Whether Gmail should <a href="https://support.google.com/a/answer/1710338">
 		 * treat this address as an alias</a> for the user's primary email address.
 		 * This setting only applies to custom "from" aliases.
 		 */
-		treatAsAlias?: boolean;
+		treatAsAlias?: boolean | null;
 
 		/**
 		 * Indicates whether this address has been verified for use as a send-as
 		 * alias.  Read-only.  This setting only applies to custom "from" aliases.
 		 */
-		verificationStatus?: ForwardingAddressVerificationStatus;
+		verificationStatus?: ForwardingAddressVerificationStatus | null;
 	}
 
 
@@ -718,30 +718,30 @@ export namespace MyNS {
 	export interface SmtpMsa {
 
 		/** The hostname of the SMTP service.  Required. */
-		host?: string;
+		host?: string | null;
 
 		/**
 		 * The password that will be used for authentication with the SMTP service.
 		 * This is a write-only field that can be specified in requests to create or
 		 * update SendAs settings; it is never populated in responses.
 		 */
-		password?: string;
+		password?: string | null;
 
 		/** The port of the SMTP service.  Required. */
-		port?: number;
+		port?: number | null;
 
 		/**
 		 * The protocol that will be used to secure communication with the SMTP
 		 * service.  Required.
 		 */
-		securityMode?: SmtpMsaSecurityMode;
+		securityMode?: SmtpMsaSecurityMode | null;
 
 		/**
 		 * The username that will be used for authentication with the SMTP service.
 		 * This is a write-only field that can be specified in requests to create or
 		 * update SendAs settings; it is never populated in responses.
 		 */
-		username?: string;
+		username?: string | null;
 	}
 
 	export enum SmtpMsaSecurityMode { securityModeUnspecified = 0, none = 1, ssl = 2, starttls = 3 }
@@ -749,7 +749,7 @@ export namespace MyNS {
 	export interface ListSmimeInfoResponse {
 
 		/** List of SmimeInfo. */
-		smimeInfo?: Array<SmimeInfo>;
+		smimeInfo?: Array<SmimeInfo> | null;
 	}
 
 
@@ -757,26 +757,26 @@ export namespace MyNS {
 	export interface SmimeInfo {
 
 		/** Encrypted key password, when key is encrypted. */
-		encryptedKeyPassword?: string;
+		encryptedKeyPassword?: string | null;
 
 		/** When the certificate expires (in milliseconds since epoch). */
-		expiration?: string;
+		expiration?: string | null;
 
 		/** The immutable ID for the SmimeInfo. */
-		id?: string;
+		id?: string | null;
 
 		/** Whether this SmimeInfo is the default one for this user's send-as address. */
-		isDefault?: boolean;
+		isDefault?: boolean | null;
 
 		/** The S/MIME certificate issuer's common name. */
-		issuerCn?: string;
+		issuerCn?: string | null;
 
 		/**
 		 * PEM formatted X509 concatenated certificate string (standard base64
 		 * encoding).  Format used for returning key, which includes public key
 		 * as well as certificate chain (not private key).
 		 */
-		pem?: string;
+		pem?: string | null;
 
 		/**
 		 * PKCS#12 format containing a single private/public key pair and
@@ -785,16 +785,16 @@ export namespace MyNS {
 		 * private key is not intended to be exported.  PKCS#12 may be encrypted,
 		 * in which case encryptedKeyPassword should be set appropriately.
 		 */
-		pkcs12?: string;
+		pkcs12?: string | null;
 	}
 
 	export interface ListThreadsResponse {
 
 		/** Page token to retrieve the next page of results in the list. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Estimated total number of results. */
-		resultSizeEstimate?: string;
+		resultSizeEstimate?: string | null;
 
 		/**
 		 * List of threads. Note that each thread resource does not contain a list of
@@ -802,7 +802,7 @@ export namespace MyNS {
 		 * can be fetched using the
 		 * <a href="/gmail/api/v1/reference/users/threads/get">threads.get</a> method.
 		 */
-		threads?: Array<Thread>;
+		threads?: Array<Thread> | null;
 	}
 
 
@@ -810,34 +810,34 @@ export namespace MyNS {
 	export interface Thread {
 
 		/** The ID of the last history record that modified this thread. */
-		historyId?: string;
+		historyId?: string | null;
 
 		/** The unique ID of the thread. */
-		id?: string;
+		id?: string | null;
 
 		/** The list of messages in the thread. */
-		messages?: Array<Message>;
+		messages?: Array<Message> | null;
 
 		/** A short part of the message text. */
-		snippet?: string;
+		snippet?: string | null;
 	}
 
 	export interface ModifyMessageRequest {
 
 		/** A list of IDs of labels to add to this message. */
-		addLabelIds?: Array<string>;
+		addLabelIds?: Array<string> | null;
 
 		/** A list IDs of labels to remove from this message. */
-		removeLabelIds?: Array<string>;
+		removeLabelIds?: Array<string> | null;
 	}
 
 	export interface ModifyThreadRequest {
 
 		/** A list of IDs of labels to add to this thread. */
-		addLabelIds?: Array<string>;
+		addLabelIds?: Array<string> | null;
 
 		/** A list of IDs of labels to remove from this thread. */
-		removeLabelIds?: Array<string>;
+		removeLabelIds?: Array<string> | null;
 	}
 
 
@@ -845,13 +845,13 @@ export namespace MyNS {
 	export interface PopSettings {
 
 		/** The range of messages which are accessible via POP. */
-		accessWindow?: PopSettingsAccessWindow;
+		accessWindow?: PopSettingsAccessWindow | null;
 
 		/**
 		 * The action that will be executed on a message after it has been fetched via
 		 * POP.
 		 */
-		disposition?: AutoForwardingDisposition;
+		disposition?: AutoForwardingDisposition | null;
 	}
 
 	export enum PopSettingsAccessWindow { accessWindowUnspecified = 0, disabled = 1, fromNowOn = 2, allMail = 3 }
@@ -861,16 +861,16 @@ export namespace MyNS {
 	export interface Profile {
 
 		/** The user's email address. */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/** The ID of the mailbox's current history record. */
-		historyId?: string;
+		historyId?: string | null;
 
 		/** The total number of messages in the mailbox. */
-		messagesTotal?: number;
+		messagesTotal?: number | null;
 
 		/** The total number of threads in the mailbox. */
-		threadsTotal?: number;
+		threadsTotal?: number | null;
 	}
 
 
@@ -882,7 +882,7 @@ export namespace MyNS {
 	export interface VacationSettings {
 
 		/** Flag that controls whether Gmail automatically replies to messages. */
-		enableAutoReply?: boolean;
+		enableAutoReply?: boolean | null;
 
 		/**
 		 * An optional end time for sending auto-replies (epoch ms).
@@ -891,36 +891,36 @@ export namespace MyNS {
 		 * <code>endTime</code> are specified, <code>startTime</code> must precede
 		 * <code>endTime</code>.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Response body in HTML format.  Gmail will sanitize the HTML before
 		 * storing it.
 		 */
-		responseBodyHtml?: string;
+		responseBodyHtml?: string | null;
 
 		/** Response body in plain text format. */
-		responseBodyPlainText?: string;
+		responseBodyPlainText?: string | null;
 
 		/**
 		 * Optional text to prepend to the subject line in vacation responses.  In
 		 * order to enable auto-replies, either the response subject or the response
 		 * body must be nonempty.
 		 */
-		responseSubject?: string;
+		responseSubject?: string | null;
 
 		/**
 		 * Flag that determines whether responses are sent to recipients who are not
 		 * in the user's list of contacts.
 		 */
-		restrictToContacts?: boolean;
+		restrictToContacts?: boolean | null;
 
 		/**
 		 * Flag that determines whether responses are sent to recipients who are
 		 * outside of the user's domain. This feature is only available for G Suite
 		 * users.
 		 */
-		restrictToDomain?: boolean;
+		restrictToDomain?: boolean | null;
 
 		/**
 		 * An optional start time for sending auto-replies (epoch ms).
@@ -929,7 +929,7 @@ export namespace MyNS {
 		 * <code>endTime</code> are specified, <code>startTime</code> must precede
 		 * <code>endTime</code>.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -937,7 +937,7 @@ export namespace MyNS {
 	export interface WatchRequest {
 
 		/** Filtering behavior of labelIds list specified. */
-		labelFilterAction?: WatchRequestLabelFilterAction;
+		labelFilterAction?: WatchRequestLabelFilterAction | null;
 
 		/**
 		 * List of label_ids to restrict notifications about.  By default,
@@ -945,7 +945,7 @@ export namespace MyNS {
 		 * dictates which labels are required for a push notification to
 		 * be generated.
 		 */
-		labelIds?: Array<string>;
+		labelIds?: Array<string> | null;
 
 		/**
 		 * A fully qualified Google Cloud Pub/Sub API topic name to publish the
@@ -956,7 +956,7 @@ export namespace MyNS {
 		 * Note that the "my-project-identifier" portion must exactly match your
 		 * Google developer project id (the one executing this watch request).
 		 */
-		topicName?: string;
+		topicName?: string | null;
 	}
 
 	export enum WatchRequestLabelFilterAction { include = 0, exclude = 1 }
@@ -970,10 +970,10 @@ export namespace MyNS {
 		 * (epoch millis). Call <code>watch</code> again before this time to renew
 		 * the watch.
 		 */
-		expiration?: string;
+		expiration?: string | null;
 
 		/** The ID of the mailbox's current history record. */
-		historyId?: string;
+		historyId?: string | null;
 	}
 
 	@Injectable()

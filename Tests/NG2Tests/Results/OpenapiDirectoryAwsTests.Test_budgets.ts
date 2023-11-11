@@ -30,7 +30,7 @@ export namespace MyNS {
 		 * A list of notifications, each with a list of subscribers.
 		 * Maximum items: 5
 		 */
-		NotificationsWithSubscribers?: Array<NotificationWithSubscribers>;
+		NotificationsWithSubscribers?: Array<NotificationWithSubscribers> | null;
 	}
 
 
@@ -47,14 +47,14 @@ export namespace MyNS {
 		BudgetName: string;
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
-		BudgetLimit?: Spend;
-		PlannedBudgetLimits?: PlannedBudgetLimits;
+		BudgetLimit?: Spend | null;
+		PlannedBudgetLimits?: PlannedBudgetLimits | null;
 
 		/** A map that represents the cost filters that are applied to the budget. */
-		CostFilters?: CostFilters;
+		CostFilters?: CostFilters | null;
 
 		/** <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p> */
-		CostTypes?: CostTypes;
+		CostTypes?: CostTypes | null;
 
 		/**
 		 * The time unit of the budget, such as MONTHLY or QUARTERLY.
@@ -63,10 +63,10 @@ export namespace MyNS {
 		TimeUnit: BudgetTimeUnit;
 
 		/** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. */
-		TimePeriod?: TimePeriod;
+		TimePeriod?: TimePeriod | null;
 
 		/** <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.</p> <p>For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p> */
-		CalculatedSpend?: CalculatedSpend;
+		CalculatedSpend?: CalculatedSpend | null;
 
 		/**
 		 * <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.</p>
@@ -75,7 +75,7 @@ export namespace MyNS {
 		BudgetType: BudgetBudgetType;
 
 		/** A generic time stamp. In Java, it is transformed to a <code>Date</code> object. */
-		LastUpdatedTime?: Date;
+		LastUpdatedTime?: Date | null;
 	}
 
 
@@ -112,17 +112,17 @@ export namespace MyNS {
 
 	/** <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p> */
 	export interface CostTypes {
-		IncludeTax?: boolean;
-		IncludeSubscription?: boolean;
-		UseBlended?: boolean;
-		IncludeRefund?: boolean;
-		IncludeCredit?: boolean;
-		IncludeUpfront?: boolean;
-		IncludeRecurring?: boolean;
-		IncludeOtherSubscription?: boolean;
-		IncludeSupport?: boolean;
-		IncludeDiscount?: boolean;
-		UseAmortized?: boolean;
+		IncludeTax?: boolean | null;
+		IncludeSubscription?: boolean | null;
+		UseBlended?: boolean | null;
+		IncludeRefund?: boolean | null;
+		IncludeCredit?: boolean | null;
+		IncludeUpfront?: boolean | null;
+		IncludeRecurring?: boolean | null;
+		IncludeOtherSubscription?: boolean | null;
+		IncludeSupport?: boolean | null;
+		IncludeDiscount?: boolean | null;
+		UseAmortized?: boolean | null;
 	}
 
 	export enum BudgetTimeUnit { DAILY = 0, MONTHLY = 1, QUARTERLY = 2, ANNUALLY = 3 }
@@ -132,10 +132,10 @@ export namespace MyNS {
 	export interface TimePeriod {
 
 		/** A generic time stamp. In Java, it is transformed to a <code>Date</code> object. */
-		Start?: Date;
+		Start?: Date | null;
 
 		/** A generic time stamp. In Java, it is transformed to a <code>Date</code> object. */
-		End?: Date;
+		End?: Date | null;
 	}
 
 
@@ -149,7 +149,7 @@ export namespace MyNS {
 		ActualSpend: Spend;
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
-		ForecastedSpend?: Spend;
+		ForecastedSpend?: Spend | null;
 	}
 
 	export enum BudgetBudgetType { USAGE = 0, COST = 1, RI_UTILIZATION = 2, RI_COVERAGE = 3, SAVINGS_PLANS_UTILIZATION = 4, SAVINGS_PLANS_COVERAGE = 5 }
@@ -198,8 +198,8 @@ export namespace MyNS {
 		Threshold: number;
 
 		/** The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE. */
-		ThresholdType?: NotificationThresholdType;
-		NotificationState?: NotificationNotificationState;
+		ThresholdType?: NotificationThresholdType | null;
+		NotificationState?: NotificationNotificationState | null;
 	}
 
 	export enum NotificationNotificationType { ACTUAL = 0, FORECASTED = 1 }
@@ -439,7 +439,7 @@ export namespace MyNS {
 	export interface DescribeBudgetResponse {
 
 		/** <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p> */
-		Budget?: Budget;
+		Budget?: Budget | null;
 	}
 
 
@@ -468,7 +468,7 @@ export namespace MyNS {
 	export interface DescribeBudgetPerformanceHistoryResponse {
 
 		/** A history of the state of a budget at the end of the budget's specified time period. */
-		BudgetPerformanceHistory?: BudgetPerformanceHistory;
+		BudgetPerformanceHistory?: BudgetPerformanceHistory | null;
 
 		/**
 		 * A generic string.
@@ -476,7 +476,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: .*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -489,20 +489,20 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^:\\]+
 		 */
-		BudgetName?: string;
+		BudgetName?: string | null;
 
 		/** <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.</p> */
-		BudgetType?: BudgetBudgetType;
+		BudgetType?: BudgetBudgetType | null;
 
 		/** A map that represents the cost filters that are applied to the budget. */
-		CostFilters?: CostFilters;
+		CostFilters?: CostFilters | null;
 
 		/** <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p> */
-		CostTypes?: CostTypes;
+		CostTypes?: CostTypes | null;
 
 		/** The time unit of the budget, such as MONTHLY or QUARTERLY. */
-		TimeUnit?: BudgetTimeUnit;
-		BudgetedAndActualAmountsList?: Array<BudgetedAndActualAmounts>;
+		TimeUnit?: BudgetTimeUnit | null;
+		BudgetedAndActualAmountsList?: Array<BudgetedAndActualAmounts> | null;
 	}
 
 
@@ -510,13 +510,13 @@ export namespace MyNS {
 	export interface BudgetedAndActualAmounts {
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
-		BudgetedAmount?: Spend;
+		BudgetedAmount?: Spend | null;
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
-		ActualAmount?: Spend;
+		ActualAmount?: Spend | null;
 
 		/** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. */
-		TimePeriod?: TimePeriod;
+		TimePeriod?: TimePeriod | null;
 	}
 
 	export interface DescribeBudgetPerformanceHistoryRequest {
@@ -540,14 +540,14 @@ export namespace MyNS {
 		BudgetName: string;
 
 		/** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. */
-		TimePeriod?: TimePeriod;
+		TimePeriod?: TimePeriod | null;
 
 		/**
 		 * An integer that represents how many entries a paginated response contains. The maximum is 100.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * A generic string.
@@ -555,7 +555,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: .*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidNextTokenException {
@@ -569,7 +569,7 @@ export namespace MyNS {
 	export interface DescribeBudgetsResponse {
 
 		/** A list of budgets. */
-		Budgets?: Array<Budget>;
+		Budgets?: Array<Budget> | null;
 
 		/**
 		 * A generic string.
@@ -577,7 +577,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: .*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -598,7 +598,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * A generic string.
@@ -606,7 +606,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: .*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -614,7 +614,7 @@ export namespace MyNS {
 	export interface DescribeNotificationsForBudgetResponse {
 
 		/** A list of notifications. */
-		Notifications?: Array<Notification>;
+		Notifications?: Array<Notification> | null;
 
 		/**
 		 * A generic string.
@@ -622,7 +622,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: .*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -652,7 +652,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * A generic string.
@@ -660,7 +660,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: .*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -672,7 +672,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 11
 		 */
-		Subscribers?: Array<Subscriber>;
+		Subscribers?: Array<Subscriber> | null;
 
 		/**
 		 * A generic string.
@@ -680,7 +680,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: .*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -716,7 +716,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * A generic string.
@@ -724,7 +724,7 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: .*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 

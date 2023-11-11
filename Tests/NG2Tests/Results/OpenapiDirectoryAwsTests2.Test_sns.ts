@@ -17,7 +17,7 @@ export namespace MyNS {
 
 	/** The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action. */
 	export interface CheckIfPhoneNumberIsOptedOutResponse {
-		isOptedOut?: boolean;
+		isOptedOut?: boolean | null;
 	}
 
 	export interface ThrottledException {
@@ -26,7 +26,7 @@ export namespace MyNS {
 
 	/** Response for ConfirmSubscriptions action. */
 	export interface ConfirmSubscriptionResponse {
-		SubscriptionArn?: string;
+		SubscriptionArn?: string | null;
 	}
 
 	export interface SubscriptionLimitExceededException {
@@ -38,19 +38,19 @@ export namespace MyNS {
 
 	/** Response from CreatePlatformApplication action. */
 	export interface CreatePlatformApplicationResponse {
-		PlatformApplicationArn?: string;
+		PlatformApplicationArn?: string | null;
 	}
 
 
 	/** Response from CreateEndpoint action. */
 	export interface CreateEndpointResponse {
-		EndpointArn?: string;
+		EndpointArn?: string | null;
 	}
 
 
 	/** Response from CreateTopic action. */
 	export interface CreateTopicResponse {
-		TopicArn?: string;
+		TopicArn?: string | null;
 	}
 
 
@@ -81,7 +81,7 @@ export namespace MyNS {
 
 	/** Response from GetEndpointAttributes of the EndpointArn. */
 	export interface GetEndpointAttributesResponse {
-		Attributes?: MapStringToString;
+		Attributes?: MapStringToString | null;
 	}
 
 	export interface MapStringToString {
@@ -90,19 +90,19 @@ export namespace MyNS {
 
 	/** Response for GetPlatformApplicationAttributes action. */
 	export interface GetPlatformApplicationAttributesResponse {
-		Attributes?: MapStringToString;
+		Attributes?: MapStringToString | null;
 	}
 
 
 	/** The response from the <code>GetSMSAttributes</code> request. */
 	export interface GetSMSAttributesResponse {
-		attributes?: MapStringToString;
+		attributes?: MapStringToString | null;
 	}
 
 
 	/** Response for GetSubscriptionAttributes action. */
 	export interface GetSubscriptionAttributesResponse {
-		Attributes?: SubscriptionAttributesMap;
+		Attributes?: SubscriptionAttributesMap | null;
 	}
 
 	export interface SubscriptionAttributesMap {
@@ -111,7 +111,7 @@ export namespace MyNS {
 
 	/** Response for GetTopicAttributes action. */
 	export interface GetTopicAttributesResponse {
-		Attributes?: TopicAttributesMap;
+		Attributes?: TopicAttributesMap | null;
 	}
 
 	export interface TopicAttributesMap {
@@ -120,64 +120,64 @@ export namespace MyNS {
 
 	/** Response for ListEndpointsByPlatformApplication action. */
 	export interface ListEndpointsByPlatformApplicationResponse {
-		Endpoints?: Array<Endpoint>;
-		NextToken?: string;
+		Endpoints?: Array<Endpoint> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Endpoint for mobile app and device. */
 	export interface Endpoint {
-		EndpointArn?: string;
-		Attributes?: MapStringToString;
+		EndpointArn?: string | null;
+		Attributes?: MapStringToString | null;
 	}
 
 
 	/** The response from the <code>ListPhoneNumbersOptedOut</code> action. */
 	export interface ListPhoneNumbersOptedOutResponse {
-		phoneNumbers?: Array<string>;
-		nextToken?: string;
+		phoneNumbers?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Response for ListPlatformApplications action. */
 	export interface ListPlatformApplicationsResponse {
-		PlatformApplications?: Array<PlatformApplication>;
-		NextToken?: string;
+		PlatformApplications?: Array<PlatformApplication> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Platform application object. */
 	export interface PlatformApplication {
-		PlatformApplicationArn?: string;
-		Attributes?: MapStringToString;
+		PlatformApplicationArn?: string | null;
+		Attributes?: MapStringToString | null;
 	}
 
 
 	/** Response for ListSubscriptions action */
 	export interface ListSubscriptionsResponse {
-		Subscriptions?: Array<Subscription>;
-		NextToken?: string;
+		Subscriptions?: Array<Subscription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A wrapper type for the attributes of an Amazon SNS subscription. */
 	export interface Subscription {
-		SubscriptionArn?: string;
-		Owner?: string;
-		Protocol?: string;
-		Endpoint?: string;
-		TopicArn?: string;
+		SubscriptionArn?: string | null;
+		Owner?: string | null;
+		Protocol?: string | null;
+		Endpoint?: string | null;
+		TopicArn?: string | null;
 	}
 
 
 	/** Response for ListSubscriptionsByTopic action. */
 	export interface ListSubscriptionsByTopicResponse {
-		Subscriptions?: Array<Subscription>;
-		NextToken?: string;
+		Subscriptions?: Array<Subscription> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -186,14 +186,14 @@ export namespace MyNS {
 
 	/** Response for ListTopics action. */
 	export interface ListTopicsResponse {
-		Topics?: Array<Topic>;
-		NextToken?: string;
+		Topics?: Array<Topic> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>. */
 	export interface Topic {
-		TopicArn?: string;
+		TopicArn?: string | null;
 	}
 
 
@@ -204,15 +204,15 @@ export namespace MyNS {
 
 	/** Response for Publish action. */
 	export interface PublishResponse {
-		MessageId?: string;
+		MessageId?: string | null;
 	}
 
 
 	/** <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.</p> */
 	export interface MessageAttributeValue {
 		DataType: string;
-		StringValue?: string;
-		BinaryValue?: string;
+		StringValue?: string | null;
+		BinaryValue?: string | null;
 	}
 
 	export interface InvalidParameterValueException {
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	/** Response for Subscribe action. */
 	export interface SubscribeResponse {
-		SubscriptionArn?: string;
+		SubscriptionArn?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -277,7 +277,7 @@ export namespace MyNS {
 	export interface ConfirmSubscriptionInput {
 		TopicArn: string;
 		Token: string;
-		AuthenticateOnUnsubscribe?: string;
+		AuthenticateOnUnsubscribe?: string | null;
 	}
 
 
@@ -293,16 +293,16 @@ export namespace MyNS {
 	export interface CreatePlatformEndpointInput {
 		PlatformApplicationArn: string;
 		Token: string;
-		CustomUserData?: string;
-		Attributes?: MapStringToString;
+		CustomUserData?: string | null;
+		Attributes?: MapStringToString | null;
 	}
 
 
 	/** Input for CreateTopic action. */
 	export interface CreateTopicInput {
 		Name: string;
-		Attributes?: TopicAttributesMap;
-		Tags?: Array<Tag>;
+		Attributes?: TopicAttributesMap | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -336,7 +336,7 @@ export namespace MyNS {
 
 	/** The input for the <code>GetSMSAttributes</code> request. */
 	export interface GetSMSAttributesInput {
-		attributes?: Array<string>;
+		attributes?: Array<string> | null;
 	}
 
 
@@ -355,32 +355,32 @@ export namespace MyNS {
 	/** Input for ListEndpointsByPlatformApplication action. */
 	export interface ListEndpointsByPlatformApplicationInput {
 		PlatformApplicationArn: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** The input for the <code>ListPhoneNumbersOptedOut</code> action. */
 	export interface ListPhoneNumbersOptedOutInput {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Input for ListPlatformApplications action. */
 	export interface ListPlatformApplicationsInput {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Input for ListSubscriptionsByTopic action. */
 	export interface ListSubscriptionsByTopicInput {
 		TopicArn: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Input for ListSubscriptions action. */
 	export interface ListSubscriptionsInput {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -388,7 +388,7 @@ export namespace MyNS {
 	}
 
 	export interface ListTopicsInput {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface MessageAttributeMap {
@@ -403,13 +403,13 @@ export namespace MyNS {
 
 	/** Input for Publish action. */
 	export interface PublishInput {
-		TopicArn?: string;
-		TargetArn?: string;
-		PhoneNumber?: string;
+		TopicArn?: string | null;
+		TargetArn?: string | null;
+		PhoneNumber?: string | null;
 		Message: string;
-		Subject?: string;
-		MessageStructure?: string;
-		MessageAttributes?: MessageAttributeMap;
+		Subject?: string | null;
+		MessageStructure?: string | null;
+		MessageAttributes?: MessageAttributeMap | null;
 	}
 
 
@@ -444,7 +444,7 @@ export namespace MyNS {
 	export interface SetSubscriptionAttributesInput {
 		SubscriptionArn: string;
 		AttributeName: string;
-		AttributeValue?: string;
+		AttributeValue?: string | null;
 	}
 
 
@@ -452,7 +452,7 @@ export namespace MyNS {
 	export interface SetTopicAttributesInput {
 		TopicArn: string;
 		AttributeName: string;
-		AttributeValue?: string;
+		AttributeValue?: string | null;
 	}
 
 
@@ -460,9 +460,9 @@ export namespace MyNS {
 	export interface SubscribeInput {
 		TopicArn: string;
 		Protocol: string;
-		Endpoint?: string;
-		Attributes?: SubscriptionAttributesMap;
-		ReturnSubscriptionArn?: boolean;
+		Endpoint?: string | null;
+		Attributes?: SubscriptionAttributesMap | null;
+		ReturnSubscriptionArn?: boolean | null;
 	}
 
 	export interface TagResourceRequest {

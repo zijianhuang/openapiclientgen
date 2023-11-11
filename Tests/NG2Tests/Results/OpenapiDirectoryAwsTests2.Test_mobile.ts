@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface CreateProjectResult {
 
 		/** Detailed information about an AWS Mobile Hub project. */
-		details?: ProjectDetails;
+		details?: ProjectDetails | null;
 	}
 
 
@@ -15,22 +15,22 @@ export namespace MyNS {
 	export interface ProjectDetails {
 
 		/** Name of the project. */
-		name?: string;
+		name?: string | null;
 
 		/** Unique project identifier. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Default region to use for AWS resource creation in the AWS Mobile Hub project. */
-		region?: string;
+		region?: string | null;
 
 		/** Synchronization state for a project. */
-		state?: ProjectDetailsState;
-		createdDate?: Date;
-		lastUpdatedDate?: Date;
-		consoleUrl?: string;
+		state?: ProjectDetailsState | null;
+		createdDate?: Date | null;
+		lastUpdatedDate?: Date | null;
+		consoleUrl?: string | null;
 
 		/** List of AWS resources associated with a project. */
-		resources?: Array<Resource>;
+		resources?: Array<Resource> | null;
 	}
 
 	export enum ProjectDetailsState { NORMAL = 0, SYNCING = 1, IMPORTING = 2 }
@@ -40,19 +40,19 @@ export namespace MyNS {
 	export interface Resource {
 
 		/** Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). */
-		type?: string;
+		type?: string | null;
 
 		/** Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). */
-		name?: string;
+		name?: string | null;
 
 		/** AWS resource name which uniquely identifies the resource in AWS systems. */
-		arn?: string;
+		arn?: string | null;
 
 		/** Identifies which feature in AWS Mobile Hub is associated with this AWS resource. */
-		feature?: string;
+		feature?: string | null;
 
 		/** Key-value attribute pairs. */
-		attributes?: Attributes;
+		attributes?: Attributes | null;
 	}
 
 
@@ -65,7 +65,7 @@ export namespace MyNS {
 	export interface InternalFailureException {
 
 		/** The Exception Error Message. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -73,7 +73,7 @@ export namespace MyNS {
 	export interface ServiceUnavailableException {
 
 		/** The Exception Error Message. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -81,7 +81,7 @@ export namespace MyNS {
 	export interface UnauthorizedException {
 
 		/** The Exception Error Message. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -89,7 +89,7 @@ export namespace MyNS {
 	export interface TooManyRequestsException {
 
 		/** The Exception Error Message. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -97,7 +97,7 @@ export namespace MyNS {
 	export interface BadRequestException {
 
 		/** The Exception Error Message. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -105,7 +105,7 @@ export namespace MyNS {
 	export interface NotFoundException {
 
 		/** The Exception Error Message. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -113,7 +113,7 @@ export namespace MyNS {
 	export interface LimitExceededException {
 
 		/** The Exception Error Message. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -121,10 +121,10 @@ export namespace MyNS {
 	export interface DeleteProjectResult {
 
 		/** List of AWS resources associated with a project. */
-		deletedResources?: Array<Resource>;
+		deletedResources?: Array<Resource> | null;
 
 		/** List of AWS resources associated with a project. */
-		orphanedResources?: Array<Resource>;
+		orphanedResources?: Array<Resource> | null;
 	}
 
 
@@ -132,7 +132,7 @@ export namespace MyNS {
 	export interface DescribeBundleResult {
 
 		/** The details of the bundle. */
-		details?: BundleDetails;
+		details?: BundleDetails | null;
 	}
 
 
@@ -140,22 +140,22 @@ export namespace MyNS {
 	export interface BundleDetails {
 
 		/** Unique bundle identifier. */
-		bundleId?: string;
+		bundleId?: string | null;
 
 		/** Title of the download bundle. */
-		title?: string;
+		title?: string | null;
 
 		/** Version of the download bundle. */
-		version?: string;
+		version?: string | null;
 
 		/** Description of the download bundle. */
-		description?: string;
+		description?: string | null;
 
 		/** Icon for the download bundle. */
-		iconUrl?: string;
+		iconUrl?: string | null;
 
 		/** Developer desktop or mobile app or website platforms. */
-		availablePlatforms?: Array<Platform>;
+		availablePlatforms?: Array<Platform> | null;
 	}
 
 
@@ -167,7 +167,7 @@ export namespace MyNS {
 	export interface DescribeProjectResult {
 
 		/** Detailed information about an AWS Mobile Hub project. */
-		details?: ProjectDetails;
+		details?: ProjectDetails | null;
 	}
 
 
@@ -175,7 +175,7 @@ export namespace MyNS {
 	export interface ExportBundleResult {
 
 		/** The download Url. */
-		downloadUrl?: string;
+		downloadUrl?: string | null;
 	}
 
 
@@ -183,13 +183,13 @@ export namespace MyNS {
 	export interface ExportProjectResult {
 
 		/** The download Url. */
-		downloadUrl?: string;
+		downloadUrl?: string | null;
 
 		/** URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. */
-		shareUrl?: string;
+		shareUrl?: string | null;
 
 		/** Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. */
-		snapshotId?: string;
+		snapshotId?: string | null;
 	}
 
 
@@ -197,10 +197,10 @@ export namespace MyNS {
 	export interface ListBundlesResult {
 
 		/** A list of bundles. */
-		bundleList?: Array<BundleDetails>;
+		bundleList?: Array<BundleDetails> | null;
 
 		/** Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -208,10 +208,10 @@ export namespace MyNS {
 	export interface ListProjectsResult {
 
 		/** List of projects. */
-		projects?: Array<ProjectSummary>;
+		projects?: Array<ProjectSummary> | null;
 
 		/** Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -219,10 +219,10 @@ export namespace MyNS {
 	export interface ProjectSummary {
 
 		/** Name of the project. */
-		name?: string;
+		name?: string | null;
 
 		/** Unique project identifier. */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -230,7 +230,7 @@ export namespace MyNS {
 	export interface UpdateProjectResult {
 
 		/** Detailed information about an AWS Mobile Hub project. */
-		details?: ProjectDetails;
+		details?: ProjectDetails | null;
 	}
 
 
@@ -238,7 +238,7 @@ export namespace MyNS {
 	export interface AccountActionRequiredException {
 
 		/** The Exception Error Message. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -246,7 +246,7 @@ export namespace MyNS {
 	export interface CreateProjectRequest {
 
 		/** Binary file data. */
-		contents?: string;
+		contents?: string | null;
 	}
 
 
@@ -293,7 +293,7 @@ export namespace MyNS {
 	export interface UpdateProjectRequest {
 
 		/** Binary file data. */
-		contents?: string;
+		contents?: string | null;
 	}
 
 	@Injectable()
@@ -402,13 +402,13 @@ export namespace MyNS {
 	export interface CreateProjectPostBody {
 
 		/** Binary file data. */
-		contents?: string;
+		contents?: string | null;
 	}
 
 	export interface UpdateProjectPostBody {
 
 		/** Binary file data. */
-		contents?: string;
+		contents?: string | null;
 	}
 
 }

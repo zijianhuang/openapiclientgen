@@ -44,7 +44,7 @@ export namespace MyNS {
 	/** <p/> */
 	export interface CancelCommandRequest {
 		CommandId: string;
-		InstanceIds?: Array<string>;
+		InstanceIds?: Array<string> | null;
 	}
 
 	export interface InvalidCommandId {
@@ -57,7 +57,7 @@ export namespace MyNS {
 	}
 
 	export interface CancelMaintenanceWindowExecutionResult {
-		WindowExecutionId?: string;
+		WindowExecutionId?: string | null;
 	}
 
 	export interface CancelMaintenanceWindowExecutionRequest {
@@ -68,56 +68,56 @@ export namespace MyNS {
 	}
 
 	export interface CreateActivationResult {
-		ActivationId?: string;
-		ActivationCode?: string;
+		ActivationId?: string | null;
+		ActivationCode?: string | null;
 	}
 
 	export interface CreateActivationRequest {
-		Description?: string;
-		DefaultInstanceName?: string;
+		Description?: string | null;
+		DefaultInstanceName?: string | null;
 		IamRole: string;
-		RegistrationLimit?: number;
-		ExpirationDate?: Date;
-		Tags?: Array<Tag>;
+		RegistrationLimit?: number | null;
+		ExpirationDate?: Date | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateAssociationResult {
 
 		/** Describes the parameters for a document. */
-		AssociationDescription?: AssociationDescription;
+		AssociationDescription?: AssociationDescription | null;
 	}
 
 
 	/** Describes the parameters for a document. */
 	export interface AssociationDescription {
-		Name?: string;
-		InstanceId?: string;
-		AssociationVersion?: string;
-		Date?: Date;
-		LastUpdateAssociationDate?: Date;
+		Name?: string | null;
+		InstanceId?: string | null;
+		AssociationVersion?: string | null;
+		Date?: Date | null;
+		LastUpdateAssociationDate?: Date | null;
 
 		/** Describes an association status. */
-		Status?: AssociationStatus;
+		Status?: AssociationStatus | null;
 
 		/** Information about the association. */
-		Overview?: AssociationOverview;
-		DocumentVersion?: string;
-		AutomationTargetParameterName?: string;
-		Parameters?: Parameters;
-		AssociationId?: string;
-		Targets?: Array<Target>;
-		ScheduleExpression?: string;
+		Overview?: AssociationOverview | null;
+		DocumentVersion?: string | null;
+		AutomationTargetParameterName?: string | null;
+		Parameters?: Parameters | null;
+		AssociationId?: string | null;
+		Targets?: Array<Target> | null;
+		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
-		OutputLocation?: InstanceAssociationOutputLocation;
-		LastExecutionDate?: Date;
-		LastSuccessfulExecutionDate?: Date;
-		AssociationName?: string;
-		MaxErrors?: string;
-		MaxConcurrency?: string;
-		ComplianceSeverity?: AssociationDescriptionComplianceSeverity;
-		SyncCompliance?: AssociationDescriptionSyncCompliance;
-		ApplyOnlyAtCronInterval?: boolean;
+		OutputLocation?: InstanceAssociationOutputLocation | null;
+		LastExecutionDate?: Date | null;
+		LastSuccessfulExecutionDate?: Date | null;
+		AssociationName?: string | null;
+		MaxErrors?: string | null;
+		MaxConcurrency?: string | null;
+		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
+		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
+		ApplyOnlyAtCronInterval?: boolean | null;
 	}
 
 
@@ -126,7 +126,7 @@ export namespace MyNS {
 		Date: Date;
 		Name: AssociationStatusName;
 		Message: string;
-		AdditionalInfo?: string;
+		AdditionalInfo?: string | null;
 	}
 
 	export enum AssociationStatusName { Pending = 0, Success = 1, Failed = 2 }
@@ -134,9 +134,9 @@ export namespace MyNS {
 
 	/** Information about the association. */
 	export interface AssociationOverview {
-		Status?: string;
-		DetailedStatus?: string;
-		AssociationStatusAggregatedCount?: AssociationStatusAggregatedCount;
+		Status?: string | null;
+		DetailedStatus?: string | null;
+		AssociationStatusAggregatedCount?: AssociationStatusAggregatedCount | null;
 	}
 
 	export interface AssociationStatusAggregatedCount {
@@ -148,8 +148,8 @@ export namespace MyNS {
 
 	/** <p>An array of search criteria that targets instances using a Key,Value combination that you specify. </p> <p>Supported formats include the following.</p> <ul> <li> <p> <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> </p> </li> <li> <p> <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> </p> </li> <li> <p> <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> </p> </li> </ul> <p>For example:</p> <ul> <li> <p> <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> </p> </li> <li> <p> <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p> </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p> <p>This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> </p> <p>This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.</p> </li> <li> <p>(State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code> </p> <p>This example demonstrates how to target all managed instances in the AWS Region where the association was created.</p> </li> </ul> <p>For information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.</p> */
 	export interface Target {
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 
@@ -157,15 +157,15 @@ export namespace MyNS {
 	export interface InstanceAssociationOutputLocation {
 
 		/** An S3 bucket where you want to store the results of this request. */
-		S3Location?: S3OutputLocation;
+		S3Location?: S3OutputLocation | null;
 	}
 
 
 	/** An S3 bucket where you want to store the results of this request. */
 	export interface S3OutputLocation {
-		OutputS3Region?: string;
-		OutputS3BucketName?: string;
-		OutputS3KeyPrefix?: string;
+		OutputS3Region?: string | null;
+		OutputS3BucketName?: string | null;
+		OutputS3KeyPrefix?: string | null;
 	}
 
 	export enum AssociationDescriptionComplianceSeverity { CRITICAL = 0, HIGH = 1, MEDIUM = 2, LOW = 3, UNSPECIFIED = 4 }
@@ -174,21 +174,21 @@ export namespace MyNS {
 
 	export interface CreateAssociationRequest {
 		Name: string;
-		DocumentVersion?: string;
-		InstanceId?: string;
-		Parameters?: Parameters;
-		Targets?: Array<Target>;
-		ScheduleExpression?: string;
+		DocumentVersion?: string | null;
+		InstanceId?: string | null;
+		Parameters?: Parameters | null;
+		Targets?: Array<Target> | null;
+		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
-		OutputLocation?: InstanceAssociationOutputLocation;
-		AssociationName?: string;
-		AutomationTargetParameterName?: string;
-		MaxErrors?: string;
-		MaxConcurrency?: string;
-		ComplianceSeverity?: AssociationDescriptionComplianceSeverity;
-		SyncCompliance?: AssociationDescriptionSyncCompliance;
-		ApplyOnlyAtCronInterval?: boolean;
+		OutputLocation?: InstanceAssociationOutputLocation | null;
+		AssociationName?: string | null;
+		AutomationTargetParameterName?: string | null;
+		MaxErrors?: string | null;
+		MaxConcurrency?: string | null;
+		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
+		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
+		ApplyOnlyAtCronInterval?: boolean | null;
 	}
 
 	export interface AssociationAlreadyExists {
@@ -219,8 +219,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateAssociationBatchResult {
-		Successful?: Array<AssociationDescription>;
-		Failed?: Array<FailedCreateAssociation>;
+		Successful?: Array<AssociationDescription> | null;
+		Failed?: Array<FailedCreateAssociation> | null;
 	}
 
 
@@ -228,30 +228,30 @@ export namespace MyNS {
 	export interface FailedCreateAssociation {
 
 		/** Describes the association of a Systems Manager SSM document and an instance. */
-		Entry?: CreateAssociationBatchRequestEntry;
-		Message?: string;
-		Fault?: FailedCreateAssociationFault;
+		Entry?: CreateAssociationBatchRequestEntry | null;
+		Message?: string | null;
+		Fault?: FailedCreateAssociationFault | null;
 	}
 
 
 	/** Describes the association of a Systems Manager SSM document and an instance. */
 	export interface CreateAssociationBatchRequestEntry {
 		Name: string;
-		InstanceId?: string;
-		Parameters?: Parameters;
-		AutomationTargetParameterName?: string;
-		DocumentVersion?: string;
-		Targets?: Array<Target>;
-		ScheduleExpression?: string;
+		InstanceId?: string | null;
+		Parameters?: Parameters | null;
+		AutomationTargetParameterName?: string | null;
+		DocumentVersion?: string | null;
+		Targets?: Array<Target> | null;
+		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
-		OutputLocation?: InstanceAssociationOutputLocation;
-		AssociationName?: string;
-		MaxErrors?: string;
-		MaxConcurrency?: string;
-		ComplianceSeverity?: AssociationDescriptionComplianceSeverity;
-		SyncCompliance?: AssociationDescriptionSyncCompliance;
-		ApplyOnlyAtCronInterval?: boolean;
+		OutputLocation?: InstanceAssociationOutputLocation | null;
+		AssociationName?: string | null;
+		MaxErrors?: string | null;
+		MaxConcurrency?: string | null;
+		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
+		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
+		ApplyOnlyAtCronInterval?: boolean | null;
 	}
 
 	export enum FailedCreateAssociationFault { Client = 0, Server = 1, Unknown = 2 }
@@ -263,36 +263,36 @@ export namespace MyNS {
 	export interface CreateDocumentResult {
 
 		/** Describes a Systems Manager document. */
-		DocumentDescription?: DocumentDescription;
+		DocumentDescription?: DocumentDescription | null;
 	}
 
 
 	/** Describes a Systems Manager document.  */
 	export interface DocumentDescription {
-		Sha1?: string;
-		Hash?: string;
-		HashType?: DocumentDescriptionHashType;
-		Name?: string;
-		VersionName?: string;
-		Owner?: string;
-		CreatedDate?: Date;
+		Sha1?: string | null;
+		Hash?: string | null;
+		HashType?: DocumentDescriptionHashType | null;
+		Name?: string | null;
+		VersionName?: string | null;
+		Owner?: string | null;
+		CreatedDate?: Date | null;
 
 		/** The status of a document. */
-		Status?: DocumentDescriptionStatus;
-		StatusInformation?: string;
-		DocumentVersion?: string;
-		Description?: string;
-		Parameters?: Array<DocumentParameter>;
-		PlatformTypes?: Array<PlatformType>;
-		DocumentType?: DocumentDescriptionDocumentType;
-		SchemaVersion?: string;
-		LatestVersion?: string;
-		DefaultVersion?: string;
-		DocumentFormat?: DocumentDescriptionDocumentFormat;
-		TargetType?: string;
-		Tags?: Array<Tag>;
-		AttachmentsInformation?: Array<AttachmentInformation>;
-		Requires?: Array<DocumentRequires>;
+		Status?: DocumentDescriptionStatus | null;
+		StatusInformation?: string | null;
+		DocumentVersion?: string | null;
+		Description?: string | null;
+		Parameters?: Array<DocumentParameter> | null;
+		PlatformTypes?: Array<PlatformType> | null;
+		DocumentType?: DocumentDescriptionDocumentType | null;
+		SchemaVersion?: string | null;
+		LatestVersion?: string | null;
+		DefaultVersion?: string | null;
+		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+		TargetType?: string | null;
+		Tags?: Array<Tag> | null;
+		AttachmentsInformation?: Array<AttachmentInformation> | null;
+		Requires?: Array<DocumentRequires> | null;
 	}
 
 	export enum DocumentDescriptionHashType { Sha256 = 0, Sha1 = 1 }
@@ -302,10 +302,10 @@ export namespace MyNS {
 
 	/** Parameters specified in a System Manager document that run on the server when the command is run.  */
 	export interface DocumentParameter {
-		Name?: string;
-		Type?: DocumentParameterType;
-		Description?: string;
-		DefaultValue?: string;
+		Name?: string | null;
+		Type?: DocumentParameterType | null;
+		Description?: string | null;
+		DefaultValue?: string | null;
 	}
 
 	export enum DocumentParameterType { String = 0, StringList = 1 }
@@ -319,34 +319,34 @@ export namespace MyNS {
 
 	/** An attribute of an attachment, such as the attachment name. */
 	export interface AttachmentInformation {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/** An SSM document required by the current document. */
 	export interface DocumentRequires {
 		Name: string;
-		Version?: string;
+		Version?: string | null;
 	}
 
 	export interface CreateDocumentRequest {
 		Content: string;
-		Requires?: Array<DocumentRequires>;
-		Attachments?: Array<AttachmentsSource>;
+		Requires?: Array<DocumentRequires> | null;
+		Attachments?: Array<AttachmentsSource> | null;
 		Name: string;
-		VersionName?: string;
-		DocumentType?: DocumentDescriptionDocumentType;
-		DocumentFormat?: DocumentDescriptionDocumentFormat;
-		TargetType?: string;
-		Tags?: Array<Tag>;
+		VersionName?: string | null;
+		DocumentType?: DocumentDescriptionDocumentType | null;
+		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+		TargetType?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Identifying information about a document attachment, including the file name and a key-value pair that identifies the location of an attachment to a document. */
 	export interface AttachmentsSource {
-		Key?: AttachmentsSourceKey;
-		Values?: Array<string>;
-		Name?: string;
+		Key?: AttachmentsSourceKey | null;
+		Values?: Array<string> | null;
+		Name?: string | null;
 	}
 
 	export enum AttachmentsSourceKey { SourceUrl = 0, S3FileUrl = 1, AttachmentReference = 2 }
@@ -367,21 +367,21 @@ export namespace MyNS {
 	}
 
 	export interface CreateMaintenanceWindowResult {
-		WindowId?: string;
+		WindowId?: string | null;
 	}
 
 	export interface CreateMaintenanceWindowRequest {
 		Name: string;
-		Description?: string;
-		StartDate?: string;
-		EndDate?: string;
+		Description?: string | null;
+		StartDate?: string | null;
+		EndDate?: string | null;
 		Schedule: string;
-		ScheduleTimezone?: string;
+		ScheduleTimezone?: string | null;
 		Duration: number;
 		Cutoff: number;
 		AllowUnassociatedTargets: boolean;
-		ClientToken?: string;
-		Tags?: Array<Tag>;
+		ClientToken?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface IdempotentParameterMismatch {
@@ -391,20 +391,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateOpsItemResponse {
-		OpsItemId?: string;
+		OpsItemId?: string | null;
 	}
 
 	export interface CreateOpsItemRequest {
 		Description: string;
-		OperationalData?: OpsItemOperationalData;
-		Notifications?: Array<OpsItemNotification>;
-		Priority?: number;
-		RelatedOpsItems?: Array<RelatedOpsItem>;
+		OperationalData?: OpsItemOperationalData | null;
+		Notifications?: Array<OpsItemNotification> | null;
+		Priority?: number | null;
+		RelatedOpsItems?: Array<RelatedOpsItem> | null;
 		Source: string;
 		Title: string;
-		Tags?: Array<Tag>;
-		Category?: string;
-		Severity?: string;
+		Tags?: Array<Tag> | null;
+		Category?: string | null;
+		Severity?: string | null;
 	}
 
 	export interface OpsItemOperationalData {
@@ -413,7 +413,7 @@ export namespace MyNS {
 
 	/** A notification about the OpsItem. */
 	export interface OpsItemNotification {
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 
@@ -432,27 +432,27 @@ export namespace MyNS {
 	}
 
 	export interface CreatePatchBaselineResult {
-		BaselineId?: string;
+		BaselineId?: string | null;
 	}
 
 	export interface CreatePatchBaselineRequest {
-		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem;
+		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 		Name: string;
 
 		/** A set of patch filters, typically used for approval rules. */
-		GlobalFilters?: PatchFilterGroup;
+		GlobalFilters?: PatchFilterGroup | null;
 
 		/** A set of rules defining the approval rules for a patch baseline. */
-		ApprovalRules?: PatchRuleGroup;
-		ApprovedPatches?: Array<string>;
-		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel;
-		ApprovedPatchesEnableNonSecurity?: boolean;
-		RejectedPatches?: Array<string>;
-		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction;
-		Description?: string;
-		Sources?: Array<PatchSource>;
-		ClientToken?: string;
-		Tags?: Array<Tag>;
+		ApprovalRules?: PatchRuleGroup | null;
+		ApprovedPatches?: Array<string> | null;
+		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel | null;
+		ApprovedPatchesEnableNonSecurity?: boolean | null;
+		RejectedPatches?: Array<string> | null;
+		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction | null;
+		Description?: string | null;
+		Sources?: Array<PatchSource> | null;
+		ClientToken?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreatePatchBaselineRequestOperatingSystem { WINDOWS = 0, AMAZON_LINUX = 1, AMAZON_LINUX_2 = 2, UBUNTU = 3, REDHAT_ENTERPRISE_LINUX = 4, SUSE = 5, CENTOS = 6, ORACLE_LINUX = 7, DEBIAN = 8 }
@@ -487,10 +487,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		PatchFilterGroup: PatchFilterGroup;
-		ComplianceLevel?: PatchRuleComplianceLevel;
-		ApproveAfterDays?: number;
-		ApproveUntilDate?: string;
-		EnableNonSecurity?: boolean;
+		ComplianceLevel?: PatchRuleComplianceLevel | null;
+		ApproveAfterDays?: number | null;
+		ApproveUntilDate?: string | null;
+		EnableNonSecurity?: boolean | null;
 	}
 
 	export enum PatchRuleComplianceLevel { CRITICAL = 0, HIGH = 1, MEDIUM = 2, LOW = 3, INFORMATIONAL = 4, UNSPECIFIED = 5 }
@@ -512,24 +512,24 @@ export namespace MyNS {
 		SyncName: string;
 
 		/** Information about the target S3 bucket for the Resource Data Sync. */
-		S3Destination?: ResourceDataSyncS3Destination;
-		SyncType?: string;
+		S3Destination?: ResourceDataSyncS3Destination | null;
+		SyncType?: string | null;
 
 		/** Information about the source of the data included in the resource data sync. */
-		SyncSource?: ResourceDataSyncSource;
+		SyncSource?: ResourceDataSyncSource | null;
 	}
 
 
 	/** Information about the target S3 bucket for the Resource Data Sync. */
 	export interface ResourceDataSyncS3Destination {
 		BucketName: string;
-		Prefix?: string;
+		Prefix?: string | null;
 		SyncFormat: ResourceDataSyncS3DestinationSyncFormat;
 		Region: string;
-		AWSKMSKeyARN?: string;
+		AWSKMSKeyARN?: string | null;
 
 		/** Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID. */
-		DestinationDataSharing?: ResourceDataSyncDestinationDataSharing;
+		DestinationDataSharing?: ResourceDataSyncDestinationDataSharing | null;
 	}
 
 	export enum ResourceDataSyncS3DestinationSyncFormat { JsonSerDe = 0 }
@@ -537,7 +537,7 @@ export namespace MyNS {
 
 	/** Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID. */
 	export interface ResourceDataSyncDestinationDataSharing {
-		DestinationDataSharingType?: string;
+		DestinationDataSharingType?: string | null;
 	}
 
 
@@ -546,22 +546,22 @@ export namespace MyNS {
 		SourceType: string;
 
 		/** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions. */
-		AwsOrganizationsSource?: ResourceDataSyncAwsOrganizationsSource;
+		AwsOrganizationsSource?: ResourceDataSyncAwsOrganizationsSource | null;
 		SourceRegions: Array<string>;
-		IncludeFutureRegions?: boolean;
+		IncludeFutureRegions?: boolean | null;
 	}
 
 
 	/** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions. */
 	export interface ResourceDataSyncAwsOrganizationsSource {
 		OrganizationSourceType: string;
-		OrganizationalUnits?: Array<ResourceDataSyncOrganizationalUnit>;
+		OrganizationalUnits?: Array<ResourceDataSyncOrganizationalUnit> | null;
 	}
 
 
 	/** The AWS Organizations organizational unit data source for the sync. */
 	export interface ResourceDataSyncOrganizationalUnit {
-		OrganizationalUnitId?: string;
+		OrganizationalUnitId?: string | null;
 	}
 
 	export interface ResourceDataSyncCountExceededException {
@@ -590,9 +590,9 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAssociationRequest {
-		Name?: string;
-		InstanceId?: string;
-		AssociationId?: string;
+		Name?: string | null;
+		InstanceId?: string | null;
+		AssociationId?: string | null;
 	}
 
 	export interface AssociationDoesNotExist {
@@ -603,9 +603,9 @@ export namespace MyNS {
 
 	export interface DeleteDocumentRequest {
 		Name: string;
-		DocumentVersion?: string;
-		VersionName?: string;
-		Force?: boolean;
+		DocumentVersion?: string | null;
+		VersionName?: string | null;
+		Force?: boolean | null;
 	}
 
 	export interface InvalidDocumentOperation {
@@ -615,34 +615,34 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInventoryResult {
-		DeletionId?: string;
-		TypeName?: string;
+		DeletionId?: string | null;
+		TypeName?: string | null;
 
 		/** Information about the delete operation. */
-		DeletionSummary?: InventoryDeletionSummary;
+		DeletionSummary?: InventoryDeletionSummary | null;
 	}
 
 
 	/** Information about the delete operation. */
 	export interface InventoryDeletionSummary {
-		TotalCount?: number;
-		RemainingCount?: number;
-		SummaryItems?: Array<InventoryDeletionSummaryItem>;
+		TotalCount?: number | null;
+		RemainingCount?: number | null;
+		SummaryItems?: Array<InventoryDeletionSummaryItem> | null;
 	}
 
 
 	/** Either a count, remaining count, or a version number in a delete inventory summary. */
 	export interface InventoryDeletionSummaryItem {
-		Version?: string;
-		Count?: number;
-		RemainingCount?: number;
+		Version?: string | null;
+		Count?: number | null;
+		RemainingCount?: number | null;
 	}
 
 	export interface DeleteInventoryRequest {
 		TypeName: string;
-		SchemaDeleteOption?: DeleteInventoryRequestSchemaDeleteOption;
-		DryRun?: boolean;
-		ClientToken?: string;
+		SchemaDeleteOption?: DeleteInventoryRequestSchemaDeleteOption | null;
+		DryRun?: boolean | null;
+		ClientToken?: string | null;
 	}
 
 	export enum DeleteInventoryRequestSchemaDeleteOption { DisableSchema = 0, DeleteSchema = 1 }
@@ -660,7 +660,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteMaintenanceWindowResult {
-		WindowId?: string;
+		WindowId?: string | null;
 	}
 
 	export interface DeleteMaintenanceWindowRequest {
@@ -678,8 +678,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteParametersResult {
-		DeletedParameters?: Array<string>;
-		InvalidParameters?: Array<string>;
+		DeletedParameters?: Array<string> | null;
+		InvalidParameters?: Array<string> | null;
 	}
 
 	export interface DeleteParametersRequest {
@@ -687,7 +687,7 @@ export namespace MyNS {
 	}
 
 	export interface DeletePatchBaselineResult {
-		BaselineId?: string;
+		BaselineId?: string | null;
 	}
 
 	export interface DeletePatchBaselineRequest {
@@ -702,7 +702,7 @@ export namespace MyNS {
 
 	export interface DeleteResourceDataSyncRequest {
 		SyncName: string;
-		SyncType?: string;
+		SyncType?: string | null;
 	}
 
 	export interface ResourceDataSyncNotFoundException {
@@ -716,8 +716,8 @@ export namespace MyNS {
 	}
 
 	export interface DeregisterPatchBaselineForPatchGroupResult {
-		BaselineId?: string;
-		PatchGroup?: string;
+		BaselineId?: string | null;
+		PatchGroup?: string | null;
 	}
 
 	export interface DeregisterPatchBaselineForPatchGroupRequest {
@@ -726,22 +726,22 @@ export namespace MyNS {
 	}
 
 	export interface DeregisterTargetFromMaintenanceWindowResult {
-		WindowId?: string;
-		WindowTargetId?: string;
+		WindowId?: string | null;
+		WindowTargetId?: string | null;
 	}
 
 	export interface DeregisterTargetFromMaintenanceWindowRequest {
 		WindowId: string;
 		WindowTargetId: string;
-		Safe?: boolean;
+		Safe?: boolean | null;
 	}
 
 	export interface TargetInUseException {
 	}
 
 	export interface DeregisterTaskFromMaintenanceWindowResult {
-		WindowId?: string;
-		WindowTaskId?: string;
+		WindowId?: string | null;
+		WindowTaskId?: string | null;
 	}
 
 	export interface DeregisterTaskFromMaintenanceWindowRequest {
@@ -750,36 +750,36 @@ export namespace MyNS {
 	}
 
 	export interface DescribeActivationsResult {
-		ActivationList?: Array<Activation>;
-		NextToken?: string;
+		ActivationList?: Array<Activation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance. */
 	export interface Activation {
-		ActivationId?: string;
-		Description?: string;
-		DefaultInstanceName?: string;
-		IamRole?: string;
-		RegistrationLimit?: number;
-		RegistrationsCount?: number;
-		ExpirationDate?: Date;
-		Expired?: boolean;
-		CreatedDate?: Date;
-		Tags?: Array<Tag>;
+		ActivationId?: string | null;
+		Description?: string | null;
+		DefaultInstanceName?: string | null;
+		IamRole?: string | null;
+		RegistrationLimit?: number | null;
+		RegistrationsCount?: number | null;
+		ExpirationDate?: Date | null;
+		Expired?: boolean | null;
+		CreatedDate?: Date | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DescribeActivationsRequest {
-		Filters?: Array<DescribeActivationsFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<DescribeActivationsFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Filter for the DescribeActivation API. */
 	export interface DescribeActivationsFilter {
-		FilterKey?: DescribeActivationsFilterFilterKey;
-		FilterValues?: Array<string>;
+		FilterKey?: DescribeActivationsFilterFilterKey | null;
+		FilterValues?: Array<string> | null;
 	}
 
 	export enum DescribeActivationsFilterFilterKey { ActivationIds = 0, DefaultInstanceName = 1, IamRole = 2 }
@@ -793,53 +793,53 @@ export namespace MyNS {
 	export interface DescribeAssociationResult {
 
 		/** Describes the parameters for a document. */
-		AssociationDescription?: AssociationDescription;
+		AssociationDescription?: AssociationDescription | null;
 	}
 
 	export interface DescribeAssociationRequest {
-		Name?: string;
-		InstanceId?: string;
-		AssociationId?: string;
-		AssociationVersion?: string;
+		Name?: string | null;
+		InstanceId?: string | null;
+		AssociationId?: string | null;
+		AssociationVersion?: string | null;
 	}
 
 	export interface InvalidAssociationVersion {
 	}
 
 	export interface DescribeAssociationExecutionTargetsResult {
-		AssociationExecutionTargets?: Array<AssociationExecutionTarget>;
-		NextToken?: string;
+		AssociationExecutionTargets?: Array<AssociationExecutionTarget> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Includes information about the specified association execution. */
 	export interface AssociationExecutionTarget {
-		AssociationId?: string;
-		AssociationVersion?: string;
-		ExecutionId?: string;
-		ResourceId?: string;
-		ResourceType?: string;
-		Status?: string;
-		DetailedStatus?: string;
-		LastExecutionDate?: Date;
+		AssociationId?: string | null;
+		AssociationVersion?: string | null;
+		ExecutionId?: string | null;
+		ResourceId?: string | null;
+		ResourceType?: string | null;
+		Status?: string | null;
+		DetailedStatus?: string | null;
+		LastExecutionDate?: Date | null;
 
 		/** Information about the source where the association execution details are stored. */
-		OutputSource?: OutputSource;
+		OutputSource?: OutputSource | null;
 	}
 
 
 	/** Information about the source where the association execution details are stored. */
 	export interface OutputSource {
-		OutputSourceId?: string;
-		OutputSourceType?: string;
+		OutputSourceId?: string | null;
+		OutputSourceType?: string | null;
 	}
 
 	export interface DescribeAssociationExecutionTargetsRequest {
 		AssociationId: string;
 		ExecutionId: string;
-		Filters?: Array<AssociationExecutionTargetsFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<AssociationExecutionTargetsFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -855,28 +855,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAssociationExecutionsResult {
-		AssociationExecutions?: Array<AssociationExecution>;
-		NextToken?: string;
+		AssociationExecutions?: Array<AssociationExecution> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Includes information about the specified association. */
 	export interface AssociationExecution {
-		AssociationId?: string;
-		AssociationVersion?: string;
-		ExecutionId?: string;
-		Status?: string;
-		DetailedStatus?: string;
-		CreatedTime?: Date;
-		LastExecutionDate?: Date;
-		ResourceCountByStatus?: string;
+		AssociationId?: string | null;
+		AssociationVersion?: string | null;
+		ExecutionId?: string | null;
+		Status?: string | null;
+		DetailedStatus?: string | null;
+		CreatedTime?: Date | null;
+		LastExecutionDate?: Date | null;
+		ResourceCountByStatus?: string | null;
 	}
 
 	export interface DescribeAssociationExecutionsRequest {
 		AssociationId: string;
-		Filters?: Array<AssociationExecutionFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<AssociationExecutionFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -892,37 +892,37 @@ export namespace MyNS {
 	export enum AssociationExecutionFilterType { EQUAL = 0, LESS_THAN = 1, GREATER_THAN = 2 }
 
 	export interface DescribeAutomationExecutionsResult {
-		AutomationExecutionMetadataList?: Array<AutomationExecutionMetadata>;
-		NextToken?: string;
+		AutomationExecutionMetadataList?: Array<AutomationExecutionMetadata> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Details about a specific Automation execution. */
 	export interface AutomationExecutionMetadata {
-		AutomationExecutionId?: string;
-		DocumentName?: string;
-		DocumentVersion?: string;
-		AutomationExecutionStatus?: AutomationExecutionMetadataAutomationExecutionStatus;
-		ExecutionStartTime?: Date;
-		ExecutionEndTime?: Date;
-		ExecutedBy?: string;
-		LogFile?: string;
-		Outputs?: AutomationParameterMap;
-		Mode?: AutomationExecutionMetadataMode;
-		ParentAutomationExecutionId?: string;
-		CurrentStepName?: string;
-		CurrentAction?: string;
-		FailureMessage?: string;
-		TargetParameterName?: string;
-		Targets?: Array<Target>;
-		TargetMaps?: Array<TargetMap>;
+		AutomationExecutionId?: string | null;
+		DocumentName?: string | null;
+		DocumentVersion?: string | null;
+		AutomationExecutionStatus?: AutomationExecutionMetadataAutomationExecutionStatus | null;
+		ExecutionStartTime?: Date | null;
+		ExecutionEndTime?: Date | null;
+		ExecutedBy?: string | null;
+		LogFile?: string | null;
+		Outputs?: AutomationParameterMap | null;
+		Mode?: AutomationExecutionMetadataMode | null;
+		ParentAutomationExecutionId?: string | null;
+		CurrentStepName?: string | null;
+		CurrentAction?: string | null;
+		FailureMessage?: string | null;
+		TargetParameterName?: string | null;
+		Targets?: Array<Target> | null;
+		TargetMaps?: Array<TargetMap> | null;
 
 		/** Information about targets that resolved during the Automation execution. */
-		ResolvedTargets?: ResolvedTargets;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
-		Target?: string;
-		AutomationType?: AutomationExecutionMetadataAutomationType;
+		ResolvedTargets?: ResolvedTargets | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
+		Target?: string | null;
+		AutomationType?: AutomationExecutionMetadataAutomationType | null;
 	}
 
 	export enum AutomationExecutionMetadataAutomationExecutionStatus { Pending = 0, InProgress = 1, Waiting = 2, Success = 3, TimedOut = 4, Cancelling = 5, Cancelled = 6, Failed = 7 }
@@ -938,16 +938,16 @@ export namespace MyNS {
 
 	/** Information about targets that resolved during the Automation execution. */
 	export interface ResolvedTargets {
-		ParameterValues?: Array<string>;
-		Truncated?: boolean;
+		ParameterValues?: Array<string> | null;
+		Truncated?: boolean | null;
 	}
 
 	export enum AutomationExecutionMetadataAutomationType { CrossAccount = 0, Local = 1 }
 
 	export interface DescribeAutomationExecutionsRequest {
-		Filters?: Array<AutomationExecutionFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<AutomationExecutionFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -966,39 +966,39 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAutomationStepExecutionsResult {
-		StepExecutions?: Array<StepExecution>;
-		NextToken?: string;
+		StepExecutions?: Array<StepExecution> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Detailed information about an the execution state of an Automation step. */
 	export interface StepExecution {
-		StepName?: string;
-		Action?: string;
-		TimeoutSeconds?: number;
-		OnFailure?: string;
-		MaxAttempts?: number;
-		ExecutionStartTime?: Date;
-		ExecutionEndTime?: Date;
-		StepStatus?: AutomationExecutionMetadataAutomationExecutionStatus;
-		ResponseCode?: string;
-		Inputs?: NormalStringMap;
-		Outputs?: AutomationParameterMap;
-		Response?: string;
-		FailureMessage?: string;
+		StepName?: string | null;
+		Action?: string | null;
+		TimeoutSeconds?: number | null;
+		OnFailure?: string | null;
+		MaxAttempts?: number | null;
+		ExecutionStartTime?: Date | null;
+		ExecutionEndTime?: Date | null;
+		StepStatus?: AutomationExecutionMetadataAutomationExecutionStatus | null;
+		ResponseCode?: string | null;
+		Inputs?: NormalStringMap | null;
+		Outputs?: AutomationParameterMap | null;
+		Response?: string | null;
+		FailureMessage?: string | null;
 
 		/** Information about an Automation failure. */
-		FailureDetails?: FailureDetails;
-		StepExecutionId?: string;
-		OverriddenParameters?: AutomationParameterMap;
-		IsEnd?: boolean;
-		NextStep?: string;
-		IsCritical?: boolean;
-		ValidNextSteps?: Array<string>;
-		Targets?: Array<Target>;
+		FailureDetails?: FailureDetails | null;
+		StepExecutionId?: string | null;
+		OverriddenParameters?: AutomationParameterMap | null;
+		IsEnd?: boolean | null;
+		NextStep?: string | null;
+		IsCritical?: boolean | null;
+		ValidNextSteps?: Array<string> | null;
+		Targets?: Array<Target> | null;
 
 		/** The combination of AWS Regions and accounts targeted by the current Automation execution. */
-		TargetLocation?: TargetLocation;
+		TargetLocation?: TargetLocation | null;
 	}
 
 	export interface NormalStringMap {
@@ -1007,27 +1007,27 @@ export namespace MyNS {
 
 	/** Information about an Automation failure. */
 	export interface FailureDetails {
-		FailureStage?: string;
-		FailureType?: string;
-		Details?: AutomationParameterMap;
+		FailureStage?: string | null;
+		FailureType?: string | null;
+		Details?: AutomationParameterMap | null;
 	}
 
 
 	/** The combination of AWS Regions and accounts targeted by the current Automation execution. */
 	export interface TargetLocation {
-		Accounts?: Array<string>;
-		Regions?: Array<string>;
-		TargetLocationMaxConcurrency?: string;
-		TargetLocationMaxErrors?: string;
-		ExecutionRoleName?: string;
+		Accounts?: Array<string> | null;
+		Regions?: Array<string> | null;
+		TargetLocationMaxConcurrency?: string | null;
+		TargetLocationMaxErrors?: string | null;
+		ExecutionRoleName?: string | null;
 	}
 
 	export interface DescribeAutomationStepExecutionsRequest {
 		AutomationExecutionId: string;
-		Filters?: Array<StepExecutionFilter>;
-		NextToken?: string;
-		MaxResults?: number;
-		ReverseOrder?: boolean;
+		Filters?: Array<StepExecutionFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		ReverseOrder?: boolean | null;
 	}
 
 
@@ -1043,71 +1043,71 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAvailablePatchesResult {
-		Patches?: Array<Patch>;
-		NextToken?: string;
+		Patches?: Array<Patch> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents metadata about a patch. */
 	export interface Patch {
-		Id?: string;
-		ReleaseDate?: Date;
-		Title?: string;
-		Description?: string;
-		ContentUrl?: string;
-		Vendor?: string;
-		ProductFamily?: string;
-		Product?: string;
-		Classification?: string;
-		MsrcSeverity?: string;
-		KbNumber?: string;
-		MsrcNumber?: string;
-		Language?: string;
+		Id?: string | null;
+		ReleaseDate?: Date | null;
+		Title?: string | null;
+		Description?: string | null;
+		ContentUrl?: string | null;
+		Vendor?: string | null;
+		ProductFamily?: string | null;
+		Product?: string | null;
+		Classification?: string | null;
+		MsrcSeverity?: string | null;
+		KbNumber?: string | null;
+		MsrcNumber?: string | null;
+		Language?: string | null;
 	}
 
 	export interface DescribeAvailablePatchesRequest {
-		Filters?: Array<PatchOrchestratorFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<PatchOrchestratorFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Defines a filter used in Patch Manager APIs. */
 	export interface PatchOrchestratorFilter {
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface DescribeDocumentResult {
 
 		/** Describes a Systems Manager document. */
-		Document?: DocumentDescription;
+		Document?: DocumentDescription | null;
 	}
 
 	export interface DescribeDocumentRequest {
 		Name: string;
-		DocumentVersion?: string;
-		VersionName?: string;
+		DocumentVersion?: string | null;
+		VersionName?: string | null;
 	}
 
 	export interface DescribeDocumentPermissionResponse {
-		AccountIds?: Array<string>;
+		AccountIds?: Array<string> | null;
 
 		/** A list of of AWS accounts where the current document is shared and the version shared with each account. */
-		AccountSharingInfoList?: Array<AccountSharingInfo>;
+		AccountSharingInfoList?: Array<AccountSharingInfo> | null;
 	}
 
 
 	/** Information includes the AWS account ID where the current document is shared and the version shared with that account. */
 	export interface AccountSharingInfo {
-		AccountId?: string;
+		AccountId?: string | null;
 
 		/**
 		 * The document version shared with other accounts. You can share <code>Latest</code>, <code>Default</code> or <code>All versions</code>.
 		 * Max length: 8
 		 * Pattern: ([$]LATEST|[$]DEFAULT|[$]ALL)
 		 */
-		SharedDocumentVersion?: string;
+		SharedDocumentVersion?: string | null;
 	}
 
 	export interface DescribeDocumentPermissionRequest {
@@ -1121,28 +1121,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribeEffectiveInstanceAssociationsResult {
-		Associations?: Array<InstanceAssociation>;
-		NextToken?: string;
+		Associations?: Array<InstanceAssociation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** One or more association documents on the instance.  */
 	export interface InstanceAssociation {
-		AssociationId?: string;
-		InstanceId?: string;
-		Content?: string;
-		AssociationVersion?: string;
+		AssociationId?: string | null;
+		InstanceId?: string | null;
+		Content?: string | null;
+		AssociationVersion?: string | null;
 	}
 
 	export interface DescribeEffectiveInstanceAssociationsRequest {
 		InstanceId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeEffectivePatchesForPatchBaselineResult {
-		EffectivePatches?: Array<EffectivePatch>;
-		NextToken?: string;
+		EffectivePatches?: Array<EffectivePatch> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1150,53 +1150,53 @@ export namespace MyNS {
 	export interface EffectivePatch {
 
 		/** Represents metadata about a patch. */
-		Patch?: Patch;
+		Patch?: Patch | null;
 
 		/** Information about the approval status of a patch. */
-		PatchStatus?: PatchStatus;
+		PatchStatus?: PatchStatus | null;
 	}
 
 
 	/** Information about the approval status of a patch. */
 	export interface PatchStatus {
-		DeploymentStatus?: PatchStatusDeploymentStatus;
-		ComplianceLevel?: PatchRuleComplianceLevel;
-		ApprovalDate?: Date;
+		DeploymentStatus?: PatchStatusDeploymentStatus | null;
+		ComplianceLevel?: PatchRuleComplianceLevel | null;
+		ApprovalDate?: Date | null;
 	}
 
 	export enum PatchStatusDeploymentStatus { APPROVED = 0, PENDING_APPROVAL = 1, EXPLICIT_APPROVED = 2, EXPLICIT_REJECTED = 3 }
 
 	export interface DescribeEffectivePatchesForPatchBaselineRequest {
 		BaselineId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface UnsupportedOperatingSystem {
 	}
 
 	export interface DescribeInstanceAssociationsStatusResult {
-		InstanceAssociationStatusInfos?: Array<InstanceAssociationStatusInfo>;
-		NextToken?: string;
+		InstanceAssociationStatusInfos?: Array<InstanceAssociationStatusInfo> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Status information about the instance association. */
 	export interface InstanceAssociationStatusInfo {
-		AssociationId?: string;
-		Name?: string;
-		DocumentVersion?: string;
-		AssociationVersion?: string;
-		InstanceId?: string;
-		ExecutionDate?: Date;
-		Status?: string;
-		DetailedStatus?: string;
-		ExecutionSummary?: string;
-		ErrorCode?: string;
+		AssociationId?: string | null;
+		Name?: string | null;
+		DocumentVersion?: string | null;
+		AssociationVersion?: string | null;
+		InstanceId?: string | null;
+		ExecutionDate?: Date | null;
+		Status?: string | null;
+		DetailedStatus?: string | null;
+		ExecutionSummary?: string | null;
+		ErrorCode?: string | null;
 
 		/** The URL of S3 bucket where you want to store the results of this request. */
-		OutputUrl?: InstanceAssociationOutputUrl;
-		AssociationName?: string;
+		OutputUrl?: InstanceAssociationOutputUrl | null;
+		AssociationName?: string | null;
 	}
 
 
@@ -1204,50 +1204,50 @@ export namespace MyNS {
 	export interface InstanceAssociationOutputUrl {
 
 		/** A URL for the S3 bucket where you want to store the results of this request. */
-		S3OutputUrl?: S3OutputUrl;
+		S3OutputUrl?: S3OutputUrl | null;
 	}
 
 
 	/** A URL for the S3 bucket where you want to store the results of this request. */
 	export interface S3OutputUrl {
-		OutputUrl?: string;
+		OutputUrl?: string | null;
 	}
 
 	export interface DescribeInstanceAssociationsStatusRequest {
 		InstanceId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeInstanceInformationResult {
-		InstanceInformationList?: Array<InstanceInformation>;
-		NextToken?: string;
+		InstanceInformationList?: Array<InstanceInformation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a filter for a specific list of instances.  */
 	export interface InstanceInformation {
-		InstanceId?: string;
-		PingStatus?: InstanceInformationPingStatus;
-		LastPingDateTime?: Date;
-		AgentVersion?: string;
-		IsLatestVersion?: boolean;
-		PlatformType?: PlatformType;
-		PlatformName?: string;
-		PlatformVersion?: string;
-		ActivationId?: string;
-		IamRole?: string;
-		RegistrationDate?: Date;
-		ResourceType?: InstanceInformationResourceType;
-		Name?: string;
-		IPAddress?: string;
-		ComputerName?: string;
-		AssociationStatus?: string;
-		LastAssociationExecutionDate?: Date;
-		LastSuccessfulAssociationExecutionDate?: Date;
+		InstanceId?: string | null;
+		PingStatus?: InstanceInformationPingStatus | null;
+		LastPingDateTime?: Date | null;
+		AgentVersion?: string | null;
+		IsLatestVersion?: boolean | null;
+		PlatformType?: PlatformType | null;
+		PlatformName?: string | null;
+		PlatformVersion?: string | null;
+		ActivationId?: string | null;
+		IamRole?: string | null;
+		RegistrationDate?: Date | null;
+		ResourceType?: InstanceInformationResourceType | null;
+		Name?: string | null;
+		IPAddress?: string | null;
+		ComputerName?: string | null;
+		AssociationStatus?: string | null;
+		LastAssociationExecutionDate?: Date | null;
+		LastSuccessfulAssociationExecutionDate?: Date | null;
 
 		/** Status information about the aggregated associations. */
-		AssociationOverview?: InstanceAggregatedAssociationOverview;
+		AssociationOverview?: InstanceAggregatedAssociationOverview | null;
 	}
 
 	export enum InstanceInformationPingStatus { Online = 0, ConnectionLost = 1, Inactive = 2 }
@@ -1257,18 +1257,18 @@ export namespace MyNS {
 
 	/** Status information about the aggregated associations. */
 	export interface InstanceAggregatedAssociationOverview {
-		DetailedStatus?: string;
-		InstanceAssociationStatusAggregatedCount?: InstanceAssociationStatusAggregatedCount;
+		DetailedStatus?: string | null;
+		InstanceAssociationStatusAggregatedCount?: InstanceAssociationStatusAggregatedCount | null;
 	}
 
 	export interface InstanceAssociationStatusAggregatedCount {
 	}
 
 	export interface DescribeInstanceInformationRequest {
-		InstanceInformationFilterList?: Array<InstanceInformationFilter>;
-		Filters?: Array<InstanceInformationStringFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		InstanceInformationFilterList?: Array<InstanceInformationFilter> | null;
+		Filters?: Array<InstanceInformationStringFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1291,8 +1291,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeInstancePatchStatesResult {
-		InstancePatchStates?: Array<InstancePatchState>;
-		NextToken?: string;
+		InstancePatchStates?: Array<InstancePatchState> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1301,22 +1301,22 @@ export namespace MyNS {
 		InstanceId: string;
 		PatchGroup: string;
 		BaselineId: string;
-		SnapshotId?: string;
-		InstallOverrideList?: string;
-		OwnerInformation?: string;
-		InstalledCount?: number;
-		InstalledOtherCount?: number;
-		InstalledPendingRebootCount?: number;
-		InstalledRejectedCount?: number;
-		MissingCount?: number;
-		FailedCount?: number;
-		UnreportedNotApplicableCount?: number;
-		NotApplicableCount?: number;
+		SnapshotId?: string | null;
+		InstallOverrideList?: string | null;
+		OwnerInformation?: string | null;
+		InstalledCount?: number | null;
+		InstalledOtherCount?: number | null;
+		InstalledPendingRebootCount?: number | null;
+		InstalledRejectedCount?: number | null;
+		MissingCount?: number | null;
+		FailedCount?: number | null;
+		UnreportedNotApplicableCount?: number | null;
+		NotApplicableCount?: number | null;
 		OperationStartTime: Date;
 		OperationEndTime: Date;
 		Operation: InstancePatchStateOperation;
-		LastNoRebootInstallOperationTime?: Date;
-		RebootOption?: InstancePatchStateRebootOption;
+		LastNoRebootInstallOperationTime?: Date | null;
+		RebootOption?: InstancePatchStateRebootOption | null;
 	}
 
 	export enum InstancePatchStateOperation { Scan = 0, Install = 1 }
@@ -1325,20 +1325,20 @@ export namespace MyNS {
 
 	export interface DescribeInstancePatchStatesRequest {
 		InstanceIds: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeInstancePatchStatesForPatchGroupResult {
-		InstancePatchStates?: Array<InstancePatchState>;
-		NextToken?: string;
+		InstancePatchStates?: Array<InstancePatchState> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeInstancePatchStatesForPatchGroupRequest {
 		PatchGroup: string;
-		Filters?: Array<InstancePatchStateFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<InstancePatchStateFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -1352,8 +1352,8 @@ export namespace MyNS {
 	export enum InstancePatchStateFilterType { Equal = 0, NotEqual = 1, LessThan = 2, GreaterThan = 3 }
 
 	export interface DescribeInstancePatchesResult {
-		Patches?: Array<PatchComplianceData>;
-		NextToken?: string;
+		Patches?: Array<PatchComplianceData> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1371,61 +1371,61 @@ export namespace MyNS {
 
 	export interface DescribeInstancePatchesRequest {
 		InstanceId: string;
-		Filters?: Array<PatchOrchestratorFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<PatchOrchestratorFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeInventoryDeletionsResult {
-		InventoryDeletions?: Array<InventoryDeletionStatusItem>;
-		NextToken?: string;
+		InventoryDeletions?: Array<InventoryDeletionStatusItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Status information returned by the <code>DeleteInventory</code> action. */
 	export interface InventoryDeletionStatusItem {
-		DeletionId?: string;
-		TypeName?: string;
-		DeletionStartTime?: Date;
-		LastStatus?: InventoryDeletionStatusItemLastStatus;
-		LastStatusMessage?: string;
+		DeletionId?: string | null;
+		TypeName?: string | null;
+		DeletionStartTime?: Date | null;
+		LastStatus?: InventoryDeletionStatusItemLastStatus | null;
+		LastStatusMessage?: string | null;
 
 		/** Information about the delete operation. */
-		DeletionSummary?: InventoryDeletionSummary;
-		LastStatusUpdateTime?: Date;
+		DeletionSummary?: InventoryDeletionSummary | null;
+		LastStatusUpdateTime?: Date | null;
 	}
 
 	export enum InventoryDeletionStatusItemLastStatus { InProgress = 0, Complete = 1 }
 
 	export interface DescribeInventoryDeletionsRequest {
-		DeletionId?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		DeletionId?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface InvalidDeletionIdException {
 	}
 
 	export interface DescribeMaintenanceWindowExecutionTaskInvocationsResult {
-		WindowExecutionTaskInvocationIdentities?: Array<MaintenanceWindowExecutionTaskInvocationIdentity>;
-		NextToken?: string;
+		WindowExecutionTaskInvocationIdentities?: Array<MaintenanceWindowExecutionTaskInvocationIdentity> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes the information about a task invocation for a particular target as part of a task execution performed as part of a maintenance window execution. */
 	export interface MaintenanceWindowExecutionTaskInvocationIdentity {
-		WindowExecutionId?: string;
-		TaskExecutionId?: string;
-		InvocationId?: string;
-		ExecutionId?: string;
-		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType;
-		Parameters?: string;
-		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus;
-		StatusDetails?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		OwnerInformation?: string;
-		WindowTargetId?: string;
+		WindowExecutionId?: string | null;
+		TaskExecutionId?: string | null;
+		InvocationId?: string | null;
+		ExecutionId?: string | null;
+		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
+		Parameters?: string | null;
+		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+		StatusDetails?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		OwnerInformation?: string | null;
+		WindowTargetId?: string | null;
 	}
 
 	export enum MaintenanceWindowExecutionTaskInvocationIdentityTaskType { RUN_COMMAND = 0, AUTOMATION = 1, STEP_FUNCTIONS = 2, LAMBDA = 3 }
@@ -1435,137 +1435,137 @@ export namespace MyNS {
 	export interface DescribeMaintenanceWindowExecutionTaskInvocationsRequest {
 		WindowExecutionId: string;
 		TaskId: string;
-		Filters?: Array<MaintenanceWindowFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<MaintenanceWindowFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Filter used in the request. Supported filter keys are Name and Enabled. */
 	export interface MaintenanceWindowFilter {
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface DescribeMaintenanceWindowExecutionTasksResult {
-		WindowExecutionTaskIdentities?: Array<MaintenanceWindowExecutionTaskIdentity>;
-		NextToken?: string;
+		WindowExecutionTaskIdentities?: Array<MaintenanceWindowExecutionTaskIdentity> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a task execution performed as part of a maintenance window execution. */
 	export interface MaintenanceWindowExecutionTaskIdentity {
-		WindowExecutionId?: string;
-		TaskExecutionId?: string;
-		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus;
-		StatusDetails?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		TaskArn?: string;
-		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType;
+		WindowExecutionId?: string | null;
+		TaskExecutionId?: string | null;
+		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+		StatusDetails?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		TaskArn?: string | null;
+		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
 	}
 
 	export interface DescribeMaintenanceWindowExecutionTasksRequest {
 		WindowExecutionId: string;
-		Filters?: Array<MaintenanceWindowFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<MaintenanceWindowFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowExecutionsResult {
-		WindowExecutions?: Array<MaintenanceWindowExecution>;
-		NextToken?: string;
+		WindowExecutions?: Array<MaintenanceWindowExecution> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes the information about an execution of a maintenance window.  */
 	export interface MaintenanceWindowExecution {
-		WindowId?: string;
-		WindowExecutionId?: string;
-		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus;
-		StatusDetails?: string;
-		StartTime?: Date;
-		EndTime?: Date;
+		WindowId?: string | null;
+		WindowExecutionId?: string | null;
+		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+		StatusDetails?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 	}
 
 	export interface DescribeMaintenanceWindowExecutionsRequest {
 		WindowId: string;
-		Filters?: Array<MaintenanceWindowFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<MaintenanceWindowFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowScheduleResult {
-		ScheduledWindowExecutions?: Array<ScheduledWindowExecution>;
-		NextToken?: string;
+		ScheduledWindowExecutions?: Array<ScheduledWindowExecution> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a scheduled execution for a maintenance window. */
 	export interface ScheduledWindowExecution {
-		WindowId?: string;
-		Name?: string;
-		ExecutionTime?: string;
+		WindowId?: string | null;
+		Name?: string | null;
+		ExecutionTime?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowScheduleRequest {
-		WindowId?: string;
-		Targets?: Array<Target>;
-		ResourceType?: DescribeMaintenanceWindowScheduleRequestResourceType;
-		Filters?: Array<PatchOrchestratorFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		WindowId?: string | null;
+		Targets?: Array<Target> | null;
+		ResourceType?: DescribeMaintenanceWindowScheduleRequestResourceType | null;
+		Filters?: Array<PatchOrchestratorFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum DescribeMaintenanceWindowScheduleRequestResourceType { INSTANCE = 0, RESOURCE_GROUP = 1 }
 
 	export interface DescribeMaintenanceWindowTargetsResult {
-		Targets?: Array<MaintenanceWindowTarget>;
-		NextToken?: string;
+		Targets?: Array<MaintenanceWindowTarget> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The target registered with the maintenance window. */
 	export interface MaintenanceWindowTarget {
-		WindowId?: string;
-		WindowTargetId?: string;
-		ResourceType?: DescribeMaintenanceWindowScheduleRequestResourceType;
-		Targets?: Array<Target>;
-		OwnerInformation?: string;
-		Name?: string;
-		Description?: string;
+		WindowId?: string | null;
+		WindowTargetId?: string | null;
+		ResourceType?: DescribeMaintenanceWindowScheduleRequestResourceType | null;
+		Targets?: Array<Target> | null;
+		OwnerInformation?: string | null;
+		Name?: string | null;
+		Description?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowTargetsRequest {
 		WindowId: string;
-		Filters?: Array<MaintenanceWindowFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<MaintenanceWindowFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowTasksResult {
-		Tasks?: Array<MaintenanceWindowTask>;
-		NextToken?: string;
+		Tasks?: Array<MaintenanceWindowTask> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a task defined for a maintenance window. */
 	export interface MaintenanceWindowTask {
-		WindowId?: string;
-		WindowTaskId?: string;
-		TaskArn?: string;
-		Type?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType;
-		Targets?: Array<Target>;
-		TaskParameters?: MaintenanceWindowTaskParameters;
-		Priority?: number;
+		WindowId?: string | null;
+		WindowTaskId?: string | null;
+		TaskArn?: string | null;
+		Type?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
+		Targets?: Array<Target> | null;
+		TaskParameters?: MaintenanceWindowTaskParameters | null;
+		Priority?: number | null;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
-		LoggingInfo?: LoggingInfo;
-		ServiceRoleArn?: string;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
-		Name?: string;
-		Description?: string;
+		LoggingInfo?: LoggingInfo | null;
+		ServiceRoleArn?: string | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
+		Name?: string | null;
+		Description?: string | null;
 	}
 
 	export interface MaintenanceWindowTaskParameters {
@@ -1575,91 +1575,91 @@ export namespace MyNS {
 	/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
 	export interface LoggingInfo {
 		S3BucketName: string;
-		S3KeyPrefix?: string;
+		S3KeyPrefix?: string | null;
 		S3Region: string;
 	}
 
 	export interface DescribeMaintenanceWindowTasksRequest {
 		WindowId: string;
-		Filters?: Array<MaintenanceWindowFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<MaintenanceWindowFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowsResult {
-		WindowIdentities?: Array<MaintenanceWindowIdentity>;
-		NextToken?: string;
+		WindowIdentities?: Array<MaintenanceWindowIdentity> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about the maintenance window. */
 	export interface MaintenanceWindowIdentity {
-		WindowId?: string;
-		Name?: string;
-		Description?: string;
-		Enabled?: boolean;
-		Duration?: number;
-		Cutoff?: number;
-		Schedule?: string;
-		ScheduleTimezone?: string;
-		EndDate?: string;
-		StartDate?: string;
-		NextExecutionTime?: string;
+		WindowId?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Enabled?: boolean | null;
+		Duration?: number | null;
+		Cutoff?: number | null;
+		Schedule?: string | null;
+		ScheduleTimezone?: string | null;
+		EndDate?: string | null;
+		StartDate?: string | null;
+		NextExecutionTime?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowsRequest {
-		Filters?: Array<MaintenanceWindowFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<MaintenanceWindowFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowsForTargetResult {
-		WindowIdentities?: Array<MaintenanceWindowIdentityForTarget>;
-		NextToken?: string;
+		WindowIdentities?: Array<MaintenanceWindowIdentityForTarget> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The maintenance window to which the specified target belongs. */
 	export interface MaintenanceWindowIdentityForTarget {
-		WindowId?: string;
-		Name?: string;
+		WindowId?: string | null;
+		Name?: string | null;
 	}
 
 	export interface DescribeMaintenanceWindowsForTargetRequest {
 		Targets: Array<Target>;
 		ResourceType: DescribeMaintenanceWindowScheduleRequestResourceType;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeOpsItemsResponse {
-		NextToken?: string;
-		OpsItemSummaries?: Array<OpsItemSummary>;
+		NextToken?: string | null;
+		OpsItemSummaries?: Array<OpsItemSummary> | null;
 	}
 
 
 	/** A count of OpsItems. */
 	export interface OpsItemSummary {
-		CreatedBy?: string;
-		CreatedTime?: Date;
-		LastModifiedBy?: string;
-		LastModifiedTime?: Date;
-		Priority?: number;
-		Source?: string;
-		Status?: OpsItemSummaryStatus;
-		OpsItemId?: string;
-		Title?: string;
-		OperationalData?: OpsItemOperationalData;
-		Category?: string;
-		Severity?: string;
+		CreatedBy?: string | null;
+		CreatedTime?: Date | null;
+		LastModifiedBy?: string | null;
+		LastModifiedTime?: Date | null;
+		Priority?: number | null;
+		Source?: string | null;
+		Status?: OpsItemSummaryStatus | null;
+		OpsItemId?: string | null;
+		Title?: string | null;
+		OperationalData?: OpsItemOperationalData | null;
+		Category?: string | null;
+		Severity?: string | null;
 	}
 
 	export enum OpsItemSummaryStatus { Open = 0, InProgress = 1, Resolved = 2 }
 
 	export interface DescribeOpsItemsRequest {
-		OpsItemFilters?: Array<OpsItemFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		OpsItemFilters?: Array<OpsItemFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1675,24 +1675,24 @@ export namespace MyNS {
 	export enum OpsItemFilterOperator { Equal = 0, Contains = 1, GreaterThan = 2, LessThan = 3 }
 
 	export interface DescribeParametersResult {
-		Parameters?: Array<ParameterMetadata>;
-		NextToken?: string;
+		Parameters?: Array<ParameterMetadata> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Metadata includes information like the ARN of the last user and the date/time the parameter was last used. */
 	export interface ParameterMetadata {
-		Name?: string;
-		Type?: ParameterMetadataType;
-		KeyId?: string;
-		LastModifiedDate?: Date;
-		LastModifiedUser?: string;
-		Description?: string;
-		AllowedPattern?: string;
-		Version?: number;
-		Tier?: ParameterMetadataTier;
-		Policies?: Array<ParameterInlinePolicy>;
-		DataType?: string;
+		Name?: string | null;
+		Type?: ParameterMetadataType | null;
+		KeyId?: string | null;
+		LastModifiedDate?: Date | null;
+		LastModifiedUser?: string | null;
+		Description?: string | null;
+		AllowedPattern?: string | null;
+		Version?: number | null;
+		Tier?: ParameterMetadataTier | null;
+		Policies?: Array<ParameterInlinePolicy> | null;
+		DataType?: string | null;
 	}
 
 	export enum ParameterMetadataType { String = 0, StringList = 1, SecureString = 2 }
@@ -1702,16 +1702,16 @@ export namespace MyNS {
 
 	/** One or more policies assigned to a parameter. */
 	export interface ParameterInlinePolicy {
-		PolicyText?: string;
-		PolicyType?: string;
-		PolicyStatus?: string;
+		PolicyText?: string | null;
+		PolicyType?: string | null;
+		PolicyStatus?: string | null;
 	}
 
 	export interface DescribeParametersRequest {
-		Filters?: Array<ParametersFilter>;
-		ParameterFilters?: Array<ParameterStringFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<ParametersFilter> | null;
+		ParameterFilters?: Array<ParameterStringFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1727,44 +1727,44 @@ export namespace MyNS {
 	/** <p>One or more filters. Use a filter to return a more specific list of results.</p> <important> <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.</p> <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.</p> <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples of CLI commands demonstrating valid parameter filter constructions, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> </important> */
 	export interface ParameterStringFilter {
 		Key: string;
-		Option?: string;
-		Values?: Array<string>;
+		Option?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface InvalidFilterOption {
 	}
 
 	export interface DescribePatchBaselinesResult {
-		BaselineIdentities?: Array<PatchBaselineIdentity>;
-		NextToken?: string;
+		BaselineIdentities?: Array<PatchBaselineIdentity> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Defines the basic information about a patch baseline. */
 	export interface PatchBaselineIdentity {
-		BaselineId?: string;
-		BaselineName?: string;
-		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem;
-		BaselineDescription?: string;
-		DefaultBaseline?: boolean;
+		BaselineId?: string | null;
+		BaselineName?: string | null;
+		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
+		BaselineDescription?: string | null;
+		DefaultBaseline?: boolean | null;
 	}
 
 	export interface DescribePatchBaselinesRequest {
-		Filters?: Array<PatchOrchestratorFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		Filters?: Array<PatchOrchestratorFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribePatchGroupStateResult {
-		Instances?: number;
-		InstancesWithInstalledPatches?: number;
-		InstancesWithInstalledOtherPatches?: number;
-		InstancesWithInstalledPendingRebootPatches?: number;
-		InstancesWithInstalledRejectedPatches?: number;
-		InstancesWithMissingPatches?: number;
-		InstancesWithFailedPatches?: number;
-		InstancesWithNotApplicablePatches?: number;
-		InstancesWithUnreportedNotApplicablePatches?: number;
+		Instances?: number | null;
+		InstancesWithInstalledPatches?: number | null;
+		InstancesWithInstalledOtherPatches?: number | null;
+		InstancesWithInstalledPendingRebootPatches?: number | null;
+		InstancesWithInstalledRejectedPatches?: number | null;
+		InstancesWithMissingPatches?: number | null;
+		InstancesWithFailedPatches?: number | null;
+		InstancesWithNotApplicablePatches?: number | null;
+		InstancesWithUnreportedNotApplicablePatches?: number | null;
 	}
 
 	export interface DescribePatchGroupStateRequest {
@@ -1772,28 +1772,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribePatchGroupsResult {
-		Mappings?: Array<PatchGroupPatchBaselineMapping>;
-		NextToken?: string;
+		Mappings?: Array<PatchGroupPatchBaselineMapping> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The mapping between a patch group and the patch baseline the patch group is registered with. */
 	export interface PatchGroupPatchBaselineMapping {
-		PatchGroup?: string;
+		PatchGroup?: string | null;
 
 		/** Defines the basic information about a patch baseline. */
-		BaselineIdentity?: PatchBaselineIdentity;
+		BaselineIdentity?: PatchBaselineIdentity | null;
 	}
 
 	export interface DescribePatchGroupsRequest {
-		MaxResults?: number;
-		Filters?: Array<PatchOrchestratorFilter>;
-		NextToken?: string;
+		MaxResults?: number | null;
+		Filters?: Array<PatchOrchestratorFilter> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribePatchPropertiesResult {
-		Properties?: Array<PatchPropertyEntry>;
-		NextToken?: string;
+		Properties?: Array<PatchPropertyEntry> | null;
+		NextToken?: string | null;
 	}
 
 	export interface PatchPropertyEntry {
@@ -1802,9 +1802,9 @@ export namespace MyNS {
 	export interface DescribePatchPropertiesRequest {
 		OperatingSystem: CreatePatchBaselineRequestOperatingSystem;
 		Property: DescribePatchPropertiesRequestProperty;
-		PatchSet?: DescribePatchPropertiesRequestPatchSet;
-		MaxResults?: number;
-		NextToken?: string;
+		PatchSet?: DescribePatchPropertiesRequestPatchSet | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum DescribePatchPropertiesRequestProperty { PRODUCT = 0, PRODUCT_FAMILY = 1, CLASSIFICATION = 2, MSRC_SEVERITY = 3, PRIORITY = 4, SEVERITY = 5 }
@@ -1812,24 +1812,24 @@ export namespace MyNS {
 	export enum DescribePatchPropertiesRequestPatchSet { OS = 0, APPLICATION = 1 }
 
 	export interface DescribeSessionsResponse {
-		Sessions?: Array<Session>;
-		NextToken?: string;
+		Sessions?: Array<Session> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a Session Manager connection to an instance. */
 	export interface Session {
-		SessionId?: string;
-		Target?: string;
-		Status?: SessionStatus;
-		StartDate?: Date;
-		EndDate?: Date;
-		DocumentName?: string;
-		Owner?: string;
-		Details?: string;
+		SessionId?: string | null;
+		Target?: string | null;
+		Status?: SessionStatus | null;
+		StartDate?: Date | null;
+		EndDate?: Date | null;
+		DocumentName?: string | null;
+		Owner?: string | null;
+		Details?: string | null;
 
 		/** Reserved for future use. */
-		OutputUrl?: SessionManagerOutputUrl;
+		OutputUrl?: SessionManagerOutputUrl | null;
 	}
 
 	export enum SessionStatus { Connected = 0, Connecting = 1, Disconnected = 2, Terminated = 3, Terminating = 4, Failed = 5 }
@@ -1837,15 +1837,15 @@ export namespace MyNS {
 
 	/** Reserved for future use. */
 	export interface SessionManagerOutputUrl {
-		S3OutputUrl?: string;
-		CloudWatchOutputUrl?: string;
+		S3OutputUrl?: string | null;
+		CloudWatchOutputUrl?: string | null;
 	}
 
 	export interface DescribeSessionsRequest {
 		State: DescribeSessionsRequestState;
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<SessionFilter>;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<SessionFilter> | null;
 	}
 
 	export enum DescribeSessionsRequestState { Active = 0, History = 1 }
@@ -1862,51 +1862,51 @@ export namespace MyNS {
 	export interface GetAutomationExecutionResult {
 
 		/** Detailed information about the current state of an individual Automation execution. */
-		AutomationExecution?: AutomationExecution;
+		AutomationExecution?: AutomationExecution | null;
 	}
 
 
 	/** Detailed information about the current state of an individual Automation execution. */
 	export interface AutomationExecution {
-		AutomationExecutionId?: string;
-		DocumentName?: string;
-		DocumentVersion?: string;
-		ExecutionStartTime?: Date;
-		ExecutionEndTime?: Date;
-		AutomationExecutionStatus?: AutomationExecutionMetadataAutomationExecutionStatus;
-		StepExecutions?: Array<StepExecution>;
-		StepExecutionsTruncated?: boolean;
-		Parameters?: AutomationParameterMap;
-		Outputs?: AutomationParameterMap;
-		FailureMessage?: string;
-		Mode?: AutomationExecutionMetadataMode;
-		ParentAutomationExecutionId?: string;
-		ExecutedBy?: string;
-		CurrentStepName?: string;
-		CurrentAction?: string;
-		TargetParameterName?: string;
-		Targets?: Array<Target>;
-		TargetMaps?: Array<TargetMap>;
+		AutomationExecutionId?: string | null;
+		DocumentName?: string | null;
+		DocumentVersion?: string | null;
+		ExecutionStartTime?: Date | null;
+		ExecutionEndTime?: Date | null;
+		AutomationExecutionStatus?: AutomationExecutionMetadataAutomationExecutionStatus | null;
+		StepExecutions?: Array<StepExecution> | null;
+		StepExecutionsTruncated?: boolean | null;
+		Parameters?: AutomationParameterMap | null;
+		Outputs?: AutomationParameterMap | null;
+		FailureMessage?: string | null;
+		Mode?: AutomationExecutionMetadataMode | null;
+		ParentAutomationExecutionId?: string | null;
+		ExecutedBy?: string | null;
+		CurrentStepName?: string | null;
+		CurrentAction?: string | null;
+		TargetParameterName?: string | null;
+		Targets?: Array<Target> | null;
+		TargetMaps?: Array<TargetMap> | null;
 
 		/** Information about targets that resolved during the Automation execution. */
-		ResolvedTargets?: ResolvedTargets;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
-		Target?: string;
-		TargetLocations?: Array<TargetLocation>;
+		ResolvedTargets?: ResolvedTargets | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
+		Target?: string | null;
+		TargetLocations?: Array<TargetLocation> | null;
 
 		/** An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution. */
-		ProgressCounters?: ProgressCounters;
+		ProgressCounters?: ProgressCounters | null;
 	}
 
 
 	/** An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution. */
 	export interface ProgressCounters {
-		TotalSteps?: number;
-		SuccessSteps?: number;
-		FailedSteps?: number;
-		CancelledSteps?: number;
-		TimedOutSteps?: number;
+		TotalSteps?: number | null;
+		SuccessSteps?: number | null;
+		FailedSteps?: number | null;
+		CancelledSteps?: number | null;
+		TimedOutSteps?: number | null;
 	}
 
 	export interface GetAutomationExecutionRequest {
@@ -1914,16 +1914,16 @@ export namespace MyNS {
 	}
 
 	export interface GetCalendarStateResponse {
-		State?: GetCalendarStateResponseState;
-		AtTime?: string;
-		NextTransitionTime?: string;
+		State?: GetCalendarStateResponseState | null;
+		AtTime?: string | null;
+		NextTransitionTime?: string | null;
 	}
 
 	export enum GetCalendarStateResponseState { OPEN = 0, CLOSED = 1 }
 
 	export interface GetCalendarStateRequest {
 		CalendarNames: Array<string>;
-		AtTime?: string;
+		AtTime?: string | null;
 	}
 
 	export interface InvalidDocumentType {
@@ -1933,25 +1933,25 @@ export namespace MyNS {
 	}
 
 	export interface GetCommandInvocationResult {
-		CommandId?: string;
-		InstanceId?: string;
-		Comment?: string;
-		DocumentName?: string;
-		DocumentVersion?: string;
-		PluginName?: string;
-		ResponseCode?: number;
-		ExecutionStartDateTime?: string;
-		ExecutionElapsedTime?: string;
-		ExecutionEndDateTime?: string;
-		Status?: GetCommandInvocationResultStatus;
-		StatusDetails?: string;
-		StandardOutputContent?: string;
-		StandardOutputUrl?: string;
-		StandardErrorContent?: string;
-		StandardErrorUrl?: string;
+		CommandId?: string | null;
+		InstanceId?: string | null;
+		Comment?: string | null;
+		DocumentName?: string | null;
+		DocumentVersion?: string | null;
+		PluginName?: string | null;
+		ResponseCode?: number | null;
+		ExecutionStartDateTime?: string | null;
+		ExecutionElapsedTime?: string | null;
+		ExecutionEndDateTime?: string | null;
+		Status?: GetCommandInvocationResultStatus | null;
+		StatusDetails?: string | null;
+		StandardOutputContent?: string | null;
+		StandardOutputUrl?: string | null;
+		StandardErrorContent?: string | null;
+		StandardErrorUrl?: string | null;
 
 		/** Configuration options for sending command output to CloudWatch Logs. */
-		CloudWatchOutputConfig?: CloudWatchOutputConfig;
+		CloudWatchOutputConfig?: CloudWatchOutputConfig | null;
 	}
 
 	export enum GetCommandInvocationResultStatus { Pending = 0, InProgress = 1, Delayed = 2, Success = 3, Cancelled = 4, TimedOut = 5, Failed = 6, Cancelling = 7 }
@@ -1959,14 +1959,14 @@ export namespace MyNS {
 
 	/** Configuration options for sending command output to CloudWatch Logs. */
 	export interface CloudWatchOutputConfig {
-		CloudWatchLogGroupName?: string;
-		CloudWatchOutputEnabled?: boolean;
+		CloudWatchLogGroupName?: string | null;
+		CloudWatchOutputEnabled?: boolean | null;
 	}
 
 	export interface GetCommandInvocationRequest {
 		CommandId: string;
 		InstanceId: string;
-		PluginName?: string;
+		PluginName?: string | null;
 	}
 
 	export interface InvalidPluginName {
@@ -1976,8 +1976,8 @@ export namespace MyNS {
 	}
 
 	export interface GetConnectionStatusResponse {
-		Target?: string;
-		Status?: GetConnectionStatusResponseStatus;
+		Target?: string | null;
+		Status?: GetConnectionStatusResponseStatus | null;
 	}
 
 	export enum GetConnectionStatusResponseStatus { Connected = 0, NotConnected = 1 }
@@ -1987,19 +1987,19 @@ export namespace MyNS {
 	}
 
 	export interface GetDefaultPatchBaselineResult {
-		BaselineId?: string;
-		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem;
+		BaselineId?: string | null;
+		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 	}
 
 	export interface GetDefaultPatchBaselineRequest {
-		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem;
+		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 	}
 
 	export interface GetDeployablePatchSnapshotForInstanceResult {
-		InstanceId?: string;
-		SnapshotId?: string;
-		SnapshotDownloadUrl?: string;
-		Product?: string;
+		InstanceId?: string | null;
+		SnapshotId?: string | null;
+		SnapshotDownloadUrl?: string | null;
+		Product?: string | null;
 	}
 
 	export interface GetDeployablePatchSnapshotForInstanceRequest {
@@ -2011,60 +2011,60 @@ export namespace MyNS {
 	}
 
 	export interface GetDocumentResult {
-		Name?: string;
-		VersionName?: string;
-		DocumentVersion?: string;
+		Name?: string | null;
+		VersionName?: string | null;
+		DocumentVersion?: string | null;
 
 		/** The status of a document. */
-		Status?: DocumentDescriptionStatus;
-		StatusInformation?: string;
-		Content?: string;
-		DocumentType?: DocumentDescriptionDocumentType;
-		DocumentFormat?: DocumentDescriptionDocumentFormat;
-		Requires?: Array<DocumentRequires>;
-		AttachmentsContent?: Array<AttachmentContent>;
+		Status?: DocumentDescriptionStatus | null;
+		StatusInformation?: string | null;
+		Content?: string | null;
+		DocumentType?: DocumentDescriptionDocumentType | null;
+		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+		Requires?: Array<DocumentRequires> | null;
+		AttachmentsContent?: Array<AttachmentContent> | null;
 	}
 
 
 	/** A structure that includes attributes that describe a document attachment. */
 	export interface AttachmentContent {
-		Name?: string;
-		Size?: number;
-		Hash?: string;
-		HashType?: AttachmentContentHashType;
-		Url?: string;
+		Name?: string | null;
+		Size?: number | null;
+		Hash?: string | null;
+		HashType?: AttachmentContentHashType | null;
+		Url?: string | null;
 	}
 
 	export enum AttachmentContentHashType { Sha256 = 0 }
 
 	export interface GetDocumentRequest {
 		Name: string;
-		VersionName?: string;
-		DocumentVersion?: string;
-		DocumentFormat?: DocumentDescriptionDocumentFormat;
+		VersionName?: string | null;
+		DocumentVersion?: string | null;
+		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
 	}
 
 	export interface GetInventoryResult {
-		Entities?: Array<InventoryResultEntity>;
-		NextToken?: string;
+		Entities?: Array<InventoryResultEntity> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Inventory query results. */
 	export interface InventoryResultEntity {
-		Id?: string;
-		Data?: InventoryResultItemMap;
+		Id?: string | null;
+		Data?: InventoryResultItemMap | null;
 	}
 
 	export interface InventoryResultItemMap {
 	}
 
 	export interface GetInventoryRequest {
-		Filters?: Array<InventoryFilter>;
-		Aggregators?: Array<InventoryAggregator>;
-		ResultAttributes?: Array<ResultAttribute>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<InventoryFilter> | null;
+		Aggregators?: Array<InventoryAggregator> | null;
+		ResultAttributes?: Array<ResultAttribute> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -2072,7 +2072,7 @@ export namespace MyNS {
 	export interface InventoryFilter {
 		Key: string;
 		Values: Array<string>;
-		Type?: InventoryFilterType;
+		Type?: InventoryFilterType | null;
 	}
 
 	export enum InventoryFilterType { Equal = 0, NotEqual = 1, BeginWith = 2, LessThan = 3, GreaterThan = 4, Exists = 5 }
@@ -2080,9 +2080,9 @@ export namespace MyNS {
 
 	/** Specifies the inventory type and attribute for the aggregation execution. */
 	export interface InventoryAggregator {
-		Expression?: string;
-		Aggregators?: Array<InventoryAggregator>;
-		Groups?: Array<InventoryGroup>;
+		Expression?: string | null;
+		Aggregators?: Array<InventoryAggregator> | null;
+		Groups?: Array<InventoryGroup> | null;
 	}
 
 
@@ -2108,17 +2108,17 @@ export namespace MyNS {
 	}
 
 	export interface GetInventorySchemaResult {
-		Schemas?: Array<InventoryItemSchema>;
-		NextToken?: string;
+		Schemas?: Array<InventoryItemSchema> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The inventory item schema definition. Users can use this to compose inventory query filters. */
 	export interface InventoryItemSchema {
 		TypeName: string;
-		Version?: string;
+		Version?: string | null;
 		Attributes: Array<InventoryItemAttribute>;
-		DisplayName?: string;
+		DisplayName?: string | null;
 	}
 
 
@@ -2131,28 +2131,28 @@ export namespace MyNS {
 	export enum InventoryItemAttributeDataType { _string = 0, number = 1 }
 
 	export interface GetInventorySchemaRequest {
-		TypeName?: string;
-		NextToken?: string;
-		MaxResults?: number;
-		Aggregator?: boolean;
-		SubType?: boolean;
+		TypeName?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Aggregator?: boolean | null;
+		SubType?: boolean | null;
 	}
 
 	export interface GetMaintenanceWindowResult {
-		WindowId?: string;
-		Name?: string;
-		Description?: string;
-		StartDate?: string;
-		EndDate?: string;
-		Schedule?: string;
-		ScheduleTimezone?: string;
-		NextExecutionTime?: string;
-		Duration?: number;
-		Cutoff?: number;
-		AllowUnassociatedTargets?: boolean;
-		Enabled?: boolean;
-		CreatedDate?: Date;
-		ModifiedDate?: Date;
+		WindowId?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		StartDate?: string | null;
+		EndDate?: string | null;
+		Schedule?: string | null;
+		ScheduleTimezone?: string | null;
+		NextExecutionTime?: string | null;
+		Duration?: number | null;
+		Cutoff?: number | null;
+		AllowUnassociatedTargets?: boolean | null;
+		Enabled?: boolean | null;
+		CreatedDate?: Date | null;
+		ModifiedDate?: Date | null;
 	}
 
 	export interface GetMaintenanceWindowRequest {
@@ -2160,12 +2160,12 @@ export namespace MyNS {
 	}
 
 	export interface GetMaintenanceWindowExecutionResult {
-		WindowExecutionId?: string;
-		TaskIds?: Array<string>;
-		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus;
-		StatusDetails?: string;
-		StartTime?: Date;
-		EndTime?: Date;
+		WindowExecutionId?: string | null;
+		TaskIds?: Array<string> | null;
+		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+		StatusDetails?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 	}
 
 	export interface GetMaintenanceWindowExecutionRequest {
@@ -2173,19 +2173,19 @@ export namespace MyNS {
 	}
 
 	export interface GetMaintenanceWindowExecutionTaskResult {
-		WindowExecutionId?: string;
-		TaskExecutionId?: string;
-		TaskArn?: string;
-		ServiceRole?: string;
-		Type?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType;
-		TaskParameters?: Array<MaintenanceWindowTaskParameters>;
-		Priority?: number;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
-		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus;
-		StatusDetails?: string;
-		StartTime?: Date;
-		EndTime?: Date;
+		WindowExecutionId?: string | null;
+		TaskExecutionId?: string | null;
+		TaskArn?: string | null;
+		ServiceRole?: string | null;
+		Type?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
+		TaskParameters?: Array<MaintenanceWindowTaskParameters> | null;
+		Priority?: number | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
+		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+		StatusDetails?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 	}
 
 	export interface GetMaintenanceWindowExecutionTaskRequest {
@@ -2194,18 +2194,18 @@ export namespace MyNS {
 	}
 
 	export interface GetMaintenanceWindowExecutionTaskInvocationResult {
-		WindowExecutionId?: string;
-		TaskExecutionId?: string;
-		InvocationId?: string;
-		ExecutionId?: string;
-		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType;
-		Parameters?: string;
-		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus;
-		StatusDetails?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		OwnerInformation?: string;
-		WindowTargetId?: string;
+		WindowExecutionId?: string | null;
+		TaskExecutionId?: string | null;
+		InvocationId?: string | null;
+		ExecutionId?: string | null;
+		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
+		Parameters?: string | null;
+		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+		StatusDetails?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		OwnerInformation?: string | null;
+		WindowTargetId?: string | null;
 	}
 
 	export interface GetMaintenanceWindowExecutionTaskInvocationRequest {
@@ -2215,24 +2215,24 @@ export namespace MyNS {
 	}
 
 	export interface GetMaintenanceWindowTaskResult {
-		WindowId?: string;
-		WindowTaskId?: string;
-		Targets?: Array<Target>;
-		TaskArn?: string;
-		ServiceRoleArn?: string;
-		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType;
-		TaskParameters?: MaintenanceWindowTaskParameters;
+		WindowId?: string | null;
+		WindowTaskId?: string | null;
+		Targets?: Array<Target> | null;
+		TaskArn?: string | null;
+		ServiceRoleArn?: string | null;
+		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
+		TaskParameters?: MaintenanceWindowTaskParameters | null;
 
 		/** The parameters for task execution. */
-		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
-		Priority?: number;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
+		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters | null;
+		Priority?: number | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
-		LoggingInfo?: LoggingInfo;
-		Name?: string;
-		Description?: string;
+		LoggingInfo?: LoggingInfo | null;
+		Name?: string | null;
+		Description?: string | null;
 	}
 
 
@@ -2240,44 +2240,44 @@ export namespace MyNS {
 	export interface MaintenanceWindowTaskInvocationParameters {
 
 		/** <p>The parameters for a RUN_COMMAND task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>. </p> </note> */
-		RunCommand?: MaintenanceWindowRunCommandParameters;
+		RunCommand?: MaintenanceWindowRunCommandParameters | null;
 
 		/** The parameters for an AUTOMATION task type. */
-		Automation?: MaintenanceWindowAutomationParameters;
+		Automation?: MaintenanceWindowAutomationParameters | null;
 
 		/** <p>The parameters for a STEP_FUNCTIONS task.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.</p> </note> */
-		StepFunctions?: MaintenanceWindowStepFunctionsParameters;
+		StepFunctions?: MaintenanceWindowStepFunctionsParameters | null;
 
 		/** <p>The parameters for a LAMBDA task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.</p> </note> */
-		Lambda?: MaintenanceWindowLambdaParameters;
+		Lambda?: MaintenanceWindowLambdaParameters | null;
 	}
 
 
 	/** <p>The parameters for a RUN_COMMAND task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>. </p> </note> */
 	export interface MaintenanceWindowRunCommandParameters {
-		Comment?: string;
+		Comment?: string | null;
 
 		/** Configuration options for sending command output to CloudWatch Logs. */
-		CloudWatchOutputConfig?: CloudWatchOutputConfig;
-		DocumentHash?: string;
-		DocumentHashType?: DocumentDescriptionHashType;
-		DocumentVersion?: string;
+		CloudWatchOutputConfig?: CloudWatchOutputConfig | null;
+		DocumentHash?: string | null;
+		DocumentHashType?: DocumentDescriptionHashType | null;
+		DocumentVersion?: string | null;
 
 		/** Configurations for sending notifications. */
-		NotificationConfig?: NotificationConfig;
-		OutputS3BucketName?: string;
-		OutputS3KeyPrefix?: string;
-		Parameters?: Parameters;
-		ServiceRoleArn?: string;
-		TimeoutSeconds?: number;
+		NotificationConfig?: NotificationConfig | null;
+		OutputS3BucketName?: string | null;
+		OutputS3KeyPrefix?: string | null;
+		Parameters?: Parameters | null;
+		ServiceRoleArn?: string | null;
+		TimeoutSeconds?: number | null;
 	}
 
 
 	/** Configurations for sending notifications. */
 	export interface NotificationConfig {
-		NotificationArn?: string;
-		NotificationEvents?: Array<NotificationEvent>;
-		NotificationType?: NotificationConfigNotificationType;
+		NotificationArn?: string | null;
+		NotificationEvents?: Array<NotificationEvent> | null;
+		NotificationType?: NotificationConfigNotificationType | null;
 	}
 
 	export enum NotificationEvent { All = 0, InProgress = 1, Success = 2, TimedOut = 3, Cancelled = 4, Failed = 5 }
@@ -2287,23 +2287,23 @@ export namespace MyNS {
 
 	/** The parameters for an AUTOMATION task type. */
 	export interface MaintenanceWindowAutomationParameters {
-		DocumentVersion?: string;
-		Parameters?: AutomationParameterMap;
+		DocumentVersion?: string | null;
+		Parameters?: AutomationParameterMap | null;
 	}
 
 
 	/** <p>The parameters for a STEP_FUNCTIONS task.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.</p> </note> */
 	export interface MaintenanceWindowStepFunctionsParameters {
-		Input?: string;
-		Name?: string;
+		Input?: string | null;
+		Name?: string | null;
 	}
 
 
 	/** <p>The parameters for a LAMBDA task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.</p> </note> */
 	export interface MaintenanceWindowLambdaParameters {
-		ClientContext?: string;
-		Qualifier?: string;
-		Payload?: string;
+		ClientContext?: string | null;
+		Qualifier?: string | null;
+		Payload?: string | null;
 	}
 
 	export interface GetMaintenanceWindowTaskRequest {
@@ -2314,28 +2314,28 @@ export namespace MyNS {
 	export interface GetOpsItemResponse {
 
 		/** Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. */
-		OpsItem?: OpsItem;
+		OpsItem?: OpsItem | null;
 	}
 
 
 	/** Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.  */
 	export interface OpsItem {
-		CreatedBy?: string;
-		CreatedTime?: Date;
-		Description?: string;
-		LastModifiedBy?: string;
-		LastModifiedTime?: Date;
-		Notifications?: Array<OpsItemNotification>;
-		Priority?: number;
-		RelatedOpsItems?: Array<RelatedOpsItem>;
-		Status?: OpsItemSummaryStatus;
-		OpsItemId?: string;
-		Version?: string;
-		Title?: string;
-		Source?: string;
-		OperationalData?: OpsItemOperationalData;
-		Category?: string;
-		Severity?: string;
+		CreatedBy?: string | null;
+		CreatedTime?: Date | null;
+		Description?: string | null;
+		LastModifiedBy?: string | null;
+		LastModifiedTime?: Date | null;
+		Notifications?: Array<OpsItemNotification> | null;
+		Priority?: number | null;
+		RelatedOpsItems?: Array<RelatedOpsItem> | null;
+		Status?: OpsItemSummaryStatus | null;
+		OpsItemId?: string | null;
+		Version?: string | null;
+		Title?: string | null;
+		Source?: string | null;
+		OperationalData?: OpsItemOperationalData | null;
+		Category?: string | null;
+		Severity?: string | null;
 	}
 
 	export interface GetOpsItemRequest {
@@ -2346,27 +2346,27 @@ export namespace MyNS {
 	}
 
 	export interface GetOpsSummaryResult {
-		Entities?: Array<OpsEntity>;
-		NextToken?: string;
+		Entities?: Array<OpsEntity> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The result of the query. */
 	export interface OpsEntity {
-		Id?: string;
-		Data?: OpsEntityItemMap;
+		Id?: string | null;
+		Data?: OpsEntityItemMap | null;
 	}
 
 	export interface OpsEntityItemMap {
 	}
 
 	export interface GetOpsSummaryRequest {
-		SyncName?: string;
-		Filters?: Array<OpsFilter>;
-		Aggregators?: Array<OpsAggregator>;
-		ResultAttributes?: Array<OpsResultAttribute>;
-		NextToken?: string;
-		MaxResults?: number;
+		SyncName?: string | null;
+		Filters?: Array<OpsFilter> | null;
+		Aggregators?: Array<OpsAggregator> | null;
+		ResultAttributes?: Array<OpsResultAttribute> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -2374,18 +2374,18 @@ export namespace MyNS {
 	export interface OpsFilter {
 		Key: string;
 		Values: Array<string>;
-		Type?: InventoryFilterType;
+		Type?: InventoryFilterType | null;
 	}
 
 
 	/** One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few. */
 	export interface OpsAggregator {
-		AggregatorType?: string;
-		TypeName?: string;
-		AttributeName?: string;
-		Values?: OpsAggregatorValueMap;
-		Filters?: Array<OpsFilter>;
-		Aggregators?: Array<OpsAggregator>;
+		AggregatorType?: string | null;
+		TypeName?: string | null;
+		AttributeName?: string | null;
+		Values?: OpsAggregatorValueMap | null;
+		Filters?: Array<OpsFilter> | null;
+		Aggregators?: Array<OpsAggregator> | null;
 	}
 
 	export interface OpsAggregatorValueMap {
@@ -2400,26 +2400,26 @@ export namespace MyNS {
 	export interface GetParameterResult {
 
 		/** An Systems Manager parameter in Parameter Store. */
-		Parameter?: Parameter;
+		Parameter?: Parameter | null;
 	}
 
 
 	/** An Systems Manager parameter in Parameter Store. */
 	export interface Parameter {
-		Name?: string;
-		Type?: ParameterMetadataType;
-		Value?: string;
-		Version?: number;
-		Selector?: string;
-		SourceResult?: string;
-		LastModifiedDate?: Date;
-		ARN?: string;
-		DataType?: string;
+		Name?: string | null;
+		Type?: ParameterMetadataType | null;
+		Value?: string | null;
+		Version?: number | null;
+		Selector?: string | null;
+		SourceResult?: string | null;
+		LastModifiedDate?: Date | null;
+		ARN?: string | null;
+		DataType?: string | null;
 	}
 
 	export interface GetParameterRequest {
 		Name: string;
-		WithDecryption?: boolean;
+		WithDecryption?: boolean | null;
 	}
 
 	export interface InvalidKeyId {
@@ -2429,81 +2429,81 @@ export namespace MyNS {
 	}
 
 	export interface GetParameterHistoryResult {
-		Parameters?: Array<ParameterHistory>;
-		NextToken?: string;
+		Parameters?: Array<ParameterHistory> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about parameter usage. */
 	export interface ParameterHistory {
-		Name?: string;
-		Type?: ParameterMetadataType;
-		KeyId?: string;
-		LastModifiedDate?: Date;
-		LastModifiedUser?: string;
-		Description?: string;
-		Value?: string;
-		AllowedPattern?: string;
-		Version?: number;
-		Labels?: Array<string>;
-		Tier?: ParameterHistoryTier;
-		Policies?: Array<ParameterInlinePolicy>;
-		DataType?: string;
+		Name?: string | null;
+		Type?: ParameterMetadataType | null;
+		KeyId?: string | null;
+		LastModifiedDate?: Date | null;
+		LastModifiedUser?: string | null;
+		Description?: string | null;
+		Value?: string | null;
+		AllowedPattern?: string | null;
+		Version?: number | null;
+		Labels?: Array<string> | null;
+		Tier?: ParameterHistoryTier | null;
+		Policies?: Array<ParameterInlinePolicy> | null;
+		DataType?: string | null;
 	}
 
 	export enum ParameterHistoryTier { Standard = 0, Advanced = 1, Intelligent_Tiering = 2 }
 
 	export interface GetParameterHistoryRequest {
 		Name: string;
-		WithDecryption?: boolean;
-		MaxResults?: number;
-		NextToken?: string;
+		WithDecryption?: boolean | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetParametersResult {
-		Parameters?: Array<Parameter>;
-		InvalidParameters?: Array<string>;
+		Parameters?: Array<Parameter> | null;
+		InvalidParameters?: Array<string> | null;
 	}
 
 	export interface GetParametersRequest {
 		Names: Array<string>;
-		WithDecryption?: boolean;
+		WithDecryption?: boolean | null;
 	}
 
 	export interface GetParametersByPathResult {
-		Parameters?: Array<Parameter>;
-		NextToken?: string;
+		Parameters?: Array<Parameter> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetParametersByPathRequest {
 		Path: string;
-		Recursive?: boolean;
-		ParameterFilters?: Array<ParameterStringFilter>;
-		WithDecryption?: boolean;
-		MaxResults?: number;
-		NextToken?: string;
+		Recursive?: boolean | null;
+		ParameterFilters?: Array<ParameterStringFilter> | null;
+		WithDecryption?: boolean | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetPatchBaselineResult {
-		BaselineId?: string;
-		Name?: string;
-		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem;
+		BaselineId?: string | null;
+		Name?: string | null;
+		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 
 		/** A set of patch filters, typically used for approval rules. */
-		GlobalFilters?: PatchFilterGroup;
+		GlobalFilters?: PatchFilterGroup | null;
 
 		/** A set of rules defining the approval rules for a patch baseline. */
-		ApprovalRules?: PatchRuleGroup;
-		ApprovedPatches?: Array<string>;
-		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel;
-		ApprovedPatchesEnableNonSecurity?: boolean;
-		RejectedPatches?: Array<string>;
-		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction;
-		PatchGroups?: Array<string>;
-		CreatedDate?: Date;
-		ModifiedDate?: Date;
-		Description?: string;
-		Sources?: Array<PatchSource>;
+		ApprovalRules?: PatchRuleGroup | null;
+		ApprovedPatches?: Array<string> | null;
+		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel | null;
+		ApprovedPatchesEnableNonSecurity?: boolean | null;
+		RejectedPatches?: Array<string> | null;
+		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction | null;
+		PatchGroups?: Array<string> | null;
+		CreatedDate?: Date | null;
+		ModifiedDate?: Date | null;
+		Description?: string | null;
+		Sources?: Array<PatchSource> | null;
 	}
 
 	export interface GetPatchBaselineRequest {
@@ -2511,14 +2511,14 @@ export namespace MyNS {
 	}
 
 	export interface GetPatchBaselineForPatchGroupResult {
-		BaselineId?: string;
-		PatchGroup?: string;
-		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem;
+		BaselineId?: string | null;
+		PatchGroup?: string | null;
+		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 	}
 
 	export interface GetPatchBaselineForPatchGroupRequest {
 		PatchGroup: string;
-		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem;
+		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 	}
 
 
@@ -2526,18 +2526,18 @@ export namespace MyNS {
 	export interface GetServiceSettingResult {
 
 		/** <p>The service setting data structure.</p> <p> <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p> <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.</p> */
-		ServiceSetting?: ServiceSetting;
+		ServiceSetting?: ServiceSetting | null;
 	}
 
 
 	/** <p>The service setting data structure.</p> <p> <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p> <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.</p> */
 	export interface ServiceSetting {
-		SettingId?: string;
-		SettingValue?: string;
-		LastModifiedDate?: Date;
-		LastModifiedUser?: string;
-		ARN?: string;
-		Status?: string;
+		SettingId?: string | null;
+		SettingValue?: string | null;
+		LastModifiedDate?: Date | null;
+		LastModifiedUser?: string | null;
+		ARN?: string | null;
+		Status?: string | null;
 	}
 
 
@@ -2550,13 +2550,13 @@ export namespace MyNS {
 	}
 
 	export interface LabelParameterVersionResult {
-		InvalidLabels?: Array<string>;
-		ParameterVersion?: number;
+		InvalidLabels?: Array<string> | null;
+		ParameterVersion?: number | null;
 	}
 
 	export interface LabelParameterVersionRequest {
 		Name: string;
-		ParameterVersion?: number;
+		ParameterVersion?: number | null;
 		Labels: Array<string>;
 	}
 
@@ -2564,64 +2564,64 @@ export namespace MyNS {
 	}
 
 	export interface ListAssociationVersionsResult {
-		AssociationVersions?: Array<AssociationVersionInfo>;
-		NextToken?: string;
+		AssociationVersions?: Array<AssociationVersionInfo> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about the association version. */
 	export interface AssociationVersionInfo {
-		AssociationId?: string;
-		AssociationVersion?: string;
-		CreatedDate?: Date;
-		Name?: string;
-		DocumentVersion?: string;
-		Parameters?: Parameters;
-		Targets?: Array<Target>;
-		ScheduleExpression?: string;
+		AssociationId?: string | null;
+		AssociationVersion?: string | null;
+		CreatedDate?: Date | null;
+		Name?: string | null;
+		DocumentVersion?: string | null;
+		Parameters?: Parameters | null;
+		Targets?: Array<Target> | null;
+		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
-		OutputLocation?: InstanceAssociationOutputLocation;
-		AssociationName?: string;
-		MaxErrors?: string;
-		MaxConcurrency?: string;
-		ComplianceSeverity?: AssociationDescriptionComplianceSeverity;
-		SyncCompliance?: AssociationDescriptionSyncCompliance;
-		ApplyOnlyAtCronInterval?: boolean;
+		OutputLocation?: InstanceAssociationOutputLocation | null;
+		AssociationName?: string | null;
+		MaxErrors?: string | null;
+		MaxConcurrency?: string | null;
+		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
+		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
+		ApplyOnlyAtCronInterval?: boolean | null;
 	}
 
 	export interface ListAssociationVersionsRequest {
 		AssociationId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAssociationsResult {
-		Associations?: Array<Association>;
-		NextToken?: string;
+		Associations?: Array<Association> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes an association of a Systems Manager document and an instance. */
 	export interface Association {
-		Name?: string;
-		InstanceId?: string;
-		AssociationId?: string;
-		AssociationVersion?: string;
-		DocumentVersion?: string;
-		Targets?: Array<Target>;
-		LastExecutionDate?: Date;
+		Name?: string | null;
+		InstanceId?: string | null;
+		AssociationId?: string | null;
+		AssociationVersion?: string | null;
+		DocumentVersion?: string | null;
+		Targets?: Array<Target> | null;
+		LastExecutionDate?: Date | null;
 
 		/** Information about the association. */
-		Overview?: AssociationOverview;
-		ScheduleExpression?: string;
-		AssociationName?: string;
+		Overview?: AssociationOverview | null;
+		ScheduleExpression?: string | null;
+		AssociationName?: string | null;
 	}
 
 	export interface ListAssociationsRequest {
-		AssociationFilterList?: Array<AssociationFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		AssociationFilterList?: Array<AssociationFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -2634,61 +2634,61 @@ export namespace MyNS {
 	export enum AssociationFilterKey { InstanceId = 0, Name = 1, AssociationId = 2, AssociationStatusName = 3, LastExecutedBefore = 4, LastExecutedAfter = 5, AssociationName = 6, ResourceGroupName = 7 }
 
 	export interface ListCommandInvocationsResult {
-		CommandInvocations?: Array<CommandInvocation>;
-		NextToken?: string;
+		CommandInvocations?: Array<CommandInvocation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you ran.  */
 	export interface CommandInvocation {
-		CommandId?: string;
-		InstanceId?: string;
-		InstanceName?: string;
-		Comment?: string;
-		DocumentName?: string;
-		DocumentVersion?: string;
-		RequestedDateTime?: Date;
-		Status?: GetCommandInvocationResultStatus;
-		StatusDetails?: string;
-		TraceOutput?: string;
-		StandardOutputUrl?: string;
-		StandardErrorUrl?: string;
-		CommandPlugins?: Array<CommandPlugin>;
-		ServiceRole?: string;
+		CommandId?: string | null;
+		InstanceId?: string | null;
+		InstanceName?: string | null;
+		Comment?: string | null;
+		DocumentName?: string | null;
+		DocumentVersion?: string | null;
+		RequestedDateTime?: Date | null;
+		Status?: GetCommandInvocationResultStatus | null;
+		StatusDetails?: string | null;
+		TraceOutput?: string | null;
+		StandardOutputUrl?: string | null;
+		StandardErrorUrl?: string | null;
+		CommandPlugins?: Array<CommandPlugin> | null;
+		ServiceRole?: string | null;
 
 		/** Configurations for sending notifications. */
-		NotificationConfig?: NotificationConfig;
+		NotificationConfig?: NotificationConfig | null;
 
 		/** Configuration options for sending command output to CloudWatch Logs. */
-		CloudWatchOutputConfig?: CloudWatchOutputConfig;
+		CloudWatchOutputConfig?: CloudWatchOutputConfig | null;
 	}
 
 
 	/** Describes plugin details. */
 	export interface CommandPlugin {
-		Name?: string;
-		Status?: CommandPluginStatus;
-		StatusDetails?: string;
-		ResponseCode?: number;
-		ResponseStartDateTime?: Date;
-		ResponseFinishDateTime?: Date;
-		Output?: string;
-		StandardOutputUrl?: string;
-		StandardErrorUrl?: string;
-		OutputS3Region?: string;
-		OutputS3BucketName?: string;
-		OutputS3KeyPrefix?: string;
+		Name?: string | null;
+		Status?: CommandPluginStatus | null;
+		StatusDetails?: string | null;
+		ResponseCode?: number | null;
+		ResponseStartDateTime?: Date | null;
+		ResponseFinishDateTime?: Date | null;
+		Output?: string | null;
+		StandardOutputUrl?: string | null;
+		StandardErrorUrl?: string | null;
+		OutputS3Region?: string | null;
+		OutputS3BucketName?: string | null;
+		OutputS3KeyPrefix?: string | null;
 	}
 
 	export enum CommandPluginStatus { Pending = 0, InProgress = 1, Success = 2, TimedOut = 3, Cancelled = 4, Failed = 5 }
 
 	export interface ListCommandInvocationsRequest {
-		CommandId?: string;
-		InstanceId?: string;
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<CommandFilter>;
-		Details?: boolean;
+		CommandId?: string | null;
+		InstanceId?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<CommandFilter> | null;
+		Details?: boolean | null;
 	}
 
 
@@ -2701,72 +2701,72 @@ export namespace MyNS {
 	export enum CommandFilterKey { InvokedAfter = 0, InvokedBefore = 1, Status = 2, ExecutionStage = 3, DocumentName = 4 }
 
 	export interface ListCommandsResult {
-		Commands?: Array<Command>;
-		NextToken?: string;
+		Commands?: Array<Command> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a command request. */
 	export interface Command {
-		CommandId?: string;
-		DocumentName?: string;
-		DocumentVersion?: string;
-		Comment?: string;
-		ExpiresAfter?: Date;
-		Parameters?: Parameters;
-		InstanceIds?: Array<string>;
-		Targets?: Array<Target>;
-		RequestedDateTime?: Date;
-		Status?: CommandStatus;
-		StatusDetails?: string;
-		OutputS3Region?: string;
-		OutputS3BucketName?: string;
-		OutputS3KeyPrefix?: string;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
-		TargetCount?: number;
-		CompletedCount?: number;
-		ErrorCount?: number;
-		DeliveryTimedOutCount?: number;
-		ServiceRole?: string;
+		CommandId?: string | null;
+		DocumentName?: string | null;
+		DocumentVersion?: string | null;
+		Comment?: string | null;
+		ExpiresAfter?: Date | null;
+		Parameters?: Parameters | null;
+		InstanceIds?: Array<string> | null;
+		Targets?: Array<Target> | null;
+		RequestedDateTime?: Date | null;
+		Status?: CommandStatus | null;
+		StatusDetails?: string | null;
+		OutputS3Region?: string | null;
+		OutputS3BucketName?: string | null;
+		OutputS3KeyPrefix?: string | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
+		TargetCount?: number | null;
+		CompletedCount?: number | null;
+		ErrorCount?: number | null;
+		DeliveryTimedOutCount?: number | null;
+		ServiceRole?: string | null;
 
 		/** Configurations for sending notifications. */
-		NotificationConfig?: NotificationConfig;
+		NotificationConfig?: NotificationConfig | null;
 
 		/** Configuration options for sending command output to CloudWatch Logs. */
-		CloudWatchOutputConfig?: CloudWatchOutputConfig;
-		TimeoutSeconds?: number;
+		CloudWatchOutputConfig?: CloudWatchOutputConfig | null;
+		TimeoutSeconds?: number | null;
 	}
 
 	export enum CommandStatus { Pending = 0, InProgress = 1, Success = 2, Cancelled = 3, Failed = 4, TimedOut = 5, Cancelling = 6 }
 
 	export interface ListCommandsRequest {
-		CommandId?: string;
-		InstanceId?: string;
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<CommandFilter>;
+		CommandId?: string | null;
+		InstanceId?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<CommandFilter> | null;
 	}
 
 	export interface ListComplianceItemsResult {
-		ComplianceItems?: Array<ComplianceItem>;
-		NextToken?: string;
+		ComplianceItems?: Array<ComplianceItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on. */
 	export interface ComplianceItem {
-		ComplianceType?: string;
-		ResourceType?: string;
-		ResourceId?: string;
-		Id?: string;
-		Title?: string;
-		Status?: ComplianceItemStatus;
-		Severity?: PatchRuleComplianceLevel;
+		ComplianceType?: string | null;
+		ResourceType?: string | null;
+		ResourceId?: string | null;
+		Id?: string | null;
+		Title?: string | null;
+		Status?: ComplianceItemStatus | null;
+		Severity?: PatchRuleComplianceLevel | null;
 
 		/** A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'. */
-		ExecutionSummary?: ComplianceExecutionSummary;
-		Details?: ComplianceItemDetails;
+		ExecutionSummary?: ComplianceExecutionSummary | null;
+		Details?: ComplianceItemDetails | null;
 	}
 
 	export enum ComplianceItemStatus { COMPLIANT = 0, NON_COMPLIANT = 1 }
@@ -2775,135 +2775,135 @@ export namespace MyNS {
 	/** A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'. */
 	export interface ComplianceExecutionSummary {
 		ExecutionTime: Date;
-		ExecutionId?: string;
-		ExecutionType?: string;
+		ExecutionId?: string | null;
+		ExecutionType?: string | null;
 	}
 
 	export interface ComplianceItemDetails {
 	}
 
 	export interface ListComplianceItemsRequest {
-		Filters?: Array<ComplianceStringFilter>;
-		ResourceIds?: Array<string>;
-		ResourceTypes?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<ComplianceStringFilter> | null;
+		ResourceIds?: Array<string> | null;
+		ResourceTypes?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** One or more filters. Use a filter to return a more specific list of results. */
 	export interface ComplianceStringFilter {
-		Key?: string;
-		Values?: Array<string>;
-		Type?: ComplianceStringFilterType;
+		Key?: string | null;
+		Values?: Array<string> | null;
+		Type?: ComplianceStringFilterType | null;
 	}
 
 	export enum ComplianceStringFilterType { EQUAL = 0, NOT_EQUAL = 1, BEGIN_WITH = 2, LESS_THAN = 3, GREATER_THAN = 4 }
 
 	export interface ListComplianceSummariesResult {
-		ComplianceSummaryItems?: Array<ComplianceSummaryItem>;
-		NextToken?: string;
+		ComplianceSummaryItems?: Array<ComplianceSummaryItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of compliance information by compliance type. */
 	export interface ComplianceSummaryItem {
-		ComplianceType?: string;
+		ComplianceType?: string | null;
 
 		/** A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type. */
-		CompliantSummary?: CompliantSummary;
+		CompliantSummary?: CompliantSummary | null;
 
 		/** A summary of resources that are not compliant. The summary is organized according to resource type. */
-		NonCompliantSummary?: NonCompliantSummary;
+		NonCompliantSummary?: NonCompliantSummary | null;
 	}
 
 
 	/** A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type. */
 	export interface CompliantSummary {
-		CompliantCount?: number;
+		CompliantCount?: number | null;
 
 		/** The number of managed instances found for each patch severity level defined in the request filter. */
-		SeveritySummary?: SeveritySummary;
+		SeveritySummary?: SeveritySummary | null;
 	}
 
 
 	/** The number of managed instances found for each patch severity level defined in the request filter. */
 	export interface SeveritySummary {
-		CriticalCount?: number;
-		HighCount?: number;
-		MediumCount?: number;
-		LowCount?: number;
-		InformationalCount?: number;
-		UnspecifiedCount?: number;
+		CriticalCount?: number | null;
+		HighCount?: number | null;
+		MediumCount?: number | null;
+		LowCount?: number | null;
+		InformationalCount?: number | null;
+		UnspecifiedCount?: number | null;
 	}
 
 
 	/** A summary of resources that are not compliant. The summary is organized according to resource type. */
 	export interface NonCompliantSummary {
-		NonCompliantCount?: number;
+		NonCompliantCount?: number | null;
 
 		/** The number of managed instances found for each patch severity level defined in the request filter. */
-		SeveritySummary?: SeveritySummary;
+		SeveritySummary?: SeveritySummary | null;
 	}
 
 	export interface ListComplianceSummariesRequest {
-		Filters?: Array<ComplianceStringFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<ComplianceStringFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDocumentVersionsResult {
-		DocumentVersions?: Array<DocumentVersionInfo>;
-		NextToken?: string;
+		DocumentVersions?: Array<DocumentVersionInfo> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Version information about the document. */
 	export interface DocumentVersionInfo {
-		Name?: string;
-		DocumentVersion?: string;
-		VersionName?: string;
-		CreatedDate?: Date;
-		IsDefaultVersion?: boolean;
-		DocumentFormat?: DocumentDescriptionDocumentFormat;
+		Name?: string | null;
+		DocumentVersion?: string | null;
+		VersionName?: string | null;
+		CreatedDate?: Date | null;
+		IsDefaultVersion?: boolean | null;
+		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
 
 		/** The status of a document. */
-		Status?: DocumentDescriptionStatus;
-		StatusInformation?: string;
+		Status?: DocumentDescriptionStatus | null;
+		StatusInformation?: string | null;
 	}
 
 	export interface ListDocumentVersionsRequest {
 		Name: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDocumentsResult {
-		DocumentIdentifiers?: Array<DocumentIdentifier>;
-		NextToken?: string;
+		DocumentIdentifiers?: Array<DocumentIdentifier> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes the name of a Systems Manager document. */
 	export interface DocumentIdentifier {
-		Name?: string;
-		Owner?: string;
-		VersionName?: string;
-		PlatformTypes?: Array<PlatformType>;
-		DocumentVersion?: string;
-		DocumentType?: DocumentDescriptionDocumentType;
-		SchemaVersion?: string;
-		DocumentFormat?: DocumentDescriptionDocumentFormat;
-		TargetType?: string;
-		Tags?: Array<Tag>;
-		Requires?: Array<DocumentRequires>;
+		Name?: string | null;
+		Owner?: string | null;
+		VersionName?: string | null;
+		PlatformTypes?: Array<PlatformType> | null;
+		DocumentVersion?: string | null;
+		DocumentType?: DocumentDescriptionDocumentType | null;
+		SchemaVersion?: string | null;
+		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+		TargetType?: string | null;
+		Tags?: Array<Tag> | null;
+		Requires?: Array<DocumentRequires> | null;
 	}
 
 	export interface ListDocumentsRequest {
-		DocumentFilterList?: Array<DocumentFilter>;
-		Filters?: Array<DocumentKeyValuesFilter>;
-		MaxResults?: number;
-		NextToken?: string;
+		DocumentFilterList?: Array<DocumentFilter> | null;
+		Filters?: Array<DocumentKeyValuesFilter> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -2918,17 +2918,17 @@ export namespace MyNS {
 
 	/** <p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.</p> <p>Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <p>If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <p>For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p> */
 	export interface DocumentKeyValuesFilter {
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface ListInventoryEntriesResult {
-		TypeName?: string;
-		InstanceId?: string;
-		SchemaVersion?: string;
-		CaptureTime?: string;
-		Entries?: Array<InventoryItemEntry>;
-		NextToken?: string;
+		TypeName?: string | null;
+		InstanceId?: string | null;
+		SchemaVersion?: string | null;
+		CaptureTime?: string | null;
+		Entries?: Array<InventoryItemEntry> | null;
+		NextToken?: string | null;
 	}
 
 	export interface InventoryItemEntry {
@@ -2937,87 +2937,87 @@ export namespace MyNS {
 	export interface ListInventoryEntriesRequest {
 		InstanceId: string;
 		TypeName: string;
-		Filters?: Array<InventoryFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<InventoryFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListResourceComplianceSummariesResult {
-		ResourceComplianceSummaryItems?: Array<ResourceComplianceSummaryItem>;
-		NextToken?: string;
+		ResourceComplianceSummaryItems?: Array<ResourceComplianceSummaryItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Compliance summary information for a specific resource.  */
 	export interface ResourceComplianceSummaryItem {
-		ComplianceType?: string;
-		ResourceType?: string;
-		ResourceId?: string;
-		Status?: ComplianceItemStatus;
-		OverallSeverity?: PatchRuleComplianceLevel;
+		ComplianceType?: string | null;
+		ResourceType?: string | null;
+		ResourceId?: string | null;
+		Status?: ComplianceItemStatus | null;
+		OverallSeverity?: PatchRuleComplianceLevel | null;
 
 		/** A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'. */
-		ExecutionSummary?: ComplianceExecutionSummary;
+		ExecutionSummary?: ComplianceExecutionSummary | null;
 
 		/** A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type. */
-		CompliantSummary?: CompliantSummary;
+		CompliantSummary?: CompliantSummary | null;
 
 		/** A summary of resources that are not compliant. The summary is organized according to resource type. */
-		NonCompliantSummary?: NonCompliantSummary;
+		NonCompliantSummary?: NonCompliantSummary | null;
 	}
 
 	export interface ListResourceComplianceSummariesRequest {
-		Filters?: Array<ComplianceStringFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<ComplianceStringFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListResourceDataSyncResult {
-		ResourceDataSyncItems?: Array<ResourceDataSyncItem>;
-		NextToken?: string;
+		ResourceDataSyncItems?: Array<ResourceDataSyncItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a Resource Data Sync configuration, including its current status and last successful sync. */
 	export interface ResourceDataSyncItem {
-		SyncName?: string;
-		SyncType?: string;
+		SyncName?: string | null;
+		SyncType?: string | null;
 
 		/** <p>The data type name for including resource data sync state. There are four sync states:</p> <p> <code>OrganizationNotExists</code> (Your organization doesn't exist)</p> <p> <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)</p> <p> <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)</p> <p> <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)</p> */
-		SyncSource?: ResourceDataSyncSourceWithState;
+		SyncSource?: ResourceDataSyncSourceWithState | null;
 
 		/** Information about the target S3 bucket for the Resource Data Sync. */
-		S3Destination?: ResourceDataSyncS3Destination;
-		LastSyncTime?: Date;
-		LastSuccessfulSyncTime?: Date;
-		SyncLastModifiedTime?: Date;
-		LastStatus?: ResourceDataSyncItemLastStatus;
-		SyncCreatedTime?: Date;
-		LastSyncStatusMessage?: string;
+		S3Destination?: ResourceDataSyncS3Destination | null;
+		LastSyncTime?: Date | null;
+		LastSuccessfulSyncTime?: Date | null;
+		SyncLastModifiedTime?: Date | null;
+		LastStatus?: ResourceDataSyncItemLastStatus | null;
+		SyncCreatedTime?: Date | null;
+		LastSyncStatusMessage?: string | null;
 	}
 
 
 	/** <p>The data type name for including resource data sync state. There are four sync states:</p> <p> <code>OrganizationNotExists</code> (Your organization doesn't exist)</p> <p> <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)</p> <p> <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)</p> <p> <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)</p> */
 	export interface ResourceDataSyncSourceWithState {
-		SourceType?: string;
+		SourceType?: string | null;
 
 		/** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions. */
-		AwsOrganizationsSource?: ResourceDataSyncAwsOrganizationsSource;
-		SourceRegions?: Array<string>;
-		IncludeFutureRegions?: boolean;
-		State?: string;
+		AwsOrganizationsSource?: ResourceDataSyncAwsOrganizationsSource | null;
+		SourceRegions?: Array<string> | null;
+		IncludeFutureRegions?: boolean | null;
+		State?: string | null;
 	}
 
 	export enum ResourceDataSyncItemLastStatus { Successful = 0, Failed = 1, InProgress = 2 }
 
 	export interface ListResourceDataSyncRequest {
-		SyncType?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		SyncType?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceResult {
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -3031,15 +3031,15 @@ export namespace MyNS {
 	export interface ModifyDocumentPermissionRequest {
 		Name: string;
 		PermissionType: DescribeDocumentPermissionRequestPermissionType;
-		AccountIdsToAdd?: Array<string>;
-		AccountIdsToRemove?: Array<string>;
+		AccountIdsToAdd?: Array<string> | null;
+		AccountIdsToRemove?: Array<string> | null;
 
 		/**
 		 * The document version shared with other accounts. You can share <code>Latest</code>, <code>Default</code> or <code>All versions</code>.
 		 * Max length: 8
 		 * Pattern: ([$]LATEST|[$]DEFAULT|[$]ALL)
 		 */
-		SharedDocumentVersion?: string;
+		SharedDocumentVersion?: string | null;
 	}
 
 	export interface DocumentPermissionLimit {
@@ -3059,18 +3059,18 @@ export namespace MyNS {
 		 */
 		ExecutionSummary: ComplianceExecutionSummary;
 		Items: Array<ComplianceItemEntry>;
-		ItemContentHash?: string;
-		UploadType?: PutComplianceItemsRequestUploadType;
+		ItemContentHash?: string | null;
+		UploadType?: PutComplianceItemsRequestUploadType | null;
 	}
 
 
 	/** Information about a compliance item. */
 	export interface ComplianceItemEntry {
-		Id?: string;
-		Title?: string;
+		Id?: string | null;
+		Title?: string | null;
 		Severity: PatchRuleComplianceLevel;
 		Status: ComplianceItemStatus;
-		Details?: ComplianceItemDetails;
+		Details?: ComplianceItemDetails | null;
 	}
 
 	export enum PutComplianceItemsRequestUploadType { COMPLETE = 0, PARTIAL = 1 }
@@ -3088,7 +3088,7 @@ export namespace MyNS {
 	}
 
 	export interface PutInventoryResult {
-		Message?: string;
+		Message?: string | null;
 	}
 
 	export interface PutInventoryRequest {
@@ -3102,9 +3102,9 @@ export namespace MyNS {
 		TypeName: string;
 		SchemaVersion: string;
 		CaptureTime: string;
-		ContentHash?: string;
-		Content?: Array<InventoryItemEntry>;
-		Context?: InventoryItemContentContext;
+		ContentHash?: string | null;
+		Content?: Array<InventoryItemEntry> | null;
+		Context?: InventoryItemContentContext | null;
 	}
 
 	export interface InventoryItemContentContext {
@@ -3129,24 +3129,24 @@ export namespace MyNS {
 	}
 
 	export interface PutParameterResult {
-		Version?: number;
-		Tier?: PutParameterResultTier;
+		Version?: number | null;
+		Tier?: PutParameterResultTier | null;
 	}
 
 	export enum PutParameterResultTier { Standard = 0, Advanced = 1, Intelligent_Tiering = 2 }
 
 	export interface PutParameterRequest {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		Value: string;
-		Type?: ParameterMetadataType;
-		KeyId?: string;
-		Overwrite?: boolean;
-		AllowedPattern?: string;
-		Tags?: Array<Tag>;
-		Tier?: PutParameterRequestTier;
-		Policies?: string;
-		DataType?: string;
+		Type?: ParameterMetadataType | null;
+		KeyId?: string | null;
+		Overwrite?: boolean | null;
+		AllowedPattern?: string | null;
+		Tags?: Array<Tag> | null;
+		Tier?: PutParameterRequestTier | null;
+		Policies?: string | null;
+		DataType?: string | null;
 	}
 
 	export enum PutParameterRequestTier { Standard = 0, Advanced = 1, Intelligent_Tiering = 2 }
@@ -3188,7 +3188,7 @@ export namespace MyNS {
 	}
 
 	export interface RegisterDefaultPatchBaselineResult {
-		BaselineId?: string;
+		BaselineId?: string | null;
 	}
 
 	export interface RegisterDefaultPatchBaselineRequest {
@@ -3196,8 +3196,8 @@ export namespace MyNS {
 	}
 
 	export interface RegisterPatchBaselineForPatchGroupResult {
-		BaselineId?: string;
-		PatchGroup?: string;
+		BaselineId?: string | null;
+		PatchGroup?: string | null;
 	}
 
 	export interface RegisterPatchBaselineForPatchGroupRequest {
@@ -3209,42 +3209,42 @@ export namespace MyNS {
 	}
 
 	export interface RegisterTargetWithMaintenanceWindowResult {
-		WindowTargetId?: string;
+		WindowTargetId?: string | null;
 	}
 
 	export interface RegisterTargetWithMaintenanceWindowRequest {
 		WindowId: string;
 		ResourceType: DescribeMaintenanceWindowScheduleRequestResourceType;
 		Targets: Array<Target>;
-		OwnerInformation?: string;
-		Name?: string;
-		Description?: string;
-		ClientToken?: string;
+		OwnerInformation?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		ClientToken?: string | null;
 	}
 
 	export interface RegisterTaskWithMaintenanceWindowResult {
-		WindowTaskId?: string;
+		WindowTaskId?: string | null;
 	}
 
 	export interface RegisterTaskWithMaintenanceWindowRequest {
 		WindowId: string;
 		Targets: Array<Target>;
 		TaskArn: string;
-		ServiceRoleArn?: string;
+		ServiceRoleArn?: string | null;
 		TaskType: MaintenanceWindowExecutionTaskInvocationIdentityTaskType;
-		TaskParameters?: MaintenanceWindowTaskParameters;
+		TaskParameters?: MaintenanceWindowTaskParameters | null;
 
 		/** The parameters for task execution. */
-		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
-		Priority?: number;
+		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters | null;
+		Priority?: number | null;
 		MaxConcurrency: string;
 		MaxErrors: string;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
-		LoggingInfo?: LoggingInfo;
-		Name?: string;
-		Description?: string;
-		ClientToken?: string;
+		LoggingInfo?: LoggingInfo | null;
+		Name?: string | null;
+		Description?: string | null;
+		ClientToken?: string | null;
 	}
 
 	export interface FeatureNotAvailableException {
@@ -3264,7 +3264,7 @@ export namespace MyNS {
 	export interface ResetServiceSettingResult {
 
 		/** <p>The service setting data structure.</p> <p> <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p> <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.</p> */
-		ServiceSetting?: ServiceSetting;
+		ServiceSetting?: ServiceSetting | null;
 	}
 
 
@@ -3274,9 +3274,9 @@ export namespace MyNS {
 	}
 
 	export interface ResumeSessionResponse {
-		SessionId?: string;
-		TokenValue?: string;
-		StreamUrl?: string;
+		SessionId?: string | null;
+		TokenValue?: string | null;
+		StreamUrl?: string | null;
 	}
 
 	export interface ResumeSessionRequest {
@@ -3289,7 +3289,7 @@ export namespace MyNS {
 	export interface SendAutomationSignalRequest {
 		AutomationExecutionId: string;
 		SignalType: SendAutomationSignalRequestSignalType;
-		Payload?: AutomationParameterMap;
+		Payload?: AutomationParameterMap | null;
 	}
 
 	export enum SendAutomationSignalRequestSignalType { Approve = 0, Reject = 1, StartStep = 2, StopStep = 3, Resume = 4 }
@@ -3303,31 +3303,31 @@ export namespace MyNS {
 	export interface SendCommandResult {
 
 		/** Describes a command request. */
-		Command?: Command;
+		Command?: Command | null;
 	}
 
 	export interface SendCommandRequest {
-		InstanceIds?: Array<string>;
-		Targets?: Array<Target>;
+		InstanceIds?: Array<string> | null;
+		Targets?: Array<Target> | null;
 		DocumentName: string;
-		DocumentVersion?: string;
-		DocumentHash?: string;
-		DocumentHashType?: DocumentDescriptionHashType;
-		TimeoutSeconds?: number;
-		Comment?: string;
-		Parameters?: Parameters;
-		OutputS3Region?: string;
-		OutputS3BucketName?: string;
-		OutputS3KeyPrefix?: string;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
-		ServiceRoleArn?: string;
+		DocumentVersion?: string | null;
+		DocumentHash?: string | null;
+		DocumentHashType?: DocumentDescriptionHashType | null;
+		TimeoutSeconds?: number | null;
+		Comment?: string | null;
+		Parameters?: Parameters | null;
+		OutputS3Region?: string | null;
+		OutputS3BucketName?: string | null;
+		OutputS3KeyPrefix?: string | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
+		ServiceRoleArn?: string | null;
 
 		/** Configurations for sending notifications. */
-		NotificationConfig?: NotificationConfig;
+		NotificationConfig?: NotificationConfig | null;
 
 		/** Configuration options for sending command output to CloudWatch Logs. */
-		CloudWatchOutputConfig?: CloudWatchOutputConfig;
+		CloudWatchOutputConfig?: CloudWatchOutputConfig | null;
 	}
 
 	export interface InvalidOutputFolder {
@@ -3350,22 +3350,22 @@ export namespace MyNS {
 	}
 
 	export interface StartAutomationExecutionResult {
-		AutomationExecutionId?: string;
+		AutomationExecutionId?: string | null;
 	}
 
 	export interface StartAutomationExecutionRequest {
 		DocumentName: string;
-		DocumentVersion?: string;
-		Parameters?: AutomationParameterMap;
-		ClientToken?: string;
-		Mode?: AutomationExecutionMetadataMode;
-		TargetParameterName?: string;
-		Targets?: Array<Target>;
-		TargetMaps?: Array<TargetMap>;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
-		TargetLocations?: Array<TargetLocation>;
-		Tags?: Array<Tag>;
+		DocumentVersion?: string | null;
+		Parameters?: AutomationParameterMap | null;
+		ClientToken?: string | null;
+		Mode?: AutomationExecutionMetadataMode | null;
+		TargetParameterName?: string | null;
+		Targets?: Array<Target> | null;
+		TargetMaps?: Array<TargetMap> | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
+		TargetLocations?: Array<TargetLocation> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface AutomationDefinitionNotFoundException {
@@ -3381,15 +3381,15 @@ export namespace MyNS {
 	}
 
 	export interface StartSessionResponse {
-		SessionId?: string;
-		TokenValue?: string;
-		StreamUrl?: string;
+		SessionId?: string | null;
+		TokenValue?: string | null;
+		StreamUrl?: string | null;
 	}
 
 	export interface StartSessionRequest {
 		Target: string;
-		DocumentName?: string;
-		Parameters?: SessionManagerParameters;
+		DocumentName?: string | null;
+		Parameters?: SessionManagerParameters | null;
 	}
 
 	export interface SessionManagerParameters {
@@ -3403,7 +3403,7 @@ export namespace MyNS {
 
 	export interface StopAutomationExecutionRequest {
 		AutomationExecutionId: string;
-		Type?: StopAutomationExecutionRequestType;
+		Type?: StopAutomationExecutionRequestType | null;
 	}
 
 	export enum StopAutomationExecutionRequestType { Complete = 0, Cancel = 1 }
@@ -3412,7 +3412,7 @@ export namespace MyNS {
 	}
 
 	export interface TerminateSessionResponse {
-		SessionId?: string;
+		SessionId?: string | null;
 	}
 
 	export interface TerminateSessionRequest {
@@ -3422,27 +3422,27 @@ export namespace MyNS {
 	export interface UpdateAssociationResult {
 
 		/** Describes the parameters for a document. */
-		AssociationDescription?: AssociationDescription;
+		AssociationDescription?: AssociationDescription | null;
 	}
 
 	export interface UpdateAssociationRequest {
 		AssociationId: string;
-		Parameters?: Parameters;
-		DocumentVersion?: string;
-		ScheduleExpression?: string;
+		Parameters?: Parameters | null;
+		DocumentVersion?: string | null;
+		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
-		OutputLocation?: InstanceAssociationOutputLocation;
-		Name?: string;
-		Targets?: Array<Target>;
-		AssociationName?: string;
-		AssociationVersion?: string;
-		AutomationTargetParameterName?: string;
-		MaxErrors?: string;
-		MaxConcurrency?: string;
-		ComplianceSeverity?: AssociationDescriptionComplianceSeverity;
-		SyncCompliance?: AssociationDescriptionSyncCompliance;
-		ApplyOnlyAtCronInterval?: boolean;
+		OutputLocation?: InstanceAssociationOutputLocation | null;
+		Name?: string | null;
+		Targets?: Array<Target> | null;
+		AssociationName?: string | null;
+		AssociationVersion?: string | null;
+		AutomationTargetParameterName?: string | null;
+		MaxErrors?: string | null;
+		MaxConcurrency?: string | null;
+		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
+		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
+		ApplyOnlyAtCronInterval?: boolean | null;
 	}
 
 	export interface InvalidUpdate {
@@ -3454,7 +3454,7 @@ export namespace MyNS {
 	export interface UpdateAssociationStatusResult {
 
 		/** Describes the parameters for a document. */
-		AssociationDescription?: AssociationDescription;
+		AssociationDescription?: AssociationDescription | null;
 	}
 
 	export interface UpdateAssociationStatusRequest {
@@ -3474,17 +3474,17 @@ export namespace MyNS {
 	export interface UpdateDocumentResult {
 
 		/** Describes a Systems Manager document. */
-		DocumentDescription?: DocumentDescription;
+		DocumentDescription?: DocumentDescription | null;
 	}
 
 	export interface UpdateDocumentRequest {
 		Content: string;
-		Attachments?: Array<AttachmentsSource>;
+		Attachments?: Array<AttachmentsSource> | null;
 		Name: string;
-		VersionName?: string;
-		DocumentVersion?: string;
-		DocumentFormat?: DocumentDescriptionDocumentFormat;
-		TargetType?: string;
+		VersionName?: string | null;
+		DocumentVersion?: string | null;
+		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+		TargetType?: string | null;
 	}
 
 	export interface DocumentVersionLimitExceeded {
@@ -3499,15 +3499,15 @@ export namespace MyNS {
 	export interface UpdateDocumentDefaultVersionResult {
 
 		/** A default version of a document. */
-		Description?: DocumentDefaultVersionDescription;
+		Description?: DocumentDefaultVersionDescription | null;
 	}
 
 
 	/** A default version of a document. */
 	export interface DocumentDefaultVersionDescription {
-		Name?: string;
-		DefaultVersion?: string;
-		DefaultVersionName?: string;
+		Name?: string | null;
+		DefaultVersion?: string | null;
+		DefaultVersionName?: string | null;
 	}
 
 	export interface UpdateDocumentDefaultVersionRequest {
@@ -3516,92 +3516,92 @@ export namespace MyNS {
 	}
 
 	export interface UpdateMaintenanceWindowResult {
-		WindowId?: string;
-		Name?: string;
-		Description?: string;
-		StartDate?: string;
-		EndDate?: string;
-		Schedule?: string;
-		ScheduleTimezone?: string;
-		Duration?: number;
-		Cutoff?: number;
-		AllowUnassociatedTargets?: boolean;
-		Enabled?: boolean;
+		WindowId?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		StartDate?: string | null;
+		EndDate?: string | null;
+		Schedule?: string | null;
+		ScheduleTimezone?: string | null;
+		Duration?: number | null;
+		Cutoff?: number | null;
+		AllowUnassociatedTargets?: boolean | null;
+		Enabled?: boolean | null;
 	}
 
 	export interface UpdateMaintenanceWindowRequest {
 		WindowId: string;
-		Name?: string;
-		Description?: string;
-		StartDate?: string;
-		EndDate?: string;
-		Schedule?: string;
-		ScheduleTimezone?: string;
-		Duration?: number;
-		Cutoff?: number;
-		AllowUnassociatedTargets?: boolean;
-		Enabled?: boolean;
-		Replace?: boolean;
+		Name?: string | null;
+		Description?: string | null;
+		StartDate?: string | null;
+		EndDate?: string | null;
+		Schedule?: string | null;
+		ScheduleTimezone?: string | null;
+		Duration?: number | null;
+		Cutoff?: number | null;
+		AllowUnassociatedTargets?: boolean | null;
+		Enabled?: boolean | null;
+		Replace?: boolean | null;
 	}
 
 	export interface UpdateMaintenanceWindowTargetResult {
-		WindowId?: string;
-		WindowTargetId?: string;
-		Targets?: Array<Target>;
-		OwnerInformation?: string;
-		Name?: string;
-		Description?: string;
+		WindowId?: string | null;
+		WindowTargetId?: string | null;
+		Targets?: Array<Target> | null;
+		OwnerInformation?: string | null;
+		Name?: string | null;
+		Description?: string | null;
 	}
 
 	export interface UpdateMaintenanceWindowTargetRequest {
 		WindowId: string;
 		WindowTargetId: string;
-		Targets?: Array<Target>;
-		OwnerInformation?: string;
-		Name?: string;
-		Description?: string;
-		Replace?: boolean;
+		Targets?: Array<Target> | null;
+		OwnerInformation?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Replace?: boolean | null;
 	}
 
 	export interface UpdateMaintenanceWindowTaskResult {
-		WindowId?: string;
-		WindowTaskId?: string;
-		Targets?: Array<Target>;
-		TaskArn?: string;
-		ServiceRoleArn?: string;
-		TaskParameters?: MaintenanceWindowTaskParameters;
+		WindowId?: string | null;
+		WindowTaskId?: string | null;
+		Targets?: Array<Target> | null;
+		TaskArn?: string | null;
+		ServiceRoleArn?: string | null;
+		TaskParameters?: MaintenanceWindowTaskParameters | null;
 
 		/** The parameters for task execution. */
-		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
-		Priority?: number;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
+		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters | null;
+		Priority?: number | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
-		LoggingInfo?: LoggingInfo;
-		Name?: string;
-		Description?: string;
+		LoggingInfo?: LoggingInfo | null;
+		Name?: string | null;
+		Description?: string | null;
 	}
 
 	export interface UpdateMaintenanceWindowTaskRequest {
 		WindowId: string;
 		WindowTaskId: string;
-		Targets?: Array<Target>;
-		TaskArn?: string;
-		ServiceRoleArn?: string;
-		TaskParameters?: MaintenanceWindowTaskParameters;
+		Targets?: Array<Target> | null;
+		TaskArn?: string | null;
+		ServiceRoleArn?: string | null;
+		TaskParameters?: MaintenanceWindowTaskParameters | null;
 
 		/** The parameters for task execution. */
-		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
-		Priority?: number;
-		MaxConcurrency?: string;
-		MaxErrors?: string;
+		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters | null;
+		Priority?: number | null;
+		MaxConcurrency?: string | null;
+		MaxErrors?: string | null;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
-		LoggingInfo?: LoggingInfo;
-		Name?: string;
-		Description?: string;
-		Replace?: boolean;
+		LoggingInfo?: LoggingInfo | null;
+		Name?: string | null;
+		Description?: string | null;
+		Replace?: boolean | null;
 	}
 
 	export interface UpdateManagedInstanceRoleResult {
@@ -3616,57 +3616,57 @@ export namespace MyNS {
 	}
 
 	export interface UpdateOpsItemRequest {
-		Description?: string;
-		OperationalData?: OpsItemOperationalData;
-		OperationalDataToDelete?: Array<string>;
-		Notifications?: Array<OpsItemNotification>;
-		Priority?: number;
-		RelatedOpsItems?: Array<RelatedOpsItem>;
-		Status?: OpsItemSummaryStatus;
+		Description?: string | null;
+		OperationalData?: OpsItemOperationalData | null;
+		OperationalDataToDelete?: Array<string> | null;
+		Notifications?: Array<OpsItemNotification> | null;
+		Priority?: number | null;
+		RelatedOpsItems?: Array<RelatedOpsItem> | null;
+		Status?: OpsItemSummaryStatus | null;
 		OpsItemId: string;
-		Title?: string;
-		Category?: string;
-		Severity?: string;
+		Title?: string | null;
+		Category?: string | null;
+		Severity?: string | null;
 	}
 
 	export interface UpdatePatchBaselineResult {
-		BaselineId?: string;
-		Name?: string;
-		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem;
+		BaselineId?: string | null;
+		Name?: string | null;
+		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 
 		/** A set of patch filters, typically used for approval rules. */
-		GlobalFilters?: PatchFilterGroup;
+		GlobalFilters?: PatchFilterGroup | null;
 
 		/** A set of rules defining the approval rules for a patch baseline. */
-		ApprovalRules?: PatchRuleGroup;
-		ApprovedPatches?: Array<string>;
-		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel;
-		ApprovedPatchesEnableNonSecurity?: boolean;
-		RejectedPatches?: Array<string>;
-		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction;
-		CreatedDate?: Date;
-		ModifiedDate?: Date;
-		Description?: string;
-		Sources?: Array<PatchSource>;
+		ApprovalRules?: PatchRuleGroup | null;
+		ApprovedPatches?: Array<string> | null;
+		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel | null;
+		ApprovedPatchesEnableNonSecurity?: boolean | null;
+		RejectedPatches?: Array<string> | null;
+		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction | null;
+		CreatedDate?: Date | null;
+		ModifiedDate?: Date | null;
+		Description?: string | null;
+		Sources?: Array<PatchSource> | null;
 	}
 
 	export interface UpdatePatchBaselineRequest {
 		BaselineId: string;
-		Name?: string;
+		Name?: string | null;
 
 		/** A set of patch filters, typically used for approval rules. */
-		GlobalFilters?: PatchFilterGroup;
+		GlobalFilters?: PatchFilterGroup | null;
 
 		/** A set of rules defining the approval rules for a patch baseline. */
-		ApprovalRules?: PatchRuleGroup;
-		ApprovedPatches?: Array<string>;
-		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel;
-		ApprovedPatchesEnableNonSecurity?: boolean;
-		RejectedPatches?: Array<string>;
-		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction;
-		Description?: string;
-		Sources?: Array<PatchSource>;
-		Replace?: boolean;
+		ApprovalRules?: PatchRuleGroup | null;
+		ApprovedPatches?: Array<string> | null;
+		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel | null;
+		ApprovedPatchesEnableNonSecurity?: boolean | null;
+		RejectedPatches?: Array<string> | null;
+		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction | null;
+		Description?: string | null;
+		Sources?: Array<PatchSource> | null;
+		Replace?: boolean | null;
 	}
 
 	export interface UpdateResourceDataSyncResult {
@@ -3785,8 +3785,8 @@ export namespace MyNS {
 	export interface InventoryResultItem {
 		TypeName: string;
 		SchemaVersion: string;
-		CaptureTime?: string;
-		ContentHash?: string;
+		CaptureTime?: string | null;
+		ContentHash?: string | null;
 		Content: Array<InventoryItemEntry>;
 	}
 
@@ -3795,7 +3795,7 @@ export namespace MyNS {
 
 	/** Defines the values for a task parameter. */
 	export interface MaintenanceWindowTaskParameterValueExpression {
-		Values?: Array<string>;
+		Values?: Array<string> | null;
 	}
 
 	export enum NotificationType { Command = 0, Invocation = 1 }
@@ -3806,8 +3806,8 @@ export namespace MyNS {
 
 	/** The OpsItem summaries result item. */
 	export interface OpsEntityItem {
-		CaptureTime?: string;
-		Content?: Array<OpsEntityItemEntry>;
+		CaptureTime?: string | null;
+		Content?: Array<OpsEntityItemEntry> | null;
 	}
 
 	export enum OpsFilterOperatorType { Equal = 0, NotEqual = 1, BeginWith = 2, LessThan = 3, GreaterThan = 4, Exists = 5 }
@@ -3819,8 +3819,8 @@ export namespace MyNS {
 
 	/** An object that defines the value of the key and its type in the OperationalData map. */
 	export interface OpsItemDataValue {
-		Value?: string;
-		Type?: OpsItemDataType;
+		Value?: string | null;
+		Type?: OpsItemDataType | null;
 	}
 
 	export enum ParameterType { String = 0, StringList = 1, SecureString = 2 }

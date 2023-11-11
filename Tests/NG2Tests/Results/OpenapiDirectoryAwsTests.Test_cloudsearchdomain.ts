@@ -7,39 +7,39 @@ export namespace MyNS {
 	export interface SearchResponse {
 
 		/** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>). */
-		status?: SearchStatus;
+		status?: SearchStatus | null;
 
 		/** The collection of documents that match the search request. */
-		hits?: Hits;
-		facets?: Facets;
+		hits?: Hits | null;
+		facets?: Facets | null;
 
 		/** The statistics calculated in the request. */
-		stats?: Stats;
+		stats?: Stats | null;
 	}
 
 
 	/** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>). */
 	export interface SearchStatus {
-		timems?: number;
-		rid?: string;
+		timems?: number | null;
+		rid?: string | null;
 	}
 
 
 	/** The collection of documents that match the search request. */
 	export interface Hits {
-		found?: number;
-		start?: number;
-		cursor?: string;
-		hit?: Array<Hit>;
+		found?: number | null;
+		start?: number | null;
+		cursor?: string | null;
+		hit?: Array<Hit> | null;
 	}
 
 
 	/** Information about a document that matches the search request. */
 	export interface Hit {
-		id?: string;
-		fields?: Fields;
-		exprs?: Exprs;
-		highlights?: Highlights;
+		id?: string | null;
+		fields?: Fields | null;
+		exprs?: Exprs | null;
+		highlights?: Highlights | null;
 	}
 
 	export interface Fields {
@@ -62,7 +62,7 @@ export namespace MyNS {
 
 	/** Information about any problems encountered while processing a search request. */
 	export interface SearchException {
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -70,68 +70,68 @@ export namespace MyNS {
 	export interface SuggestResponse {
 
 		/** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>). */
-		status?: SuggestStatus;
+		status?: SuggestStatus | null;
 
 		/** Container for the suggestion information returned in a <code>SuggestResponse</code>. */
-		suggest?: SuggestModel;
+		suggest?: SuggestModel | null;
 	}
 
 
 	/** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>). */
 	export interface SuggestStatus {
-		timems?: number;
-		rid?: string;
+		timems?: number | null;
+		rid?: string | null;
 	}
 
 
 	/** Container for the suggestion information returned in a <code>SuggestResponse</code>. */
 	export interface SuggestModel {
-		query?: string;
-		found?: number;
-		suggestions?: Array<SuggestionMatch>;
+		query?: string | null;
+		found?: number | null;
+		suggestions?: Array<SuggestionMatch> | null;
 	}
 
 
 	/** An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>.  */
 	export interface SuggestionMatch {
-		suggestion?: string;
-		score?: number;
-		id?: string;
+		suggestion?: string | null;
+		score?: number | null;
+		id?: string | null;
 	}
 
 
 	/** Contains the response to an <code>UploadDocuments</code> request. */
 	export interface UploadDocumentsResponse {
-		status?: string;
-		adds?: number;
-		deletes?: number;
-		warnings?: Array<DocumentServiceWarning>;
+		status?: string | null;
+		adds?: number | null;
+		deletes?: number | null;
+		warnings?: Array<DocumentServiceWarning> | null;
 	}
 
 
 	/** A warning returned by the document service when an issue is discovered while processing an upload request. */
 	export interface DocumentServiceWarning {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** Information about any problems encountered while processing an upload request. */
 	export interface DocumentServiceException {
-		status?: string;
-		message?: string;
+		status?: string | null;
+		message?: string | null;
 	}
 
 
 	/** A container for facet information.  */
 	export interface Bucket {
-		value?: string;
-		count?: number;
+		value?: string | null;
+		count?: number | null;
 	}
 
 
 	/** A container for the calculated facet values and counts. */
 	export interface BucketInfo {
-		buckets?: Array<Bucket>;
+		buckets?: Array<Bucket> | null;
 	}
 
 	export enum ContentType { application_json = 0, application_xml = 1 }
@@ -139,14 +139,14 @@ export namespace MyNS {
 
 	/** The statistics for a field calculated in the request. */
 	export interface FieldStats {
-		min?: string;
-		max?: string;
-		count?: number;
-		missing?: number;
-		sum?: number;
-		sumOfSquares?: number;
-		mean?: string;
-		stddev?: number;
+		min?: string | null;
+		max?: string | null;
+		count?: number | null;
+		missing?: number | null;
+		sum?: number | null;
+		sumOfSquares?: number | null;
+		mean?: string | null;
+		stddev?: number | null;
 	}
 
 	export enum QueryParser { simple = 0, structured = 1, lucene = 2, dismax = 3 }

@@ -11,17 +11,17 @@ export namespace MyNS {
 	export interface AccessLevel {
 
 		/** `BasicLevel` is an `AccessLevel` using a set of recommended features. */
-		basic?: BasicLevel;
+		basic?: BasicLevel | null;
 
 		/**
 		 * `CustomLevel` is an `AccessLevel` using the Cloud Common Expression Language
 		 * to represent the necessary conditions for the level to apply to a request.
 		 * See CEL spec at: https://github.com/google/cel-spec
 		 */
-		custom?: CustomLevel;
+		custom?: CustomLevel | null;
 
 		/** Description of the `AccessLevel` and its use. Does not affect behavior. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Required. Resource name for the Access Level. The `short_name` component
@@ -29,10 +29,10 @@ export namespace MyNS {
 		 * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
 		 * of the `short_name` component is 50 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Human readable title. Must be unique within the Policy. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -46,10 +46,10 @@ export namespace MyNS {
 		 * is used, at least one `Condition` in `conditions` must be satisfied for the
 		 * `AccessLevel` to be applied. Default behavior is AND.
 		 */
-		combiningFunction?: BasicLevelCombiningFunction;
+		combiningFunction?: BasicLevelCombiningFunction | null;
 
 		/** Required. A list of requirements for the `AccessLevel` to be granted. */
-		conditions?: Array<Condition>;
+		conditions?: Array<Condition> | null;
 	}
 
 	export enum BasicLevelCombiningFunction { AND = 0, OR = 1 }
@@ -75,7 +75,7 @@ export namespace MyNS {
 		 * true for requests originating from encrypted Linux desktops and encrypted
 		 * Windows desktops.
 		 */
-		devicePolicy?: DevicePolicy;
+		devicePolicy?: DevicePolicy | null;
 
 		/**
 		 * CIDR block IP subnetwork specification. May be IPv4 or IPv6. Note that for
@@ -87,7 +87,7 @@ export namespace MyNS {
 		 * the listed subnets in order for this Condition to be true. If empty, all IP
 		 * addresses are allowed.
 		 */
-		ipSubnetworks?: Array<string>;
+		ipSubnetworks?: Array<string> | null;
 
 		/**
 		 * The request must be made by one of the provided user or service
@@ -97,20 +97,20 @@ export namespace MyNS {
 		 * `serviceAccount:{emailid}`
 		 * If not specified, a request may come from any user.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Whether to negate the Condition. If true, the Condition becomes a NAND over
 		 * its non-empty fields, each field must be false for the Condition overall to
 		 * be satisfied. Defaults to false.
 		 */
-		negate?: boolean;
+		negate?: boolean | null;
 
 		/**
 		 * The request must originate from one of the provided countries/regions.
 		 * Must be valid ISO 3166-1 alpha-2 codes.
 		 */
-		regions?: Array<string>;
+		regions?: Array<string> | null;
 
 		/**
 		 * A list of other access levels defined in the same `Policy`, referenced by
@@ -119,7 +119,7 @@ export namespace MyNS {
 		 * to be true. Example:
 		 * "`accessPolicies/MY_POLICY/accessLevels/LEVEL_NAME"`
 		 */
-		requiredAccessLevels?: Array<string>;
+		requiredAccessLevels?: Array<string> | null;
 	}
 
 
@@ -140,25 +140,25 @@ export namespace MyNS {
 		 * Allowed device management levels, an empty list allows all management
 		 * levels.
 		 */
-		allowedDeviceManagementLevels?: Array<string>;
+		allowedDeviceManagementLevels?: Array<string> | null;
 
 		/** Allowed encryptions statuses, an empty list allows all statuses. */
-		allowedEncryptionStatuses?: Array<string>;
+		allowedEncryptionStatuses?: Array<string> | null;
 
 		/** Allowed OS versions, an empty list allows all types and all versions. */
-		osConstraints?: Array<OsConstraint>;
+		osConstraints?: Array<OsConstraint> | null;
 
 		/** Whether the device needs to be approved by the customer admin. */
-		requireAdminApproval?: boolean;
+		requireAdminApproval?: boolean | null;
 
 		/** Whether the device needs to be corp owned. */
-		requireCorpOwned?: boolean;
+		requireCorpOwned?: boolean | null;
 
 		/**
 		 * Whether or not screenlock is required for the DevicePolicy to be true.
 		 * Defaults to `false`.
 		 */
-		requireScreenlock?: boolean;
+		requireScreenlock?: boolean | null;
 	}
 
 
@@ -170,10 +170,10 @@ export namespace MyNS {
 		 * satisfies the constraint. Format: `"major.minor.patch"`.
 		 * Examples: `"10.5.301"`, `"9.2.1"`.
 		 */
-		minimumVersion?: string;
+		minimumVersion?: string | null;
 
 		/** Required. The allowed OS type. */
-		osType?: OsConstraintOsType;
+		osType?: OsConstraintOsType | null;
 
 		/**
 		 * Only allows requests from devices with a verified Chrome OS.
@@ -181,7 +181,7 @@ export namespace MyNS {
 		 * conformant to domain policies, and the caller has permission to call
 		 * the API targeted by the request.
 		 */
-		requireVerifiedChromeOs?: boolean;
+		requireVerifiedChromeOs?: boolean | null;
 	}
 
 	export enum OsConstraintOsType { OS_UNSPECIFIED = 0, DESKTOP_MAC = 1, DESKTOP_WINDOWS = 2, DESKTOP_LINUX = 3, DESKTOP_CHROME_OS = 4, ANDROID = 5, IOS = 6 }
@@ -218,7 +218,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		expr?: Expr;
+		expr?: Expr | null;
 	}
 
 
@@ -252,26 +252,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -290,23 +290,23 @@ export namespace MyNS {
 		 * two Access Polices will be identical if and only if their etags are
 		 * identical. Clients should not expect this to be in any specific format.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Output only. Resource name of the `AccessPolicy`. Format:
 		 * `accessPolicies/{policy_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. The parent of this `AccessPolicy` in the Cloud Resource
 		 * Hierarchy. Currently immutable once created. Format:
 		 * `organizations/{organization_id}`
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/** Required. Human readable title. Does not affect behavior. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -329,7 +329,7 @@ export namespace MyNS {
 		 * and the call will fail. This field is not required. If etag is not
 		 * provided, the operation will be performed as if a valid etag is provided.
 		 */
-		etag?: string;
+		etag?: string | null;
 	}
 
 
@@ -343,7 +343,7 @@ export namespace MyNS {
 		 * List of all the Service Perimeter instances in
 		 * the Access Policy.
 		 */
-		servicePerimeters?: Array<ServicePerimeter>;
+		servicePerimeters?: Array<ServicePerimeter> | null;
 	}
 
 
@@ -365,14 +365,14 @@ export namespace MyNS {
 		 * Description of the `ServicePerimeter` and its use. Does not affect
 		 * behavior.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Required. Resource name for the ServicePerimeter.  The `short_name`
 		 * component must begin with a letter and only include alphanumeric and '_'.
 		 * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Perimeter type indicator. A single project is
@@ -382,22 +382,22 @@ export namespace MyNS {
 		 * the restricted service list as well as access level lists must be
 		 * empty.
 		 */
-		perimeterType?: ServicePerimeterPerimeterType;
+		perimeterType?: ServicePerimeterPerimeterType | null;
 
 		/**
 		 * `ServicePerimeterConfig` specifies a set of Google Cloud resources that
 		 * describe specific Service Perimeter configuration.
 		 */
-		spec?: ServicePerimeterConfig;
+		spec?: ServicePerimeterConfig | null;
 
 		/**
 		 * `ServicePerimeterConfig` specifies a set of Google Cloud resources that
 		 * describe specific Service Perimeter configuration.
 		 */
-		status?: ServicePerimeterConfig;
+		status?: ServicePerimeterConfig | null;
 
 		/** Human readable title. Must be unique within the Policy. */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * Use explicit dry run spec flag. Ordinarily, a dry-run spec implicitly
@@ -411,7 +411,7 @@ export namespace MyNS {
 		 * restrictions. use_explicit_dry_run_spec must bet set to True if any of the
 		 * fields in the spec are set to non-default values.
 		 */
-		useExplicitDryRunSpec?: boolean;
+		useExplicitDryRunSpec?: boolean | null;
 	}
 
 	export enum ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 0, PERIMETER_TYPE_BRIDGE = 1 }
@@ -433,13 +433,13 @@ export namespace MyNS {
 		 * `"accessPolicies/MY_POLICY/accessLevels/MY_LEVEL"`.
 		 * For Service Perimeter Bridge, must be empty.
 		 */
-		accessLevels?: Array<string>;
+		accessLevels?: Array<string> | null;
 
 		/**
 		 * A list of Google Cloud resources that are inside of the service perimeter.
 		 * Currently only projects are allowed. Format: `projects/{project_number}`
 		 */
-		resources?: Array<string>;
+		resources?: Array<string> | null;
 
 		/**
 		 * Google Cloud services that are subject to the Service Perimeter
@@ -447,13 +447,13 @@ export namespace MyNS {
 		 * to the storage buckets inside the perimeter must meet the perimeter's
 		 * access restrictions.
 		 */
-		restrictedServices?: Array<string>;
+		restrictedServices?: Array<string> | null;
 
 		/**
 		 * Specifies how APIs are allowed to communicate within the Service
 		 * Perimeter.
 		 */
-		vpcAccessibleServices?: VpcAccessibleServices;
+		vpcAccessibleServices?: VpcAccessibleServices | null;
 	}
 
 
@@ -467,13 +467,13 @@ export namespace MyNS {
 		 * The list of APIs usable within the Service Perimeter. Must be empty
 		 * unless 'enable_restriction' is True.
 		 */
-		allowedServices?: Array<string>;
+		allowedServices?: Array<string> | null;
 
 		/**
 		 * Whether to restrict API calls within the Service Perimeter to the list of
 		 * APIs specified in 'allowed_services'.
 		 */
-		enableRestriction?: boolean;
+		enableRestriction?: boolean | null;
 	}
 
 
@@ -494,13 +494,13 @@ export namespace MyNS {
 	export interface ListAccessLevelsResponse {
 
 		/** List of the Access Level instances. */
-		accessLevels?: Array<AccessLevel>;
+		accessLevels?: Array<AccessLevel> | null;
 
 		/**
 		 * The pagination token to retrieve the next page of results. If the value is
 		 * empty, no further results remain.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -508,13 +508,13 @@ export namespace MyNS {
 	export interface ListAccessPoliciesResponse {
 
 		/** List of the AccessPolicy instances. */
-		accessPolicies?: Array<AccessPolicy>;
+		accessPolicies?: Array<AccessPolicy> | null;
 
 		/**
 		 * The pagination token to retrieve the next page of results. If the value is
 		 * empty, no further results remain.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -522,10 +522,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -540,7 +540,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -550,7 +550,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -558,14 +558,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -577,7 +577,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -592,20 +592,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -616,10 +616,10 @@ export namespace MyNS {
 		 * The pagination token to retrieve the next page of results. If the value is
 		 * empty, no further results remain.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of the Service Perimeter instances. */
-		servicePerimeters?: Array<ServicePerimeter>;
+		servicePerimeters?: Array<ServicePerimeter> | null;
 	}
 
 
@@ -634,7 +634,7 @@ export namespace MyNS {
 		 * replace all existing Access Levels in the
 		 * Access Policy.
 		 */
-		accessLevels?: Array<AccessLevel>;
+		accessLevels?: Array<AccessLevel> | null;
 
 		/**
 		 * Optional. The etag for the version of the Access Policy that this
@@ -644,7 +644,7 @@ export namespace MyNS {
 		 * and the call will fail. This field is not required. If etag is not
 		 * provided, the operation will be performed as if a valid etag is provided.
 		 */
-		etag?: string;
+		etag?: string | null;
 	}
 
 
@@ -655,7 +655,7 @@ export namespace MyNS {
 	export interface ReplaceAccessLevelsResponse {
 
 		/** List of the Access Level instances. */
-		accessLevels?: Array<AccessLevel>;
+		accessLevels?: Array<AccessLevel> | null;
 	}
 
 
@@ -673,14 +673,14 @@ export namespace MyNS {
 		 * and the call will fail. This field is not required. If etag is not
 		 * provided, the operation will be performed as if a valid etag is provided.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Required. The desired Service Perimeters that should
 		 * replace all existing Service Perimeters in the
 		 * Access Policy.
 		 */
-		servicePerimeters?: Array<ServicePerimeter>;
+		servicePerimeters?: Array<ServicePerimeter> | null;
 	}
 
 
@@ -691,7 +691,7 @@ export namespace MyNS {
 	export interface ReplaceServicePerimetersResponse {
 
 		/** List of the Service Perimeter instances. */
-		servicePerimeters?: Array<ServicePerimeter>;
+		servicePerimeters?: Array<ServicePerimeter> | null;
 	}
 
 	@Injectable()

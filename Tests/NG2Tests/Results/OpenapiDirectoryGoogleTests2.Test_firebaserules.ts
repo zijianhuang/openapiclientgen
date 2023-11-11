@@ -15,10 +15,10 @@ export namespace MyNS {
 		 * }
 		 * The JSON representation for `Empty` is empty JSON object `{}`.
 		 */
-		anyValue?: Empty;
+		anyValue?: Empty | null;
 
 		/** Argument exactly matches value provided. */
-		exactValue?: any;
+		exactValue?: any | null;
 	}
 
 
@@ -42,16 +42,16 @@ export namespace MyNS {
 	export interface ExpressionReport {
 
 		/** Subexpressions */
-		children?: Array<ExpressionReport>;
+		children?: Array<ExpressionReport> | null;
 
 		/**
 		 * Position in the `Source` content including its line, column number, and an
 		 * index of the `File` in the `Source` message. Used for debug purposes.
 		 */
-		sourcePosition?: SourcePosition;
+		sourcePosition?: SourcePosition | null;
 
 		/** Values that this expression evaluated to when encountered. */
-		values?: Array<ValueCount>;
+		values?: Array<ValueCount> | null;
 	}
 
 
@@ -62,19 +62,19 @@ export namespace MyNS {
 	export interface SourcePosition {
 
 		/** First column on the source line associated with the source fragment. */
-		column?: number;
+		column?: number | null;
 
 		/** Start position relative to the beginning of the file. */
-		currentOffset?: number;
+		currentOffset?: number | null;
 
 		/** End position relative to the beginning of the file. */
-		endOffset?: number;
+		endOffset?: number | null;
 
 		/** Name of the `File`. */
-		fileName?: string;
+		fileName?: string | null;
 
 		/** Line number of the source fragment. 1-based. */
-		line?: number;
+		line?: number | null;
 	}
 
 
@@ -85,10 +85,10 @@ export namespace MyNS {
 	export interface ValueCount {
 
 		/** The amount of times that expression returned. */
-		count?: number;
+		count?: number | null;
 
 		/** The return value of the expression */
-		value?: any;
+		value?: any | null;
 	}
 
 
@@ -96,13 +96,13 @@ export namespace MyNS {
 	export interface File {
 
 		/** Textual Content. */
-		content?: string;
+		content?: string | null;
 
 		/** Fingerprint (e.g. github sha) associated with the `File`. */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/** File name. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -113,10 +113,10 @@ export namespace MyNS {
 	export interface FunctionCall {
 
 		/** The arguments that were provided to the function. */
-		args?: Array<string>;
+		args?: Array<string> | null;
 
 		/** Name of the function invoked. */
-		function?: string;
+		function?: string | null;
 	}
 
 
@@ -137,16 +137,16 @@ export namespace MyNS {
 		 * provided is the order in which they must appear in the function
 		 * invocation.
 		 */
-		args?: Array<Arg>;
+		args?: Array<Arg> | null;
 
 		/**
 		 * The name of the function.
 		 * The function name must match one provided by a service declaration.
 		 */
-		function?: string;
+		function?: string | null;
 
 		/** Possible result values from the function mock invocation. */
-		result?: Result;
+		result?: Result | null;
 	}
 
 
@@ -162,13 +162,13 @@ export namespace MyNS {
 		 * }
 		 * The JSON representation for `Empty` is empty JSON object `{}`.
 		 */
-		undefined?: Empty;
+		undefined?: Empty | null;
 
 		/**
 		 * The result is an actual value. The type of the value must match that
 		 * of the type declared by the service.
 		 */
-		value?: any;
+		value?: any | null;
 	}
 
 
@@ -176,26 +176,26 @@ export namespace MyNS {
 	export interface GetReleaseExecutableResponse {
 
 		/** Executable view of the `Ruleset` referenced by the `Release`. */
-		executable?: string;
+		executable?: string | null;
 
 		/** The Rules runtime version of the executable. */
-		executableVersion?: GetReleaseExecutableResponseExecutableVersion;
+		executableVersion?: GetReleaseExecutableResponseExecutableVersion | null;
 
 		/** `Language` used to generate the executable bytes. */
-		language?: GetReleaseExecutableResponseLanguage;
+		language?: GetReleaseExecutableResponseLanguage | null;
 
 		/** `Ruleset` name associated with the `Release` executable. */
-		rulesetName?: string;
+		rulesetName?: string | null;
 
 		/**
 		 * Optional, indicates the freshness of the result. The response is
 		 * guaranteed to be the latest within an interval up to the
 		 * sync_time (inclusive).
 		 */
-		syncTime?: string;
+		syncTime?: string | null;
 
 		/** Timestamp for the most recent `Release.update_time`. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 	export enum GetReleaseExecutableResponseExecutableVersion { RELEASE_EXECUTABLE_VERSION_UNSPECIFIED = 0, FIREBASE_RULES_EXECUTABLE_V1 = 1, FIREBASE_RULES_EXECUTABLE_V2 = 2 }
@@ -207,16 +207,16 @@ export namespace MyNS {
 	export interface Issue {
 
 		/** Short error description. */
-		description?: string;
+		description?: string | null;
 
 		/** The severity of the issue. */
-		severity?: IssueSeverity;
+		severity?: IssueSeverity | null;
 
 		/**
 		 * Position in the `Source` content including its line, column number, and an
 		 * index of the `File` in the `Source` message. Used for debug purposes.
 		 */
-		sourcePosition?: SourcePosition;
+		sourcePosition?: SourcePosition | null;
 	}
 
 	export enum IssueSeverity { SEVERITY_UNSPECIFIED = 0, DEPRECATION = 1, WARNING = 2, ERROR = 3 }
@@ -229,10 +229,10 @@ export namespace MyNS {
 		 * The pagination token to retrieve the next page of results. If the value is
 		 * empty, no further results remain.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of `Release` instances. */
-		releases?: Array<Release>;
+		releases?: Array<Release> | null;
 	}
 
 
@@ -246,7 +246,7 @@ export namespace MyNS {
 		 * Time the release was created.
 		 * Output only.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Resource name for the `Release`.
@@ -269,19 +269,19 @@ export namespace MyNS {
 		 * relationship between `Release` instances.
 		 * Format: `projects/{project_id}/releases/{release_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must
 		 * exist the `Release` to be created.
 		 */
-		rulesetName?: string;
+		rulesetName?: string | null;
 
 		/**
 		 * Time the release was updated.
 		 * Output only.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -292,10 +292,10 @@ export namespace MyNS {
 		 * The pagination token to retrieve the next page of results. If the value is
 		 * empty, no further results remain.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of `Ruleset` instances. */
-		rulesets?: Array<Ruleset>;
+		rulesets?: Array<Ruleset> | null;
 	}
 
 
@@ -309,20 +309,20 @@ export namespace MyNS {
 		 * Time the `Ruleset` was created.
 		 * Output only.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Metadata for a Ruleset. */
-		metadata?: Metadata;
+		metadata?: Metadata | null;
 
 		/**
 		 * Name of the `Ruleset`. The ruleset_id is auto generated by the service.
 		 * Format: `projects/{project_id}/rulesets/{ruleset_id}`
 		 * Output only.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** `Source` is one or more `File` messages comprising a logical set of rules. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -333,7 +333,7 @@ export namespace MyNS {
 		 * Services that this ruleset has declarations for (e.g.,
 		 * "cloud.firestore"). There may be 0+ of these.
 		 */
-		services?: Array<string>;
+		services?: Array<string> | null;
 	}
 
 
@@ -341,7 +341,7 @@ export namespace MyNS {
 	export interface Source {
 
 		/** `File` set constituting the `Source` bundle. */
-		files?: Array<File>;
+		files?: Array<File> | null;
 	}
 
 
@@ -357,20 +357,20 @@ export namespace MyNS {
 	export interface TestCase {
 
 		/** Test expectation. */
-		expectation?: TestCaseExpectation;
+		expectation?: TestCaseExpectation | null;
 
 		/** Specifies what should be included in the response. */
-		expressionReportLevel?: TestCaseExpressionReportLevel;
+		expressionReportLevel?: TestCaseExpressionReportLevel | null;
 
 		/**
 		 * Optional function mocks for service-defined functions. If not set, any
 		 * service defined function is expected to return an error, which may or may
 		 * not influence the test outcome.
 		 */
-		functionMocks?: Array<FunctionMock>;
+		functionMocks?: Array<FunctionMock> | null;
 
 		/** Specifies whether paths (such as request.path) are encoded and how. */
-		pathEncoding?: TestCasePathEncoding;
+		pathEncoding?: TestCasePathEncoding | null;
 
 		/**
 		 * Request context.
@@ -390,14 +390,14 @@ export namespace MyNS {
 		 * If the request value is not well-formed for the service, the request will
 		 * be rejected as an invalid argument.
 		 */
-		request?: any;
+		request?: any | null;
 
 		/**
 		 * Optional resource value as it appears in persistent storage before the
 		 * request is fulfilled.
 		 * The resource type depends on the `request.path` value.
 		 */
-		resource?: any;
+		resource?: any | null;
 	}
 
 	export enum TestCaseExpectation { EXPECTATION_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
@@ -420,13 +420,13 @@ export namespace MyNS {
 		 * function mocks or to runtime errors that occur during evaluation.
 		 * For example: ```Unable to read variable [name: "resource"]```
 		 */
-		debugMessages?: Array<string>;
+		debugMessages?: Array<string> | null;
 
 		/**
 		 * Position in the `Source` content including its line, column number, and an
 		 * index of the `File` in the `Source` message. Used for debug purposes.
 		 */
-		errorPosition?: SourcePosition;
+		errorPosition?: SourcePosition | null;
 
 		/**
 		 * The mapping from expression in the ruleset AST to the values they were
@@ -435,7 +435,7 @@ export namespace MyNS {
 		 * contrast to the "visited_expressions" field above. Literal expressions
 		 * are omitted.
 		 */
-		expressionReports?: Array<ExpressionReport>;
+		expressionReports?: Array<ExpressionReport> | null;
 
 		/**
 		 * The set of function calls made to service-defined methods.
@@ -443,10 +443,10 @@ export namespace MyNS {
 		 * during evaluation, are provided for both mocked and unmocked functions,
 		 * and included on the response regardless of the test `state`.
 		 */
-		functionCalls?: Array<FunctionCall>;
+		functionCalls?: Array<FunctionCall> | null;
 
 		/** State of the test. */
-		state?: TestResultState;
+		state?: TestResultState | null;
 
 		/**
 		 * The set of visited permission expressions for a given test. This returns
@@ -460,7 +460,7 @@ export namespace MyNS {
 		 * For a detailed report of the intermediate evaluation states, see the
 		 * `expression_reports` field
 		 */
-		visitedExpressions?: Array<VisitedExpression>;
+		visitedExpressions?: Array<VisitedExpression> | null;
 	}
 
 	export enum TestResultState { STATE_UNSPECIFIED = 0, SUCCESS = 1, FAILURE = 2 }
@@ -473,10 +473,10 @@ export namespace MyNS {
 		 * Position in the `Source` content including its line, column number, and an
 		 * index of the `File` in the `Source` message. Used for debug purposes.
 		 */
-		sourcePosition?: SourcePosition;
+		sourcePosition?: SourcePosition | null;
 
 		/** The evaluated value for the visited expression, e.g. true/false */
-		value?: any;
+		value?: any | null;
 	}
 
 
@@ -484,7 +484,7 @@ export namespace MyNS {
 	export interface TestRulesetRequest {
 
 		/** `Source` is one or more `File` messages comprising a logical set of rules. */
-		source?: Source;
+		source?: Source | null;
 
 		/**
 		 * `TestSuite` is a collection of `TestCase` instances that validate the logical
@@ -492,7 +492,7 @@ export namespace MyNS {
 		 * a `TestRuleset` invocation or as part of a `Release` object as a pre-release
 		 * check.
 		 */
-		testSuite?: TestSuite;
+		testSuite?: TestSuite | null;
 	}
 
 
@@ -505,7 +505,7 @@ export namespace MyNS {
 	export interface TestSuite {
 
 		/** Collection of test cases associated with the `TestSuite`. */
-		testCases?: Array<TestCase>;
+		testCases?: Array<TestCase> | null;
 	}
 
 
@@ -516,14 +516,14 @@ export namespace MyNS {
 		 * Syntactic and semantic `Source` issues of varying severity. Issues of
 		 * `ERROR` severity will prevent tests from executing.
 		 */
-		issues?: Array<Issue>;
+		issues?: Array<Issue> | null;
 
 		/**
 		 * The set of test results given the test cases in the `TestSuite`.
 		 * The results will appear in the same order as the test cases appear in the
 		 * `TestSuite`.
 		 */
-		testResults?: Array<TestResult>;
+		testResults?: Array<TestResult> | null;
 	}
 
 
@@ -534,10 +534,10 @@ export namespace MyNS {
 		 * `Release` is a named reference to a `Ruleset`. Once a `Release` refers to a
 		 * `Ruleset`, rules-enabled services will be able to enforce the `Ruleset`.
 		 */
-		release?: Release;
+		release?: Release | null;
 
 		/** Specifies which fields to update. */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 	@Injectable()

@@ -5,22 +5,22 @@ export namespace MyNS {
 	export interface CopyBackupToRegionResponse {
 
 		/** Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation. */
-		DestinationBackup?: DestinationBackup;
+		DestinationBackup?: DestinationBackup | null;
 	}
 
 
 	/** Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation. */
 	export interface DestinationBackup {
-		CreateTimestamp?: Date;
-		SourceRegion?: string;
-		SourceBackup?: string;
-		SourceCluster?: string;
+		CreateTimestamp?: Date | null;
+		SourceRegion?: string | null;
+		SourceBackup?: string | null;
+		SourceCluster?: string | null;
 	}
 
 	export interface CopyBackupToRegionRequest {
 		DestinationRegion: string;
 		BackupId: string;
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 
@@ -51,28 +51,28 @@ export namespace MyNS {
 	export interface CreateClusterResponse {
 
 		/** Contains information about an AWS CloudHSM cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 
 	/** Contains information about an AWS CloudHSM cluster. */
 	export interface Cluster {
-		BackupPolicy?: ClusterBackupPolicy;
-		ClusterId?: string;
-		CreateTimestamp?: Date;
-		Hsms?: Array<Hsm>;
-		HsmType?: string;
-		PreCoPassword?: string;
-		SecurityGroup?: string;
-		SourceBackupId?: string;
-		State?: ClusterState;
-		StateMessage?: string;
-		SubnetMapping?: ExternalSubnetMapping;
-		VpcId?: string;
+		BackupPolicy?: ClusterBackupPolicy | null;
+		ClusterId?: string | null;
+		CreateTimestamp?: Date | null;
+		Hsms?: Array<Hsm> | null;
+		HsmType?: string | null;
+		PreCoPassword?: string | null;
+		SecurityGroup?: string | null;
+		SourceBackupId?: string | null;
+		State?: ClusterState | null;
+		StateMessage?: string | null;
+		SubnetMapping?: ExternalSubnetMapping | null;
+		VpcId?: string | null;
 
 		/** Contains one or more certificates or a certificate signing request (CSR). */
-		Certificates?: Certificates;
-		TagList?: Array<Tag>;
+		Certificates?: Certificates | null;
+		TagList?: Array<Tag> | null;
 	}
 
 	export enum ClusterBackupPolicy { DEFAULT = 0 }
@@ -80,14 +80,14 @@ export namespace MyNS {
 
 	/** Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster. */
 	export interface Hsm {
-		AvailabilityZone?: string;
-		ClusterId?: string;
-		SubnetId?: string;
-		EniId?: string;
-		EniIp?: string;
+		AvailabilityZone?: string | null;
+		ClusterId?: string | null;
+		SubnetId?: string | null;
+		EniId?: string | null;
+		EniIp?: string | null;
 		HsmId: string;
-		State?: HsmState;
-		StateMessage?: string;
+		State?: HsmState | null;
+		StateMessage?: string | null;
 	}
 
 	export enum HsmState { CREATE_IN_PROGRESS = 0, ACTIVE = 1, DEGRADED = 2, DELETE_IN_PROGRESS = 3, DELETED = 4 }
@@ -100,51 +100,51 @@ export namespace MyNS {
 
 	/** Contains one or more certificates or a certificate signing request (CSR). */
 	export interface Certificates {
-		ClusterCsr?: string;
-		HsmCertificate?: string;
-		AwsHardwareCertificate?: string;
-		ManufacturerHardwareCertificate?: string;
-		ClusterCertificate?: string;
+		ClusterCsr?: string | null;
+		HsmCertificate?: string | null;
+		AwsHardwareCertificate?: string | null;
+		ManufacturerHardwareCertificate?: string | null;
+		ClusterCertificate?: string | null;
 	}
 
 	export interface CreateClusterRequest {
 		SubnetIds: Array<string>;
 		HsmType: string;
-		SourceBackupId?: string;
-		TagList?: Array<Tag>;
+		SourceBackupId?: string | null;
+		TagList?: Array<Tag> | null;
 	}
 
 	export interface CreateHsmResponse {
 
 		/** Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster. */
-		Hsm?: Hsm;
+		Hsm?: Hsm | null;
 	}
 
 	export interface CreateHsmRequest {
 		ClusterId: string;
 		AvailabilityZone: string;
-		IpAddress?: string;
+		IpAddress?: string | null;
 	}
 
 	export interface DeleteBackupResponse {
 
 		/** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter. */
-		Backup?: Backup;
+		Backup?: Backup | null;
 	}
 
 
 	/** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter. */
 	export interface Backup {
 		BackupId: string;
-		BackupState?: BackupBackupState;
-		ClusterId?: string;
-		CreateTimestamp?: Date;
-		CopyTimestamp?: Date;
-		SourceRegion?: string;
-		SourceBackup?: string;
-		SourceCluster?: string;
-		DeleteTimestamp?: Date;
-		TagList?: Array<Tag>;
+		BackupState?: BackupBackupState | null;
+		ClusterId?: string | null;
+		CreateTimestamp?: Date | null;
+		CopyTimestamp?: Date | null;
+		SourceRegion?: string | null;
+		SourceBackup?: string | null;
+		SourceCluster?: string | null;
+		DeleteTimestamp?: Date | null;
+		TagList?: Array<Tag> | null;
 	}
 
 	export enum BackupBackupState { CREATE_IN_PROGRESS = 0, READY = 1, DELETED = 2, PENDING_DELETION = 3 }
@@ -156,7 +156,7 @@ export namespace MyNS {
 	export interface DeleteClusterResponse {
 
 		/** Contains information about an AWS CloudHSM cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface DeleteClusterRequest {
@@ -164,45 +164,45 @@ export namespace MyNS {
 	}
 
 	export interface DeleteHsmResponse {
-		HsmId?: string;
+		HsmId?: string | null;
 	}
 
 	export interface DeleteHsmRequest {
 		ClusterId: string;
-		HsmId?: string;
-		EniId?: string;
-		EniIp?: string;
+		HsmId?: string | null;
+		EniId?: string | null;
+		EniIp?: string | null;
 	}
 
 	export interface DescribeBackupsResponse {
-		Backups?: Array<Backup>;
-		NextToken?: string;
+		Backups?: Array<Backup> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeBackupsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Filters?: Filters;
-		SortAscending?: boolean;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Filters?: Filters | null;
+		SortAscending?: boolean | null;
 	}
 
 	export interface Filters {
 	}
 
 	export interface DescribeClustersResponse {
-		Clusters?: Array<Cluster>;
-		NextToken?: string;
+		Clusters?: Array<Cluster> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeClustersRequest {
-		Filters?: Filters;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Filters | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface InitializeClusterResponse {
-		State?: ClusterState;
-		StateMessage?: string;
+		State?: ClusterState | null;
+		StateMessage?: string | null;
 	}
 
 	export interface InitializeClusterRequest {
@@ -213,19 +213,19 @@ export namespace MyNS {
 
 	export interface ListTagsResponse {
 		TagList: Array<Tag>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsRequest {
 		ResourceId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface RestoreBackupResponse {
 
 		/** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter. */
-		Backup?: Backup;
+		Backup?: Backup | null;
 	}
 
 	export interface RestoreBackupRequest {

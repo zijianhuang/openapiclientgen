@@ -5,17 +5,17 @@ export namespace MyNS {
 	export interface AssociateCustomerGatewayResponse {
 
 		/** Describes the association between a customer gateway, a device, and a link. */
-		CustomerGatewayAssociation?: CustomerGatewayAssociation;
+		CustomerGatewayAssociation?: CustomerGatewayAssociation | null;
 	}
 
 
 	/** Describes the association between a customer gateway, a device, and a link. */
 	export interface CustomerGatewayAssociation {
-		CustomerGatewayArn?: string;
-		GlobalNetworkId?: string;
-		DeviceId?: string;
-		LinkId?: string;
-		State?: CustomerGatewayAssociationState;
+		CustomerGatewayArn?: string | null;
+		GlobalNetworkId?: string | null;
+		DeviceId?: string | null;
+		LinkId?: string | null;
+		State?: CustomerGatewayAssociationState | null;
 	}
 
 	export enum CustomerGatewayAssociationState { PENDING = 0, AVAILABLE = 1, DELETING = 2, DELETED = 3 }
@@ -44,50 +44,50 @@ export namespace MyNS {
 	export interface AssociateLinkResponse {
 
 		/** Describes the association between a device and a link. */
-		LinkAssociation?: LinkAssociation;
+		LinkAssociation?: LinkAssociation | null;
 	}
 
 
 	/** Describes the association between a device and a link. */
 	export interface LinkAssociation {
-		GlobalNetworkId?: string;
-		DeviceId?: string;
-		LinkId?: string;
-		LinkAssociationState?: CustomerGatewayAssociationState;
+		GlobalNetworkId?: string | null;
+		DeviceId?: string | null;
+		LinkId?: string | null;
+		LinkAssociationState?: CustomerGatewayAssociationState | null;
 	}
 
 	export interface CreateDeviceResponse {
 
 		/** Describes a device. */
-		Device?: Device;
+		Device?: Device | null;
 	}
 
 
 	/** Describes a device. */
 	export interface Device {
-		DeviceId?: string;
-		DeviceArn?: string;
-		GlobalNetworkId?: string;
-		Description?: string;
-		Type?: string;
-		Vendor?: string;
-		Model?: string;
-		SerialNumber?: string;
+		DeviceId?: string | null;
+		DeviceArn?: string | null;
+		GlobalNetworkId?: string | null;
+		Description?: string | null;
+		Type?: string | null;
+		Vendor?: string | null;
+		Model?: string | null;
+		SerialNumber?: string | null;
 
 		/** Describes a location. */
-		Location?: Location;
-		SiteId?: string;
-		CreatedAt?: Date;
-		State?: DeviceState;
-		Tags?: Array<Tag>;
+		Location?: Location | null;
+		SiteId?: string | null;
+		CreatedAt?: Date | null;
+		State?: DeviceState | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Describes a location. */
 	export interface Location {
-		Address?: string;
-		Latitude?: string;
-		Longitude?: string;
+		Address?: string | null;
+		Latitude?: string | null;
+		Longitude?: string | null;
 	}
 
 	export enum DeviceState { PENDING = 0, AVAILABLE = 1, DELETING = 2, UPDATING = 3 }
@@ -95,183 +95,183 @@ export namespace MyNS {
 
 	/** Describes a tag. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface CreateGlobalNetworkResponse {
 
 		/** Describes a global network. */
-		GlobalNetwork?: GlobalNetwork;
+		GlobalNetwork?: GlobalNetwork | null;
 	}
 
 
 	/** Describes a global network. */
 	export interface GlobalNetwork {
-		GlobalNetworkId?: string;
-		GlobalNetworkArn?: string;
-		Description?: string;
-		CreatedAt?: Date;
-		State?: DeviceState;
-		Tags?: Array<Tag>;
+		GlobalNetworkId?: string | null;
+		GlobalNetworkArn?: string | null;
+		Description?: string | null;
+		CreatedAt?: Date | null;
+		State?: DeviceState | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateLinkResponse {
 
 		/** Describes a link. */
-		Link?: Link;
+		Link?: Link | null;
 	}
 
 
 	/** Describes a link. */
 	export interface Link {
-		LinkId?: string;
-		LinkArn?: string;
-		GlobalNetworkId?: string;
-		SiteId?: string;
-		Description?: string;
-		Type?: string;
+		LinkId?: string | null;
+		LinkArn?: string | null;
+		GlobalNetworkId?: string | null;
+		SiteId?: string | null;
+		Description?: string | null;
+		Type?: string | null;
 
 		/** Describes bandwidth information. */
-		Bandwidth?: Bandwidth;
-		Provider?: string;
-		CreatedAt?: Date;
-		State?: DeviceState;
-		Tags?: Array<Tag>;
+		Bandwidth?: Bandwidth | null;
+		Provider?: string | null;
+		CreatedAt?: Date | null;
+		State?: DeviceState | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Describes bandwidth information. */
 	export interface Bandwidth {
-		UploadSpeed?: number;
-		DownloadSpeed?: number;
+		UploadSpeed?: number | null;
+		DownloadSpeed?: number | null;
 	}
 
 	export interface CreateSiteResponse {
 
 		/** Describes a site. */
-		Site?: Site;
+		Site?: Site | null;
 	}
 
 
 	/** Describes a site. */
 	export interface Site {
-		SiteId?: string;
-		SiteArn?: string;
-		GlobalNetworkId?: string;
-		Description?: string;
+		SiteId?: string | null;
+		SiteArn?: string | null;
+		GlobalNetworkId?: string | null;
+		Description?: string | null;
 
 		/** Describes a location. */
-		Location?: Location;
-		CreatedAt?: Date;
-		State?: DeviceState;
-		Tags?: Array<Tag>;
+		Location?: Location | null;
+		CreatedAt?: Date | null;
+		State?: DeviceState | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DeleteDeviceResponse {
 
 		/** Describes a device. */
-		Device?: Device;
+		Device?: Device | null;
 	}
 
 	export interface DeleteGlobalNetworkResponse {
 
 		/** Describes a global network. */
-		GlobalNetwork?: GlobalNetwork;
+		GlobalNetwork?: GlobalNetwork | null;
 	}
 
 	export interface DeleteLinkResponse {
 
 		/** Describes a link. */
-		Link?: Link;
+		Link?: Link | null;
 	}
 
 	export interface DeleteSiteResponse {
 
 		/** Describes a site. */
-		Site?: Site;
+		Site?: Site | null;
 	}
 
 	export interface DeregisterTransitGatewayResponse {
 
 		/** Describes the registration of a transit gateway to a global network. */
-		TransitGatewayRegistration?: TransitGatewayRegistration;
+		TransitGatewayRegistration?: TransitGatewayRegistration | null;
 	}
 
 
 	/** Describes the registration of a transit gateway to a global network. */
 	export interface TransitGatewayRegistration {
-		GlobalNetworkId?: string;
-		TransitGatewayArn?: string;
+		GlobalNetworkId?: string | null;
+		TransitGatewayArn?: string | null;
 
 		/** Describes the status of a transit gateway registration. */
-		State?: TransitGatewayRegistrationStateReason;
+		State?: TransitGatewayRegistrationStateReason | null;
 	}
 
 
 	/** Describes the status of a transit gateway registration. */
 	export interface TransitGatewayRegistrationStateReason {
-		Code?: TransitGatewayRegistrationStateReasonCode;
-		Message?: string;
+		Code?: TransitGatewayRegistrationStateReasonCode | null;
+		Message?: string | null;
 	}
 
 	export enum TransitGatewayRegistrationStateReasonCode { PENDING = 0, AVAILABLE = 1, DELETING = 2, DELETED = 3, FAILED = 4 }
 
 	export interface DescribeGlobalNetworksResponse {
-		GlobalNetworks?: Array<GlobalNetwork>;
-		NextToken?: string;
+		GlobalNetworks?: Array<GlobalNetwork> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DisassociateCustomerGatewayResponse {
 
 		/** Describes the association between a customer gateway, a device, and a link. */
-		CustomerGatewayAssociation?: CustomerGatewayAssociation;
+		CustomerGatewayAssociation?: CustomerGatewayAssociation | null;
 	}
 
 	export interface DisassociateLinkResponse {
 
 		/** Describes the association between a device and a link. */
-		LinkAssociation?: LinkAssociation;
+		LinkAssociation?: LinkAssociation | null;
 	}
 
 	export interface GetCustomerGatewayAssociationsResponse {
-		CustomerGatewayAssociations?: Array<CustomerGatewayAssociation>;
-		NextToken?: string;
+		CustomerGatewayAssociations?: Array<CustomerGatewayAssociation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetDevicesResponse {
-		Devices?: Array<Device>;
-		NextToken?: string;
+		Devices?: Array<Device> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetLinkAssociationsResponse {
-		LinkAssociations?: Array<LinkAssociation>;
-		NextToken?: string;
+		LinkAssociations?: Array<LinkAssociation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetLinksResponse {
-		Links?: Array<Link>;
-		NextToken?: string;
+		Links?: Array<Link> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetSitesResponse {
-		Sites?: Array<Site>;
-		NextToken?: string;
+		Sites?: Array<Site> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetTransitGatewayRegistrationsResponse {
-		TransitGatewayRegistrations?: Array<TransitGatewayRegistration>;
-		NextToken?: string;
+		TransitGatewayRegistrations?: Array<TransitGatewayRegistration> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 	export interface RegisterTransitGatewayResponse {
 
 		/** Describes the registration of a transit gateway to a global network. */
-		TransitGatewayRegistration?: TransitGatewayRegistration;
+		TransitGatewayRegistration?: TransitGatewayRegistration | null;
 	}
 
 	export interface TagResourceResponse {
@@ -283,31 +283,31 @@ export namespace MyNS {
 	export interface UpdateDeviceResponse {
 
 		/** Describes a device. */
-		Device?: Device;
+		Device?: Device | null;
 	}
 
 	export interface UpdateGlobalNetworkResponse {
 
 		/** Describes a global network. */
-		GlobalNetwork?: GlobalNetwork;
+		GlobalNetwork?: GlobalNetwork | null;
 	}
 
 	export interface UpdateLinkResponse {
 
 		/** Describes a link. */
-		Link?: Link;
+		Link?: Link | null;
 	}
 
 	export interface UpdateSiteResponse {
 
 		/** Describes a site. */
-		Site?: Site;
+		Site?: Site | null;
 	}
 
 	export interface AssociateCustomerGatewayRequest {
 		CustomerGatewayArn: string;
 		DeviceId: string;
-		LinkId?: string;
+		LinkId?: string | null;
 	}
 
 	export interface AssociateLinkRequest {
@@ -316,43 +316,43 @@ export namespace MyNS {
 	}
 
 	export interface CreateDeviceRequest {
-		Description?: string;
-		Type?: string;
-		Vendor?: string;
-		Model?: string;
-		SerialNumber?: string;
+		Description?: string | null;
+		Type?: string | null;
+		Vendor?: string | null;
+		Model?: string | null;
+		SerialNumber?: string | null;
 
 		/** Describes a location. */
-		Location?: Location;
-		SiteId?: string;
-		Tags?: Array<Tag>;
+		Location?: Location | null;
+		SiteId?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateGlobalNetworkRequest {
-		Description?: string;
-		Tags?: Array<Tag>;
+		Description?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateLinkRequest {
-		Description?: string;
-		Type?: string;
+		Description?: string | null;
+		Type?: string | null;
 
 		/**
 		 * Describes bandwidth information.
 		 * Required
 		 */
 		Bandwidth: Bandwidth;
-		Provider?: string;
+		Provider?: string | null;
 		SiteId: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateSiteRequest {
-		Description?: string;
+		Description?: string | null;
 
 		/** Describes a location. */
-		Location?: Location;
-		Tags?: Array<Tag>;
+		Location?: Location | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DeleteDeviceRequest {
@@ -422,35 +422,35 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDeviceRequest {
-		Description?: string;
-		Type?: string;
-		Vendor?: string;
-		Model?: string;
-		SerialNumber?: string;
+		Description?: string | null;
+		Type?: string | null;
+		Vendor?: string | null;
+		Model?: string | null;
+		SerialNumber?: string | null;
 
 		/** Describes a location. */
-		Location?: Location;
-		SiteId?: string;
+		Location?: Location | null;
+		SiteId?: string | null;
 	}
 
 	export interface UpdateGlobalNetworkRequest {
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateLinkRequest {
-		Description?: string;
-		Type?: string;
+		Description?: string | null;
+		Type?: string | null;
 
 		/** Describes bandwidth information. */
-		Bandwidth?: Bandwidth;
-		Provider?: string;
+		Bandwidth?: Bandwidth | null;
+		Provider?: string | null;
 	}
 
 	export interface UpdateSiteRequest {
-		Description?: string;
+		Description?: string | null;
 
 		/** Describes a location. */
-		Location?: Location;
+		Location?: Location | null;
 	}
 
 	@Injectable()
@@ -803,7 +803,7 @@ export namespace MyNS {
 		DeviceId: string;
 
 		/** The ID of the link. */
-		LinkId?: string;
+		LinkId?: string | null;
 	}
 
 	export interface AssociateLinkPostBody {
@@ -824,52 +824,52 @@ export namespace MyNS {
 	export interface CreateDevicePostBody {
 
 		/** <p>A description of the device.</p> <p>Length Constraints: Maximum length of 256 characters.</p> */
-		Description?: string;
+		Description?: string | null;
 
 		/** The type of the device. */
-		Type?: string;
+		Type?: string | null;
 
 		/** <p>The vendor of the device.</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		Vendor?: string;
+		Vendor?: string | null;
 
 		/** <p>The model of the device.</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		Model?: string;
+		Model?: string | null;
 
 		/** <p>The serial number of the device.</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		SerialNumber?: string;
+		SerialNumber?: string | null;
 
 		/** Describes a location. */
-		Location?: CreateDevicePostBodyLocation;
+		Location?: CreateDevicePostBodyLocation | null;
 
 		/** The ID of the site. */
-		SiteId?: string;
+		SiteId?: string | null;
 
 		/** The tags to apply to the resource during creation. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDevicePostBodyLocation {
-		Address?: string;
-		Latitude?: string;
-		Longitude?: string;
+		Address?: string | null;
+		Latitude?: string | null;
+		Longitude?: string | null;
 	}
 
 	export interface CreateGlobalNetworkPostBody {
 
 		/** <p>A description of the global network.</p> <p>Length Constraints: Maximum length of 256 characters.</p> */
-		Description?: string;
+		Description?: string | null;
 
 		/** The tags to apply to the resource during creation. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateLinkPostBody {
 
 		/** <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256 characters.</p> */
-		Description?: string;
+		Description?: string | null;
 
 		/** <p>The type of the link.</p> <p>Constraints: Cannot include the following characters: | \ ^</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		Type?: string;
+		Type?: string | null;
 
 		/**
 		 * Describes bandwidth information.
@@ -878,7 +878,7 @@ export namespace MyNS {
 		Bandwidth: CreateLinkPostBodyBandwidth;
 
 		/** <p>The provider of the link.</p> <p>Constraints: Cannot include the following characters: | \ ^</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		Provider?: string;
+		Provider?: string | null;
 
 		/**
 		 * The ID of the site.
@@ -887,101 +887,101 @@ export namespace MyNS {
 		SiteId: string;
 
 		/** The tags to apply to the resource during creation. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateLinkPostBodyBandwidth {
-		UploadSpeed?: number;
-		DownloadSpeed?: number;
+		UploadSpeed?: number | null;
+		DownloadSpeed?: number | null;
 	}
 
 	export interface CreateSitePostBody {
 
 		/** <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256 characters.</p> */
-		Description?: string;
+		Description?: string | null;
 
 		/** Describes a location. */
-		Location?: CreateSitePostBodyLocation;
+		Location?: CreateSitePostBodyLocation | null;
 
 		/** The tags to apply to the resource during creation. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateSitePostBodyLocation {
-		Address?: string;
-		Latitude?: string;
-		Longitude?: string;
+		Address?: string | null;
+		Latitude?: string | null;
+		Longitude?: string | null;
 	}
 
 	export interface UpdateDevicePatchBody {
 
 		/** <p>A description of the device.</p> <p>Length Constraints: Maximum length of 256 characters.</p> */
-		Description?: string;
+		Description?: string | null;
 
 		/** The type of the device. */
-		Type?: string;
+		Type?: string | null;
 
 		/** <p>The vendor of the device.</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		Vendor?: string;
+		Vendor?: string | null;
 
 		/** <p>The model of the device.</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		Model?: string;
+		Model?: string | null;
 
 		/** <p>The serial number of the device.</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		SerialNumber?: string;
+		SerialNumber?: string | null;
 
 		/** Describes a location. */
-		Location?: UpdateDevicePatchBodyLocation;
+		Location?: UpdateDevicePatchBodyLocation | null;
 
 		/** The ID of the site. */
-		SiteId?: string;
+		SiteId?: string | null;
 	}
 
 	export interface UpdateDevicePatchBodyLocation {
-		Address?: string;
-		Latitude?: string;
-		Longitude?: string;
+		Address?: string | null;
+		Latitude?: string | null;
+		Longitude?: string | null;
 	}
 
 	export interface UpdateGlobalNetworkPatchBody {
 
 		/** <p>A description of the global network.</p> <p>Length Constraints: Maximum length of 256 characters.</p> */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateLinkPatchBody {
 
 		/** <p>A description of the link.</p> <p>Length Constraints: Maximum length of 256 characters.</p> */
-		Description?: string;
+		Description?: string | null;
 
 		/** <p>The type of the link.</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		Type?: string;
+		Type?: string | null;
 
 		/** Describes bandwidth information. */
-		Bandwidth?: UpdateLinkPatchBodyBandwidth;
+		Bandwidth?: UpdateLinkPatchBodyBandwidth | null;
 
 		/** <p>The provider of the link.</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
-		Provider?: string;
+		Provider?: string | null;
 	}
 
 	export interface UpdateLinkPatchBodyBandwidth {
-		UploadSpeed?: number;
-		DownloadSpeed?: number;
+		UploadSpeed?: number | null;
+		DownloadSpeed?: number | null;
 	}
 
 	export interface UpdateSitePatchBody {
 
 		/** <p>A description of your site.</p> <p>Length Constraints: Maximum length of 256 characters.</p> */
-		Description?: string;
+		Description?: string | null;
 
 		/** Describes a location. */
-		Location?: UpdateSitePatchBodyLocation;
+		Location?: UpdateSitePatchBodyLocation | null;
 	}
 
 	export interface UpdateSitePatchBodyLocation {
-		Address?: string;
-		Latitude?: string;
-		Longitude?: string;
+		Address?: string | null;
+		Latitude?: string | null;
+		Longitude?: string | null;
 	}
 
 	export interface RegisterTransitGatewayPostBody {

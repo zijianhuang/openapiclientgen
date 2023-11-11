@@ -3,24 +3,24 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateAssetResponse {
-		Arn?: string;
-		CreatedAt?: string;
-		EgressEndpoints?: Array<EgressEndpoint>;
-		Id?: string;
-		PackagingGroupId?: string;
-		ResourceId?: string;
-		SourceArn?: string;
-		SourceRoleArn?: string;
+		Arn?: string | null;
+		CreatedAt?: string | null;
+		EgressEndpoints?: Array<EgressEndpoint> | null;
+		Id?: string | null;
+		PackagingGroupId?: string | null;
+		ResourceId?: string | null;
+		SourceArn?: string | null;
+		SourceRoleArn?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
 	/** The endpoint URL used to access an Asset using one PackagingConfiguration. */
 	export interface EgressEndpoint {
-		PackagingConfigurationId?: string;
-		Url?: string;
+		PackagingConfigurationId?: string | null;
+		Url?: string | null;
 	}
 
 
@@ -47,24 +47,24 @@ export namespace MyNS {
 	}
 
 	export interface CreatePackagingConfigurationResponse {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A CMAF packaging configuration. */
-		CmafPackage?: CmafPackage;
+		CmafPackage?: CmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
+		DashPackage?: DashPackage | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
-		Id?: string;
+		HlsPackage?: HlsPackage | null;
+		Id?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) PackagingConfiguration. */
-		MssPackage?: MssPackage;
-		PackagingGroupId?: string;
+		MssPackage?: MssPackage | null;
+		PackagingGroupId?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -72,9 +72,9 @@ export namespace MyNS {
 	export interface CmafPackage {
 
 		/** A CMAF encryption configuration. */
-		Encryption?: CmafEncryption;
+		Encryption?: CmafEncryption | null;
 		HlsManifests: Array<HlsManifest>;
-		SegmentDurationSeconds?: number;
+		SegmentDurationSeconds?: number | null;
 	}
 
 
@@ -99,14 +99,14 @@ export namespace MyNS {
 
 	/** An HTTP Live Streaming (HLS) manifest configuration. */
 	export interface HlsManifest {
-		AdMarkers?: HlsManifestAdMarkers;
-		IncludeIframeOnlyStream?: boolean;
-		ManifestName?: string;
-		ProgramDateTimeIntervalSeconds?: number;
-		RepeatExtXKey?: boolean;
+		AdMarkers?: HlsManifestAdMarkers | null;
+		IncludeIframeOnlyStream?: boolean | null;
+		ManifestName?: string | null;
+		ProgramDateTimeIntervalSeconds?: number | null;
+		RepeatExtXKey?: boolean | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 	export enum HlsManifestAdMarkers { NONE = 0, SCTE35_ENHANCED = 1, PASSTHROUGH = 2 }
@@ -114,9 +114,9 @@ export namespace MyNS {
 
 	/** A StreamSelection configuration. */
 	export interface StreamSelection {
-		MaxVideoBitsPerSecond?: number;
-		MinVideoBitsPerSecond?: number;
-		StreamOrder?: StreamSelectionStreamOrder;
+		MaxVideoBitsPerSecond?: number | null;
+		MinVideoBitsPerSecond?: number | null;
+		StreamOrder?: StreamSelectionStreamOrder | null;
 	}
 
 	export enum StreamSelectionStreamOrder { ORIGINAL = 0, VIDEO_BITRATE_ASCENDING = 1, VIDEO_BITRATE_DESCENDING = 2 }
@@ -127,22 +127,22 @@ export namespace MyNS {
 		DashManifests: Array<DashManifest>;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
-		Encryption?: DashEncryption;
-		PeriodTriggers?: Array<__PeriodTriggersElement>;
-		SegmentDurationSeconds?: number;
-		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat;
+		Encryption?: DashEncryption | null;
+		PeriodTriggers?: Array<__PeriodTriggersElement> | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat | null;
 	}
 
 
 	/** A DASH manifest configuration. */
 	export interface DashManifest {
-		ManifestLayout?: DashManifestManifestLayout;
-		ManifestName?: string;
-		MinBufferTimeSeconds?: number;
-		Profile?: DashManifestProfile;
+		ManifestLayout?: DashManifestManifestLayout | null;
+		ManifestName?: string | null;
+		MinBufferTimeSeconds?: number | null;
+		Profile?: DashManifestProfile | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 	export enum DashManifestManifestLayout { FULL = 0, COMPACT = 1 }
@@ -169,17 +169,17 @@ export namespace MyNS {
 	export interface HlsPackage {
 
 		/** An HTTP Live Streaming (HLS) encryption configuration. */
-		Encryption?: HlsEncryption;
+		Encryption?: HlsEncryption | null;
 		HlsManifests: Array<HlsManifest>;
-		SegmentDurationSeconds?: number;
-		UseAudioRenditionGroup?: boolean;
+		SegmentDurationSeconds?: number | null;
+		UseAudioRenditionGroup?: boolean | null;
 	}
 
 
 	/** An HTTP Live Streaming (HLS) encryption configuration. */
 	export interface HlsEncryption {
-		ConstantInitializationVector?: string;
-		EncryptionMethod?: HlsEncryptionEncryptionMethod;
+		ConstantInitializationVector?: string | null;
+		EncryptionMethod?: HlsEncryptionEncryptionMethod | null;
 
 		/**
 		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
@@ -195,9 +195,9 @@ export namespace MyNS {
 	export interface MssPackage {
 
 		/** A Microsoft Smooth Streaming (MSS) encryption configuration. */
-		Encryption?: MssEncryption;
+		Encryption?: MssEncryption | null;
 		MssManifests: Array<MssManifest>;
-		SegmentDurationSeconds?: number;
+		SegmentDurationSeconds?: number | null;
 	}
 
 
@@ -214,24 +214,24 @@ export namespace MyNS {
 
 	/** A Microsoft Smooth Streaming (MSS) manifest configuration. */
 	export interface MssManifest {
-		ManifestName?: string;
+		ManifestName?: string | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 	export enum SegmentTemplateFormat { NUMBER_WITH_TIMELINE = 0, TIME_WITH_TIMELINE = 1, NUMBER_WITH_DURATION = 2 }
 
 	export interface CreatePackagingGroupResponse {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
-		DomainName?: string;
-		Id?: string;
+		Authorization?: Authorization | null;
+		DomainName?: string | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -251,136 +251,136 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAssetResponse {
-		Arn?: string;
-		CreatedAt?: string;
-		EgressEndpoints?: Array<EgressEndpoint>;
-		Id?: string;
-		PackagingGroupId?: string;
-		ResourceId?: string;
-		SourceArn?: string;
-		SourceRoleArn?: string;
+		Arn?: string | null;
+		CreatedAt?: string | null;
+		EgressEndpoints?: Array<EgressEndpoint> | null;
+		Id?: string | null;
+		PackagingGroupId?: string | null;
+		ResourceId?: string | null;
+		SourceArn?: string | null;
+		SourceRoleArn?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface DescribePackagingConfigurationResponse {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A CMAF packaging configuration. */
-		CmafPackage?: CmafPackage;
+		CmafPackage?: CmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
+		DashPackage?: DashPackage | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
-		Id?: string;
+		HlsPackage?: HlsPackage | null;
+		Id?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) PackagingConfiguration. */
-		MssPackage?: MssPackage;
-		PackagingGroupId?: string;
+		MssPackage?: MssPackage | null;
+		PackagingGroupId?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface DescribePackagingGroupResponse {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
-		DomainName?: string;
-		Id?: string;
+		Authorization?: Authorization | null;
+		DomainName?: string | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListAssetsResponse {
-		Assets?: Array<AssetShallow>;
-		NextToken?: string;
+		Assets?: Array<AssetShallow> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A MediaPackage VOD Asset resource. */
 	export interface AssetShallow {
-		Arn?: string;
-		CreatedAt?: string;
-		Id?: string;
-		PackagingGroupId?: string;
-		ResourceId?: string;
-		SourceArn?: string;
-		SourceRoleArn?: string;
+		Arn?: string | null;
+		CreatedAt?: string | null;
+		Id?: string | null;
+		PackagingGroupId?: string | null;
+		ResourceId?: string | null;
+		SourceArn?: string | null;
+		SourceRoleArn?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListPackagingConfigurationsResponse {
-		NextToken?: string;
-		PackagingConfigurations?: Array<PackagingConfiguration>;
+		NextToken?: string | null;
+		PackagingConfigurations?: Array<PackagingConfiguration> | null;
 	}
 
 
 	/** A MediaPackage VOD PackagingConfiguration resource. */
 	export interface PackagingConfiguration {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A CMAF packaging configuration. */
-		CmafPackage?: CmafPackage;
+		CmafPackage?: CmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
+		DashPackage?: DashPackage | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
-		Id?: string;
+		HlsPackage?: HlsPackage | null;
+		Id?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) PackagingConfiguration. */
-		MssPackage?: MssPackage;
-		PackagingGroupId?: string;
+		MssPackage?: MssPackage | null;
+		PackagingGroupId?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListPackagingGroupsResponse {
-		NextToken?: string;
-		PackagingGroups?: Array<PackagingGroup>;
+		NextToken?: string | null;
+		PackagingGroups?: Array<PackagingGroup> | null;
 	}
 
 
 	/** A MediaPackage VOD PackagingGroup resource. */
 	export interface PackagingGroup {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
-		DomainName?: string;
-		Id?: string;
+		Authorization?: Authorization | null;
+		DomainName?: string | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string;
+		Tags?: __mapOf__string | null;
 	}
 
 	export interface __mapOf__string {
 	}
 
 	export interface UpdatePackagingGroupResponse {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
-		DomainName?: string;
-		Id?: string;
+		Authorization?: Authorization | null;
+		DomainName?: string | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export enum AdMarkers { NONE = 0, SCTE35_ENHANCED = 1, PASSTHROUGH = 2 }
@@ -390,12 +390,12 @@ export namespace MyNS {
 	export interface CreateAssetRequest {
 		Id: string;
 		PackagingGroupId: string;
-		ResourceId?: string;
+		ResourceId?: string | null;
 		SourceArn: string;
 		SourceRoleArn: string;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -403,21 +403,21 @@ export namespace MyNS {
 	export interface CreatePackagingConfigurationRequest {
 
 		/** A CMAF packaging configuration. */
-		CmafPackage?: CmafPackage;
+		CmafPackage?: CmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
+		DashPackage?: DashPackage | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
+		HlsPackage?: HlsPackage | null;
 		Id: string;
 
 		/** A Microsoft Smooth Streaming (MSS) PackagingConfiguration. */
-		MssPackage?: MssPackage;
+		MssPackage?: MssPackage | null;
 		PackagingGroupId: string;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -425,11 +425,11 @@ export namespace MyNS {
 	export interface CreatePackagingGroupRequest {
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
+		Authorization?: Authorization | null;
 		Id: string;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export enum ManifestLayout { FULL = 0, COMPACT = 1 }
@@ -482,7 +482,7 @@ export namespace MyNS {
 	export interface UpdatePackagingGroupRequest {
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
+		Authorization?: Authorization | null;
 	}
 
 	@Injectable()
@@ -675,7 +675,7 @@ export namespace MyNS {
 		packagingGroupId: string;
 
 		/** The resource ID to include in SPEKE key requests. */
-		resourceId?: string;
+		resourceId?: string | null;
 
 		/**
 		 * ARN of the source object in S3.
@@ -690,19 +690,19 @@ export namespace MyNS {
 		sourceRoleArn: string;
 
 		/** A collection of tags associated with a resource */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreatePackagingConfigurationPostBody {
 
 		/** A CMAF packaging configuration. */
-		cmafPackage?: CreatePackagingConfigurationPostBodyCmafPackage;
+		cmafPackage?: CreatePackagingConfigurationPostBodyCmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		dashPackage?: CreatePackagingConfigurationPostBodyDashPackage;
+		dashPackage?: CreatePackagingConfigurationPostBodyDashPackage | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		hlsPackage?: CreatePackagingConfigurationPostBodyHlsPackage;
+		hlsPackage?: CreatePackagingConfigurationPostBodyHlsPackage | null;
 
 		/**
 		 * The ID of the PackagingConfiguration.
@@ -711,7 +711,7 @@ export namespace MyNS {
 		id: string;
 
 		/** A Microsoft Smooth Streaming (MSS) PackagingConfiguration. */
-		mssPackage?: CreatePackagingConfigurationPostBodyMssPackage;
+		mssPackage?: CreatePackagingConfigurationPostBodyMssPackage | null;
 
 		/**
 		 * The ID of a PackagingGroup.
@@ -720,48 +720,48 @@ export namespace MyNS {
 		packagingGroupId: string;
 
 		/** A collection of tags associated with a resource */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreatePackagingConfigurationPostBodyCmafPackage {
 
 		/** A CMAF encryption configuration. */
-		Encryption?: CmafEncryption;
-		HlsManifests?: Array<HlsManifest>;
-		SegmentDurationSeconds?: number;
+		Encryption?: CmafEncryption | null;
+		HlsManifests?: Array<HlsManifest> | null;
+		SegmentDurationSeconds?: number | null;
 	}
 
 	export interface CreatePackagingConfigurationPostBodyDashPackage {
-		DashManifests?: Array<DashManifest>;
+		DashManifests?: Array<DashManifest> | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
-		Encryption?: DashEncryption;
-		PeriodTriggers?: Array<__PeriodTriggersElement>;
-		SegmentDurationSeconds?: number;
-		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat;
+		Encryption?: DashEncryption | null;
+		PeriodTriggers?: Array<__PeriodTriggersElement> | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat | null;
 	}
 
 	export interface CreatePackagingConfigurationPostBodyHlsPackage {
 
 		/** An HTTP Live Streaming (HLS) encryption configuration. */
-		Encryption?: HlsEncryption;
-		HlsManifests?: Array<HlsManifest>;
-		SegmentDurationSeconds?: number;
-		UseAudioRenditionGroup?: boolean;
+		Encryption?: HlsEncryption | null;
+		HlsManifests?: Array<HlsManifest> | null;
+		SegmentDurationSeconds?: number | null;
+		UseAudioRenditionGroup?: boolean | null;
 	}
 
 	export interface CreatePackagingConfigurationPostBodyMssPackage {
 
 		/** A Microsoft Smooth Streaming (MSS) encryption configuration. */
-		Encryption?: MssEncryption;
-		MssManifests?: Array<MssManifest>;
-		SegmentDurationSeconds?: number;
+		Encryption?: MssEncryption | null;
+		MssManifests?: Array<MssManifest> | null;
+		SegmentDurationSeconds?: number | null;
 	}
 
 	export interface CreatePackagingGroupPostBody {
 
 		/** CDN Authorization credentials */
-		authorization?: CreatePackagingGroupPostBodyAuthorization;
+		authorization?: CreatePackagingGroupPostBodyAuthorization | null;
 
 		/**
 		 * The ID of the PackagingGroup.
@@ -770,23 +770,23 @@ export namespace MyNS {
 		id: string;
 
 		/** A collection of tags associated with a resource */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreatePackagingGroupPostBodyAuthorization {
-		CdnIdentifierSecret?: string;
-		SecretsRoleArn?: string;
+		CdnIdentifierSecret?: string | null;
+		SecretsRoleArn?: string | null;
 	}
 
 	export interface UpdatePackagingGroupPutBody {
 
 		/** CDN Authorization credentials */
-		authorization?: UpdatePackagingGroupPutBodyAuthorization;
+		authorization?: UpdatePackagingGroupPutBodyAuthorization | null;
 	}
 
 	export interface UpdatePackagingGroupPutBodyAuthorization {
-		CdnIdentifierSecret?: string;
-		SecretsRoleArn?: string;
+		CdnIdentifierSecret?: string | null;
+		SecretsRoleArn?: string | null;
 	}
 
 	export interface TagResourcePostBody {

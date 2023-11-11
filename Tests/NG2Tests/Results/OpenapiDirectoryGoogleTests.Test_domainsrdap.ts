@@ -37,16 +37,16 @@ export namespace MyNS {
 	export interface HttpBody {
 
 		/** The HTTP Content-Type header value specifying the content type of the body. */
-		contentType?: string;
+		contentType?: string | null;
 
 		/** The HTTP request/response body as raw binary. */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * Application specific response metadata. Must be set in the first response
 		 * for streaming APIs.
 		 */
-		extensions?: Array<string>;
+		extensions?: Array<string> | null;
 	}
 
 
@@ -57,25 +57,25 @@ export namespace MyNS {
 	export interface Link {
 
 		/** Target URL of a link. Example: "http://example.com/previous". */
-		href?: string;
+		href?: string | null;
 
 		/** Language code of a link. Example: "en". */
-		hreflang?: string;
+		hreflang?: string | null;
 
 		/** Media type of the link destination. Example: "screen". */
-		media?: string;
+		media?: string | null;
 
 		/** Relation type of a link. Example: "previous". */
-		rel?: string;
+		rel?: string | null;
 
 		/** Title of this link. Example: "title". */
-		title?: string;
+		title?: string | null;
 
 		/** Content type of the link. Example: "application/json". */
-		type?: string;
+		type?: string | null;
 
 		/** URL giving context for the link. Example: "http://example.com/current". */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -86,13 +86,13 @@ export namespace MyNS {
 	export interface Notice {
 
 		/** Description of the notice. */
-		description?: Array<string>;
+		description?: Array<string> | null;
 
 		/** Link to a document containing more information. */
-		links?: Array<Link>;
+		links?: Array<Link> | null;
 
 		/** Title of a notice. Example: "Terms of Service". */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * Type values defined in [section 10.2.1 of RFC
@@ -101,7 +101,7 @@ export namespace MyNS {
 		 * truncated due to excessive load", "result set truncated due to
 		 * unexplainable reasons".
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -109,10 +109,10 @@ export namespace MyNS {
 	export interface RdapResponse {
 
 		/** Error description. */
-		description?: Array<string>;
+		description?: Array<string> | null;
 
 		/** Error HTTP code. Example: "501". */
-		errorCode?: number;
+		errorCode?: number | null;
 
 		/**
 		 * Message that represents an arbitrary HTTP body. It should only be used for
@@ -145,22 +145,22 @@ export namespace MyNS {
 		 * Use of this type only changes how the request and response bodies are
 		 * handled, all other features will continue to work unchanged.
 		 */
-		jsonResponse?: HttpBody;
+		jsonResponse?: HttpBody | null;
 
 		/**
 		 * Error language code. Error response info fields are defined in [section 6
 		 * of RFC 7483](https://tools.ietf.org/html/rfc7483#section-6).
 		 */
-		lang?: string;
+		lang?: string | null;
 
 		/** Notices applying to this response. */
-		notices?: Array<Notice>;
+		notices?: Array<Notice> | null;
 
 		/** RDAP conformance level. */
-		rdapConformance?: Array<string>;
+		rdapConformance?: Array<string> | null;
 
 		/** Error title. */
-		title?: string;
+		title?: string | null;
 	}
 
 	@Injectable()

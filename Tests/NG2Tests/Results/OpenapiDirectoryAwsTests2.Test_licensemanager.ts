@@ -3,18 +3,18 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateLicenseConfigurationResponse {
-		LicenseConfigurationArn?: string;
+		LicenseConfigurationArn?: string | null;
 	}
 
 	export interface CreateLicenseConfigurationRequest {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		LicenseCountingType: CreateLicenseConfigurationRequestLicenseCountingType;
-		LicenseCount?: number;
-		LicenseCountHardLimit?: boolean;
-		LicenseRules?: Array<string>;
-		Tags?: Array<Tag>;
-		ProductInformationList?: Array<ProductInformation>;
+		LicenseCount?: number | null;
+		LicenseCountHardLimit?: boolean | null;
+		LicenseRules?: Array<string> | null;
+		Tags?: Array<Tag> | null;
+		ProductInformationList?: Array<ProductInformation> | null;
 	}
 
 	export enum CreateLicenseConfigurationRequestLicenseCountingType { vCPU = 0, Instance = 1, Core = 2, Socket = 3 }
@@ -22,8 +22,8 @@ export namespace MyNS {
 
 	/** Details about a tag for a license configuration. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
@@ -67,31 +67,31 @@ export namespace MyNS {
 	}
 
 	export interface GetLicenseConfigurationResponse {
-		LicenseConfigurationId?: string;
-		LicenseConfigurationArn?: string;
-		Name?: string;
-		Description?: string;
-		LicenseCountingType?: CreateLicenseConfigurationRequestLicenseCountingType;
-		LicenseRules?: Array<string>;
-		LicenseCount?: number;
-		LicenseCountHardLimit?: boolean;
-		ConsumedLicenses?: number;
-		Status?: string;
-		OwnerAccountId?: string;
-		ConsumedLicenseSummaryList?: Array<ConsumedLicenseSummary>;
-		ManagedResourceSummaryList?: Array<ManagedResourceSummary>;
-		Tags?: Array<Tag>;
-		ProductInformationList?: Array<ProductInformation>;
+		LicenseConfigurationId?: string | null;
+		LicenseConfigurationArn?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		LicenseCountingType?: CreateLicenseConfigurationRequestLicenseCountingType | null;
+		LicenseRules?: Array<string> | null;
+		LicenseCount?: number | null;
+		LicenseCountHardLimit?: boolean | null;
+		ConsumedLicenses?: number | null;
+		Status?: string | null;
+		OwnerAccountId?: string | null;
+		ConsumedLicenseSummaryList?: Array<ConsumedLicenseSummary> | null;
+		ManagedResourceSummaryList?: Array<ManagedResourceSummary> | null;
+		Tags?: Array<Tag> | null;
+		ProductInformationList?: Array<ProductInformation> | null;
 
 		/** Describes automated discovery. */
-		AutomatedDiscoveryInformation?: AutomatedDiscoveryInformation;
+		AutomatedDiscoveryInformation?: AutomatedDiscoveryInformation | null;
 	}
 
 
 	/** Details about license consumption. */
 	export interface ConsumedLicenseSummary {
-		ResourceType?: ConsumedLicenseSummaryResourceType;
-		ConsumedLicenses?: number;
+		ResourceType?: ConsumedLicenseSummaryResourceType | null;
+		ConsumedLicenses?: number | null;
 	}
 
 	export enum ConsumedLicenseSummaryResourceType { EC2_INSTANCE = 0, EC2_HOST = 1, EC2_AMI = 2, RDS = 3, SYSTEMS_MANAGER_MANAGED_INSTANCE = 4 }
@@ -99,14 +99,14 @@ export namespace MyNS {
 
 	/** Summary information about a managed resource. */
 	export interface ManagedResourceSummary {
-		ResourceType?: ConsumedLicenseSummaryResourceType;
-		AssociationCount?: number;
+		ResourceType?: ConsumedLicenseSummaryResourceType | null;
+		AssociationCount?: number | null;
 	}
 
 
 	/** Describes automated discovery. */
 	export interface AutomatedDiscoveryInformation {
-		LastRunTime?: Date;
+		LastRunTime?: Date | null;
 	}
 
 	export interface GetLicenseConfigurationRequest {
@@ -114,13 +114,13 @@ export namespace MyNS {
 	}
 
 	export interface GetServiceSettingsResponse {
-		S3BucketArn?: string;
-		SnsTopicArn?: string;
+		S3BucketArn?: string | null;
+		SnsTopicArn?: string | null;
 
 		/** Configuration information for AWS Organizations. */
-		OrganizationConfiguration?: OrganizationConfiguration;
-		EnableCrossAccountsDiscovery?: boolean;
-		LicenseManagerResourceShareArn?: string;
+		OrganizationConfiguration?: OrganizationConfiguration | null;
+		EnableCrossAccountsDiscovery?: boolean | null;
+		LicenseManagerResourceShareArn?: string | null;
 	}
 
 
@@ -133,103 +133,103 @@ export namespace MyNS {
 	}
 
 	export interface ListAssociationsForLicenseConfigurationResponse {
-		LicenseConfigurationAssociations?: Array<LicenseConfigurationAssociation>;
-		NextToken?: string;
+		LicenseConfigurationAssociations?: Array<LicenseConfigurationAssociation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes an association with a license configuration. */
 	export interface LicenseConfigurationAssociation {
-		ResourceArn?: string;
-		ResourceType?: ConsumedLicenseSummaryResourceType;
-		ResourceOwnerId?: string;
-		AssociationTime?: Date;
+		ResourceArn?: string | null;
+		ResourceType?: ConsumedLicenseSummaryResourceType | null;
+		ResourceOwnerId?: string | null;
+		AssociationTime?: Date | null;
 	}
 
 	export interface ListAssociationsForLicenseConfigurationRequest {
 		LicenseConfigurationArn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface FilterLimitExceededException {
 	}
 
 	export interface ListFailuresForLicenseConfigurationOperationsResponse {
-		LicenseOperationFailureList?: Array<LicenseOperationFailure>;
-		NextToken?: string;
+		LicenseOperationFailureList?: Array<LicenseOperationFailure> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes the failure of a license operation. */
 	export interface LicenseOperationFailure {
-		ResourceArn?: string;
-		ResourceType?: ConsumedLicenseSummaryResourceType;
-		ErrorMessage?: string;
-		FailureTime?: Date;
-		OperationName?: string;
-		ResourceOwnerId?: string;
-		OperationRequestedBy?: string;
-		MetadataList?: Array<Metadata>;
+		ResourceArn?: string | null;
+		ResourceType?: ConsumedLicenseSummaryResourceType | null;
+		ErrorMessage?: string | null;
+		FailureTime?: Date | null;
+		OperationName?: string | null;
+		ResourceOwnerId?: string | null;
+		OperationRequestedBy?: string | null;
+		MetadataList?: Array<Metadata> | null;
 	}
 
 
 	/** Reserved. */
 	export interface Metadata {
-		Name?: string;
-		Value?: string;
+		Name?: string | null;
+		Value?: string | null;
 	}
 
 	export interface ListFailuresForLicenseConfigurationOperationsRequest {
 		LicenseConfigurationArn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListLicenseConfigurationsResponse {
-		LicenseConfigurations?: Array<LicenseConfiguration>;
-		NextToken?: string;
+		LicenseConfigurations?: Array<LicenseConfiguration> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used. */
 	export interface LicenseConfiguration {
-		LicenseConfigurationId?: string;
-		LicenseConfigurationArn?: string;
-		Name?: string;
-		Description?: string;
-		LicenseCountingType?: CreateLicenseConfigurationRequestLicenseCountingType;
-		LicenseRules?: Array<string>;
-		LicenseCount?: number;
-		LicenseCountHardLimit?: boolean;
-		ConsumedLicenses?: number;
-		Status?: string;
-		OwnerAccountId?: string;
-		ConsumedLicenseSummaryList?: Array<ConsumedLicenseSummary>;
-		ManagedResourceSummaryList?: Array<ManagedResourceSummary>;
-		ProductInformationList?: Array<ProductInformation>;
+		LicenseConfigurationId?: string | null;
+		LicenseConfigurationArn?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		LicenseCountingType?: CreateLicenseConfigurationRequestLicenseCountingType | null;
+		LicenseRules?: Array<string> | null;
+		LicenseCount?: number | null;
+		LicenseCountHardLimit?: boolean | null;
+		ConsumedLicenses?: number | null;
+		Status?: string | null;
+		OwnerAccountId?: string | null;
+		ConsumedLicenseSummaryList?: Array<ConsumedLicenseSummary> | null;
+		ManagedResourceSummaryList?: Array<ManagedResourceSummary> | null;
+		ProductInformationList?: Array<ProductInformation> | null;
 
 		/** Describes automated discovery. */
-		AutomatedDiscoveryInformation?: AutomatedDiscoveryInformation;
+		AutomatedDiscoveryInformation?: AutomatedDiscoveryInformation | null;
 	}
 
 	export interface ListLicenseConfigurationsRequest {
-		LicenseConfigurationArns?: Array<string>;
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<Filter>;
+		LicenseConfigurationArns?: Array<string> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 
 	/** A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. */
 	export interface Filter {
-		Name?: string;
-		Values?: Array<string>;
+		Name?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface ListLicenseSpecificationsForResourceResponse {
-		LicenseSpecifications?: Array<LicenseSpecification>;
-		NextToken?: string;
+		LicenseSpecifications?: Array<LicenseSpecification> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -240,30 +240,30 @@ export namespace MyNS {
 
 	export interface ListLicenseSpecificationsForResourceRequest {
 		ResourceArn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListResourceInventoryResponse {
-		ResourceInventoryList?: Array<ResourceInventory>;
-		NextToken?: string;
+		ResourceInventoryList?: Array<ResourceInventory> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Details about a resource. */
 	export interface ResourceInventory {
-		ResourceId?: string;
-		ResourceType?: ConsumedLicenseSummaryResourceType;
-		ResourceArn?: string;
-		Platform?: string;
-		PlatformVersion?: string;
-		ResourceOwningAccountId?: string;
+		ResourceId?: string | null;
+		ResourceType?: ConsumedLicenseSummaryResourceType | null;
+		ResourceArn?: string | null;
+		Platform?: string | null;
+		PlatformVersion?: string | null;
+		ResourceOwningAccountId?: string | null;
 	}
 
 	export interface ListResourceInventoryRequest {
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<InventoryFilter>;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<InventoryFilter> | null;
 	}
 
 
@@ -271,7 +271,7 @@ export namespace MyNS {
 	export interface InventoryFilter {
 		Name: string;
 		Condition: InventoryFilterCondition;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export enum InventoryFilterCondition { EQUALS = 0, NOT_EQUALS = 1, BEGINS_WITH = 2, CONTAINS = 3 }
@@ -280,7 +280,7 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -288,26 +288,26 @@ export namespace MyNS {
 	}
 
 	export interface ListUsageForLicenseConfigurationResponse {
-		LicenseConfigurationUsageList?: Array<LicenseConfigurationUsage>;
-		NextToken?: string;
+		LicenseConfigurationUsageList?: Array<LicenseConfigurationUsage> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Details about the usage of a resource associated with a license configuration. */
 	export interface LicenseConfigurationUsage {
-		ResourceArn?: string;
-		ResourceType?: ConsumedLicenseSummaryResourceType;
-		ResourceStatus?: string;
-		ResourceOwnerId?: string;
-		AssociationTime?: Date;
-		ConsumedLicenses?: number;
+		ResourceArn?: string | null;
+		ResourceType?: ConsumedLicenseSummaryResourceType | null;
+		ResourceStatus?: string | null;
+		ResourceOwnerId?: string | null;
+		AssociationTime?: Date | null;
+		ConsumedLicenses?: number | null;
 	}
 
 	export interface ListUsageForLicenseConfigurationRequest {
 		LicenseConfigurationArn: string;
-		MaxResults?: number;
-		NextToken?: string;
-		Filters?: Array<Filter>;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface TagResourceResponse {
@@ -331,13 +331,13 @@ export namespace MyNS {
 
 	export interface UpdateLicenseConfigurationRequest {
 		LicenseConfigurationArn: string;
-		LicenseConfigurationStatus?: UpdateLicenseConfigurationRequestLicenseConfigurationStatus;
-		LicenseRules?: Array<string>;
-		LicenseCount?: number;
-		LicenseCountHardLimit?: boolean;
-		Name?: string;
-		Description?: string;
-		ProductInformationList?: Array<ProductInformation>;
+		LicenseConfigurationStatus?: UpdateLicenseConfigurationRequestLicenseConfigurationStatus | null;
+		LicenseRules?: Array<string> | null;
+		LicenseCount?: number | null;
+		LicenseCountHardLimit?: boolean | null;
+		Name?: string | null;
+		Description?: string | null;
+		ProductInformationList?: Array<ProductInformation> | null;
 	}
 
 	export enum UpdateLicenseConfigurationRequestLicenseConfigurationStatus { AVAILABLE = 0, DISABLED = 1 }
@@ -347,8 +347,8 @@ export namespace MyNS {
 
 	export interface UpdateLicenseSpecificationsForResourceRequest {
 		ResourceArn: string;
-		AddLicenseSpecifications?: Array<LicenseSpecification>;
-		RemoveLicenseSpecifications?: Array<LicenseSpecification>;
+		AddLicenseSpecifications?: Array<LicenseSpecification> | null;
+		RemoveLicenseSpecifications?: Array<LicenseSpecification> | null;
 	}
 
 	export interface InvalidResourceStateException {
@@ -361,12 +361,12 @@ export namespace MyNS {
 	}
 
 	export interface UpdateServiceSettingsRequest {
-		S3BucketArn?: string;
-		SnsTopicArn?: string;
+		S3BucketArn?: string | null;
+		SnsTopicArn?: string | null;
 
 		/** Configuration information for AWS Organizations. */
-		OrganizationConfiguration?: OrganizationConfiguration;
-		EnableCrossAccountsDiscovery?: boolean;
+		OrganizationConfiguration?: OrganizationConfiguration | null;
+		EnableCrossAccountsDiscovery?: boolean | null;
 	}
 
 	export enum ResourceType { EC2_INSTANCE = 0, EC2_HOST = 1, EC2_AMI = 2, RDS = 3, SYSTEMS_MANAGER_MANAGED_INSTANCE = 4 }

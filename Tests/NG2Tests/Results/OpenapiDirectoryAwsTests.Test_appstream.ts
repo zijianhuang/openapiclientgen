@@ -29,7 +29,7 @@ export namespace MyNS {
 	}
 
 	export interface BatchAssociateUserStackResult {
-		errors?: Array<UserStackAssociationError>;
+		errors?: Array<UserStackAssociationError> | null;
 	}
 
 
@@ -37,9 +37,9 @@ export namespace MyNS {
 	export interface UserStackAssociationError {
 
 		/** Describes a user in the user pool and the associated stack. */
-		UserStackAssociation?: UserStackAssociation;
-		ErrorCode?: UserStackAssociationErrorErrorCode;
-		ErrorMessage?: string;
+		UserStackAssociation?: UserStackAssociation | null;
+		ErrorCode?: UserStackAssociationErrorErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 
@@ -48,7 +48,7 @@ export namespace MyNS {
 		StackName: string;
 		UserName: string;
 		AuthenticationType: UserStackAssociationAuthenticationType;
-		SendEmailNotification?: boolean;
+		SendEmailNotification?: boolean | null;
 	}
 
 	export enum UserStackAssociationAuthenticationType { API = 0, SAML = 1, USERPOOL = 2 }
@@ -60,7 +60,7 @@ export namespace MyNS {
 	}
 
 	export interface BatchDisassociateUserStackResult {
-		errors?: Array<UserStackAssociationError>;
+		errors?: Array<UserStackAssociationError> | null;
 	}
 
 	export interface BatchDisassociateUserStackRequest {
@@ -68,14 +68,14 @@ export namespace MyNS {
 	}
 
 	export interface CopyImageResponse {
-		DestinationImageName?: string;
+		DestinationImageName?: string | null;
 	}
 
 	export interface CopyImageRequest {
 		SourceImageName: string;
 		DestinationImageName: string;
 		DestinationRegion: string;
-		DestinationImageDescription?: string;
+		DestinationImageDescription?: string | null;
 	}
 
 	export interface ResourceAlreadyExistsException {
@@ -87,18 +87,18 @@ export namespace MyNS {
 	export interface CreateDirectoryConfigResult {
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DirectoryConfig?: DirectoryConfig;
+		DirectoryConfig?: DirectoryConfig | null;
 	}
 
 
 	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 	export interface DirectoryConfig {
 		DirectoryName: string;
-		OrganizationalUnitDistinguishedNames?: Array<string>;
+		OrganizationalUnitDistinguishedNames?: Array<string> | null;
 
 		/** Describes the credentials for the service account used by the fleet or image builder to connect to the directory. */
-		ServiceAccountCredentials?: ServiceAccountCredentials;
-		CreatedTime?: Date;
+		ServiceAccountCredentials?: ServiceAccountCredentials | null;
+		CreatedTime?: Date | null;
 	}
 
 
@@ -122,7 +122,7 @@ export namespace MyNS {
 	export interface CreateFleetResult {
 
 		/** Describes a fleet. */
-		Fleet?: Fleet;
+		Fleet?: Fleet | null;
 	}
 
 
@@ -130,32 +130,32 @@ export namespace MyNS {
 	export interface Fleet {
 		Arn: string;
 		Name: string;
-		DisplayName?: string;
-		Description?: string;
-		ImageName?: string;
-		ImageArn?: string;
+		DisplayName?: string | null;
+		Description?: string | null;
+		ImageName?: string | null;
+		ImageArn?: string | null;
 		InstanceType: string;
-		FleetType?: FleetFleetType;
+		FleetType?: FleetFleetType | null;
 
 		/**
 		 * Describes the capacity status for a fleet.
 		 * Required
 		 */
 		ComputeCapacityStatus: ComputeCapacityStatus;
-		MaxUserDurationInSeconds?: number;
-		DisconnectTimeoutInSeconds?: number;
+		MaxUserDurationInSeconds?: number | null;
+		DisconnectTimeoutInSeconds?: number | null;
 		State: FleetState;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig;
-		CreatedTime?: Date;
-		FleetErrors?: Array<FleetError>;
-		EnableDefaultInternetAccess?: boolean;
+		VpcConfig?: VpcConfig | null;
+		CreatedTime?: Date | null;
+		FleetErrors?: Array<FleetError> | null;
+		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo;
-		IdleDisconnectTimeoutInSeconds?: number;
-		IamRoleArn?: string;
+		DomainJoinInfo?: DomainJoinInfo | null;
+		IdleDisconnectTimeoutInSeconds?: number | null;
+		IamRoleArn?: string | null;
 	}
 
 	export enum FleetFleetType { ALWAYS_ON = 0, ON_DEMAND = 1 }
@@ -164,9 +164,9 @@ export namespace MyNS {
 	/** Describes the capacity status for a fleet. */
 	export interface ComputeCapacityStatus {
 		Desired: number;
-		Running?: number;
-		InUse?: number;
-		Available?: number;
+		Running?: number | null;
+		InUse?: number | null;
+		Available?: number | null;
 	}
 
 	export enum FleetState { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3 }
@@ -176,20 +176,20 @@ export namespace MyNS {
 	export interface VpcConfig {
 
 		/** The subnet identifiers. */
-		SubnetIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
 
 		/**
 		 * The security group identifiers.
 		 * Maximum items: 5
 		 */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 
 	/** Describes a fleet error. */
 	export interface FleetError {
-		ErrorCode?: FleetErrorErrorCode;
-		ErrorMessage?: string;
+		ErrorCode?: FleetErrorErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum FleetErrorErrorCode { IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = 0, IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = 1, IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = 2, NETWORK_INTERFACE_LIMIT_EXCEEDED = 3, INTERNAL_SERVICE_ERROR = 4, IAM_SERVICE_ROLE_IS_MISSING = 5, MACHINE_ROLE_IS_MISSING = 6, STS_DISABLED_IN_REGION = 7, SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = 8, IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = 9, SUBNET_NOT_FOUND = 10, IMAGE_NOT_FOUND = 11, INVALID_SUBNET_CONFIGURATION = 12, SECURITY_GROUPS_NOT_FOUND = 13, IGW_NOT_ATTACHED = 14, IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = 15, DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = 16, DOMAIN_JOIN_ERROR_ACCESS_DENIED = 17, DOMAIN_JOIN_ERROR_LOGON_FAILURE = 18, DOMAIN_JOIN_ERROR_INVALID_PARAMETER = 19, DOMAIN_JOIN_ERROR_MORE_DATA = 20, DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = 21, DOMAIN_JOIN_ERROR_NOT_SUPPORTED = 22, DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = 23, DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = 24, DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = 25, DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = 26, DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = 27 }
@@ -197,16 +197,16 @@ export namespace MyNS {
 
 	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 	export interface DomainJoinInfo {
-		DirectoryName?: string;
-		OrganizationalUnitDistinguishedName?: string;
+		DirectoryName?: string | null;
+		OrganizationalUnitDistinguishedName?: string | null;
 	}
 
 	export interface CreateFleetRequest {
 		Name: string;
-		ImageName?: string;
-		ImageArn?: string;
+		ImageName?: string | null;
+		ImageArn?: string | null;
 		InstanceType: string;
-		FleetType?: FleetFleetType;
+		FleetType?: FleetFleetType | null;
 
 		/**
 		 * Describes the capacity for a fleet.
@@ -215,18 +215,18 @@ export namespace MyNS {
 		ComputeCapacity: ComputeCapacity;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig;
-		MaxUserDurationInSeconds?: number;
-		DisconnectTimeoutInSeconds?: number;
-		Description?: string;
-		DisplayName?: string;
-		EnableDefaultInternetAccess?: boolean;
+		VpcConfig?: VpcConfig | null;
+		MaxUserDurationInSeconds?: number | null;
+		DisconnectTimeoutInSeconds?: number | null;
+		Description?: string | null;
+		DisplayName?: string | null;
+		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo;
-		Tags?: Tags;
-		IdleDisconnectTimeoutInSeconds?: number;
-		IamRoleArn?: string;
+		DomainJoinInfo?: DomainJoinInfo | null;
+		Tags?: Tags | null;
+		IdleDisconnectTimeoutInSeconds?: number | null;
+		IamRoleArn?: string | null;
 	}
 
 
@@ -247,38 +247,38 @@ export namespace MyNS {
 	export interface CreateImageBuilderResult {
 
 		/** Describes a virtual machine that is used to create an image. */
-		ImageBuilder?: ImageBuilder;
+		ImageBuilder?: ImageBuilder | null;
 	}
 
 
 	/** Describes a virtual machine that is used to create an image.  */
 	export interface ImageBuilder {
 		Name: string;
-		Arn?: string;
-		ImageArn?: string;
-		Description?: string;
-		DisplayName?: string;
+		Arn?: string | null;
+		ImageArn?: string | null;
+		Description?: string | null;
+		DisplayName?: string | null;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig;
-		InstanceType?: string;
-		Platform?: ImageBuilderPlatform;
-		IamRoleArn?: string;
-		State?: ImageBuilderState;
+		VpcConfig?: VpcConfig | null;
+		InstanceType?: string | null;
+		Platform?: ImageBuilderPlatform | null;
+		IamRoleArn?: string | null;
+		State?: ImageBuilderState | null;
 
 		/** Describes the reason why the last image builder state change occurred. */
-		StateChangeReason?: ImageBuilderStateChangeReason;
-		CreatedTime?: Date;
-		EnableDefaultInternetAccess?: boolean;
+		StateChangeReason?: ImageBuilderStateChangeReason | null;
+		CreatedTime?: Date | null;
+		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo;
+		DomainJoinInfo?: DomainJoinInfo | null;
 
 		/** Describes the network details of the fleet or image builder instance. */
-		NetworkAccessConfiguration?: NetworkAccessConfiguration;
-		ImageBuilderErrors?: Array<ResourceError>;
-		AppstreamAgentVersion?: string;
-		AccessEndpoints?: Array<AccessEndpoint>;
+		NetworkAccessConfiguration?: NetworkAccessConfiguration | null;
+		ImageBuilderErrors?: Array<ResourceError> | null;
+		AppstreamAgentVersion?: string | null;
+		AccessEndpoints?: Array<AccessEndpoint> | null;
 	}
 
 	export enum ImageBuilderPlatform { WINDOWS = 0, WINDOWS_SERVER_2016 = 1, WINDOWS_SERVER_2019 = 2 }
@@ -288,8 +288,8 @@ export namespace MyNS {
 
 	/** Describes the reason why the last image builder state change occurred. */
 	export interface ImageBuilderStateChangeReason {
-		Code?: ImageBuilderStateChangeReasonCode;
-		Message?: string;
+		Code?: ImageBuilderStateChangeReasonCode | null;
+		Message?: string | null;
 	}
 
 	export enum ImageBuilderStateChangeReasonCode { INTERNAL_ERROR = 0, IMAGE_UNAVAILABLE = 1 }
@@ -297,85 +297,85 @@ export namespace MyNS {
 
 	/** Describes the network details of the fleet or image builder instance. */
 	export interface NetworkAccessConfiguration {
-		EniPrivateIpAddress?: string;
-		EniId?: string;
+		EniPrivateIpAddress?: string | null;
+		EniId?: string | null;
 	}
 
 
 	/** Describes a resource error. */
 	export interface ResourceError {
-		ErrorCode?: FleetErrorErrorCode;
-		ErrorMessage?: string;
-		ErrorTimestamp?: Date;
+		ErrorCode?: FleetErrorErrorCode | null;
+		ErrorMessage?: string | null;
+		ErrorTimestamp?: Date | null;
 	}
 
 
 	/** Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint. */
 	export interface AccessEndpoint {
 		EndpointType: AccessEndpointEndpointType;
-		VpceId?: string;
+		VpceId?: string | null;
 	}
 
 	export enum AccessEndpointEndpointType { STREAMING = 0 }
 
 	export interface CreateImageBuilderRequest {
 		Name: string;
-		ImageName?: string;
-		ImageArn?: string;
+		ImageName?: string | null;
+		ImageArn?: string | null;
 		InstanceType: string;
-		Description?: string;
-		DisplayName?: string;
+		Description?: string | null;
+		DisplayName?: string | null;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig;
-		IamRoleArn?: string;
-		EnableDefaultInternetAccess?: boolean;
+		VpcConfig?: VpcConfig | null;
+		IamRoleArn?: string | null;
+		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo;
-		AppstreamAgentVersion?: string;
-		Tags?: Tags;
-		AccessEndpoints?: Array<AccessEndpoint>;
+		DomainJoinInfo?: DomainJoinInfo | null;
+		AppstreamAgentVersion?: string | null;
+		Tags?: Tags | null;
+		AccessEndpoints?: Array<AccessEndpoint> | null;
 	}
 
 	export interface CreateImageBuilderStreamingURLResult {
-		StreamingURL?: string;
-		Expires?: Date;
+		StreamingURL?: string | null;
+		Expires?: Date | null;
 	}
 
 	export interface CreateImageBuilderStreamingURLRequest {
 		Name: string;
-		Validity?: number;
+		Validity?: number | null;
 	}
 
 	export interface CreateStackResult {
 
 		/** Describes a stack. */
-		Stack?: Stack;
+		Stack?: Stack | null;
 	}
 
 
 	/** Describes a stack. */
 	export interface Stack {
-		Arn?: string;
+		Arn?: string | null;
 		Name: string;
-		Description?: string;
-		DisplayName?: string;
-		CreatedTime?: Date;
+		Description?: string | null;
+		DisplayName?: string | null;
+		CreatedTime?: Date | null;
 
 		/** The storage connectors. */
-		StorageConnectors?: Array<StorageConnector>;
-		RedirectURL?: string;
-		FeedbackURL?: string;
+		StorageConnectors?: Array<StorageConnector> | null;
+		RedirectURL?: string | null;
+		FeedbackURL?: string | null;
 
 		/** The stack errors. */
-		StackErrors?: Array<StackError>;
-		UserSettings?: Array<UserSetting>;
+		StackErrors?: Array<StackError> | null;
+		UserSettings?: Array<UserSetting> | null;
 
 		/** Describes the persistent application settings for users of a stack. */
-		ApplicationSettings?: ApplicationSettingsResponse;
-		AccessEndpoints?: Array<AccessEndpoint>;
-		EmbedHostDomains?: Array<string>;
+		ApplicationSettings?: ApplicationSettingsResponse | null;
+		AccessEndpoints?: Array<AccessEndpoint> | null;
+		EmbedHostDomains?: Array<string> | null;
 	}
 
 
@@ -392,8 +392,8 @@ export namespace MyNS {
 		 * The ARN of the resource.
 		 * Min length: 1
 		 */
-		ResourceIdentifier?: string;
-		Domains?: Array<string>;
+		ResourceIdentifier?: string | null;
+		Domains?: Array<string> | null;
 	}
 
 	export enum StorageConnectorConnectorType { HOMEFOLDERS = 0, GOOGLE_DRIVE = 1, ONE_DRIVE = 2 }
@@ -401,8 +401,8 @@ export namespace MyNS {
 
 	/** Describes a stack error. */
 	export interface StackError {
-		ErrorCode?: StackErrorErrorCode;
-		ErrorMessage?: string;
+		ErrorCode?: StackErrorErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum StackErrorErrorCode { STORAGE_CONNECTOR_ERROR = 0, INTERNAL_SERVICE_ERROR = 1 }
@@ -421,53 +421,53 @@ export namespace MyNS {
 
 	/** Describes the persistent application settings for users of a stack. */
 	export interface ApplicationSettingsResponse {
-		Enabled?: boolean;
-		SettingsGroup?: string;
-		S3BucketName?: string;
+		Enabled?: boolean | null;
+		SettingsGroup?: string | null;
+		S3BucketName?: string | null;
 	}
 
 	export interface CreateStackRequest {
 		Name: string;
-		Description?: string;
-		DisplayName?: string;
+		Description?: string | null;
+		DisplayName?: string | null;
 
 		/** The storage connectors. */
-		StorageConnectors?: Array<StorageConnector>;
-		RedirectURL?: string;
-		FeedbackURL?: string;
-		UserSettings?: Array<UserSetting>;
+		StorageConnectors?: Array<StorageConnector> | null;
+		RedirectURL?: string | null;
+		FeedbackURL?: string | null;
+		UserSettings?: Array<UserSetting> | null;
 
 		/** The persistent application settings for users of a stack. */
-		ApplicationSettings?: ApplicationSettings;
-		Tags?: Tags;
-		AccessEndpoints?: Array<AccessEndpoint>;
-		EmbedHostDomains?: Array<string>;
+		ApplicationSettings?: ApplicationSettings | null;
+		Tags?: Tags | null;
+		AccessEndpoints?: Array<AccessEndpoint> | null;
+		EmbedHostDomains?: Array<string> | null;
 	}
 
 
 	/** The persistent application settings for users of a stack. */
 	export interface ApplicationSettings {
 		Enabled: boolean;
-		SettingsGroup?: string;
+		SettingsGroup?: string | null;
 	}
 
 	export interface CreateStreamingURLResult {
-		StreamingURL?: string;
-		Expires?: Date;
+		StreamingURL?: string | null;
+		Expires?: Date | null;
 	}
 
 	export interface CreateStreamingURLRequest {
 		StackName: string;
 		FleetName: string;
 		UserId: string;
-		ApplicationId?: string;
-		Validity?: number;
-		SessionContext?: string;
+		ApplicationId?: string | null;
+		Validity?: number | null;
+		SessionContext?: string | null;
 	}
 
 	export interface CreateUsageReportSubscriptionResult {
-		S3BucketName?: string;
-		Schedule?: CreateUsageReportSubscriptionResultSchedule;
+		S3BucketName?: string | null;
+		Schedule?: CreateUsageReportSubscriptionResultSchedule | null;
 	}
 
 	export enum CreateUsageReportSubscriptionResultSchedule { DAILY = 0 }
@@ -480,9 +480,9 @@ export namespace MyNS {
 
 	export interface CreateUserRequest {
 		UserName: string;
-		MessageAction?: CreateUserRequestMessageAction;
-		FirstName?: string;
-		LastName?: string;
+		MessageAction?: CreateUserRequestMessageAction | null;
+		FirstName?: string | null;
+		LastName?: string | null;
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
 
@@ -508,32 +508,32 @@ export namespace MyNS {
 	export interface DeleteImageResult {
 
 		/** Describes an image. */
-		Image?: Image;
+		Image?: Image | null;
 	}
 
 
 	/** Describes an image. */
 	export interface Image {
 		Name: string;
-		Arn?: string;
-		BaseImageArn?: string;
-		DisplayName?: string;
-		State?: ImageState;
-		Visibility?: ImageVisibility;
-		ImageBuilderSupported?: boolean;
-		ImageBuilderName?: string;
-		Platform?: ImageBuilderPlatform;
-		Description?: string;
+		Arn?: string | null;
+		BaseImageArn?: string | null;
+		DisplayName?: string | null;
+		State?: ImageState | null;
+		Visibility?: ImageVisibility | null;
+		ImageBuilderSupported?: boolean | null;
+		ImageBuilderName?: string | null;
+		Platform?: ImageBuilderPlatform | null;
+		Description?: string | null;
 
 		/** Describes the reason why the last image state change occurred. */
-		StateChangeReason?: ImageStateChangeReason;
-		Applications?: Array<Application>;
-		CreatedTime?: Date;
-		PublicBaseImageReleasedDate?: Date;
-		AppstreamAgentVersion?: string;
+		StateChangeReason?: ImageStateChangeReason | null;
+		Applications?: Array<Application> | null;
+		CreatedTime?: Date | null;
+		PublicBaseImageReleasedDate?: Date | null;
+		AppstreamAgentVersion?: string | null;
 
 		/** Describes the permissions for an image. */
-		ImagePermissions?: ImagePermissions;
+		ImagePermissions?: ImagePermissions | null;
 	}
 
 	export enum ImageState { PENDING = 0, AVAILABLE = 1, FAILED = 2, COPYING = 3, DELETING = 4 }
@@ -543,8 +543,8 @@ export namespace MyNS {
 
 	/** Describes the reason why the last image state change occurred. */
 	export interface ImageStateChangeReason {
-		Code?: ImageStateChangeReasonCode;
-		Message?: string;
+		Code?: ImageStateChangeReasonCode | null;
+		Message?: string | null;
 	}
 
 	export enum ImageStateChangeReasonCode { INTERNAL_ERROR = 0, IMAGE_BUILDER_NOT_AVAILABLE = 1, IMAGE_COPY_FAILURE = 2 }
@@ -552,13 +552,13 @@ export namespace MyNS {
 
 	/** Describes an application in the application catalog. */
 	export interface Application {
-		Name?: string;
-		DisplayName?: string;
-		IconURL?: string;
-		LaunchPath?: string;
-		LaunchParameters?: string;
-		Enabled?: boolean;
-		Metadata?: Metadata;
+		Name?: string | null;
+		DisplayName?: string | null;
+		IconURL?: string | null;
+		LaunchPath?: string | null;
+		LaunchParameters?: string | null;
+		Enabled?: boolean | null;
+		Metadata?: Metadata | null;
 	}
 
 	export interface Metadata {
@@ -567,8 +567,8 @@ export namespace MyNS {
 
 	/** Describes the permissions for an image.  */
 	export interface ImagePermissions {
-		allowFleet?: boolean;
-		allowImageBuilder?: boolean;
+		allowFleet?: boolean | null;
+		allowImageBuilder?: boolean | null;
 	}
 
 	export interface DeleteImageRequest {
@@ -578,7 +578,7 @@ export namespace MyNS {
 	export interface DeleteImageBuilderResult {
 
 		/** Describes a virtual machine that is used to create an image. */
-		ImageBuilder?: ImageBuilder;
+		ImageBuilder?: ImageBuilder | null;
 	}
 
 	export interface DeleteImageBuilderRequest {
@@ -615,43 +615,43 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDirectoryConfigsResult {
-		DirectoryConfigs?: Array<DirectoryConfig>;
-		NextToken?: string;
+		DirectoryConfigs?: Array<DirectoryConfig> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeDirectoryConfigsRequest {
-		DirectoryNames?: Array<string>;
-		MaxResults?: number;
-		NextToken?: string;
+		DirectoryNames?: Array<string> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeFleetsResult {
 
 		/** The fleets. */
-		Fleets?: Array<Fleet>;
-		NextToken?: string;
+		Fleets?: Array<Fleet> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeFleetsRequest {
-		Names?: Array<string>;
-		NextToken?: string;
+		Names?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeImageBuildersResult {
-		ImageBuilders?: Array<ImageBuilder>;
-		NextToken?: string;
+		ImageBuilders?: Array<ImageBuilder> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeImageBuildersRequest {
-		Names?: Array<string>;
-		MaxResults?: number;
-		NextToken?: string;
+		Names?: Array<string> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeImagePermissionsResult {
-		Name?: string;
-		SharedImagePermissionsList?: Array<SharedImagePermissions>;
-		NextToken?: string;
+		Name?: string | null;
+		SharedImagePermissionsList?: Array<SharedImagePermissions> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -668,29 +668,29 @@ export namespace MyNS {
 
 	export interface DescribeImagePermissionsRequest {
 		Name: string;
-		MaxResults?: number;
-		SharedAwsAccountIds?: Array<string>;
-		NextToken?: string;
+		MaxResults?: number | null;
+		SharedAwsAccountIds?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeImagesResult {
-		Images?: Array<Image>;
-		NextToken?: string;
+		Images?: Array<Image> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeImagesRequest {
-		Names?: Array<string>;
-		Arns?: Array<string>;
-		Type?: ImageVisibility;
-		NextToken?: string;
-		MaxResults?: number;
+		Names?: Array<string> | null;
+		Arns?: Array<string> | null;
+		Type?: ImageVisibility | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeSessionsResult {
 
 		/** List of sessions. */
-		Sessions?: Array<Session>;
-		NextToken?: string;
+		Sessions?: Array<Session> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -706,13 +706,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		State: SessionState;
-		ConnectionState?: SessionConnectionState;
-		StartTime?: Date;
-		MaxExpirationTime?: Date;
-		AuthenticationType?: UserStackAssociationAuthenticationType;
+		ConnectionState?: SessionConnectionState | null;
+		StartTime?: Date | null;
+		MaxExpirationTime?: Date | null;
+		AuthenticationType?: UserStackAssociationAuthenticationType | null;
 
 		/** Describes the network details of the fleet or image builder instance. */
-		NetworkAccessConfiguration?: NetworkAccessConfiguration;
+		NetworkAccessConfiguration?: NetworkAccessConfiguration | null;
 	}
 
 	export enum SessionState { ACTIVE = 0, PENDING = 1, EXPIRED = 2 }
@@ -722,87 +722,87 @@ export namespace MyNS {
 	export interface DescribeSessionsRequest {
 		StackName: string;
 		FleetName: string;
-		UserId?: string;
-		NextToken?: string;
-		Limit?: number;
-		AuthenticationType?: UserStackAssociationAuthenticationType;
+		UserId?: string | null;
+		NextToken?: string | null;
+		Limit?: number | null;
+		AuthenticationType?: UserStackAssociationAuthenticationType | null;
 	}
 
 	export interface DescribeStacksResult {
 
 		/** The stacks. */
-		Stacks?: Array<Stack>;
-		NextToken?: string;
+		Stacks?: Array<Stack> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeStacksRequest {
-		Names?: Array<string>;
-		NextToken?: string;
+		Names?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeUsageReportSubscriptionsResult {
-		UsageReportSubscriptions?: Array<UsageReportSubscription>;
-		NextToken?: string;
+		UsageReportSubscriptions?: Array<UsageReportSubscription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes information about the usage report subscription. */
 	export interface UsageReportSubscription {
-		S3BucketName?: string;
-		Schedule?: CreateUsageReportSubscriptionResultSchedule;
-		LastGeneratedReportDate?: Date;
-		SubscriptionErrors?: Array<LastReportGenerationExecutionError>;
+		S3BucketName?: string | null;
+		Schedule?: CreateUsageReportSubscriptionResultSchedule | null;
+		LastGeneratedReportDate?: Date | null;
+		SubscriptionErrors?: Array<LastReportGenerationExecutionError> | null;
 	}
 
 
 	/** Describes the error that is returned when a usage report can't be generated. */
 	export interface LastReportGenerationExecutionError {
-		ErrorCode?: LastReportGenerationExecutionErrorErrorCode;
-		ErrorMessage?: string;
+		ErrorCode?: LastReportGenerationExecutionErrorErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum LastReportGenerationExecutionErrorErrorCode { RESOURCE_NOT_FOUND = 0, ACCESS_DENIED = 1, INTERNAL_SERVICE_ERROR = 2 }
 
 	export interface DescribeUsageReportSubscriptionsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeUserStackAssociationsResult {
-		UserStackAssociations?: Array<UserStackAssociation>;
-		NextToken?: string;
+		UserStackAssociations?: Array<UserStackAssociation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeUserStackAssociationsRequest {
-		StackName?: string;
-		UserName?: string;
-		AuthenticationType?: UserStackAssociationAuthenticationType;
-		MaxResults?: number;
-		NextToken?: string;
+		StackName?: string | null;
+		UserName?: string | null;
+		AuthenticationType?: UserStackAssociationAuthenticationType | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeUsersResult {
-		Users?: Array<User>;
-		NextToken?: string;
+		Users?: Array<User> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a user in the user pool. */
 	export interface User {
-		Arn?: string;
-		UserName?: string;
-		Enabled?: boolean;
-		Status?: string;
-		FirstName?: string;
-		LastName?: string;
-		CreatedTime?: Date;
+		Arn?: string | null;
+		UserName?: string | null;
+		Enabled?: boolean | null;
+		Status?: string | null;
+		FirstName?: string | null;
+		LastName?: string | null;
+		CreatedTime?: Date | null;
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
 
 	export interface DescribeUsersRequest {
 		AuthenticationType: UserStackAssociationAuthenticationType;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DisableUserResult {
@@ -837,27 +837,27 @@ export namespace MyNS {
 	}
 
 	export interface ListAssociatedFleetsResult {
-		Names?: Array<string>;
-		NextToken?: string;
+		Names?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAssociatedFleetsRequest {
 		StackName: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListAssociatedStacksResult {
-		Names?: Array<string>;
-		NextToken?: string;
+		Names?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAssociatedStacksRequest {
 		FleetName: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -874,12 +874,12 @@ export namespace MyNS {
 	export interface StartImageBuilderResult {
 
 		/** Describes a virtual machine that is used to create an image. */
-		ImageBuilder?: ImageBuilder;
+		ImageBuilder?: ImageBuilder | null;
 	}
 
 	export interface StartImageBuilderRequest {
 		Name: string;
-		AppstreamAgentVersion?: string;
+		AppstreamAgentVersion?: string | null;
 	}
 
 	export interface StopFleetResult {
@@ -892,7 +892,7 @@ export namespace MyNS {
 	export interface StopImageBuilderResult {
 
 		/** Describes a virtual machine that is used to create an image. */
-		ImageBuilder?: ImageBuilder;
+		ImageBuilder?: ImageBuilder | null;
 	}
 
 	export interface StopImageBuilderRequest {
@@ -918,48 +918,48 @@ export namespace MyNS {
 	export interface UpdateDirectoryConfigResult {
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DirectoryConfig?: DirectoryConfig;
+		DirectoryConfig?: DirectoryConfig | null;
 	}
 
 	export interface UpdateDirectoryConfigRequest {
 		DirectoryName: string;
-		OrganizationalUnitDistinguishedNames?: Array<string>;
+		OrganizationalUnitDistinguishedNames?: Array<string> | null;
 
 		/** Describes the credentials for the service account used by the fleet or image builder to connect to the directory. */
-		ServiceAccountCredentials?: ServiceAccountCredentials;
+		ServiceAccountCredentials?: ServiceAccountCredentials | null;
 	}
 
 	export interface UpdateFleetResult {
 
 		/** Describes a fleet. */
-		Fleet?: Fleet;
+		Fleet?: Fleet | null;
 	}
 
 	export interface UpdateFleetRequest {
-		ImageName?: string;
-		ImageArn?: string;
-		Name?: string;
-		InstanceType?: string;
+		ImageName?: string | null;
+		ImageArn?: string | null;
+		Name?: string | null;
+		InstanceType?: string | null;
 
 		/** Describes the capacity for a fleet. */
-		ComputeCapacity?: ComputeCapacity;
+		ComputeCapacity?: ComputeCapacity | null;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig;
-		MaxUserDurationInSeconds?: number;
-		DisconnectTimeoutInSeconds?: number;
-		DeleteVpcConfig?: boolean;
-		Description?: string;
-		DisplayName?: string;
-		EnableDefaultInternetAccess?: boolean;
+		VpcConfig?: VpcConfig | null;
+		MaxUserDurationInSeconds?: number | null;
+		DisconnectTimeoutInSeconds?: number | null;
+		DeleteVpcConfig?: boolean | null;
+		Description?: string | null;
+		DisplayName?: string | null;
+		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo;
-		IdleDisconnectTimeoutInSeconds?: number;
+		DomainJoinInfo?: DomainJoinInfo | null;
+		IdleDisconnectTimeoutInSeconds?: number | null;
 
 		/** The fleet attributes. */
-		AttributesToDelete?: Array<FleetAttribute>;
-		IamRoleArn?: string;
+		AttributesToDelete?: Array<FleetAttribute> | null;
+		IamRoleArn?: string | null;
 	}
 
 
@@ -983,26 +983,26 @@ export namespace MyNS {
 	export interface UpdateStackResult {
 
 		/** Describes a stack. */
-		Stack?: Stack;
+		Stack?: Stack | null;
 	}
 
 	export interface UpdateStackRequest {
-		DisplayName?: string;
-		Description?: string;
+		DisplayName?: string | null;
+		Description?: string | null;
 		Name: string;
 
 		/** The storage connectors. */
-		StorageConnectors?: Array<StorageConnector>;
-		DeleteStorageConnectors?: boolean;
-		RedirectURL?: string;
-		FeedbackURL?: string;
-		AttributesToDelete?: Array<StackAttribute>;
-		UserSettings?: Array<UserSetting>;
+		StorageConnectors?: Array<StorageConnector> | null;
+		DeleteStorageConnectors?: boolean | null;
+		RedirectURL?: string | null;
+		FeedbackURL?: string | null;
+		AttributesToDelete?: Array<StackAttribute> | null;
+		UserSettings?: Array<UserSetting> | null;
 
 		/** The persistent application settings for users of a stack. */
-		ApplicationSettings?: ApplicationSettings;
-		AccessEndpoints?: Array<AccessEndpoint>;
-		EmbedHostDomains?: Array<string>;
+		ApplicationSettings?: ApplicationSettings | null;
+		AccessEndpoints?: Array<AccessEndpoint> | null;
+		EmbedHostDomains?: Array<string> | null;
 	}
 
 	export enum StackAttribute { STORAGE_CONNECTORS = 0, STORAGE_CONNECTOR_HOMEFOLDERS = 1, STORAGE_CONNECTOR_GOOGLE_DRIVE = 2, STORAGE_CONNECTOR_ONE_DRIVE = 3, REDIRECT_URL = 4, FEEDBACK_URL = 5, THEME_NAME = 6, USER_SETTINGS = 7, EMBED_HOST_DOMAINS = 8, IAM_ROLE_ARN = 9, ACCESS_ENDPOINTS = 10 }

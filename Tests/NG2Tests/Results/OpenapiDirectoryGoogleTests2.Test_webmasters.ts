@@ -3,22 +3,22 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface ApiDataRow {
-		clicks?: number;
-		ctr?: number;
-		impressions?: number;
-		keys?: Array<string>;
-		position?: number;
+		clicks?: number | null;
+		ctr?: number | null;
+		impressions?: number | null;
+		keys?: Array<string> | null;
+		position?: number | null;
 	}
 
 	export interface ApiDimensionFilter {
-		dimension?: string;
-		expression?: string;
-		operator?: string;
+		dimension?: string | null;
+		expression?: string | null;
+		operator?: string | null;
 	}
 
 	export interface ApiDimensionFilterGroup {
-		filters?: Array<ApiDimensionFilter>;
-		groupType?: string;
+		filters?: Array<ApiDimensionFilter> | null;
+		groupType?: string | null;
 	}
 
 	export interface SearchAnalyticsQueryRequest {
@@ -28,28 +28,28 @@ export namespace MyNS {
 		 * Note: If you group or filter by page, you cannot aggregate by property.
 		 * If you specify any value other than AUTO, the aggregation type in the result will match the requested type, or if you request an invalid type, you will get an error. The API will never change your aggregation type if the requested type is invalid.
 		 */
-		aggregationType?: string;
+		aggregationType?: string | null;
 
 		/** [Optional] Zero or more filters to apply to the dimension grouping values; for example, 'query contains "buy"' to see only data where the query string contains the substring "buy" (not case-sensitive). You can filter by a dimension without grouping by it. */
-		dimensionFilterGroups?: Array<ApiDimensionFilterGroup>;
+		dimensionFilterGroups?: Array<ApiDimensionFilterGroup> | null;
 
 		/** [Optional] Zero or more dimensions to group results by. Dimensions are the group-by values in the Search Analytics page. Dimensions are combined to create a unique row key for each row. Results are grouped in the order that you supply these dimensions. */
-		dimensions?: Array<string>;
+		dimensions?: Array<string> | null;
 
 		/** [Required] End date of the requested date range, in YYYY-MM-DD format, in PST (UTC - 8:00). Must be greater than or equal to the start date. This value is included in the range. */
-		endDate?: string;
+		endDate?: string | null;
 
 		/** [Optional; Default is 1000] The maximum number of rows to return. Must be a number from 1 to 5,000 (inclusive). */
-		rowLimit?: number;
+		rowLimit?: number | null;
 
 		/** [Optional; Default is "web"] The search type to filter for. */
-		searchType?: string;
+		searchType?: string | null;
 
 		/** [Required] Start date of the requested date range, in YYYY-MM-DD format, in PST time (UTC - 8:00). Must be less than or equal to the end date. This value is included in the range. */
-		startDate?: string;
+		startDate?: string | null;
 
 		/** [Optional; Default is 0] Zero-based index of the first row in the response. Must be a non-negative number. */
-		startRow?: number;
+		startRow?: number | null;
 	}
 
 
@@ -57,10 +57,10 @@ export namespace MyNS {
 	export interface SearchAnalyticsQueryResponse {
 
 		/** How the results were aggregated. */
-		responseAggregationType?: string;
+		responseAggregationType?: string | null;
 
 		/** A list of rows grouped by the key values in the order given in the query. */
-		rows?: Array<ApiDataRow>;
+		rows?: Array<ApiDataRow> | null;
 	}
 
 
@@ -68,7 +68,7 @@ export namespace MyNS {
 	export interface SitemapsListResponse {
 
 		/** Contains detailed information about a specific URL submitted as a sitemap. */
-		sitemap?: Array<WmxSitemap>;
+		sitemap?: Array<WmxSitemap> | null;
 	}
 
 
@@ -76,31 +76,31 @@ export namespace MyNS {
 	export interface WmxSitemap {
 
 		/** The various content types in the sitemap. */
-		contents?: Array<WmxSitemapContent>;
+		contents?: Array<WmxSitemapContent> | null;
 
 		/** Number of errors in the sitemap. These are issues with the sitemap itself that need to be fixed before it can be processed correctly. */
-		errors?: string;
+		errors?: string | null;
 
 		/** If true, the sitemap has not been processed. */
-		isPending?: boolean;
+		isPending?: boolean | null;
 
 		/** If true, the sitemap is a collection of sitemaps. */
-		isSitemapsIndex?: boolean;
+		isSitemapsIndex?: boolean | null;
 
 		/** Date & time in which this sitemap was last downloaded. Date format is in RFC 3339 format (yyyy-mm-dd). */
-		lastDownloaded?: Date;
+		lastDownloaded?: Date | null;
 
 		/** Date & time in which this sitemap was submitted. Date format is in RFC 3339 format (yyyy-mm-dd). */
-		lastSubmitted?: Date;
+		lastSubmitted?: Date | null;
 
 		/** The url of the sitemap. */
-		path?: string;
+		path?: string | null;
 
 		/** The type of the sitemap. For example: rssFeed. */
-		type?: string;
+		type?: string | null;
 
 		/** Number of warnings for the sitemap. These are generally non-critical issues with URLs in the sitemaps. */
-		warnings?: string;
+		warnings?: string | null;
 	}
 
 
@@ -108,13 +108,13 @@ export namespace MyNS {
 	export interface WmxSitemapContent {
 
 		/** The number of URLs from the sitemap that were indexed (of the content type). */
-		indexed?: string;
+		indexed?: string | null;
 
 		/** The number of URLs in the sitemap (of the content type). */
-		submitted?: string;
+		submitted?: string | null;
 
 		/** The specific type of content in this sitemap. For example: web. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -122,7 +122,7 @@ export namespace MyNS {
 	export interface SitesListResponse {
 
 		/** Contains permission level information about a Search Console site. For more information, see Permissions in Search Console. */
-		siteEntry?: Array<WmxSite>;
+		siteEntry?: Array<WmxSite> | null;
 	}
 
 
@@ -130,10 +130,10 @@ export namespace MyNS {
 	export interface WmxSite {
 
 		/** The user's permission level for the site. */
-		permissionLevel?: string;
+		permissionLevel?: string | null;
 
 		/** The URL of the site. */
-		siteUrl?: string;
+		siteUrl?: string | null;
 	}
 
 	@Injectable()

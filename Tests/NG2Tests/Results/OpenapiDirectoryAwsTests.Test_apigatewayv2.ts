@@ -3,63 +3,63 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateApiResponse {
-		ApiEndpoint?: string;
+		ApiEndpoint?: string | null;
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiKeySelectionExpression?: string;
+		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors;
-		CreatedDate?: Date;
+		CorsConfiguration?: Cors | null;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		DisableSchemaValidation?: boolean;
-		ImportInfo?: Array<string>;
+		Description?: string | null;
+		DisableSchemaValidation?: boolean | null;
+		ImportInfo?: Array<string> | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** Represents a protocol type. */
-		ProtocolType?: CreateApiResponseProtocolType;
+		ProtocolType?: CreateApiResponseProtocolType | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteSelectionExpression?: string;
+		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** A string with a length between [1-64]. */
-		Version?: string;
-		Warnings?: Array<string>;
+		Version?: string | null;
+		Warnings?: Array<string> | null;
 	}
 
 
 	/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
 	export interface Cors {
-		AllowCredentials?: boolean;
+		AllowCredentials?: boolean | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		AllowHeaders?: Array<string>;
+		AllowHeaders?: Array<string> | null;
 
 		/** Represents a collection of methods. Supported only for HTTP APIs. */
-		AllowMethods?: Array<string>;
+		AllowMethods?: Array<string> | null;
 
 		/** Represents a collection of origins. Supported only for HTTP APIs. */
-		AllowOrigins?: Array<string>;
+		AllowOrigins?: Array<string> | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		ExposeHeaders?: Array<string>;
+		ExposeHeaders?: Array<string> | null;
 
 		/**
 		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
 		 * Minimum: -1
 		 * Maximum: 86400
 		 */
-		MaxAge?: number;
+		MaxAge?: number | null;
 	}
 
 	export enum CreateApiResponseProtocolType { WEBSOCKET = 0, HTTP = 1 }
@@ -84,50 +84,50 @@ export namespace MyNS {
 	export interface CreateApiMappingResponse {
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** The identifier. */
-		ApiMappingId?: string;
+		ApiMappingId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		ApiMappingKey?: string;
+		ApiMappingKey?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Stage?: string;
+		Stage?: string | null;
 	}
 
 	export interface CreateAuthorizerResponse {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		AuthorizerCredentialsArn?: string;
+		AuthorizerCredentialsArn?: string | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/**
 		 * An integer with a value between [0-3600].
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		AuthorizerResultTtlInSeconds?: number;
+		AuthorizerResultTtlInSeconds?: number | null;
 
 		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
-		AuthorizerType?: CreateAuthorizerResponseAuthorizerType;
+		AuthorizerType?: CreateAuthorizerResponseAuthorizerType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		AuthorizerUri?: string;
+		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string>;
+		IdentitySource?: Array<string> | null;
 
 		/** A string with a length between [0-1024]. */
-		IdentityValidationExpression?: string;
+		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration;
+		JwtConfiguration?: JWTConfiguration | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export enum CreateAuthorizerResponseAuthorizerType { REQUEST = 0, JWT = 1 }
@@ -135,25 +135,25 @@ export namespace MyNS {
 
 	/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
 	export interface JWTConfiguration {
-		Audience?: Array<string>;
+		Audience?: Array<string> | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		Issuer?: string;
+		Issuer?: string | null;
 	}
 
 	export interface CreateDeploymentResponse {
-		AutoDeployed?: boolean;
-		CreatedDate?: Date;
+		AutoDeployed?: boolean | null;
+		CreatedDate?: Date | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** Represents a deployment status. */
-		DeploymentStatus?: CreateDeploymentResponseDeploymentStatus;
-		DeploymentStatusMessage?: string;
+		DeploymentStatus?: CreateDeploymentResponseDeploymentStatus | null;
+		DeploymentStatusMessage?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export enum CreateDeploymentResponseDeploymentStatus { PENDING = 0, FAILED = 1, DEPLOYED = 2 }
@@ -161,40 +161,40 @@ export namespace MyNS {
 	export interface CreateDomainNameResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiMappingSelectionExpression?: string;
+		ApiMappingSelectionExpression?: string | null;
 
 		/** A string with a length between [1-512]. */
-		DomainName?: string;
+		DomainName?: string | null;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration>;
+		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
 	/** The domain name configuration. */
 	export interface DomainNameConfiguration {
-		ApiGatewayDomainName?: string;
+		ApiGatewayDomainName?: string | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CertificateArn?: string;
+		CertificateArn?: string | null;
 
 		/** A string with a length between [1-128]. */
-		CertificateName?: string;
-		CertificateUploadDate?: Date;
+		CertificateName?: string | null;
+		CertificateUploadDate?: Date | null;
 
 		/** The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated. */
-		DomainNameStatus?: DomainNameConfigurationDomainNameStatus;
-		DomainNameStatusMessage?: string;
+		DomainNameStatus?: DomainNameConfigurationDomainNameStatus | null;
+		DomainNameStatusMessage?: string | null;
 
 		/** Represents an endpoint type. */
-		EndpointType?: DomainNameConfigurationEndpointType;
-		HostedZoneId?: string;
+		EndpointType?: DomainNameConfigurationEndpointType | null;
+		HostedZoneId?: string | null;
 
 		/** The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2. */
-		SecurityPolicy?: DomainNameConfigurationSecurityPolicy;
+		SecurityPolicy?: DomainNameConfigurationSecurityPolicy | null;
 	}
 
 	export enum DomainNameConfigurationDomainNameStatus { AVAILABLE = 0, UPDATING = 1 }
@@ -207,62 +207,62 @@ export namespace MyNS {
 	}
 
 	export interface CreateIntegrationResult {
-		ApiGatewayManaged?: boolean;
+		ApiGatewayManaged?: boolean | null;
 
 		/** A string with a length between [1-1024]. */
-		ConnectionId?: string;
+		ConnectionId?: string | null;
 
 		/** Represents a connection type. */
-		ConnectionType?: CreateIntegrationResultConnectionType;
+		ConnectionType?: CreateIntegrationResultConnectionType | null;
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CredentialsArn?: string;
+		CredentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The identifier. */
-		IntegrationId?: string;
+		IntegrationId?: string | null;
 
 		/** A string with a length between [1-64]. */
-		IntegrationMethod?: string;
+		IntegrationMethod?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		IntegrationResponseSelectionExpression?: string;
+		IntegrationResponseSelectionExpression?: string | null;
 
 		/** Represents an API method integration type. */
-		IntegrationType?: CreateIntegrationResultIntegrationType;
+		IntegrationType?: CreateIntegrationResultIntegrationType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		IntegrationUri?: string;
+		IntegrationUri?: string | null;
 
 		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior;
+		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior | null;
 
 		/** A string with a length between [1-64]. */
-		PayloadFormatVersion?: string;
+		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters;
+		RequestParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap;
+		RequestTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 
 		/**
 		 * An integer with a value between [50-30000].
 		 * Minimum: 50
 		 * Maximum: 30000
 		 */
-		TimeoutInMillis?: number;
+		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfig;
+		TlsConfig?: TlsConfig | null;
 	}
 
 	export enum CreateIntegrationResultConnectionType { INTERNET = 0, VPC_LINK = 1 }
@@ -288,84 +288,84 @@ export namespace MyNS {
 	export interface TlsConfig {
 
 		/** A string with a length between [1-512]. */
-		ServerNameToVerify?: string;
+		ServerNameToVerify?: string | null;
 	}
 
 	export interface CreateIntegrationResponseResponse {
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** The identifier. */
-		IntegrationResponseId?: string;
+		IntegrationResponseId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		IntegrationResponseKey?: string;
+		IntegrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters;
+		ResponseParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap;
+		ResponseTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 	}
 
 	export interface CreateModelResponse {
 
 		/** A string with a length between [1-256]. */
-		ContentType?: string;
+		ContentType?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The identifier. */
-		ModelId?: string;
+		ModelId?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A string with a length between [0-32768]. */
-		Schema?: string;
+		Schema?: string | null;
 	}
 
 	export interface CreateRouteResult {
-		ApiGatewayManaged?: boolean;
-		ApiKeyRequired?: boolean;
+		ApiGatewayManaged?: boolean | null;
+		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string>;
+		AuthorizationScopes?: Array<string> | null;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
-		AuthorizationType?: CreateRouteResultAuthorizationType;
+		AuthorizationType?: CreateRouteResultAuthorizationType | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** A string with a length between [1-64]. */
-		OperationName?: string;
+		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels;
+		RequestModels?: RouteModels | null;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters;
+		RequestParameters?: RouteParameters | null;
 
 		/** The identifier. */
-		RouteId?: string;
+		RouteId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteKey?: string;
+		RouteKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteResponseSelectionExpression?: string;
+		RouteResponseSelectionExpression?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Target?: string;
+		Target?: string | null;
 	}
 
 	export enum CreateRouteResultAuthorizationType { NONE = 0, AWS_IAM = 1, CUSTOM = 2, JWT = 3 }
@@ -383,60 +383,60 @@ export namespace MyNS {
 
 	/** Validation constraints imposed on parameters of a request (path, query string, headers). */
 	export interface ParameterConstraints {
-		Required?: boolean;
+		Required?: boolean | null;
 	}
 
 	export interface CreateRouteResponseResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels;
+		ResponseModels?: RouteModels | null;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters;
+		ResponseParameters?: RouteParameters | null;
 
 		/** The identifier. */
-		RouteResponseId?: string;
+		RouteResponseId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteResponseKey?: string;
+		RouteResponseKey?: string | null;
 	}
 
 	export interface CreateStageResponse {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings;
-		ApiGatewayManaged?: boolean;
-		AutoDeploy?: boolean;
+		AccessLogSettings?: AccessLogSettings | null;
+		ApiGatewayManaged?: boolean | null;
+		AutoDeploy?: boolean | null;
 
 		/** The identifier. */
-		ClientCertificateId?: string;
-		CreatedDate?: Date;
+		ClientCertificateId?: string | null;
+		CreatedDate?: Date | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings;
+		DefaultRouteSettings?: RouteSettings | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		LastDeploymentStatusMessage?: string;
-		LastUpdatedDate?: Date;
+		Description?: string | null;
+		LastDeploymentStatusMessage?: string | null;
+		LastUpdatedDate?: Date | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap;
+		RouteSettings?: RouteSettingsMap | null;
 
 		/** A string with a length between [1-128]. */
-		StageName?: string;
+		StageName?: string | null;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap;
+		StageVariables?: StageVariablesMap | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -444,22 +444,22 @@ export namespace MyNS {
 	export interface AccessLogSettings {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		DestinationArn?: string;
+		DestinationArn?: string | null;
 
 		/** A string with a length between [1-1024]. */
-		Format?: string;
+		Format?: string | null;
 	}
 
 
 	/** Represents a collection of route settings. */
 	export interface RouteSettings {
-		DataTraceEnabled?: boolean;
-		DetailedMetricsEnabled?: boolean;
+		DataTraceEnabled?: boolean | null;
+		DetailedMetricsEnabled?: boolean | null;
 
 		/** The logging level. */
-		LoggingLevel?: RouteSettingsLoggingLevel;
-		ThrottlingBurstLimit?: number;
-		ThrottlingRateLimit?: number;
+		LoggingLevel?: RouteSettingsLoggingLevel | null;
+		ThrottlingBurstLimit?: number | null;
+		ThrottlingRateLimit?: number | null;
 	}
 
 	export enum RouteSettingsLoggingLevel { ERROR = 0, INFO = 1, OFF = 2 }
@@ -479,31 +479,31 @@ export namespace MyNS {
 	export enum LoggingLevel { ERROR = 0, INFO = 1, OFF = 2 }
 
 	export interface CreateVpcLinkResponse {
-		CreatedDate?: Date;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A list of security group IDs for the VPC link. */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 
 		/** A list of subnet IDs to include in the VPC link. */
-		SubnetIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** The identifier. */
-		VpcLinkId?: string;
+		VpcLinkId?: string | null;
 
 		/** The status of the VPC link. */
-		VpcLinkStatus?: CreateVpcLinkResponseVpcLinkStatus;
+		VpcLinkStatus?: CreateVpcLinkResponseVpcLinkStatus | null;
 
 		/** A string with a length between [0-1024]. */
-		VpcLinkStatusMessage?: string;
+		VpcLinkStatusMessage?: string | null;
 
 		/** The version of the VPC link. */
-		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion;
+		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion | null;
 	}
 
 	export enum CreateVpcLinkResponseVpcLinkStatus { PENDING = 0, AVAILABLE = 1, DELETING = 2, FAILED = 3, INACTIVE = 4 }
@@ -516,64 +516,64 @@ export namespace MyNS {
 	export interface ExportApiResponse {
 
 		/** Represents an exported definition of an API in a particular output format, for example, YAML. The API is serialized to the requested specification, for example, OpenAPI 3.0. */
-		body?: string;
+		body?: string | null;
 	}
 
 	export interface GetApiResponse {
-		ApiEndpoint?: string;
+		ApiEndpoint?: string | null;
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiKeySelectionExpression?: string;
+		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors;
-		CreatedDate?: Date;
+		CorsConfiguration?: Cors | null;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		DisableSchemaValidation?: boolean;
-		ImportInfo?: Array<string>;
+		Description?: string | null;
+		DisableSchemaValidation?: boolean | null;
+		ImportInfo?: Array<string> | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** Represents a protocol type. */
-		ProtocolType?: CreateApiResponseProtocolType;
+		ProtocolType?: CreateApiResponseProtocolType | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteSelectionExpression?: string;
+		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** A string with a length between [1-64]. */
-		Version?: string;
-		Warnings?: Array<string>;
+		Version?: string | null;
+		Warnings?: Array<string> | null;
 	}
 
 	export interface GetApiMappingResponse {
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** The identifier. */
-		ApiMappingId?: string;
+		ApiMappingId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		ApiMappingKey?: string;
+		ApiMappingKey?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Stage?: string;
+		Stage?: string | null;
 	}
 
 	export interface GetApiMappingsResponse {
-		Items?: Array<ApiMapping>;
+		Items?: Array<ApiMapping> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -587,10 +587,10 @@ export namespace MyNS {
 		ApiId: string;
 
 		/** The identifier. */
-		ApiMappingId?: string;
+		ApiMappingId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		ApiMappingKey?: string;
+		ApiMappingKey?: string | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -600,31 +600,31 @@ export namespace MyNS {
 	}
 
 	export interface GetApisResponse {
-		Items?: Array<Api>;
+		Items?: Array<Api> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents an API. */
 	export interface Api {
-		ApiEndpoint?: string;
+		ApiEndpoint?: string | null;
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiKeySelectionExpression?: string;
+		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors;
-		CreatedDate?: Date;
+		CorsConfiguration?: Cors | null;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		DisableSchemaValidation?: boolean;
-		ImportInfo?: Array<string>;
+		Description?: string | null;
+		DisableSchemaValidation?: boolean | null;
+		ImportInfo?: Array<string> | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -645,52 +645,52 @@ export namespace MyNS {
 		RouteSelectionExpression: string;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** A string with a length between [1-64]. */
-		Version?: string;
-		Warnings?: Array<string>;
+		Version?: string | null;
+		Warnings?: Array<string> | null;
 	}
 
 	export interface GetAuthorizerResponse {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		AuthorizerCredentialsArn?: string;
+		AuthorizerCredentialsArn?: string | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/**
 		 * An integer with a value between [0-3600].
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		AuthorizerResultTtlInSeconds?: number;
+		AuthorizerResultTtlInSeconds?: number | null;
 
 		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
-		AuthorizerType?: CreateAuthorizerResponseAuthorizerType;
+		AuthorizerType?: CreateAuthorizerResponseAuthorizerType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		AuthorizerUri?: string;
+		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string>;
+		IdentitySource?: Array<string> | null;
 
 		/** A string with a length between [0-1024]. */
-		IdentityValidationExpression?: string;
+		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration;
+		JwtConfiguration?: JWTConfiguration | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface GetAuthorizersResponse {
-		Items?: Array<Authorizer>;
+		Items?: Array<Authorizer> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -698,32 +698,32 @@ export namespace MyNS {
 	export interface Authorizer {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		AuthorizerCredentialsArn?: string;
+		AuthorizerCredentialsArn?: string | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/**
 		 * An integer with a value between [0-3600].
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		AuthorizerResultTtlInSeconds?: number;
+		AuthorizerResultTtlInSeconds?: number | null;
 
 		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
-		AuthorizerType?: CreateAuthorizerResponseAuthorizerType;
+		AuthorizerType?: CreateAuthorizerResponseAuthorizerType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		AuthorizerUri?: string;
+		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string>;
+		IdentitySource?: Array<string> | null;
 
 		/** A string with a length between [0-1024]. */
-		IdentityValidationExpression?: string;
+		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration;
+		JwtConfiguration?: JWTConfiguration | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -733,64 +733,64 @@ export namespace MyNS {
 	}
 
 	export interface GetDeploymentResponse {
-		AutoDeployed?: boolean;
-		CreatedDate?: Date;
+		AutoDeployed?: boolean | null;
+		CreatedDate?: Date | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** Represents a deployment status. */
-		DeploymentStatus?: CreateDeploymentResponseDeploymentStatus;
-		DeploymentStatusMessage?: string;
+		DeploymentStatus?: CreateDeploymentResponseDeploymentStatus | null;
+		DeploymentStatusMessage?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface GetDeploymentsResponse {
-		Items?: Array<Deployment>;
+		Items?: Array<Deployment> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet. */
 	export interface Deployment {
-		AutoDeployed?: boolean;
-		CreatedDate?: Date;
+		AutoDeployed?: boolean | null;
+		CreatedDate?: Date | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** Represents a deployment status. */
-		DeploymentStatus?: CreateDeploymentResponseDeploymentStatus;
-		DeploymentStatusMessage?: string;
+		DeploymentStatus?: CreateDeploymentResponseDeploymentStatus | null;
+		DeploymentStatusMessage?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface GetDomainNameResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiMappingSelectionExpression?: string;
+		ApiMappingSelectionExpression?: string | null;
 
 		/** A string with a length between [1-512]. */
-		DomainName?: string;
+		DomainName?: string | null;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration>;
+		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface GetDomainNamesResponse {
-		Items?: Array<DomainName>;
+		Items?: Array<DomainName> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -798,7 +798,7 @@ export namespace MyNS {
 	export interface DomainName {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiMappingSelectionExpression?: string;
+		ApiMappingSelectionExpression?: string | null;
 
 		/**
 		 * A string with a length between [1-512].
@@ -807,97 +807,97 @@ export namespace MyNS {
 		DomainName1: string;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration>;
+		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface GetIntegrationResult {
-		ApiGatewayManaged?: boolean;
+		ApiGatewayManaged?: boolean | null;
 
 		/** A string with a length between [1-1024]. */
-		ConnectionId?: string;
+		ConnectionId?: string | null;
 
 		/** Represents a connection type. */
-		ConnectionType?: CreateIntegrationResultConnectionType;
+		ConnectionType?: CreateIntegrationResultConnectionType | null;
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CredentialsArn?: string;
+		CredentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The identifier. */
-		IntegrationId?: string;
+		IntegrationId?: string | null;
 
 		/** A string with a length between [1-64]. */
-		IntegrationMethod?: string;
+		IntegrationMethod?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		IntegrationResponseSelectionExpression?: string;
+		IntegrationResponseSelectionExpression?: string | null;
 
 		/** Represents an API method integration type. */
-		IntegrationType?: CreateIntegrationResultIntegrationType;
+		IntegrationType?: CreateIntegrationResultIntegrationType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		IntegrationUri?: string;
+		IntegrationUri?: string | null;
 
 		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior;
+		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior | null;
 
 		/** A string with a length between [1-64]. */
-		PayloadFormatVersion?: string;
+		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters;
+		RequestParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap;
+		RequestTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 
 		/**
 		 * An integer with a value between [50-30000].
 		 * Minimum: 50
 		 * Maximum: 30000
 		 */
-		TimeoutInMillis?: number;
+		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfig;
+		TlsConfig?: TlsConfig | null;
 	}
 
 	export interface GetIntegrationResponseResponse {
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** The identifier. */
-		IntegrationResponseId?: string;
+		IntegrationResponseId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		IntegrationResponseKey?: string;
+		IntegrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters;
+		ResponseParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap;
+		ResponseTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 	}
 
 	export interface GetIntegrationResponsesResponse {
-		Items?: Array<IntegrationResponse>;
+		Items?: Array<IntegrationResponse> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -905,10 +905,10 @@ export namespace MyNS {
 	export interface IntegrationResponse {
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** The identifier. */
-		IntegrationResponseId?: string;
+		IntegrationResponseId?: string | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -917,110 +917,110 @@ export namespace MyNS {
 		IntegrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters;
+		ResponseParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap;
+		ResponseTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 	}
 
 	export interface GetIntegrationsResponse {
-		Items?: Array<Integration>;
+		Items?: Array<Integration> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents an integration. */
 	export interface Integration {
-		ApiGatewayManaged?: boolean;
+		ApiGatewayManaged?: boolean | null;
 
 		/** A string with a length between [1-1024]. */
-		ConnectionId?: string;
+		ConnectionId?: string | null;
 
 		/** Represents a connection type. */
-		ConnectionType?: CreateIntegrationResultConnectionType;
+		ConnectionType?: CreateIntegrationResultConnectionType | null;
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CredentialsArn?: string;
+		CredentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The identifier. */
-		IntegrationId?: string;
+		IntegrationId?: string | null;
 
 		/** A string with a length between [1-64]. */
-		IntegrationMethod?: string;
+		IntegrationMethod?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		IntegrationResponseSelectionExpression?: string;
+		IntegrationResponseSelectionExpression?: string | null;
 
 		/** Represents an API method integration type. */
-		IntegrationType?: CreateIntegrationResultIntegrationType;
+		IntegrationType?: CreateIntegrationResultIntegrationType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		IntegrationUri?: string;
+		IntegrationUri?: string | null;
 
 		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior;
+		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior | null;
 
 		/** A string with a length between [1-64]. */
-		PayloadFormatVersion?: string;
+		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters;
+		RequestParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap;
+		RequestTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 
 		/**
 		 * An integer with a value between [50-30000].
 		 * Minimum: 50
 		 * Maximum: 30000
 		 */
-		TimeoutInMillis?: number;
+		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfig;
+		TlsConfig?: TlsConfig | null;
 	}
 
 	export interface GetModelResponse {
 
 		/** A string with a length between [1-256]. */
-		ContentType?: string;
+		ContentType?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The identifier. */
-		ModelId?: string;
+		ModelId?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A string with a length between [0-32768]. */
-		Schema?: string;
+		Schema?: string | null;
 	}
 
 	export interface GetModelTemplateResponse {
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface GetModelsResponse {
-		Items?: Array<Model>;
+		Items?: Array<Model> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1028,13 +1028,13 @@ export namespace MyNS {
 	export interface Model {
 
 		/** A string with a length between [1-256]. */
-		ContentType?: string;
+		ContentType?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The identifier. */
-		ModelId?: string;
+		ModelId?: string | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -1043,70 +1043,70 @@ export namespace MyNS {
 		Name: string;
 
 		/** A string with a length between [0-32768]. */
-		Schema?: string;
+		Schema?: string | null;
 	}
 
 	export interface GetRouteResult {
-		ApiGatewayManaged?: boolean;
-		ApiKeyRequired?: boolean;
+		ApiGatewayManaged?: boolean | null;
+		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string>;
+		AuthorizationScopes?: Array<string> | null;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
-		AuthorizationType?: CreateRouteResultAuthorizationType;
+		AuthorizationType?: CreateRouteResultAuthorizationType | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** A string with a length between [1-64]. */
-		OperationName?: string;
+		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels;
+		RequestModels?: RouteModels | null;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters;
+		RequestParameters?: RouteParameters | null;
 
 		/** The identifier. */
-		RouteId?: string;
+		RouteId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteKey?: string;
+		RouteKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteResponseSelectionExpression?: string;
+		RouteResponseSelectionExpression?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Target?: string;
+		Target?: string | null;
 	}
 
 	export interface GetRouteResponseResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels;
+		ResponseModels?: RouteModels | null;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters;
+		ResponseParameters?: RouteParameters | null;
 
 		/** The identifier. */
-		RouteResponseId?: string;
+		RouteResponseId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteResponseKey?: string;
+		RouteResponseKey?: string | null;
 	}
 
 	export interface GetRouteResponsesResponse {
-		Items?: Array<RouteResponse>;
+		Items?: Array<RouteResponse> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1114,16 +1114,16 @@ export namespace MyNS {
 	export interface RouteResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels;
+		ResponseModels?: RouteModels | null;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters;
+		ResponseParameters?: RouteParameters | null;
 
 		/** The identifier. */
-		RouteResponseId?: string;
+		RouteResponseId?: string | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -1133,41 +1133,41 @@ export namespace MyNS {
 	}
 
 	export interface GetRoutesResponse {
-		Items?: Array<Route>;
+		Items?: Array<Route> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a route. */
 	export interface Route {
-		ApiGatewayManaged?: boolean;
-		ApiKeyRequired?: boolean;
+		ApiGatewayManaged?: boolean | null;
+		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string>;
+		AuthorizationScopes?: Array<string> | null;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
-		AuthorizationType?: CreateRouteResultAuthorizationType;
+		AuthorizationType?: CreateRouteResultAuthorizationType | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** A string with a length between [1-64]. */
-		OperationName?: string;
+		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels;
+		RequestModels?: RouteModels | null;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters;
+		RequestParameters?: RouteParameters | null;
 
 		/** The identifier. */
-		RouteId?: string;
+		RouteId?: string | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -1176,52 +1176,52 @@ export namespace MyNS {
 		RouteKey: string;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteResponseSelectionExpression?: string;
+		RouteResponseSelectionExpression?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Target?: string;
+		Target?: string | null;
 	}
 
 	export interface GetStageResponse {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings;
-		ApiGatewayManaged?: boolean;
-		AutoDeploy?: boolean;
+		AccessLogSettings?: AccessLogSettings | null;
+		ApiGatewayManaged?: boolean | null;
+		AutoDeploy?: boolean | null;
 
 		/** The identifier. */
-		ClientCertificateId?: string;
-		CreatedDate?: Date;
+		ClientCertificateId?: string | null;
+		CreatedDate?: Date | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings;
+		DefaultRouteSettings?: RouteSettings | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		LastDeploymentStatusMessage?: string;
-		LastUpdatedDate?: Date;
+		Description?: string | null;
+		LastDeploymentStatusMessage?: string | null;
+		LastUpdatedDate?: Date | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap;
+		RouteSettings?: RouteSettingsMap | null;
 
 		/** A string with a length between [1-128]. */
-		StageName?: string;
+		StageName?: string | null;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap;
+		StageVariables?: StageVariablesMap | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface GetStagesResponse {
-		Items?: Array<Stage>;
+		Items?: Array<Stage> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1229,27 +1229,27 @@ export namespace MyNS {
 	export interface Stage {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings;
-		ApiGatewayManaged?: boolean;
-		AutoDeploy?: boolean;
+		AccessLogSettings?: AccessLogSettings | null;
+		ApiGatewayManaged?: boolean | null;
+		AutoDeploy?: boolean | null;
 
 		/** The identifier. */
-		ClientCertificateId?: string;
-		CreatedDate?: Date;
+		ClientCertificateId?: string | null;
+		CreatedDate?: Date | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings;
+		DefaultRouteSettings?: RouteSettings | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		LastDeploymentStatusMessage?: string;
-		LastUpdatedDate?: Date;
+		Description?: string | null;
+		LastDeploymentStatusMessage?: string | null;
+		LastUpdatedDate?: Date | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap;
+		RouteSettings?: RouteSettingsMap | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -1258,57 +1258,57 @@ export namespace MyNS {
 		StageName: string;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap;
+		StageVariables?: StageVariablesMap | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface GetTagsResponse {
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface GetVpcLinkResponse {
-		CreatedDate?: Date;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A list of security group IDs for the VPC link. */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 
 		/** A list of subnet IDs to include in the VPC link. */
-		SubnetIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** The identifier. */
-		VpcLinkId?: string;
+		VpcLinkId?: string | null;
 
 		/** The status of the VPC link. */
-		VpcLinkStatus?: CreateVpcLinkResponseVpcLinkStatus;
+		VpcLinkStatus?: CreateVpcLinkResponseVpcLinkStatus | null;
 
 		/** A string with a length between [0-1024]. */
-		VpcLinkStatusMessage?: string;
+		VpcLinkStatusMessage?: string | null;
 
 		/** The version of the VPC link. */
-		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion;
+		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion | null;
 	}
 
 	export interface GetVpcLinksResponse {
-		Items?: Array<VpcLink>;
+		Items?: Array<VpcLink> | null;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a VPC link. */
 	export interface VpcLink {
-		CreatedDate?: Date;
+		CreatedDate?: Date | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -1329,7 +1329,7 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/**
 		 * The identifier.
@@ -1338,417 +1338,417 @@ export namespace MyNS {
 		VpcLinkId: string;
 
 		/** The status of the VPC link. */
-		VpcLinkStatus?: CreateVpcLinkResponseVpcLinkStatus;
+		VpcLinkStatus?: CreateVpcLinkResponseVpcLinkStatus | null;
 
 		/** A string with a length between [0-1024]. */
-		VpcLinkStatusMessage?: string;
+		VpcLinkStatusMessage?: string | null;
 
 		/** The version of the VPC link. */
-		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion;
+		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion | null;
 	}
 
 	export interface ImportApiResponse {
-		ApiEndpoint?: string;
+		ApiEndpoint?: string | null;
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiKeySelectionExpression?: string;
+		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors;
-		CreatedDate?: Date;
+		CorsConfiguration?: Cors | null;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		DisableSchemaValidation?: boolean;
-		ImportInfo?: Array<string>;
+		Description?: string | null;
+		DisableSchemaValidation?: boolean | null;
+		ImportInfo?: Array<string> | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** Represents a protocol type. */
-		ProtocolType?: CreateApiResponseProtocolType;
+		ProtocolType?: CreateApiResponseProtocolType | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteSelectionExpression?: string;
+		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** A string with a length between [1-64]. */
-		Version?: string;
-		Warnings?: Array<string>;
+		Version?: string | null;
+		Warnings?: Array<string> | null;
 	}
 
 	export interface ReimportApiResponse {
-		ApiEndpoint?: string;
+		ApiEndpoint?: string | null;
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiKeySelectionExpression?: string;
+		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors;
-		CreatedDate?: Date;
+		CorsConfiguration?: Cors | null;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		DisableSchemaValidation?: boolean;
-		ImportInfo?: Array<string>;
+		Description?: string | null;
+		DisableSchemaValidation?: boolean | null;
+		ImportInfo?: Array<string> | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** Represents a protocol type. */
-		ProtocolType?: CreateApiResponseProtocolType;
+		ProtocolType?: CreateApiResponseProtocolType | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteSelectionExpression?: string;
+		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** A string with a length between [1-64]. */
-		Version?: string;
-		Warnings?: Array<string>;
+		Version?: string | null;
+		Warnings?: Array<string> | null;
 	}
 
 	export interface TagResourceResponse {
 	}
 
 	export interface UpdateApiResponse {
-		ApiEndpoint?: string;
+		ApiEndpoint?: string | null;
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiKeySelectionExpression?: string;
+		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors;
-		CreatedDate?: Date;
+		CorsConfiguration?: Cors | null;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		DisableSchemaValidation?: boolean;
-		ImportInfo?: Array<string>;
+		Description?: string | null;
+		DisableSchemaValidation?: boolean | null;
+		ImportInfo?: Array<string> | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** Represents a protocol type. */
-		ProtocolType?: CreateApiResponseProtocolType;
+		ProtocolType?: CreateApiResponseProtocolType | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteSelectionExpression?: string;
+		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** A string with a length between [1-64]. */
-		Version?: string;
-		Warnings?: Array<string>;
+		Version?: string | null;
+		Warnings?: Array<string> | null;
 	}
 
 	export interface UpdateApiMappingResponse {
 
 		/** The identifier. */
-		ApiId?: string;
+		ApiId?: string | null;
 
 		/** The identifier. */
-		ApiMappingId?: string;
+		ApiMappingId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		ApiMappingKey?: string;
+		ApiMappingKey?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Stage?: string;
+		Stage?: string | null;
 	}
 
 	export interface UpdateAuthorizerResponse {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		AuthorizerCredentialsArn?: string;
+		AuthorizerCredentialsArn?: string | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/**
 		 * An integer with a value between [0-3600].
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		AuthorizerResultTtlInSeconds?: number;
+		AuthorizerResultTtlInSeconds?: number | null;
 
 		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
-		AuthorizerType?: CreateAuthorizerResponseAuthorizerType;
+		AuthorizerType?: CreateAuthorizerResponseAuthorizerType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		AuthorizerUri?: string;
+		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string>;
+		IdentitySource?: Array<string> | null;
 
 		/** A string with a length between [0-1024]. */
-		IdentityValidationExpression?: string;
+		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration;
+		JwtConfiguration?: JWTConfiguration | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateDeploymentResponse {
-		AutoDeployed?: boolean;
-		CreatedDate?: Date;
+		AutoDeployed?: boolean | null;
+		CreatedDate?: Date | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** Represents a deployment status. */
-		DeploymentStatus?: CreateDeploymentResponseDeploymentStatus;
-		DeploymentStatusMessage?: string;
+		DeploymentStatus?: CreateDeploymentResponseDeploymentStatus | null;
+		DeploymentStatusMessage?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateDomainNameResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiMappingSelectionExpression?: string;
+		ApiMappingSelectionExpression?: string | null;
 
 		/** A string with a length between [1-512]. */
-		DomainName?: string;
+		DomainName?: string | null;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration>;
+		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface UpdateIntegrationResult {
-		ApiGatewayManaged?: boolean;
+		ApiGatewayManaged?: boolean | null;
 
 		/** A string with a length between [1-1024]. */
-		ConnectionId?: string;
+		ConnectionId?: string | null;
 
 		/** Represents a connection type. */
-		ConnectionType?: CreateIntegrationResultConnectionType;
+		ConnectionType?: CreateIntegrationResultConnectionType | null;
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CredentialsArn?: string;
+		CredentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The identifier. */
-		IntegrationId?: string;
+		IntegrationId?: string | null;
 
 		/** A string with a length between [1-64]. */
-		IntegrationMethod?: string;
+		IntegrationMethod?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		IntegrationResponseSelectionExpression?: string;
+		IntegrationResponseSelectionExpression?: string | null;
 
 		/** Represents an API method integration type. */
-		IntegrationType?: CreateIntegrationResultIntegrationType;
+		IntegrationType?: CreateIntegrationResultIntegrationType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		IntegrationUri?: string;
+		IntegrationUri?: string | null;
 
 		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior;
+		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior | null;
 
 		/** A string with a length between [1-64]. */
-		PayloadFormatVersion?: string;
+		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters;
+		RequestParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap;
+		RequestTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 
 		/**
 		 * An integer with a value between [50-30000].
 		 * Minimum: 50
 		 * Maximum: 30000
 		 */
-		TimeoutInMillis?: number;
+		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfig;
+		TlsConfig?: TlsConfig | null;
 	}
 
 	export interface UpdateIntegrationResponseResponse {
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** The identifier. */
-		IntegrationResponseId?: string;
+		IntegrationResponseId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		IntegrationResponseKey?: string;
+		IntegrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters;
+		ResponseParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap;
+		ResponseTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 	}
 
 	export interface UpdateModelResponse {
 
 		/** A string with a length between [1-256]. */
-		ContentType?: string;
+		ContentType?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The identifier. */
-		ModelId?: string;
+		ModelId?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A string with a length between [0-32768]. */
-		Schema?: string;
+		Schema?: string | null;
 	}
 
 	export interface UpdateRouteResult {
-		ApiGatewayManaged?: boolean;
-		ApiKeyRequired?: boolean;
+		ApiGatewayManaged?: boolean | null;
+		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string>;
+		AuthorizationScopes?: Array<string> | null;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
-		AuthorizationType?: CreateRouteResultAuthorizationType;
+		AuthorizationType?: CreateRouteResultAuthorizationType | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** A string with a length between [1-64]. */
-		OperationName?: string;
+		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels;
+		RequestModels?: RouteModels | null;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters;
+		RequestParameters?: RouteParameters | null;
 
 		/** The identifier. */
-		RouteId?: string;
+		RouteId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteKey?: string;
+		RouteKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteResponseSelectionExpression?: string;
+		RouteResponseSelectionExpression?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Target?: string;
+		Target?: string | null;
 	}
 
 	export interface UpdateRouteResponseResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels;
+		ResponseModels?: RouteModels | null;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters;
+		ResponseParameters?: RouteParameters | null;
 
 		/** The identifier. */
-		RouteResponseId?: string;
+		RouteResponseId?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteResponseKey?: string;
+		RouteResponseKey?: string | null;
 	}
 
 	export interface UpdateStageResponse {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings;
-		ApiGatewayManaged?: boolean;
-		AutoDeploy?: boolean;
+		AccessLogSettings?: AccessLogSettings | null;
+		ApiGatewayManaged?: boolean | null;
+		AutoDeploy?: boolean | null;
 
 		/** The identifier. */
-		ClientCertificateId?: string;
-		CreatedDate?: Date;
+		ClientCertificateId?: string | null;
+		CreatedDate?: Date | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings;
+		DefaultRouteSettings?: RouteSettings | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		LastDeploymentStatusMessage?: string;
-		LastUpdatedDate?: Date;
+		Description?: string | null;
+		LastDeploymentStatusMessage?: string | null;
+		LastUpdatedDate?: Date | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap;
+		RouteSettings?: RouteSettingsMap | null;
 
 		/** A string with a length between [1-128]. */
-		StageName?: string;
+		StageName?: string | null;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap;
+		StageVariables?: StageVariablesMap | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface UpdateVpcLinkResponse {
-		CreatedDate?: Date;
+		CreatedDate?: Date | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A list of security group IDs for the VPC link. */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 
 		/** A list of subnet IDs to include in the VPC link. */
-		SubnetIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** The identifier. */
-		VpcLinkId?: string;
+		VpcLinkId?: string | null;
 
 		/** The status of the VPC link. */
-		VpcLinkStatus?: CreateVpcLinkResponseVpcLinkStatus;
+		VpcLinkStatus?: CreateVpcLinkResponseVpcLinkStatus | null;
 
 		/** A string with a length between [0-1024]. */
-		VpcLinkStatusMessage?: string;
+		VpcLinkStatusMessage?: string | null;
 
 		/** The version of the VPC link. */
-		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion;
+		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion | null;
 	}
 
 
@@ -1782,7 +1782,7 @@ export namespace MyNS {
 		ApiId: string;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		ApiMappingKey?: string;
+		ApiMappingKey?: string | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -1796,17 +1796,17 @@ export namespace MyNS {
 	export interface CreateApiRequest {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiKeySelectionExpression?: string;
+		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors;
+		CorsConfiguration?: Cors | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CredentialsArn?: string;
+		CredentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		DisableSchemaValidation?: boolean;
+		Description?: string | null;
+		DisableSchemaValidation?: boolean | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -1821,19 +1821,19 @@ export namespace MyNS {
 		ProtocolType: CreateApiResponseProtocolType;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteKey?: string;
+		RouteKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteSelectionExpression?: string;
+		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		Target?: string;
+		Target?: string | null;
 
 		/** A string with a length between [1-64]. */
-		Version?: string;
+		Version?: string | null;
 	}
 
 
@@ -1841,14 +1841,14 @@ export namespace MyNS {
 	export interface CreateAuthorizerRequest {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		AuthorizerCredentialsArn?: string;
+		AuthorizerCredentialsArn?: string | null;
 
 		/**
 		 * An integer with a value between [0-3600].
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		AuthorizerResultTtlInSeconds?: number;
+		AuthorizerResultTtlInSeconds?: number | null;
 
 		/**
 		 * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
@@ -1857,7 +1857,7 @@ export namespace MyNS {
 		AuthorizerType: CreateAuthorizerResponseAuthorizerType;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		AuthorizerUri?: string;
+		AuthorizerUri?: string | null;
 
 		/**
 		 * The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.
@@ -1866,10 +1866,10 @@ export namespace MyNS {
 		IdentitySource: Array<string>;
 
 		/** A string with a length between [0-1024]. */
-		IdentityValidationExpression?: string;
+		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration;
+		JwtConfiguration?: JWTConfiguration | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -1883,10 +1883,10 @@ export namespace MyNS {
 	export interface CreateDeploymentRequest {
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** A string with a length between [1-128]. */
-		StageName?: string;
+		StageName?: string | null;
 	}
 
 
@@ -1904,10 +1904,10 @@ export namespace MyNS {
 		DomainName: string;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration>;
+		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -1923,7 +1923,7 @@ export namespace MyNS {
 	export interface TlsConfigInput {
 
 		/** A string with a length between [1-512]. */
-		ServerNameToVerify?: string;
+		ServerNameToVerify?: string | null;
 	}
 
 
@@ -1931,22 +1931,22 @@ export namespace MyNS {
 	export interface CreateIntegrationRequest {
 
 		/** A string with a length between [1-1024]. */
-		ConnectionId?: string;
+		ConnectionId?: string | null;
 
 		/** Represents a connection type. */
-		ConnectionType?: CreateIntegrationResultConnectionType;
+		ConnectionType?: CreateIntegrationResultConnectionType | null;
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CredentialsArn?: string;
+		CredentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** A string with a length between [1-64]. */
-		IntegrationMethod?: string;
+		IntegrationMethod?: string | null;
 
 		/**
 		 * Represents an API method integration type.
@@ -1955,32 +1955,32 @@ export namespace MyNS {
 		IntegrationType: CreateIntegrationResultIntegrationType;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		IntegrationUri?: string;
+		IntegrationUri?: string | null;
 
 		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior;
+		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior | null;
 
 		/** A string with a length between [1-64]. */
-		PayloadFormatVersion?: string;
+		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters;
+		RequestParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap;
+		RequestTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 
 		/**
 		 * An integer with a value between [50-30000].
 		 * Minimum: 50
 		 * Maximum: 30000
 		 */
-		TimeoutInMillis?: number;
+		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfigInput;
+		TlsConfig?: TlsConfigInput | null;
 	}
 
 
@@ -1988,7 +1988,7 @@ export namespace MyNS {
 	export interface CreateIntegrationResponseRequest {
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -1997,13 +1997,13 @@ export namespace MyNS {
 		IntegrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters;
+		ResponseParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap;
+		ResponseTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 	}
 
 
@@ -2011,10 +2011,10 @@ export namespace MyNS {
 	export interface CreateModelRequest {
 
 		/** A string with a length between [1-256]. */
-		ContentType?: string;
+		ContentType?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -2032,28 +2032,28 @@ export namespace MyNS {
 
 	/** Creates a new Route resource to represent a route. */
 	export interface CreateRouteRequest {
-		ApiKeyRequired?: boolean;
+		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string>;
+		AuthorizationScopes?: Array<string> | null;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
-		AuthorizationType?: CreateRouteResultAuthorizationType;
+		AuthorizationType?: CreateRouteResultAuthorizationType | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** A string with a length between [1-64]. */
-		OperationName?: string;
+		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels;
+		RequestModels?: RouteModels | null;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters;
+		RequestParameters?: RouteParameters | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -2062,10 +2062,10 @@ export namespace MyNS {
 		RouteKey: string;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteResponseSelectionExpression?: string;
+		RouteResponseSelectionExpression?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Target?: string;
+		Target?: string | null;
 	}
 
 
@@ -2073,13 +2073,13 @@ export namespace MyNS {
 	export interface CreateRouteResponseRequest {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels;
+		ResponseModels?: RouteModels | null;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters;
+		ResponseParameters?: RouteParameters | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -2093,23 +2093,23 @@ export namespace MyNS {
 	export interface CreateStageRequest {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings;
-		AutoDeploy?: boolean;
+		AccessLogSettings?: AccessLogSettings | null;
+		AutoDeploy?: boolean | null;
 
 		/** The identifier. */
-		ClientCertificateId?: string;
+		ClientCertificateId?: string | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings;
+		DefaultRouteSettings?: RouteSettings | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap;
+		RouteSettings?: RouteSettingsMap | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -2118,10 +2118,10 @@ export namespace MyNS {
 		StageName: string;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap;
+		StageVariables?: StageVariablesMap | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -2135,7 +2135,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** A list of security group IDs for the VPC link. */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 
 		/**
 		 * A list of subnet IDs to include in the VPC link.
@@ -2144,7 +2144,7 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -2309,7 +2309,7 @@ export namespace MyNS {
 	export interface TagResourceRequest {
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface UntagResourceRequest {
@@ -2326,10 +2326,10 @@ export namespace MyNS {
 		ApiId: string;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		ApiMappingKey?: string;
+		ApiMappingKey?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Stage?: string;
+		Stage?: string | null;
 	}
 
 
@@ -2337,32 +2337,32 @@ export namespace MyNS {
 	export interface UpdateApiRequest {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ApiKeySelectionExpression?: string;
+		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors;
+		CorsConfiguration?: Cors | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CredentialsArn?: string;
+		CredentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
-		DisableSchemaValidation?: boolean;
+		Description?: string | null;
+		DisableSchemaValidation?: boolean | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteKey?: string;
+		RouteKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteSelectionExpression?: string;
+		RouteSelectionExpression?: string | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		Target?: string;
+		Target?: string | null;
 
 		/** A string with a length between [1-64]. */
-		Version?: string;
+		Version?: string | null;
 	}
 
 
@@ -2370,32 +2370,32 @@ export namespace MyNS {
 	export interface UpdateAuthorizerRequest {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		AuthorizerCredentialsArn?: string;
+		AuthorizerCredentialsArn?: string | null;
 
 		/**
 		 * An integer with a value between [0-3600].
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		AuthorizerResultTtlInSeconds?: number;
+		AuthorizerResultTtlInSeconds?: number | null;
 
 		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
-		AuthorizerType?: CreateAuthorizerResponseAuthorizerType;
+		AuthorizerType?: CreateAuthorizerResponseAuthorizerType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		AuthorizerUri?: string;
+		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string>;
+		IdentitySource?: Array<string> | null;
 
 		/** A string with a length between [0-1024]. */
-		IdentityValidationExpression?: string;
+		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration;
+		JwtConfiguration?: JWTConfiguration | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 
@@ -2403,7 +2403,7 @@ export namespace MyNS {
 	export interface UpdateDeploymentRequest {
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 	}
 
 
@@ -2411,7 +2411,7 @@ export namespace MyNS {
 	export interface UpdateDomainNameRequest {
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration>;
+		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
 	}
 
 
@@ -2419,53 +2419,53 @@ export namespace MyNS {
 	export interface UpdateIntegrationRequest {
 
 		/** A string with a length between [1-1024]. */
-		ConnectionId?: string;
+		ConnectionId?: string | null;
 
 		/** Represents a connection type. */
-		ConnectionType?: CreateIntegrationResultConnectionType;
+		ConnectionType?: CreateIntegrationResultConnectionType | null;
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		CredentialsArn?: string;
+		CredentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** A string with a length between [1-64]. */
-		IntegrationMethod?: string;
+		IntegrationMethod?: string | null;
 
 		/** Represents an API method integration type. */
-		IntegrationType?: CreateIntegrationResultIntegrationType;
+		IntegrationType?: CreateIntegrationResultIntegrationType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		IntegrationUri?: string;
+		IntegrationUri?: string | null;
 
 		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior;
+		PassthroughBehavior?: CreateIntegrationResultPassthroughBehavior | null;
 
 		/** A string with a length between [1-64]. */
-		PayloadFormatVersion?: string;
+		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters;
+		RequestParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap;
+		RequestTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 
 		/**
 		 * An integer with a value between [50-30000].
 		 * Minimum: 50
 		 * Maximum: 30000
 		 */
-		TimeoutInMillis?: number;
+		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfigInput;
+		TlsConfig?: TlsConfigInput | null;
 	}
 
 
@@ -2473,19 +2473,19 @@ export namespace MyNS {
 	export interface UpdateIntegrationResponseRequest {
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		IntegrationResponseKey?: string;
+		IntegrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters;
+		ResponseParameters?: IntegrationParameters | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap;
+		ResponseTemplates?: TemplateMap | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		TemplateSelectionExpression?: string;
+		TemplateSelectionExpression?: string | null;
 	}
 
 
@@ -2493,52 +2493,52 @@ export namespace MyNS {
 	export interface UpdateModelRequest {
 
 		/** A string with a length between [1-256]. */
-		ContentType?: string;
+		ContentType?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 
 		/** A string with a length between [0-32768]. */
-		Schema?: string;
+		Schema?: string | null;
 	}
 
 
 	/** Updates a Route. */
 	export interface UpdateRouteRequest {
-		ApiKeyRequired?: boolean;
+		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string>;
+		AuthorizationScopes?: Array<string> | null;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
-		AuthorizationType?: CreateRouteResultAuthorizationType;
+		AuthorizationType?: CreateRouteResultAuthorizationType | null;
 
 		/** The identifier. */
-		AuthorizerId?: string;
+		AuthorizerId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** A string with a length between [1-64]. */
-		OperationName?: string;
+		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels;
+		RequestModels?: RouteModels | null;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters;
+		RequestParameters?: RouteParameters | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteKey?: string;
+		RouteKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		RouteResponseSelectionExpression?: string;
+		RouteResponseSelectionExpression?: string | null;
 
 		/** A string with a length between [1-128]. */
-		Target?: string;
+		Target?: string | null;
 	}
 
 
@@ -2546,16 +2546,16 @@ export namespace MyNS {
 	export interface UpdateRouteResponseRequest {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		ModelSelectionExpression?: string;
+		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels;
+		ResponseModels?: RouteModels | null;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters;
+		ResponseParameters?: RouteParameters | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		RouteResponseKey?: string;
+		RouteResponseKey?: string | null;
 	}
 
 
@@ -2563,26 +2563,26 @@ export namespace MyNS {
 	export interface UpdateStageRequest {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings;
-		AutoDeploy?: boolean;
+		AccessLogSettings?: AccessLogSettings | null;
+		AutoDeploy?: boolean | null;
 
 		/** The identifier. */
-		ClientCertificateId?: string;
+		ClientCertificateId?: string | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings;
+		DefaultRouteSettings?: RouteSettings | null;
 
 		/** The identifier. */
-		DeploymentId?: string;
+		DeploymentId?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap;
+		RouteSettings?: RouteSettingsMap | null;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap;
+		StageVariables?: StageVariablesMap | null;
 	}
 
 
@@ -2590,7 +2590,7 @@ export namespace MyNS {
 	export interface UpdateVpcLinkRequest {
 
 		/** A string with a length between [1-128]. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	@Injectable()
@@ -3381,19 +3381,19 @@ export namespace MyNS {
 	export interface CreateApiPostBody {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		apiKeySelectionExpression?: string;
+		apiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		corsConfiguration?: CreateApiPostBodyCorsConfiguration;
+		corsConfiguration?: CreateApiPostBodyCorsConfiguration | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		credentialsArn?: string;
+		credentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/** Avoid validating models when creating a deployment. Supported only for WebSocket APIs. */
-		disableSchemaValidation?: boolean;
+		disableSchemaValidation?: boolean | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -3408,42 +3408,42 @@ export namespace MyNS {
 		protocolType: CreateApiResponseProtocolType;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		routeKey?: string;
+		routeKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		routeSelectionExpression?: string;
+		routeSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		target?: string;
+		target?: string | null;
 
 		/** A string with a length between [1-64]. */
-		version?: string;
+		version?: string | null;
 	}
 
 	export interface CreateApiPostBodyCorsConfiguration {
-		AllowCredentials?: boolean;
+		AllowCredentials?: boolean | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		AllowHeaders?: Array<string>;
+		AllowHeaders?: Array<string> | null;
 
 		/** Represents a collection of methods. Supported only for HTTP APIs. */
-		AllowMethods?: Array<string>;
+		AllowMethods?: Array<string> | null;
 
 		/** Represents a collection of origins. Supported only for HTTP APIs. */
-		AllowOrigins?: Array<string>;
+		AllowOrigins?: Array<string> | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		ExposeHeaders?: Array<string>;
+		ExposeHeaders?: Array<string> | null;
 
 		/**
 		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
 		 * Minimum: -1
 		 * Maximum: 86400
 		 */
-		MaxAge?: number;
+		MaxAge?: number | null;
 	}
 
 	export interface ImportApiPutBody {
@@ -3464,7 +3464,7 @@ export namespace MyNS {
 		apiId: string;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		apiMappingKey?: string;
+		apiMappingKey?: string | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -3476,14 +3476,14 @@ export namespace MyNS {
 	export interface CreateAuthorizerPostBody {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		authorizerCredentialsArn?: string;
+		authorizerCredentialsArn?: string | null;
 
 		/**
 		 * An integer with a value between [0-3600].
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		authorizerResultTtlInSeconds?: number;
+		authorizerResultTtlInSeconds?: number | null;
 
 		/**
 		 * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
@@ -3492,7 +3492,7 @@ export namespace MyNS {
 		authorizerType: CreateAuthorizerResponseAuthorizerType;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		authorizerUri?: string;
+		authorizerUri?: string | null;
 
 		/**
 		 * The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.
@@ -3501,10 +3501,10 @@ export namespace MyNS {
 		identitySource: Array<string>;
 
 		/** A string with a length between [0-1024]. */
-		identityValidationExpression?: string;
+		identityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		jwtConfiguration?: CreateAuthorizerPostBodyJwtConfiguration;
+		jwtConfiguration?: CreateAuthorizerPostBodyJwtConfiguration | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -3514,19 +3514,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateAuthorizerPostBodyJwtConfiguration {
-		Audience?: Array<string>;
+		Audience?: Array<string> | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		Issuer?: string;
+		Issuer?: string | null;
 	}
 
 	export interface CreateDeploymentPostBody {
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/** A string with a length between [1-128]. */
-		stageName?: string;
+		stageName?: string | null;
 	}
 
 	export interface CreateDomainNamePostBody {
@@ -3538,31 +3538,31 @@ export namespace MyNS {
 		domainName: string;
 
 		/** The domain name configurations. */
-		domainNameConfigurations?: Array<DomainNameConfiguration>;
+		domainNameConfigurations?: Array<DomainNameConfiguration> | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateIntegrationPostBody {
 
 		/** A string with a length between [1-1024]. */
-		connectionId?: string;
+		connectionId?: string | null;
 
 		/** Represents a connection type. */
-		connectionType?: CreateIntegrationResultConnectionType;
+		connectionType?: CreateIntegrationResultConnectionType | null;
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		credentialsArn?: string;
+		credentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/** A string with a length between [1-64]. */
-		integrationMethod?: string;
+		integrationMethod?: string | null;
 
 		/**
 		 * Represents an API method integration type.
@@ -3571,44 +3571,44 @@ export namespace MyNS {
 		integrationType: CreateIntegrationResultIntegrationType;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		integrationUri?: string;
+		integrationUri?: string | null;
 
 		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-		passthroughBehavior?: CreateIntegrationResultPassthroughBehavior;
+		passthroughBehavior?: CreateIntegrationResultPassthroughBehavior | null;
 
 		/** A string with a length between [1-64]. */
-		payloadFormatVersion?: string;
+		payloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		requestParameters?: {[id: string]: string };
+		requestParameters?: {[id: string]: string } | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		requestTemplates?: {[id: string]: string };
+		requestTemplates?: {[id: string]: string } | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		templateSelectionExpression?: string;
+		templateSelectionExpression?: string | null;
 
 		/**
 		 * An integer with a value between [50-30000].
 		 * Minimum: 50
 		 * Maximum: 30000
 		 */
-		timeoutInMillis?: number;
+		timeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		tlsConfig?: CreateIntegrationPostBodyTlsConfig;
+		tlsConfig?: CreateIntegrationPostBodyTlsConfig | null;
 	}
 
 	export interface CreateIntegrationPostBodyTlsConfig {
 
 		/** A string with a length between [1-512]. */
-		ServerNameToVerify?: string;
+		ServerNameToVerify?: string | null;
 	}
 
 	export interface CreateIntegrationResponsePostBody {
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -3617,22 +3617,22 @@ export namespace MyNS {
 		integrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		responseParameters?: {[id: string]: string };
+		responseParameters?: {[id: string]: string } | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		responseTemplates?: {[id: string]: string };
+		responseTemplates?: {[id: string]: string } | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		templateSelectionExpression?: string;
+		templateSelectionExpression?: string | null;
 	}
 
 	export interface CreateModelPostBody {
 
 		/** A string with a length between [1-256]. */
-		contentType?: string;
+		contentType?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -3650,28 +3650,28 @@ export namespace MyNS {
 	export interface CreateRoutePostBody {
 
 		/** Specifies whether an API key is required for the route. Supported only for WebSocket APIs. */
-		apiKeyRequired?: boolean;
+		apiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		authorizationScopes?: Array<string>;
+		authorizationScopes?: Array<string> | null;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
-		authorizationType?: CreateRouteResultAuthorizationType;
+		authorizationType?: CreateRouteResultAuthorizationType | null;
 
 		/** The identifier. */
-		authorizerId?: string;
+		authorizerId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		modelSelectionExpression?: string;
+		modelSelectionExpression?: string | null;
 
 		/** A string with a length between [1-64]. */
-		operationName?: string;
+		operationName?: string | null;
 
 		/** The route models. */
-		requestModels?: {[id: string]: string };
+		requestModels?: {[id: string]: string } | null;
 
 		/** The route parameters. */
-		requestParameters?: {[id: string]: ParameterConstraints };
+		requestParameters?: {[id: string]: ParameterConstraints } | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -3680,22 +3680,22 @@ export namespace MyNS {
 		routeKey: string;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		routeResponseSelectionExpression?: string;
+		routeResponseSelectionExpression?: string | null;
 
 		/** A string with a length between [1-128]. */
-		target?: string;
+		target?: string | null;
 	}
 
 	export interface CreateRouteResponsePostBody {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		modelSelectionExpression?: string;
+		modelSelectionExpression?: string | null;
 
 		/** The route models. */
-		responseModels?: {[id: string]: string };
+		responseModels?: {[id: string]: string } | null;
 
 		/** The route parameters. */
-		responseParameters?: {[id: string]: ParameterConstraints };
+		responseParameters?: {[id: string]: ParameterConstraints } | null;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -3707,25 +3707,25 @@ export namespace MyNS {
 	export interface CreateStagePostBody {
 
 		/** Settings for logging access in a stage. */
-		accessLogSettings?: CreateStagePostBodyAccessLogSettings;
+		accessLogSettings?: CreateStagePostBodyAccessLogSettings | null;
 
 		/** Specifies whether updates to an API automatically trigger a new deployment. The default value is false. */
-		autoDeploy?: boolean;
+		autoDeploy?: boolean | null;
 
 		/** The identifier. */
-		clientCertificateId?: string;
+		clientCertificateId?: string | null;
 
 		/** Represents a collection of route settings. */
-		defaultRouteSettings?: CreateStagePostBodyDefaultRouteSettings;
+		defaultRouteSettings?: CreateStagePostBodyDefaultRouteSettings | null;
 
 		/** The identifier. */
-		deploymentId?: string;
+		deploymentId?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/** The route settings map. */
-		routeSettings?: {[id: string]: RouteSettings };
+		routeSettings?: {[id: string]: RouteSettings } | null;
 
 		/**
 		 * A string with a length between [1-128].
@@ -3734,29 +3734,29 @@ export namespace MyNS {
 		stageName: string;
 
 		/** The stage variable map. */
-		stageVariables?: {[id: string]: string };
+		stageVariables?: {[id: string]: string } | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateStagePostBodyAccessLogSettings {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		DestinationArn?: string;
+		DestinationArn?: string | null;
 
 		/** A string with a length between [1-1024]. */
-		Format?: string;
+		Format?: string | null;
 	}
 
 	export interface CreateStagePostBodyDefaultRouteSettings {
-		DataTraceEnabled?: boolean;
-		DetailedMetricsEnabled?: boolean;
+		DataTraceEnabled?: boolean | null;
+		DetailedMetricsEnabled?: boolean | null;
 
 		/** The logging level. */
-		LoggingLevel?: RouteSettingsLoggingLevel;
-		ThrottlingBurstLimit?: number;
-		ThrottlingRateLimit?: number;
+		LoggingLevel?: RouteSettingsLoggingLevel | null;
+		ThrottlingBurstLimit?: number | null;
+		ThrottlingRateLimit?: number | null;
 	}
 
 	export interface CreateVpcLinkPostBody {
@@ -3768,7 +3768,7 @@ export namespace MyNS {
 		name: string;
 
 		/** A list of security group IDs for the VPC link. */
-		securityGroupIds?: Array<string>;
+		securityGroupIds?: Array<string> | null;
 
 		/**
 		 * A list of subnet IDs to include in the VPC link.
@@ -3777,7 +3777,7 @@ export namespace MyNS {
 		subnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface ReimportApiPutBody {
@@ -3792,57 +3792,57 @@ export namespace MyNS {
 	export interface UpdateApiPatchBody {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		apiKeySelectionExpression?: string;
+		apiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		corsConfiguration?: UpdateApiPatchBodyCorsConfiguration;
+		corsConfiguration?: UpdateApiPatchBodyCorsConfiguration | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		credentialsArn?: string;
+		credentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/** Avoid validating models when creating a deployment. Supported only for WebSocket APIs. */
-		disableSchemaValidation?: boolean;
+		disableSchemaValidation?: boolean | null;
 
 		/** A string with a length between [1-128]. */
-		name?: string;
+		name?: string | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		routeKey?: string;
+		routeKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		routeSelectionExpression?: string;
+		routeSelectionExpression?: string | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		target?: string;
+		target?: string | null;
 
 		/** A string with a length between [1-64]. */
-		version?: string;
+		version?: string | null;
 	}
 
 	export interface UpdateApiPatchBodyCorsConfiguration {
-		AllowCredentials?: boolean;
+		AllowCredentials?: boolean | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		AllowHeaders?: Array<string>;
+		AllowHeaders?: Array<string> | null;
 
 		/** Represents a collection of methods. Supported only for HTTP APIs. */
-		AllowMethods?: Array<string>;
+		AllowMethods?: Array<string> | null;
 
 		/** Represents a collection of origins. Supported only for HTTP APIs. */
-		AllowOrigins?: Array<string>;
+		AllowOrigins?: Array<string> | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		ExposeHeaders?: Array<string>;
+		ExposeHeaders?: Array<string> | null;
 
 		/**
 		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
 		 * Minimum: -1
 		 * Maximum: 86400
 		 */
-		MaxAge?: number;
+		MaxAge?: number | null;
 	}
 
 	export interface UpdateApiMappingPatchBody {
@@ -3854,260 +3854,260 @@ export namespace MyNS {
 		apiId: string;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		apiMappingKey?: string;
+		apiMappingKey?: string | null;
 
 		/** A string with a length between [1-128]. */
-		stage?: string;
+		stage?: string | null;
 	}
 
 	export interface UpdateAuthorizerPatchBody {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		authorizerCredentialsArn?: string;
+		authorizerCredentialsArn?: string | null;
 
 		/**
 		 * An integer with a value between [0-3600].
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		authorizerResultTtlInSeconds?: number;
+		authorizerResultTtlInSeconds?: number | null;
 
 		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
-		authorizerType?: CreateAuthorizerResponseAuthorizerType;
+		authorizerType?: CreateAuthorizerResponseAuthorizerType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		authorizerUri?: string;
+		authorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		identitySource?: Array<string>;
+		identitySource?: Array<string> | null;
 
 		/** A string with a length between [0-1024]. */
-		identityValidationExpression?: string;
+		identityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		jwtConfiguration?: UpdateAuthorizerPatchBodyJwtConfiguration;
+		jwtConfiguration?: UpdateAuthorizerPatchBodyJwtConfiguration | null;
 
 		/** A string with a length between [1-128]. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface UpdateAuthorizerPatchBodyJwtConfiguration {
-		Audience?: Array<string>;
+		Audience?: Array<string> | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		Issuer?: string;
+		Issuer?: string | null;
 	}
 
 	export interface UpdateDeploymentPatchBody {
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface UpdateDomainNamePatchBody {
 
 		/** The domain name configurations. */
-		domainNameConfigurations?: Array<DomainNameConfiguration>;
+		domainNameConfigurations?: Array<DomainNameConfiguration> | null;
 	}
 
 	export interface UpdateIntegrationPatchBody {
 
 		/** A string with a length between [1-1024]. */
-		connectionId?: string;
+		connectionId?: string | null;
 
 		/** Represents a connection type. */
-		connectionType?: CreateIntegrationResultConnectionType;
+		connectionType?: CreateIntegrationResultConnectionType | null;
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** Represents an Amazon Resource Name (ARN). */
-		credentialsArn?: string;
+		credentialsArn?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/** A string with a length between [1-64]. */
-		integrationMethod?: string;
+		integrationMethod?: string | null;
 
 		/** Represents an API method integration type. */
-		integrationType?: CreateIntegrationResultIntegrationType;
+		integrationType?: CreateIntegrationResultIntegrationType | null;
 
 		/** A string representation of a URI with a length between [1-2048]. */
-		integrationUri?: string;
+		integrationUri?: string | null;
 
 		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
-		passthroughBehavior?: CreateIntegrationResultPassthroughBehavior;
+		passthroughBehavior?: CreateIntegrationResultPassthroughBehavior | null;
 
 		/** A string with a length between [1-64]. */
-		payloadFormatVersion?: string;
+		payloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		requestParameters?: {[id: string]: string };
+		requestParameters?: {[id: string]: string } | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		requestTemplates?: {[id: string]: string };
+		requestTemplates?: {[id: string]: string } | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		templateSelectionExpression?: string;
+		templateSelectionExpression?: string | null;
 
 		/**
 		 * An integer with a value between [50-30000].
 		 * Minimum: 50
 		 * Maximum: 30000
 		 */
-		timeoutInMillis?: number;
+		timeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		tlsConfig?: UpdateIntegrationPatchBodyTlsConfig;
+		tlsConfig?: UpdateIntegrationPatchBodyTlsConfig | null;
 	}
 
 	export interface UpdateIntegrationPatchBodyTlsConfig {
 
 		/** A string with a length between [1-512]. */
-		ServerNameToVerify?: string;
+		ServerNameToVerify?: string | null;
 	}
 
 	export interface UpdateIntegrationResponsePatchBody {
 
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
-		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
+		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		integrationResponseKey?: string;
+		integrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		responseParameters?: {[id: string]: string };
+		responseParameters?: {[id: string]: string } | null;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		responseTemplates?: {[id: string]: string };
+		responseTemplates?: {[id: string]: string } | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		templateSelectionExpression?: string;
+		templateSelectionExpression?: string | null;
 	}
 
 	export interface UpdateModelPatchBody {
 
 		/** A string with a length between [1-256]. */
-		contentType?: string;
+		contentType?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/** A string with a length between [1-128]. */
-		name?: string;
+		name?: string | null;
 
 		/** A string with a length between [0-32768]. */
-		schema?: string;
+		schema?: string | null;
 	}
 
 	export interface UpdateRoutePatchBody {
 
 		/** Specifies whether an API key is required for the route. Supported only for WebSocket APIs. */
-		apiKeyRequired?: boolean;
+		apiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		authorizationScopes?: Array<string>;
+		authorizationScopes?: Array<string> | null;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
-		authorizationType?: CreateRouteResultAuthorizationType;
+		authorizationType?: CreateRouteResultAuthorizationType | null;
 
 		/** The identifier. */
-		authorizerId?: string;
+		authorizerId?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		modelSelectionExpression?: string;
+		modelSelectionExpression?: string | null;
 
 		/** A string with a length between [1-64]. */
-		operationName?: string;
+		operationName?: string | null;
 
 		/** The route models. */
-		requestModels?: {[id: string]: string };
+		requestModels?: {[id: string]: string } | null;
 
 		/** The route parameters. */
-		requestParameters?: {[id: string]: ParameterConstraints };
+		requestParameters?: {[id: string]: ParameterConstraints } | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		routeKey?: string;
+		routeKey?: string | null;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		routeResponseSelectionExpression?: string;
+		routeResponseSelectionExpression?: string | null;
 
 		/** A string with a length between [1-128]. */
-		target?: string;
+		target?: string | null;
 	}
 
 	export interface UpdateRouteResponsePatchBody {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
-		modelSelectionExpression?: string;
+		modelSelectionExpression?: string | null;
 
 		/** The route models. */
-		responseModels?: {[id: string]: string };
+		responseModels?: {[id: string]: string } | null;
 
 		/** The route parameters. */
-		responseParameters?: {[id: string]: ParameterConstraints };
+		responseParameters?: {[id: string]: ParameterConstraints } | null;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
-		routeResponseKey?: string;
+		routeResponseKey?: string | null;
 	}
 
 	export interface UpdateStagePatchBody {
 
 		/** Settings for logging access in a stage. */
-		accessLogSettings?: UpdateStagePatchBodyAccessLogSettings;
+		accessLogSettings?: UpdateStagePatchBodyAccessLogSettings | null;
 
 		/** Specifies whether updates to an API automatically trigger a new deployment. The default value is false. */
-		autoDeploy?: boolean;
+		autoDeploy?: boolean | null;
 
 		/** The identifier. */
-		clientCertificateId?: string;
+		clientCertificateId?: string | null;
 
 		/** Represents a collection of route settings. */
-		defaultRouteSettings?: UpdateStagePatchBodyDefaultRouteSettings;
+		defaultRouteSettings?: UpdateStagePatchBodyDefaultRouteSettings | null;
 
 		/** The identifier. */
-		deploymentId?: string;
+		deploymentId?: string | null;
 
 		/** A string with a length between [0-1024]. */
-		description?: string;
+		description?: string | null;
 
 		/** The route settings map. */
-		routeSettings?: {[id: string]: RouteSettings };
+		routeSettings?: {[id: string]: RouteSettings } | null;
 
 		/** The stage variable map. */
-		stageVariables?: {[id: string]: string };
+		stageVariables?: {[id: string]: string } | null;
 	}
 
 	export interface UpdateStagePatchBodyAccessLogSettings {
 
 		/** Represents an Amazon Resource Name (ARN). */
-		DestinationArn?: string;
+		DestinationArn?: string | null;
 
 		/** A string with a length between [1-1024]. */
-		Format?: string;
+		Format?: string | null;
 	}
 
 	export interface UpdateStagePatchBodyDefaultRouteSettings {
-		DataTraceEnabled?: boolean;
-		DetailedMetricsEnabled?: boolean;
+		DataTraceEnabled?: boolean | null;
+		DetailedMetricsEnabled?: boolean | null;
 
 		/** The logging level. */
-		LoggingLevel?: RouteSettingsLoggingLevel;
-		ThrottlingBurstLimit?: number;
-		ThrottlingRateLimit?: number;
+		LoggingLevel?: RouteSettingsLoggingLevel | null;
+		ThrottlingBurstLimit?: number | null;
+		ThrottlingRateLimit?: number | null;
 	}
 
 	export interface UpdateVpcLinkPatchBody {
 
 		/** A string with a length between [1-128]. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface TagResourcePostBody {
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 }

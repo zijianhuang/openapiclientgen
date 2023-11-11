@@ -9,14 +9,14 @@ export namespace MyNS {
 
 	export interface CreateActivityInput {
 		name: string;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 
 	/** <p>Tags are key-value pairs that can be associated with Step Functions state machines and activities.</p> <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p> */
 	export interface Tag {
-		key?: string;
-		value?: string;
+		key?: string | null;
+		value?: string | null;
 	}
 
 	export interface ActivityLimitExceeded {
@@ -37,11 +37,11 @@ export namespace MyNS {
 		name: string;
 		definition: string;
 		roleArn: string;
-		type?: CreateStateMachineInputType;
+		type?: CreateStateMachineInputType | null;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
-		loggingConfiguration?: LoggingConfiguration;
-		tags?: Array<Tag>;
+		loggingConfiguration?: LoggingConfiguration | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum CreateStateMachineInputType { STANDARD = 0, EXPRESS = 1 }
@@ -49,9 +49,9 @@ export namespace MyNS {
 
 	/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
 	export interface LoggingConfiguration {
-		level?: LoggingConfigurationLevel;
-		includeExecutionData?: boolean;
-		destinations?: Array<LogDestination>;
+		level?: LoggingConfigurationLevel | null;
+		includeExecutionData?: boolean | null;
+		destinations?: Array<LogDestination> | null;
 	}
 
 	export enum LoggingConfigurationLevel { ALL = 0, ERROR = 1, FATAL = 2, OFF = 3 }
@@ -61,13 +61,13 @@ export namespace MyNS {
 	export interface LogDestination {
 
 		/** <p/> */
-		cloudWatchLogsLogGroup?: CloudWatchLogsLogGroup;
+		cloudWatchLogsLogGroup?: CloudWatchLogsLogGroup | null;
 	}
 
 
 	/** <p/> */
 	export interface CloudWatchLogsLogGroup {
-		logGroupArn?: string;
+		logGroupArn?: string | null;
 	}
 
 	export interface InvalidArn {
@@ -121,12 +121,12 @@ export namespace MyNS {
 	export interface DescribeExecutionOutput {
 		executionArn: string;
 		stateMachineArn: string;
-		name?: string;
+		name?: string | null;
 		status: DescribeExecutionOutputStatus;
 		startDate: Date;
-		stopDate?: Date;
+		stopDate?: Date | null;
 		input: string;
-		output?: string;
+		output?: string | null;
 	}
 
 	export enum DescribeExecutionOutputStatus { RUNNING = 0, SUCCEEDED = 1, FAILED = 2, TIMED_OUT = 3, ABORTED = 4 }
@@ -141,14 +141,14 @@ export namespace MyNS {
 	export interface DescribeStateMachineOutput {
 		stateMachineArn: string;
 		name: string;
-		status?: DescribeStateMachineOutputStatus;
+		status?: DescribeStateMachineOutputStatus | null;
 		definition: string;
 		roleArn: string;
 		type: CreateStateMachineInputType;
 		creationDate: Date;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
-		loggingConfiguration?: LoggingConfiguration;
+		loggingConfiguration?: LoggingConfiguration | null;
 	}
 
 	export enum DescribeStateMachineOutputStatus { ACTIVE = 0, DELETING = 1 }
@@ -168,7 +168,7 @@ export namespace MyNS {
 		updateDate: Date;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
-		loggingConfiguration?: LoggingConfiguration;
+		loggingConfiguration?: LoggingConfiguration | null;
 	}
 
 	export interface DescribeStateMachineForExecutionInput {
@@ -176,13 +176,13 @@ export namespace MyNS {
 	}
 
 	export interface GetActivityTaskOutput {
-		taskToken?: string;
-		input?: string;
+		taskToken?: string | null;
+		input?: string | null;
 	}
 
 	export interface GetActivityTaskInput {
 		activityArn: string;
-		workerName?: string;
+		workerName?: string | null;
 	}
 
 	export interface ActivityWorkerLimitExceeded {
@@ -195,7 +195,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		events: Array<HistoryEvent>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -204,103 +204,103 @@ export namespace MyNS {
 		timestamp: Date;
 		type: HistoryEventType;
 		id: number;
-		previousEventId?: number;
+		previousEventId?: number | null;
 
 		/** Contains details about an activity that failed during an execution. */
-		activityFailedEventDetails?: ActivityFailedEventDetails;
+		activityFailedEventDetails?: ActivityFailedEventDetails | null;
 
 		/** Contains details about an activity schedule failure that occurred during an execution. */
-		activityScheduleFailedEventDetails?: ActivityScheduleFailedEventDetails;
+		activityScheduleFailedEventDetails?: ActivityScheduleFailedEventDetails | null;
 
 		/** Contains details about an activity scheduled during an execution. */
-		activityScheduledEventDetails?: ActivityScheduledEventDetails;
+		activityScheduledEventDetails?: ActivityScheduledEventDetails | null;
 
 		/** Contains details about the start of an activity during an execution. */
-		activityStartedEventDetails?: ActivityStartedEventDetails;
+		activityStartedEventDetails?: ActivityStartedEventDetails | null;
 
 		/** Contains details about an activity that successfully terminated during an execution. */
-		activitySucceededEventDetails?: ActivitySucceededEventDetails;
+		activitySucceededEventDetails?: ActivitySucceededEventDetails | null;
 
 		/** Contains details about an activity timeout that occurred during an execution. */
-		activityTimedOutEventDetails?: ActivityTimedOutEventDetails;
+		activityTimedOutEventDetails?: ActivityTimedOutEventDetails | null;
 
 		/** Contains details about a task failure event. */
-		taskFailedEventDetails?: TaskFailedEventDetails;
+		taskFailedEventDetails?: TaskFailedEventDetails | null;
 
 		/** Contains details about a task scheduled during an execution. */
-		taskScheduledEventDetails?: TaskScheduledEventDetails;
+		taskScheduledEventDetails?: TaskScheduledEventDetails | null;
 
 		/** Contains details about a task that failed to start during an execution. */
-		taskStartFailedEventDetails?: TaskStartFailedEventDetails;
+		taskStartFailedEventDetails?: TaskStartFailedEventDetails | null;
 
 		/** Contains details about the start of a task during an execution. */
-		taskStartedEventDetails?: TaskStartedEventDetails;
+		taskStartedEventDetails?: TaskStartedEventDetails | null;
 
 		/** Contains details about a task that failed to submit during an execution. */
-		taskSubmitFailedEventDetails?: TaskSubmitFailedEventDetails;
+		taskSubmitFailedEventDetails?: TaskSubmitFailedEventDetails | null;
 
 		/** Contains details about a task submitted to a resource . */
-		taskSubmittedEventDetails?: TaskSubmittedEventDetails;
+		taskSubmittedEventDetails?: TaskSubmittedEventDetails | null;
 
 		/** Contains details about the successful completion of a task state. */
-		taskSucceededEventDetails?: TaskSucceededEventDetails;
+		taskSucceededEventDetails?: TaskSucceededEventDetails | null;
 
 		/** Contains details about a resource timeout that occurred during an execution. */
-		taskTimedOutEventDetails?: TaskTimedOutEventDetails;
+		taskTimedOutEventDetails?: TaskTimedOutEventDetails | null;
 
 		/** Contains details about an execution failure event. */
-		executionFailedEventDetails?: ExecutionFailedEventDetails;
+		executionFailedEventDetails?: ExecutionFailedEventDetails | null;
 
 		/** Contains details about the start of the execution. */
-		executionStartedEventDetails?: ExecutionStartedEventDetails;
+		executionStartedEventDetails?: ExecutionStartedEventDetails | null;
 
 		/** Contains details about the successful termination of the execution. */
-		executionSucceededEventDetails?: ExecutionSucceededEventDetails;
+		executionSucceededEventDetails?: ExecutionSucceededEventDetails | null;
 
 		/** Contains details about an abort of an execution. */
-		executionAbortedEventDetails?: ExecutionAbortedEventDetails;
+		executionAbortedEventDetails?: ExecutionAbortedEventDetails | null;
 
 		/** Contains details about the execution timeout that occurred during the execution. */
-		executionTimedOutEventDetails?: ExecutionTimedOutEventDetails;
+		executionTimedOutEventDetails?: ExecutionTimedOutEventDetails | null;
 
 		/** Details about a Map state that was started. */
-		mapStateStartedEventDetails?: MapStateStartedEventDetails;
+		mapStateStartedEventDetails?: MapStateStartedEventDetails | null;
 
 		/** Contains details about an iteration of a Map state. */
-		mapIterationStartedEventDetails?: MapIterationEventDetails;
+		mapIterationStartedEventDetails?: MapIterationEventDetails | null;
 
 		/** Contains details about an iteration of a Map state. */
-		mapIterationSucceededEventDetails?: MapIterationEventDetails;
+		mapIterationSucceededEventDetails?: MapIterationEventDetails | null;
 
 		/** Contains details about an iteration of a Map state. */
-		mapIterationFailedEventDetails?: MapIterationEventDetails;
+		mapIterationFailedEventDetails?: MapIterationEventDetails | null;
 
 		/** Contains details about an iteration of a Map state. */
-		mapIterationAbortedEventDetails?: MapIterationEventDetails;
+		mapIterationAbortedEventDetails?: MapIterationEventDetails | null;
 
 		/** Contains details about a lambda function that failed during an execution. */
-		lambdaFunctionFailedEventDetails?: LambdaFunctionFailedEventDetails;
+		lambdaFunctionFailedEventDetails?: LambdaFunctionFailedEventDetails | null;
 
 		/** Contains details about a failed lambda function schedule event that occurred during an execution. */
-		lambdaFunctionScheduleFailedEventDetails?: LambdaFunctionScheduleFailedEventDetails;
+		lambdaFunctionScheduleFailedEventDetails?: LambdaFunctionScheduleFailedEventDetails | null;
 
 		/** Contains details about a lambda function scheduled during an execution. */
-		lambdaFunctionScheduledEventDetails?: LambdaFunctionScheduledEventDetails;
+		lambdaFunctionScheduledEventDetails?: LambdaFunctionScheduledEventDetails | null;
 
 		/** Contains details about a lambda function that failed to start during an execution. */
-		lambdaFunctionStartFailedEventDetails?: LambdaFunctionStartFailedEventDetails;
+		lambdaFunctionStartFailedEventDetails?: LambdaFunctionStartFailedEventDetails | null;
 
 		/** Contains details about a lambda function that successfully terminated during an execution. */
-		lambdaFunctionSucceededEventDetails?: LambdaFunctionSucceededEventDetails;
+		lambdaFunctionSucceededEventDetails?: LambdaFunctionSucceededEventDetails | null;
 
 		/** Contains details about a lambda function timeout that occurred during an execution. */
-		lambdaFunctionTimedOutEventDetails?: LambdaFunctionTimedOutEventDetails;
+		lambdaFunctionTimedOutEventDetails?: LambdaFunctionTimedOutEventDetails | null;
 
 		/** Contains details about a state entered during an execution. */
-		stateEnteredEventDetails?: StateEnteredEventDetails;
+		stateEnteredEventDetails?: StateEnteredEventDetails | null;
 
 		/** Contains details about an exit from a state during an execution. */
-		stateExitedEventDetails?: StateExitedEventDetails;
+		stateExitedEventDetails?: StateExitedEventDetails | null;
 	}
 
 	export enum HistoryEventType { ActivityFailed = 0, ActivityScheduled = 1, ActivityScheduleFailed = 2, ActivityStarted = 3, ActivitySucceeded = 4, ActivityTimedOut = 5, ChoiceStateEntered = 6, ChoiceStateExited = 7, ExecutionAborted = 8, ExecutionFailed = 9, ExecutionStarted = 10, ExecutionSucceeded = 11, ExecutionTimedOut = 12, FailStateEntered = 13, LambdaFunctionFailed = 14, LambdaFunctionScheduled = 15, LambdaFunctionScheduleFailed = 16, LambdaFunctionStarted = 17, LambdaFunctionStartFailed = 18, LambdaFunctionSucceeded = 19, LambdaFunctionTimedOut = 20, MapIterationAborted = 21, MapIterationFailed = 22, MapIterationStarted = 23, MapIterationSucceeded = 24, MapStateAborted = 25, MapStateEntered = 26, MapStateExited = 27, MapStateFailed = 28, MapStateStarted = 29, MapStateSucceeded = 30, ParallelStateAborted = 31, ParallelStateEntered = 32, ParallelStateExited = 33, ParallelStateFailed = 34, ParallelStateStarted = 35, ParallelStateSucceeded = 36, PassStateEntered = 37, PassStateExited = 38, SucceedStateEntered = 39, SucceedStateExited = 40, TaskFailed = 41, TaskScheduled = 42, TaskStarted = 43, TaskStartFailed = 44, TaskStateAborted = 45, TaskStateEntered = 46, TaskStateExited = 47, TaskSubmitFailed = 48, TaskSubmitted = 49, TaskSucceeded = 50, TaskTimedOut = 51, WaitStateAborted = 52, WaitStateEntered = 53, WaitStateExited = 54 }
@@ -308,43 +308,43 @@ export namespace MyNS {
 
 	/** Contains details about an activity that failed during an execution. */
 	export interface ActivityFailedEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about an activity schedule failure that occurred during an execution. */
 	export interface ActivityScheduleFailedEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about an activity scheduled during an execution. */
 	export interface ActivityScheduledEventDetails {
 		resource: string;
-		input?: string;
-		timeoutInSeconds?: number;
-		heartbeatInSeconds?: number;
+		input?: string | null;
+		timeoutInSeconds?: number | null;
+		heartbeatInSeconds?: number | null;
 	}
 
 
 	/** Contains details about the start of an activity during an execution. */
 	export interface ActivityStartedEventDetails {
-		workerName?: string;
+		workerName?: string | null;
 	}
 
 
 	/** Contains details about an activity that successfully terminated during an execution. */
 	export interface ActivitySucceededEventDetails {
-		output?: string;
+		output?: string | null;
 	}
 
 
 	/** Contains details about an activity timeout that occurred during an execution. */
 	export interface ActivityTimedOutEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
@@ -352,8 +352,8 @@ export namespace MyNS {
 	export interface TaskFailedEventDetails {
 		resourceType: string;
 		resource: string;
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
@@ -363,7 +363,7 @@ export namespace MyNS {
 		resource: string;
 		region: string;
 		parameters: string;
-		timeoutInSeconds?: number;
+		timeoutInSeconds?: number | null;
 	}
 
 
@@ -371,8 +371,8 @@ export namespace MyNS {
 	export interface TaskStartFailedEventDetails {
 		resourceType: string;
 		resource: string;
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
@@ -387,8 +387,8 @@ export namespace MyNS {
 	export interface TaskSubmitFailedEventDetails {
 		resourceType: string;
 		resource: string;
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
@@ -396,7 +396,7 @@ export namespace MyNS {
 	export interface TaskSubmittedEventDetails {
 		resourceType: string;
 		resource: string;
-		output?: string;
+		output?: string | null;
 	}
 
 
@@ -404,7 +404,7 @@ export namespace MyNS {
 	export interface TaskSucceededEventDetails {
 		resourceType: string;
 		resource: string;
-		output?: string;
+		output?: string | null;
 	}
 
 
@@ -412,118 +412,118 @@ export namespace MyNS {
 	export interface TaskTimedOutEventDetails {
 		resourceType: string;
 		resource: string;
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about an execution failure event. */
 	export interface ExecutionFailedEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about the start of the execution. */
 	export interface ExecutionStartedEventDetails {
-		input?: string;
-		roleArn?: string;
+		input?: string | null;
+		roleArn?: string | null;
 	}
 
 
 	/** Contains details about the successful termination of the execution. */
 	export interface ExecutionSucceededEventDetails {
-		output?: string;
+		output?: string | null;
 	}
 
 
 	/** Contains details about an abort of an execution. */
 	export interface ExecutionAbortedEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about the execution timeout that occurred during the execution. */
 	export interface ExecutionTimedOutEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Details about a Map state that was started. */
 	export interface MapStateStartedEventDetails {
-		length?: number;
+		length?: number | null;
 	}
 
 
 	/** Contains details about an iteration of a Map state. */
 	export interface MapIterationEventDetails {
-		name?: string;
-		index?: number;
+		name?: string | null;
+		index?: number | null;
 	}
 
 
 	/** Contains details about a lambda function that failed during an execution. */
 	export interface LambdaFunctionFailedEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about a failed lambda function schedule event that occurred during an execution. */
 	export interface LambdaFunctionScheduleFailedEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about a lambda function scheduled during an execution. */
 	export interface LambdaFunctionScheduledEventDetails {
 		resource: string;
-		input?: string;
-		timeoutInSeconds?: number;
+		input?: string | null;
+		timeoutInSeconds?: number | null;
 	}
 
 
 	/** Contains details about a lambda function that failed to start during an execution. */
 	export interface LambdaFunctionStartFailedEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about a lambda function that successfully terminated during an execution. */
 	export interface LambdaFunctionSucceededEventDetails {
-		output?: string;
+		output?: string | null;
 	}
 
 
 	/** Contains details about a lambda function timeout that occurred during an execution. */
 	export interface LambdaFunctionTimedOutEventDetails {
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 
 	/** Contains details about a state entered during an execution. */
 	export interface StateEnteredEventDetails {
 		name: string;
-		input?: string;
+		input?: string | null;
 	}
 
 
 	/** Contains details about an exit from a state during an execution. */
 	export interface StateExitedEventDetails {
 		name: string;
-		output?: string;
+		output?: string | null;
 	}
 
 	export interface GetExecutionHistoryInput {
 		executionArn: string;
-		maxResults?: number;
-		reverseOrder?: boolean;
-		nextToken?: string;
+		maxResults?: number | null;
+		reverseOrder?: boolean | null;
+		nextToken?: string | null;
 	}
 
 	export interface InvalidToken {
@@ -531,7 +531,7 @@ export namespace MyNS {
 
 	export interface ListActivitiesOutput {
 		activities: Array<ActivityListItem>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -543,13 +543,13 @@ export namespace MyNS {
 	}
 
 	export interface ListActivitiesInput {
-		maxResults?: number;
-		nextToken?: string;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListExecutionsOutput {
 		executions: Array<ExecutionListItem>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -560,19 +560,19 @@ export namespace MyNS {
 		name: string;
 		status: DescribeExecutionOutputStatus;
 		startDate: Date;
-		stopDate?: Date;
+		stopDate?: Date | null;
 	}
 
 	export interface ListExecutionsInput {
 		stateMachineArn: string;
-		statusFilter?: DescribeExecutionOutputStatus;
-		maxResults?: number;
-		nextToken?: string;
+		statusFilter?: DescribeExecutionOutputStatus | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListStateMachinesOutput {
 		stateMachines: Array<StateMachineListItem>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -585,12 +585,12 @@ export namespace MyNS {
 	}
 
 	export interface ListStateMachinesInput {
-		maxResults?: number;
-		nextToken?: string;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceInput {
@@ -605,8 +605,8 @@ export namespace MyNS {
 
 	export interface SendTaskFailureInput {
 		taskToken: string;
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 	export interface TaskDoesNotExist {
@@ -640,8 +640,8 @@ export namespace MyNS {
 
 	export interface StartExecutionInput {
 		stateMachineArn: string;
-		name?: string;
-		input?: string;
+		name?: string | null;
+		input?: string | null;
 	}
 
 	export interface ExecutionLimitExceeded {
@@ -659,8 +659,8 @@ export namespace MyNS {
 
 	export interface StopExecutionInput {
 		executionArn: string;
-		error?: string;
-		cause?: string;
+		error?: string | null;
+		cause?: string | null;
 	}
 
 	export interface TagResourceOutput {
@@ -685,11 +685,11 @@ export namespace MyNS {
 
 	export interface UpdateStateMachineInput {
 		stateMachineArn: string;
-		definition?: string;
-		roleArn?: string;
+		definition?: string | null;
+		roleArn?: string | null;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
-		loggingConfiguration?: LoggingConfiguration;
+		loggingConfiguration?: LoggingConfiguration | null;
 	}
 
 	export interface MissingRequiredParameter {

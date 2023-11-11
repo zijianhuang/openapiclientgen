@@ -5,61 +5,61 @@ export namespace MyNS {
 	export interface Tokeninfo {
 
 		/** Who is the intended audience for this token. In general the same as issued_to. */
-		audience?: string;
+		audience?: string | null;
 
 		/** The email address of the user. Present only if the email scope is present in the request. */
-		email?: string;
+		email?: string | null;
 
 		/** The expiry time of the token, as number of seconds left until expiry. */
-		expires_in?: number;
+		expires_in?: number | null;
 
 		/** To whom was the token issued to. In general the same as audience. */
-		issued_to?: string;
+		issued_to?: string | null;
 
 		/** The space separated list of scopes granted to this token. */
-		scope?: string;
+		scope?: string | null;
 
 		/** The obfuscated user id. */
-		user_id?: string;
+		user_id?: string | null;
 
 		/** Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request. */
-		verified_email?: boolean;
+		verified_email?: boolean | null;
 	}
 
 	export interface Userinfo {
 
 		/** The user's email address. */
-		email?: string;
+		email?: string | null;
 
 		/** The user's last name. */
-		family_name?: string;
+		family_name?: string | null;
 
 		/** The user's gender. */
-		gender?: string;
+		gender?: string | null;
 
 		/** The user's first name. */
-		given_name?: string;
+		given_name?: string | null;
 
 		/** The hosted domain e.g. example.com if the user is Google apps user. */
-		hd?: string;
+		hd?: string | null;
 
 		/** The obfuscated ID of the user. */
-		id?: string;
+		id?: string | null;
 
 		/** URL of the profile page. */
-		link?: string;
+		link?: string | null;
 
 		/** The user's preferred locale. */
-		locale?: string;
+		locale?: string | null;
 
 		/** The user's full name. */
-		name?: string;
+		name?: string | null;
 
 		/** URL of the user's picture image. */
-		picture?: string;
+		picture?: string | null;
 
 		/** Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. */
-		verified_email?: boolean;
+		verified_email?: boolean | null;
 	}
 
 	@Injectable()

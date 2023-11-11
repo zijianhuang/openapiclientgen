@@ -17,22 +17,22 @@ export namespace MyNS {
 	export interface AddSourceIdentifierToSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 
 	/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
 	export interface EventSubscription {
-		CustomerAwsId?: string;
-		CustSubscriptionId?: string;
-		SnsTopicArn?: string;
-		Status?: string;
-		SubscriptionCreationTime?: string;
-		SourceType?: string;
-		SourceIdsList?: Array<string>;
-		EventCategoriesList?: Array<string>;
-		Enabled?: boolean;
-		EventSubscriptionArn?: string;
+		CustomerAwsId?: string | null;
+		CustSubscriptionId?: string | null;
+		SnsTopicArn?: string | null;
+		Status?: string | null;
+		SubscriptionCreationTime?: string | null;
+		SourceType?: string | null;
+		SourceIdsList?: Array<string> | null;
+		EventCategoriesList?: Array<string> | null;
+		Enabled?: boolean | null;
+		EventSubscriptionArn?: string | null;
 	}
 
 	export interface SubscriptionNotFoundFault {
@@ -44,8 +44,8 @@ export namespace MyNS {
 
 	/** Metadata assigned to an Amazon Neptune resource consisting of a key-value pair. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface DBInstanceNotFoundFault {
@@ -57,25 +57,25 @@ export namespace MyNS {
 	export interface ApplyPendingMaintenanceActionResult {
 
 		/** Describes the pending maintenance actions for a resource. */
-		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions;
+		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions | null;
 	}
 
 
 	/** Describes the pending maintenance actions for a resource. */
 	export interface ResourcePendingMaintenanceActions {
-		ResourceIdentifier?: string;
-		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction>;
+		ResourceIdentifier?: string | null;
+		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction> | null;
 	}
 
 
 	/** Provides information about a pending maintenance action for a resource. */
 	export interface PendingMaintenanceAction {
-		Action?: string;
-		AutoAppliedAfterDate?: Date;
-		ForcedApplyDate?: Date;
-		OptInStatus?: string;
-		CurrentApplyDate?: Date;
-		Description?: string;
+		Action?: string | null;
+		AutoAppliedAfterDate?: Date | null;
+		ForcedApplyDate?: Date | null;
+		OptInStatus?: string | null;
+		CurrentApplyDate?: Date | null;
+		Description?: string | null;
 	}
 
 	export interface ResourceNotFoundFault {
@@ -84,16 +84,16 @@ export namespace MyNS {
 	export interface CopyDBClusterParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p> */
-		DBClusterParameterGroup?: DBClusterParameterGroup;
+		DBClusterParameterGroup?: DBClusterParameterGroup | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p> */
 	export interface DBClusterParameterGroup {
-		DBClusterParameterGroupName?: string;
-		DBParameterGroupFamily?: string;
-		Description?: string;
-		DBClusterParameterGroupArn?: string;
+		DBClusterParameterGroupName?: string | null;
+		DBParameterGroupFamily?: string | null;
+		Description?: string | null;
+		DBClusterParameterGroupArn?: string | null;
 	}
 
 	export interface DBParameterGroupNotFoundFault {
@@ -108,32 +108,32 @@ export namespace MyNS {
 	export interface CopyDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
-		DBClusterSnapshot?: DBClusterSnapshot;
+		DBClusterSnapshot?: DBClusterSnapshot | null;
 	}
 
 
 	/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
 	export interface DBClusterSnapshot {
-		AvailabilityZones?: Array<string>;
-		DBClusterSnapshotIdentifier?: string;
-		DBClusterIdentifier?: string;
-		SnapshotCreateTime?: Date;
-		Engine?: string;
-		AllocatedStorage?: number;
-		Status?: string;
-		Port?: number;
-		VpcId?: string;
-		ClusterCreateTime?: Date;
-		MasterUsername?: string;
-		EngineVersion?: string;
-		LicenseModel?: string;
-		SnapshotType?: string;
-		PercentProgress?: number;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		DBClusterSnapshotArn?: string;
-		SourceDBClusterSnapshotArn?: string;
-		IAMDatabaseAuthenticationEnabled?: boolean;
+		AvailabilityZones?: Array<string> | null;
+		DBClusterSnapshotIdentifier?: string | null;
+		DBClusterIdentifier?: string | null;
+		SnapshotCreateTime?: Date | null;
+		Engine?: string | null;
+		AllocatedStorage?: number | null;
+		Status?: string | null;
+		Port?: number | null;
+		VpcId?: string | null;
+		ClusterCreateTime?: Date | null;
+		MasterUsername?: string | null;
+		EngineVersion?: string | null;
+		LicenseModel?: string | null;
+		SnapshotType?: string | null;
+		PercentProgress?: number | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		DBClusterSnapshotArn?: string | null;
+		SourceDBClusterSnapshotArn?: string | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
 	}
 
 	export interface DBClusterSnapshotAlreadyExistsFault {
@@ -154,94 +154,94 @@ export namespace MyNS {
 	export interface CopyDBParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p> */
-		DBParameterGroup?: DBParameterGroup;
+		DBParameterGroup?: DBParameterGroup | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon Neptune DB parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p> */
 	export interface DBParameterGroup {
-		DBParameterGroupName?: string;
-		DBParameterGroupFamily?: string;
-		Description?: string;
-		DBParameterGroupArn?: string;
+		DBParameterGroupName?: string | null;
+		DBParameterGroupFamily?: string | null;
+		Description?: string | null;
+		DBParameterGroupArn?: string | null;
 	}
 
 	export interface CreateDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
 	export interface DBCluster {
-		AllocatedStorage?: number;
-		AvailabilityZones?: Array<string>;
-		BackupRetentionPeriod?: number;
-		CharacterSetName?: string;
-		DatabaseName?: string;
-		DBClusterIdentifier?: string;
-		DBClusterParameterGroup?: string;
-		DBSubnetGroup?: string;
-		Status?: string;
-		PercentProgress?: string;
-		EarliestRestorableTime?: Date;
-		Endpoint?: string;
-		ReaderEndpoint?: string;
-		MultiAZ?: boolean;
-		Engine?: string;
-		EngineVersion?: string;
-		LatestRestorableTime?: Date;
-		Port?: number;
-		MasterUsername?: string;
-		DBClusterOptionGroupMemberships?: Array<DBClusterOptionGroupStatus>;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
-		ReplicationSourceIdentifier?: string;
-		ReadReplicaIdentifiers?: Array<string>;
-		DBClusterMembers?: Array<DBClusterMember>;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
-		HostedZoneId?: string;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		DbClusterResourceId?: string;
-		DBClusterArn?: string;
-		AssociatedRoles?: Array<DBClusterRole>;
-		IAMDatabaseAuthenticationEnabled?: boolean;
-		CloneGroupId?: string;
-		ClusterCreateTime?: Date;
-		EnabledCloudwatchLogsExports?: Array<string>;
-		DeletionProtection?: boolean;
+		AllocatedStorage?: number | null;
+		AvailabilityZones?: Array<string> | null;
+		BackupRetentionPeriod?: number | null;
+		CharacterSetName?: string | null;
+		DatabaseName?: string | null;
+		DBClusterIdentifier?: string | null;
+		DBClusterParameterGroup?: string | null;
+		DBSubnetGroup?: string | null;
+		Status?: string | null;
+		PercentProgress?: string | null;
+		EarliestRestorableTime?: Date | null;
+		Endpoint?: string | null;
+		ReaderEndpoint?: string | null;
+		MultiAZ?: boolean | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		LatestRestorableTime?: Date | null;
+		Port?: number | null;
+		MasterUsername?: string | null;
+		DBClusterOptionGroupMemberships?: Array<DBClusterOptionGroupStatus> | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		ReplicationSourceIdentifier?: string | null;
+		ReadReplicaIdentifiers?: Array<string> | null;
+		DBClusterMembers?: Array<DBClusterMember> | null;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
+		HostedZoneId?: string | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		DbClusterResourceId?: string | null;
+		DBClusterArn?: string | null;
+		AssociatedRoles?: Array<DBClusterRole> | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
+		CloneGroupId?: string | null;
+		ClusterCreateTime?: Date | null;
+		EnabledCloudwatchLogsExports?: Array<string> | null;
+		DeletionProtection?: boolean | null;
 	}
 
 
 	/** Contains status information for a DB cluster option group. */
 	export interface DBClusterOptionGroupStatus {
-		DBClusterOptionGroupName?: string;
-		Status?: string;
+		DBClusterOptionGroupName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Contains information about an instance that is part of a DB cluster. */
 	export interface DBClusterMember {
-		DBInstanceIdentifier?: string;
-		IsClusterWriter?: boolean;
-		DBClusterParameterGroupStatus?: string;
-		PromotionTier?: number;
+		DBInstanceIdentifier?: string | null;
+		IsClusterWriter?: boolean | null;
+		DBClusterParameterGroupStatus?: string | null;
+		PromotionTier?: number | null;
 	}
 
 
 	/** This data type is used as a response element for queries on VPC security group membership. */
 	export interface VpcSecurityGroupMembership {
-		VpcSecurityGroupId?: string;
-		Status?: string;
+		VpcSecurityGroupId?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster. */
 	export interface DBClusterRole {
-		RoleArn?: string;
-		Status?: string;
+		RoleArn?: string | null;
+		Status?: string | null;
 	}
 
 	export interface DBClusterAlreadyExistsFault {
@@ -280,185 +280,185 @@ export namespace MyNS {
 	export interface CreateDBClusterParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p> */
-		DBClusterParameterGroup?: DBClusterParameterGroup;
+		DBClusterParameterGroup?: DBClusterParameterGroup | null;
 	}
 
 	export interface CreateDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
-		DBClusterSnapshot?: DBClusterSnapshot;
+		DBClusterSnapshot?: DBClusterSnapshot | null;
 	}
 
 	export interface CreateDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
 	export interface DBInstance {
-		DBInstanceIdentifier?: string;
-		DBInstanceClass?: string;
-		Engine?: string;
-		DBInstanceStatus?: string;
-		MasterUsername?: string;
-		DBName?: string;
+		DBInstanceIdentifier?: string | null;
+		DBInstanceClass?: string | null;
+		Engine?: string | null;
+		DBInstanceStatus?: string | null;
+		MasterUsername?: string | null;
+		DBName?: string | null;
 
 		/** Specifies a connection endpoint. */
-		Endpoint?: Endpoint;
-		AllocatedStorage?: number;
-		InstanceCreateTime?: Date;
-		PreferredBackupWindow?: string;
-		BackupRetentionPeriod?: number;
-		DBSecurityGroups?: Array<DBSecurityGroupMembership>;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
-		DBParameterGroups?: Array<DBParameterGroupStatus>;
-		AvailabilityZone?: string;
+		Endpoint?: Endpoint | null;
+		AllocatedStorage?: number | null;
+		InstanceCreateTime?: Date | null;
+		PreferredBackupWindow?: string | null;
+		BackupRetentionPeriod?: number | null;
+		DBSecurityGroups?: Array<DBSecurityGroupMembership> | null;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
+		DBParameterGroups?: Array<DBParameterGroupStatus> | null;
+		AvailabilityZone?: string | null;
 
 		/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
-		DBSubnetGroup?: DBSubnetGroup;
-		PreferredMaintenanceWindow?: string;
+		DBSubnetGroup?: DBSubnetGroup | null;
+		PreferredMaintenanceWindow?: string | null;
 
 		/** This data type is used as a response element in the <a>ModifyDBInstance</a> action. */
-		PendingModifiedValues?: PendingModifiedValues;
-		LatestRestorableTime?: Date;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		ReadReplicaSourceDBInstanceIdentifier?: string;
-		ReadReplicaDBInstanceIdentifiers?: Array<string>;
-		ReadReplicaDBClusterIdentifiers?: Array<string>;
-		LicenseModel?: string;
-		Iops?: number;
-		OptionGroupMemberships?: Array<OptionGroupMembership>;
-		CharacterSetName?: string;
-		SecondaryAvailabilityZone?: string;
-		PubliclyAccessible?: boolean;
-		StatusInfos?: Array<DBInstanceStatusInfo>;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		DbInstancePort?: number;
-		DBClusterIdentifier?: string;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		DbiResourceId?: string;
-		CACertificateIdentifier?: string;
-		DomainMemberships?: Array<DomainMembership>;
-		CopyTagsToSnapshot?: boolean;
-		MonitoringInterval?: number;
-		EnhancedMonitoringResourceArn?: string;
-		MonitoringRoleArn?: string;
-		PromotionTier?: number;
-		DBInstanceArn?: string;
-		Timezone?: string;
-		IAMDatabaseAuthenticationEnabled?: boolean;
-		PerformanceInsightsEnabled?: boolean;
-		PerformanceInsightsKMSKeyId?: string;
-		EnabledCloudwatchLogsExports?: Array<string>;
-		DeletionProtection?: boolean;
+		PendingModifiedValues?: PendingModifiedValues | null;
+		LatestRestorableTime?: Date | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		ReadReplicaSourceDBInstanceIdentifier?: string | null;
+		ReadReplicaDBInstanceIdentifiers?: Array<string> | null;
+		ReadReplicaDBClusterIdentifiers?: Array<string> | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		OptionGroupMemberships?: Array<OptionGroupMembership> | null;
+		CharacterSetName?: string | null;
+		SecondaryAvailabilityZone?: string | null;
+		PubliclyAccessible?: boolean | null;
+		StatusInfos?: Array<DBInstanceStatusInfo> | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		DbInstancePort?: number | null;
+		DBClusterIdentifier?: string | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		DbiResourceId?: string | null;
+		CACertificateIdentifier?: string | null;
+		DomainMemberships?: Array<DomainMembership> | null;
+		CopyTagsToSnapshot?: boolean | null;
+		MonitoringInterval?: number | null;
+		EnhancedMonitoringResourceArn?: string | null;
+		MonitoringRoleArn?: string | null;
+		PromotionTier?: number | null;
+		DBInstanceArn?: string | null;
+		Timezone?: string | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
+		PerformanceInsightsEnabled?: boolean | null;
+		PerformanceInsightsKMSKeyId?: string | null;
+		EnabledCloudwatchLogsExports?: Array<string> | null;
+		DeletionProtection?: boolean | null;
 	}
 
 
 	/** Specifies a connection endpoint. */
 	export interface Endpoint {
-		Address?: string;
-		Port?: number;
-		HostedZoneId?: string;
+		Address?: string | null;
+		Port?: number | null;
+		HostedZoneId?: string | null;
 	}
 
 
 	/** Specifies membership in a designated DB security group. */
 	export interface DBSecurityGroupMembership {
-		DBSecurityGroupName?: string;
-		Status?: string;
+		DBSecurityGroupName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** <p>The status of the DB parameter group.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p> <a>DeleteDBInstance</a> </p> </li> <li> <p> <a>ModifyDBInstance</a> </p> </li> <li> <p> <a>RebootDBInstance</a> </p> </li> </ul> */
 	export interface DBParameterGroupStatus {
-		DBParameterGroupName?: string;
-		ParameterApplyStatus?: string;
+		DBParameterGroupName?: string | null;
+		ParameterApplyStatus?: string | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
 	export interface DBSubnetGroup {
-		DBSubnetGroupName?: string;
-		DBSubnetGroupDescription?: string;
-		VpcId?: string;
-		SubnetGroupStatus?: string;
-		Subnets?: Array<Subnet>;
-		DBSubnetGroupArn?: string;
+		DBSubnetGroupName?: string | null;
+		DBSubnetGroupDescription?: string | null;
+		VpcId?: string | null;
+		SubnetGroupStatus?: string | null;
+		Subnets?: Array<Subnet> | null;
+		DBSubnetGroupArn?: string | null;
 	}
 
 
 	/** <p>Specifies a subnet.</p> <p> This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
 	export interface Subnet {
-		SubnetIdentifier?: string;
+		SubnetIdentifier?: string | null;
 
 		/** Specifies an Availability Zone. */
-		SubnetAvailabilityZone?: AvailabilityZone;
-		SubnetStatus?: string;
+		SubnetAvailabilityZone?: AvailabilityZone | null;
+		SubnetStatus?: string | null;
 	}
 
 
 	/** Specifies an Availability Zone. */
 	export interface AvailabilityZone {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/**  This data type is used as a response element in the <a>ModifyDBInstance</a> action. */
 	export interface PendingModifiedValues {
-		DBInstanceClass?: string;
-		AllocatedStorage?: number;
-		MasterUserPassword?: string;
-		Port?: number;
-		BackupRetentionPeriod?: number;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		LicenseModel?: string;
-		Iops?: number;
-		DBInstanceIdentifier?: string;
-		StorageType?: string;
-		CACertificateIdentifier?: string;
-		DBSubnetGroupName?: string;
+		DBInstanceClass?: string | null;
+		AllocatedStorage?: number | null;
+		MasterUserPassword?: string | null;
+		Port?: number | null;
+		BackupRetentionPeriod?: number | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		DBInstanceIdentifier?: string | null;
+		StorageType?: string | null;
+		CACertificateIdentifier?: string | null;
+		DBSubnetGroupName?: string | null;
 
 		/** A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated. */
-		PendingCloudwatchLogsExports?: PendingCloudwatchLogsExports;
+		PendingCloudwatchLogsExports?: PendingCloudwatchLogsExports | null;
 	}
 
 
 	/** A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated. */
 	export interface PendingCloudwatchLogsExports {
-		LogTypesToEnable?: Array<string>;
-		LogTypesToDisable?: Array<string>;
+		LogTypesToEnable?: Array<string> | null;
+		LogTypesToDisable?: Array<string> | null;
 	}
 
 
 	/** Provides information on the option groups the DB instance is a member of. */
 	export interface OptionGroupMembership {
-		OptionGroupName?: string;
-		Status?: string;
+		OptionGroupName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Provides a list of status information for a DB instance. */
 	export interface DBInstanceStatusInfo {
-		StatusType?: string;
-		Normal?: boolean;
-		Status?: string;
-		Message?: string;
+		StatusType?: string | null;
+		Normal?: boolean | null;
+		Status?: string | null;
+		Message?: string | null;
 	}
 
 
 	/** An Active Directory Domain membership record associated with a DB instance. */
 	export interface DomainMembership {
-		Domain?: string;
-		Status?: string;
-		FQDN?: string;
-		IAMRoleName?: string;
+		Domain?: string | null;
+		Status?: string | null;
+		FQDN?: string | null;
+		IAMRoleName?: string | null;
 	}
 
 	export interface DBInstanceAlreadyExistsFault {
@@ -491,13 +491,13 @@ export namespace MyNS {
 	export interface CreateDBParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p> */
-		DBParameterGroup?: DBParameterGroup;
+		DBParameterGroup?: DBParameterGroup | null;
 	}
 
 	export interface CreateDBSubnetGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
-		DBSubnetGroup?: DBSubnetGroup;
+		DBSubnetGroup?: DBSubnetGroup | null;
 	}
 
 	export interface DBSubnetGroupAlreadyExistsFault {
@@ -512,7 +512,7 @@ export namespace MyNS {
 	export interface CreateEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface EventSubscriptionQuotaExceededFault {
@@ -536,7 +536,7 @@ export namespace MyNS {
 	export interface DeleteDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface InvalidDBParameterGroupStateFault {
@@ -545,13 +545,13 @@ export namespace MyNS {
 	export interface DeleteDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
-		DBClusterSnapshot?: DBClusterSnapshot;
+		DBClusterSnapshot?: DBClusterSnapshot | null;
 	}
 
 	export interface DeleteDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface DBSnapshotAlreadyExistsFault {
@@ -563,15 +563,15 @@ export namespace MyNS {
 	export interface DeleteEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface InvalidEventSubscriptionStateFault {
 	}
 
 	export interface DBClusterParameterGroupsMessage {
-		Marker?: string;
-		DBClusterParameterGroups?: Array<DBClusterParameterGroup>;
+		Marker?: string | null;
+		DBClusterParameterGroups?: Array<DBClusterParameterGroup> | null;
 	}
 
 
@@ -582,23 +582,23 @@ export namespace MyNS {
 	}
 
 	export interface DBClusterParameterGroupDetails {
-		Parameters?: Array<Parameter>;
-		Marker?: string;
+		Parameters?: Array<Parameter> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Specifies a parameter. */
 	export interface Parameter {
-		ParameterName?: string;
-		ParameterValue?: string;
-		Description?: string;
-		Source?: string;
-		ApplyType?: string;
-		DataType?: string;
-		AllowedValues?: string;
-		IsModifiable?: boolean;
-		MinimumEngineVersion?: string;
-		ApplyMethod?: ParameterApplyMethod;
+		ParameterName?: string | null;
+		ParameterValue?: string | null;
+		Description?: string | null;
+		Source?: string | null;
+		ApplyType?: string | null;
+		DataType?: string | null;
+		AllowedValues?: string | null;
+		IsModifiable?: boolean | null;
+		MinimumEngineVersion?: string | null;
+		ApplyMethod?: ParameterApplyMethod | null;
 	}
 
 	export enum ParameterApplyMethod { immediate = 0, pending_reboot = 1 }
@@ -606,252 +606,252 @@ export namespace MyNS {
 	export interface DescribeDBClusterSnapshotAttributesResult {
 
 		/** <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
-		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult;
+		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult | null;
 	}
 
 
 	/** <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
 	export interface DBClusterSnapshotAttributesResult {
-		DBClusterSnapshotIdentifier?: string;
-		DBClusterSnapshotAttributes?: Array<DBClusterSnapshotAttribute>;
+		DBClusterSnapshotIdentifier?: string | null;
+		DBClusterSnapshotAttributes?: Array<DBClusterSnapshotAttribute> | null;
 	}
 
 
 	/** <p>Contains the name and values of a manual DB cluster snapshot attribute.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
 	export interface DBClusterSnapshotAttribute {
-		AttributeName?: string;
-		AttributeValues?: Array<string>;
+		AttributeName?: string | null;
+		AttributeValues?: Array<string> | null;
 	}
 
 	export interface DBClusterSnapshotMessage {
-		Marker?: string;
-		DBClusterSnapshots?: Array<DBClusterSnapshot>;
+		Marker?: string | null;
+		DBClusterSnapshots?: Array<DBClusterSnapshot> | null;
 	}
 
 	export interface DBClusterMessage {
-		Marker?: string;
-		DBClusters?: Array<DBCluster>;
+		Marker?: string | null;
+		DBClusters?: Array<DBCluster> | null;
 	}
 
 	export interface DBEngineVersionMessage {
-		Marker?: string;
-		DBEngineVersions?: Array<DBEngineVersion>;
+		Marker?: string | null;
+		DBEngineVersions?: Array<DBEngineVersion> | null;
 	}
 
 
 	/**  This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>. */
 	export interface DBEngineVersion {
-		Engine?: string;
-		EngineVersion?: string;
-		DBParameterGroupFamily?: string;
-		DBEngineDescription?: string;
-		DBEngineVersionDescription?: string;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		DBParameterGroupFamily?: string | null;
+		DBEngineDescription?: string | null;
+		DBEngineVersionDescription?: string | null;
 
 		/** Specifies a character set. */
-		DefaultCharacterSet?: CharacterSet;
-		SupportedCharacterSets?: Array<CharacterSet>;
-		ValidUpgradeTarget?: Array<UpgradeTarget>;
-		SupportedTimezones?: Array<Timezone>;
-		ExportableLogTypes?: Array<string>;
-		SupportsLogExportsToCloudwatchLogs?: boolean;
-		SupportsReadReplica?: boolean;
+		DefaultCharacterSet?: CharacterSet | null;
+		SupportedCharacterSets?: Array<CharacterSet> | null;
+		ValidUpgradeTarget?: Array<UpgradeTarget> | null;
+		SupportedTimezones?: Array<Timezone> | null;
+		ExportableLogTypes?: Array<string> | null;
+		SupportsLogExportsToCloudwatchLogs?: boolean | null;
+		SupportsReadReplica?: boolean | null;
 	}
 
 
 	/** Specifies a character set. */
 	export interface CharacterSet {
-		CharacterSetName?: string;
-		CharacterSetDescription?: string;
+		CharacterSetName?: string | null;
+		CharacterSetDescription?: string | null;
 	}
 
 
 	/** The version of the database engine that a DB instance can be upgraded to. */
 	export interface UpgradeTarget {
-		Engine?: string;
-		EngineVersion?: string;
-		Description?: string;
-		AutoUpgrade?: boolean;
-		IsMajorVersionUpgrade?: boolean;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		Description?: string | null;
+		AutoUpgrade?: boolean | null;
+		IsMajorVersionUpgrade?: boolean | null;
 	}
 
 
 	/** A time zone associated with a <a>DBInstance</a>. */
 	export interface Timezone {
-		TimezoneName?: string;
+		TimezoneName?: string | null;
 	}
 
 	export interface DBInstanceMessage {
-		Marker?: string;
-		DBInstances?: Array<DBInstance>;
+		Marker?: string | null;
+		DBInstances?: Array<DBInstance> | null;
 	}
 
 	export interface DBParameterGroupsMessage {
-		Marker?: string;
-		DBParameterGroups?: Array<DBParameterGroup>;
+		Marker?: string | null;
+		DBParameterGroups?: Array<DBParameterGroup> | null;
 	}
 
 	export interface DBParameterGroupDetails {
-		Parameters?: Array<Parameter>;
-		Marker?: string;
+		Parameters?: Array<Parameter> | null;
+		Marker?: string | null;
 	}
 
 	export interface DBSubnetGroupMessage {
-		Marker?: string;
-		DBSubnetGroups?: Array<DBSubnetGroup>;
+		Marker?: string | null;
+		DBSubnetGroups?: Array<DBSubnetGroup> | null;
 	}
 
 	export interface DescribeEngineDefaultClusterParametersResult {
 
 		/** Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. */
-		EngineDefaults?: EngineDefaults;
+		EngineDefaults?: EngineDefaults | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. */
 	export interface EngineDefaults {
-		DBParameterGroupFamily?: string;
-		Marker?: string;
-		Parameters?: Array<Parameter>;
+		DBParameterGroupFamily?: string | null;
+		Marker?: string | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 	export interface DescribeEngineDefaultParametersResult {
 
 		/** Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. */
-		EngineDefaults?: EngineDefaults;
+		EngineDefaults?: EngineDefaults | null;
 	}
 
 	export interface EventCategoriesMessage {
-		EventCategoriesMapList?: Array<EventCategoriesMap>;
+		EventCategoriesMapList?: Array<EventCategoriesMap> | null;
 	}
 
 
 	/** Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action. */
 	export interface EventCategoriesMap {
-		SourceType?: string;
-		EventCategories?: Array<string>;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
 	}
 
 	export interface EventSubscriptionsMessage {
-		Marker?: string;
-		EventSubscriptionsList?: Array<EventSubscription>;
+		Marker?: string | null;
+		EventSubscriptionsList?: Array<EventSubscription> | null;
 	}
 
 	export interface EventsMessage {
-		Marker?: string;
-		Events?: Array<Event>;
+		Marker?: string | null;
+		Events?: Array<Event> | null;
 	}
 
 
 	/**  This data type is used as a response element in the <a>DescribeEvents</a> action. */
 	export interface Event {
-		SourceIdentifier?: string;
-		SourceType?: EventSourceType;
-		Message?: string;
-		EventCategories?: Array<string>;
-		Date?: Date;
-		SourceArn?: string;
+		SourceIdentifier?: string | null;
+		SourceType?: EventSourceType | null;
+		Message?: string | null;
+		EventCategories?: Array<string> | null;
+		Date?: Date | null;
+		SourceArn?: string | null;
 	}
 
 	export enum EventSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
 
 	export interface OrderableDBInstanceOptionsMessage {
-		OrderableDBInstanceOptions?: Array<OrderableDBInstanceOption>;
-		Marker?: string;
+		OrderableDBInstanceOptions?: Array<OrderableDBInstanceOption> | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains a list of available options for a DB instance.</p> <p> This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.</p> */
 	export interface OrderableDBInstanceOption {
-		Engine?: string;
-		EngineVersion?: string;
-		DBInstanceClass?: string;
-		LicenseModel?: string;
-		AvailabilityZones?: Array<AvailabilityZone>;
-		MultiAZCapable?: boolean;
-		ReadReplicaCapable?: boolean;
-		Vpc?: boolean;
-		SupportsStorageEncryption?: boolean;
-		StorageType?: string;
-		SupportsIops?: boolean;
-		SupportsEnhancedMonitoring?: boolean;
-		SupportsIAMDatabaseAuthentication?: boolean;
-		SupportsPerformanceInsights?: boolean;
-		MinStorageSize?: number;
-		MaxStorageSize?: number;
-		MinIopsPerDbInstance?: number;
-		MaxIopsPerDbInstance?: number;
-		MinIopsPerGib?: number;
-		MaxIopsPerGib?: number;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		DBInstanceClass?: string | null;
+		LicenseModel?: string | null;
+		AvailabilityZones?: Array<AvailabilityZone> | null;
+		MultiAZCapable?: boolean | null;
+		ReadReplicaCapable?: boolean | null;
+		Vpc?: boolean | null;
+		SupportsStorageEncryption?: boolean | null;
+		StorageType?: string | null;
+		SupportsIops?: boolean | null;
+		SupportsEnhancedMonitoring?: boolean | null;
+		SupportsIAMDatabaseAuthentication?: boolean | null;
+		SupportsPerformanceInsights?: boolean | null;
+		MinStorageSize?: number | null;
+		MaxStorageSize?: number | null;
+		MinIopsPerDbInstance?: number | null;
+		MaxIopsPerDbInstance?: number | null;
+		MinIopsPerGib?: number | null;
+		MaxIopsPerGib?: number | null;
 	}
 
 	export interface PendingMaintenanceActionsMessage {
-		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions>;
-		Marker?: string;
+		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions> | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeValidDBInstanceModificationsResult {
 
 		/** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>. */
-		ValidDBInstanceModificationsMessage?: ValidDBInstanceModificationsMessage;
+		ValidDBInstanceModificationsMessage?: ValidDBInstanceModificationsMessage | null;
 	}
 
 
 	/** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>.  */
 	export interface ValidDBInstanceModificationsMessage {
-		Storage?: Array<ValidStorageOptions>;
+		Storage?: Array<ValidStorageOptions> | null;
 	}
 
 
 	/** <p>Information about valid modifications that you can make to your DB instance.</p> <p>Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.</p> */
 	export interface ValidStorageOptions {
-		StorageType?: string;
-		StorageSize?: Array<Range>;
-		ProvisionedIops?: Array<Range>;
-		IopsToStorageRatio?: Array<DoubleRange>;
+		StorageType?: string | null;
+		StorageSize?: Array<Range> | null;
+		ProvisionedIops?: Array<Range> | null;
+		IopsToStorageRatio?: Array<DoubleRange> | null;
 	}
 
 
 	/** A range of integer values. */
 	export interface Range {
-		From?: number;
-		To?: number;
-		Step?: number;
+		From?: number | null;
+		To?: number | null;
+		Step?: number | null;
 	}
 
 
 	/** A range of double values. */
 	export interface DoubleRange {
-		From?: number;
-		To?: number;
+		From?: number | null;
+		To?: number | null;
 	}
 
 	export interface FailoverDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface TagListMessage {
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 	export interface ModifyDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface InvalidDBSecurityGroupStateFault {
 	}
 
 	export interface DBClusterParameterGroupNameMessage {
-		DBClusterParameterGroupName?: string;
+		DBClusterParameterGroupName?: string | null;
 	}
 
 	export interface ModifyDBClusterSnapshotAttributeResult {
 
 		/** <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
-		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult;
+		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult | null;
 	}
 
 	export interface SharedSnapshotQuotaExceededFault {
@@ -860,7 +860,7 @@ export namespace MyNS {
 	export interface ModifyDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface DBUpgradeDependencyFailureFault {
@@ -870,13 +870,13 @@ export namespace MyNS {
 	}
 
 	export interface DBParameterGroupNameMessage {
-		DBParameterGroupName?: string;
+		DBParameterGroupName?: string | null;
 	}
 
 	export interface ModifyDBSubnetGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
-		DBSubnetGroup?: DBSubnetGroup;
+		DBSubnetGroup?: DBSubnetGroup | null;
 	}
 
 	export interface SubnetAlreadyInUse {
@@ -885,19 +885,19 @@ export namespace MyNS {
 	export interface ModifyEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface PromoteReadReplicaDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface RebootDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface DBClusterRoleNotFoundFault {
@@ -906,13 +906,13 @@ export namespace MyNS {
 	export interface RemoveSourceIdentifierFromSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface RestoreDBClusterFromSnapshotResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface InsufficientDBClusterCapacityFault {
@@ -927,19 +927,19 @@ export namespace MyNS {
 	export interface RestoreDBClusterToPointInTimeResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface StartDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface StopDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface AddRoleToDBClusterMessage {
@@ -968,147 +968,147 @@ export namespace MyNS {
 
 	/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.</p> */
 	export interface CloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string>;
-		DisableLogTypes?: Array<string>;
+		EnableLogTypes?: Array<string> | null;
+		DisableLogTypes?: Array<string> | null;
 	}
 
 	export interface CopyDBClusterParameterGroupMessage {
 		SourceDBClusterParameterGroupIdentifier: string;
 		TargetDBClusterParameterGroupIdentifier: string;
 		TargetDBClusterParameterGroupDescription: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CopyDBClusterSnapshotMessage {
 		SourceDBClusterSnapshotIdentifier: string;
 		TargetDBClusterSnapshotIdentifier: string;
-		KmsKeyId?: string;
-		PreSignedUrl?: string;
-		CopyTags?: boolean;
-		Tags?: Array<Tag>;
+		KmsKeyId?: string | null;
+		PreSignedUrl?: string | null;
+		CopyTags?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CopyDBParameterGroupMessage {
 		SourceDBParameterGroupIdentifier: string;
 		TargetDBParameterGroupIdentifier: string;
 		TargetDBParameterGroupDescription: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDBClusterMessage {
-		AvailabilityZones?: Array<string>;
-		BackupRetentionPeriod?: number;
-		CharacterSetName?: string;
-		DatabaseName?: string;
+		AvailabilityZones?: Array<string> | null;
+		BackupRetentionPeriod?: number | null;
+		CharacterSetName?: string | null;
+		DatabaseName?: string | null;
 		DBClusterIdentifier: string;
-		DBClusterParameterGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		DBSubnetGroupName?: string;
+		DBClusterParameterGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		DBSubnetGroupName?: string | null;
 		Engine: string;
-		EngineVersion?: string;
-		Port?: number;
-		MasterUsername?: string;
-		MasterUserPassword?: string;
-		OptionGroupName?: string;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
-		ReplicationSourceIdentifier?: string;
-		Tags?: Array<Tag>;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		PreSignedUrl?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnableCloudwatchLogsExports?: Array<string>;
-		DeletionProtection?: boolean;
+		EngineVersion?: string | null;
+		Port?: number | null;
+		MasterUsername?: string | null;
+		MasterUserPassword?: string | null;
+		OptionGroupName?: string | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		ReplicationSourceIdentifier?: string | null;
+		Tags?: Array<Tag> | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		PreSignedUrl?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface CreateDBClusterParameterGroupMessage {
 		DBClusterParameterGroupName: string;
 		DBParameterGroupFamily: string;
 		Description: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDBClusterSnapshotMessage {
 		DBClusterSnapshotIdentifier: string;
 		DBClusterIdentifier: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDBInstanceMessage {
-		DBName?: string;
+		DBName?: string | null;
 		DBInstanceIdentifier: string;
-		AllocatedStorage?: number;
+		AllocatedStorage?: number | null;
 		DBInstanceClass: string;
 		Engine: string;
-		MasterUsername?: string;
-		MasterUserPassword?: string;
-		DBSecurityGroups?: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		AvailabilityZone?: string;
-		DBSubnetGroupName?: string;
-		PreferredMaintenanceWindow?: string;
-		DBParameterGroupName?: string;
-		BackupRetentionPeriod?: number;
-		PreferredBackupWindow?: string;
-		Port?: number;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		LicenseModel?: string;
-		Iops?: number;
-		OptionGroupName?: string;
-		CharacterSetName?: string;
-		PubliclyAccessible?: boolean;
-		Tags?: Array<Tag>;
-		DBClusterIdentifier?: string;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		TdeCredentialPassword?: string;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		Domain?: string;
-		CopyTagsToSnapshot?: boolean;
-		MonitoringInterval?: number;
-		MonitoringRoleArn?: string;
-		DomainIAMRoleName?: string;
-		PromotionTier?: number;
-		Timezone?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnablePerformanceInsights?: boolean;
-		PerformanceInsightsKMSKeyId?: string;
-		EnableCloudwatchLogsExports?: Array<string>;
-		DeletionProtection?: boolean;
+		MasterUsername?: string | null;
+		MasterUserPassword?: string | null;
+		DBSecurityGroups?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		AvailabilityZone?: string | null;
+		DBSubnetGroupName?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		DBParameterGroupName?: string | null;
+		BackupRetentionPeriod?: number | null;
+		PreferredBackupWindow?: string | null;
+		Port?: number | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		CharacterSetName?: string | null;
+		PubliclyAccessible?: boolean | null;
+		Tags?: Array<Tag> | null;
+		DBClusterIdentifier?: string | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		TdeCredentialPassword?: string | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		Domain?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
+		MonitoringInterval?: number | null;
+		MonitoringRoleArn?: string | null;
+		DomainIAMRoleName?: string | null;
+		PromotionTier?: number | null;
+		Timezone?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnablePerformanceInsights?: boolean | null;
+		PerformanceInsightsKMSKeyId?: string | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface CreateDBParameterGroupMessage {
 		DBParameterGroupName: string;
 		DBParameterGroupFamily: string;
 		Description: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDBSubnetGroupMessage {
 		DBSubnetGroupName: string;
 		DBSubnetGroupDescription: string;
 		SubnetIds: Array<string>;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateEventSubscriptionMessage {
 		SubscriptionName: string;
 		SnsTopicArn: string;
-		SourceType?: string;
-		EventCategories?: Array<string>;
-		SourceIds?: Array<string>;
-		Enabled?: boolean;
-		Tags?: Array<Tag>;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
+		SourceIds?: Array<string> | null;
+		Enabled?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DeleteDBClusterMessage {
 		DBClusterIdentifier: string;
-		SkipFinalSnapshot?: boolean;
-		FinalDBSnapshotIdentifier?: string;
+		SkipFinalSnapshot?: boolean | null;
+		FinalDBSnapshotIdentifier?: string | null;
 	}
 
 	export interface DeleteDBClusterParameterGroupMessage {
@@ -1121,8 +1121,8 @@ export namespace MyNS {
 
 	export interface DeleteDBInstanceMessage {
 		DBInstanceIdentifier: string;
-		SkipFinalSnapshot?: boolean;
-		FinalDBSnapshotIdentifier?: string;
+		SkipFinalSnapshot?: boolean | null;
+		FinalDBSnapshotIdentifier?: string | null;
 	}
 
 	export interface DeleteDBParameterGroupMessage {
@@ -1138,18 +1138,18 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDBClusterParameterGroupsMessage {
-		DBClusterParameterGroupName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBClusterParameterGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBClusterParametersMessage {
 		DBClusterParameterGroupName: string;
-		Source?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Source?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBClusterSnapshotAttributesMessage {
@@ -1157,122 +1157,122 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDBClusterSnapshotsMessage {
-		DBClusterIdentifier?: string;
-		DBClusterSnapshotIdentifier?: string;
-		SnapshotType?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
-		IncludeShared?: boolean;
-		IncludePublic?: boolean;
+		DBClusterIdentifier?: string | null;
+		DBClusterSnapshotIdentifier?: string | null;
+		SnapshotType?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		IncludeShared?: boolean | null;
+		IncludePublic?: boolean | null;
 	}
 
 	export interface DescribeDBClustersMessage {
-		DBClusterIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBClusterIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBEngineVersionsMessage {
-		Engine?: string;
-		EngineVersion?: string;
-		DBParameterGroupFamily?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
-		DefaultOnly?: boolean;
-		ListSupportedCharacterSets?: boolean;
-		ListSupportedTimezones?: boolean;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		DBParameterGroupFamily?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		DefaultOnly?: boolean | null;
+		ListSupportedCharacterSets?: boolean | null;
+		ListSupportedTimezones?: boolean | null;
 	}
 
 	export interface DescribeDBInstancesMessage {
-		DBInstanceIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBInstanceIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBParameterGroupsMessage {
-		DBParameterGroupName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBParameterGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBParametersMessage {
 		DBParameterGroupName: string;
-		Source?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Source?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBSubnetGroupsMessage {
-		DBSubnetGroupName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBSubnetGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeEngineDefaultClusterParametersMessage {
 		DBParameterGroupFamily: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeEngineDefaultParametersMessage {
 		DBParameterGroupFamily: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeEventCategoriesMessage {
-		SourceType?: string;
-		Filters?: Array<Filter>;
+		SourceType?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface DescribeEventSubscriptionsMessage {
-		SubscriptionName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		SubscriptionName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum SourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
 
 	export interface DescribeEventsMessage {
-		SourceIdentifier?: string;
-		SourceType?: DescribeEventsMessageSourceType;
-		StartTime?: Date;
-		EndTime?: Date;
-		Duration?: number;
-		EventCategories?: Array<string>;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		SourceIdentifier?: string | null;
+		SourceType?: DescribeEventsMessageSourceType | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Duration?: number | null;
+		EventCategories?: Array<string> | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum DescribeEventsMessageSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
 
 	export interface DescribeOrderableDBInstanceOptionsMessage {
 		Engine: string;
-		EngineVersion?: string;
-		DBInstanceClass?: string;
-		LicenseModel?: string;
-		Vpc?: boolean;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		EngineVersion?: string | null;
+		DBInstanceClass?: string | null;
+		LicenseModel?: string | null;
+		Vpc?: boolean | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribePendingMaintenanceActionsMessage {
-		ResourceIdentifier?: string;
-		Filters?: Array<Filter>;
-		Marker?: string;
-		MaxRecords?: number;
+		ResourceIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribeValidDBInstanceModificationsMessage {
@@ -1280,33 +1280,33 @@ export namespace MyNS {
 	}
 
 	export interface FailoverDBClusterMessage {
-		DBClusterIdentifier?: string;
-		TargetDBInstanceIdentifier?: string;
+		DBClusterIdentifier?: string | null;
+		TargetDBInstanceIdentifier?: string | null;
 	}
 
 	export interface ListTagsForResourceMessage {
 		ResourceName: string;
-		Filters?: Array<Filter>;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface ModifyDBClusterMessage {
 		DBClusterIdentifier: string;
-		NewDBClusterIdentifier?: string;
-		ApplyImmediately?: boolean;
-		BackupRetentionPeriod?: number;
-		DBClusterParameterGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		Port?: number;
-		MasterUserPassword?: string;
-		OptionGroupName?: string;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
+		NewDBClusterIdentifier?: string | null;
+		ApplyImmediately?: boolean | null;
+		BackupRetentionPeriod?: number | null;
+		DBClusterParameterGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		Port?: number | null;
+		MasterUserPassword?: string | null;
+		OptionGroupName?: string | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
 
 		/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.</p> */
-		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration;
-		EngineVersion?: string;
-		DeletionProtection?: boolean;
+		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration | null;
+		EngineVersion?: string | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface ModifyDBClusterParameterGroupMessage {
@@ -1317,50 +1317,50 @@ export namespace MyNS {
 	export interface ModifyDBClusterSnapshotAttributeMessage {
 		DBClusterSnapshotIdentifier: string;
 		AttributeName: string;
-		ValuesToAdd?: Array<string>;
-		ValuesToRemove?: Array<string>;
+		ValuesToAdd?: Array<string> | null;
+		ValuesToRemove?: Array<string> | null;
 	}
 
 	export interface ModifyDBInstanceMessage {
 		DBInstanceIdentifier: string;
-		AllocatedStorage?: number;
-		DBInstanceClass?: string;
-		DBSubnetGroupName?: string;
-		DBSecurityGroups?: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		ApplyImmediately?: boolean;
-		MasterUserPassword?: string;
-		DBParameterGroupName?: string;
-		BackupRetentionPeriod?: number;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AllowMajorVersionUpgrade?: boolean;
-		AutoMinorVersionUpgrade?: boolean;
-		LicenseModel?: string;
-		Iops?: number;
-		OptionGroupName?: string;
-		NewDBInstanceIdentifier?: string;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		TdeCredentialPassword?: string;
-		CACertificateIdentifier?: string;
-		Domain?: string;
-		CopyTagsToSnapshot?: boolean;
-		MonitoringInterval?: number;
-		DBPortNumber?: number;
-		PubliclyAccessible?: boolean;
-		MonitoringRoleArn?: string;
-		DomainIAMRoleName?: string;
-		PromotionTier?: number;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnablePerformanceInsights?: boolean;
-		PerformanceInsightsKMSKeyId?: string;
+		AllocatedStorage?: number | null;
+		DBInstanceClass?: string | null;
+		DBSubnetGroupName?: string | null;
+		DBSecurityGroups?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		ApplyImmediately?: boolean | null;
+		MasterUserPassword?: string | null;
+		DBParameterGroupName?: string | null;
+		BackupRetentionPeriod?: number | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AllowMajorVersionUpgrade?: boolean | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		NewDBInstanceIdentifier?: string | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		TdeCredentialPassword?: string | null;
+		CACertificateIdentifier?: string | null;
+		Domain?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
+		MonitoringInterval?: number | null;
+		DBPortNumber?: number | null;
+		PubliclyAccessible?: boolean | null;
+		MonitoringRoleArn?: string | null;
+		DomainIAMRoleName?: string | null;
+		PromotionTier?: number | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnablePerformanceInsights?: boolean | null;
+		PerformanceInsightsKMSKeyId?: string | null;
 
 		/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.</p> */
-		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration;
-		DeletionProtection?: boolean;
+		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface ModifyDBParameterGroupMessage {
@@ -1370,16 +1370,16 @@ export namespace MyNS {
 
 	export interface ModifyDBSubnetGroupMessage {
 		DBSubnetGroupName: string;
-		DBSubnetGroupDescription?: string;
+		DBSubnetGroupDescription?: string | null;
 		SubnetIds: Array<string>;
 	}
 
 	export interface ModifyEventSubscriptionMessage {
 		SubscriptionName: string;
-		SnsTopicArn?: string;
-		SourceType?: string;
-		EventCategories?: Array<string>;
-		Enabled?: boolean;
+		SnsTopicArn?: string | null;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
+		Enabled?: boolean | null;
 	}
 
 	export interface PromoteReadReplicaDBClusterMessage {
@@ -1388,7 +1388,7 @@ export namespace MyNS {
 
 	export interface RebootDBInstanceMessage {
 		DBInstanceIdentifier: string;
-		ForceFailover?: boolean;
+		ForceFailover?: boolean | null;
 	}
 
 	export interface RemoveRoleFromDBClusterMessage {
@@ -1408,51 +1408,51 @@ export namespace MyNS {
 
 	export interface ResetDBClusterParameterGroupMessage {
 		DBClusterParameterGroupName: string;
-		ResetAllParameters?: boolean;
-		Parameters?: Array<Parameter>;
+		ResetAllParameters?: boolean | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 	export interface ResetDBParameterGroupMessage {
 		DBParameterGroupName: string;
-		ResetAllParameters?: boolean;
-		Parameters?: Array<Parameter>;
+		ResetAllParameters?: boolean | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 	export interface RestoreDBClusterFromSnapshotMessage {
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 		DBClusterIdentifier: string;
 		SnapshotIdentifier: string;
 		Engine: string;
-		EngineVersion?: string;
-		Port?: number;
-		DBSubnetGroupName?: string;
-		DatabaseName?: string;
-		OptionGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		Tags?: Array<Tag>;
-		KmsKeyId?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnableCloudwatchLogsExports?: Array<string>;
-		DBClusterParameterGroupName?: string;
-		DeletionProtection?: boolean;
+		EngineVersion?: string | null;
+		Port?: number | null;
+		DBSubnetGroupName?: string | null;
+		DatabaseName?: string | null;
+		OptionGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		Tags?: Array<Tag> | null;
+		KmsKeyId?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		DBClusterParameterGroupName?: string | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface RestoreDBClusterToPointInTimeMessage {
 		DBClusterIdentifier: string;
-		RestoreType?: string;
+		RestoreType?: string | null;
 		SourceDBClusterIdentifier: string;
-		RestoreToTime?: Date;
-		UseLatestRestorableTime?: boolean;
-		Port?: number;
-		DBSubnetGroupName?: string;
-		OptionGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		Tags?: Array<Tag>;
-		KmsKeyId?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnableCloudwatchLogsExports?: Array<string>;
-		DBClusterParameterGroupName?: string;
-		DeletionProtection?: boolean;
+		RestoreToTime?: Date | null;
+		UseLatestRestorableTime?: boolean | null;
+		Port?: number | null;
+		DBSubnetGroupName?: string | null;
+		OptionGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		Tags?: Array<Tag> | null;
+		KmsKeyId?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		DBClusterParameterGroupName?: string | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface StartDBClusterMessage {
@@ -2576,8 +2576,8 @@ export namespace MyNS {
 	export enum POST_ListTagsForResourceVersion { _2014_10_31 = 0 }
 
 	export interface GET_ModifyDBClusterCloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string>;
-		DisableLogTypes?: Array<string>;
+		EnableLogTypes?: Array<string> | null;
+		DisableLogTypes?: Array<string> | null;
 	}
 
 	export enum GET_ModifyDBClusterAction { ModifyDBCluster = 0 }
@@ -2599,8 +2599,8 @@ export namespace MyNS {
 	export enum POST_ModifyDBClusterSnapshotAttributeVersion { _2014_10_31 = 0 }
 
 	export interface GET_ModifyDBInstanceCloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string>;
-		DisableLogTypes?: Array<string>;
+		EnableLogTypes?: Array<string> | null;
+		DisableLogTypes?: Array<string> | null;
 	}
 
 	export enum GET_ModifyDBInstanceAction { ModifyDBInstance = 0 }

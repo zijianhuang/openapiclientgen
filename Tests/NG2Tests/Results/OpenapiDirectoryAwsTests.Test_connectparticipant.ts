@@ -5,24 +5,24 @@ export namespace MyNS {
 	export interface CreateParticipantConnectionResponse {
 
 		/** The websocket for the participant's connection. */
-		Websocket?: Websocket;
+		Websocket?: Websocket | null;
 
 		/** Connection credentials. */
-		ConnectionCredentials?: ConnectionCredentials;
+		ConnectionCredentials?: ConnectionCredentials | null;
 	}
 
 
 	/** The websocket for the participant's connection. */
 	export interface Websocket {
-		Url?: string;
-		ConnectionExpiry?: string;
+		Url?: string | null;
+		ConnectionExpiry?: string | null;
 	}
 
 
 	/** Connection credentials.  */
 	export interface ConnectionCredentials {
-		ConnectionToken?: string;
-		Expiry?: string;
+		ConnectionToken?: string | null;
+		Expiry?: string | null;
 	}
 
 	export enum ConnectionType { WEBSOCKET = 0, CONNECTION_CREDENTIALS = 1 }
@@ -43,22 +43,22 @@ export namespace MyNS {
 	}
 
 	export interface GetTranscriptResponse {
-		InitialContactId?: string;
-		Transcript?: Array<Item>;
-		NextToken?: string;
+		InitialContactId?: string | null;
+		Transcript?: Array<Item> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An item - message or event - that has been sent.  */
 	export interface Item {
-		AbsoluteTime?: string;
-		Content?: string;
-		ContentType?: string;
-		Id?: string;
-		Type?: ItemType;
-		ParticipantId?: string;
-		DisplayName?: string;
-		ParticipantRole?: ItemParticipantRole;
+		AbsoluteTime?: string | null;
+		Content?: string | null;
+		ContentType?: string | null;
+		Id?: string | null;
+		Type?: ItemType | null;
+		ParticipantId?: string | null;
+		DisplayName?: string | null;
+		ParticipantRole?: ItemParticipantRole | null;
 	}
 
 	export enum ItemType { MESSAGE = 0, EVENT = 1, CONNECTION_ACK = 2 }
@@ -66,13 +66,13 @@ export namespace MyNS {
 	export enum ItemParticipantRole { AGENT = 0, CUSTOMER = 1, SYSTEM = 2 }
 
 	export interface SendEventResponse {
-		Id?: string;
-		AbsoluteTime?: string;
+		Id?: string | null;
+		AbsoluteTime?: string | null;
 	}
 
 	export interface SendMessageResponse {
-		Id?: string;
-		AbsoluteTime?: string;
+		Id?: string | null;
+		AbsoluteTime?: string | null;
 	}
 
 	export enum ChatItemType { MESSAGE = 0, EVENT = 1, CONNECTION_ACK = 2 }
@@ -82,7 +82,7 @@ export namespace MyNS {
 	}
 
 	export interface DisconnectParticipantRequest {
-		ClientToken?: string;
+		ClientToken?: string | null;
 	}
 
 	export enum ScanDirection { FORWARD = 0, BACKWARD = 1 }
@@ -92,34 +92,34 @@ export namespace MyNS {
 
 	/** A filtering option for where to start. For example, if you sent 100 messages, start with message 50.  */
 	export interface StartPosition {
-		Id?: string;
-		AbsoluteTime?: string;
-		MostRecent?: number;
+		Id?: string | null;
+		AbsoluteTime?: string | null;
+		MostRecent?: number | null;
 	}
 
 	export interface GetTranscriptRequest {
-		ContactId?: string;
-		MaxResults?: number;
-		NextToken?: string;
-		ScanDirection?: ScanDirection;
-		SortOrder?: SortKey;
+		ContactId?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		ScanDirection?: ScanDirection | null;
+		SortOrder?: SortKey | null;
 
 		/** A filtering option for where to start. For example, if you sent 100 messages, start with message 50. */
-		StartPosition?: StartPosition;
+		StartPosition?: StartPosition | null;
 	}
 
 	export enum ParticipantRole { AGENT = 0, CUSTOMER = 1, SYSTEM = 2 }
 
 	export interface SendEventRequest {
 		ContentType: string;
-		Content?: string;
-		ClientToken?: string;
+		Content?: string | null;
+		ClientToken?: string | null;
 	}
 
 	export interface SendMessageRequest {
 		ContentType: string;
 		Content: string;
-		ClientToken?: string;
+		ClientToken?: string | null;
 	}
 
 	@Injectable()
@@ -191,7 +191,7 @@ export namespace MyNS {
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Max length: 500
 		 */
-		ClientToken?: string;
+		ClientToken?: string | null;
 	}
 
 	export interface GetTranscriptPostBody {
@@ -201,36 +201,36 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		ContactId?: string;
+		ContactId?: string | null;
 
 		/**
 		 * The maximum number of results to return in the page. Default: 10.
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.
 		 * Max length: 1000
 		 * Min length: 1
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/** The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. */
-		ScanDirection?: ScanDirection;
+		ScanDirection?: ScanDirection | null;
 
 		/** The sort order for the records. Default: DESCENDING. */
-		SortOrder?: SortKey;
+		SortOrder?: SortKey | null;
 
 		/** A filtering option for where to start. For example, if you sent 100 messages, start with message 50. */
-		StartPosition?: GetTranscriptPostBodyStartPosition;
+		StartPosition?: GetTranscriptPostBodyStartPosition | null;
 	}
 
 	export interface GetTranscriptPostBodyStartPosition {
-		Id?: string;
-		AbsoluteTime?: string;
-		MostRecent?: number;
+		Id?: string | null;
+		AbsoluteTime?: string | null;
+		MostRecent?: number | null;
 	}
 
 	export interface SendEventPostBody {
@@ -248,13 +248,13 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		Content?: string;
+		Content?: string | null;
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Max length: 500
 		 */
-		ClientToken?: string;
+		ClientToken?: string | null;
 	}
 
 	export interface SendMessagePostBody {
@@ -279,7 +279,7 @@ export namespace MyNS {
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Max length: 500
 		 */
-		ClientToken?: string;
+		ClientToken?: string | null;
 	}
 
 }

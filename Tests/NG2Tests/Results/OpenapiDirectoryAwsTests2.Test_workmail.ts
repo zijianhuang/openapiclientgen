@@ -66,7 +66,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupResponse {
-		GroupId?: string;
+		GroupId?: string | null;
 	}
 
 	export interface CreateGroupRequest {
@@ -81,7 +81,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateResourceResponse {
-		ResourceId?: string;
+		ResourceId?: string | null;
 	}
 
 	export interface CreateResourceRequest {
@@ -93,7 +93,7 @@ export namespace MyNS {
 	export enum CreateResourceRequestType { ROOM = 0, EQUIPMENT = 1 }
 
 	export interface CreateUserResponse {
-		UserId?: string;
+		UserId?: string | null;
 	}
 
 	export interface CreateUserRequest {
@@ -173,12 +173,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeGroupResponse {
-		GroupId?: string;
-		Name?: string;
-		Email?: string;
-		State?: DescribeGroupResponseState;
-		EnabledDate?: Date;
-		DisabledDate?: Date;
+		GroupId?: string | null;
+		Name?: string | null;
+		Email?: string | null;
+		State?: DescribeGroupResponseState | null;
+		EnabledDate?: Date | null;
+		DisabledDate?: Date | null;
 	}
 
 	export enum DescribeGroupResponseState { ENABLED = 0, DISABLED = 1, DELETED = 2 }
@@ -189,15 +189,15 @@ export namespace MyNS {
 	}
 
 	export interface DescribeOrganizationResponse {
-		OrganizationId?: string;
-		Alias?: string;
-		State?: string;
-		DirectoryId?: string;
-		DirectoryType?: string;
-		DefaultMailDomain?: string;
-		CompletedDate?: Date;
-		ErrorMessage?: string;
-		ARN?: string;
+		OrganizationId?: string | null;
+		Alias?: string | null;
+		State?: string | null;
+		DirectoryId?: string | null;
+		DirectoryType?: string | null;
+		DefaultMailDomain?: string | null;
+		CompletedDate?: Date | null;
+		ErrorMessage?: string | null;
+		ARN?: string | null;
 	}
 
 	export interface DescribeOrganizationRequest {
@@ -205,24 +205,24 @@ export namespace MyNS {
 	}
 
 	export interface DescribeResourceResponse {
-		ResourceId?: string;
-		Email?: string;
-		Name?: string;
-		Type?: CreateResourceRequestType;
+		ResourceId?: string | null;
+		Email?: string | null;
+		Name?: string | null;
+		Type?: CreateResourceRequestType | null;
 
 		/** At least one delegate must be associated to the resource to disable automatic replies from the resource. */
-		BookingOptions?: BookingOptions;
-		State?: DescribeGroupResponseState;
-		EnabledDate?: Date;
-		DisabledDate?: Date;
+		BookingOptions?: BookingOptions | null;
+		State?: DescribeGroupResponseState | null;
+		EnabledDate?: Date | null;
+		DisabledDate?: Date | null;
 	}
 
 
 	/** At least one delegate must be associated to the resource to disable automatic replies from the resource. */
 	export interface BookingOptions {
-		AutoAcceptRequests?: boolean;
-		AutoDeclineRecurringRequests?: boolean;
-		AutoDeclineConflictingRequests?: boolean;
+		AutoAcceptRequests?: boolean | null;
+		AutoDeclineRecurringRequests?: boolean | null;
+		AutoDeclineConflictingRequests?: boolean | null;
 	}
 
 	export interface DescribeResourceRequest {
@@ -231,14 +231,14 @@ export namespace MyNS {
 	}
 
 	export interface DescribeUserResponse {
-		UserId?: string;
-		Name?: string;
-		Email?: string;
-		DisplayName?: string;
-		State?: DescribeGroupResponseState;
-		UserRole?: DescribeUserResponseUserRole;
-		EnabledDate?: Date;
-		DisabledDate?: Date;
+		UserId?: string | null;
+		Name?: string | null;
+		Email?: string | null;
+		DisplayName?: string | null;
+		State?: DescribeGroupResponseState | null;
+		UserRole?: DescribeUserResponseUserRole | null;
+		EnabledDate?: Date | null;
+		DisabledDate?: Date | null;
 	}
 
 	export enum DescribeUserResponseUserRole { USER = 0, RESOURCE = 1, SYSTEM_USER = 2 }
@@ -267,8 +267,8 @@ export namespace MyNS {
 	}
 
 	export interface GetAccessControlEffectResponse {
-		Effect?: GetAccessControlEffectResponseEffect;
-		MatchedRules?: Array<string>;
+		Effect?: GetAccessControlEffectResponseEffect | null;
+		MatchedRules?: Array<string> | null;
 	}
 
 	export enum GetAccessControlEffectResponseEffect { ALLOW = 0, DENY = 1 }
@@ -281,10 +281,10 @@ export namespace MyNS {
 	}
 
 	export interface GetDefaultRetentionPolicyResponse {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		FolderConfigurations?: Array<FolderConfiguration>;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		FolderConfigurations?: Array<FolderConfiguration> | null;
 	}
 
 
@@ -292,7 +292,7 @@ export namespace MyNS {
 	export interface FolderConfiguration {
 		Name: FolderConfigurationName;
 		Action: FolderConfigurationAction;
-		Period?: number;
+		Period?: number | null;
 	}
 
 	export enum FolderConfigurationName { INBOX = 0, DELETED_ITEMS = 1, SENT_ITEMS = 2, DRAFTS = 3, JUNK_EMAIL = 4 }
@@ -304,8 +304,8 @@ export namespace MyNS {
 	}
 
 	export interface GetMailboxDetailsResponse {
-		MailboxQuota?: number;
-		MailboxSize?: number;
+		MailboxQuota?: number | null;
+		MailboxSize?: number | null;
 	}
 
 	export interface GetMailboxDetailsRequest {
@@ -314,23 +314,23 @@ export namespace MyNS {
 	}
 
 	export interface ListAccessControlRulesResponse {
-		Rules?: Array<AccessControlRule>;
+		Rules?: Array<AccessControlRule> | null;
 	}
 
 
 	/** A rule that controls access to an Amazon WorkMail organization. */
 	export interface AccessControlRule {
-		Name?: string;
-		Effect?: GetAccessControlEffectResponseEffect;
-		Description?: string;
-		IpRanges?: Array<string>;
-		NotIpRanges?: Array<string>;
-		Actions?: Array<string>;
-		NotActions?: Array<string>;
-		UserIds?: Array<string>;
-		NotUserIds?: Array<string>;
-		DateCreated?: Date;
-		DateModified?: Date;
+		Name?: string | null;
+		Effect?: GetAccessControlEffectResponseEffect | null;
+		Description?: string | null;
+		IpRanges?: Array<string> | null;
+		NotIpRanges?: Array<string> | null;
+		Actions?: Array<string> | null;
+		NotActions?: Array<string> | null;
+		UserIds?: Array<string> | null;
+		NotUserIds?: Array<string> | null;
+		DateCreated?: Date | null;
+		DateModified?: Date | null;
 	}
 
 	export interface ListAccessControlRulesRequest {
@@ -338,31 +338,31 @@ export namespace MyNS {
 	}
 
 	export interface ListAliasesResponse {
-		Aliases?: Array<string>;
-		NextToken?: string;
+		Aliases?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAliasesRequest {
 		OrganizationId: string;
 		EntityId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListGroupMembersResponse {
-		Members?: Array<Member>;
-		NextToken?: string;
+		Members?: Array<Member> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The representation of a user or group. */
 	export interface Member {
-		Id?: string;
-		Name?: string;
-		Type?: MemberType;
-		State?: DescribeGroupResponseState;
-		EnabledDate?: Date;
-		DisabledDate?: Date;
+		Id?: string | null;
+		Name?: string | null;
+		Type?: MemberType | null;
+		State?: DescribeGroupResponseState | null;
+		EnabledDate?: Date | null;
+		DisabledDate?: Date | null;
 	}
 
 	export enum MemberType { GROUP = 0, USER = 1 }
@@ -370,35 +370,35 @@ export namespace MyNS {
 	export interface ListGroupMembersRequest {
 		OrganizationId: string;
 		GroupId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListGroupsResponse {
-		Groups?: Array<Group>;
-		NextToken?: string;
+		Groups?: Array<Group> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The representation of an Amazon WorkMail group. */
 	export interface Group {
-		Id?: string;
-		Email?: string;
-		Name?: string;
-		State?: DescribeGroupResponseState;
-		EnabledDate?: Date;
-		DisabledDate?: Date;
+		Id?: string | null;
+		Email?: string | null;
+		Name?: string | null;
+		State?: DescribeGroupResponseState | null;
+		EnabledDate?: Date | null;
+		DisabledDate?: Date | null;
 	}
 
 	export interface ListGroupsRequest {
 		OrganizationId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListMailboxPermissionsResponse {
-		Permissions?: Array<Permission>;
-		NextToken?: string;
+		Permissions?: Array<Permission> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -414,32 +414,32 @@ export namespace MyNS {
 	export interface ListMailboxPermissionsRequest {
 		OrganizationId: string;
 		EntityId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListOrganizationsResponse {
-		OrganizationSummaries?: Array<OrganizationSummary>;
-		NextToken?: string;
+		OrganizationSummaries?: Array<OrganizationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The representation of an organization. */
 	export interface OrganizationSummary {
-		OrganizationId?: string;
-		Alias?: string;
-		ErrorMessage?: string;
-		State?: string;
+		OrganizationId?: string | null;
+		Alias?: string | null;
+		ErrorMessage?: string | null;
+		State?: string | null;
 	}
 
 	export interface ListOrganizationsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListResourceDelegatesResponse {
-		Delegates?: Array<Delegate>;
-		NextToken?: string;
+		Delegates?: Array<Delegate> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -452,35 +452,35 @@ export namespace MyNS {
 	export interface ListResourceDelegatesRequest {
 		OrganizationId: string;
 		ResourceId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListResourcesResponse {
-		Resources?: Array<Resource>;
-		NextToken?: string;
+		Resources?: Array<Resource> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The representation of a resource. */
 	export interface Resource {
-		Id?: string;
-		Email?: string;
-		Name?: string;
-		Type?: CreateResourceRequestType;
-		State?: DescribeGroupResponseState;
-		EnabledDate?: Date;
-		DisabledDate?: Date;
+		Id?: string | null;
+		Email?: string | null;
+		Name?: string | null;
+		Type?: CreateResourceRequestType | null;
+		State?: DescribeGroupResponseState | null;
+		EnabledDate?: Date | null;
+		DisabledDate?: Date | null;
 	}
 
 	export interface ListResourcesRequest {
 		OrganizationId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -498,27 +498,27 @@ export namespace MyNS {
 	}
 
 	export interface ListUsersResponse {
-		Users?: Array<User>;
-		NextToken?: string;
+		Users?: Array<User> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The representation of an Amazon WorkMail user. */
 	export interface User {
-		Id?: string;
-		Email?: string;
-		Name?: string;
-		DisplayName?: string;
-		State?: DescribeGroupResponseState;
-		UserRole?: DescribeUserResponseUserRole;
-		EnabledDate?: Date;
-		DisabledDate?: Date;
+		Id?: string | null;
+		Email?: string | null;
+		Name?: string | null;
+		DisplayName?: string | null;
+		State?: DescribeGroupResponseState | null;
+		UserRole?: DescribeUserResponseUserRole | null;
+		EnabledDate?: Date | null;
+		DisabledDate?: Date | null;
 	}
 
 	export interface ListUsersRequest {
 		OrganizationId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface PutAccessControlRuleResponse {
@@ -528,12 +528,12 @@ export namespace MyNS {
 		Name: string;
 		Effect: GetAccessControlEffectResponseEffect;
 		Description: string;
-		IpRanges?: Array<string>;
-		NotIpRanges?: Array<string>;
-		Actions?: Array<string>;
-		NotActions?: Array<string>;
-		UserIds?: Array<string>;
-		NotUserIds?: Array<string>;
+		IpRanges?: Array<string> | null;
+		NotIpRanges?: Array<string> | null;
+		Actions?: Array<string> | null;
+		NotActions?: Array<string> | null;
+		UserIds?: Array<string> | null;
+		NotUserIds?: Array<string> | null;
 		OrganizationId: string;
 	}
 
@@ -552,9 +552,9 @@ export namespace MyNS {
 
 	export interface PutRetentionPolicyRequest {
 		OrganizationId: string;
-		Id?: string;
+		Id?: string | null;
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		FolderConfigurations: Array<FolderConfiguration>;
 	}
 
@@ -622,10 +622,10 @@ export namespace MyNS {
 	export interface UpdateResourceRequest {
 		OrganizationId: string;
 		ResourceId: string;
-		Name?: string;
+		Name?: string | null;
 
 		/** At least one delegate must be associated to the resource to disable automatic replies from the resource. */
-		BookingOptions?: BookingOptions;
+		BookingOptions?: BookingOptions | null;
 	}
 
 	export interface InvalidConfigurationException {

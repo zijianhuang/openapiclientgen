@@ -12,10 +12,10 @@ export namespace MyNS {
 		 * must have type of JSON, and include the manifest configurations for the
 		 * project.
 		 */
-		files?: Array<File>;
+		files?: Array<File> | null;
 
 		/** The script project's Drive ID. */
-		scriptId?: string;
+		scriptId?: string | null;
 	}
 
 
@@ -32,32 +32,32 @@ export namespace MyNS {
 		 * This read-only field is only visible to users who have WRITER
 		 * permission for the script project.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** A set of functions. No duplicates are permitted. */
-		functionSet?: GoogleAppsScriptTypeFunctionSet;
+		functionSet?: GoogleAppsScriptTypeFunctionSet | null;
 
 		/** A simple user profile resource. */
-		lastModifyUser?: GoogleAppsScriptTypeUser;
+		lastModifyUser?: GoogleAppsScriptTypeUser | null;
 
 		/**
 		 * The name of the file. The file extension is not part of the file
 		 * name, which can be identified from the type field.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The file content. */
-		source?: string;
+		source?: string | null;
 
 		/** The type of the file. */
-		type?: FileType;
+		type?: FileType | null;
 
 		/**
 		 * Last modified date timestamp.
 		 * This read-only field is only visible to users who have WRITER
 		 * permission for the script project.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -65,7 +65,7 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeFunctionSet {
 
 		/** A list of functions composing the set. */
-		values?: Array<GoogleAppsScriptTypeFunction>;
+		values?: Array<GoogleAppsScriptTypeFunction> | null;
 	}
 
 
@@ -73,7 +73,7 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeFunction {
 
 		/** The function name in the script project. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -81,16 +81,16 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeUser {
 
 		/** The user's domain. */
-		domain?: string;
+		domain?: string | null;
 
 		/** The user's identifying email address. */
-		email?: string;
+		email?: string | null;
 
 		/** The user's display name. */
-		name?: string;
+		name?: string | null;
 
 		/** The user's photo. */
-		photoUrl?: string;
+		photoUrl?: string | null;
 	}
 
 	export enum FileType { ENUM_TYPE_UNSPECIFIED = 0, SERVER_JS = 1, HTML = 2, JSON = 3 }
@@ -104,10 +104,10 @@ export namespace MyNS {
 		 * This is usually the ID of a Google Doc, Google Sheet, Google Form, or
 		 * Google Slides file. If not set, a standalone script project is created.
 		 */
-		parentId?: string;
+		parentId?: string | null;
 
 		/** The title for the project. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -115,16 +115,16 @@ export namespace MyNS {
 	export interface Deployment {
 
 		/** Metadata the defines how a deployment is configured. */
-		deploymentConfig?: DeploymentConfig;
+		deploymentConfig?: DeploymentConfig | null;
 
 		/** The deployment ID for this deployment. */
-		deploymentId?: string;
+		deploymentId?: string | null;
 
 		/** The deployment's entry points. */
-		entryPoints?: Array<EntryPoint>;
+		entryPoints?: Array<EntryPoint> | null;
 
 		/** Last modified date time stamp. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -132,16 +132,16 @@ export namespace MyNS {
 	export interface DeploymentConfig {
 
 		/** The description for this deployment. */
-		description?: string;
+		description?: string | null;
 
 		/** The manifest file name for this deployment. */
-		manifestFileName?: string;
+		manifestFileName?: string | null;
 
 		/** The script project's Drive ID. */
-		scriptId?: string;
+		scriptId?: string | null;
 
 		/** The version number on which this deployment is based. */
-		versionNumber?: number;
+		versionNumber?: number | null;
 	}
 
 
@@ -149,16 +149,16 @@ export namespace MyNS {
 	export interface EntryPoint {
 
 		/** An add-on entry point. */
-		addOn?: GoogleAppsScriptTypeAddOnEntryPoint;
+		addOn?: GoogleAppsScriptTypeAddOnEntryPoint | null;
 
 		/** The type of the entry point. */
-		entryPointType?: EntryPointEntryPointType;
+		entryPointType?: EntryPointEntryPointType | null;
 
 		/** An API executable entry point. */
-		executionApi?: GoogleAppsScriptTypeExecutionApiEntryPoint;
+		executionApi?: GoogleAppsScriptTypeExecutionApiEntryPoint | null;
 
 		/** A web application entry point. */
-		webApp?: GoogleAppsScriptTypeWebAppEntryPoint;
+		webApp?: GoogleAppsScriptTypeWebAppEntryPoint | null;
 	}
 
 
@@ -166,22 +166,22 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeAddOnEntryPoint {
 
 		/** The add-on's required list of supported container types. */
-		addOnType?: GoogleAppsScriptTypeAddOnEntryPointAddOnType;
+		addOnType?: GoogleAppsScriptTypeAddOnEntryPointAddOnType | null;
 
 		/** The add-on's optional description. */
-		description?: string;
+		description?: string | null;
 
 		/** The add-on's optional help URL. */
-		helpUrl?: string;
+		helpUrl?: string | null;
 
 		/** The add-on's required post install tip URL. */
-		postInstallTipUrl?: string;
+		postInstallTipUrl?: string | null;
 
 		/** The add-on's optional report issue URL. */
-		reportIssueUrl?: string;
+		reportIssueUrl?: string | null;
 
 		/** The add-on's required title. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export enum GoogleAppsScriptTypeAddOnEntryPointAddOnType { UNKNOWN_ADDON_TYPE = 0, GMAIL = 1, DATA_STUDIO = 2 }
@@ -193,7 +193,7 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeExecutionApiEntryPoint {
 
 		/** API executable entry point configuration. */
-		entryPointConfig?: GoogleAppsScriptTypeExecutionApiConfig;
+		entryPointConfig?: GoogleAppsScriptTypeExecutionApiConfig | null;
 	}
 
 
@@ -201,7 +201,7 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeExecutionApiConfig {
 
 		/** Who has permission to run the API executable. */
-		access?: GoogleAppsScriptTypeExecutionApiConfigAccess;
+		access?: GoogleAppsScriptTypeExecutionApiConfigAccess | null;
 	}
 
 	export enum GoogleAppsScriptTypeExecutionApiConfigAccess { UNKNOWN_ACCESS = 0, MYSELF = 1, DOMAIN = 2, ANYONE = 3, ANYONE_ANONYMOUS = 4 }
@@ -211,10 +211,10 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeWebAppEntryPoint {
 
 		/** Web app entry point configuration. */
-		entryPointConfig?: GoogleAppsScriptTypeWebAppConfig;
+		entryPointConfig?: GoogleAppsScriptTypeWebAppConfig | null;
 
 		/** The URL for the web application. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -222,10 +222,10 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeWebAppConfig {
 
 		/** Who has permission to run the web app. */
-		access?: GoogleAppsScriptTypeExecutionApiConfigAccess;
+		access?: GoogleAppsScriptTypeExecutionApiConfigAccess | null;
 
 		/** Who to execute the web app as. */
-		executeAs?: GoogleAppsScriptTypeWebAppConfigExecuteAs;
+		executeAs?: GoogleAppsScriptTypeWebAppConfigExecuteAs | null;
 	}
 
 	export enum GoogleAppsScriptTypeWebAppConfigExecuteAs { UNKNOWN_EXECUTE_AS = 0, USER_ACCESSING = 1, USER_DEPLOYING = 2 }
@@ -248,7 +248,7 @@ export namespace MyNS {
 	export interface ExecuteStreamResponse {
 
 		/** The result of an execution. */
-		result?: ScriptExecutionResult;
+		result?: ScriptExecutionResult | null;
 	}
 
 
@@ -259,7 +259,7 @@ export namespace MyNS {
 		 * `Value` represents a dynamically typed value which is the outcome of an
 		 * executed script.
 		 */
-		returnValue?: Value;
+		returnValue?: Value | null;
 	}
 
 
@@ -270,34 +270,34 @@ export namespace MyNS {
 	export interface Value {
 
 		/** Represents a boolean value. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** Represents raw byte values. */
-		bytesValue?: string;
+		bytesValue?: string | null;
 
 		/** Represents a date in ms since the epoch. */
-		dateValue?: string;
+		dateValue?: string | null;
 
 		/** `ListValue` is a wrapper around a repeated field of values. */
-		listValue?: ListValue;
+		listValue?: ListValue | null;
 
 		/** Represents a null value. */
-		nullValue?: ValueNullValue;
+		nullValue?: ValueNullValue | null;
 
 		/** Represents a double value. */
-		numberValue?: number;
+		numberValue?: number | null;
 
 		/** Represents a structured proto value. */
-		protoValue?: {[id: string]: any };
+		protoValue?: {[id: string]: any } | null;
 
 		/** Represents a string value. */
-		stringValue?: string;
+		stringValue?: string | null;
 
 		/**
 		 * `Struct` represents a structured data value, consisting of fields which map
 		 * to dynamically typed values.
 		 */
-		structValue?: Struct;
+		structValue?: Struct | null;
 	}
 
 
@@ -305,7 +305,7 @@ export namespace MyNS {
 	export interface ListValue {
 
 		/** Repeated field of dynamically typed values. */
-		values?: Array<Value>;
+		values?: Array<Value> | null;
 	}
 
 	export enum ValueNullValue { NULL_VALUE = 0 }
@@ -318,7 +318,7 @@ export namespace MyNS {
 	export interface Struct {
 
 		/** Unordered map of dynamically typed values. */
-		fields?: {[id: string]: Value };
+		fields?: {[id: string]: Value } | null;
 	}
 
 
@@ -338,19 +338,19 @@ export namespace MyNS {
 		 * The error message thrown by Apps Script, usually localized into the user's
 		 * language.
 		 */
-		errorMessage?: string;
+		errorMessage?: string | null;
 
 		/**
 		 * The error type, for example `TypeError` or `ReferenceError`. If the error
 		 * type is unavailable, this field is not included.
 		 */
-		errorType?: string;
+		errorType?: string | null;
 
 		/**
 		 * An array of objects that provide a stack trace through the script to show
 		 * where the execution failed, with the deepest call first.
 		 */
-		scriptStackTraceElements?: Array<ScriptStackTraceElement>;
+		scriptStackTraceElements?: Array<ScriptStackTraceElement> | null;
 	}
 
 
@@ -358,10 +358,10 @@ export namespace MyNS {
 	export interface ScriptStackTraceElement {
 
 		/** The name of the function that failed. */
-		function?: string;
+		function?: string | null;
 
 		/** The line number where the script failed. */
-		lineNumber?: number;
+		lineNumber?: number | null;
 	}
 
 
@@ -377,14 +377,14 @@ export namespace MyNS {
 		 * most recently saved version rather than the version deployed for use with
 		 * the Apps Script API. Optional; default is `false`.
 		 */
-		devMode?: boolean;
+		devMode?: boolean | null;
 
 		/**
 		 * The name of the function to execute in the given script. The name does not
 		 * include parentheses or parameters. It can reference a function in an
 		 * included library such as `Library.libFunction1`.
 		 */
-		function?: string;
+		function?: string | null;
 
 		/**
 		 * The parameters to be passed to the function being executed. The object type
@@ -393,7 +393,7 @@ export namespace MyNS {
 		 * `Document` or a `Calendar`); they can only be primitive types such as
 		 * `string`, `number`, `array`, `object`, or `boolean`. Optional.
 		 */
-		parameters?: Array<string>;
+		parameters?: Array<string> | null;
 
 		/**
 		 * <b>Deprecated</b>. For use with Android add-ons only. An ID that represents
@@ -409,7 +409,7 @@ export namespace MyNS {
 		 * `Intent.getStringExtra("com.google.android.apps.docs.addons.SessionState")`.
 		 * Optional.
 		 */
-		sessionState?: string;
+		sessionState?: string | null;
 	}
 
 
@@ -428,7 +428,7 @@ export namespace MyNS {
 		 * they can only return primitive types such as a `string`, `number`, `array`,
 		 * `object`, or `boolean`.
 		 */
-		result?: any;
+		result?: any | null;
 	}
 
 
@@ -441,25 +441,25 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeProcess {
 
 		/** Duration the execution spent executing. */
-		duration?: string;
+		duration?: string | null;
 
 		/** Name of the function the started the execution. */
-		functionName?: string;
+		functionName?: string | null;
 
 		/** The executions status. */
-		processStatus?: GoogleAppsScriptTypeProcessProcessStatus;
+		processStatus?: GoogleAppsScriptTypeProcessProcessStatus | null;
 
 		/** The executions type. */
-		processType?: GoogleAppsScriptTypeProcessProcessType;
+		processType?: GoogleAppsScriptTypeProcessProcessType | null;
 
 		/** Name of the script being executed. */
-		projectName?: string;
+		projectName?: string | null;
 
 		/** Time the execution started. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The executing users access level to the script. */
-		userAccessLevel?: GoogleAppsScriptTypeProcessUserAccessLevel;
+		userAccessLevel?: GoogleAppsScriptTypeProcessUserAccessLevel | null;
 	}
 
 	export enum GoogleAppsScriptTypeProcessProcessStatus { PROCESS_STATUS_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, COMPLETED = 3, CANCELED = 4, FAILED = 5, TIMED_OUT = 6, UNKNOWN = 7, DELAYED = 8 }
@@ -473,13 +473,13 @@ export namespace MyNS {
 	export interface ListDeploymentsResponse {
 
 		/** The list of deployments. */
-		deployments?: Array<Deployment>;
+		deployments?: Array<Deployment> | null;
 
 		/**
 		 * The token that can be used in the next call to get the next page of
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -493,10 +493,10 @@ export namespace MyNS {
 		 * Token for the next page of results. If empty, there are no more pages
 		 * remaining.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of processes matching request parameters. */
-		processes?: Array<GoogleAppsScriptTypeProcess>;
+		processes?: Array<GoogleAppsScriptTypeProcess> | null;
 	}
 
 
@@ -510,10 +510,10 @@ export namespace MyNS {
 		 * Token for the next page of results. If empty, there are no more pages
 		 * remaining.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of processes matching request parameters. */
-		processes?: Array<GoogleAppsScriptTypeProcess>;
+		processes?: Array<GoogleAppsScriptTypeProcess> | null;
 	}
 
 
@@ -524,10 +524,10 @@ export namespace MyNS {
 		 * The token use to fetch the next page of records. if not exist in the
 		 * response, that means no more versions to list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of versions. */
-		versions?: Array<Version>;
+		versions?: Array<Version> | null;
 	}
 
 
@@ -539,19 +539,19 @@ export namespace MyNS {
 	export interface Version {
 
 		/** When the version was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** The description for this version. */
-		description?: string;
+		description?: string | null;
 
 		/** The script project's Drive ID. */
-		scriptId?: string;
+		scriptId?: string | null;
 
 		/**
 		 * The incremental ID that is created by Apps Script when a version is
 		 * created. This is system assigned number and is immutable once created.
 		 */
-		versionNumber?: number;
+		versionNumber?: number | null;
 	}
 
 
@@ -562,13 +562,13 @@ export namespace MyNS {
 	export interface Metrics {
 
 		/** Number of active users. */
-		activeUsers?: Array<MetricsValue>;
+		activeUsers?: Array<MetricsValue> | null;
 
 		/** Number of failed executions. */
-		failedExecutions?: Array<MetricsValue>;
+		failedExecutions?: Array<MetricsValue> | null;
 
 		/** Number of total executions. */
-		totalExecutions?: Array<MetricsValue>;
+		totalExecutions?: Array<MetricsValue> | null;
 	}
 
 
@@ -576,13 +576,13 @@ export namespace MyNS {
 	export interface MetricsValue {
 
 		/** Required field indicating the end time of the interval. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Required field indicating the start time of the interval. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Indicates the number of executions counted. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -610,13 +610,13 @@ export namespace MyNS {
 	export interface Operation {
 
 		/** This field indicates whether the script execution has completed. A completed execution has a populated `response` field containing the ExecutionResponse from function that was executed. */
-		done?: boolean;
+		done?: boolean | null;
 
 		/** If a `run` call succeeds but the script function (or Apps Script itself) throws an exception, the response body's error field contains this `Status` object. */
-		error?: Status;
+		error?: Status | null;
 
 		/** If the script function returns successfully, this field contains an ExecutionResponse object with the function's return value. */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -624,13 +624,13 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code. For this API, this value either: <ul> <li> 10, indicating a `SCRIPT_TIMEOUT` error,</li> <li> 3, indicating an `INVALID_ARGUMENT` error, or</li> <li> 1, indicating a `CANCELLED` execution.</li> </ul> */
-		code?: number;
+		code?: number | null;
 
 		/** An array that contains a single ExecutionError object that provides information about the nature of the error. */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/** A developer-facing error message, which is in English. Any user-facing error message is localized and sent in the details field, or localized by the client. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -638,29 +638,29 @@ export namespace MyNS {
 	export interface Project {
 
 		/** When the script was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** A simple user profile resource. */
-		creator?: GoogleAppsScriptTypeUser;
+		creator?: GoogleAppsScriptTypeUser | null;
 
 		/** A simple user profile resource. */
-		lastModifyUser?: GoogleAppsScriptTypeUser;
+		lastModifyUser?: GoogleAppsScriptTypeUser | null;
 
 		/**
 		 * The parent's Drive ID that the script will be attached to. This is usually
 		 * the ID of a Google Document or Google Sheet. This filed is optional, and
 		 * if not set, a stand-alone script will be created.
 		 */
-		parentId?: string;
+		parentId?: string | null;
 
 		/** The script project's Drive ID. */
-		scriptId?: string;
+		scriptId?: string | null;
 
 		/** The title for the project. */
-		title?: string;
+		title?: string | null;
 
 		/** When the script was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -668,7 +668,7 @@ export namespace MyNS {
 	export interface UpdateDeploymentRequest {
 
 		/** Metadata the defines how a deployment is configured. */
-		deploymentConfig?: DeploymentConfig;
+		deploymentConfig?: DeploymentConfig | null;
 	}
 
 	@Injectable()

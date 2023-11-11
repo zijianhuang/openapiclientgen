@@ -5,16 +5,16 @@ export namespace MyNS {
 	export interface GetRoleCredentialsResponse {
 
 		/** Provides information about the role credentials that are assigned to the user. */
-		roleCredentials?: RoleCredentials;
+		roleCredentials?: RoleCredentials | null;
 	}
 
 
 	/** Provides information about the role credentials that are assigned to the user. */
 	export interface RoleCredentials {
-		accessKeyId?: string;
-		secretAccessKey?: string;
-		sessionToken?: string;
-		expiration?: number;
+		accessKeyId?: string | null;
+		secretAccessKey?: string | null;
+		sessionToken?: string | null;
+		expiration?: number | null;
 	}
 
 	export interface InvalidRequestException {
@@ -30,28 +30,28 @@ export namespace MyNS {
 	}
 
 	export interface ListAccountRolesResponse {
-		nextToken?: string;
-		roleList?: Array<RoleInfo>;
+		nextToken?: string | null;
+		roleList?: Array<RoleInfo> | null;
 	}
 
 
 	/** Provides information about the role that is assigned to the user. */
 	export interface RoleInfo {
-		roleName?: string;
-		accountId?: string;
+		roleName?: string | null;
+		accountId?: string | null;
 	}
 
 	export interface ListAccountsResponse {
-		nextToken?: string;
-		accountList?: Array<AccountInfo>;
+		nextToken?: string | null;
+		accountList?: Array<AccountInfo> | null;
 	}
 
 
 	/** Provides information about your AWS account. */
 	export interface AccountInfo {
-		accountId?: string;
-		accountName?: string;
-		emailAddress?: string;
+		accountId?: string | null;
+		accountName?: string | null;
+		emailAddress?: string | null;
 	}
 
 	export interface GetRoleCredentialsRequest {

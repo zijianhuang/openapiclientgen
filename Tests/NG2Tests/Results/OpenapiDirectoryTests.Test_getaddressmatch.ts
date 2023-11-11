@@ -21,9 +21,9 @@ export namespace MyNS {
 	}
 
 	export interface GetaddressmatchGetByLicenseAndAddressReturn {
-		Code?: string;
-		Credits?: string;
-		Simkey?: string;
+		Code?: string | null;
+		Credits?: string | null;
+		Simkey?: string | null;
 	}
 
 }

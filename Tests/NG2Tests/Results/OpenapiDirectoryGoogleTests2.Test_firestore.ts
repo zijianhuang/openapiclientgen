@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface ArrayValue {
 
 		/** Values in the array. */
-		values?: Array<Value>;
+		values?: Array<Value> | null;
 	}
 
 
@@ -15,20 +15,20 @@ export namespace MyNS {
 	export interface Value {
 
 		/** An array value. */
-		arrayValue?: ArrayValue;
+		arrayValue?: ArrayValue | null;
 
 		/** A boolean value. */
-		booleanValue?: boolean;
+		booleanValue?: boolean | null;
 
 		/**
 		 * A bytes value.
 		 * Must not exceed 1 MiB - 89 bytes.
 		 * Only the first 1,500 bytes are considered by queries.
 		 */
-		bytesValue?: string;
+		bytesValue?: string | null;
 
 		/** A double value. */
-		doubleValue?: number;
+		doubleValue?: number | null;
 
 		/**
 		 * An object representing a latitude/longitude pair. This is expressed as a pair
@@ -37,22 +37,22 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		geoPointValue?: LatLng;
+		geoPointValue?: LatLng | null;
 
 		/** An integer value. */
-		integerValue?: string;
+		integerValue?: string | null;
 
 		/** A map value. */
-		mapValue?: MapValue;
+		mapValue?: MapValue | null;
 
 		/** A null value. */
-		nullValue?: ValueNullValue;
+		nullValue?: ValueNullValue | null;
 
 		/**
 		 * A reference to a document. For example:
 		 * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
 		 */
-		referenceValue?: string;
+		referenceValue?: string | null;
 
 		/**
 		 * A string value.
@@ -60,14 +60,14 @@ export namespace MyNS {
 		 * Only the first 1,500 bytes of the UTF-8 representation are considered by
 		 * queries.
 		 */
-		stringValue?: string;
+		stringValue?: string | null;
 
 		/**
 		 * A timestamp value.
 		 * Precise only to microseconds. When stored, any additional precision is
 		 * rounded down.
 		 */
-		timestampValue?: string;
+		timestampValue?: string | null;
 	}
 
 
@@ -81,10 +81,10 @@ export namespace MyNS {
 	export interface LatLng {
 
 		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
-		latitude?: number;
+		latitude?: number | null;
 
 		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
-		longitude?: number;
+		longitude?: number | null;
 	}
 
 
@@ -98,7 +98,7 @@ export namespace MyNS {
 		 * in certain documented contexts. The map keys, represented as UTF-8, must
 		 * not exceed 1,500 bytes and cannot be empty.
 		 */
-		fields?: {[id: string]: Value };
+		fields?: {[id: string]: Value } | null;
 	}
 
 	export enum ValueNullValue { NULL_VALUE = 0 }
@@ -113,7 +113,7 @@ export namespace MyNS {
 		 * The request will fail if any of the document is not a child resource of the
 		 * given `database`. Duplicate names will be elided.
 		 */
-		documents?: Array<string>;
+		documents?: Array<string> | null;
 
 		/**
 		 * A set of field paths on a document.
@@ -122,19 +122,19 @@ export namespace MyNS {
 		 * This is different from standard field masks, as this is always scoped to a
 		 * Document, and takes in account the dynamic nature of Value.
 		 */
-		mask?: DocumentMask;
+		mask?: DocumentMask | null;
 
 		/** Options for creating a new transaction. */
-		newTransaction?: TransactionOptions;
+		newTransaction?: TransactionOptions | null;
 
 		/**
 		 * Reads documents as they were at the given time.
 		 * This may not be older than 270 seconds.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 
 		/** Reads documents in a transaction. */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 
@@ -151,7 +151,7 @@ export namespace MyNS {
 		 * The list of field paths in the mask. See Document.fields for a field
 		 * path syntax reference.
 		 */
-		fieldPaths?: Array<string>;
+		fieldPaths?: Array<string> | null;
 	}
 
 
@@ -159,10 +159,10 @@ export namespace MyNS {
 	export interface TransactionOptions {
 
 		/** Options for a transaction that can only be used to read documents. */
-		readOnly?: ReadOnly;
+		readOnly?: ReadOnly | null;
 
 		/** Options for a transaction that can be used to read and write documents. */
-		readWrite?: ReadWrite;
+		readWrite?: ReadWrite | null;
 	}
 
 
@@ -173,7 +173,7 @@ export namespace MyNS {
 		 * Reads documents at the given time.
 		 * This may not be older than 60 seconds.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 	}
 
 
@@ -181,7 +181,7 @@ export namespace MyNS {
 	export interface ReadWrite {
 
 		/** An optional transaction to retry. */
-		retryTransaction?: string;
+		retryTransaction?: string | null;
 	}
 
 
@@ -192,13 +192,13 @@ export namespace MyNS {
 		 * A Firestore document.
 		 * Must not exceed 1 MiB - 4 bytes.
 		 */
-		found?: Document;
+		found?: Document | null;
 
 		/**
 		 * A document name that was requested but does not exist. In the format:
 		 * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
 		 */
-		missing?: string;
+		missing?: string | null;
 
 		/**
 		 * The time at which the document was read.
@@ -206,14 +206,14 @@ export namespace MyNS {
 		 * the result stream are guaranteed not to have changed between their
 		 * read_time and this one.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 
 		/**
 		 * The transaction that was started as part of this request.
 		 * Will only be set in the first response, and only if
 		 * BatchGetDocumentsRequest.new_transaction was set in the request.
 		 */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 
@@ -229,7 +229,7 @@ export namespace MyNS {
 		 * recreated. It can also be compared to values from other documents and
 		 * the `read_time` of a query.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * The document's fields.
@@ -252,13 +252,13 @@ export namespace MyNS {
 		 * escaped using a `\`. For example, `` `x&y` `` represents `x&y` and
 		 * `` `bak\`tik` `` represents `` bak`tik ``.
 		 */
-		fields?: {[id: string]: Value };
+		fields?: {[id: string]: Value } | null;
 
 		/**
 		 * The resource name of the document, for example
 		 * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. The time at which the document was last changed.
@@ -266,7 +266,7 @@ export namespace MyNS {
 		 * monotonically with each change to the document. It can also be
 		 * compared to values from other documents and the `read_time` of a query.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -274,7 +274,7 @@ export namespace MyNS {
 	export interface BeginTransactionRequest {
 
 		/** Options for creating a new transaction. */
-		options?: TransactionOptions;
+		options?: TransactionOptions | null;
 	}
 
 
@@ -282,7 +282,7 @@ export namespace MyNS {
 	export interface BeginTransactionResponse {
 
 		/** The transaction that was started. */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 
@@ -294,13 +294,13 @@ export namespace MyNS {
 		 * the `parent` specified in the containing `RunQueryRequest`.
 		 * When true, selects all descendant collections.
 		 */
-		allDescendants?: boolean;
+		allDescendants?: boolean | null;
 
 		/**
 		 * The collection ID.
 		 * When set, selects only collections with this ID.
 		 */
-		collectionId?: string;
+		collectionId?: string | null;
 	}
 
 
@@ -308,13 +308,13 @@ export namespace MyNS {
 	export interface CommitRequest {
 
 		/** If set, applies all writes in this transaction, and commits it. */
-		transaction?: string;
+		transaction?: string | null;
 
 		/**
 		 * The writes to apply.
 		 * Always executed atomically and in order.
 		 */
-		writes?: Array<Write>;
+		writes?: Array<Write> | null;
 	}
 
 
@@ -322,22 +322,22 @@ export namespace MyNS {
 	export interface Write {
 
 		/** A precondition on a document, used for conditional operations. */
-		currentDocument?: Precondition;
+		currentDocument?: Precondition | null;
 
 		/**
 		 * A document name to delete. In the format:
 		 * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
 		 */
-		delete?: string;
+		delete?: string | null;
 
 		/** A transformation of a document. */
-		transform?: DocumentTransform;
+		transform?: DocumentTransform | null;
 
 		/**
 		 * A Firestore document.
 		 * Must not exceed 1 MiB - 4 bytes.
 		 */
-		update?: Document;
+		update?: Document | null;
 
 		/**
 		 * A set of field paths on a document.
@@ -346,7 +346,7 @@ export namespace MyNS {
 		 * This is different from standard field masks, as this is always scoped to a
 		 * Document, and takes in account the dynamic nature of Value.
 		 */
-		updateMask?: DocumentMask;
+		updateMask?: DocumentMask | null;
 
 		/**
 		 * The transforms to perform after update.
@@ -354,7 +354,7 @@ export namespace MyNS {
 		 * write is equivalent to performing `update` and `transform` to the same
 		 * document atomically and in order.
 		 */
-		updateTransforms?: Array<FieldTransform>;
+		updateTransforms?: Array<FieldTransform> | null;
 	}
 
 
@@ -365,13 +365,13 @@ export namespace MyNS {
 		 * When set to `true`, the target document must exist.
 		 * When set to `false`, the target document must not exist.
 		 */
-		exists?: boolean;
+		exists?: boolean | null;
 
 		/**
 		 * When set, the target document must exist and have been last updated at
 		 * that time.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -379,14 +379,14 @@ export namespace MyNS {
 	export interface DocumentTransform {
 
 		/** The name of the document to transform. */
-		document?: string;
+		document?: string | null;
 
 		/**
 		 * The list of transformations to apply to the fields of the document, in
 		 * order.
 		 * This must not be empty.
 		 */
-		fieldTransforms?: Array<FieldTransform>;
+		fieldTransforms?: Array<FieldTransform> | null;
 	}
 
 
@@ -394,28 +394,28 @@ export namespace MyNS {
 	export interface FieldTransform {
 
 		/** An array value. */
-		appendMissingElements?: ArrayValue;
+		appendMissingElements?: ArrayValue | null;
 
 		/**
 		 * The path of the field. See Document.fields for the field path syntax
 		 * reference.
 		 */
-		fieldPath?: string;
+		fieldPath?: string | null;
 
 		/** A message that can hold any of the supported value types. */
-		increment?: Value;
+		increment?: Value | null;
 
 		/** A message that can hold any of the supported value types. */
-		maximum?: Value;
+		maximum?: Value | null;
 
 		/** A message that can hold any of the supported value types. */
-		minimum?: Value;
+		minimum?: Value | null;
 
 		/** An array value. */
-		removeAllFromArray?: ArrayValue;
+		removeAllFromArray?: ArrayValue | null;
 
 		/** Sets the field to the given server value. */
-		setToServerValue?: FieldTransformSetToServerValue;
+		setToServerValue?: FieldTransformSetToServerValue | null;
 	}
 
 	export enum FieldTransformSetToServerValue { SERVER_VALUE_UNSPECIFIED = 0, REQUEST_TIME = 1 }
@@ -428,14 +428,14 @@ export namespace MyNS {
 		 * The time at which the commit occurred. Any read with an equal or greater
 		 * `read_time` is guaranteed to see the effects of the commit.
 		 */
-		commitTime?: string;
+		commitTime?: string | null;
 
 		/**
 		 * The result of applying the writes.
 		 * This i-th write result corresponds to the i-th write in the
 		 * request.
 		 */
-		writeResults?: Array<WriteResult>;
+		writeResults?: Array<WriteResult> | null;
 	}
 
 
@@ -446,7 +446,7 @@ export namespace MyNS {
 		 * The results of applying each DocumentTransform.FieldTransform, in the
 		 * same order.
 		 */
-		transformResults?: Array<Value>;
+		transformResults?: Array<Value> | null;
 
 		/**
 		 * The last update time of the document after applying the write. Not set
@@ -454,7 +454,7 @@ export namespace MyNS {
 		 * If the write did not actually change the document, this will be the
 		 * previous update_time.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -465,10 +465,10 @@ export namespace MyNS {
 		 * The list of filters to combine.
 		 * Must contain at least one filter.
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/** The operator for combining multiple filters. */
-		op?: CompositeFilterOp;
+		op?: CompositeFilterOp | null;
 	}
 
 
@@ -476,13 +476,13 @@ export namespace MyNS {
 	export interface Filter {
 
 		/** A filter that merges multiple other filters using the given operator. */
-		compositeFilter?: CompositeFilter;
+		compositeFilter?: CompositeFilter | null;
 
 		/** A filter on a specific field. */
-		fieldFilter?: FieldFilter;
+		fieldFilter?: FieldFilter | null;
 
 		/** A filter with a single operand. */
-		unaryFilter?: UnaryFilter;
+		unaryFilter?: UnaryFilter | null;
 	}
 
 
@@ -490,19 +490,19 @@ export namespace MyNS {
 	export interface FieldFilter {
 
 		/** A reference to a field, such as `max(messages.time) as max_time`. */
-		field?: FieldReference;
+		field?: FieldReference | null;
 
 		/** The operator to filter by. */
-		op?: FieldFilterOp;
+		op?: FieldFilterOp | null;
 
 		/** A message that can hold any of the supported value types. */
-		value?: Value;
+		value?: Value | null;
 	}
 
 
 	/** A reference to a field, such as `max(messages.time) as max_time`. */
 	export interface FieldReference {
-		fieldPath?: string;
+		fieldPath?: string | null;
 	}
 
 	export enum FieldFilterOp { OPERATOR_UNSPECIFIED = 0, LESS_THAN = 1, LESS_THAN_OR_EQUAL = 2, GREATER_THAN = 3, GREATER_THAN_OR_EQUAL = 4, EQUAL = 5, ARRAY_CONTAINS = 6, IN = 7, ARRAY_CONTAINS_ANY = 8 }
@@ -512,10 +512,10 @@ export namespace MyNS {
 	export interface UnaryFilter {
 
 		/** A reference to a field, such as `max(messages.time) as max_time`. */
-		field?: FieldReference;
+		field?: FieldReference | null;
 
 		/** The unary operator to apply. */
-		op?: UnaryFilterOp;
+		op?: UnaryFilterOp | null;
 	}
 
 	export enum UnaryFilterOp { OPERATOR_UNSPECIFIED = 0, IS_NAN = 1, IS_NULL = 2 }
@@ -530,14 +530,14 @@ export namespace MyNS {
 		 * If the position is just before or just after the given values, relative
 		 * to the sort order defined by the query.
 		 */
-		before?: boolean;
+		before?: boolean | null;
 
 		/**
 		 * The values that represent a position, in the order they appear in
 		 * the order by clause of a query.
 		 * Can contain fewer values than specified in the order by clause.
 		 */
-		values?: Array<Value>;
+		values?: Array<Value> | null;
 	}
 
 
@@ -554,13 +554,13 @@ export namespace MyNS {
 		 * A Firestore document.
 		 * Must not exceed 1 MiB - 4 bytes.
 		 */
-		document?: Document;
+		document?: Document | null;
 
 		/** A set of target IDs for targets that no longer match this document. */
-		removedTargetIds?: Array<number>;
+		removedTargetIds?: Array<number> | null;
 
 		/** A set of target IDs of targets that match this document. */
-		targetIds?: Array<number>;
+		targetIds?: Array<number> | null;
 	}
 
 
@@ -574,16 +574,16 @@ export namespace MyNS {
 	export interface DocumentDelete {
 
 		/** The resource name of the Document that was deleted. */
-		document?: string;
+		document?: string | null;
 
 		/**
 		 * The read timestamp at which the delete was observed.
 		 * Greater or equal to the `commit_time` of the delete.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 
 		/** A set of target IDs for targets that previously matched this entity. */
-		removedTargetIds?: Array<number>;
+		removedTargetIds?: Array<number> | null;
 	}
 
 
@@ -598,16 +598,16 @@ export namespace MyNS {
 	export interface DocumentRemove {
 
 		/** The resource name of the Document that has gone out of view. */
-		document?: string;
+		document?: string | null;
 
 		/**
 		 * The read timestamp at which the remove was observed.
 		 * Greater or equal to the `commit_time` of the change/delete/remove.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 
 		/** A set of target IDs for targets that previously matched this document. */
-		removedTargetIds?: Array<number>;
+		removedTargetIds?: Array<number> | null;
 	}
 
 
@@ -620,7 +620,7 @@ export namespace MyNS {
 		 * The request will fail if any of the document is not a child resource of
 		 * the given `database`. Duplicate names will be elided.
 		 */
-		documents?: Array<string>;
+		documents?: Array<string> | null;
 	}
 
 
@@ -645,10 +645,10 @@ export namespace MyNS {
 		 * If different from the count of documents in the client that match, the
 		 * client must manually determine which documents no longer match the target.
 		 */
-		count?: number;
+		count?: number | null;
 
 		/** The target ID to which this filter applies. */
-		targetId?: number;
+		targetId?: number | null;
 	}
 
 
@@ -659,36 +659,36 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1ExportDocumentsMetadata {
 
 		/** Which collection ids are being exported. */
-		collectionIds?: Array<string>;
+		collectionIds?: Array<string> | null;
 
 		/**
 		 * The time this operation completed. Will be unset if operation still in
 		 * progress.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The state of the export operation. */
-		operationState?: GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState;
+		operationState?: GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState | null;
 
 		/** Where the entities are being exported to. */
-		outputUriPrefix?: string;
+		outputUriPrefix?: string | null;
 
 		/**
 		 * Describes the progress of the operation.
 		 * Unit of work is generic and must be interpreted based on where Progress
 		 * is used.
 		 */
-		progressBytes?: GoogleFirestoreAdminV1Progress;
+		progressBytes?: GoogleFirestoreAdminV1Progress | null;
 
 		/**
 		 * Describes the progress of the operation.
 		 * Unit of work is generic and must be interpreted based on where Progress
 		 * is used.
 		 */
-		progressDocuments?: GoogleFirestoreAdminV1Progress;
+		progressDocuments?: GoogleFirestoreAdminV1Progress | null;
 
 		/** The time this operation started. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 	export enum GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState { OPERATION_STATE_UNSPECIFIED = 0, INITIALIZING = 1, PROCESSING = 2, CANCELLING = 3, FINALIZING = 4, SUCCESSFUL = 5, FAILED = 6, CANCELLED = 7 }
@@ -702,10 +702,10 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1Progress {
 
 		/** The amount of work completed. */
-		completedWork?: string;
+		completedWork?: string | null;
 
 		/** The amount of work estimated. */
-		estimatedWork?: string;
+		estimatedWork?: string | null;
 	}
 
 
@@ -713,7 +713,7 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1ExportDocumentsRequest {
 
 		/** Which collection ids to export. Unspecified means all collections. */
-		collectionIds?: Array<string>;
+		collectionIds?: Array<string> | null;
 
 		/**
 		 * The output URI. Currently only supports Google Cloud Storage URIs of the
@@ -725,7 +725,7 @@ export namespace MyNS {
 		 * If the URI is a bucket (without a namespace path), a prefix will be
 		 * generated based on the start time.
 		 */
-		outputUriPrefix?: string;
+		outputUriPrefix?: string | null;
 	}
 
 
@@ -737,7 +737,7 @@ export namespace MyNS {
 		 * into Cloud Firestore (this project or another project) after the operation
 		 * completes successfully.
 		 */
-		outputUriPrefix?: string;
+		outputUriPrefix?: string | null;
 	}
 
 
@@ -749,7 +749,7 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1Field {
 
 		/** The index configuration for this field. */
-		indexConfig?: GoogleFirestoreAdminV1IndexConfig;
+		indexConfig?: GoogleFirestoreAdminV1IndexConfig | null;
 
 		/**
 		 * A field name of the form
@@ -775,7 +775,7 @@ export namespace MyNS {
 		 * Indexes defined on this `Field` will be applied to all fields which do not
 		 * have their own `Field` index configuration.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -788,10 +788,10 @@ export namespace MyNS {
 		 * or from which it *would* be set if this field had no index configuration
 		 * (when `uses_ancestor_config` is false).
 		 */
-		ancestorField?: string;
+		ancestorField?: string | null;
 
 		/** The indexes supported for this field. */
-		indexes?: Array<GoogleFirestoreAdminV1Index>;
+		indexes?: Array<GoogleFirestoreAdminV1Index> | null;
 
 		/**
 		 * Output only
@@ -800,14 +800,14 @@ export namespace MyNS {
 		 * state as the field specified by `ancestor_field`, at which point
 		 * `uses_ancestor_config` will be `true` and `reverting` will be `false`.
 		 */
-		reverting?: boolean;
+		reverting?: boolean | null;
 
 		/**
 		 * Output only. When true, the `Field`'s index configuration is set from the
 		 * configuration specified by the `ancestor_field`.
 		 * When false, the `Field`'s index configuration is defined explicitly.
 		 */
-		usesAncestorConfig?: boolean;
+		usesAncestorConfig?: boolean | null;
 	}
 
 
@@ -828,7 +828,7 @@ export namespace MyNS {
 		 * For single field indexes, this will always be exactly one entry with a
 		 * field path equal to the field path of the associated field.
 		 */
-		fields?: Array<GoogleFirestoreAdminV1IndexField>;
+		fields?: Array<GoogleFirestoreAdminV1IndexField> | null;
 
 		/**
 		 * Output only. A server defined name for this index.
@@ -836,7 +836,7 @@ export namespace MyNS {
 		 * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
 		 * For single field indexes, this field will be empty.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Indexes with a collection query scope specified allow queries
@@ -846,10 +846,10 @@ export namespace MyNS {
 		 * all collections descended from a specific document, specified at query
 		 * time, and that have the same collection id as this index.
 		 */
-		queryScope?: GoogleFirestoreAdminV1IndexQueryScope;
+		queryScope?: GoogleFirestoreAdminV1IndexQueryScope | null;
 
 		/** Output only. The serving state of the index. */
-		state?: GoogleFirestoreAdminV1IndexState;
+		state?: GoogleFirestoreAdminV1IndexState | null;
 	}
 
 
@@ -861,20 +861,20 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1IndexField {
 
 		/** Indicates that this field supports operations on `array_value`s. */
-		arrayConfig?: GoogleFirestoreAdminV1IndexFieldArrayConfig;
+		arrayConfig?: GoogleFirestoreAdminV1IndexFieldArrayConfig | null;
 
 		/**
 		 * Can be __name__.
 		 * For single field indexes, this must match the name of the field or may
 		 * be omitted.
 		 */
-		fieldPath?: string;
+		fieldPath?: string | null;
 
 		/**
 		 * Indicates that this field supports ordering by the specified order or
 		 * comparing using =, <, <=, >, >=.
 		 */
-		order?: GoogleFirestoreAdminV1IndexFieldOrder;
+		order?: GoogleFirestoreAdminV1IndexFieldOrder | null;
 	}
 
 	export enum GoogleFirestoreAdminV1IndexFieldArrayConfig { ARRAY_CONFIG_UNSPECIFIED = 0, CONTAINS = 1 }
@@ -896,39 +896,39 @@ export namespace MyNS {
 		 * The time this operation completed. Will be unset if operation still in
 		 * progress.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * The field resource that this operation is acting on. For example:
 		 * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
 		 */
-		field?: string;
+		field?: string | null;
 
 		/**
 		 * A list of IndexConfigDelta, which describe the intent of this
 		 * operation.
 		 */
-		indexConfigDeltas?: Array<GoogleFirestoreAdminV1IndexConfigDelta>;
+		indexConfigDeltas?: Array<GoogleFirestoreAdminV1IndexConfigDelta> | null;
 
 		/**
 		 * Describes the progress of the operation.
 		 * Unit of work is generic and must be interpreted based on where Progress
 		 * is used.
 		 */
-		progressBytes?: GoogleFirestoreAdminV1Progress;
+		progressBytes?: GoogleFirestoreAdminV1Progress | null;
 
 		/**
 		 * Describes the progress of the operation.
 		 * Unit of work is generic and must be interpreted based on where Progress
 		 * is used.
 		 */
-		progressDocuments?: GoogleFirestoreAdminV1Progress;
+		progressDocuments?: GoogleFirestoreAdminV1Progress | null;
 
 		/** The time this operation started. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The state of the operation. */
-		state?: GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState;
+		state?: GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState | null;
 	}
 
 
@@ -936,13 +936,13 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1IndexConfigDelta {
 
 		/** Specifies how the index is changing. */
-		changeType?: GoogleFirestoreAdminV1IndexConfigDeltaChangeType;
+		changeType?: GoogleFirestoreAdminV1IndexConfigDeltaChangeType | null;
 
 		/**
 		 * Cloud Firestore indexes enable simple and complex queries against
 		 * documents in a database.
 		 */
-		index?: GoogleFirestoreAdminV1Index;
+		index?: GoogleFirestoreAdminV1Index | null;
 	}
 
 	export enum GoogleFirestoreAdminV1IndexConfigDeltaChangeType { CHANGE_TYPE_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
@@ -955,36 +955,36 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1ImportDocumentsMetadata {
 
 		/** Which collection ids are being imported. */
-		collectionIds?: Array<string>;
+		collectionIds?: Array<string> | null;
 
 		/**
 		 * The time this operation completed. Will be unset if operation still in
 		 * progress.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The location of the documents being imported. */
-		inputUriPrefix?: string;
+		inputUriPrefix?: string | null;
 
 		/** The state of the import operation. */
-		operationState?: GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState;
+		operationState?: GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState | null;
 
 		/**
 		 * Describes the progress of the operation.
 		 * Unit of work is generic and must be interpreted based on where Progress
 		 * is used.
 		 */
-		progressBytes?: GoogleFirestoreAdminV1Progress;
+		progressBytes?: GoogleFirestoreAdminV1Progress | null;
 
 		/**
 		 * Describes the progress of the operation.
 		 * Unit of work is generic and must be interpreted based on where Progress
 		 * is used.
 		 */
-		progressDocuments?: GoogleFirestoreAdminV1Progress;
+		progressDocuments?: GoogleFirestoreAdminV1Progress | null;
 
 		/** The time this operation started. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -995,7 +995,7 @@ export namespace MyNS {
 		 * Which collection ids to import. Unspecified means all collections included
 		 * in the import.
 		 */
-		collectionIds?: Array<string>;
+		collectionIds?: Array<string> | null;
 
 		/**
 		 * Location of the exported files.
@@ -1004,7 +1004,7 @@ export namespace MyNS {
 		 * See:
 		 * google.firestore.admin.v1.ExportDocumentsResponse.output_uri_prefix.
 		 */
-		inputUriPrefix?: string;
+		inputUriPrefix?: string | null;
 	}
 
 
@@ -1018,33 +1018,33 @@ export namespace MyNS {
 		 * The time this operation completed. Will be unset if operation still in
 		 * progress.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * The index resource that this operation is acting on. For example:
 		 * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{index_id}`
 		 */
-		index?: string;
+		index?: string | null;
 
 		/**
 		 * Describes the progress of the operation.
 		 * Unit of work is generic and must be interpreted based on where Progress
 		 * is used.
 		 */
-		progressBytes?: GoogleFirestoreAdminV1Progress;
+		progressBytes?: GoogleFirestoreAdminV1Progress | null;
 
 		/**
 		 * Describes the progress of the operation.
 		 * Unit of work is generic and must be interpreted based on where Progress
 		 * is used.
 		 */
-		progressDocuments?: GoogleFirestoreAdminV1Progress;
+		progressDocuments?: GoogleFirestoreAdminV1Progress | null;
 
 		/** The time this operation started. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The state of the operation. */
-		state?: GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState;
+		state?: GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState | null;
 	}
 
 
@@ -1052,13 +1052,13 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1ListFieldsResponse {
 
 		/** The requested fields. */
-		fields?: Array<GoogleFirestoreAdminV1Field>;
+		fields?: Array<GoogleFirestoreAdminV1Field> | null;
 
 		/**
 		 * A page token that may be used to request another page of results. If blank,
 		 * this is the last page.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1066,13 +1066,13 @@ export namespace MyNS {
 	export interface GoogleFirestoreAdminV1ListIndexesResponse {
 
 		/** The requested indexes. */
-		indexes?: Array<GoogleFirestoreAdminV1Index>;
+		indexes?: Array<GoogleFirestoreAdminV1Index> | null;
 
 		/**
 		 * A page token that may be used to request another page of results. If blank,
 		 * this is the last page.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1090,10 +1090,10 @@ export namespace MyNS {
 	export interface GoogleLongrunningListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<GoogleLongrunningOperation>;
+		operations?: Array<GoogleLongrunningOperation> | null;
 	}
 
 
@@ -1108,7 +1108,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1118,7 +1118,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -1126,14 +1126,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -1145,7 +1145,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -1160,20 +1160,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -1181,13 +1181,13 @@ export namespace MyNS {
 	export interface ListCollectionIdsRequest {
 
 		/** The maximum number of results to return. */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * A page token. Must be a value from
 		 * ListCollectionIdsResponse.
 		 */
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 
@@ -1195,10 +1195,10 @@ export namespace MyNS {
 	export interface ListCollectionIdsResponse {
 
 		/** The collection ids. */
-		collectionIds?: Array<string>;
+		collectionIds?: Array<string> | null;
 
 		/** A page token that may be used to continue the list. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1206,10 +1206,10 @@ export namespace MyNS {
 	export interface ListDocumentsResponse {
 
 		/** The Documents found. */
-		documents?: Array<Document>;
+		documents?: Array<Document> | null;
 
 		/** The next page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1217,10 +1217,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1231,28 +1231,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1260,13 +1260,13 @@ export namespace MyNS {
 	export interface ListenRequest {
 
 		/** A specification of a set of documents to listen to. */
-		addTarget?: Target;
+		addTarget?: Target | null;
 
 		/** Labels associated with this target change. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The ID of a target to remove from this stream. */
-		removeTarget?: number;
+		removeTarget?: number | null;
 	}
 
 
@@ -1274,31 +1274,31 @@ export namespace MyNS {
 	export interface Target {
 
 		/** A target specified by a set of documents names. */
-		documents?: DocumentsTarget;
+		documents?: DocumentsTarget | null;
 
 		/** If the target should be removed once it is current and consistent. */
-		once?: boolean;
+		once?: boolean | null;
 
 		/** A target specified by a query. */
-		query?: QueryTarget;
+		query?: QueryTarget | null;
 
 		/**
 		 * Start listening after a specific `read_time`.
 		 * The client must know the state of matching documents at this time.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 
 		/**
 		 * A resume token from a prior TargetChange for an identical target.
 		 * Using a resume token with a different target is unsupported and may fail.
 		 */
-		resumeToken?: string;
+		resumeToken?: string | null;
 
 		/**
 		 * The target ID that identifies the target on the stream. Must be a positive
 		 * number and non-zero.
 		 */
-		targetId?: number;
+		targetId?: number | null;
 	}
 
 
@@ -1313,10 +1313,10 @@ export namespace MyNS {
 		 * `projects/my-project/databases/my-database/documents` or
 		 * `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/** A Firestore query. */
-		structuredQuery?: StructuredQuery;
+		structuredQuery?: StructuredQuery | null;
 	}
 
 
@@ -1324,24 +1324,24 @@ export namespace MyNS {
 	export interface StructuredQuery {
 
 		/** A position in a query result set. */
-		endAt?: Cursor;
+		endAt?: Cursor | null;
 
 		/** The collections to query. */
-		from?: Array<CollectionSelector>;
+		from?: Array<CollectionSelector> | null;
 
 		/**
 		 * The maximum number of results to return.
 		 * Applies after all other constraints.
 		 * Must be >= 0 if specified.
 		 */
-		limit?: number;
+		limit?: number | null;
 
 		/**
 		 * The number of results to skip.
 		 * Applies before limit, but after all other constraints. Must be >= 0 if
 		 * specified.
 		 */
-		offset?: number;
+		offset?: number | null;
 
 		/**
 		 * The order to apply to the query results.
@@ -1359,16 +1359,16 @@ export namespace MyNS {
 		 * * `SELECT * FROM Foo WHERE A > 1` becomes
 		 * `SELECT * FROM Foo WHERE A > 1 ORDER BY A, __name__`
 		 */
-		orderBy?: Array<Order>;
+		orderBy?: Array<Order> | null;
 
 		/** The projection of document's fields to return. */
-		select?: Projection;
+		select?: Projection | null;
 
 		/** A position in a query result set. */
-		startAt?: Cursor;
+		startAt?: Cursor | null;
 
 		/** A filter. */
-		where?: Filter;
+		where?: Filter | null;
 	}
 
 
@@ -1376,10 +1376,10 @@ export namespace MyNS {
 	export interface Order {
 
 		/** The direction to order by. Defaults to `ASCENDING`. */
-		direction?: OrderDirection;
+		direction?: OrderDirection | null;
 
 		/** A reference to a field, such as `max(messages.time) as max_time`. */
-		field?: FieldReference;
+		field?: FieldReference | null;
 	}
 
 	export enum OrderDirection { DIRECTION_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
@@ -1393,7 +1393,7 @@ export namespace MyNS {
 		 * If empty, all fields are returned. To only return the name
 		 * of the document, use `['__name__']`.
 		 */
-		fields?: Array<FieldReference>;
+		fields?: Array<FieldReference> | null;
 	}
 
 
@@ -1407,7 +1407,7 @@ export namespace MyNS {
 		 * Multiple DocumentChange messages may be returned for the same logical
 		 * change, if multiple targets are affected.
 		 */
-		documentChange?: DocumentChange;
+		documentChange?: DocumentChange | null;
 
 		/**
 		 * A Document has been deleted.
@@ -1416,7 +1416,7 @@ export namespace MyNS {
 		 * Multiple DocumentDelete messages may be returned for the same logical
 		 * delete, if multiple targets are affected.
 		 */
-		documentDelete?: DocumentDelete;
+		documentDelete?: DocumentDelete | null;
 
 		/**
 		 * A Document has been removed from the view of the targets.
@@ -1426,13 +1426,13 @@ export namespace MyNS {
 		 * Multiple DocumentRemove messages may be returned for the same logical
 		 * write or delete, if multiple targets are affected.
 		 */
-		documentRemove?: DocumentRemove;
+		documentRemove?: DocumentRemove | null;
 
 		/** A digest of all the documents that match a given target. */
-		filter?: ExistenceFilter;
+		filter?: ExistenceFilter | null;
 
 		/** Targets being watched have changed. */
-		targetChange?: TargetChange;
+		targetChange?: TargetChange | null;
 	}
 
 
@@ -1447,7 +1447,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		cause?: Status;
+		cause?: Status | null;
 
 		/**
 		 * The consistent `read_time` for the given `target_ids` (omitted when the
@@ -1459,24 +1459,24 @@ export namespace MyNS {
 		 * For a given stream, `read_time` is guaranteed to be monotonically
 		 * increasing.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 
 		/**
 		 * A token that can be used to resume the stream for the given `target_ids`,
 		 * or all targets if `target_ids` is empty.
 		 * Not set on every target change.
 		 */
-		resumeToken?: string;
+		resumeToken?: string | null;
 
 		/** The type of change that occurred. */
-		targetChangeType?: TargetChangeTargetChangeType;
+		targetChangeType?: TargetChangeTargetChangeType | null;
 
 		/**
 		 * The target IDs of targets that have changed.
 		 * If empty, the change applies to all targets.
 		 * The order of the target IDs is not defined.
 		 */
-		targetIds?: Array<number>;
+		targetIds?: Array<number> | null;
 	}
 
 	export enum TargetChangeTargetChangeType { NO_CHANGE = 0, ADD = 1, REMOVE = 2, CURRENT = 3, RESET = 4 }
@@ -1486,7 +1486,7 @@ export namespace MyNS {
 	export interface RollbackRequest {
 
 		/** Required. The transaction to roll back. */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 
@@ -1494,19 +1494,19 @@ export namespace MyNS {
 	export interface RunQueryRequest {
 
 		/** Options for creating a new transaction. */
-		newTransaction?: TransactionOptions;
+		newTransaction?: TransactionOptions | null;
 
 		/**
 		 * Reads documents as they were at the given time.
 		 * This may not be older than 270 seconds.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 
 		/** A Firestore query. */
-		structuredQuery?: StructuredQuery;
+		structuredQuery?: StructuredQuery | null;
 
 		/** Reads documents in a transaction. */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 
@@ -1517,7 +1517,7 @@ export namespace MyNS {
 		 * A Firestore document.
 		 * Must not exceed 1 MiB - 4 bytes.
 		 */
-		document?: Document;
+		document?: Document | null;
 
 		/**
 		 * The time at which the document was read. This may be monotonically
@@ -1527,13 +1527,13 @@ export namespace MyNS {
 		 * `document` will be sent, and this represents the time at which the query
 		 * was run.
 		 */
-		readTime?: string;
+		readTime?: string | null;
 
 		/**
 		 * The number of results that have been skipped due to an offset between
 		 * the last response and the current response.
 		 */
-		skippedResults?: number;
+		skippedResults?: number | null;
 
 		/**
 		 * The transaction that was started as part of this request.
@@ -1541,7 +1541,7 @@ export namespace MyNS {
 		 * RunQueryRequest.new_transaction was set in the request.
 		 * If set, no other fields will be set in this response.
 		 */
-		transaction?: string;
+		transaction?: string | null;
 	}
 
 
@@ -1557,14 +1557,14 @@ export namespace MyNS {
 	export interface WriteRequest {
 
 		/** Labels associated with this write request. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The ID of the write stream to resume.
 		 * This may only be set in the first message. When left empty, a new write
 		 * stream will be created.
 		 */
-		streamId?: string;
+		streamId?: string | null;
 
 		/**
 		 * A stream token that was previously sent by the server.
@@ -1578,7 +1578,7 @@ export namespace MyNS {
 		 * a specific point, set this field and the `stream_id` field.
 		 * Leave this field unset when creating a new stream.
 		 */
-		streamToken?: string;
+		streamToken?: string | null;
 
 		/**
 		 * The writes to apply.
@@ -1587,7 +1587,7 @@ export namespace MyNS {
 		 * This may be empty on the last request.
 		 * This must not be empty on all other requests.
 		 */
-		writes?: Array<Write>;
+		writes?: Array<Write> | null;
 	}
 
 
@@ -1598,27 +1598,27 @@ export namespace MyNS {
 		 * The time at which the commit occurred. Any read with an equal or greater
 		 * `read_time` is guaranteed to see the effects of the write.
 		 */
-		commitTime?: string;
+		commitTime?: string | null;
 
 		/**
 		 * The ID of the stream.
 		 * Only set on the first message, when a new stream was created.
 		 */
-		streamId?: string;
+		streamId?: string | null;
 
 		/**
 		 * A token that represents the position of this response in the stream.
 		 * This can be used by a client to resume the stream at this point.
 		 * This field is always set.
 		 */
-		streamToken?: string;
+		streamToken?: string | null;
 
 		/**
 		 * The result of applying the writes.
 		 * This i-th write result corresponds to the i-th write in the
 		 * request.
 		 */
-		writeResults?: Array<WriteResult>;
+		writeResults?: Array<WriteResult> | null;
 	}
 
 	@Injectable()

@@ -15,7 +15,7 @@ export namespace MyNS {
 		 * present on the device. Logging into the device with these generated accounts
 		 * allows testing more functionalities.
 		 */
-		googleAuto?: GoogleAuto;
+		googleAuto?: GoogleAuto | null;
 	}
 
 
@@ -39,25 +39,25 @@ export namespace MyNS {
 		 * Required. The id of the Android device to be used.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		androidModelId?: string;
+		androidModelId?: string | null;
 
 		/**
 		 * Required. The id of the Android OS version to be used.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		androidVersionId?: string;
+		androidVersionId?: string | null;
 
 		/**
 		 * Required. The locale the test device used for testing.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		locale?: string;
+		locale?: string | null;
 
 		/**
 		 * Required. How the device is oriented during the test.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		orientation?: string;
+		orientation?: string | null;
 	}
 
 
@@ -65,13 +65,13 @@ export namespace MyNS {
 	export interface AndroidDeviceCatalog {
 
 		/** The set of supported Android device models. */
-		models?: Array<AndroidModel>;
+		models?: Array<AndroidModel> | null;
 
 		/** Android configuration that can be selected at the time a test is run. */
-		runtimeConfiguration?: AndroidRuntimeConfiguration;
+		runtimeConfiguration?: AndroidRuntimeConfiguration | null;
 
 		/** The set of supported Android OS versions. */
-		versions?: Array<AndroidVersion>;
+		versions?: Array<AndroidVersion> | null;
 	}
 
 
@@ -82,52 +82,52 @@ export namespace MyNS {
 		 * The company that this device is branded with.
 		 * Example: "Google", "Samsung".
 		 */
-		brand?: string;
+		brand?: string | null;
 
 		/**
 		 * The name of the industrial design.
 		 * This corresponds to android.os.Build.DEVICE.
 		 */
-		codename?: string;
+		codename?: string | null;
 
 		/** Whether this device is virtual or physical. */
-		form?: AndroidModelForm;
+		form?: AndroidModelForm | null;
 
 		/** Whether this device is a phone, tablet, wearable, etc. */
-		formFactor?: AndroidModelFormFactor;
+		formFactor?: AndroidModelFormFactor | null;
 
 		/**
 		 * The unique opaque id for this model.
 		 * Use this for invoking the TestExecutionService.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * True if and only if tests with this model are recorded by stitching
 		 * together screenshots. See use_low_spec_video_recording in device config.
 		 */
-		lowFpsVideoRecording?: boolean;
+		lowFpsVideoRecording?: boolean | null;
 
 		/** The manufacturer of this device. */
-		manufacturer?: string;
+		manufacturer?: string | null;
 
 		/**
 		 * The human-readable marketing name for this device model.
 		 * Examples: "Nexus 5", "Galaxy S5".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Screen density in DPI.
 		 * This corresponds to ro.sf.lcd_density
 		 */
-		screenDensity?: number;
+		screenDensity?: number | null;
 
 		/** Screen size in the horizontal (X) dimension measured in pixels. */
-		screenX?: number;
+		screenX?: number | null;
 
 		/** Screen size in the vertical (Y) dimension measured in pixels. */
-		screenY?: number;
+		screenY?: number | null;
 
 		/**
 		 * The list of supported ABIs for this device.
@@ -138,19 +138,19 @@ export namespace MyNS {
 		 * the id of an AndroidVersion), denoting an ABI that is supported only on
 		 * a particular version.
 		 */
-		supportedAbis?: Array<string>;
+		supportedAbis?: Array<string> | null;
 
 		/** The set of Android versions this device supports. */
-		supportedVersionIds?: Array<string>;
+		supportedVersionIds?: Array<string> | null;
 
 		/**
 		 * Tags for this dimension.
 		 * Examples: "default", "preview", "deprecated".
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 
 		/** URL of a thumbnail image of the device. */
-		thumbnailUrl?: string;
+		thumbnailUrl?: string | null;
 	}
 
 	export enum AndroidModelForm { DEVICE_FORM_UNSPECIFIED = 0, VIRTUAL = 1, PHYSICAL = 2 }
@@ -162,10 +162,10 @@ export namespace MyNS {
 	export interface AndroidRuntimeConfiguration {
 
 		/** The set of available locales. */
-		locales?: Array<Locale>;
+		locales?: Array<Locale> | null;
 
 		/** The set of available orientations. */
-		orientations?: Array<Orientation>;
+		orientations?: Array<Orientation> | null;
 	}
 
 
@@ -176,25 +176,25 @@ export namespace MyNS {
 		 * The id for this locale.
 		 * Example: "en_US".
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * A human-friendly name for this language/locale.
 		 * Example: "English".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A human-friendly string representing the region for this
 		 * locale. Example: "United States". Not present for every locale.
 		 */
-		region?: string;
+		region?: string | null;
 
 		/**
 		 * Tags for this dimension.
 		 * Example: "default".
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 	}
 
 
@@ -205,19 +205,19 @@ export namespace MyNS {
 		 * The id for this orientation.
 		 * Example: "portrait".
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * A human-friendly name for this orientation.
 		 * Example: "portrait".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Tags for this dimension.
 		 * Example: "default".
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 	}
 
 
@@ -228,25 +228,25 @@ export namespace MyNS {
 		 * The API level for this Android version.
 		 * Examples: 18, 19.
 		 */
-		apiLevel?: number;
+		apiLevel?: number | null;
 
 		/**
 		 * The code name for this Android version.
 		 * Examples: "JellyBean", "KitKat".
 		 */
-		codeName?: string;
+		codeName?: string | null;
 
 		/**
 		 * Data about the relative number of devices running a
 		 * given configuration of the Android platform.
 		 */
-		distribution?: Distribution;
+		distribution?: Distribution | null;
 
 		/**
 		 * An opaque id for this Android version.
 		 * Use this id to invoke the TestExecutionService.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
@@ -258,19 +258,19 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		releaseDate?: Date;
+		releaseDate?: Date | null;
 
 		/**
 		 * Tags for this dimension.
 		 * Examples: "default", "preview", "deprecated".
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 
 		/**
 		 * A string representing this version of the Android OS.
 		 * Examples: "4.3", "4.4".
 		 */
-		versionString?: string;
+		versionString?: string | null;
 	}
 
 
@@ -284,10 +284,10 @@ export namespace MyNS {
 		 * Output only. The estimated fraction (0-1) of the total market with this
 		 * configuration.
 		 */
-		marketShare?: number;
+		marketShare?: number | null;
 
 		/** Output only. The time this distribution was measured. */
-		measurementTime?: string;
+		measurementTime?: string | null;
 	}
 
 
@@ -308,19 +308,19 @@ export namespace MyNS {
 		 * if specifying a year by itself or a year and month where the day is not
 		 * significant.
 		 */
-		day?: number;
+		day?: number | null;
 
 		/**
 		 * Month of year. Must be from 1 to 12, or 0 if specifying a year without a
 		 * month and day.
 		 */
-		month?: number;
+		month?: number | null;
 
 		/**
 		 * Year of date. Must be from 1 to 9999, or 0 if specifying a date without
 		 * a year.
 		 */
-		year?: number;
+		year?: number | null;
 	}
 
 
@@ -328,7 +328,7 @@ export namespace MyNS {
 	export interface AndroidDeviceList {
 
 		/** Required. A list of Android devices. */
-		androidDevices?: Array<AndroidDevice>;
+		androidDevices?: Array<AndroidDevice> | null;
 	}
 
 
@@ -345,7 +345,7 @@ export namespace MyNS {
 	export interface AndroidInstrumentationTest {
 
 		/** A reference to a file, used for user inputs. */
-		appApk?: FileReference;
+		appApk?: FileReference | null;
 
 		/**
 		 * An Android App Bundle file format, containing a BundleConfig.pb file,
@@ -353,13 +353,13 @@ export namespace MyNS {
 		 * <p>See https://developer.android.com/guide/app-bundle/build for guidance on
 		 * building App Bundles.
 		 */
-		appBundle?: AppBundle;
+		appBundle?: AppBundle | null;
 
 		/**
 		 * The java package for the application under test.
 		 * The default value is determined by examining the application's manifest.
 		 */
-		appPackageId?: string;
+		appPackageId?: string | null;
 
 		/**
 		 * The option of whether running each test within its own invocation of
@@ -375,25 +375,25 @@ export namespace MyNS {
 		 * for more information about Android Test Orchestrator.
 		 * If not set, the test will be run without the orchestrator.
 		 */
-		orchestratorOption?: AndroidInstrumentationTestOrchestratorOption;
+		orchestratorOption?: AndroidInstrumentationTestOrchestratorOption | null;
 
 		/** Options for enabling sharding. */
-		shardingOption?: ShardingOption;
+		shardingOption?: ShardingOption | null;
 
 		/** A reference to a file, used for user inputs. */
-		testApk?: FileReference;
+		testApk?: FileReference | null;
 
 		/**
 		 * The java package for the test to be executed.
 		 * The default value is determined by examining the application's manifest.
 		 */
-		testPackageId?: string;
+		testPackageId?: string | null;
 
 		/**
 		 * The InstrumentationTestRunner class.
 		 * The default value is determined by examining the application's manifest.
 		 */
-		testRunnerClass?: string;
+		testRunnerClass?: string | null;
 
 		/**
 		 * Each target must be fully qualified with the package name or class name,
@@ -403,7 +403,7 @@ export namespace MyNS {
 		 * - "class package_name.class_name#method_name"
 		 * If empty, all targets in the module will be run.
 		 */
-		testTargets?: Array<string>;
+		testTargets?: Array<string> | null;
 	}
 
 
@@ -414,7 +414,7 @@ export namespace MyNS {
 		 * A path to a file in Google Cloud Storage.
 		 * Example: gs://build-app-1414623860166/app-debug-unaligned.apk
 		 */
-		gcsPath?: string;
+		gcsPath?: string | null;
 	}
 
 
@@ -427,7 +427,7 @@ export namespace MyNS {
 	export interface AppBundle {
 
 		/** A reference to a file, used for user inputs. */
-		bundleLocation?: FileReference;
+		bundleLocation?: FileReference | null;
 	}
 
 	export enum AndroidInstrumentationTestOrchestratorOption { ORCHESTRATOR_OPTION_UNSPECIFIED = 0, USE_ORCHESTRATOR = 1, DO_NOT_USE_ORCHESTRATOR = 2 }
@@ -442,7 +442,7 @@ export namespace MyNS {
 		 * With manual sharding enabled, specifying test targets via
 		 * environment_variables or in InstrumentationTest is invalid.
 		 */
-		manualSharding?: ManualSharding;
+		manualSharding?: ManualSharding | null;
 
 		/**
 		 * Uniformly shards test cases given a total number of shards.
@@ -450,7 +450,7 @@ export namespace MyNS {
 		 * shardIndex” AndroidJUnitRunner arguments. With uniform sharding enabled,
 		 * specifying these sharding arguments via environment_variables is invalid.
 		 */
-		uniformSharding?: UniformSharding;
+		uniformSharding?: UniformSharding | null;
 	}
 
 
@@ -466,7 +466,7 @@ export namespace MyNS {
 		 * Required. Group of packages, classes, and/or test methods to be run for
 		 * each shard. The number of shard_test_targets must be >= 1 and <= 50.
 		 */
-		testTargetsForShard?: Array<TestTargetsForShard>;
+		testTargetsForShard?: Array<TestTargetsForShard> | null;
 	}
 
 
@@ -479,7 +479,7 @@ export namespace MyNS {
 		 * example, “package com.my.packages” “class com.my.package.MyClass”.
 		 * The number of shard_test_targets must be greater than 0.
 		 */
-		testTargets?: Array<string>;
+		testTargets?: Array<string> | null;
 	}
 
 
@@ -492,7 +492,7 @@ export namespace MyNS {
 	export interface UniformSharding {
 
 		/** Required. Total number of shards. The number must be >= 1 and <= 50. */
-		numShards?: number;
+		numShards?: number | null;
 	}
 
 
@@ -509,25 +509,25 @@ export namespace MyNS {
 		 * Required. The ids of the set of Android device to be used.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		androidModelIds?: Array<string>;
+		androidModelIds?: Array<string> | null;
 
 		/**
 		 * Required. The ids of the set of Android OS version to be used.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		androidVersionIds?: Array<string>;
+		androidVersionIds?: Array<string> | null;
 
 		/**
 		 * Required. The set of locales the test device will enable for testing.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		locales?: Array<string>;
+		locales?: Array<string> | null;
 
 		/**
 		 * Required. The set of orientations to test with.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		orientations?: Array<string>;
+		orientations?: Array<string> | null;
 	}
 
 
@@ -538,7 +538,7 @@ export namespace MyNS {
 	export interface AndroidRoboTest {
 
 		/** A reference to a file, used for user inputs. */
-		appApk?: FileReference;
+		appApk?: FileReference | null;
 
 		/**
 		 * An Android App Bundle file format, containing a BundleConfig.pb file,
@@ -546,39 +546,39 @@ export namespace MyNS {
 		 * <p>See https://developer.android.com/guide/app-bundle/build for guidance on
 		 * building App Bundles.
 		 */
-		appBundle?: AppBundle;
+		appBundle?: AppBundle | null;
 
 		/** The initial activity that should be used to start the app. */
-		appInitialActivity?: string;
+		appInitialActivity?: string | null;
 
 		/**
 		 * The java package for the application under test.
 		 * The default value is determined by examining the application's manifest.
 		 */
-		appPackageId?: string;
+		appPackageId?: string | null;
 
 		/**
 		 * The max depth of the traversal stack Robo can explore. Needs to be at least
 		 * 2 to make Robo explore the app beyond the first activity.
 		 * Default is 50.
 		 */
-		maxDepth?: number;
+		maxDepth?: number | null;
 
 		/**
 		 * The max number of steps Robo can execute.
 		 * Default is no limit.
 		 */
-		maxSteps?: number;
+		maxSteps?: number | null;
 
 		/**
 		 * A set of directives Robo should apply during the crawl.
 		 * This allows users to customize the crawl. For example, the username and
 		 * password for a test account can be provided.
 		 */
-		roboDirectives?: Array<RoboDirective>;
+		roboDirectives?: Array<RoboDirective> | null;
 
 		/** A reference to a file, used for user inputs. */
-		roboScript?: FileReference;
+		roboScript?: FileReference | null;
 
 		/**
 		 * The intents used to launch the app for the crawl.
@@ -586,7 +586,7 @@ export namespace MyNS {
 		 * If some are provided, then only those provided are launched (the main
 		 * launcher activity must be provided explicitly).
 		 */
-		startingIntents?: Array<RoboStartingIntent>;
+		startingIntents?: Array<RoboStartingIntent> | null;
 	}
 
 
@@ -600,13 +600,13 @@ export namespace MyNS {
 		 * Required. The type of action that Robo should perform on the specified
 		 * element.
 		 */
-		actionType?: RoboDirectiveActionType;
+		actionType?: RoboDirectiveActionType | null;
 
 		/**
 		 * The text that Robo is directed to set. If left empty, the directive will be
 		 * treated as a CLICK on the element matching the resource_name.
 		 */
-		inputText?: string;
+		inputText?: string | null;
 
 		/**
 		 * Required. The android resource name of the target UI element.
@@ -617,7 +617,7 @@ export namespace MyNS {
 		 * Reference doc:
 		 * https://developer.android.com/guide/topics/resources/accessing-resources.html
 		 */
-		resourceName?: string;
+		resourceName?: string | null;
 	}
 
 	export enum RoboDirectiveActionType { ACTION_TYPE_UNSPECIFIED = 0, SINGLE_CLICK = 1, ENTER_TEXT = 2, IGNORE = 3 }
@@ -627,13 +627,13 @@ export namespace MyNS {
 	export interface RoboStartingIntent {
 
 		/** Specifies an intent that starts the main launcher activity. */
-		launcherActivity?: LauncherActivityIntent;
+		launcherActivity?: LauncherActivityIntent | null;
 
 		/** A starting intent specified by an action, uri, and categories. */
-		startActivity?: StartActivityIntent;
+		startActivity?: StartActivityIntent | null;
 
 		/** Timeout in seconds for each intent. */
-		timeout?: string;
+		timeout?: string | null;
 	}
 
 
@@ -649,13 +649,13 @@ export namespace MyNS {
 		 * Action name.
 		 * Required for START_ACTIVITY.
 		 */
-		action?: string;
+		action?: string | null;
 
 		/** Intent categories to set on the intent. */
-		categories?: Array<string>;
+		categories?: Array<string> | null;
 
 		/** URI for the action. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -667,7 +667,7 @@ export namespace MyNS {
 	export interface AndroidTestLoop {
 
 		/** A reference to a file, used for user inputs. */
-		appApk?: FileReference;
+		appApk?: FileReference | null;
 
 		/**
 		 * An Android App Bundle file format, containing a BundleConfig.pb file,
@@ -675,13 +675,13 @@ export namespace MyNS {
 		 * <p>See https://developer.android.com/guide/app-bundle/build for guidance on
 		 * building App Bundles.
 		 */
-		appBundle?: AppBundle;
+		appBundle?: AppBundle | null;
 
 		/**
 		 * The java package for the application under test.
 		 * The default is determined by examining the application's manifest.
 		 */
-		appPackageId?: string;
+		appPackageId?: string | null;
 
 		/**
 		 * The list of scenario labels that should be run during the test.
@@ -692,14 +692,14 @@ export namespace MyNS {
 		 * execution.
 		 * Scenarios can also be specified in the scenarios field.
 		 */
-		scenarioLabels?: Array<string>;
+		scenarioLabels?: Array<string> | null;
 
 		/**
 		 * The list of scenarios that should be run during the test.
 		 * The default is all test loops, derived from the application's
 		 * manifest.
 		 */
-		scenarios?: Array<number>;
+		scenarios?: Array<number> | null;
 	}
 
 
@@ -707,13 +707,13 @@ export namespace MyNS {
 	export interface Apk {
 
 		/** A reference to a file, used for user inputs. */
-		location?: FileReference;
+		location?: FileReference | null;
 
 		/**
 		 * The java package for the APK to be installed.
 		 * Value is determined by examining the application's manifest.
 		 */
-		packageName?: string;
+		packageName?: string | null;
 	}
 
 
@@ -727,7 +727,7 @@ export namespace MyNS {
 		 * An Android app manifest. See
 		 * http://developer.android.com/guide/topics/manifest/manifest-intro.html
 		 */
-		apkManifest?: ApkManifest;
+		apkManifest?: ApkManifest | null;
 	}
 
 
@@ -738,23 +738,23 @@ export namespace MyNS {
 	export interface ApkManifest {
 
 		/** User-readable name for the application. */
-		applicationLabel?: string;
-		intentFilters?: Array<IntentFilter>;
+		applicationLabel?: string | null;
+		intentFilters?: Array<IntentFilter> | null;
 
 		/** Maximum API level on which the application is designed to run. */
-		maxSdkVersion?: number;
+		maxSdkVersion?: number | null;
 
 		/** Minimum API level required for the application to run. */
-		minSdkVersion?: number;
+		minSdkVersion?: number | null;
 
 		/**
 		 * Full Java-style package name for this application, e.g.
 		 * "com.example.foo".
 		 */
-		packageName?: string;
+		packageName?: string | null;
 
 		/** Specifies the API Level on which the application is designed to run. */
-		targetSdkVersion?: number;
+		targetSdkVersion?: number | null;
 	}
 
 
@@ -765,13 +765,13 @@ export namespace MyNS {
 	export interface IntentFilter {
 
 		/** The android:name value of the <action> tag. */
-		actionNames?: Array<string>;
+		actionNames?: Array<string> | null;
 
 		/** The android:name value of the <category> tag. */
-		categoryNames?: Array<string>;
+		categoryNames?: Array<string> | null;
 
 		/** The android:mimeType value of the <data> tag. */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -783,7 +783,7 @@ export namespace MyNS {
 		 * If this state is already final, then the cancelation request will
 		 * have no effect.
 		 */
-		testState?: CancelTestMatrixResponseTestState;
+		testState?: CancelTestMatrixResponseTestState | null;
 	}
 
 	export enum CancelTestMatrixResponseTestState { TEST_STATE_UNSPECIFIED = 0, VALIDATING = 1, PENDING = 2, RUNNING = 3, FINISHED = 4, ERROR = 5, UNSUPPORTED_ENVIRONMENT = 6, INCOMPATIBLE_ENVIRONMENT = 7, INCOMPATIBLE_ARCHITECTURE = 8, CANCELLED = 9, INVALID = 10 }
@@ -793,10 +793,10 @@ export namespace MyNS {
 	export interface ClientInfo {
 
 		/** The list of detailed information about client. */
-		clientInfoDetails?: Array<ClientInfoDetail>;
+		clientInfoDetails?: Array<ClientInfoDetail> | null;
 
 		/** Required. Client name, such as gcloud. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -807,10 +807,10 @@ export namespace MyNS {
 	export interface ClientInfoDetail {
 
 		/** Required. The key of detailed client information. */
-		key?: string;
+		key?: string | null;
 
 		/** Required. The value of detailed client information. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -818,10 +818,10 @@ export namespace MyNS {
 	export interface DeviceFile {
 
 		/** An opaque binary blob file to install on the device before the test starts. */
-		obbFile?: ObbFile;
+		obbFile?: ObbFile | null;
 
 		/** A file or directory to install on the device before the test starts. */
-		regularFile?: RegularFile;
+		regularFile?: RegularFile | null;
 	}
 
 
@@ -829,7 +829,7 @@ export namespace MyNS {
 	export interface ObbFile {
 
 		/** A reference to a file, used for user inputs. */
-		obb?: FileReference;
+		obb?: FileReference | null;
 
 		/**
 		 * Required. OBB file name which must conform to the format as specified by
@@ -839,7 +839,7 @@ export namespace MyNS {
 		 * \<shared-storage\>/Android/obb/\<package-name\>/
 		 * on the device.
 		 */
-		obbFileName?: string;
+		obbFileName?: string | null;
 	}
 
 
@@ -847,7 +847,7 @@ export namespace MyNS {
 	export interface RegularFile {
 
 		/** A reference to a file, used for user inputs. */
-		content?: FileReference;
+		content?: FileReference | null;
 
 		/**
 		 * Required. Where to put the content on the device. Must be an absolute,
@@ -866,7 +866,7 @@ export namespace MyNS {
 		 * Environment API</a> in app and test code to access files on the device in a
 		 * portable way.
 		 */
-		devicePath?: string;
+		devicePath?: string | null;
 	}
 
 
@@ -874,10 +874,10 @@ export namespace MyNS {
 	export interface Environment {
 
 		/** A single Android device. */
-		androidDevice?: AndroidDevice;
+		androidDevice?: AndroidDevice | null;
 
 		/** A single iOS device. */
-		iosDevice?: IosDevice;
+		iosDevice?: IosDevice | null;
 	}
 
 
@@ -888,25 +888,25 @@ export namespace MyNS {
 		 * Required. The id of the iOS device to be used.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		iosModelId?: string;
+		iosModelId?: string | null;
 
 		/**
 		 * Required. The id of the iOS major software version to be used.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		iosVersionId?: string;
+		iosVersionId?: string | null;
 
 		/**
 		 * Required. The locale the test device used for testing.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		locale?: string;
+		locale?: string | null;
 
 		/**
 		 * Required. How the device is oriented during the test.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 */
-		orientation?: string;
+		orientation?: string | null;
 	}
 
 
@@ -914,7 +914,7 @@ export namespace MyNS {
 	export interface EnvironmentMatrix {
 
 		/** A list of Android device configurations in which the test is to be executed. */
-		androidDeviceList?: AndroidDeviceList;
+		androidDeviceList?: AndroidDeviceList | null;
 
 		/**
 		 * A set of Android device configuration permutations is defined by the
@@ -923,10 +923,10 @@ export namespace MyNS {
 		 * Only supported permutations will be instantiated.  Invalid permutations
 		 * (e.g., incompatible models/versions) are ignored.
 		 */
-		androidMatrix?: AndroidMatrix;
+		androidMatrix?: AndroidMatrix | null;
 
 		/** A list of iOS device configurations in which the test is to be executed. */
-		iosDeviceList?: IosDeviceList;
+		iosDeviceList?: IosDeviceList | null;
 	}
 
 
@@ -934,7 +934,7 @@ export namespace MyNS {
 	export interface IosDeviceList {
 
 		/** Required. A list of iOS devices. */
-		iosDevices?: Array<IosDevice>;
+		iosDevices?: Array<IosDevice> | null;
 	}
 
 
@@ -942,10 +942,10 @@ export namespace MyNS {
 	export interface EnvironmentVariable {
 
 		/** Key for the environment variable. */
-		key?: string;
+		key?: string | null;
 
 		/** Value for the environment variable. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -956,7 +956,7 @@ export namespace MyNS {
 		 * Android application details based on application manifest and apk archive
 		 * contents.
 		 */
-		apkDetail?: ApkDetail;
+		apkDetail?: ApkDetail | null;
 	}
 
 
@@ -969,7 +969,7 @@ export namespace MyNS {
 		 * The requesting user must have write access on the bucket in the supplied
 		 * path.
 		 */
-		gcsPath?: string;
+		gcsPath?: string | null;
 	}
 
 
@@ -977,16 +977,16 @@ export namespace MyNS {
 	export interface IosDeviceCatalog {
 
 		/** The set of supported iOS device models. */
-		models?: Array<IosModel>;
+		models?: Array<IosModel> | null;
 
 		/** iOS configuration that can be selected at the time a test is run. */
-		runtimeConfiguration?: IosRuntimeConfiguration;
+		runtimeConfiguration?: IosRuntimeConfiguration | null;
 
 		/** The set of supported iOS software versions. */
-		versions?: Array<IosVersion>;
+		versions?: Array<IosVersion> | null;
 
 		/** The set of supported Xcode versions. */
-		xcodeVersions?: Array<XcodeVersion>;
+		xcodeVersions?: Array<XcodeVersion> | null;
 	}
 
 
@@ -1001,40 +1001,40 @@ export namespace MyNS {
 		 * Copied from
 		 * https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html
 		 */
-		deviceCapabilities?: Array<string>;
+		deviceCapabilities?: Array<string> | null;
 
 		/** Whether this device is a phone, tablet, wearable, etc. */
-		formFactor?: AndroidModelFormFactor;
+		formFactor?: AndroidModelFormFactor | null;
 
 		/**
 		 * The unique opaque id for this model.
 		 * Use this for invoking the TestExecutionService.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * The human-readable name for this device model.
 		 * Examples: "iPhone 4s", "iPad Mini 2".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Screen density in DPI. */
-		screenDensity?: number;
+		screenDensity?: number | null;
 
 		/** Screen size in the horizontal (X) dimension measured in pixels. */
-		screenX?: number;
+		screenX?: number | null;
 
 		/** Screen size in the vertical (Y) dimension measured in pixels. */
-		screenY?: number;
+		screenY?: number | null;
 
 		/** The set of iOS major software versions this device supports. */
-		supportedVersionIds?: Array<string>;
+		supportedVersionIds?: Array<string> | null;
 
 		/**
 		 * Tags for this dimension.
 		 * Examples: "default", "preview", "deprecated".
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 	}
 
 
@@ -1042,10 +1042,10 @@ export namespace MyNS {
 	export interface IosRuntimeConfiguration {
 
 		/** The set of available locales. */
-		locales?: Array<Locale>;
+		locales?: Array<Locale> | null;
 
 		/** The set of available orientations. */
-		orientations?: Array<Orientation>;
+		orientations?: Array<Orientation> | null;
 	}
 
 
@@ -1056,28 +1056,28 @@ export namespace MyNS {
 		 * An opaque id for this iOS version.
 		 * Use this id to invoke the TestExecutionService.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * An integer representing the major iOS version.
 		 * Examples: "8", "9".
 		 */
-		majorVersion?: number;
+		majorVersion?: number | null;
 
 		/**
 		 * An integer representing the minor iOS version.
 		 * Examples: "1", "2".
 		 */
-		minorVersion?: number;
+		minorVersion?: number | null;
 
 		/** The available Xcode versions for this version. */
-		supportedXcodeVersionIds?: Array<string>;
+		supportedXcodeVersionIds?: Array<string> | null;
 
 		/**
 		 * Tags for this dimension.
 		 * Examples: "default", "preview", "deprecated".
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 	}
 
 
@@ -1088,13 +1088,13 @@ export namespace MyNS {
 		 * Tags for this Xcode version.
 		 * Example: "default".
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 
 		/**
 		 * The id for this version.
 		 * Example: "9.2".
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -1106,16 +1106,16 @@ export namespace MyNS {
 	export interface IosTestLoop {
 
 		/** Output only. The bundle id for the application under test. */
-		appBundleId?: string;
+		appBundleId?: string | null;
 
 		/** A reference to a file, used for user inputs. */
-		appIpa?: FileReference;
+		appIpa?: FileReference | null;
 
 		/**
 		 * The list of scenarios that should be run during the test. Defaults to the
 		 * single scenario 0 if unspecified.
 		 */
-		scenarios?: Array<number>;
+		scenarios?: Array<number> | null;
 	}
 
 
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 		 * NETWORK_CONFIGURATION environment type when calling
 		 * TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
 		 */
-		networkProfile?: string;
+		networkProfile?: string | null;
 	}
 
 
@@ -1143,32 +1143,32 @@ export namespace MyNS {
 	export interface IosXcTest {
 
 		/** Output only. The bundle id for the application under test. */
-		appBundleId?: string;
+		appBundleId?: string | null;
 
 		/** A reference to a file, used for user inputs. */
-		testsZip?: FileReference;
+		testsZip?: FileReference | null;
 
 		/**
 		 * The Xcode version that should be used for the test.
 		 * Use the TestEnvironmentDiscoveryService to get supported options.
 		 * Defaults to the latest Xcode version Firebase Test Lab supports.
 		 */
-		xcodeVersion?: string;
+		xcodeVersion?: string | null;
 
 		/** A reference to a file, used for user inputs. */
-		xctestrun?: FileReference;
+		xctestrun?: FileReference | null;
 	}
 
 	export interface NetworkConfiguration {
 
 		/** Network emulation parameters. */
-		downRule?: TrafficRule;
+		downRule?: TrafficRule | null;
 
 		/** The unique opaque id for this network traffic configuration. */
-		id?: string;
+		id?: string | null;
 
 		/** Network emulation parameters. */
-		upRule?: TrafficRule;
+		upRule?: TrafficRule | null;
 	}
 
 
@@ -1176,23 +1176,23 @@ export namespace MyNS {
 	export interface TrafficRule {
 
 		/** Bandwidth in kbits/second. */
-		bandwidth?: number;
+		bandwidth?: number | null;
 
 		/** Burst size in kbits. */
-		burst?: number;
+		burst?: number | null;
 
 		/** Packet delay, must be >= 0. */
-		delay?: string;
+		delay?: string | null;
 
 		/** Packet duplication ratio (0.0 - 1.0). */
-		packetDuplicationRatio?: number;
+		packetDuplicationRatio?: number | null;
 
 		/** Packet loss ratio (0.0 - 1.0). */
-		packetLossRatio?: number;
+		packetLossRatio?: number | null;
 	}
 
 	export interface NetworkConfigurationCatalog {
-		configurations?: Array<NetworkConfiguration>;
+		configurations?: Array<NetworkConfiguration> | null;
 	}
 
 
@@ -1204,7 +1204,7 @@ export namespace MyNS {
 		 * Orchestrator that is provided by TestExecutionService.
 		 * Example: "1.0.2 beta".
 		 */
-		orchestratorVersion?: string;
+		orchestratorVersion?: string | null;
 	}
 
 
@@ -1212,19 +1212,19 @@ export namespace MyNS {
 	export interface ResultStorage {
 
 		/** A storage location within Google cloud storage (GCS). */
-		googleCloudStorage?: GoogleCloudStorage;
+		googleCloudStorage?: GoogleCloudStorage | null;
 
 		/** Output only. URL to the results in the Firebase Web Console. */
-		resultsUrl?: string;
+		resultsUrl?: string | null;
 
 		/**
 		 * Represents a tool results execution resource.
 		 * This has the results of a TestMatrix.
 		 */
-		toolResultsExecution?: ToolResultsExecution;
+		toolResultsExecution?: ToolResultsExecution | null;
 
 		/** Represents a tool results history resource. */
-		toolResultsHistory?: ToolResultsHistory;
+		toolResultsHistory?: ToolResultsHistory | null;
 	}
 
 
@@ -1235,13 +1235,13 @@ export namespace MyNS {
 	export interface ToolResultsExecution {
 
 		/** Output only. A tool results execution ID. */
-		executionId?: string;
+		executionId?: string | null;
 
 		/** Output only. A tool results history ID. */
-		historyId?: string;
+		historyId?: string | null;
 
 		/** Output only. The cloud project that owns the tool results execution. */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -1249,10 +1249,10 @@ export namespace MyNS {
 	export interface ToolResultsHistory {
 
 		/** Required. A tool results history ID. */
-		historyId?: string;
+		historyId?: string | null;
 
 		/** Required. The cloud project that owns the tool results history. */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -1260,13 +1260,13 @@ export namespace MyNS {
 	export interface Shard {
 
 		/** Output only. The total number of shards. */
-		numShards?: number;
+		numShards?: number | null;
 
 		/** Output only. The index of the shard among all the shards. */
-		shardIndex?: number;
+		shardIndex?: number | null;
 
 		/** Test targets for a shard. */
-		testTargetsForShard?: TestTargetsForShard;
+		testTargetsForShard?: TestTargetsForShard | null;
 	}
 
 	export interface SystraceSetup {
@@ -1275,7 +1275,7 @@ export namespace MyNS {
 		 * Systrace duration in seconds.
 		 * Should be between 1 and 30 seconds. 0 disables systrace.
 		 */
-		durationSeconds?: number;
+		durationSeconds?: number | null;
 	}
 
 
@@ -1286,7 +1286,7 @@ export namespace MyNS {
 		 * Output only. If the TestState is ERROR, then this string will contain
 		 * human-readable details about the error.
 		 */
-		errorMessage?: string;
+		errorMessage?: string | null;
 
 		/**
 		 * Output only. Human-readable, detailed descriptions of the test's progress.
@@ -1294,7 +1294,7 @@ export namespace MyNS {
 		 * During the course of execution new data may be appended
 		 * to the end of progress_messages.
 		 */
-		progressMessages?: Array<string>;
+		progressMessages?: Array<string> | null;
 	}
 
 
@@ -1302,14 +1302,14 @@ export namespace MyNS {
 	export interface TestEnvironmentCatalog {
 
 		/** The currently supported Android devices. */
-		androidDeviceCatalog?: AndroidDeviceCatalog;
+		androidDeviceCatalog?: AndroidDeviceCatalog | null;
 
 		/** The currently supported iOS devices. */
-		iosDeviceCatalog?: IosDeviceCatalog;
-		networkConfigurationCatalog?: NetworkConfigurationCatalog;
+		iosDeviceCatalog?: IosDeviceCatalog | null;
+		networkConfigurationCatalog?: NetworkConfigurationCatalog | null;
 
 		/** The currently provided software environment on the devices under test. */
-		softwareCatalog?: ProvidedSoftwareCatalog;
+		softwareCatalog?: ProvidedSoftwareCatalog | null;
 	}
 
 
@@ -1317,40 +1317,40 @@ export namespace MyNS {
 	export interface TestExecution {
 
 		/** The environment in which the test is run. */
-		environment?: Environment;
+		environment?: Environment | null;
 
 		/** Output only. Unique id set by the service. */
-		id?: string;
+		id?: string | null;
 
 		/** Output only. Id of the containing TestMatrix. */
-		matrixId?: string;
+		matrixId?: string | null;
 
 		/** Output only. The cloud project that owns the test execution. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Output only. Details about the shard. */
-		shard?: Shard;
+		shard?: Shard | null;
 
 		/**
 		 * Output only. Indicates the current progress of the test execution
 		 * (e.g., FINISHED).
 		 */
-		state?: CancelTestMatrixResponseTestState;
+		state?: CancelTestMatrixResponseTestState | null;
 
 		/** Additional details about the progress of the running test. */
-		testDetails?: TestDetails;
+		testDetails?: TestDetails | null;
 
 		/** A description of how to run the test. */
-		testSpecification?: TestSpecification;
+		testSpecification?: TestSpecification | null;
 
 		/** Output only. The time this test execution was initially created. */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/**
 		 * Represents a tool results step resource.
 		 * This has the results of a TestExecution.
 		 */
-		toolResultsStep?: ToolResultsStep;
+		toolResultsStep?: ToolResultsStep | null;
 	}
 
 
@@ -1367,36 +1367,36 @@ export namespace MyNS {
 		 * See <http://developer.android.com/tools/testing/testing_android.html> for
 		 * more information on types of Android tests.
 		 */
-		androidInstrumentationTest?: AndroidInstrumentationTest;
+		androidInstrumentationTest?: AndroidInstrumentationTest | null;
 
 		/**
 		 * A test of an android application that explores the application on a virtual
 		 * or physical Android Device, finding culprits and crashes as it goes.
 		 */
-		androidRoboTest?: AndroidRoboTest;
+		androidRoboTest?: AndroidRoboTest | null;
 
 		/**
 		 * A test of an Android Application with a Test Loop.
 		 * The intent \<intent-name\> will be implicitly added, since Games is the only
 		 * user of this api, for the time being.
 		 */
-		androidTestLoop?: AndroidTestLoop;
+		androidTestLoop?: AndroidTestLoop | null;
 
 		/** Disables performance metrics recording. May reduce test latency. */
-		disablePerformanceMetrics?: boolean;
+		disablePerformanceMetrics?: boolean | null;
 
 		/** Disables video recording. May reduce test latency. */
-		disableVideoRecording?: boolean;
+		disableVideoRecording?: boolean | null;
 
 		/**
 		 * A test of an iOS application that implements one or more game loop scenarios.
 		 * This test type accepts an archived application (.ipa file) and a list of
 		 * integer scenarios that will be executed on the app sequentially.
 		 */
-		iosTestLoop?: IosTestLoop;
+		iosTestLoop?: IosTestLoop | null;
 
 		/** A description of how to set up an iOS device prior to running the test. */
-		iosTestSetup?: IosTestSetup;
+		iosTestSetup?: IosTestSetup | null;
 
 		/**
 		 * A test of an iOS application that uses the XCTest framework.
@@ -1406,17 +1406,17 @@ export namespace MyNS {
 		 * the corresponding contents of the Build/Products directory that contains all
 		 * the binaries needed to run the tests.
 		 */
-		iosXcTest?: IosXcTest;
+		iosXcTest?: IosXcTest | null;
 
 		/** A description of how to set up the Android device prior to running the test. */
-		testSetup?: TestSetup;
+		testSetup?: TestSetup | null;
 
 		/**
 		 * Max time a test execution is allowed to run before it is
 		 * automatically cancelled.
 		 * The default value is 5 min.
 		 */
-		testTimeout?: string;
+		testTimeout?: string | null;
 	}
 
 
@@ -1424,13 +1424,13 @@ export namespace MyNS {
 	export interface TestSetup {
 
 		/** Identifies an account and how to log into it. */
-		account?: Account;
+		account?: Account | null;
 
 		/**
 		 * APKs to install in addition to those being directly tested.
 		 * Currently capped at 100.
 		 */
-		additionalApks?: Array<Apk>;
+		additionalApks?: Array<Apk> | null;
 
 		/**
 		 * List of directories on the device to upload to GCS at the end of the test;
@@ -1441,16 +1441,16 @@ export namespace MyNS {
 		 * not map to external storage, the system will replace it with the external
 		 * storage path prefix for that device.
 		 */
-		directoriesToPull?: Array<string>;
+		directoriesToPull?: Array<string> | null;
 
 		/**
 		 * Environment variables to set for the test (only applicable for
 		 * instrumentation tests).
 		 */
-		environmentVariables?: Array<EnvironmentVariable>;
+		environmentVariables?: Array<EnvironmentVariable> | null;
 
 		/** List of files to push to the device before starting the test. */
-		filesToPush?: Array<DeviceFile>;
+		filesToPush?: Array<DeviceFile> | null;
 
 		/**
 		 * The network traffic profile used for running the test.
@@ -1458,8 +1458,8 @@ export namespace MyNS {
 		 * NETWORK_CONFIGURATION environment type when calling
 		 * TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
 		 */
-		networkProfile?: string;
-		systrace?: SystraceSetup;
+		networkProfile?: string | null;
+		systrace?: SystraceSetup | null;
 	}
 
 
@@ -1470,16 +1470,16 @@ export namespace MyNS {
 	export interface ToolResultsStep {
 
 		/** Output only. A tool results execution ID. */
-		executionId?: string;
+		executionId?: string | null;
 
 		/** Output only. A tool results history ID. */
-		historyId?: string;
+		historyId?: string | null;
 
 		/** Output only. The cloud project that owns the tool results step. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Output only. A tool results step ID. */
-		stepId?: string;
+		stepId?: string | null;
 	}
 
 
@@ -1491,10 +1491,10 @@ export namespace MyNS {
 	export interface TestMatrix {
 
 		/** Information about the client which invoked the test. */
-		clientInfo?: ClientInfo;
+		clientInfo?: ClientInfo | null;
 
 		/** The matrix of environments in which the test is to be executed. */
-		environmentMatrix?: EnvironmentMatrix;
+		environmentMatrix?: EnvironmentMatrix | null;
 
 		/**
 		 * The number of times a TestExecution should be re-attempted if one or more
@@ -1502,43 +1502,43 @@ export namespace MyNS {
 		 * The maximum number of reruns allowed is 10.
 		 * Default is 0, which implies no reruns.
 		 */
-		flakyTestAttempts?: number;
+		flakyTestAttempts?: number | null;
 
 		/**
 		 * Output only. Describes why the matrix is considered invalid.
 		 * Only useful for matrices in the INVALID state.
 		 */
-		invalidMatrixDetails?: TestMatrixInvalidMatrixDetails;
+		invalidMatrixDetails?: TestMatrixInvalidMatrixDetails | null;
 
 		/**
 		 * Output Only. The overall outcome of the test.
 		 * Only set when the test matrix state is FINISHED.
 		 */
-		outcomeSummary?: TestMatrixOutcomeSummary;
+		outcomeSummary?: TestMatrixOutcomeSummary | null;
 
 		/** The cloud project that owns the test matrix. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Locations where the results of running the test are stored. */
-		resultStorage?: ResultStorage;
+		resultStorage?: ResultStorage | null;
 
 		/** Output only. Indicates the current progress of the test matrix. */
-		state?: CancelTestMatrixResponseTestState;
+		state?: CancelTestMatrixResponseTestState | null;
 
 		/**
 		 * Output only. The list of test executions that the service creates for
 		 * this matrix.
 		 */
-		testExecutions?: Array<TestExecution>;
+		testExecutions?: Array<TestExecution> | null;
 
 		/** Output only. Unique id set by the service. */
-		testMatrixId?: string;
+		testMatrixId?: string | null;
 
 		/** A description of how to run the test. */
-		testSpecification?: TestSpecification;
+		testSpecification?: TestSpecification | null;
 
 		/** Output only. The time this test matrix was initially created. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 	export enum TestMatrixInvalidMatrixDetails { INVALID_MATRIX_DETAILS_UNSPECIFIED = 0, DETAILS_UNAVAILABLE = 1, MALFORMED_APK = 2, MALFORMED_TEST_APK = 3, NO_MANIFEST = 4, NO_PACKAGE_NAME = 5, INVALID_PACKAGE_NAME = 6, TEST_SAME_AS_APP = 7, NO_INSTRUMENTATION = 8, NO_SIGNATURE = 9, INSTRUMENTATION_ORCHESTRATOR_INCOMPATIBLE = 10, NO_TEST_RUNNER_CLASS = 11, NO_LAUNCHER_ACTIVITY = 12, FORBIDDEN_PERMISSIONS = 13, INVALID_ROBO_DIRECTIVES = 14, INVALID_RESOURCE_NAME = 15, INVALID_DIRECTIVE_ACTION = 16, TEST_LOOP_INTENT_FILTER_NOT_FOUND = 17, SCENARIO_LABEL_NOT_DECLARED = 18, SCENARIO_LABEL_MALFORMED = 19, SCENARIO_NOT_DECLARED = 20, DEVICE_ADMIN_RECEIVER = 21, MALFORMED_XC_TEST_ZIP = 22, BUILT_FOR_IOS_SIMULATOR = 23, NO_TESTS_IN_XC_TEST_ZIP = 24, USE_DESTINATION_ARTIFACTS = 25, TEST_NOT_APP_HOSTED = 26, PLIST_CANNOT_BE_PARSED = 27, TEST_ONLY_APK = 28, MALFORMED_IPA = 29, MISSING_URL_SCHEME = 30, MALFORMED_APP_BUNDLE = 31, NO_CODE_APK = 32, INVALID_INPUT_APK = 33, INVALID_APK_PREVIEW_SDK = 34 }

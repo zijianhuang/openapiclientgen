@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateDiscovererResponse {
-		Description?: string;
-		DiscovererArn?: string;
-		DiscovererId?: string;
-		SourceArn?: string;
-		State?: CreateDiscovererResponseState;
+		Description?: string | null;
+		DiscovererArn?: string | null;
+		DiscovererId?: string | null;
+		SourceArn?: string | null;
+		State?: CreateDiscovererResponseState | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export enum CreateDiscovererResponseState { STARTED = 0, STOPPED = 1 }
@@ -39,35 +39,35 @@ export namespace MyNS {
 	}
 
 	export interface CreateRegistryResponse {
-		Description?: string;
-		RegistryArn?: string;
-		RegistryName?: string;
+		Description?: string | null;
+		RegistryArn?: string | null;
+		RegistryName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface CreateSchemaResponse {
-		Description?: string;
-		LastModified?: Date;
-		SchemaArn?: string;
-		SchemaName?: string;
-		SchemaVersion?: string;
+		Description?: string | null;
+		LastModified?: Date | null;
+		SchemaArn?: string | null;
+		SchemaName?: string | null;
+		SchemaVersion?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
-		Type?: string;
-		VersionCreatedDate?: Date;
+		Tags?: Tags | null;
+		Type?: string | null;
+		VersionCreatedDate?: Date | null;
 	}
 
 	export interface NotFoundException {
 	}
 
 	export interface DescribeCodeBindingResponse {
-		CreationDate?: Date;
-		LastModified?: Date;
-		SchemaVersion?: string;
-		Status?: DescribeCodeBindingResponseStatus;
+		CreationDate?: Date | null;
+		LastModified?: Date | null;
+		SchemaVersion?: string | null;
+		Status?: DescribeCodeBindingResponseStatus | null;
 	}
 
 	export enum DescribeCodeBindingResponseStatus { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2 }
@@ -76,219 +76,219 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDiscovererResponse {
-		Description?: string;
-		DiscovererArn?: string;
-		DiscovererId?: string;
-		SourceArn?: string;
-		State?: CreateDiscovererResponseState;
+		Description?: string | null;
+		DiscovererArn?: string | null;
+		DiscovererId?: string | null;
+		SourceArn?: string | null;
+		State?: CreateDiscovererResponseState | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface DescribeRegistryResponse {
-		Description?: string;
-		RegistryArn?: string;
-		RegistryName?: string;
+		Description?: string | null;
+		RegistryArn?: string | null;
+		RegistryName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface DescribeSchemaResponse {
-		Content?: string;
-		Description?: string;
-		LastModified?: Date;
-		SchemaArn?: string;
-		SchemaName?: string;
-		SchemaVersion?: string;
+		Content?: string | null;
+		Description?: string | null;
+		LastModified?: Date | null;
+		SchemaArn?: string | null;
+		SchemaName?: string | null;
+		SchemaVersion?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
-		Type?: string;
-		VersionCreatedDate?: Date;
+		Tags?: Tags | null;
+		Type?: string | null;
+		VersionCreatedDate?: Date | null;
 	}
 
 	export interface GetCodeBindingSourceResponse {
-		Body?: string;
+		Body?: string | null;
 	}
 
 	export interface GetDiscoveredSchemaResponse {
-		Content?: string;
+		Content?: string | null;
 	}
 
 	export interface GetResourcePolicyResponse {
-		Policy?: string;
-		RevisionId?: string;
+		Policy?: string | null;
+		RevisionId?: string | null;
 	}
 
 	export interface ListDiscoverersResponse {
-		Discoverers?: Array<DiscovererSummary>;
-		NextToken?: string;
+		Discoverers?: Array<DiscovererSummary> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DiscovererSummary {
-		DiscovererArn?: string;
-		DiscovererId?: string;
-		SourceArn?: string;
-		State?: CreateDiscovererResponseState;
+		DiscovererArn?: string | null;
+		DiscovererId?: string | null;
+		SourceArn?: string | null;
+		State?: CreateDiscovererResponseState | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListRegistriesResponse {
-		NextToken?: string;
-		Registries?: Array<RegistrySummary>;
+		NextToken?: string | null;
+		Registries?: Array<RegistrySummary> | null;
 	}
 
 	export interface RegistrySummary {
-		RegistryArn?: string;
-		RegistryName?: string;
+		RegistryArn?: string | null;
+		RegistryName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListSchemaVersionsResponse {
-		NextToken?: string;
-		SchemaVersions?: Array<SchemaVersionSummary>;
+		NextToken?: string | null;
+		SchemaVersions?: Array<SchemaVersionSummary> | null;
 	}
 
 	export interface SchemaVersionSummary {
-		SchemaArn?: string;
-		SchemaName?: string;
-		SchemaVersion?: string;
+		SchemaArn?: string | null;
+		SchemaName?: string | null;
+		SchemaVersion?: string | null;
 	}
 
 	export interface ListSchemasResponse {
-		NextToken?: string;
-		Schemas?: Array<SchemaSummary>;
+		NextToken?: string | null;
+		Schemas?: Array<SchemaSummary> | null;
 	}
 
 
 	/** A summary of schema details. */
 	export interface SchemaSummary {
-		LastModified?: Date;
-		SchemaArn?: string;
-		SchemaName?: string;
+		LastModified?: Date | null;
+		SchemaArn?: string | null;
+		SchemaName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
-		VersionCount?: number;
+		Tags?: Tags | null;
+		VersionCount?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface PutCodeBindingResponse {
-		CreationDate?: Date;
-		LastModified?: Date;
-		SchemaVersion?: string;
-		Status?: DescribeCodeBindingResponseStatus;
+		CreationDate?: Date | null;
+		LastModified?: Date | null;
+		SchemaVersion?: string | null;
+		Status?: DescribeCodeBindingResponseStatus | null;
 	}
 
 	export interface GoneException {
 	}
 
 	export interface PutResourcePolicyResponse {
-		Policy?: string;
-		RevisionId?: string;
+		Policy?: string | null;
+		RevisionId?: string | null;
 	}
 
 	export interface PreconditionFailedException {
 	}
 
 	export interface SearchSchemasResponse {
-		NextToken?: string;
-		Schemas?: Array<SearchSchemaSummary>;
+		NextToken?: string | null;
+		Schemas?: Array<SearchSchemaSummary> | null;
 	}
 
 	export interface SearchSchemaSummary {
-		RegistryName?: string;
-		SchemaArn?: string;
-		SchemaName?: string;
-		SchemaVersions?: Array<SearchSchemaVersionSummary>;
+		RegistryName?: string | null;
+		SchemaArn?: string | null;
+		SchemaName?: string | null;
+		SchemaVersions?: Array<SearchSchemaVersionSummary> | null;
 	}
 
 	export interface SearchSchemaVersionSummary {
-		CreatedDate?: Date;
-		SchemaVersion?: string;
+		CreatedDate?: Date | null;
+		SchemaVersion?: string | null;
 	}
 
 	export interface StartDiscovererResponse {
-		DiscovererId?: string;
-		State?: CreateDiscovererResponseState;
+		DiscovererId?: string | null;
+		State?: CreateDiscovererResponseState | null;
 	}
 
 	export interface StopDiscovererResponse {
-		DiscovererId?: string;
-		State?: CreateDiscovererResponseState;
+		DiscovererId?: string | null;
+		State?: CreateDiscovererResponseState | null;
 	}
 
 	export interface UpdateDiscovererResponse {
-		Description?: string;
-		DiscovererArn?: string;
-		DiscovererId?: string;
-		SourceArn?: string;
-		State?: CreateDiscovererResponseState;
+		Description?: string | null;
+		DiscovererArn?: string | null;
+		DiscovererId?: string | null;
+		SourceArn?: string | null;
+		State?: CreateDiscovererResponseState | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface UpdateRegistryResponse {
-		Description?: string;
-		RegistryArn?: string;
-		RegistryName?: string;
+		Description?: string | null;
+		RegistryArn?: string | null;
+		RegistryName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface UpdateSchemaResponse {
-		Description?: string;
-		LastModified?: Date;
-		SchemaArn?: string;
-		SchemaName?: string;
-		SchemaVersion?: string;
+		Description?: string | null;
+		LastModified?: Date | null;
+		SchemaArn?: string | null;
+		SchemaName?: string | null;
+		SchemaVersion?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
-		Type?: string;
-		VersionCreatedDate?: Date;
+		Tags?: Tags | null;
+		Type?: string | null;
+		VersionCreatedDate?: Date | null;
 	}
 
 	export enum CodeGenerationStatus { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2 }
 
 	export interface CreateDiscovererRequest {
-		Description?: string;
+		Description?: string | null;
 		SourceArn: string;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export enum DiscovererState { STARTED = 0, STOPPED = 1 }
 
 	export interface CreateRegistryRequest {
-		Description?: string;
+		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export enum Type { OpenApi3 = 0 }
 
 	export interface CreateSchemaRequest {
 		Content: string;
-		Description?: string;
+		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags;
+		Tags?: Tags | null;
 		Type: Type;
 	}
 
@@ -352,7 +352,7 @@ export namespace MyNS {
 	/** The name of the policy. */
 	export interface PutResourcePolicyRequest {
 		Policy: string;
-		RevisionId?: string;
+		RevisionId?: string | null;
 	}
 
 	export interface SearchSchemasRequest {
@@ -377,20 +377,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDiscovererRequest {
-		Description?: string;
+		Description?: string | null;
 	}
 
 
 	/** Updates the registry. */
 	export interface UpdateRegistryRequest {
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateSchemaRequest {
-		ClientTokenId?: string;
-		Content?: string;
-		Description?: string;
-		Type?: Type;
+		ClientTokenId?: string | null;
+		Content?: string | null;
+		Description?: string | null;
+		Type?: Type | null;
 	}
 
 	@Injectable()
@@ -741,7 +741,7 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The ARN of the event bus.
@@ -752,7 +752,7 @@ export namespace MyNS {
 		SourceArn: string;
 
 		/** Key-value pairs associated with a resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateRegistryPostBody {
@@ -762,10 +762,10 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface UpdateRegistryPutBody {
@@ -775,7 +775,7 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface CreateSchemaPostBody {
@@ -793,10 +793,10 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The type of schema.
@@ -812,24 +812,24 @@ export namespace MyNS {
 		 * Max length: 36
 		 * Min length: 0
 		 */
-		ClientTokenId?: string;
+		ClientTokenId?: string | null;
 
 		/**
 		 * The source of the schema definition.
 		 * Max length: 100000
 		 * Min length: 1
 		 */
-		Content?: string;
+		Content?: string | null;
 
 		/**
 		 * The description of the schema.
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** The schema type for the events schema. */
-		Type?: Type;
+		Type?: Type | null;
 	}
 
 	export interface UpdateDiscovererPutBody {
@@ -839,7 +839,7 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface PutResourcePolicyPutBody {
@@ -851,7 +851,7 @@ export namespace MyNS {
 		Policy: string;
 
 		/** The revision ID of the policy. */
-		RevisionId?: string;
+		RevisionId?: string | null;
 	}
 
 	export interface GetDiscoveredSchemaPostBody {

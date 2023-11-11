@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CancelChangeSetResponse {
-		ChangeSetId?: string;
-		ChangeSetArn?: string;
+		ChangeSetId?: string | null;
+		ChangeSetArn?: string | null;
 	}
 
 	export interface InternalServiceException {
@@ -26,14 +26,14 @@ export namespace MyNS {
 	}
 
 	export interface DescribeChangeSetResponse {
-		ChangeSetId?: string;
-		ChangeSetArn?: string;
-		ChangeSetName?: string;
-		StartTime?: string;
-		EndTime?: string;
-		Status?: DescribeChangeSetResponseStatus;
-		FailureDescription?: string;
-		ChangeSet?: Array<ChangeSummary>;
+		ChangeSetId?: string | null;
+		ChangeSetArn?: string | null;
+		ChangeSetName?: string | null;
+		StartTime?: string | null;
+		EndTime?: string | null;
+		Status?: DescribeChangeSetResponseStatus | null;
+		FailureDescription?: string | null;
+		ChangeSet?: Array<ChangeSummary> | null;
 	}
 
 	export enum DescribeChangeSetResponseStatus { PREPARING = 0, APPLYING = 1, SUCCEEDED = 2, CANCELLED = 3, FAILED = 4 }
@@ -41,84 +41,84 @@ export namespace MyNS {
 
 	/** This object is a container for common summary information about the change. The summary doesn't contain the whole change structure. */
 	export interface ChangeSummary {
-		ChangeType?: string;
+		ChangeType?: string | null;
 
 		/** A product entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. */
-		Entity?: Entity;
-		Details?: string;
-		ErrorDetailList?: Array<ErrorDetail>;
+		Entity?: Entity | null;
+		Details?: string | null;
+		ErrorDetailList?: Array<ErrorDetail> | null;
 	}
 
 
 	/** A product entity contains data that describes your product, its supported features, and how it can be used or launched by your customer.  */
 	export interface Entity {
 		Type: string;
-		Identifier?: string;
+		Identifier?: string | null;
 	}
 
 
 	/** Details about the error. */
 	export interface ErrorDetail {
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface DescribeEntityResponse {
-		EntityType?: string;
-		EntityIdentifier?: string;
-		EntityArn?: string;
-		LastModifiedDate?: string;
-		Details?: string;
+		EntityType?: string | null;
+		EntityIdentifier?: string | null;
+		EntityArn?: string | null;
+		LastModifiedDate?: string | null;
+		Details?: string | null;
 	}
 
 	export interface ResourceNotSupportedException {
 	}
 
 	export interface ListChangeSetsResponse {
-		ChangeSetSummaryList?: Array<ChangeSetSummaryListItem>;
-		NextToken?: string;
+		ChangeSetSummaryList?: Array<ChangeSetSummaryListItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of a change set returned in a list of change sets when the <code>ListChangeSets</code> action is called. */
 	export interface ChangeSetSummaryListItem {
-		ChangeSetId?: string;
-		ChangeSetArn?: string;
-		ChangeSetName?: string;
-		StartTime?: string;
-		EndTime?: string;
-		Status?: DescribeChangeSetResponseStatus;
-		EntityIdList?: Array<string>;
+		ChangeSetId?: string | null;
+		ChangeSetArn?: string | null;
+		ChangeSetName?: string | null;
+		StartTime?: string | null;
+		EndTime?: string | null;
+		Status?: DescribeChangeSetResponseStatus | null;
+		EntityIdList?: Array<string> | null;
 	}
 
 
 	/** A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions. */
 	export interface Filter {
-		Name?: string;
-		ValueList?: Array<string>;
+		Name?: string | null;
+		ValueList?: Array<string> | null;
 	}
 
 	export enum SortOrder { ASCENDING = 0, DESCENDING = 1 }
 
 	export interface ListEntitiesResponse {
-		EntitySummaryList?: Array<EntitySummary>;
-		NextToken?: string;
+		EntitySummaryList?: Array<EntitySummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities. */
 	export interface EntitySummary {
-		Name?: string;
-		EntityType?: string;
-		EntityId?: string;
-		EntityArn?: string;
-		LastModifiedDate?: string;
-		Visibility?: string;
+		Name?: string | null;
+		EntityType?: string | null;
+		EntityId?: string | null;
+		EntityArn?: string | null;
+		LastModifiedDate?: string | null;
+		Visibility?: string | null;
 	}
 
 	export interface StartChangeSetResponse {
-		ChangeSetId?: string;
-		ChangeSetArn?: string;
+		ChangeSetId?: string | null;
+		ChangeSetArn?: string | null;
 	}
 
 
@@ -151,36 +151,36 @@ export namespace MyNS {
 
 	/** An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>. */
 	export interface Sort {
-		SortBy?: string;
-		SortOrder?: SortOrder;
+		SortBy?: string | null;
+		SortOrder?: SortOrder | null;
 	}
 
 	export interface ListChangeSetsRequest {
 		Catalog: string;
-		FilterList?: Array<Filter>;
+		FilterList?: Array<Filter> | null;
 
 		/** An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>. */
-		Sort?: Sort;
-		MaxResults?: number;
-		NextToken?: string;
+		Sort?: Sort | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListEntitiesRequest {
 		Catalog: string;
 		EntityType: string;
-		FilterList?: Array<Filter>;
+		FilterList?: Array<Filter> | null;
 
 		/** An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>. */
-		Sort?: Sort;
-		NextToken?: string;
-		MaxResults?: number;
+		Sort?: Sort | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface StartChangeSetRequest {
 		Catalog: string;
 		ChangeSet: Array<Change>;
-		ChangeSetName?: string;
-		ClientRequestToken?: string;
+		ChangeSetName?: string | null;
+		ClientRequestToken?: string | null;
 	}
 
 	@Injectable()
@@ -269,17 +269,17 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 8
 		 */
-		FilterList?: Array<Filter>;
+		FilterList?: Array<Filter> | null;
 
 		/** An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>. */
-		Sort?: ListChangeSetsPostBodySort;
+		Sort?: ListChangeSetsPostBodySort | null;
 
 		/**
 		 * The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.
 		 * Minimum: 1
 		 * Maximum: 20
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * The token value retrieved from a previous call to access the next page of results.
@@ -287,12 +287,12 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w+=.:@\-\/]$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListChangeSetsPostBodySort {
-		SortBy?: string;
-		SortOrder?: SortOrder;
+		SortBy?: string | null;
+		SortOrder?: SortOrder | null;
 	}
 
 	export interface ListEntitiesPostBody {
@@ -320,10 +320,10 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 8
 		 */
-		FilterList?: Array<Filter>;
+		FilterList?: Array<Filter> | null;
 
 		/** An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>. */
-		Sort?: ListEntitiesPostBodySort;
+		Sort?: ListEntitiesPostBodySort | null;
 
 		/**
 		 * The value of the next token, if it exists. Null if there are no more results.
@@ -331,19 +331,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w+=.:@\-\/]$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.
 		 * Minimum: 1
 		 * Maximum: 20
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListEntitiesPostBodySort {
-		SortBy?: string;
-		SortOrder?: SortOrder;
+		SortBy?: string | null;
+		SortOrder?: SortOrder | null;
 	}
 
 	export interface StartChangeSetPostBody {
@@ -371,7 +371,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w\s+=.:@-]+$
 		 */
-		ChangeSetName?: string;
+		ChangeSetName?: string | null;
 
 		/**
 		 * A unique token to identify the request to ensure idempotency.
@@ -379,7 +379,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w\-]+$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 }

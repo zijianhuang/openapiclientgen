@@ -21,12 +21,12 @@ export namespace MyNS {
 	}
 
 	export interface GetareacodefromnumberGetByLicenseAndNumberReturn {
-		Abbreviation?: string;
-		AreaCode?: string;
-		Code?: string;
-		Credits?: string;
-		Locale?: string;
-		PrimaryCity?: string;
+		Abbreviation?: string | null;
+		AreaCode?: string | null;
+		Code?: string | null;
+		Credits?: string | null;
+		Locale?: string | null;
+		PrimaryCity?: string | null;
 	}
 
 }

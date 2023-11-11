@@ -1479,56 +1479,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Removes the avatar for the project.
-		/// Avatar_Remove_Project_Avatar {organization}/_apis/projects/{projectId}/avatar
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="projectId">The ID or name of the project.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Avatar_Remove_Project_AvatarAsync(string organization, string projectId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes the avatar for the project.
-		/// Avatar_Remove_Project_Avatar {organization}/_apis/projects/{projectId}/avatar
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="projectId">The ID or name of the project.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Avatar_Remove_Project_Avatar(string organization, string projectId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Sets the avatar for the project.
 		/// Avatar_Set_Project_Avatar {organization}/_apis/projects/{projectId}/avatar
 		/// </summary>
@@ -1595,6 +1545,56 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Removes the avatar for the project.
+		/// Avatar_Remove_Project_Avatar {organization}/_apis/projects/{projectId}/avatar
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="projectId">The ID or name of the project.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Avatar_Remove_Project_AvatarAsync(string organization, string projectId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes the avatar for the project.
+		/// Avatar_Remove_Project_Avatar {organization}/_apis/projects/{projectId}/avatar
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="projectId">The ID or name of the project.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Avatar_Remove_Project_Avatar(string organization, string projectId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Get a collection of team project properties.
 		/// Projects_Get_Project_Properties {organization}/_apis/projects/{projectId}/properties
 		/// </summary>
@@ -1649,6 +1649,74 @@ namespace MyNS
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProjectProperty[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of teams.
+		/// Teams_Get_Teams {organization}/_apis/projects/{projectId}/teams
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="mine">If true return all the teams requesting user is member, otherwise return all the teams user has read access.</param>
+		/// <param name="top">Maximum number of teams to return.</param>
+		/// <param name="skip">Number of teams to skip.</param>
+		/// <param name="expandIdentity">A value indicating whether or not to expand Identity information in the result WebApiTeam object.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WebApiTeam[]> Teams_Get_TeamsAsync(string organization, string projectId, bool mine, int top, int skip, bool expandIdentity, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WebApiTeam[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of teams.
+		/// Teams_Get_Teams {organization}/_apis/projects/{projectId}/teams
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="mine">If true return all the teams requesting user is member, otherwise return all the teams user has read access.</param>
+		/// <param name="top">Maximum number of teams to return.</param>
+		/// <param name="skip">Number of teams to skip.</param>
+		/// <param name="expandIdentity">A value indicating whether or not to expand Identity information in the result WebApiTeam object.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WebApiTeam[] Teams_Get_Teams(string organization, string projectId, bool mine, int top, int skip, bool expandIdentity, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WebApiTeam[]>(jsonReader);
 				}
 			}
 			finally
@@ -1749,126 +1817,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a list of teams.
-		/// Teams_Get_Teams {organization}/_apis/projects/{projectId}/teams
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="mine">If true return all the teams requesting user is member, otherwise return all the teams user has read access.</param>
-		/// <param name="top">Maximum number of teams to return.</param>
-		/// <param name="skip">Number of teams to skip.</param>
-		/// <param name="expandIdentity">A value indicating whether or not to expand Identity information in the result WebApiTeam object.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WebApiTeam[]> Teams_Get_TeamsAsync(string organization, string projectId, bool mine, int top, int skip, bool expandIdentity, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WebApiTeam[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of teams.
-		/// Teams_Get_Teams {organization}/_apis/projects/{projectId}/teams
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="mine">If true return all the teams requesting user is member, otherwise return all the teams user has read access.</param>
-		/// <param name="top">Maximum number of teams to return.</param>
-		/// <param name="skip">Number of teams to skip.</param>
-		/// <param name="expandIdentity">A value indicating whether or not to expand Identity information in the result WebApiTeam object.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WebApiTeam[] Teams_Get_Teams(string organization, string projectId, bool mine, int top, int skip, bool expandIdentity, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WebApiTeam[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a team.
-		/// Teams_Delete {organization}/_apis/projects/{projectId}/teams/{teamId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="projectId">The name or ID (GUID) of the team project containing the team to delete.</param>
-		/// <param name="teamId">The name or ID of the team to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Teams_DeleteAsync(string organization, string projectId, string teamId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a team.
-		/// Teams_Delete {organization}/_apis/projects/{projectId}/teams/{teamId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="projectId">The name or ID (GUID) of the team project containing the team to delete.</param>
-		/// <param name="teamId">The name or ID of the team to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Teams_Delete(string organization, string projectId, string teamId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a specific team.
 		/// Teams_Get {organization}/_apis/projects/{projectId}/teams/{teamId}
 		/// </summary>
@@ -1926,6 +1874,58 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WebApiTeam>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a team.
+		/// Teams_Delete {organization}/_apis/projects/{projectId}/teams/{teamId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="projectId">The name or ID (GUID) of the team project containing the team to delete.</param>
+		/// <param name="teamId">The name or ID of the team to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Teams_DeleteAsync(string organization, string projectId, string teamId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a team.
+		/// Teams_Delete {organization}/_apis/projects/{projectId}/teams/{teamId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="projectId">The name or ID (GUID) of the team project containing the team to delete.</param>
+		/// <param name="teamId">The name or ID of the team to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Teams_Delete(string organization, string projectId, string teamId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{

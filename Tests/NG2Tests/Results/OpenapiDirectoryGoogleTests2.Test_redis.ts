@@ -20,7 +20,7 @@ export namespace MyNS {
 	export interface ExportInstanceRequest {
 
 		/** The output content */
-		outputConfig?: OutputConfig;
+		outputConfig?: OutputConfig | null;
 	}
 
 
@@ -28,7 +28,7 @@ export namespace MyNS {
 	export interface OutputConfig {
 
 		/** The Cloud Storage location for the output content */
-		gcsDestination?: GcsDestination;
+		gcsDestination?: GcsDestination | null;
 	}
 
 
@@ -39,7 +39,7 @@ export namespace MyNS {
 		 * Required. Data destination URI (e.g.
 		 * 'gs://my_bucket/my_object'). Existing files will be overwritten.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -50,7 +50,7 @@ export namespace MyNS {
 		 * Optional. Available data protection modes that the user can choose. If it's
 		 * unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
 		 */
-		dataProtectionMode?: FailoverInstanceRequestDataProtectionMode;
+		dataProtectionMode?: FailoverInstanceRequestDataProtectionMode | null;
 	}
 
 	export enum FailoverInstanceRequestDataProtectionMode { DATA_PROTECTION_MODE_UNSPECIFIED = 0, LIMITED_DATA_LOSS = 1, FORCE_DATA_LOSS = 2 }
@@ -60,7 +60,7 @@ export namespace MyNS {
 	export interface GcsSource {
 
 		/** Required. Source data URI. (e.g. 'gs://my_bucket/my_object'). */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -78,7 +78,7 @@ export namespace MyNS {
 		 * specified in `location_id` or `alternative_location_id` fields when
 		 * creating a Redis instance.
 		 */
-		availableZones?: {[id: string]: GoogleCloudRedisV1ZoneMetadata };
+		availableZones?: {[id: string]: GoogleCloudRedisV1ZoneMetadata } | null;
 	}
 
 
@@ -94,25 +94,25 @@ export namespace MyNS {
 	export interface GoogleCloudRedisV1OperationMetadata {
 
 		/** API version. */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** Specifies if cancellation was requested for the operation. */
-		cancelRequested?: boolean;
+		cancelRequested?: boolean | null;
 
 		/** Creation timestamp. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** End timestamp. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Operation status details. */
-		statusDetail?: string;
+		statusDetail?: string | null;
 
 		/** Operation target. */
-		target?: string;
+		target?: string | null;
 
 		/** Operation verb. */
-		verb?: string;
+		verb?: string | null;
 	}
 
 
@@ -120,7 +120,7 @@ export namespace MyNS {
 	export interface ImportInstanceRequest {
 
 		/** The input content */
-		inputConfig?: InputConfig;
+		inputConfig?: InputConfig | null;
 	}
 
 
@@ -128,7 +128,7 @@ export namespace MyNS {
 	export interface InputConfig {
 
 		/** The Cloud Storage location for the input content */
-		gcsSource?: GcsSource;
+		gcsSource?: GcsSource | null;
 	}
 
 
@@ -140,7 +140,7 @@ export namespace MyNS {
 		 * against zonal failures by provisioning it across two zones. If provided, it
 		 * must be a different zone from the one provided in location_id.
 		 */
-		alternativeLocationId?: string;
+		alternativeLocationId?: string | null;
 
 		/**
 		 * Optional. The full name of the Google Compute Engine
@@ -148,16 +148,16 @@ export namespace MyNS {
 		 * instance is connected. If left unspecified, the `default` network
 		 * will be used.
 		 */
-		authorizedNetwork?: string;
+		authorizedNetwork?: string | null;
 
 		/**
 		 * Optional. The network connect mode of the Redis instance.
 		 * If not provided, the connect mode defaults to DIRECT_PEERING.
 		 */
-		connectMode?: InstanceConnectMode;
+		connectMode?: InstanceConnectMode | null;
 
 		/** Output only. The time the instance was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The current zone where the Redis endpoint is placed. For Basic
@@ -166,19 +166,19 @@ export namespace MyNS {
 		 * this can be either location_id or alternative_location_id and can
 		 * change after a failover event.
 		 */
-		currentLocationId?: string;
+		currentLocationId?: string | null;
 
 		/** An arbitrary and optional user-provided name for the instance. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Output only. Hostname or IP address of the exposed Redis endpoint used by
 		 * clients to connect to the service.
 		 */
-		host?: string;
+		host?: string | null;
 
 		/** Resource labels to represent user provided metadata */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Optional. The zone where the instance will be provisioned. If not provided,
@@ -187,10 +187,10 @@ export namespace MyNS {
 		 * failures. If alternative_location_id is also provided, it must be
 		 * different from location_id.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 
 		/** Required. Redis memory size in GiB. */
-		memorySizeGb?: number;
+		memorySizeGb?: number | null;
 
 		/**
 		 * Required. Unique name of the resource in this scope including project and
@@ -202,7 +202,7 @@ export namespace MyNS {
 		 * should be provisioned in. Refer to location_id and
 		 * alternative_location_id fields for more details.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. Cloud IAM identity used by import / export operations to
@@ -211,10 +211,10 @@ export namespace MyNS {
 		 * for a given instance so should be checked before each import/export
 		 * operation.
 		 */
-		persistenceIamIdentity?: string;
+		persistenceIamIdentity?: string | null;
 
 		/** Output only. The port number of the exposed Redis endpoint. */
-		port?: number;
+		port?: number | null;
 
 		/**
 		 * Optional. Redis configuration parameters, according to
@@ -232,7 +232,7 @@ export namespace MyNS {
 		 * *   stream-node-max-bytes
 		 * *   stream-node-max-entries
 		 */
-		redisConfigs?: {[id: string]: string };
+		redisConfigs?: {[id: string]: string } | null;
 
 		/**
 		 * Optional. The version of Redis software.
@@ -242,7 +242,7 @@ export namespace MyNS {
 		 * *   `REDIS_4_0` for Redis 4.0 compatibility (default)
 		 * *   `REDIS_5_0` for Redis 5.0 compatibility
 		 */
-		redisVersion?: string;
+		redisVersion?: string | null;
 
 		/**
 		 * Optional. The CIDR range of internal addresses that are reserved for this
@@ -250,19 +250,19 @@ export namespace MyNS {
 		 * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
 		 * and non-overlapping with existing subnets in an authorized network.
 		 */
-		reservedIpRange?: string;
+		reservedIpRange?: string | null;
 
 		/** Output only. The current state of this instance. */
-		state?: InstanceState;
+		state?: InstanceState | null;
 
 		/**
 		 * Output only. Additional information about the current status of this
 		 * instance, if available.
 		 */
-		statusMessage?: string;
+		statusMessage?: string | null;
 
 		/** Required. The service tier of the instance. */
-		tier?: InstanceTier;
+		tier?: InstanceTier | null;
 	}
 
 	export enum InstanceConnectMode { CONNECT_MODE_UNSPECIFIED = 0, DIRECT_PEERING = 1, PRIVATE_SERVICE_ACCESS = 2 }
@@ -286,16 +286,16 @@ export namespace MyNS {
 		 * the `status` field set to ERROR and `status_message` field set to "location
 		 * not available for ListInstances".
 		 */
-		instances?: Array<Instance>;
+		instances?: Array<Instance> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -303,10 +303,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -317,22 +317,22 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Resource ID for the region. For example: "us-east1". */
-		locationId?: string;
+		locationId?: string | null;
 
 		/** Output only. The set of available zones in the location. The map is keyed by the lowercase ID of each zone, as defined by Compute Engine. These keys can be specified in `location_id` or `alternative_location_id` fields when creating a Redis instance. */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/** Full resource name for the region. For example: "projects/example-project/locations/us-east1". */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -340,10 +340,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -358,7 +358,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -368,7 +368,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * {
@@ -381,14 +381,14 @@ export namespace MyNS {
 		 * `apiVersion`: API version used to start the operation.
 		 * }
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -400,7 +400,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -415,20 +415,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -436,7 +436,7 @@ export namespace MyNS {
 	export interface UpgradeInstanceRequest {
 
 		/** Required. Specifies the target version of Redis software to upgrade to. */
-		redisVersion?: string;
+		redisVersion?: string | null;
 	}
 
 	@Injectable()

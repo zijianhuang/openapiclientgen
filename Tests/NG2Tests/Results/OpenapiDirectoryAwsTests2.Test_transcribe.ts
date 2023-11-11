@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateMedicalVocabularyResponse {
-		VocabularyName?: string;
-		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode;
-		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState;
-		LastModifiedTime?: Date;
-		FailureReason?: string;
+		VocabularyName?: string | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
+		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
+		LastModifiedTime?: Date | null;
+		FailureReason?: string | null;
 	}
 
 	export enum CreateMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -35,11 +35,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateVocabularyResponse {
-		VocabularyName?: string;
-		LanguageCode?: CreateVocabularyResponseLanguageCode;
-		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState;
-		LastModifiedTime?: Date;
-		FailureReason?: string;
+		VocabularyName?: string | null;
+		LanguageCode?: CreateVocabularyResponseLanguageCode | null;
+		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
+		LastModifiedTime?: Date | null;
+		FailureReason?: string | null;
 	}
 
 	export enum CreateVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -47,16 +47,16 @@ export namespace MyNS {
 	export interface CreateVocabularyRequest {
 		VocabularyName: string;
 		LanguageCode: CreateVocabularyRequestLanguageCode;
-		Phrases?: Array<string>;
-		VocabularyFileUri?: string;
+		Phrases?: Array<string> | null;
+		VocabularyFileUri?: string | null;
 	}
 
 	export enum CreateVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface CreateVocabularyFilterResponse {
-		VocabularyFilterName?: string;
-		LanguageCode?: CreateVocabularyFilterResponseLanguageCode;
-		LastModifiedTime?: Date;
+		VocabularyFilterName?: string | null;
+		LanguageCode?: CreateVocabularyFilterResponseLanguageCode | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export enum CreateVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -64,8 +64,8 @@ export namespace MyNS {
 	export interface CreateVocabularyFilterRequest {
 		VocabularyFilterName: string;
 		LanguageCode: CreateVocabularyFilterRequestLanguageCode;
-		Words?: Array<string>;
-		VocabularyFilterFileUri?: string;
+		Words?: Array<string> | null;
+		VocabularyFilterFileUri?: string | null;
 	}
 
 	export enum CreateVocabularyFilterRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -96,32 +96,32 @@ export namespace MyNS {
 	export interface GetMedicalTranscriptionJobResponse {
 
 		/** The data structure that containts the information for a medical transcription job. */
-		MedicalTranscriptionJob?: MedicalTranscriptionJob;
+		MedicalTranscriptionJob?: MedicalTranscriptionJob | null;
 	}
 
 
 	/** The data structure that containts the information for a medical transcription job. */
 	export interface MedicalTranscriptionJob {
-		MedicalTranscriptionJobName?: string;
-		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus;
-		LanguageCode?: MedicalTranscriptionJobLanguageCode;
-		MediaSampleRateHertz?: number;
-		MediaFormat?: MedicalTranscriptionJobMediaFormat;
+		MedicalTranscriptionJobName?: string | null;
+		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
+		LanguageCode?: MedicalTranscriptionJobLanguageCode | null;
+		MediaSampleRateHertz?: number | null;
+		MediaFormat?: MedicalTranscriptionJobMediaFormat | null;
 
 		/** Describes the input media file in a transcription request. */
-		Media?: Media;
+		Media?: Media | null;
 
 		/** Identifies the location of a medical transcript. */
-		Transcript?: MedicalTranscript;
-		StartTime?: Date;
-		CreationTime?: Date;
-		CompletionTime?: Date;
-		FailureReason?: string;
+		Transcript?: MedicalTranscript | null;
+		StartTime?: Date | null;
+		CreationTime?: Date | null;
+		CompletionTime?: Date | null;
+		FailureReason?: string | null;
 
 		/** Optional settings for the <a>StartMedicalTranscriptionJob</a> operation. */
-		Settings?: MedicalTranscriptionSetting;
-		Specialty?: MedicalTranscriptionJobSpecialty;
-		Type?: MedicalTranscriptionJobType;
+		Settings?: MedicalTranscriptionSetting | null;
+		Specialty?: MedicalTranscriptionJobSpecialty | null;
+		Type?: MedicalTranscriptionJobType | null;
 	}
 
 	export enum MedicalTranscriptionJobTranscriptionJobStatus { QUEUED = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3 }
@@ -133,24 +133,24 @@ export namespace MyNS {
 
 	/** Describes the input media file in a transcription request. */
 	export interface Media {
-		MediaFileUri?: string;
+		MediaFileUri?: string | null;
 	}
 
 
 	/** Identifies the location of a medical transcript. */
 	export interface MedicalTranscript {
-		TranscriptFileUri?: string;
+		TranscriptFileUri?: string | null;
 	}
 
 
 	/** Optional settings for the <a>StartMedicalTranscriptionJob</a> operation. */
 	export interface MedicalTranscriptionSetting {
-		ShowSpeakerLabels?: boolean;
-		MaxSpeakerLabels?: number;
-		ChannelIdentification?: boolean;
-		ShowAlternatives?: boolean;
-		MaxAlternatives?: number;
-		VocabularyName?: string;
+		ShowSpeakerLabels?: boolean | null;
+		MaxSpeakerLabels?: number | null;
+		ChannelIdentification?: boolean | null;
+		ShowAlternatives?: boolean | null;
+		MaxAlternatives?: number | null;
+		VocabularyName?: string | null;
 	}
 
 	export enum MedicalTranscriptionJobSpecialty { PRIMARYCARE = 0 }
@@ -162,12 +162,12 @@ export namespace MyNS {
 	}
 
 	export interface GetMedicalVocabularyResponse {
-		VocabularyName?: string;
-		LanguageCode?: GetMedicalVocabularyResponseLanguageCode;
-		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState;
-		LastModifiedTime?: Date;
-		FailureReason?: string;
-		DownloadUri?: string;
+		VocabularyName?: string | null;
+		LanguageCode?: GetMedicalVocabularyResponseLanguageCode | null;
+		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
+		LastModifiedTime?: Date | null;
+		FailureReason?: string | null;
+		DownloadUri?: string | null;
 	}
 
 	export enum GetMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -179,36 +179,36 @@ export namespace MyNS {
 	export interface GetTranscriptionJobResponse {
 
 		/** Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation. */
-		TranscriptionJob?: TranscriptionJob;
+		TranscriptionJob?: TranscriptionJob | null;
 	}
 
 
 	/** Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation.  */
 	export interface TranscriptionJob {
-		TranscriptionJobName?: string;
-		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus;
-		LanguageCode?: TranscriptionJobLanguageCode;
-		MediaSampleRateHertz?: number;
-		MediaFormat?: MedicalTranscriptionJobMediaFormat;
+		TranscriptionJobName?: string | null;
+		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
+		LanguageCode?: TranscriptionJobLanguageCode | null;
+		MediaSampleRateHertz?: number | null;
+		MediaFormat?: MedicalTranscriptionJobMediaFormat | null;
 
 		/** Describes the input media file in a transcription request. */
-		Media?: Media;
+		Media?: Media | null;
 
 		/** Identifies the location of a transcription. */
-		Transcript?: Transcript;
-		StartTime?: Date;
-		CreationTime?: Date;
-		CompletionTime?: Date;
-		FailureReason?: string;
+		Transcript?: Transcript | null;
+		StartTime?: Date | null;
+		CreationTime?: Date | null;
+		CompletionTime?: Date | null;
+		FailureReason?: string | null;
 
 		/** Provides optional settings for the <code>StartTranscriptionJob</code> operation. */
-		Settings?: Settings;
+		Settings?: Settings | null;
 
 		/** Provides information about when a transcription job should be executed. */
-		JobExecutionSettings?: JobExecutionSettings;
+		JobExecutionSettings?: JobExecutionSettings | null;
 
 		/** Settings for content redaction within a transcription job. */
-		ContentRedaction?: ContentRedaction;
+		ContentRedaction?: ContentRedaction | null;
 	}
 
 	export enum TranscriptionJobLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -216,21 +216,21 @@ export namespace MyNS {
 
 	/** Identifies the location of a transcription. */
 	export interface Transcript {
-		TranscriptFileUri?: string;
-		RedactedTranscriptFileUri?: string;
+		TranscriptFileUri?: string | null;
+		RedactedTranscriptFileUri?: string | null;
 	}
 
 
 	/** Provides optional settings for the <code>StartTranscriptionJob</code> operation. */
 	export interface Settings {
-		VocabularyName?: string;
-		ShowSpeakerLabels?: boolean;
-		MaxSpeakerLabels?: number;
-		ChannelIdentification?: boolean;
-		ShowAlternatives?: boolean;
-		MaxAlternatives?: number;
-		VocabularyFilterName?: string;
-		VocabularyFilterMethod?: SettingsVocabularyFilterMethod;
+		VocabularyName?: string | null;
+		ShowSpeakerLabels?: boolean | null;
+		MaxSpeakerLabels?: number | null;
+		ChannelIdentification?: boolean | null;
+		ShowAlternatives?: boolean | null;
+		MaxAlternatives?: number | null;
+		VocabularyFilterName?: string | null;
+		VocabularyFilterMethod?: SettingsVocabularyFilterMethod | null;
 	}
 
 	export enum SettingsVocabularyFilterMethod { remove = 0, mask = 1 }
@@ -238,8 +238,8 @@ export namespace MyNS {
 
 	/** Provides information about when a transcription job should be executed. */
 	export interface JobExecutionSettings {
-		AllowDeferredExecution?: boolean;
-		DataAccessRoleArn?: string;
+		AllowDeferredExecution?: boolean | null;
+		DataAccessRoleArn?: string | null;
 	}
 
 
@@ -258,12 +258,12 @@ export namespace MyNS {
 	}
 
 	export interface GetVocabularyResponse {
-		VocabularyName?: string;
-		LanguageCode?: GetVocabularyResponseLanguageCode;
-		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState;
-		LastModifiedTime?: Date;
-		FailureReason?: string;
-		DownloadUri?: string;
+		VocabularyName?: string | null;
+		LanguageCode?: GetVocabularyResponseLanguageCode | null;
+		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
+		LastModifiedTime?: Date | null;
+		FailureReason?: string | null;
+		DownloadUri?: string | null;
 	}
 
 	export enum GetVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -273,10 +273,10 @@ export namespace MyNS {
 	}
 
 	export interface GetVocabularyFilterResponse {
-		VocabularyFilterName?: string;
-		LanguageCode?: GetVocabularyFilterResponseLanguageCode;
-		LastModifiedTime?: Date;
-		DownloadUri?: string;
+		VocabularyFilterName?: string | null;
+		LanguageCode?: GetVocabularyFilterResponseLanguageCode | null;
+		LastModifiedTime?: Date | null;
+		DownloadUri?: string | null;
 	}
 
 	export enum GetVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -286,24 +286,24 @@ export namespace MyNS {
 	}
 
 	export interface ListMedicalTranscriptionJobsResponse {
-		Status?: MedicalTranscriptionJobTranscriptionJobStatus;
-		NextToken?: string;
-		MedicalTranscriptionJobSummaries?: Array<MedicalTranscriptionJobSummary>;
+		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
+		NextToken?: string | null;
+		MedicalTranscriptionJobSummaries?: Array<MedicalTranscriptionJobSummary> | null;
 	}
 
 
 	/** Provides summary information about a transcription job. */
 	export interface MedicalTranscriptionJobSummary {
-		MedicalTranscriptionJobName?: string;
-		CreationTime?: Date;
-		StartTime?: Date;
-		CompletionTime?: Date;
-		LanguageCode?: MedicalTranscriptionJobSummaryLanguageCode;
-		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus;
-		FailureReason?: string;
-		OutputLocationType?: MedicalTranscriptionJobSummaryOutputLocationType;
-		Specialty?: MedicalTranscriptionJobSpecialty;
-		Type?: MedicalTranscriptionJobType;
+		MedicalTranscriptionJobName?: string | null;
+		CreationTime?: Date | null;
+		StartTime?: Date | null;
+		CompletionTime?: Date | null;
+		LanguageCode?: MedicalTranscriptionJobSummaryLanguageCode | null;
+		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
+		FailureReason?: string | null;
+		OutputLocationType?: MedicalTranscriptionJobSummaryOutputLocationType | null;
+		Specialty?: MedicalTranscriptionJobSpecialty | null;
+		Type?: MedicalTranscriptionJobType | null;
 	}
 
 	export enum MedicalTranscriptionJobSummaryLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -311,112 +311,112 @@ export namespace MyNS {
 	export enum MedicalTranscriptionJobSummaryOutputLocationType { CUSTOMER_BUCKET = 0, SERVICE_BUCKET = 1 }
 
 	export interface ListMedicalTranscriptionJobsRequest {
-		Status?: MedicalTranscriptionJobTranscriptionJobStatus;
-		JobNameContains?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
+		JobNameContains?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListMedicalVocabulariesResponse {
-		Status?: CreateMedicalVocabularyResponseVocabularyState;
-		NextToken?: string;
-		Vocabularies?: Array<VocabularyInfo>;
+		Status?: CreateMedicalVocabularyResponseVocabularyState | null;
+		NextToken?: string | null;
+		Vocabularies?: Array<VocabularyInfo> | null;
 	}
 
 
 	/** Provides information about a custom vocabulary.  */
 	export interface VocabularyInfo {
-		VocabularyName?: string;
-		LanguageCode?: VocabularyInfoLanguageCode;
-		LastModifiedTime?: Date;
-		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState;
+		VocabularyName?: string | null;
+		LanguageCode?: VocabularyInfoLanguageCode | null;
+		LastModifiedTime?: Date | null;
+		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
 
 	export enum VocabularyInfoLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface ListMedicalVocabulariesRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		StateEquals?: CreateMedicalVocabularyResponseVocabularyState;
-		NameContains?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		StateEquals?: CreateMedicalVocabularyResponseVocabularyState | null;
+		NameContains?: string | null;
 	}
 
 	export interface ListTranscriptionJobsResponse {
-		Status?: MedicalTranscriptionJobTranscriptionJobStatus;
-		NextToken?: string;
-		TranscriptionJobSummaries?: Array<TranscriptionJobSummary>;
+		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
+		NextToken?: string | null;
+		TranscriptionJobSummaries?: Array<TranscriptionJobSummary> | null;
 	}
 
 
 	/** Provides a summary of information about a transcription job. */
 	export interface TranscriptionJobSummary {
-		TranscriptionJobName?: string;
-		CreationTime?: Date;
-		StartTime?: Date;
-		CompletionTime?: Date;
-		LanguageCode?: TranscriptionJobSummaryLanguageCode;
-		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus;
-		FailureReason?: string;
-		OutputLocationType?: MedicalTranscriptionJobSummaryOutputLocationType;
+		TranscriptionJobName?: string | null;
+		CreationTime?: Date | null;
+		StartTime?: Date | null;
+		CompletionTime?: Date | null;
+		LanguageCode?: TranscriptionJobSummaryLanguageCode | null;
+		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
+		FailureReason?: string | null;
+		OutputLocationType?: MedicalTranscriptionJobSummaryOutputLocationType | null;
 
 		/** Settings for content redaction within a transcription job. */
-		ContentRedaction?: ContentRedaction;
+		ContentRedaction?: ContentRedaction | null;
 	}
 
 	export enum TranscriptionJobSummaryLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface ListTranscriptionJobsRequest {
-		Status?: MedicalTranscriptionJobTranscriptionJobStatus;
-		JobNameContains?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
+		JobNameContains?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListVocabulariesResponse {
-		Status?: CreateMedicalVocabularyResponseVocabularyState;
-		NextToken?: string;
-		Vocabularies?: Array<VocabularyInfo>;
+		Status?: CreateMedicalVocabularyResponseVocabularyState | null;
+		NextToken?: string | null;
+		Vocabularies?: Array<VocabularyInfo> | null;
 	}
 
 	export interface ListVocabulariesRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		StateEquals?: CreateMedicalVocabularyResponseVocabularyState;
-		NameContains?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		StateEquals?: CreateMedicalVocabularyResponseVocabularyState | null;
+		NameContains?: string | null;
 	}
 
 	export interface ListVocabularyFiltersResponse {
-		NextToken?: string;
-		VocabularyFilters?: Array<VocabularyFilterInfo>;
+		NextToken?: string | null;
+		VocabularyFilters?: Array<VocabularyFilterInfo> | null;
 	}
 
 
 	/** Provides information about a vocabulary filter. */
 	export interface VocabularyFilterInfo {
-		VocabularyFilterName?: string;
-		LanguageCode?: VocabularyFilterInfoLanguageCode;
-		LastModifiedTime?: Date;
+		VocabularyFilterName?: string | null;
+		LanguageCode?: VocabularyFilterInfoLanguageCode | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export enum VocabularyFilterInfoLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface ListVocabularyFiltersRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		NameContains?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		NameContains?: string | null;
 	}
 
 	export interface StartMedicalTranscriptionJobResponse {
 
 		/** The data structure that containts the information for a medical transcription job. */
-		MedicalTranscriptionJob?: MedicalTranscriptionJob;
+		MedicalTranscriptionJob?: MedicalTranscriptionJob | null;
 	}
 
 	export interface StartMedicalTranscriptionJobRequest {
 		MedicalTranscriptionJobName: string;
 		LanguageCode: StartMedicalTranscriptionJobRequestLanguageCode;
-		MediaSampleRateHertz?: number;
-		MediaFormat?: MedicalTranscriptionJobMediaFormat;
+		MediaSampleRateHertz?: number | null;
+		MediaFormat?: MedicalTranscriptionJobMediaFormat | null;
 
 		/**
 		 * Describes the input media file in a transcription request.
@@ -424,10 +424,10 @@ export namespace MyNS {
 		 */
 		Media: Media;
 		OutputBucketName: string;
-		OutputEncryptionKMSKeyId?: string;
+		OutputEncryptionKMSKeyId?: string | null;
 
 		/** Optional settings for the <a>StartMedicalTranscriptionJob</a> operation. */
-		Settings?: MedicalTranscriptionSetting;
+		Settings?: MedicalTranscriptionSetting | null;
 		Specialty: MedicalTranscriptionJobSpecialty;
 		Type: MedicalTranscriptionJobType;
 	}
@@ -437,40 +437,40 @@ export namespace MyNS {
 	export interface StartTranscriptionJobResponse {
 
 		/** Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation. */
-		TranscriptionJob?: TranscriptionJob;
+		TranscriptionJob?: TranscriptionJob | null;
 	}
 
 	export interface StartTranscriptionJobRequest {
 		TranscriptionJobName: string;
 		LanguageCode: StartTranscriptionJobRequestLanguageCode;
-		MediaSampleRateHertz?: number;
-		MediaFormat?: MedicalTranscriptionJobMediaFormat;
+		MediaSampleRateHertz?: number | null;
+		MediaFormat?: MedicalTranscriptionJobMediaFormat | null;
 
 		/**
 		 * Describes the input media file in a transcription request.
 		 * Required
 		 */
 		Media: Media;
-		OutputBucketName?: string;
-		OutputEncryptionKMSKeyId?: string;
+		OutputBucketName?: string | null;
+		OutputEncryptionKMSKeyId?: string | null;
 
 		/** Provides optional settings for the <code>StartTranscriptionJob</code> operation. */
-		Settings?: Settings;
+		Settings?: Settings | null;
 
 		/** Provides information about when a transcription job should be executed. */
-		JobExecutionSettings?: JobExecutionSettings;
+		JobExecutionSettings?: JobExecutionSettings | null;
 
 		/** Settings for content redaction within a transcription job. */
-		ContentRedaction?: ContentRedaction;
+		ContentRedaction?: ContentRedaction | null;
 	}
 
 	export enum StartTranscriptionJobRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateMedicalVocabularyResponse {
-		VocabularyName?: string;
-		LanguageCode?: UpdateMedicalVocabularyResponseLanguageCode;
-		LastModifiedTime?: Date;
-		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState;
+		VocabularyName?: string | null;
+		LanguageCode?: UpdateMedicalVocabularyResponseLanguageCode | null;
+		LastModifiedTime?: Date | null;
+		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
 
 	export enum UpdateMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -478,16 +478,16 @@ export namespace MyNS {
 	export interface UpdateMedicalVocabularyRequest {
 		VocabularyName: string;
 		LanguageCode: UpdateMedicalVocabularyRequestLanguageCode;
-		VocabularyFileUri?: string;
+		VocabularyFileUri?: string | null;
 	}
 
 	export enum UpdateMedicalVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyResponse {
-		VocabularyName?: string;
-		LanguageCode?: UpdateVocabularyResponseLanguageCode;
-		LastModifiedTime?: Date;
-		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState;
+		VocabularyName?: string | null;
+		LanguageCode?: UpdateVocabularyResponseLanguageCode | null;
+		LastModifiedTime?: Date | null;
+		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
 
 	export enum UpdateVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -495,24 +495,24 @@ export namespace MyNS {
 	export interface UpdateVocabularyRequest {
 		VocabularyName: string;
 		LanguageCode: UpdateVocabularyRequestLanguageCode;
-		Phrases?: Array<string>;
-		VocabularyFileUri?: string;
+		Phrases?: Array<string> | null;
+		VocabularyFileUri?: string | null;
 	}
 
 	export enum UpdateVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyFilterResponse {
-		VocabularyFilterName?: string;
-		LanguageCode?: UpdateVocabularyFilterResponseLanguageCode;
-		LastModifiedTime?: Date;
+		VocabularyFilterName?: string | null;
+		LanguageCode?: UpdateVocabularyFilterResponseLanguageCode | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export enum UpdateVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyFilterRequest {
 		VocabularyFilterName: string;
-		Words?: Array<string>;
-		VocabularyFilterFileUri?: string;
+		Words?: Array<string> | null;
+		VocabularyFilterFileUri?: string | null;
 	}
 
 	export enum RedactionType { PII = 0 }

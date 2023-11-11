@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CancelImageCreationResponse {
-		requestId?: string;
-		clientToken?: string;
-		imageBuildVersionArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		imageBuildVersionArn?: string | null;
 	}
 
 	export interface ServiceException {
@@ -33,9 +33,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateComponentResponse {
-		requestId?: string;
-		clientToken?: string;
-		componentBuildVersionArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		componentBuildVersionArn?: string | null;
 	}
 
 	export interface InvalidVersionNumberException {
@@ -45,9 +45,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateDistributionConfigurationResponse {
-		requestId?: string;
-		clientToken?: string;
-		distributionConfigurationArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		distributionConfigurationArn?: string | null;
 	}
 
 
@@ -56,19 +56,19 @@ export namespace MyNS {
 		region: string;
 
 		/** Define and configure the output AMIs of the pipeline. */
-		amiDistributionConfiguration?: AmiDistributionConfiguration;
-		licenseConfigurationArns?: Array<string>;
+		amiDistributionConfiguration?: AmiDistributionConfiguration | null;
+		licenseConfigurationArns?: Array<string> | null;
 	}
 
 
 	/**  Define and configure the output AMIs of the pipeline.  */
 	export interface AmiDistributionConfiguration {
-		name?: string;
-		description?: string;
-		amiTags?: TagMap;
+		name?: string | null;
+		description?: string | null;
+		amiTags?: TagMap | null;
 
 		/** Describes the configuration for a launch permission. The launch permission modification request is sent to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have selected to distribute the AMI. */
-		launchPermission?: LaunchPermissionConfiguration;
+		launchPermission?: LaunchPermissionConfiguration | null;
 	}
 
 	export interface TagMap {
@@ -77,31 +77,31 @@ export namespace MyNS {
 
 	/** Describes the configuration for a launch permission. The launch permission modification request is sent to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have selected to distribute the AMI. */
 	export interface LaunchPermissionConfiguration {
-		userIds?: Array<string>;
-		userGroups?: Array<string>;
+		userIds?: Array<string> | null;
+		userGroups?: Array<string> | null;
 	}
 
 	export interface ResourceAlreadyExistsException {
 	}
 
 	export interface CreateImageResponse {
-		requestId?: string;
-		clientToken?: string;
-		imageBuildVersionArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		imageBuildVersionArn?: string | null;
 	}
 
 	export interface CreateImagePipelineResponse {
-		requestId?: string;
-		clientToken?: string;
-		imagePipelineArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		imagePipelineArn?: string | null;
 	}
 
 	export enum PipelineExecutionStartCondition { EXPRESSION_MATCH_ONLY = 0, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = 1 }
 
 	export interface CreateImageRecipeResponse {
-		requestId?: string;
-		clientToken?: string;
-		imageRecipeArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		imageRecipeArn?: string | null;
 	}
 
 
@@ -113,98 +113,98 @@ export namespace MyNS {
 
 	/** Defines block device mappings for the instance used to configure your image. */
 	export interface InstanceBlockDeviceMapping {
-		deviceName?: string;
+		deviceName?: string | null;
 
 		/** Amazon EBS-specific block device mapping specifications. */
-		ebs?: EbsInstanceBlockDeviceSpecification;
-		virtualName?: string;
-		noDevice?: string;
+		ebs?: EbsInstanceBlockDeviceSpecification | null;
+		virtualName?: string | null;
+		noDevice?: string | null;
 	}
 
 
 	/** Amazon EBS-specific block device mapping specifications. */
 	export interface EbsInstanceBlockDeviceSpecification {
-		encrypted?: boolean;
-		deleteOnTermination?: boolean;
-		iops?: number;
-		kmsKeyId?: string;
-		snapshotId?: string;
-		volumeSize?: number;
-		volumeType?: EbsInstanceBlockDeviceSpecificationVolumeType;
+		encrypted?: boolean | null;
+		deleteOnTermination?: boolean | null;
+		iops?: number | null;
+		kmsKeyId?: string | null;
+		snapshotId?: string | null;
+		volumeSize?: number | null;
+		volumeType?: EbsInstanceBlockDeviceSpecificationVolumeType | null;
 	}
 
 	export enum EbsInstanceBlockDeviceSpecificationVolumeType { standard = 0, io1 = 1, gp2 = 2, sc1 = 3, st1 = 4 }
 
 	export interface CreateInfrastructureConfigurationResponse {
-		requestId?: string;
-		clientToken?: string;
-		infrastructureConfigurationArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		infrastructureConfigurationArn?: string | null;
 	}
 
 
 	/** Amazon S3 logging configuration. */
 	export interface S3Logs {
-		s3BucketName?: string;
-		s3KeyPrefix?: string;
+		s3BucketName?: string | null;
+		s3KeyPrefix?: string | null;
 	}
 
 	export interface DeleteComponentResponse {
-		requestId?: string;
-		componentBuildVersionArn?: string;
+		requestId?: string | null;
+		componentBuildVersionArn?: string | null;
 	}
 
 	export interface ResourceDependencyException {
 	}
 
 	export interface DeleteDistributionConfigurationResponse {
-		requestId?: string;
-		distributionConfigurationArn?: string;
+		requestId?: string | null;
+		distributionConfigurationArn?: string | null;
 	}
 
 	export interface DeleteImageResponse {
-		requestId?: string;
-		imageBuildVersionArn?: string;
+		requestId?: string | null;
+		imageBuildVersionArn?: string | null;
 	}
 
 	export interface DeleteImagePipelineResponse {
-		requestId?: string;
-		imagePipelineArn?: string;
+		requestId?: string | null;
+		imagePipelineArn?: string | null;
 	}
 
 	export interface DeleteImageRecipeResponse {
-		requestId?: string;
-		imageRecipeArn?: string;
+		requestId?: string | null;
+		imageRecipeArn?: string | null;
 	}
 
 	export interface DeleteInfrastructureConfigurationResponse {
-		requestId?: string;
-		infrastructureConfigurationArn?: string;
+		requestId?: string | null;
+		infrastructureConfigurationArn?: string | null;
 	}
 
 	export interface GetComponentResponse {
-		requestId?: string;
+		requestId?: string | null;
 
 		/** A detailed view of a component. */
-		component?: Component;
+		component?: Component | null;
 	}
 
 
 	/** A detailed view of a component. */
 	export interface Component {
-		arn?: string;
-		name?: string;
-		version?: string;
-		description?: string;
-		changeDescription?: string;
-		type?: ComponentType;
-		platform?: ComponentPlatform;
-		supportedOsVersions?: Array<string>;
-		owner?: string;
-		data?: string;
-		kmsKeyId?: string;
-		encrypted?: boolean;
-		dateCreated?: string;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		description?: string | null;
+		changeDescription?: string | null;
+		type?: ComponentType | null;
+		platform?: ComponentPlatform | null;
+		supportedOsVersions?: Array<string> | null;
+		owner?: string | null;
+		data?: string | null;
+		kmsKeyId?: string | null;
+		encrypted?: boolean | null;
+		dateCreated?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export enum ComponentType { BUILD = 0, TEST = 1 }
@@ -212,78 +212,78 @@ export namespace MyNS {
 	export enum ComponentPlatform { Windows = 0, Linux = 1 }
 
 	export interface GetComponentPolicyResponse {
-		requestId?: string;
-		policy?: string;
+		requestId?: string | null;
+		policy?: string | null;
 	}
 
 	export interface ResourceNotFoundException {
 	}
 
 	export interface GetDistributionConfigurationResponse {
-		requestId?: string;
+		requestId?: string | null;
 
 		/** A distribution configuration. */
-		distributionConfiguration?: DistributionConfiguration;
+		distributionConfiguration?: DistributionConfiguration | null;
 	}
 
 
 	/** A distribution configuration. */
 	export interface DistributionConfiguration {
-		arn?: string;
-		name?: string;
-		description?: string;
-		distributions?: Array<Distribution>;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		distributions?: Array<Distribution> | null;
 		timeoutMinutes: number;
-		dateCreated?: string;
-		dateUpdated?: string;
-		tags?: TagMap;
+		dateCreated?: string | null;
+		dateUpdated?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface GetImageResponse {
-		requestId?: string;
+		requestId?: string | null;
 
 		/** An image build version. */
-		image?: Image;
+		image?: Image | null;
 	}
 
 
 	/** An image build version. */
 	export interface Image {
-		arn?: string;
-		name?: string;
-		version?: string;
-		platform?: ComponentPlatform;
-		enhancedImageMetadataEnabled?: boolean;
-		osVersion?: string;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		platform?: ComponentPlatform | null;
+		enhancedImageMetadataEnabled?: boolean | null;
+		osVersion?: string | null;
 
 		/** Image state shows the image status and the reason for that status. */
-		state?: ImageState;
+		state?: ImageState | null;
 
 		/** An image recipe. */
-		imageRecipe?: ImageRecipe;
-		sourcePipelineName?: string;
-		sourcePipelineArn?: string;
+		imageRecipe?: ImageRecipe | null;
+		sourcePipelineName?: string | null;
+		sourcePipelineArn?: string | null;
 
 		/** Details of the infrastructure configuration. */
-		infrastructureConfiguration?: InfrastructureConfiguration;
+		infrastructureConfiguration?: InfrastructureConfiguration | null;
 
 		/** A distribution configuration. */
-		distributionConfiguration?: DistributionConfiguration;
+		distributionConfiguration?: DistributionConfiguration | null;
 
 		/** Image tests configuration. */
-		imageTestsConfiguration?: ImageTestsConfiguration;
-		dateCreated?: string;
+		imageTestsConfiguration?: ImageTestsConfiguration | null;
+		dateCreated?: string | null;
 
 		/** The resources produced by this image. */
-		outputResources?: OutputResources;
-		tags?: TagMap;
+		outputResources?: OutputResources | null;
+		tags?: TagMap | null;
 	}
 
 
 	/**  Image state shows the image status and the reason for that status.  */
 	export interface ImageState {
-		status?: ImageStateStatus;
-		reason?: string;
+		status?: ImageStateStatus | null;
+		reason?: string | null;
 	}
 
 	export enum ImageStateStatus { PENDING = 0, CREATING = 1, BUILDING = 2, TESTING = 3, DISTRIBUTING = 4, INTEGRATING = 5, AVAILABLE = 6, CANCELLED = 7, FAILED = 8, DEPRECATED = 9, DELETED = 10 }
@@ -291,38 +291,38 @@ export namespace MyNS {
 
 	/** An image recipe. */
 	export interface ImageRecipe {
-		arn?: string;
-		name?: string;
-		description?: string;
-		platform?: ComponentPlatform;
-		owner?: string;
-		version?: string;
-		components?: Array<ComponentConfiguration>;
-		parentImage?: string;
-		blockDeviceMappings?: Array<InstanceBlockDeviceMapping>;
-		dateCreated?: string;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		platform?: ComponentPlatform | null;
+		owner?: string | null;
+		version?: string | null;
+		components?: Array<ComponentConfiguration> | null;
+		parentImage?: string | null;
+		blockDeviceMappings?: Array<InstanceBlockDeviceMapping> | null;
+		dateCreated?: string | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** Details of the infrastructure configuration. */
 	export interface InfrastructureConfiguration {
-		arn?: string;
-		name?: string;
-		description?: string;
-		instanceTypes?: Array<string>;
-		instanceProfileName?: string;
-		securityGroupIds?: Array<string>;
-		subnetId?: string;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		instanceTypes?: Array<string> | null;
+		instanceProfileName?: string | null;
+		securityGroupIds?: Array<string> | null;
+		subnetId?: string | null;
 
 		/** Logging configuration defines where Image Builder uploads your logs. */
-		logging?: Logging;
-		keyPair?: string;
-		terminateInstanceOnFailure?: boolean;
-		snsTopicArn?: string;
-		dateCreated?: string;
-		dateUpdated?: string;
-		tags?: TagMap;
+		logging?: Logging | null;
+		keyPair?: string | null;
+		terminateInstanceOnFailure?: boolean | null;
+		snsTopicArn?: string | null;
+		dateCreated?: string | null;
+		dateUpdated?: string | null;
+		tags?: TagMap | null;
 	}
 
 
@@ -330,295 +330,295 @@ export namespace MyNS {
 	export interface Logging {
 
 		/** Amazon S3 logging configuration. */
-		s3Logs?: S3Logs;
+		s3Logs?: S3Logs | null;
 	}
 
 
 	/** Image tests configuration. */
 	export interface ImageTestsConfiguration {
-		imageTestsEnabled?: boolean;
-		timeoutMinutes?: number;
+		imageTestsEnabled?: boolean | null;
+		timeoutMinutes?: number | null;
 	}
 
 
 	/** The resources produced by this image.  */
 	export interface OutputResources {
-		amis?: Array<Ami>;
+		amis?: Array<Ami> | null;
 	}
 
 
 	/**  Details of an EC2 AMI.  */
 	export interface Ami {
-		region?: string;
-		image?: string;
-		name?: string;
-		description?: string;
+		region?: string | null;
+		image?: string | null;
+		name?: string | null;
+		description?: string | null;
 
 		/** Image state shows the image status and the reason for that status. */
-		state?: ImageState;
+		state?: ImageState | null;
 	}
 
 	export interface GetImagePipelineResponse {
-		requestId?: string;
+		requestId?: string | null;
 
 		/** Details of an image pipeline. */
-		imagePipeline?: ImagePipeline;
+		imagePipeline?: ImagePipeline | null;
 	}
 
 
 	/** Details of an image pipeline. */
 	export interface ImagePipeline {
-		arn?: string;
-		name?: string;
-		description?: string;
-		platform?: ComponentPlatform;
-		enhancedImageMetadataEnabled?: boolean;
-		imageRecipeArn?: string;
-		infrastructureConfigurationArn?: string;
-		distributionConfigurationArn?: string;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		platform?: ComponentPlatform | null;
+		enhancedImageMetadataEnabled?: boolean | null;
+		imageRecipeArn?: string | null;
+		infrastructureConfigurationArn?: string | null;
+		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
-		imageTestsConfiguration?: ImageTestsConfiguration;
+		imageTestsConfiguration?: ImageTestsConfiguration | null;
 
 		/** A schedule configures how often and when a pipeline will automatically create a new image. */
-		schedule?: Schedule;
-		status?: ImagePipelineStatus;
-		dateCreated?: string;
-		dateUpdated?: string;
-		dateLastRun?: string;
-		dateNextRun?: string;
-		tags?: TagMap;
+		schedule?: Schedule | null;
+		status?: ImagePipelineStatus | null;
+		dateCreated?: string | null;
+		dateUpdated?: string | null;
+		dateLastRun?: string | null;
+		dateNextRun?: string | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** A schedule configures how often and when a pipeline will automatically create a new image.  */
 	export interface Schedule {
-		scheduleExpression?: string;
-		pipelineExecutionStartCondition?: PipelineExecutionStartCondition;
+		scheduleExpression?: string | null;
+		pipelineExecutionStartCondition?: PipelineExecutionStartCondition | null;
 	}
 
 	export enum ImagePipelineStatus { DISABLED = 0, ENABLED = 1 }
 
 	export interface GetImagePolicyResponse {
-		requestId?: string;
-		policy?: string;
+		requestId?: string | null;
+		policy?: string | null;
 	}
 
 	export interface GetImageRecipeResponse {
-		requestId?: string;
+		requestId?: string | null;
 
 		/** An image recipe. */
-		imageRecipe?: ImageRecipe;
+		imageRecipe?: ImageRecipe | null;
 	}
 
 	export interface GetImageRecipePolicyResponse {
-		requestId?: string;
-		policy?: string;
+		requestId?: string | null;
+		policy?: string | null;
 	}
 
 
 	/** GetInfrastructureConfiguration response object.  */
 	export interface GetInfrastructureConfigurationResponse {
-		requestId?: string;
+		requestId?: string | null;
 
 		/** Details of the infrastructure configuration. */
-		infrastructureConfiguration?: InfrastructureConfiguration;
+		infrastructureConfiguration?: InfrastructureConfiguration | null;
 	}
 
 	export interface ImportComponentResponse {
-		requestId?: string;
-		clientToken?: string;
-		componentBuildVersionArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		componentBuildVersionArn?: string | null;
 	}
 
 	export interface ListComponentBuildVersionsResponse {
-		requestId?: string;
-		componentSummaryList?: Array<ComponentSummary>;
-		nextToken?: string;
+		requestId?: string | null;
+		componentSummaryList?: Array<ComponentSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A high-level summary of a component. */
 	export interface ComponentSummary {
-		arn?: string;
-		name?: string;
-		version?: string;
-		platform?: ComponentPlatform;
-		supportedOsVersions?: Array<string>;
-		type?: ComponentType;
-		owner?: string;
-		description?: string;
-		changeDescription?: string;
-		dateCreated?: string;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		platform?: ComponentPlatform | null;
+		supportedOsVersions?: Array<string> | null;
+		type?: ComponentType | null;
+		owner?: string | null;
+		description?: string | null;
+		changeDescription?: string | null;
+		dateCreated?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface InvalidPaginationTokenException {
 	}
 
 	export interface ListComponentsResponse {
-		requestId?: string;
-		componentVersionList?: Array<ComponentVersion>;
-		nextToken?: string;
+		requestId?: string | null;
+		componentVersionList?: Array<ComponentVersion> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A high-level overview of a component semantic version. */
 	export interface ComponentVersion {
-		arn?: string;
-		name?: string;
-		version?: string;
-		description?: string;
-		platform?: ComponentPlatform;
-		supportedOsVersions?: Array<string>;
-		type?: ComponentType;
-		owner?: string;
-		dateCreated?: string;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		description?: string | null;
+		platform?: ComponentPlatform | null;
+		supportedOsVersions?: Array<string> | null;
+		type?: ComponentType | null;
+		owner?: string | null;
+		dateCreated?: string | null;
 	}
 
 
 	/** A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.  */
 	export interface Filter {
-		name?: string;
-		values?: Array<string>;
+		name?: string | null;
+		values?: Array<string> | null;
 	}
 
 	export interface ListDistributionConfigurationsResponse {
-		requestId?: string;
-		distributionConfigurationSummaryList?: Array<DistributionConfigurationSummary>;
-		nextToken?: string;
+		requestId?: string | null;
+		distributionConfigurationSummaryList?: Array<DistributionConfigurationSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A high-level overview of a distribution configuration. */
 	export interface DistributionConfigurationSummary {
-		arn?: string;
-		name?: string;
-		description?: string;
-		dateCreated?: string;
-		dateUpdated?: string;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		dateCreated?: string | null;
+		dateUpdated?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface ListImageBuildVersionsResponse {
-		requestId?: string;
-		imageSummaryList?: Array<ImageSummary>;
-		nextToken?: string;
+		requestId?: string | null;
+		imageSummaryList?: Array<ImageSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An image summary. */
 	export interface ImageSummary {
-		arn?: string;
-		name?: string;
-		version?: string;
-		platform?: ComponentPlatform;
-		osVersion?: string;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		platform?: ComponentPlatform | null;
+		osVersion?: string | null;
 
 		/** Image state shows the image status and the reason for that status. */
-		state?: ImageState;
-		owner?: string;
-		dateCreated?: string;
+		state?: ImageState | null;
+		owner?: string | null;
+		dateCreated?: string | null;
 
 		/** The resources produced by this image. */
-		outputResources?: OutputResources;
-		tags?: TagMap;
+		outputResources?: OutputResources | null;
+		tags?: TagMap | null;
 	}
 
 	export interface ListImagePipelineImagesResponse {
-		requestId?: string;
-		imageSummaryList?: Array<ImageSummary>;
-		nextToken?: string;
+		requestId?: string | null;
+		imageSummaryList?: Array<ImageSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListImagePipelinesResponse {
-		requestId?: string;
-		imagePipelineList?: Array<ImagePipeline>;
-		nextToken?: string;
+		requestId?: string | null;
+		imagePipelineList?: Array<ImagePipeline> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListImageRecipesResponse {
-		requestId?: string;
-		imageRecipeSummaryList?: Array<ImageRecipeSummary>;
-		nextToken?: string;
+		requestId?: string | null;
+		imageRecipeSummaryList?: Array<ImageRecipeSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A summary of an image recipe. */
 	export interface ImageRecipeSummary {
-		arn?: string;
-		name?: string;
-		platform?: ComponentPlatform;
-		owner?: string;
-		parentImage?: string;
-		dateCreated?: string;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		platform?: ComponentPlatform | null;
+		owner?: string | null;
+		parentImage?: string | null;
+		dateCreated?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface ListImagesResponse {
-		requestId?: string;
-		imageVersionList?: Array<ImageVersion>;
-		nextToken?: string;
+		requestId?: string | null;
+		imageVersionList?: Array<ImageVersion> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An image semantic version. */
 	export interface ImageVersion {
-		arn?: string;
-		name?: string;
-		version?: string;
-		platform?: ComponentPlatform;
-		osVersion?: string;
-		owner?: string;
-		dateCreated?: string;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		platform?: ComponentPlatform | null;
+		osVersion?: string | null;
+		owner?: string | null;
+		dateCreated?: string | null;
 	}
 
 	export interface ListInfrastructureConfigurationsResponse {
-		requestId?: string;
-		infrastructureConfigurationSummaryList?: Array<InfrastructureConfigurationSummary>;
-		nextToken?: string;
+		requestId?: string | null;
+		infrastructureConfigurationSummaryList?: Array<InfrastructureConfigurationSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The infrastructure used when building EC2 AMIs. */
 	export interface InfrastructureConfigurationSummary {
-		arn?: string;
-		name?: string;
-		description?: string;
-		dateCreated?: string;
-		dateUpdated?: string;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		dateCreated?: string | null;
+		dateUpdated?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface InvalidParameterException {
 	}
 
 	export interface PutComponentPolicyResponse {
-		requestId?: string;
-		componentArn?: string;
+		requestId?: string | null;
+		componentArn?: string | null;
 	}
 
 	export interface InvalidParameterValueException {
 	}
 
 	export interface PutImagePolicyResponse {
-		requestId?: string;
-		imageArn?: string;
+		requestId?: string | null;
+		imageArn?: string | null;
 	}
 
 	export interface PutImageRecipePolicyResponse {
-		requestId?: string;
-		imageRecipeArn?: string;
+		requestId?: string | null;
+		imageRecipeArn?: string | null;
 	}
 
 	export interface StartImagePipelineExecutionResponse {
-		requestId?: string;
-		clientToken?: string;
-		imageBuildVersionArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		imageBuildVersionArn?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -628,21 +628,21 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDistributionConfigurationResponse {
-		requestId?: string;
-		clientToken?: string;
-		distributionConfigurationArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		distributionConfigurationArn?: string | null;
 	}
 
 	export interface UpdateImagePipelineResponse {
-		requestId?: string;
-		clientToken?: string;
-		imagePipelineArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		imagePipelineArn?: string | null;
 	}
 
 	export interface UpdateInfrastructureConfigurationResponse {
-		requestId?: string;
-		clientToken?: string;
-		infrastructureConfigurationArn?: string;
+		requestId?: string | null;
+		clientToken?: string | null;
+		infrastructureConfigurationArn?: string | null;
 	}
 
 	export interface CancelImageCreationRequest {
@@ -657,22 +657,22 @@ export namespace MyNS {
 	export interface CreateComponentRequest {
 		name: string;
 		semanticVersion: string;
-		description?: string;
-		changeDescription?: string;
+		description?: string | null;
+		changeDescription?: string | null;
 		platform: ComponentPlatform;
-		supportedOsVersions?: Array<string>;
-		data?: string;
-		uri?: string;
-		kmsKeyId?: string;
-		tags?: TagMap;
+		supportedOsVersions?: Array<string> | null;
+		data?: string | null;
+		uri?: string | null;
+		kmsKeyId?: string | null;
+		tags?: TagMap | null;
 		clientToken: string;
 	}
 
 	export interface CreateDistributionConfigurationRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 		distributions: Array<Distribution>;
-		tags?: TagMap;
+		tags?: TagMap | null;
 		clientToken: string;
 	}
 
@@ -680,59 +680,59 @@ export namespace MyNS {
 
 	export interface CreateImagePipelineRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 		imageRecipeArn: string;
 		infrastructureConfigurationArn: string;
-		distributionConfigurationArn?: string;
+		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
-		imageTestsConfiguration?: ImageTestsConfiguration;
-		enhancedImageMetadataEnabled?: boolean;
+		imageTestsConfiguration?: ImageTestsConfiguration | null;
+		enhancedImageMetadataEnabled?: boolean | null;
 
 		/** A schedule configures how often and when a pipeline will automatically create a new image. */
-		schedule?: Schedule;
-		status?: ImagePipelineStatus;
-		tags?: TagMap;
+		schedule?: Schedule | null;
+		status?: ImagePipelineStatus | null;
+		tags?: TagMap | null;
 		clientToken: string;
 	}
 
 	export interface CreateImageRecipeRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 		semanticVersion: string;
 		components: Array<ComponentConfiguration>;
 		parentImage: string;
-		blockDeviceMappings?: Array<InstanceBlockDeviceMapping>;
-		tags?: TagMap;
+		blockDeviceMappings?: Array<InstanceBlockDeviceMapping> | null;
+		tags?: TagMap | null;
 		clientToken: string;
 	}
 
 	export interface CreateImageRequest {
 		imageRecipeArn: string;
-		distributionConfigurationArn?: string;
+		distributionConfigurationArn?: string | null;
 		infrastructureConfigurationArn: string;
 
 		/** Image tests configuration. */
-		imageTestsConfiguration?: ImageTestsConfiguration;
-		enhancedImageMetadataEnabled?: boolean;
-		tags?: TagMap;
+		imageTestsConfiguration?: ImageTestsConfiguration | null;
+		enhancedImageMetadataEnabled?: boolean | null;
+		tags?: TagMap | null;
 		clientToken: string;
 	}
 
 	export interface CreateInfrastructureConfigurationRequest {
 		name: string;
-		description?: string;
-		instanceTypes?: Array<string>;
+		description?: string | null;
+		instanceTypes?: Array<string> | null;
 		instanceProfileName: string;
-		securityGroupIds?: Array<string>;
-		subnetId?: string;
+		securityGroupIds?: Array<string> | null;
+		subnetId?: string | null;
 
 		/** Logging configuration defines where Image Builder uploads your logs. */
-		logging?: Logging;
-		keyPair?: string;
-		terminateInstanceOnFailure?: boolean;
-		snsTopicArn?: string;
-		tags?: TagMap;
+		logging?: Logging | null;
+		keyPair?: string | null;
+		terminateInstanceOnFailure?: boolean | null;
+		snsTopicArn?: string | null;
+		tags?: TagMap | null;
 		clientToken: string;
 	}
 
@@ -790,77 +790,77 @@ export namespace MyNS {
 	export interface ImportComponentRequest {
 		name: string;
 		semanticVersion: string;
-		description?: string;
-		changeDescription?: string;
+		description?: string | null;
+		changeDescription?: string | null;
 		type: ComponentType;
 		format: ComponentFormat;
 		platform: ComponentPlatform;
-		data?: string;
-		uri?: string;
-		kmsKeyId?: string;
-		tags?: TagMap;
+		data?: string | null;
+		uri?: string | null;
+		kmsKeyId?: string | null;
+		tags?: TagMap | null;
 		clientToken: string;
 	}
 
 	export interface ListComponentBuildVersionsRequest {
 		componentVersionArn: string;
-		maxResults?: number;
-		nextToken?: string;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export enum Ownership { Self = 0, Shared = 1, Amazon = 2 }
 
 	export interface ListComponentsRequest {
-		owner?: Ownership;
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		owner?: Ownership | null;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListDistributionConfigurationsRequest {
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListImageBuildVersionsRequest {
 		imageVersionArn: string;
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListImagePipelineImagesRequest {
 		imagePipelineArn: string;
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListImagePipelinesRequest {
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListImageRecipesRequest {
-		owner?: Ownership;
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		owner?: Ownership | null;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListImagesRequest {
-		owner?: Ownership;
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		owner?: Ownership | null;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListInfrastructureConfigurationsRequest {
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -895,41 +895,41 @@ export namespace MyNS {
 
 	export interface UpdateDistributionConfigurationRequest {
 		distributionConfigurationArn: string;
-		description?: string;
+		description?: string | null;
 		distributions: Array<Distribution>;
 		clientToken: string;
 	}
 
 	export interface UpdateImagePipelineRequest {
 		imagePipelineArn: string;
-		description?: string;
+		description?: string | null;
 		imageRecipeArn: string;
 		infrastructureConfigurationArn: string;
-		distributionConfigurationArn?: string;
+		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
-		imageTestsConfiguration?: ImageTestsConfiguration;
-		enhancedImageMetadataEnabled?: boolean;
+		imageTestsConfiguration?: ImageTestsConfiguration | null;
+		enhancedImageMetadataEnabled?: boolean | null;
 
 		/** A schedule configures how often and when a pipeline will automatically create a new image. */
-		schedule?: Schedule;
-		status?: ImagePipelineStatus;
+		schedule?: Schedule | null;
+		status?: ImagePipelineStatus | null;
 		clientToken: string;
 	}
 
 	export interface UpdateInfrastructureConfigurationRequest {
 		infrastructureConfigurationArn: string;
-		description?: string;
-		instanceTypes?: Array<string>;
+		description?: string | null;
+		instanceTypes?: Array<string> | null;
 		instanceProfileName: string;
-		securityGroupIds?: Array<string>;
-		subnetId?: string;
+		securityGroupIds?: Array<string> | null;
+		subnetId?: string | null;
 
 		/** Logging configuration defines where Image Builder uploads your logs. */
-		logging?: Logging;
-		keyPair?: string;
-		terminateInstanceOnFailure?: boolean;
-		snsTopicArn?: string;
+		logging?: Logging | null;
+		keyPair?: string | null;
+		terminateInstanceOnFailure?: boolean | null;
+		snsTopicArn?: string | null;
 		clientToken: string;
 	}
 
@@ -1393,14 +1393,14 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		changeDescription?: string;
+		changeDescription?: string | null;
 
 		/**
 		 * The platform of the component.
@@ -1413,27 +1413,27 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 25
 		 */
-		supportedOsVersions?: Array<string>;
+		supportedOsVersions?: Array<string> | null;
 
 		/**
 		 * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.
 		 * Max length: 16000
 		 * Min length: 1
 		 */
-		data?: string;
+		data?: string | null;
 
 		/** The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If you use S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component. */
-		uri?: string;
+		uri?: string | null;
 
 		/**
 		 * The ID of the KMS key that should be used to encrypt this component.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		kmsKeyId?: string;
+		kmsKeyId?: string | null;
 
 		/** The tags of the component. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The idempotency token of the component.
@@ -1458,7 +1458,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The distributions of the distribution configuration.
@@ -1467,7 +1467,7 @@ export namespace MyNS {
 		distributions: Array<Distribution>;
 
 		/** The tags of the distribution configuration. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The idempotency token of the distribution configuration.
@@ -1491,7 +1491,7 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
 		 */
-		distributionConfigurationArn?: string;
+		distributionConfigurationArn?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.
@@ -1501,13 +1501,13 @@ export namespace MyNS {
 		infrastructureConfigurationArn: string;
 
 		/** Image tests configuration. */
-		imageTestsConfiguration?: CreateImagePutBodyImageTestsConfiguration;
+		imageTestsConfiguration?: CreateImagePutBodyImageTestsConfiguration | null;
 
 		/** Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. */
-		enhancedImageMetadataEnabled?: boolean;
+		enhancedImageMetadataEnabled?: boolean | null;
 
 		/** The tags of the image. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The idempotency token used to make this request idempotent.
@@ -1519,8 +1519,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateImagePutBodyImageTestsConfiguration {
-		imageTestsEnabled?: boolean;
-		timeoutMinutes?: number;
+		imageTestsEnabled?: boolean | null;
+		timeoutMinutes?: number | null;
 	}
 
 	export interface CreateImagePipelinePutBody {
@@ -1537,7 +1537,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.
@@ -1557,22 +1557,22 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
 		 */
-		distributionConfigurationArn?: string;
+		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
-		imageTestsConfiguration?: CreateImagePipelinePutBodyImageTestsConfiguration;
+		imageTestsConfiguration?: CreateImagePipelinePutBodyImageTestsConfiguration | null;
 
 		/** Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. */
-		enhancedImageMetadataEnabled?: boolean;
+		enhancedImageMetadataEnabled?: boolean | null;
 
 		/** A schedule configures how often and when a pipeline will automatically create a new image. */
-		schedule?: CreateImagePipelinePutBodySchedule;
+		schedule?: CreateImagePipelinePutBodySchedule | null;
 
 		/** The status of the image pipeline. */
-		status?: ImagePipelineStatus;
+		status?: ImagePipelineStatus | null;
 
 		/** The tags of the image pipeline. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The idempotency token used to make this request idempotent.
@@ -1584,13 +1584,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateImagePipelinePutBodyImageTestsConfiguration {
-		imageTestsEnabled?: boolean;
-		timeoutMinutes?: number;
+		imageTestsEnabled?: boolean | null;
+		timeoutMinutes?: number | null;
 	}
 
 	export interface CreateImagePipelinePutBodySchedule {
-		scheduleExpression?: string;
-		pipelineExecutionStartCondition?: PipelineExecutionStartCondition;
+		scheduleExpression?: string | null;
+		pipelineExecutionStartCondition?: PipelineExecutionStartCondition | null;
 	}
 
 	export interface CreateImageRecipePutBody {
@@ -1607,7 +1607,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The semantic version of the image recipe.
@@ -1632,10 +1632,10 @@ export namespace MyNS {
 		parentImage: string;
 
 		/** The block device mappings of the image recipe. */
-		blockDeviceMappings?: Array<InstanceBlockDeviceMapping>;
+		blockDeviceMappings?: Array<InstanceBlockDeviceMapping> | null;
 
 		/** The tags of the image recipe. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The idempotency token used to make this request idempotent.
@@ -1660,10 +1660,10 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability. */
-		instanceTypes?: Array<string>;
+		instanceTypes?: Array<string> | null;
 
 		/**
 		 * The instance profile to associate with the instance used to customize your EC2 AMI.
@@ -1674,36 +1674,36 @@ export namespace MyNS {
 		instanceProfileName: string;
 
 		/** The security group IDs to associate with the instance used to customize your EC2 AMI. */
-		securityGroupIds?: Array<string>;
+		securityGroupIds?: Array<string> | null;
 
 		/**
 		 * The subnet ID in which to place the instance used to customize your EC2 AMI.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		subnetId?: string;
+		subnetId?: string | null;
 
 		/** Logging configuration defines where Image Builder uploads your logs. */
-		logging?: CreateInfrastructureConfigurationPutBodyLogging;
+		logging?: CreateInfrastructureConfigurationPutBodyLogging | null;
 
 		/**
 		 * The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to create your image.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		keyPair?: string;
+		keyPair?: string | null;
 
 		/** The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. */
-		terminateInstanceOnFailure?: boolean;
+		terminateInstanceOnFailure?: boolean | null;
 
 		/**
 		 * The SNS topic on which to send image build events.
 		 * Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$
 		 */
-		snsTopicArn?: string;
+		snsTopicArn?: string | null;
 
 		/** The tags of the infrastructure configuration. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The idempotency token used to make this request idempotent.
@@ -1717,7 +1717,7 @@ export namespace MyNS {
 	export interface CreateInfrastructureConfigurationPutBodyLogging {
 
 		/** Amazon S3 logging configuration. */
-		s3Logs?: S3Logs;
+		s3Logs?: S3Logs | null;
 	}
 
 	export interface ImportComponentPutBody {
@@ -1741,14 +1741,14 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		changeDescription?: string;
+		changeDescription?: string | null;
 
 		/**
 		 * The type of the component denotes whether the component is used to build the image or only to test it.
@@ -1773,20 +1773,20 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		data?: string;
+		data?: string | null;
 
 		/** The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If you use S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component. */
-		uri?: string;
+		uri?: string | null;
 
 		/**
 		 * The ID of the KMS key that should be used to encrypt this component.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		kmsKeyId?: string;
+		kmsKeyId?: string | null;
 
 		/** The tags of the component. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The idempotency token of the component.
@@ -1811,41 +1811,41 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListComponentsPostBody {
 
 		/** The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers. */
-		owner?: Ownership;
+		owner?: Ownership | null;
 
 		/**
 		 * The filters.
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum items to return in a request.
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListDistributionConfigurationsPostBody {
@@ -1855,21 +1855,21 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum items to return in a request.
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListImageBuildVersionsPostBody {
@@ -1886,21 +1886,21 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum items to return in a request.
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListImagePipelineImagesPostBody {
@@ -1917,21 +1917,21 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum items to return in a request.
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListImagePipelinesPostBody {
@@ -1941,75 +1941,75 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum items to return in a request.
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListImageRecipesPostBody {
 
 		/** The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers. */
-		owner?: Ownership;
+		owner?: Ownership | null;
 
 		/**
 		 * The filters.
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum items to return in a request.
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListImagesPostBody {
 
 		/** The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers. */
-		owner?: Ownership;
+		owner?: Ownership | null;
 
 		/**
 		 * The filters.
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum items to return in a request.
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListInfrastructureConfigurationsPostBody {
@@ -2019,21 +2019,21 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The maximum items to return in a request.
 		 * Minimum: 1
 		 * Maximum: 25
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -2131,7 +2131,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The distributions of the distribution configuration.
@@ -2162,7 +2162,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.
@@ -2182,19 +2182,19 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
 		 */
-		distributionConfigurationArn?: string;
+		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
-		imageTestsConfiguration?: UpdateImagePipelinePutBodyImageTestsConfiguration;
+		imageTestsConfiguration?: UpdateImagePipelinePutBodyImageTestsConfiguration | null;
 
 		/** Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. */
-		enhancedImageMetadataEnabled?: boolean;
+		enhancedImageMetadataEnabled?: boolean | null;
 
 		/** A schedule configures how often and when a pipeline will automatically create a new image. */
-		schedule?: UpdateImagePipelinePutBodySchedule;
+		schedule?: UpdateImagePipelinePutBodySchedule | null;
 
 		/** The status of the image pipeline. */
-		status?: ImagePipelineStatus;
+		status?: ImagePipelineStatus | null;
 
 		/**
 		 * The idempotency token used to make this request idempotent.
@@ -2206,13 +2206,13 @@ export namespace MyNS {
 	}
 
 	export interface UpdateImagePipelinePutBodyImageTestsConfiguration {
-		imageTestsEnabled?: boolean;
-		timeoutMinutes?: number;
+		imageTestsEnabled?: boolean | null;
+		timeoutMinutes?: number | null;
 	}
 
 	export interface UpdateImagePipelinePutBodySchedule {
-		scheduleExpression?: string;
-		pipelineExecutionStartCondition?: PipelineExecutionStartCondition;
+		scheduleExpression?: string | null;
+		pipelineExecutionStartCondition?: PipelineExecutionStartCondition | null;
 	}
 
 	export interface UpdateInfrastructureConfigurationPutBody {
@@ -2229,10 +2229,10 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability. */
-		instanceTypes?: Array<string>;
+		instanceTypes?: Array<string> | null;
 
 		/**
 		 * The instance profile to associate with the instance used to customize your EC2 AMI.
@@ -2243,33 +2243,33 @@ export namespace MyNS {
 		instanceProfileName: string;
 
 		/** The security group IDs to associate with the instance used to customize your EC2 AMI. */
-		securityGroupIds?: Array<string>;
+		securityGroupIds?: Array<string> | null;
 
 		/**
 		 * The subnet ID to place the instance used to customize your EC2 AMI in.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		subnetId?: string;
+		subnetId?: string | null;
 
 		/** Logging configuration defines where Image Builder uploads your logs. */
-		logging?: UpdateInfrastructureConfigurationPutBodyLogging;
+		logging?: UpdateInfrastructureConfigurationPutBodyLogging | null;
 
 		/**
 		 * The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to create your image.
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		keyPair?: string;
+		keyPair?: string | null;
 
 		/** The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. */
-		terminateInstanceOnFailure?: boolean;
+		terminateInstanceOnFailure?: boolean | null;
 
 		/**
 		 * The SNS topic on which to send image build events.
 		 * Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$
 		 */
-		snsTopicArn?: string;
+		snsTopicArn?: string | null;
 
 		/**
 		 * The idempotency token used to make this request idempotent.
@@ -2283,7 +2283,7 @@ export namespace MyNS {
 	export interface UpdateInfrastructureConfigurationPutBodyLogging {
 
 		/** Amazon S3 logging configuration. */
-		s3Logs?: S3Logs;
+		s3Logs?: S3Logs | null;
 	}
 
 }

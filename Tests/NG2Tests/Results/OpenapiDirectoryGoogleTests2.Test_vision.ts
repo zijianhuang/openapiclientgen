@@ -11,7 +11,7 @@ export namespace MyNS {
 		 * Format is:
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
 		 */
-		product?: string;
+		product?: string | null;
 	}
 
 
@@ -19,13 +19,13 @@ export namespace MyNS {
 	export interface AnnotateFileRequest {
 
 		/** Required. Requested features. */
-		features?: Array<Feature>;
+		features?: Array<Feature> | null;
 
 		/** Image context and/or feature-specific parameters. */
-		imageContext?: ImageContext;
+		imageContext?: ImageContext | null;
 
 		/** The desired input location and metadata. */
-		inputConfig?: InputConfig;
+		inputConfig?: InputConfig | null;
 
 		/**
 		 * Pages of the file to perform image annotation.
@@ -39,7 +39,7 @@ export namespace MyNS {
 		 * If this field is empty, by default the service performs image annotation
 		 * for the first 5 pages of the file.
 		 */
-		pages?: Array<number>;
+		pages?: Array<number> | null;
 	}
 
 
@@ -54,17 +54,17 @@ export namespace MyNS {
 		 * Maximum number of results of this type. Does not apply to
 		 * `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * Model to use for the feature.
 		 * Supported values: "builtin/stable" (the default if unset) and
 		 * "builtin/latest".
 		 */
-		model?: string;
+		model?: string | null;
 
 		/** The feature type. */
-		type?: FeatureType;
+		type?: FeatureType | null;
 	}
 
 	export enum FeatureType { TYPE_UNSPECIFIED = 0, FACE_DETECTION = 1, LANDMARK_DETECTION = 2, LOGO_DETECTION = 3, LABEL_DETECTION = 4, TEXT_DETECTION = 5, DOCUMENT_TEXT_DETECTION = 6, SAFE_SEARCH_DETECTION = 7, IMAGE_PROPERTIES = 8, CROP_HINTS = 9, WEB_DETECTION = 10, PRODUCT_SEARCH = 11, OBJECT_LOCALIZATION = 12 }
@@ -74,7 +74,7 @@ export namespace MyNS {
 	export interface ImageContext {
 
 		/** Parameters for crop hints annotation request. */
-		cropHintsParams?: CropHintsParams;
+		cropHintsParams?: CropHintsParams | null;
 
 		/**
 		 * List of languages to use for TEXT_DETECTION. In most cases, an empty value
@@ -86,16 +86,16 @@ export namespace MyNS {
 		 * error if one or more of the specified languages is not one of the
 		 * [supported languages](https://cloud.google.com/vision/docs/languages).
 		 */
-		languageHints?: Array<string>;
+		languageHints?: Array<string> | null;
 
 		/** Rectangle determined by min and max `LatLng` pairs. */
-		latLongRect?: LatLongRect;
+		latLongRect?: LatLongRect | null;
 
 		/** Parameters for a product search request. */
-		productSearchParams?: ProductSearchParams;
+		productSearchParams?: ProductSearchParams | null;
 
 		/** Parameters for web detection request. */
-		webDetectionParams?: WebDetectionParams;
+		webDetectionParams?: WebDetectionParams | null;
 	}
 
 
@@ -110,7 +110,7 @@ export namespace MyNS {
 		 * limited to a maximum of 16; any aspect ratios provided after the 16th are
 		 * ignored.
 		 */
-		aspectRatios?: Array<number>;
+		aspectRatios?: Array<number> | null;
 	}
 
 
@@ -124,7 +124,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		maxLatLng?: LatLng;
+		maxLatLng?: LatLng | null;
 
 		/**
 		 * An object representing a latitude/longitude pair. This is expressed as a pair
@@ -133,7 +133,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		minLatLng?: LatLng;
+		minLatLng?: LatLng | null;
 	}
 
 
@@ -147,10 +147,10 @@ export namespace MyNS {
 	export interface LatLng {
 
 		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
-		latitude?: number;
+		latitude?: number | null;
 
 		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
-		longitude?: number;
+		longitude?: number | null;
 	}
 
 
@@ -158,7 +158,7 @@ export namespace MyNS {
 	export interface ProductSearchParams {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly;
+		boundingPoly?: BoundingPoly | null;
 
 		/**
 		 * The filtering expression. This can be used to restrict search results based
@@ -169,7 +169,7 @@ export namespace MyNS {
 		 * acceptable, but "(color = red OR brand = Google)" is not acceptable.
 		 * "color: red" is not acceptable because it uses a ':' instead of an '='.
 		 */
-		filter?: string;
+		filter?: string | null;
 
 		/**
 		 * The list of product categories to search in. Currently, we only consider
@@ -180,14 +180,14 @@ export namespace MyNS {
 		 * or "toys-v2" for better product search accuracy. It is recommended to
 		 * migrate existing products to these categories as well.
 		 */
-		productCategories?: Array<string>;
+		productCategories?: Array<string> | null;
 
 		/**
 		 * The resource name of a ProductSet to be searched for similar images.
 		 * Format is:
 		 * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
 		 */
-		productSet?: string;
+		productSet?: string | null;
 	}
 
 
@@ -195,10 +195,10 @@ export namespace MyNS {
 	export interface BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<NormalizedVertex>;
+		normalizedVertices?: Array<NormalizedVertex> | null;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<Vertex>;
+		vertices?: Array<Vertex> | null;
 	}
 
 
@@ -210,10 +210,10 @@ export namespace MyNS {
 	export interface NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -224,10 +224,10 @@ export namespace MyNS {
 	export interface Vertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -235,7 +235,7 @@ export namespace MyNS {
 	export interface WebDetectionParams {
 
 		/** Whether to include results derived from the geo information in the image. */
-		includeGeoResults?: boolean;
+		includeGeoResults?: boolean | null;
 	}
 
 
@@ -249,16 +249,16 @@ export namespace MyNS {
 		 * Currently, this field only works for BatchAnnotateFiles requests. It does
 		 * not work for AsyncBatchAnnotateFiles requests.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GcsSource;
+		gcsSource?: GcsSource | null;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -269,7 +269,7 @@ export namespace MyNS {
 		 * Google Cloud Storage URI for the input file. This must only be a
 		 * Google Cloud Storage object. Wildcards are not currently supported.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -287,19 +287,19 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** The desired input location and metadata. */
-		inputConfig?: InputConfig;
+		inputConfig?: InputConfig | null;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<AnnotateImageResponse>;
+		responses?: Array<AnnotateImageResponse> | null;
 
 		/** This field gives the total number of pages in the file. */
-		totalPages?: number;
+		totalPages?: number | null;
 	}
 
 
@@ -314,20 +314,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -338,10 +338,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: ImageAnnotationContext;
+		context?: ImageAnnotationContext | null;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: CropHintsAnnotation;
+		cropHintsAnnotation?: CropHintsAnnotation | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -351,10 +351,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<FaceAnnotation>;
+		faceAnnotations?: Array<FaceAnnotation> | null;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -365,41 +365,41 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: TextAnnotation;
+		fullTextAnnotation?: TextAnnotation | null;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: ImageProperties;
+		imagePropertiesAnnotation?: ImageProperties | null;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<EntityAnnotation>;
+		labelAnnotations?: Array<EntityAnnotation> | null;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<EntityAnnotation>;
+		landmarkAnnotations?: Array<EntityAnnotation> | null;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<LocalizedObjectAnnotation>;
+		localizedObjectAnnotations?: Array<LocalizedObjectAnnotation> | null;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<EntityAnnotation>;
+		logoAnnotations?: Array<EntityAnnotation> | null;
 
 		/** Results for a product search request. */
-		productSearchResults?: ProductSearchResults;
+		productSearchResults?: ProductSearchResults | null;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: SafeSearchAnnotation;
+		safeSearchAnnotation?: SafeSearchAnnotation | null;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<EntityAnnotation>;
+		textAnnotations?: Array<EntityAnnotation> | null;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: WebDetection;
+		webDetection?: WebDetection | null;
 	}
 
 
@@ -413,10 +413,10 @@ export namespace MyNS {
 		 * If the file was a PDF or TIFF, this field gives the page number within
 		 * the file used to produce the image.
 		 */
-		pageNumber?: number;
+		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -424,7 +424,7 @@ export namespace MyNS {
 	export interface CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<CropHint>;
+		cropHints?: Array<CropHint> | null;
 	}
 
 
@@ -432,16 +432,16 @@ export namespace MyNS {
 	export interface CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly;
+		boundingPoly?: BoundingPoly | null;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Fraction of importance of this salient region with respect to the original
 		 * image.
 		 */
-		importanceFraction?: number;
+		importanceFraction?: number | null;
 	}
 
 
@@ -449,60 +449,60 @@ export namespace MyNS {
 	export interface FaceAnnotation {
 
 		/** Anger likelihood. */
-		angerLikelihood?: FaceAnnotationAngerLikelihood;
+		angerLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Blurred likelihood. */
-		blurredLikelihood?: FaceAnnotationAngerLikelihood;
+		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly;
+		boundingPoly?: BoundingPoly | null;
 
 		/** Detection confidence. Range [0, 1]. */
-		detectionConfidence?: number;
+		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: BoundingPoly;
+		fdBoundingPoly?: BoundingPoly | null;
 
 		/** Headwear likelihood. */
-		headwearLikelihood?: FaceAnnotationAngerLikelihood;
+		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Joy likelihood. */
-		joyLikelihood?: FaceAnnotationAngerLikelihood;
+		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Face landmarking confidence. Range [0, 1]. */
-		landmarkingConfidence?: number;
+		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<Landmark>;
+		landmarks?: Array<Landmark> | null;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
 		 * pointing relative to the vertical plane perpendicular to the image. Range
 		 * [-180,180].
 		 */
-		panAngle?: number;
+		panAngle?: number | null;
 
 		/**
 		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
 		 * of the face relative to the image vertical about the axis perpendicular to
 		 * the face. Range [-180,180].
 		 */
-		rollAngle?: number;
+		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
-		sorrowLikelihood?: FaceAnnotationAngerLikelihood;
+		sorrowLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Surprise likelihood. */
-		surpriseLikelihood?: FaceAnnotationAngerLikelihood;
+		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Pitch angle, which indicates the upwards/downwards angle that the face is
 		 * pointing relative to the image's horizontal plane. Range [-180,180].
 		 */
-		tiltAngle?: number;
+		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
-		underExposedLikelihood?: FaceAnnotationAngerLikelihood;
+		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
 	export enum FaceAnnotationAngerLikelihood { UNKNOWN = 0, VERY_UNLIKELY = 1, UNLIKELY = 2, POSSIBLE = 3, LIKELY = 4, VERY_LIKELY = 5 }
@@ -516,10 +516,10 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: Position;
+		position?: Position | null;
 
 		/** Face landmark type. */
-		type?: LandmarkType;
+		type?: LandmarkType | null;
 	}
 
 
@@ -531,13 +531,13 @@ export namespace MyNS {
 	export interface Position {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 
 		/** Z coordinate (or depth). */
-		z?: number;
+		z?: number | null;
 	}
 
 	export enum LandmarkType { UNKNOWN_LANDMARK = 0, LEFT_EYE = 1, RIGHT_EYE = 2, LEFT_OF_LEFT_EYEBROW = 3, RIGHT_OF_LEFT_EYEBROW = 4, LEFT_OF_RIGHT_EYEBROW = 5, RIGHT_OF_RIGHT_EYEBROW = 6, MIDPOINT_BETWEEN_EYES = 7, NOSE_TIP = 8, UPPER_LIP = 9, LOWER_LIP = 10, MOUTH_LEFT = 11, MOUTH_RIGHT = 12, MOUTH_CENTER = 13, NOSE_BOTTOM_RIGHT = 14, NOSE_BOTTOM_LEFT = 15, NOSE_BOTTOM_CENTER = 16, LEFT_EYE_TOP_BOUNDARY = 17, LEFT_EYE_RIGHT_CORNER = 18, LEFT_EYE_BOTTOM_BOUNDARY = 19, LEFT_EYE_LEFT_CORNER = 20, RIGHT_EYE_TOP_BOUNDARY = 21, RIGHT_EYE_RIGHT_CORNER = 22, RIGHT_EYE_BOTTOM_BOUNDARY = 23, RIGHT_EYE_LEFT_CORNER = 24, LEFT_EYEBROW_UPPER_MIDPOINT = 25, RIGHT_EYEBROW_UPPER_MIDPOINT = 26, LEFT_EAR_TRAGION = 27, RIGHT_EAR_TRAGION = 28, LEFT_EYE_PUPIL = 29, RIGHT_EYE_PUPIL = 30, FOREHEAD_GLABELLA = 31, CHIN_GNATHION = 32, CHIN_LEFT_GONION = 33, CHIN_RIGHT_GONION = 34 }
@@ -555,10 +555,10 @@ export namespace MyNS {
 	export interface TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<Page>;
+		pages?: Array<Page> | null;
 
 		/** UTF-8 text detected on the pages. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -566,25 +566,25 @@ export namespace MyNS {
 	export interface Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<Block>;
+		blocks?: Array<Block> | null;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Page height. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		height?: number;
+		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty;
+		property?: TextProperty | null;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -592,19 +592,19 @@ export namespace MyNS {
 	export interface Block {
 
 		/** Detected block type (text, image etc) for this block. */
-		blockType?: BlockBlockType;
+		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: BoundingPoly;
+		boundingBox?: BoundingPoly | null;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<Paragraph>;
+		paragraphs?: Array<Paragraph> | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty;
+		property?: TextProperty | null;
 	}
 
 	export enum BlockBlockType { UNKNOWN = 0, TEXT = 1, TABLE = 2, PICTURE = 3, RULER = 4, BARCODE = 5 }
@@ -614,16 +614,16 @@ export namespace MyNS {
 	export interface Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: BoundingPoly;
+		boundingBox?: BoundingPoly | null;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty;
+		property?: TextProperty | null;
 
 		/** List of all words in this paragraph. */
-		words?: Array<Word>;
+		words?: Array<Word> | null;
 	}
 
 
@@ -631,10 +631,10 @@ export namespace MyNS {
 	export interface TextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: DetectedBreak;
+		detectedBreak?: DetectedBreak | null;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<DetectedLanguage>;
+		detectedLanguages?: Array<DetectedLanguage> | null;
 	}
 
 
@@ -642,10 +642,10 @@ export namespace MyNS {
 	export interface DetectedBreak {
 
 		/** True if break prepends the element. */
-		isPrefix?: boolean;
+		isPrefix?: boolean | null;
 
 		/** Detected break type. */
-		type?: DetectedBreakType;
+		type?: DetectedBreakType | null;
 	}
 
 	export enum DetectedBreakType { UNKNOWN = 0, SPACE = 1, SURE_SPACE = 2, EOL_SURE_SPACE = 3, HYPHEN = 4, LINE_BREAK = 5 }
@@ -655,14 +655,14 @@ export namespace MyNS {
 	export interface DetectedLanguage {
 
 		/** Confidence of detected language. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -670,19 +670,19 @@ export namespace MyNS {
 	export interface Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: BoundingPoly;
+		boundingBox?: BoundingPoly | null;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty;
+		property?: TextProperty | null;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<Symbol>;
+		symbols?: Array<Symbol> | null;
 	}
 
 
@@ -690,16 +690,16 @@ export namespace MyNS {
 	export interface Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: BoundingPoly;
+		boundingBox?: BoundingPoly | null;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty;
+		property?: TextProperty | null;
 
 		/** The actual UTF-8 representation of the symbol. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -707,7 +707,7 @@ export namespace MyNS {
 	export interface ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: DominantColorsAnnotation;
+		dominantColors?: DominantColorsAnnotation | null;
 	}
 
 
@@ -715,7 +715,7 @@ export namespace MyNS {
 	export interface DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<ColorInfo>;
+		colors?: Array<ColorInfo> | null;
 	}
 
 
@@ -830,16 +830,16 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
 		 * Value in range [0, 1].
 		 */
-		pixelFraction?: number;
+		pixelFraction?: number | null;
 
 		/** Image-specific score for this color. Value in range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -961,16 +961,16 @@ export namespace MyNS {
 		 * If omitted, this color object is to be rendered as a solid color
 		 * (as if the alpha value had been explicitly given with a value of 1.0).
 		 */
-		alpha?: number;
+		alpha?: number | null;
 
 		/** The amount of blue in the color as a value in the interval [0, 1]. */
-		blue?: number;
+		blue?: number | null;
 
 		/** The amount of green in the color as a value in the interval [0, 1]. */
-		green?: number;
+		green?: number | null;
 
 		/** The amount of red in the color as a value in the interval [0, 1]. */
-		red?: number;
+		red?: number | null;
 	}
 
 
@@ -978,7 +978,7 @@ export namespace MyNS {
 	export interface EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly;
+		boundingPoly?: BoundingPoly | null;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -987,16 +987,16 @@ export namespace MyNS {
 		 * this field represents the confidence that there is a tower in the query
 		 * image. Range [0, 1].
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The language code for the locale in which the entity textual
 		 * `description` is expressed.
 		 */
-		locale?: string;
+		locale?: string | null;
 
 		/**
 		 * The location information for the detected entity. Multiple
@@ -1005,23 +1005,23 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<LocationInfo>;
+		locations?: Array<LocationInfo> | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		mid?: string;
+		mid?: string | null;
 
 		/**
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<Property>;
+		properties?: Array<Property> | null;
 
 		/** Overall score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 
 		/**
 		 * The relevancy of the ICA (Image Content Annotation) label to the
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 		 * detected distant towering building, even though the confidence that
 		 * there is a tower in each image may be the same. Range [0, 1].
 		 */
-		topicality?: number;
+		topicality?: number | null;
 	}
 
 
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng;
+		latLng?: LatLng | null;
 	}
 
 
@@ -1052,13 +1052,13 @@ export namespace MyNS {
 	export interface Property {
 
 		/** Name of the property. */
-		name?: string;
+		name?: string | null;
 
 		/** Value of numeric properties. */
-		uint64Value?: string;
+		uint64Value?: string | null;
 
 		/** Value of the property. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -1066,23 +1066,23 @@ export namespace MyNS {
 	export interface LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly;
+		boundingPoly?: BoundingPoly | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -1094,7 +1094,7 @@ export namespace MyNS {
 		 * product set and products removed from the product set after this time are
 		 * not reflected in the current results.
 		 */
-		indexTime?: string;
+		indexTime?: string | null;
 
 		/**
 		 * List of results grouped by products detected in the query image. Each entry
@@ -1102,10 +1102,10 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GroupedResult>;
+		productGroupedResults?: Array<GroupedResult> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<Result>;
+		results?: Array<Result> | null;
 	}
 
 
@@ -1116,13 +1116,13 @@ export namespace MyNS {
 	export interface GroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly;
+		boundingPoly?: BoundingPoly | null;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<ObjectAnnotation>;
+		objectAnnotations?: Array<ObjectAnnotation> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<Result>;
+		results?: Array<Result> | null;
 	}
 
 
@@ -1134,16 +1134,16 @@ export namespace MyNS {
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -1154,16 +1154,16 @@ export namespace MyNS {
 		 * The resource name of the image from the product that is the closest match
 		 * to the query.
 		 */
-		image?: string;
+		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: Product;
+		product?: Product | null;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -1174,13 +1174,13 @@ export namespace MyNS {
 		 * User-provided metadata to be stored with this product. Must be at most 4096
 		 * characters long.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The user-provided name for this Product. Must not be empty. Must be at most
 		 * 4096 characters long.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The resource name of the product.
@@ -1188,7 +1188,7 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
 		 * This field is ignored when creating a product.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Immutable. The category for the product identified by the reference image. This should
@@ -1196,7 +1196,7 @@ export namespace MyNS {
 		 * "homegoods", "apparel", and "toys" are still supported, but these should
 		 * not be used for new products.
 		 */
-		productCategory?: string;
+		productCategory?: string | null;
 
 		/**
 		 * Key-value pairs that can be attached to a product. At query time,
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<KeyValue>;
+		productLabels?: Array<KeyValue> | null;
 	}
 
 
@@ -1221,13 +1221,13 @@ export namespace MyNS {
 		 * The key of the label attached to the product. Cannot be empty and cannot
 		 * exceed 128 bytes.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * The value of the label attached to the product. Cannot be empty and
 		 * cannot exceed 128 bytes.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -1243,10 +1243,10 @@ export namespace MyNS {
 		 * contain elements such as nudity, pornographic images or cartoons, or
 		 * sexual activities.
 		 */
-		adult?: FaceAnnotationAngerLikelihood;
+		adult?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this is a medical image. */
-		medical?: FaceAnnotationAngerLikelihood;
+		medical?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Likelihood that the request image contains racy content. Racy content may
@@ -1254,17 +1254,17 @@ export namespace MyNS {
 		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
 		 * body areas.
 		 */
-		racy?: FaceAnnotationAngerLikelihood;
+		racy?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Spoof likelihood. The likelihood that an modification
 		 * was made to the image's canonical version to make it appear
 		 * funny or offensive.
 		 */
-		spoof?: FaceAnnotationAngerLikelihood;
+		spoof?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this image contains violent content. */
-		violence?: FaceAnnotationAngerLikelihood;
+		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -1275,29 +1275,29 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<WebLabel>;
+		bestGuessLabels?: Array<WebLabel> | null;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<WebImage>;
+		fullMatchingImages?: Array<WebImage> | null;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<WebPage>;
+		pagesWithMatchingImages?: Array<WebPage> | null;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<WebImage>;
+		partialMatchingImages?: Array<WebImage> | null;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<WebImage>;
+		visuallySimilarImages?: Array<WebImage> | null;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<WebEntity>;
+		webEntities?: Array<WebEntity> | null;
 	}
 
 
@@ -1305,14 +1305,14 @@ export namespace MyNS {
 	export interface WebLabel {
 
 		/** Label for extra metadata. */
-		label?: string;
+		label?: string | null;
 
 		/**
 		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
 		 * For more information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -1320,10 +1320,10 @@ export namespace MyNS {
 	export interface WebImage {
 
 		/** (Deprecated) Overall relevancy score for the image. */
-		score?: number;
+		score?: number | null;
 
 		/** The result image URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -1334,10 +1334,10 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<WebImage>;
+		fullMatchingImages?: Array<WebImage> | null;
 
 		/** Title for the web page, may contain HTML markups. */
-		pageTitle?: string;
+		pageTitle?: string | null;
 
 		/**
 		 * Partial matching images on the page.
@@ -1345,13 +1345,13 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<WebImage>;
+		partialMatchingImages?: Array<WebImage> | null;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
-		score?: number;
+		score?: number | null;
 
 		/** The result web page URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -1359,16 +1359,16 @@ export namespace MyNS {
 	export interface WebEntity {
 
 		/** Canonical description of the entity, in English. */
-		description?: string;
+		description?: string | null;
 
 		/** Opaque entity ID. */
-		entityId?: string;
+		entityId?: string | null;
 
 		/**
 		 * Overall relevancy score for the entity.
 		 * Not normalized and not comparable across different image queries.
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -1379,13 +1379,13 @@ export namespace MyNS {
 	export interface AnnotateImageRequest {
 
 		/** Requested features. */
-		features?: Array<Feature>;
+		features?: Array<Feature> | null;
 
 		/** Client image to perform Google Cloud Vision API tasks over. */
-		image?: Image;
+		image?: Image | null;
 
 		/** Image context and/or feature-specific parameters. */
-		imageContext?: ImageContext;
+		imageContext?: ImageContext | null;
 	}
 
 
@@ -1397,10 +1397,10 @@ export namespace MyNS {
 		 * Note: As with all `bytes` fields, protobuffers use a pure binary
 		 * representation, whereas JSON representations use base64.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/** External image source (Google Cloud Storage or web URL image location). */
-		source?: ImageSource;
+		source?: ImageSource | null;
 	}
 
 
@@ -1414,7 +1414,7 @@ export namespace MyNS {
 		 * [Google Cloud Storage Request
 		 * URIs](https://cloud.google.com/storage/docs/reference-uris) for more info.
 		 */
-		gcsImageUri?: string;
+		gcsImageUri?: string | null;
 
 		/**
 		 * The URI of the source image. Can be either:
@@ -1432,7 +1432,7 @@ export namespace MyNS {
 		 * When both `gcs_image_uri` and `image_uri` are specified, `image_uri` takes
 		 * precedence.
 		 */
-		imageUri?: string;
+		imageUri?: string | null;
 	}
 
 
@@ -1440,16 +1440,16 @@ export namespace MyNS {
 	export interface AsyncAnnotateFileRequest {
 
 		/** Required. Requested features. */
-		features?: Array<Feature>;
+		features?: Array<Feature> | null;
 
 		/** Image context and/or feature-specific parameters. */
-		imageContext?: ImageContext;
+		imageContext?: ImageContext | null;
 
 		/** The desired input location and metadata. */
-		inputConfig?: InputConfig;
+		inputConfig?: InputConfig | null;
 
 		/** The desired output location and metadata. */
-		outputConfig?: OutputConfig;
+		outputConfig?: OutputConfig | null;
 	}
 
 
@@ -1467,10 +1467,10 @@ export namespace MyNS {
 		 * Currently, batch_size only applies to GcsDestination, with potential future
 		 * support for other output configurations.
 		 */
-		batchSize?: number;
+		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GcsDestination;
+		gcsDestination?: GcsDestination | null;
 	}
 
 
@@ -1497,7 +1497,7 @@ export namespace MyNS {
 		 * Multiple outputs can happen if, for example, the output JSON is too large
 		 * and overflows into multiple sharded files.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 	export interface AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: OutputConfig;
+		outputConfig?: OutputConfig | null;
 	}
 
 
@@ -1525,10 +1525,10 @@ export namespace MyNS {
 		 * `eu`: The European Union.
 		 * Example: `projects/project-A/locations/eu`.
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/** Required. Individual async file annotation requests for this batch. */
-		requests?: Array<AsyncAnnotateFileRequest>;
+		requests?: Array<AsyncAnnotateFileRequest> | null;
 	}
 
 
@@ -1539,7 +1539,7 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<AsyncAnnotateFileResponse>;
+		responses?: Array<AsyncAnnotateFileResponse> | null;
 	}
 
 
@@ -1547,7 +1547,7 @@ export namespace MyNS {
 	export interface AsyncBatchAnnotateImagesRequest {
 
 		/** The desired output location and metadata. */
-		outputConfig?: OutputConfig;
+		outputConfig?: OutputConfig | null;
 
 		/**
 		 * Optional. Target project and location to make a call.
@@ -1559,10 +1559,10 @@ export namespace MyNS {
 		 * `eu`: The European Union.
 		 * Example: `projects/project-A/locations/eu`.
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/** Required. Individual image annotation requests for this batch. */
-		requests?: Array<AnnotateImageRequest>;
+		requests?: Array<AnnotateImageRequest> | null;
 	}
 
 
@@ -1570,7 +1570,7 @@ export namespace MyNS {
 	export interface AsyncBatchAnnotateImagesResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: OutputConfig;
+		outputConfig?: OutputConfig | null;
 	}
 
 
@@ -1587,13 +1587,13 @@ export namespace MyNS {
 		 * `eu`: The European Union.
 		 * Example: `projects/project-A/locations/eu`.
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/**
 		 * Required. The list of file annotation requests. Right now we support only one
 		 * AnnotateFileRequest in BatchAnnotateFilesRequest.
 		 */
-		requests?: Array<AnnotateFileRequest>;
+		requests?: Array<AnnotateFileRequest> | null;
 	}
 
 
@@ -1604,7 +1604,7 @@ export namespace MyNS {
 		 * The list of file annotation responses, each response corresponding to each
 		 * AnnotateFileRequest in BatchAnnotateFilesRequest.
 		 */
-		responses?: Array<AnnotateFileResponse>;
+		responses?: Array<AnnotateFileResponse> | null;
 	}
 
 
@@ -1621,10 +1621,10 @@ export namespace MyNS {
 		 * `eu`: The European Union.
 		 * Example: `projects/project-A/locations/eu`.
 		 */
-		parent?: string;
+		parent?: string | null;
 
 		/** Required. Individual image annotation requests for this batch. */
-		requests?: Array<AnnotateImageRequest>;
+		requests?: Array<AnnotateImageRequest> | null;
 	}
 
 
@@ -1632,7 +1632,7 @@ export namespace MyNS {
 	export interface BatchAnnotateImagesResponse {
 
 		/** Individual responses to image annotation requests within the batch. */
-		responses?: Array<AnnotateImageResponse>;
+		responses?: Array<AnnotateImageResponse> | null;
 	}
 
 
@@ -1647,13 +1647,13 @@ export namespace MyNS {
 		 * The time when the batch request is finished and
 		 * google.longrunning.Operation.done is set to true.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The current state of the batch operation. */
-		state?: BatchOperationMetadataState;
+		state?: BatchOperationMetadataState | null;
 
 		/** The time when the batch request was submitted to the server. */
-		submitTime?: string;
+		submitTime?: string | null;
 	}
 
 	export enum BatchOperationMetadataState { STATE_UNSPECIFIED = 0, PROCESSING = 1, SUCCESSFUL = 2, FAILED = 3, CANCELLED = 4 }
@@ -1691,19 +1691,19 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** The desired input location and metadata. */
-		inputConfig?: GoogleCloudVisionV1p1beta1InputConfig;
+		inputConfig?: GoogleCloudVisionV1p1beta1InputConfig | null;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<GoogleCloudVisionV1p1beta1AnnotateImageResponse>;
+		responses?: Array<GoogleCloudVisionV1p1beta1AnnotateImageResponse> | null;
 
 		/** This field gives the total number of pages in the file. */
-		totalPages?: number;
+		totalPages?: number | null;
 	}
 
 
@@ -1717,16 +1717,16 @@ export namespace MyNS {
 		 * Currently, this field only works for BatchAnnotateFiles requests. It does
 		 * not work for AsyncBatchAnnotateFiles requests.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GoogleCloudVisionV1p1beta1GcsSource;
+		gcsSource?: GoogleCloudVisionV1p1beta1GcsSource | null;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -1737,7 +1737,7 @@ export namespace MyNS {
 		 * Google Cloud Storage URI for the input file. This must only be a
 		 * Google Cloud Storage object. Wildcards are not currently supported.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -1748,10 +1748,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: GoogleCloudVisionV1p1beta1ImageAnnotationContext;
+		context?: GoogleCloudVisionV1p1beta1ImageAnnotationContext | null;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: GoogleCloudVisionV1p1beta1CropHintsAnnotation;
+		cropHintsAnnotation?: GoogleCloudVisionV1p1beta1CropHintsAnnotation | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1761,10 +1761,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<GoogleCloudVisionV1p1beta1FaceAnnotation>;
+		faceAnnotations?: Array<GoogleCloudVisionV1p1beta1FaceAnnotation> | null;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -1775,41 +1775,41 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: GoogleCloudVisionV1p1beta1TextAnnotation;
+		fullTextAnnotation?: GoogleCloudVisionV1p1beta1TextAnnotation | null;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: GoogleCloudVisionV1p1beta1ImageProperties;
+		imagePropertiesAnnotation?: GoogleCloudVisionV1p1beta1ImageProperties | null;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation>;
+		labelAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation> | null;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation>;
+		landmarkAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation> | null;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation>;
+		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation> | null;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation>;
+		logoAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation> | null;
 
 		/** Results for a product search request. */
-		productSearchResults?: GoogleCloudVisionV1p1beta1ProductSearchResults;
+		productSearchResults?: GoogleCloudVisionV1p1beta1ProductSearchResults | null;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: GoogleCloudVisionV1p1beta1SafeSearchAnnotation;
+		safeSearchAnnotation?: GoogleCloudVisionV1p1beta1SafeSearchAnnotation | null;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation>;
+		textAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation> | null;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: GoogleCloudVisionV1p1beta1WebDetection;
+		webDetection?: GoogleCloudVisionV1p1beta1WebDetection | null;
 	}
 
 
@@ -1823,10 +1823,10 @@ export namespace MyNS {
 		 * If the file was a PDF or TIFF, this field gives the page number within
 		 * the file used to produce the image.
 		 */
-		pageNumber?: number;
+		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -1834,7 +1834,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<GoogleCloudVisionV1p1beta1CropHint>;
+		cropHints?: Array<GoogleCloudVisionV1p1beta1CropHint> | null;
 	}
 
 
@@ -1842,16 +1842,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Fraction of importance of this salient region with respect to the original
 		 * image.
 		 */
-		importanceFraction?: number;
+		importanceFraction?: number | null;
 	}
 
 
@@ -1859,10 +1859,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<GoogleCloudVisionV1p1beta1NormalizedVertex>;
+		normalizedVertices?: Array<GoogleCloudVisionV1p1beta1NormalizedVertex> | null;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<GoogleCloudVisionV1p1beta1Vertex>;
+		vertices?: Array<GoogleCloudVisionV1p1beta1Vertex> | null;
 	}
 
 
@@ -1874,10 +1874,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -1888,10 +1888,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Vertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -1899,60 +1899,60 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1FaceAnnotation {
 
 		/** Anger likelihood. */
-		angerLikelihood?: FaceAnnotationAngerLikelihood;
+		angerLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Blurred likelihood. */
-		blurredLikelihood?: FaceAnnotationAngerLikelihood;
+		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/** Detection confidence. Range [0, 1]. */
-		detectionConfidence?: number;
+		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		fdBoundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/** Headwear likelihood. */
-		headwearLikelihood?: FaceAnnotationAngerLikelihood;
+		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Joy likelihood. */
-		joyLikelihood?: FaceAnnotationAngerLikelihood;
+		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Face landmarking confidence. Range [0, 1]. */
-		landmarkingConfidence?: number;
+		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<GoogleCloudVisionV1p1beta1FaceAnnotationLandmark>;
+		landmarks?: Array<GoogleCloudVisionV1p1beta1FaceAnnotationLandmark> | null;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
 		 * pointing relative to the vertical plane perpendicular to the image. Range
 		 * [-180,180].
 		 */
-		panAngle?: number;
+		panAngle?: number | null;
 
 		/**
 		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
 		 * of the face relative to the image vertical about the axis perpendicular to
 		 * the face. Range [-180,180].
 		 */
-		rollAngle?: number;
+		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
-		sorrowLikelihood?: FaceAnnotationAngerLikelihood;
+		sorrowLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Surprise likelihood. */
-		surpriseLikelihood?: FaceAnnotationAngerLikelihood;
+		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Pitch angle, which indicates the upwards/downwards angle that the face is
 		 * pointing relative to the image's horizontal plane. Range [-180,180].
 		 */
-		tiltAngle?: number;
+		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
-		underExposedLikelihood?: FaceAnnotationAngerLikelihood;
+		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -1964,10 +1964,10 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: GoogleCloudVisionV1p1beta1Position;
+		position?: GoogleCloudVisionV1p1beta1Position | null;
 
 		/** Face landmark type. */
-		type?: LandmarkType;
+		type?: LandmarkType | null;
 	}
 
 
@@ -1979,13 +1979,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Position {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 
 		/** Z coordinate (or depth). */
-		z?: number;
+		z?: number | null;
 	}
 
 
@@ -2001,10 +2001,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<GoogleCloudVisionV1p1beta1Page>;
+		pages?: Array<GoogleCloudVisionV1p1beta1Page> | null;
 
 		/** UTF-8 text detected on the pages. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -2012,25 +2012,25 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<GoogleCloudVisionV1p1beta1Block>;
+		blocks?: Array<GoogleCloudVisionV1p1beta1Block> | null;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Page height. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		height?: number;
+		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -2038,19 +2038,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Block {
 
 		/** Detected block type (text, image etc) for this block. */
-		blockType?: BlockBlockType;
+		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<GoogleCloudVisionV1p1beta1Paragraph>;
+		paragraphs?: Array<GoogleCloudVisionV1p1beta1Paragraph> | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
 	}
 
 
@@ -2058,16 +2058,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
 
 		/** List of all words in this paragraph. */
-		words?: Array<GoogleCloudVisionV1p1beta1Word>;
+		words?: Array<GoogleCloudVisionV1p1beta1Word> | null;
 	}
 
 
@@ -2075,10 +2075,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1TextAnnotationTextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak;
+		detectedBreak?: GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak | null;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage>;
+		detectedLanguages?: Array<GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage> | null;
 	}
 
 
@@ -2086,10 +2086,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak {
 
 		/** True if break prepends the element. */
-		isPrefix?: boolean;
+		isPrefix?: boolean | null;
 
 		/** Detected break type. */
-		type?: DetectedBreakType;
+		type?: DetectedBreakType | null;
 	}
 
 
@@ -2097,14 +2097,14 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage {
 
 		/** Confidence of detected language. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -2112,19 +2112,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<GoogleCloudVisionV1p1beta1Symbol>;
+		symbols?: Array<GoogleCloudVisionV1p1beta1Symbol> | null;
 	}
 
 
@@ -2132,16 +2132,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
 
 		/** The actual UTF-8 representation of the symbol. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -2149,7 +2149,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: GoogleCloudVisionV1p1beta1DominantColorsAnnotation;
+		dominantColors?: GoogleCloudVisionV1p1beta1DominantColorsAnnotation | null;
 	}
 
 
@@ -2157,7 +2157,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<GoogleCloudVisionV1p1beta1ColorInfo>;
+		colors?: Array<GoogleCloudVisionV1p1beta1ColorInfo> | null;
 	}
 
 
@@ -2272,16 +2272,16 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
 		 * Value in range [0, 1].
 		 */
-		pixelFraction?: number;
+		pixelFraction?: number | null;
 
 		/** Image-specific score for this color. Value in range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -2289,7 +2289,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -2298,16 +2298,16 @@ export namespace MyNS {
 		 * this field represents the confidence that there is a tower in the query
 		 * image. Range [0, 1].
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The language code for the locale in which the entity textual
 		 * `description` is expressed.
 		 */
-		locale?: string;
+		locale?: string | null;
 
 		/**
 		 * The location information for the detected entity. Multiple
@@ -2316,23 +2316,23 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<GoogleCloudVisionV1p1beta1LocationInfo>;
+		locations?: Array<GoogleCloudVisionV1p1beta1LocationInfo> | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		mid?: string;
+		mid?: string | null;
 
 		/**
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<GoogleCloudVisionV1p1beta1Property>;
+		properties?: Array<GoogleCloudVisionV1p1beta1Property> | null;
 
 		/** Overall score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 
 		/**
 		 * The relevancy of the ICA (Image Content Annotation) label to the
@@ -2341,7 +2341,7 @@ export namespace MyNS {
 		 * detected distant towering building, even though the confidence that
 		 * there is a tower in each image may be the same. Range [0, 1].
 		 */
-		topicality?: number;
+		topicality?: number | null;
 	}
 
 
@@ -2355,7 +2355,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng;
+		latLng?: LatLng | null;
 	}
 
 
@@ -2363,13 +2363,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Property {
 
 		/** Name of the property. */
-		name?: string;
+		name?: string | null;
 
 		/** Value of numeric properties. */
-		uint64Value?: string;
+		uint64Value?: string | null;
 
 		/** Value of the property. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -2377,23 +2377,23 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -2405,7 +2405,7 @@ export namespace MyNS {
 		 * product set and products removed from the product set after this time are
 		 * not reflected in the current results.
 		 */
-		indexTime?: string;
+		indexTime?: string | null;
 
 		/**
 		 * List of results grouped by products detected in the query image. Each entry
@@ -2413,10 +2413,10 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult>;
+		productGroupedResults?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsResult>;
+		results?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsResult> | null;
 	}
 
 
@@ -2427,13 +2427,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsResult>;
+		results?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsResult> | null;
 	}
 
 
@@ -2445,16 +2445,16 @@ export namespace MyNS {
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -2465,16 +2465,16 @@ export namespace MyNS {
 		 * The resource name of the image from the product that is the closest match
 		 * to the query.
 		 */
-		image?: string;
+		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: GoogleCloudVisionV1p1beta1Product;
+		product?: GoogleCloudVisionV1p1beta1Product | null;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -2485,13 +2485,13 @@ export namespace MyNS {
 		 * User-provided metadata to be stored with this product. Must be at most 4096
 		 * characters long.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The user-provided name for this Product. Must not be empty. Must be at most
 		 * 4096 characters long.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The resource name of the product.
@@ -2499,7 +2499,7 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
 		 * This field is ignored when creating a product.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Immutable. The category for the product identified by the reference image. This should
@@ -2507,7 +2507,7 @@ export namespace MyNS {
 		 * "homegoods", "apparel", and "toys" are still supported, but these should
 		 * not be used for new products.
 		 */
-		productCategory?: string;
+		productCategory?: string | null;
 
 		/**
 		 * Key-value pairs that can be attached to a product. At query time,
@@ -2521,7 +2521,7 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<GoogleCloudVisionV1p1beta1ProductKeyValue>;
+		productLabels?: Array<GoogleCloudVisionV1p1beta1ProductKeyValue> | null;
 	}
 
 
@@ -2532,13 +2532,13 @@ export namespace MyNS {
 		 * The key of the label attached to the product. Cannot be empty and cannot
 		 * exceed 128 bytes.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * The value of the label attached to the product. Cannot be empty and
 		 * cannot exceed 128 bytes.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -2554,10 +2554,10 @@ export namespace MyNS {
 		 * contain elements such as nudity, pornographic images or cartoons, or
 		 * sexual activities.
 		 */
-		adult?: FaceAnnotationAngerLikelihood;
+		adult?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this is a medical image. */
-		medical?: FaceAnnotationAngerLikelihood;
+		medical?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Likelihood that the request image contains racy content. Racy content may
@@ -2565,17 +2565,17 @@ export namespace MyNS {
 		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
 		 * body areas.
 		 */
-		racy?: FaceAnnotationAngerLikelihood;
+		racy?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Spoof likelihood. The likelihood that an modification
 		 * was made to the image's canonical version to make it appear
 		 * funny or offensive.
 		 */
-		spoof?: FaceAnnotationAngerLikelihood;
+		spoof?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this image contains violent content. */
-		violence?: FaceAnnotationAngerLikelihood;
+		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -2586,29 +2586,29 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebLabel>;
+		bestGuessLabels?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebLabel> | null;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebPage>;
+		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebPage> | null;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
+		visuallySimilarImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebEntity>;
+		webEntities?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebEntity> | null;
 	}
 
 
@@ -2616,14 +2616,14 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1WebDetectionWebLabel {
 
 		/** Label for extra metadata. */
-		label?: string;
+		label?: string | null;
 
 		/**
 		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
 		 * For more information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -2631,10 +2631,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1WebDetectionWebImage {
 
 		/** (Deprecated) Overall relevancy score for the image. */
-		score?: number;
+		score?: number | null;
 
 		/** The result image URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -2645,10 +2645,10 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
 
 		/** Title for the web page, may contain HTML markups. */
-		pageTitle?: string;
+		pageTitle?: string | null;
 
 		/**
 		 * Partial matching images on the page.
@@ -2656,13 +2656,13 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
-		score?: number;
+		score?: number | null;
 
 		/** The result web page URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -2670,16 +2670,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1WebDetectionWebEntity {
 
 		/** Canonical description of the entity, in English. */
-		description?: string;
+		description?: string | null;
 
 		/** Opaque entity ID. */
-		entityId?: string;
+		entityId?: string | null;
 
 		/**
 		 * Overall relevancy score for the entity.
 		 * Not normalized and not comparable across different image queries.
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -2687,7 +2687,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p1beta1OutputConfig;
+		outputConfig?: GoogleCloudVisionV1p1beta1OutputConfig | null;
 	}
 
 
@@ -2705,10 +2705,10 @@ export namespace MyNS {
 		 * Currently, batch_size only applies to GcsDestination, with potential future
 		 * support for other output configurations.
 		 */
-		batchSize?: number;
+		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GoogleCloudVisionV1p1beta1GcsDestination;
+		gcsDestination?: GoogleCloudVisionV1p1beta1GcsDestination | null;
 	}
 
 
@@ -2735,7 +2735,7 @@ export namespace MyNS {
 		 * Multiple outputs can happen if, for example, the output JSON is too large
 		 * and overflows into multiple sharded files.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -2746,7 +2746,7 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponse>;
+		responses?: Array<GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponse> | null;
 	}
 
 
@@ -2754,13 +2754,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1OperationMetadata {
 
 		/** The time when the batch request was received. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Current state of the batch operation. */
-		state?: GoogleCloudVisionV1p1beta1OperationMetadataState;
+		state?: GoogleCloudVisionV1p1beta1OperationMetadataState | null;
 
 		/** The time when the operation result was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 	export enum GoogleCloudVisionV1p1beta1OperationMetadataState { STATE_UNSPECIFIED = 0, CREATED = 1, RUNNING = 2, DONE = 3, CANCELLED = 4 }
@@ -2780,19 +2780,19 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** The desired input location and metadata. */
-		inputConfig?: GoogleCloudVisionV1p2beta1InputConfig;
+		inputConfig?: GoogleCloudVisionV1p2beta1InputConfig | null;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<GoogleCloudVisionV1p2beta1AnnotateImageResponse>;
+		responses?: Array<GoogleCloudVisionV1p2beta1AnnotateImageResponse> | null;
 
 		/** This field gives the total number of pages in the file. */
-		totalPages?: number;
+		totalPages?: number | null;
 	}
 
 
@@ -2806,16 +2806,16 @@ export namespace MyNS {
 		 * Currently, this field only works for BatchAnnotateFiles requests. It does
 		 * not work for AsyncBatchAnnotateFiles requests.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GoogleCloudVisionV1p2beta1GcsSource;
+		gcsSource?: GoogleCloudVisionV1p2beta1GcsSource | null;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -2826,7 +2826,7 @@ export namespace MyNS {
 		 * Google Cloud Storage URI for the input file. This must only be a
 		 * Google Cloud Storage object. Wildcards are not currently supported.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -2837,10 +2837,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: GoogleCloudVisionV1p2beta1ImageAnnotationContext;
+		context?: GoogleCloudVisionV1p2beta1ImageAnnotationContext | null;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: GoogleCloudVisionV1p2beta1CropHintsAnnotation;
+		cropHintsAnnotation?: GoogleCloudVisionV1p2beta1CropHintsAnnotation | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -2850,10 +2850,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<GoogleCloudVisionV1p2beta1FaceAnnotation>;
+		faceAnnotations?: Array<GoogleCloudVisionV1p2beta1FaceAnnotation> | null;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -2864,41 +2864,41 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: GoogleCloudVisionV1p2beta1TextAnnotation;
+		fullTextAnnotation?: GoogleCloudVisionV1p2beta1TextAnnotation | null;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: GoogleCloudVisionV1p2beta1ImageProperties;
+		imagePropertiesAnnotation?: GoogleCloudVisionV1p2beta1ImageProperties | null;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation>;
+		labelAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation> | null;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation>;
+		landmarkAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation> | null;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation>;
+		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation> | null;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation>;
+		logoAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation> | null;
 
 		/** Results for a product search request. */
-		productSearchResults?: GoogleCloudVisionV1p2beta1ProductSearchResults;
+		productSearchResults?: GoogleCloudVisionV1p2beta1ProductSearchResults | null;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: GoogleCloudVisionV1p2beta1SafeSearchAnnotation;
+		safeSearchAnnotation?: GoogleCloudVisionV1p2beta1SafeSearchAnnotation | null;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation>;
+		textAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation> | null;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: GoogleCloudVisionV1p2beta1WebDetection;
+		webDetection?: GoogleCloudVisionV1p2beta1WebDetection | null;
 	}
 
 
@@ -2912,10 +2912,10 @@ export namespace MyNS {
 		 * If the file was a PDF or TIFF, this field gives the page number within
 		 * the file used to produce the image.
 		 */
-		pageNumber?: number;
+		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -2923,7 +2923,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<GoogleCloudVisionV1p2beta1CropHint>;
+		cropHints?: Array<GoogleCloudVisionV1p2beta1CropHint> | null;
 	}
 
 
@@ -2931,16 +2931,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Fraction of importance of this salient region with respect to the original
 		 * image.
 		 */
-		importanceFraction?: number;
+		importanceFraction?: number | null;
 	}
 
 
@@ -2948,10 +2948,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<GoogleCloudVisionV1p2beta1NormalizedVertex>;
+		normalizedVertices?: Array<GoogleCloudVisionV1p2beta1NormalizedVertex> | null;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<GoogleCloudVisionV1p2beta1Vertex>;
+		vertices?: Array<GoogleCloudVisionV1p2beta1Vertex> | null;
 	}
 
 
@@ -2963,10 +2963,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -2977,10 +2977,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Vertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -2988,60 +2988,60 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1FaceAnnotation {
 
 		/** Anger likelihood. */
-		angerLikelihood?: FaceAnnotationAngerLikelihood;
+		angerLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Blurred likelihood. */
-		blurredLikelihood?: FaceAnnotationAngerLikelihood;
+		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/** Detection confidence. Range [0, 1]. */
-		detectionConfidence?: number;
+		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		fdBoundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/** Headwear likelihood. */
-		headwearLikelihood?: FaceAnnotationAngerLikelihood;
+		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Joy likelihood. */
-		joyLikelihood?: FaceAnnotationAngerLikelihood;
+		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Face landmarking confidence. Range [0, 1]. */
-		landmarkingConfidence?: number;
+		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<GoogleCloudVisionV1p2beta1FaceAnnotationLandmark>;
+		landmarks?: Array<GoogleCloudVisionV1p2beta1FaceAnnotationLandmark> | null;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
 		 * pointing relative to the vertical plane perpendicular to the image. Range
 		 * [-180,180].
 		 */
-		panAngle?: number;
+		panAngle?: number | null;
 
 		/**
 		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
 		 * of the face relative to the image vertical about the axis perpendicular to
 		 * the face. Range [-180,180].
 		 */
-		rollAngle?: number;
+		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
-		sorrowLikelihood?: FaceAnnotationAngerLikelihood;
+		sorrowLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Surprise likelihood. */
-		surpriseLikelihood?: FaceAnnotationAngerLikelihood;
+		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Pitch angle, which indicates the upwards/downwards angle that the face is
 		 * pointing relative to the image's horizontal plane. Range [-180,180].
 		 */
-		tiltAngle?: number;
+		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
-		underExposedLikelihood?: FaceAnnotationAngerLikelihood;
+		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -3053,10 +3053,10 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: GoogleCloudVisionV1p2beta1Position;
+		position?: GoogleCloudVisionV1p2beta1Position | null;
 
 		/** Face landmark type. */
-		type?: LandmarkType;
+		type?: LandmarkType | null;
 	}
 
 
@@ -3068,13 +3068,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Position {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 
 		/** Z coordinate (or depth). */
-		z?: number;
+		z?: number | null;
 	}
 
 
@@ -3090,10 +3090,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<GoogleCloudVisionV1p2beta1Page>;
+		pages?: Array<GoogleCloudVisionV1p2beta1Page> | null;
 
 		/** UTF-8 text detected on the pages. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -3101,25 +3101,25 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<GoogleCloudVisionV1p2beta1Block>;
+		blocks?: Array<GoogleCloudVisionV1p2beta1Block> | null;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Page height. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		height?: number;
+		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -3127,19 +3127,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Block {
 
 		/** Detected block type (text, image etc) for this block. */
-		blockType?: BlockBlockType;
+		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<GoogleCloudVisionV1p2beta1Paragraph>;
+		paragraphs?: Array<GoogleCloudVisionV1p2beta1Paragraph> | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
 	}
 
 
@@ -3147,16 +3147,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
 
 		/** List of all words in this paragraph. */
-		words?: Array<GoogleCloudVisionV1p2beta1Word>;
+		words?: Array<GoogleCloudVisionV1p2beta1Word> | null;
 	}
 
 
@@ -3164,10 +3164,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1TextAnnotationTextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak;
+		detectedBreak?: GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak | null;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage>;
+		detectedLanguages?: Array<GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage> | null;
 	}
 
 
@@ -3175,10 +3175,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak {
 
 		/** True if break prepends the element. */
-		isPrefix?: boolean;
+		isPrefix?: boolean | null;
 
 		/** Detected break type. */
-		type?: DetectedBreakType;
+		type?: DetectedBreakType | null;
 	}
 
 
@@ -3186,14 +3186,14 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage {
 
 		/** Confidence of detected language. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -3201,19 +3201,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<GoogleCloudVisionV1p2beta1Symbol>;
+		symbols?: Array<GoogleCloudVisionV1p2beta1Symbol> | null;
 	}
 
 
@@ -3221,16 +3221,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
 
 		/** The actual UTF-8 representation of the symbol. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -3238,7 +3238,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: GoogleCloudVisionV1p2beta1DominantColorsAnnotation;
+		dominantColors?: GoogleCloudVisionV1p2beta1DominantColorsAnnotation | null;
 	}
 
 
@@ -3246,7 +3246,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<GoogleCloudVisionV1p2beta1ColorInfo>;
+		colors?: Array<GoogleCloudVisionV1p2beta1ColorInfo> | null;
 	}
 
 
@@ -3361,16 +3361,16 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
 		 * Value in range [0, 1].
 		 */
-		pixelFraction?: number;
+		pixelFraction?: number | null;
 
 		/** Image-specific score for this color. Value in range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -3378,7 +3378,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -3387,16 +3387,16 @@ export namespace MyNS {
 		 * this field represents the confidence that there is a tower in the query
 		 * image. Range [0, 1].
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The language code for the locale in which the entity textual
 		 * `description` is expressed.
 		 */
-		locale?: string;
+		locale?: string | null;
 
 		/**
 		 * The location information for the detected entity. Multiple
@@ -3405,23 +3405,23 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<GoogleCloudVisionV1p2beta1LocationInfo>;
+		locations?: Array<GoogleCloudVisionV1p2beta1LocationInfo> | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		mid?: string;
+		mid?: string | null;
 
 		/**
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<GoogleCloudVisionV1p2beta1Property>;
+		properties?: Array<GoogleCloudVisionV1p2beta1Property> | null;
 
 		/** Overall score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 
 		/**
 		 * The relevancy of the ICA (Image Content Annotation) label to the
@@ -3430,7 +3430,7 @@ export namespace MyNS {
 		 * detected distant towering building, even though the confidence that
 		 * there is a tower in each image may be the same. Range [0, 1].
 		 */
-		topicality?: number;
+		topicality?: number | null;
 	}
 
 
@@ -3444,7 +3444,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng;
+		latLng?: LatLng | null;
 	}
 
 
@@ -3452,13 +3452,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Property {
 
 		/** Name of the property. */
-		name?: string;
+		name?: string | null;
 
 		/** Value of numeric properties. */
-		uint64Value?: string;
+		uint64Value?: string | null;
 
 		/** Value of the property. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -3466,23 +3466,23 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -3494,7 +3494,7 @@ export namespace MyNS {
 		 * product set and products removed from the product set after this time are
 		 * not reflected in the current results.
 		 */
-		indexTime?: string;
+		indexTime?: string | null;
 
 		/**
 		 * List of results grouped by products detected in the query image. Each entry
@@ -3502,10 +3502,10 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult>;
+		productGroupedResults?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsResult>;
+		results?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsResult> | null;
 	}
 
 
@@ -3516,13 +3516,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotation> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsResult>;
+		results?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsResult> | null;
 	}
 
 
@@ -3534,16 +3534,16 @@ export namespace MyNS {
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -3554,16 +3554,16 @@ export namespace MyNS {
 		 * The resource name of the image from the product that is the closest match
 		 * to the query.
 		 */
-		image?: string;
+		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: GoogleCloudVisionV1p2beta1Product;
+		product?: GoogleCloudVisionV1p2beta1Product | null;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -3574,13 +3574,13 @@ export namespace MyNS {
 		 * User-provided metadata to be stored with this product. Must be at most 4096
 		 * characters long.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The user-provided name for this Product. Must not be empty. Must be at most
 		 * 4096 characters long.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The resource name of the product.
@@ -3588,7 +3588,7 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
 		 * This field is ignored when creating a product.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Immutable. The category for the product identified by the reference image. This should
@@ -3596,7 +3596,7 @@ export namespace MyNS {
 		 * "homegoods", "apparel", and "toys" are still supported, but these should
 		 * not be used for new products.
 		 */
-		productCategory?: string;
+		productCategory?: string | null;
 
 		/**
 		 * Key-value pairs that can be attached to a product. At query time,
@@ -3610,7 +3610,7 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<GoogleCloudVisionV1p2beta1ProductKeyValue>;
+		productLabels?: Array<GoogleCloudVisionV1p2beta1ProductKeyValue> | null;
 	}
 
 
@@ -3621,13 +3621,13 @@ export namespace MyNS {
 		 * The key of the label attached to the product. Cannot be empty and cannot
 		 * exceed 128 bytes.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * The value of the label attached to the product. Cannot be empty and
 		 * cannot exceed 128 bytes.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -3643,10 +3643,10 @@ export namespace MyNS {
 		 * contain elements such as nudity, pornographic images or cartoons, or
 		 * sexual activities.
 		 */
-		adult?: FaceAnnotationAngerLikelihood;
+		adult?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this is a medical image. */
-		medical?: FaceAnnotationAngerLikelihood;
+		medical?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Likelihood that the request image contains racy content. Racy content may
@@ -3654,17 +3654,17 @@ export namespace MyNS {
 		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
 		 * body areas.
 		 */
-		racy?: FaceAnnotationAngerLikelihood;
+		racy?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Spoof likelihood. The likelihood that an modification
 		 * was made to the image's canonical version to make it appear
 		 * funny or offensive.
 		 */
-		spoof?: FaceAnnotationAngerLikelihood;
+		spoof?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this image contains violent content. */
-		violence?: FaceAnnotationAngerLikelihood;
+		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -3675,29 +3675,29 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebLabel>;
+		bestGuessLabels?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebLabel> | null;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebPage>;
+		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebPage> | null;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
+		visuallySimilarImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebEntity>;
+		webEntities?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebEntity> | null;
 	}
 
 
@@ -3705,14 +3705,14 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1WebDetectionWebLabel {
 
 		/** Label for extra metadata. */
-		label?: string;
+		label?: string | null;
 
 		/**
 		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
 		 * For more information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -3720,10 +3720,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1WebDetectionWebImage {
 
 		/** (Deprecated) Overall relevancy score for the image. */
-		score?: number;
+		score?: number | null;
 
 		/** The result image URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -3734,10 +3734,10 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
 
 		/** Title for the web page, may contain HTML markups. */
-		pageTitle?: string;
+		pageTitle?: string | null;
 
 		/**
 		 * Partial matching images on the page.
@@ -3745,13 +3745,13 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
-		score?: number;
+		score?: number | null;
 
 		/** The result web page URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -3759,16 +3759,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1WebDetectionWebEntity {
 
 		/** Canonical description of the entity, in English. */
-		description?: string;
+		description?: string | null;
 
 		/** Opaque entity ID. */
-		entityId?: string;
+		entityId?: string | null;
 
 		/**
 		 * Overall relevancy score for the entity.
 		 * Not normalized and not comparable across different image queries.
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -3776,7 +3776,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p2beta1OutputConfig;
+		outputConfig?: GoogleCloudVisionV1p2beta1OutputConfig | null;
 	}
 
 
@@ -3794,10 +3794,10 @@ export namespace MyNS {
 		 * Currently, batch_size only applies to GcsDestination, with potential future
 		 * support for other output configurations.
 		 */
-		batchSize?: number;
+		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GoogleCloudVisionV1p2beta1GcsDestination;
+		gcsDestination?: GoogleCloudVisionV1p2beta1GcsDestination | null;
 	}
 
 
@@ -3824,7 +3824,7 @@ export namespace MyNS {
 		 * Multiple outputs can happen if, for example, the output JSON is too large
 		 * and overflows into multiple sharded files.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -3835,7 +3835,7 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponse>;
+		responses?: Array<GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponse> | null;
 	}
 
 
@@ -3843,13 +3843,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1OperationMetadata {
 
 		/** The time when the batch request was received. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Current state of the batch operation. */
-		state?: GoogleCloudVisionV1p1beta1OperationMetadataState;
+		state?: GoogleCloudVisionV1p1beta1OperationMetadataState | null;
 
 		/** The time when the operation result was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -3867,19 +3867,19 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** The desired input location and metadata. */
-		inputConfig?: GoogleCloudVisionV1p3beta1InputConfig;
+		inputConfig?: GoogleCloudVisionV1p3beta1InputConfig | null;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<GoogleCloudVisionV1p3beta1AnnotateImageResponse>;
+		responses?: Array<GoogleCloudVisionV1p3beta1AnnotateImageResponse> | null;
 
 		/** This field gives the total number of pages in the file. */
-		totalPages?: number;
+		totalPages?: number | null;
 	}
 
 
@@ -3893,16 +3893,16 @@ export namespace MyNS {
 		 * Currently, this field only works for BatchAnnotateFiles requests. It does
 		 * not work for AsyncBatchAnnotateFiles requests.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GoogleCloudVisionV1p3beta1GcsSource;
+		gcsSource?: GoogleCloudVisionV1p3beta1GcsSource | null;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -3913,7 +3913,7 @@ export namespace MyNS {
 		 * Google Cloud Storage URI for the input file. This must only be a
 		 * Google Cloud Storage object. Wildcards are not currently supported.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -3924,10 +3924,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: GoogleCloudVisionV1p3beta1ImageAnnotationContext;
+		context?: GoogleCloudVisionV1p3beta1ImageAnnotationContext | null;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: GoogleCloudVisionV1p3beta1CropHintsAnnotation;
+		cropHintsAnnotation?: GoogleCloudVisionV1p3beta1CropHintsAnnotation | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -3937,10 +3937,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<GoogleCloudVisionV1p3beta1FaceAnnotation>;
+		faceAnnotations?: Array<GoogleCloudVisionV1p3beta1FaceAnnotation> | null;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -3951,41 +3951,41 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: GoogleCloudVisionV1p3beta1TextAnnotation;
+		fullTextAnnotation?: GoogleCloudVisionV1p3beta1TextAnnotation | null;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: GoogleCloudVisionV1p3beta1ImageProperties;
+		imagePropertiesAnnotation?: GoogleCloudVisionV1p3beta1ImageProperties | null;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation>;
+		labelAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation> | null;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation>;
+		landmarkAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation> | null;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation>;
+		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation> | null;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation>;
+		logoAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation> | null;
 
 		/** Results for a product search request. */
-		productSearchResults?: GoogleCloudVisionV1p3beta1ProductSearchResults;
+		productSearchResults?: GoogleCloudVisionV1p3beta1ProductSearchResults | null;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: GoogleCloudVisionV1p3beta1SafeSearchAnnotation;
+		safeSearchAnnotation?: GoogleCloudVisionV1p3beta1SafeSearchAnnotation | null;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation>;
+		textAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation> | null;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: GoogleCloudVisionV1p3beta1WebDetection;
+		webDetection?: GoogleCloudVisionV1p3beta1WebDetection | null;
 	}
 
 
@@ -3999,10 +3999,10 @@ export namespace MyNS {
 		 * If the file was a PDF or TIFF, this field gives the page number within
 		 * the file used to produce the image.
 		 */
-		pageNumber?: number;
+		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -4010,7 +4010,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<GoogleCloudVisionV1p3beta1CropHint>;
+		cropHints?: Array<GoogleCloudVisionV1p3beta1CropHint> | null;
 	}
 
 
@@ -4018,16 +4018,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Fraction of importance of this salient region with respect to the original
 		 * image.
 		 */
-		importanceFraction?: number;
+		importanceFraction?: number | null;
 	}
 
 
@@ -4035,10 +4035,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<GoogleCloudVisionV1p3beta1NormalizedVertex>;
+		normalizedVertices?: Array<GoogleCloudVisionV1p3beta1NormalizedVertex> | null;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<GoogleCloudVisionV1p3beta1Vertex>;
+		vertices?: Array<GoogleCloudVisionV1p3beta1Vertex> | null;
 	}
 
 
@@ -4050,10 +4050,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -4064,10 +4064,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Vertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -4075,60 +4075,60 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1FaceAnnotation {
 
 		/** Anger likelihood. */
-		angerLikelihood?: FaceAnnotationAngerLikelihood;
+		angerLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Blurred likelihood. */
-		blurredLikelihood?: FaceAnnotationAngerLikelihood;
+		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/** Detection confidence. Range [0, 1]. */
-		detectionConfidence?: number;
+		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		fdBoundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/** Headwear likelihood. */
-		headwearLikelihood?: FaceAnnotationAngerLikelihood;
+		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Joy likelihood. */
-		joyLikelihood?: FaceAnnotationAngerLikelihood;
+		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Face landmarking confidence. Range [0, 1]. */
-		landmarkingConfidence?: number;
+		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<GoogleCloudVisionV1p3beta1FaceAnnotationLandmark>;
+		landmarks?: Array<GoogleCloudVisionV1p3beta1FaceAnnotationLandmark> | null;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
 		 * pointing relative to the vertical plane perpendicular to the image. Range
 		 * [-180,180].
 		 */
-		panAngle?: number;
+		panAngle?: number | null;
 
 		/**
 		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
 		 * of the face relative to the image vertical about the axis perpendicular to
 		 * the face. Range [-180,180].
 		 */
-		rollAngle?: number;
+		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
-		sorrowLikelihood?: FaceAnnotationAngerLikelihood;
+		sorrowLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Surprise likelihood. */
-		surpriseLikelihood?: FaceAnnotationAngerLikelihood;
+		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Pitch angle, which indicates the upwards/downwards angle that the face is
 		 * pointing relative to the image's horizontal plane. Range [-180,180].
 		 */
-		tiltAngle?: number;
+		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
-		underExposedLikelihood?: FaceAnnotationAngerLikelihood;
+		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -4140,10 +4140,10 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: GoogleCloudVisionV1p3beta1Position;
+		position?: GoogleCloudVisionV1p3beta1Position | null;
 
 		/** Face landmark type. */
-		type?: LandmarkType;
+		type?: LandmarkType | null;
 	}
 
 
@@ -4155,13 +4155,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Position {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 
 		/** Z coordinate (or depth). */
-		z?: number;
+		z?: number | null;
 	}
 
 
@@ -4177,10 +4177,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<GoogleCloudVisionV1p3beta1Page>;
+		pages?: Array<GoogleCloudVisionV1p3beta1Page> | null;
 
 		/** UTF-8 text detected on the pages. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -4188,25 +4188,25 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<GoogleCloudVisionV1p3beta1Block>;
+		blocks?: Array<GoogleCloudVisionV1p3beta1Block> | null;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Page height. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		height?: number;
+		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -4214,19 +4214,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Block {
 
 		/** Detected block type (text, image etc) for this block. */
-		blockType?: BlockBlockType;
+		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<GoogleCloudVisionV1p3beta1Paragraph>;
+		paragraphs?: Array<GoogleCloudVisionV1p3beta1Paragraph> | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
 	}
 
 
@@ -4234,16 +4234,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
 
 		/** List of all words in this paragraph. */
-		words?: Array<GoogleCloudVisionV1p3beta1Word>;
+		words?: Array<GoogleCloudVisionV1p3beta1Word> | null;
 	}
 
 
@@ -4251,10 +4251,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1TextAnnotationTextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak;
+		detectedBreak?: GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak | null;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage>;
+		detectedLanguages?: Array<GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage> | null;
 	}
 
 
@@ -4262,10 +4262,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak {
 
 		/** True if break prepends the element. */
-		isPrefix?: boolean;
+		isPrefix?: boolean | null;
 
 		/** Detected break type. */
-		type?: DetectedBreakType;
+		type?: DetectedBreakType | null;
 	}
 
 
@@ -4273,14 +4273,14 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage {
 
 		/** Confidence of detected language. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -4288,19 +4288,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<GoogleCloudVisionV1p3beta1Symbol>;
+		symbols?: Array<GoogleCloudVisionV1p3beta1Symbol> | null;
 	}
 
 
@@ -4308,16 +4308,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
 
 		/** The actual UTF-8 representation of the symbol. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -4325,7 +4325,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: GoogleCloudVisionV1p3beta1DominantColorsAnnotation;
+		dominantColors?: GoogleCloudVisionV1p3beta1DominantColorsAnnotation | null;
 	}
 
 
@@ -4333,7 +4333,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<GoogleCloudVisionV1p3beta1ColorInfo>;
+		colors?: Array<GoogleCloudVisionV1p3beta1ColorInfo> | null;
 	}
 
 
@@ -4448,16 +4448,16 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
 		 * Value in range [0, 1].
 		 */
-		pixelFraction?: number;
+		pixelFraction?: number | null;
 
 		/** Image-specific score for this color. Value in range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -4465,7 +4465,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -4474,16 +4474,16 @@ export namespace MyNS {
 		 * this field represents the confidence that there is a tower in the query
 		 * image. Range [0, 1].
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The language code for the locale in which the entity textual
 		 * `description` is expressed.
 		 */
-		locale?: string;
+		locale?: string | null;
 
 		/**
 		 * The location information for the detected entity. Multiple
@@ -4492,23 +4492,23 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<GoogleCloudVisionV1p3beta1LocationInfo>;
+		locations?: Array<GoogleCloudVisionV1p3beta1LocationInfo> | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		mid?: string;
+		mid?: string | null;
 
 		/**
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<GoogleCloudVisionV1p3beta1Property>;
+		properties?: Array<GoogleCloudVisionV1p3beta1Property> | null;
 
 		/** Overall score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 
 		/**
 		 * The relevancy of the ICA (Image Content Annotation) label to the
@@ -4517,7 +4517,7 @@ export namespace MyNS {
 		 * detected distant towering building, even though the confidence that
 		 * there is a tower in each image may be the same. Range [0, 1].
 		 */
-		topicality?: number;
+		topicality?: number | null;
 	}
 
 
@@ -4531,7 +4531,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng;
+		latLng?: LatLng | null;
 	}
 
 
@@ -4539,13 +4539,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Property {
 
 		/** Name of the property. */
-		name?: string;
+		name?: string | null;
 
 		/** Value of numeric properties. */
-		uint64Value?: string;
+		uint64Value?: string | null;
 
 		/** Value of the property. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -4553,23 +4553,23 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -4581,7 +4581,7 @@ export namespace MyNS {
 		 * product set and products removed from the product set after this time are
 		 * not reflected in the current results.
 		 */
-		indexTime?: string;
+		indexTime?: string | null;
 
 		/**
 		 * List of results grouped by products detected in the query image. Each entry
@@ -4589,10 +4589,10 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult>;
+		productGroupedResults?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsResult>;
+		results?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsResult> | null;
 	}
 
 
@@ -4603,13 +4603,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotation> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsResult>;
+		results?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsResult> | null;
 	}
 
 
@@ -4621,16 +4621,16 @@ export namespace MyNS {
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -4641,16 +4641,16 @@ export namespace MyNS {
 		 * The resource name of the image from the product that is the closest match
 		 * to the query.
 		 */
-		image?: string;
+		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: GoogleCloudVisionV1p3beta1Product;
+		product?: GoogleCloudVisionV1p3beta1Product | null;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -4661,13 +4661,13 @@ export namespace MyNS {
 		 * User-provided metadata to be stored with this product. Must be at most 4096
 		 * characters long.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The user-provided name for this Product. Must not be empty. Must be at most
 		 * 4096 characters long.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The resource name of the product.
@@ -4675,7 +4675,7 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
 		 * This field is ignored when creating a product.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Immutable. The category for the product identified by the reference image. This should
@@ -4683,7 +4683,7 @@ export namespace MyNS {
 		 * "homegoods", "apparel", and "toys" are still supported, but these should
 		 * not be used for new products.
 		 */
-		productCategory?: string;
+		productCategory?: string | null;
 
 		/**
 		 * Key-value pairs that can be attached to a product. At query time,
@@ -4697,7 +4697,7 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<GoogleCloudVisionV1p3beta1ProductKeyValue>;
+		productLabels?: Array<GoogleCloudVisionV1p3beta1ProductKeyValue> | null;
 	}
 
 
@@ -4708,13 +4708,13 @@ export namespace MyNS {
 		 * The key of the label attached to the product. Cannot be empty and cannot
 		 * exceed 128 bytes.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * The value of the label attached to the product. Cannot be empty and
 		 * cannot exceed 128 bytes.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -4730,10 +4730,10 @@ export namespace MyNS {
 		 * contain elements such as nudity, pornographic images or cartoons, or
 		 * sexual activities.
 		 */
-		adult?: FaceAnnotationAngerLikelihood;
+		adult?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this is a medical image. */
-		medical?: FaceAnnotationAngerLikelihood;
+		medical?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Likelihood that the request image contains racy content. Racy content may
@@ -4741,17 +4741,17 @@ export namespace MyNS {
 		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
 		 * body areas.
 		 */
-		racy?: FaceAnnotationAngerLikelihood;
+		racy?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Spoof likelihood. The likelihood that an modification
 		 * was made to the image's canonical version to make it appear
 		 * funny or offensive.
 		 */
-		spoof?: FaceAnnotationAngerLikelihood;
+		spoof?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this image contains violent content. */
-		violence?: FaceAnnotationAngerLikelihood;
+		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -4762,29 +4762,29 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebLabel>;
+		bestGuessLabels?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebLabel> | null;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebPage>;
+		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebPage> | null;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
+		visuallySimilarImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebEntity>;
+		webEntities?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebEntity> | null;
 	}
 
 
@@ -4792,14 +4792,14 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1WebDetectionWebLabel {
 
 		/** Label for extra metadata. */
-		label?: string;
+		label?: string | null;
 
 		/**
 		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
 		 * For more information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -4807,10 +4807,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1WebDetectionWebImage {
 
 		/** (Deprecated) Overall relevancy score for the image. */
-		score?: number;
+		score?: number | null;
 
 		/** The result image URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -4821,10 +4821,10 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
 
 		/** Title for the web page, may contain HTML markups. */
-		pageTitle?: string;
+		pageTitle?: string | null;
 
 		/**
 		 * Partial matching images on the page.
@@ -4832,13 +4832,13 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
-		score?: number;
+		score?: number | null;
 
 		/** The result web page URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -4846,16 +4846,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1WebDetectionWebEntity {
 
 		/** Canonical description of the entity, in English. */
-		description?: string;
+		description?: string | null;
 
 		/** Opaque entity ID. */
-		entityId?: string;
+		entityId?: string | null;
 
 		/**
 		 * Overall relevancy score for the entity.
 		 * Not normalized and not comparable across different image queries.
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -4863,7 +4863,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p3beta1OutputConfig;
+		outputConfig?: GoogleCloudVisionV1p3beta1OutputConfig | null;
 	}
 
 
@@ -4881,10 +4881,10 @@ export namespace MyNS {
 		 * Currently, batch_size only applies to GcsDestination, with potential future
 		 * support for other output configurations.
 		 */
-		batchSize?: number;
+		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GoogleCloudVisionV1p3beta1GcsDestination;
+		gcsDestination?: GoogleCloudVisionV1p3beta1GcsDestination | null;
 	}
 
 
@@ -4911,7 +4911,7 @@ export namespace MyNS {
 		 * Multiple outputs can happen if, for example, the output JSON is too large
 		 * and overflows into multiple sharded files.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -4922,7 +4922,7 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponse>;
+		responses?: Array<GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponse> | null;
 	}
 
 
@@ -4937,13 +4937,13 @@ export namespace MyNS {
 		 * The time when the batch request is finished and
 		 * google.longrunning.Operation.done is set to true.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The current state of the batch operation. */
-		state?: BatchOperationMetadataState;
+		state?: BatchOperationMetadataState | null;
 
 		/** The time when the batch request was submitted to the server. */
-		submitTime?: string;
+		submitTime?: string | null;
 	}
 
 
@@ -4956,7 +4956,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1ImportProductSetsResponse {
 
 		/** The list of reference_images that are imported successfully. */
-		referenceImages?: Array<GoogleCloudVisionV1p3beta1ReferenceImage>;
+		referenceImages?: Array<GoogleCloudVisionV1p3beta1ReferenceImage> | null;
 
 		/**
 		 * The rpc status for each ImportProductSet request, including both successes
@@ -4965,7 +4965,7 @@ export namespace MyNS {
 		 * and statuses[i] stores the success or failure status of processing the i-th
 		 * line of the csv, starting from line 0.
 		 */
-		statuses?: Array<Status>;
+		statuses?: Array<Status> | null;
 	}
 
 
@@ -4984,7 +4984,7 @@ export namespace MyNS {
 		 * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
 		 * is not).
 		 */
-		boundingPolys?: Array<GoogleCloudVisionV1p3beta1BoundingPoly>;
+		boundingPolys?: Array<GoogleCloudVisionV1p3beta1BoundingPoly> | null;
 
 		/**
 		 * The resource name of the reference image.
@@ -4992,13 +4992,13 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
 		 * This field is ignored when creating a reference image.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. The Google Cloud Storage URI of the reference image.
 		 * The URI must start with `gs://`.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -5006,13 +5006,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1OperationMetadata {
 
 		/** The time when the batch request was received. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Current state of the batch operation. */
-		state?: GoogleCloudVisionV1p1beta1OperationMetadataState;
+		state?: GoogleCloudVisionV1p1beta1OperationMetadataState | null;
 
 		/** The time when the operation result was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -5030,19 +5030,19 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** The desired input location and metadata. */
-		inputConfig?: GoogleCloudVisionV1p4beta1InputConfig;
+		inputConfig?: GoogleCloudVisionV1p4beta1InputConfig | null;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateImageResponse>;
+		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateImageResponse> | null;
 
 		/** This field gives the total number of pages in the file. */
-		totalPages?: number;
+		totalPages?: number | null;
 	}
 
 
@@ -5056,16 +5056,16 @@ export namespace MyNS {
 		 * Currently, this field only works for BatchAnnotateFiles requests. It does
 		 * not work for AsyncBatchAnnotateFiles requests.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GoogleCloudVisionV1p4beta1GcsSource;
+		gcsSource?: GoogleCloudVisionV1p4beta1GcsSource | null;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -5076,7 +5076,7 @@ export namespace MyNS {
 		 * Google Cloud Storage URI for the input file. This must only be a
 		 * Google Cloud Storage object. Wildcards are not currently supported.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -5087,10 +5087,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: GoogleCloudVisionV1p4beta1ImageAnnotationContext;
+		context?: GoogleCloudVisionV1p4beta1ImageAnnotationContext | null;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: GoogleCloudVisionV1p4beta1CropHintsAnnotation;
+		cropHintsAnnotation?: GoogleCloudVisionV1p4beta1CropHintsAnnotation | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -5100,10 +5100,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<GoogleCloudVisionV1p4beta1FaceAnnotation>;
+		faceAnnotations?: Array<GoogleCloudVisionV1p4beta1FaceAnnotation> | null;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -5114,41 +5114,41 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: GoogleCloudVisionV1p4beta1TextAnnotation;
+		fullTextAnnotation?: GoogleCloudVisionV1p4beta1TextAnnotation | null;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: GoogleCloudVisionV1p4beta1ImageProperties;
+		imagePropertiesAnnotation?: GoogleCloudVisionV1p4beta1ImageProperties | null;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation>;
+		labelAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation> | null;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation>;
+		landmarkAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation> | null;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation>;
+		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation> | null;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation>;
+		logoAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation> | null;
 
 		/** Results for a product search request. */
-		productSearchResults?: GoogleCloudVisionV1p4beta1ProductSearchResults;
+		productSearchResults?: GoogleCloudVisionV1p4beta1ProductSearchResults | null;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: GoogleCloudVisionV1p4beta1SafeSearchAnnotation;
+		safeSearchAnnotation?: GoogleCloudVisionV1p4beta1SafeSearchAnnotation | null;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation>;
+		textAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation> | null;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: GoogleCloudVisionV1p4beta1WebDetection;
+		webDetection?: GoogleCloudVisionV1p4beta1WebDetection | null;
 	}
 
 
@@ -5162,10 +5162,10 @@ export namespace MyNS {
 		 * If the file was a PDF or TIFF, this field gives the page number within
 		 * the file used to produce the image.
 		 */
-		pageNumber?: number;
+		pageNumber?: number | null;
 
 		/** The URI of the file used to produce the image. */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -5173,7 +5173,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<GoogleCloudVisionV1p4beta1CropHint>;
+		cropHints?: Array<GoogleCloudVisionV1p4beta1CropHint> | null;
 	}
 
 
@@ -5181,16 +5181,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Fraction of importance of this salient region with respect to the original
 		 * image.
 		 */
-		importanceFraction?: number;
+		importanceFraction?: number | null;
 	}
 
 
@@ -5198,10 +5198,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<GoogleCloudVisionV1p4beta1NormalizedVertex>;
+		normalizedVertices?: Array<GoogleCloudVisionV1p4beta1NormalizedVertex> | null;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<GoogleCloudVisionV1p4beta1Vertex>;
+		vertices?: Array<GoogleCloudVisionV1p4beta1Vertex> | null;
 	}
 
 
@@ -5213,10 +5213,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -5227,10 +5227,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Vertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -5238,38 +5238,38 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1FaceAnnotation {
 
 		/** Anger likelihood. */
-		angerLikelihood?: FaceAnnotationAngerLikelihood;
+		angerLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Blurred likelihood. */
-		blurredLikelihood?: FaceAnnotationAngerLikelihood;
+		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/** Detection confidence. Range [0, 1]. */
-		detectionConfidence?: number;
+		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		fdBoundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/** Headwear likelihood. */
-		headwearLikelihood?: FaceAnnotationAngerLikelihood;
+		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Joy likelihood. */
-		joyLikelihood?: FaceAnnotationAngerLikelihood;
+		joyLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Face landmarking confidence. Range [0, 1]. */
-		landmarkingConfidence?: number;
+		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<GoogleCloudVisionV1p4beta1FaceAnnotationLandmark>;
+		landmarks?: Array<GoogleCloudVisionV1p4beta1FaceAnnotationLandmark> | null;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
 		 * pointing relative to the vertical plane perpendicular to the image. Range
 		 * [-180,180].
 		 */
-		panAngle?: number;
+		panAngle?: number | null;
 
 		/**
 		 * Additional recognition information. Only computed if
@@ -5277,29 +5277,29 @@ export namespace MyNS {
 		 * to a Celebrity in the input CelebritySet. This field is
 		 * sorted in order of decreasing confidence values.
 		 */
-		recognitionResult?: Array<GoogleCloudVisionV1p4beta1FaceRecognitionResult>;
+		recognitionResult?: Array<GoogleCloudVisionV1p4beta1FaceRecognitionResult> | null;
 
 		/**
 		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
 		 * of the face relative to the image vertical about the axis perpendicular to
 		 * the face. Range [-180,180].
 		 */
-		rollAngle?: number;
+		rollAngle?: number | null;
 
 		/** Sorrow likelihood. */
-		sorrowLikelihood?: FaceAnnotationAngerLikelihood;
+		sorrowLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** Surprise likelihood. */
-		surpriseLikelihood?: FaceAnnotationAngerLikelihood;
+		surpriseLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Pitch angle, which indicates the upwards/downwards angle that the face is
 		 * pointing relative to the image's horizontal plane. Range [-180,180].
 		 */
-		tiltAngle?: number;
+		tiltAngle?: number | null;
 
 		/** Under-exposed likelihood. */
-		underExposedLikelihood?: FaceAnnotationAngerLikelihood;
+		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -5311,10 +5311,10 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: GoogleCloudVisionV1p4beta1Position;
+		position?: GoogleCloudVisionV1p4beta1Position | null;
 
 		/** Face landmark type. */
-		type?: LandmarkType;
+		type?: LandmarkType | null;
 	}
 
 
@@ -5326,13 +5326,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Position {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 
 		/** Z coordinate (or depth). */
-		z?: number;
+		z?: number | null;
 	}
 
 
@@ -5340,10 +5340,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1FaceRecognitionResult {
 
 		/** A Celebrity is a group of Faces with an identity. */
-		celebrity?: GoogleCloudVisionV1p4beta1Celebrity;
+		celebrity?: GoogleCloudVisionV1p4beta1Celebrity | null;
 
 		/** Recognition confidence. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 	}
 
 
@@ -5351,16 +5351,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Celebrity {
 
 		/** The Celebrity's description. */
-		description?: string;
+		description?: string | null;
 
 		/** The Celebrity's display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The resource name of the preloaded Celebrity. Has the format
 		 * `builtin/{mid}`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -5376,10 +5376,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<GoogleCloudVisionV1p4beta1Page>;
+		pages?: Array<GoogleCloudVisionV1p4beta1Page> | null;
 
 		/** UTF-8 text detected on the pages. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -5387,25 +5387,25 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<GoogleCloudVisionV1p4beta1Block>;
+		blocks?: Array<GoogleCloudVisionV1p4beta1Block> | null;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Page height. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		height?: number;
+		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -5413,19 +5413,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Block {
 
 		/** Detected block type (text, image etc) for this block. */
-		blockType?: BlockBlockType;
+		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<GoogleCloudVisionV1p4beta1Paragraph>;
+		paragraphs?: Array<GoogleCloudVisionV1p4beta1Paragraph> | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
 	}
 
 
@@ -5433,16 +5433,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
 
 		/** List of all words in this paragraph. */
-		words?: Array<GoogleCloudVisionV1p4beta1Word>;
+		words?: Array<GoogleCloudVisionV1p4beta1Word> | null;
 	}
 
 
@@ -5450,10 +5450,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1TextAnnotationTextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak;
+		detectedBreak?: GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak | null;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage>;
+		detectedLanguages?: Array<GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage> | null;
 	}
 
 
@@ -5461,10 +5461,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak {
 
 		/** True if break prepends the element. */
-		isPrefix?: boolean;
+		isPrefix?: boolean | null;
 
 		/** Detected break type. */
-		type?: DetectedBreakType;
+		type?: DetectedBreakType | null;
 	}
 
 
@@ -5472,14 +5472,14 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage {
 
 		/** Confidence of detected language. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -5487,19 +5487,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<GoogleCloudVisionV1p4beta1Symbol>;
+		symbols?: Array<GoogleCloudVisionV1p4beta1Symbol> | null;
 	}
 
 
@@ -5507,16 +5507,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
 
 		/** The actual UTF-8 representation of the symbol. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -5524,7 +5524,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: GoogleCloudVisionV1p4beta1DominantColorsAnnotation;
+		dominantColors?: GoogleCloudVisionV1p4beta1DominantColorsAnnotation | null;
 	}
 
 
@@ -5532,7 +5532,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<GoogleCloudVisionV1p4beta1ColorInfo>;
+		colors?: Array<GoogleCloudVisionV1p4beta1ColorInfo> | null;
 	}
 
 
@@ -5647,16 +5647,16 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color;
+		color?: Color | null;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
 		 * Value in range [0, 1].
 		 */
-		pixelFraction?: number;
+		pixelFraction?: number | null;
 
 		/** Image-specific score for this color. Value in range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -5664,7 +5664,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -5673,16 +5673,16 @@ export namespace MyNS {
 		 * this field represents the confidence that there is a tower in the query
 		 * image. Range [0, 1].
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Entity textual description, expressed in its `locale` language. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The language code for the locale in which the entity textual
 		 * `description` is expressed.
 		 */
-		locale?: string;
+		locale?: string | null;
 
 		/**
 		 * The location information for the detected entity. Multiple
@@ -5691,23 +5691,23 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<GoogleCloudVisionV1p4beta1LocationInfo>;
+		locations?: Array<GoogleCloudVisionV1p4beta1LocationInfo> | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		mid?: string;
+		mid?: string | null;
 
 		/**
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<GoogleCloudVisionV1p4beta1Property>;
+		properties?: Array<GoogleCloudVisionV1p4beta1Property> | null;
 
 		/** Overall score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 
 		/**
 		 * The relevancy of the ICA (Image Content Annotation) label to the
@@ -5716,7 +5716,7 @@ export namespace MyNS {
 		 * detected distant towering building, even though the confidence that
 		 * there is a tower in each image may be the same. Range [0, 1].
 		 */
-		topicality?: number;
+		topicality?: number | null;
 	}
 
 
@@ -5730,7 +5730,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng;
+		latLng?: LatLng | null;
 	}
 
 
@@ -5738,13 +5738,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Property {
 
 		/** Name of the property. */
-		name?: string;
+		name?: string | null;
 
 		/** Value of numeric properties. */
-		uint64Value?: string;
+		uint64Value?: string | null;
 
 		/** Value of the property. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -5752,23 +5752,23 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -5780,7 +5780,7 @@ export namespace MyNS {
 		 * product set and products removed from the product set after this time are
 		 * not reflected in the current results.
 		 */
-		indexTime?: string;
+		indexTime?: string | null;
 
 		/**
 		 * List of results grouped by products detected in the query image. Each entry
@@ -5788,10 +5788,10 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult>;
+		productGroupedResults?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsResult>;
+		results?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsResult> | null;
 	}
 
 
@@ -5802,13 +5802,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotation> | null;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsResult>;
+		results?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsResult> | null;
 	}
 
 
@@ -5820,16 +5820,16 @@ export namespace MyNS {
 		 * information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Object ID that should align with EntityAnnotation mid. */
-		mid?: string;
+		mid?: string | null;
 
 		/** Object name, expressed in its `language_code` language. */
-		name?: string;
+		name?: string | null;
 
 		/** Score of the result. Range [0, 1]. */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -5840,16 +5840,16 @@ export namespace MyNS {
 		 * The resource name of the image from the product that is the closest match
 		 * to the query.
 		 */
-		image?: string;
+		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: GoogleCloudVisionV1p4beta1Product;
+		product?: GoogleCloudVisionV1p4beta1Product | null;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -5860,13 +5860,13 @@ export namespace MyNS {
 		 * User-provided metadata to be stored with this product. Must be at most 4096
 		 * characters long.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The user-provided name for this Product. Must not be empty. Must be at most
 		 * 4096 characters long.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The resource name of the product.
@@ -5874,7 +5874,7 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
 		 * This field is ignored when creating a product.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Immutable. The category for the product identified by the reference image. This should
@@ -5882,7 +5882,7 @@ export namespace MyNS {
 		 * "homegoods", "apparel", and "toys" are still supported, but these should
 		 * not be used for new products.
 		 */
-		productCategory?: string;
+		productCategory?: string | null;
 
 		/**
 		 * Key-value pairs that can be attached to a product. At query time,
@@ -5896,7 +5896,7 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<GoogleCloudVisionV1p4beta1ProductKeyValue>;
+		productLabels?: Array<GoogleCloudVisionV1p4beta1ProductKeyValue> | null;
 	}
 
 
@@ -5907,13 +5907,13 @@ export namespace MyNS {
 		 * The key of the label attached to the product. Cannot be empty and cannot
 		 * exceed 128 bytes.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * The value of the label attached to the product. Cannot be empty and
 		 * cannot exceed 128 bytes.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -5929,10 +5929,10 @@ export namespace MyNS {
 		 * contain elements such as nudity, pornographic images or cartoons, or
 		 * sexual activities.
 		 */
-		adult?: FaceAnnotationAngerLikelihood;
+		adult?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this is a medical image. */
-		medical?: FaceAnnotationAngerLikelihood;
+		medical?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Likelihood that the request image contains racy content. Racy content may
@@ -5940,17 +5940,17 @@ export namespace MyNS {
 		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
 		 * body areas.
 		 */
-		racy?: FaceAnnotationAngerLikelihood;
+		racy?: FaceAnnotationAngerLikelihood | null;
 
 		/**
 		 * Spoof likelihood. The likelihood that an modification
 		 * was made to the image's canonical version to make it appear
 		 * funny or offensive.
 		 */
-		spoof?: FaceAnnotationAngerLikelihood;
+		spoof?: FaceAnnotationAngerLikelihood | null;
 
 		/** Likelihood that this image contains violent content. */
-		violence?: FaceAnnotationAngerLikelihood;
+		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
 
@@ -5961,29 +5961,29 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebLabel>;
+		bestGuessLabels?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebLabel> | null;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebPage>;
+		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebPage> | null;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
+		visuallySimilarImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebEntity>;
+		webEntities?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebEntity> | null;
 	}
 
 
@@ -5991,14 +5991,14 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1WebDetectionWebLabel {
 
 		/** Label for extra metadata. */
-		label?: string;
+		label?: string | null;
 
 		/**
 		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
 		 * For more information, see
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -6006,10 +6006,10 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1WebDetectionWebImage {
 
 		/** (Deprecated) Overall relevancy score for the image. */
-		score?: number;
+		score?: number | null;
 
 		/** The result image URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -6020,10 +6020,10 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
 
 		/** Title for the web page, may contain HTML markups. */
-		pageTitle?: string;
+		pageTitle?: string | null;
 
 		/**
 		 * Partial matching images on the page.
@@ -6031,13 +6031,13 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
-		score?: number;
+		score?: number | null;
 
 		/** The result web page URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -6045,16 +6045,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1WebDetectionWebEntity {
 
 		/** Canonical description of the entity, in English. */
-		description?: string;
+		description?: string | null;
 
 		/** Opaque entity ID. */
-		entityId?: string;
+		entityId?: string | null;
 
 		/**
 		 * Overall relevancy score for the entity.
 		 * Not normalized and not comparable across different image queries.
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -6062,7 +6062,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p4beta1OutputConfig;
+		outputConfig?: GoogleCloudVisionV1p4beta1OutputConfig | null;
 	}
 
 
@@ -6080,10 +6080,10 @@ export namespace MyNS {
 		 * Currently, batch_size only applies to GcsDestination, with potential future
 		 * support for other output configurations.
 		 */
-		batchSize?: number;
+		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GoogleCloudVisionV1p4beta1GcsDestination;
+		gcsDestination?: GoogleCloudVisionV1p4beta1GcsDestination | null;
 	}
 
 
@@ -6110,7 +6110,7 @@ export namespace MyNS {
 		 * Multiple outputs can happen if, for example, the output JSON is too large
 		 * and overflows into multiple sharded files.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -6121,7 +6121,7 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponse>;
+		responses?: Array<GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponse> | null;
 	}
 
 
@@ -6129,7 +6129,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1AsyncBatchAnnotateImagesResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p4beta1OutputConfig;
+		outputConfig?: GoogleCloudVisionV1p4beta1OutputConfig | null;
 	}
 
 
@@ -6140,7 +6140,7 @@ export namespace MyNS {
 		 * The list of file annotation responses, each response corresponding to each
 		 * AnnotateFileRequest in BatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateFileResponse>;
+		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateFileResponse> | null;
 	}
 
 
@@ -6155,13 +6155,13 @@ export namespace MyNS {
 		 * The time when the batch request is finished and
 		 * google.longrunning.Operation.done is set to true.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The current state of the batch operation. */
-		state?: BatchOperationMetadataState;
+		state?: BatchOperationMetadataState | null;
 
 		/** The time when the batch request was submitted to the server. */
-		submitTime?: string;
+		submitTime?: string | null;
 	}
 
 
@@ -6174,7 +6174,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1ImportProductSetsResponse {
 
 		/** The list of reference_images that are imported successfully. */
-		referenceImages?: Array<GoogleCloudVisionV1p4beta1ReferenceImage>;
+		referenceImages?: Array<GoogleCloudVisionV1p4beta1ReferenceImage> | null;
 
 		/**
 		 * The rpc status for each ImportProductSet request, including both successes
@@ -6183,7 +6183,7 @@ export namespace MyNS {
 		 * and statuses[i] stores the success or failure status of processing the i-th
 		 * line of the csv, starting from line 0.
 		 */
-		statuses?: Array<Status>;
+		statuses?: Array<Status> | null;
 	}
 
 
@@ -6202,7 +6202,7 @@ export namespace MyNS {
 		 * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
 		 * is not).
 		 */
-		boundingPolys?: Array<GoogleCloudVisionV1p4beta1BoundingPoly>;
+		boundingPolys?: Array<GoogleCloudVisionV1p4beta1BoundingPoly> | null;
 
 		/**
 		 * The resource name of the reference image.
@@ -6210,13 +6210,13 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
 		 * This field is ignored when creating a reference image.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. The Google Cloud Storage URI of the reference image.
 		 * The URI must start with `gs://`.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -6224,13 +6224,13 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1OperationMetadata {
 
 		/** The time when the batch request was received. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Current state of the batch operation. */
-		state?: GoogleCloudVisionV1p1beta1OperationMetadataState;
+		state?: GoogleCloudVisionV1p1beta1OperationMetadataState | null;
 
 		/** The time when the operation result was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -6289,7 +6289,7 @@ export namespace MyNS {
 		 * The system will resize the image if the image resolution is too
 		 * large to process (larger than 20MP).
 		 */
-		csvFileUri?: string;
+		csvFileUri?: string | null;
 	}
 
 
@@ -6300,7 +6300,7 @@ export namespace MyNS {
 		 * The Google Cloud Storage location for a csv file which preserves a list of
 		 * ImportProductSetRequests in each line.
 		 */
-		gcsSource?: ImportProductSetsGcsSource;
+		gcsSource?: ImportProductSetsGcsSource | null;
 	}
 
 
@@ -6308,7 +6308,7 @@ export namespace MyNS {
 	export interface ImportProductSetsRequest {
 
 		/** The input content for the `ImportProductSets` method. */
-		inputConfig?: ImportProductSetsInputConfig;
+		inputConfig?: ImportProductSetsInputConfig | null;
 	}
 
 
@@ -6321,7 +6321,7 @@ export namespace MyNS {
 	export interface ImportProductSetsResponse {
 
 		/** The list of reference_images that are imported successfully. */
-		referenceImages?: Array<ReferenceImage>;
+		referenceImages?: Array<ReferenceImage> | null;
 
 		/**
 		 * The rpc status for each ImportProductSet request, including both successes
@@ -6330,7 +6330,7 @@ export namespace MyNS {
 		 * and statuses[i] stores the success or failure status of processing the i-th
 		 * line of the csv, starting from line 0.
 		 */
-		statuses?: Array<Status>;
+		statuses?: Array<Status> | null;
 	}
 
 
@@ -6349,7 +6349,7 @@ export namespace MyNS {
 		 * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
 		 * is not).
 		 */
-		boundingPolys?: Array<BoundingPoly>;
+		boundingPolys?: Array<BoundingPoly> | null;
 
 		/**
 		 * The resource name of the reference image.
@@ -6357,13 +6357,13 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
 		 * This field is ignored when creating a reference image.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. The Google Cloud Storage URI of the reference image.
 		 * The URI must start with `gs://`.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -6371,10 +6371,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -6389,7 +6389,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -6399,7 +6399,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -6407,14 +6407,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -6426,7 +6426,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -6437,10 +6437,10 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of ProductSets. */
-		productSets?: Array<ProductSet>;
+		productSets?: Array<ProductSet> | null;
 	}
 
 
@@ -6455,7 +6455,7 @@ export namespace MyNS {
 		 * The user-provided name for this ProductSet. Must not be empty. Must be at
 		 * most 4096 characters long.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -6465,7 +6465,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		indexError?: Status;
+		indexError?: Status | null;
 
 		/**
 		 * Output only. The time at which this ProductSet was last indexed. Query
@@ -6474,7 +6474,7 @@ export namespace MyNS {
 		 * "1970-01-01T00:00:00Z".
 		 * This field is ignored when creating a ProductSet.
 		 */
-		indexTime?: string;
+		indexTime?: string | null;
 
 		/**
 		 * The resource name of the ProductSet.
@@ -6482,7 +6482,7 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
 		 * This field is ignored when creating a ProductSet.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -6493,10 +6493,10 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of Products. */
-		products?: Array<Product>;
+		products?: Array<Product> | null;
 	}
 
 
@@ -6507,10 +6507,10 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of products. */
-		products?: Array<Product>;
+		products?: Array<Product> | null;
 	}
 
 
@@ -6518,13 +6518,13 @@ export namespace MyNS {
 	export interface ListReferenceImagesResponse {
 
 		/** The next_page_token returned from a previous List request, if any. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The maximum number of items to return. Default 10, maximum 100. */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/** The list of reference images. */
-		referenceImages?: Array<ReferenceImage>;
+		referenceImages?: Array<ReferenceImage> | null;
 	}
 
 
@@ -6532,13 +6532,13 @@ export namespace MyNS {
 	export interface OperationMetadata {
 
 		/** The time when the batch request was received. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Current state of the batch operation. */
-		state?: GoogleCloudVisionV1p1beta1OperationMetadataState;
+		state?: GoogleCloudVisionV1p1beta1OperationMetadataState | null;
 
 		/** The time when the operation result was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -6550,7 +6550,7 @@ export namespace MyNS {
 		 * member of product_set_id in addition to other ProductSets, the Product will
 		 * still be deleted.
 		 */
-		productSetId?: string;
+		productSetId?: string | null;
 	}
 
 
@@ -6561,16 +6561,16 @@ export namespace MyNS {
 		 * If delete_orphan_products is true, all Products that are not in any
 		 * ProductSet will be deleted.
 		 */
-		deleteOrphanProducts?: boolean;
+		deleteOrphanProducts?: boolean | null;
 
 		/**
 		 * The default value is false. Override this value to true to actually perform
 		 * the purge.
 		 */
-		force?: boolean;
+		force?: boolean | null;
 
 		/** Config to control which ProductSet contains the Products to be deleted. */
-		productSetPurgeConfig?: ProductSetPurgeConfig;
+		productSetPurgeConfig?: ProductSetPurgeConfig | null;
 	}
 
 
@@ -6582,7 +6582,7 @@ export namespace MyNS {
 		 * Format is:
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
 		 */
-		product?: string;
+		product?: string | null;
 	}
 
 	@Injectable()

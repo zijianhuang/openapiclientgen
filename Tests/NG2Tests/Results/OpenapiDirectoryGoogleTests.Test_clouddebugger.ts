@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface AliasContext {
 
 		/** The alias kind. */
-		kind?: AliasContextKind;
+		kind?: AliasContextKind | null;
 
 		/** The alias name. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum AliasContextKind { ANY = 0, FIXED = 1, MOVABLE = 2, OTHER = 3 }
@@ -27,23 +27,23 @@ export namespace MyNS {
 		 * Action that the agent should perform when the code at the
 		 * breakpoint location is hit.
 		 */
-		action?: BreakpointAction;
+		action?: BreakpointAction | null;
 
 		/**
 		 * The deadline for the breakpoint to stay in CANARY_ACTIVE state. The value
 		 * is meaningless when the breakpoint is not in CANARY_ACTIVE state.
 		 */
-		canaryExpireTime?: string;
+		canaryExpireTime?: string | null;
 
 		/**
 		 * Condition that triggers the breakpoint.
 		 * The condition is a compound boolean expression composed using expressions
 		 * in a programming language at the source location.
 		 */
-		condition?: string;
+		condition?: string | null;
 
 		/** Time this breakpoint was created by the server in seconds resolution. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Values of evaluated expressions at breakpoint time.
@@ -54,7 +54,7 @@ export namespace MyNS {
 		 * If the expression cannot be evaluated, the `status` inside the `Variable`
 		 * will indicate an error and contain the error text.
 		 */
-		evaluatedExpressions?: Array<Variable>;
+		evaluatedExpressions?: Array<Variable> | null;
 
 		/**
 		 * List of read-only expressions to evaluate at the breakpoint location.
@@ -62,34 +62,34 @@ export namespace MyNS {
 		 * at the source location. If the breakpoint action is `LOG`, the evaluated
 		 * expressions are included in log statements.
 		 */
-		expressions?: Array<string>;
+		expressions?: Array<string> | null;
 
 		/**
 		 * Time this breakpoint was finalized as seen by the server in seconds
 		 * resolution.
 		 */
-		finalTime?: string;
+		finalTime?: string | null;
 
 		/** Breakpoint identifier, unique in the scope of the debuggee. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * When true, indicates that this is a final result and the
 		 * breakpoint state will not change from here on.
 		 */
-		isFinalState?: boolean;
+		isFinalState?: boolean | null;
 
 		/**
 		 * A set of custom breakpoint properties, populated by the agent, to be
 		 * displayed to the user.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Represents a location in the source code. */
-		location?: SourceLocation;
+		location?: SourceLocation | null;
 
 		/** Indicates the severity of the log. Only relevant when action is `LOG`. */
-		logLevel?: BreakpointLogLevel;
+		logLevel?: BreakpointLogLevel | null;
 
 		/**
 		 * Only relevant when action is `LOG`. Defines the message to log when
@@ -100,16 +100,16 @@ export namespace MyNS {
 		 * Example: `Message received, id = $0, count = $1` with
 		 * `expressions` = `[ message.id, message.count ]`.
 		 */
-		logMessageFormat?: string;
+		logMessageFormat?: string | null;
 
 		/**
 		 * The stack at breakpoint time, where stack_frames[0] represents the most
 		 * recently entered function.
 		 */
-		stackFrames?: Array<StackFrame>;
+		stackFrames?: Array<StackFrame> | null;
 
 		/** The current state of the breakpoint. */
-		state?: BreakpointState;
+		state?: BreakpointState | null;
 
 		/**
 		 * Represents a contextual status message.
@@ -118,10 +118,10 @@ export namespace MyNS {
 		 * For example, the `Breakpoint.status` field can indicate an error referring
 		 * to the `BREAKPOINT_SOURCE_LOCATION` with the message `Location not found`.
 		 */
-		status?: StatusMessage;
+		status?: StatusMessage | null;
 
 		/** E-mail address of the user that created this breakpoint */
-		userEmail?: string;
+		userEmail?: string | null;
 
 		/**
 		 * The `variable_table` exists to aid with computation, memory and network
@@ -136,7 +136,7 @@ export namespace MyNS {
 		 * variable. The effective variable is a merge of the referencing variable
 		 * and the referenced variable.
 		 */
-		variableTable?: Array<Variable>;
+		variableTable?: Array<Variable> | null;
 	}
 
 	export enum BreakpointAction { CAPTURE = 0, LOG = 1 }
@@ -229,10 +229,10 @@ export namespace MyNS {
 	export interface Variable {
 
 		/** Members contained or pointed to by the variable. */
-		members?: Array<Variable>;
+		members?: Array<Variable> | null;
 
 		/** Name of the variable, if any. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Represents a contextual status message.
@@ -241,7 +241,7 @@ export namespace MyNS {
 		 * For example, the `Breakpoint.status` field can indicate an error referring
 		 * to the `BREAKPOINT_SOURCE_LOCATION` with the message `Location not found`.
 		 */
-		status?: StatusMessage;
+		status?: StatusMessage | null;
 
 		/**
 		 * Variable type (e.g. `MyClass`). If the variable is split with
@@ -249,17 +249,17 @@ export namespace MyNS {
 		 * a type is agent specific. It is recommended to include the dynamic type
 		 * rather than a static type of an object.
 		 */
-		type?: string;
+		type?: string | null;
 
 		/** Simple value of the variable. */
-		value?: string;
+		value?: string | null;
 
 		/**
 		 * Reference to a variable in the shared variable table. More than
 		 * one variable can reference the same variable in the table. The
 		 * `var_table_index` field is an index into `variable_table` in Breakpoint.
 		 */
-		varTableIndex?: number;
+		varTableIndex?: number | null;
 	}
 
 
@@ -273,13 +273,13 @@ export namespace MyNS {
 	export interface StatusMessage {
 
 		/** Represents a message with parameters. */
-		description?: FormatMessage;
+		description?: FormatMessage | null;
 
 		/** Distinguishes errors from informational messages. */
-		isError?: boolean;
+		isError?: boolean | null;
 
 		/** Reference to which the message applies. */
-		refersTo?: StatusMessageRefersTo;
+		refersTo?: StatusMessageRefersTo | null;
 	}
 
 
@@ -295,10 +295,10 @@ export namespace MyNS {
 		 * is loaded.  Again, $0 is very important.`
 		 * *   `Please pay $$10 to use $0 instead of $1.`
 		 */
-		format?: string;
+		format?: string | null;
 
 		/** Optional parameters to be embedded into the message. */
-		parameters?: Array<string>;
+		parameters?: Array<string> | null;
 	}
 
 	export enum StatusMessageRefersTo { UNSPECIFIED = 0, BREAKPOINT_SOURCE_LOCATION = 1, BREAKPOINT_CONDITION = 2, BREAKPOINT_EXPRESSION = 3, BREAKPOINT_AGE = 4, BREAKPOINT_CANARY_FAILED = 5, VARIABLE_NAME = 6, VARIABLE_VALUE = 7 }
@@ -312,13 +312,13 @@ export namespace MyNS {
 		 * Agents that do not support setting breakpoints on specific columns ignore
 		 * this field.
 		 */
-		column?: number;
+		column?: number | null;
 
 		/** Line inside the file. The first line in the file has the value `1`. */
-		line?: number;
+		line?: number | null;
 
 		/** Path to the source file within the source context of the target binary. */
-		path?: string;
+		path?: string | null;
 	}
 
 	export enum BreakpointLogLevel { INFO = 0, WARNING = 1, ERROR = 2 }
@@ -331,19 +331,19 @@ export namespace MyNS {
 		 * Set of arguments passed to this function.
 		 * Note that this might not be populated for all stack frames.
 		 */
-		arguments?: Array<Variable>;
+		arguments?: Array<Variable> | null;
 
 		/** Demangled function name at the call site. */
-		function?: string;
+		function?: string | null;
 
 		/**
 		 * Set of local variables at the stack frame location.
 		 * Note that this might not be populated for all stack frames.
 		 */
-		locals?: Array<Variable>;
+		locals?: Array<Variable> | null;
 
 		/** Represents a location in the source code. */
-		location?: SourceLocation;
+		location?: SourceLocation | null;
 	}
 
 	export enum BreakpointState { STATE_UNSPECIFIED = 0, STATE_CANARY_PENDING_AGENTS = 1, STATE_CANARY_ACTIVE = 2, STATE_ROLLING_TO_ALL = 3, STATE_IS_FINAL = 4 }
@@ -356,16 +356,16 @@ export namespace MyNS {
 	export interface CloudRepoSourceContext {
 
 		/** An alias to a repo revision. */
-		aliasContext?: AliasContext;
+		aliasContext?: AliasContext | null;
 
 		/** The name of an alias (branch, tag, etc.). */
-		aliasName?: string;
+		aliasName?: string | null;
 
 		/** A unique identifier for a cloud repo. */
-		repoId?: RepoId;
+		repoId?: RepoId | null;
 
 		/** A revision ID. */
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 
@@ -376,10 +376,10 @@ export namespace MyNS {
 		 * Selects a repo using a Google Cloud Platform project ID
 		 * (e.g. winged-cargo-31) and a repo name within that project.
 		 */
-		projectRepoId?: ProjectRepoId;
+		projectRepoId?: ProjectRepoId | null;
 
 		/** A server-assigned, globally unique identifier. */
-		uid?: string;
+		uid?: string | null;
 	}
 
 
@@ -390,10 +390,10 @@ export namespace MyNS {
 	export interface ProjectRepoId {
 
 		/** The ID of the project. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** The name of the repo. Leave empty for the default repo. */
-		repoName?: string;
+		repoName?: string | null;
 	}
 
 
@@ -408,10 +408,10 @@ export namespace MyNS {
 		 * The unique name of the workspace within the repo.  This is the name
 		 * chosen by the client in the Source API's CreateWorkspace method.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** A unique identifier for a cloud repo. */
-		repoId?: RepoId;
+		repoId?: RepoId | null;
 	}
 
 
@@ -422,14 +422,14 @@ export namespace MyNS {
 		 * The ID of the snapshot.
 		 * An empty snapshot_id refers to the most recent snapshot.
 		 */
-		snapshotId?: string;
+		snapshotId?: string | null;
 
 		/**
 		 * A CloudWorkspaceId is a unique identifier for a cloud workspace.
 		 * A cloud workspace is a place associated with a repo where modified files
 		 * can be stored before they are committed.
 		 */
-		workspaceId?: CloudWorkspaceId;
+		workspaceId?: CloudWorkspaceId | null;
 	}
 
 
@@ -447,56 +447,56 @@ export namespace MyNS {
 		 * Schema: `domain/language-platform/vmajor.minor` (for example
 		 * `google.com/java-gcp/v1.1`).
 		 */
-		agentVersion?: string;
+		agentVersion?: string | null;
 
 		/** Used when setting breakpoint canary for this debuggee. */
-		canaryMode?: DebuggeeCanaryMode;
+		canaryMode?: DebuggeeCanaryMode | null;
 
 		/**
 		 * Human readable description of the debuggee.
 		 * Including a human-readable project name, environment name and version
 		 * information is recommended.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * References to the locations and revisions of the source code used in the
 		 * deployed application.
 		 */
-		extSourceContexts?: Array<ExtendedSourceContext>;
+		extSourceContexts?: Array<ExtendedSourceContext> | null;
 
 		/** Unique identifier for the debuggee generated by the controller service. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * If set to `true`, indicates that the agent should disable itself and
 		 * detach from the debuggee.
 		 */
-		isDisabled?: boolean;
+		isDisabled?: boolean | null;
 
 		/**
 		 * If set to `true`, indicates that Controller service does not detect any
 		 * activity from the debuggee agents and the application is possibly stopped.
 		 */
-		isInactive?: boolean;
+		isInactive?: boolean | null;
 
 		/**
 		 * A set of custom debuggee properties, populated by the agent, to be
 		 * displayed to the user.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Project the debuggee is associated with.
 		 * Use project number or id when registering a Google Cloud Platform project.
 		 */
-		project?: string;
+		project?: string | null;
 
 		/**
 		 * References to the locations and revisions of the source code used in the
 		 * deployed application.
 		 */
-		sourceContexts?: Array<SourceContext>;
+		sourceContexts?: Array<SourceContext> | null;
 
 		/**
 		 * Represents a contextual status message.
@@ -505,7 +505,7 @@ export namespace MyNS {
 		 * For example, the `Breakpoint.status` field can indicate an error referring
 		 * to the `BREAKPOINT_SOURCE_LOCATION` with the message `Location not found`.
 		 */
-		status?: StatusMessage;
+		status?: StatusMessage | null;
 
 		/**
 		 * Uniquifier to further distinguish the application.
@@ -515,7 +515,7 @@ export namespace MyNS {
 		 * application. Agents should consider seeding this field with value that
 		 * identifies the code, binary, configuration and environment.
 		 */
-		uniquifier?: string;
+		uniquifier?: string | null;
 	}
 
 	export enum DebuggeeCanaryMode { CANARY_MODE_UNSPECIFIED = 0, CANARY_MODE_ALWAYS_ENABLED = 1, CANARY_MODE_ALWAYS_DISABLED = 2, CANARY_MODE_DEFAULT_ENABLED = 3, CANARY_MODE_DEFAULT_DISABLED = 4 }
@@ -531,10 +531,10 @@ export namespace MyNS {
 		 * A SourceContext is a reference to a tree of files. A SourceContext together
 		 * with a path point to a unique revision of a single file or directory.
 		 */
-		context?: SourceContext;
+		context?: SourceContext | null;
 
 		/** Labels with user defined metadata. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 	}
 
 
@@ -548,19 +548,19 @@ export namespace MyNS {
 		 * A CloudRepoSourceContext denotes a particular revision in a cloud
 		 * repo (a repo hosted by the Google Cloud Platform).
 		 */
-		cloudRepo?: CloudRepoSourceContext;
+		cloudRepo?: CloudRepoSourceContext | null;
 
 		/** A CloudWorkspaceSourceContext denotes a workspace at a particular snapshot. */
-		cloudWorkspace?: CloudWorkspaceSourceContext;
+		cloudWorkspace?: CloudWorkspaceSourceContext | null;
 
 		/** A SourceContext referring to a Gerrit project. */
-		gerrit?: GerritSourceContext;
+		gerrit?: GerritSourceContext | null;
 
 		/**
 		 * A GitSourceContext denotes a particular revision in a third party Git
 		 * repository (e.g. GitHub).
 		 */
-		git?: GitSourceContext;
+		git?: GitSourceContext | null;
 	}
 
 
@@ -568,23 +568,23 @@ export namespace MyNS {
 	export interface GerritSourceContext {
 
 		/** An alias to a repo revision. */
-		aliasContext?: AliasContext;
+		aliasContext?: AliasContext | null;
 
 		/** The name of an alias (branch, tag, etc.). */
-		aliasName?: string;
+		aliasName?: string | null;
 
 		/**
 		 * The full project name within the host. Projects may be nested, so
 		 * "project/subproject" is a valid project name.
 		 * The "repo name" is hostURI/project.
 		 */
-		gerritProject?: string;
+		gerritProject?: string | null;
 
 		/** The URI of a running Gerrit instance. */
-		hostUri?: string;
+		hostUri?: string | null;
 
 		/** A revision (commit) ID. */
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 
@@ -598,10 +598,10 @@ export namespace MyNS {
 		 * Git commit hash.
 		 * required.
 		 */
-		revisionId?: string;
+		revisionId?: string | null;
 
 		/** Git repository URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -626,7 +626,7 @@ export namespace MyNS {
 		 * ## Breakpoint (the resource)
 		 * Represents the breakpoint specification, status and results.
 		 */
-		breakpoint?: Breakpoint;
+		breakpoint?: Breakpoint | null;
 	}
 
 
@@ -637,20 +637,20 @@ export namespace MyNS {
 		 * List of all active breakpoints.
 		 * The fields `id` and `location` are guaranteed to be set on each breakpoint.
 		 */
-		breakpoints?: Array<Breakpoint>;
+		breakpoints?: Array<Breakpoint> | null;
 
 		/**
 		 * A token that can be used in the next method call to block until
 		 * the list of breakpoints changes.
 		 */
-		nextWaitToken?: string;
+		nextWaitToken?: string | null;
 
 		/**
 		 * If set to `true`, indicates that there is no change to the
 		 * list of active breakpoints and the server-selected timeout has expired.
 		 * The `breakpoints` field would be empty and should be ignored.
 		 */
-		waitExpired?: boolean;
+		waitExpired?: boolean | null;
 	}
 
 
@@ -663,13 +663,13 @@ export namespace MyNS {
 		 * The fields: `stack_frames`, `evaluated_expressions` and `variable_table`
 		 * are cleared on each breakpoint regardless of its status.
 		 */
-		breakpoints?: Array<Breakpoint>;
+		breakpoints?: Array<Breakpoint> | null;
 
 		/**
 		 * A wait token that can be used in the next call to `list` (REST) or
 		 * `ListBreakpoints` (RPC) to block until the list of breakpoints has changes.
 		 */
-		nextWaitToken?: string;
+		nextWaitToken?: string | null;
 	}
 
 
@@ -682,7 +682,7 @@ export namespace MyNS {
 		 * The `description` field is a human readable field provided by agents and
 		 * can be displayed to users.
 		 */
-		debuggees?: Array<Debuggee>;
+		debuggees?: Array<Debuggee> | null;
 	}
 
 
@@ -696,7 +696,7 @@ export namespace MyNS {
 		 * Agents attached to the same debuggee identify themselves as such by using
 		 * exactly the same Debuggee message value when registering.
 		 */
-		debuggee?: Debuggee;
+		debuggee?: Debuggee | null;
 	}
 
 
@@ -707,7 +707,7 @@ export namespace MyNS {
 		 * A unique ID generated for the agent.
 		 * Each RegisterDebuggee request will generate a new agent ID.
 		 */
-		agentId?: string;
+		agentId?: string | null;
 
 		/**
 		 * Represents the debugged application. The application may include one or more
@@ -716,7 +716,7 @@ export namespace MyNS {
 		 * Agents attached to the same debuggee identify themselves as such by using
 		 * exactly the same Debuggee message value when registering.
 		 */
-		debuggee?: Debuggee;
+		debuggee?: Debuggee | null;
 	}
 
 
@@ -728,7 +728,7 @@ export namespace MyNS {
 		 * ## Breakpoint (the resource)
 		 * Represents the breakpoint specification, status and results.
 		 */
-		breakpoint?: Breakpoint;
+		breakpoint?: Breakpoint | null;
 	}
 
 
@@ -740,7 +740,7 @@ export namespace MyNS {
 		 * ## Breakpoint (the resource)
 		 * Represents the breakpoint specification, status and results.
 		 */
-		breakpoint?: Breakpoint;
+		breakpoint?: Breakpoint | null;
 	}
 
 

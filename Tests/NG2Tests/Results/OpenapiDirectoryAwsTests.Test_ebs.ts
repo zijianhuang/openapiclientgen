@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface GetSnapshotBlockResponse {
-		BlockData?: string;
+		BlockData?: string | null;
 	}
 
 	export interface ValidationException {
@@ -13,34 +13,34 @@ export namespace MyNS {
 	}
 
 	export interface ListChangedBlocksResponse {
-		ChangedBlocks?: Array<ChangedBlock>;
-		ExpiryTime?: Date;
-		VolumeSize?: number;
-		BlockSize?: number;
-		NextToken?: string;
+		ChangedBlocks?: Array<ChangedBlock> | null;
+		ExpiryTime?: Date | null;
+		VolumeSize?: number | null;
+		BlockSize?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage. */
 	export interface ChangedBlock {
-		BlockIndex?: number;
-		FirstBlockToken?: string;
-		SecondBlockToken?: string;
+		BlockIndex?: number | null;
+		FirstBlockToken?: string | null;
+		SecondBlockToken?: string | null;
 	}
 
 	export interface ListSnapshotBlocksResponse {
-		Blocks?: Array<Block>;
-		ExpiryTime?: Date;
-		VolumeSize?: number;
-		BlockSize?: number;
-		NextToken?: string;
+		Blocks?: Array<Block> | null;
+		ExpiryTime?: Date | null;
+		VolumeSize?: number | null;
+		BlockSize?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A block of data in an Amazon Elastic Block Store snapshot. */
 	export interface Block {
-		BlockIndex?: number;
-		BlockToken?: string;
+		BlockIndex?: number | null;
+		BlockToken?: string | null;
 	}
 
 	export enum ChecksumAlgorithm { SHA256 = 0 }

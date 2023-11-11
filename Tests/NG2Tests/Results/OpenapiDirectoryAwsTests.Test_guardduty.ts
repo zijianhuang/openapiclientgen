@@ -15,7 +15,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateDetectorResponse {
-		DetectorId?: string;
+		DetectorId?: string | null;
 	}
 
 	export interface CreateFilterResponse {
@@ -110,8 +110,8 @@ export namespace MyNS {
 
 	/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
 	export interface DestinationProperties {
-		DestinationArn?: string;
-		KmsKeyArn?: string;
+		DestinationArn?: string | null;
+		KmsKeyArn?: string | null;
 	}
 
 	export interface DisableOrganizationAdminAccountResponse {
@@ -128,12 +128,12 @@ export namespace MyNS {
 	}
 
 	export interface GetDetectorResponse {
-		CreatedAt?: string;
-		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency;
+		CreatedAt?: string | null;
+		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
 		ServiceRole: string;
 		Status: GetDetectorResponseStatus;
-		UpdatedAt?: string;
-		Tags?: TagMap;
+		UpdatedAt?: string | null;
+		Tags?: TagMap | null;
 	}
 
 	export enum GetDetectorResponseFindingPublishingFrequency { FIFTEEN_MINUTES = 0, ONE_HOUR = 1, SIX_HOURS = 2 }
@@ -145,16 +145,16 @@ export namespace MyNS {
 
 	export interface GetFilterResponse {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		Action: GetFilterResponseAction;
-		Rank?: number;
+		Rank?: number | null;
 
 		/**
 		 * Contains information about the criteria used for querying findings.
 		 * Required
 		 */
 		FindingCriteria: FindingCriteria;
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export enum GetFilterResponseAction { NOOP = 0, ARCHIVE = 1 }
@@ -162,7 +162,7 @@ export namespace MyNS {
 
 	/** Contains information about the criteria used for querying findings. */
 	export interface FindingCriteria {
-		Criterion?: Criterion;
+		Criterion?: Criterion | null;
 	}
 
 	export interface GetFindingsResponse {
@@ -174,11 +174,11 @@ export namespace MyNS {
 	export interface Finding {
 		AccountId: string;
 		Arn: string;
-		Confidence?: number;
+		Confidence?: number | null;
 		CreatedAt: string;
-		Description?: string;
+		Description?: string | null;
 		Id: string;
-		Partition?: string;
+		Partition?: string | null;
 		Region: string;
 
 		/**
@@ -189,9 +189,9 @@ export namespace MyNS {
 		SchemaVersion: string;
 
 		/** Contains additional information about the generated finding. */
-		Service?: Service;
+		Service?: Service | null;
 		Severity: number;
-		Title?: string;
+		Title?: string | null;
 		Type: string;
 		UpdatedAt: string;
 	}
@@ -201,60 +201,60 @@ export namespace MyNS {
 	export interface Resource {
 
 		/** Contains information about the access keys. */
-		AccessKeyDetails?: AccessKeyDetails;
+		AccessKeyDetails?: AccessKeyDetails | null;
 
 		/** Contains information on the S3 bucket. */
-		S3BucketDetails?: Array<S3BucketDetail>;
+		S3BucketDetails?: Array<S3BucketDetail> | null;
 
 		/** Contains information about the details of an instance. */
-		InstanceDetails?: InstanceDetails;
-		ResourceType?: string;
+		InstanceDetails?: InstanceDetails | null;
+		ResourceType?: string | null;
 	}
 
 
 	/** Contains information about the access keys. */
 	export interface AccessKeyDetails {
-		AccessKeyId?: string;
-		PrincipalId?: string;
-		UserName?: string;
-		UserType?: string;
+		AccessKeyId?: string | null;
+		PrincipalId?: string | null;
+		UserName?: string | null;
+		UserType?: string | null;
 	}
 
 	export interface S3BucketDetail {
-		Arn?: string;
-		Name?: string;
-		Type?: string;
-		CreatedAt?: Date;
+		Arn?: string | null;
+		Name?: string | null;
+		Type?: string | null;
+		CreatedAt?: Date | null;
 
 		/** Contains information on the owner of the bucket. */
-		Owner?: Owner;
-		Tags?: Array<Tag>;
+		Owner?: Owner | null;
+		Tags?: Array<Tag> | null;
 
 		/** Contains information on the server side encryption method used in the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html">S3 Server-Side Encryption</a> for more information. */
-		DefaultServerSideEncryption?: DefaultServerSideEncryption;
+		DefaultServerSideEncryption?: DefaultServerSideEncryption | null;
 
 		/** Describes the public access policies that apply to the S3 bucket. */
-		PublicAccess?: PublicAccess;
+		PublicAccess?: PublicAccess | null;
 	}
 
 
 	/** Contains information on the owner of the bucket. */
 	export interface Owner {
-		Id?: string;
+		Id?: string | null;
 	}
 
 
 	/** Contains information about a tag associated with the EC2 instance. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
 	/** Contains information on the server side encryption method used in the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html">S3 Server-Side Encryption</a> for more information. */
 	export interface DefaultServerSideEncryption {
-		EncryptionType?: string;
-		KmsMasterKeyArn?: string;
+		EncryptionType?: string | null;
+		KmsMasterKeyArn?: string | null;
 	}
 
 
@@ -262,8 +262,8 @@ export namespace MyNS {
 	export interface PublicAccess {
 
 		/** Contains information about how permissions are configured for the S3 bucket. */
-		PermissionConfiguration?: PermissionConfiguration;
-		EffectivePermission?: string;
+		PermissionConfiguration?: PermissionConfiguration | null;
+		EffectivePermission?: string | null;
 	}
 
 
@@ -271,10 +271,10 @@ export namespace MyNS {
 	export interface PermissionConfiguration {
 
 		/** Contains information about the bucket level permissions for the S3 bucket. */
-		BucketLevelPermissions?: BucketLevelPermissions;
+		BucketLevelPermissions?: BucketLevelPermissions | null;
 
 		/** Contains information about the account level permissions on the S3 bucket. */
-		AccountLevelPermissions?: AccountLevelPermissions;
+		AccountLevelPermissions?: AccountLevelPermissions | null;
 	}
 
 
@@ -282,36 +282,36 @@ export namespace MyNS {
 	export interface BucketLevelPermissions {
 
 		/** Contains information on the current access control policies for the bucket. */
-		AccessControlList?: AccessControlList;
+		AccessControlList?: AccessControlList | null;
 
 		/** Contains information on the current bucket policies for the S3 bucket. */
-		BucketPolicy?: BucketPolicy;
+		BucketPolicy?: BucketPolicy | null;
 
 		/** Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">S3 Block Public Access</a> for more information. */
-		BlockPublicAccess?: BlockPublicAccess;
+		BlockPublicAccess?: BlockPublicAccess | null;
 	}
 
 
 	/** Contains information on the current access control policies for the bucket. */
 	export interface AccessControlList {
-		AllowsPublicReadAccess?: boolean;
-		AllowsPublicWriteAccess?: boolean;
+		AllowsPublicReadAccess?: boolean | null;
+		AllowsPublicWriteAccess?: boolean | null;
 	}
 
 
 	/** Contains information on the current bucket policies for the S3 bucket. */
 	export interface BucketPolicy {
-		AllowsPublicReadAccess?: boolean;
-		AllowsPublicWriteAccess?: boolean;
+		AllowsPublicReadAccess?: boolean | null;
+		AllowsPublicWriteAccess?: boolean | null;
 	}
 
 
 	/** Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">S3 Block Public Access</a> for more information.  */
 	export interface BlockPublicAccess {
-		IgnorePublicAcls?: boolean;
-		RestrictPublicBuckets?: boolean;
-		BlockPublicAcls?: boolean;
-		BlockPublicPolicy?: boolean;
+		IgnorePublicAcls?: boolean | null;
+		RestrictPublicBuckets?: boolean | null;
+		BlockPublicAcls?: boolean | null;
+		BlockPublicPolicy?: boolean | null;
 	}
 
 
@@ -319,70 +319,70 @@ export namespace MyNS {
 	export interface AccountLevelPermissions {
 
 		/** Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">S3 Block Public Access</a> for more information. */
-		BlockPublicAccess?: BlockPublicAccess;
+		BlockPublicAccess?: BlockPublicAccess | null;
 	}
 
 
 	/** Contains information about the details of an instance. */
 	export interface InstanceDetails {
-		AvailabilityZone?: string;
+		AvailabilityZone?: string | null;
 
 		/** Contains information about the EC2 instance profile. */
-		IamInstanceProfile?: IamInstanceProfile;
-		ImageDescription?: string;
-		ImageId?: string;
-		InstanceId?: string;
-		InstanceState?: string;
-		InstanceType?: string;
-		OutpostArn?: string;
-		LaunchTime?: string;
-		NetworkInterfaces?: Array<NetworkInterface>;
-		Platform?: string;
-		ProductCodes?: Array<ProductCode>;
-		Tags?: Array<Tag>;
+		IamInstanceProfile?: IamInstanceProfile | null;
+		ImageDescription?: string | null;
+		ImageId?: string | null;
+		InstanceId?: string | null;
+		InstanceState?: string | null;
+		InstanceType?: string | null;
+		OutpostArn?: string | null;
+		LaunchTime?: string | null;
+		NetworkInterfaces?: Array<NetworkInterface> | null;
+		Platform?: string | null;
+		ProductCodes?: Array<ProductCode> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Contains information about the EC2 instance profile. */
 	export interface IamInstanceProfile {
-		Arn?: string;
-		Id?: string;
+		Arn?: string | null;
+		Id?: string | null;
 	}
 
 
 	/** Contains information about the elastic network interface of the EC2 instance. */
 	export interface NetworkInterface {
-		Ipv6Addresses?: Array<string>;
-		NetworkInterfaceId?: string;
-		PrivateDnsName?: string;
-		PrivateIpAddress?: string;
-		PrivateIpAddresses?: Array<PrivateIpAddressDetails>;
-		PublicDnsName?: string;
-		PublicIp?: string;
-		SecurityGroups?: Array<SecurityGroup>;
-		SubnetId?: string;
-		VpcId?: string;
+		Ipv6Addresses?: Array<string> | null;
+		NetworkInterfaceId?: string | null;
+		PrivateDnsName?: string | null;
+		PrivateIpAddress?: string | null;
+		PrivateIpAddresses?: Array<PrivateIpAddressDetails> | null;
+		PublicDnsName?: string | null;
+		PublicIp?: string | null;
+		SecurityGroups?: Array<SecurityGroup> | null;
+		SubnetId?: string | null;
+		VpcId?: string | null;
 	}
 
 
 	/** Contains other private IP address information of the EC2 instance. */
 	export interface PrivateIpAddressDetails {
-		PrivateDnsName?: string;
-		PrivateIpAddress?: string;
+		PrivateDnsName?: string | null;
+		PrivateIpAddress?: string | null;
 	}
 
 
 	/** Contains information about the security groups associated with the EC2 instance. */
 	export interface SecurityGroup {
-		GroupId?: string;
-		GroupName?: string;
+		GroupId?: string | null;
+		GroupName?: string | null;
 	}
 
 
 	/** Contains information about the product code for the EC2 instance. */
 	export interface ProductCode {
-		Code?: string;
-		ProductType?: string;
+		Code?: string | null;
+		ProductType?: string | null;
 	}
 
 
@@ -390,56 +390,56 @@ export namespace MyNS {
 	export interface Service {
 
 		/** Contains information about actions. */
-		Action?: Action;
+		Action?: Action | null;
 
 		/** Contains information about the reason that the finding was generated. */
-		Evidence?: Evidence;
-		Archived?: boolean;
-		Count?: number;
-		DetectorId?: string;
-		EventFirstSeen?: string;
-		EventLastSeen?: string;
-		ResourceRole?: string;
-		ServiceName?: string;
-		UserFeedback?: string;
+		Evidence?: Evidence | null;
+		Archived?: boolean | null;
+		Count?: number | null;
+		DetectorId?: string | null;
+		EventFirstSeen?: string | null;
+		EventLastSeen?: string | null;
+		ResourceRole?: string | null;
+		ServiceName?: string | null;
+		UserFeedback?: string | null;
 	}
 
 
 	/** Contains information about actions. */
 	export interface Action {
-		ActionType?: string;
+		ActionType?: string | null;
 
 		/** Contains information about the API operation. */
-		AwsApiCallAction?: AwsApiCallAction;
+		AwsApiCallAction?: AwsApiCallAction | null;
 
 		/** Contains information about the DNS_REQUEST action described in this finding. */
-		DnsRequestAction?: DnsRequestAction;
+		DnsRequestAction?: DnsRequestAction | null;
 
 		/** Contains information about the NETWORK_CONNECTION action described in the finding. */
-		NetworkConnectionAction?: NetworkConnectionAction;
+		NetworkConnectionAction?: NetworkConnectionAction | null;
 
 		/** Contains information about the PORT_PROBE action described in the finding. */
-		PortProbeAction?: PortProbeAction;
+		PortProbeAction?: PortProbeAction | null;
 	}
 
 
 	/** Contains information about the API operation. */
 	export interface AwsApiCallAction {
-		Api?: string;
-		CallerType?: string;
+		Api?: string | null;
+		CallerType?: string | null;
 
 		/** Contains information about the domain. */
-		DomainDetails?: DomainDetails;
+		DomainDetails?: DomainDetails | null;
 
 		/** Contains information about the remote IP address of the connection. */
-		RemoteIpDetails?: RemoteIpDetails;
-		ServiceName?: string;
+		RemoteIpDetails?: RemoteIpDetails | null;
+		ServiceName?: string | null;
 	}
 
 
 	/** Contains information about the domain. */
 	export interface DomainDetails {
-		Domain?: string;
+		Domain?: string | null;
 	}
 
 
@@ -447,99 +447,99 @@ export namespace MyNS {
 	export interface RemoteIpDetails {
 
 		/** Contains information about the city associated with the IP address. */
-		City?: City;
+		City?: City | null;
 
 		/** Contains information about the country where the remote IP address is located. */
-		Country?: Country;
+		Country?: Country | null;
 
 		/** Contains information about the location of the remote IP address. */
-		GeoLocation?: GeoLocation;
-		IpAddressV4?: string;
+		GeoLocation?: GeoLocation | null;
+		IpAddressV4?: string | null;
 
 		/** Contains information about the ISP organization of the remote IP address. */
-		Organization?: Organization;
+		Organization?: Organization | null;
 	}
 
 
 	/** Contains information about the city associated with the IP address. */
 	export interface City {
-		CityName?: string;
+		CityName?: string | null;
 	}
 
 
 	/** Contains information about the country where the remote IP address is located. */
 	export interface Country {
-		CountryCode?: string;
-		CountryName?: string;
+		CountryCode?: string | null;
+		CountryName?: string | null;
 	}
 
 
 	/** Contains information about the location of the remote IP address. */
 	export interface GeoLocation {
-		Lat?: number;
-		Lon?: number;
+		Lat?: number | null;
+		Lon?: number | null;
 	}
 
 
 	/** Contains information about the ISP organization of the remote IP address. */
 	export interface Organization {
-		Asn?: string;
-		AsnOrg?: string;
-		Isp?: string;
-		Org?: string;
+		Asn?: string | null;
+		AsnOrg?: string | null;
+		Isp?: string | null;
+		Org?: string | null;
 	}
 
 
 	/** Contains information about the DNS_REQUEST action described in this finding. */
 	export interface DnsRequestAction {
-		Domain?: string;
+		Domain?: string | null;
 	}
 
 
 	/** Contains information about the NETWORK_CONNECTION action described in the finding. */
 	export interface NetworkConnectionAction {
-		Blocked?: boolean;
-		ConnectionDirection?: string;
+		Blocked?: boolean | null;
+		ConnectionDirection?: string | null;
 
 		/** Contains information about the port for the local connection. */
-		LocalPortDetails?: LocalPortDetails;
-		Protocol?: string;
+		LocalPortDetails?: LocalPortDetails | null;
+		Protocol?: string | null;
 
 		/** Contains information about the local IP address of the connection. */
-		LocalIpDetails?: LocalIpDetails;
+		LocalIpDetails?: LocalIpDetails | null;
 
 		/** Contains information about the remote IP address of the connection. */
-		RemoteIpDetails?: RemoteIpDetails;
+		RemoteIpDetails?: RemoteIpDetails | null;
 
 		/** Contains information about the remote port. */
-		RemotePortDetails?: RemotePortDetails;
+		RemotePortDetails?: RemotePortDetails | null;
 	}
 
 
 	/** Contains information about the port for the local connection. */
 	export interface LocalPortDetails {
-		Port?: number;
-		PortName?: string;
+		Port?: number | null;
+		PortName?: string | null;
 	}
 
 
 	/** Contains information about the local IP address of the connection. */
 	export interface LocalIpDetails {
-		IpAddressV4?: string;
+		IpAddressV4?: string | null;
 	}
 
 
 	/** Contains information about the remote port. */
 	export interface RemotePortDetails {
-		Port?: number;
-		PortName?: string;
+		Port?: number | null;
+		PortName?: string | null;
 	}
 
 
 	/** Contains information about the PORT_PROBE action described in the finding. */
 	export interface PortProbeAction {
-		Blocked?: boolean;
-		PortProbeDetails?: Array<PortProbeDetail>;
+		Blocked?: boolean | null;
+		PortProbeDetails?: Array<PortProbeDetail> | null;
 	}
 
 
@@ -547,26 +547,26 @@ export namespace MyNS {
 	export interface PortProbeDetail {
 
 		/** Contains information about the port for the local connection. */
-		LocalPortDetails?: LocalPortDetails;
+		LocalPortDetails?: LocalPortDetails | null;
 
 		/** Contains information about the local IP address of the connection. */
-		LocalIpDetails?: LocalIpDetails;
+		LocalIpDetails?: LocalIpDetails | null;
 
 		/** Contains information about the remote IP address of the connection. */
-		RemoteIpDetails?: RemoteIpDetails;
+		RemoteIpDetails?: RemoteIpDetails | null;
 	}
 
 
 	/** Contains information about the reason that the finding was generated. */
 	export interface Evidence {
-		ThreatIntelligenceDetails?: Array<ThreatIntelligenceDetail>;
+		ThreatIntelligenceDetails?: Array<ThreatIntelligenceDetail> | null;
 	}
 
 
 	/** An instance of a threat intelligence detail that constitutes evidence for the finding. */
 	export interface ThreatIntelligenceDetail {
-		ThreatListName?: string;
-		ThreatNames?: Array<string>;
+		ThreatListName?: string | null;
+		ThreatNames?: Array<string> | null;
 	}
 
 	export enum OrderBy { ASC = 0, DESC = 1 }
@@ -583,7 +583,7 @@ export namespace MyNS {
 
 	/** Contains information about finding statistics. */
 	export interface FindingStatistics {
-		CountBySeverity?: CountBySeverity;
+		CountBySeverity?: CountBySeverity | null;
 	}
 
 	export interface CountBySeverity {
@@ -596,7 +596,7 @@ export namespace MyNS {
 		Format: GetIPSetResponseFormat;
 		Location: string;
 		Status: GetIPSetResponseStatus;
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export enum GetIPSetResponseFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
@@ -604,7 +604,7 @@ export namespace MyNS {
 	export enum GetIPSetResponseStatus { INACTIVE = 0, ACTIVATING = 1, ACTIVE = 2, DEACTIVATING = 3, ERROR = 4, DELETE_PENDING = 5, DELETED = 6 }
 
 	export interface GetInvitationsCountResponse {
-		InvitationsCount?: number;
+		InvitationsCount?: number | null;
 	}
 
 	export interface GetMasterAccountResponse {
@@ -619,10 +619,10 @@ export namespace MyNS {
 
 	/** Contains information about the master account and invitation. */
 	export interface Master {
-		AccountId?: string;
-		InvitationId?: string;
-		RelationshipStatus?: string;
-		InvitedAt?: string;
+		AccountId?: string | null;
+		InvitationId?: string | null;
+		RelationshipStatus?: string | null;
+		InvitedAt?: string | null;
 	}
 
 	export interface GetMembersResponse {
@@ -634,11 +634,11 @@ export namespace MyNS {
 	/** Contains information about the member account.  */
 	export interface Member {
 		AccountId: string;
-		DetectorId?: string;
+		DetectorId?: string | null;
 		MasterId: string;
 		Email: string;
 		RelationshipStatus: string;
-		InvitedAt?: string;
+		InvitedAt?: string | null;
 		UpdatedAt: string;
 	}
 
@@ -647,7 +647,7 @@ export namespace MyNS {
 		Format: GetIPSetResponseFormat;
 		Location: string;
 		Status: GetIPSetResponseStatus;
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface InviteMembersResponse {
@@ -656,60 +656,60 @@ export namespace MyNS {
 
 	export interface ListDetectorsResponse {
 		DetectorIds: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListFiltersResponse {
 		FilterNames: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListFindingsResponse {
 		FindingIds: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListIPSetsResponse {
 		IpSetIds: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListInvitationsResponse {
-		Invitations?: Array<Invitation>;
-		NextToken?: string;
+		Invitations?: Array<Invitation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about the invitation to become a member account. */
 	export interface Invitation {
-		AccountId?: string;
-		InvitationId?: string;
-		RelationshipStatus?: string;
-		InvitedAt?: string;
+		AccountId?: string | null;
+		InvitationId?: string | null;
+		RelationshipStatus?: string | null;
+		InvitedAt?: string | null;
 	}
 
 	export interface ListMembersResponse {
-		Members?: Array<Member>;
-		NextToken?: string;
+		Members?: Array<Member> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListOrganizationAdminAccountsResponse {
-		AdminAccounts?: Array<AdminAccount>;
-		NextToken?: string;
+		AdminAccounts?: Array<AdminAccount> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The account within the organization specified as the GuardDuty delegated administrator. */
 	export interface AdminAccount {
-		AdminAccountId?: string;
-		AdminStatus?: AdminAccountAdminStatus;
+		AdminAccountId?: string | null;
+		AdminStatus?: AdminAccountAdminStatus | null;
 	}
 
 	export enum AdminAccountAdminStatus { ENABLED = 0, DISABLE_IN_PROGRESS = 1 }
 
 	export interface ListPublishingDestinationsResponse {
 		Destinations: Array<Destination>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -721,12 +721,12 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface ListThreatIntelSetsResponse {
 		ThreatIntelSetIds: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface StartMonitoringMembersResponse {
@@ -782,44 +782,44 @@ export namespace MyNS {
 
 	/** Contains information about the condition. */
 	export interface Condition {
-		Eq?: Array<string>;
-		Neq?: Array<string>;
-		Gt?: number;
-		Gte?: number;
-		Lt?: number;
-		Lte?: number;
-		Equals?: Array<string>;
-		NotEquals?: Array<string>;
-		GreaterThan?: number;
-		GreaterThanOrEqual?: number;
-		LessThan?: number;
-		LessThanOrEqual?: number;
+		Eq?: Array<string> | null;
+		Neq?: Array<string> | null;
+		Gt?: number | null;
+		Gte?: number | null;
+		Lt?: number | null;
+		Lte?: number | null;
+		Equals?: Array<string> | null;
+		NotEquals?: Array<string> | null;
+		GreaterThan?: number | null;
+		GreaterThanOrEqual?: number | null;
+		LessThan?: number | null;
+		LessThanOrEqual?: number | null;
 	}
 
 	export enum FindingPublishingFrequency { FIFTEEN_MINUTES = 0, ONE_HOUR = 1, SIX_HOURS = 2 }
 
 	export interface CreateDetectorRequest {
 		Enable: boolean;
-		ClientToken?: string;
-		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency;
-		Tags?: TagMap;
+		ClientToken?: string | null;
+		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
+		Tags?: TagMap | null;
 	}
 
 	export enum FilterAction { NOOP = 0, ARCHIVE = 1 }
 
 	export interface CreateFilterRequest {
 		Name: string;
-		Description?: string;
-		Action?: GetFilterResponseAction;
-		Rank?: number;
+		Description?: string | null;
+		Action?: GetFilterResponseAction | null;
+		Rank?: number | null;
 
 		/**
 		 * Contains information about the criteria used for querying findings.
 		 * Required
 		 */
 		FindingCriteria: FindingCriteria;
-		ClientToken?: string;
-		Tags?: TagMap;
+		ClientToken?: string | null;
+		Tags?: TagMap | null;
 	}
 
 	export enum IpSetFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
@@ -829,8 +829,8 @@ export namespace MyNS {
 		Format: GetIPSetResponseFormat;
 		Location: string;
 		Activate: boolean;
-		ClientToken?: string;
-		Tags?: TagMap;
+		ClientToken?: string | null;
+		Tags?: TagMap | null;
 	}
 
 	export interface CreateMembersRequest {
@@ -847,11 +847,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		DestinationProperties: DestinationProperties;
-		ClientToken?: string;
+		ClientToken?: string | null;
 	}
 
 	export interface CreateSampleFindingsRequest {
-		FindingTypes?: Array<string>;
+		FindingTypes?: Array<string> | null;
 	}
 
 	export enum ThreatIntelSetFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
@@ -861,8 +861,8 @@ export namespace MyNS {
 		Format: GetIPSetResponseFormat;
 		Location: string;
 		Activate: boolean;
-		ClientToken?: string;
-		Tags?: TagMap;
+		ClientToken?: string | null;
+		Tags?: TagMap | null;
 	}
 
 	export interface DeclineInvitationsRequest {
@@ -928,22 +928,22 @@ export namespace MyNS {
 
 	/** Contains information about the criteria used for sorting findings. */
 	export interface SortCriteria {
-		AttributeName?: string;
-		OrderBy?: OrderBy;
+		AttributeName?: string | null;
+		OrderBy?: OrderBy | null;
 	}
 
 	export interface GetFindingsRequest {
 		FindingIds: Array<string>;
 
 		/** Contains information about the criteria used for sorting findings. */
-		SortCriteria?: SortCriteria;
+		SortCriteria?: SortCriteria | null;
 	}
 
 	export interface GetFindingsStatisticsRequest {
 		FindingStatisticTypes: Array<FindingStatisticType>;
 
 		/** Contains information about the criteria used for querying findings. */
-		FindingCriteria?: FindingCriteria;
+		FindingCriteria?: FindingCriteria | null;
 	}
 
 	export interface GetIPSetRequest {
@@ -968,8 +968,8 @@ export namespace MyNS {
 
 	export interface InviteMembersRequest {
 		AccountIds: Array<string>;
-		DisableEmailNotification?: boolean;
-		Message?: string;
+		DisableEmailNotification?: boolean | null;
+		Message?: string | null;
 	}
 
 	export interface ListDetectorsRequest {
@@ -981,12 +981,12 @@ export namespace MyNS {
 	export interface ListFindingsRequest {
 
 		/** Contains information about the criteria used for querying findings. */
-		FindingCriteria?: FindingCriteria;
+		FindingCriteria?: FindingCriteria | null;
 
 		/** Contains information about the criteria used for sorting findings. */
-		SortCriteria?: SortCriteria;
-		MaxResults?: number;
-		NextToken?: string;
+		SortCriteria?: SortCriteria | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListIPSetsRequest {
@@ -1030,29 +1030,29 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDetectorRequest {
-		Enable?: boolean;
-		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency;
+		Enable?: boolean | null;
+		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
 	}
 
 	export interface UpdateFilterRequest {
-		Description?: string;
-		Action?: GetFilterResponseAction;
-		Rank?: number;
+		Description?: string | null;
+		Action?: GetFilterResponseAction | null;
+		Rank?: number | null;
 
 		/** Contains information about the criteria used for querying findings. */
-		FindingCriteria?: FindingCriteria;
+		FindingCriteria?: FindingCriteria | null;
 	}
 
 	export interface UpdateFindingsFeedbackRequest {
 		FindingIds: Array<string>;
 		Feedback: Feedback;
-		Comments?: string;
+		Comments?: string | null;
 	}
 
 	export interface UpdateIPSetRequest {
-		Name?: string;
-		Location?: string;
-		Activate?: boolean;
+		Name?: string | null;
+		Location?: string | null;
+		Activate?: boolean | null;
 	}
 
 	export interface UpdateOrganizationConfigurationRequest {
@@ -1062,13 +1062,13 @@ export namespace MyNS {
 	export interface UpdatePublishingDestinationRequest {
 
 		/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
-		DestinationProperties?: DestinationProperties;
+		DestinationProperties?: DestinationProperties | null;
 	}
 
 	export interface UpdateThreatIntelSetRequest {
-		Name?: string;
-		Location?: string;
-		Activate?: boolean;
+		Name?: string | null;
+		Location?: string | null;
+		Activate?: boolean | null;
 	}
 
 	@Injectable()
@@ -1705,13 +1705,13 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** An enum value that specifies how frequently updated findings are exported. */
-		findingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency;
+		findingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
 
 		/** The tags to be added to a new detector resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateFilterPostBody {
@@ -1729,21 +1729,21 @@ export namespace MyNS {
 		 * Max length: 512
 		 * Min length: 0
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Specifies the action that is to be applied to the findings that match the filter.
 		 * Max length: 300
 		 * Min length: 1
 		 */
-		action?: GetFilterResponseAction;
+		action?: GetFilterResponseAction | null;
 
 		/**
 		 * Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		rank?: number;
+		rank?: number | null;
 
 		/**
 		 * Contains information about the criteria used for querying findings.
@@ -1756,14 +1756,14 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** The tags to be added to a new filter resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateFilterPostBodyFindingCriteria {
-		Criterion?: Criterion;
+		Criterion?: Criterion | null;
 	}
 
 	export interface CreateIPSetPostBody {
@@ -1803,10 +1803,10 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** The tags to be added to a new IP set resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateMembersPostBody {
@@ -1841,12 +1841,12 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface CreatePublishingDestinationPostBodyDestinationProperties {
-		DestinationArn?: string;
-		KmsKeyArn?: string;
+		DestinationArn?: string | null;
+		KmsKeyArn?: string | null;
 	}
 
 	export interface CreateSampleFindingsPostBody {
@@ -1856,7 +1856,7 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		findingTypes?: Array<string>;
+		findingTypes?: Array<string> | null;
 	}
 
 	export interface CreateThreatIntelSetPostBody {
@@ -1896,10 +1896,10 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 0
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** The tags to be added to a new threat list resource. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface DeclineInvitationsPostBody {
@@ -1916,10 +1916,10 @@ export namespace MyNS {
 	export interface UpdateDetectorPostBody {
 
 		/** Specifies whether the detector is enabled or not enabled. */
-		enable?: boolean;
+		enable?: boolean | null;
 
 		/** An enum value that specifies how frequently findings are exported, such as to CloudWatch Events. */
-		findingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency;
+		findingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
 	}
 
 	export interface UpdateFilterPostBody {
@@ -1929,28 +1929,28 @@ export namespace MyNS {
 		 * Max length: 512
 		 * Min length: 0
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Specifies the action that is to be applied to the findings that match the filter.
 		 * Max length: 300
 		 * Min length: 1
 		 */
-		action?: GetFilterResponseAction;
+		action?: GetFilterResponseAction | null;
 
 		/**
 		 * Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		rank?: number;
+		rank?: number | null;
 
 		/** Contains information about the criteria used for querying findings. */
-		findingCriteria?: UpdateFilterPostBodyFindingCriteria;
+		findingCriteria?: UpdateFilterPostBodyFindingCriteria | null;
 	}
 
 	export interface UpdateFilterPostBodyFindingCriteria {
-		Criterion?: Criterion;
+		Criterion?: Criterion | null;
 	}
 
 	export interface UpdateIPSetPostBody {
@@ -1960,17 +1960,17 @@ export namespace MyNS {
 		 * Max length: 300
 		 * Min length: 1
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
 		 * Max length: 300
 		 * Min length: 1
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** The updated Boolean value that specifies whether the IPSet is active or not. */
-		activate?: boolean;
+		activate?: boolean | null;
 	}
 
 	export interface DeleteInvitationsPostBody {
@@ -1998,12 +1998,12 @@ export namespace MyNS {
 	export interface UpdatePublishingDestinationPostBody {
 
 		/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
-		destinationProperties?: UpdatePublishingDestinationPostBodyDestinationProperties;
+		destinationProperties?: UpdatePublishingDestinationPostBodyDestinationProperties | null;
 	}
 
 	export interface UpdatePublishingDestinationPostBodyDestinationProperties {
-		DestinationArn?: string;
-		KmsKeyArn?: string;
+		DestinationArn?: string | null;
+		KmsKeyArn?: string | null;
 	}
 
 	export interface UpdateThreatIntelSetPostBody {
@@ -2013,17 +2013,17 @@ export namespace MyNS {
 		 * Max length: 300
 		 * Min length: 1
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The updated URI of the file that contains the ThreateIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
 		 * Max length: 300
 		 * Min length: 1
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** The updated Boolean value that specifies whether the ThreateIntelSet is active or not. */
-		activate?: boolean;
+		activate?: boolean | null;
 	}
 
 	export interface UpdateOrganizationConfigurationPostBody {
@@ -2075,12 +2075,12 @@ export namespace MyNS {
 		findingIds: Array<string>;
 
 		/** Contains information about the criteria used for sorting findings. */
-		sortCriteria?: GetFindingsPostBodySortCriteria;
+		sortCriteria?: GetFindingsPostBodySortCriteria | null;
 	}
 
 	export interface GetFindingsPostBodySortCriteria {
-		AttributeName?: string;
-		OrderBy?: OrderBy;
+		AttributeName?: string | null;
+		OrderBy?: OrderBy | null;
 	}
 
 	export interface GetFindingsStatisticsPostBody {
@@ -2094,11 +2094,11 @@ export namespace MyNS {
 		findingStatisticTypes: Array<FindingStatisticType>;
 
 		/** Contains information about the criteria used for querying findings. */
-		findingCriteria?: GetFindingsStatisticsPostBodyFindingCriteria;
+		findingCriteria?: GetFindingsStatisticsPostBodyFindingCriteria | null;
 	}
 
 	export interface GetFindingsStatisticsPostBodyFindingCriteria {
-		Criterion?: Criterion;
+		Criterion?: Criterion | null;
 	}
 
 	export interface GetMembersPostBody {
@@ -2123,38 +2123,38 @@ export namespace MyNS {
 		accountIds: Array<string>;
 
 		/** A Boolean value that specifies whether you want to disable email notification to the accounts that you’re inviting to GuardDuty as members. */
-		disableEmailNotification?: boolean;
+		disableEmailNotification?: boolean | null;
 
 		/** The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members. */
-		message?: string;
+		message?: string | null;
 	}
 
 	export interface ListFindingsPostBody {
 
 		/** Contains information about the criteria used for querying findings. */
-		findingCriteria?: ListFindingsPostBodyFindingCriteria;
+		findingCriteria?: ListFindingsPostBodyFindingCriteria | null;
 
 		/** Contains information about the criteria used for sorting findings. */
-		sortCriteria?: ListFindingsPostBodySortCriteria;
+		sortCriteria?: ListFindingsPostBodySortCriteria | null;
 
 		/**
 		 * You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
 		 * Minimum: 1
 		 * Maximum: 50
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/** You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data. */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListFindingsPostBodyFindingCriteria {
-		Criterion?: Criterion;
+		Criterion?: Criterion | null;
 	}
 
 	export interface ListFindingsPostBodySortCriteria {
-		AttributeName?: string;
-		OrderBy?: OrderBy;
+		AttributeName?: string | null;
+		OrderBy?: OrderBy | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -2216,7 +2216,7 @@ export namespace MyNS {
 		feedback: Feedback;
 
 		/** Additional feedback about the GuardDuty findings. */
-		comments?: string;
+		comments?: string | null;
 	}
 
 }

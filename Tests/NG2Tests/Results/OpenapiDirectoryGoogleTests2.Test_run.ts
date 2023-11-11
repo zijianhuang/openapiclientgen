@@ -5,7 +5,7 @@ export namespace MyNS {
 
 	/** Information for connecting over HTTP(s). */
 	export interface Addressable {
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -61,14 +61,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -98,10 +98,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -115,13 +115,13 @@ export namespace MyNS {
 	export interface AuthorizedDomain {
 
 		/** Relative name of the domain authorized for use. Example: `example.com`. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Read only. Full path to the `AuthorizedDomain` resource in the API.
 		 * Example: `apps/myapp/authorizedDomains/example.com`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -152,7 +152,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -187,13 +187,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -227,26 +227,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -266,14 +266,14 @@ export namespace MyNS {
 		 * LocalObjectReference contains enough information to let you locate the
 		 * referenced object inside the same namespace.
 		 */
-		localObjectReference?: LocalObjectReference;
+		localObjectReference?: LocalObjectReference | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * The ConfigMap to select from.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -281,7 +281,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Specify whether the ConfigMap must be defined
 		 */
-		optional?: boolean;
+		optional?: boolean | null;
 	}
 
 
@@ -301,7 +301,7 @@ export namespace MyNS {
 		 * More info:
 		 * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -317,7 +317,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * The key to select.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
@@ -325,14 +325,14 @@ export namespace MyNS {
 		 * LocalObjectReference contains enough information to let you locate the
 		 * referenced object inside the same namespace.
 		 */
-		localObjectReference?: LocalObjectReference;
+		localObjectReference?: LocalObjectReference | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * The ConfigMap to select from.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -340,7 +340,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Specify whether the ConfigMap or its key must be defined
 		 */
-		optional?: boolean;
+		optional?: boolean | null;
 	}
 
 
@@ -363,7 +363,7 @@ export namespace MyNS {
 		 * this setting. This might be in conflict with other options that affect the
 		 * file mode, like fsGroup, and the result can be other mode bits set.
 		 */
-		defaultMode?: number;
+		defaultMode?: number | null;
 
 		/**
 		 * (Optional)
@@ -376,14 +376,14 @@ export namespace MyNS {
 		 * present. If a key is specified which is not present in the Secret,
 		 * the volume setup will error unless it is marked optional.
 		 */
-		items?: Array<KeyToPath>;
+		items?: Array<KeyToPath> | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * Name of the config.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -391,7 +391,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Specify whether the Secret or its keys must be defined.
 		 */
-		optional?: boolean;
+		optional?: boolean | null;
 	}
 
 
@@ -407,7 +407,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * The key to project.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * (Optional)
@@ -418,7 +418,7 @@ export namespace MyNS {
 		 * with other options that affect the file mode, like fsGroup, and the result
 		 * can be other mode bits set.
 		 */
-		mode?: number;
+		mode?: number | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
@@ -428,7 +428,7 @@ export namespace MyNS {
 		 * May not contain the path element '..'.
 		 * May not start with the string '..'.
 		 */
-		path?: string;
+		path?: string | null;
 	}
 
 
@@ -443,28 +443,28 @@ export namespace MyNS {
 	export interface Configuration {
 
 		/** The API version for this call such as "serving.knative.dev/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** The kind of resource, in this case always "Configuration". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
 		 * persisted resources must have, which includes all objects users must create.
 		 */
-		metadata?: ObjectMeta;
+		metadata?: ObjectMeta | null;
 
 		/**
 		 * ConfigurationSpec holds the desired state of the Configuration (from the
 		 * client).
 		 */
-		spec?: ConfigurationSpec;
+		spec?: ConfigurationSpec | null;
 
 		/**
 		 * ConfigurationStatus communicates the observed state of the Configuration
 		 * (from the controller).
 		 */
-		status?: ConfigurationStatus;
+		status?: ConfigurationStatus | null;
 	}
 
 
@@ -481,7 +481,7 @@ export namespace MyNS {
 		 * are not queryable and should be preserved when modifying objects. More
 		 * info: http://kubernetes.io/docs/user-guide/annotations
 		 */
-		annotations?: {[id: string]: string };
+		annotations?: {[id: string]: string } | null;
 
 		/**
 		 * (Optional)
@@ -492,7 +492,7 @@ export namespace MyNS {
 		 * different clusters. This field is not set anywhere right now and apiserver
 		 * is going to ignore it if set in create or update request.
 		 */
-		clusterName?: string;
+		clusterName?: string | null;
 
 		/**
 		 * (Optional)
@@ -506,7 +506,7 @@ export namespace MyNS {
 		 * More info:
 		 * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
 		 */
-		creationTimestamp?: string;
+		creationTimestamp?: string | null;
 
 		/**
 		 * (Optional)
@@ -516,7 +516,7 @@ export namespace MyNS {
 		 * it will be removed from the system. Only set when deletionTimestamp is also
 		 * set. May only be shortened. Read-only.
 		 */
-		deletionGracePeriodSeconds?: number;
+		deletionGracePeriodSeconds?: number | null;
 
 		/**
 		 * (Optional)
@@ -544,7 +544,7 @@ export namespace MyNS {
 		 * More info:
 		 * https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
 		 */
-		deletionTimestamp?: string;
+		deletionTimestamp?: string | null;
 
 		/**
 		 * (Optional)
@@ -556,7 +556,7 @@ export namespace MyNS {
 		 * in this list can only be removed.
 		 * +patchStrategy=merge
 		 */
-		finalizers?: Array<string>;
+		finalizers?: Array<string> | null;
 
 		/**
 		 * (Optional)
@@ -579,14 +579,14 @@ export namespace MyNS {
 		 * https://git.k8s.io/community/contributors/devel/api-conventions.md#idempotency
 		 * string generateName = 2;
 		 */
-		generateName?: string;
+		generateName?: string | null;
 
 		/**
 		 * (Optional)
 		 * A sequence number representing a specific generation of the desired state.
 		 * Populated by the system. Read-only.
 		 */
-		generation?: number;
+		generation?: number | null;
 
 		/**
 		 * (Optional)
@@ -595,7 +595,7 @@ export namespace MyNS {
 		 * and routes.
 		 * More info: http://kubernetes.io/docs/user-guide/labels
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Name must be unique within a namespace, within a Cloud Run region.
@@ -606,14 +606,14 @@ export namespace MyNS {
 		 * More info: http://kubernetes.io/docs/user-guide/identifiers#names
 		 * +optional
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Namespace defines the space within each name must be unique, within a
 		 * Cloud Run region. In Cloud Run the namespace must be equal to either the
 		 * project ID or project number.
 		 */
-		namespace?: string;
+		namespace?: string | null;
 
 		/**
 		 * (Optional)
@@ -622,7 +622,7 @@ export namespace MyNS {
 		 * List of objects that own this object. If ALL objects in the list have
 		 * been deleted, this object will be garbage collected.
 		 */
-		ownerReferences?: Array<OwnerReference>;
+		ownerReferences?: Array<OwnerReference> | null;
 
 		/**
 		 * (Optional)
@@ -638,7 +638,7 @@ export namespace MyNS {
 		 * More info:
 		 * https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency
 		 */
-		resourceVersion?: string;
+		resourceVersion?: string | null;
 
 		/**
 		 * (Optional)
@@ -647,7 +647,7 @@ export namespace MyNS {
 		 * Read-only.
 		 * string selfLink = 4;
 		 */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/**
 		 * (Optional)
@@ -658,7 +658,7 @@ export namespace MyNS {
 		 * Read-only.
 		 * More info: http://kubernetes.io/docs/user-guide/identifiers#uids
 		 */
-		uid?: string;
+		uid?: string | null;
 	}
 
 
@@ -670,7 +670,7 @@ export namespace MyNS {
 	export interface OwnerReference {
 
 		/** API version of the referent. */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/**
 		 * If true, AND if the owner has the "foregroundDeletion" finalizer, then
@@ -681,32 +681,32 @@ export namespace MyNS {
 		 * otherwise 422 (Unprocessable Entity) will be returned.
 		 * +optional
 		 */
-		blockOwnerDeletion?: boolean;
+		blockOwnerDeletion?: boolean | null;
 
 		/**
 		 * If true, this reference points to the managing controller.
 		 * +optional
 		 */
-		controller?: boolean;
+		controller?: boolean | null;
 
 		/**
 		 * Kind of the referent.
 		 * More info:
 		 * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * Name of the referent.
 		 * More info: http://kubernetes.io/docs/user-guide/identifiers#names
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * UID of the referent.
 		 * More info: http://kubernetes.io/docs/user-guide/identifiers#uids
 		 */
-		uid?: string;
+		uid?: string | null;
 	}
 
 
@@ -721,7 +721,7 @@ export namespace MyNS {
 		 * from a template. Based on:
 		 * https://github.com/kubernetes/api/blob/e771f807/core/v1/types.go#L3179-L3190
 		 */
-		template?: RevisionTemplate;
+		template?: RevisionTemplate | null;
 	}
 
 
@@ -736,10 +736,10 @@ export namespace MyNS {
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
 		 * persisted resources must have, which includes all objects users must create.
 		 */
-		metadata?: ObjectMeta;
+		metadata?: ObjectMeta | null;
 
 		/** RevisionSpec holds the desired state of the Revision (from the client). */
-		spec?: RevisionSpec;
+		spec?: RevisionSpec | null;
 	}
 
 
@@ -755,7 +755,7 @@ export namespace MyNS {
 		 * to the application is not limited, and the system decides the
 		 * target concurrency for the autoscaler.
 		 */
-		containerConcurrency?: number;
+		containerConcurrency?: number | null;
 
 		/**
 		 * Containers holds the single container that defines the unit of execution
@@ -765,7 +765,7 @@ export namespace MyNS {
 		 * The runtime contract is documented here:
 		 * https://github.com/knative/serving/blob/master/docs/runtime-contract.md
 		 */
-		containers?: Array<Container>;
+		containers?: Array<Container> | null;
 
 		/**
 		 * Email address of the IAM service account associated with the revision
@@ -773,15 +773,15 @@ export namespace MyNS {
 		 * running revision, and determines what permissions the revision has. If
 		 * not provided, the revision will use the project's default service account.
 		 */
-		serviceAccountName?: string;
+		serviceAccountName?: string | null;
 
 		/**
 		 * TimeoutSeconds holds the max duration the instance is allowed for
 		 * responding to a request.
 		 * Not currently used by Cloud Run.
 		 */
-		timeoutSeconds?: number;
-		volumes?: Array<Volume>;
+		timeoutSeconds?: number | null;
+		volumes?: Array<Volume> | null;
 	}
 
 
@@ -808,8 +808,8 @@ export namespace MyNS {
 		 * More info:
 		 * https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
 		 */
-		args?: Array<string>;
-		command?: Array<string>;
+		args?: Array<string> | null;
+		command?: Array<string> | null;
 
 		/**
 		 * (Optional)
@@ -817,7 +817,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * List of environment variables to set in the container.
 		 */
-		env?: Array<EnvVar>;
+		env?: Array<EnvVar> | null;
 
 		/**
 		 * (Optional)
@@ -830,7 +830,7 @@ export namespace MyNS {
 		 * take precedence. Values defined by an Env with a duplicate key will take
 		 * precedence. Cannot be updated.
 		 */
-		envFrom?: Array<EnvFromSource>;
+		envFrom?: Array<EnvFromSource> | null;
 
 		/**
 		 * Cloud Run fully managed: only supports containers from Google Container
@@ -839,7 +839,7 @@ export namespace MyNS {
 		 * URL of the Container image.
 		 * More info: https://kubernetes.io/docs/concepts/containers/images
 		 */
-		image?: string;
+		image?: string | null;
 
 		/**
 		 * (Optional)
@@ -851,7 +851,7 @@ export namespace MyNS {
 		 * More info:
 		 * https://kubernetes.io/docs/concepts/containers/images#updating-images
 		 */
-		imagePullPolicy?: string;
+		imagePullPolicy?: string | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
@@ -859,13 +859,13 @@ export namespace MyNS {
 		 * Probe describes a health check to be performed against a container to
 		 * determine whether it is alive or ready to receive traffic.
 		 */
-		livenessProbe?: Probe;
+		livenessProbe?: Probe | null;
 
 		/**
 		 * (Optional)
 		 * Name of the container specified as a DNS_LABEL.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -875,7 +875,7 @@ export namespace MyNS {
 		 * If omitted, a port number will be chosen and passed to the container
 		 * through the PORT environment variable for the container to listen on.
 		 */
-		ports?: Array<ContainerPort>;
+		ports?: Array<ContainerPort> | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
@@ -883,10 +883,10 @@ export namespace MyNS {
 		 * Probe describes a health check to be performed against a container to
 		 * determine whether it is alive or ready to receive traffic.
 		 */
-		readinessProbe?: Probe;
+		readinessProbe?: Probe | null;
 
 		/** ResourceRequirements describes the compute resource requirements. */
-		resources?: ResourceRequirements;
+		resources?: ResourceRequirements | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
@@ -896,7 +896,7 @@ export namespace MyNS {
 		 * PodSecurityContext.  When both are set, the values in SecurityContext take
 		 * precedence.
 		 */
-		securityContext?: SecurityContext;
+		securityContext?: SecurityContext | null;
 
 		/**
 		 * (Optional)
@@ -909,7 +909,7 @@ export namespace MyNS {
 		 * total message length across all containers will be limited to 12kb.
 		 * Defaults to /dev/termination-log.
 		 */
-		terminationMessagePath?: string;
+		terminationMessagePath?: string | null;
 
 		/**
 		 * (Optional)
@@ -922,7 +922,7 @@ export namespace MyNS {
 		 * container exited with an error. The log output is limited to 2048 bytes or
 		 * 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
 		 */
-		terminationMessagePolicy?: string;
+		terminationMessagePolicy?: string | null;
 
 		/**
 		 * (Optional)
@@ -930,7 +930,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Pod volumes to mount into the container's filesystem.
 		 */
-		volumeMounts?: Array<VolumeMount>;
+		volumeMounts?: Array<VolumeMount> | null;
 
 		/**
 		 * (Optional)
@@ -940,7 +940,7 @@ export namespace MyNS {
 		 * If not specified, the container runtime's default will be used, which
 		 * might be configured in the container image.
 		 */
-		workingDir?: string;
+		workingDir?: string | null;
 	}
 
 
@@ -948,7 +948,7 @@ export namespace MyNS {
 	export interface EnvVar {
 
 		/** Name of the environment variable. Must be a C_IDENTIFIER. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -961,14 +961,14 @@ export namespace MyNS {
 		 * exists or not.
 		 * Defaults to "".
 		 */
-		value?: string;
+		value?: string | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * EnvVarSource represents a source for the value of an EnvVar.
 		 */
-		valueFrom?: EnvVarSource;
+		valueFrom?: EnvVarSource | null;
 	}
 
 
@@ -984,14 +984,14 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Selects a key from a ConfigMap.
 		 */
-		configMapKeyRef?: ConfigMapKeySelector;
+		configMapKeyRef?: ConfigMapKeySelector | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * SecretKeySelector selects a key of a Secret.
 		 */
-		secretKeyRef?: SecretKeySelector;
+		secretKeyRef?: SecretKeySelector | null;
 	}
 
 
@@ -1007,7 +1007,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * The key of the secret to select from.  Must be a valid secret key.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
@@ -1015,14 +1015,14 @@ export namespace MyNS {
 		 * LocalObjectReference contains enough information to let you locate the
 		 * referenced object inside the same namespace.
 		 */
-		localObjectReference?: LocalObjectReference;
+		localObjectReference?: LocalObjectReference | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * The name of the secret in the pod's namespace to select from.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Specify whether the Secret or its key must be defined
 		 */
-		optional?: boolean;
+		optional?: boolean | null;
 	}
 
 
@@ -1049,7 +1049,7 @@ export namespace MyNS {
 		 * The contents of the target ConfigMap's Data field will represent the
 		 * key-value pairs as environment variables.
 		 */
-		configMapRef?: ConfigMapEnvSource;
+		configMapRef?: ConfigMapEnvSource | null;
 
 		/**
 		 * (Optional)
@@ -1058,7 +1058,7 @@ export namespace MyNS {
 		 * An optional identifier to prepend to each key in the ConfigMap. Must be a
 		 * C_IDENTIFIER.
 		 */
-		prefix?: string;
+		prefix?: string | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
@@ -1068,7 +1068,7 @@ export namespace MyNS {
 		 * The contents of the target Secret's Data field will represent the
 		 * key-value pairs as environment variables.
 		 */
-		secretRef?: SecretEnvSource;
+		secretRef?: SecretEnvSource | null;
 	}
 
 
@@ -1088,14 +1088,14 @@ export namespace MyNS {
 		 * LocalObjectReference contains enough information to let you locate the
 		 * referenced object inside the same namespace.
 		 */
-		localObjectReference?: LocalObjectReference;
+		localObjectReference?: LocalObjectReference | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * The Secret to select from.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -1103,7 +1103,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Specify whether the Secret must be defined
 		 */
-		optional?: boolean;
+		optional?: boolean | null;
 	}
 
 
@@ -1120,7 +1120,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * ExecAction describes a "run in container" action.
 		 */
-		exec?: ExecAction;
+		exec?: ExecAction | null;
 
 		/**
 		 * (Optional)
@@ -1129,14 +1129,14 @@ export namespace MyNS {
 		 * Minimum consecutive failures for the probe to be considered failed after
 		 * having succeeded. Defaults to 3. Minimum value is 1.
 		 */
-		failureThreshold?: number;
+		failureThreshold?: number | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * HTTPGetAction describes an action based on HTTP Get requests.
 		 */
-		httpGet?: HTTPGetAction;
+		httpGet?: HTTPGetAction | null;
 
 		/**
 		 * (Optional)
@@ -1146,7 +1146,7 @@ export namespace MyNS {
 		 * are initiated. More info:
 		 * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
 		 */
-		initialDelaySeconds?: number;
+		initialDelaySeconds?: number | null;
 
 		/**
 		 * (Optional)
@@ -1155,7 +1155,7 @@ export namespace MyNS {
 		 * How often (in seconds) to perform the probe.
 		 * Default to 10 seconds. Minimum value is 1.
 		 */
-		periodSeconds?: number;
+		periodSeconds?: number | null;
 
 		/**
 		 * (Optional)
@@ -1165,14 +1165,14 @@ export namespace MyNS {
 		 * after having failed. Defaults to 1. Must be 1 for liveness. Minimum value
 		 * is 1.
 		 */
-		successThreshold?: number;
+		successThreshold?: number | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * TCPSocketAction describes an action based on opening a socket
 		 */
-		tcpSocket?: TCPSocketAction;
+		tcpSocket?: TCPSocketAction | null;
 
 		/**
 		 * (Optional)
@@ -1183,7 +1183,7 @@ export namespace MyNS {
 		 * More info:
 		 * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
 		 */
-		timeoutSeconds?: number;
+		timeoutSeconds?: number | null;
 	}
 
 
@@ -1205,7 +1205,7 @@ export namespace MyNS {
 		 * explicitly call out to that shell. Exit status of 0 is treated as
 		 * live/healthy and non-zero is unhealthy.
 		 */
-		command?: string;
+		command?: string | null;
 	}
 
 
@@ -1223,7 +1223,7 @@ export namespace MyNS {
 		 * Host name to connect to, defaults to the pod IP. You probably want to set
 		 * "Host" in httpHeaders instead.
 		 */
-		host?: string;
+		host?: string | null;
 
 		/**
 		 * (Optional)
@@ -1231,7 +1231,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Custom headers to set in the request. HTTP allows repeated headers.
 		 */
-		httpHeaders?: Array<HTTPHeader>;
+		httpHeaders?: Array<HTTPHeader> | null;
 
 		/**
 		 * (Optional)
@@ -1239,7 +1239,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Path to access on the HTTP server.
 		 */
-		path?: string;
+		path?: string | null;
 
 		/**
 		 * (Optional)
@@ -1248,7 +1248,7 @@ export namespace MyNS {
 		 * Scheme to use for connecting to the host.
 		 * Defaults to HTTP.
 		 */
-		scheme?: string;
+		scheme?: string | null;
 	}
 
 
@@ -1264,14 +1264,14 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * The header field name
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * The header field value
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -1288,7 +1288,7 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Optional: Host name to connect to, defaults to the pod IP.
 		 */
-		host?: string;
+		host?: string | null;
 
 		/**
 		 * IntOrString is a type that can hold an int32 or a string.  When used in
@@ -1296,7 +1296,7 @@ export namespace MyNS {
 		 * inner type.  This allows you to have, for example, a JSON field that can
 		 * accept a name or number.
 		 */
-		port?: IntOrString;
+		port?: IntOrString | null;
 	}
 
 
@@ -1309,13 +1309,13 @@ export namespace MyNS {
 	export interface IntOrString {
 
 		/** The int value. */
-		intVal?: number;
+		intVal?: number | null;
 
 		/** The string value. */
-		strVal?: string;
+		strVal?: string | null;
 
 		/** The type of the value. */
-		type?: number;
+		type?: number | null;
 	}
 
 
@@ -1327,7 +1327,7 @@ export namespace MyNS {
 		 * Port number the container listens on.
 		 * This must be a valid port number, 0 < x < 65536.
 		 */
-		containerPort?: number;
+		containerPort?: number | null;
 
 		/**
 		 * (Optional)
@@ -1336,7 +1336,7 @@ export namespace MyNS {
 		 * If specified, used to specify which protocol to use.
 		 * Allowed values are "http1" and "h2c".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -1345,7 +1345,7 @@ export namespace MyNS {
 		 * Protocol for port. Must be "TCP".
 		 * Defaults to "TCP".
 		 */
-		protocol?: string;
+		protocol?: string | null;
 	}
 
 
@@ -1361,7 +1361,7 @@ export namespace MyNS {
 		 * The values of the map is string form of the 'quantity' k8s type:
 		 * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
 		 */
-		limits?: {[id: string]: string };
+		limits?: {[id: string]: string } | null;
 
 		/**
 		 * (Optional)
@@ -1374,7 +1374,7 @@ export namespace MyNS {
 		 * The values of the map is string form of the 'quantity' k8s type:
 		 * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
 		 */
-		requests?: {[id: string]: string };
+		requests?: {[id: string]: string } | null;
 	}
 
 
@@ -1398,7 +1398,7 @@ export namespace MyNS {
 		 * PodSecurityContext, the value specified in SecurityContext takes
 		 * precedence.
 		 */
-		runAsUser?: number;
+		runAsUser?: number | null;
 	}
 
 
@@ -1415,14 +1415,14 @@ export namespace MyNS {
 		 * Path within the container at which the volume should be mounted.  Must
 		 * not contain ':'.
 		 */
-		mountPath?: string;
+		mountPath?: string | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * This must match the Name of a Volume.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (Optional)
@@ -1431,7 +1431,7 @@ export namespace MyNS {
 		 * Only true is accepted.
 		 * Defaults to true.
 		 */
-		readOnly?: boolean;
+		readOnly?: boolean | null;
 
 		/**
 		 * (Optional)
@@ -1440,7 +1440,7 @@ export namespace MyNS {
 		 * Path within the volume from which the container's volume should be mounted.
 		 * Defaults to "" (volume's root).
 		 */
-		subPath?: string;
+		subPath?: string | null;
 	}
 
 
@@ -1459,14 +1459,14 @@ export namespace MyNS {
 		 * volume as files using the keys in the Data field as the file names, unless
 		 * the items element is populated with specific mappings of keys to paths.
 		 */
-		configMap?: ConfigMapVolumeSource;
+		configMap?: ConfigMapVolumeSource | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * Volume's name.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
@@ -1474,7 +1474,7 @@ export namespace MyNS {
 		 * The contents of the target Secret's Data field will be presented in a volume
 		 * as files using the keys in the Data field as the file names.
 		 */
-		secret?: SecretVolumeSource;
+		secret?: SecretVolumeSource | null;
 	}
 
 
@@ -1495,7 +1495,7 @@ export namespace MyNS {
 		 * this setting. This might be in conflict with other options that affect the
 		 * file mode, like fsGroup, and the result can be other mode bits set.
 		 */
-		defaultMode?: number;
+		defaultMode?: number | null;
 
 		/**
 		 * (Optional)
@@ -1508,7 +1508,7 @@ export namespace MyNS {
 		 * present. If a key is specified which is not present in the Secret,
 		 * the volume setup will error unless it is marked optional.
 		 */
-		items?: Array<KeyToPath>;
+		items?: Array<KeyToPath> | null;
 
 		/**
 		 * (Optional)
@@ -1516,14 +1516,14 @@ export namespace MyNS {
 		 * Cloud Run for Anthos: supported
 		 * Specify whether the Secret or its keys must be defined.
 		 */
-		optional?: boolean;
+		optional?: boolean | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run for Anthos: supported
 		 * Name of the secret in the container's namespace to use.
 		 */
-		secretName?: string;
+		secretName?: string | null;
 	}
 
 
@@ -1538,20 +1538,20 @@ export namespace MyNS {
 		 * reconciliation processes that bring the "spec" inline with the observed
 		 * state of the world.
 		 */
-		conditions?: Array<GoogleCloudRunV1Condition>;
+		conditions?: Array<GoogleCloudRunV1Condition> | null;
 
 		/**
 		 * LatestCreatedRevisionName is the last revision that was created from this
 		 * Configuration. It might not be ready yet, for that use
 		 * LatestReadyRevisionName.
 		 */
-		latestCreatedRevisionName?: string;
+		latestCreatedRevisionName?: string | null;
 
 		/**
 		 * LatestReadyRevisionName holds the name of the latest Revision stamped out
 		 * from this Configuration that has had its "Ready" condition become "True".
 		 */
-		latestReadyRevisionName?: string;
+		latestReadyRevisionName?: string | null;
 
 		/**
 		 * ObservedGeneration is the 'Generation' of the Configuration that
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 		 * observedGeneration = metadata.generation, and the Ready condition's status
 		 * is True or False.
 		 */
-		observedGeneration?: number;
+		observedGeneration?: number | null;
 	}
 
 
@@ -1569,19 +1569,19 @@ export namespace MyNS {
 	export interface GoogleCloudRunV1Condition {
 
 		/** Optional. Last time the condition transitioned from one status to another. */
-		lastTransitionTime?: string;
+		lastTransitionTime?: string | null;
 
 		/** Optional. Human readable message indicating details about the current status. */
-		message?: string;
+		message?: string | null;
 
 		/** Optional. One-word CamelCase reason for the condition's last transition. */
-		reason?: string;
+		reason?: string | null;
 
 		/** Optional. How to interpret failures of this condition, one of Error, Warning, Info */
-		severity?: string;
+		severity?: string | null;
 
 		/** Status of the condition, one of True, False, Unknown. */
-		status?: string;
+		status?: string | null;
 
 		/**
 		 * type is used to communicate the status of the reconciliation process.
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 		 * Types common to all resources include:
 		 * * "Ready": True when the Resource is ready.
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -1598,22 +1598,22 @@ export namespace MyNS {
 	export interface DomainMapping {
 
 		/** The API version for this call such as "domains.cloudrun.com/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** The kind of resource, in this case "DomainMapping". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
 		 * persisted resources must have, which includes all objects users must create.
 		 */
-		metadata?: ObjectMeta;
+		metadata?: ObjectMeta | null;
 
 		/** The desired state of the Domain Mapping. */
-		spec?: DomainMappingSpec;
+		spec?: DomainMappingSpec | null;
 
 		/** The current state of the Domain Mapping. */
-		status?: DomainMappingStatus;
+		status?: DomainMappingStatus | null;
 	}
 
 
@@ -1621,7 +1621,7 @@ export namespace MyNS {
 	export interface DomainMappingSpec {
 
 		/** The mode of the certificate. */
-		certificateMode?: DomainMappingSpecCertificateMode;
+		certificateMode?: DomainMappingSpecCertificateMode | null;
 
 		/**
 		 * If set, the mapping will override any mapping set before this spec was set.
@@ -1629,13 +1629,13 @@ export namespace MyNS {
 		 * warning about a potential conflict and only set it once the respective UI
 		 * has given such a warning.
 		 */
-		forceOverride?: boolean;
+		forceOverride?: boolean | null;
 
 		/**
 		 * The name of the Knative Route that this DomainMapping applies to.
 		 * The route must exist.
 		 */
-		routeName?: string;
+		routeName?: string | null;
 	}
 
 	export enum DomainMappingSpecCertificateMode { CERTIFICATE_MODE_UNSPECIFIED = 0, NONE = 1, AUTOMATIC = 2 }
@@ -1648,10 +1648,10 @@ export namespace MyNS {
 		 * Array of observed DomainMappingConditions, indicating the current state
 		 * of the DomainMapping.
 		 */
-		conditions?: Array<GoogleCloudRunV1Condition>;
+		conditions?: Array<GoogleCloudRunV1Condition> | null;
 
 		/** The name of the route that the mapping currently points to. */
-		mappedRouteName?: string;
+		mappedRouteName?: string | null;
 
 		/**
 		 * ObservedGeneration is the 'Generation' of the DomainMapping that
@@ -1660,14 +1660,14 @@ export namespace MyNS {
 		 * observedGeneration = metadata.generation and the Ready condition's status
 		 * is True or False.
 		 */
-		observedGeneration?: number;
+		observedGeneration?: number | null;
 
 		/**
 		 * The resource records required to configure this domain mapping. These
 		 * records must be added to the domain's DNS configuration in order to
 		 * serve the application via this domain mapping.
 		 */
-		resourceRecords?: Array<ResourceRecord>;
+		resourceRecords?: Array<ResourceRecord> | null;
 	}
 
 
@@ -1678,16 +1678,16 @@ export namespace MyNS {
 		 * Relative name of the object affected by this record. Only applicable for
 		 * `CNAME` records. Example: 'www'.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Data for this record. Values vary by record type, as defined in RFC 1035
 		 * (section 5) and RFC 1034 (section 3.6.1).
 		 */
-		rrdata?: string;
+		rrdata?: string | null;
 
 		/** Resource record type. Example: `AAAA`. */
-		type?: ResourceRecordType;
+		type?: ResourceRecordType | null;
 	}
 
 	export enum ResourceRecordType { RECORD_TYPE_UNSPECIFIED = 0, A = 1, AAAA = 2, CNAME = 3 }
@@ -1697,10 +1697,10 @@ export namespace MyNS {
 	export interface ListAuthorizedDomainsResponse {
 
 		/** The authorized domains belonging to the user. */
-		domains?: Array<AuthorizedDomain>;
+		domains?: Array<AuthorizedDomain> | null;
 
 		/** Continuation token for fetching the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1708,23 +1708,23 @@ export namespace MyNS {
 	export interface ListConfigurationsResponse {
 
 		/** The API version for this call such as "serving.knative.dev/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** List of Configurations. */
-		items?: Array<Configuration>;
+		items?: Array<Configuration> | null;
 
 		/** The kind of this resource, in this case "ConfigurationList". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * ListMeta describes metadata that synthetic resources must have, including
 		 * lists and various status objects. A resource may have only one of
 		 * {ObjectMeta, ListMeta}.
 		 */
-		metadata?: ListMeta;
+		metadata?: ListMeta | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -1745,7 +1745,7 @@ export namespace MyNS {
 		 * using this continue value will be identical to the value in the first
 		 * response.
 		 */
-		continue?: string;
+		continue?: string | null;
 
 		/**
 		 * String that identifies the server's internal version of this object that
@@ -1757,7 +1757,7 @@ export namespace MyNS {
 		 * https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency
 		 * +optional
 		 */
-		resourceVersion?: string;
+		resourceVersion?: string | null;
 
 		/**
 		 * SelfLink is a URL representing this object.
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 		 * Read-only.
 		 * +optional
 		 */
-		selfLink?: string;
+		selfLink?: string | null;
 	}
 
 
@@ -1773,23 +1773,23 @@ export namespace MyNS {
 	export interface ListDomainMappingsResponse {
 
 		/** The API version for this call such as "domains.cloudrun.com/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** List of DomainMappings. */
-		items?: Array<DomainMapping>;
+		items?: Array<DomainMapping> | null;
 
 		/** The kind of this resource, in this case "DomainMappingList". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * ListMeta describes metadata that synthetic resources must have, including
 		 * lists and various status objects. A resource may have only one of
 		 * {ObjectMeta, ListMeta}.
 		 */
-		metadata?: ListMeta;
+		metadata?: ListMeta | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -1797,10 +1797,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1811,28 +1811,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1840,23 +1840,23 @@ export namespace MyNS {
 	export interface ListRevisionsResponse {
 
 		/** The API version for this call such as "serving.knative.dev/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** List of Revisions. */
-		items?: Array<Revision>;
+		items?: Array<Revision> | null;
 
 		/** The kind of this resource, in this case "RevisionList". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * ListMeta describes metadata that synthetic resources must have, including
 		 * lists and various status objects. A resource may have only one of
 		 * {ObjectMeta, ListMeta}.
 		 */
-		metadata?: ListMeta;
+		metadata?: ListMeta | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -1870,25 +1870,25 @@ export namespace MyNS {
 	export interface Revision {
 
 		/** The API version for this call such as "serving.knative.dev/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** The kind of this resource, in this case "Revision". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
 		 * persisted resources must have, which includes all objects users must create.
 		 */
-		metadata?: ObjectMeta;
+		metadata?: ObjectMeta | null;
 
 		/** RevisionSpec holds the desired state of the Revision (from the client). */
-		spec?: RevisionSpec;
+		spec?: RevisionSpec | null;
 
 		/**
 		 * RevisionStatus communicates the observed state of the Revision (from the
 		 * controller).
 		 */
-		status?: RevisionStatus;
+		status?: RevisionStatus | null;
 	}
 
 
@@ -1909,7 +1909,7 @@ export namespace MyNS {
 		 * * "ContainerHealthy": True when the Revision readiness check completes.
 		 * * "Active": True when the Revision may receive traffic.
 		 */
-		conditions?: Array<GoogleCloudRunV1Condition>;
+		conditions?: Array<GoogleCloudRunV1Condition> | null;
 
 		/**
 		 * ImageDigest holds the resolved digest for the image specified
@@ -1917,14 +1917,14 @@ export namespace MyNS {
 		 * of Revision. This field holds the digest value regardless of whether
 		 * a tag or digest was originally specified in the Container object.
 		 */
-		imageDigest?: string;
+		imageDigest?: string | null;
 
 		/**
 		 * Specifies the generated logging url for this particular revision
 		 * based on the revision url template specified in the controller's config.
 		 * +optional
 		 */
-		logUrl?: string;
+		logUrl?: string | null;
 
 		/**
 		 * ObservedGeneration is the 'Generation' of the Revision that
@@ -1933,10 +1933,10 @@ export namespace MyNS {
 		 * observedGeneration = metadata.generation, and the Ready condition's status
 		 * is True or False.
 		 */
-		observedGeneration?: number;
+		observedGeneration?: number | null;
 
 		/** Not currently used by Cloud Run. */
-		serviceName?: string;
+		serviceName?: string | null;
 	}
 
 
@@ -1944,23 +1944,23 @@ export namespace MyNS {
 	export interface ListRoutesResponse {
 
 		/** The API version for this call such as "serving.knative.dev/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** List of Routes. */
-		items?: Array<Route>;
+		items?: Array<Route> | null;
 
 		/** The kind of this resource, in this case always "RouteList". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * ListMeta describes metadata that synthetic resources must have, including
 		 * lists and various status objects. A resource may have only one of
 		 * {ObjectMeta, ListMeta}.
 		 */
-		metadata?: ListMeta;
+		metadata?: ListMeta | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -1978,25 +1978,25 @@ export namespace MyNS {
 	export interface Route {
 
 		/** The API version for this call such as "serving.knative.dev/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** The kind of this resource, in this case always "Route". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
 		 * persisted resources must have, which includes all objects users must create.
 		 */
-		metadata?: ObjectMeta;
+		metadata?: ObjectMeta | null;
 
 		/** RouteSpec holds the desired state of the Route (from the client). */
-		spec?: RouteSpec;
+		spec?: RouteSpec | null;
 
 		/**
 		 * RouteStatus communicates the observed state of the Route (from the
 		 * controller).
 		 */
-		status?: RouteStatus;
+		status?: RouteStatus | null;
 	}
 
 
@@ -2008,7 +2008,7 @@ export namespace MyNS {
 		 * Revisions and Configurations.
 		 * Cloud Run currently supports a single configurationName.
 		 */
-		traffic?: Array<TrafficTarget>;
+		traffic?: Array<TrafficTarget> | null;
 	}
 
 
@@ -2024,7 +2024,7 @@ export namespace MyNS {
 		 * with RevisionName.
 		 * Cloud Run currently supports a single ConfigurationName.
 		 */
-		configurationName?: string;
+		configurationName?: string | null;
 
 		/**
 		 * LatestRevision may be optionally provided to indicate that the latest
@@ -2033,7 +2033,7 @@ export namespace MyNS {
 		 * empty; it must be false when RevisionName is non-empty.
 		 * +optional
 		 */
-		latestRevision?: boolean;
+		latestRevision?: boolean | null;
 
 		/**
 		 * Percent specifies percent of the traffic to this Revision or Configuration.
@@ -2041,14 +2041,14 @@ export namespace MyNS {
 		 * Cloud Run currently requires 100 percent for a single ConfigurationName
 		 * TrafficTarget entry.
 		 */
-		percent?: number;
+		percent?: number | null;
 
 		/**
 		 * RevisionName of a specific revision to which to send this portion of
 		 * traffic. This is mutually exclusive with ConfigurationName.
 		 * Providing RevisionName in spec is not currently supported by Cloud Run.
 		 */
-		revisionName?: string;
+		revisionName?: string | null;
 
 		/**
 		 * Tag is optionally used to expose a dedicated url for referencing
@@ -2056,7 +2056,7 @@ export namespace MyNS {
 		 * Not currently supported in Cloud Run.
 		 * +optional
 		 */
-		tag?: string;
+		tag?: string | null;
 
 		/**
 		 * Output only. URL displays the URL for accessing tagged traffic targets. URL
@@ -2065,7 +2065,7 @@ export namespace MyNS {
 		 * (e.g. basic auth, url path, etc.
 		 * Not currently supported in Cloud Run.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -2076,14 +2076,14 @@ export namespace MyNS {
 	export interface RouteStatus {
 
 		/** Information for connecting over HTTP(s). */
-		address?: Addressable;
+		address?: Addressable | null;
 
 		/**
 		 * Conditions communicates information about ongoing/complete
 		 * reconciliation processes that bring the "spec" inline with the observed
 		 * state of the world.
 		 */
-		conditions?: Array<GoogleCloudRunV1Condition>;
+		conditions?: Array<GoogleCloudRunV1Condition> | null;
 
 		/**
 		 * ObservedGeneration is the 'Generation' of the Route that
@@ -2096,7 +2096,7 @@ export namespace MyNS {
 		 * its observedGeneration, as new "latest ready" revisions from the
 		 * Configuration are processed without an update to the Route's spec.
 		 */
-		observedGeneration?: number;
+		observedGeneration?: number | null;
 
 		/**
 		 * Traffic holds the configured traffic distribution.
@@ -2104,14 +2104,14 @@ export namespace MyNS {
 		 * When ConfigurationName appears in the spec, this will hold the
 		 * LatestReadyRevisionName that we last observed.
 		 */
-		traffic?: Array<TrafficTarget>;
+		traffic?: Array<TrafficTarget> | null;
 
 		/**
 		 * URL holds the url that will distribute traffic over the provided traffic
 		 * targets. It generally has the form:
 		 * https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -2119,23 +2119,23 @@ export namespace MyNS {
 	export interface ListServicesResponse {
 
 		/** The API version for this call such as "serving.knative.dev/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** List of Services. */
-		items?: Array<Service>;
+		items?: Array<Service> | null;
 
 		/** The kind of this resource, in this case "ServiceList". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * ListMeta describes metadata that synthetic resources must have, including
 		 * lists and various status objects. A resource may have only one of
 		 * {ObjectMeta, ListMeta}.
 		 */
-		metadata?: ListMeta;
+		metadata?: ListMeta | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -2155,25 +2155,25 @@ export namespace MyNS {
 	export interface Service {
 
 		/** The API version for this call such as "serving.knative.dev/v1". */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/** The kind of resource, in this case "Service". */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
 		 * persisted resources must have, which includes all objects users must create.
 		 */
-		metadata?: ObjectMeta;
+		metadata?: ObjectMeta | null;
 
 		/**
 		 * ServiceSpec holds the desired state of the Route (from the client), which
 		 * is used to manipulate the underlying Route and Configuration(s).
 		 */
-		spec?: ServiceSpec;
+		spec?: ServiceSpec | null;
 
 		/** The current state of the Service. Output only. */
-		status?: ServiceStatus;
+		status?: ServiceStatus | null;
 	}
 
 
@@ -2188,13 +2188,13 @@ export namespace MyNS {
 		 * from a template. Based on:
 		 * https://github.com/kubernetes/api/blob/e771f807/core/v1/types.go#L3179-L3190
 		 */
-		template?: RevisionTemplate;
+		template?: RevisionTemplate | null;
 
 		/**
 		 * Traffic specifies how to distribute traffic over a collection of Knative
 		 * Revisions and Configurations.
 		 */
-		traffic?: Array<TrafficTarget>;
+		traffic?: Array<TrafficTarget> | null;
 	}
 
 
@@ -2202,7 +2202,7 @@ export namespace MyNS {
 	export interface ServiceStatus {
 
 		/** Information for connecting over HTTP(s). */
-		address?: Addressable;
+		address?: Addressable | null;
 
 		/**
 		 * Conditions communicates information about ongoing/complete
@@ -2214,7 +2214,7 @@ export namespace MyNS {
 		 * * "Ready": true when both the underlying Route and Configuration are
 		 * ready.
 		 */
-		conditions?: Array<GoogleCloudRunV1Condition>;
+		conditions?: Array<GoogleCloudRunV1Condition> | null;
 
 		/**
 		 * From ConfigurationStatus.
@@ -2222,7 +2222,7 @@ export namespace MyNS {
 		 * Service's Configuration. It might not be ready yet, for that use
 		 * LatestReadyRevisionName.
 		 */
-		latestCreatedRevisionName?: string;
+		latestCreatedRevisionName?: string | null;
 
 		/**
 		 * From ConfigurationStatus.
@@ -2230,7 +2230,7 @@ export namespace MyNS {
 		 * from this Service's Configuration that has had its "Ready" condition become
 		 * "True".
 		 */
-		latestReadyRevisionName?: string;
+		latestReadyRevisionName?: string | null;
 
 		/**
 		 * ObservedGeneration is the 'Generation' of the Route that
@@ -2239,7 +2239,7 @@ export namespace MyNS {
 		 * observedGeneration = metadata.generation and the Ready condition's status
 		 * is True or False.
 		 */
-		observedGeneration?: number;
+		observedGeneration?: number | null;
 
 		/**
 		 * From RouteStatus.
@@ -2248,7 +2248,7 @@ export namespace MyNS {
 		 * When ConfigurationName appears in the spec, this will hold the
 		 * LatestReadyRevisionName that we last observed.
 		 */
-		traffic?: Array<TrafficTarget>;
+		traffic?: Array<TrafficTarget> | null;
 
 		/**
 		 * From RouteStatus.
@@ -2256,7 +2256,7 @@ export namespace MyNS {
 		 * targets. It generally has the form
 		 * https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -2272,21 +2272,21 @@ export namespace MyNS {
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
 		 * persisted resources must have, which includes all objects users must create.
 		 */
-		metadata?: ObjectMeta;
+		metadata?: ObjectMeta | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run on GKE: supported
 		 * NamespaceSpec describes the attributes on a Namespace.
 		 */
-		spec?: NamespaceSpec;
+		spec?: NamespaceSpec | null;
 
 		/**
 		 * Cloud Run fully managed: not supported
 		 * Cloud Run on GKE: supported
 		 * NamespaceStatus is information about the current status of a Namespace.
 		 */
-		status?: NamespaceStatus;
+		status?: NamespaceStatus | null;
 	}
 
 
@@ -2302,7 +2302,7 @@ export namespace MyNS {
 		 * remove object from storage. More info:
 		 * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
 		 */
-		finalizers?: Array<string>;
+		finalizers?: Array<string> | null;
 	}
 
 
@@ -2317,7 +2317,7 @@ export namespace MyNS {
 		 * Phase is the current lifecycle phase of the namespace.
 		 * More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
 		 */
-		phase?: string;
+		phase?: string | null;
 	}
 
 
@@ -2381,14 +2381,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -2403,7 +2403,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -2423,7 +2423,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -2441,13 +2441,13 @@ export namespace MyNS {
 		 * base64 encoded string, representing the arbitrary (possibly non-string)
 		 * data value here. Described in https://tools.ietf.org/html/rfc4648#section-4
 		 */
-		data?: {[id: string]: string };
+		data?: {[id: string]: string } | null;
 
 		/**
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
 		 * persisted resources must have, which includes all objects users must create.
 		 */
-		metadata?: ObjectMeta;
+		metadata?: ObjectMeta | null;
 
 		/**
 		 * stringData allows specifying non-binary secret data in string form.
@@ -2456,10 +2456,10 @@ export namespace MyNS {
 		 * any existing values. It is never output when reading from the API.
 		 * +k8s:conversion-gen=false
 		 */
-		stringData?: {[id: string]: string };
+		stringData?: {[id: string]: string } | null;
 
 		/** Used to facilitate programmatic handling of secret data. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -2523,7 +2523,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -2531,7 +2531,7 @@ export namespace MyNS {
 		 * following default mask is used:
 		 * `paths: "bindings, etag"`
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -2542,7 +2542,7 @@ export namespace MyNS {
 		 * Suggested HTTP return code for this status, 0 if not set.
 		 * +optional
 		 */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * StatusDetails is a set of additional properties that MAY be set by the
@@ -2552,20 +2552,20 @@ export namespace MyNS {
 		 * and should assume that any attribute may be empty, invalid, or under
 		 * defined.
 		 */
-		details?: StatusDetails;
+		details?: StatusDetails | null;
 
 		/**
 		 * A human-readable description of the status of this operation.
 		 * +optional
 		 */
-		message?: string;
+		message?: string | null;
 
 		/**
 		 * ListMeta describes metadata that synthetic resources must have, including
 		 * lists and various status objects. A resource may have only one of
 		 * {ObjectMeta, ListMeta}.
 		 */
-		metadata?: ListMeta;
+		metadata?: ListMeta | null;
 
 		/**
 		 * A machine-readable description of why this operation is in the
@@ -2574,7 +2574,7 @@ export namespace MyNS {
 		 * code but does not override it.
 		 * +optional
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/**
 		 * Status of the operation.
@@ -2583,7 +2583,7 @@ export namespace MyNS {
 		 * https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
 		 * +optional
 		 */
-		status?: string;
+		status?: string | null;
 	}
 
 
@@ -2602,13 +2602,13 @@ export namespace MyNS {
 		 * failure. Not all StatusReasons may provide detailed causes.
 		 * +optional
 		 */
-		causes?: Array<StatusCause>;
+		causes?: Array<StatusCause> | null;
 
 		/**
 		 * The group attribute of the resource associated with the status
 		 * StatusReason. +optional
 		 */
-		group?: string;
+		group?: string | null;
 
 		/**
 		 * The kind attribute of the resource associated with the status StatusReason.
@@ -2617,14 +2617,14 @@ export namespace MyNS {
 		 * https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
 		 * +optional
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The name attribute of the resource associated with the status StatusReason
 		 * (when there is a single name which can be described).
 		 * +optional
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * If specified, the time in seconds before the operation should be retried.
@@ -2632,7 +2632,7 @@ export namespace MyNS {
 		 * those errors this field may indicate how long to wait before taking the
 		 * alternate action. +optional
 		 */
-		retryAfterSeconds?: number;
+		retryAfterSeconds?: number | null;
 
 		/**
 		 * UID of the resource.
@@ -2640,7 +2640,7 @@ export namespace MyNS {
 		 * More info: http://kubernetes.io/docs/user-guide/identifiers#uids
 		 * +optional
 		 */
-		uid?: string;
+		uid?: string | null;
 	}
 
 
@@ -2661,21 +2661,21 @@ export namespace MyNS {
 		 * "items[0].name" - the field "name" on the first array entry in "items"
 		 * +optional
 		 */
-		field?: string;
+		field?: string | null;
 
 		/**
 		 * A human-readable description of the cause of the error.  This field may be
 		 * presented as-is to a reader.
 		 * +optional
 		 */
-		message?: string;
+		message?: string | null;
 
 		/**
 		 * A machine-readable description of the cause of the error. If this value is
 		 * empty there is no information available.
 		 * +optional
 		 */
-		reason?: string;
+		reason?: string | null;
 	}
 
 
@@ -2688,7 +2688,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -2699,7 +2699,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()

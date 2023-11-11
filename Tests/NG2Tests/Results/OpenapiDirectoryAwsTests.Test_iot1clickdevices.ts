@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface ClaimDevicesByClaimCodeResponse {
-		ClaimCode?: string;
-		Total?: number;
+		ClaimCode?: string | null;
+		Total?: number | null;
 	}
 
 	export interface InvalidRequestException {
@@ -17,21 +17,21 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDeviceResponse {
-		DeviceDescription?: DeviceDescription;
+		DeviceDescription?: DeviceDescription | null;
 	}
 
 	export interface DeviceDescription {
-		Arn?: string;
+		Arn?: string | null;
 
 		/**
 		 * DeviceAttributes is a string-to-string map specified by the user.
 		 */
-		Attributes?: DeviceAttributes;
-		DeviceId?: string;
-		Enabled?: boolean;
-		RemainingLife?: number;
-		Type?: string;
-		Tags?: __mapOf__string;
+		Attributes?: DeviceAttributes | null;
+		DeviceId?: string | null;
+		Enabled?: boolean | null;
+		RemainingLife?: number | null;
+		Type?: string | null;
+		Tags?: __mapOf__string | null;
 	}
 
 
@@ -48,7 +48,7 @@ export namespace MyNS {
 	}
 
 	export interface FinalizeDeviceClaimResponse {
-		State?: string;
+		State?: string | null;
 	}
 
 	export interface PreconditionFailedException {
@@ -58,55 +58,55 @@ export namespace MyNS {
 	}
 
 	export interface GetDeviceMethodsResponse {
-		DeviceMethods?: Array<DeviceMethod>;
+		DeviceMethods?: Array<DeviceMethod> | null;
 	}
 
 	export interface DeviceMethod {
-		DeviceType?: string;
-		MethodName?: string;
+		DeviceType?: string | null;
+		MethodName?: string | null;
 	}
 
 	export interface InitiateDeviceClaimResponse {
-		State?: string;
+		State?: string | null;
 	}
 
 	export interface InvokeDeviceMethodResponse {
-		DeviceMethodResponse?: string;
+		DeviceMethodResponse?: string | null;
 	}
 
 	export interface RangeNotSatisfiableException {
 	}
 
 	export interface ListDeviceEventsResponse {
-		Events?: Array<DeviceEvent>;
-		NextToken?: string;
+		Events?: Array<DeviceEvent> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DeviceEvent {
-		Device?: Device;
-		StdEvent?: string;
+		Device?: Device | null;
+		StdEvent?: string | null;
 	}
 
 	export interface Device {
-		Attributes?: Attributes;
-		DeviceId?: string;
-		Type?: string;
+		Attributes?: Attributes | null;
+		DeviceId?: string | null;
+		Type?: string | null;
 	}
 
 	export interface Attributes {
 	}
 
 	export interface ListDevicesResponse {
-		Devices?: Array<DeviceDescription>;
-		NextToken?: string;
+		Devices?: Array<DeviceDescription> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string;
+		Tags?: __mapOf__string | null;
 	}
 
 	export interface UnclaimDeviceResponse {
-		State?: string;
+		State?: string | null;
 	}
 
 	export interface UpdateDeviceStateResponse {
@@ -119,7 +119,7 @@ export namespace MyNS {
 	}
 
 	export interface FinalizeDeviceClaimRequest {
-		Tags?: __mapOf__string;
+		Tags?: __mapOf__string | null;
 	}
 
 	export interface GetDeviceMethodsRequest {
@@ -129,8 +129,8 @@ export namespace MyNS {
 	}
 
 	export interface InvokeDeviceMethodRequest {
-		DeviceMethod?: DeviceMethod;
-		DeviceMethodParameters?: string;
+		DeviceMethod?: DeviceMethod | null;
+		DeviceMethodParameters?: string | null;
 	}
 
 	export interface ListDeviceEventsRequest {
@@ -153,7 +153,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDeviceStateRequest {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	@Injectable()
@@ -328,21 +328,21 @@ export namespace MyNS {
 		 * Tagging Strategies</a>.</p><p>
 		 * </p>
 		 */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface InvokeDeviceMethodPostBody {
 
 		/** The device method to invoke. */
-		deviceMethod?: InvokeDeviceMethodPostBodyDeviceMethod;
+		deviceMethod?: InvokeDeviceMethodPostBodyDeviceMethod | null;
 
 		/** A JSON encoded string containing the device method request parameters. */
-		deviceMethodParameters?: string;
+		deviceMethodParameters?: string | null;
 	}
 
 	export interface InvokeDeviceMethodPostBodyDeviceMethod {
-		DeviceType?: string;
-		MethodName?: string;
+		DeviceType?: string | null;
+		MethodName?: string | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -363,7 +363,7 @@ export namespace MyNS {
 		 * If true, the device is enabled. If false, the device is
 		 * disabled.
 		 */
-		enabled?: boolean;
+		enabled?: boolean | null;
 	}
 
 }

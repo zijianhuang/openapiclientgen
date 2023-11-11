@@ -24,67 +24,67 @@ export namespace MyNS {
 	}
 
 	export interface AssociateWebsiteAuthorizationProviderResponse {
-		AuthorizationProviderId?: string;
+		AuthorizationProviderId?: string | null;
 	}
 
 	export interface AssociateWebsiteCertificateAuthorityResponse {
-		WebsiteCaId?: string;
+		WebsiteCaId?: string | null;
 	}
 
 	export interface CreateFleetResponse {
-		FleetArn?: string;
+		FleetArn?: string | null;
 	}
 
 	export interface DeleteFleetResponse {
 	}
 
 	export interface DescribeAuditStreamConfigurationResponse {
-		AuditStreamArn?: string;
+		AuditStreamArn?: string | null;
 	}
 
 	export interface DescribeCompanyNetworkConfigurationResponse {
-		VpcId?: string;
-		SubnetIds?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		VpcId?: string | null;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface DescribeDeviceResponse {
-		Status?: DescribeDeviceResponseStatus;
-		Model?: string;
-		Manufacturer?: string;
-		OperatingSystem?: string;
-		OperatingSystemVersion?: string;
-		PatchLevel?: string;
-		FirstAccessedTime?: Date;
-		LastAccessedTime?: Date;
-		Username?: string;
+		Status?: DescribeDeviceResponseStatus | null;
+		Model?: string | null;
+		Manufacturer?: string | null;
+		OperatingSystem?: string | null;
+		OperatingSystemVersion?: string | null;
+		PatchLevel?: string | null;
+		FirstAccessedTime?: Date | null;
+		LastAccessedTime?: Date | null;
+		Username?: string | null;
 	}
 
 	export enum DescribeDeviceResponseStatus { ACTIVE = 0, SIGNED_OUT = 1 }
 
 	export interface DescribeDevicePolicyConfigurationResponse {
-		DeviceCaCertificate?: string;
+		DeviceCaCertificate?: string | null;
 	}
 
 	export interface DescribeDomainResponse {
-		DomainName?: string;
-		DisplayName?: string;
-		CreatedTime?: Date;
-		DomainStatus?: DescribeDomainResponseDomainStatus;
-		AcmCertificateArn?: string;
+		DomainName?: string | null;
+		DisplayName?: string | null;
+		CreatedTime?: Date | null;
+		DomainStatus?: DescribeDomainResponseDomainStatus | null;
+		AcmCertificateArn?: string | null;
 	}
 
 	export enum DescribeDomainResponseDomainStatus { PENDING_VALIDATION = 0, ASSOCIATING = 1, ACTIVE = 2, INACTIVE = 3, DISASSOCIATING = 4, DISASSOCIATED = 5, FAILED_TO_ASSOCIATE = 6, FAILED_TO_DISASSOCIATE = 7 }
 
 	export interface DescribeFleetMetadataResponse {
-		CreatedTime?: Date;
-		LastUpdatedTime?: Date;
-		FleetName?: string;
-		DisplayName?: string;
-		OptimizeForEndUserLocation?: boolean;
-		CompanyCode?: string;
-		FleetStatus?: DescribeFleetMetadataResponseFleetStatus;
-		Tags?: TagMap;
+		CreatedTime?: Date | null;
+		LastUpdatedTime?: Date | null;
+		FleetName?: string | null;
+		DisplayName?: string | null;
+		OptimizeForEndUserLocation?: boolean | null;
+		CompanyCode?: string | null;
+		FleetStatus?: DescribeFleetMetadataResponseFleetStatus | null;
+		Tags?: TagMap | null;
 	}
 
 	export enum DescribeFleetMetadataResponseFleetStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3, FAILED_TO_CREATE = 4, FAILED_TO_DELETE = 5 }
@@ -93,17 +93,17 @@ export namespace MyNS {
 	}
 
 	export interface DescribeIdentityProviderConfigurationResponse {
-		IdentityProviderType?: DescribeIdentityProviderConfigurationResponseIdentityProviderType;
-		ServiceProviderSamlMetadata?: string;
-		IdentityProviderSamlMetadata?: string;
+		IdentityProviderType?: DescribeIdentityProviderConfigurationResponseIdentityProviderType | null;
+		ServiceProviderSamlMetadata?: string | null;
+		IdentityProviderSamlMetadata?: string | null;
 	}
 
 	export enum DescribeIdentityProviderConfigurationResponseIdentityProviderType { SAML = 0 }
 
 	export interface DescribeWebsiteCertificateAuthorityResponse {
-		Certificate?: string;
-		CreatedTime?: Date;
-		DisplayName?: string;
+		Certificate?: string | null;
+		CreatedTime?: Date | null;
+		DisplayName?: string | null;
 	}
 
 	export interface DisassociateDomainResponse {
@@ -116,78 +116,78 @@ export namespace MyNS {
 	}
 
 	export interface ListDevicesResponse {
-		Devices?: Array<DeviceSummary>;
-		NextToken?: string;
+		Devices?: Array<DeviceSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The summary of devices. */
 	export interface DeviceSummary {
-		DeviceId?: string;
-		DeviceStatus?: DescribeDeviceResponseStatus;
+		DeviceId?: string | null;
+		DeviceStatus?: DescribeDeviceResponseStatus | null;
 	}
 
 	export interface ListDomainsResponse {
-		Domains?: Array<DomainSummary>;
-		NextToken?: string;
+		Domains?: Array<DomainSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The summary of the domain. */
 	export interface DomainSummary {
 		DomainName: string;
-		DisplayName?: string;
+		DisplayName?: string | null;
 		CreatedTime: Date;
 		DomainStatus: DescribeDomainResponseDomainStatus;
 	}
 
 	export interface ListFleetsResponse {
-		FleetSummaryList?: Array<FleetSummary>;
-		NextToken?: string;
+		FleetSummaryList?: Array<FleetSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The summary of the fleet. */
 	export interface FleetSummary {
-		FleetArn?: string;
-		CreatedTime?: Date;
-		LastUpdatedTime?: Date;
-		FleetName?: string;
-		DisplayName?: string;
-		CompanyCode?: string;
-		FleetStatus?: DescribeFleetMetadataResponseFleetStatus;
-		Tags?: TagMap;
+		FleetArn?: string | null;
+		CreatedTime?: Date | null;
+		LastUpdatedTime?: Date | null;
+		FleetName?: string | null;
+		DisplayName?: string | null;
+		CompanyCode?: string | null;
+		FleetStatus?: DescribeFleetMetadataResponseFleetStatus | null;
+		Tags?: TagMap | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface ListWebsiteAuthorizationProvidersResponse {
-		WebsiteAuthorizationProviders?: Array<WebsiteAuthorizationProviderSummary>;
-		NextToken?: string;
+		WebsiteAuthorizationProviders?: Array<WebsiteAuthorizationProviderSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The summary of the website authorization provider. */
 	export interface WebsiteAuthorizationProviderSummary {
-		AuthorizationProviderId?: string;
+		AuthorizationProviderId?: string | null;
 		AuthorizationProviderType: DescribeIdentityProviderConfigurationResponseIdentityProviderType;
-		DomainName?: string;
-		CreatedTime?: Date;
+		DomainName?: string | null;
+		CreatedTime?: Date | null;
 	}
 
 	export interface ListWebsiteCertificateAuthoritiesResponse {
-		WebsiteCertificateAuthorities?: Array<WebsiteCaSummary>;
-		NextToken?: string;
+		WebsiteCertificateAuthorities?: Array<WebsiteCaSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The summary of the certificate authority (CA). */
 	export interface WebsiteCaSummary {
-		WebsiteCaId?: string;
-		CreatedTime?: Date;
-		DisplayName?: string;
+		WebsiteCaId?: string | null;
+		CreatedTime?: Date | null;
+		DisplayName?: string | null;
 	}
 
 	export interface RestoreDomainAccessResponse {
@@ -226,7 +226,7 @@ export namespace MyNS {
 	export interface AssociateDomainRequest {
 		FleetArn: string;
 		DomainName: string;
-		DisplayName?: string;
+		DisplayName?: string | null;
 		AcmCertificateArn: string;
 	}
 
@@ -235,20 +235,20 @@ export namespace MyNS {
 	export interface AssociateWebsiteAuthorizationProviderRequest {
 		FleetArn: string;
 		AuthorizationProviderType: DescribeIdentityProviderConfigurationResponseIdentityProviderType;
-		DomainName?: string;
+		DomainName?: string | null;
 	}
 
 	export interface AssociateWebsiteCertificateAuthorityRequest {
 		FleetArn: string;
 		Certificate: string;
-		DisplayName?: string;
+		DisplayName?: string | null;
 	}
 
 	export interface CreateFleetRequest {
 		FleetName: string;
-		DisplayName?: string;
-		OptimizeForEndUserLocation?: boolean;
-		Tags?: TagMap;
+		DisplayName?: string | null;
+		OptimizeForEndUserLocation?: boolean | null;
+		Tags?: TagMap | null;
 	}
 
 	export interface DeleteFleetRequest {
@@ -315,19 +315,19 @@ export namespace MyNS {
 
 	export interface ListDevicesRequest {
 		FleetArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDomainsRequest {
 		FleetArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListFleetsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -335,14 +335,14 @@ export namespace MyNS {
 
 	export interface ListWebsiteAuthorizationProvidersRequest {
 		FleetArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListWebsiteCertificateAuthoritiesRequest {
 		FleetArn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface RestoreDomainAccessRequest {
@@ -369,7 +369,7 @@ export namespace MyNS {
 
 	export interface UpdateAuditStreamConfigurationRequest {
 		FleetArn: string;
-		AuditStreamArn?: string;
+		AuditStreamArn?: string | null;
 	}
 
 	export interface UpdateCompanyNetworkConfigurationRequest {
@@ -381,25 +381,25 @@ export namespace MyNS {
 
 	export interface UpdateDevicePolicyConfigurationRequest {
 		FleetArn: string;
-		DeviceCaCertificate?: string;
+		DeviceCaCertificate?: string | null;
 	}
 
 	export interface UpdateDomainMetadataRequest {
 		FleetArn: string;
 		DomainName: string;
-		DisplayName?: string;
+		DisplayName?: string | null;
 	}
 
 	export interface UpdateFleetMetadataRequest {
 		FleetArn: string;
-		DisplayName?: string;
-		OptimizeForEndUserLocation?: boolean;
+		DisplayName?: string | null;
+		OptimizeForEndUserLocation?: boolean | null;
 	}
 
 	export interface UpdateIdentityProviderConfigurationRequest {
 		FleetArn: string;
 		IdentityProviderType: DescribeIdentityProviderConfigurationResponseIdentityProviderType;
-		IdentityProviderSamlMetadata?: string;
+		IdentityProviderSamlMetadata?: string | null;
 	}
 
 	@Injectable()
@@ -742,7 +742,7 @@ export namespace MyNS {
 		 * The name to display.
 		 * Max length: 100
 		 */
-		DisplayName?: string;
+		DisplayName?: string | null;
 
 		/**
 		 * The ARN of an issued ACM certificate that is valid for the domain being associated.
@@ -774,7 +774,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
-		DomainName?: string;
+		DomainName?: string | null;
 	}
 
 	export interface AssociateWebsiteCertificateAuthorityPostBody {
@@ -800,7 +800,7 @@ export namespace MyNS {
 		 * The certificate name to display.
 		 * Max length: 100
 		 */
-		DisplayName?: string;
+		DisplayName?: string | null;
 	}
 
 	export interface CreateFleetPostBody {
@@ -818,13 +818,13 @@ export namespace MyNS {
 		 * The fleet name to display.
 		 * Max length: 100
 		 */
-		DisplayName?: string;
+		DisplayName?: string | null;
 
 		/** The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. */
-		OptimizeForEndUserLocation?: boolean;
+		OptimizeForEndUserLocation?: boolean | null;
 
 		/** The tags to add to the resource. A tag is a key-value pair. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface DeleteFleetPostBody {
@@ -1025,13 +1025,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w\-]+
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to be included in the next page.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDomainsPostBody {
@@ -1050,13 +1050,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w\-]+
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to be included in the next page.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListFleetsPostBody {
@@ -1067,13 +1067,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w\-]+
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to be included in the next page.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -1101,13 +1101,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w\-]+
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to be included in the next page.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListWebsiteCertificateAuthoritiesPostBody {
@@ -1124,7 +1124,7 @@ export namespace MyNS {
 		 * The maximum number of results to be included in the next page.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
@@ -1132,7 +1132,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w\-]+
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface RestoreDomainAccessPostBody {
@@ -1208,7 +1208,7 @@ export namespace MyNS {
 		 * The ARN of the Amazon Kinesis data stream that receives the audit events.
 		 * Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$
 		 */
-		AuditStreamArn?: string;
+		AuditStreamArn?: string | null;
 	}
 
 	export interface UpdateCompanyNetworkConfigurationPostBody {
@@ -1258,7 +1258,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: (-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
-		DeviceCaCertificate?: string;
+		DeviceCaCertificate?: string | null;
 	}
 
 	export interface UpdateDomainMetadataPostBody {
@@ -1284,7 +1284,7 @@ export namespace MyNS {
 		 * The name to display.
 		 * Max length: 100
 		 */
-		DisplayName?: string;
+		DisplayName?: string | null;
 	}
 
 	export interface UpdateFleetMetadataPostBody {
@@ -1301,10 +1301,10 @@ export namespace MyNS {
 		 * The fleet name to display. The existing DisplayName is unset if null is passed.
 		 * Max length: 100
 		 */
-		DisplayName?: string;
+		DisplayName?: string | null;
 
 		/** The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. */
-		OptimizeForEndUserLocation?: boolean;
+		OptimizeForEndUserLocation?: boolean | null;
 	}
 
 	export interface UpdateIdentityProviderConfigurationPostBody {
@@ -1328,7 +1328,7 @@ export namespace MyNS {
 		 * Max length: 204800
 		 * Min length: 1
 		 */
-		IdentityProviderSamlMetadata?: string;
+		IdentityProviderSamlMetadata?: string | null;
 	}
 
 }

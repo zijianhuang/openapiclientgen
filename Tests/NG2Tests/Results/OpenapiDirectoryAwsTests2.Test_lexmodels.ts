@@ -3,26 +3,26 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateBotVersionResponse {
-		name?: string;
-		description?: string;
-		intents?: Array<Intent>;
+		name?: string | null;
+		description?: string | null;
+		intents?: Array<Intent> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: Prompt;
+		clarificationPrompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: Statement;
-		status?: CreateBotVersionResponseStatus;
-		failureReason?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		idleSessionTTLInSeconds?: number;
-		voiceId?: string;
-		checksum?: string;
-		version?: string;
-		locale?: CreateBotVersionResponseLocale;
-		childDirected?: boolean;
-		detectSentiment?: boolean;
+		abortStatement?: Statement | null;
+		status?: CreateBotVersionResponseStatus | null;
+		failureReason?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		idleSessionTTLInSeconds?: number | null;
+		voiceId?: string | null;
+		checksum?: string | null;
+		version?: string | null;
+		locale?: CreateBotVersionResponseLocale | null;
+		childDirected?: boolean | null;
+		detectSentiment?: boolean | null;
 	}
 
 
@@ -37,7 +37,7 @@ export namespace MyNS {
 	export interface Prompt {
 		messages: Array<Message>;
 		maxAttempts: number;
-		responseCard?: string;
+		responseCard?: string | null;
 	}
 
 
@@ -45,7 +45,7 @@ export namespace MyNS {
 	export interface Message {
 		contentType: MessageContentType;
 		content: string;
-		groupNumber?: number;
+		groupNumber?: number | null;
 	}
 
 	export enum MessageContentType { PlainText = 0, SSML = 1, CustomPayload = 2 }
@@ -54,7 +54,7 @@ export namespace MyNS {
 	/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.  */
 	export interface Statement {
 		messages: Array<Message>;
-		responseCard?: string;
+		responseCard?: string | null;
 	}
 
 	export enum CreateBotVersionResponseStatus { BUILDING = 0, READY = 1, READY_BASIC_TESTING = 2, FAILED = 3, NOT_BUILT = 4 }
@@ -80,50 +80,50 @@ export namespace MyNS {
 	}
 
 	export interface CreateIntentVersionResponse {
-		name?: string;
-		description?: string;
-		slots?: Array<Slot>;
-		sampleUtterances?: Array<string>;
+		name?: string | null;
+		description?: string | null;
+		slots?: Array<Slot> | null;
+		sampleUtterances?: Array<string> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: Prompt;
+		confirmationPrompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement;
+		rejectionStatement?: Statement | null;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: FollowUpPrompt;
+		followUpPrompt?: FollowUpPrompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: Statement;
+		conclusionStatement?: Statement | null;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: CodeHook;
+		dialogCodeHook?: CodeHook | null;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: FulfillmentActivity;
-		parentIntentSignature?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
-		checksum?: string;
+		fulfillmentActivity?: FulfillmentActivity | null;
+		parentIntentSignature?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
+		checksum?: string | null;
 	}
 
 
 	/** Identifies the version of a specific slot. */
 	export interface Slot {
 		name: string;
-		description?: string;
+		description?: string | null;
 		slotConstraint: SlotSlotConstraint;
-		slotType?: string;
-		slotTypeVersion?: string;
+		slotType?: string | null;
+		slotTypeVersion?: string | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		valueElicitationPrompt?: Prompt;
-		priority?: number;
-		sampleUtterances?: Array<string>;
-		responseCard?: string;
-		obfuscationSetting?: SlotObfuscationSetting;
+		valueElicitationPrompt?: Prompt | null;
+		priority?: number | null;
+		sampleUtterances?: Array<string> | null;
+		responseCard?: string | null;
+		obfuscationSetting?: SlotObfuscationSetting | null;
 	}
 
 	export enum SlotSlotConstraint { Required = 0, Optional = 1 }
@@ -160,29 +160,29 @@ export namespace MyNS {
 		type: FulfillmentActivityType;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		codeHook?: CodeHook;
+		codeHook?: CodeHook | null;
 	}
 
 	export enum FulfillmentActivityType { ReturnIntent = 0, CodeHook = 1 }
 
 	export interface CreateSlotTypeVersionResponse {
-		name?: string;
-		description?: string;
-		enumerationValues?: Array<EnumerationValue>;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
-		checksum?: string;
-		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy;
-		parentSlotTypeSignature?: string;
-		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+		name?: string | null;
+		description?: string | null;
+		enumerationValues?: Array<EnumerationValue> | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
+		checksum?: string | null;
+		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
+		parentSlotTypeSignature?: string | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
 	}
 
 
 	/** <p>Each slot type can have a set of values. Each enumeration value represents a value the slot type can take. </p> <p>For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values </p> <ul> <li> <p>thick</p> </li> <li> <p>thin</p> </li> <li> <p>stuffed</p> </li> </ul> */
 	export interface EnumerationValue {
 		value: string;
-		synonyms?: Array<string>;
+		synonyms?: Array<string> | null;
 	}
 
 	export enum CreateSlotTypeVersionResponseValueSelectionStrategy { ORIGINAL_VALUE = 0, TOP_RESOLUTION = 1 }
@@ -192,7 +192,7 @@ export namespace MyNS {
 	export interface SlotTypeConfiguration {
 
 		/** Provides a regular expression used to validate the value of a slot. */
-		regexConfiguration?: SlotTypeRegexConfiguration;
+		regexConfiguration?: SlotTypeRegexConfiguration | null;
 	}
 
 
@@ -205,58 +205,58 @@ export namespace MyNS {
 	}
 
 	export interface GetBotResponse {
-		name?: string;
-		description?: string;
-		intents?: Array<Intent>;
+		name?: string | null;
+		description?: string | null;
+		intents?: Array<Intent> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: Prompt;
+		clarificationPrompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: Statement;
-		status?: CreateBotVersionResponseStatus;
-		failureReason?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		idleSessionTTLInSeconds?: number;
-		voiceId?: string;
-		checksum?: string;
-		version?: string;
-		locale?: GetBotResponseLocale;
-		childDirected?: boolean;
-		detectSentiment?: boolean;
+		abortStatement?: Statement | null;
+		status?: CreateBotVersionResponseStatus | null;
+		failureReason?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		idleSessionTTLInSeconds?: number | null;
+		voiceId?: string | null;
+		checksum?: string | null;
+		version?: string | null;
+		locale?: GetBotResponseLocale | null;
+		childDirected?: boolean | null;
+		detectSentiment?: boolean | null;
 	}
 
 	export enum GetBotResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface GetBotAliasResponse {
-		name?: string;
-		description?: string;
-		botVersion?: string;
-		botName?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		checksum?: string;
+		name?: string | null;
+		description?: string | null;
+		botVersion?: string | null;
+		botName?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		checksum?: string | null;
 
 		/** Contains information about conversation log settings. */
-		conversationLogs?: ConversationLogsResponse;
+		conversationLogs?: ConversationLogsResponse | null;
 	}
 
 
 	/** Contains information about conversation log settings. */
 	export interface ConversationLogsResponse {
-		logSettings?: Array<LogSettingsResponse>;
-		iamRoleArn?: string;
+		logSettings?: Array<LogSettingsResponse> | null;
+		iamRoleArn?: string | null;
 	}
 
 
 	/** The settings for conversation logs. */
 	export interface LogSettingsResponse {
-		logType?: LogSettingsResponseLogType;
-		destination?: LogSettingsResponseDestination;
-		kmsKeyArn?: string;
-		resourceArn?: string;
-		resourcePrefix?: string;
+		logType?: LogSettingsResponseLogType | null;
+		destination?: LogSettingsResponseDestination | null;
+		kmsKeyArn?: string | null;
+		resourceArn?: string | null;
+		resourcePrefix?: string | null;
 	}
 
 	export enum LogSettingsResponseLogType { AUDIO = 0, TEXT = 1 }
@@ -264,35 +264,35 @@ export namespace MyNS {
 	export enum LogSettingsResponseDestination { CLOUDWATCH_LOGS = 0, S3 = 1 }
 
 	export interface GetBotAliasesResponse {
-		BotAliases?: Array<BotAliasMetadata>;
-		nextToken?: string;
+		BotAliases?: Array<BotAliasMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides information about a bot alias. */
 	export interface BotAliasMetadata {
-		name?: string;
-		description?: string;
-		botVersion?: string;
-		botName?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		checksum?: string;
+		name?: string | null;
+		description?: string | null;
+		botVersion?: string | null;
+		botName?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		checksum?: string | null;
 
 		/** Contains information about conversation log settings. */
-		conversationLogs?: ConversationLogsResponse;
+		conversationLogs?: ConversationLogsResponse | null;
 	}
 
 	export interface GetBotChannelAssociationResponse {
-		name?: string;
-		description?: string;
-		botAlias?: string;
-		botName?: string;
-		createdDate?: Date;
-		type?: GetBotChannelAssociationResponseType;
-		botConfiguration?: ChannelConfigurationMap;
-		status?: GetBotChannelAssociationResponseStatus;
-		failureReason?: string;
+		name?: string | null;
+		description?: string | null;
+		botAlias?: string | null;
+		botName?: string | null;
+		createdDate?: Date | null;
+		type?: GetBotChannelAssociationResponseType | null;
+		botConfiguration?: ChannelConfigurationMap | null;
+		status?: GetBotChannelAssociationResponseStatus | null;
+		failureReason?: string | null;
 	}
 
 	export enum GetBotChannelAssociationResponseType { Facebook = 0, Slack = 1, Twilio_Sms = 2, Kik = 3 }
@@ -303,51 +303,51 @@ export namespace MyNS {
 	export enum GetBotChannelAssociationResponseStatus { IN_PROGRESS = 0, CREATED = 1, FAILED = 2 }
 
 	export interface GetBotChannelAssociationsResponse {
-		botChannelAssociations?: Array<BotChannelAssociation>;
-		nextToken?: string;
+		botChannelAssociations?: Array<BotChannelAssociation> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents an association between an Amazon Lex bot and an external messaging platform. */
 	export interface BotChannelAssociation {
-		name?: string;
-		description?: string;
-		botAlias?: string;
-		botName?: string;
-		createdDate?: Date;
-		type?: BotChannelAssociationType;
-		botConfiguration?: ChannelConfigurationMap;
-		status?: GetBotChannelAssociationResponseStatus;
-		failureReason?: string;
+		name?: string | null;
+		description?: string | null;
+		botAlias?: string | null;
+		botName?: string | null;
+		createdDate?: Date | null;
+		type?: BotChannelAssociationType | null;
+		botConfiguration?: ChannelConfigurationMap | null;
+		status?: GetBotChannelAssociationResponseStatus | null;
+		failureReason?: string | null;
 	}
 
 	export enum BotChannelAssociationType { Facebook = 0, Slack = 1, Twilio_Sms = 2, Kik = 3 }
 
 	export interface GetBotVersionsResponse {
-		bots?: Array<BotMetadata>;
-		nextToken?: string;
+		bots?: Array<BotMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides information about a bot. . */
 	export interface BotMetadata {
-		name?: string;
-		description?: string;
-		status?: CreateBotVersionResponseStatus;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
+		name?: string | null;
+		description?: string | null;
+		status?: CreateBotVersionResponseStatus | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
 	}
 
 	export interface GetBotsResponse {
-		bots?: Array<BotMetadata>;
-		nextToken?: string;
+		bots?: Array<BotMetadata> | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetBuiltinIntentResponse {
-		signature?: string;
-		supportedLocales?: Array<Locale>;
-		slots?: Array<BuiltinIntentSlot>;
+		signature?: string | null;
+		supportedLocales?: Array<Locale> | null;
+		slots?: Array<BuiltinIntentSlot> | null;
 	}
 
 	export enum Locale { en_US = 0, en_GB = 1, de_DE = 2 }
@@ -355,41 +355,41 @@ export namespace MyNS {
 
 	/** Provides information about a slot used in a built-in intent. */
 	export interface BuiltinIntentSlot {
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface GetBuiltinIntentsResponse {
-		intents?: Array<BuiltinIntentMetadata>;
-		nextToken?: string;
+		intents?: Array<BuiltinIntentMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides metadata for a built-in intent. */
 	export interface BuiltinIntentMetadata {
-		signature?: string;
-		supportedLocales?: Array<Locale>;
+		signature?: string | null;
+		supportedLocales?: Array<Locale> | null;
 	}
 
 	export interface GetBuiltinSlotTypesResponse {
-		slotTypes?: Array<BuiltinSlotTypeMetadata>;
-		nextToken?: string;
+		slotTypes?: Array<BuiltinSlotTypeMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides information about a built in slot type. */
 	export interface BuiltinSlotTypeMetadata {
-		signature?: string;
-		supportedLocales?: Array<Locale>;
+		signature?: string | null;
+		supportedLocales?: Array<Locale> | null;
 	}
 
 	export interface GetExportResponse {
-		name?: string;
-		version?: string;
-		resourceType?: GetExportResponseResourceType;
-		exportType?: GetExportResponseExportType;
-		exportStatus?: GetExportResponseExportStatus;
-		failureReason?: string;
-		url?: string;
+		name?: string | null;
+		version?: string | null;
+		resourceType?: GetExportResponseResourceType | null;
+		exportType?: GetExportResponseExportType | null;
+		exportStatus?: GetExportResponseExportStatus | null;
+		failureReason?: string | null;
+		url?: string | null;
 	}
 
 	export enum GetExportResponseResourceType { BOT = 0, INTENT = 1, SLOT_TYPE = 2 }
@@ -399,13 +399,13 @@ export namespace MyNS {
 	export enum GetExportResponseExportStatus { IN_PROGRESS = 0, READY = 1, FAILED = 2 }
 
 	export interface GetImportResponse {
-		name?: string;
-		resourceType?: GetExportResponseResourceType;
-		mergeStrategy?: GetImportResponseMergeStrategy;
-		importId?: string;
-		importStatus?: GetImportResponseImportStatus;
-		failureReason?: Array<string>;
-		createdDate?: Date;
+		name?: string | null;
+		resourceType?: GetExportResponseResourceType | null;
+		mergeStrategy?: GetImportResponseMergeStrategy | null;
+		importId?: string | null;
+		importStatus?: GetImportResponseImportStatus | null;
+		failureReason?: Array<string> | null;
+		createdDate?: Date | null;
 	}
 
 	export enum GetImportResponseMergeStrategy { OVERWRITE_LATEST = 0, FAIL_ON_CONFLICT = 1 }
@@ -413,112 +413,112 @@ export namespace MyNS {
 	export enum GetImportResponseImportStatus { IN_PROGRESS = 0, COMPLETE = 1, FAILED = 2 }
 
 	export interface GetIntentResponse {
-		name?: string;
-		description?: string;
-		slots?: Array<Slot>;
-		sampleUtterances?: Array<string>;
+		name?: string | null;
+		description?: string | null;
+		slots?: Array<Slot> | null;
+		sampleUtterances?: Array<string> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: Prompt;
+		confirmationPrompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement;
+		rejectionStatement?: Statement | null;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: FollowUpPrompt;
+		followUpPrompt?: FollowUpPrompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: Statement;
+		conclusionStatement?: Statement | null;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: CodeHook;
+		dialogCodeHook?: CodeHook | null;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: FulfillmentActivity;
-		parentIntentSignature?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
-		checksum?: string;
+		fulfillmentActivity?: FulfillmentActivity | null;
+		parentIntentSignature?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
+		checksum?: string | null;
 	}
 
 	export interface GetIntentVersionsResponse {
-		intents?: Array<IntentMetadata>;
-		nextToken?: string;
+		intents?: Array<IntentMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides information about an intent. */
 	export interface IntentMetadata {
-		name?: string;
-		description?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
+		name?: string | null;
+		description?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
 	}
 
 	export interface GetIntentsResponse {
-		intents?: Array<IntentMetadata>;
-		nextToken?: string;
+		intents?: Array<IntentMetadata> | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetSlotTypeResponse {
-		name?: string;
-		description?: string;
-		enumerationValues?: Array<EnumerationValue>;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
-		checksum?: string;
-		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy;
-		parentSlotTypeSignature?: string;
-		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+		name?: string | null;
+		description?: string | null;
+		enumerationValues?: Array<EnumerationValue> | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
+		checksum?: string | null;
+		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
+		parentSlotTypeSignature?: string | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
 	}
 
 	export interface GetSlotTypeVersionsResponse {
-		slotTypes?: Array<SlotTypeMetadata>;
-		nextToken?: string;
+		slotTypes?: Array<SlotTypeMetadata> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides information about a slot type.. */
 	export interface SlotTypeMetadata {
-		name?: string;
-		description?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
+		name?: string | null;
+		description?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
 	}
 
 	export interface GetSlotTypesResponse {
-		slotTypes?: Array<SlotTypeMetadata>;
-		nextToken?: string;
+		slotTypes?: Array<SlotTypeMetadata> | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetUtterancesViewResponse {
-		botName?: string;
-		utterances?: Array<UtteranceList>;
+		botName?: string | null;
+		utterances?: Array<UtteranceList> | null;
 	}
 
 
 	/** Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances. */
 	export interface UtteranceList {
-		botVersion?: string;
-		utterances?: Array<UtteranceData>;
+		botVersion?: string | null;
+		utterances?: Array<UtteranceData> | null;
 	}
 
 
 	/** Provides information about a single utterance that was made to your bot.  */
 	export interface UtteranceData {
-		utteranceString?: string;
-		count?: number;
-		distinctUsers?: number;
-		firstUtteredDate?: Date;
-		lastUtteredDate?: Date;
+		utteranceString?: string | null;
+		count?: number | null;
+		distinctUsers?: number | null;
+		firstUtteredDate?: Date | null;
+		lastUtteredDate?: Date | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -529,44 +529,44 @@ export namespace MyNS {
 	}
 
 	export interface PutBotResponse {
-		name?: string;
-		description?: string;
-		intents?: Array<Intent>;
+		name?: string | null;
+		description?: string | null;
+		intents?: Array<Intent> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: Prompt;
+		clarificationPrompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: Statement;
-		status?: CreateBotVersionResponseStatus;
-		failureReason?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		idleSessionTTLInSeconds?: number;
-		voiceId?: string;
-		checksum?: string;
-		version?: string;
-		locale?: PutBotResponseLocale;
-		childDirected?: boolean;
-		createVersion?: boolean;
-		detectSentiment?: boolean;
-		tags?: Array<Tag>;
+		abortStatement?: Statement | null;
+		status?: CreateBotVersionResponseStatus | null;
+		failureReason?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		idleSessionTTLInSeconds?: number | null;
+		voiceId?: string | null;
+		checksum?: string | null;
+		version?: string | null;
+		locale?: PutBotResponseLocale | null;
+		childDirected?: boolean | null;
+		createVersion?: boolean | null;
+		detectSentiment?: boolean | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum PutBotResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface PutBotAliasResponse {
-		name?: string;
-		description?: string;
-		botVersion?: string;
-		botName?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		checksum?: string;
+		name?: string | null;
+		description?: string | null;
+		botVersion?: string | null;
+		botName?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		checksum?: string | null;
 
 		/** Contains information about conversation log settings. */
-		conversationLogs?: ConversationLogsResponse;
-		tags?: Array<Tag>;
+		conversationLogs?: ConversationLogsResponse | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -574,63 +574,63 @@ export namespace MyNS {
 	export interface LogSettingsRequest {
 		logType: LogSettingsResponseLogType;
 		destination: LogSettingsResponseDestination;
-		kmsKeyArn?: string;
+		kmsKeyArn?: string | null;
 		resourceArn: string;
 	}
 
 	export interface PutIntentResponse {
-		name?: string;
-		description?: string;
-		slots?: Array<Slot>;
-		sampleUtterances?: Array<string>;
+		name?: string | null;
+		description?: string | null;
+		slots?: Array<Slot> | null;
+		sampleUtterances?: Array<string> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: Prompt;
+		confirmationPrompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement;
+		rejectionStatement?: Statement | null;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: FollowUpPrompt;
+		followUpPrompt?: FollowUpPrompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: Statement;
+		conclusionStatement?: Statement | null;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: CodeHook;
+		dialogCodeHook?: CodeHook | null;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: FulfillmentActivity;
-		parentIntentSignature?: string;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
-		checksum?: string;
-		createVersion?: boolean;
+		fulfillmentActivity?: FulfillmentActivity | null;
+		parentIntentSignature?: string | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
+		checksum?: string | null;
+		createVersion?: boolean | null;
 	}
 
 	export interface PutSlotTypeResponse {
-		name?: string;
-		description?: string;
-		enumerationValues?: Array<EnumerationValue>;
-		lastUpdatedDate?: Date;
-		createdDate?: Date;
-		version?: string;
-		checksum?: string;
-		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy;
-		createVersion?: boolean;
-		parentSlotTypeSignature?: string;
-		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+		name?: string | null;
+		description?: string | null;
+		enumerationValues?: Array<EnumerationValue> | null;
+		lastUpdatedDate?: Date | null;
+		createdDate?: Date | null;
+		version?: string | null;
+		checksum?: string | null;
+		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
+		createVersion?: boolean | null;
+		parentSlotTypeSignature?: string | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
 	}
 
 	export interface StartImportResponse {
-		name?: string;
-		resourceType?: GetExportResponseResourceType;
-		mergeStrategy?: GetImportResponseMergeStrategy;
-		importId?: string;
-		importStatus?: GetImportResponseImportStatus;
-		tags?: Array<Tag>;
-		createdDate?: Date;
+		name?: string | null;
+		resourceType?: GetExportResponseResourceType | null;
+		mergeStrategy?: GetImportResponseMergeStrategy | null;
+		importId?: string | null;
+		importStatus?: GetImportResponseImportStatus | null;
+		tags?: Array<Tag> | null;
+		createdDate?: Date | null;
 	}
 
 	export interface TagResourceResponse {
@@ -655,15 +655,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateBotVersionRequest {
-		checksum?: string;
+		checksum?: string | null;
 	}
 
 	export interface CreateIntentVersionRequest {
-		checksum?: string;
+		checksum?: string | null;
 	}
 
 	export interface CreateSlotTypeVersionRequest {
-		checksum?: string;
+		checksum?: string | null;
 	}
 
 	export enum SlotValueSelectionStrategy { ORIGINAL_VALUE = 0, TOP_RESOLUTION = 1 }
@@ -776,72 +776,72 @@ export namespace MyNS {
 	export enum ProcessBehavior { SAVE = 0, BUILD = 1 }
 
 	export interface PutBotAliasRequest {
-		description?: string;
+		description?: string | null;
 		botVersion: string;
-		checksum?: string;
+		checksum?: string | null;
 
 		/** Provides the settings needed for conversation logs. */
-		conversationLogs?: ConversationLogsRequest;
-		tags?: Array<Tag>;
+		conversationLogs?: ConversationLogsRequest | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface PutBotRequest {
-		description?: string;
-		intents?: Array<Intent>;
+		description?: string | null;
+		intents?: Array<Intent> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: Prompt;
+		clarificationPrompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: Statement;
-		idleSessionTTLInSeconds?: number;
-		voiceId?: string;
-		checksum?: string;
-		processBehavior?: ProcessBehavior;
+		abortStatement?: Statement | null;
+		idleSessionTTLInSeconds?: number | null;
+		voiceId?: string | null;
+		checksum?: string | null;
+		processBehavior?: ProcessBehavior | null;
 		locale: PutBotRequestLocale;
 		childDirected: boolean;
-		detectSentiment?: boolean;
-		createVersion?: boolean;
-		tags?: Array<Tag>;
+		detectSentiment?: boolean | null;
+		createVersion?: boolean | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum PutBotRequestLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface PutIntentRequest {
-		description?: string;
-		slots?: Array<Slot>;
-		sampleUtterances?: Array<string>;
+		description?: string | null;
+		slots?: Array<Slot> | null;
+		sampleUtterances?: Array<string> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: Prompt;
+		confirmationPrompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement;
+		rejectionStatement?: Statement | null;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: FollowUpPrompt;
+		followUpPrompt?: FollowUpPrompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: Statement;
+		conclusionStatement?: Statement | null;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: CodeHook;
+		dialogCodeHook?: CodeHook | null;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: FulfillmentActivity;
-		parentIntentSignature?: string;
-		checksum?: string;
-		createVersion?: boolean;
+		fulfillmentActivity?: FulfillmentActivity | null;
+		parentIntentSignature?: string | null;
+		checksum?: string | null;
+		createVersion?: boolean | null;
 	}
 
 	export interface PutSlotTypeRequest {
-		description?: string;
-		enumerationValues?: Array<EnumerationValue>;
-		checksum?: string;
-		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy;
-		createVersion?: boolean;
-		parentSlotTypeSignature?: string;
-		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+		description?: string | null;
+		enumerationValues?: Array<EnumerationValue> | null;
+		checksum?: string | null;
+		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
+		createVersion?: boolean | null;
+		parentSlotTypeSignature?: string | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
 	}
 
 	export enum SlotConstraint { Required = 0, Optional = 1 }
@@ -850,7 +850,7 @@ export namespace MyNS {
 		payload: string;
 		resourceType: GetExportResponseResourceType;
 		mergeStrategy: GetImportResponseMergeStrategy;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface TagResourceRequest {
@@ -1303,19 +1303,19 @@ export namespace MyNS {
 	export interface CreateBotVersionPostBody {
 
 		/** Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
-		checksum?: string;
+		checksum?: string | null;
 	}
 
 	export interface CreateIntentVersionPostBody {
 
 		/** Checksum of the <code>$LATEST</code> version of the intent that should be used to create the new version. If you specify a checksum and the <code>$LATEST</code> version of the intent has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
-		checksum?: string;
+		checksum?: string | null;
 	}
 
 	export interface CreateSlotTypeVersionPostBody {
 
 		/** Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
-		checksum?: string;
+		checksum?: string | null;
 	}
 
 	export interface PutBotAliasPutBody {
@@ -1325,7 +1325,7 @@ export namespace MyNS {
 		 * Max length: 200
 		 * Min length: 0
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The version of the bot.
@@ -1337,22 +1337,22 @@ export namespace MyNS {
 		botVersion: string;
 
 		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a bot alias, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
-		checksum?: string;
+		checksum?: string | null;
 
 		/** Provides the settings needed for conversation logs. */
-		conversationLogs?: PutBotAliasPutBodyConversationLogs;
+		conversationLogs?: PutBotAliasPutBodyConversationLogs | null;
 
 		/**
 		 * A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.
 		 * Minimum items: 0
 		 * Maximum items: 200
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface PutBotAliasPutBodyConversationLogs {
-		logSettings?: Array<LogSettingsRequest>;
-		iamRoleArn?: string;
+		logSettings?: Array<LogSettingsRequest> | null;
+		iamRoleArn?: string | null;
 	}
 
 	export enum GetBuiltinIntentsLocale { en_US = 0, en_GB = 1, de_DE = 2 }
@@ -1379,32 +1379,32 @@ export namespace MyNS {
 		 * Max length: 200
 		 * Min length: 0
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <a>how-it-works</a>. */
-		intents?: Array<Intent>;
+		intents?: Array<Intent> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: PutBotPutBodyClarificationPrompt;
+		clarificationPrompt?: PutBotPutBodyClarificationPrompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: PutBotPutBodyAbortStatement;
+		abortStatement?: PutBotPutBodyAbortStatement | null;
 
 		/**
 		 * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p> <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p> <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p> <p>The default is 300 seconds (5 minutes).</p>
 		 * Minimum: 60
 		 * Maximum: 86400
 		 */
-		idleSessionTTLInSeconds?: number;
+		idleSessionTTLInSeconds?: number | null;
 
 		/** The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>. */
-		voiceId?: string;
+		voiceId?: string | null;
 
 		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
-		checksum?: string;
+		checksum?: string | null;
 
 		/** <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p> <p>If you don't specify this value, the default value is <code>BUILD</code>.</p> */
-		processBehavior?: ProcessBehavior;
+		processBehavior?: ProcessBehavior | null;
 
 		/**
 		 * <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p> <p>The default is <code>en-US</code>.</p>
@@ -1419,28 +1419,28 @@ export namespace MyNS {
 		childDirected: boolean;
 
 		/** When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>. */
-		detectSentiment?: boolean;
+		detectSentiment?: boolean | null;
 
 		/** When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>. */
-		createVersion?: boolean;
+		createVersion?: boolean | null;
 
 		/**
 		 * A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.
 		 * Minimum items: 0
 		 * Maximum items: 200
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface PutBotPutBodyClarificationPrompt {
-		messages?: Array<Message>;
-		maxAttempts?: number;
-		responseCard?: string;
+		messages?: Array<Message> | null;
+		maxAttempts?: number | null;
+		responseCard?: string | null;
 	}
 
 	export interface PutBotPutBodyAbortStatement {
-		messages?: Array<Message>;
-		responseCard?: string;
+		messages?: Array<Message> | null;
+		responseCard?: string | null;
 	}
 
 	export enum PutBotPutBodyLocale { en_US = 0, en_GB = 1, de_DE = 2 }
@@ -1452,85 +1452,85 @@ export namespace MyNS {
 		 * Max length: 200
 		 * Min length: 0
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <a>how-it-works</a>.
 		 * Minimum items: 0
 		 * Maximum items: 100
 		 */
-		slots?: Array<Slot>;
+		slots?: Array<Slot> | null;
 
 		/**
 		 * <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p> <p>In each utterance, a slot name is enclosed in curly braces. </p>
 		 * Minimum items: 0
 		 * Maximum items: 1500
 		 */
-		sampleUtterances?: Array<string>;
+		sampleUtterances?: Array<string> | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: PutIntentPutBodyConfirmationPrompt;
+		confirmationPrompt?: PutIntentPutBodyConfirmationPrompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: PutIntentPutBodyRejectionStatement;
+		rejectionStatement?: PutIntentPutBodyRejectionStatement | null;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: PutIntentPutBodyFollowUpPrompt;
+		followUpPrompt?: PutIntentPutBodyFollowUpPrompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: PutIntentPutBodyConclusionStatement;
+		conclusionStatement?: PutIntentPutBodyConclusionStatement | null;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: PutIntentPutBodyDialogCodeHook;
+		dialogCodeHook?: PutIntentPutBodyDialogCodeHook | null;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: PutIntentPutBodyFulfillmentActivity;
+		fulfillmentActivity?: PutIntentPutBodyFulfillmentActivity | null;
 
 		/** A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>. */
-		parentIntentSignature?: string;
+		parentIntentSignature?: string | null;
 
 		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new intent, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a intent, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
-		checksum?: string;
+		checksum?: string | null;
 
 		/** When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>. */
-		createVersion?: boolean;
+		createVersion?: boolean | null;
 	}
 
 	export interface PutIntentPutBodyConfirmationPrompt {
-		messages?: Array<Message>;
-		maxAttempts?: number;
-		responseCard?: string;
+		messages?: Array<Message> | null;
+		maxAttempts?: number | null;
+		responseCard?: string | null;
 	}
 
 	export interface PutIntentPutBodyRejectionStatement {
-		messages?: Array<Message>;
-		responseCard?: string;
+		messages?: Array<Message> | null;
+		responseCard?: string | null;
 	}
 
 	export interface PutIntentPutBodyFollowUpPrompt {
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		prompt?: Prompt;
+		prompt?: Prompt | null;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement;
+		rejectionStatement?: Statement | null;
 	}
 
 	export interface PutIntentPutBodyConclusionStatement {
-		messages?: Array<Message>;
-		responseCard?: string;
+		messages?: Array<Message> | null;
+		responseCard?: string | null;
 	}
 
 	export interface PutIntentPutBodyDialogCodeHook {
-		uri?: string;
-		messageVersion?: string;
+		uri?: string | null;
+		messageVersion?: string | null;
 	}
 
 	export interface PutIntentPutBodyFulfillmentActivity {
-		type?: FulfillmentActivityType;
+		type?: FulfillmentActivityType | null;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		codeHook?: CodeHook;
+		codeHook?: CodeHook | null;
 	}
 
 	export interface PutSlotTypePutBody {
@@ -1540,23 +1540,23 @@ export namespace MyNS {
 		 * Max length: 200
 		 * Min length: 0
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
 		 * Minimum items: 0
 		 * Maximum items: 10000
 		 */
-		enumerationValues?: Array<EnumerationValue>;
+		enumerationValues?: Array<EnumerationValue> | null;
 
 		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
-		checksum?: string;
+		checksum?: string | null;
 
 		/** <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p> <ul> <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li> <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p> */
-		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy;
+		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
 
 		/** When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>. */
-		createVersion?: boolean;
+		createVersion?: boolean | null;
 
 		/**
 		 * <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
@@ -1564,14 +1564,14 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
-		parentSlotTypeSignature?: string;
+		parentSlotTypeSignature?: string | null;
 
 		/**
 		 * Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.
 		 * Minimum items: 0
 		 * Maximum items: 10
 		 */
-		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
 	}
 
 	export interface StartImportPostBody {
@@ -1599,7 +1599,7 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 200
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 }

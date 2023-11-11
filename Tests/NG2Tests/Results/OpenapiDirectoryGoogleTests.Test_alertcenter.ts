@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface AccountWarning {
 
 		/** Required. The email of the user that this event belongs to. */
-		email?: string;
+		email?: string | null;
 
 		/** The details of the login action. */
-		loginDetails?: LoginDetails;
+		loginDetails?: LoginDetails | null;
 	}
 
 
@@ -21,13 +21,13 @@ export namespace MyNS {
 		 * Optional. The human-readable IP address (for example,
 		 * `11.22.33.44`) that is associated with the warning event.
 		 */
-		ipAddress?: string;
+		ipAddress?: string | null;
 
 		/**
 		 * Optional. The successful login time that is associated with the warning
 		 * event. This isn't present for blocked login attempts.
 		 */
-		loginTime?: string;
+		loginTime?: string | null;
 	}
 
 
@@ -35,39 +35,39 @@ export namespace MyNS {
 	export interface ActivityRule {
 
 		/** List of action names associated with the rule threshold. */
-		actionNames?: Array<string>;
+		actionNames?: Array<string> | null;
 
 		/** Rule create timestamp. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Description of the rule. */
-		description?: string;
+		description?: string | null;
 
 		/** Alert display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Rule name. */
-		name?: string;
+		name?: string | null;
 
 		/** Query that is used to get the data from the associated source. */
-		query?: string;
+		query?: string | null;
 
 		/**
 		 * List of alert IDs superseded by this alert. It is used to indicate that
 		 * this alert is essentially extension of superseded alerts and we found the
 		 * relationship after creating these alerts.
 		 */
-		supersededAlerts?: Array<string>;
+		supersededAlerts?: Array<string> | null;
 
 		/**
 		 * Alert ID superseding this alert. It is used to indicate that superseding
 		 * alert is essentially extension of this alert and we found the relationship
 		 * after creating both alerts.
 		 */
-		supersedingAlert?: string;
+		supersedingAlert?: string | null;
 
 		/** Alert threshold is for example “COUNT > 5”. */
-		threshold?: string;
+		threshold?: string | null;
 
 		/**
 		 * The trigger sources for this rule.
@@ -75,13 +75,13 @@ export namespace MyNS {
 		 * * DEVICE_EVENTS
 		 * * USER_EVENTS
 		 */
-		triggerSource?: string;
+		triggerSource?: string | null;
 
 		/** The timestamp of the last update to the rule. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** Rule window size. Possible values are 1 hour or 24 hours. */
-		windowSize?: string;
+		windowSize?: string | null;
 	}
 
 
@@ -89,29 +89,29 @@ export namespace MyNS {
 	export interface Alert {
 
 		/** Output only. The unique identifier for the alert. */
-		alertId?: string;
+		alertId?: string | null;
 
 		/** Output only. The time this alert was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Output only. The unique identifier of the Google account of the customer. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/**
 		 * Optional. The data associated with this alert, for example
 		 * google.apps.alertcenter.type.DeviceCompromised.
 		 */
-		data?: {[id: string]: any };
+		data?: {[id: string]: any } | null;
 
 		/** Output only. `True` if this alert is marked for deletion. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/**
 		 * Optional. The time the event that caused this alert ceased being active.
 		 * If provided, the end time must not be earlier than the start time.
 		 * If not provided, it indicates an ongoing alert.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Optional. `etag` is used for optimistic concurrency control as a way to help
@@ -124,17 +124,17 @@ export namespace MyNS {
 		 * If no `etag` is provided in the call to update alert, then the existing
 		 * alert is overwritten blindly.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/** An alert metadata. */
-		metadata?: AlertMetadata;
+		metadata?: AlertMetadata | null;
 
 		/**
 		 * Output only. An optional
 		 * [Security Investigation Tool](https://support.google.com/a/answer/7575955)
 		 * query for this alert.
 		 */
-		securityInvestigationToolLink?: string;
+		securityInvestigationToolLink?: string | null;
 
 		/**
 		 * Required. A unique identifier for the system that reported the alert.
@@ -147,13 +147,13 @@ export namespace MyNS {
 		 * * State sponsored attack
 		 * * Google identity
 		 */
-		source?: string;
+		source?: string | null;
 
 		/**
 		 * Required. The time the event that caused this alert was started or
 		 * detected.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/**
 		 * Required. The type of the alert.
@@ -161,10 +161,10 @@ export namespace MyNS {
 		 * For a list of available alert types see
 		 * [G Suite Alert types](/admin-sdk/alertcenter/reference/alert-types).
 		 */
-		type?: string;
+		type?: string | null;
 
 		/** Output only. The time this alert was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -172,13 +172,13 @@ export namespace MyNS {
 	export interface AlertMetadata {
 
 		/** Output only. The alert identifier. */
-		alertId?: string;
+		alertId?: string | null;
 
 		/** The email address of the user assigned to the alert. */
-		assignee?: string;
+		assignee?: string | null;
 
 		/** Output only. The unique identifier of the Google account of the customer. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/**
 		 * Optional. `etag` is used for optimistic concurrency control as a way to
@@ -192,7 +192,7 @@ export namespace MyNS {
 		 * If no `etag` is provided in the call to update alert metadata, then the
 		 * existing alert metadata is overwritten blindly.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * The severity value of the alert. Alert Center will set this field at alert
@@ -203,7 +203,7 @@ export namespace MyNS {
 		 * * MEDIUM
 		 * * LOW
 		 */
-		severity?: string;
+		severity?: string | null;
 
 		/**
 		 * The current status of the alert.
@@ -212,10 +212,10 @@ export namespace MyNS {
 		 * * IN_PROGRESS
 		 * * CLOSED
 		 */
-		status?: string;
+		status?: string | null;
 
 		/** Output only. The time this metadata was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -223,22 +223,22 @@ export namespace MyNS {
 	export interface AlertFeedback {
 
 		/** Output only. The alert identifier. */
-		alertId?: string;
+		alertId?: string | null;
 
 		/** Output only. The time this feedback was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Output only. The unique identifier of the Google account of the customer. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/** Output only. The email of the user that provided the feedback. */
-		email?: string;
+		email?: string | null;
 
 		/** Output only. The unique identifier for the feedback. */
-		feedbackId?: string;
+		feedbackId?: string | null;
 
 		/** Required. The type of the feedback. */
-		type?: AlertFeedbackType;
+		type?: AlertFeedbackType | null;
 	}
 
 	export enum AlertFeedbackType { ALERT_FEEDBACK_TYPE_UNSPECIFIED = 0, NOT_USEFUL = 1, SOMEWHAT_USEFUL = 2, VERY_USEFUL = 3 }
@@ -248,7 +248,7 @@ export namespace MyNS {
 	export interface AppMakerSqlSetupNotification {
 
 		/** List of applications with requests for default SQL set up. */
-		requestInfo?: Array<RequestInfo>;
+		requestInfo?: Array<RequestInfo> | null;
 	}
 
 
@@ -259,16 +259,16 @@ export namespace MyNS {
 		 * List of app developers who triggered notifications for above
 		 * application.
 		 */
-		appDeveloperEmail?: Array<string>;
+		appDeveloperEmail?: Array<string> | null;
 
 		/** Required. The application that requires the SQL setup. */
-		appKey?: string;
+		appKey?: string | null;
 
 		/**
 		 * Required. Number of requests sent for this application to set up default
 		 * SQL instance.
 		 */
-		numberOfRequests?: string;
+		numberOfRequests?: string | null;
 	}
 
 
@@ -279,7 +279,7 @@ export namespace MyNS {
 		 * A representation of a CSV file attachment, as a list of column headers and
 		 * a list of data rows.
 		 */
-		csv?: Csv;
+		csv?: Csv | null;
 	}
 
 
@@ -293,10 +293,10 @@ export namespace MyNS {
 		 * The list of data rows in a CSV file, as string arrays rather than as a
 		 * single comma-separated string.
 		 */
-		dataRows?: Array<CsvRow>;
+		dataRows?: Array<CsvRow> | null;
 
 		/** The list of headers for data columns in a CSV file. */
-		headers?: Array<string>;
+		headers?: Array<string> | null;
 	}
 
 
@@ -307,7 +307,7 @@ export namespace MyNS {
 		 * The data entries in a CSV file row, as a string array rather than a
 		 * single comma-separated string.
 		 */
-		entries?: Array<string>;
+		entries?: Array<string> | null;
 	}
 
 
@@ -318,19 +318,19 @@ export namespace MyNS {
 	export interface BadWhitelist {
 
 		/** Domain ID of Gmail phishing alerts. */
-		domainId?: DomainId;
+		domainId?: DomainId | null;
 
 		/** Entity whose actions triggered a Gmail phishing alert. */
-		maliciousEntity?: MaliciousEntity;
+		maliciousEntity?: MaliciousEntity | null;
 
 		/** The list of messages contained by this alert. */
-		messages?: Array<GmailMessageInfo>;
+		messages?: Array<GmailMessageInfo> | null;
 
 		/**
 		 * The source IP address of the malicious email, for example,
 		 * `127.0.0.1`.
 		 */
-		sourceIp?: string;
+		sourceIp?: string | null;
 	}
 
 
@@ -338,7 +338,7 @@ export namespace MyNS {
 	export interface DomainId {
 
 		/** The primary domain for the customer. */
-		customerPrimaryDomain?: string;
+		customerPrimaryDomain?: string | null;
 	}
 
 
@@ -346,13 +346,13 @@ export namespace MyNS {
 	export interface MaliciousEntity {
 
 		/** The header from display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** A user. */
-		entity?: User;
+		entity?: User | null;
 
 		/** The sender email address. */
-		fromHeader?: string;
+		fromHeader?: string | null;
 	}
 
 
@@ -360,10 +360,10 @@ export namespace MyNS {
 	export interface User {
 
 		/** Display name of the user. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Email address of the user. */
-		emailAddress?: string;
+		emailAddress?: string | null;
 	}
 
 
@@ -371,28 +371,28 @@ export namespace MyNS {
 	export interface GmailMessageInfo {
 
 		/** The `SHA256` hash of email's attachment and all MIME parts. */
-		attachmentsSha256Hash?: Array<string>;
+		attachmentsSha256Hash?: Array<string> | null;
 
 		/** The date the malicious email was sent. */
-		date?: string;
+		date?: string | null;
 
 		/** The hash of the message body text. */
-		md5HashMessageBody?: string;
+		md5HashMessageBody?: string | null;
 
 		/** The MD5 Hash of email's subject (only available for reported emails). */
-		md5HashSubject?: string;
+		md5HashSubject?: string | null;
 
 		/** The snippet of the message body text (only available for reported emails). */
-		messageBodySnippet?: string;
+		messageBodySnippet?: string | null;
 
 		/** The message ID. */
-		messageId?: string;
+		messageId?: string | null;
 
 		/** The recipient of this email. */
-		recipient?: string;
+		recipient?: string | null;
 
 		/** The email subject text (only available for reported emails). */
-		subjectText?: string;
+		subjectText?: string | null;
 	}
 
 
@@ -400,13 +400,13 @@ export namespace MyNS {
 	export interface BatchDeleteAlertsRequest {
 
 		/** Required. list of alert IDs. */
-		alertId?: Array<string>;
+		alertId?: Array<string> | null;
 
 		/**
 		 * Optional. The unique identifier of the G Suite organization account of the
 		 * customer the alerts are associated with.
 		 */
-		customerId?: string;
+		customerId?: string | null;
 	}
 
 
@@ -414,10 +414,10 @@ export namespace MyNS {
 	export interface BatchDeleteAlertsResponse {
 
 		/** The status details for each failed alert_id. */
-		failedAlertStatus?: {[id: string]: Status };
+		failedAlertStatus?: {[id: string]: Status } | null;
 
 		/** The successful list of alert IDs. */
-		successAlertIds?: Array<string>;
+		successAlertIds?: Array<string> | null;
 	}
 
 
@@ -432,20 +432,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -453,13 +453,13 @@ export namespace MyNS {
 	export interface BatchUndeleteAlertsRequest {
 
 		/** Required. list of alert IDs. */
-		alertId?: Array<string>;
+		alertId?: Array<string> | null;
 
 		/**
 		 * Optional. The unique identifier of the G Suite organization account of the
 		 * customer the alerts are associated with.
 		 */
-		customerId?: string;
+		customerId?: string | null;
 	}
 
 
@@ -467,10 +467,10 @@ export namespace MyNS {
 	export interface BatchUndeleteAlertsResponse {
 
 		/** The status details for each failed alert_id. */
-		failedAlertStatus?: {[id: string]: Status };
+		failedAlertStatus?: {[id: string]: Status } | null;
 
 		/** The successful list of alert IDs. */
-		successAlertIds?: Array<string>;
+		successAlertIds?: Array<string> | null;
 	}
 
 
@@ -486,13 +486,13 @@ export namespace MyNS {
 		 * Optional. The format of the payload that would be sent.
 		 * If not specified the format will be JSON.
 		 */
-		payloadFormat?: CloudPubsubTopicPayloadFormat;
+		payloadFormat?: CloudPubsubTopicPayloadFormat | null;
 
 		/**
 		 * The `name` field of a Cloud Pubsub [Topic]
 		 * (https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
 		 */
-		topicName?: string;
+		topicName?: string | null;
 	}
 
 	export enum CloudPubsubTopicPayloadFormat { PAYLOAD_FORMAT_UNSPECIFIED = 0, JSON = 1 }
@@ -502,10 +502,10 @@ export namespace MyNS {
 	export interface DeviceCompromised {
 
 		/** The email of the user this alert was created for. */
-		email?: string;
+		email?: string | null;
 
 		/** Required. The list of security events. */
-		events?: Array<DeviceCompromisedSecurityDetail>;
+		events?: Array<DeviceCompromisedSecurityDetail> | null;
 	}
 
 
@@ -516,25 +516,25 @@ export namespace MyNS {
 		 * The device compromised state. Possible values are "`Compromised`" or
 		 * "`Not Compromised`".
 		 */
-		deviceCompromisedState?: string;
+		deviceCompromisedState?: string | null;
 
 		/** Required. The device ID. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/** The model of the device. */
-		deviceModel?: string;
+		deviceModel?: string | null;
 
 		/** The type of the device. */
-		deviceType?: string;
+		deviceType?: string | null;
 
 		/** Required for iOS, empty for others. */
-		iosVendorId?: string;
+		iosVendorId?: string | null;
 
 		/** The device resource ID. */
-		resourceId?: string;
+		resourceId?: string | null;
 
 		/** The serial number of the device. */
-		serialNumber?: string;
+		serialNumber?: string | null;
 	}
 
 
@@ -545,7 +545,7 @@ export namespace MyNS {
 		 * Common alert information about violated rules that are configured by G Suite
 		 * administrators.
 		 */
-		ruleViolationInfo?: RuleViolationInfo;
+		ruleViolationInfo?: RuleViolationInfo | null;
 	}
 
 
@@ -556,10 +556,10 @@ export namespace MyNS {
 	export interface RuleViolationInfo {
 
 		/** Source of the data. */
-		dataSource?: RuleViolationInfoDataSource;
+		dataSource?: RuleViolationInfoDataSource | null;
 
 		/** List of matches that were found in the resource content. */
-		matchInfo?: Array<MatchInfo>;
+		matchInfo?: Array<MatchInfo> | null;
 
 		/**
 		 * Resource recipients.
@@ -570,28 +570,28 @@ export namespace MyNS {
 		 * For Gmail, they are emails of the users or groups that the Gmail message
 		 * was sent to.
 		 */
-		recipients?: Array<string>;
+		recipients?: Array<string> | null;
 
 		/** Proto that contains resource information. */
-		resourceInfo?: ResourceInfo;
+		resourceInfo?: ResourceInfo | null;
 
 		/** Proto that contains rule information. */
-		ruleInfo?: RuleInfo;
+		ruleInfo?: RuleInfo | null;
 
 		/** Actions suppressed due to other actions with higher priority. */
-		suppressedActionTypes?: Array<string>;
+		suppressedActionTypes?: Array<string> | null;
 
 		/** Trigger of the rule. */
-		trigger?: RuleViolationInfoTrigger;
+		trigger?: RuleViolationInfoTrigger | null;
 
 		/** Actions applied as a consequence of the rule being triggered. */
-		triggeredActionTypes?: Array<string>;
+		triggeredActionTypes?: Array<string> | null;
 
 		/**
 		 * Email of the user who caused the violation. Value could be empty if not
 		 * applicable, for example, a violation found by drive continuous scan.
 		 */
-		triggeringUserEmail?: string;
+		triggeringUserEmail?: string | null;
 	}
 
 	export enum RuleViolationInfoDataSource { DATA_SOURCE_UNSPECIFIED = 0, DRIVE = 1 }
@@ -601,10 +601,10 @@ export namespace MyNS {
 	export interface MatchInfo {
 
 		/** Detector provided by Google. */
-		predefinedDetector?: PredefinedDetectorInfo;
+		predefinedDetector?: PredefinedDetectorInfo | null;
 
 		/** Detector defined by administrators. */
-		userDefinedDetector?: UserDefinedDetectorInfo;
+		userDefinedDetector?: UserDefinedDetectorInfo | null;
 	}
 
 
@@ -612,7 +612,7 @@ export namespace MyNS {
 	export interface PredefinedDetectorInfo {
 
 		/** Name that uniquely identifies the detector. */
-		detectorName?: string;
+		detectorName?: string | null;
 	}
 
 
@@ -620,10 +620,10 @@ export namespace MyNS {
 	export interface UserDefinedDetectorInfo {
 
 		/** Display name of the detector. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Resource name that uniquely identifies the detector. */
-		resourceName?: string;
+		resourceName?: string | null;
 	}
 
 
@@ -631,10 +631,10 @@ export namespace MyNS {
 	export interface ResourceInfo {
 
 		/** Drive file ID. */
-		documentId?: string;
+		documentId?: string | null;
 
 		/** Title of the resource, for example email subject, or document title. */
-		resourceTitle?: string;
+		resourceTitle?: string | null;
 	}
 
 
@@ -642,10 +642,10 @@ export namespace MyNS {
 	export interface RuleInfo {
 
 		/** User provided name of the rule. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Resource name that uniquely identifies the rule. */
-		resourceName?: string;
+		resourceName?: string | null;
 	}
 
 	export enum RuleViolationInfoTrigger { TRIGGER_UNSPECIFIED = 0, DRIVE_SHARE = 1 }
@@ -658,10 +658,10 @@ export namespace MyNS {
 	export interface DomainWideTakeoutInitiated {
 
 		/** The email of the admin who initiated the takeout. */
-		email?: string;
+		email?: string | null;
 
 		/** The takeout request ID. */
-		takeoutRequestId?: string;
+		takeoutRequestId?: string | null;
 	}
 
 
@@ -685,16 +685,16 @@ export namespace MyNS {
 		 * The list of emails which correspond to the users directly affected by the
 		 * incident.
 		 */
-		affectedUserEmails?: Array<string>;
+		affectedUserEmails?: Array<string> | null;
 
 		/** Attachment with application-specific information about an alert. */
-		attachmentData?: Attachment;
+		attachmentData?: Attachment | null;
 
 		/** A detailed, freeform incident description. */
-		description?: string;
+		description?: string | null;
 
 		/** A one-line incident description. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -705,7 +705,7 @@ export namespace MyNS {
 		 * The list of alert feedback.
 		 * Feedback entries for each alert are ordered by creation time descending.
 		 */
-		feedback?: Array<AlertFeedback>;
+		feedback?: Array<AlertFeedback> | null;
 	}
 
 
@@ -713,7 +713,7 @@ export namespace MyNS {
 	export interface ListAlertsResponse {
 
 		/** The list of alerts. */
-		alerts?: Array<Alert>;
+		alerts?: Array<Alert> | null;
 
 		/**
 		 * The token for the next page. If not empty, indicates that there may be more
@@ -721,7 +721,7 @@ export namespace MyNS {
 		 * subsequent ListAlertsRequest to get alerts continuing from last result
 		 * of the current list call.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -738,19 +738,19 @@ export namespace MyNS {
 	export interface MailPhishing {
 
 		/** Domain ID of Gmail phishing alerts. */
-		domainId?: DomainId;
+		domainId?: DomainId | null;
 
 		/** If `true`, the email originated from within the organization. */
-		isInternal?: boolean;
+		isInternal?: boolean | null;
 
 		/** Entity whose actions triggered a Gmail phishing alert. */
-		maliciousEntity?: MaliciousEntity;
+		maliciousEntity?: MaliciousEntity | null;
 
 		/** The list of messages contained by this alert. */
-		messages?: Array<GmailMessageInfo>;
+		messages?: Array<GmailMessageInfo> | null;
 
 		/** System actions on the messages. */
-		systemActionType?: MailPhishingSystemActionType;
+		systemActionType?: MailPhishingSystemActionType | null;
 	}
 
 	export enum MailPhishingSystemActionType { SYSTEM_ACTION_TYPE_UNSPECIFIED = 0, NO_OPERATION = 1, REMOVED_FROM_INBOX = 2 }
@@ -769,7 +769,7 @@ export namespace MyNS {
 		 * `alerts-api-push-notifications@system.gserviceaccount.com` the
 		 * `projects.topics.publish` permission.
 		 */
-		cloudPubsubTopic?: CloudPubsubTopic;
+		cloudPubsubTopic?: CloudPubsubTopic | null;
 	}
 
 
@@ -782,16 +782,16 @@ export namespace MyNS {
 	export interface PhishingSpike {
 
 		/** Domain ID of Gmail phishing alerts. */
-		domainId?: DomainId;
+		domainId?: DomainId | null;
 
 		/** If `true`, the email originated from within the organization. */
-		isInternal?: boolean;
+		isInternal?: boolean | null;
 
 		/** Entity whose actions triggered a Gmail phishing alert. */
-		maliciousEntity?: MaliciousEntity;
+		maliciousEntity?: MaliciousEntity | null;
 
 		/** The list of messages contained by this alert. */
-		messages?: Array<GmailMessageInfo>;
+		messages?: Array<GmailMessageInfo> | null;
 	}
 
 
@@ -799,7 +799,7 @@ export namespace MyNS {
 	export interface Settings {
 
 		/** The list of notifications. */
-		notifications?: Array<Notification>;
+		notifications?: Array<Notification> | null;
 	}
 
 
@@ -807,7 +807,7 @@ export namespace MyNS {
 	export interface StateSponsoredAttack {
 
 		/** The email of the user this incident was created for. */
-		email?: string;
+		email?: string | null;
 	}
 
 
@@ -815,10 +815,10 @@ export namespace MyNS {
 	export interface SuspiciousActivity {
 
 		/** The email of the user this alert was created for. */
-		email?: string;
+		email?: string | null;
 
 		/** Required. The list of security events. */
-		events?: Array<SuspiciousActivitySecurityDetail>;
+		events?: Array<SuspiciousActivitySecurityDetail> | null;
 	}
 
 
@@ -826,31 +826,31 @@ export namespace MyNS {
 	export interface SuspiciousActivitySecurityDetail {
 
 		/** Required. The device ID. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/** The model of the device. */
-		deviceModel?: string;
+		deviceModel?: string | null;
 
 		/** The device property which was changed. */
-		deviceProperty?: string;
+		deviceProperty?: string | null;
 
 		/** The type of the device. */
-		deviceType?: string;
+		deviceType?: string | null;
 
 		/** Required for iOS, empty for others. */
-		iosVendorId?: string;
+		iosVendorId?: string | null;
 
 		/** The new value of the device property after the change. */
-		newValue?: string;
+		newValue?: string | null;
 
 		/** The old value of the device property before the change. */
-		oldValue?: string;
+		oldValue?: string | null;
 
 		/** The device resource ID. */
-		resourceId?: string;
+		resourceId?: string | null;
 
 		/** The serial number of the device. */
-		serialNumber?: string;
+		serialNumber?: string | null;
 	}
 
 
@@ -862,7 +862,7 @@ export namespace MyNS {
 		 * customer the alert is associated with.
 		 * Inferred from the caller identity if not provided.
 		 */
-		customerId?: string;
+		customerId?: string | null;
 	}
 
 	@Injectable()

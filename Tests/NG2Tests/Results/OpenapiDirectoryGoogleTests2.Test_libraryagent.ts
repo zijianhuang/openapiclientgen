@@ -7,20 +7,20 @@ export namespace MyNS {
 	export interface GoogleExampleLibraryagentV1Book {
 
 		/** The name of the book author. */
-		author?: string;
+		author?: string | null;
 
 		/**
 		 * The resource name of the book.
 		 * Book names have the form `shelves/{shelf_id}/books/{book_id}`.
 		 * The name is ignored when creating a book.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Value indicating whether the book has been read. */
-		read?: boolean;
+		read?: boolean | null;
 
 		/** The title of the book. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -28,7 +28,7 @@ export namespace MyNS {
 	export interface GoogleExampleLibraryagentV1ListBooksResponse {
 
 		/** The list of books. */
-		books?: Array<GoogleExampleLibraryagentV1Book>;
+		books?: Array<GoogleExampleLibraryagentV1Book> | null;
 
 		/**
 		 * A token to retrieve next page of results.
@@ -37,7 +37,7 @@ export namespace MyNS {
 		 * field in the subsequent call to `ListBooks` method to retrieve the next
 		 * page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -51,10 +51,10 @@ export namespace MyNS {
 		 * field in the subsequent call to `ListShelves` method to retrieve the next
 		 * page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of shelves. */
-		shelves?: Array<GoogleExampleLibraryagentV1Shelf>;
+		shelves?: Array<GoogleExampleLibraryagentV1Shelf> | null;
 	}
 
 
@@ -66,10 +66,10 @@ export namespace MyNS {
 		 * Shelf names have the form `shelves/{shelf_id}`.
 		 * The name is ignored when creating a shelf.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The theme of the shelf */
-		theme?: string;
+		theme?: string | null;
 	}
 
 	@Injectable()

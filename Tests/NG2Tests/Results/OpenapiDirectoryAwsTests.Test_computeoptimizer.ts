@@ -3,25 +3,25 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface GetAutoScalingGroupRecommendationsResponse {
-		nextToken?: string;
-		autoScalingGroupRecommendations?: Array<AutoScalingGroupRecommendation>;
-		errors?: Array<GetRecommendationError>;
+		nextToken?: string | null;
+		autoScalingGroupRecommendations?: Array<AutoScalingGroupRecommendation> | null;
+		errors?: Array<GetRecommendationError> | null;
 	}
 
 
 	/** Describes an Auto Scaling group recommendation. */
 	export interface AutoScalingGroupRecommendation {
-		accountId?: string;
-		autoScalingGroupArn?: string;
-		autoScalingGroupName?: string;
-		finding?: AutoScalingGroupRecommendationFinding;
-		utilizationMetrics?: Array<UtilizationMetric>;
-		lookBackPeriodInDays?: number;
+		accountId?: string | null;
+		autoScalingGroupArn?: string | null;
+		autoScalingGroupName?: string | null;
+		finding?: AutoScalingGroupRecommendationFinding | null;
+		utilizationMetrics?: Array<UtilizationMetric> | null;
+		lookBackPeriodInDays?: number | null;
 
 		/** Describes the configuration of an Auto Scaling group. */
-		currentConfiguration?: AutoScalingGroupConfiguration;
-		recommendationOptions?: Array<AutoScalingGroupRecommendationOption>;
-		lastRefreshTimestamp?: Date;
+		currentConfiguration?: AutoScalingGroupConfiguration | null;
+		recommendationOptions?: Array<AutoScalingGroupRecommendationOption> | null;
+		lastRefreshTimestamp?: Date | null;
 	}
 
 	export enum AutoScalingGroupRecommendationFinding { Underprovisioned = 0, Overprovisioned = 1, Optimized = 2, NotOptimized = 3 }
@@ -29,9 +29,9 @@ export namespace MyNS {
 
 	/** Describes a utilization metric of a resource, such as an Amazon EC2 instance. */
 	export interface UtilizationMetric {
-		name?: UtilizationMetricName;
-		statistic?: UtilizationMetricStatistic;
-		value?: number;
+		name?: UtilizationMetricName | null;
+		statistic?: UtilizationMetricStatistic | null;
+		value?: number | null;
 	}
 
 	export enum UtilizationMetricName { Cpu = 0, Memory = 1 }
@@ -41,10 +41,10 @@ export namespace MyNS {
 
 	/** Describes the configuration of an Auto Scaling group. */
 	export interface AutoScalingGroupConfiguration {
-		desiredCapacity?: number;
-		minSize?: number;
-		maxSize?: number;
-		instanceType?: string;
+		desiredCapacity?: number | null;
+		minSize?: number | null;
+		maxSize?: number | null;
+		instanceType?: string | null;
 	}
 
 
@@ -52,33 +52,33 @@ export namespace MyNS {
 	export interface AutoScalingGroupRecommendationOption {
 
 		/** Describes the configuration of an Auto Scaling group. */
-		configuration?: AutoScalingGroupConfiguration;
-		projectedUtilizationMetrics?: Array<UtilizationMetric>;
-		performanceRisk?: number;
-		rank?: number;
+		configuration?: AutoScalingGroupConfiguration | null;
+		projectedUtilizationMetrics?: Array<UtilizationMetric> | null;
+		performanceRisk?: number | null;
+		rank?: number | null;
 	}
 
 
 	/** <p>Describes an error experienced when getting recommendations.</p> <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p> */
 	export interface GetRecommendationError {
-		identifier?: string;
-		code?: string;
-		message?: string;
+		identifier?: string | null;
+		code?: string | null;
+		message?: string | null;
 	}
 
 	export interface GetAutoScalingGroupRecommendationsRequest {
-		accountIds?: Array<string>;
-		autoScalingGroupArns?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
-		filters?: Array<Filter>;
+		accountIds?: Array<string> | null;
+		autoScalingGroupArns?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		filters?: Array<Filter> | null;
 	}
 
 
 	/** Describes a filter that returns a more specific list of recommendations. */
 	export interface Filter {
-		name?: FilterName;
-		values?: Array<string>;
+		name?: FilterName | null;
+		values?: Array<string> | null;
 	}
 
 	export enum FilterName { Finding = 0, RecommendationSourceType = 1 }
@@ -108,70 +108,70 @@ export namespace MyNS {
 	}
 
 	export interface GetEC2InstanceRecommendationsResponse {
-		nextToken?: string;
-		instanceRecommendations?: Array<InstanceRecommendation>;
-		errors?: Array<GetRecommendationError>;
+		nextToken?: string | null;
+		instanceRecommendations?: Array<InstanceRecommendation> | null;
+		errors?: Array<GetRecommendationError> | null;
 	}
 
 
 	/** Describes an Amazon EC2 instance recommendation. */
 	export interface InstanceRecommendation {
-		instanceArn?: string;
-		accountId?: string;
-		instanceName?: string;
-		currentInstanceType?: string;
-		finding?: AutoScalingGroupRecommendationFinding;
-		utilizationMetrics?: Array<UtilizationMetric>;
-		lookBackPeriodInDays?: number;
-		recommendationOptions?: Array<InstanceRecommendationOption>;
-		recommendationSources?: Array<RecommendationSource>;
-		lastRefreshTimestamp?: Date;
+		instanceArn?: string | null;
+		accountId?: string | null;
+		instanceName?: string | null;
+		currentInstanceType?: string | null;
+		finding?: AutoScalingGroupRecommendationFinding | null;
+		utilizationMetrics?: Array<UtilizationMetric> | null;
+		lookBackPeriodInDays?: number | null;
+		recommendationOptions?: Array<InstanceRecommendationOption> | null;
+		recommendationSources?: Array<RecommendationSource> | null;
+		lastRefreshTimestamp?: Date | null;
 	}
 
 
 	/** Describes a recommendation option for an Amazon EC2 instance. */
 	export interface InstanceRecommendationOption {
-		instanceType?: string;
-		projectedUtilizationMetrics?: Array<UtilizationMetric>;
-		performanceRisk?: number;
-		rank?: number;
+		instanceType?: string | null;
+		projectedUtilizationMetrics?: Array<UtilizationMetric> | null;
+		performanceRisk?: number | null;
+		rank?: number | null;
 	}
 
 
 	/** Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group. */
 	export interface RecommendationSource {
-		recommendationSourceArn?: string;
-		recommendationSourceType?: RecommendationSourceRecommendationSourceType;
+		recommendationSourceArn?: string | null;
+		recommendationSourceType?: RecommendationSourceRecommendationSourceType | null;
 	}
 
 	export enum RecommendationSourceRecommendationSourceType { Ec2Instance = 0, AutoScalingGroup = 1 }
 
 	export interface GetEC2InstanceRecommendationsRequest {
-		instanceArns?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
-		filters?: Array<Filter>;
-		accountIds?: Array<string>;
+		instanceArns?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		filters?: Array<Filter> | null;
+		accountIds?: Array<string> | null;
 	}
 
 	export interface GetEC2RecommendationProjectedMetricsResponse {
-		recommendedOptionProjectedMetrics?: Array<RecommendedOptionProjectedMetric>;
+		recommendedOptionProjectedMetrics?: Array<RecommendedOptionProjectedMetric> | null;
 	}
 
 
 	/** Describes a projected utilization metric of a recommendation option. */
 	export interface RecommendedOptionProjectedMetric {
-		recommendedInstanceType?: string;
-		rank?: number;
-		projectedMetrics?: Array<ProjectedMetric>;
+		recommendedInstanceType?: string | null;
+		rank?: number | null;
+		projectedMetrics?: Array<ProjectedMetric> | null;
 	}
 
 
 	/** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. */
 	export interface ProjectedMetric {
-		name?: UtilizationMetricName;
-		timestamps?: Array<string>;
-		values?: Array<number>;
+		name?: UtilizationMetricName | null;
+		timestamps?: Array<string> | null;
+		values?: Array<number> | null;
 	}
 
 	export interface GetEC2RecommendationProjectedMetricsRequest {
@@ -183,9 +183,9 @@ export namespace MyNS {
 	}
 
 	export interface GetEnrollmentStatusResponse {
-		status?: GetEnrollmentStatusResponseStatus;
-		statusReason?: string;
-		memberAccountsEnrolled?: boolean;
+		status?: GetEnrollmentStatusResponseStatus | null;
+		statusReason?: string | null;
+		memberAccountsEnrolled?: boolean | null;
 	}
 
 	export enum GetEnrollmentStatusResponseStatus { Active = 0, Inactive = 1, Pending = 2, Failed = 3 }
@@ -194,39 +194,39 @@ export namespace MyNS {
 	}
 
 	export interface GetRecommendationSummariesResponse {
-		nextToken?: string;
-		recommendationSummaries?: Array<RecommendationSummary>;
+		nextToken?: string | null;
+		recommendationSummaries?: Array<RecommendationSummary> | null;
 	}
 
 
 	/** A summary of a recommendation. */
 	export interface RecommendationSummary {
-		summaries?: Array<Summary>;
-		recommendationResourceType?: RecommendationSourceRecommendationSourceType;
-		accountId?: string;
+		summaries?: Array<Summary> | null;
+		recommendationResourceType?: RecommendationSourceRecommendationSourceType | null;
+		accountId?: string | null;
 	}
 
 
 	/** The summary of a recommendation. */
 	export interface Summary {
-		name?: AutoScalingGroupRecommendationFinding;
-		value?: number;
+		name?: AutoScalingGroupRecommendationFinding | null;
+		value?: number | null;
 	}
 
 	export interface GetRecommendationSummariesRequest {
-		accountIds?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
+		accountIds?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface UpdateEnrollmentStatusResponse {
-		status?: GetEnrollmentStatusResponseStatus;
-		statusReason?: string;
+		status?: GetEnrollmentStatusResponseStatus | null;
+		statusReason?: string | null;
 	}
 
 	export interface UpdateEnrollmentStatusRequest {
 		status: GetEnrollmentStatusResponseStatus;
-		includeMemberAccounts?: boolean;
+		includeMemberAccounts?: boolean | null;
 	}
 
 	export enum Finding { Underprovisioned = 0, Overprovisioned = 1, Optimized = 2, NotOptimized = 3 }

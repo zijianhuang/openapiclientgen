@@ -11,7 +11,7 @@ export namespace MyNS {
 		 * GET requests require the following syntax for the URL query parameter:
 		 * `photoIds=<id1>&photoIds=<id2>&...`.
 		 */
-		photoIds?: Array<string>;
+		photoIds?: Array<string> | null;
 	}
 
 
@@ -25,7 +25,7 @@ export namespace MyNS {
 		 * The status for the operation to delete a single
 		 * Photo in the batch request.
 		 */
-		status?: Array<Status>;
+		status?: Array<Status> | null;
 	}
 
 
@@ -40,20 +40,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -66,7 +66,7 @@ export namespace MyNS {
 		 * the requests in
 		 * BatchGetPhotos.
 		 */
-		results?: Array<PhotoResponse>;
+		results?: Array<PhotoResponse> | null;
 	}
 
 
@@ -81,7 +81,7 @@ export namespace MyNS {
 	export interface PhotoResponse {
 
 		/** Photo is used to store 360 photos along with photo metadata. */
-		photo?: Photo;
+		photo?: Photo | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -91,7 +91,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 	}
 
 
@@ -103,13 +103,13 @@ export namespace MyNS {
 		 * When the photo has no exif timestamp, this is used to set a timestamp in
 		 * the photo metadata.
 		 */
-		captureTime?: string;
+		captureTime?: string | null;
 
 		/**
 		 * Connections to other photos. A connection represents the link from this
 		 * photo to another photo.
 		 */
-		connections?: Array<Connection>;
+		connections?: Array<Connection> | null;
 
 		/**
 		 * Output only. The download URL for the photo bytes. This field is set only
@@ -118,37 +118,37 @@ export namespace MyNS {
 		 * is set to
 		 * PhotoView.INCLUDE_DOWNLOAD_URL.
 		 */
-		downloadUrl?: string;
+		downloadUrl?: string | null;
 
 		/**
 		 * Output only. Status in Google Maps, whether this photo was published or
 		 * rejected. Not currently populated.
 		 */
-		mapsPublishStatus?: PhotoMapsPublishStatus;
+		mapsPublishStatus?: PhotoMapsPublishStatus | null;
 
 		/** Identifier for a Photo. */
-		photoId?: PhotoId;
+		photoId?: PhotoId | null;
 
 		/** Places where this photo belongs. */
-		places?: Array<Place>;
+		places?: Array<Place> | null;
 
 		/** Raw pose measurement for an entity. */
-		pose?: Pose;
+		pose?: Pose | null;
 
 		/** Output only. The share link for the photo. */
-		shareLink?: string;
+		shareLink?: string | null;
 
 		/** Output only. The thumbnail URL for showing a preview of the given photo. */
-		thumbnailUrl?: string;
+		thumbnailUrl?: string | null;
 
 		/** Output only. Status of rights transfer on this photo. */
-		transferStatus?: PhotoTransferStatus;
+		transferStatus?: PhotoTransferStatus | null;
 
 		/** Upload reference for media files. */
-		uploadReference?: UploadRef;
+		uploadReference?: UploadRef | null;
 
 		/** Output only. View count of the photo. */
-		viewCount?: string;
+		viewCount?: string | null;
 	}
 
 
@@ -156,7 +156,7 @@ export namespace MyNS {
 	export interface Connection {
 
 		/** Identifier for a Photo. */
-		target?: PhotoId;
+		target?: PhotoId | null;
 	}
 
 
@@ -164,7 +164,7 @@ export namespace MyNS {
 	export interface PhotoId {
 
 		/** Required. A unique identifier for a photo. */
-		id?: string;
+		id?: string | null;
 	}
 
 	export enum PhotoMapsPublishStatus { UNSPECIFIED_MAPS_PUBLISH_STATUS = 0, PUBLISHED = 1, REJECTED_UNKNOWN = 2 }
@@ -177,16 +177,16 @@ export namespace MyNS {
 		 * Output-only. The language_code that the name is localized with. This should
 		 * be the language_code specified in the request, but may be a fallback.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Output-only. The name of the place, localized to the language_code. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Place identifier, as described in
 		 * https://developers.google.com/places/place-id.
 		 */
-		placeId?: string;
+		placeId?: string | null;
 	}
 
 
@@ -201,20 +201,20 @@ export namespace MyNS {
 		 * Other platforms have different methods of obtaining similar accuracy
 		 * estimations.
 		 */
-		accuracyMeters?: number;
+		accuracyMeters?: number | null;
 
 		/**
 		 * Altitude of the pose in meters above WGS84 ellipsoid.
 		 * NaN indicates an unmeasured quantity.
 		 */
-		altitude?: number;
+		altitude?: number | null;
 
 		/**
 		 * Compass heading, measured at the center of the photo in degrees clockwise
 		 * from North. Value must be >=0 and <360.
 		 * NaN indicates an unmeasured quantity.
 		 */
-		heading?: number;
+		heading?: number | null;
 
 		/**
 		 * An object representing a latitude/longitude pair. This is expressed as a pair
@@ -223,10 +223,10 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLngPair?: LatLng;
+		latLngPair?: LatLng | null;
 
 		/** Level information containing level number and its corresponding name. */
-		level?: Level;
+		level?: Level | null;
 
 		/**
 		 * Pitch, measured at the center of the photo in degrees. Value must be >=-90
@@ -234,14 +234,14 @@ export namespace MyNS {
 		 * means looking directly up.
 		 * NaN indicates an unmeasured quantity.
 		 */
-		pitch?: number;
+		pitch?: number | null;
 
 		/**
 		 * Roll, measured in degrees. Value must be >= 0 and <360. A value of 0
 		 * means level with the horizon.
 		 * NaN indicates an unmeasured quantity.
 		 */
-		roll?: number;
+		roll?: number | null;
 	}
 
 
@@ -255,10 +255,10 @@ export namespace MyNS {
 	export interface LatLng {
 
 		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
-		latitude?: number;
+		latitude?: number | null;
 
 		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
-		longitude?: number;
+		longitude?: number | null;
 	}
 
 
@@ -270,14 +270,14 @@ export namespace MyNS {
 		 * Consider how the elevator buttons would be labeled for this level if there
 		 * was an elevator.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
 		 * the first level above ground level, -1 indicates the first level under
 		 * ground level. Non-integer values are OK.
 		 */
-		number?: number;
+		number?: number | null;
 	}
 
 	export enum PhotoTransferStatus { TRANSFER_STATUS_UNKNOWN = 0, NEVER_TRANSFERRED = 1, PENDING = 2, COMPLETED = 3, REJECTED = 4, EXPIRED = 5, CANCELLED = 6, RECEIVED_VIA_TRANSFER = 7 }
@@ -291,7 +291,7 @@ export namespace MyNS {
 		 * the form:
 		 * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
 		 */
-		uploadUrl?: string;
+		uploadUrl?: string | null;
 	}
 
 
@@ -305,7 +305,7 @@ export namespace MyNS {
 		 * Required. List of
 		 * UpdatePhotoRequests.
 		 */
-		updatePhotoRequests?: Array<UpdatePhotoRequest>;
+		updatePhotoRequests?: Array<UpdatePhotoRequest> | null;
 	}
 
 
@@ -317,7 +317,7 @@ export namespace MyNS {
 	export interface UpdatePhotoRequest {
 
 		/** Photo is used to store 360 photos along with photo metadata. */
-		photo?: Photo;
+		photo?: Photo | null;
 
 		/**
 		 * Required. Mask that identifies fields on the photo metadata to update.
@@ -343,7 +343,7 @@ export namespace MyNS {
 		 * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
 		 * all connections are removed.</aside>
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -358,7 +358,7 @@ export namespace MyNS {
 		 * Photo updated, in the same order as
 		 * the request.
 		 */
-		results?: Array<PhotoResponse>;
+		results?: Array<PhotoResponse> | null;
 	}
 
 
@@ -382,14 +382,14 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * List of photos. The
 		 * pageSize field
 		 * in the request determines the number of items returned.
 		 */
-		photos?: Array<Photo>;
+		photos?: Array<Photo> | null;
 	}
 
 
@@ -404,7 +404,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -414,7 +414,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -422,14 +422,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -441,7 +441,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 	@Injectable()

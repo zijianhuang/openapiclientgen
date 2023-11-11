@@ -22,7 +22,7 @@ export namespace MyNS {
 		 * unless the
 		 * error report has been generated automatically from Google App Engine logs.
 		 */
-		httpRequest?: HttpRequestContext;
+		httpRequest?: HttpRequestContext | null;
 
 		/**
 		 * Indicates a location in the source code of the service for which errors are
@@ -30,13 +30,13 @@ export namespace MyNS {
 		 * an error, unless the error report contains a `message` with a supported
 		 * exception stack trace. All fields are optional for the later case.
 		 */
-		reportLocation?: SourceLocation;
+		reportLocation?: SourceLocation | null;
 
 		/**
 		 * Source code that was used to build the executable which has
 		 * caused the given error message.
 		 */
-		sourceReferences?: Array<SourceReference>;
+		sourceReferences?: Array<SourceReference> | null;
 
 		/**
 		 * The user who caused or was affected by the crash.
@@ -48,7 +48,7 @@ export namespace MyNS {
 		 * distinguish affected users. See `affected_users_count` in
 		 * `ErrorGroupStats`.
 		 */
-		user?: string;
+		user?: string | null;
 	}
 
 
@@ -61,10 +61,10 @@ export namespace MyNS {
 	export interface HttpRequestContext {
 
 		/** The type of HTTP request, such as `GET`, `POST`, etc. */
-		method?: string;
+		method?: string | null;
 
 		/** The referrer information that is provided with the request. */
-		referrer?: string;
+		referrer?: string | null;
 
 		/**
 		 * The IP address from which the request originated.
@@ -72,16 +72,16 @@ export namespace MyNS {
 		 * IP address, depending on the data that has been provided
 		 * in the error report.
 		 */
-		remoteIp?: string;
+		remoteIp?: string | null;
 
 		/** The HTTP response status code for the request. */
-		responseStatusCode?: number;
+		responseStatusCode?: number | null;
 
 		/** The URL of the request. */
-		url?: string;
+		url?: string | null;
 
 		/** The user agent information that is provided with the request. */
-		userAgent?: string;
+		userAgent?: string | null;
 	}
 
 
@@ -97,17 +97,17 @@ export namespace MyNS {
 		 * The source code filename, which can include a truncated relative
 		 * path, or a full path from a production machine.
 		 */
-		filePath?: string;
+		filePath?: string | null;
 
 		/**
 		 * Human-readable name of a function or method.
 		 * The value can include optional context like the class or package name.
 		 * For example, `my.package.MyClass.method` in case of Java.
 		 */
-		functionName?: string;
+		functionName?: string | null;
 
 		/** 1-based. 0 indicates that the line number is unknown. */
-		lineNumber?: number;
+		lineNumber?: number | null;
 	}
 
 
@@ -121,13 +121,13 @@ export namespace MyNS {
 		 * Optional. A URI string identifying the repository.
 		 * Example: "https://github.com/GoogleCloudPlatform/kubernetes.git"
 		 */
-		repository?: string;
+		repository?: string | null;
 
 		/**
 		 * The canonical and persistent identifier of the deployed revision.
 		 * Example (git): "0035781c50ec7aa23385dc841529ce8a4b70db1b"
 		 */
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 
@@ -140,23 +140,23 @@ export namespace MyNS {
 		 * unless the
 		 * error report has been generated automatically from Google App Engine logs.
 		 */
-		context?: ErrorContext;
+		context?: ErrorContext | null;
 
 		/**
 		 * Time when the event occurred as provided in the error report.
 		 * If the report did not contain a timestamp, the time the error was received
 		 * by the Error Reporting system is used.
 		 */
-		eventTime?: string;
+		eventTime?: string | null;
 
 		/** The stack trace that was reported or logged by the service. */
-		message?: string;
+		message?: string | null;
 
 		/**
 		 * Describes a running service that sends errors.
 		 * Its version changes over time and multiple versions can run in parallel.
 		 */
-		serviceContext?: ServiceContext;
+		serviceContext?: ServiceContext | null;
 	}
 
 
@@ -172,7 +172,7 @@ export namespace MyNS {
 		 * Value is set automatically for incoming errors and must not be set when
 		 * reporting errors.
 		 */
-		resourceType?: string;
+		resourceType?: string | null;
 
 		/**
 		 * An identifier of the service, such as the name of the
@@ -182,7 +182,7 @@ export namespace MyNS {
 		 * Contains the service name for error reports extracted from Google
 		 * App Engine logs or `default` if the App Engine default service is used.
 		 */
-		service?: string;
+		service?: string | null;
 
 		/**
 		 * Represents the source code version that the developer provided,
@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * For App Engine standard environment, the version is set to the version of
 		 * the app.
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -201,16 +201,16 @@ export namespace MyNS {
 		 * Group IDs are unique for a given project. If the same kind of error
 		 * occurs in different service contexts, it will receive the same group ID.
 		 */
-		groupId?: string;
+		groupId?: string | null;
 
 		/**
 		 * The group resource name.
 		 * Example: <code>projects/my-project-123/groups/CNSgkpnppqKCUw</code>
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Associated tracking issues. */
-		trackingIssues?: Array<TrackingIssue>;
+		trackingIssues?: Array<TrackingIssue> | null;
 	}
 
 
@@ -221,7 +221,7 @@ export namespace MyNS {
 		 * A URL pointing to a related entry in an issue tracking system.
 		 * Example: https://github.com/user/project/issues/4
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -236,7 +236,7 @@ export namespace MyNS {
 		 * criteria. This list can be truncated if multiple services are affected.
 		 * Refer to `num_affected_services` for the total count.
 		 */
-		affectedServices?: Array<ServiceContext>;
+		affectedServices?: Array<ServiceContext> | null;
 
 		/**
 		 * Approximate number of affected users in the given group that
@@ -252,39 +252,39 @@ export namespace MyNS {
 		 * implicitly affected, such as due to a crash of the whole service,
 		 * this is not reflected here.
 		 */
-		affectedUsersCount?: string;
+		affectedUsersCount?: string | null;
 
 		/**
 		 * Approximate total number of events in the given group that match
 		 * the filter criteria.
 		 */
-		count?: string;
+		count?: string | null;
 
 		/**
 		 * Approximate first occurrence that was ever seen for this group
 		 * and which matches the given filter criteria, ignoring the
 		 * time_range that was specified in the request.
 		 */
-		firstSeenTime?: string;
+		firstSeenTime?: string | null;
 
 		/** Description of a group of similar error events. */
-		group?: ErrorGroup;
+		group?: ErrorGroup | null;
 
 		/**
 		 * Approximate last occurrence that was ever seen for this group and
 		 * which matches the given filter criteria, ignoring the time_range
 		 * that was specified in the request.
 		 */
-		lastSeenTime?: string;
+		lastSeenTime?: string | null;
 
 		/**
 		 * The total number of services with a non-zero error count for the given
 		 * filter criteria.
 		 */
-		numAffectedServices?: number;
+		numAffectedServices?: number | null;
 
 		/** An error event which is returned by the Error Reporting system. */
-		representative?: ErrorEvent;
+		representative?: ErrorEvent | null;
 
 		/**
 		 * Approximate number of occurrences over time.
@@ -293,7 +293,7 @@ export namespace MyNS {
 		 * - Non-overlapping, and
 		 * - Ordered by ascending time.
 		 */
-		timedCounts?: Array<TimedCount>;
+		timedCounts?: Array<TimedCount> | null;
 	}
 
 
@@ -305,13 +305,13 @@ export namespace MyNS {
 	export interface TimedCount {
 
 		/** Approximate number of occurrences in the given time period. */
-		count?: string;
+		count?: string | null;
 
 		/** End of the time period to which `count` refers (excluded). */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Start of the time period to which `count` refers (included). */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -319,17 +319,17 @@ export namespace MyNS {
 	export interface ListEventsResponse {
 
 		/** The error events which match the given request. */
-		errorEvents?: Array<ErrorEvent>;
+		errorEvents?: Array<ErrorEvent> | null;
 
 		/**
 		 * If non-empty, more results are available.
 		 * Pass this token, along with the same query parameters as the first
 		 * request, to view the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The timestamp specifies the start time to which the request was restricted. */
-		timeRangeBegin?: string;
+		timeRangeBegin?: string | null;
 	}
 
 
@@ -337,14 +337,14 @@ export namespace MyNS {
 	export interface ListGroupStatsResponse {
 
 		/** The error group stats which match the given request. */
-		errorGroupStats?: Array<ErrorGroupStats>;
+		errorGroupStats?: Array<ErrorGroupStats> | null;
 
 		/**
 		 * If non-empty, more results are available.
 		 * Pass this token, along with the same query parameters as the first
 		 * request, to view the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * The timestamp specifies the start time to which the request was restricted.
@@ -352,7 +352,7 @@ export namespace MyNS {
 		 * to a later time if a project has exceeded the storage quota and older data
 		 * has been deleted.
 		 */
-		timeRangeBegin?: string;
+		timeRangeBegin?: string | null;
 	}
 
 
@@ -373,14 +373,14 @@ export namespace MyNS {
 		 * unless the
 		 * error report has been generated automatically from Google App Engine logs.
 		 */
-		context?: ErrorContext;
+		context?: ErrorContext | null;
 
 		/**
 		 * Optional. Time when the event occurred.
 		 * If not provided, the time when the event was received by the
 		 * Error Reporting system will be used.
 		 */
-		eventTime?: string;
+		eventTime?: string | null;
 
 		/**
 		 * Required. The error message.
@@ -407,13 +407,13 @@ export namespace MyNS {
 		 * * **Go**: Must be the return value of
 		 * [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
 		 */
-		message?: string;
+		message?: string | null;
 
 		/**
 		 * Describes a running service that sends errors.
 		 * Its version changes over time and multiple versions can run in parallel.
 		 */
-		serviceContext?: ServiceContext;
+		serviceContext?: ServiceContext | null;
 	}
 
 	@Injectable()

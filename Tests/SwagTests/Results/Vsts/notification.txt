@@ -2710,6 +2710,70 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get a list of notification subscriptions, either by subscription IDs or by all subscriptions for a given user or group.
+		/// Subscriptions_List {organization}/_apis/notification/subscriptions
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="targetId">User or Group ID</param>
+		/// <param name="ids">List of subscription IDs</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<NotificationSubscription[]> Subscriptions_ListAsync(string organization, string targetId, string ids, SubscriptionQueryQueryFlags queryFlags, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<NotificationSubscription[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of notification subscriptions, either by subscription IDs or by all subscriptions for a given user or group.
+		/// Subscriptions_List {organization}/_apis/notification/subscriptions
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="targetId">User or Group ID</param>
+		/// <param name="ids">List of subscription IDs</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public NotificationSubscription[] Subscriptions_List(string organization, string targetId, string ids, SubscriptionQueryQueryFlags queryFlags, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<NotificationSubscription[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create a new subscription.
 		/// Subscriptions_Create {organization}/_apis/notification/subscriptions
 		/// </summary>
@@ -2784,118 +2848,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a list of notification subscriptions, either by subscription IDs or by all subscriptions for a given user or group.
-		/// Subscriptions_List {organization}/_apis/notification/subscriptions
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="targetId">User or Group ID</param>
-		/// <param name="ids">List of subscription IDs</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<NotificationSubscription[]> Subscriptions_ListAsync(string organization, string targetId, string ids, SubscriptionQueryQueryFlags queryFlags, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<NotificationSubscription[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of notification subscriptions, either by subscription IDs or by all subscriptions for a given user or group.
-		/// Subscriptions_List {organization}/_apis/notification/subscriptions
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="targetId">User or Group ID</param>
-		/// <param name="ids">List of subscription IDs</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public NotificationSubscription[] Subscriptions_List(string organization, string targetId, string ids, SubscriptionQueryQueryFlags queryFlags, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<NotificationSubscription[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a subscription.
-		/// Subscriptions_Delete {organization}/_apis/notification/subscriptions/{subscriptionId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Subscriptions_DeleteAsync(string subscriptionId, string organization, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a subscription.
-		/// Subscriptions_Delete {organization}/_apis/notification/subscriptions/{subscriptionId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Subscriptions_Delete(string subscriptionId, string organization, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a notification subscription by its ID.
 		/// Subscriptions_Get {organization}/_apis/notification/subscriptions/{subscriptionId}
 		/// </summary>
@@ -2947,6 +2899,54 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<NotificationSubscription>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a subscription.
+		/// Subscriptions_Delete {organization}/_apis/notification/subscriptions/{subscriptionId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Subscriptions_DeleteAsync(string subscriptionId, string organization, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a subscription.
+		/// Subscriptions_Delete {organization}/_apis/notification/subscriptions/{subscriptionId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Subscriptions_Delete(string subscriptionId, string organization, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{

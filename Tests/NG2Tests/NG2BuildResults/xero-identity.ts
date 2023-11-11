@@ -5,58 +5,58 @@ export namespace MyNS {
 	export interface Connection {
 
 		/** Xero identifier */
-		id?: string;
+		id?: string | null;
 
 		/** Xero identifier of organisation */
-		tenantId?: string;
+		tenantId?: string | null;
 
 		/** Identifier shared across connections authorised at the same time */
-		authEventId?: string;
+		authEventId?: string | null;
 
 		/** Xero tenant type (i.e. ORGANISATION, PRACTICE) */
-		tenantType?: string;
+		tenantType?: string | null;
 
 		/** Xero tenant name */
-		tenantName?: string;
+		tenantName?: string | null;
 
 		/** The date when the user connected this tenant to your app */
-		createdDateUtc?: Date;
+		createdDateUtc?: Date | null;
 
 		/** The date when the user most recently connected this tenant to your app. May differ to the created date if the user has disconnected and subsequently reconnected this tenant to your app. */
-		updatedDateUtc?: Date;
+		updatedDateUtc?: Date | null;
 	}
 
 	export interface RefreshToken {
 
 		/** Xero grant type */
-		grant_type?: string;
+		grant_type?: string | null;
 
 		/** refresh token provided during authentication flow */
-		refresh_token?: string;
+		refresh_token?: string | null;
 
 		/** client id for Xero app */
-		client_id?: string;
+		client_id?: string | null;
 
 		/** client secret for Xero app 2 */
-		client_secret?: string;
+		client_secret?: string | null;
 	}
 
 	export interface AccessToken {
 
 		/** Xero unique identifier */
-		id_token?: string;
+		id_token?: string | null;
 
 		/** access token provided during authentication flow */
-		access_token?: string;
+		access_token?: string | null;
 
 		/** time in milliseconds until access token expires. */
-		expires_in?: string;
+		expires_in?: string | null;
 
 		/** type of token i.e. Bearer */
-		token_type?: string;
+		token_type?: string | null;
 
 		/** token used to refresh an expired access token */
-		refresh_token?: string;
+		refresh_token?: string | null;
 	}
 
 	@Injectable()

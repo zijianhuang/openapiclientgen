@@ -30,163 +30,163 @@ export namespace MyNS {
 	export interface CreateJobResponse {
 
 		/** A section of the response body that provides information about the job that is created. */
-		Job?: Job;
+		Job?: Job | null;
 	}
 
 
 	/** A section of the response body that provides information about the job that is created. */
 	export interface Job {
-		Id?: string;
-		Arn?: string;
-		PipelineId?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		PipelineId?: string | null;
 
 		/** Information about the file that you're transcoding. */
-		Input?: JobInput;
-		Inputs?: Array<JobInput>;
+		Input?: JobInput | null;
+		Inputs?: Array<JobInput> | null;
 
 		/** <important> <p>Outputs recommended instead.</p> </important> <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p> */
-		Output?: JobOutput;
-		Outputs?: Array<JobOutput>;
-		OutputKeyPrefix?: string;
-		Playlists?: Array<Playlist>;
-		Status?: string;
-		UserMetadata?: UserMetadata;
+		Output?: JobOutput | null;
+		Outputs?: Array<JobOutput> | null;
+		OutputKeyPrefix?: string | null;
+		Playlists?: Array<Playlist> | null;
+		Status?: string | null;
+		UserMetadata?: UserMetadata | null;
 
 		/** Details about the timing of a job. */
-		Timing?: Timing;
+		Timing?: Timing | null;
 	}
 
 
 	/** Information about the file that you're transcoding. */
 	export interface JobInput {
-		Key?: string;
-		FrameRate?: string;
-		Resolution?: string;
-		AspectRatio?: string;
-		Interlaced?: string;
-		Container?: string;
+		Key?: string | null;
+		FrameRate?: string | null;
+		Resolution?: string | null;
+		AspectRatio?: string | null;
+		Interlaced?: string | null;
+		Container?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 
 		/** Settings that determine when a clip begins and how long it lasts. */
-		TimeSpan?: TimeSpan;
+		TimeSpan?: TimeSpan | null;
 
 		/** The captions to be created, if any. */
-		InputCaptions?: InputCaptions;
+		InputCaptions?: InputCaptions | null;
 
 		/** The detected properties of the input file. Elastic Transcoder identifies these values from the input file. */
-		DetectedProperties?: DetectedProperties;
+		DetectedProperties?: DetectedProperties | null;
 	}
 
 
 	/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
 	export interface Encryption {
-		Mode?: string;
-		Key?: string;
-		KeyMd5?: string;
-		InitializationVector?: string;
+		Mode?: string | null;
+		Key?: string | null;
+		KeyMd5?: string | null;
+		InitializationVector?: string | null;
 	}
 
 
 	/** Settings that determine when a clip begins and how long it lasts. */
 	export interface TimeSpan {
-		StartTime?: string;
-		Duration?: string;
+		StartTime?: string | null;
+		Duration?: string | null;
 	}
 
 
 	/** The captions to be created, if any. */
 	export interface InputCaptions {
-		MergePolicy?: string;
-		CaptionSources?: Array<CaptionSource>;
+		MergePolicy?: string | null;
+		CaptionSources?: Array<CaptionSource> | null;
 	}
 
 
 	/** A source file for the input sidecar captions used during the transcoding process. */
 	export interface CaptionSource {
-		Key?: string;
-		Language?: string;
-		TimeOffset?: string;
-		Label?: string;
+		Key?: string | null;
+		Language?: string | null;
+		TimeOffset?: string | null;
+		Label?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 	}
 
 
 	/** The detected properties of the input file. Elastic Transcoder identifies these values from the input file. */
 	export interface DetectedProperties {
-		Width?: number;
-		Height?: number;
-		FrameRate?: string;
-		FileSize?: number;
-		DurationMillis?: number;
+		Width?: number | null;
+		Height?: number | null;
+		FrameRate?: string | null;
+		FileSize?: number | null;
+		DurationMillis?: number | null;
 	}
 
 
 	/** <important> <p>Outputs recommended instead.</p> </important> <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p> */
 	export interface JobOutput {
-		Id?: string;
-		Key?: string;
-		ThumbnailPattern?: string;
+		Id?: string | null;
+		Key?: string | null;
+		ThumbnailPattern?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		ThumbnailEncryption?: Encryption;
-		Rotate?: string;
-		PresetId?: string;
-		SegmentDuration?: string;
-		Status?: string;
-		StatusDetail?: string;
-		Duration?: number;
-		Width?: number;
-		Height?: number;
-		FrameRate?: string;
-		FileSize?: number;
-		DurationMillis?: number;
-		Watermarks?: Array<JobWatermark>;
+		ThumbnailEncryption?: Encryption | null;
+		Rotate?: string | null;
+		PresetId?: string | null;
+		SegmentDuration?: string | null;
+		Status?: string | null;
+		StatusDetail?: string | null;
+		Duration?: number | null;
+		Width?: number | null;
+		Height?: number | null;
+		FrameRate?: string | null;
+		FileSize?: number | null;
+		DurationMillis?: number | null;
+		Watermarks?: Array<JobWatermark> | null;
 
 		/** The .jpg or .png file associated with an audio file. */
-		AlbumArt?: JobAlbumArt;
-		Composition?: Array<Clip>;
+		AlbumArt?: JobAlbumArt | null;
+		Composition?: Array<Clip> | null;
 
 		/** The captions to be created, if any. */
-		Captions?: Captions;
+		Captions?: Captions | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
-		AppliedColorSpaceConversion?: string;
+		Encryption?: Encryption | null;
+		AppliedColorSpaceConversion?: string | null;
 	}
 
 
 	/** Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency. */
 	export interface JobWatermark {
-		PresetWatermarkId?: string;
-		InputKey?: string;
+		PresetWatermarkId?: string | null;
+		InputKey?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 	}
 
 
 	/** The .jpg or .png file associated with an audio file. */
 	export interface JobAlbumArt {
-		MergePolicy?: string;
-		Artwork?: Array<Artwork>;
+		MergePolicy?: string | null;
+		Artwork?: Array<Artwork> | null;
 	}
 
 
 	/** <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.</p> <p>To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array.</p> <p>To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.</p> */
 	export interface Artwork {
-		InputKey?: string;
-		MaxWidth?: string;
-		MaxHeight?: string;
-		SizingPolicy?: string;
-		PaddingPolicy?: string;
-		AlbumArtFormat?: string;
+		InputKey?: string | null;
+		MaxWidth?: string | null;
+		MaxHeight?: string | null;
+		SizingPolicy?: string | null;
+		PaddingPolicy?: string | null;
+		AlbumArtFormat?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 	}
 
 
@@ -194,63 +194,63 @@ export namespace MyNS {
 	export interface Clip {
 
 		/** Settings that determine when a clip begins and how long it lasts. */
-		TimeSpan?: TimeSpan;
+		TimeSpan?: TimeSpan | null;
 	}
 
 
 	/** The captions to be created, if any. */
 	export interface Captions {
-		MergePolicy?: string;
-		CaptionSources?: Array<CaptionSource>;
-		CaptionFormats?: Array<CaptionFormat>;
+		MergePolicy?: string | null;
+		CaptionSources?: Array<CaptionSource> | null;
+		CaptionFormats?: Array<CaptionFormat> | null;
 	}
 
 
 	/** The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error. */
 	export interface CaptionFormat {
-		Format?: string;
-		Pattern?: string;
+		Format?: string | null;
+		Pattern?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 	}
 
 
 	/**  Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30.  */
 	export interface Playlist {
-		Name?: string;
-		Format?: string;
-		OutputKeys?: Array<string>;
+		Name?: string | null;
+		Format?: string | null;
+		OutputKeys?: Array<string> | null;
 
 		/** The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files. */
-		HlsContentProtection?: HlsContentProtection;
+		HlsContentProtection?: HlsContentProtection | null;
 
 		/** <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p> */
-		PlayReadyDrm?: PlayReadyDrm;
-		Status?: string;
-		StatusDetail?: string;
+		PlayReadyDrm?: PlayReadyDrm | null;
+		Status?: string | null;
+		StatusDetail?: string | null;
 	}
 
 
 	/** The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files. */
 	export interface HlsContentProtection {
-		Method?: string;
-		Key?: string;
-		KeyMd5?: string;
-		InitializationVector?: string;
-		LicenseAcquisitionUrl?: string;
-		KeyStoragePolicy?: string;
+		Method?: string | null;
+		Key?: string | null;
+		KeyMd5?: string | null;
+		InitializationVector?: string | null;
+		LicenseAcquisitionUrl?: string | null;
+		KeyStoragePolicy?: string | null;
 	}
 
 
 	/** <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p> */
 	export interface PlayReadyDrm {
-		Format?: string;
-		Key?: string;
-		KeyMd5?: string;
-		KeyId?: string;
-		InitializationVector?: string;
-		LicenseAcquisitionUrl?: string;
+		Format?: string | null;
+		Key?: string | null;
+		KeyMd5?: string | null;
+		KeyId?: string | null;
+		InitializationVector?: string | null;
+		LicenseAcquisitionUrl?: string | null;
 	}
 
 	export interface UserMetadata {
@@ -259,47 +259,47 @@ export namespace MyNS {
 
 	/** Details about the timing of a job. */
 	export interface Timing {
-		SubmitTimeMillis?: number;
-		StartTimeMillis?: number;
-		FinishTimeMillis?: number;
+		SubmitTimeMillis?: number | null;
+		StartTimeMillis?: number | null;
+		FinishTimeMillis?: number | null;
 	}
 
 
 	/** The <code>CreateJobOutput</code> structure. */
 	export interface CreateJobOutput {
-		Key?: string;
-		ThumbnailPattern?: string;
+		Key?: string | null;
+		ThumbnailPattern?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		ThumbnailEncryption?: Encryption;
-		Rotate?: string;
-		PresetId?: string;
-		SegmentDuration?: string;
-		Watermarks?: Array<JobWatermark>;
+		ThumbnailEncryption?: Encryption | null;
+		Rotate?: string | null;
+		PresetId?: string | null;
+		SegmentDuration?: string | null;
+		Watermarks?: Array<JobWatermark> | null;
 
 		/** The .jpg or .png file associated with an audio file. */
-		AlbumArt?: JobAlbumArt;
-		Composition?: Array<Clip>;
+		AlbumArt?: JobAlbumArt | null;
+		Composition?: Array<Clip> | null;
 
 		/** The captions to be created, if any. */
-		Captions?: Captions;
+		Captions?: Captions | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 	}
 
 
 	/** Information about the master playlist. */
 	export interface CreateJobPlaylist {
-		Name?: string;
-		Format?: string;
-		OutputKeys?: Array<string>;
+		Name?: string | null;
+		Format?: string | null;
+		OutputKeys?: Array<string> | null;
 
 		/** The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files. */
-		HlsContentProtection?: HlsContentProtection;
+		HlsContentProtection?: HlsContentProtection | null;
 
 		/** <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p> */
-		PlayReadyDrm?: PlayReadyDrm;
+		PlayReadyDrm?: PlayReadyDrm | null;
 	}
 
 	export interface LimitExceededException {
@@ -310,62 +310,62 @@ export namespace MyNS {
 	export interface CreatePipelineResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline;
-		Warnings?: Array<Warning>;
+		Pipeline?: Pipeline | null;
+		Warnings?: Array<Warning> | null;
 	}
 
 
 	/** The pipeline (queue) that is used to manage jobs. */
 	export interface Pipeline {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		Status?: string;
-		InputBucket?: string;
-		OutputBucket?: string;
-		Role?: string;
-		AwsKmsKeyArn?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		Status?: string | null;
+		InputBucket?: string | null;
+		OutputBucket?: string | null;
+		Role?: string | null;
+		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: Notifications;
+		Notifications?: Notifications | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: PipelineOutputConfig;
+		ContentConfig?: PipelineOutputConfig | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: PipelineOutputConfig;
+		ThumbnailConfig?: PipelineOutputConfig | null;
 	}
 
 
 	/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
 	export interface Notifications {
-		Progressing?: string;
-		Completed?: string;
-		Warning?: string;
-		Error?: string;
+		Progressing?: string | null;
+		Completed?: string | null;
+		Warning?: string | null;
+		Error?: string | null;
 	}
 
 
 	/** The <code>PipelineOutputConfig</code> structure. */
 	export interface PipelineOutputConfig {
-		Bucket?: string;
-		StorageClass?: string;
-		Permissions?: Array<Permission>;
+		Bucket?: string | null;
+		StorageClass?: string | null;
+		Permissions?: Array<Permission> | null;
 	}
 
 
 	/** The <code>Permission</code> structure. */
 	export interface Permission {
-		GranteeType?: string;
-		Grantee?: string;
-		Access?: Array<string>;
+		GranteeType?: string | null;
+		Grantee?: string | null;
+		Access?: Array<string> | null;
 	}
 
 
 	/** <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p> */
 	export interface Warning {
-		Code?: string;
-		Message?: string;
+		Code?: string | null;
+		Message?: string | null;
 	}
 
 
@@ -373,70 +373,70 @@ export namespace MyNS {
 	export interface CreatePresetResponse {
 
 		/** Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job. */
-		Preset?: Preset;
-		Warning?: string;
+		Preset?: Preset | null;
+		Warning?: string | null;
 	}
 
 
 	/** Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job. */
 	export interface Preset {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		Description?: string;
-		Container?: string;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Container?: string | null;
 
 		/** Parameters required for transcoding audio. */
-		Audio?: AudioParameters;
+		Audio?: AudioParameters | null;
 
 		/** The <code>VideoParameters</code> structure. */
-		Video?: VideoParameters;
+		Video?: VideoParameters | null;
 
 		/** Thumbnails for videos. */
-		Thumbnails?: Thumbnails;
-		Type?: string;
+		Thumbnails?: Thumbnails | null;
+		Type?: string | null;
 	}
 
 
 	/** Parameters required for transcoding audio. */
 	export interface AudioParameters {
-		Codec?: string;
-		SampleRate?: string;
-		BitRate?: string;
-		Channels?: string;
-		AudioPackingMode?: string;
+		Codec?: string | null;
+		SampleRate?: string | null;
+		BitRate?: string | null;
+		Channels?: string | null;
+		AudioPackingMode?: string | null;
 
 		/** Options associated with your audio codec. */
-		CodecOptions?: AudioCodecOptions;
+		CodecOptions?: AudioCodecOptions | null;
 	}
 
 
 	/** Options associated with your audio codec. */
 	export interface AudioCodecOptions {
-		Profile?: string;
-		BitDepth?: string;
-		BitOrder?: string;
-		Signed?: string;
+		Profile?: string | null;
+		BitDepth?: string | null;
+		BitOrder?: string | null;
+		Signed?: string | null;
 	}
 
 
 	/** The <code>VideoParameters</code> structure. */
 	export interface VideoParameters {
-		Codec?: string;
-		CodecOptions?: CodecOptions;
-		KeyframesMaxDist?: string;
-		FixedGOP?: string;
-		BitRate?: string;
-		FrameRate?: string;
-		MaxFrameRate?: string;
-		Resolution?: string;
-		AspectRatio?: string;
-		MaxWidth?: string;
-		MaxHeight?: string;
-		DisplayAspectRatio?: string;
-		SizingPolicy?: string;
-		PaddingPolicy?: string;
-		Watermarks?: Array<PresetWatermark>;
+		Codec?: string | null;
+		CodecOptions?: CodecOptions | null;
+		KeyframesMaxDist?: string | null;
+		FixedGOP?: string | null;
+		BitRate?: string | null;
+		FrameRate?: string | null;
+		MaxFrameRate?: string | null;
+		Resolution?: string | null;
+		AspectRatio?: string | null;
+		MaxWidth?: string | null;
+		MaxHeight?: string | null;
+		DisplayAspectRatio?: string | null;
+		SizingPolicy?: string | null;
+		PaddingPolicy?: string | null;
+		Watermarks?: Array<PresetWatermark> | null;
 	}
 
 	export interface CodecOptions {
@@ -445,29 +445,29 @@ export namespace MyNS {
 
 	/** <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p> <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p> <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p> */
 	export interface PresetWatermark {
-		Id?: string;
-		MaxWidth?: string;
-		MaxHeight?: string;
-		SizingPolicy?: string;
-		HorizontalAlign?: string;
-		HorizontalOffset?: string;
-		VerticalAlign?: string;
-		VerticalOffset?: string;
-		Opacity?: string;
-		Target?: string;
+		Id?: string | null;
+		MaxWidth?: string | null;
+		MaxHeight?: string | null;
+		SizingPolicy?: string | null;
+		HorizontalAlign?: string | null;
+		HorizontalOffset?: string | null;
+		VerticalAlign?: string | null;
+		VerticalOffset?: string | null;
+		Opacity?: string | null;
+		Target?: string | null;
 	}
 
 
 	/** Thumbnails for videos. */
 	export interface Thumbnails {
-		Format?: string;
-		Interval?: string;
-		Resolution?: string;
-		AspectRatio?: string;
-		MaxWidth?: string;
-		MaxHeight?: string;
-		SizingPolicy?: string;
-		PaddingPolicy?: string;
+		Format?: string | null;
+		Interval?: string | null;
+		Resolution?: string | null;
+		AspectRatio?: string | null;
+		MaxWidth?: string | null;
+		MaxHeight?: string | null;
+		SizingPolicy?: string | null;
+		PaddingPolicy?: string | null;
 	}
 
 
@@ -483,29 +483,29 @@ export namespace MyNS {
 
 	/** The <code>ListJobsByPipelineResponse</code> structure. */
 	export interface ListJobsByPipelineResponse {
-		Jobs?: Array<Job>;
-		NextPageToken?: string;
+		Jobs?: Array<Job> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/**  The <code>ListJobsByStatusResponse</code> structure.  */
 	export interface ListJobsByStatusResponse {
-		Jobs?: Array<Job>;
-		NextPageToken?: string;
+		Jobs?: Array<Job> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** A list of the pipelines associated with the current AWS account. */
 	export interface ListPipelinesResponse {
-		Pipelines?: Array<Pipeline>;
-		NextPageToken?: string;
+		Pipelines?: Array<Pipeline> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** The <code>ListPresetsResponse</code> structure. */
 	export interface ListPresetsResponse {
-		Presets?: Array<Preset>;
-		NextPageToken?: string;
+		Presets?: Array<Preset> | null;
+		NextPageToken?: string | null;
 	}
 
 
@@ -513,7 +513,7 @@ export namespace MyNS {
 	export interface ReadJobResponse {
 
 		/** A section of the response body that provides information about the job that is created. */
-		Job?: Job;
+		Job?: Job | null;
 	}
 
 
@@ -521,8 +521,8 @@ export namespace MyNS {
 	export interface ReadPipelineResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline;
-		Warnings?: Array<Warning>;
+		Pipeline?: Pipeline | null;
+		Warnings?: Array<Warning> | null;
 	}
 
 
@@ -530,14 +530,14 @@ export namespace MyNS {
 	export interface ReadPresetResponse {
 
 		/** Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job. */
-		Preset?: Preset;
+		Preset?: Preset | null;
 	}
 
 
 	/** The <code>TestRoleResponse</code> structure. */
 	export interface TestRoleResponse {
-		Success?: string;
-		Messages?: Array<string>;
+		Success?: string | null;
+		Messages?: Array<string> | null;
 	}
 
 
@@ -545,8 +545,8 @@ export namespace MyNS {
 	export interface UpdatePipelineResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline;
-		Warnings?: Array<Warning>;
+		Pipeline?: Pipeline | null;
+		Warnings?: Array<Warning> | null;
 	}
 
 
@@ -554,7 +554,7 @@ export namespace MyNS {
 	export interface UpdatePipelineNotificationsResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline;
+		Pipeline?: Pipeline | null;
 	}
 
 
@@ -562,7 +562,7 @@ export namespace MyNS {
 	export interface UpdatePipelineStatusResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline;
+		Pipeline?: Pipeline | null;
 	}
 
 
@@ -576,15 +576,15 @@ export namespace MyNS {
 		PipelineId: string;
 
 		/** Information about the file that you're transcoding. */
-		Input?: JobInput;
-		Inputs?: Array<JobInput>;
+		Input?: JobInput | null;
+		Inputs?: Array<JobInput> | null;
 
 		/** The <code>CreateJobOutput</code> structure. */
-		Output?: CreateJobOutput;
-		Outputs?: Array<CreateJobOutput>;
-		OutputKeyPrefix?: string;
-		Playlists?: Array<CreateJobPlaylist>;
-		UserMetadata?: UserMetadata;
+		Output?: CreateJobOutput | null;
+		Outputs?: Array<CreateJobOutput> | null;
+		OutputKeyPrefix?: string | null;
+		Playlists?: Array<CreateJobPlaylist> | null;
+		UserMetadata?: UserMetadata | null;
 	}
 
 
@@ -592,35 +592,35 @@ export namespace MyNS {
 	export interface CreatePipelineRequest {
 		Name: string;
 		InputBucket: string;
-		OutputBucket?: string;
+		OutputBucket?: string | null;
 		Role: string;
-		AwsKmsKeyArn?: string;
+		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: Notifications;
+		Notifications?: Notifications | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: PipelineOutputConfig;
+		ContentConfig?: PipelineOutputConfig | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: PipelineOutputConfig;
+		ThumbnailConfig?: PipelineOutputConfig | null;
 	}
 
 
 	/** The <code>CreatePresetRequest</code> structure. */
 	export interface CreatePresetRequest {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		Container: string;
 
 		/** The <code>VideoParameters</code> structure. */
-		Video?: VideoParameters;
+		Video?: VideoParameters | null;
 
 		/** Parameters required for transcoding audio. */
-		Audio?: AudioParameters;
+		Audio?: AudioParameters | null;
 
 		/** Thumbnails for videos. */
-		Thumbnails?: Thumbnails;
+		Thumbnails?: Thumbnails | null;
 	}
 
 
@@ -691,19 +691,19 @@ export namespace MyNS {
 
 	/** The <code>UpdatePipelineRequest</code> structure. */
 	export interface UpdatePipelineRequest {
-		Name?: string;
-		InputBucket?: string;
-		Role?: string;
-		AwsKmsKeyArn?: string;
+		Name?: string | null;
+		InputBucket?: string | null;
+		Role?: string | null;
+		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: Notifications;
+		Notifications?: Notifications | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: PipelineOutputConfig;
+		ContentConfig?: PipelineOutputConfig | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: PipelineOutputConfig;
+		ThumbnailConfig?: PipelineOutputConfig | null;
 	}
 
 
@@ -900,81 +900,81 @@ export namespace MyNS {
 		PipelineId: string;
 
 		/** Information about the file that you're transcoding. */
-		Input?: CreateJobPostBodyInput;
+		Input?: CreateJobPostBodyInput | null;
 
 		/**
 		 * A section of the request body that provides information about the files that are being transcoded.
 		 * Maximum items: 200
 		 */
-		Inputs?: Array<JobInput>;
+		Inputs?: Array<JobInput> | null;
 
 		/** The <code>CreateJobOutput</code> structure. */
-		Output?: CreateJobPostBodyOutput;
+		Output?: CreateJobPostBodyOutput | null;
 
 		/**
 		 * A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
 		 * Maximum items: 30
 		 */
-		Outputs?: Array<CreateJobOutput>;
+		Outputs?: Array<CreateJobOutput> | null;
 
 		/**
 		 * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		OutputKeyPrefix?: string;
+		OutputKeyPrefix?: string | null;
 
 		/**
 		 * <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create.</p> <p>The maximum number of master playlists in a job is 30.</p>
 		 * Maximum items: 30
 		 */
-		Playlists?: Array<CreateJobPlaylist>;
+		Playlists?: Array<CreateJobPlaylist> | null;
 
 		/** User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them. */
-		UserMetadata?: {[id: string]: string };
+		UserMetadata?: {[id: string]: string } | null;
 	}
 
 	export interface CreateJobPostBodyInput {
-		Key?: string;
-		FrameRate?: string;
-		Resolution?: string;
-		AspectRatio?: string;
-		Interlaced?: string;
-		Container?: string;
+		Key?: string | null;
+		FrameRate?: string | null;
+		Resolution?: string | null;
+		AspectRatio?: string | null;
+		Interlaced?: string | null;
+		Container?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 
 		/** Settings that determine when a clip begins and how long it lasts. */
-		TimeSpan?: TimeSpan;
+		TimeSpan?: TimeSpan | null;
 
 		/** The captions to be created, if any. */
-		InputCaptions?: InputCaptions;
+		InputCaptions?: InputCaptions | null;
 
 		/** The detected properties of the input file. Elastic Transcoder identifies these values from the input file. */
-		DetectedProperties?: DetectedProperties;
+		DetectedProperties?: DetectedProperties | null;
 	}
 
 	export interface CreateJobPostBodyOutput {
-		Key?: string;
-		ThumbnailPattern?: string;
+		Key?: string | null;
+		ThumbnailPattern?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		ThumbnailEncryption?: Encryption;
-		Rotate?: string;
-		PresetId?: string;
-		SegmentDuration?: string;
-		Watermarks?: Array<JobWatermark>;
+		ThumbnailEncryption?: Encryption | null;
+		Rotate?: string | null;
+		PresetId?: string | null;
+		SegmentDuration?: string | null;
+		Watermarks?: Array<JobWatermark> | null;
 
 		/** The .jpg or .png file associated with an audio file. */
-		AlbumArt?: JobAlbumArt;
-		Composition?: Array<Clip>;
+		AlbumArt?: JobAlbumArt | null;
+		Composition?: Array<Clip> | null;
 
 		/** The captions to be created, if any. */
-		Captions?: Captions;
+		Captions?: Captions | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 	}
 
 	export interface CreatePipelinePostBody {
@@ -998,7 +998,7 @@ export namespace MyNS {
 		 * <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p> <p>Specify this value when all of the following are true:</p> <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files. </p> <important> <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants full control over the files only to the AWS account that owns the role that is specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
 		 * Pattern: ^(\w|\.|-){1,255}$
 		 */
-		OutputBucket?: string;
+		OutputBucket?: string | null;
 
 		/**
 		 * The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.
@@ -1012,35 +1012,35 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 0
 		 */
-		AwsKmsKeyArn?: string;
+		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: CreatePipelinePostBodyNotifications;
+		Notifications?: CreatePipelinePostBodyNotifications | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: CreatePipelinePostBodyContentConfig;
+		ContentConfig?: CreatePipelinePostBodyContentConfig | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: CreatePipelinePostBodyThumbnailConfig;
+		ThumbnailConfig?: CreatePipelinePostBodyThumbnailConfig | null;
 	}
 
 	export interface CreatePipelinePostBodyNotifications {
-		Progressing?: string;
-		Completed?: string;
-		Warning?: string;
-		Error?: string;
+		Progressing?: string | null;
+		Completed?: string | null;
+		Warning?: string | null;
+		Error?: string | null;
 	}
 
 	export interface CreatePipelinePostBodyContentConfig {
-		Bucket?: string;
-		StorageClass?: string;
-		Permissions?: Array<Permission>;
+		Bucket?: string | null;
+		StorageClass?: string | null;
+		Permissions?: Array<Permission> | null;
 	}
 
 	export interface CreatePipelinePostBodyThumbnailConfig {
-		Bucket?: string;
-		StorageClass?: string;
-		Permissions?: Array<Permission>;
+		Bucket?: string | null;
+		StorageClass?: string | null;
+		Permissions?: Array<Permission> | null;
 	}
 
 	export interface CreatePresetPostBody {
@@ -1058,7 +1058,7 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
@@ -1068,53 +1068,53 @@ export namespace MyNS {
 		Container: string;
 
 		/** The <code>VideoParameters</code> structure. */
-		Video?: CreatePresetPostBodyVideo;
+		Video?: CreatePresetPostBodyVideo | null;
 
 		/** Parameters required for transcoding audio. */
-		Audio?: CreatePresetPostBodyAudio;
+		Audio?: CreatePresetPostBodyAudio | null;
 
 		/** Thumbnails for videos. */
-		Thumbnails?: CreatePresetPostBodyThumbnails;
+		Thumbnails?: CreatePresetPostBodyThumbnails | null;
 	}
 
 	export interface CreatePresetPostBodyVideo {
-		Codec?: string;
-		CodecOptions?: CodecOptions;
-		KeyframesMaxDist?: string;
-		FixedGOP?: string;
-		BitRate?: string;
-		FrameRate?: string;
-		MaxFrameRate?: string;
-		Resolution?: string;
-		AspectRatio?: string;
-		MaxWidth?: string;
-		MaxHeight?: string;
-		DisplayAspectRatio?: string;
-		SizingPolicy?: string;
-		PaddingPolicy?: string;
-		Watermarks?: Array<PresetWatermark>;
+		Codec?: string | null;
+		CodecOptions?: CodecOptions | null;
+		KeyframesMaxDist?: string | null;
+		FixedGOP?: string | null;
+		BitRate?: string | null;
+		FrameRate?: string | null;
+		MaxFrameRate?: string | null;
+		Resolution?: string | null;
+		AspectRatio?: string | null;
+		MaxWidth?: string | null;
+		MaxHeight?: string | null;
+		DisplayAspectRatio?: string | null;
+		SizingPolicy?: string | null;
+		PaddingPolicy?: string | null;
+		Watermarks?: Array<PresetWatermark> | null;
 	}
 
 	export interface CreatePresetPostBodyAudio {
-		Codec?: string;
-		SampleRate?: string;
-		BitRate?: string;
-		Channels?: string;
-		AudioPackingMode?: string;
+		Codec?: string | null;
+		SampleRate?: string | null;
+		BitRate?: string | null;
+		Channels?: string | null;
+		AudioPackingMode?: string | null;
 
 		/** Options associated with your audio codec. */
-		CodecOptions?: AudioCodecOptions;
+		CodecOptions?: AudioCodecOptions | null;
 	}
 
 	export interface CreatePresetPostBodyThumbnails {
-		Format?: string;
-		Interval?: string;
-		Resolution?: string;
-		AspectRatio?: string;
-		MaxWidth?: string;
-		MaxHeight?: string;
-		SizingPolicy?: string;
-		PaddingPolicy?: string;
+		Format?: string | null;
+		Interval?: string | null;
+		Resolution?: string | null;
+		AspectRatio?: string | null;
+		MaxWidth?: string | null;
+		MaxHeight?: string | null;
+		SizingPolicy?: string | null;
+		PaddingPolicy?: string | null;
 	}
 
 	export interface UpdatePipelinePutBody {
@@ -1124,54 +1124,54 @@ export namespace MyNS {
 		 * Max length: 40
 		 * Min length: 1
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.
 		 * Pattern: ^(\w|\.|-){1,255}$
 		 */
-		InputBucket?: string;
+		InputBucket?: string | null;
 
 		/**
 		 * The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.
 		 * Pattern: ^arn:aws:iam::\w{12}:role/.+$
 		 */
-		Role?: string;
+		Role?: string | null;
 
 		/**
 		 * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
 		 * Max length: 255
 		 * Min length: 0
 		 */
-		AwsKmsKeyArn?: string;
+		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: UpdatePipelinePutBodyNotifications;
+		Notifications?: UpdatePipelinePutBodyNotifications | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: UpdatePipelinePutBodyContentConfig;
+		ContentConfig?: UpdatePipelinePutBodyContentConfig | null;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: UpdatePipelinePutBodyThumbnailConfig;
+		ThumbnailConfig?: UpdatePipelinePutBodyThumbnailConfig | null;
 	}
 
 	export interface UpdatePipelinePutBodyNotifications {
-		Progressing?: string;
-		Completed?: string;
-		Warning?: string;
-		Error?: string;
+		Progressing?: string | null;
+		Completed?: string | null;
+		Warning?: string | null;
+		Error?: string | null;
 	}
 
 	export interface UpdatePipelinePutBodyContentConfig {
-		Bucket?: string;
-		StorageClass?: string;
-		Permissions?: Array<Permission>;
+		Bucket?: string | null;
+		StorageClass?: string | null;
+		Permissions?: Array<Permission> | null;
 	}
 
 	export interface UpdatePipelinePutBodyThumbnailConfig {
-		Bucket?: string;
-		StorageClass?: string;
-		Permissions?: Array<Permission>;
+		Bucket?: string | null;
+		StorageClass?: string | null;
+		Permissions?: Array<Permission> | null;
 	}
 
 	export interface TestRolePostBody {
@@ -1215,10 +1215,10 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePipelineNotificationsPostBodyNotifications {
-		Progressing?: string;
-		Completed?: string;
-		Warning?: string;
-		Error?: string;
+		Progressing?: string | null;
+		Completed?: string | null;
+		Warning?: string | null;
+		Error?: string | null;
 	}
 
 	export interface UpdatePipelineStatusPostBody {

@@ -15,30 +15,30 @@ export namespace MyNS {
 	}
 
 	export interface CreateGraphResponse {
-		GraphArn?: string;
+		GraphArn?: string | null;
 	}
 
 	export interface ServiceQuotaExceededException {
 	}
 
 	export interface CreateMembersResponse {
-		Members?: Array<MemberDetail>;
-		UnprocessedAccounts?: Array<UnprocessedAccount>;
+		Members?: Array<MemberDetail> | null;
+		UnprocessedAccounts?: Array<UnprocessedAccount> | null;
 	}
 
 
 	/** Details about a member account that was invited to contribute to a behavior graph. */
 	export interface MemberDetail {
-		AccountId?: string;
-		EmailAddress?: string;
-		GraphArn?: string;
-		MasterId?: string;
-		Status?: MemberDetailStatus;
-		DisabledReason?: MemberDetailDisabledReason;
-		InvitedTime?: Date;
-		UpdatedTime?: Date;
-		PercentOfGraphUtilization?: number;
-		PercentOfGraphUtilizationUpdatedTime?: Date;
+		AccountId?: string | null;
+		EmailAddress?: string | null;
+		GraphArn?: string | null;
+		MasterId?: string | null;
+		Status?: MemberDetailStatus | null;
+		DisabledReason?: MemberDetailDisabledReason | null;
+		InvitedTime?: Date | null;
+		UpdatedTime?: Date | null;
+		PercentOfGraphUtilization?: number | null;
+		PercentOfGraphUtilizationUpdatedTime?: Date | null;
 	}
 
 	export enum MemberDetailStatus { INVITED = 0, VERIFICATION_IN_PROGRESS = 1, VERIFICATION_FAILED = 2, ENABLED = 3, ACCEPTED_BUT_DISABLED = 4 }
@@ -48,8 +48,8 @@ export namespace MyNS {
 
 	/** A member account that was included in a request but for which the request could not be processed. */
 	export interface UnprocessedAccount {
-		AccountId?: string;
-		Reason?: string;
+		AccountId?: string | null;
+		Reason?: string | null;
 	}
 
 
@@ -60,35 +60,35 @@ export namespace MyNS {
 	}
 
 	export interface DeleteMembersResponse {
-		AccountIds?: Array<string>;
-		UnprocessedAccounts?: Array<UnprocessedAccount>;
+		AccountIds?: Array<string> | null;
+		UnprocessedAccounts?: Array<UnprocessedAccount> | null;
 	}
 
 	export interface GetMembersResponse {
-		MemberDetails?: Array<MemberDetail>;
-		UnprocessedAccounts?: Array<UnprocessedAccount>;
+		MemberDetails?: Array<MemberDetail> | null;
+		UnprocessedAccounts?: Array<UnprocessedAccount> | null;
 	}
 
 	export interface ListGraphsResponse {
-		GraphList?: Array<Graph>;
-		NextToken?: string;
+		GraphList?: Array<Graph> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A behavior graph in Detective. */
 	export interface Graph {
-		Arn?: string;
-		CreatedTime?: Date;
+		Arn?: string | null;
+		CreatedTime?: Date | null;
 	}
 
 	export interface ListInvitationsResponse {
-		Invitations?: Array<MemberDetail>;
-		NextToken?: string;
+		Invitations?: Array<MemberDetail> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListMembersResponse {
-		MemberDetails?: Array<MemberDetail>;
-		NextToken?: string;
+		MemberDetails?: Array<MemberDetail> | null;
+		NextToken?: string | null;
 	}
 
 	export interface AcceptInvitationRequest {
@@ -97,7 +97,7 @@ export namespace MyNS {
 
 	export interface CreateMembersRequest {
 		GraphArn: string;
-		Message?: string;
+		Message?: string | null;
 		Accounts: Array<Account>;
 	}
 
@@ -120,19 +120,19 @@ export namespace MyNS {
 	}
 
 	export interface ListGraphsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListInvitationsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListMembersRequest {
 		GraphArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export enum MemberStatus { INVITED = 0, VERIFICATION_IN_PROGRESS = 1, VERIFICATION_FAILED = 2, ENABLED = 3, ACCEPTED_BUT_DISABLED = 4 }
@@ -292,7 +292,7 @@ export namespace MyNS {
 		 * Max length: 1000
 		 * Min length: 1
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/**
 		 * The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the account list contains the account identifier and the AWS account root user email address.
@@ -366,14 +366,14 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.
 		 * Minimum: 1
 		 * Maximum: 200
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListInvitationsPostBody {
@@ -383,14 +383,14 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.
 		 * Minimum: 1
 		 * Maximum: 200
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListMembersPostBody {
@@ -407,14 +407,14 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 1
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.
 		 * Minimum: 1
 		 * Maximum: 200
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface RejectInvitationPostBody {

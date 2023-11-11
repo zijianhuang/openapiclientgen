@@ -8,13 +8,13 @@ export namespace MyNS {
 		IdentityPoolId: string;
 		IdentityPoolName: string;
 		AllowUnauthenticatedIdentities: boolean;
-		AllowClassicFlow?: boolean;
-		SupportedLoginProviders?: IdentityProviders;
-		DeveloperProviderName?: string;
-		OpenIdConnectProviderARNs?: Array<string>;
-		CognitoIdentityProviders?: Array<CognitoIdentityProvider>;
-		SamlProviderARNs?: Array<string>;
-		IdentityPoolTags?: IdentityPoolTagsType;
+		AllowClassicFlow?: boolean | null;
+		SupportedLoginProviders?: IdentityProviders | null;
+		DeveloperProviderName?: string | null;
+		OpenIdConnectProviderARNs?: Array<string> | null;
+		CognitoIdentityProviders?: Array<CognitoIdentityProvider> | null;
+		SamlProviderARNs?: Array<string> | null;
+		IdentityPoolTags?: IdentityPoolTagsType | null;
 	}
 
 	export interface IdentityProviders {
@@ -23,9 +23,9 @@ export namespace MyNS {
 
 	/** A provider representing an Amazon Cognito user pool and its client ID. */
 	export interface CognitoIdentityProvider {
-		ProviderName?: string;
-		ClientId?: string;
-		ServerSideTokenCheck?: boolean;
+		ProviderName?: string | null;
+		ClientId?: string | null;
+		ServerSideTokenCheck?: boolean | null;
 	}
 
 	export interface IdentityPoolTagsType {
@@ -36,13 +36,13 @@ export namespace MyNS {
 	export interface CreateIdentityPoolInput {
 		IdentityPoolName: string;
 		AllowUnauthenticatedIdentities: boolean;
-		AllowClassicFlow?: boolean;
-		SupportedLoginProviders?: IdentityProviders;
-		DeveloperProviderName?: string;
-		OpenIdConnectProviderARNs?: Array<string>;
-		CognitoIdentityProviders?: Array<CognitoIdentityProvider>;
-		SamlProviderARNs?: Array<string>;
-		IdentityPoolTags?: IdentityPoolTagsType;
+		AllowClassicFlow?: boolean | null;
+		SupportedLoginProviders?: IdentityProviders | null;
+		DeveloperProviderName?: string | null;
+		OpenIdConnectProviderARNs?: Array<string> | null;
+		CognitoIdentityProviders?: Array<CognitoIdentityProvider> | null;
+		SamlProviderARNs?: Array<string> | null;
+		IdentityPoolTags?: IdentityPoolTagsType | null;
 	}
 
 	export interface InvalidParameterException {
@@ -66,14 +66,14 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>DeleteIdentities</code> operation. */
 	export interface DeleteIdentitiesResponse {
-		UnprocessedIdentityIds?: Array<UnprocessedIdentityId>;
+		UnprocessedIdentityIds?: Array<UnprocessedIdentityId> | null;
 	}
 
 
 	/** An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId. */
 	export interface UnprocessedIdentityId {
-		IdentityId?: string;
-		ErrorCode?: UnprocessedIdentityIdErrorCode;
+		IdentityId?: string | null;
+		ErrorCode?: UnprocessedIdentityIdErrorCode | null;
 	}
 
 	export enum UnprocessedIdentityIdErrorCode { AccessDenied = 0, InternalServerError = 1 }
@@ -96,10 +96,10 @@ export namespace MyNS {
 
 	/** A description of the identity. */
 	export interface IdentityDescription {
-		IdentityId?: string;
-		Logins?: Array<string>;
-		CreationDate?: Date;
-		LastModifiedDate?: Date;
+		IdentityId?: string | null;
+		Logins?: Array<string> | null;
+		CreationDate?: Date | null;
+		LastModifiedDate?: Date | null;
 	}
 
 
@@ -117,27 +117,27 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>GetCredentialsForIdentity</code> operation. */
 	export interface GetCredentialsForIdentityResponse {
-		IdentityId?: string;
+		IdentityId?: string | null;
 
 		/** Credentials for the provided identity ID. */
-		Credentials?: Credentials;
+		Credentials?: Credentials | null;
 	}
 
 
 	/** Credentials for the provided identity ID. */
 	export interface Credentials {
-		AccessKeyId?: string;
-		SecretKey?: string;
-		SessionToken?: string;
-		Expiration?: Date;
+		AccessKeyId?: string | null;
+		SecretKey?: string | null;
+		SessionToken?: string | null;
+		Expiration?: Date | null;
 	}
 
 
 	/** Input to the <code>GetCredentialsForIdentity</code> action. */
 	export interface GetCredentialsForIdentityInput {
 		IdentityId: string;
-		Logins?: LoginsMap;
-		CustomRoleArn?: string;
+		Logins?: LoginsMap | null;
+		CustomRoleArn?: string | null;
 	}
 
 	export interface LoginsMap {
@@ -152,23 +152,23 @@ export namespace MyNS {
 
 	/** Returned in response to a GetId request. */
 	export interface GetIdResponse {
-		IdentityId?: string;
+		IdentityId?: string | null;
 	}
 
 
 	/** Input to the GetId action. */
 	export interface GetIdInput {
-		AccountId?: string;
+		AccountId?: string | null;
 		IdentityPoolId: string;
-		Logins?: LoginsMap;
+		Logins?: LoginsMap | null;
 	}
 
 
 	/** Returned in response to a successful <code>GetIdentityPoolRoles</code> operation. */
 	export interface GetIdentityPoolRolesResponse {
-		IdentityPoolId?: string;
-		Roles?: RolesMap;
-		RoleMappings?: RoleMappingMap;
+		IdentityPoolId?: string | null;
+		Roles?: RolesMap | null;
+		RoleMappings?: RoleMappingMap | null;
 	}
 
 	export interface RolesMap {
@@ -186,31 +186,31 @@ export namespace MyNS {
 
 	/** Returned in response to a successful GetOpenIdToken request. */
 	export interface GetOpenIdTokenResponse {
-		IdentityId?: string;
-		Token?: string;
+		IdentityId?: string | null;
+		Token?: string | null;
 	}
 
 
 	/** Input to the GetOpenIdToken action. */
 	export interface GetOpenIdTokenInput {
 		IdentityId: string;
-		Logins?: LoginsMap;
+		Logins?: LoginsMap | null;
 	}
 
 
 	/** Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request. */
 	export interface GetOpenIdTokenForDeveloperIdentityResponse {
-		IdentityId?: string;
-		Token?: string;
+		IdentityId?: string | null;
+		Token?: string | null;
 	}
 
 
 	/** Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action. */
 	export interface GetOpenIdTokenForDeveloperIdentityInput {
 		IdentityPoolId: string;
-		IdentityId?: string;
+		IdentityId?: string | null;
 		Logins: LoginsMap;
-		TokenDuration?: number;
+		TokenDuration?: number | null;
 	}
 
 	export interface DeveloperUserAlreadyRegisteredException {
@@ -219,9 +219,9 @@ export namespace MyNS {
 
 	/** The response to a ListIdentities request. */
 	export interface ListIdentitiesResponse {
-		IdentityPoolId?: string;
-		Identities?: Array<IdentityDescription>;
-		NextToken?: string;
+		IdentityPoolId?: string | null;
+		Identities?: Array<IdentityDescription> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -229,33 +229,33 @@ export namespace MyNS {
 	export interface ListIdentitiesInput {
 		IdentityPoolId: string;
 		MaxResults: number;
-		NextToken?: string;
-		HideDisabled?: boolean;
+		NextToken?: string | null;
+		HideDisabled?: boolean | null;
 	}
 
 
 	/** The result of a successful ListIdentityPools action. */
 	export interface ListIdentityPoolsResponse {
-		IdentityPools?: Array<IdentityPoolShortDescription>;
-		NextToken?: string;
+		IdentityPools?: Array<IdentityPoolShortDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A description of the identity pool. */
 	export interface IdentityPoolShortDescription {
-		IdentityPoolId?: string;
-		IdentityPoolName?: string;
+		IdentityPoolId?: string | null;
+		IdentityPoolName?: string | null;
 	}
 
 
 	/** Input to the ListIdentityPools action. */
 	export interface ListIdentityPoolsInput {
 		MaxResults: number;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: IdentityPoolTagsType;
+		Tags?: IdentityPoolTagsType | null;
 	}
 
 	export interface ListTagsForResourceInput {
@@ -265,25 +265,25 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>LookupDeveloperIdentity</code> action. */
 	export interface LookupDeveloperIdentityResponse {
-		IdentityId?: string;
-		DeveloperUserIdentifierList?: Array<string>;
-		NextToken?: string;
+		IdentityId?: string | null;
+		DeveloperUserIdentifierList?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Input to the <code>LookupDeveloperIdentityInput</code> action. */
 	export interface LookupDeveloperIdentityInput {
 		IdentityPoolId: string;
-		IdentityId?: string;
-		DeveloperUserIdentifier?: string;
-		MaxResults?: number;
-		NextToken?: string;
+		IdentityId?: string | null;
+		DeveloperUserIdentifier?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Returned in response to a successful <code>MergeDeveloperIdentities</code> action. */
 	export interface MergeDeveloperIdentitiesResponse {
-		IdentityId?: string;
+		IdentityId?: string | null;
 	}
 
 
@@ -300,7 +300,7 @@ export namespace MyNS {
 	export interface SetIdentityPoolRolesInput {
 		IdentityPoolId: string;
 		Roles: RolesMap;
-		RoleMappings?: RoleMappingMap;
+		RoleMappings?: RoleMappingMap | null;
 	}
 
 	export interface ConcurrentModificationException {
@@ -366,10 +366,10 @@ export namespace MyNS {
 	/** A role mapping. */
 	export interface RoleMapping {
 		Type: RoleMappingType;
-		AmbiguousRoleResolution?: AmbiguousRoleResolutionType;
+		AmbiguousRoleResolution?: AmbiguousRoleResolutionType | null;
 
 		/** A container for rules. */
-		RulesConfiguration?: RulesConfigurationType;
+		RulesConfiguration?: RulesConfigurationType | null;
 	}
 
 	@Injectable()

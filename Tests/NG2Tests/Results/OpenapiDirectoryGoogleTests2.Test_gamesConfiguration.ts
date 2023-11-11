@@ -7,31 +7,31 @@ export namespace MyNS {
 	export interface AchievementConfiguration {
 
 		/** The type of the achievement. */
-		achievementType?: AchievementConfigurationAchievementType;
+		achievementType?: AchievementConfigurationAchievementType | null;
 
 		/** An achievement configuration detail. */
-		draft?: AchievementConfigurationDetail;
+		draft?: AchievementConfigurationDetail | null;
 
 		/** The ID of the achievement. */
-		id?: string;
+		id?: string | null;
 
 		/** The initial state of the achievement. */
-		initialState?: AchievementConfigurationInitialState;
+		initialState?: AchievementConfigurationInitialState | null;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string <code>gamesConfiguration#achievementConfiguration</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** An achievement configuration detail. */
-		published?: AchievementConfigurationDetail;
+		published?: AchievementConfigurationDetail | null;
 
 		/** Steps to unlock.  Only applicable to incremental achievements. */
-		stepsToUnlock?: number;
+		stepsToUnlock?: number | null;
 
 		/** The token for this resource. */
-		token?: string;
+		token?: string | null;
 	}
 
 	export enum AchievementConfigurationAchievementType { ACHIEVEMENT_TYPE_UNSPECIFIED = 0, STANDARD = 1, INCREMENTAL = 2 }
@@ -41,25 +41,25 @@ export namespace MyNS {
 	export interface AchievementConfigurationDetail {
 
 		/** A localized string bundle resource. */
-		description?: LocalizedStringBundle;
+		description?: LocalizedStringBundle | null;
 
 		/** The icon url of this achievement. Writes to this field are ignored. */
-		iconUrl?: string;
+		iconUrl?: string | null;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string <code>gamesConfiguration#achievementConfigurationDetail</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** A localized string bundle resource. */
-		name?: LocalizedStringBundle;
+		name?: LocalizedStringBundle | null;
 
 		/** Point value for the achievement. */
-		pointValue?: number;
+		pointValue?: number | null;
 
 		/** The sort rank of this achievement. Writes to this field are ignored. */
-		sortRank?: number;
+		sortRank?: number | null;
 	}
 
 
@@ -70,10 +70,10 @@ export namespace MyNS {
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string <code>gamesConfiguration#localizedStringBundle</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** The locale strings. */
-		translations?: Array<LocalizedString>;
+		translations?: Array<LocalizedString> | null;
 	}
 
 
@@ -84,13 +84,13 @@ export namespace MyNS {
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string <code>gamesConfiguration#localizedString</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** The locale string. */
-		locale?: string;
+		locale?: string | null;
 
 		/** The string value. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export enum AchievementConfigurationInitialState { INITIAL_STATE_UNSPECIFIED = 0, HIDDEN = 1, REVEALED = 2 }
@@ -100,17 +100,17 @@ export namespace MyNS {
 	export interface AchievementConfigurationListResponse {
 
 		/** The achievement configurations. */
-		items?: Array<AchievementConfiguration>;
+		items?: Array<AchievementConfiguration> | null;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string
 		 * <code>gamesConfiguration#achievementConfigurationListResponse</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** The pagination token for the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -118,22 +118,22 @@ export namespace MyNS {
 	export interface GamesNumberAffixConfiguration {
 
 		/** A localized string bundle resource. */
-		few?: LocalizedStringBundle;
+		few?: LocalizedStringBundle | null;
 
 		/** A localized string bundle resource. */
-		many?: LocalizedStringBundle;
+		many?: LocalizedStringBundle | null;
 
 		/** A localized string bundle resource. */
-		one?: LocalizedStringBundle;
+		one?: LocalizedStringBundle | null;
 
 		/** A localized string bundle resource. */
-		other?: LocalizedStringBundle;
+		other?: LocalizedStringBundle | null;
 
 		/** A localized string bundle resource. */
-		two?: LocalizedStringBundle;
+		two?: LocalizedStringBundle | null;
 
 		/** A localized string bundle resource. */
-		zero?: LocalizedStringBundle;
+		zero?: LocalizedStringBundle | null;
 	}
 
 
@@ -141,16 +141,16 @@ export namespace MyNS {
 	export interface GamesNumberFormatConfiguration {
 
 		/** The curreny code string. Only used for CURRENCY format type. */
-		currencyCode?: string;
+		currencyCode?: string | null;
 
 		/** The number of decimal places for number. Only used for NUMERIC format type. */
-		numDecimalPlaces?: number;
+		numDecimalPlaces?: number | null;
 
 		/** The formatting for the number. */
-		numberFormatType?: GamesNumberFormatConfigurationNumberFormatType;
+		numberFormatType?: GamesNumberFormatConfigurationNumberFormatType | null;
 
 		/** A number affix resource. */
-		suffix?: GamesNumberAffixConfiguration;
+		suffix?: GamesNumberAffixConfiguration | null;
 	}
 
 	export enum GamesNumberFormatConfigurationNumberFormatType { NUMBER_FORMAT_TYPE_UNSPECIFIED = 0, NUMERIC = 1, TIME_DURATION = 2, CURRENCY = 3 }
@@ -160,19 +160,19 @@ export namespace MyNS {
 	export interface ImageConfiguration {
 
 		/** The image type for the image. */
-		imageType?: ImageConfigurationImageType;
+		imageType?: ImageConfigurationImageType | null;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string <code>gamesConfiguration#imageConfiguration</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** The resource ID of resource which the image belongs to. */
-		resourceId?: string;
+		resourceId?: string | null;
 
 		/** The url for this image. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum ImageConfigurationImageType { IMAGE_TYPE_UNSPECIFIED = 0, ACHIEVEMENT_ICON = 1, LEADERBOARD_ICON = 2 }
@@ -182,29 +182,29 @@ export namespace MyNS {
 	export interface LeaderboardConfiguration {
 
 		/** A leaderboard configuration detail. */
-		draft?: LeaderboardConfigurationDetail;
+		draft?: LeaderboardConfigurationDetail | null;
 
 		/** The ID of the leaderboard. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string <code>gamesConfiguration#leaderboardConfiguration</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** A leaderboard configuration detail. */
-		published?: LeaderboardConfigurationDetail;
+		published?: LeaderboardConfigurationDetail | null;
 
 		/** Maximum score that can be posted to this leaderboard. */
-		scoreMax?: string;
+		scoreMax?: string | null;
 
 		/** Minimum score that can be posted to this leaderboard. */
-		scoreMin?: string;
-		scoreOrder?: LeaderboardConfigurationScoreOrder;
+		scoreMin?: string | null;
+		scoreOrder?: LeaderboardConfigurationScoreOrder | null;
 
 		/** The token for this resource. */
-		token?: string;
+		token?: string | null;
 	}
 
 
@@ -212,22 +212,22 @@ export namespace MyNS {
 	export interface LeaderboardConfigurationDetail {
 
 		/** The icon url of this leaderboard. Writes to this field are ignored. */
-		iconUrl?: string;
+		iconUrl?: string | null;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string <code>gamesConfiguration#leaderboardConfigurationDetail</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** A localized string bundle resource. */
-		name?: LocalizedStringBundle;
+		name?: LocalizedStringBundle | null;
 
 		/** A number format resource. */
-		scoreFormat?: GamesNumberFormatConfiguration;
+		scoreFormat?: GamesNumberFormatConfiguration | null;
 
 		/** The sort rank of this leaderboard. Writes to this field are ignored. */
-		sortRank?: number;
+		sortRank?: number | null;
 	}
 
 	export enum LeaderboardConfigurationScoreOrder { SCORE_ORDER_UNSPECIFIED = 0, LARGER_IS_BETTER = 1, SMALLER_IS_BETTER = 2 }
@@ -237,17 +237,17 @@ export namespace MyNS {
 	export interface LeaderboardConfigurationListResponse {
 
 		/** The leaderboard configurations. */
-		items?: Array<LeaderboardConfiguration>;
+		items?: Array<LeaderboardConfiguration> | null;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
 		 * string
 		 * <code>gamesConfiguration#leaderboardConfigurationListResponse</code>.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/** The pagination token for the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()

@@ -10,10 +10,10 @@ export namespace MyNS {
 	export interface AnalyzeCommentRequest {
 
 		/** Opaque token that is echoed from the request to the response. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** Represents a body of text. */
-		comment?: TextEntry;
+		comment?: TextEntry | null;
 
 		/**
 		 * Optional identifier associating this AnalyzeCommentRequest with a
@@ -21,7 +21,7 @@ export namespace MyNS {
 		 * norms and rules. Specifying this value enables us to explore building
 		 * community-specific models for clients.
 		 */
-		communityId?: string;
+		communityId?: string | null;
 
 		/**
 		 * Context is typically something that a Comment is referencing or replying to
@@ -31,13 +31,13 @@ export namespace MyNS {
 		 * breaking backwards compatibility. The server will return an error if more
 		 * than one of the following fields is present.
 		 */
-		context?: Context;
+		context?: Context | null;
 
 		/**
 		 * Do not store the comment or context sent in this request. By default, the
 		 * service may store comments/context for debugging purposes.
 		 */
-		doNotStore?: boolean;
+		doNotStore?: boolean | null;
 
 		/**
 		 * The language(s) of the comment and context. If none are specified, we
@@ -49,7 +49,7 @@ export namespace MyNS {
 		 * specified by the caller, or auto-detected) are not *all* supported by the
 		 * service.
 		 */
-		languages?: Array<string>;
+		languages?: Array<string> | null;
 
 		/**
 		 * Specification of requested attributes. The AttributeParameters serve as
@@ -61,7 +61,7 @@ export namespace MyNS {
 		 * go/checker-models (internal) and
 		 * https://github.com/conversationai/perspectiveapi/blob/master/2-api/models.md#all-attribute-types.
 		 */
-		requestedAttributes?: {[id: string]: AttributeParameters };
+		requestedAttributes?: {[id: string]: AttributeParameters } | null;
 
 		/**
 		 * Session ID. Used to join related RPCs into a single session. For example,
@@ -69,14 +69,14 @@ export namespace MyNS {
 		 * SuggestCommentScore RPCs should set all invocations of both RPCs to the
 		 * same Session ID, typically a random 64-bit integer.
 		 */
-		sessionId?: string;
+		sessionId?: string | null;
 
 		/**
 		 * An advisory parameter that will return span annotations if the model
 		 * is capable of providing scores with sub-comment resolution. This will
 		 * likely increase the size of the returned message.
 		 */
-		spanAnnotations?: boolean;
+		spanAnnotations?: boolean | null;
 	}
 
 
@@ -84,10 +84,10 @@ export namespace MyNS {
 	export interface TextEntry {
 
 		/** UTF-8 encoded text. */
-		text?: string;
+		text?: string | null;
 
 		/** Type of the text field. */
-		type?: TextEntryType;
+		type?: TextEntryType | null;
 	}
 
 	export enum TextEntryType { TEXT_TYPE_UNSPECIFIED = 0, PLAIN_TEXT = 1, HTML = 2 }
@@ -108,10 +108,10 @@ export namespace MyNS {
 		 * message board, where comments are either a top level comment or the child of
 		 * a top level comment.
 		 */
-		articleAndParentComment?: ArticleAndParentComment;
+		articleAndParentComment?: ArticleAndParentComment | null;
 
 		/** A list of messages. For example, a linear comments section or forum thread. */
-		entries?: Array<TextEntry>;
+		entries?: Array<TextEntry> | null;
 	}
 
 
@@ -123,10 +123,10 @@ export namespace MyNS {
 	export interface ArticleAndParentComment {
 
 		/** Represents a body of text. */
-		article?: TextEntry;
+		article?: TextEntry | null;
 
 		/** Represents a body of text. */
-		parentComment?: TextEntry;
+		parentComment?: TextEntry | null;
 	}
 
 
@@ -138,10 +138,10 @@ export namespace MyNS {
 		 * unset, a default threshold will be applied. A FloatValue wrapper is used to
 		 * distinguish between 0 vs. default/unset.
 		 */
-		scoreThreshold?: number;
+		scoreThreshold?: number | null;
 
 		/** What type of scores to return. If unset, defaults to probability scores. */
-		scoreType?: AttributeParametersScoreType;
+		scoreType?: AttributeParametersScoreType | null;
 	}
 
 	export enum AttributeParametersScoreType { SCORE_TYPE_UNSPECIFIED = 0, PROBABILITY = 1, STD_DEV_SCORE = 2, PERCENTILE = 3, RAW = 4 }
@@ -155,16 +155,16 @@ export namespace MyNS {
 		 * as the requested_attribute field in AnalyzeCommentRequest, for example
 		 * "ATTACK_ON_AUTHOR", "INFLAMMATORY", etc).
 		 */
-		attributeScores?: {[id: string]: AttributeScores };
+		attributeScores?: {[id: string]: AttributeScores } | null;
 
 		/** Same token from the original AnalyzeCommentRequest. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * Contains the languages detected from the text content, sorted in order of
 		 * likelihood.
 		 */
-		detectedLanguages?: Array<string>;
+		detectedLanguages?: Array<string> | null;
 
 		/**
 		 * The language(s) used by CommentAnalyzer service to choose which Model to
@@ -175,7 +175,7 @@ export namespace MyNS {
 		 * else
 		 * effective_languages = detected_languages[0]
 		 */
-		languages?: Array<string>;
+		languages?: Array<string> | null;
 	}
 
 
@@ -186,10 +186,10 @@ export namespace MyNS {
 	export interface AttributeScores {
 
 		/** Per-span scores. */
-		spanScores?: Array<SpanScore>;
+		spanScores?: Array<SpanScore> | null;
 
 		/** Analysis scores are described by a value and a ScoreType. */
-		summaryScore?: Score;
+		summaryScore?: Score | null;
 	}
 
 
@@ -203,11 +203,11 @@ export namespace MyNS {
 		 * describes the text "Hi".
 		 * If "begin" and "end" are unset, the score applies to the full text.
 		 */
-		begin?: number;
-		end?: number;
+		begin?: number | null;
+		end?: number | null;
 
 		/** Analysis scores are described by a value and a ScoreType. */
-		score?: Score;
+		score?: Score | null;
 	}
 
 
@@ -215,10 +215,10 @@ export namespace MyNS {
 	export interface Score {
 
 		/** The type of the above value. */
-		type?: AttributeParametersScoreType;
+		type?: AttributeParametersScoreType | null;
 
 		/** Score value. Semantics described by type below. */
-		value?: number;
+		value?: number | null;
 	}
 
 
@@ -241,13 +241,13 @@ export namespace MyNS {
 		 * also must not be empty. An `INVALID_ARGUMENT` error is returned for all
 		 * malformed requests.
 		 */
-		attributeScores?: {[id: string]: AttributeScores };
+		attributeScores?: {[id: string]: AttributeScores } | null;
 
 		/** Opaque token that is echoed from the request to the response. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** Represents a body of text. */
-		comment?: TextEntry;
+		comment?: TextEntry | null;
 
 		/**
 		 * Optional identifier associating this comment score suggestion with a
@@ -255,7 +255,7 @@ export namespace MyNS {
 		 * and rules. Specifying this value enables training community-specific
 		 * models.
 		 */
-		communityId?: string;
+		communityId?: string | null;
 
 		/**
 		 * Context is typically something that a Comment is referencing or replying to
@@ -265,14 +265,14 @@ export namespace MyNS {
 		 * breaking backwards compatibility. The server will return an error if more
 		 * than one of the following fields is present.
 		 */
-		context?: Context;
+		context?: Context | null;
 
 		/**
 		 * The language(s) of the comment and context. If none are specified, we
 		 * attempt to automatically detect the language. Both ISO and BCP-47 language
 		 * codes are accepted.
 		 */
-		languages?: Array<string>;
+		languages?: Array<string> | null;
 
 		/**
 		 * Session ID. Used to join related RPCs into a single session. For example,
@@ -280,7 +280,7 @@ export namespace MyNS {
 		 * SuggestCommentScore RPCs should set all invocations of both RPCs to the
 		 * same Session ID, typically a random 64-bit integer.
 		 */
-		sessionId?: string;
+		sessionId?: string | null;
 	}
 
 
@@ -288,13 +288,13 @@ export namespace MyNS {
 	export interface SuggestCommentScoreResponse {
 
 		/** Same token from the original SuggestCommentScoreRequest. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** The list of languages detected from the comment text. */
-		detectedLanguages?: Array<string>;
+		detectedLanguages?: Array<string> | null;
 
 		/** The list of languages provided in the request. */
-		requestedLanguages?: Array<string>;
+		requestedLanguages?: Array<string> | null;
 	}
 
 	@Injectable()
