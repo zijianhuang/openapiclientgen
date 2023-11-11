@@ -1,4 +1,5 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
+using Fonlow.Poco2Client;
 using Fonlow.TypeScriptCodeDom;
 using Microsoft.OpenApi.Models;
 using System;
@@ -50,6 +51,11 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		public string ProductName { get; private set; }
 
+		protected virtual CodeObjectHelper CreateCodeObjectHelper(bool asModule)
+		{
+			return new CodeObjectHelper(asModule);
+		}
+
 		/// <summary>
 		/// Save C# codes into a file.
 		/// </summary>
@@ -69,7 +75,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
 
-			using TypeScriptCodeProvider provider = new(jsOutput.AsModule);
+			var provider = new TypeScriptCodeProvider(new Fonlow.TypeScriptCodeDom.TsCodeGenerator(CreateCodeObjectHelper(jsOutput.AsModule)));
 			provider.GenerateCodeFromCompileUnit(CodeCompileUnit, writer, TsCodeGenerationOptions.Instance);
 		}
 
@@ -98,7 +104,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			clientNamespace = new CodeNamespace(settings.ClientNamespace);
 			CodeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
-			ComponentsToTsTypes componentsToTsTypes = new(settings, CodeCompileUnit, clientNamespace);
+			ComponentsToTsTypes componentsToTsTypes = new(settings, jsOutput, CodeCompileUnit, clientNamespace);
 			componentsToTsTypes.CreateCodeDom(components);
 
 			if (paths == null)

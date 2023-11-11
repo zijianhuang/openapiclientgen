@@ -447,6 +447,17 @@ namespace SwagTests
 			helper.GenerateAndAssertAndBuild("SwagMock\\xero-payroll-uk.yaml", "Results\\xero-payroll-uk.txt");
 		}
 
+		/// <summary>
+		/// OpenApi v3.1
+		/// </summary>
+		[Fact]
+		public void Testwebhook31()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock\\webhook31.yaml", "Results\\webhook31.txt");
+		}
+
+
+
 		//[Fact]
 		//public void TestXero_projects() in getTasks, parameter chargeType has no in field which is required.
 		//{
