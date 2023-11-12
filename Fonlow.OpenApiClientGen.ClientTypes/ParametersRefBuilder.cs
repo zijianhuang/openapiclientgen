@@ -36,7 +36,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					Documentation = p.Description,
 					ParameterDescriptor = new ParameterDescriptor()
 					{
-						IsOptional = !p.Required,
+						IsRequired = p.Required,
 						ParameterName = refinedName,
 						ParameterType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),

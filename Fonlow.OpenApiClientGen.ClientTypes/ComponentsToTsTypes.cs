@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// <summary>
 	/// POCO to TypeScript interfaces generator. Create CodeDOM and output TS codes, with TypeScript CodeDOM provider
 	/// </summary>
-	public class ComponentsToTsTypes : ComponentsToTypesBase, IComponentToCodeDom
+	public class ComponentsToTsTypes : ComponentsToTypesBase
 	{
 		readonly JSOutput jsOutput;
 		public ComponentsToTsTypes(Settings settings, JSOutput jsOutput, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)

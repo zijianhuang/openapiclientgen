@@ -10,7 +10,7 @@ using System.Linq;
 namespace Fonlow.CodeDom.Web.Ts
 {
 	/// <summary>
-	/// Generate a client function upon ApiDescription
+	/// Generate a client function in CodeDOM upon ApiDescription
 	/// </summary>
 	public abstract class ClientApiTsFunctionGenAbstract
 	{
@@ -140,7 +140,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			builder.AppendLine(HttpMethod + " " + RelativePath);
 			foreach (ParameterDescriptionEx item in ParameterDescriptions)
 			{
-				CodeTypeReference tsParameterType = item.ParameterTypeReference;// Poco2TsGen.TranslateToClientTypeReference(item.ParameterDescriptor.ParameterType);
+				CodeTypeReference tsParameterType = item.ParameterTypeReference;
 				if (!String.IsNullOrEmpty(item.Documentation))
 				{
 					var funky = item.Documentation.Contains("*/");

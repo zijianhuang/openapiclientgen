@@ -190,23 +190,6 @@ namespace Fonlow.OpenApiClientGen.CS
 			}
 		}
 
-		//public CompilerResults CompileThenSave(string fileName)//not working in .net core
-		//{
-		//	using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
-		//	CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
-		//	var s = WriteToText();
-		//	var results = provider.CompileAssemblyFromSource(  //https://docs.microsoft.com/en-us/dotnet/core/compatibility/unsupported-apis
-		//		new CompilerParameters(new string[] { "System.Net.Http", "Newtonsoft.Json" })
-		//		{
-		//			GenerateInMemory = true,
-		//		}, s
-		//		);
-
-		//	File.WriteAllText(fileName, s); //save the file anyway
-
-		//	return results;
-		//}
-
 		string[] GetContainerClassNames(OpenApiPaths paths)
 		{
 			if (settings.ContainerNameStrategy == ContainerNameStrategy.None)
