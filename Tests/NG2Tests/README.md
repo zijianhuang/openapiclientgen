@@ -4,4 +4,4 @@ Each ng guild upon generated codes of a definition file may take around 15 secon
 
 In NG2Tests, whether to run ng build, while others are subject to hardcoded setting BuildToValidate, which should be set to true only when generated codes have been significantly altered and you want to make sure generated codes could all be compiled.
 
-You don't have to run `ng test` everytime. For more details, please check [Testing](https://github.com/zijianhuang/openapiclientgen/wiki/Testing)
+You don't have to run `ng test` everytime. For more details, please check [Testing](https://github.com/zijianhuang/openapiclientgen/wiki/Testing) in Wiki.
