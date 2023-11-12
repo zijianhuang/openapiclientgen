@@ -31,7 +31,7 @@ namespace Fonlow.CodeDom.Web
 		static readonly Type typeofDateOnlyNullable = typeof(DateOnly?);
 		static readonly Type typeOfNullableDefinition = typeof(Nullable<>);
 
-		public static string Transform(string newUriText, ParameterDescriptionEx d)
+		public static string Transform(string newUriText, ParameterDescription d)
 		{
 			if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 			{
@@ -148,7 +148,7 @@ namespace Fonlow.CodeDom.Web
 			}
 		}
 
-		public static string TransformForTs(string newUriText, ParameterDescriptionEx d)
+		public static string TransformForTs(string newUriText, ParameterDescription d)
 		{
 			if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 			{

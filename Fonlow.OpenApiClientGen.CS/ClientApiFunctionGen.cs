@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.CS
 	internal class ClientApiFunctionGen
 	{
 		OpenApiOperation apiOperation;
-		ParameterDescriptionEx[] parameterDescriptions;
+		ParameterDescription[] parameterDescriptions;
 		CodeTypeReference requestBodyCodeTypeReference; // for post and put
 		string requestBodyComment;
 
@@ -189,7 +189,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			method.Comments.Add(new CodeCommentStatement(actionName + " " + RelativePath, true));
 			method.Comments.Add(new CodeCommentStatement("</summary>", true));
-			foreach (ParameterDescriptionEx item in parameterDescriptions)
+			foreach (ParameterDescription item in parameterDescriptions)
 			{
 				CreateParamDocComment(item.Name, item.Documentation);
 			}

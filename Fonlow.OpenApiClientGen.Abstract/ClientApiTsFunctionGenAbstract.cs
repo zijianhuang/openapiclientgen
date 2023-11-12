@@ -15,7 +15,7 @@ namespace Fonlow.CodeDom.Web.Ts
 	public abstract class ClientApiTsFunctionGenAbstract
 	{
 		OpenApiOperation apiOperation;
-		protected ParameterDescriptionEx[] ParameterDescriptions { get; private set; }
+		protected ParameterDescription[] ParameterDescriptions { get; private set; }
 		protected CodeTypeReference RequestBodyCodeTypeReference { get; private set; }
 		string requestBodyComment;
 
@@ -138,7 +138,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			builder.AppendLine(HttpMethod + " " + RelativePath);
-			foreach (ParameterDescriptionEx item in ParameterDescriptions)
+			foreach (ParameterDescription item in ParameterDescriptions)
 			{
 				CodeTypeReference tsParameterType = item.ParameterTypeReference;
 				if (!String.IsNullOrEmpty(item.Documentation))
@@ -193,7 +193,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected abstract void RenderImplementation();
 
-		protected abstract string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions);
+		protected abstract string CreateUriQueryForTs(string uriText, ParameterDescription[] parameterDescriptions);
 	}
 
 }
