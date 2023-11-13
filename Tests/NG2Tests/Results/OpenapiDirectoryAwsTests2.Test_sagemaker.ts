@@ -5489,7 +5489,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAlgorithmsOutput} Success
 		 */
-		ListAlgorithms(MaxResults: string, NextToken: string, requestBody: ListAlgorithmsInput): Observable<ListAlgorithmsOutput> {
+		ListAlgorithms(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAlgorithmsInput): Observable<ListAlgorithmsOutput> {
 			return this.http.post<ListAlgorithmsOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListAlgorithms?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5500,7 +5500,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppsResponse} Success
 		 */
-		ListApps(MaxResults: string, NextToken: string, requestBody: ListAppsRequest): Observable<ListAppsResponse> {
+		ListApps(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAppsRequest): Observable<ListAppsResponse> {
 			return this.http.post<ListAppsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListApps?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5511,7 +5511,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAutoMLJobsResponse} Success
 		 */
-		ListAutoMLJobs(MaxResults: string, NextToken: string, requestBody: ListAutoMLJobsRequest): Observable<ListAutoMLJobsResponse> {
+		ListAutoMLJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAutoMLJobsRequest): Observable<ListAutoMLJobsResponse> {
 			return this.http.post<ListAutoMLJobsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListAutoMLJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5522,7 +5522,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCandidatesForAutoMLJobResponse} Success
 		 */
-		ListCandidatesForAutoMLJob(MaxResults: string, NextToken: string, requestBody: ListCandidatesForAutoMLJobRequest): Observable<ListCandidatesForAutoMLJobResponse> {
+		ListCandidatesForAutoMLJob(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCandidatesForAutoMLJobRequest): Observable<ListCandidatesForAutoMLJobResponse> {
 			return this.http.post<ListCandidatesForAutoMLJobResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListCandidatesForAutoMLJob?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5533,7 +5533,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCodeRepositoriesOutput} Success
 		 */
-		ListCodeRepositories(MaxResults: string, NextToken: string, requestBody: ListCodeRepositoriesInput): Observable<ListCodeRepositoriesOutput> {
+		ListCodeRepositories(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCodeRepositoriesInput): Observable<ListCodeRepositoriesOutput> {
 			return this.http.post<ListCodeRepositoriesOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListCodeRepositories?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5544,7 +5544,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCompilationJobsResponse} Success
 		 */
-		ListCompilationJobs(MaxResults: string, NextToken: string, requestBody: ListCompilationJobsRequest): Observable<ListCompilationJobsResponse> {
+		ListCompilationJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCompilationJobsRequest): Observable<ListCompilationJobsResponse> {
 			return this.http.post<ListCompilationJobsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListCompilationJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5555,7 +5555,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDomainsResponse} Success
 		 */
-		ListDomains(MaxResults: string, NextToken: string, requestBody: ListDomainsRequest): Observable<ListDomainsResponse> {
+		ListDomains(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDomainsRequest): Observable<ListDomainsResponse> {
 			return this.http.post<ListDomainsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListDomains?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5566,7 +5566,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEndpointConfigsOutput} Success
 		 */
-		ListEndpointConfigs(MaxResults: string, NextToken: string, requestBody: ListEndpointConfigsInput): Observable<ListEndpointConfigsOutput> {
+		ListEndpointConfigs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListEndpointConfigsInput): Observable<ListEndpointConfigsOutput> {
 			return this.http.post<ListEndpointConfigsOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListEndpointConfigs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5577,7 +5577,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEndpointsOutput} Success
 		 */
-		ListEndpoints(MaxResults: string, NextToken: string, requestBody: ListEndpointsInput): Observable<ListEndpointsOutput> {
+		ListEndpoints(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListEndpointsInput): Observable<ListEndpointsOutput> {
 			return this.http.post<ListEndpointsOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListEndpoints?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5588,7 +5588,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListExperimentsResponse} Success
 		 */
-		ListExperiments(MaxResults: string, NextToken: string, requestBody: ListExperimentsRequest): Observable<ListExperimentsResponse> {
+		ListExperiments(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListExperimentsRequest): Observable<ListExperimentsResponse> {
 			return this.http.post<ListExperimentsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListExperiments?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5599,7 +5599,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFlowDefinitionsResponse} Success
 		 */
-		ListFlowDefinitions(MaxResults: string, NextToken: string, requestBody: ListFlowDefinitionsRequest): Observable<ListFlowDefinitionsResponse> {
+		ListFlowDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFlowDefinitionsRequest): Observable<ListFlowDefinitionsResponse> {
 			return this.http.post<ListFlowDefinitionsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListFlowDefinitions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5610,7 +5610,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHumanTaskUisResponse} Success
 		 */
-		ListHumanTaskUis(MaxResults: string, NextToken: string, requestBody: ListHumanTaskUisRequest): Observable<ListHumanTaskUisResponse> {
+		ListHumanTaskUis(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListHumanTaskUisRequest): Observable<ListHumanTaskUisResponse> {
 			return this.http.post<ListHumanTaskUisResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListHumanTaskUis?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5621,7 +5621,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHyperParameterTuningJobsResponse} Success
 		 */
-		ListHyperParameterTuningJobs(MaxResults: string, NextToken: string, requestBody: ListHyperParameterTuningJobsRequest): Observable<ListHyperParameterTuningJobsResponse> {
+		ListHyperParameterTuningJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListHyperParameterTuningJobsRequest): Observable<ListHyperParameterTuningJobsResponse> {
 			return this.http.post<ListHyperParameterTuningJobsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListHyperParameterTuningJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5632,7 +5632,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLabelingJobsResponse} Success
 		 */
-		ListLabelingJobs(MaxResults: string, NextToken: string, requestBody: ListLabelingJobsRequest): Observable<ListLabelingJobsResponse> {
+		ListLabelingJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListLabelingJobsRequest): Observable<ListLabelingJobsResponse> {
 			return this.http.post<ListLabelingJobsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListLabelingJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5643,7 +5643,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLabelingJobsForWorkteamResponse} Success
 		 */
-		ListLabelingJobsForWorkteam(MaxResults: string, NextToken: string, requestBody: ListLabelingJobsForWorkteamRequest): Observable<ListLabelingJobsForWorkteamResponse> {
+		ListLabelingJobsForWorkteam(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListLabelingJobsForWorkteamRequest): Observable<ListLabelingJobsForWorkteamResponse> {
 			return this.http.post<ListLabelingJobsForWorkteamResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListLabelingJobsForWorkteam?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5654,7 +5654,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListModelPackagesOutput} Success
 		 */
-		ListModelPackages(MaxResults: string, NextToken: string, requestBody: ListModelPackagesInput): Observable<ListModelPackagesOutput> {
+		ListModelPackages(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListModelPackagesInput): Observable<ListModelPackagesOutput> {
 			return this.http.post<ListModelPackagesOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListModelPackages?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5665,7 +5665,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListModelsOutput} Success
 		 */
-		ListModels(MaxResults: string, NextToken: string, requestBody: ListModelsInput): Observable<ListModelsOutput> {
+		ListModels(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListModelsInput): Observable<ListModelsOutput> {
 			return this.http.post<ListModelsOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListModels?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5676,7 +5676,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMonitoringExecutionsResponse} Success
 		 */
-		ListMonitoringExecutions(MaxResults: string, NextToken: string, requestBody: ListMonitoringExecutionsRequest): Observable<ListMonitoringExecutionsResponse> {
+		ListMonitoringExecutions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMonitoringExecutionsRequest): Observable<ListMonitoringExecutionsResponse> {
 			return this.http.post<ListMonitoringExecutionsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListMonitoringExecutions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5687,7 +5687,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMonitoringSchedulesResponse} Success
 		 */
-		ListMonitoringSchedules(MaxResults: string, NextToken: string, requestBody: ListMonitoringSchedulesRequest): Observable<ListMonitoringSchedulesResponse> {
+		ListMonitoringSchedules(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMonitoringSchedulesRequest): Observable<ListMonitoringSchedulesResponse> {
 			return this.http.post<ListMonitoringSchedulesResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListMonitoringSchedules?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5698,7 +5698,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNotebookInstanceLifecycleConfigsOutput} Success
 		 */
-		ListNotebookInstanceLifecycleConfigs(MaxResults: string, NextToken: string, requestBody: ListNotebookInstanceLifecycleConfigsInput): Observable<ListNotebookInstanceLifecycleConfigsOutput> {
+		ListNotebookInstanceLifecycleConfigs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListNotebookInstanceLifecycleConfigsInput): Observable<ListNotebookInstanceLifecycleConfigsOutput> {
 			return this.http.post<ListNotebookInstanceLifecycleConfigsOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListNotebookInstanceLifecycleConfigs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5709,7 +5709,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNotebookInstancesOutput} Success
 		 */
-		ListNotebookInstances(MaxResults: string, NextToken: string, requestBody: ListNotebookInstancesInput): Observable<ListNotebookInstancesOutput> {
+		ListNotebookInstances(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListNotebookInstancesInput): Observable<ListNotebookInstancesOutput> {
 			return this.http.post<ListNotebookInstancesOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListNotebookInstances?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5720,7 +5720,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProcessingJobsResponse} Success
 		 */
-		ListProcessingJobs(MaxResults: string, NextToken: string, requestBody: ListProcessingJobsRequest): Observable<ListProcessingJobsResponse> {
+		ListProcessingJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListProcessingJobsRequest): Observable<ListProcessingJobsResponse> {
 			return this.http.post<ListProcessingJobsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListProcessingJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5731,7 +5731,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSubscribedWorkteamsResponse} Success
 		 */
-		ListSubscribedWorkteams(MaxResults: string, NextToken: string, requestBody: ListSubscribedWorkteamsRequest): Observable<ListSubscribedWorkteamsResponse> {
+		ListSubscribedWorkteams(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListSubscribedWorkteamsRequest): Observable<ListSubscribedWorkteamsResponse> {
 			return this.http.post<ListSubscribedWorkteamsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListSubscribedWorkteams?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5742,7 +5742,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsOutput} Success
 		 */
-		ListTags(MaxResults: string, NextToken: string, requestBody: ListTagsInput): Observable<ListTagsOutput> {
+		ListTags(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsInput): Observable<ListTagsOutput> {
 			return this.http.post<ListTagsOutput>(this.baseUri + '#X-Amz-Target=SageMaker.ListTags?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5753,7 +5753,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTrainingJobsResponse} Success
 		 */
-		ListTrainingJobs(MaxResults: string, NextToken: string, requestBody: ListTrainingJobsRequest): Observable<ListTrainingJobsResponse> {
+		ListTrainingJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTrainingJobsRequest): Observable<ListTrainingJobsResponse> {
 			return this.http.post<ListTrainingJobsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListTrainingJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5764,7 +5764,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTrainingJobsForHyperParameterTuningJobResponse} Success
 		 */
-		ListTrainingJobsForHyperParameterTuningJob(MaxResults: string, NextToken: string, requestBody: ListTrainingJobsForHyperParameterTuningJobRequest): Observable<ListTrainingJobsForHyperParameterTuningJobResponse> {
+		ListTrainingJobsForHyperParameterTuningJob(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTrainingJobsForHyperParameterTuningJobRequest): Observable<ListTrainingJobsForHyperParameterTuningJobResponse> {
 			return this.http.post<ListTrainingJobsForHyperParameterTuningJobResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListTrainingJobsForHyperParameterTuningJob?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5775,7 +5775,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTransformJobsResponse} Success
 		 */
-		ListTransformJobs(MaxResults: string, NextToken: string, requestBody: ListTransformJobsRequest): Observable<ListTransformJobsResponse> {
+		ListTransformJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTransformJobsRequest): Observable<ListTransformJobsResponse> {
 			return this.http.post<ListTransformJobsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListTransformJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5786,7 +5786,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTrialComponentsResponse} Success
 		 */
-		ListTrialComponents(MaxResults: string, NextToken: string, requestBody: ListTrialComponentsRequest): Observable<ListTrialComponentsResponse> {
+		ListTrialComponents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTrialComponentsRequest): Observable<ListTrialComponentsResponse> {
 			return this.http.post<ListTrialComponentsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListTrialComponents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5797,7 +5797,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTrialsResponse} Success
 		 */
-		ListTrials(MaxResults: string, NextToken: string, requestBody: ListTrialsRequest): Observable<ListTrialsResponse> {
+		ListTrials(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTrialsRequest): Observable<ListTrialsResponse> {
 			return this.http.post<ListTrialsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListTrials?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5808,7 +5808,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUserProfilesResponse} Success
 		 */
-		ListUserProfiles(MaxResults: string, NextToken: string, requestBody: ListUserProfilesRequest): Observable<ListUserProfilesResponse> {
+		ListUserProfiles(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListUserProfilesRequest): Observable<ListUserProfilesResponse> {
 			return this.http.post<ListUserProfilesResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListUserProfiles?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5819,7 +5819,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkteamsResponse} Success
 		 */
-		ListWorkteams(MaxResults: string, NextToken: string, requestBody: ListWorkteamsRequest): Observable<ListWorkteamsResponse> {
+		ListWorkteams(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkteamsRequest): Observable<ListWorkteamsResponse> {
 			return this.http.post<ListWorkteamsResponse>(this.baseUri + '#X-Amz-Target=SageMaker.ListWorkteams?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5839,7 +5839,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchResponse} Success
 		 */
-		Search(MaxResults: string, NextToken: string, requestBody: SearchRequest): Observable<SearchResponse> {
+		Search(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: SearchRequest): Observable<SearchResponse> {
 			return this.http.post<SearchResponse>(this.baseUri + '#X-Amz-Target=SageMaker.Search?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

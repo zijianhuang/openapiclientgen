@@ -3182,7 +3182,7 @@ export namespace MyNS {
 		 * update the listed peering ranges.
 		 * @return {void} Successful response
 		 */
-		Servicenetworking_services_connections_patch(name: string, force: boolean, updateMask: string, requestBody: Connection): Observable<HttpResponse<string>> {
+		Servicenetworking_services_connections_patch(name: string, force: boolean | null | undefined, updateMask: string | null | undefined, requestBody: Connection): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&force=' + force + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3223,7 +3223,7 @@ export namespace MyNS {
 		 * network.
 		 * @return {void} Successful response
 		 */
-		Servicenetworking_services_connections_list(parent: string, network: string): Observable<HttpResponse<string>> {
+		Servicenetworking_services_connections_list(parent: string, network: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/connections&network=' + (network == null ? '' : encodeURIComponent(network)), { observe: 'response', responseType: 'text' });
 		}
 

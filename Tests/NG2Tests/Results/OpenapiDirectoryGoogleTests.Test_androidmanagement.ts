@@ -1533,7 +1533,7 @@ export namespace MyNS {
 		 * @param {string} signupUrlName The name of the SignupUrl used to sign up for the enterprise.
 		 * @return {void} Successful response
 		 */
-		Androidmanagement_enterprises_create(enterpriseToken: string, projectId: string, signupUrlName: string, requestBody: Enterprise): Observable<HttpResponse<string>> {
+		Androidmanagement_enterprises_create(enterpriseToken: string | null | undefined, projectId: string | null | undefined, signupUrlName: string | null | undefined, requestBody: Enterprise): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/enterprises?enterpriseToken=' + (enterpriseToken == null ? '' : encodeURIComponent(enterpriseToken)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&signupUrlName=' + (signupUrlName == null ? '' : encodeURIComponent(signupUrlName)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1544,7 +1544,7 @@ export namespace MyNS {
 		 * @param {string} projectId The ID of the Google Cloud Platform project which will own the enterprise.
 		 * @return {void} Successful response
 		 */
-		Androidmanagement_signupUrls_create(callbackUrl: string, projectId: string): Observable<HttpResponse<string>> {
+		Androidmanagement_signupUrls_create(callbackUrl: string | null | undefined, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/signupUrls?callbackUrl=' + (callbackUrl == null ? '' : encodeURIComponent(callbackUrl)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1556,7 +1556,7 @@ export namespace MyNS {
 		 * @param {string} wipeReasonMessage Optional. A short message displayed to the user before wiping the work profile on personal devices. This has no effect on company owned devices. The maximum message length is 200 characters.
 		 * @return {void} Successful response
 		 */
-		Androidmanagement_enterprises_enrollmentTokens_delete(name: string, wipeDataFlags: Array<string>, wipeReasonMessage: string): Observable<HttpResponse<string>> {
+		Androidmanagement_enterprises_enrollmentTokens_delete(name: string, wipeDataFlags: Array<string> | null | undefined, wipeReasonMessage: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&' + wipeDataFlags.map(z => `wipeDataFlags=${encodeURIComponent(z)}`).join('&') + '&wipeReasonMessage=' + (wipeReasonMessage == null ? '' : encodeURIComponent(wipeReasonMessage)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1567,7 +1567,7 @@ export namespace MyNS {
 		 * @param {string} languageCode The preferred language for localized application info, as a BCP47 tag (e.g. "en-US", "de"). If not specified the default language of the application will be used.
 		 * @return {void} Successful response
 		 */
-		Androidmanagement_enterprises_webApps_get(name: string, languageCode: string): Observable<HttpResponse<string>> {
+		Androidmanagement_enterprises_webApps_get(name: string, languageCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1578,7 +1578,7 @@ export namespace MyNS {
 		 * @param {string} updateMask The field mask indicating the fields to update. If not set, all modifiable fields will be modified.
 		 * @return {void} Successful response
 		 */
-		Androidmanagement_enterprises_webApps_patch(name: string, updateMask: string, requestBody: WebApp): Observable<HttpResponse<string>> {
+		Androidmanagement_enterprises_webApps_patch(name: string, updateMask: string | null | undefined, requestBody: WebApp): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androidmanagement_enterprises_devices_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androidmanagement_enterprises_devices_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/devices&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1632,7 +1632,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androidmanagement_enterprises_policies_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androidmanagement_enterprises_policies_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/policies&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1644,7 +1644,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androidmanagement_enterprises_webApps_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androidmanagement_enterprises_webApps_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/webApps&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

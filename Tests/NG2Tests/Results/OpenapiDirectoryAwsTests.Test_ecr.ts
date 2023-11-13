@@ -775,7 +775,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeImageScanFindingsResponse} Success
 		 */
-		DescribeImageScanFindings(maxResults: string, nextToken: string, requestBody: DescribeImageScanFindingsRequest): Observable<DescribeImageScanFindingsResponse> {
+		DescribeImageScanFindings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeImageScanFindingsRequest): Observable<DescribeImageScanFindingsResponse> {
 			return this.http.post<DescribeImageScanFindingsResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.DescribeImageScanFindings?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -786,7 +786,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeImagesResponse} Success
 		 */
-		DescribeImages(maxResults: string, nextToken: string, requestBody: DescribeImagesRequest): Observable<DescribeImagesResponse> {
+		DescribeImages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeImagesRequest): Observable<DescribeImagesResponse> {
 			return this.http.post<DescribeImagesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.DescribeImages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -797,7 +797,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeRepositoriesResponse} Success
 		 */
-		DescribeRepositories(maxResults: string, nextToken: string, requestBody: DescribeRepositoriesRequest): Observable<DescribeRepositoriesResponse> {
+		DescribeRepositories(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeRepositoriesRequest): Observable<DescribeRepositoriesResponse> {
 			return this.http.post<DescribeRepositoriesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.DescribeRepositories?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -835,7 +835,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetLifecyclePolicyPreviewResponse} Success
 		 */
-		GetLifecyclePolicyPreview(maxResults: string, nextToken: string, requestBody: GetLifecyclePolicyPreviewRequest): Observable<GetLifecyclePolicyPreviewResponse> {
+		GetLifecyclePolicyPreview(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetLifecyclePolicyPreviewRequest): Observable<GetLifecyclePolicyPreviewResponse> {
 			return this.http.post<GetLifecyclePolicyPreviewResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -864,7 +864,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListImagesResponse} Success
 		 */
-		ListImages(maxResults: string, nextToken: string, requestBody: ListImagesRequest): Observable<ListImagesResponse> {
+		ListImages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListImagesRequest): Observable<ListImagesResponse> {
 			return this.http.post<ListImagesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.ListImages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

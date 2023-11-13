@@ -3853,7 +3853,7 @@ export namespace MyNS {
 		 * @param {string} regionCode The regionCode parameter instructs the API to return results for the specified country. The parameter value is an ISO 3166-1 alpha-2 country code. YouTube uses this value when the authorized user's previous activity on YouTube does not provide enough information to generate the activity feed.
 		 * @return {void} Successful response
 		 */
-		Youtube_activities_list(part: string, channelId: string, home: boolean, maxResults: number, mine: boolean, pageToken: string, publishedAfter: string, publishedBefore: string, regionCode: string): Observable<HttpResponse<string>> {
+		Youtube_activities_list(part: string, channelId: string | null | undefined, home: boolean | null | undefined, maxResults: number | null | undefined, mine: boolean | null | undefined, pageToken: string | null | undefined, publishedAfter: string | null | undefined, publishedBefore: string | null | undefined, regionCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'activities?part=' + (part == null ? '' : encodeURIComponent(part)) + '&channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&home=' + home + '&maxResults=' + maxResults + '&mine=' + mine + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&publishedAfter=' + (publishedAfter == null ? '' : encodeURIComponent(publishedAfter)) + '&publishedBefore=' + (publishedBefore == null ? '' : encodeURIComponent(publishedBefore)) + '&regionCode=' + (regionCode == null ? '' : encodeURIComponent(regionCode)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3877,7 +3877,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_captions_delete(id: string, onBehalfOf: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_captions_delete(id: string, onBehalfOf: string | null | undefined, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'captions?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOf=' + (onBehalfOf == null ? '' : encodeURIComponent(onBehalfOf)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3892,7 +3892,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_captions_list(part: string, videoId: string, id: string, onBehalfOf: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_captions_list(part: string, videoId: string, id: string | null | undefined, onBehalfOf: string | null | undefined, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'captions?part=' + (part == null ? '' : encodeURIComponent(part)) + '&videoId=' + (videoId == null ? '' : encodeURIComponent(videoId)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOf=' + (onBehalfOf == null ? '' : encodeURIComponent(onBehalfOf)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3907,7 +3907,7 @@ export namespace MyNS {
 		 * You should set the sync parameter to true if you are uploading a transcript, which has no time codes, or if you suspect the time codes in your file are incorrect and want YouTube to try to fix them.
 		 * @return {void} Successful response
 		 */
-		Youtube_captions_insert(part: string, onBehalfOf: string, onBehalfOfContentOwner: string, sync: boolean, requestBody: Caption): Observable<HttpResponse<string>> {
+		Youtube_captions_insert(part: string, onBehalfOf: string | null | undefined, onBehalfOfContentOwner: string | null | undefined, sync: boolean | null | undefined, requestBody: Caption): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'captions?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOf=' + (onBehalfOf == null ? '' : encodeURIComponent(onBehalfOf)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&sync=' + sync, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3922,7 +3922,7 @@ export namespace MyNS {
 		 * The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will automatically synchronize the caption track with the audio track.
 		 * @return {void} Successful response
 		 */
-		Youtube_captions_update(part: string, onBehalfOf: string, onBehalfOfContentOwner: string, sync: boolean, requestBody: Caption): Observable<HttpResponse<string>> {
+		Youtube_captions_update(part: string, onBehalfOf: string | null | undefined, onBehalfOfContentOwner: string | null | undefined, sync: boolean | null | undefined, requestBody: Caption): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'captions?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOf=' + (onBehalfOf == null ? '' : encodeURIComponent(onBehalfOf)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&sync=' + sync, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3937,7 +3937,7 @@ export namespace MyNS {
 		 * @param {string} tlang The tlang parameter specifies that the API response should return a translation of the specified caption track. The parameter value is an ISO 639-1 two-letter language code that identifies the desired caption language. The translation is generated by using machine translation, such as Google Translate.
 		 * @return {void} Successful response
 		 */
-		Youtube_captions_download(id: string, onBehalfOf: string, onBehalfOfContentOwner: string, tfmt: Youtube_captions_downloadTfmt, tlang: string): Observable<HttpResponse<string>> {
+		Youtube_captions_download(id: string, onBehalfOf: string | null | undefined, onBehalfOfContentOwner: string | null | undefined, tfmt: Youtube_captions_downloadTfmt | null | undefined, tlang: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'captions/' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOf=' + (onBehalfOf == null ? '' : encodeURIComponent(onBehalfOf)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&tfmt=' + tfmt + '&tlang=' + (tlang == null ? '' : encodeURIComponent(tlang)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3949,7 +3949,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_channelSections_delete(id: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_channelSections_delete(id: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'channelSections?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3966,7 +3966,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_channelSections_list(part: string, channelId: string, hl: string, id: string, mine: boolean, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_channelSections_list(part: string, channelId: string | null | undefined, hl: string | null | undefined, id: string | null | undefined, mine: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channelSections?part=' + (part == null ? '' : encodeURIComponent(part)) + '&channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&mine=' + mine + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3982,7 +3982,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_channelSections_insert(part: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, requestBody: ChannelSection): Observable<HttpResponse<string>> {
+		Youtube_channelSections_insert(part: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, requestBody: ChannelSection): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'channelSections?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3995,7 +3995,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_channelSections_update(part: string, onBehalfOfContentOwner: string, requestBody: ChannelSection): Observable<HttpResponse<string>> {
+		Youtube_channelSections_update(part: string, onBehalfOfContentOwner: string | null | undefined, requestBody: ChannelSection): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'channelSections?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4018,7 +4018,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_channels_list(part: string, categoryId: string, forUsername: string, hl: string, id: string, managedByMe: boolean, maxResults: number, mine: boolean, mySubscribers: boolean, onBehalfOfContentOwner: string, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_channels_list(part: string, categoryId: string | null | undefined, forUsername: string | null | undefined, hl: string | null | undefined, id: string | null | undefined, managedByMe: boolean | null | undefined, maxResults: number | null | undefined, mine: boolean | null | undefined, mySubscribers: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels?part=' + (part == null ? '' : encodeURIComponent(part)) + '&categoryId=' + (categoryId == null ? '' : encodeURIComponent(categoryId)) + '&forUsername=' + (forUsername == null ? '' : encodeURIComponent(forUsername)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&managedByMe=' + managedByMe + '&maxResults=' + maxResults + '&mine=' + mine + '&mySubscribers=' + mySubscribers + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4031,7 +4031,7 @@ export namespace MyNS {
 		 * @param {string} onBehalfOfContentOwner The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_channels_update(part: string, onBehalfOfContentOwner: string, requestBody: Channel): Observable<HttpResponse<string>> {
+		Youtube_channels_update(part: string, onBehalfOfContentOwner: string | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'channels?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4057,7 +4057,7 @@ export namespace MyNS {
 		 * @param {string} videoId The videoId parameter instructs the API to return comment threads associated with the specified video ID.
 		 * @return {void} Successful response
 		 */
-		Youtube_commentThreads_list(part: string, allThreadsRelatedToChannelId: string, channelId: string, id: string, maxResults: number, moderationStatus: Youtube_commentThreads_listModerationStatus, order: Youtube_commentThreads_listOrder, pageToken: string, searchTerms: string, textFormat: Youtube_commentThreads_listTextFormat, videoId: string): Observable<HttpResponse<string>> {
+		Youtube_commentThreads_list(part: string, allThreadsRelatedToChannelId: string | null | undefined, channelId: string | null | undefined, id: string | null | undefined, maxResults: number | null | undefined, moderationStatus: Youtube_commentThreads_listModerationStatus | null | undefined, order: Youtube_commentThreads_listOrder | null | undefined, pageToken: string | null | undefined, searchTerms: string | null | undefined, textFormat: Youtube_commentThreads_listTextFormat | null | undefined, videoId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'commentThreads?part=' + (part == null ? '' : encodeURIComponent(part)) + '&allThreadsRelatedToChannelId=' + (allThreadsRelatedToChannelId == null ? '' : encodeURIComponent(allThreadsRelatedToChannelId)) + '&channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&maxResults=' + maxResults + '&moderationStatus=' + moderationStatus + '&order=' + order + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchTerms=' + (searchTerms == null ? '' : encodeURIComponent(searchTerms)) + '&textFormat=' + textFormat + '&videoId=' + (videoId == null ? '' : encodeURIComponent(videoId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4105,7 +4105,7 @@ export namespace MyNS {
 		 * @param {Youtube_commentThreads_listTextFormat} textFormat This parameter indicates whether the API should return comments formatted as HTML or as plain text.
 		 * @return {void} Successful response
 		 */
-		Youtube_comments_list(part: string, id: string, maxResults: number, pageToken: string, parentId: string, textFormat: Youtube_commentThreads_listTextFormat): Observable<HttpResponse<string>> {
+		Youtube_comments_list(part: string, id: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, parentId: string | null | undefined, textFormat: Youtube_commentThreads_listTextFormat | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'comments?part=' + (part == null ? '' : encodeURIComponent(part)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parentId=' + (parentId == null ? '' : encodeURIComponent(parentId)) + '&textFormat=' + textFormat, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4148,7 +4148,7 @@ export namespace MyNS {
 		 * Note: This parameter is only valid if the moderationStatus parameter is also set to rejected.
 		 * @return {void} Successful response
 		 */
-		Youtube_comments_setModerationStatus(id: string, moderationStatus: Youtube_comments_setModerationStatusModerationStatus, banAuthor: boolean): Observable<HttpResponse<string>> {
+		Youtube_comments_setModerationStatus(id: string, moderationStatus: Youtube_comments_setModerationStatusModerationStatus, banAuthor: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'comments/setModerationStatus?id=' + (id == null ? '' : encodeURIComponent(id)) + '&moderationStatus=' + moderationStatus + '&banAuthor=' + banAuthor, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4161,7 +4161,7 @@ export namespace MyNS {
 		 * @param {string} regionCode The regionCode parameter instructs the API to return the list of guide categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
 		 * @return {void} Successful response
 		 */
-		Youtube_guideCategories_list(part: string, hl: string, id: string, regionCode: string): Observable<HttpResponse<string>> {
+		Youtube_guideCategories_list(part: string, hl: string | null | undefined, id: string | null | undefined, regionCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'guideCategories?part=' + (part == null ? '' : encodeURIComponent(part)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&regionCode=' + (regionCode == null ? '' : encodeURIComponent(regionCode)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4172,7 +4172,7 @@ export namespace MyNS {
 		 * @param {string} hl The hl parameter specifies the language that should be used for text values in the API response.
 		 * @return {void} Successful response
 		 */
-		Youtube_i18nLanguages_list(part: string, hl: string): Observable<HttpResponse<string>> {
+		Youtube_i18nLanguages_list(part: string, hl: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'i18nLanguages?part=' + (part == null ? '' : encodeURIComponent(part)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4183,7 +4183,7 @@ export namespace MyNS {
 		 * @param {string} hl The hl parameter specifies the language that should be used for text values in the API response.
 		 * @return {void} Successful response
 		 */
-		Youtube_i18nRegions_list(part: string, hl: string): Observable<HttpResponse<string>> {
+		Youtube_i18nRegions_list(part: string, hl: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'i18nRegions?part=' + (part == null ? '' : encodeURIComponent(part)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4198,7 +4198,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveBroadcasts_delete(id: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string): Observable<HttpResponse<string>> {
+		Youtube_liveBroadcasts_delete(id: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'liveBroadcasts?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4219,7 +4219,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveBroadcasts_list(part: string, broadcastStatus: Youtube_liveBroadcasts_listBroadcastStatus, broadcastType: Youtube_liveBroadcasts_listBroadcastType, id: string, maxResults: number, mine: boolean, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_liveBroadcasts_list(part: string, broadcastStatus: Youtube_liveBroadcasts_listBroadcastStatus | null | undefined, broadcastType: Youtube_liveBroadcasts_listBroadcastType | null | undefined, id: string | null | undefined, maxResults: number | null | undefined, mine: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'liveBroadcasts?part=' + (part == null ? '' : encodeURIComponent(part)) + '&broadcastStatus=' + broadcastStatus + '&broadcastType=' + broadcastType + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&maxResults=' + maxResults + '&mine=' + mine + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4235,7 +4235,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveBroadcasts_insert(part: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, requestBody: LiveBroadcast): Observable<HttpResponse<string>> {
+		Youtube_liveBroadcasts_insert(part: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, requestBody: LiveBroadcast): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'liveBroadcasts?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4252,7 +4252,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveBroadcasts_update(part: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, requestBody: LiveBroadcast): Observable<HttpResponse<string>> {
+		Youtube_liveBroadcasts_update(part: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, requestBody: LiveBroadcast): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'liveBroadcasts?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4269,7 +4269,7 @@ export namespace MyNS {
 		 * @param {string} streamId The streamId parameter specifies the unique ID of the video stream that is being bound to a broadcast. If this parameter is omitted, the API will remove any existing binding between the broadcast and a video stream.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveBroadcasts_bind(id: string, part: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, streamId: string): Observable<HttpResponse<string>> {
+		Youtube_liveBroadcasts_bind(id: string, part: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, streamId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'liveBroadcasts/bind?id=' + (id == null ? '' : encodeURIComponent(id)) + '&part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)) + '&streamId=' + (streamId == null ? '' : encodeURIComponent(streamId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4290,7 +4290,7 @@ export namespace MyNS {
 		 * @param {string} walltime The walltime parameter specifies the wall clock time at which the specified slate change will occur. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sssZ) format.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveBroadcasts_control(id: string, part: string, displaySlate: boolean, offsetTimeMs: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, walltime: string): Observable<HttpResponse<string>> {
+		Youtube_liveBroadcasts_control(id: string, part: string, displaySlate: boolean | null | undefined, offsetTimeMs: string | null | undefined, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, walltime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'liveBroadcasts/control?id=' + (id == null ? '' : encodeURIComponent(id)) + '&part=' + (part == null ? '' : encodeURIComponent(part)) + '&displaySlate=' + displaySlate + '&offsetTimeMs=' + (offsetTimeMs == null ? '' : encodeURIComponent(offsetTimeMs)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)) + '&walltime=' + (walltime == null ? '' : encodeURIComponent(walltime)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4307,7 +4307,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveBroadcasts_transition(broadcastStatus: Youtube_liveBroadcasts_transitionBroadcastStatus, id: string, part: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string): Observable<HttpResponse<string>> {
+		Youtube_liveBroadcasts_transition(broadcastStatus: Youtube_liveBroadcasts_transitionBroadcastStatus, id: string, part: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'liveBroadcasts/transition?broadcastStatus=' + broadcastStatus + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4353,7 +4353,7 @@ export namespace MyNS {
 		 * @param {number} profileImageSize The profileImageSize parameter specifies the size of the user profile pictures that should be returned in the result set. Default: 88.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveChatMessages_list(liveChatId: string, part: string, hl: string, maxResults: number, pageToken: string, profileImageSize: number): Observable<HttpResponse<string>> {
+		Youtube_liveChatMessages_list(liveChatId: string, part: string, hl: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, profileImageSize: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'liveChat/messages?liveChatId=' + (liveChatId == null ? '' : encodeURIComponent(liveChatId)) + '&part=' + (part == null ? '' : encodeURIComponent(part)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&profileImageSize=' + profileImageSize, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4386,7 +4386,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveChatModerators_list(liveChatId: string, part: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_liveChatModerators_list(liveChatId: string, part: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'liveChat/moderators?liveChatId=' + (liveChatId == null ? '' : encodeURIComponent(liveChatId)) + '&part=' + (part == null ? '' : encodeURIComponent(part)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4411,7 +4411,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveStreams_delete(id: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string): Observable<HttpResponse<string>> {
+		Youtube_liveStreams_delete(id: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'liveStreams?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4430,7 +4430,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveStreams_list(part: string, id: string, maxResults: number, mine: boolean, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_liveStreams_list(part: string, id: string | null | undefined, maxResults: number | null | undefined, mine: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'liveStreams?part=' + (part == null ? '' : encodeURIComponent(part)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&maxResults=' + maxResults + '&mine=' + mine + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4446,7 +4446,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveStreams_insert(part: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, requestBody: LiveStream): Observable<HttpResponse<string>> {
+		Youtube_liveStreams_insert(part: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, requestBody: LiveStream): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'liveStreams?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4463,7 +4463,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_liveStreams_update(part: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, requestBody: LiveStream): Observable<HttpResponse<string>> {
+		Youtube_liveStreams_update(part: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, requestBody: LiveStream): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'liveStreams?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4478,7 +4478,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_members_list(part: string, filterByMemberChannelId: string, hasAccessToLevel: string, maxResults: number, mode: Youtube_members_listMode, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_members_list(part: string, filterByMemberChannelId: string | null | undefined, hasAccessToLevel: string | null | undefined, maxResults: number | null | undefined, mode: Youtube_members_listMode | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'members?part=' + (part == null ? '' : encodeURIComponent(part)) + '&filterByMemberChannelId=' + (filterByMemberChannelId == null ? '' : encodeURIComponent(filterByMemberChannelId)) + '&hasAccessToLevel=' + (hasAccessToLevel == null ? '' : encodeURIComponent(hasAccessToLevel)) + '&maxResults=' + maxResults + '&mode=' + mode + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4500,7 +4500,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_playlistItems_delete(id: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_playlistItems_delete(id: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'playlistItems?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4518,7 +4518,7 @@ export namespace MyNS {
 		 * @param {string} videoId The videoId parameter specifies that the request should return only the playlist items that contain the specified video.
 		 * @return {void} Successful response
 		 */
-		Youtube_playlistItems_list(part: string, id: string, maxResults: number, onBehalfOfContentOwner: string, pageToken: string, playlistId: string, videoId: string): Observable<HttpResponse<string>> {
+		Youtube_playlistItems_list(part: string, id: string | null | undefined, maxResults: number | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageToken: string | null | undefined, playlistId: string | null | undefined, videoId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'playlistItems?part=' + (part == null ? '' : encodeURIComponent(part)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&maxResults=' + maxResults + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&playlistId=' + (playlistId == null ? '' : encodeURIComponent(playlistId)) + '&videoId=' + (videoId == null ? '' : encodeURIComponent(videoId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4530,7 +4530,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_playlistItems_insert(part: string, onBehalfOfContentOwner: string, requestBody: PlaylistItem): Observable<HttpResponse<string>> {
+		Youtube_playlistItems_insert(part: string, onBehalfOfContentOwner: string | null | undefined, requestBody: PlaylistItem): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'playlistItems?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4543,7 +4543,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_playlistItems_update(part: string, onBehalfOfContentOwner: string, requestBody: PlaylistItem): Observable<HttpResponse<string>> {
+		Youtube_playlistItems_update(part: string, onBehalfOfContentOwner: string | null | undefined, requestBody: PlaylistItem): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'playlistItems?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4555,7 +4555,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_playlists_delete(id: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_playlists_delete(id: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'playlists?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4577,7 +4577,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_playlists_list(part: string, channelId: string, hl: string, id: string, maxResults: number, mine: boolean, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_playlists_list(part: string, channelId: string | null | undefined, hl: string | null | undefined, id: string | null | undefined, maxResults: number | null | undefined, mine: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'playlists?part=' + (part == null ? '' : encodeURIComponent(part)) + '&channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&maxResults=' + maxResults + '&mine=' + mine + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4592,7 +4592,7 @@ export namespace MyNS {
 		 * This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
 		 * @return {void} Successful response
 		 */
-		Youtube_playlists_insert(part: string, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, requestBody: Playlist): Observable<HttpResponse<string>> {
+		Youtube_playlists_insert(part: string, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, requestBody: Playlist): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'playlists?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4605,7 +4605,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_playlists_update(part: string, onBehalfOfContentOwner: string, requestBody: Playlist): Observable<HttpResponse<string>> {
+		Youtube_playlists_update(part: string, onBehalfOfContentOwner: string | null | undefined, requestBody: Playlist): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'playlists?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4652,7 +4652,7 @@ export namespace MyNS {
 		 * @param {Youtube_search_listVideoType} videoType The videoType parameter lets you restrict a search to a particular type of videos. If you specify a value for this parameter, you must also set the type parameter's value to video.
 		 * @return {void} Successful response
 		 */
-		Youtube_search_list(part: string, channelId: string, channelType: Youtube_search_listChannelType, eventType: Youtube_search_listEventType, forContentOwner: boolean, forDeveloper: boolean, forMine: boolean, location: string, locationRadius: string, maxResults: number, onBehalfOfContentOwner: string, order: Youtube_search_listOrder, pageToken: string, publishedAfter: string, publishedBefore: string, q: string, regionCode: string, relatedToVideoId: string, relevanceLanguage: string, safeSearch: Youtube_search_listSafeSearch, topicId: string, type: string, videoCaption: Youtube_search_listVideoCaption, videoCategoryId: string, videoDefinition: Youtube_search_listVideoDefinition, videoDimension: Youtube_search_listVideoDimension, videoDuration: Youtube_search_listVideoDuration, videoEmbeddable: Youtube_search_listVideoEmbeddable, videoLicense: Youtube_search_listVideoLicense, videoSyndicated: Youtube_search_listVideoSyndicated, videoType: Youtube_search_listVideoType): Observable<HttpResponse<string>> {
+		Youtube_search_list(part: string, channelId: string | null | undefined, channelType: Youtube_search_listChannelType | null | undefined, eventType: Youtube_search_listEventType | null | undefined, forContentOwner: boolean | null | undefined, forDeveloper: boolean | null | undefined, forMine: boolean | null | undefined, location: string | null | undefined, locationRadius: string | null | undefined, maxResults: number | null | undefined, onBehalfOfContentOwner: string | null | undefined, order: Youtube_search_listOrder | null | undefined, pageToken: string | null | undefined, publishedAfter: string | null | undefined, publishedBefore: string | null | undefined, q: string | null | undefined, regionCode: string | null | undefined, relatedToVideoId: string | null | undefined, relevanceLanguage: string | null | undefined, safeSearch: Youtube_search_listSafeSearch | null | undefined, topicId: string | null | undefined, type: string | null | undefined, videoCaption: Youtube_search_listVideoCaption | null | undefined, videoCategoryId: string | null | undefined, videoDefinition: Youtube_search_listVideoDefinition | null | undefined, videoDimension: Youtube_search_listVideoDimension | null | undefined, videoDuration: Youtube_search_listVideoDuration | null | undefined, videoEmbeddable: Youtube_search_listVideoEmbeddable | null | undefined, videoLicense: Youtube_search_listVideoLicense | null | undefined, videoSyndicated: Youtube_search_listVideoSyndicated | null | undefined, videoType: Youtube_search_listVideoType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'search?part=' + (part == null ? '' : encodeURIComponent(part)) + '&channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&channelType=' + channelType + '&eventType=' + eventType + '&forContentOwner=' + forContentOwner + '&forDeveloper=' + forDeveloper + '&forMine=' + forMine + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&locationRadius=' + (locationRadius == null ? '' : encodeURIComponent(locationRadius)) + '&maxResults=' + maxResults + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&order=' + order + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&publishedAfter=' + (publishedAfter == null ? '' : encodeURIComponent(publishedAfter)) + '&publishedBefore=' + (publishedBefore == null ? '' : encodeURIComponent(publishedBefore)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&regionCode=' + (regionCode == null ? '' : encodeURIComponent(regionCode)) + '&relatedToVideoId=' + (relatedToVideoId == null ? '' : encodeURIComponent(relatedToVideoId)) + '&relevanceLanguage=' + (relevanceLanguage == null ? '' : encodeURIComponent(relevanceLanguage)) + '&safeSearch=' + safeSearch + '&topicId=' + (topicId == null ? '' : encodeURIComponent(topicId)) + '&type=' + (type == null ? '' : encodeURIComponent(type)) + '&videoCaption=' + videoCaption + '&videoCategoryId=' + (videoCategoryId == null ? '' : encodeURIComponent(videoCategoryId)) + '&videoDefinition=' + videoDefinition + '&videoDimension=' + videoDimension + '&videoDuration=' + videoDuration + '&videoEmbeddable=' + videoEmbeddable + '&videoLicense=' + videoLicense + '&videoSyndicated=' + videoSyndicated + '&videoType=' + videoType, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4665,7 +4665,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_sponsors_list(part: string, filter: Youtube_sponsors_listFilter, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_sponsors_list(part: string, filter: Youtube_sponsors_listFilter | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sponsors?part=' + (part == null ? '' : encodeURIComponent(part)) + '&filter=' + filter + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4700,7 +4700,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_subscriptions_list(part: string, channelId: string, forChannelId: string, id: string, maxResults: number, mine: boolean, myRecentSubscribers: boolean, mySubscribers: boolean, onBehalfOfContentOwner: string, onBehalfOfContentOwnerChannel: string, order: Youtube_subscriptions_listOrder, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_subscriptions_list(part: string, channelId: string | null | undefined, forChannelId: string | null | undefined, id: string | null | undefined, maxResults: number | null | undefined, mine: boolean | null | undefined, myRecentSubscribers: boolean | null | undefined, mySubscribers: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, onBehalfOfContentOwnerChannel: string | null | undefined, order: Youtube_subscriptions_listOrder | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'subscriptions?part=' + (part == null ? '' : encodeURIComponent(part)) + '&channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&forChannelId=' + (forChannelId == null ? '' : encodeURIComponent(forChannelId)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&maxResults=' + maxResults + '&mine=' + mine + '&myRecentSubscribers=' + myRecentSubscribers + '&mySubscribers=' + mySubscribers + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&onBehalfOfContentOwnerChannel=' + (onBehalfOfContentOwnerChannel == null ? '' : encodeURIComponent(onBehalfOfContentOwnerChannel)) + '&order=' + order + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4724,7 +4724,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
 		 * @return {void} Successful response
 		 */
-		Youtube_superChatEvents_list(part: string, hl: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Youtube_superChatEvents_list(part: string, hl: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'superChatEvents?part=' + (part == null ? '' : encodeURIComponent(part)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4736,7 +4736,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_thumbnails_set(videoId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_thumbnails_set(videoId: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'thumbnails/set?videoId=' + (videoId == null ? '' : encodeURIComponent(videoId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4747,7 +4747,7 @@ export namespace MyNS {
 		 * @param {string} hl The hl parameter specifies the language that should be used for text values in the API response.
 		 * @return {void} Successful response
 		 */
-		Youtube_videoAbuseReportReasons_list(part: string, hl: string): Observable<HttpResponse<string>> {
+		Youtube_videoAbuseReportReasons_list(part: string, hl: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videoAbuseReportReasons?part=' + (part == null ? '' : encodeURIComponent(part)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4760,7 +4760,7 @@ export namespace MyNS {
 		 * @param {string} regionCode The regionCode parameter instructs the API to return the list of video categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
 		 * @return {void} Successful response
 		 */
-		Youtube_videoCategories_list(part: string, hl: string, id: string, regionCode: string): Observable<HttpResponse<string>> {
+		Youtube_videoCategories_list(part: string, hl: string | null | undefined, id: string | null | undefined, regionCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videoCategories?part=' + (part == null ? '' : encodeURIComponent(part)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&regionCode=' + (regionCode == null ? '' : encodeURIComponent(regionCode)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4772,7 +4772,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_videos_delete(id: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_videos_delete(id: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'videos?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4799,7 +4799,7 @@ export namespace MyNS {
 		 * @param {string} videoCategoryId The videoCategoryId parameter identifies the video category for which the chart should be retrieved. This parameter can only be used in conjunction with the chart parameter. By default, charts are not restricted to a particular category.
 		 * @return {void} Successful response
 		 */
-		Youtube_videos_list(part: string, chart: Youtube_videos_listChart, hl: string, id: string, locale: string, maxHeight: number, maxResults: number, maxWidth: number, myRating: Youtube_videos_listMyRating, onBehalfOfContentOwner: string, pageToken: string, regionCode: string, videoCategoryId: string): Observable<HttpResponse<string>> {
+		Youtube_videos_list(part: string, chart: Youtube_videos_listChart | null | undefined, hl: string | null | undefined, id: string | null | undefined, locale: string | null | undefined, maxHeight: number | null | undefined, maxResults: number | null | undefined, maxWidth: number | null | undefined, myRating: Youtube_videos_listMyRating | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageToken: string | null | undefined, regionCode: string | null | undefined, videoCategoryId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos?part=' + (part == null ? '' : encodeURIComponent(part)) + '&chart=' + chart + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&id=' + (id == null ? '' : encodeURIComponent(id)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxHeight=' + maxHeight + '&maxResults=' + maxResults + '&maxWidth=' + maxWidth + '&myRating=' + myRating + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&regionCode=' + (regionCode == null ? '' : encodeURIComponent(regionCode)) + '&videoCategoryId=' + (videoCategoryId == null ? '' : encodeURIComponent(videoCategoryId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4813,7 +4813,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_videos_update(part: string, onBehalfOfContentOwner: string, requestBody: Video): Observable<HttpResponse<string>> {
+		Youtube_videos_update(part: string, onBehalfOfContentOwner: string | null | undefined, requestBody: Video): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'videos?part=' + (part == null ? '' : encodeURIComponent(part)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4825,7 +4825,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_videos_getRating(id: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_videos_getRating(id: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/getRating?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4847,7 +4847,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_videos_reportAbuse(onBehalfOfContentOwner: string, requestBody: VideoAbuseReport): Observable<HttpResponse<string>> {
+		Youtube_videos_reportAbuse(onBehalfOfContentOwner: string | null | undefined, requestBody: VideoAbuseReport): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'videos/reportAbuse?onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4859,7 +4859,7 @@ export namespace MyNS {
 		 * The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		Youtube_watermarks_unset(channelId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtube_watermarks_unset(channelId: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'watermarks/unset?channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), null, { observe: 'response', responseType: 'text' });
 		}
 	}

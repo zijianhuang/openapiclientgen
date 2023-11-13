@@ -1671,7 +1671,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUsersResponse} Success
 		 */
-		ListUsers(accountId: string, user_email: string, user_type: UpdateUserRequestItemUserType, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListUsersResponse> {
+		ListUsers(accountId: string, user_email: string | null | undefined, user_type: UpdateUserRequestItemUserType | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListUsersResponse> {
 			return this.http.get<ListUsersResponse>(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/users&user_email=' + (user_email == null ? '' : encodeURIComponent(user_email)) + '&user_type=' + user_type + '&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1695,7 +1695,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAccountsResponse} Success
 		 */
-		ListAccounts(name: string, user_email: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListAccountsResponse> {
+		ListAccounts(name: string | null | undefined, user_email: string | null | undefined, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListAccountsResponse> {
 			return this.http.get<ListAccountsResponse>(this.baseUri + 'accounts?name=' + (name == null ? '' : encodeURIComponent(name)) + '&user_email=' + (user_email == null ? '' : encodeURIComponent(user_email)) + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1719,7 +1719,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAttendeesResponse} Success
 		 */
-		ListAttendees(meetingId: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListAttendeesResponse> {
+		ListAttendees(meetingId: string, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListAttendeesResponse> {
 			return this.http.get<ListAttendeesResponse>(this.baseUri + 'meetings/' + (meetingId == null ? '' : encodeURIComponent(meetingId)) + '/attendees&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1743,7 +1743,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBotsResponse} Success
 		 */
-		ListBots(accountId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListBotsResponse> {
+		ListBots(accountId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBotsResponse> {
 			return this.http.get<ListBotsResponse>(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/bots&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMeetingsResponse} Success
 		 */
-		ListMeetings(next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListMeetingsResponse> {
+		ListMeetings(next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMeetingsResponse> {
 			return this.http.get<ListMeetingsResponse>(this.baseUri + 'meetings?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1787,7 +1787,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPhoneNumberOrdersResponse} Success
 		 */
-		ListPhoneNumberOrders(next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListPhoneNumberOrdersResponse> {
+		ListPhoneNumberOrders(next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPhoneNumberOrdersResponse> {
 			return this.http.get<ListPhoneNumberOrdersResponse>(this.baseUri + 'phone-number-orders?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1812,7 +1812,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProxySessionsResponse} Success
 		 */
-		ListProxySessions(voiceConnectorId: string, status: ProxySessionStatus, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListProxySessionsResponse> {
+		ListProxySessions(voiceConnectorId: string, status: ProxySessionStatus | null | undefined, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListProxySessionsResponse> {
 			return this.http.get<ListProxySessionsResponse>(this.baseUri + 'voice-connectors/' + (voiceConnectorId == null ? '' : encodeURIComponent(voiceConnectorId)) + '/proxy-sessions&status=' + status + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1837,7 +1837,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRoomsResponse} Success
 		 */
-		ListRooms(accountId: string, member_id: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListRoomsResponse> {
+		ListRooms(accountId: string, member_id: string | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRoomsResponse> {
 			return this.http.get<ListRoomsResponse>(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/rooms&member_id=' + (member_id == null ? '' : encodeURIComponent(member_id)) + '&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1863,7 +1863,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRoomMembershipsResponse} Success
 		 */
-		ListRoomMemberships(accountId: string, roomId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListRoomMembershipsResponse> {
+		ListRoomMemberships(accountId: string, roomId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRoomMembershipsResponse> {
 			return this.http.get<ListRoomMembershipsResponse>(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/rooms/' + (roomId == null ? '' : encodeURIComponent(roomId)) + '/memberships&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1895,7 +1895,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceConnectorsResponse} Success
 		 */
-		ListVoiceConnectors(next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListVoiceConnectorsResponse> {
+		ListVoiceConnectors(next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListVoiceConnectorsResponse> {
 			return this.http.get<ListVoiceConnectorsResponse>(this.baseUri + 'voice-connectors?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1917,7 +1917,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceConnectorGroupsResponse} Success
 		 */
-		ListVoiceConnectorGroups(next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListVoiceConnectorGroupsResponse> {
+		ListVoiceConnectorGroups(next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListVoiceConnectorGroupsResponse> {
 			return this.http.get<ListVoiceConnectorGroupsResponse>(this.baseUri + 'voice-connector-groups?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2603,7 +2603,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPhoneNumbersResponse} Success
 		 */
-		ListPhoneNumbers(status: PhoneNumberStatus, product_type: UpdatePhoneNumberRequestItemProductType, filter_name: PhoneNumberAssociationName, filter_value: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListPhoneNumbersResponse> {
+		ListPhoneNumbers(status: PhoneNumberStatus | null | undefined, product_type: UpdatePhoneNumberRequestItemProductType | null | undefined, filter_name: PhoneNumberAssociationName | null | undefined, filter_value: string | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPhoneNumbersResponse> {
 			return this.http.get<ListPhoneNumbersResponse>(this.baseUri + 'phone-numbers?status=' + status + '&product_type=' + product_type + '&filter_name=' + filter_name + '&filter_value=' + (filter_value == null ? '' : encodeURIComponent(filter_value)) + '&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2716,7 +2716,7 @@ export namespace MyNS {
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @return {SearchAvailablePhoneNumbersResponse} Success
 		 */
-		SearchAvailablePhoneNumbers(area_code: string, city: string, country: string, state: string, toll_free_prefix: string, max_results: number, next_token: string, type: SearchAvailablePhoneNumbersType): Observable<SearchAvailablePhoneNumbersResponse> {
+		SearchAvailablePhoneNumbers(area_code: string | null | undefined, city: string | null | undefined, country: string | null | undefined, state: string | null | undefined, toll_free_prefix: string | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, type: SearchAvailablePhoneNumbersType): Observable<SearchAvailablePhoneNumbersResponse> {
 			return this.http.get<SearchAvailablePhoneNumbersResponse>(this.baseUri + 'search#type=phone-numbers?area_code=' + (area_code == null ? '' : encodeURIComponent(area_code)) + '&city=' + (city == null ? '' : encodeURIComponent(city)) + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&state=' + (state == null ? '' : encodeURIComponent(state)) + '&toll_free_prefix=' + (toll_free_prefix == null ? '' : encodeURIComponent(toll_free_prefix)) + '&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&type=' + type, {});
 		}
 

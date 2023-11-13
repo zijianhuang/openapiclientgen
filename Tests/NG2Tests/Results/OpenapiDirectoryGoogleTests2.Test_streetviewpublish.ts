@@ -514,7 +514,7 @@ export namespace MyNS {
 		 * all connections are removed.</aside>
 		 * @return {void} Successful response
 		 */
-		Streetviewpublish_photo_update(id: string, updateMask: string, requestBody: Photo): Observable<HttpResponse<string>> {
+		Streetviewpublish_photo_update(id: string, updateMask: string | null | undefined, requestBody: Photo): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/photo/' + (id == null ? '' : encodeURIComponent(id)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -553,7 +553,7 @@ export namespace MyNS {
 		 * Photo response.
 		 * @return {void} Successful response
 		 */
-		Streetviewpublish_photo_get(photoId: string, languageCode: string, view: Streetviewpublish_photo_getView): Observable<HttpResponse<string>> {
+		Streetviewpublish_photo_get(photoId: string, languageCode: string | null | undefined, view: Streetviewpublish_photo_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/photo/' + (photoId == null ? '' : encodeURIComponent(photoId)) + '&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -609,7 +609,7 @@ export namespace MyNS {
 		 * Photos response.
 		 * @return {void} Successful response
 		 */
-		Streetviewpublish_photos_list(filter: string, languageCode: string, pageSize: number, pageToken: string, view: Streetviewpublish_photo_getView): Observable<HttpResponse<string>> {
+		Streetviewpublish_photos_list(filter: string | null | undefined, languageCode: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Streetviewpublish_photo_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/photos?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -665,7 +665,7 @@ export namespace MyNS {
 		 * Photo response.
 		 * @return {void} Successful response
 		 */
-		Streetviewpublish_photos_batchGet(languageCode: string, photoIds: Array<string>, view: Streetviewpublish_photo_getView): Observable<HttpResponse<string>> {
+		Streetviewpublish_photos_batchGet(languageCode: string | null | undefined, photoIds: Array<string> | null | undefined, view: Streetviewpublish_photo_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/photos:batchGet?languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&' + photoIds.map(z => `photoIds=${encodeURIComponent(z)}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 

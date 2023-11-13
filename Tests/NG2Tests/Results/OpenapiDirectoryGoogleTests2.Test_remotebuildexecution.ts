@@ -2263,7 +2263,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Remotebuildexecution_projects_operations_get(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Remotebuildexecution_projects_operations_get(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

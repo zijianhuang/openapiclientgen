@@ -30,7 +30,7 @@ export namespace MyNS {
 		 * @param {number} limit maximum number of results to return
 		 * @return {Array<Pet>} pet response
 		 */
-		FindPets(tags: Array<string>, limit: number): Observable<Array<Pet>> {
+		FindPets(tags: Array<string> | null | undefined, limit: number | null | undefined): Observable<Array<Pet>> {
 			return this.http.get<Array<Pet>>(this.baseUri + 'pets?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, {});
 		}
 

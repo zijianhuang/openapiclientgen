@@ -1112,7 +1112,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 employees will be returned in a single API call
 		 * @return {Employees} search results matching criteria
 		 */
-		GetEmployees(where: string, order: string, page: number): Observable<Employees> {
+		GetEmployees(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<Employees> {
 			return this.http.get<Employees>(this.baseUri + 'Employees?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1154,7 +1154,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
 		 * @return {LeaveApplications} search results matching criteria
 		 */
-		GetLeaveApplications(where: string, order: string, page: number): Observable<LeaveApplications> {
+		GetLeaveApplications(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<LeaveApplications> {
 			return this.http.get<LeaveApplications>(this.baseUri + 'LeaveApplications?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1195,7 +1195,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
 		 * @return {PayItems} search results matching criteria
 		 */
-		GetPayItems(where: string, order: string, page: number): Observable<PayItems> {
+		GetPayItems(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayItems> {
 			return this.http.get<PayItems>(this.baseUri + 'PayItems?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1216,7 +1216,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
 		 * @return {PayrollCalendars} search results matching criteria
 		 */
-		GetPayrollCalendars(where: string, order: string, page: number): Observable<PayrollCalendars> {
+		GetPayrollCalendars(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayrollCalendars> {
 			return this.http.get<PayrollCalendars>(this.baseUri + 'PayrollCalendars?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1247,7 +1247,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 PayRuns will be returned in a single API call
 		 * @return {PayRuns} search results matching criteria
 		 */
-		GetPayRuns(where: string, order: string, page: number): Observable<PayRuns> {
+		GetPayRuns(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayRuns> {
 			return this.http.get<PayRuns>(this.baseUri + 'PayRuns?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 SuperFunds will be returned in a single API call
 		 * @return {SuperFunds} search results matching criteria
 		 */
-		GetSuperfunds(where: string, order: string, page: number): Observable<SuperFunds> {
+		GetSuperfunds(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<SuperFunds> {
 			return this.http.get<SuperFunds>(this.baseUri + 'Superfunds?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1360,7 +1360,7 @@ export namespace MyNS {
 		 * @param {string} USI The USI of the Regulated SuperFund
 		 * @return {SuperFundProducts} search results matching criteria
 		 */
-		GetSuperfundProducts(ABN: string, USI: string): Observable<SuperFundProducts> {
+		GetSuperfundProducts(ABN: string | null | undefined, USI: string | null | undefined): Observable<SuperFundProducts> {
 			return this.http.get<SuperFundProducts>(this.baseUri + 'SuperfundProducts?ABN=' + (ABN == null ? '' : encodeURIComponent(ABN)) + '&USI=' + (USI == null ? '' : encodeURIComponent(USI)), {});
 		}
 
@@ -1372,7 +1372,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 timesheets will be returned in a single API call
 		 * @return {Timesheets} search results matching criteria
 		 */
-		GetTimesheets(where: string, order: string, page: number): Observable<Timesheets> {
+		GetTimesheets(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<Timesheets> {
 			return this.http.get<Timesheets>(this.baseUri + 'Timesheets?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 

@@ -988,7 +988,7 @@ export namespace MyNS {
 		 * Optional. The default is to return all entries.
 		 * @return {void} Successful response
 		 */
-		Calendar_acl_list(calendarId: string, maxResults: number, pageToken: string, showDeleted: boolean, syncToken: string): Observable<HttpResponse<string>> {
+		Calendar_acl_list(calendarId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, syncToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/acl&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -999,7 +999,7 @@ export namespace MyNS {
 		 * @param {boolean} sendNotifications Whether to send notifications about the calendar sharing change. Optional. The default is True.
 		 * @return {void} Successful response
 		 */
-		Calendar_acl_insert(calendarId: string, sendNotifications: boolean, requestBody: AclRule): Observable<HttpResponse<string>> {
+		Calendar_acl_insert(calendarId: string, sendNotifications: boolean | null | undefined, requestBody: AclRule): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/acl&sendNotifications=' + sendNotifications, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1016,7 +1016,7 @@ export namespace MyNS {
 		 * Optional. The default is to return all entries.
 		 * @return {void} Successful response
 		 */
-		Calendar_acl_watch(calendarId: string, maxResults: number, pageToken: string, showDeleted: boolean, syncToken: string, requestBody: Channel): Observable<HttpResponse<string>> {
+		Calendar_acl_watch(calendarId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, syncToken: string | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/acl/watch&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1050,7 +1050,7 @@ export namespace MyNS {
 		 * @param {boolean} sendNotifications Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True.
 		 * @return {void} Successful response
 		 */
-		Calendar_acl_patch(calendarId: string, ruleId: string, sendNotifications: boolean, requestBody: AclRule): Observable<HttpResponse<string>> {
+		Calendar_acl_patch(calendarId: string, ruleId: string, sendNotifications: boolean | null | undefined, requestBody: AclRule): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/acl/' + (ruleId == null ? '' : encodeURIComponent(ruleId)) + '&sendNotifications=' + sendNotifications, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1062,7 +1062,7 @@ export namespace MyNS {
 		 * @param {boolean} sendNotifications Whether to send notifications about the calendar sharing change. Note that there are no notifications on access removal. Optional. The default is True.
 		 * @return {void} Successful response
 		 */
-		Calendar_acl_update(calendarId: string, ruleId: string, sendNotifications: boolean, requestBody: AclRule): Observable<HttpResponse<string>> {
+		Calendar_acl_update(calendarId: string, ruleId: string, sendNotifications: boolean | null | undefined, requestBody: AclRule): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/acl/' + (ruleId == null ? '' : encodeURIComponent(ruleId)) + '&sendNotifications=' + sendNotifications, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1111,7 +1111,7 @@ export namespace MyNS {
 		 * @param {string} updatedMin Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_list(calendarId: string, alwaysIncludeEmail: boolean, iCalUID: string, maxAttendees: number, maxResults: number, orderBy: Calendar_events_listOrderBy, pageToken: string, privateExtendedProperty: Array<string>, q: string, sharedExtendedProperty: Array<string>, showDeleted: boolean, showHiddenInvitations: boolean, singleEvents: boolean, syncToken: string, timeMax: string, timeMin: string, timeZone: string, updatedMin: string): Observable<HttpResponse<string>> {
+		Calendar_events_list(calendarId: string, alwaysIncludeEmail: boolean | null | undefined, iCalUID: string | null | undefined, maxAttendees: number | null | undefined, maxResults: number | null | undefined, orderBy: Calendar_events_listOrderBy | null | undefined, pageToken: string | null | undefined, privateExtendedProperty: Array<string> | null | undefined, q: string | null | undefined, sharedExtendedProperty: Array<string> | null | undefined, showDeleted: boolean | null | undefined, showHiddenInvitations: boolean | null | undefined, singleEvents: boolean | null | undefined, syncToken: string | null | undefined, timeMax: string | null | undefined, timeMin: string | null | undefined, timeZone: string | null | undefined, updatedMin: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events&alwaysIncludeEmail=' + alwaysIncludeEmail + '&iCalUID=' + (iCalUID == null ? '' : encodeURIComponent(iCalUID)) + '&maxAttendees=' + maxAttendees + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + privateExtendedProperty.map(z => `privateExtendedProperty=${encodeURIComponent(z)}`).join('&') + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&' + sharedExtendedProperty.map(z => `sharedExtendedProperty=${encodeURIComponent(z)}`).join('&') + '&showDeleted=' + showDeleted + '&showHiddenInvitations=' + showHiddenInvitations + '&singleEvents=' + singleEvents + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)) + '&timeMax=' + (timeMax == null ? '' : encodeURIComponent(timeMax)) + '&timeMin=' + (timeMin == null ? '' : encodeURIComponent(timeMin)) + '&timeZone=' + (timeZone == null ? '' : encodeURIComponent(timeZone)) + '&updatedMin=' + (updatedMin == null ? '' : encodeURIComponent(updatedMin)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1127,7 +1127,7 @@ export namespace MyNS {
 		 * @param {boolean} supportsAttachments Whether API client performing operation supports event attachments. Optional. The default is False.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_insert(calendarId: string, conferenceDataVersion: number, maxAttendees: number, sendNotifications: boolean, sendUpdates: Calendar_events_insertSendUpdates, supportsAttachments: boolean, requestBody: Event): Observable<HttpResponse<string>> {
+		Calendar_events_insert(calendarId: string, conferenceDataVersion: number | null | undefined, maxAttendees: number | null | undefined, sendNotifications: boolean | null | undefined, sendUpdates: Calendar_events_insertSendUpdates | null | undefined, supportsAttachments: boolean | null | undefined, requestBody: Event): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events&conferenceDataVersion=' + conferenceDataVersion + '&maxAttendees=' + maxAttendees + '&sendNotifications=' + sendNotifications + '&sendUpdates=' + sendUpdates + '&supportsAttachments=' + supportsAttachments, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 		 * @param {boolean} supportsAttachments Whether API client performing operation supports event attachments. Optional. The default is False.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_import(calendarId: string, conferenceDataVersion: number, supportsAttachments: boolean, requestBody: Event): Observable<HttpResponse<string>> {
+		Calendar_events_import(calendarId: string, conferenceDataVersion: number | null | undefined, supportsAttachments: boolean | null | undefined, requestBody: Event): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/import&conferenceDataVersion=' + conferenceDataVersion + '&supportsAttachments=' + supportsAttachments, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 		 * @param {Calendar_events_insertSendUpdates} sendUpdates Guests who should receive notifications about the creation of the new event.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_quickAdd(calendarId: string, text: string, sendNotifications: boolean, sendUpdates: Calendar_events_insertSendUpdates): Observable<HttpResponse<string>> {
+		Calendar_events_quickAdd(calendarId: string, text: string, sendNotifications: boolean | null | undefined, sendUpdates: Calendar_events_insertSendUpdates | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/quickAdd&text=' + (text == null ? '' : encodeURIComponent(text)) + '&sendNotifications=' + sendNotifications + '&sendUpdates=' + sendUpdates, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1192,7 +1192,7 @@ export namespace MyNS {
 		 * @param {string} updatedMin Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_watch(calendarId: string, alwaysIncludeEmail: boolean, iCalUID: string, maxAttendees: number, maxResults: number, orderBy: Calendar_events_listOrderBy, pageToken: string, privateExtendedProperty: Array<string>, q: string, sharedExtendedProperty: Array<string>, showDeleted: boolean, showHiddenInvitations: boolean, singleEvents: boolean, syncToken: string, timeMax: string, timeMin: string, timeZone: string, updatedMin: string, requestBody: Channel): Observable<HttpResponse<string>> {
+		Calendar_events_watch(calendarId: string, alwaysIncludeEmail: boolean | null | undefined, iCalUID: string | null | undefined, maxAttendees: number | null | undefined, maxResults: number | null | undefined, orderBy: Calendar_events_listOrderBy | null | undefined, pageToken: string | null | undefined, privateExtendedProperty: Array<string> | null | undefined, q: string | null | undefined, sharedExtendedProperty: Array<string> | null | undefined, showDeleted: boolean | null | undefined, showHiddenInvitations: boolean | null | undefined, singleEvents: boolean | null | undefined, syncToken: string | null | undefined, timeMax: string | null | undefined, timeMin: string | null | undefined, timeZone: string | null | undefined, updatedMin: string | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/watch&alwaysIncludeEmail=' + alwaysIncludeEmail + '&iCalUID=' + (iCalUID == null ? '' : encodeURIComponent(iCalUID)) + '&maxAttendees=' + maxAttendees + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + privateExtendedProperty.map(z => `privateExtendedProperty=${encodeURIComponent(z)}`).join('&') + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&' + sharedExtendedProperty.map(z => `sharedExtendedProperty=${encodeURIComponent(z)}`).join('&') + '&showDeleted=' + showDeleted + '&showHiddenInvitations=' + showHiddenInvitations + '&singleEvents=' + singleEvents + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)) + '&timeMax=' + (timeMax == null ? '' : encodeURIComponent(timeMax)) + '&timeMin=' + (timeMin == null ? '' : encodeURIComponent(timeMin)) + '&timeZone=' + (timeZone == null ? '' : encodeURIComponent(timeZone)) + '&updatedMin=' + (updatedMin == null ? '' : encodeURIComponent(updatedMin)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1206,7 +1206,7 @@ export namespace MyNS {
 		 * @param {Calendar_events_insertSendUpdates} sendUpdates Guests who should receive notifications about the deletion of the event.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_delete(calendarId: string, eventId: string, sendNotifications: boolean, sendUpdates: Calendar_events_insertSendUpdates): Observable<HttpResponse<string>> {
+		Calendar_events_delete(calendarId: string, eventId: string, sendNotifications: boolean | null | undefined, sendUpdates: Calendar_events_insertSendUpdates | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/' + (eventId == null ? '' : encodeURIComponent(eventId)) + '&sendNotifications=' + sendNotifications + '&sendUpdates=' + sendUpdates, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1220,7 +1220,7 @@ export namespace MyNS {
 		 * @param {string} timeZone Time zone used in the response. Optional. The default is the time zone of the calendar.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_get(calendarId: string, eventId: string, alwaysIncludeEmail: boolean, maxAttendees: number, timeZone: string): Observable<HttpResponse<string>> {
+		Calendar_events_get(calendarId: string, eventId: string, alwaysIncludeEmail: boolean | null | undefined, maxAttendees: number | null | undefined, timeZone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/' + (eventId == null ? '' : encodeURIComponent(eventId)) + '&alwaysIncludeEmail=' + alwaysIncludeEmail + '&maxAttendees=' + maxAttendees + '&timeZone=' + (timeZone == null ? '' : encodeURIComponent(timeZone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1238,7 +1238,7 @@ export namespace MyNS {
 		 * @param {boolean} supportsAttachments Whether API client performing operation supports event attachments. Optional. The default is False.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_patch(calendarId: string, eventId: string, alwaysIncludeEmail: boolean, conferenceDataVersion: number, maxAttendees: number, sendNotifications: boolean, sendUpdates: Calendar_events_insertSendUpdates, supportsAttachments: boolean, requestBody: Event): Observable<HttpResponse<string>> {
+		Calendar_events_patch(calendarId: string, eventId: string, alwaysIncludeEmail: boolean | null | undefined, conferenceDataVersion: number | null | undefined, maxAttendees: number | null | undefined, sendNotifications: boolean | null | undefined, sendUpdates: Calendar_events_insertSendUpdates | null | undefined, supportsAttachments: boolean | null | undefined, requestBody: Event): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/' + (eventId == null ? '' : encodeURIComponent(eventId)) + '&alwaysIncludeEmail=' + alwaysIncludeEmail + '&conferenceDataVersion=' + conferenceDataVersion + '&maxAttendees=' + maxAttendees + '&sendNotifications=' + sendNotifications + '&sendUpdates=' + sendUpdates + '&supportsAttachments=' + supportsAttachments, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1256,7 +1256,7 @@ export namespace MyNS {
 		 * @param {boolean} supportsAttachments Whether API client performing operation supports event attachments. Optional. The default is False.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_update(calendarId: string, eventId: string, alwaysIncludeEmail: boolean, conferenceDataVersion: number, maxAttendees: number, sendNotifications: boolean, sendUpdates: Calendar_events_insertSendUpdates, supportsAttachments: boolean, requestBody: Event): Observable<HttpResponse<string>> {
+		Calendar_events_update(calendarId: string, eventId: string, alwaysIncludeEmail: boolean | null | undefined, conferenceDataVersion: number | null | undefined, maxAttendees: number | null | undefined, sendNotifications: boolean | null | undefined, sendUpdates: Calendar_events_insertSendUpdates | null | undefined, supportsAttachments: boolean | null | undefined, requestBody: Event): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/' + (eventId == null ? '' : encodeURIComponent(eventId)) + '&alwaysIncludeEmail=' + alwaysIncludeEmail + '&conferenceDataVersion=' + conferenceDataVersion + '&maxAttendees=' + maxAttendees + '&sendNotifications=' + sendNotifications + '&sendUpdates=' + sendUpdates + '&supportsAttachments=' + supportsAttachments, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1276,7 +1276,7 @@ export namespace MyNS {
 		 * @param {string} timeZone Time zone used in the response. Optional. The default is the time zone of the calendar.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_instances(calendarId: string, eventId: string, alwaysIncludeEmail: boolean, maxAttendees: number, maxResults: number, originalStart: string, pageToken: string, showDeleted: boolean, timeMax: string, timeMin: string, timeZone: string): Observable<HttpResponse<string>> {
+		Calendar_events_instances(calendarId: string, eventId: string, alwaysIncludeEmail: boolean | null | undefined, maxAttendees: number | null | undefined, maxResults: number | null | undefined, originalStart: string | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, timeMax: string | null | undefined, timeMin: string | null | undefined, timeZone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/' + (eventId == null ? '' : encodeURIComponent(eventId)) + '/instances&alwaysIncludeEmail=' + alwaysIncludeEmail + '&maxAttendees=' + maxAttendees + '&maxResults=' + maxResults + '&originalStart=' + (originalStart == null ? '' : encodeURIComponent(originalStart)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&timeMax=' + (timeMax == null ? '' : encodeURIComponent(timeMax)) + '&timeMin=' + (timeMin == null ? '' : encodeURIComponent(timeMin)) + '&timeZone=' + (timeZone == null ? '' : encodeURIComponent(timeZone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1291,7 +1291,7 @@ export namespace MyNS {
 		 * @param {Calendar_events_insertSendUpdates} sendUpdates Guests who should receive notifications about the change of the event's organizer.
 		 * @return {void} Successful response
 		 */
-		Calendar_events_move(calendarId: string, eventId: string, destination: string, sendNotifications: boolean, sendUpdates: Calendar_events_insertSendUpdates): Observable<HttpResponse<string>> {
+		Calendar_events_move(calendarId: string, eventId: string, destination: string, sendNotifications: boolean | null | undefined, sendUpdates: Calendar_events_insertSendUpdates | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'calendars/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '/events/' + (eventId == null ? '' : encodeURIComponent(eventId)) + '/move&destination=' + (destination == null ? '' : encodeURIComponent(destination)) + '&sendNotifications=' + sendNotifications + '&sendUpdates=' + sendUpdates, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1337,7 +1337,7 @@ export namespace MyNS {
 		 * Optional. The default is to return all entries.
 		 * @return {void} Successful response
 		 */
-		Calendar_calendarList_list(maxResults: number, minAccessRole: Calendar_calendarList_listMinAccessRole, pageToken: string, showDeleted: boolean, showHidden: boolean, syncToken: string): Observable<HttpResponse<string>> {
+		Calendar_calendarList_list(maxResults: number | null | undefined, minAccessRole: Calendar_calendarList_listMinAccessRole | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, showHidden: boolean | null | undefined, syncToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/me/calendarList?maxResults=' + maxResults + '&minAccessRole=' + minAccessRole + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&showHidden=' + showHidden + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1347,7 +1347,7 @@ export namespace MyNS {
 		 * @param {boolean} colorRgbFormat Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.
 		 * @return {void} Successful response
 		 */
-		Calendar_calendarList_insert(colorRgbFormat: boolean, requestBody: CalendarListEntry): Observable<HttpResponse<string>> {
+		Calendar_calendarList_insert(colorRgbFormat: boolean | null | undefined, requestBody: CalendarListEntry): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'users/me/calendarList?colorRgbFormat=' + colorRgbFormat, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1366,7 +1366,7 @@ export namespace MyNS {
 		 * Optional. The default is to return all entries.
 		 * @return {void} Successful response
 		 */
-		Calendar_calendarList_watch(maxResults: number, minAccessRole: Calendar_calendarList_listMinAccessRole, pageToken: string, showDeleted: boolean, showHidden: boolean, syncToken: string, requestBody: Channel): Observable<HttpResponse<string>> {
+		Calendar_calendarList_watch(maxResults: number | null | undefined, minAccessRole: Calendar_calendarList_listMinAccessRole | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, showHidden: boolean | null | undefined, syncToken: string | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'users/me/calendarList/watch?maxResults=' + maxResults + '&minAccessRole=' + minAccessRole + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&showHidden=' + showHidden + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1397,7 +1397,7 @@ export namespace MyNS {
 		 * @param {boolean} colorRgbFormat Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.
 		 * @return {void} Successful response
 		 */
-		Calendar_calendarList_patch(calendarId: string, colorRgbFormat: boolean, requestBody: CalendarListEntry): Observable<HttpResponse<string>> {
+		Calendar_calendarList_patch(calendarId: string, colorRgbFormat: boolean | null | undefined, requestBody: CalendarListEntry): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'users/me/calendarList/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '&colorRgbFormat=' + colorRgbFormat, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1408,7 +1408,7 @@ export namespace MyNS {
 		 * @param {boolean} colorRgbFormat Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.
 		 * @return {void} Successful response
 		 */
-		Calendar_calendarList_update(calendarId: string, colorRgbFormat: boolean, requestBody: CalendarListEntry): Observable<HttpResponse<string>> {
+		Calendar_calendarList_update(calendarId: string, colorRgbFormat: boolean | null | undefined, requestBody: CalendarListEntry): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'users/me/calendarList/' + (calendarId == null ? '' : encodeURIComponent(calendarId)) + '&colorRgbFormat=' + colorRgbFormat, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1423,7 +1423,7 @@ export namespace MyNS {
 		 * Optional. The default is to return all entries.
 		 * @return {void} Successful response
 		 */
-		Calendar_settings_list(maxResults: number, pageToken: string, syncToken: string): Observable<HttpResponse<string>> {
+		Calendar_settings_list(maxResults: number | null | undefined, pageToken: string | null | undefined, syncToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/me/settings?maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1438,7 +1438,7 @@ export namespace MyNS {
 		 * Optional. The default is to return all entries.
 		 * @return {void} Successful response
 		 */
-		Calendar_settings_watch(maxResults: number, pageToken: string, syncToken: string, requestBody: Channel): Observable<HttpResponse<string>> {
+		Calendar_settings_watch(maxResults: number | null | undefined, pageToken: string | null | undefined, syncToken: string | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'users/me/settings/watch?maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

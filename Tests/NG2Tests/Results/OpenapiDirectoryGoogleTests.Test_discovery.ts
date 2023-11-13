@@ -382,7 +382,7 @@ export namespace MyNS {
 		 * @param {boolean} preferred Return only the preferred version of an API.
 		 * @return {void} Successful response
 		 */
-		Discovery_apis_list(name: string, preferred: boolean): Observable<HttpResponse<string>> {
+		Discovery_apis_list(name: string | null | undefined, preferred: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'apis?name=' + (name == null ? '' : encodeURIComponent(name)) + '&preferred=' + preferred, { observe: 'response', responseType: 'text' });
 		}
 

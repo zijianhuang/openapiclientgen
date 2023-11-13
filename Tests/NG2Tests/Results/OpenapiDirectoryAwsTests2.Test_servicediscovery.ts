@@ -652,7 +652,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetInstancesHealthStatusResponse} Success
 		 */
-		GetInstancesHealthStatus(MaxResults: string, NextToken: string, requestBody: GetInstancesHealthStatusRequest): Observable<GetInstancesHealthStatusResponse> {
+		GetInstancesHealthStatus(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetInstancesHealthStatusRequest): Observable<GetInstancesHealthStatusResponse> {
 			return this.http.post<GetInstancesHealthStatusResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.GetInstancesHealthStatus?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInstancesResponse} Success
 		 */
-		ListInstances(MaxResults: string, NextToken: string, requestBody: ListInstancesRequest): Observable<ListInstancesResponse> {
+		ListInstances(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListInstancesRequest): Observable<ListInstancesResponse> {
 			return this.http.post<ListInstancesResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.ListInstances?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -701,7 +701,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNamespacesResponse} Success
 		 */
-		ListNamespaces(MaxResults: string, NextToken: string, requestBody: ListNamespacesRequest): Observable<ListNamespacesResponse> {
+		ListNamespaces(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListNamespacesRequest): Observable<ListNamespacesResponse> {
 			return this.http.post<ListNamespacesResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.ListNamespaces?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -712,7 +712,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOperationsResponse} Success
 		 */
-		ListOperations(MaxResults: string, NextToken: string, requestBody: ListOperationsRequest): Observable<ListOperationsResponse> {
+		ListOperations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListOperationsRequest): Observable<ListOperationsResponse> {
 			return this.http.post<ListOperationsResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.ListOperations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServicesResponse} Success
 		 */
-		ListServices(MaxResults: string, NextToken: string, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
+		ListServices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
 			return this.http.post<ListServicesResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.ListServices?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

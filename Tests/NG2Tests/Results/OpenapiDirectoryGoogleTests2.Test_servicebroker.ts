@@ -304,7 +304,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Servicebroker_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Servicebroker_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

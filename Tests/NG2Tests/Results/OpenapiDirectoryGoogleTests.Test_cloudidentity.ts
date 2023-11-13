@@ -285,7 +285,7 @@ export namespace MyNS {
 		 * @param {Cloudidentity_groups_listView} view Group resource view to be returned. Defaults to [View.BASIC]().
 		 * @return {void} Successful response
 		 */
-		Cloudidentity_groups_list(pageSize: number, pageToken: string, parent: string, view: Cloudidentity_groups_listView): Observable<HttpResponse<string>> {
+		Cloudidentity_groups_list(pageSize: number | null | undefined, pageToken: string | null | undefined, parent: string | null | undefined, view: Cloudidentity_groups_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/groups?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -312,7 +312,7 @@ export namespace MyNS {
 		 * created corresponding to every Identity Source `identity_source_id`.
 		 * @return {void} Successful response
 		 */
-		Cloudidentity_groups_lookup(groupKey_id: string, groupKey_namespace: string): Observable<HttpResponse<string>> {
+		Cloudidentity_groups_lookup(groupKey_id: string | null | undefined, groupKey_namespace: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/groups:lookup?groupKey_id=' + (groupKey_id == null ? '' : encodeURIComponent(groupKey_id)) + '&groupKey_namespace=' + (groupKey_namespace == null ? '' : encodeURIComponent(groupKey_namespace)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -329,7 +329,7 @@ export namespace MyNS {
 		 * @param {Cloudidentity_groups_listView} view Group resource view to be returned. Defaults to [View.BASIC]().
 		 * @return {void} Successful response
 		 */
-		Cloudidentity_groups_search(pageSize: number, pageToken: string, query: string, view: Cloudidentity_groups_listView): Observable<HttpResponse<string>> {
+		Cloudidentity_groups_search(pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined, view: Cloudidentity_groups_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/groups:search?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -371,7 +371,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Required. Editable fields: `display_name`, `description`
 		 * @return {void} Successful response
 		 */
-		Cloudidentity_groups_patch(name: string, updateMask: string, requestBody: Group): Observable<HttpResponse<string>> {
+		Cloudidentity_groups_patch(name: string, updateMask: string | null | undefined, requestBody: Group): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -388,7 +388,7 @@ export namespace MyNS {
 		 * @param {Cloudidentity_groups_listView} view Membership resource view to be returned. Defaults to View.BASIC.
 		 * @return {void} Successful response
 		 */
-		Cloudidentity_groups_memberships_list(parent: string, pageSize: number, pageToken: string, view: Cloudidentity_groups_listView): Observable<HttpResponse<string>> {
+		Cloudidentity_groups_memberships_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Cloudidentity_groups_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/memberships&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -422,7 +422,7 @@ export namespace MyNS {
 		 * created corresponding to every Identity Source `identity_source_id`.
 		 * @return {void} Successful response
 		 */
-		Cloudidentity_groups_memberships_lookup(parent: string, memberKey_id: string, memberKey_namespace: string): Observable<HttpResponse<string>> {
+		Cloudidentity_groups_memberships_lookup(parent: string, memberKey_id: string | null | undefined, memberKey_namespace: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/memberships:lookup&memberKey_id=' + (memberKey_id == null ? '' : encodeURIComponent(memberKey_id)) + '&memberKey_namespace=' + (memberKey_namespace == null ? '' : encodeURIComponent(memberKey_namespace)), { observe: 'response', responseType: 'text' });
 		}
 	}

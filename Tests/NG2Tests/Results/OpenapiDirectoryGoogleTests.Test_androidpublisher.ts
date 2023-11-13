@@ -1030,7 +1030,7 @@ export namespace MyNS {
 		 * @param {boolean} ackBundleInstallationWarning Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_edits_bundles_upload(packageName: string, editId: string, ackBundleInstallationWarning: boolean): Observable<HttpResponse<string>> {
+		Androidpublisher_edits_bundles_upload(packageName: string, editId: string, ackBundleInstallationWarning: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/edits/' + (editId == null ? '' : encodeURIComponent(editId)) + '/bundles&ackBundleInstallationWarning=' + ackBundleInstallationWarning + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1294,7 +1294,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app with in-app products; for example, "com.spiffygame".
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_inappproducts_list(packageName: string, maxResults: number, startIndex: number, token: string): Observable<HttpResponse<string>> {
+		Androidpublisher_inappproducts_list(packageName: string, maxResults: number | null | undefined, startIndex: number | null | undefined, token: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/inappproducts&maxResults=' + maxResults + '&startIndex=' + startIndex + '&token=' + (token == null ? '' : encodeURIComponent(token)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -1305,7 +1305,7 @@ export namespace MyNS {
 		 * @param {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_inappproducts_insert(packageName: string, autoConvertMissingPrices: boolean, requestBody: InAppProduct): Observable<HttpResponse<string>> {
+		Androidpublisher_inappproducts_insert(packageName: string, autoConvertMissingPrices: boolean | null | undefined, requestBody: InAppProduct): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/inappproducts&autoConvertMissingPrices=' + autoConvertMissingPrices + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1338,7 +1338,7 @@ export namespace MyNS {
 		 * @param {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_inappproducts_patch(packageName: string, sku: string, autoConvertMissingPrices: boolean, requestBody: InAppProduct): Observable<HttpResponse<string>> {
+		Androidpublisher_inappproducts_patch(packageName: string, sku: string, autoConvertMissingPrices: boolean | null | undefined, requestBody: InAppProduct): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/inappproducts/' + (sku == null ? '' : encodeURIComponent(sku)) + '&autoConvertMissingPrices=' + autoConvertMissingPrices + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1350,7 +1350,7 @@ export namespace MyNS {
 		 * @param {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_inappproducts_update(packageName: string, sku: string, autoConvertMissingPrices: boolean, requestBody: InAppProduct): Observable<HttpResponse<string>> {
+		Androidpublisher_inappproducts_update(packageName: string, sku: string, autoConvertMissingPrices: boolean | null | undefined, requestBody: InAppProduct): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/inappproducts/' + (sku == null ? '' : encodeURIComponent(sku)) + '&autoConvertMissingPrices=' + autoConvertMissingPrices + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 		 * @param {boolean} revoke Whether to revoke the purchased item. If set to true, access to the subscription or in-app item will be terminated immediately. If the item is a recurring subscription, all future payments will also be terminated. Consumed in-app items need to be handled by developer's app. (optional)
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_orders_refund(packageName: string, orderId: string, revoke: boolean): Observable<HttpResponse<string>> {
+		Androidpublisher_orders_refund(packageName: string, orderId: string, revoke: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/orders/' + (orderId == null ? '' : encodeURIComponent(orderId)) + ':refund&revoke=' + revoke + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1473,7 +1473,7 @@ export namespace MyNS {
 		 * - 1: Both voided in-app purchases and voided subscription purchases will be returned in the response.  Note: Before requesting to receive voided subscription purchases, you must switch to use orderId in the response which uniquely identifies one-time purchases and subscriptions. Otherwise, you will receive multiple subscription orders with the same PurchaseToken, because subscription renewal orders share the same PurchaseToken.
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_purchases_voidedpurchases_list(packageName: string, endTime: string, maxResults: number, startIndex: number, startTime: string, token: string, type: number): Observable<HttpResponse<string>> {
+		Androidpublisher_purchases_voidedpurchases_list(packageName: string, endTime: string | null | undefined, maxResults: number | null | undefined, startIndex: number | null | undefined, startTime: string | null | undefined, token: string | null | undefined, type: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/purchases/voidedpurchases&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&maxResults=' + maxResults + '&startIndex=' + startIndex + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)) + '&token=' + (token == null ? '' : encodeURIComponent(token)) + '&type=' + type + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -1483,7 +1483,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_reviews_list(packageName: string, maxResults: number, startIndex: number, token: string, translationLanguage: string): Observable<HttpResponse<string>> {
+		Androidpublisher_reviews_list(packageName: string, maxResults: number | null | undefined, startIndex: number | null | undefined, token: string | null | undefined, translationLanguage: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/reviews&maxResults=' + maxResults + '&startIndex=' + startIndex + '&token=' + (token == null ? '' : encodeURIComponent(token)) + '&translationLanguage=' + (translationLanguage == null ? '' : encodeURIComponent(translationLanguage)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -1493,7 +1493,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
 		 * @return {void} Successful response
 		 */
-		Androidpublisher_reviews_get(packageName: string, reviewId: string, translationLanguage: string): Observable<HttpResponse<string>> {
+		Androidpublisher_reviews_get(packageName: string, reviewId: string, translationLanguage: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (packageName == null ? '' : encodeURIComponent(packageName)) + '/reviews/' + (reviewId == null ? '' : encodeURIComponent(reviewId)) + '&translationLanguage=' + (translationLanguage == null ? '' : encodeURIComponent(translationLanguage)) + '', { observe: 'response', responseType: 'text' });
 		}
 

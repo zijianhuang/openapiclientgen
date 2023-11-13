@@ -427,7 +427,7 @@ export namespace MyNS {
 		 * next_page_token.
 		 * @return {void} Successful response
 		 */
-		Poly_assets_list(category: string, curated: boolean, format: string, keywords: string, maxComplexity: Poly_assets_listMaxComplexity, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Poly_assets_list(category: string | null | undefined, curated: boolean | null | undefined, format: string | null | undefined, keywords: string | null | undefined, maxComplexity: Poly_assets_listMaxComplexity | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/assets?category=' + (category == null ? '' : encodeURIComponent(category)) + '&curated=' + curated + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&keywords=' + (keywords == null ? '' : encodeURIComponent(keywords)) + '&maxComplexity=' + maxComplexity + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -472,7 +472,7 @@ export namespace MyNS {
 		 * which returns all assets.
 		 * @return {void} Successful response
 		 */
-		Poly_users_assets_list(name: string, format: string, orderBy: string, pageSize: number, pageToken: string, visibility: Poly_users_assets_listVisibility): Observable<HttpResponse<string>> {
+		Poly_users_assets_list(name: string, format: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, visibility: Poly_users_assets_listVisibility | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/assets&format=' + (format == null ? '' : encodeURIComponent(format)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&visibility=' + visibility, { observe: 'response', responseType: 'text' });
 		}
 
@@ -497,7 +497,7 @@ export namespace MyNS {
 		 * next_page_token.
 		 * @return {void} Successful response
 		 */
-		Poly_users_likedassets_list(name: string, format: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Poly_users_likedassets_list(name: string, format: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/likedassets&format=' + (format == null ? '' : encodeURIComponent(format)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

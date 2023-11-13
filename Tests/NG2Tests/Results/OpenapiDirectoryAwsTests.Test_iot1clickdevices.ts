@@ -248,7 +248,7 @@ export namespace MyNS {
 		 *  
 		 * @return {ListDeviceEventsResponse} Success
 		 */
-		ListDeviceEvents(deviceId: string, fromTimeStamp: Date, maxResults: number, nextToken: string, toTimeStamp: Date): Observable<ListDeviceEventsResponse> {
+		ListDeviceEvents(deviceId: string, fromTimeStamp: Date, maxResults: number | null | undefined, nextToken: string | null | undefined, toTimeStamp: Date): Observable<ListDeviceEventsResponse> {
 			return this.http.get<ListDeviceEventsResponse>(this.baseUri + 'devices/' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '/events#fromTimeStamp&toTimeStamp&fromTimeStamp=' + fromTimeStamp.toISOString() + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&toTimeStamp=' + toTimeStamp.toISOString(), {});
 		}
 
@@ -261,7 +261,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @return {ListDevicesResponse} Success
 		 */
-		ListDevices(deviceType: string, maxResults: number, nextToken: string): Observable<ListDevicesResponse> {
+		ListDevices(deviceType: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListDevicesResponse> {
 			return this.http.get<ListDevicesResponse>(this.baseUri + 'devices?deviceType=' + (deviceType == null ? '' : encodeURIComponent(deviceType)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 

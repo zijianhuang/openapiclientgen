@@ -765,7 +765,7 @@ export namespace MyNS {
 		 * @param {boolean} includeCustomMetadata Set this to TRUE to include custom metadata in the response.
 		 * @return {GetDocumentVersionResponse} Success
 		 */
-		GetDocumentVersion(DocumentId: string, VersionId: string, fields: string, includeCustomMetadata: boolean): Observable<GetDocumentVersionResponse> {
+		GetDocumentVersion(DocumentId: string, VersionId: string, fields: string | null | undefined, includeCustomMetadata: boolean | null | undefined): Observable<GetDocumentVersionResponse> {
 			return this.http.get<GetDocumentVersionResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '/versions/' + (VersionId == null ? '' : encodeURIComponent(VersionId)) + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&includeCustomMetadata=' + includeCustomMetadata, {});
 		}
 
@@ -819,7 +819,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call)
 		 * @return {DescribeResourcePermissionsResponse} Success
 		 */
-		DescribeResourcePermissions(ResourceId: string, principalId: string, limit: number, marker: string): Observable<DescribeResourcePermissionsResponse> {
+		DescribeResourcePermissions(ResourceId: string, principalId: string | null | undefined, limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeResourcePermissionsResponse> {
 			return this.http.get<DescribeResourcePermissionsResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/permissions&principalId=' + (principalId == null ? '' : encodeURIComponent(principalId)) + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -851,7 +851,7 @@ export namespace MyNS {
 		 * @param {string} versionid The ID of the version, if the custom metadata is being added to a document version.
 		 * @return {CreateCustomMetadataResponse} Success
 		 */
-		CreateCustomMetadata(ResourceId: string, versionid: string, requestBody: CreateCustomMetadataPutBody): Observable<CreateCustomMetadataResponse> {
+		CreateCustomMetadata(ResourceId: string, versionid: string | null | undefined, requestBody: CreateCustomMetadataPutBody): Observable<CreateCustomMetadataResponse> {
 			return this.http.put<CreateCustomMetadataResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/customMetadata&versionid=' + (versionid == null ? '' : encodeURIComponent(versionid)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -864,7 +864,7 @@ export namespace MyNS {
 		 * @param {boolean} deleteAll Flag to indicate removal of all custom metadata properties from the specified resource.
 		 * @return {DeleteCustomMetadataResponse} Success
 		 */
-		DeleteCustomMetadata(ResourceId: string, versionId: string, keys: Array<string>, deleteAll: boolean): Observable<DeleteCustomMetadataResponse> {
+		DeleteCustomMetadata(ResourceId: string, versionId: string | null | undefined, keys: Array<string> | null | undefined, deleteAll: boolean | null | undefined): Observable<DeleteCustomMetadataResponse> {
 			return this.http.delete<DeleteCustomMetadataResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/customMetadata&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)) + '&' + keys.map(z => `keys=${encodeURIComponent(z)}`).join('&') + '&deleteAll=' + deleteAll, {});
 		}
 
@@ -895,7 +895,7 @@ export namespace MyNS {
 		 * @param {boolean} deleteAll Flag to request removal of all labels from the specified resource.
 		 * @return {DeleteLabelsResponse} Success
 		 */
-		DeleteLabels(ResourceId: string, labels: Array<string>, deleteAll: boolean): Observable<DeleteLabelsResponse> {
+		DeleteLabels(ResourceId: string, labels: Array<string> | null | undefined, deleteAll: boolean | null | undefined): Observable<DeleteLabelsResponse> {
 			return this.http.delete<DeleteLabelsResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/labels&' + labels.map(z => `labels=${encodeURIComponent(z)}`).join('&') + '&deleteAll=' + deleteAll, {});
 		}
 
@@ -917,7 +917,7 @@ export namespace MyNS {
 		 * @param {number} limit The maximum number of items to return with this call.
 		 * @return {DescribeNotificationSubscriptionsResponse} Success
 		 */
-		DescribeNotificationSubscriptions(OrganizationId: string, marker: string, limit: number): Observable<DescribeNotificationSubscriptionsResponse> {
+		DescribeNotificationSubscriptions(OrganizationId: string, marker: string | null | undefined, limit: number | null | undefined): Observable<DescribeNotificationSubscriptionsResponse> {
 			return this.http.get<DescribeNotificationSubscriptionsResponse>(this.baseUri + 'api/v1/organizations/' + (OrganizationId == null ? '' : encodeURIComponent(OrganizationId)) + '/subscriptions&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + limit, {});
 		}
 
@@ -946,7 +946,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeUsersResponse} Success
 		 */
-		DescribeUsers(organizationId: string, userIds: string, query: string, include: UserFilterType, order: OrderType, sort: UserSortType, marker: string, limit: number, fields: string, Limit: string, Marker: string): Observable<DescribeUsersResponse> {
+		DescribeUsers(organizationId: string | null | undefined, userIds: string | null | undefined, query: string | null | undefined, include: UserFilterType | null | undefined, order: OrderType | null | undefined, sort: UserSortType | null | undefined, marker: string | null | undefined, limit: number | null | undefined, fields: string | null | undefined, Limit: string | null | undefined, Marker: string | null | undefined): Observable<DescribeUsersResponse> {
 			return this.http.get<DescribeUsersResponse>(this.baseUri + 'api/v1/users?organizationId=' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '&userIds=' + (userIds == null ? '' : encodeURIComponent(userIds)) + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&include=' + include + '&order=' + order + '&sort=' + sort + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + limit + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), {});
 		}
 
@@ -979,7 +979,7 @@ export namespace MyNS {
 		 * @param {boolean} includeCustomMetadata Set this to <code>TRUE</code> to include custom metadata in the response.
 		 * @return {GetDocumentResponse} Success
 		 */
-		GetDocument(DocumentId: string, includeCustomMetadata: boolean): Observable<GetDocumentResponse> {
+		GetDocument(DocumentId: string, includeCustomMetadata: boolean | null | undefined): Observable<GetDocumentResponse> {
 			return this.http.get<GetDocumentResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '&includeCustomMetadata=' + includeCustomMetadata, {});
 		}
 
@@ -1010,7 +1010,7 @@ export namespace MyNS {
 		 * @param {boolean} includeCustomMetadata Set to TRUE to include custom metadata in the response.
 		 * @return {GetFolderResponse} Success
 		 */
-		GetFolder(FolderId: string, includeCustomMetadata: boolean): Observable<GetFolderResponse> {
+		GetFolder(FolderId: string, includeCustomMetadata: boolean | null | undefined): Observable<GetFolderResponse> {
 			return this.http.get<GetFolderResponse>(this.baseUri + 'api/v1/folders/' + (FolderId == null ? '' : encodeURIComponent(FolderId)) + '&includeCustomMetadata=' + includeCustomMetadata, {});
 		}
 
@@ -1048,7 +1048,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeFolderContentsResponse} Success
 		 */
-		DescribeFolderContents(FolderId: string, sort: ResourceSortType, order: OrderType, limit: number, marker: string, type: FolderContentType, include: string, Limit: string, Marker: string): Observable<DescribeFolderContentsResponse> {
+		DescribeFolderContents(FolderId: string, sort: ResourceSortType | null | undefined, order: OrderType | null | undefined, limit: number | null | undefined, marker: string | null | undefined, type: FolderContentType | null | undefined, include: string | null | undefined, Limit: string | null | undefined, Marker: string | null | undefined): Observable<DescribeFolderContentsResponse> {
 			return this.http.get<DescribeFolderContentsResponse>(this.baseUri + 'api/v1/folders/' + (FolderId == null ? '' : encodeURIComponent(FolderId)) + '/contents&sort=' + sort + '&order=' + order + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&type=' + type + '&include=' + (include == null ? '' : encodeURIComponent(include)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), {});
 		}
 
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results.
 		 * @return {DescribeActivitiesResponse} Success
 		 */
-		DescribeActivities(startTime: Date, endTime: Date, organizationId: string, activityTypes: string, resourceId: string, userId: string, includeIndirectActivities: boolean, limit: number, marker: string): Observable<DescribeActivitiesResponse> {
+		DescribeActivities(startTime: Date | null | undefined, endTime: Date | null | undefined, organizationId: string | null | undefined, activityTypes: string | null | undefined, resourceId: string | null | undefined, userId: string | null | undefined, includeIndirectActivities: boolean | null | undefined, limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeActivitiesResponse> {
 			return this.http.get<DescribeActivitiesResponse>(this.baseUri + 'api/v1/activities?startTime=' + startTime.toISOString() + '&endTime=' + endTime.toISOString() + '&organizationId=' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '&activityTypes=' + (activityTypes == null ? '' : encodeURIComponent(activityTypes)) + '&resourceId=' + (resourceId == null ? '' : encodeURIComponent(resourceId)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&includeIndirectActivities=' + includeIndirectActivities + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1110,7 +1110,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results. This marker was received from a previous call.
 		 * @return {DescribeCommentsResponse} Success
 		 */
-		DescribeComments(DocumentId: string, VersionId: string, limit: number, marker: string): Observable<DescribeCommentsResponse> {
+		DescribeComments(DocumentId: string, VersionId: string, limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeCommentsResponse> {
 			return this.http.get<DescribeCommentsResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '/versions/' + (VersionId == null ? '' : encodeURIComponent(VersionId)) + '/comments&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1126,7 +1126,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeDocumentVersionsResponse} Success
 		 */
-		DescribeDocumentVersions(DocumentId: string, marker: string, limit: number, include: string, fields: string, Limit: string, Marker: string): Observable<DescribeDocumentVersionsResponse> {
+		DescribeDocumentVersions(DocumentId: string, marker: string | null | undefined, limit: number | null | undefined, include: string | null | undefined, fields: string | null | undefined, Limit: string | null | undefined, Marker: string | null | undefined): Observable<DescribeDocumentVersionsResponse> {
 			return this.http.get<DescribeDocumentVersionsResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '/versions&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + limit + '&include=' + (include == null ? '' : encodeURIComponent(include)) + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), {});
 		}
 
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 		 * @param {number} limit The maximum number of items to return with this call.
 		 * @return {DescribeGroupsResponse} Success
 		 */
-		DescribeGroups(searchQuery: string, organizationId: string, marker: string, limit: number): Observable<DescribeGroupsResponse> {
+		DescribeGroups(searchQuery: string, organizationId: string | null | undefined, marker: string | null | undefined, limit: number | null | undefined): Observable<DescribeGroupsResponse> {
 			return this.http.get<DescribeGroupsResponse>(this.baseUri + 'api/v1/groups#searchQuery?searchQuery=' + (searchQuery == null ? '' : encodeURIComponent(searchQuery)) + '&organizationId=' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + limit, {});
 		}
 
@@ -1150,7 +1150,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @return {DescribeRootFoldersResponse} Success
 		 */
-		DescribeRootFolders(limit: number, marker: string): Observable<DescribeRootFoldersResponse> {
+		DescribeRootFolders(limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeRootFoldersResponse> {
 			return this.http.get<DescribeRootFoldersResponse>(this.baseUri + 'api/v1/me/root#Authentication?limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1172,7 +1172,7 @@ export namespace MyNS {
 		 * @param {string} marker This value is not supported.
 		 * @return {GetDocumentPathResponse} Success
 		 */
-		GetDocumentPath(DocumentId: string, limit: number, fields: string, marker: string): Observable<GetDocumentPathResponse> {
+		GetDocumentPath(DocumentId: string, limit: number | null | undefined, fields: string | null | undefined, marker: string | null | undefined): Observable<GetDocumentPathResponse> {
 			return this.http.get<GetDocumentPathResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '/path&limit=' + limit + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1185,7 +1185,7 @@ export namespace MyNS {
 		 * @param {string} marker This value is not supported.
 		 * @return {GetFolderPathResponse} Success
 		 */
-		GetFolderPath(FolderId: string, limit: number, fields: string, marker: string): Observable<GetFolderPathResponse> {
+		GetFolderPath(FolderId: string, limit: number | null | undefined, fields: string | null | undefined, marker: string | null | undefined): Observable<GetFolderPathResponse> {
 			return this.http.get<GetFolderPathResponse>(this.baseUri + 'api/v1/folders/' + (FolderId == null ? '' : encodeURIComponent(FolderId)) + '/path&limit=' + limit + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1198,7 +1198,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results. This marker was received from a previous call.
 		 * @return {GetResourcesResponse} Success
 		 */
-		GetResources(userId: string, collectionType: ResourceCollectionType, limit: number, marker: string): Observable<GetResourcesResponse> {
+		GetResources(userId: string | null | undefined, collectionType: ResourceCollectionType | null | undefined, limit: number | null | undefined, marker: string | null | undefined): Observable<GetResourcesResponse> {
 			return this.http.get<GetResourcesResponse>(this.baseUri + 'api/v1/resources?userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&collectionType=' + collectionType + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1219,7 +1219,7 @@ export namespace MyNS {
 		 * @param {SharePrincipalType} type The principal type of the resource.
 		 * @return {void} 
 		 */
-		RemoveResourcePermission(ResourceId: string, PrincipalId: string, type: SharePrincipalType): Observable<HttpResponse<string>> {
+		RemoveResourcePermission(ResourceId: string, PrincipalId: string, type: SharePrincipalType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/permissions/' + (PrincipalId == null ? '' : encodeURIComponent(PrincipalId)) + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 	}

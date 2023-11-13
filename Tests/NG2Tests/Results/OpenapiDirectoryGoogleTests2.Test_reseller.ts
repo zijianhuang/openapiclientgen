@@ -287,7 +287,7 @@ export namespace MyNS {
 		 * @param {string} customerAuthToken The customerAuthToken query string is required when creating a resold account that transfers a direct customer's subscription or transfers another reseller customer's subscription to your reseller management. This is a hexadecimal authentication token needed to complete the subscription transfer. For more information, see the administrator help center.
 		 * @return {void} Successful response
 		 */
-		Reseller_customers_insert(customerAuthToken: string, requestBody: Customer): Observable<HttpResponse<string>> {
+		Reseller_customers_insert(customerAuthToken: string | null | undefined, requestBody: Customer): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'customers?customerAuthToken=' + (customerAuthToken == null ? '' : encodeURIComponent(customerAuthToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * @param {string} customerAuthToken The customerAuthToken query string is required when creating a resold account that transfers a direct customer's subscription or transfers another reseller customer's subscription to your reseller management. This is a hexadecimal authentication token needed to complete the subscription transfer. For more information, see the administrator help center.
 		 * @return {void} Successful response
 		 */
-		Reseller_subscriptions_insert(customerId: string, customerAuthToken: string, requestBody: Subscription): Observable<HttpResponse<string>> {
+		Reseller_subscriptions_insert(customerId: string, customerAuthToken: string | null | undefined, requestBody: Subscription): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'customers/' + (customerId == null ? '' : encodeURIComponent(customerId)) + '/subscriptions&customerAuthToken=' + (customerAuthToken == null ? '' : encodeURIComponent(customerAuthToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -436,7 +436,7 @@ export namespace MyNS {
 		 * @param {string} serviceAccountEmailAddress The service account which will own the created Cloud-PubSub topic.
 		 * @return {void} Successful response
 		 */
-		Reseller_resellernotify_register(serviceAccountEmailAddress: string): Observable<HttpResponse<string>> {
+		Reseller_resellernotify_register(serviceAccountEmailAddress: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'resellernotify/register?serviceAccountEmailAddress=' + (serviceAccountEmailAddress == null ? '' : encodeURIComponent(serviceAccountEmailAddress)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -446,7 +446,7 @@ export namespace MyNS {
 		 * @param {string} serviceAccountEmailAddress The service account which owns the Cloud-PubSub topic.
 		 * @return {void} Successful response
 		 */
-		Reseller_resellernotify_unregister(serviceAccountEmailAddress: string): Observable<HttpResponse<string>> {
+		Reseller_resellernotify_unregister(serviceAccountEmailAddress: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'resellernotify/unregister?serviceAccountEmailAddress=' + (serviceAccountEmailAddress == null ? '' : encodeURIComponent(serviceAccountEmailAddress)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -462,7 +462,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to specify next page in the list
 		 * @return {void} Successful response
 		 */
-		Reseller_subscriptions_list(customerAuthToken: string, customerId: string, customerNamePrefix: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Reseller_subscriptions_list(customerAuthToken: string | null | undefined, customerId: string | null | undefined, customerNamePrefix: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'subscriptions?customerAuthToken=' + (customerAuthToken == null ? '' : encodeURIComponent(customerAuthToken)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&customerNamePrefix=' + (customerNamePrefix == null ? '' : encodeURIComponent(customerNamePrefix)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

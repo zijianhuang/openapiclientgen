@@ -15,7 +15,7 @@ export namespace MyNS {
 		 * @param {string} to Target base to convert to
 		 * @return {void} 200 success response
 		 */
-		NumbersBaseGetByNumberAndFromAndTo(number: string, from: string, to: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersBaseGetByNumberAndFromAndTo(number: string, from: string | null | undefined, to: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/base?number=' + (number == null ? '' : encodeURIComponent(number)) + '&from=' + (from == null ? '' : encodeURIComponent(from)) + '&to=' + (to == null ? '' : encodeURIComponent(to)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -26,7 +26,7 @@ export namespace MyNS {
 		 * @param {string} from Base of the supplied number (Optional base 10 assumed by default)
 		 * @return {void} 200 success response
 		 */
-		NumbersBaseBinaryGetByNumberAndFrom(number: string, from: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersBaseBinaryGetByNumberAndFrom(number: string, from: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/base/binary?number=' + (number == null ? '' : encodeURIComponent(number)) + '&from=' + (from == null ? '' : encodeURIComponent(from)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -37,7 +37,7 @@ export namespace MyNS {
 		 * @param {string} from Base of the supplied number (Optional base 10 assumed by default)
 		 * @return {void} 200 success response
 		 */
-		NumbersBaseHexGetByNumberAndFrom(number: string, from: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersBaseHexGetByNumberAndFrom(number: string, from: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/base/hex?number=' + (number == null ? '' : encodeURIComponent(number)) + '&from=' + (from == null ? '' : encodeURIComponent(from)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -48,7 +48,7 @@ export namespace MyNS {
 		 * @param {string} from Base of the supplied number (Optional base 10 assumed by default)
 		 * @return {void} 200 success response
 		 */
-		NumbersBaseOctalGetByNumberAndFrom(number: string, from: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersBaseOctalGetByNumberAndFrom(number: string, from: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/base/octal?number=' + (number == null ? '' : encodeURIComponent(number)) + '&from=' + (from == null ? '' : encodeURIComponent(from)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -59,7 +59,7 @@ export namespace MyNS {
 		 * @param {string} language Language to use
 		 * @return {void} 200 Success response
 		 */
-		NumbersCardinalGetByNumberAndLanguage(number: string, language: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersCardinalGetByNumberAndLanguage(number: string | null | undefined, language: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/cardinal?number=' + (number == null ? '' : encodeURIComponent(number)) + '&language=' + (language == null ? '' : encodeURIComponent(language)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -70,7 +70,7 @@ export namespace MyNS {
 		 * @param {string} language Language to use
 		 * @return {void} 200 Success response
 		 */
-		NumbersCurrencyGetByNumberAndLanguage(number: string, language: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersCurrencyGetByNumberAndLanguage(number: string | null | undefined, language: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/currency?number=' + (number == null ? '' : encodeURIComponent(number)) + '&language=' + (language == null ? '' : encodeURIComponent(language)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -90,7 +90,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersIs_cubeGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersIs_cubeGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/is-cube?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -100,7 +100,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersIs_palindromeGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersIs_palindromeGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/is-palindrome?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -110,7 +110,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersIs_squareGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersIs_squareGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/is-square?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -120,7 +120,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersIs_triangleGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersIs_triangleGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/is-triangle?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -139,7 +139,7 @@ export namespace MyNS {
 		 * @param {string} number Number to convert
 		 * @return {void} 200 Success response
 		 */
-		NumbersNumeralChineseGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersNumeralChineseGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/numeral/chinese?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -149,7 +149,7 @@ export namespace MyNS {
 		 * @param {string} number Number to convert
 		 * @return {void} 200 Success response
 		 */
-		NumbersNumeralEgyptianGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersNumeralEgyptianGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/numeral/egyptian?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -159,7 +159,7 @@ export namespace MyNS {
 		 * @param {string} number Number to convert
 		 * @return {void} 200 Success response
 		 */
-		NumbersNumeralRomanGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersNumeralRomanGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/numeral/roman?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -169,7 +169,7 @@ export namespace MyNS {
 		 * @param {string} number Number value
 		 * @return {void} 200 Success response
 		 */
-		NumbersOrdinalGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersOrdinalGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/ordinal?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -180,7 +180,7 @@ export namespace MyNS {
 		 * @param {string} to Optional start position
 		 * @return {void} 200 Success response
 		 */
-		NumbersPiGetByFromAndTo(from: string, to: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPiGetByFromAndTo(from: string | null | undefined, to: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/pi?from=' + (from == null ? '' : encodeURIComponent(from)) + '&to=' + (to == null ? '' : encodeURIComponent(to)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * @param {string} number Number to get the factors
 		 * @return {void} 200 Success response
 		 */
-		NumbersPrimeFactorsGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPrimeFactorsGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/prime/factors?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -200,7 +200,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersPrimeIs_fermat_primeGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPrimeIs_fermat_primeGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/prime/is-fermat-prime?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -210,7 +210,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersPrimeIs_fibonacci_primeGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPrimeIs_fibonacci_primeGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/prime/is-fibonacci-prime?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -220,7 +220,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersPrimeIs_mersenne_primeGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPrimeIs_mersenne_primeGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/prime/is-mersenne-prime?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -230,7 +230,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersPrimeIs_partition_primeGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPrimeIs_partition_primeGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/prime/is-partition-prime?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -240,7 +240,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersPrimeIs_pell_primeGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPrimeIs_pell_primeGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/prime/is-pell-prime?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -250,7 +250,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersPrimeIs_perfectGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPrimeIs_perfectGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/prime/is-perfect?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -260,7 +260,7 @@ export namespace MyNS {
 		 * @param {string} number Number to check
 		 * @return {void} 200 Success response
 		 */
-		NumbersPrimeIs_primeGetByNumber(number: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersPrimeIs_primeGetByNumber(number: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/prime/is-prime?number=' + (number == null ? '' : encodeURIComponent(number)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -272,7 +272,7 @@ export namespace MyNS {
 		 * @param {string} total Total number of random numbers to generate. Defaults to 1
 		 * @return {void} 200 Success response
 		 */
-		NumbersRandomGetByMinAndMaxAndTotal(min: string, max: string, total: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		NumbersRandomGetByMinAndMaxAndTotal(min: string | null | undefined, max: string | null | undefined, total: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'numbers/random?min=' + (min == null ? '' : encodeURIComponent(min)) + '&max=' + (max == null ? '' : encodeURIComponent(max)) + '&total=' + (total == null ? '' : encodeURIComponent(total)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}

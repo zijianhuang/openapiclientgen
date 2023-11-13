@@ -1052,7 +1052,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataSetsResponse} Success
 		 */
-		ListDataSets(maxResults: number, nextToken: string, origin: string, MaxResults: string, NextToken: string): Observable<ListDataSetsResponse> {
+		ListDataSets(maxResults: number | null | undefined, nextToken: string | null | undefined, origin: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDataSetsResponse> {
 			return this.http.get<ListDataSetsResponse>(this.baseUri + 'v1/data-sets?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&origin=' + (origin == null ? '' : encodeURIComponent(origin)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1076,7 +1076,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJobsResponse} Success
 		 */
-		ListJobs(dataSetId: string, maxResults: number, nextToken: string, revisionId: string, MaxResults: string, NextToken: string): Observable<ListJobsResponse> {
+		ListJobs(dataSetId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, revisionId: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJobsResponse> {
 			return this.http.get<ListJobsResponse>(this.baseUri + 'v1/jobs?dataSetId=' + (dataSetId == null ? '' : encodeURIComponent(dataSetId)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&revisionId=' + (revisionId == null ? '' : encodeURIComponent(revisionId)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1100,7 +1100,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataSetRevisionsResponse} Success
 		 */
-		ListDataSetRevisions(DataSetId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListDataSetRevisionsResponse> {
+		ListDataSetRevisions(DataSetId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDataSetRevisionsResponse> {
 			return this.http.get<ListDataSetRevisionsResponse>(this.baseUri + 'v1/data-sets/' + (DataSetId == null ? '' : encodeURIComponent(DataSetId)) + '/revisions&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1214,7 +1214,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRevisionAssetsResponse} Success
 		 */
-		ListRevisionAssets(DataSetId: string, maxResults: number, nextToken: string, RevisionId: string, MaxResults: string, NextToken: string): Observable<ListRevisionAssetsResponse> {
+		ListRevisionAssets(DataSetId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, RevisionId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRevisionAssetsResponse> {
 			return this.http.get<ListRevisionAssetsResponse>(this.baseUri + 'v1/data-sets/' + (DataSetId == null ? '' : encodeURIComponent(DataSetId)) + '/revisions/' + (RevisionId == null ? '' : encodeURIComponent(RevisionId)) + '/assets&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

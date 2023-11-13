@@ -610,7 +610,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPublicKeysResponse} Success
 		 */
-		ListPublicKeys(NextToken: string, requestBody: ListPublicKeysRequest): Observable<ListPublicKeysResponse> {
+		ListPublicKeys(NextToken: string | null | undefined, requestBody: ListPublicKeysRequest): Observable<ListPublicKeysResponse> {
 			return this.http.post<ListPublicKeysResponse>(this.baseUri + '#X-Amz-Target=com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListPublicKeys?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -620,7 +620,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsResponse} Success
 		 */
-		ListTags(NextToken: string, requestBody: ListTagsRequest): Observable<ListTagsResponse> {
+		ListTags(NextToken: string | null | undefined, requestBody: ListTagsRequest): Observable<ListTagsResponse> {
 			return this.http.post<ListTagsResponse>(this.baseUri + '#X-Amz-Target=com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTags?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -630,7 +630,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTrailsResponse} Success
 		 */
-		ListTrails(NextToken: string, requestBody: ListTrailsRequest): Observable<ListTrailsResponse> {
+		ListTrails(NextToken: string | null | undefined, requestBody: ListTrailsRequest): Observable<ListTrailsResponse> {
 			return this.http.post<ListTrailsResponse>(this.baseUri + '#X-Amz-Target=com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTrails?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -641,7 +641,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {LookupEventsResponse} Success
 		 */
-		LookupEvents(MaxResults: string, NextToken: string, requestBody: LookupEventsRequest): Observable<LookupEventsResponse> {
+		LookupEvents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: LookupEventsRequest): Observable<LookupEventsResponse> {
 			return this.http.post<LookupEventsResponse>(this.baseUri + '#X-Amz-Target=com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.LookupEvents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

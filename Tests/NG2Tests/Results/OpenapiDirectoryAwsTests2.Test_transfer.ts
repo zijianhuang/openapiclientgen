@@ -439,7 +439,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServersResponse} Success
 		 */
-		ListServers(MaxResults: string, NextToken: string, requestBody: ListServersRequest): Observable<ListServersResponse> {
+		ListServers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServersRequest): Observable<ListServersResponse> {
 			return this.http.post<ListServersResponse>(this.baseUri + '#X-Amz-Target=TransferService.ListServers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -450,7 +450,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + '#X-Amz-Target=TransferService.ListTagsForResource?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -461,7 +461,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUsersResponse} Success
 		 */
-		ListUsers(MaxResults: string, NextToken: string, requestBody: ListUsersRequest): Observable<ListUsersResponse> {
+		ListUsers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListUsersRequest): Observable<ListUsersResponse> {
 			return this.http.post<ListUsersResponse>(this.baseUri + '#X-Amz-Target=TransferService.ListUsers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

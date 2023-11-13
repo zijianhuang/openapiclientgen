@@ -1915,7 +1915,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListApplicationRevisionsOutput} Success
 		 */
-		ListApplicationRevisions(nextToken: string, requestBody: ListApplicationRevisionsInput): Observable<ListApplicationRevisionsOutput> {
+		ListApplicationRevisions(nextToken: string | null | undefined, requestBody: ListApplicationRevisionsInput): Observable<ListApplicationRevisionsOutput> {
 			return this.http.post<ListApplicationRevisionsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListApplicationRevisions?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1925,7 +1925,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListApplicationsOutput} Success
 		 */
-		ListApplications(nextToken: string, requestBody: ListApplicationsInput): Observable<ListApplicationsOutput> {
+		ListApplications(nextToken: string | null | undefined, requestBody: ListApplicationsInput): Observable<ListApplicationsOutput> {
 			return this.http.post<ListApplicationsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListApplications?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1935,7 +1935,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentConfigsOutput} Success
 		 */
-		ListDeploymentConfigs(nextToken: string, requestBody: ListDeploymentConfigsInput): Observable<ListDeploymentConfigsOutput> {
+		ListDeploymentConfigs(nextToken: string | null | undefined, requestBody: ListDeploymentConfigsInput): Observable<ListDeploymentConfigsOutput> {
 			return this.http.post<ListDeploymentConfigsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListDeploymentConfigs?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1945,7 +1945,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentGroupsOutput} Success
 		 */
-		ListDeploymentGroups(nextToken: string, requestBody: ListDeploymentGroupsInput): Observable<ListDeploymentGroupsOutput> {
+		ListDeploymentGroups(nextToken: string | null | undefined, requestBody: ListDeploymentGroupsInput): Observable<ListDeploymentGroupsOutput> {
 			return this.http.post<ListDeploymentGroupsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListDeploymentGroups?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1955,7 +1955,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentInstancesOutput} Success
 		 */
-		ListDeploymentInstances(nextToken: string, requestBody: ListDeploymentInstancesInput): Observable<ListDeploymentInstancesOutput> {
+		ListDeploymentInstances(nextToken: string | null | undefined, requestBody: ListDeploymentInstancesInput): Observable<ListDeploymentInstancesOutput> {
 			return this.http.post<ListDeploymentInstancesOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListDeploymentInstances?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1974,7 +1974,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentsOutput} Success
 		 */
-		ListDeployments(nextToken: string, requestBody: ListDeploymentsInput): Observable<ListDeploymentsOutput> {
+		ListDeployments(nextToken: string | null | undefined, requestBody: ListDeploymentsInput): Observable<ListDeploymentsOutput> {
 			return this.http.post<ListDeploymentsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListDeployments?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

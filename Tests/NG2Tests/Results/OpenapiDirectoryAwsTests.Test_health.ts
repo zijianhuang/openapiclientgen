@@ -371,7 +371,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeAffectedAccountsForOrganizationResponse} Success
 		 */
-		DescribeAffectedAccountsForOrganization(maxResults: string, nextToken: string, requestBody: DescribeAffectedAccountsForOrganizationRequest): Observable<DescribeAffectedAccountsForOrganizationResponse> {
+		DescribeAffectedAccountsForOrganization(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeAffectedAccountsForOrganizationRequest): Observable<DescribeAffectedAccountsForOrganizationResponse> {
 			return this.http.post<DescribeAffectedAccountsForOrganizationResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeAffectedAccountsForOrganization?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -382,7 +382,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeAffectedEntitiesResponse} Success
 		 */
-		DescribeAffectedEntities(maxResults: string, nextToken: string, requestBody: DescribeAffectedEntitiesRequest): Observable<DescribeAffectedEntitiesResponse> {
+		DescribeAffectedEntities(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeAffectedEntitiesRequest): Observable<DescribeAffectedEntitiesResponse> {
 			return this.http.post<DescribeAffectedEntitiesResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeAffectedEntities?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -393,7 +393,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeAffectedEntitiesForOrganizationResponse} Success
 		 */
-		DescribeAffectedEntitiesForOrganization(maxResults: string, nextToken: string, requestBody: DescribeAffectedEntitiesForOrganizationRequest): Observable<DescribeAffectedEntitiesForOrganizationResponse> {
+		DescribeAffectedEntitiesForOrganization(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeAffectedEntitiesForOrganizationRequest): Observable<DescribeAffectedEntitiesForOrganizationResponse> {
 			return this.http.post<DescribeAffectedEntitiesForOrganizationResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeAffectedEntitiesForOrganization?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -413,7 +413,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEventAggregatesResponse} Success
 		 */
-		DescribeEventAggregates(maxResults: string, nextToken: string, requestBody: DescribeEventAggregatesRequest): Observable<DescribeEventAggregatesResponse> {
+		DescribeEventAggregates(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEventAggregatesRequest): Observable<DescribeEventAggregatesResponse> {
 			return this.http.post<DescribeEventAggregatesResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeEventAggregates?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -442,7 +442,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEventTypesResponse} Success
 		 */
-		DescribeEventTypes(maxResults: string, nextToken: string, requestBody: DescribeEventTypesRequest): Observable<DescribeEventTypesResponse> {
+		DescribeEventTypes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEventTypesRequest): Observable<DescribeEventTypesResponse> {
 			return this.http.post<DescribeEventTypesResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeEventTypes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -453,7 +453,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEventsResponse} Success
 		 */
-		DescribeEvents(maxResults: string, nextToken: string, requestBody: DescribeEventsRequest): Observable<DescribeEventsResponse> {
+		DescribeEvents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEventsRequest): Observable<DescribeEventsResponse> {
 			return this.http.post<DescribeEventsResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeEvents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -464,7 +464,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEventsForOrganizationResponse} Success
 		 */
-		DescribeEventsForOrganization(maxResults: string, nextToken: string, requestBody: DescribeEventsForOrganizationRequest): Observable<DescribeEventsForOrganizationResponse> {
+		DescribeEventsForOrganization(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEventsForOrganizationRequest): Observable<DescribeEventsForOrganizationResponse> {
 			return this.http.post<DescribeEventsForOrganizationResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeEventsForOrganization?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

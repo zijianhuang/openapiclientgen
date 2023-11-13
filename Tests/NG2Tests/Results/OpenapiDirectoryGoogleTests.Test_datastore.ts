@@ -1477,7 +1477,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Datastore_projects_indexes_list(projectId: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Datastore_projects_indexes_list(projectId: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/indexes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1677,7 +1677,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Datastore_projects_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Datastore_projects_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

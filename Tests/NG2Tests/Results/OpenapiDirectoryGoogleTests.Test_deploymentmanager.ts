@@ -734,7 +734,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_deployments_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Deploymentmanager_deployments_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/deployments&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * @param {boolean} preview If set to true, creates a deployment and creates "shell" resources but does not actually instantiate these resources. This allows you to preview what your deployment looks like. After previewing a deployment, you can deploy your resources by making a request with the update() method or you can use the cancelPreview() method to cancel the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_deployments_insert(project: string, createPolicy: Deploymentmanager_deployments_insertCreatePolicy, preview: boolean, requestBody: Deployment): Observable<HttpResponse<string>> {
+		Deploymentmanager_deployments_insert(project: string, createPolicy: Deploymentmanager_deployments_insertCreatePolicy | null | undefined, preview: boolean | null | undefined, requestBody: Deployment): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/deployments&createPolicy=' + createPolicy + '&preview=' + preview + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -758,7 +758,7 @@ export namespace MyNS {
 		 * @param {Deploymentmanager_deployments_deleteDeletePolicy} deletePolicy Sets the policy to use for deleting resources.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_deployments_delete(project: string, deployment: string, deletePolicy: Deploymentmanager_deployments_deleteDeletePolicy): Observable<HttpResponse<string>> {
+		Deploymentmanager_deployments_delete(project: string, deployment: string, deletePolicy: Deploymentmanager_deployments_deleteDeletePolicy | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/deployments/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '&deletePolicy=' + deletePolicy + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -783,7 +783,7 @@ export namespace MyNS {
 		 * @param {boolean} preview If set to true, updates the deployment and creates and updates the "shell" resources but does not actually alter or instantiate these resources. This allows you to preview what your deployment will look like. You can use this intent to preview how an update would affect your deployment. You must provide a target.config with a configuration if this is set to true. After previewing a deployment, you can deploy your resources by making a request with the update() or you can cancelPreview() to remove the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_deployments_patch(project: string, deployment: string, createPolicy: Deploymentmanager_deployments_insertCreatePolicy, deletePolicy: Deploymentmanager_deployments_deleteDeletePolicy, preview: boolean, requestBody: Deployment): Observable<HttpResponse<string>> {
+		Deploymentmanager_deployments_patch(project: string, deployment: string, createPolicy: Deploymentmanager_deployments_insertCreatePolicy | null | undefined, deletePolicy: Deploymentmanager_deployments_deleteDeletePolicy | null | undefined, preview: boolean | null | undefined, requestBody: Deployment): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/deployments/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '&createPolicy=' + createPolicy + '&deletePolicy=' + deletePolicy + '&preview=' + preview + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -797,7 +797,7 @@ export namespace MyNS {
 		 * @param {boolean} preview If set to true, updates the deployment and creates and updates the "shell" resources but does not actually alter or instantiate these resources. This allows you to preview what your deployment will look like. You can use this intent to preview how an update would affect your deployment. You must provide a target.config with a configuration if this is set to true. After previewing a deployment, you can deploy your resources by making a request with the update() or you can cancelPreview() to remove the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_deployments_update(project: string, deployment: string, createPolicy: Deploymentmanager_deployments_insertCreatePolicy, deletePolicy: Deploymentmanager_deployments_deleteDeletePolicy, preview: boolean, requestBody: Deployment): Observable<HttpResponse<string>> {
+		Deploymentmanager_deployments_update(project: string, deployment: string, createPolicy: Deploymentmanager_deployments_insertCreatePolicy | null | undefined, deletePolicy: Deploymentmanager_deployments_deleteDeletePolicy | null | undefined, preview: boolean | null | undefined, requestBody: Deployment): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/deployments/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '&createPolicy=' + createPolicy + '&deletePolicy=' + deletePolicy + '&preview=' + preview + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -828,7 +828,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_manifests_list(project: string, deployment: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Deploymentmanager_manifests_list(project: string, deployment: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/deployments/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '/manifests&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -860,7 +860,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_resources_list(project: string, deployment: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Deploymentmanager_resources_list(project: string, deployment: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/deployments/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '/resources&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -935,7 +935,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_operations_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Deploymentmanager_operations_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -965,7 +965,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Deploymentmanager_types_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Deploymentmanager_types_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/types&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -2614,7 +2614,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetApisResponse} Success
 		 */
-		GetApis(maxResults: string, nextToken: string): Observable<GetApisResponse> {
+		GetApis(maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetApisResponse> {
 			return this.http.get<GetApisResponse>(this.baseUri + 'v2/apis?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2625,7 +2625,7 @@ export namespace MyNS {
 		 * @param {boolean} failOnWarnings Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.
 		 * @return {void} 
 		 */
-		ImportApi(basepath: string, failOnWarnings: boolean, requestBody: ImportApiPutBody): Observable<HttpResponse<string>> {
+		ImportApi(basepath: string | null | undefined, failOnWarnings: boolean | null | undefined, requestBody: ImportApiPutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v2/apis?basepath=' + (basepath == null ? '' : encodeURIComponent(basepath)) + '&failOnWarnings=' + failOnWarnings, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2647,7 +2647,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetApiMappingsResponse} Success
 		 */
-		GetApiMappings(domainName: string, maxResults: string, nextToken: string): Observable<GetApiMappingsResponse> {
+		GetApiMappings(domainName: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetApiMappingsResponse> {
 			return this.http.get<GetApiMappingsResponse>(this.baseUri + 'v2/domainnames/' + (domainName == null ? '' : encodeURIComponent(domainName)) + '/apimappings&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2669,7 +2669,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetAuthorizersResponse} Success
 		 */
-		GetAuthorizers(apiId: string, maxResults: string, nextToken: string): Observable<GetAuthorizersResponse> {
+		GetAuthorizers(apiId: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetAuthorizersResponse> {
 			return this.http.get<GetAuthorizersResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/authorizers&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2691,7 +2691,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetDeploymentsResponse} Success
 		 */
-		GetDeployments(apiId: string, maxResults: string, nextToken: string): Observable<GetDeploymentsResponse> {
+		GetDeployments(apiId: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetDeploymentsResponse> {
 			return this.http.get<GetDeploymentsResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/deployments&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2711,7 +2711,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetDomainNamesResponse} Success
 		 */
-		GetDomainNames(maxResults: string, nextToken: string): Observable<GetDomainNamesResponse> {
+		GetDomainNames(maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetDomainNamesResponse> {
 			return this.http.get<GetDomainNamesResponse>(this.baseUri + 'v2/domainnames?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2733,7 +2733,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetIntegrationsResponse} Success
 		 */
-		GetIntegrations(apiId: string, maxResults: string, nextToken: string): Observable<GetIntegrationsResponse> {
+		GetIntegrations(apiId: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetIntegrationsResponse> {
 			return this.http.get<GetIntegrationsResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/integrations&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2757,7 +2757,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetIntegrationResponsesResponse} Success
 		 */
-		GetIntegrationResponses(apiId: string, integrationId: string, maxResults: string, nextToken: string): Observable<GetIntegrationResponsesResponse> {
+		GetIntegrationResponses(apiId: string, integrationId: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetIntegrationResponsesResponse> {
 			return this.http.get<GetIntegrationResponsesResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/integrations/' + (integrationId == null ? '' : encodeURIComponent(integrationId)) + '/integrationresponses&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2779,7 +2779,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetModelsResponse} Success
 		 */
-		GetModels(apiId: string, maxResults: string, nextToken: string): Observable<GetModelsResponse> {
+		GetModels(apiId: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetModelsResponse> {
 			return this.http.get<GetModelsResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/models&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2801,7 +2801,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetRoutesResponse} Success
 		 */
-		GetRoutes(apiId: string, maxResults: string, nextToken: string): Observable<GetRoutesResponse> {
+		GetRoutes(apiId: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetRoutesResponse> {
 			return this.http.get<GetRoutesResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/routes&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2825,7 +2825,7 @@ export namespace MyNS {
 		 * @param {string} routeId The route ID.
 		 * @return {GetRouteResponsesResponse} Success
 		 */
-		GetRouteResponses(apiId: string, maxResults: string, nextToken: string, routeId: string): Observable<GetRouteResponsesResponse> {
+		GetRouteResponses(apiId: string, maxResults: string | null | undefined, nextToken: string | null | undefined, routeId: string): Observable<GetRouteResponsesResponse> {
 			return this.http.get<GetRouteResponsesResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/routes/' + (routeId == null ? '' : encodeURIComponent(routeId)) + '/routeresponses&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2847,7 +2847,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetStagesResponse} Success
 		 */
-		GetStages(apiId: string, maxResults: string, nextToken: string): Observable<GetStagesResponse> {
+		GetStages(apiId: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetStagesResponse> {
 			return this.http.get<GetStagesResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/stages&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2867,7 +2867,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The next page of elements from this collection. Not valid for the last element of the collection.
 		 * @return {GetVpcLinksResponse} Success
 		 */
-		GetVpcLinks(maxResults: string, nextToken: string): Observable<GetVpcLinksResponse> {
+		GetVpcLinks(maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<GetVpcLinksResponse> {
 			return this.http.get<GetVpcLinksResponse>(this.baseUri + 'v2/vpclinks?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -2910,7 +2910,7 @@ export namespace MyNS {
 		 * @param {boolean} failOnWarnings Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.
 		 * @return {void} 
 		 */
-		ReimportApi(apiId: string, basepath: string, failOnWarnings: boolean, requestBody: ReimportApiPutBody): Observable<HttpResponse<string>> {
+		ReimportApi(apiId: string, basepath: string | null | undefined, failOnWarnings: boolean | null | undefined, requestBody: ReimportApiPutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '&basepath=' + (basepath == null ? '' : encodeURIComponent(basepath)) + '&failOnWarnings=' + failOnWarnings, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3331,7 +3331,7 @@ export namespace MyNS {
 		 * @param {string} stageName The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.
 		 * @return {ExportApiResponse} Success
 		 */
-		ExportApi(apiId: string, exportVersion: string, includeExtensions: boolean, outputType: string, specification: string, stageName: string): Observable<ExportApiResponse> {
+		ExportApi(apiId: string, exportVersion: string | null | undefined, includeExtensions: boolean | null | undefined, outputType: string, specification: string, stageName: string | null | undefined): Observable<ExportApiResponse> {
 			return this.http.get<ExportApiResponse>(this.baseUri + 'v2/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/exports/' + (specification == null ? '' : encodeURIComponent(specification)) + '#outputType&exportVersion=' + (exportVersion == null ? '' : encodeURIComponent(exportVersion)) + '&includeExtensions=' + includeExtensions + '&outputType=' + (outputType == null ? '' : encodeURIComponent(outputType)) + '&stageName=' + (stageName == null ? '' : encodeURIComponent(stageName)), {});
 		}
 

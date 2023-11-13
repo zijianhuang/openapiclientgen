@@ -603,7 +603,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFlowsResponse} Success
 		 */
-		ListFlows(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListFlowsResponse> {
+		ListFlows(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListFlowsResponse> {
 			return this.http.get<ListFlowsResponse>(this.baseUri + 'v1/flows?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -656,7 +656,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEntitlementsResponse} Success
 		 */
-		ListEntitlements(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListEntitlementsResponse> {
+		ListEntitlements(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListEntitlementsResponse> {
 			return this.http.get<ListEntitlementsResponse>(this.baseUri + 'v1/entitlements?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

@@ -762,7 +762,7 @@ export namespace MyNS {
 		 * @param {string} PageToken When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. 
 		 * @return {ListPipelinesResponse} Success
 		 */
-		ListPipelines(Ascending: string, PageToken: string): Observable<ListPipelinesResponse> {
+		ListPipelines(Ascending: string | null | undefined, PageToken: string | null | undefined): Observable<ListPipelinesResponse> {
 			return this.http.get<ListPipelinesResponse>(this.baseUri + '2012-09-25/pipelines?Ascending=' + (Ascending == null ? '' : encodeURIComponent(Ascending)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), {});
 		}
 
@@ -782,7 +782,7 @@ export namespace MyNS {
 		 * @param {string} PageToken When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. 
 		 * @return {ListPresetsResponse} Success
 		 */
-		ListPresets(Ascending: string, PageToken: string): Observable<ListPresetsResponse> {
+		ListPresets(Ascending: string | null | undefined, PageToken: string | null | undefined): Observable<ListPresetsResponse> {
 			return this.http.get<ListPresetsResponse>(this.baseUri + '2012-09-25/presets?Ascending=' + (Ascending == null ? '' : encodeURIComponent(Ascending)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), {});
 		}
 
@@ -844,7 +844,7 @@ export namespace MyNS {
 		 * @param {string} PageToken  When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. 
 		 * @return {ListJobsByPipelineResponse} Success
 		 */
-		ListJobsByPipeline(PipelineId: string, Ascending: string, PageToken: string): Observable<ListJobsByPipelineResponse> {
+		ListJobsByPipeline(PipelineId: string, Ascending: string | null | undefined, PageToken: string | null | undefined): Observable<ListJobsByPipelineResponse> {
 			return this.http.get<ListJobsByPipelineResponse>(this.baseUri + '2012-09-25/jobsByPipeline/' + (PipelineId == null ? '' : encodeURIComponent(PipelineId)) + '&Ascending=' + (Ascending == null ? '' : encodeURIComponent(Ascending)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), {});
 		}
 
@@ -856,7 +856,7 @@ export namespace MyNS {
 		 * @param {string} PageToken  When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. 
 		 * @return {ListJobsByStatusResponse} Success
 		 */
-		ListJobsByStatus(Status: string, Ascending: string, PageToken: string): Observable<ListJobsByStatusResponse> {
+		ListJobsByStatus(Status: string, Ascending: string | null | undefined, PageToken: string | null | undefined): Observable<ListJobsByStatusResponse> {
 			return this.http.get<ListJobsByStatusResponse>(this.baseUri + '2012-09-25/jobsByStatus/' + (Status == null ? '' : encodeURIComponent(Status)) + '&Ascending=' + (Ascending == null ? '' : encodeURIComponent(Ascending)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), {});
 		}
 

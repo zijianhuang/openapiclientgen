@@ -146,7 +146,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Mask to control which fields get updated. Updates all if not present.
 		 * @return {void} Successful response
 		 */
-		Oslogin_users_sshPublicKeys_patch(name: string, updateMask: string, requestBody: SshPublicKey): Observable<HttpResponse<string>> {
+		Oslogin_users_sshPublicKeys_patch(name: string, updateMask: string | null | undefined, requestBody: SshPublicKey): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -159,7 +159,7 @@ export namespace MyNS {
 		 * @param {string} systemId A system ID for filtering the results of the request.
 		 * @return {void} Successful response
 		 */
-		Oslogin_users_getLoginProfile(name: string, projectId: string, systemId: string): Observable<HttpResponse<string>> {
+		Oslogin_users_getLoginProfile(name: string, projectId: string | null | undefined, systemId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/loginProfile&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&systemId=' + (systemId == null ? '' : encodeURIComponent(systemId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -172,7 +172,7 @@ export namespace MyNS {
 		 * @param {string} projectId The project ID of the Google Cloud Platform project.
 		 * @return {void} Successful response
 		 */
-		Oslogin_users_importSshPublicKey(parent: string, projectId: string, requestBody: SshPublicKey): Observable<HttpResponse<string>> {
+		Oslogin_users_importSshPublicKey(parent: string, projectId: string | null | undefined, requestBody: SshPublicKey): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + ':importSshPublicKey&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

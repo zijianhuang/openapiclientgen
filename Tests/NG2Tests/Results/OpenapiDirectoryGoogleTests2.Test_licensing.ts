@@ -139,7 +139,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to fetch the next page of data. The maxResults query string is related to the pageToken since maxResults determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.
 		 * @return {void} Successful response
 		 */
-		Licensing_licenseAssignments_listForProductAndSku(productId: string, skuId: string, customerId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Licensing_licenseAssignments_listForProductAndSku(productId: string, skuId: string, customerId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (productId == null ? '' : encodeURIComponent(productId)) + '/sku/' + (skuId == null ? '' : encodeURIComponent(skuId)) + '/users&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -153,7 +153,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to fetch the next page of data. The maxResults query string is related to the pageToken since maxResults determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.
 		 * @return {void} Successful response
 		 */
-		Licensing_licenseAssignments_listForProduct(productId: string, customerId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Licensing_licenseAssignments_listForProduct(productId: string, customerId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (productId == null ? '' : encodeURIComponent(productId)) + '/users&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 	}

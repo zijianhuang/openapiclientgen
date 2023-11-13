@@ -565,7 +565,7 @@ export namespace MyNS {
 		 * Get v3/blogs/byurl
 		 * @return {void} Successful response
 		 */
-		Blogger_blogs_getByUrl(url: string, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_blogs_getByUrl(url: string, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/byurl?url=' + (url == null ? '' : encodeURIComponent(url)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -574,7 +574,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}
 		 * @return {void} Successful response
 		 */
-		Blogger_blogs_get(blogId: string, maxPosts: number, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_blogs_get(blogId: string, maxPosts: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '&maxPosts=' + maxPosts + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -583,7 +583,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/comments
 		 * @return {void} Successful response
 		 */
-		Blogger_comments_listByBlog(blogId: string, endDate: string, fetchBodies: boolean, maxResults: number, pageToken: string, startDate: string, status: Array<CommentStatus>): Observable<HttpResponse<string>> {
+		Blogger_comments_listByBlog(blogId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: Array<CommentStatus> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/comments&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&fetchBodies=' + fetchBodies + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&' + status.map(z => `status=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -592,7 +592,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/pages
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_list(blogId: string, fetchBodies: boolean, maxResults: number, pageToken: string, status: Array<PageStatus>, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_pages_list(blogId: string, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, status: Array<PageStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages&fetchBodies=' + fetchBodies + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + status.map(z => `status=${z}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -601,7 +601,7 @@ export namespace MyNS {
 		 * Post v3/blogs/{blogId}/pages
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_insert(blogId: string, isDraft: boolean, requestBody: Page): Observable<HttpResponse<string>> {
+		Blogger_pages_insert(blogId: string, isDraft: boolean | null | undefined, requestBody: Page): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages&isDraft=' + isDraft, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -619,7 +619,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/pages/{pageId}
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_get(blogId: string, pageId: string, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_pages_get(blogId: string, pageId: string, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages/' + (pageId == null ? '' : encodeURIComponent(pageId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -628,7 +628,7 @@ export namespace MyNS {
 		 * Patch v3/blogs/{blogId}/pages/{pageId}
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_patch(blogId: string, pageId: string, publish: boolean, revert: boolean, requestBody: Page): Observable<HttpResponse<string>> {
+		Blogger_pages_patch(blogId: string, pageId: string, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Page): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages/' + (pageId == null ? '' : encodeURIComponent(pageId)) + '&publish=' + publish + '&revert=' + revert, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -637,7 +637,7 @@ export namespace MyNS {
 		 * Put v3/blogs/{blogId}/pages/{pageId}
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_update(blogId: string, pageId: string, publish: boolean, revert: boolean, requestBody: Page): Observable<HttpResponse<string>> {
+		Blogger_pages_update(blogId: string, pageId: string, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Page): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages/' + (pageId == null ? '' : encodeURIComponent(pageId)) + '&publish=' + publish + '&revert=' + revert, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -664,7 +664,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/pageviews
 		 * @return {void} Successful response
 		 */
-		Blogger_pageViews_get(blogId: string, range: Array<string>): Observable<HttpResponse<string>> {
+		Blogger_pageViews_get(blogId: string, range: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pageviews&' + range.map(z => `range=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -673,7 +673,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_list(blogId: string, endDate: string, fetchBodies: boolean, fetchImages: boolean, labels: string, maxResults: number, orderBy: Blogger_posts_listOrderBy, pageToken: string, startDate: string, status: Array<PostStatus>, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_posts_list(blogId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, fetchImages: boolean | null | undefined, labels: string | null | undefined, maxResults: number | null | undefined, orderBy: Blogger_posts_listOrderBy | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: Array<PostStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&fetchBodies=' + fetchBodies + '&fetchImages=' + fetchImages + '&labels=' + (labels == null ? '' : encodeURIComponent(labels)) + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&' + status.map(z => `status=${z}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -682,7 +682,7 @@ export namespace MyNS {
 		 * Post v3/blogs/{blogId}/posts
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_insert(blogId: string, fetchBody: boolean, fetchImages: boolean, isDraft: boolean, requestBody: Post): Observable<HttpResponse<string>> {
+		Blogger_posts_insert(blogId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, isDraft: boolean | null | undefined, requestBody: Post): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts&fetchBody=' + fetchBody + '&fetchImages=' + fetchImages + '&isDraft=' + isDraft, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -691,7 +691,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/bypath
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_getByPath(blogId: string, path: string, maxComments: number, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_posts_getByPath(blogId: string, path: string, maxComments: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/bypath&path=' + (path == null ? '' : encodeURIComponent(path)) + '&maxComments=' + maxComments + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -700,7 +700,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/search
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_search(blogId: string, q: string, fetchBodies: boolean, orderBy: Blogger_posts_listOrderBy): Observable<HttpResponse<string>> {
+		Blogger_posts_search(blogId: string, q: string, fetchBodies: boolean | null | undefined, orderBy: Blogger_posts_listOrderBy | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/search&q=' + (q == null ? '' : encodeURIComponent(q)) + '&fetchBodies=' + fetchBodies + '&orderBy=' + orderBy, { observe: 'response', responseType: 'text' });
 		}
 
@@ -718,7 +718,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/{postId}
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_get(blogId: string, postId: string, fetchBody: boolean, fetchImages: boolean, maxComments: number, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_posts_get(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '&fetchBody=' + fetchBody + '&fetchImages=' + fetchImages + '&maxComments=' + maxComments + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -727,7 +727,7 @@ export namespace MyNS {
 		 * Patch v3/blogs/{blogId}/posts/{postId}
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_patch(blogId: string, postId: string, fetchBody: boolean, fetchImages: boolean, maxComments: number, publish: boolean, revert: boolean, requestBody: Post): Observable<HttpResponse<string>> {
+		Blogger_posts_patch(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Post): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '&fetchBody=' + fetchBody + '&fetchImages=' + fetchImages + '&maxComments=' + maxComments + '&publish=' + publish + '&revert=' + revert, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -736,7 +736,7 @@ export namespace MyNS {
 		 * Put v3/blogs/{blogId}/posts/{postId}
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_update(blogId: string, postId: string, fetchBody: boolean, fetchImages: boolean, maxComments: number, publish: boolean, revert: boolean, requestBody: Post): Observable<HttpResponse<string>> {
+		Blogger_posts_update(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Post): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '&fetchBody=' + fetchBody + '&fetchImages=' + fetchImages + '&maxComments=' + maxComments + '&publish=' + publish + '&revert=' + revert, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -745,7 +745,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/{postId}/comments
 		 * @return {void} Successful response
 		 */
-		Blogger_comments_list(blogId: string, postId: string, endDate: string, fetchBodies: boolean, maxResults: number, pageToken: string, startDate: string, status: CommentStatus, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_comments_list(blogId: string, postId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: CommentStatus | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '/comments&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&fetchBodies=' + fetchBodies + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&status=' + status + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -763,7 +763,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/{postId}/comments/{commentId}
 		 * @return {void} Successful response
 		 */
-		Blogger_comments_get(blogId: string, postId: string, commentId: string, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_comments_get(blogId: string, postId: string, commentId: string, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '/comments/' + (commentId == null ? '' : encodeURIComponent(commentId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -799,7 +799,7 @@ export namespace MyNS {
 		 * Post v3/blogs/{blogId}/posts/{postId}/publish
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_publish(blogId: string, postId: string, publishDate: string): Observable<HttpResponse<string>> {
+		Blogger_posts_publish(blogId: string, postId: string, publishDate: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '/publish&publishDate=' + (publishDate == null ? '' : encodeURIComponent(publishDate)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -827,7 +827,7 @@ export namespace MyNS {
 		 * @param {Array<BlogStatus>} status Default value of status is LIVE.
 		 * @return {void} Successful response
 		 */
-		Blogger_blogs_listByUser(userId: string, fetchUserInfo: boolean, role: Array<BlogPerUserInfoRole>, status: Array<BlogStatus>, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_blogs_listByUser(userId: string, fetchUserInfo: boolean | null | undefined, role: Array<BlogPerUserInfoRole> | null | undefined, status: Array<BlogStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/blogs&fetchUserInfo=' + fetchUserInfo + '&' + role.map(z => `role=${z}`).join('&') + '&' + status.map(z => `status=${z}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -836,7 +836,7 @@ export namespace MyNS {
 		 * Get v3/users/{userId}/blogs/{blogId}
 		 * @return {void} Successful response
 		 */
-		Blogger_blogUserInfos_get(userId: string, blogId: string, maxPosts: number): Observable<HttpResponse<string>> {
+		Blogger_blogUserInfos_get(userId: string, blogId: string, maxPosts: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '&maxPosts=' + maxPosts, { observe: 'response', responseType: 'text' });
 		}
 
@@ -845,7 +845,7 @@ export namespace MyNS {
 		 * Get v3/users/{userId}/blogs/{blogId}/posts
 		 * @return {void} Successful response
 		 */
-		Blogger_postUserInfos_list(userId: string, blogId: string, endDate: string, fetchBodies: boolean, labels: string, maxResults: number, orderBy: Blogger_posts_listOrderBy, pageToken: string, startDate: string, status: Array<PostStatus>, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_postUserInfos_list(userId: string, blogId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, labels: string | null | undefined, maxResults: number | null | undefined, orderBy: Blogger_posts_listOrderBy | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: Array<PostStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&fetchBodies=' + fetchBodies + '&labels=' + (labels == null ? '' : encodeURIComponent(labels)) + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&' + status.map(z => `status=${z}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -854,7 +854,7 @@ export namespace MyNS {
 		 * Get v3/users/{userId}/blogs/{blogId}/posts/{postId}
 		 * @return {void} Successful response
 		 */
-		Blogger_postUserInfos_get(userId: string, blogId: string, postId: string, maxComments: number): Observable<HttpResponse<string>> {
+		Blogger_postUserInfos_get(userId: string, blogId: string, postId: string, maxComments: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '&maxComments=' + maxComments, { observe: 'response', responseType: 'text' });
 		}
 	}

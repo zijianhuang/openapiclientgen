@@ -945,7 +945,7 @@ export namespace MyNS {
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
 		 * @return {ListAppsResult} Success
 		 */
-		ListApps(nextToken: string, maxResults: number): Observable<ListAppsResult> {
+		ListApps(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAppsResult> {
 			return this.http.get<ListAppsResult>(this.baseUri + 'apps?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -967,7 +967,7 @@ export namespace MyNS {
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
 		 * @return {ListBackendEnvironmentsResult} Success
 		 */
-		ListBackendEnvironments(appId: string, nextToken: string, maxResults: number): Observable<ListBackendEnvironmentsResult> {
+		ListBackendEnvironments(appId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListBackendEnvironmentsResult> {
 			return this.http.get<ListBackendEnvironmentsResult>(this.baseUri + 'apps/' + (appId == null ? '' : encodeURIComponent(appId)) + '/backendenvironments&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -989,7 +989,7 @@ export namespace MyNS {
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
 		 * @return {ListBranchesResult} Success
 		 */
-		ListBranches(appId: string, nextToken: string, maxResults: number): Observable<ListBranchesResult> {
+		ListBranches(appId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListBranchesResult> {
 			return this.http.get<ListBranchesResult>(this.baseUri + 'apps/' + (appId == null ? '' : encodeURIComponent(appId)) + '/branches&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1022,7 +1022,7 @@ export namespace MyNS {
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
 		 * @return {ListDomainAssociationsResult} Success
 		 */
-		ListDomainAssociations(appId: string, nextToken: string, maxResults: number): Observable<ListDomainAssociationsResult> {
+		ListDomainAssociations(appId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDomainAssociationsResult> {
 			return this.http.get<ListDomainAssociationsResult>(this.baseUri + 'apps/' + (appId == null ? '' : encodeURIComponent(appId)) + '/domains&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
 		 * @return {ListWebhooksResult} Success
 		 */
-		ListWebhooks(appId: string, nextToken: string, maxResults: number): Observable<ListWebhooksResult> {
+		ListWebhooks(appId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListWebhooksResult> {
 			return this.http.get<ListWebhooksResult>(this.baseUri + 'apps/' + (appId == null ? '' : encodeURIComponent(appId)) + '/webhooks&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1250,7 +1250,7 @@ export namespace MyNS {
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
 		 * @return {ListArtifactsResult} Success
 		 */
-		ListArtifacts(appId: string, branchName: string, jobId: string, nextToken: string, maxResults: number): Observable<ListArtifactsResult> {
+		ListArtifacts(appId: string, branchName: string, jobId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListArtifactsResult> {
 			return this.http.get<ListArtifactsResult>(this.baseUri + 'apps/' + (appId == null ? '' : encodeURIComponent(appId)) + '/branches/' + (branchName == null ? '' : encodeURIComponent(branchName)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/artifacts&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1263,7 +1263,7 @@ export namespace MyNS {
 		 * @param {number} maxResults  Maximum number of records to list in a single response. 
 		 * @return {ListJobsResult} Success
 		 */
-		ListJobs(appId: string, branchName: string, nextToken: string, maxResults: number): Observable<ListJobsResult> {
+		ListJobs(appId: string, branchName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListJobsResult> {
 			return this.http.get<ListJobsResult>(this.baseUri + 'apps/' + (appId == null ? '' : encodeURIComponent(appId)) + '/branches/' + (branchName == null ? '' : encodeURIComponent(branchName)) + '/jobs&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 

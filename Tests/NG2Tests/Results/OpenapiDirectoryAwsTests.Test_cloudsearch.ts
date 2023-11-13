@@ -1430,7 +1430,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeAnalysisSchemes(DomainName: string, AnalysisSchemeNames: Array<string>, Deployed: boolean, Action: GET_DescribeAnalysisSchemesAction, Version: GET_DescribeAnalysisSchemesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAnalysisSchemes(DomainName: string, AnalysisSchemeNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeAnalysisSchemesAction, Version: GET_DescribeAnalysisSchemesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAnalysisSchemes?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + AnalysisSchemeNames.map(z => `AnalysisSchemeNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeAvailabilityOptions(DomainName: string, Deployed: boolean, Action: GET_DescribeAvailabilityOptionsAction, Version: GET_DescribeAvailabilityOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAvailabilityOptions(DomainName: string, Deployed: boolean | null | undefined, Action: GET_DescribeAvailabilityOptionsAction, Version: GET_DescribeAvailabilityOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAvailabilityOptions?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeDomainEndpointOptions(DomainName: string, Deployed: boolean, Action: GET_DescribeDomainEndpointOptionsAction, Version: GET_DescribeDomainEndpointOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDomainEndpointOptions(DomainName: string, Deployed: boolean | null | undefined, Action: GET_DescribeDomainEndpointOptionsAction, Version: GET_DescribeDomainEndpointOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDomainEndpointOptions?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1462,7 +1462,7 @@ export namespace MyNS {
 		 * @param {Array<string>} DomainNames The names of the domains you want to include in the response.
 		 * @return {void} Success
 		 */
-		GET_DescribeDomains(DomainNames: Array<string>, Action: GET_DescribeDomainsAction, Version: GET_DescribeDomainsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDomains(DomainNames: Array<string> | null | undefined, Action: GET_DescribeDomainsAction, Version: GET_DescribeDomainsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDomains?' + DomainNames.map(z => `DomainNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1474,7 +1474,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeExpressions(DomainName: string, ExpressionNames: Array<string>, Deployed: boolean, Action: GET_DescribeExpressionsAction, Version: GET_DescribeExpressionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeExpressions(DomainName: string, ExpressionNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeExpressionsAction, Version: GET_DescribeExpressionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeExpressions?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + ExpressionNames.map(z => `ExpressionNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1486,7 +1486,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeIndexFields(DomainName: string, FieldNames: Array<string>, Deployed: boolean, Action: GET_DescribeIndexFieldsAction, Version: GET_DescribeIndexFieldsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeIndexFields(DomainName: string, FieldNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeIndexFieldsAction, Version: GET_DescribeIndexFieldsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeIndexFields?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + FieldNames.map(z => `FieldNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1506,7 +1506,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeServiceAccessPolicies(DomainName: string, Deployed: boolean, Action: GET_DescribeServiceAccessPoliciesAction, Version: GET_DescribeServiceAccessPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeServiceAccessPolicies(DomainName: string, Deployed: boolean | null | undefined, Action: GET_DescribeServiceAccessPoliciesAction, Version: GET_DescribeServiceAccessPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeServiceAccessPolicies?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1518,7 +1518,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeSuggesters(DomainName: string, SuggesterNames: Array<string>, Deployed: boolean, Action: GET_DescribeSuggestersAction, Version: GET_DescribeSuggestersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeSuggesters(DomainName: string, SuggesterNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeSuggestersAction, Version: GET_DescribeSuggestersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeSuggesters?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + SuggesterNames.map(z => `SuggesterNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 

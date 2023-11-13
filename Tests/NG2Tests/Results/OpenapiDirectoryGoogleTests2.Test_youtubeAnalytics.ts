@@ -354,7 +354,7 @@ export namespace MyNS {
 		 * linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		YoutubeAnalytics_groupItems_delete(id: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		YoutubeAnalytics_groupItems_delete(id: string | null | undefined, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v2/groupItems?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -375,7 +375,7 @@ export namespace MyNS {
 		 * linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		YoutubeAnalytics_groupItems_list(groupId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		YoutubeAnalytics_groupItems_list(groupId: string | null | undefined, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/groupItems?groupId=' + (groupId == null ? '' : encodeURIComponent(groupId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -394,7 +394,7 @@ export namespace MyNS {
 		 * linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		YoutubeAnalytics_groupItems_insert(onBehalfOfContentOwner: string, requestBody: GroupItem): Observable<HttpResponse<string>> {
+		YoutubeAnalytics_groupItems_insert(onBehalfOfContentOwner: string | null | undefined, requestBody: GroupItem): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/groupItems?onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -415,7 +415,7 @@ export namespace MyNS {
 		 * linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		YoutubeAnalytics_groups_delete(id: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		YoutubeAnalytics_groups_delete(id: string | null | undefined, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v2/groups?id=' + (id == null ? '' : encodeURIComponent(id)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -448,7 +448,7 @@ export namespace MyNS {
 		 * identifies the next page that can be retrieved.
 		 * @return {void} Successful response
 		 */
-		YoutubeAnalytics_groups_list(id: string, mine: boolean, onBehalfOfContentOwner: string, pageToken: string): Observable<HttpResponse<string>> {
+		YoutubeAnalytics_groups_list(id: string | null | undefined, mine: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/groups?id=' + (id == null ? '' : encodeURIComponent(id)) + '&mine=' + mine + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -467,7 +467,7 @@ export namespace MyNS {
 		 * linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		YoutubeAnalytics_groups_insert(onBehalfOfContentOwner: string, requestBody: Group): Observable<HttpResponse<string>> {
+		YoutubeAnalytics_groups_insert(onBehalfOfContentOwner: string | null | undefined, requestBody: Group): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/groups?onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -486,7 +486,7 @@ export namespace MyNS {
 		 * linked to the specified YouTube content owner.
 		 * @return {void} Successful response
 		 */
-		YoutubeAnalytics_groups_update(onBehalfOfContentOwner: string, requestBody: Group): Observable<HttpResponse<string>> {
+		YoutubeAnalytics_groups_update(onBehalfOfContentOwner: string | null | undefined, requestBody: Group): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v2/groups?onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -551,7 +551,7 @@ export namespace MyNS {
 		 * minValue: 1
 		 * @return {void} Successful response
 		 */
-		YoutubeAnalytics_reports_query(currency: string, dimensions: string, endDate: string, filters: string, ids: string, includeHistoricalChannelData: boolean, maxResults: number, metrics: string, sort: string, startDate: string, startIndex: number): Observable<HttpResponse<string>> {
+		YoutubeAnalytics_reports_query(currency: string | null | undefined, dimensions: string | null | undefined, endDate: string | null | undefined, filters: string | null | undefined, ids: string | null | undefined, includeHistoricalChannelData: boolean | null | undefined, maxResults: number | null | undefined, metrics: string | null | undefined, sort: string | null | undefined, startDate: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/reports?currency=' + (currency == null ? '' : encodeURIComponent(currency)) + '&dimensions=' + (dimensions == null ? '' : encodeURIComponent(dimensions)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&ids=' + (ids == null ? '' : encodeURIComponent(ids)) + '&includeHistoricalChannelData=' + includeHistoricalChannelData + '&maxResults=' + maxResults + '&metrics=' + (metrics == null ? '' : encodeURIComponent(metrics)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 	}

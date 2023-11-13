@@ -4390,7 +4390,7 @@ export namespace MyNS {
 		 * extensions.
 		 * @return {void} Successful response
 		 */
-		Dlp_infoTypes_list(filter: string, languageCode: string, locationId: string): Observable<HttpResponse<string>> {
+		Dlp_infoTypes_list(filter: string | null | undefined, languageCode: string | null | undefined, locationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/infoTypes?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4408,7 +4408,7 @@ export namespace MyNS {
 		 * en-US strings will be returned.
 		 * @return {void} Successful response
 		 */
-		Dlp_locations_infoTypes_list(locationId: string, filter: string, languageCode: string): Observable<HttpResponse<string>> {
+		Dlp_locations_infoTypes_list(locationId: string, filter: string | null | undefined, languageCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/infoTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4574,7 +4574,7 @@ export namespace MyNS {
 		 * to `ListDeidentifyTemplates`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_deidentifyTemplates_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_deidentifyTemplates_list(parent: string, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/deidentifyTemplates&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4638,7 +4638,7 @@ export namespace MyNS {
 		 * @param {GooglePrivacyDlpV2DlpJobType} type The type of job. Defaults to `DlpJobType.INSPECT`
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_dlpJobs_list(parent: string, filter: string, locationId: string, orderBy: string, pageSize: number, pageToken: string, type: GooglePrivacyDlpV2DlpJobType): Observable<HttpResponse<string>> {
+		Dlp_projects_dlpJobs_list(parent: string, filter: string | null | undefined, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, type: GooglePrivacyDlpV2DlpJobType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/dlpJobs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4697,7 +4697,7 @@ export namespace MyNS {
 		 * to `ListInspectTemplates`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_inspectTemplates_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_inspectTemplates_list(parent: string, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/inspectTemplates&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4758,7 +4758,7 @@ export namespace MyNS {
 		 * change for subsequent calls.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_jobTriggers_list(parent: string, filter: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_jobTriggers_list(parent: string, filter: string | null | undefined, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/jobTriggers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4852,7 +4852,7 @@ export namespace MyNS {
 		 * to `ListDeidentifyTemplates`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_deidentifyTemplates_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_deidentifyTemplates_list(parent: string, locationId: string, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/deidentifyTemplates&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4918,7 +4918,7 @@ export namespace MyNS {
 		 * @param {GooglePrivacyDlpV2DlpJobType} type The type of job. Defaults to `DlpJobType.INSPECT`
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_dlpJobs_list(parent: string, locationId: string, filter: string, orderBy: string, pageSize: number, pageToken: string, type: GooglePrivacyDlpV2DlpJobType): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_dlpJobs_list(parent: string, locationId: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, type: GooglePrivacyDlpV2DlpJobType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/dlpJobs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4982,7 +4982,7 @@ export namespace MyNS {
 		 * to `ListInspectTemplates`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_inspectTemplates_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_inspectTemplates_list(parent: string, locationId: string, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/inspectTemplates&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5045,7 +5045,7 @@ export namespace MyNS {
 		 * change for subsequent calls.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_jobTriggers_list(parent: string, locationId: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_jobTriggers_list(parent: string, locationId: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/jobTriggers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5089,7 +5089,7 @@ export namespace MyNS {
 		 * to `ListStoredInfoTypes`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_storedInfoTypes_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_storedInfoTypes_list(parent: string, locationId: string, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/storedInfoTypes&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5134,7 +5134,7 @@ export namespace MyNS {
 		 * to `ListStoredInfoTypes`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_storedInfoTypes_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_storedInfoTypes_list(parent: string, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/storedInfoTypes&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

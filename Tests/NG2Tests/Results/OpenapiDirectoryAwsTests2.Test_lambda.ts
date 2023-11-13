@@ -829,7 +829,7 @@ export namespace MyNS {
 		 * @param {string} RevisionId Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.
 		 * @return {void} 
 		 */
-		AddLayerVersionPermission(LayerName: string, VersionNumber: number, RevisionId: string, requestBody: AddLayerVersionPermissionPostBody): Observable<HttpResponse<string>> {
+		AddLayerVersionPermission(LayerName: string, VersionNumber: number, RevisionId: string | null | undefined, requestBody: AddLayerVersionPermissionPostBody): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + '2018-10-31/layers/' + (LayerName == null ? '' : encodeURIComponent(LayerName)) + '/versions/' + VersionNumber + '/policy&RevisionId=' + (RevisionId == null ? '' : encodeURIComponent(RevisionId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -851,7 +851,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier Specify a version or alias to add permissions to a published version of the function.
 		 * @return {void} 
 		 */
-		AddPermission(FunctionName: string, Qualifier: string, requestBody: AddPermissionPostBody): Observable<HttpResponse<string>> {
+		AddPermission(FunctionName: string, Qualifier: string | null | undefined, requestBody: AddPermissionPostBody): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/policy&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -862,7 +862,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier Specify a version or alias to get the policy for that resource.
 		 * @return {GetPolicyResponse} Success
 		 */
-		GetPolicy(FunctionName: string, Qualifier: string): Observable<GetPolicyResponse> {
+		GetPolicy(FunctionName: string, Qualifier: string | null | undefined): Observable<GetPolicyResponse> {
 			return this.http.get<GetPolicyResponse>(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/policy&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), {});
 		}
 
@@ -885,7 +885,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems Limit the number of aliases returned.
 		 * @return {ListAliasesResponse} Success
 		 */
-		ListAliases(FunctionName: string, FunctionVersion: string, Marker: string, MaxItems: number): Observable<ListAliasesResponse> {
+		ListAliases(FunctionName: string, FunctionVersion: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListAliasesResponse> {
 			return this.http.get<ListAliasesResponse>(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/aliases&FunctionVersion=' + (FunctionVersion == null ? '' : encodeURIComponent(FunctionVersion)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems, {});
 		}
 
@@ -907,7 +907,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of event source mappings to return.
 		 * @return {ListEventSourceMappingsResponse} Success
 		 */
-		ListEventSourceMappings(EventSourceArn: string, FunctionName: string, Marker: string, MaxItems: number): Observable<ListEventSourceMappingsResponse> {
+		ListEventSourceMappings(EventSourceArn: string | null | undefined, FunctionName: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListEventSourceMappingsResponse> {
 			return this.http.get<ListEventSourceMappingsResponse>(this.baseUri + '2015-03-31/event-source-mappings/?EventSourceArn=' + (EventSourceArn == null ? '' : encodeURIComponent(EventSourceArn)) + '&FunctionName=' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems, {});
 		}
 
@@ -990,7 +990,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier Specify a version to delete. You can't delete a version that's referenced by an alias.
 		 * @return {void} 
 		 */
-		DeleteFunction(FunctionName: string, Qualifier: string): Observable<HttpResponse<string>> {
+		DeleteFunction(FunctionName: string, Qualifier: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1001,7 +1001,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier Specify a version or alias to get details about a published version of the function.
 		 * @return {GetFunctionResponse} Success
 		 */
-		GetFunction(FunctionName: string, Qualifier: string): Observable<GetFunctionResponse> {
+		GetFunction(FunctionName: string, Qualifier: string | null | undefined): Observable<GetFunctionResponse> {
 			return this.http.get<GetFunctionResponse>(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), {});
 		}
 
@@ -1032,7 +1032,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier A version number or alias name.
 		 * @return {void} 
 		 */
-		DeleteFunctionEventInvokeConfig(FunctionName: string, Qualifier: string): Observable<HttpResponse<string>> {
+		DeleteFunctionEventInvokeConfig(FunctionName: string, Qualifier: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + '2019-09-25/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/event-invoke-config&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1043,7 +1043,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier A version number or alias name.
 		 * @return {FunctionEventInvokeConfig} Success
 		 */
-		GetFunctionEventInvokeConfig(FunctionName: string, Qualifier: string): Observable<FunctionEventInvokeConfig> {
+		GetFunctionEventInvokeConfig(FunctionName: string, Qualifier: string | null | undefined): Observable<FunctionEventInvokeConfig> {
 			return this.http.get<FunctionEventInvokeConfig>(this.baseUri + '2019-09-25/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/event-invoke-config&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), {});
 		}
 
@@ -1054,7 +1054,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier A version number or alias name.
 		 * @return {FunctionEventInvokeConfig} Success
 		 */
-		PutFunctionEventInvokeConfig(FunctionName: string, Qualifier: string, requestBody: PutFunctionEventInvokeConfigPutBody): Observable<FunctionEventInvokeConfig> {
+		PutFunctionEventInvokeConfig(FunctionName: string, Qualifier: string | null | undefined, requestBody: PutFunctionEventInvokeConfigPutBody): Observable<FunctionEventInvokeConfig> {
 			return this.http.put<FunctionEventInvokeConfig>(this.baseUri + '2019-09-25/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/event-invoke-config&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1065,7 +1065,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier A version number or alias name.
 		 * @return {FunctionEventInvokeConfig} Success
 		 */
-		UpdateFunctionEventInvokeConfig(FunctionName: string, Qualifier: string, requestBody: UpdateFunctionEventInvokeConfigPostBody): Observable<FunctionEventInvokeConfig> {
+		UpdateFunctionEventInvokeConfig(FunctionName: string, Qualifier: string | null | undefined, requestBody: UpdateFunctionEventInvokeConfigPostBody): Observable<FunctionEventInvokeConfig> {
 			return this.http.post<FunctionEventInvokeConfig>(this.baseUri + '2019-09-25/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/event-invoke-config&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1150,7 +1150,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier Specify a version or alias to get details about a published version of the function.
 		 * @return {FunctionConfiguration} Success
 		 */
-		GetFunctionConfiguration(FunctionName: string, Qualifier: string): Observable<FunctionConfiguration> {
+		GetFunctionConfiguration(FunctionName: string, Qualifier: string | null | undefined): Observable<FunctionConfiguration> {
 			return this.http.get<FunctionConfiguration>(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/configuration&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), {});
 		}
 
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 		 * @param {string} Qualifier Specify a version or alias to invoke a published version of the function.
 		 * @return {InvocationResponse} Success
 		 */
-		Invoke(FunctionName: string, Qualifier: string, requestBody: InvokePostBody): Observable<InvocationResponse> {
+		Invoke(FunctionName: string, Qualifier: string | null | undefined, requestBody: InvokePostBody): Observable<InvocationResponse> {
 			return this.http.post<InvocationResponse>(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/invocations&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1203,7 +1203,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of configurations to return.
 		 * @return {ListFunctionEventInvokeConfigsResponse} Success
 		 */
-		ListFunctionEventInvokeConfigs(FunctionName: string, Marker: string, MaxItems: number): Observable<ListFunctionEventInvokeConfigsResponse> {
+		ListFunctionEventInvokeConfigs(FunctionName: string, Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListFunctionEventInvokeConfigsResponse> {
 			return this.http.get<ListFunctionEventInvokeConfigsResponse>(this.baseUri + '2019-09-25/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/event-invoke-config/list&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems, {});
 		}
 
@@ -1216,7 +1216,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of functions to return.
 		 * @return {ListFunctionsResponse} Success
 		 */
-		ListFunctions(MasterRegion: string, FunctionVersion: FunctionVersion, Marker: string, MaxItems: number): Observable<ListFunctionsResponse> {
+		ListFunctions(MasterRegion: string | null | undefined, FunctionVersion: FunctionVersion | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListFunctionsResponse> {
 			return this.http.get<ListFunctionsResponse>(this.baseUri + '2015-03-31/functions/?MasterRegion=' + (MasterRegion == null ? '' : encodeURIComponent(MasterRegion)) + '&FunctionVersion=' + FunctionVersion + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems, {});
 		}
 
@@ -1229,7 +1229,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of versions to return.
 		 * @return {ListLayerVersionsResponse} Success
 		 */
-		ListLayerVersions(CompatibleRuntime: ListLayerVersionsCompatibleRuntime, LayerName: string, Marker: string, MaxItems: number): Observable<ListLayerVersionsResponse> {
+		ListLayerVersions(CompatibleRuntime: ListLayerVersionsCompatibleRuntime | null | undefined, LayerName: string, Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListLayerVersionsResponse> {
 			return this.http.get<ListLayerVersionsResponse>(this.baseUri + '2018-10-31/layers/' + (LayerName == null ? '' : encodeURIComponent(LayerName)) + '/versions?CompatibleRuntime=' + CompatibleRuntime + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems, {});
 		}
 
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of layers to return.
 		 * @return {ListLayersResponse} Success
 		 */
-		ListLayers(CompatibleRuntime: ListLayersCompatibleRuntime, Marker: string, MaxItems: number): Observable<ListLayersResponse> {
+		ListLayers(CompatibleRuntime: ListLayersCompatibleRuntime | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListLayersResponse> {
 			return this.http.get<ListLayersResponse>(this.baseUri + '2018-10-31/layers?CompatibleRuntime=' + CompatibleRuntime + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems, {});
 		}
 
@@ -1263,7 +1263,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems Specify a number to limit the number of configurations returned.
 		 * @return {ListProvisionedConcurrencyConfigsResponse} Success
 		 */
-		ListProvisionedConcurrencyConfigs(FunctionName: string, Marker: string, MaxItems: number, List: FunctionVersion): Observable<ListProvisionedConcurrencyConfigsResponse> {
+		ListProvisionedConcurrencyConfigs(FunctionName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, List: FunctionVersion): Observable<ListProvisionedConcurrencyConfigsResponse> {
 			return this.http.get<ListProvisionedConcurrencyConfigsResponse>(this.baseUri + '2019-09-30/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/provisioned-concurrency#List=ALL&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&List=' + List, {});
 		}
 
@@ -1295,7 +1295,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of versions to return.
 		 * @return {ListVersionsByFunctionResponse} Success
 		 */
-		ListVersionsByFunction(FunctionName: string, Marker: string, MaxItems: number): Observable<ListVersionsByFunctionResponse> {
+		ListVersionsByFunction(FunctionName: string, Marker: string | null | undefined, MaxItems: number | null | undefined): Observable<ListVersionsByFunctionResponse> {
 			return this.http.get<ListVersionsByFunctionResponse>(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/versions&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems, {});
 		}
 
@@ -1318,7 +1318,7 @@ export namespace MyNS {
 		 * @param {string} RevisionId Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.
 		 * @return {void} 
 		 */
-		RemoveLayerVersionPermission(LayerName: string, VersionNumber: number, StatementId: string, RevisionId: string): Observable<HttpResponse<string>> {
+		RemoveLayerVersionPermission(LayerName: string, VersionNumber: number, StatementId: string, RevisionId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + '2018-10-31/layers/' + (LayerName == null ? '' : encodeURIComponent(LayerName)) + '/versions/' + VersionNumber + '/policy/' + (StatementId == null ? '' : encodeURIComponent(StatementId)) + '&RevisionId=' + (RevisionId == null ? '' : encodeURIComponent(RevisionId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1331,7 +1331,7 @@ export namespace MyNS {
 		 * @param {string} RevisionId Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.
 		 * @return {void} 
 		 */
-		RemovePermission(FunctionName: string, StatementId: string, Qualifier: string, RevisionId: string): Observable<HttpResponse<string>> {
+		RemovePermission(FunctionName: string, StatementId: string, Qualifier: string | null | undefined, RevisionId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + '2015-03-31/functions/' + (FunctionName == null ? '' : encodeURIComponent(FunctionName)) + '/policy/' + (StatementId == null ? '' : encodeURIComponent(StatementId)) + '&Qualifier=' + (Qualifier == null ? '' : encodeURIComponent(Qualifier)) + '&RevisionId=' + (RevisionId == null ? '' : encodeURIComponent(RevisionId)), { observe: 'response', responseType: 'text' });
 		}
 

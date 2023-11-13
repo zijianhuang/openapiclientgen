@@ -1997,7 +1997,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetOfferingStatusResult} Success
 		 */
-		GetOfferingStatus(nextToken: string, requestBody: GetOfferingStatusRequest): Observable<GetOfferingStatusResult> {
+		GetOfferingStatus(nextToken: string | null | undefined, requestBody: GetOfferingStatusRequest): Observable<GetOfferingStatusResult> {
 			return this.http.post<GetOfferingStatusResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.GetOfferingStatus?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2097,7 +2097,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListArtifactsResult} Success
 		 */
-		ListArtifacts(nextToken: string, requestBody: ListArtifactsRequest): Observable<ListArtifactsResult> {
+		ListArtifacts(nextToken: string | null | undefined, requestBody: ListArtifactsRequest): Observable<ListArtifactsResult> {
 			return this.http.post<ListArtifactsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListArtifacts?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2116,7 +2116,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDevicePoolsResult} Success
 		 */
-		ListDevicePools(nextToken: string, requestBody: ListDevicePoolsRequest): Observable<ListDevicePoolsResult> {
+		ListDevicePools(nextToken: string | null | undefined, requestBody: ListDevicePoolsRequest): Observable<ListDevicePoolsResult> {
 			return this.http.post<ListDevicePoolsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListDevicePools?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2126,7 +2126,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDevicesResult} Success
 		 */
-		ListDevices(nextToken: string, requestBody: ListDevicesRequest): Observable<ListDevicesResult> {
+		ListDevices(nextToken: string | null | undefined, requestBody: ListDevicesRequest): Observable<ListDevicesResult> {
 			return this.http.post<ListDevicesResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListDevices?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2145,7 +2145,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListJobsResult} Success
 		 */
-		ListJobs(nextToken: string, requestBody: ListJobsRequest): Observable<ListJobsResult> {
+		ListJobs(nextToken: string | null | undefined, requestBody: ListJobsRequest): Observable<ListJobsResult> {
 			return this.http.post<ListJobsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListJobs?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2173,7 +2173,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListOfferingTransactionsResult} Success
 		 */
-		ListOfferingTransactions(nextToken: string, requestBody: ListOfferingTransactionsRequest): Observable<ListOfferingTransactionsResult> {
+		ListOfferingTransactions(nextToken: string | null | undefined, requestBody: ListOfferingTransactionsRequest): Observable<ListOfferingTransactionsResult> {
 			return this.http.post<ListOfferingTransactionsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListOfferingTransactions?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2183,7 +2183,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListOfferingsResult} Success
 		 */
-		ListOfferings(nextToken: string, requestBody: ListOfferingsRequest): Observable<ListOfferingsResult> {
+		ListOfferings(nextToken: string | null | undefined, requestBody: ListOfferingsRequest): Observable<ListOfferingsResult> {
 			return this.http.post<ListOfferingsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListOfferings?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2193,7 +2193,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListProjectsResult} Success
 		 */
-		ListProjects(nextToken: string, requestBody: ListProjectsRequest): Observable<ListProjectsResult> {
+		ListProjects(nextToken: string | null | undefined, requestBody: ListProjectsRequest): Observable<ListProjectsResult> {
 			return this.http.post<ListProjectsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListProjects?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2212,7 +2212,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRunsResult} Success
 		 */
-		ListRuns(nextToken: string, requestBody: ListRunsRequest): Observable<ListRunsResult> {
+		ListRuns(nextToken: string | null | undefined, requestBody: ListRunsRequest): Observable<ListRunsResult> {
 			return this.http.post<ListRunsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListRuns?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2222,7 +2222,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSamplesResult} Success
 		 */
-		ListSamples(nextToken: string, requestBody: ListSamplesRequest): Observable<ListSamplesResult> {
+		ListSamples(nextToken: string | null | undefined, requestBody: ListSamplesRequest): Observable<ListSamplesResult> {
 			return this.http.post<ListSamplesResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListSamples?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2232,7 +2232,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSuitesResult} Success
 		 */
-		ListSuites(nextToken: string, requestBody: ListSuitesRequest): Observable<ListSuitesResult> {
+		ListSuites(nextToken: string | null | undefined, requestBody: ListSuitesRequest): Observable<ListSuitesResult> {
 			return this.http.post<ListSuitesResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListSuites?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2252,7 +2252,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestGridProjectsResult} Success
 		 */
-		ListTestGridProjects(maxResult: string, nextToken: string, requestBody: ListTestGridProjectsRequest): Observable<ListTestGridProjectsResult> {
+		ListTestGridProjects(maxResult: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTestGridProjectsRequest): Observable<ListTestGridProjectsResult> {
 			return this.http.post<ListTestGridProjectsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTestGridProjects?maxResult=' + (maxResult == null ? '' : encodeURIComponent(maxResult)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2263,7 +2263,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestGridSessionActionsResult} Success
 		 */
-		ListTestGridSessionActions(maxResult: string, nextToken: string, requestBody: ListTestGridSessionActionsRequest): Observable<ListTestGridSessionActionsResult> {
+		ListTestGridSessionActions(maxResult: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTestGridSessionActionsRequest): Observable<ListTestGridSessionActionsResult> {
 			return this.http.post<ListTestGridSessionActionsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTestGridSessionActions?maxResult=' + (maxResult == null ? '' : encodeURIComponent(maxResult)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2274,7 +2274,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestGridSessionArtifactsResult} Success
 		 */
-		ListTestGridSessionArtifacts(maxResult: string, nextToken: string, requestBody: ListTestGridSessionArtifactsRequest): Observable<ListTestGridSessionArtifactsResult> {
+		ListTestGridSessionArtifacts(maxResult: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTestGridSessionArtifactsRequest): Observable<ListTestGridSessionArtifactsResult> {
 			return this.http.post<ListTestGridSessionArtifactsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTestGridSessionArtifacts?maxResult=' + (maxResult == null ? '' : encodeURIComponent(maxResult)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2285,7 +2285,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestGridSessionsResult} Success
 		 */
-		ListTestGridSessions(maxResult: string, nextToken: string, requestBody: ListTestGridSessionsRequest): Observable<ListTestGridSessionsResult> {
+		ListTestGridSessions(maxResult: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTestGridSessionsRequest): Observable<ListTestGridSessionsResult> {
 			return this.http.post<ListTestGridSessionsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTestGridSessions?maxResult=' + (maxResult == null ? '' : encodeURIComponent(maxResult)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2295,7 +2295,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestsResult} Success
 		 */
-		ListTests(nextToken: string, requestBody: ListTestsRequest): Observable<ListTestsResult> {
+		ListTests(nextToken: string | null | undefined, requestBody: ListTestsRequest): Observable<ListTestsResult> {
 			return this.http.post<ListTestsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTests?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2305,7 +2305,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListUniqueProblemsResult} Success
 		 */
-		ListUniqueProblems(nextToken: string, requestBody: ListUniqueProblemsRequest): Observable<ListUniqueProblemsResult> {
+		ListUniqueProblems(nextToken: string | null | undefined, requestBody: ListUniqueProblemsRequest): Observable<ListUniqueProblemsResult> {
 			return this.http.post<ListUniqueProblemsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListUniqueProblems?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2315,7 +2315,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListUploadsResult} Success
 		 */
-		ListUploads(nextToken: string, requestBody: ListUploadsRequest): Observable<ListUploadsResult> {
+		ListUploads(nextToken: string | null | undefined, requestBody: ListUploadsRequest): Observable<ListUploadsResult> {
 			return this.http.post<ListUploadsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListUploads?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

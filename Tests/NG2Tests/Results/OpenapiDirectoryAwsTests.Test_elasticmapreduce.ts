@@ -1570,7 +1570,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListBootstrapActionsOutput} Success
 		 */
-		ListBootstrapActions(Marker: string, requestBody: ListBootstrapActionsInput): Observable<ListBootstrapActionsOutput> {
+		ListBootstrapActions(Marker: string | null | undefined, requestBody: ListBootstrapActionsInput): Observable<ListBootstrapActionsOutput> {
 			return this.http.post<ListBootstrapActionsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListBootstrapActions?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1580,7 +1580,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListClustersOutput} Success
 		 */
-		ListClusters(Marker: string, requestBody: ListClustersInput): Observable<ListClustersOutput> {
+		ListClusters(Marker: string | null | undefined, requestBody: ListClustersInput): Observable<ListClustersOutput> {
 			return this.http.post<ListClustersOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListClusters?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListInstanceFleetsOutput} Success
 		 */
-		ListInstanceFleets(Marker: string, requestBody: ListInstanceFleetsInput): Observable<ListInstanceFleetsOutput> {
+		ListInstanceFleets(Marker: string | null | undefined, requestBody: ListInstanceFleetsInput): Observable<ListInstanceFleetsOutput> {
 			return this.http.post<ListInstanceFleetsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListInstanceFleets?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1600,7 +1600,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListInstanceGroupsOutput} Success
 		 */
-		ListInstanceGroups(Marker: string, requestBody: ListInstanceGroupsInput): Observable<ListInstanceGroupsOutput> {
+		ListInstanceGroups(Marker: string | null | undefined, requestBody: ListInstanceGroupsInput): Observable<ListInstanceGroupsOutput> {
 			return this.http.post<ListInstanceGroupsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListInstanceGroups?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListInstancesOutput} Success
 		 */
-		ListInstances(Marker: string, requestBody: ListInstancesInput): Observable<ListInstancesOutput> {
+		ListInstances(Marker: string | null | undefined, requestBody: ListInstancesInput): Observable<ListInstancesOutput> {
 			return this.http.post<ListInstancesOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListInstances?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListSecurityConfigurationsOutput} Success
 		 */
-		ListSecurityConfigurations(Marker: string, requestBody: ListSecurityConfigurationsInput): Observable<ListSecurityConfigurationsOutput> {
+		ListSecurityConfigurations(Marker: string | null | undefined, requestBody: ListSecurityConfigurationsInput): Observable<ListSecurityConfigurationsOutput> {
 			return this.http.post<ListSecurityConfigurationsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListSecurityConfigurations?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1630,7 +1630,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListStepsOutput} Success
 		 */
-		ListSteps(Marker: string, requestBody: ListStepsInput): Observable<ListStepsOutput> {
+		ListSteps(Marker: string | null | undefined, requestBody: ListStepsInput): Observable<ListStepsOutput> {
 			return this.http.post<ListStepsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListSteps?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -5378,7 +5378,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounts_custombatch(dryRun: boolean, requestBody: AccountsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_accounts_custombatch(dryRun: boolean | null | undefined, requestBody: AccountsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'accounts/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5397,7 +5397,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounttax_custombatch(dryRun: boolean, requestBody: AccounttaxCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_accounttax_custombatch(dryRun: boolean | null | undefined, requestBody: AccounttaxCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'accounttax/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5407,7 +5407,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_custombatch(dryRun: boolean, requestBody: DatafeedsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_datafeeds_custombatch(dryRun: boolean | null | undefined, requestBody: DatafeedsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'datafeeds/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5426,7 +5426,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_inventory_custombatch(dryRun: boolean, requestBody: InventoryCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_inventory_custombatch(dryRun: boolean | null | undefined, requestBody: InventoryCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'inventory/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5436,7 +5436,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_liasettings_custombatch(dryRun: boolean, requestBody: LiasettingsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_liasettings_custombatch(dryRun: boolean | null | undefined, requestBody: LiasettingsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'liasettings/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5464,7 +5464,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_custombatch(dryRun: boolean, requestBody: PosCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_pos_custombatch(dryRun: boolean | null | undefined, requestBody: PosCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'pos/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5474,7 +5474,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_products_custombatch(dryRun: boolean, requestBody: ProductsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_products_custombatch(dryRun: boolean | null | undefined, requestBody: ProductsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'products/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5484,7 +5484,7 @@ export namespace MyNS {
 		 * @param {boolean} includeAttributes Flag to include full product data in the results of this request. The default value is false.
 		 * @return {void} Successful response
 		 */
-		Content_productstatuses_custombatch(includeAttributes: boolean, requestBody: ProductstatusesCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_productstatuses_custombatch(includeAttributes: boolean | null | undefined, requestBody: ProductstatusesCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'productstatuses/batch?includeAttributes=' + includeAttributes, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5494,7 +5494,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_shippingsettings_custombatch(dryRun: boolean, requestBody: ShippingsettingsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_shippingsettings_custombatch(dryRun: boolean | null | undefined, requestBody: ShippingsettingsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'shippingsettings/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5506,7 +5506,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_accounts_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_accounts_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5517,7 +5517,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounts_insert(merchantId: string, dryRun: boolean, requestBody: Account): Observable<HttpResponse<string>> {
+		Content_accounts_insert(merchantId: string, dryRun: boolean | null | undefined, requestBody: Account): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5530,7 +5530,7 @@ export namespace MyNS {
 		 * @param {boolean} force Flag to delete sub-accounts with products. The default value is false.
 		 * @return {void} Successful response
 		 */
-		Content_accounts_delete(merchantId: string, accountId: string, dryRun: boolean, force: boolean): Observable<HttpResponse<string>> {
+		Content_accounts_delete(merchantId: string, accountId: string, dryRun: boolean | null | undefined, force: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '&force=' + force + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5553,7 +5553,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounts_update(merchantId: string, accountId: string, dryRun: boolean, requestBody: Account): Observable<HttpResponse<string>> {
+		Content_accounts_update(merchantId: string, accountId: string, dryRun: boolean | null | undefined, requestBody: Account): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5565,7 +5565,7 @@ export namespace MyNS {
 		 * @param {boolean} overwrite Only available to selected merchants. When set to True, this flag removes any existing claim on the requested website by another account and replaces it with a claim from this account.
 		 * @return {void} Successful response
 		 */
-		Content_accounts_claimwebsite(merchantId: string, accountId: string, overwrite: boolean): Observable<HttpResponse<string>> {
+		Content_accounts_claimwebsite(merchantId: string, accountId: string, overwrite: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/claimwebsite&overwrite=' + overwrite + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5589,7 +5589,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_accountstatuses_list(merchantId: string, destinations: Array<string>, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_accountstatuses_list(merchantId: string, destinations: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accountstatuses&' + destinations.map(z => `destinations=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5601,7 +5601,7 @@ export namespace MyNS {
 		 * @param {Array<string>} destinations If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
 		 * @return {void} Successful response
 		 */
-		Content_accountstatuses_get(merchantId: string, accountId: string, destinations: Array<string>): Observable<HttpResponse<string>> {
+		Content_accountstatuses_get(merchantId: string, accountId: string, destinations: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accountstatuses/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&' + destinations.map(z => `destinations=${encodeURIComponent(z)}`).join('&') + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5613,7 +5613,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_accounttax_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_accounttax_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounttax&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5636,7 +5636,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounttax_update(merchantId: string, accountId: string, dryRun: boolean, requestBody: AccountTax): Observable<HttpResponse<string>> {
+		Content_accounttax_update(merchantId: string, accountId: string, dryRun: boolean | null | undefined, requestBody: AccountTax): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounttax/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5648,7 +5648,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_datafeeds_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5659,7 +5659,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_insert(merchantId: string, dryRun: boolean, requestBody: Datafeed): Observable<HttpResponse<string>> {
+		Content_datafeeds_insert(merchantId: string, dryRun: boolean | null | undefined, requestBody: Datafeed): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5671,7 +5671,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_delete(merchantId: string, datafeedId: string, dryRun: boolean): Observable<HttpResponse<string>> {
+		Content_datafeeds_delete(merchantId: string, datafeedId: string, dryRun: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds/' + (datafeedId == null ? '' : encodeURIComponent(datafeedId)) + '&dryRun=' + dryRun + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5694,7 +5694,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_update(merchantId: string, datafeedId: string, dryRun: boolean, requestBody: Datafeed): Observable<HttpResponse<string>> {
+		Content_datafeeds_update(merchantId: string, datafeedId: string, dryRun: boolean | null | undefined, requestBody: Datafeed): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds/' + (datafeedId == null ? '' : encodeURIComponent(datafeedId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5706,7 +5706,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_fetchnow(merchantId: string, datafeedId: string, dryRun: boolean): Observable<HttpResponse<string>> {
+		Content_datafeeds_fetchnow(merchantId: string, datafeedId: string, dryRun: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds/' + (datafeedId == null ? '' : encodeURIComponent(datafeedId)) + '/fetchNow&dryRun=' + dryRun + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5718,7 +5718,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_datafeedstatuses_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_datafeedstatuses_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeedstatuses&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5731,7 +5731,7 @@ export namespace MyNS {
 		 * @param {string} language The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
 		 * @return {void} Successful response
 		 */
-		Content_datafeedstatuses_get(merchantId: string, datafeedId: string, country: string, language: string): Observable<HttpResponse<string>> {
+		Content_datafeedstatuses_get(merchantId: string, datafeedId: string, country: string | null | undefined, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeedstatuses/' + (datafeedId == null ? '' : encodeURIComponent(datafeedId)) + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5744,7 +5744,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_inventory_set(merchantId: string, storeCode: string, productId: string, dryRun: boolean, requestBody: InventorySetRequest): Observable<HttpResponse<string>> {
+		Content_inventory_set(merchantId: string, storeCode: string, productId: string, dryRun: boolean | null | undefined, requestBody: InventorySetRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/inventory/' + (storeCode == null ? '' : encodeURIComponent(storeCode)) + '/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5756,7 +5756,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_liasettings_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_liasettings_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/liasettings&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5779,7 +5779,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_liasettings_update(merchantId: string, accountId: string, dryRun: boolean, requestBody: LiaSettings): Observable<HttpResponse<string>> {
+		Content_liasettings_update(merchantId: string, accountId: string, dryRun: boolean | null | undefined, requestBody: LiaSettings): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/liasettings/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5843,7 +5843,7 @@ export namespace MyNS {
 		 * @param {string} posExternalAccountId The account ID by which this merchant is known to the POS data provider.
 		 * @return {void} Successful response
 		 */
-		Content_liasettings_setposdataprovider(merchantId: string, accountId: string, country: string, posDataProviderId: string, posExternalAccountId: string): Observable<HttpResponse<string>> {
+		Content_liasettings_setposdataprovider(merchantId: string, accountId: string, country: string, posDataProviderId: string | null | undefined, posExternalAccountId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/liasettings/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/setposdataprovider&country=' + (country == null ? '' : encodeURIComponent(country)) + '&posDataProviderId=' + (posDataProviderId == null ? '' : encodeURIComponent(posDataProviderId)) + '&posExternalAccountId=' + (posExternalAccountId == null ? '' : encodeURIComponent(posExternalAccountId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5879,7 +5879,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_orderreports_listdisbursements(merchantId: string, disbursementStartDate: string, disbursementEndDate: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_orderreports_listdisbursements(merchantId: string, disbursementStartDate: string, disbursementEndDate: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/orderreports/disbursements&disbursementStartDate=' + (disbursementStartDate == null ? '' : encodeURIComponent(disbursementStartDate)) + '&disbursementEndDate=' + (disbursementEndDate == null ? '' : encodeURIComponent(disbursementEndDate)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5894,7 +5894,7 @@ export namespace MyNS {
 		 * @param {string} transactionEndDate The last date in which transaction occurred. In ISO 8601 format. Default: current date.
 		 * @return {void} Successful response
 		 */
-		Content_orderreports_listtransactions(merchantId: string, disbursementId: string, transactionStartDate: string, maxResults: number, pageToken: string, transactionEndDate: string): Observable<HttpResponse<string>> {
+		Content_orderreports_listtransactions(merchantId: string, disbursementId: string, transactionStartDate: string, maxResults: number | null | undefined, pageToken: string | null | undefined, transactionEndDate: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/orderreports/disbursements/' + (disbursementId == null ? '' : encodeURIComponent(disbursementId)) + '/transactions&transactionStartDate=' + (transactionStartDate == null ? '' : encodeURIComponent(transactionStartDate)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&transactionEndDate=' + (transactionEndDate == null ? '' : encodeURIComponent(transactionEndDate)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5909,7 +5909,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_orderreturns_list(merchantId: string, createdEndDate: string, createdStartDate: string, maxResults: number, orderBy: Content_orderreturns_listOrderBy, pageToken: string): Observable<HttpResponse<string>> {
+		Content_orderreturns_list(merchantId: string, createdEndDate: string | null | undefined, createdStartDate: string | null | undefined, maxResults: number | null | undefined, orderBy: Content_orderreturns_listOrderBy | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/orderreturns&createdEndDate=' + (createdEndDate == null ? '' : encodeURIComponent(createdEndDate)) + '&createdStartDate=' + (createdStartDate == null ? '' : encodeURIComponent(createdStartDate)) + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5941,7 +5941,7 @@ export namespace MyNS {
 		 * @param {Array<string>} statuses Obtains orders that match any of the specified statuses. Please note that active is a shortcut for pendingShipment and partiallyShipped, and completed is a shortcut for shipped, partiallyDelivered, delivered, partiallyReturned, returned, and canceled.
 		 * @return {void} Successful response
 		 */
-		Content_orders_list(merchantId: string, acknowledged: boolean, maxResults: number, orderBy: string, pageToken: string, placedDateEnd: string, placedDateStart: string, statuses: Array<string>): Observable<HttpResponse<string>> {
+		Content_orders_list(merchantId: string, acknowledged: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined, placedDateEnd: string | null | undefined, placedDateStart: string | null | undefined, statuses: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/orders&acknowledged=' + acknowledged + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&placedDateEnd=' + (placedDateEnd == null ? '' : encodeURIComponent(placedDateEnd)) + '&placedDateStart=' + (placedDateStart == null ? '' : encodeURIComponent(placedDateStart)) + '&' + statuses.map(z => `statuses=${encodeURIComponent(z)}`).join('&') + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6130,7 +6130,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_inventory(merchantId: string, targetMerchantId: string, dryRun: boolean, requestBody: PosInventoryRequest): Observable<HttpResponse<string>> {
+		Content_pos_inventory(merchantId: string, targetMerchantId: string, dryRun: boolean | null | undefined, requestBody: PosInventoryRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/pos/' + (targetMerchantId == null ? '' : encodeURIComponent(targetMerchantId)) + '/inventory&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6142,7 +6142,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_sale(merchantId: string, targetMerchantId: string, dryRun: boolean, requestBody: PosSaleRequest): Observable<HttpResponse<string>> {
+		Content_pos_sale(merchantId: string, targetMerchantId: string, dryRun: boolean | null | undefined, requestBody: PosSaleRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/pos/' + (targetMerchantId == null ? '' : encodeURIComponent(targetMerchantId)) + '/sale&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6165,7 +6165,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_insert(merchantId: string, targetMerchantId: string, dryRun: boolean, requestBody: PosStore): Observable<HttpResponse<string>> {
+		Content_pos_insert(merchantId: string, targetMerchantId: string, dryRun: boolean | null | undefined, requestBody: PosStore): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/pos/' + (targetMerchantId == null ? '' : encodeURIComponent(targetMerchantId)) + '/store&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6178,7 +6178,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_delete(merchantId: string, targetMerchantId: string, storeCode: string, dryRun: boolean): Observable<HttpResponse<string>> {
+		Content_pos_delete(merchantId: string, targetMerchantId: string, storeCode: string, dryRun: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/pos/' + (targetMerchantId == null ? '' : encodeURIComponent(targetMerchantId)) + '/store/' + (storeCode == null ? '' : encodeURIComponent(storeCode)) + '&dryRun=' + dryRun + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6203,7 +6203,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_products_list(merchantId: string, includeInvalidInsertedItems: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_products_list(merchantId: string, includeInvalidInsertedItems: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/products&includeInvalidInsertedItems=' + includeInvalidInsertedItems + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6214,7 +6214,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_products_insert(merchantId: string, dryRun: boolean, requestBody: Product): Observable<HttpResponse<string>> {
+		Content_products_insert(merchantId: string, dryRun: boolean | null | undefined, requestBody: Product): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/products&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6226,7 +6226,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_products_delete(merchantId: string, productId: string, dryRun: boolean): Observable<HttpResponse<string>> {
+		Content_products_delete(merchantId: string, productId: string, dryRun: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '&dryRun=' + dryRun + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6252,7 +6252,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_productstatuses_list(merchantId: string, destinations: Array<string>, includeAttributes: boolean, includeInvalidInsertedItems: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_productstatuses_list(merchantId: string, destinations: Array<string> | null | undefined, includeAttributes: boolean | null | undefined, includeInvalidInsertedItems: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/productstatuses&' + destinations.map(z => `destinations=${encodeURIComponent(z)}`).join('&') + '&includeAttributes=' + includeAttributes + '&includeInvalidInsertedItems=' + includeInvalidInsertedItems + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6265,7 +6265,7 @@ export namespace MyNS {
 		 * @param {boolean} includeAttributes Flag to include full product data in the result of this get request. The default value is false.
 		 * @return {void} Successful response
 		 */
-		Content_productstatuses_get(merchantId: string, productId: string, destinations: Array<string>, includeAttributes: boolean): Observable<HttpResponse<string>> {
+		Content_productstatuses_get(merchantId: string, productId: string, destinations: Array<string> | null | undefined, includeAttributes: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/productstatuses/' + (productId == null ? '' : encodeURIComponent(productId)) + '&' + destinations.map(z => `destinations=${encodeURIComponent(z)}`).join('&') + '&includeAttributes=' + includeAttributes + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6277,7 +6277,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_shippingsettings_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_shippingsettings_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/shippingsettings&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6300,7 +6300,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_shippingsettings_update(merchantId: string, accountId: string, dryRun: boolean, requestBody: ShippingSettings): Observable<HttpResponse<string>> {
+		Content_shippingsettings_update(merchantId: string, accountId: string, dryRun: boolean | null | undefined, requestBody: ShippingSettings): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/shippingsettings/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6374,7 +6374,7 @@ export namespace MyNS {
 		 * @param {string} country The country of the template to retrieve. Defaults to US.
 		 * @return {void} Successful response
 		 */
-		Content_orders_gettestordertemplate(merchantId: string, templateName: Content_orders_gettestordertemplateTemplateName, country: string): Observable<HttpResponse<string>> {
+		Content_orders_gettestordertemplate(merchantId: string, templateName: Content_orders_gettestordertemplateTemplateName, country: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/testordertemplates/' + templateName + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '', { observe: 'response', responseType: 'text' });
 		}
 	}

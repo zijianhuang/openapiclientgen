@@ -423,7 +423,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScalableTargetsResponse} Success
 		 */
-		DescribeScalableTargets(MaxResults: string, NextToken: string, requestBody: DescribeScalableTargetsRequest): Observable<DescribeScalableTargetsResponse> {
+		DescribeScalableTargets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeScalableTargetsRequest): Observable<DescribeScalableTargetsResponse> {
 			return this.http.post<DescribeScalableTargetsResponse>(this.baseUri + '#X-Amz-Target=AnyScaleFrontendService.DescribeScalableTargets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -434,7 +434,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScalingActivitiesResponse} Success
 		 */
-		DescribeScalingActivities(MaxResults: string, NextToken: string, requestBody: DescribeScalingActivitiesRequest): Observable<DescribeScalingActivitiesResponse> {
+		DescribeScalingActivities(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeScalingActivitiesRequest): Observable<DescribeScalingActivitiesResponse> {
 			return this.http.post<DescribeScalingActivitiesResponse>(this.baseUri + '#X-Amz-Target=AnyScaleFrontendService.DescribeScalingActivities?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScalingPoliciesResponse} Success
 		 */
-		DescribeScalingPolicies(MaxResults: string, NextToken: string, requestBody: DescribeScalingPoliciesRequest): Observable<DescribeScalingPoliciesResponse> {
+		DescribeScalingPolicies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeScalingPoliciesRequest): Observable<DescribeScalingPoliciesResponse> {
 			return this.http.post<DescribeScalingPoliciesResponse>(this.baseUri + '#X-Amz-Target=AnyScaleFrontendService.DescribeScalingPolicies?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -456,7 +456,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScheduledActionsResponse} Success
 		 */
-		DescribeScheduledActions(MaxResults: string, NextToken: string, requestBody: DescribeScheduledActionsRequest): Observable<DescribeScheduledActionsResponse> {
+		DescribeScheduledActions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeScheduledActionsRequest): Observable<DescribeScheduledActionsResponse> {
 			return this.http.post<DescribeScheduledActionsResponse>(this.baseUri + '#X-Amz-Target=AnyScaleFrontendService.DescribeScheduledActions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

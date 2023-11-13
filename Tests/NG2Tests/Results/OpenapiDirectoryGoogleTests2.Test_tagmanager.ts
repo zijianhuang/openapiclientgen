@@ -1106,7 +1106,7 @@ export namespace MyNS {
 		 * in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_update(accountId: string, fingerprint: string, requestBody: Account): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_update(accountId: string, fingerprint: string | null | undefined, requestBody: Account): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 		 * container in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_update(accountId: string, containerId: string, fingerprint: string, requestBody: Container): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_update(accountId: string, containerId: string, fingerprint: string | null | undefined, requestBody: Container): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1221,7 +1221,7 @@ export namespace MyNS {
 		 * environment in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_environments_update(accountId: string, containerId: string, environmentId: string, fingerprint: string, requestBody: Environment): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_environments_update(accountId: string, containerId: string, environmentId: string, fingerprint: string | null | undefined, requestBody: Environment): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/environments/' + (environmentId == null ? '' : encodeURIComponent(environmentId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 		 * storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_folders_update(accountId: string, containerId: string, folderId: string, fingerprint: string, requestBody: Folder): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_folders_update(accountId: string, containerId: string, folderId: string, fingerprint: string | null | undefined, requestBody: Folder): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/folders/' + (folderId == null ? '' : encodeURIComponent(folderId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1308,7 +1308,7 @@ export namespace MyNS {
 		 * @param {Array<string>} variableId The variables to be moved to the folder.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_move_folders_update(accountId: string, containerId: string, folderId: string, tagId: Array<string>, triggerId: Array<string>, variableId: Array<string>, requestBody: Folder): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_move_folders_update(accountId: string, containerId: string, folderId: string, tagId: Array<string> | null | undefined, triggerId: Array<string> | null | undefined, variableId: Array<string> | null | undefined, requestBody: Folder): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/move_folders/' + (folderId == null ? '' : encodeURIComponent(folderId)) + '&' + tagId.map(z => `tagId=${encodeURIComponent(z)}`).join('&') + '&' + triggerId.map(z => `triggerId=${encodeURIComponent(z)}`).join('&') + '&' + variableId.map(z => `variableId=${encodeURIComponent(z)}`).join('&'), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1380,7 +1380,7 @@ export namespace MyNS {
 		 * storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_tags_update(accountId: string, containerId: string, tagId: string, fingerprint: string, requestBody: Tag): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_tags_update(accountId: string, containerId: string, tagId: string, fingerprint: string | null | undefined, requestBody: Tag): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/tags/' + (tagId == null ? '' : encodeURIComponent(tagId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1440,7 +1440,7 @@ export namespace MyNS {
 		 * in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_triggers_update(accountId: string, containerId: string, triggerId: string, fingerprint: string, requestBody: Trigger): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_triggers_update(accountId: string, containerId: string, triggerId: string, fingerprint: string | null | undefined, requestBody: Trigger): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/triggers/' + (triggerId == null ? '' : encodeURIComponent(triggerId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1500,7 +1500,7 @@ export namespace MyNS {
 		 * in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_variables_update(accountId: string, containerId: string, variableId: string, fingerprint: string, requestBody: Variable): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_variables_update(accountId: string, containerId: string, variableId: string, fingerprint: string | null | undefined, requestBody: Variable): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/variables/' + (variableId == null ? '' : encodeURIComponent(variableId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1513,7 +1513,7 @@ export namespace MyNS {
 		 * @param {boolean} includeDeleted Also retrieve deleted (archived) versions when true.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_versions_list(accountId: string, containerId: string, headers: boolean, includeDeleted: boolean): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_versions_list(accountId: string, containerId: string, headers: boolean | null | undefined, includeDeleted: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/versions&headers=' + headers + '&includeDeleted=' + includeDeleted, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1563,7 +1563,7 @@ export namespace MyNS {
 		 * container version in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_versions_update(accountId: string, containerId: string, containerVersionId: string, fingerprint: string, requestBody: ContainerVersion): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_versions_update(accountId: string, containerId: string, containerVersionId: string, fingerprint: string | null | undefined, requestBody: ContainerVersion): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/versions/' + (containerVersionId == null ? '' : encodeURIComponent(containerVersionId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1577,7 +1577,7 @@ export namespace MyNS {
 		 * container version in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_versions_publish(accountId: string, containerId: string, containerVersionId: string, fingerprint: string): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_versions_publish(accountId: string, containerId: string, containerVersionId: string, fingerprint: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/versions/' + (containerVersionId == null ? '' : encodeURIComponent(containerVersionId)) + '/publish&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), null, { observe: 'response', responseType: 'text' });
 		}
 

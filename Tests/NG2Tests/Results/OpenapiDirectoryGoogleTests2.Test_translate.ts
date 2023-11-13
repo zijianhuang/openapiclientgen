@@ -150,7 +150,7 @@ export namespace MyNS {
 		 * the response.
 		 * @return {void} Successful response
 		 */
-		Language_translations_list(q: Array<string>, target: string, cid: Array<string>, format: Language_translations_listFormat, model: string, source: string): Observable<HttpResponse<string>> {
+		Language_translations_list(q: Array<string>, target: string, cid: Array<string> | null | undefined, format: Language_translations_listFormat | null | undefined, model: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2?' + q.map(z => `q=${encodeURIComponent(z)}`).join('&') + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&' + cid.map(z => `cid=${encodeURIComponent(z)}`).join('&') + '&format=' + format + '&model=' + (model == null ? '' : encodeURIComponent(model)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -191,7 +191,7 @@ export namespace MyNS {
 		 * languages.
 		 * @return {void} Successful response
 		 */
-		Language_languages_list(model: string, target: string): Observable<HttpResponse<string>> {
+		Language_languages_list(model: string | null | undefined, target: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/languages?model=' + (model == null ? '' : encodeURIComponent(model)) + '&target=' + (target == null ? '' : encodeURIComponent(target)), { observe: 'response', responseType: 'text' });
 		}
 	}

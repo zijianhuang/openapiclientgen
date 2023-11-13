@@ -1759,7 +1759,7 @@ export namespace MyNS {
 		 * marks can be updated using "marks.<mark_key>".
 		 * @return {void} Successful response
 		 */
-		Securitycenter_organizations_sources_findings_updateSecurityMarks(name: string, startTime: string, updateMask: string, requestBody: SecurityMarks): Observable<HttpResponse<string>> {
+		Securitycenter_organizations_sources_findings_updateSecurityMarks(name: string, startTime: string | null | undefined, updateMask: string | null | undefined, requestBody: SecurityMarks): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1901,7 +1901,7 @@ export namespace MyNS {
 		 * NOW.
 		 * @return {void} Successful response
 		 */
-		Securitycenter_organizations_assets_list(parent: string, compareDuration: string, fieldMask: string, filter: string, orderBy: string, pageSize: number, pageToken: string, readTime: string): Observable<HttpResponse<string>> {
+		Securitycenter_organizations_assets_list(parent: string, compareDuration: string | null | undefined, fieldMask: string | null | undefined, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, readTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/assets&compareDuration=' + (compareDuration == null ? '' : encodeURIComponent(compareDuration)) + '&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&readTime=' + (readTime == null ? '' : encodeURIComponent(readTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2033,7 +2033,7 @@ export namespace MyNS {
 		 * API's version of NOW.
 		 * @return {void} Successful response
 		 */
-		Securitycenter_organizations_sources_findings_list(parent: string, compareDuration: string, fieldMask: string, filter: string, orderBy: string, pageSize: number, pageToken: string, readTime: string): Observable<HttpResponse<string>> {
+		Securitycenter_organizations_sources_findings_list(parent: string, compareDuration: string | null | undefined, fieldMask: string | null | undefined, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, readTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/findings&compareDuration=' + (compareDuration == null ? '' : encodeURIComponent(compareDuration)) + '&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&readTime=' + (readTime == null ? '' : encodeURIComponent(readTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2048,7 +2048,7 @@ export namespace MyNS {
 		 * greater than 0 characters in length.
 		 * @return {void} Successful response
 		 */
-		Securitycenter_organizations_sources_findings_create(parent: string, findingId: string, requestBody: Finding): Observable<HttpResponse<string>> {
+		Securitycenter_organizations_sources_findings_create(parent: string, findingId: string | null | undefined, requestBody: Finding): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/findings&findingId=' + (findingId == null ? '' : encodeURIComponent(findingId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2080,7 +2080,7 @@ export namespace MyNS {
 		 * that the system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Securitycenter_organizations_notificationConfigs_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Securitycenter_organizations_notificationConfigs_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/notificationConfigs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2095,7 +2095,7 @@ export namespace MyNS {
 		 * characters, underscores or hyphens only.
 		 * @return {void} Successful response
 		 */
-		Securitycenter_organizations_notificationConfigs_create(parent: string, configId: string, requestBody: NotificationConfig): Observable<HttpResponse<string>> {
+		Securitycenter_organizations_notificationConfigs_create(parent: string, configId: string | null | undefined, requestBody: NotificationConfig): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/notificationConfigs&configId=' + (configId == null ? '' : encodeURIComponent(configId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2111,7 +2111,7 @@ export namespace MyNS {
 		 * that the system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Securitycenter_organizations_sources_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Securitycenter_organizations_sources_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/sources&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

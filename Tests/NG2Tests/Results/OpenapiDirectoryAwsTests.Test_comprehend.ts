@@ -1550,7 +1550,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDocumentClassificationJobsResponse} Success
 		 */
-		ListDocumentClassificationJobs(MaxResults: string, NextToken: string, requestBody: ListDocumentClassificationJobsRequest): Observable<ListDocumentClassificationJobsResponse> {
+		ListDocumentClassificationJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDocumentClassificationJobsRequest): Observable<ListDocumentClassificationJobsResponse> {
 			return this.http.post<ListDocumentClassificationJobsResponse>(this.baseUri + '#X-Amz-Target=Comprehend_20171127.ListDocumentClassificationJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDocumentClassifiersResponse} Success
 		 */
-		ListDocumentClassifiers(MaxResults: string, NextToken: string, requestBody: ListDocumentClassifiersRequest): Observable<ListDocumentClassifiersResponse> {
+		ListDocumentClassifiers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDocumentClassifiersRequest): Observable<ListDocumentClassifiersResponse> {
 			return this.http.post<ListDocumentClassifiersResponse>(this.baseUri + '#X-Amz-Target=Comprehend_20171127.ListDocumentClassifiers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1572,7 +1572,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDominantLanguageDetectionJobsResponse} Success
 		 */
-		ListDominantLanguageDetectionJobs(MaxResults: string, NextToken: string, requestBody: ListDominantLanguageDetectionJobsRequest): Observable<ListDominantLanguageDetectionJobsResponse> {
+		ListDominantLanguageDetectionJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDominantLanguageDetectionJobsRequest): Observable<ListDominantLanguageDetectionJobsResponse> {
 			return this.http.post<ListDominantLanguageDetectionJobsResponse>(this.baseUri + '#X-Amz-Target=Comprehend_20171127.ListDominantLanguageDetectionJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1592,7 +1592,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEntitiesDetectionJobsResponse} Success
 		 */
-		ListEntitiesDetectionJobs(MaxResults: string, NextToken: string, requestBody: ListEntitiesDetectionJobsRequest): Observable<ListEntitiesDetectionJobsResponse> {
+		ListEntitiesDetectionJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListEntitiesDetectionJobsRequest): Observable<ListEntitiesDetectionJobsResponse> {
 			return this.http.post<ListEntitiesDetectionJobsResponse>(this.baseUri + '#X-Amz-Target=Comprehend_20171127.ListEntitiesDetectionJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1603,7 +1603,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEntityRecognizersResponse} Success
 		 */
-		ListEntityRecognizers(MaxResults: string, NextToken: string, requestBody: ListEntityRecognizersRequest): Observable<ListEntityRecognizersResponse> {
+		ListEntityRecognizers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListEntityRecognizersRequest): Observable<ListEntityRecognizersResponse> {
 			return this.http.post<ListEntityRecognizersResponse>(this.baseUri + '#X-Amz-Target=Comprehend_20171127.ListEntityRecognizers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1614,7 +1614,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListKeyPhrasesDetectionJobsResponse} Success
 		 */
-		ListKeyPhrasesDetectionJobs(MaxResults: string, NextToken: string, requestBody: ListKeyPhrasesDetectionJobsRequest): Observable<ListKeyPhrasesDetectionJobsResponse> {
+		ListKeyPhrasesDetectionJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListKeyPhrasesDetectionJobsRequest): Observable<ListKeyPhrasesDetectionJobsResponse> {
 			return this.http.post<ListKeyPhrasesDetectionJobsResponse>(this.baseUri + '#X-Amz-Target=Comprehend_20171127.ListKeyPhrasesDetectionJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1625,7 +1625,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSentimentDetectionJobsResponse} Success
 		 */
-		ListSentimentDetectionJobs(MaxResults: string, NextToken: string, requestBody: ListSentimentDetectionJobsRequest): Observable<ListSentimentDetectionJobsResponse> {
+		ListSentimentDetectionJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListSentimentDetectionJobsRequest): Observable<ListSentimentDetectionJobsResponse> {
 			return this.http.post<ListSentimentDetectionJobsResponse>(this.baseUri + '#X-Amz-Target=Comprehend_20171127.ListSentimentDetectionJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1645,7 +1645,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTopicsDetectionJobsResponse} Success
 		 */
-		ListTopicsDetectionJobs(MaxResults: string, NextToken: string, requestBody: ListTopicsDetectionJobsRequest): Observable<ListTopicsDetectionJobsResponse> {
+		ListTopicsDetectionJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTopicsDetectionJobsRequest): Observable<ListTopicsDetectionJobsResponse> {
 			return this.http.post<ListTopicsDetectionJobsResponse>(this.baseUri + '#X-Amz-Target=Comprehend_20171127.ListTopicsDetectionJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

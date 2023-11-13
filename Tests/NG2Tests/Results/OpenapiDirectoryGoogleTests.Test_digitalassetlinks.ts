@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * REQUIRED
 		 * @return {void} Successful response
 		 */
-		Digitalassetlinks_assetlinks_check(relation: string, source_androidApp_certificate_sha256Fingerprint: string, source_androidApp_packageName: string, source_web_site: string, target_androidApp_certificate_sha256Fingerprint: string, target_androidApp_packageName: string, target_web_site: string): Observable<HttpResponse<string>> {
+		Digitalassetlinks_assetlinks_check(relation: string | null | undefined, source_androidApp_certificate_sha256Fingerprint: string | null | undefined, source_androidApp_packageName: string | null | undefined, source_web_site: string | null | undefined, target_androidApp_certificate_sha256Fingerprint: string | null | undefined, target_androidApp_packageName: string | null | undefined, target_web_site: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/assetlinks:check?relation=' + (relation == null ? '' : encodeURIComponent(relation)) + '&source_androidApp_certificate_sha256Fingerprint=' + (source_androidApp_certificate_sha256Fingerprint == null ? '' : encodeURIComponent(source_androidApp_certificate_sha256Fingerprint)) + '&source_androidApp_packageName=' + (source_androidApp_packageName == null ? '' : encodeURIComponent(source_androidApp_packageName)) + '&source_web_site=' + (source_web_site == null ? '' : encodeURIComponent(source_web_site)) + '&target_androidApp_certificate_sha256Fingerprint=' + (target_androidApp_certificate_sha256Fingerprint == null ? '' : encodeURIComponent(target_androidApp_certificate_sha256Fingerprint)) + '&target_androidApp_packageName=' + (target_androidApp_packageName == null ? '' : encodeURIComponent(target_androidApp_packageName)) + '&target_web_site=' + (target_web_site == null ? '' : encodeURIComponent(target_web_site)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -405,7 +405,7 @@ export namespace MyNS {
 		 * REQUIRED
 		 * @return {void} Successful response
 		 */
-		Digitalassetlinks_statements_list(relation: string, source_androidApp_certificate_sha256Fingerprint: string, source_androidApp_packageName: string, source_web_site: string): Observable<HttpResponse<string>> {
+		Digitalassetlinks_statements_list(relation: string | null | undefined, source_androidApp_certificate_sha256Fingerprint: string | null | undefined, source_androidApp_packageName: string | null | undefined, source_web_site: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/statements:list?relation=' + (relation == null ? '' : encodeURIComponent(relation)) + '&source_androidApp_certificate_sha256Fingerprint=' + (source_androidApp_certificate_sha256Fingerprint == null ? '' : encodeURIComponent(source_androidApp_certificate_sha256Fingerprint)) + '&source_androidApp_packageName=' + (source_androidApp_packageName == null ? '' : encodeURIComponent(source_androidApp_packageName)) + '&source_web_site=' + (source_web_site == null ? '' : encodeURIComponent(source_web_site)), { observe: 'response', responseType: 'text' });
 		}
 	}

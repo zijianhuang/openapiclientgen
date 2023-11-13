@@ -5368,7 +5368,7 @@ export namespace MyNS {
 		 * @param {string} fieldMask Mask specifying which fields to read.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_datasets_tableSpecs_columnSpecs_get(name: string, fieldMask: string): Observable<HttpResponse<string>> {
+		Automl_projects_locations_datasets_tableSpecs_columnSpecs_get(name: string, fieldMask: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5381,7 +5381,7 @@ export namespace MyNS {
 		 * @param {string} updateMask The update mask applies to the resource.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_datasets_tableSpecs_columnSpecs_patch(name: string, updateMask: string, requestBody: ColumnSpec): Observable<HttpResponse<string>> {
+		Automl_projects_locations_datasets_tableSpecs_columnSpecs_patch(name: string, updateMask: string | null | undefined, requestBody: ColumnSpec): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5394,7 +5394,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Automl_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5424,7 +5424,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Automl_projects_locations_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5625,7 +5625,7 @@ export namespace MyNS {
 		 * AutoMl.ListColumnSpecs call.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_datasets_tableSpecs_columnSpecs_list(parent: string, fieldMask: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Automl_projects_locations_datasets_tableSpecs_columnSpecs_list(parent: string, fieldMask: string | null | undefined, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/columnSpecs&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5646,7 +5646,7 @@ export namespace MyNS {
 		 * AutoMl.ListDatasets call.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_datasets_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Automl_projects_locations_datasets_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/datasets&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5681,7 +5681,7 @@ export namespace MyNS {
 		 * AutoMl.ListModelEvaluations call.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_models_modelEvaluations_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Automl_projects_locations_models_modelEvaluations_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/modelEvaluations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5703,7 +5703,7 @@ export namespace MyNS {
 		 * AutoMl.ListModels call.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_models_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Automl_projects_locations_models_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/models&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5735,7 +5735,7 @@ export namespace MyNS {
 		 * AutoMl.ListTableSpecs call.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_datasets_tableSpecs_list(parent: string, fieldMask: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Automl_projects_locations_datasets_tableSpecs_list(parent: string, fieldMask: string | null | undefined, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tableSpecs&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5754,7 +5754,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Automl_projects_locations_datasets_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Automl_projects_locations_datasets_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

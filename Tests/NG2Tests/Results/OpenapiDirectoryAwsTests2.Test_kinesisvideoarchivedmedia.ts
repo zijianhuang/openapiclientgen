@@ -252,7 +252,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFragmentsOutput} Success
 		 */
-		ListFragments(MaxResults: string, NextToken: string, requestBody: ListFragmentsPostBody): Observable<ListFragmentsOutput> {
+		ListFragments(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFragmentsPostBody): Observable<ListFragmentsOutput> {
 			return this.http.post<ListFragmentsOutput>(this.baseUri + 'listFragments?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 	}

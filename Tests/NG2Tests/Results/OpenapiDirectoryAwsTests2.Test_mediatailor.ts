@@ -226,7 +226,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
 		 * @return {ListPlaybackConfigurationsResponse} Success
 		 */
-		ListPlaybackConfigurations(MaxResults: number, NextToken: string): Observable<ListPlaybackConfigurationsResponse> {
+		ListPlaybackConfigurations(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListPlaybackConfigurationsResponse> {
 			return this.http.get<ListPlaybackConfigurationsResponse>(this.baseUri + 'playbackConfigurations?MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

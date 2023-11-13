@@ -460,7 +460,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Manufacturers_accounts_products_list(parent: string, include: Array<string>, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Manufacturers_accounts_products_list(parent: string, include: Array<string> | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/products&' + include.map(z => `include=${encodeURIComponent(z)}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -503,7 +503,7 @@ export namespace MyNS {
 		 * will be returned.
 		 * @return {void} Successful response
 		 */
-		Manufacturers_accounts_products_get(parent: string, name: string, include: Array<string>): Observable<HttpResponse<string>> {
+		Manufacturers_accounts_products_get(parent: string, name: string, include: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/products/' + (name == null ? '' : encodeURIComponent(name)) + '&' + include.map(z => `include=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 

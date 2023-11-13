@@ -376,7 +376,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListContainersOutput} Success
 		 */
-		ListContainers(MaxResults: string, NextToken: string, requestBody: ListContainersInput): Observable<ListContainersOutput> {
+		ListContainers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListContainersInput): Observable<ListContainersOutput> {
 			return this.http.post<ListContainersOutput>(this.baseUri + '#X-Amz-Target=MediaStore_20170901.ListContainers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

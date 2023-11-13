@@ -324,7 +324,7 @@ export namespace MyNS {
 		 * @param {Date} startTime <p>The start time of the profile to get.</p> <p>You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and <code>endTime</code>. </p>
 		 * @return {GetProfileResponse} Success
 		 */
-		GetProfile(endTime: Date, maxDepth: number, period: string, profilingGroupName: string, startTime: Date): Observable<GetProfileResponse> {
+		GetProfile(endTime: Date | null | undefined, maxDepth: number | null | undefined, period: string | null | undefined, profilingGroupName: string, startTime: Date | null | undefined): Observable<GetProfileResponse> {
 			return this.http.get<GetProfileResponse>(this.baseUri + 'profilingGroups/' + (profilingGroupName == null ? '' : encodeURIComponent(profilingGroupName)) + '/profile?endTime=' + endTime.toISOString() + '&maxDepth=' + maxDepth + '&period=' + (period == null ? '' : encodeURIComponent(period)) + '&startTime=' + startTime.toISOString(), {});
 		}
 
@@ -340,7 +340,7 @@ export namespace MyNS {
 		 * @param {Date} startTime The start time of the time range from which to list the profiles.
 		 * @return {ListProfileTimesResponse} Success
 		 */
-		ListProfileTimes(endTime: Date, maxResults: number, nextToken: string, orderBy: OrderBy, period: AggregatedProfileTimePeriod, profilingGroupName: string, startTime: Date): Observable<ListProfileTimesResponse> {
+		ListProfileTimes(endTime: Date, maxResults: number | null | undefined, nextToken: string | null | undefined, orderBy: OrderBy | null | undefined, period: AggregatedProfileTimePeriod, profilingGroupName: string, startTime: Date): Observable<ListProfileTimesResponse> {
 			return this.http.get<ListProfileTimesResponse>(this.baseUri + 'profilingGroups/' + (profilingGroupName == null ? '' : encodeURIComponent(profilingGroupName)) + '/profileTimes#endTime&period&startTime?endTime=' + endTime.toISOString() + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&orderBy=' + orderBy + '&period=' + period + '&startTime=' + startTime.toISOString(), {});
 		}
 
@@ -352,7 +352,7 @@ export namespace MyNS {
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @return {ListProfilingGroupsResponse} Success
 		 */
-		ListProfilingGroups(includeDescription: boolean, maxResults: number, nextToken: string): Observable<ListProfilingGroupsResponse> {
+		ListProfilingGroups(includeDescription: boolean | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListProfilingGroupsResponse> {
 			return this.http.get<ListProfilingGroupsResponse>(this.baseUri + 'profilingGroups?includeDescription=' + includeDescription + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -363,7 +363,7 @@ export namespace MyNS {
 		 * @param {string} profilingGroupName <p/>
 		 * @return {void} 
 		 */
-		PostAgentProfile(profileToken: string, profilingGroupName: string, requestBody: PostAgentProfilePostBody): Observable<HttpResponse<string>> {
+		PostAgentProfile(profileToken: string | null | undefined, profilingGroupName: string, requestBody: PostAgentProfilePostBody): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'profilingGroups/' + (profilingGroupName == null ? '' : encodeURIComponent(profilingGroupName)) + '/agentProfile#Content-Type?profileToken=' + (profileToken == null ? '' : encodeURIComponent(profileToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

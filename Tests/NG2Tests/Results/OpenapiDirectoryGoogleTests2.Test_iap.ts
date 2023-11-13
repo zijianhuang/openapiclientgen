@@ -729,7 +729,7 @@ export namespace MyNS {
 		 * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
 		 * @return {void} Successful response
 		 */
-		Iap_updateIapSettings(name: string, updateMask: string, requestBody: IapSettings): Observable<HttpResponse<string>> {
+		Iap_updateIapSettings(name: string, updateMask: string | null | undefined, requestBody: IapSettings): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + ':iapSettings&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -790,7 +790,7 @@ export namespace MyNS {
 		 * token.
 		 * @return {void} Successful response
 		 */
-		Iap_projects_brands_identityAwareProxyClients_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Iap_projects_brands_identityAwareProxyClients_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/identityAwareProxyClients&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

@@ -152,7 +152,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTranscriptResponse} Success
 		 */
-		GetTranscript(MaxResults: string, NextToken: string, requestBody: GetTranscriptPostBody): Observable<GetTranscriptResponse> {
+		GetTranscript(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTranscriptPostBody): Observable<GetTranscriptResponse> {
 			return this.http.post<GetTranscriptResponse>(this.baseUri + 'participant/transcript#X-Amz-Bearer?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

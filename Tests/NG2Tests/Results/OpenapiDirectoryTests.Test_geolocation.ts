@@ -18,7 +18,7 @@ export namespace MyNS {
 		 * @param {string} key API Key.
 		 * @return {void} Get response from IP lookup
 		 */
-		GetBy_packageAndAddonAndIpAndFormatAndLangAndKey(_package: string, addon: GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyAddon, ip: string, format: GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyFormat, lang: GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyLang, key: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		GetBy_packageAndAddonAndIpAndFormatAndLangAndKey(_package: string | null | undefined, addon: GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyAddon | null | undefined, ip: string, format: GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyFormat | null | undefined, lang: GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyLang | null | undefined, key: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '?_package=' + (_package == null ? '' : encodeURIComponent(_package)) + '&addon=' + addon + '&ip=' + (ip == null ? '' : encodeURIComponent(ip)) + '&format=' + format + '&lang=' + lang + '&key=' + (key == null ? '' : encodeURIComponent(key)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}

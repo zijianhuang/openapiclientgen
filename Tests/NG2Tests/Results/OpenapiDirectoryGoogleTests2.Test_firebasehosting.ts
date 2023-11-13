@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * [`status`](../sites.versions#Version.FIELDS.status) will be used.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_versions_patch(name: string, updateMask: string, requestBody: Version): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_versions_patch(name: string, updateMask: string | null | undefined, requestBody: Version): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -771,7 +771,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token from a previous request, if provided.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_domains_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_domains_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/domains&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -797,7 +797,7 @@ export namespace MyNS {
 		 * @param {VersionFileStatus} status The type of files in the version that should be listed.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_versions_files_list(parent: string, pageSize: number, pageToken: string, status: VersionFileStatus): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_versions_files_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, status: VersionFileStatus | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/files&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&status=' + status, { observe: 'response', responseType: 'text' });
 		}
 
@@ -810,7 +810,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token from a previous request, if provided.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_releases_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_releases_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/releases&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -829,7 +829,7 @@ export namespace MyNS {
 		 * request body is `SITE_DISABLE`.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_releases_create(parent: string, versionName: string, requestBody: Release): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_releases_create(parent: string, versionName: string | null | undefined, requestBody: Release): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/releases&versionName=' + (versionName == null ? '' : encodeURIComponent(versionName)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -850,7 +850,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token from a previous request, if provided.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_versions_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_versions_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/versions&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -865,7 +865,7 @@ export namespace MyNS {
 		 * creations.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_versions_create(parent: string, sizeBytes: string, versionId: string, requestBody: Version): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_versions_create(parent: string, sizeBytes: string | null | undefined, versionId: string | null | undefined, requestBody: Version): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/versions&sizeBytes=' + (sizeBytes == null ? '' : encodeURIComponent(sizeBytes)) + '&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

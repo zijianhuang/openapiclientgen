@@ -592,7 +592,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Page token.
 		 * @return {void} Successful response
 		 */
-		Bigqueryconnection_projects_locations_connections_list(parent: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigqueryconnection_projects_locations_connections_list(parent: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/connections&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -604,7 +604,7 @@ export namespace MyNS {
 		 * @param {string} connectionId Optional. Connection id that should be assigned to the created connection.
 		 * @return {void} Successful response
 		 */
-		Bigqueryconnection_projects_locations_connections_create(parent: string, connectionId: string, requestBody: Connection): Observable<HttpResponse<string>> {
+		Bigqueryconnection_projects_locations_connections_create(parent: string, connectionId: string | null | undefined, requestBody: Connection): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/connections&connectionId=' + (connectionId == null ? '' : encodeURIComponent(connectionId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

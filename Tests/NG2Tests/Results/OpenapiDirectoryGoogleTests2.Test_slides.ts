@@ -3593,7 +3593,7 @@ export namespace MyNS {
 		 * image.
 		 * @return {void} Successful response
 		 */
-		Slides_presentations_pages_getThumbnail(presentationId: string, pageObjectId: string, thumbnailProperties_mimeType: Slides_presentations_pages_getThumbnailThumbnailProperties_mimeType, thumbnailProperties_thumbnailSize: Slides_presentations_pages_getThumbnailThumbnailProperties_thumbnailSize): Observable<HttpResponse<string>> {
+		Slides_presentations_pages_getThumbnail(presentationId: string, pageObjectId: string, thumbnailProperties_mimeType: Slides_presentations_pages_getThumbnailThumbnailProperties_mimeType | null | undefined, thumbnailProperties_thumbnailSize: Slides_presentations_pages_getThumbnailThumbnailProperties_thumbnailSize | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/presentations/' + (presentationId == null ? '' : encodeURIComponent(presentationId)) + '/pages/' + (pageObjectId == null ? '' : encodeURIComponent(pageObjectId)) + '/thumbnail&thumbnailProperties_mimeType=' + thumbnailProperties_mimeType + '&thumbnailProperties_thumbnailSize=' + thumbnailProperties_thumbnailSize, { observe: 'response', responseType: 'text' });
 		}
 

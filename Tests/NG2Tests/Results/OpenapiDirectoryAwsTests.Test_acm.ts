@@ -380,7 +380,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCertificatesResponse} Success
 		 */
-		ListCertificates(MaxItems: string, NextToken: string, requestBody: ListCertificatesRequest): Observable<ListCertificatesResponse> {
+		ListCertificates(MaxItems: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCertificatesRequest): Observable<ListCertificatesResponse> {
 			return this.http.post<ListCertificatesResponse>(this.baseUri + '#X-Amz-Target=CertificateManager.ListCertificates?MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

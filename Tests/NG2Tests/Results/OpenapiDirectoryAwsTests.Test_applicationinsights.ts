@@ -598,7 +598,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationsResponse} Success
 		 */
-		ListApplications(MaxResults: string, NextToken: string, requestBody: ListApplicationsRequest): Observable<ListApplicationsResponse> {
+		ListApplications(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListApplicationsRequest): Observable<ListApplicationsResponse> {
 			return this.http.post<ListApplicationsResponse>(this.baseUri + '#X-Amz-Target=EC2WindowsBarleyService.ListApplications?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -609,7 +609,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListComponentsResponse} Success
 		 */
-		ListComponents(MaxResults: string, NextToken: string, requestBody: ListComponentsRequest): Observable<ListComponentsResponse> {
+		ListComponents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListComponentsRequest): Observable<ListComponentsResponse> {
 			return this.http.post<ListComponentsResponse>(this.baseUri + '#X-Amz-Target=EC2WindowsBarleyService.ListComponents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -620,7 +620,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListConfigurationHistoryResponse} Success
 		 */
-		ListConfigurationHistory(MaxResults: string, NextToken: string, requestBody: ListConfigurationHistoryRequest): Observable<ListConfigurationHistoryResponse> {
+		ListConfigurationHistory(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListConfigurationHistoryRequest): Observable<ListConfigurationHistoryResponse> {
 			return this.http.post<ListConfigurationHistoryResponse>(this.baseUri + '#X-Amz-Target=EC2WindowsBarleyService.ListConfigurationHistory?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -631,7 +631,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLogPatternSetsResponse} Success
 		 */
-		ListLogPatternSets(MaxResults: string, NextToken: string, requestBody: ListLogPatternSetsRequest): Observable<ListLogPatternSetsResponse> {
+		ListLogPatternSets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListLogPatternSetsRequest): Observable<ListLogPatternSetsResponse> {
 			return this.http.post<ListLogPatternSetsResponse>(this.baseUri + '#X-Amz-Target=EC2WindowsBarleyService.ListLogPatternSets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -642,7 +642,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLogPatternsResponse} Success
 		 */
-		ListLogPatterns(MaxResults: string, NextToken: string, requestBody: ListLogPatternsRequest): Observable<ListLogPatternsResponse> {
+		ListLogPatterns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListLogPatternsRequest): Observable<ListLogPatternsResponse> {
 			return this.http.post<ListLogPatternsResponse>(this.baseUri + '#X-Amz-Target=EC2WindowsBarleyService.ListLogPatterns?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -653,7 +653,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProblemsResponse} Success
 		 */
-		ListProblems(MaxResults: string, NextToken: string, requestBody: ListProblemsRequest): Observable<ListProblemsResponse> {
+		ListProblems(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListProblemsRequest): Observable<ListProblemsResponse> {
 			return this.http.post<ListProblemsResponse>(this.baseUri + '#X-Amz-Target=EC2WindowsBarleyService.ListProblems?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

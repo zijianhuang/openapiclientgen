@@ -432,7 +432,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeCasesResponse} Success
 		 */
-		DescribeCases(maxResults: string, nextToken: string, requestBody: DescribeCasesRequest): Observable<DescribeCasesResponse> {
+		DescribeCases(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeCasesRequest): Observable<DescribeCasesResponse> {
 			return this.http.post<DescribeCasesResponse>(this.baseUri + '#X-Amz-Target=AWSSupport_20130415.DescribeCases?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -443,7 +443,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeCommunicationsResponse} Success
 		 */
-		DescribeCommunications(maxResults: string, nextToken: string, requestBody: DescribeCommunicationsRequest): Observable<DescribeCommunicationsResponse> {
+		DescribeCommunications(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeCommunicationsRequest): Observable<DescribeCommunicationsResponse> {
 			return this.http.post<DescribeCommunicationsResponse>(this.baseUri + '#X-Amz-Target=AWSSupport_20130415.DescribeCommunications?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

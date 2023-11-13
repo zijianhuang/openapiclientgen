@@ -58,9 +58,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="writer"></param>
 		protected override void WriteCode(TextWriter writer)
 		{
-			//if (writer == null)
-			//	throw new ArgumentNullException("writer", "No TextWriter instance is defined.");
-
 			var provider = new TypeScriptCodeProvider(new Fonlow.TypeScriptCodeDom.TsCodeGenerator(CreateCodeObjectHelper(jsOutput.AsModule)));
 			CodeGeneratorOptions options = new() { BracingStyle = "JS", IndentString = "\t" };
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);

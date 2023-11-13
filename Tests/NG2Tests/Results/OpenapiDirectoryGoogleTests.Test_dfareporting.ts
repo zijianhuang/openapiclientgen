@@ -5657,7 +5657,7 @@ export namespace MyNS {
 		 * @param {string} userRoleId Select only user profiles with the specified user role ID.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_accountUserProfiles_list(profileId: string, active: boolean, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, subaccountId: string, userRoleId: string): Observable<HttpResponse<string>> {
+		Dfareporting_accountUserProfiles_list(profileId: string, active: boolean | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined, userRoleId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/accountUserProfiles&active=' + active + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)) + '&userRoleId=' + (userRoleId == null ? '' : encodeURIComponent(userRoleId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5716,7 +5716,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_accounts_list(profileId: string, active: boolean, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_accounts_list(profileId: string, active: boolean | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/accounts&active=' + active + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5781,7 +5781,7 @@ export namespace MyNS {
 		 * @param {Array<AdType>} type Select only ads with these types.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_ads_list(profileId: string, active: boolean, advertiserId: string, archived: boolean, audienceSegmentIds: Array<string>, campaignIds: Array<string>, compatibility: AdCompatibility, creativeIds: Array<string>, creativeOptimizationConfigurationIds: Array<string>, dynamicClickTracker: boolean, ids: Array<string>, landingPageIds: Array<string>, maxResults: number, overriddenEventTagId: string, pageToken: string, placementIds: Array<string>, remarketingListIds: Array<string>, searchString: string, sizeIds: Array<string>, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, sslCompliant: boolean, sslRequired: boolean, type: Array<AdType>): Observable<HttpResponse<string>> {
+		Dfareporting_ads_list(profileId: string, active: boolean | null | undefined, advertiserId: string | null | undefined, archived: boolean | null | undefined, audienceSegmentIds: Array<string> | null | undefined, campaignIds: Array<string> | null | undefined, compatibility: AdCompatibility | null | undefined, creativeIds: Array<string> | null | undefined, creativeOptimizationConfigurationIds: Array<string> | null | undefined, dynamicClickTracker: boolean | null | undefined, ids: Array<string> | null | undefined, landingPageIds: Array<string> | null | undefined, maxResults: number | null | undefined, overriddenEventTagId: string | null | undefined, pageToken: string | null | undefined, placementIds: Array<string> | null | undefined, remarketingListIds: Array<string> | null | undefined, searchString: string | null | undefined, sizeIds: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, sslCompliant: boolean | null | undefined, sslRequired: boolean | null | undefined, type: Array<AdType> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/ads&active=' + active + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&archived=' + archived + '&' + audienceSegmentIds.map(z => `audienceSegmentIds=${encodeURIComponent(z)}`).join('&') + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&compatibility=' + compatibility + '&' + creativeIds.map(z => `creativeIds=${encodeURIComponent(z)}`).join('&') + '&' + creativeOptimizationConfigurationIds.map(z => `creativeOptimizationConfigurationIds=${encodeURIComponent(z)}`).join('&') + '&dynamicClickTracker=' + dynamicClickTracker + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&' + landingPageIds.map(z => `landingPageIds=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&overriddenEventTagId=' + (overriddenEventTagId == null ? '' : encodeURIComponent(overriddenEventTagId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + placementIds.map(z => `placementIds=${encodeURIComponent(z)}`).join('&') + '&' + remarketingListIds.map(z => `remarketingListIds=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + sizeIds.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&sslCompliant=' + sslCompliant + '&sslRequired=' + sslRequired + '&' + type.map(z => `type=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5839,7 +5839,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_advertiserGroups_list(profileId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_advertiserGroups_list(profileId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertiserGroups&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5912,7 +5912,7 @@ export namespace MyNS {
 		 * @param {string} subaccountId Select only landing pages that belong to this subaccount.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_advertiserLandingPages_list(profileId: string, advertiserIds: Array<string>, archived: boolean, campaignIds: Array<string>, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, subaccountId: string): Observable<HttpResponse<string>> {
+		Dfareporting_advertiserLandingPages_list(profileId: string, advertiserIds: Array<string> | null | undefined, archived: boolean | null | undefined, campaignIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertiserLandingPages&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5976,7 +5976,7 @@ export namespace MyNS {
 		 * @param {string} subaccountId Select only advertisers with these subaccount IDs.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_advertisers_list(profileId: string, advertiserGroupIds: Array<string>, floodlightConfigurationIds: Array<string>, ids: Array<string>, includeAdvertisersWithoutGroupsOnly: boolean, maxResults: number, onlyParent: boolean, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, status: AdvertiserStatus, subaccountId: string): Observable<HttpResponse<string>> {
+		Dfareporting_advertisers_list(profileId: string, advertiserGroupIds: Array<string> | null | undefined, floodlightConfigurationIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, includeAdvertisersWithoutGroupsOnly: boolean | null | undefined, maxResults: number | null | undefined, onlyParent: boolean | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, status: AdvertiserStatus | null | undefined, subaccountId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertisers&' + advertiserGroupIds.map(z => `advertiserGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + floodlightConfigurationIds.map(z => `floodlightConfigurationIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&includeAdvertisersWithoutGroupsOnly=' + includeAdvertisersWithoutGroupsOnly + '&maxResults=' + maxResults + '&onlyParent=' + onlyParent + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&status=' + status + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6051,7 +6051,7 @@ export namespace MyNS {
 		 * @param {string} subaccountId Select only campaigns that belong to this subaccount.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_campaigns_list(profileId: string, advertiserGroupIds: Array<string>, advertiserIds: Array<string>, archived: boolean, atLeastOneOptimizationActivity: boolean, excludedIds: Array<string>, ids: Array<string>, maxResults: number, overriddenEventTagId: string, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, subaccountId: string): Observable<HttpResponse<string>> {
+		Dfareporting_campaigns_list(profileId: string, advertiserGroupIds: Array<string> | null | undefined, advertiserIds: Array<string> | null | undefined, archived: boolean | null | undefined, atLeastOneOptimizationActivity: boolean | null | undefined, excludedIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, overriddenEventTagId: string | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/campaigns&' + advertiserGroupIds.map(z => `advertiserGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&atLeastOneOptimizationActivity=' + atLeastOneOptimizationActivity + '&' + excludedIds.map(z => `excludedIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&overriddenEventTagId=' + (overriddenEventTagId == null ? '' : encodeURIComponent(overriddenEventTagId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6096,7 +6096,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_campaignCreativeAssociations_list(profileId: string, campaignId: string, maxResults: number, pageToken: string, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_campaignCreativeAssociations_list(profileId: string, campaignId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/campaigns/' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '/campaignCreativeAssociations&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6138,7 +6138,7 @@ export namespace MyNS {
 		 * @param {Array<string>} userProfileIds Select only change logs with these user profile IDs.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_changeLogs_list(profileId: string, action: Dfareporting_changeLogs_listAction, ids: Array<string>, maxChangeTime: string, maxResults: number, minChangeTime: string, objectIds: Array<string>, objectType: Dfareporting_changeLogs_listObjectType, pageToken: string, searchString: string, userProfileIds: Array<string>): Observable<HttpResponse<string>> {
+		Dfareporting_changeLogs_list(profileId: string, action: Dfareporting_changeLogs_listAction | null | undefined, ids: Array<string> | null | undefined, maxChangeTime: string | null | undefined, maxResults: number | null | undefined, minChangeTime: string | null | undefined, objectIds: Array<string> | null | undefined, objectType: Dfareporting_changeLogs_listObjectType | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, userProfileIds: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/changeLogs&action=' + action + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxChangeTime=' + (maxChangeTime == null ? '' : encodeURIComponent(maxChangeTime)) + '&maxResults=' + maxResults + '&minChangeTime=' + (minChangeTime == null ? '' : encodeURIComponent(minChangeTime)) + '&' + objectIds.map(z => `objectIds=${encodeURIComponent(z)}`).join('&') + '&objectType=' + objectType + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + userProfileIds.map(z => `userProfileIds=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6163,7 +6163,7 @@ export namespace MyNS {
 		 * @param {Array<string>} regionDartIds Select only cities from these regions.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_cities_list(profileId: string, countryDartIds: Array<string>, dartIds: Array<string>, namePrefix: string, regionDartIds: Array<string>): Observable<HttpResponse<string>> {
+		Dfareporting_cities_list(profileId: string, countryDartIds: Array<string> | null | undefined, dartIds: Array<string> | null | undefined, namePrefix: string | null | undefined, regionDartIds: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/cities&' + countryDartIds.map(z => `countryDartIds=${encodeURIComponent(z)}`).join('&') + '&' + dartIds.map(z => `dartIds=${encodeURIComponent(z)}`).join('&') + '&namePrefix=' + (namePrefix == null ? '' : encodeURIComponent(namePrefix)) + '&' + regionDartIds.map(z => `regionDartIds=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6200,7 +6200,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_contentCategories_list(profileId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_contentCategories_list(profileId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/contentCategories&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6311,7 +6311,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_creativeFields_list(profileId: string, advertiserIds: Array<string>, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_creativeFields_list(profileId: string, advertiserIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeFields&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6359,7 +6359,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_creativeFieldValues_list(profileId: string, creativeFieldId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_creativeFieldValues_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_creativeFieldValues_list(profileId: string, creativeFieldId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_creativeFieldValues_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeFields/' + (creativeFieldId == null ? '' : encodeURIComponent(creativeFieldId)) + '/creativeFieldValues&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6457,7 +6457,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_creativeGroups_list(profileId: string, advertiserIds: Array<string>, groupNumber: number, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_creativeGroups_list(profileId: string, advertiserIds: Array<string> | null | undefined, groupNumber: number | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeGroups&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&groupNumber=' + groupNumber + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6525,7 +6525,7 @@ export namespace MyNS {
 		 * @param {Array<CreativeType>} types Select only creatives with these creative types.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_creatives_list(profileId: string, active: boolean, advertiserId: string, archived: boolean, campaignId: string, companionCreativeIds: Array<string>, creativeFieldIds: Array<string>, ids: Array<string>, maxResults: number, pageToken: string, renderingIds: Array<string>, searchString: string, sizeIds: Array<string>, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, studioCreativeId: string, types: Array<CreativeType>): Observable<HttpResponse<string>> {
+		Dfareporting_creatives_list(profileId: string, active: boolean | null | undefined, advertiserId: string | null | undefined, archived: boolean | null | undefined, campaignId: string | null | undefined, companionCreativeIds: Array<string> | null | undefined, creativeFieldIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, renderingIds: Array<string> | null | undefined, searchString: string | null | undefined, sizeIds: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, studioCreativeId: string | null | undefined, types: Array<CreativeType> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creatives&active=' + active + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&archived=' + archived + '&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&' + companionCreativeIds.map(z => `companionCreativeIds=${encodeURIComponent(z)}`).join('&') + '&' + creativeFieldIds.map(z => `creativeFieldIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + renderingIds.map(z => `renderingIds=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + sizeIds.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&studioCreativeId=' + (studioCreativeId == null ? '' : encodeURIComponent(studioCreativeId)) + '&' + types.map(z => `types=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6579,7 +6579,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The value of the nextToken from the previous result page.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_dimensionValues_query(profileId: string, maxResults: number, pageToken: string, requestBody: DimensionValueRequest): Observable<HttpResponse<string>> {
+		Dfareporting_dimensionValues_query(profileId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, requestBody: DimensionValueRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/dimensionvalues/query&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6600,7 +6600,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_directorySites_list(profileId: string, acceptsInStreamVideoPlacements: boolean, acceptsInterstitialPlacements: boolean, acceptsPublisherPaidPlacements: boolean, active: boolean, dfpNetworkCode: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_directorySites_list(profileId: string, acceptsInStreamVideoPlacements: boolean | null | undefined, acceptsInterstitialPlacements: boolean | null | undefined, acceptsPublisherPaidPlacements: boolean | null | undefined, active: boolean | null | undefined, dfpNetworkCode: string | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/directorySites&acceptsInStreamVideoPlacements=' + acceptsInStreamVideoPlacements + '&acceptsInterstitialPlacements=' + acceptsInterstitialPlacements + '&acceptsPublisherPaidPlacements=' + acceptsPublisherPaidPlacements + '&active=' + active + '&dfpNetworkCode=' + (dfpNetworkCode == null ? '' : encodeURIComponent(dfpNetworkCode)) + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6635,7 +6635,7 @@ export namespace MyNS {
 		 * @param {DynamicTargetingKeyObjectType} objectType Select only dynamic targeting keys with this object type.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_dynamicTargetingKeys_list(profileId: string, advertiserId: string, names: Array<string>, objectId: string, objectType: DynamicTargetingKeyObjectType): Observable<HttpResponse<string>> {
+		Dfareporting_dynamicTargetingKeys_list(profileId: string, advertiserId: string | null | undefined, names: Array<string> | null | undefined, objectId: string | null | undefined, objectType: DynamicTargetingKeyObjectType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/dynamicTargetingKeys&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + names.map(z => `names=${encodeURIComponent(z)}`).join('&') + '&objectId=' + (objectId == null ? '' : encodeURIComponent(objectId)) + '&objectType=' + objectType, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6678,7 +6678,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_eventTags_list(profileId: string, adId: string, advertiserId: string, campaignId: string, definitionsOnly: boolean, enabled: boolean, eventTagTypes: Array<EventTagType>, ids: Array<string>, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_eventTags_list(profileId: string, adId: string | null | undefined, advertiserId: string | null | undefined, campaignId: string | null | undefined, definitionsOnly: boolean | null | undefined, enabled: boolean | null | undefined, eventTagTypes: Array<EventTagType> | null | undefined, ids: Array<string> | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/eventTags&adId=' + (adId == null ? '' : encodeURIComponent(adId)) + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&definitionsOnly=' + definitionsOnly + '&enabled=' + enabled + '&' + eventTagTypes.map(z => `eventTagTypes=${z}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6746,7 +6746,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_files_list(profileId: string, maxResults: number, pageToken: string, scope: Dfareporting_files_listScope, sortField: Dfareporting_files_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_files_list(profileId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, scope: Dfareporting_files_listScope | null | undefined, sortField: Dfareporting_files_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/files&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&scope=' + scope + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6769,7 +6769,7 @@ export namespace MyNS {
 		 * @param {string} tagString Select only floodlight activities with the specified tag string.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_floodlightActivities_list(profileId: string, advertiserId: string, floodlightActivityGroupIds: Array<string>, floodlightActivityGroupName: string, floodlightActivityGroupTagString: string, floodlightActivityGroupType: FloodlightActivityFloodlightActivityGroupType, floodlightConfigurationId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, tagString: string): Observable<HttpResponse<string>> {
+		Dfareporting_floodlightActivities_list(profileId: string, advertiserId: string | null | undefined, floodlightActivityGroupIds: Array<string> | null | undefined, floodlightActivityGroupName: string | null | undefined, floodlightActivityGroupTagString: string | null | undefined, floodlightActivityGroupType: FloodlightActivityFloodlightActivityGroupType | null | undefined, floodlightConfigurationId: string | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, tagString: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightActivities&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + floodlightActivityGroupIds.map(z => `floodlightActivityGroupIds=${encodeURIComponent(z)}`).join('&') + '&floodlightActivityGroupName=' + (floodlightActivityGroupName == null ? '' : encodeURIComponent(floodlightActivityGroupName)) + '&floodlightActivityGroupTagString=' + (floodlightActivityGroupTagString == null ? '' : encodeURIComponent(floodlightActivityGroupTagString)) + '&floodlightActivityGroupType=' + floodlightActivityGroupType + '&floodlightConfigurationId=' + (floodlightConfigurationId == null ? '' : encodeURIComponent(floodlightConfigurationId)) + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&tagString=' + (tagString == null ? '' : encodeURIComponent(tagString)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6811,7 +6811,7 @@ export namespace MyNS {
 		 * @param {string} floodlightActivityId Floodlight activity ID for which we want to generate a tag.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_floodlightActivities_generatetag(profileId: string, floodlightActivityId: string): Observable<HttpResponse<string>> {
+		Dfareporting_floodlightActivities_generatetag(profileId: string, floodlightActivityId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightActivities/generatetag&floodlightActivityId=' + (floodlightActivityId == null ? '' : encodeURIComponent(floodlightActivityId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6852,7 +6852,7 @@ export namespace MyNS {
 		 * @param {FloodlightActivityFloodlightActivityGroupType} type Select only floodlight activity groups with the specified floodlight activity group type.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_floodlightActivityGroups_list(profileId: string, advertiserId: string, floodlightConfigurationId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, type: FloodlightActivityFloodlightActivityGroupType): Observable<HttpResponse<string>> {
+		Dfareporting_floodlightActivityGroups_list(profileId: string, advertiserId: string | null | undefined, floodlightConfigurationId: string | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, type: FloodlightActivityFloodlightActivityGroupType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightActivityGroups&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&floodlightConfigurationId=' + (floodlightConfigurationId == null ? '' : encodeURIComponent(floodlightConfigurationId)) + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6905,7 +6905,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Set of IDs of floodlight configurations to retrieve. Required field; otherwise an empty list will be returned.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_floodlightConfigurations_list(profileId: string, ids: Array<string>): Observable<HttpResponse<string>> {
+		Dfareporting_floodlightConfigurations_list(profileId: string, ids: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightConfigurations&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6972,7 +6972,7 @@ export namespace MyNS {
 		 * @param {string} searchString Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "app*2015" will return objects with names like "app Jan 2018", "app Jan 2018", or simply "app 2018". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "app" will match objects with name "my app", "app 2018", or simply "app".
 		 * @return {void} Successful response
 		 */
-		Dfareporting_mobileApps_list(profileId: string, directories: Array<MobileAppDirectory>, ids: Array<string>, maxResults: number, pageToken: string, searchString: string): Observable<HttpResponse<string>> {
+		Dfareporting_mobileApps_list(profileId: string, directories: Array<MobileAppDirectory> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/mobileApps&' + directories.map(z => `directories=${z}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -7075,7 +7075,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_placementGroups_list(profileId: string, advertiserIds: Array<string>, archived: boolean, campaignIds: Array<string>, contentCategoryIds: Array<string>, directorySiteIds: Array<string>, ids: Array<string>, maxEndDate: string, maxResults: number, maxStartDate: string, minEndDate: string, minStartDate: string, pageToken: string, placementGroupType: PlacementGroupPlacementGroupType, placementStrategyIds: Array<string>, pricingTypes: Array<PricingSchedulePricingType>, searchString: string, siteIds: Array<string>, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_placementGroups_list(profileId: string, advertiserIds: Array<string> | null | undefined, archived: boolean | null | undefined, campaignIds: Array<string> | null | undefined, contentCategoryIds: Array<string> | null | undefined, directorySiteIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxEndDate: string | null | undefined, maxResults: number | null | undefined, maxStartDate: string | null | undefined, minEndDate: string | null | undefined, minStartDate: string | null | undefined, pageToken: string | null | undefined, placementGroupType: PlacementGroupPlacementGroupType | null | undefined, placementStrategyIds: Array<string> | null | undefined, pricingTypes: Array<PricingSchedulePricingType> | null | undefined, searchString: string | null | undefined, siteIds: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placementGroups&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + contentCategoryIds.map(z => `contentCategoryIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxEndDate=' + (maxEndDate == null ? '' : encodeURIComponent(maxEndDate)) + '&maxResults=' + maxResults + '&maxStartDate=' + (maxStartDate == null ? '' : encodeURIComponent(maxStartDate)) + '&minEndDate=' + (minEndDate == null ? '' : encodeURIComponent(minEndDate)) + '&minStartDate=' + (minStartDate == null ? '' : encodeURIComponent(minStartDate)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&placementGroupType=' + placementGroupType + '&' + placementStrategyIds.map(z => `placementStrategyIds=${encodeURIComponent(z)}`).join('&') + '&' + pricingTypes.map(z => `pricingTypes=${z}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteIds.map(z => `siteIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7133,7 +7133,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_placementStrategies_list(profileId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_placementStrategies_list(profileId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placementStrategies&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7218,7 +7218,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_placements_list(profileId: string, advertiserIds: Array<string>, archived: boolean, campaignIds: Array<string>, compatibilities: Array<AdCompatibility>, contentCategoryIds: Array<string>, directorySiteIds: Array<string>, groupIds: Array<string>, ids: Array<string>, maxEndDate: string, maxResults: number, maxStartDate: string, minEndDate: string, minStartDate: string, pageToken: string, paymentSource: PlacementPaymentSource, placementStrategyIds: Array<string>, pricingTypes: Array<PricingSchedulePricingType>, searchString: string, siteIds: Array<string>, sizeIds: Array<string>, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_placements_list(profileId: string, advertiserIds: Array<string> | null | undefined, archived: boolean | null | undefined, campaignIds: Array<string> | null | undefined, compatibilities: Array<AdCompatibility> | null | undefined, contentCategoryIds: Array<string> | null | undefined, directorySiteIds: Array<string> | null | undefined, groupIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxEndDate: string | null | undefined, maxResults: number | null | undefined, maxStartDate: string | null | undefined, minEndDate: string | null | undefined, minStartDate: string | null | undefined, pageToken: string | null | undefined, paymentSource: PlacementPaymentSource | null | undefined, placementStrategyIds: Array<string> | null | undefined, pricingTypes: Array<PricingSchedulePricingType> | null | undefined, searchString: string | null | undefined, siteIds: Array<string> | null | undefined, sizeIds: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placements&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + compatibilities.map(z => `compatibilities=${z}`).join('&') + '&' + contentCategoryIds.map(z => `contentCategoryIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + groupIds.map(z => `groupIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxEndDate=' + (maxEndDate == null ? '' : encodeURIComponent(maxEndDate)) + '&maxResults=' + maxResults + '&maxStartDate=' + (maxStartDate == null ? '' : encodeURIComponent(maxStartDate)) + '&minEndDate=' + (minEndDate == null ? '' : encodeURIComponent(minEndDate)) + '&minStartDate=' + (minStartDate == null ? '' : encodeURIComponent(minStartDate)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&paymentSource=' + paymentSource + '&' + placementStrategyIds.map(z => `placementStrategyIds=${encodeURIComponent(z)}`).join('&') + '&' + pricingTypes.map(z => `pricingTypes=${z}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteIds.map(z => `siteIds=${encodeURIComponent(z)}`).join('&') + '&' + sizeIds.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7263,7 +7263,7 @@ export namespace MyNS {
 		 * Note: PLACEMENT_TAG_STANDARD can only be generated for 1x1 placements.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_placements_generatetags(profileId: string, campaignId: string, placementIds: Array<string>, tagFormats: Array<TagDataFormat>): Observable<HttpResponse<string>> {
+		Dfareporting_placements_generatetags(profileId: string, campaignId: string | null | undefined, placementIds: Array<string> | null | undefined, tagFormats: Array<TagDataFormat> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placements/generatetags&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&' + placementIds.map(z => `placementIds=${encodeURIComponent(z)}`).join('&') + '&' + tagFormats.map(z => `tagFormats=${z}`).join('&'), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7333,7 +7333,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_projects_list(profileId: string, advertiserIds: Array<string>, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_projects_list(profileId: string, advertiserIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7364,7 +7364,7 @@ export namespace MyNS {
 		 * @param {InventoryItemType} type Select only inventory items with this type.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_inventoryItems_list(profileId: string, projectId: string, ids: Array<string>, inPlan: boolean, maxResults: number, orderId: Array<string>, pageToken: string, siteId: Array<string>, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, type: InventoryItemType): Observable<HttpResponse<string>> {
+		Dfareporting_inventoryItems_list(profileId: string, projectId: string, ids: Array<string> | null | undefined, inPlan: boolean | null | undefined, maxResults: number | null | undefined, orderId: Array<string> | null | undefined, pageToken: string | null | undefined, siteId: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, type: InventoryItemType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/inventoryItems&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&inPlan=' + inPlan + '&maxResults=' + maxResults + '&' + orderId.map(z => `orderId=${encodeURIComponent(z)}`).join('&') + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + siteId.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7396,7 +7396,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_orderDocuments_list(profileId: string, projectId: string, approved: boolean, ids: Array<string>, maxResults: number, orderId: Array<string>, pageToken: string, searchString: string, siteId: Array<string>, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_orderDocuments_list(profileId: string, projectId: string, approved: boolean | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, orderId: Array<string> | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, siteId: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/orderDocuments&approved=' + approved + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&' + orderId.map(z => `orderId=${encodeURIComponent(z)}`).join('&') + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteId.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7426,7 +7426,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_orders_list(profileId: string, projectId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, siteId: Array<string>, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_orders_list(profileId: string, projectId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, siteId: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/orders&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteId.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7498,7 +7498,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_remarketingLists_list(profileId: string, advertiserId: string, active: boolean, floodlightActivityId: string, maxResults: number, name: string, pageToken: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_remarketingLists_list(profileId: string, advertiserId: string, active: boolean | null | undefined, floodlightActivityId: string | null | undefined, maxResults: number | null | undefined, name: string | null | undefined, pageToken: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/remarketingLists&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&active=' + active + '&floodlightActivityId=' + (floodlightActivityId == null ? '' : encodeURIComponent(floodlightActivityId)) + '&maxResults=' + maxResults + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7555,7 +7555,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_reports_list(profileId: string, maxResults: number, pageToken: string, scope: Dfareporting_reports_listScope, sortField: Dfareporting_reports_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_reports_list(profileId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, scope: Dfareporting_reports_listScope | null | undefined, sortField: Dfareporting_reports_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/reports&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&scope=' + scope + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7634,7 +7634,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_reports_files_list(profileId: string, reportId: string, maxResults: number, pageToken: string, sortField: Dfareporting_files_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_reports_files_list(profileId: string, reportId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, sortField: Dfareporting_files_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/reports/' + (reportId == null ? '' : encodeURIComponent(reportId)) + '/files&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7658,7 +7658,7 @@ export namespace MyNS {
 		 * @param {boolean} synchronous If set and true, tries to run the report synchronously.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_reports_run(profileId: string, reportId: string, synchronous: boolean): Observable<HttpResponse<string>> {
+		Dfareporting_reports_run(profileId: string, reportId: string, synchronous: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/reports/' + (reportId == null ? '' : encodeURIComponent(reportId)) + '/run&synchronous=' + synchronous, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7683,7 +7683,7 @@ export namespace MyNS {
 		 * @param {boolean} unmappedSite Select only sites that have not been mapped to a directory site.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_sites_list(profileId: string, acceptsInStreamVideoPlacements: boolean, acceptsInterstitialPlacements: boolean, acceptsPublisherPaidPlacements: boolean, adWordsSite: boolean, approved: boolean, campaignIds: Array<string>, directorySiteIds: Array<string>, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, subaccountId: string, unmappedSite: boolean): Observable<HttpResponse<string>> {
+		Dfareporting_sites_list(profileId: string, acceptsInStreamVideoPlacements: boolean | null | undefined, acceptsInterstitialPlacements: boolean | null | undefined, acceptsPublisherPaidPlacements: boolean | null | undefined, adWordsSite: boolean | null | undefined, approved: boolean | null | undefined, campaignIds: Array<string> | null | undefined, directorySiteIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined, unmappedSite: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/sites&acceptsInStreamVideoPlacements=' + acceptsInStreamVideoPlacements + '&acceptsInterstitialPlacements=' + acceptsInterstitialPlacements + '&acceptsPublisherPaidPlacements=' + acceptsPublisherPaidPlacements + '&adWordsSite=' + adWordsSite + '&approved=' + approved + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)) + '&unmappedSite=' + unmappedSite, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7739,7 +7739,7 @@ export namespace MyNS {
 		 * @param {number} width Select only sizes with this width.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_sizes_list(profileId: string, height: number, iabStandard: boolean, ids: Array<string>, width: number): Observable<HttpResponse<string>> {
+		Dfareporting_sizes_list(profileId: string, height: number | null | undefined, iabStandard: boolean | null | undefined, ids: Array<string> | null | undefined, width: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/sizes&height=' + height + '&iabStandard=' + iabStandard + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&width=' + width, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7776,7 +7776,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_subaccounts_list(profileId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_subaccounts_list(profileId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/subaccounts&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7835,7 +7835,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_targetableRemarketingLists_list(profileId: string, advertiserId: string, active: boolean, maxResults: number, name: string, pageToken: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_targetableRemarketingLists_list(profileId: string, advertiserId: string, active: boolean | null | undefined, maxResults: number | null | undefined, name: string | null | undefined, pageToken: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/targetableRemarketingLists&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&active=' + active + '&maxResults=' + maxResults + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7863,7 +7863,7 @@ export namespace MyNS {
 		 * @param {SortedDimensionSortOrder} sortOrder Order of sorted results.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_targetingTemplates_list(profileId: string, advertiserId: string, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder): Observable<HttpResponse<string>> {
+		Dfareporting_targetingTemplates_list(profileId: string, advertiserId: string | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/targetingTemplates&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7937,7 +7937,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ids Select only user role permissions with these IDs.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_userRolePermissions_list(profileId: string, ids: Array<string>): Observable<HttpResponse<string>> {
+		Dfareporting_userRolePermissions_list(profileId: string, ids: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/userRolePermissions&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -7966,7 +7966,7 @@ export namespace MyNS {
 		 * @param {string} subaccountId Select only user roles that belong to this subaccount.
 		 * @return {void} Successful response
 		 */
-		Dfareporting_userRoles_list(profileId: string, accountUserRoleOnly: boolean, ids: Array<string>, maxResults: number, pageToken: string, searchString: string, sortField: Dfareporting_accountUserProfiles_listSortField, sortOrder: SortedDimensionSortOrder, subaccountId: string): Observable<HttpResponse<string>> {
+		Dfareporting_userRoles_list(profileId: string, accountUserRoleOnly: boolean | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/userRoles&accountUserRoleOnly=' + accountUserRoleOnly + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
 		}
 

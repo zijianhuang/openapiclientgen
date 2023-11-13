@@ -219,7 +219,7 @@ export namespace MyNS {
 		 * @param {number} pageSize Page size which specifies how many records per page will be returned (default 10). Example - https://api.xero.com/bankfeeds.xro/1.0/FeedConnections?pageSize=100 to specify page size of 100.
 		 * @return {void} 
 		 */
-		GetFeedConnections(page: number, pageSize: number): Observable<HttpResponse<string>> {
+		GetFeedConnections(page: number | null | undefined, pageSize: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'FeedConnections?page=' + page + '&pageSize=' + pageSize, { observe: 'response', responseType: 'text' });
 		}
 
@@ -264,7 +264,7 @@ export namespace MyNS {
 		 * @param {number} pageSize Page size which specifies how many records per page will be returned (default 10). Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?pageSize=100 to specify page size of 100.
 		 * @return {Statements} success returns Statements array of objects response
 		 */
-		GetStatements(page: number, pageSize: number): Observable<Statements> {
+		GetStatements(page: number | null | undefined, pageSize: number | null | undefined): Observable<Statements> {
 			return this.http.get<Statements>(this.baseUri + 'Statements?page=' + page + '&pageSize=' + pageSize, {});
 		}
 

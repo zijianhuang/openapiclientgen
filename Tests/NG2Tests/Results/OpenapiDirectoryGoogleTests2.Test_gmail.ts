@@ -996,7 +996,7 @@ export namespace MyNS {
 		 * is:unread"</code>.
 		 * @return {void} Successful response
 		 */
-		Gmail_users_drafts_list(userId: string, includeSpamTrash: boolean, maxResults: number, pageToken: string, q: string): Observable<HttpResponse<string>> {
+		Gmail_users_drafts_list(userId: string, includeSpamTrash: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, q: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'gmail/v1/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/drafts&includeSpamTrash=' + includeSpamTrash + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1022,7 +1022,7 @@ export namespace MyNS {
 		 * @param {Gmail_users_drafts_getFormat} format The format to return the draft in.
 		 * @return {void} Successful response
 		 */
-		Gmail_users_drafts_get(userId: string, id: string, format: Gmail_users_drafts_getFormat): Observable<HttpResponse<string>> {
+		Gmail_users_drafts_get(userId: string, id: string, format: Gmail_users_drafts_getFormat | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'gmail/v1/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/drafts/' + (id == null ? '' : encodeURIComponent(id)) + '&format=' + format, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 		 * <code>historyId</code> for a future request.
 		 * @return {void} Successful response
 		 */
-		Gmail_users_history_list(userId: string, historyTypes: Array<string>, labelId: string, maxResults: number, pageToken: string, startHistoryId: string): Observable<HttpResponse<string>> {
+		Gmail_users_history_list(userId: string, historyTypes: Array<string> | null | undefined, labelId: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startHistoryId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'gmail/v1/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/history&' + historyTypes.map(z => `historyTypes=${encodeURIComponent(z)}`).join('&') + '&labelId=' + (labelId == null ? '' : encodeURIComponent(labelId)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startHistoryId=' + (startHistoryId == null ? '' : encodeURIComponent(startHistoryId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1143,7 +1143,7 @@ export namespace MyNS {
 		 * using the gmail.metadata scope.
 		 * @return {void} Successful response
 		 */
-		Gmail_users_messages_list(userId: string, includeSpamTrash: boolean, labelIds: Array<string>, maxResults: number, pageToken: string, q: string): Observable<HttpResponse<string>> {
+		Gmail_users_messages_list(userId: string, includeSpamTrash: boolean | null | undefined, labelIds: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, q: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'gmail/v1/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/messages&includeSpamTrash=' + includeSpamTrash + '&' + labelIds.map(z => `labelIds=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1193,7 +1193,7 @@ export namespace MyNS {
 		 * @param {Array<string>} metadataHeaders When given and format is METADATA, only include headers specified.
 		 * @return {void} Successful response
 		 */
-		Gmail_users_messages_get(userId: string, id: string, format: Gmail_users_drafts_getFormat, metadataHeaders: Array<string>): Observable<HttpResponse<string>> {
+		Gmail_users_messages_get(userId: string, id: string, format: Gmail_users_drafts_getFormat | null | undefined, metadataHeaders: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'gmail/v1/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/messages/' + (id == null ? '' : encodeURIComponent(id)) + '&format=' + format + '&' + metadataHeaders.map(z => `metadataHeaders=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1747,7 +1747,7 @@ export namespace MyNS {
 		 * using the gmail.metadata scope.
 		 * @return {void} Successful response
 		 */
-		Gmail_users_threads_list(userId: string, includeSpamTrash: boolean, labelIds: Array<string>, maxResults: number, pageToken: string, q: string): Observable<HttpResponse<string>> {
+		Gmail_users_threads_list(userId: string, includeSpamTrash: boolean | null | undefined, labelIds: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, q: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'gmail/v1/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/threads&includeSpamTrash=' + includeSpamTrash + '&' + labelIds.map(z => `labelIds=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1774,7 +1774,7 @@ export namespace MyNS {
 		 * @param {Array<string>} metadataHeaders When given and format is METADATA, only include headers specified.
 		 * @return {void} Successful response
 		 */
-		Gmail_users_threads_get(userId: string, id: string, format: Gmail_users_threads_getFormat, metadataHeaders: Array<string>): Observable<HttpResponse<string>> {
+		Gmail_users_threads_get(userId: string, id: string, format: Gmail_users_threads_getFormat | null | undefined, metadataHeaders: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'gmail/v1/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/threads/' + (id == null ? '' : encodeURIComponent(id)) + '&format=' + format + '&' + metadataHeaders.map(z => `metadataHeaders=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 

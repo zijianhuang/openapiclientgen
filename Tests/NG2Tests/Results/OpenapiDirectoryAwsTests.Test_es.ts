@@ -1680,7 +1680,7 @@ export namespace MyNS {
 		 * @param {string} ElasticsearchVersion  Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed. 
 		 * @return {DescribeElasticsearchInstanceTypeLimitsResponse} Success
 		 */
-		DescribeElasticsearchInstanceTypeLimits(domainName: string, InstanceType: DescribeElasticsearchInstanceTypeLimitsInstanceType, ElasticsearchVersion: string): Observable<DescribeElasticsearchInstanceTypeLimitsResponse> {
+		DescribeElasticsearchInstanceTypeLimits(domainName: string | null | undefined, InstanceType: DescribeElasticsearchInstanceTypeLimitsInstanceType, ElasticsearchVersion: string): Observable<DescribeElasticsearchInstanceTypeLimitsResponse> {
 			return this.http.get<DescribeElasticsearchInstanceTypeLimitsResponse>(this.baseUri + '2015-01-01/es/instanceTypeLimits/' + (ElasticsearchVersion == null ? '' : encodeURIComponent(ElasticsearchVersion)) + '/' + InstanceType + '?domainName=' + (domainName == null ? '' : encodeURIComponent(domainName)), {});
 		}
 
@@ -1691,7 +1691,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeInboundCrossClusterSearchConnectionsResponse} Success
 		 */
-		DescribeInboundCrossClusterSearchConnections(MaxResults: string, NextToken: string, requestBody: DescribeInboundCrossClusterSearchConnectionsPostBody): Observable<DescribeInboundCrossClusterSearchConnectionsResponse> {
+		DescribeInboundCrossClusterSearchConnections(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeInboundCrossClusterSearchConnectionsPostBody): Observable<DescribeInboundCrossClusterSearchConnectionsResponse> {
 			return this.http.post<DescribeInboundCrossClusterSearchConnectionsResponse>(this.baseUri + '2015-01-01/es/ccs/inboundConnection/search?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1702,7 +1702,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeOutboundCrossClusterSearchConnectionsResponse} Success
 		 */
-		DescribeOutboundCrossClusterSearchConnections(MaxResults: string, NextToken: string, requestBody: DescribeOutboundCrossClusterSearchConnectionsPostBody): Observable<DescribeOutboundCrossClusterSearchConnectionsResponse> {
+		DescribeOutboundCrossClusterSearchConnections(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeOutboundCrossClusterSearchConnectionsPostBody): Observable<DescribeOutboundCrossClusterSearchConnectionsResponse> {
 			return this.http.post<DescribeOutboundCrossClusterSearchConnectionsResponse>(this.baseUri + '2015-01-01/es/ccs/outboundConnection/search?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1713,7 +1713,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribePackagesResponse} Success
 		 */
-		DescribePackages(MaxResults: string, NextToken: string, requestBody: DescribePackagesPostBody): Observable<DescribePackagesResponse> {
+		DescribePackages(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribePackagesPostBody): Observable<DescribePackagesResponse> {
 			return this.http.post<DescribePackagesResponse>(this.baseUri + '2015-01-01/packages/describe?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1727,7 +1727,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeReservedElasticsearchInstanceOfferingsResponse} Success
 		 */
-		DescribeReservedElasticsearchInstanceOfferings(offeringId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<DescribeReservedElasticsearchInstanceOfferingsResponse> {
+		DescribeReservedElasticsearchInstanceOfferings(offeringId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<DescribeReservedElasticsearchInstanceOfferingsResponse> {
 			return this.http.get<DescribeReservedElasticsearchInstanceOfferingsResponse>(this.baseUri + '2015-01-01/es/reservedInstanceOfferings?offeringId=' + (offeringId == null ? '' : encodeURIComponent(offeringId)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1741,7 +1741,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeReservedElasticsearchInstancesResponse} Success
 		 */
-		DescribeReservedElasticsearchInstances(reservationId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<DescribeReservedElasticsearchInstancesResponse> {
+		DescribeReservedElasticsearchInstances(reservationId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<DescribeReservedElasticsearchInstancesResponse> {
 			return this.http.get<DescribeReservedElasticsearchInstancesResponse>(this.baseUri + '2015-01-01/es/reservedInstances?reservationId=' + (reservationId == null ? '' : encodeURIComponent(reservationId)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1761,7 +1761,7 @@ export namespace MyNS {
 		 * Get 2015-01-01/es/compatibleVersions
 		 * @return {GetCompatibleElasticsearchVersionsResponse} Success
 		 */
-		GetCompatibleElasticsearchVersions(domainName: string): Observable<GetCompatibleElasticsearchVersionsResponse> {
+		GetCompatibleElasticsearchVersions(domainName: string | null | undefined): Observable<GetCompatibleElasticsearchVersionsResponse> {
 			return this.http.get<GetCompatibleElasticsearchVersionsResponse>(this.baseUri + '2015-01-01/es/compatibleVersions?domainName=' + (domainName == null ? '' : encodeURIComponent(domainName)), {});
 		}
 
@@ -1772,7 +1772,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetUpgradeHistoryResponse} Success
 		 */
-		GetUpgradeHistory(DomainName: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<GetUpgradeHistoryResponse> {
+		GetUpgradeHistory(DomainName: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<GetUpgradeHistoryResponse> {
 			return this.http.get<GetUpgradeHistoryResponse>(this.baseUri + '2015-01-01/es/upgradeDomain/' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '/history&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1804,7 +1804,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDomainsForPackageResponse} Success
 		 */
-		ListDomainsForPackage(PackageID: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListDomainsForPackageResponse> {
+		ListDomainsForPackage(PackageID: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDomainsForPackageResponse> {
 			return this.http.get<ListDomainsForPackageResponse>(this.baseUri + '2015-01-01/packages/' + (PackageID == null ? '' : encodeURIComponent(PackageID)) + '/domains&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1819,7 +1819,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListElasticsearchInstanceTypesResponse} Success
 		 */
-		ListElasticsearchInstanceTypes(ElasticsearchVersion: string, domainName: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListElasticsearchInstanceTypesResponse> {
+		ListElasticsearchInstanceTypes(ElasticsearchVersion: string, domainName: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListElasticsearchInstanceTypesResponse> {
 			return this.http.get<ListElasticsearchInstanceTypesResponse>(this.baseUri + '2015-01-01/es/instanceTypes/' + (ElasticsearchVersion == null ? '' : encodeURIComponent(ElasticsearchVersion)) + '&domainName=' + (domainName == null ? '' : encodeURIComponent(domainName)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1831,7 +1831,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListElasticsearchVersionsResponse} Success
 		 */
-		ListElasticsearchVersions(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListElasticsearchVersionsResponse> {
+		ListElasticsearchVersions(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListElasticsearchVersionsResponse> {
 			return this.http.get<ListElasticsearchVersionsResponse>(this.baseUri + '2015-01-01/es/versions?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1845,7 +1845,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPackagesForDomainResponse} Success
 		 */
-		ListPackagesForDomain(DomainName: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListPackagesForDomainResponse> {
+		ListPackagesForDomain(DomainName: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPackagesForDomainResponse> {
 			return this.http.get<ListPackagesForDomainResponse>(this.baseUri + '2015-01-01/domain/' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '/packages&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

@@ -852,7 +852,7 @@ export namespace MyNS {
 		 * call. If unspecified, the first page of results is returned.
 		 * @return {void} Successful response
 		 */
-		Cloudbilling_billingAccounts_list(filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudbilling_billingAccounts_list(filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/billingAccounts?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -883,7 +883,7 @@ export namespace MyNS {
 		 * call. If unspecified, the first page of results is returned.
 		 * @return {void} Successful response
 		 */
-		Cloudbilling_services_list(pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudbilling_services_list(pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/services?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -913,7 +913,7 @@ export namespace MyNS {
 		 * Only "display_name" is currently supported.
 		 * @return {void} Successful response
 		 */
-		Cloudbilling_billingAccounts_patch(name: string, updateMask: string, requestBody: BillingAccount): Observable<HttpResponse<string>> {
+		Cloudbilling_billingAccounts_patch(name: string, updateMask: string | null | undefined, requestBody: BillingAccount): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -983,7 +983,7 @@ export namespace MyNS {
 		 * call. If unspecified, the first page of results is returned.
 		 * @return {void} Successful response
 		 */
-		Cloudbilling_billingAccounts_projects_list(name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudbilling_billingAccounts_projects_list(name: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/projects&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1013,7 +1013,7 @@ export namespace MyNS {
 		 * most).
 		 * @return {void} Successful response
 		 */
-		Cloudbilling_services_skus_list(parent: string, currencyCode: string, endTime: string, pageSize: number, pageToken: string, startTime: string): Observable<HttpResponse<string>> {
+		Cloudbilling_services_skus_list(parent: string, currencyCode: string | null | undefined, endTime: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/skus&currencyCode=' + (currencyCode == null ? '' : encodeURIComponent(currencyCode)) + '&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1033,7 +1033,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Cloudbilling_billingAccounts_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Cloudbilling_billingAccounts_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

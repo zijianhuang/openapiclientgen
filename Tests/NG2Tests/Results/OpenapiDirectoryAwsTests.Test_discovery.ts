@@ -575,7 +575,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeContinuousExportsResponse} Success
 		 */
-		DescribeContinuousExports(maxResults: string, nextToken: string, requestBody: DescribeContinuousExportsRequest): Observable<DescribeContinuousExportsResponse> {
+		DescribeContinuousExports(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeContinuousExportsRequest): Observable<DescribeContinuousExportsResponse> {
 			return this.http.post<DescribeContinuousExportsResponse>(this.baseUri + '#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeContinuousExports?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -604,7 +604,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeImportTasksResponse} Success
 		 */
-		DescribeImportTasks(maxResults: string, nextToken: string, requestBody: DescribeImportTasksRequest): Observable<DescribeImportTasksResponse> {
+		DescribeImportTasks(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeImportTasksRequest): Observable<DescribeImportTasksResponse> {
 			return this.http.post<DescribeImportTasksResponse>(this.baseUri + '#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeImportTasks?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

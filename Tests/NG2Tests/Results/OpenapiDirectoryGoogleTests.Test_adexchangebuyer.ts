@@ -1393,7 +1393,7 @@ export namespace MyNS {
 		 * @param {boolean} confirmUnsafeAccountChange Confirmation for erasing bidder and cookie matching urls.
 		 * @return {void} Successful response
 		 */
-		Adexchangebuyer_accounts_patch(id: number, confirmUnsafeAccountChange: boolean, requestBody: Account): Observable<HttpResponse<string>> {
+		Adexchangebuyer_accounts_patch(id: number, confirmUnsafeAccountChange: boolean | null | undefined, requestBody: Account): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'accounts/' + id + '?confirmUnsafeAccountChange=' + confirmUnsafeAccountChange, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1404,7 +1404,7 @@ export namespace MyNS {
 		 * @param {boolean} confirmUnsafeAccountChange Confirmation for erasing bidder and cookie matching urls.
 		 * @return {void} Successful response
 		 */
-		Adexchangebuyer_accounts_update(id: number, confirmUnsafeAccountChange: boolean, requestBody: Account): Observable<HttpResponse<string>> {
+		Adexchangebuyer_accounts_update(id: number, confirmUnsafeAccountChange: boolean | null | undefined, requestBody: Account): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'accounts/' + id + '?confirmUnsafeAccountChange=' + confirmUnsafeAccountChange, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1471,7 +1471,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
 		 * @return {void} Successful response
 		 */
-		Adexchangebuyer_creatives_list(accountId: Array<number>, buyerCreativeId: Array<string>, dealsStatusFilter: Adexchangebuyer_creatives_listDealsStatusFilter, maxResults: number, openAuctionStatusFilter: Adexchangebuyer_creatives_listDealsStatusFilter, pageToken: string): Observable<HttpResponse<string>> {
+		Adexchangebuyer_creatives_list(accountId: Array<number> | null | undefined, buyerCreativeId: Array<string> | null | undefined, dealsStatusFilter: Adexchangebuyer_creatives_listDealsStatusFilter | null | undefined, maxResults: number | null | undefined, openAuctionStatusFilter: Adexchangebuyer_creatives_listDealsStatusFilter | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'creatives?' + accountId.map(z => `accountId=${z}`).join('&') + '&' + buyerCreativeId.map(z => `buyerCreativeId=${encodeURIComponent(z)}`).join('&') + '&dealsStatusFilter=' + dealsStatusFilter + '&maxResults=' + maxResults + '&openAuctionStatusFilter=' + openAuctionStatusFilter + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1540,7 +1540,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through performance reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.
 		 * @return {void} Successful response
 		 */
-		Adexchangebuyer_performanceReport_list(accountId: string, endDateTime: string, startDateTime: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adexchangebuyer_performanceReport_list(accountId: string, endDateTime: string, startDateTime: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'performancereport?accountId=' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&endDateTime=' + (endDateTime == null ? '' : encodeURIComponent(endDateTime)) + '&startDateTime=' + (startDateTime == null ? '' : encodeURIComponent(startDateTime)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1623,7 +1623,7 @@ export namespace MyNS {
 		 * @param {string} pqlQuery The pql query used to query for products.
 		 * @return {void} Successful response
 		 */
-		Adexchangebuyer_products_search(pqlQuery: string): Observable<HttpResponse<string>> {
+		Adexchangebuyer_products_search(pqlQuery: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'products/search?pqlQuery=' + (pqlQuery == null ? '' : encodeURIComponent(pqlQuery)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1652,7 +1652,7 @@ export namespace MyNS {
 		 * @param {string} pqlQuery Query string to retrieve specific proposals.
 		 * @return {void} Successful response
 		 */
-		Adexchangebuyer_proposals_search(pqlQuery: string): Observable<HttpResponse<string>> {
+		Adexchangebuyer_proposals_search(pqlQuery: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'proposals/search?pqlQuery=' + (pqlQuery == null ? '' : encodeURIComponent(pqlQuery)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1673,7 +1673,7 @@ export namespace MyNS {
 		 * @param {string} pqlQuery Query string to retrieve specific deals.
 		 * @return {void} Successful response
 		 */
-		Adexchangebuyer_marketplacedeals_list(proposalId: string, pqlQuery: string): Observable<HttpResponse<string>> {
+		Adexchangebuyer_marketplacedeals_list(proposalId: string, pqlQuery: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'proposals/' + (proposalId == null ? '' : encodeURIComponent(proposalId)) + '/deals&pqlQuery=' + (pqlQuery == null ? '' : encodeURIComponent(pqlQuery)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1714,7 +1714,7 @@ export namespace MyNS {
 		 * @param {string} pqlQuery Query string to retrieve specific notes. To search the text contents of notes, please use syntax like "WHERE note.note = "foo" or "WHERE note.note LIKE "%bar%"
 		 * @return {void} Successful response
 		 */
-		Adexchangebuyer_marketplacenotes_list(proposalId: string, pqlQuery: string): Observable<HttpResponse<string>> {
+		Adexchangebuyer_marketplacenotes_list(proposalId: string, pqlQuery: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'proposals/' + (proposalId == null ? '' : encodeURIComponent(proposalId)) + '/notes&pqlQuery=' + (pqlQuery == null ? '' : encodeURIComponent(pqlQuery)), { observe: 'response', responseType: 'text' });
 		}
 

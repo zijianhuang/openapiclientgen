@@ -83,7 +83,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChangedBlocksResponse} Success
 		 */
-		ListChangedBlocks(firstSnapshotId: string, secondSnapshotId: string, pageToken: string, maxResults: number, startingBlockIndex: number, MaxResults: string, NextToken: string): Observable<ListChangedBlocksResponse> {
+		ListChangedBlocks(firstSnapshotId: string | null | undefined, secondSnapshotId: string, pageToken: string | null | undefined, maxResults: number | null | undefined, startingBlockIndex: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListChangedBlocksResponse> {
 			return this.http.get<ListChangedBlocksResponse>(this.baseUri + 'snapshots/' + (secondSnapshotId == null ? '' : encodeURIComponent(secondSnapshotId)) + '/changedblocks?firstSnapshotId=' + (firstSnapshotId == null ? '' : encodeURIComponent(firstSnapshotId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&maxResults=' + maxResults + '&startingBlockIndex=' + startingBlockIndex + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -98,7 +98,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSnapshotBlocksResponse} Success
 		 */
-		ListSnapshotBlocks(snapshotId: string, pageToken: string, maxResults: number, startingBlockIndex: number, MaxResults: string, NextToken: string): Observable<ListSnapshotBlocksResponse> {
+		ListSnapshotBlocks(snapshotId: string, pageToken: string | null | undefined, maxResults: number | null | undefined, startingBlockIndex: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListSnapshotBlocksResponse> {
 			return this.http.get<ListSnapshotBlocksResponse>(this.baseUri + 'snapshots/' + (snapshotId == null ? '' : encodeURIComponent(snapshotId)) + '/blocks&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&maxResults=' + maxResults + '&startingBlockIndex=' + startingBlockIndex + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 	}

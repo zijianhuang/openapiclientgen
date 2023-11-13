@@ -228,7 +228,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChangeSetsResponse} Success
 		 */
-		ListChangeSets(MaxResults: string, NextToken: string, requestBody: ListChangeSetsPostBody): Observable<ListChangeSetsResponse> {
+		ListChangeSets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListChangeSetsPostBody): Observable<ListChangeSetsResponse> {
 			return this.http.post<ListChangeSetsResponse>(this.baseUri + 'ListChangeSets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -239,7 +239,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEntitiesResponse} Success
 		 */
-		ListEntities(MaxResults: string, NextToken: string, requestBody: ListEntitiesPostBody): Observable<ListEntitiesResponse> {
+		ListEntities(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListEntitiesPostBody): Observable<ListEntitiesResponse> {
 			return this.http.post<ListEntitiesResponse>(this.baseUri + 'ListEntities?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

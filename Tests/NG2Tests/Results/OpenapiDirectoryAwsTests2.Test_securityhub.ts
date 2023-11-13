@@ -1693,7 +1693,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @return {ListMembersResponse} Success
 		 */
-		ListMembers(OnlyAssociated: boolean, MaxResults: number, NextToken: string): Observable<ListMembersResponse> {
+		ListMembers(OnlyAssociated: boolean | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListMembersResponse> {
 			return this.http.get<ListMembersResponse>(this.baseUri + 'members?OnlyAssociated=' + OnlyAssociated + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1771,7 +1771,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeActionTargetsResponse} Success
 		 */
-		DescribeActionTargets(MaxResults: string, NextToken: string, requestBody: DescribeActionTargetsPostBody): Observable<DescribeActionTargetsResponse> {
+		DescribeActionTargets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeActionTargetsPostBody): Observable<DescribeActionTargetsResponse> {
 			return this.http.post<DescribeActionTargetsResponse>(this.baseUri + 'actionTargets/get?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1781,7 +1781,7 @@ export namespace MyNS {
 		 * @param {string} HubArn The ARN of the Hub resource to retrieve.
 		 * @return {DescribeHubResponse} Success
 		 */
-		DescribeHub(HubArn: string): Observable<DescribeHubResponse> {
+		DescribeHub(HubArn: string | null | undefined): Observable<DescribeHubResponse> {
 			return this.http.get<DescribeHubResponse>(this.baseUri + 'accounts?HubArn=' + (HubArn == null ? '' : encodeURIComponent(HubArn)), {});
 		}
 
@@ -1810,7 +1810,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of results to return.
 		 * @return {DescribeProductsResponse} Success
 		 */
-		DescribeProducts(NextToken: string, MaxResults: number): Observable<DescribeProductsResponse> {
+		DescribeProducts(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeProductsResponse> {
 			return this.http.get<DescribeProductsResponse>(this.baseUri + 'products?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -1821,7 +1821,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of standards to return.
 		 * @return {DescribeStandardsResponse} Success
 		 */
-		DescribeStandards(NextToken: string, MaxResults: number): Observable<DescribeStandardsResponse> {
+		DescribeStandards(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeStandardsResponse> {
 			return this.http.get<DescribeStandardsResponse>(this.baseUri + 'standards?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -1833,7 +1833,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of security standard controls to return.
 		 * @return {DescribeStandardsControlsResponse} Success
 		 */
-		DescribeStandardsControls(StandardsSubscriptionArn: string, NextToken: string, MaxResults: number): Observable<DescribeStandardsControlsResponse> {
+		DescribeStandardsControls(StandardsSubscriptionArn: string, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeStandardsControlsResponse> {
 			return this.http.get<DescribeStandardsControlsResponse>(this.baseUri + 'standards/controls/' + (StandardsSubscriptionArn == null ? '' : encodeURIComponent(StandardsSubscriptionArn)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -1881,7 +1881,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of items to return in the response.
 		 * @return {ListEnabledProductsForImportResponse} Success
 		 */
-		ListEnabledProductsForImport(NextToken: string, MaxResults: number): Observable<ListEnabledProductsForImportResponse> {
+		ListEnabledProductsForImport(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListEnabledProductsForImportResponse> {
 			return this.http.get<ListEnabledProductsForImportResponse>(this.baseUri + 'productSubscriptions?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -1892,7 +1892,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetEnabledStandardsResponse} Success
 		 */
-		GetEnabledStandards(MaxResults: string, NextToken: string, requestBody: GetEnabledStandardsPostBody): Observable<GetEnabledStandardsResponse> {
+		GetEnabledStandards(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetEnabledStandardsPostBody): Observable<GetEnabledStandardsResponse> {
 			return this.http.post<GetEnabledStandardsResponse>(this.baseUri + 'standards/get?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1903,7 +1903,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetFindingsResponse} Success
 		 */
-		GetFindings(MaxResults: string, NextToken: string, requestBody: GetFindingsPostBody): Observable<GetFindingsResponse> {
+		GetFindings(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetFindingsPostBody): Observable<GetFindingsResponse> {
 			return this.http.post<GetFindingsResponse>(this.baseUri + 'findings?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1933,7 +1933,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetInsightsResponse} Success
 		 */
-		GetInsights(MaxResults: string, NextToken: string, requestBody: GetInsightsPostBody): Observable<GetInsightsResponse> {
+		GetInsights(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetInsightsPostBody): Observable<GetInsightsResponse> {
 			return this.http.post<GetInsightsResponse>(this.baseUri + 'insights/get?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1971,7 +1971,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @return {ListInvitationsResponse} Success
 		 */
-		ListInvitations(MaxResults: number, NextToken: string): Observable<ListInvitationsResponse> {
+		ListInvitations(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListInvitationsResponse> {
 			return this.http.get<ListInvitationsResponse>(this.baseUri + 'invitations?MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

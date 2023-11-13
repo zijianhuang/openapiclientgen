@@ -13,7 +13,7 @@ export namespace MyNS {
 		 * @param {number} page Specify the page of coming hackathons.
 		 * @return {void} No response was specified
 		 */
-		HackathonsComing_jsonGetByPage(page: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		HackathonsComing_jsonGetByPage(page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'hackathons/coming.json?page=' + page, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 

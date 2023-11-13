@@ -871,7 +871,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAliasesResponse} Success
 		 */
-		ListAliases(MaxResults: string, NextToken: string, requestBody: ListAliasesRequest): Observable<ListAliasesResponse> {
+		ListAliases(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAliasesRequest): Observable<ListAliasesResponse> {
 			return this.http.post<ListAliasesResponse>(this.baseUri + '#X-Amz-Target=WorkMailService.ListAliases?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -882,7 +882,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupMembersResponse} Success
 		 */
-		ListGroupMembers(MaxResults: string, NextToken: string, requestBody: ListGroupMembersRequest): Observable<ListGroupMembersResponse> {
+		ListGroupMembers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListGroupMembersRequest): Observable<ListGroupMembersResponse> {
 			return this.http.post<ListGroupMembersResponse>(this.baseUri + '#X-Amz-Target=WorkMailService.ListGroupMembers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -893,7 +893,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupsResponse} Success
 		 */
-		ListGroups(MaxResults: string, NextToken: string, requestBody: ListGroupsRequest): Observable<ListGroupsResponse> {
+		ListGroups(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListGroupsRequest): Observable<ListGroupsResponse> {
 			return this.http.post<ListGroupsResponse>(this.baseUri + '#X-Amz-Target=WorkMailService.ListGroups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -904,7 +904,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMailboxPermissionsResponse} Success
 		 */
-		ListMailboxPermissions(MaxResults: string, NextToken: string, requestBody: ListMailboxPermissionsRequest): Observable<ListMailboxPermissionsResponse> {
+		ListMailboxPermissions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMailboxPermissionsRequest): Observable<ListMailboxPermissionsResponse> {
 			return this.http.post<ListMailboxPermissionsResponse>(this.baseUri + '#X-Amz-Target=WorkMailService.ListMailboxPermissions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -915,7 +915,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOrganizationsResponse} Success
 		 */
-		ListOrganizations(MaxResults: string, NextToken: string, requestBody: ListOrganizationsRequest): Observable<ListOrganizationsResponse> {
+		ListOrganizations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListOrganizationsRequest): Observable<ListOrganizationsResponse> {
 			return this.http.post<ListOrganizationsResponse>(this.baseUri + '#X-Amz-Target=WorkMailService.ListOrganizations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -926,7 +926,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListResourceDelegatesResponse} Success
 		 */
-		ListResourceDelegates(MaxResults: string, NextToken: string, requestBody: ListResourceDelegatesRequest): Observable<ListResourceDelegatesResponse> {
+		ListResourceDelegates(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListResourceDelegatesRequest): Observable<ListResourceDelegatesResponse> {
 			return this.http.post<ListResourceDelegatesResponse>(this.baseUri + '#X-Amz-Target=WorkMailService.ListResourceDelegates?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -937,7 +937,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListResourcesResponse} Success
 		 */
-		ListResources(MaxResults: string, NextToken: string, requestBody: ListResourcesRequest): Observable<ListResourcesResponse> {
+		ListResources(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListResourcesRequest): Observable<ListResourcesResponse> {
 			return this.http.post<ListResourcesResponse>(this.baseUri + '#X-Amz-Target=WorkMailService.ListResources?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -957,7 +957,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUsersResponse} Success
 		 */
-		ListUsers(MaxResults: string, NextToken: string, requestBody: ListUsersRequest): Observable<ListUsersResponse> {
+		ListUsers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListUsersRequest): Observable<ListUsersResponse> {
 			return this.http.post<ListUsersResponse>(this.baseUri + '#X-Amz-Target=WorkMailService.ListUsers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

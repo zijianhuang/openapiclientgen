@@ -2039,7 +2039,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_achievementDefinitions_list(language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_achievementDefinitions_list(language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'achievements?language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2049,7 +2049,7 @@ export namespace MyNS {
 		 * @param {string} builtinGameId Override used only by built-in games in Play Games application.
 		 * @return {void} Successful response
 		 */
-		Games_achievements_updateMultiple(builtinGameId: string, requestBody: AchievementUpdateMultipleRequest): Observable<HttpResponse<string>> {
+		Games_achievements_updateMultiple(builtinGameId: string | null | undefined, requestBody: AchievementUpdateMultipleRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'achievements/updateMultiple?builtinGameId=' + (builtinGameId == null ? '' : encodeURIComponent(builtinGameId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2061,7 +2061,7 @@ export namespace MyNS {
 		 * @param {string} requestId A randomly generated numeric ID for each request specified by the caller. This number is used at the server to ensure that the request is handled correctly across retries.
 		 * @return {void} Successful response
 		 */
-		Games_achievements_increment(achievementId: string, stepsToIncrement: number, requestId: string): Observable<HttpResponse<string>> {
+		Games_achievements_increment(achievementId: string, stepsToIncrement: number, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'achievements/' + (achievementId == null ? '' : encodeURIComponent(achievementId)) + '/increment&stepsToIncrement=' + stepsToIncrement + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2093,7 +2093,7 @@ export namespace MyNS {
 		 * @param {string} builtinGameId Override used only by built-in games in Play Games application.
 		 * @return {void} Successful response
 		 */
-		Games_achievements_unlock(achievementId: string, builtinGameId: string): Observable<HttpResponse<string>> {
+		Games_achievements_unlock(achievementId: string, builtinGameId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'achievements/' + (achievementId == null ? '' : encodeURIComponent(achievementId)) + '/unlock&builtinGameId=' + (builtinGameId == null ? '' : encodeURIComponent(builtinGameId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2103,7 +2103,7 @@ export namespace MyNS {
 		 * @param {string} builtinGameId Override used only by built-in games in Play Games application.
 		 * @return {void} Successful response
 		 */
-		Games_applications_played(builtinGameId: string): Observable<HttpResponse<string>> {
+		Games_applications_played(builtinGameId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'applications/played?builtinGameId=' + (builtinGameId == null ? '' : encodeURIComponent(builtinGameId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2115,7 +2115,7 @@ export namespace MyNS {
 		 * @param {Games_applications_getPlatformType} platformType Restrict application details returned to the specific platform.
 		 * @return {void} Successful response
 		 */
-		Games_applications_get(applicationId: string, language: string, platformType: Games_applications_getPlatformType): Observable<HttpResponse<string>> {
+		Games_applications_get(applicationId: string, language: string | null | undefined, platformType: Games_applications_getPlatformType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&platformType=' + platformType, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2137,7 +2137,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_events_listDefinitions(language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_events_listDefinitions(language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'eventDefinitions?language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2149,7 +2149,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_events_listByPlayer(language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_events_listByPlayer(language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'events?language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2159,7 +2159,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_events_record(language: string, requestBody: EventRecordRequest): Observable<HttpResponse<string>> {
+		Games_events_record(language: string | null | undefined, requestBody: EventRecordRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'events?language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2171,7 +2171,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_leaderboards_list(language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_leaderboards_list(language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'leaderboards?language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2181,7 +2181,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_scores_submitMultiple(language: string, requestBody: PlayerScoreSubmissionList): Observable<HttpResponse<string>> {
+		Games_scores_submitMultiple(language: string | null | undefined, requestBody: PlayerScoreSubmissionList): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'leaderboards/scores?language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2192,7 +2192,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_leaderboards_get(leaderboardId: string, language: string): Observable<HttpResponse<string>> {
+		Games_leaderboards_get(leaderboardId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'leaderboards/' + (leaderboardId == null ? '' : encodeURIComponent(leaderboardId)) + '&language=' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2205,7 +2205,7 @@ export namespace MyNS {
 		 * @param {string} scoreTag Additional information about the score you're submitting. Values must contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
 		 * @return {void} Successful response
 		 */
-		Games_scores_submit(leaderboardId: string, score: string, language: string, scoreTag: string): Observable<HttpResponse<string>> {
+		Games_scores_submit(leaderboardId: string, score: string, language: string | null | undefined, scoreTag: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'leaderboards/' + (leaderboardId == null ? '' : encodeURIComponent(leaderboardId)) + '/scores&score=' + (score == null ? '' : encodeURIComponent(score)) + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&scoreTag=' + (scoreTag == null ? '' : encodeURIComponent(scoreTag)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2220,7 +2220,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_scores_list(leaderboardId: string, collection: Games_scores_listCollection, timeSpan: Games_scores_listTimeSpan, language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_scores_list(leaderboardId: string, collection: Games_scores_listCollection, timeSpan: Games_scores_listTimeSpan, language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'leaderboards/' + (leaderboardId == null ? '' : encodeURIComponent(leaderboardId)) + '/scores/' + collection + '&timeSpan=' + timeSpan + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2237,7 +2237,7 @@ export namespace MyNS {
 		 * @param {boolean} returnTopIfAbsent True if the top scores should be returned when the player is not in the leaderboard. Defaults to true.
 		 * @return {void} Successful response
 		 */
-		Games_scores_listWindow(leaderboardId: string, collection: Games_scores_listCollection, timeSpan: Games_scores_listTimeSpan, language: string, maxResults: number, pageToken: string, resultsAbove: number, returnTopIfAbsent: boolean): Observable<HttpResponse<string>> {
+		Games_scores_listWindow(leaderboardId: string, collection: Games_scores_listCollection, timeSpan: Games_scores_listTimeSpan, language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, resultsAbove: number | null | undefined, returnTopIfAbsent: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'leaderboards/' + (leaderboardId == null ? '' : encodeURIComponent(leaderboardId)) + '/window/' + collection + '&timeSpan=' + timeSpan + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&resultsAbove=' + resultsAbove + '&returnTopIfAbsent=' + returnTopIfAbsent, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2259,7 +2259,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_players_list(collection: Games_players_listCollection, language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_players_list(collection: Games_players_listCollection, language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'players/me/players/' + collection + '?language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2270,7 +2270,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_players_get(playerId: string, language: string): Observable<HttpResponse<string>> {
+		Games_players_get(playerId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'players/' + (playerId == null ? '' : encodeURIComponent(playerId)) + '&language=' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2284,7 +2284,7 @@ export namespace MyNS {
 		 * @param {Games_achievements_listState} state Tells the server to return only achievements with the specified state. If this parameter isn't specified, all achievements are returned.
 		 * @return {void} Successful response
 		 */
-		Games_achievements_list(playerId: string, language: string, maxResults: number, pageToken: string, state: Games_achievements_listState): Observable<HttpResponse<string>> {
+		Games_achievements_list(playerId: string, language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, state: Games_achievements_listState | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'players/' + (playerId == null ? '' : encodeURIComponent(playerId)) + '/achievements&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&state=' + state, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2298,7 +2298,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_metagame_listCategoriesByPlayer(playerId: string, collection: Games_metagame_listCategoriesByPlayerCollection, language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_metagame_listCategoriesByPlayer(playerId: string, collection: Games_metagame_listCategoriesByPlayerCollection, language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'players/' + (playerId == null ? '' : encodeURIComponent(playerId)) + '/categories/' + collection + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2315,7 +2315,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_scores_get(playerId: string, leaderboardId: string, timeSpan: Games_scores_getTimeSpan, includeRankType: Games_scores_getIncludeRankType, language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_scores_get(playerId: string, leaderboardId: string, timeSpan: Games_scores_getTimeSpan, includeRankType: Games_scores_getIncludeRankType | null | undefined, language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'players/' + (playerId == null ? '' : encodeURIComponent(playerId)) + '/leaderboards/' + (leaderboardId == null ? '' : encodeURIComponent(leaderboardId)) + '/scores/' + timeSpan + '&includeRankType=' + includeRankType + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2328,7 +2328,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_snapshots_list(playerId: string, language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_snapshots_list(playerId: string, language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'players/' + (playerId == null ? '' : encodeURIComponent(playerId)) + '/snapshots&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2373,7 +2373,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_rooms_list(language: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_rooms_list(language: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'rooms?language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2383,7 +2383,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_rooms_create(language: string, requestBody: RoomCreateRequest): Observable<HttpResponse<string>> {
+		Games_rooms_create(language: string | null | undefined, requestBody: RoomCreateRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'rooms/create?language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2394,7 +2394,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_rooms_get(roomId: string, language: string): Observable<HttpResponse<string>> {
+		Games_rooms_get(roomId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'rooms/' + (roomId == null ? '' : encodeURIComponent(roomId)) + '&language=' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2405,7 +2405,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_rooms_decline(roomId: string, language: string): Observable<HttpResponse<string>> {
+		Games_rooms_decline(roomId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'rooms/' + (roomId == null ? '' : encodeURIComponent(roomId)) + '/decline&language=' + (language == null ? '' : encodeURIComponent(language)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2426,7 +2426,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_rooms_join(roomId: string, language: string, requestBody: RoomJoinRequest): Observable<HttpResponse<string>> {
+		Games_rooms_join(roomId: string, language: string | null | undefined, requestBody: RoomJoinRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'rooms/' + (roomId == null ? '' : encodeURIComponent(roomId)) + '/join&language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2437,7 +2437,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_rooms_leave(roomId: string, language: string, requestBody: RoomLeaveRequest): Observable<HttpResponse<string>> {
+		Games_rooms_leave(roomId: string, language: string | null | undefined, requestBody: RoomLeaveRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'rooms/' + (roomId == null ? '' : encodeURIComponent(roomId)) + '/leave&language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2448,7 +2448,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_rooms_reportStatus(roomId: string, language: string, requestBody: RoomP2PStatuses): Observable<HttpResponse<string>> {
+		Games_rooms_reportStatus(roomId: string, language: string | null | undefined, requestBody: RoomP2PStatuses): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'rooms/' + (roomId == null ? '' : encodeURIComponent(roomId)) + '/reportstatus&language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2459,7 +2459,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_snapshots_get(snapshotId: string, language: string): Observable<HttpResponse<string>> {
+		Games_snapshots_get(snapshotId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'snapshots/' + (snapshotId == null ? '' : encodeURIComponent(snapshotId)) + '&language=' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2473,7 +2473,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_list(includeMatchData: boolean, language: string, maxCompletedMatches: number, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_list(includeMatchData: boolean | null | undefined, language: string | null | undefined, maxCompletedMatches: number | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'turnbasedmatches?includeMatchData=' + includeMatchData + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxCompletedMatches=' + maxCompletedMatches + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2483,7 +2483,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_create(language: string, requestBody: TurnBasedMatchCreateRequest): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_create(language: string | null | undefined, requestBody: TurnBasedMatchCreateRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'turnbasedmatches/create?language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2497,7 +2497,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_sync(includeMatchData: boolean, language: string, maxCompletedMatches: number, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_sync(includeMatchData: boolean | null | undefined, language: string | null | undefined, maxCompletedMatches: number | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'turnbasedmatches/sync?includeMatchData=' + includeMatchData + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxCompletedMatches=' + maxCompletedMatches + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2509,7 +2509,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_get(matchId: string, includeMatchData: boolean, language: string): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_get(matchId: string, includeMatchData: boolean | null | undefined, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'turnbasedmatches/' + (matchId == null ? '' : encodeURIComponent(matchId)) + '&includeMatchData=' + includeMatchData + '&language=' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2530,7 +2530,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_decline(matchId: string, language: string): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_decline(matchId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'turnbasedmatches/' + (matchId == null ? '' : encodeURIComponent(matchId)) + '/decline&language=' + (language == null ? '' : encodeURIComponent(language)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2551,7 +2551,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_finish(matchId: string, language: string, requestBody: TurnBasedMatchResults): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_finish(matchId: string, language: string | null | undefined, requestBody: TurnBasedMatchResults): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'turnbasedmatches/' + (matchId == null ? '' : encodeURIComponent(matchId)) + '/finish&language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2562,7 +2562,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_join(matchId: string, language: string): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_join(matchId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'turnbasedmatches/' + (matchId == null ? '' : encodeURIComponent(matchId)) + '/join&language=' + (language == null ? '' : encodeURIComponent(language)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2573,7 +2573,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_leave(matchId: string, language: string): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_leave(matchId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'turnbasedmatches/' + (matchId == null ? '' : encodeURIComponent(matchId)) + '/leave&language=' + (language == null ? '' : encodeURIComponent(language)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2586,7 +2586,7 @@ export namespace MyNS {
 		 * @param {string} pendingParticipantId The ID of another participant who should take their turn next. If not set, the match will wait for other player(s) to join via automatching; this is only valid if automatch criteria is set on the match with remaining slots for automatched players.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_leaveTurn(matchId: string, matchVersion: number, language: string, pendingParticipantId: string): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_leaveTurn(matchId: string, matchVersion: number, language: string | null | undefined, pendingParticipantId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'turnbasedmatches/' + (matchId == null ? '' : encodeURIComponent(matchId)) + '/leaveTurn&matchVersion=' + matchVersion + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&pendingParticipantId=' + (pendingParticipantId == null ? '' : encodeURIComponent(pendingParticipantId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2598,7 +2598,7 @@ export namespace MyNS {
 		 * @param {string} requestId A randomly generated numeric ID for each request specified by the caller. This number is used at the server to ensure that the request is handled correctly across retries.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_rematch(matchId: string, language: string, requestId: string): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_rematch(matchId: string, language: string | null | undefined, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'turnbasedmatches/' + (matchId == null ? '' : encodeURIComponent(matchId)) + '/rematch&language=' + (language == null ? '' : encodeURIComponent(language)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2609,7 +2609,7 @@ export namespace MyNS {
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @return {void} Successful response
 		 */
-		Games_turnBasedMatches_takeTurn(matchId: string, language: string, requestBody: TurnBasedMatchTurn): Observable<HttpResponse<string>> {
+		Games_turnBasedMatches_takeTurn(matchId: string, language: string | null | undefined, requestBody: TurnBasedMatchTurn): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'turnbasedmatches/' + (matchId == null ? '' : encodeURIComponent(matchId)) + '/turn&language=' + (language == null ? '' : encodeURIComponent(language)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

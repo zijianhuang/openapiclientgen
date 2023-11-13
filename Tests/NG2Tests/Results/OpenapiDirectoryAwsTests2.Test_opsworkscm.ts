@@ -473,7 +473,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeBackupsResponse} Success
 		 */
-		DescribeBackups(MaxResults: string, NextToken: string, requestBody: DescribeBackupsRequest): Observable<DescribeBackupsResponse> {
+		DescribeBackups(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeBackupsRequest): Observable<DescribeBackupsResponse> {
 			return this.http.post<DescribeBackupsResponse>(this.baseUri + '#X-Amz-Target=OpsWorksCM_V2016_11_01.DescribeBackups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -484,7 +484,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeEventsResponse} Success
 		 */
-		DescribeEvents(MaxResults: string, NextToken: string, requestBody: DescribeEventsRequest): Observable<DescribeEventsResponse> {
+		DescribeEvents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeEventsRequest): Observable<DescribeEventsResponse> {
 			return this.http.post<DescribeEventsResponse>(this.baseUri + '#X-Amz-Target=OpsWorksCM_V2016_11_01.DescribeEvents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -504,7 +504,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeServersResponse} Success
 		 */
-		DescribeServers(MaxResults: string, NextToken: string, requestBody: DescribeServersRequest): Observable<DescribeServersResponse> {
+		DescribeServers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeServersRequest): Observable<DescribeServersResponse> {
 			return this.http.post<DescribeServersResponse>(this.baseUri + '#X-Amz-Target=OpsWorksCM_V2016_11_01.DescribeServers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -533,7 +533,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + '#X-Amz-Target=OpsWorksCM_V2016_11_01.ListTagsForResource?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

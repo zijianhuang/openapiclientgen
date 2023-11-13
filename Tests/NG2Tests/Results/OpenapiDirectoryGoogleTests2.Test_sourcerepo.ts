@@ -772,7 +772,7 @@ export namespace MyNS {
 		 * a recent, prior ListReposResponse's next_page_token field.
 		 * @return {void} Successful response
 		 */
-		Sourcerepo_projects_repos_list(name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Sourcerepo_projects_repos_list(name: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/repos&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -816,7 +816,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Sourcerepo_projects_repos_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Sourcerepo_projects_repos_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

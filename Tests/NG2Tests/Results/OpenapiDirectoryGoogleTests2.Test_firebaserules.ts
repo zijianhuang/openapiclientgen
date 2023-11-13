@@ -616,7 +616,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Next page token for the next batch of `Release` instances.
 		 * @return {void} Successful response
 		 */
-		Firebaserules_projects_releases_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Firebaserules_projects_releases_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/releases&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -668,7 +668,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Next page token for loading the next batch of `Ruleset` instances.
 		 * @return {void} Successful response
 		 */
-		Firebaserules_projects_rulesets_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Firebaserules_projects_rulesets_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/rulesets&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -696,7 +696,7 @@ export namespace MyNS {
 		 * Defaults to FIREBASE_RULES_EXECUTABLE_V1.
 		 * @return {void} Successful response
 		 */
-		Firebaserules_projects_releases_getExecutable(name: string, executableVersion: GetReleaseExecutableResponseExecutableVersion): Observable<HttpResponse<string>> {
+		Firebaserules_projects_releases_getExecutable(name: string, executableVersion: GetReleaseExecutableResponseExecutableVersion | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + ':getExecutable&executableVersion=' + executableVersion, { observe: 'response', responseType: 'text' });
 		}
 

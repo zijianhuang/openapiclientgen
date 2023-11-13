@@ -898,7 +898,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListClustersResponse} Success
 		 */
-		ListClusters(clusterNameFilter: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListClustersResponse> {
+		ListClusters(clusterNameFilter: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListClustersResponse> {
 			return this.http.get<ListClustersResponse>(this.baseUri + 'v1/clusters?clusterNameFilter=' + (clusterNameFilter == null ? '' : encodeURIComponent(clusterNameFilter)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -925,7 +925,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListConfigurationsResponse} Success
 		 */
-		ListConfigurations(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListConfigurationsResponse> {
+		ListConfigurations(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListConfigurationsResponse> {
 			return this.http.get<ListConfigurationsResponse>(this.baseUri + 'v1/configurations?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -940,7 +940,7 @@ export namespace MyNS {
 		 *          
 		 * @return {DeleteClusterResponse} Success
 		 */
-		DeleteCluster(clusterArn: string, currentVersion: string): Observable<DeleteClusterResponse> {
+		DeleteCluster(clusterArn: string, currentVersion: string | null | undefined): Observable<DeleteClusterResponse> {
 			return this.http.delete<DeleteClusterResponse>(this.baseUri + 'v1/clusters/' + (clusterArn == null ? '' : encodeURIComponent(clusterArn)) + '&currentVersion=' + (currentVersion == null ? '' : encodeURIComponent(currentVersion)), {});
 		}
 
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 		 *             
 		 * @return {GetCompatibleKafkaVersionsResponse} Success
 		 */
-		GetCompatibleKafkaVersions(clusterArn: string): Observable<GetCompatibleKafkaVersionsResponse> {
+		GetCompatibleKafkaVersions(clusterArn: string | null | undefined): Observable<GetCompatibleKafkaVersionsResponse> {
 			return this.http.get<GetCompatibleKafkaVersionsResponse>(this.baseUri + 'v1/compatible-kafka-versions?clusterArn=' + (clusterArn == null ? '' : encodeURIComponent(clusterArn)), {});
 		}
 
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListClusterOperationsResponse} Success
 		 */
-		ListClusterOperations(clusterArn: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListClusterOperationsResponse> {
+		ListClusterOperations(clusterArn: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListClusterOperationsResponse> {
 			return this.http.get<ListClusterOperationsResponse>(this.baseUri + 'v1/clusters/' + (clusterArn == null ? '' : encodeURIComponent(clusterArn)) + '/operations&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1057,7 +1057,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListConfigurationRevisionsResponse} Success
 		 */
-		ListConfigurationRevisions(arn: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListConfigurationRevisionsResponse> {
+		ListConfigurationRevisions(arn: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListConfigurationRevisionsResponse> {
 			return this.http.get<ListConfigurationRevisionsResponse>(this.baseUri + 'v1/configurations/' + (arn == null ? '' : encodeURIComponent(arn)) + '/revisions&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1072,7 +1072,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListKafkaVersionsResponse} Success
 		 */
-		ListKafkaVersions(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListKafkaVersionsResponse> {
+		ListKafkaVersions(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListKafkaVersionsResponse> {
 			return this.http.get<ListKafkaVersionsResponse>(this.baseUri + 'v1/kafka-versions?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1093,7 +1093,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNodesResponse} Success
 		 */
-		ListNodes(clusterArn: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListNodesResponse> {
+		ListNodes(clusterArn: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListNodesResponse> {
 			return this.http.get<ListNodesResponse>(this.baseUri + 'v1/clusters/' + (clusterArn == null ? '' : encodeURIComponent(clusterArn)) + '/nodes&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

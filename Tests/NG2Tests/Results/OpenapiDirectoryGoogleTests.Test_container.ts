@@ -2946,7 +2946,7 @@ export namespace MyNS {
 		 * Location "-" matches all zones and all regions.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_clusters_list(projectId: string, zone: string, parent: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_clusters_list(projectId: string, zone: string, parent: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/clusters&parent=' + (parent == null ? '' : encodeURIComponent(parent)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2997,7 +2997,7 @@ export namespace MyNS {
 		 * Specified in the format 'projects/locations/clusters/*'.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_clusters_delete(projectId: string, zone: string, clusterId: string, name: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_clusters_delete(projectId: string, zone: string, clusterId: string, name: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/clusters/' + (clusterId == null ? '' : encodeURIComponent(clusterId)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3017,7 +3017,7 @@ export namespace MyNS {
 		 * Specified in the format 'projects/locations/clusters/*'.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_clusters_get(projectId: string, zone: string, clusterId: string, name: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_clusters_get(projectId: string, zone: string, clusterId: string, name: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/clusters/' + (clusterId == null ? '' : encodeURIComponent(clusterId)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3166,7 +3166,7 @@ export namespace MyNS {
 		 * listed. Specified in the format 'projects/locations/clusters/*'.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_clusters_nodePools_list(projectId: string, zone: string, clusterId: string, parent: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_clusters_nodePools_list(projectId: string, zone: string, clusterId: string, parent: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/clusters/' + (clusterId == null ? '' : encodeURIComponent(clusterId)) + '/nodePools&parent=' + (parent == null ? '' : encodeURIComponent(parent)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3207,7 +3207,7 @@ export namespace MyNS {
 		 * 'projects/locations/clusters/nodePools/*'.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_clusters_nodePools_delete(projectId: string, zone: string, clusterId: string, nodePoolId: string, name: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_clusters_nodePools_delete(projectId: string, zone: string, clusterId: string, nodePoolId: string, name: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/clusters/' + (clusterId == null ? '' : encodeURIComponent(clusterId)) + '/nodePools/' + (nodePoolId == null ? '' : encodeURIComponent(nodePoolId)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3230,7 +3230,7 @@ export namespace MyNS {
 		 * 'projects/locations/clusters/nodePools/*'.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_clusters_nodePools_get(projectId: string, zone: string, clusterId: string, nodePoolId: string, name: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_clusters_nodePools_get(projectId: string, zone: string, clusterId: string, nodePoolId: string, name: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/clusters/' + (clusterId == null ? '' : encodeURIComponent(clusterId)) + '/nodePools/' + (nodePoolId == null ? '' : encodeURIComponent(nodePoolId)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3456,7 +3456,7 @@ export namespace MyNS {
 		 * Location "-" matches all zones and all regions.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_operations_list(projectId: string, zone: string, parent: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_operations_list(projectId: string, zone: string, parent: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/operations&parent=' + (parent == null ? '' : encodeURIComponent(parent)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3476,7 +3476,7 @@ export namespace MyNS {
 		 * Specified in the format 'projects/locations/operations/*'.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_operations_get(projectId: string, zone: string, operationId: string, name: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_operations_get(projectId: string, zone: string, operationId: string, name: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/operations/' + (operationId == null ? '' : encodeURIComponent(operationId)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3510,7 +3510,7 @@ export namespace MyNS {
 		 * specified in the format 'projects/locations/*'.
 		 * @return {void} Successful response
 		 */
-		Container_projects_zones_getServerconfig(projectId: string, zone: string, name: string): Observable<HttpResponse<string>> {
+		Container_projects_zones_getServerconfig(projectId: string, zone: string, name: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/serverconfig&name=' + (name == null ? '' : encodeURIComponent(name)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3533,7 +3533,7 @@ export namespace MyNS {
 		 * This field has been deprecated and replaced by the name field.
 		 * @return {void} Successful response
 		 */
-		Container_projects_locations_clusters_nodePools_delete(name: string, clusterId: string, nodePoolId: string, projectId: string, zone: string): Observable<HttpResponse<string>> {
+		Container_projects_locations_clusters_nodePools_delete(name: string, clusterId: string | null | undefined, nodePoolId: string | null | undefined, projectId: string | null | undefined, zone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&clusterId=' + (clusterId == null ? '' : encodeURIComponent(clusterId)) + '&nodePoolId=' + (nodePoolId == null ? '' : encodeURIComponent(nodePoolId)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&zone=' + (zone == null ? '' : encodeURIComponent(zone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3556,7 +3556,7 @@ export namespace MyNS {
 		 * This field has been deprecated and replaced by the name field.
 		 * @return {void} Successful response
 		 */
-		Container_projects_locations_clusters_nodePools_get(name: string, clusterId: string, nodePoolId: string, projectId: string, zone: string): Observable<HttpResponse<string>> {
+		Container_projects_locations_clusters_nodePools_get(name: string, clusterId: string | null | undefined, nodePoolId: string | null | undefined, projectId: string | null | undefined, zone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&clusterId=' + (clusterId == null ? '' : encodeURIComponent(clusterId)) + '&nodePoolId=' + (nodePoolId == null ? '' : encodeURIComponent(nodePoolId)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&zone=' + (zone == null ? '' : encodeURIComponent(zone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3585,7 +3585,7 @@ export namespace MyNS {
 		 * This field has been deprecated and replaced by the name field.
 		 * @return {void} Successful response
 		 */
-		Container_projects_locations_getServerConfig(name: string, projectId: string, zone: string): Observable<HttpResponse<string>> {
+		Container_projects_locations_getServerConfig(name: string, projectId: string | null | undefined, zone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/serverConfig&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&zone=' + (zone == null ? '' : encodeURIComponent(zone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3821,7 +3821,7 @@ export namespace MyNS {
 		 * previous list requests to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Container_projects_aggregated_usableSubnetworks_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Container_projects_aggregated_usableSubnetworks_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/aggregated/usableSubnetworks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3841,7 +3841,7 @@ export namespace MyNS {
 		 * This field has been deprecated and replaced by the parent field.
 		 * @return {void} Successful response
 		 */
-		Container_projects_locations_clusters_list(parent: string, projectId: string, zone: string): Observable<HttpResponse<string>> {
+		Container_projects_locations_clusters_list(parent: string, projectId: string | null | undefined, zone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/clusters&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&zone=' + (zone == null ? '' : encodeURIComponent(zone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3895,7 +3895,7 @@ export namespace MyNS {
 		 * This field has been deprecated and replaced by the parent field.
 		 * @return {void} Successful response
 		 */
-		Container_projects_locations_clusters_nodePools_list(parent: string, clusterId: string, projectId: string, zone: string): Observable<HttpResponse<string>> {
+		Container_projects_locations_clusters_nodePools_list(parent: string, clusterId: string | null | undefined, projectId: string | null | undefined, zone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/nodePools&clusterId=' + (clusterId == null ? '' : encodeURIComponent(clusterId)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&zone=' + (zone == null ? '' : encodeURIComponent(zone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3925,7 +3925,7 @@ export namespace MyNS {
 		 * all zones. This field has been deprecated and replaced by the parent field.
 		 * @return {void} Successful response
 		 */
-		Container_projects_locations_operations_list(parent: string, projectId: string, zone: string): Observable<HttpResponse<string>> {
+		Container_projects_locations_operations_list(parent: string, projectId: string | null | undefined, zone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/operations&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&zone=' + (zone == null ? '' : encodeURIComponent(zone)), { observe: 'response', responseType: 'text' });
 		}
 	}

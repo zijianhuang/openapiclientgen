@@ -1558,7 +1558,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeProjectVersionsResponse} Success
 		 */
-		DescribeProjectVersions(MaxResults: string, NextToken: string, requestBody: DescribeProjectVersionsRequest): Observable<DescribeProjectVersionsResponse> {
+		DescribeProjectVersions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeProjectVersionsRequest): Observable<DescribeProjectVersionsResponse> {
 			return this.http.post<DescribeProjectVersionsResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.DescribeProjectVersions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1569,7 +1569,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeProjectsResponse} Success
 		 */
-		DescribeProjects(MaxResults: string, NextToken: string, requestBody: DescribeProjectsRequest): Observable<DescribeProjectsResponse> {
+		DescribeProjects(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeProjectsRequest): Observable<DescribeProjectsResponse> {
 			return this.http.post<DescribeProjectsResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.DescribeProjects?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCelebrityRecognitionResponse} Success
 		 */
-		GetCelebrityRecognition(MaxResults: string, NextToken: string, requestBody: GetCelebrityRecognitionRequest): Observable<GetCelebrityRecognitionResponse> {
+		GetCelebrityRecognition(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetCelebrityRecognitionRequest): Observable<GetCelebrityRecognitionResponse> {
 			return this.http.post<GetCelebrityRecognitionResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetCelebrityRecognition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1654,7 +1654,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetContentModerationResponse} Success
 		 */
-		GetContentModeration(MaxResults: string, NextToken: string, requestBody: GetContentModerationRequest): Observable<GetContentModerationResponse> {
+		GetContentModeration(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetContentModerationRequest): Observable<GetContentModerationResponse> {
 			return this.http.post<GetContentModerationResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetContentModeration?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1665,7 +1665,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetFaceDetectionResponse} Success
 		 */
-		GetFaceDetection(MaxResults: string, NextToken: string, requestBody: GetFaceDetectionRequest): Observable<GetFaceDetectionResponse> {
+		GetFaceDetection(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetFaceDetectionRequest): Observable<GetFaceDetectionResponse> {
 			return this.http.post<GetFaceDetectionResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetFaceDetection?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1676,7 +1676,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetFaceSearchResponse} Success
 		 */
-		GetFaceSearch(MaxResults: string, NextToken: string, requestBody: GetFaceSearchRequest): Observable<GetFaceSearchResponse> {
+		GetFaceSearch(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetFaceSearchRequest): Observable<GetFaceSearchResponse> {
 			return this.http.post<GetFaceSearchResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetFaceSearch?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1687,7 +1687,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetLabelDetectionResponse} Success
 		 */
-		GetLabelDetection(MaxResults: string, NextToken: string, requestBody: GetLabelDetectionRequest): Observable<GetLabelDetectionResponse> {
+		GetLabelDetection(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetLabelDetectionRequest): Observable<GetLabelDetectionResponse> {
 			return this.http.post<GetLabelDetectionResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetLabelDetection?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetPersonTrackingResponse} Success
 		 */
-		GetPersonTracking(MaxResults: string, NextToken: string, requestBody: GetPersonTrackingRequest): Observable<GetPersonTrackingResponse> {
+		GetPersonTracking(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetPersonTrackingRequest): Observable<GetPersonTrackingResponse> {
 			return this.http.post<GetPersonTrackingResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetPersonTracking?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1709,7 +1709,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTextDetectionResponse} Success
 		 */
-		GetTextDetection(MaxResults: string, NextToken: string, requestBody: GetTextDetectionRequest): Observable<GetTextDetectionResponse> {
+		GetTextDetection(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTextDetectionRequest): Observable<GetTextDetectionResponse> {
 			return this.http.post<GetTextDetectionResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetTextDetection?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1729,7 +1729,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCollectionsResponse} Success
 		 */
-		ListCollections(MaxResults: string, NextToken: string, requestBody: ListCollectionsRequest): Observable<ListCollectionsResponse> {
+		ListCollections(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCollectionsRequest): Observable<ListCollectionsResponse> {
 			return this.http.post<ListCollectionsResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.ListCollections?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1740,7 +1740,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFacesResponse} Success
 		 */
-		ListFaces(MaxResults: string, NextToken: string, requestBody: ListFacesRequest): Observable<ListFacesResponse> {
+		ListFaces(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFacesRequest): Observable<ListFacesResponse> {
 			return this.http.post<ListFacesResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.ListFaces?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1751,7 +1751,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListStreamProcessorsResponse} Success
 		 */
-		ListStreamProcessors(MaxResults: string, NextToken: string, requestBody: ListStreamProcessorsRequest): Observable<ListStreamProcessorsResponse> {
+		ListStreamProcessors(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListStreamProcessorsRequest): Observable<ListStreamProcessorsResponse> {
 			return this.http.post<ListStreamProcessorsResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.ListStreamProcessors?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

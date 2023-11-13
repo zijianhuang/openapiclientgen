@@ -308,7 +308,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @return {ListRepositoryAssociationsResponse} Success
 		 */
-		ListRepositoryAssociations(ProviderType: Array<ProviderType>, State: Array<RepositoryAssociationState>, Name: Array<string>, Owner: Array<string>, MaxResults: number, NextToken: string): Observable<ListRepositoryAssociationsResponse> {
+		ListRepositoryAssociations(ProviderType: Array<ProviderType> | null | undefined, State: Array<RepositoryAssociationState> | null | undefined, Name: Array<string> | null | undefined, Owner: Array<string> | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListRepositoryAssociationsResponse> {
 			return this.http.get<ListRepositoryAssociationsResponse>(this.baseUri + 'associations?' + ProviderType.map(z => `ProviderType=${z}`).join('&') + '&' + State.map(z => `State=${z}`).join('&') + '&' + Name.map(z => `Name=${encodeURIComponent(z)}`).join('&') + '&' + Owner.map(z => `Owner=${encodeURIComponent(z)}`).join('&') + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -330,7 +330,7 @@ export namespace MyNS {
 		 * @param {string} UserId  Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request. 
 		 * @return {DescribeRecommendationFeedbackResponse} Success
 		 */
-		DescribeRecommendationFeedback(CodeReviewArn: string, RecommendationId: string, UserId: string): Observable<DescribeRecommendationFeedbackResponse> {
+		DescribeRecommendationFeedback(CodeReviewArn: string, RecommendationId: string, UserId: string | null | undefined): Observable<DescribeRecommendationFeedbackResponse> {
 			return this.http.get<DescribeRecommendationFeedbackResponse>(this.baseUri + 'feedback/' + (CodeReviewArn == null ? '' : encodeURIComponent(CodeReviewArn)) + '#RecommendationId&RecommendationId=' + (RecommendationId == null ? '' : encodeURIComponent(RecommendationId)) + '&UserId=' + (UserId == null ? '' : encodeURIComponent(UserId)), {});
 		}
 
@@ -365,7 +365,7 @@ export namespace MyNS {
 		 * @param {string} NextToken  If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. 
 		 * @return {ListCodeReviewsResponse} Success
 		 */
-		ListCodeReviews(ProviderTypes: Array<ProviderType>, States: Array<JobState>, RepositoryNames: Array<string>, Type: CodeReviewType, MaxResults: number, NextToken: string): Observable<ListCodeReviewsResponse> {
+		ListCodeReviews(ProviderTypes: Array<ProviderType> | null | undefined, States: Array<JobState> | null | undefined, RepositoryNames: Array<string> | null | undefined, Type: CodeReviewType, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListCodeReviewsResponse> {
 			return this.http.get<ListCodeReviewsResponse>(this.baseUri + 'codereviews#Type?' + ProviderTypes.map(z => `ProviderTypes=${z}`).join('&') + '&' + States.map(z => `States=${z}`).join('&') + '&' + RepositoryNames.map(z => `RepositoryNames=${encodeURIComponent(z)}`).join('&') + '&Type=' + Type + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -379,7 +379,7 @@ export namespace MyNS {
 		 * @param {Array<string>} RecommendationIds  Filter on recommendationIds that need to be applied before displaying the result. This can be used to query all the recommendation feedback for a given recommendation. 
 		 * @return {ListRecommendationFeedbackResponse} Success
 		 */
-		ListRecommendationFeedback(NextToken: string, MaxResults: number, CodeReviewArn: string, UserIds: Array<string>, RecommendationIds: Array<string>): Observable<ListRecommendationFeedbackResponse> {
+		ListRecommendationFeedback(NextToken: string | null | undefined, MaxResults: number | null | undefined, CodeReviewArn: string, UserIds: Array<string> | null | undefined, RecommendationIds: Array<string> | null | undefined): Observable<ListRecommendationFeedbackResponse> {
 			return this.http.get<ListRecommendationFeedbackResponse>(this.baseUri + 'feedback/' + (CodeReviewArn == null ? '' : encodeURIComponent(CodeReviewArn)) + '/RecommendationFeedback?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&' + UserIds.map(z => `UserIds=${encodeURIComponent(z)}`).join('&') + '&' + RecommendationIds.map(z => `RecommendationIds=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -391,7 +391,7 @@ export namespace MyNS {
 		 * @param {string} CodeReviewArn  The Amazon Resource Name (ARN) of the code review to describe. 
 		 * @return {ListRecommendationsResponse} Success
 		 */
-		ListRecommendations(NextToken: string, MaxResults: number, CodeReviewArn: string): Observable<ListRecommendationsResponse> {
+		ListRecommendations(NextToken: string | null | undefined, MaxResults: number | null | undefined, CodeReviewArn: string): Observable<ListRecommendationsResponse> {
 			return this.http.get<ListRecommendationsResponse>(this.baseUri + 'codereviews/' + (CodeReviewArn == null ? '' : encodeURIComponent(CodeReviewArn)) + '/Recommendations?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 

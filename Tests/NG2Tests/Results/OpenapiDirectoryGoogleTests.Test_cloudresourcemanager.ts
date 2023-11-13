@@ -759,7 +759,7 @@ export namespace MyNS {
 		 * state should be returned. Defaults to false.
 		 * @return {void} Successful response
 		 */
-		Cloudresourcemanager_folders_list(pageSize: number, pageToken: string, parent: string, showDeleted: boolean): Observable<HttpResponse<string>> {
+		Cloudresourcemanager_folders_list(pageSize: number | null | undefined, pageToken: string | null | undefined, parent: string | null | undefined, showDeleted: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/folders?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&showDeleted=' + showDeleted, { observe: 'response', responseType: 'text' });
 		}
 
@@ -792,7 +792,7 @@ export namespace MyNS {
 		 * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
 		 * @return {void} Successful response
 		 */
-		Cloudresourcemanager_folders_create(parent: string, requestBody: Folder): Observable<HttpResponse<string>> {
+		Cloudresourcemanager_folders_create(parent: string | null | undefined, requestBody: Folder): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/folders?parent=' + (parent == null ? '' : encodeURIComponent(parent)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -864,7 +864,7 @@ export namespace MyNS {
 		 * Only the `display_name` can be updated.
 		 * @return {void} Successful response
 		 */
-		Cloudresourcemanager_folders_patch(name: string, updateMask: string, requestBody: Folder): Observable<HttpResponse<string>> {
+		Cloudresourcemanager_folders_patch(name: string, updateMask: string | null | undefined, requestBody: Folder): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

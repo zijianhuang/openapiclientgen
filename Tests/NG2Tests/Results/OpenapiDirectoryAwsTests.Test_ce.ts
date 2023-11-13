@@ -1362,7 +1362,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSavingsPlansCoverageResponse} Success
 		 */
-		GetSavingsPlansCoverage(MaxResults: string, NextToken: string, requestBody: GetSavingsPlansCoverageRequest): Observable<GetSavingsPlansCoverageResponse> {
+		GetSavingsPlansCoverage(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetSavingsPlansCoverageRequest): Observable<GetSavingsPlansCoverageResponse> {
 			return this.http.post<GetSavingsPlansCoverageResponse>(this.baseUri + '#X-Amz-Target=AWSInsightsIndexService.GetSavingsPlansCoverage?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1391,7 +1391,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSavingsPlansUtilizationDetailsResponse} Success
 		 */
-		GetSavingsPlansUtilizationDetails(MaxResults: string, NextToken: string, requestBody: GetSavingsPlansUtilizationDetailsRequest): Observable<GetSavingsPlansUtilizationDetailsResponse> {
+		GetSavingsPlansUtilizationDetails(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetSavingsPlansUtilizationDetailsRequest): Observable<GetSavingsPlansUtilizationDetailsResponse> {
 			return this.http.post<GetSavingsPlansUtilizationDetailsResponse>(this.baseUri + '#X-Amz-Target=AWSInsightsIndexService.GetSavingsPlansUtilizationDetails?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1420,7 +1420,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCostCategoryDefinitionsResponse} Success
 		 */
-		ListCostCategoryDefinitions(MaxResults: string, NextToken: string, requestBody: ListCostCategoryDefinitionsRequest): Observable<ListCostCategoryDefinitionsResponse> {
+		ListCostCategoryDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCostCategoryDefinitionsRequest): Observable<ListCostCategoryDefinitionsResponse> {
 			return this.http.post<ListCostCategoryDefinitionsResponse>(this.baseUri + '#X-Amz-Target=AWSInsightsIndexService.ListCostCategoryDefinitions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

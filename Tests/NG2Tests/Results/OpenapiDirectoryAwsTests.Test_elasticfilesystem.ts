@@ -386,7 +386,7 @@ export namespace MyNS {
 		 * @param {string} FileSystemId (Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.
 		 * @return {DescribeAccessPointsResponse} Success
 		 */
-		DescribeAccessPoints(MaxResults: number, NextToken: string, AccessPointId: string, FileSystemId: string): Observable<DescribeAccessPointsResponse> {
+		DescribeAccessPoints(MaxResults: number | null | undefined, NextToken: string | null | undefined, AccessPointId: string | null | undefined, FileSystemId: string | null | undefined): Observable<DescribeAccessPointsResponse> {
 			return this.http.get<DescribeAccessPointsResponse>(this.baseUri + '2015-02-01/access-points?MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&AccessPointId=' + (AccessPointId == null ? '' : encodeURIComponent(AccessPointId)) + '&FileSystemId=' + (FileSystemId == null ? '' : encodeURIComponent(FileSystemId)), {});
 		}
 
@@ -408,7 +408,7 @@ export namespace MyNS {
 		 * @param {string} FileSystemId (Optional) ID of the file system whose description you want to retrieve (String).
 		 * @return {DescribeFileSystemsResponse} Success
 		 */
-		DescribeFileSystems(MaxItems: number, Marker: string, CreationToken: string, FileSystemId: string): Observable<DescribeFileSystemsResponse> {
+		DescribeFileSystems(MaxItems: number | null | undefined, Marker: string | null | undefined, CreationToken: string | null | undefined, FileSystemId: string | null | undefined): Observable<DescribeFileSystemsResponse> {
 			return this.http.get<DescribeFileSystemsResponse>(this.baseUri + '2015-02-01/file-systems?MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&CreationToken=' + (CreationToken == null ? '' : encodeURIComponent(CreationToken)) + '&FileSystemId=' + (FileSystemId == null ? '' : encodeURIComponent(FileSystemId)), {});
 		}
 
@@ -431,7 +431,7 @@ export namespace MyNS {
 		 * @param {string} AccessPointId (Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.
 		 * @return {DescribeMountTargetsResponse} Success
 		 */
-		DescribeMountTargets(MaxItems: number, Marker: string, FileSystemId: string, MountTargetId: string, AccessPointId: string): Observable<DescribeMountTargetsResponse> {
+		DescribeMountTargets(MaxItems: number | null | undefined, Marker: string | null | undefined, FileSystemId: string | null | undefined, MountTargetId: string | null | undefined, AccessPointId: string | null | undefined): Observable<DescribeMountTargetsResponse> {
 			return this.http.get<DescribeMountTargetsResponse>(this.baseUri + '2015-02-01/mount-targets?MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&FileSystemId=' + (FileSystemId == null ? '' : encodeURIComponent(FileSystemId)) + '&MountTargetId=' + (MountTargetId == null ? '' : encodeURIComponent(MountTargetId)) + '&AccessPointId=' + (AccessPointId == null ? '' : encodeURIComponent(AccessPointId)), {});
 		}
 
@@ -573,7 +573,7 @@ export namespace MyNS {
 		 * @param {string} FileSystemId The ID of the file system whose tag set you want to retrieve.
 		 * @return {DescribeTagsResponse} Success
 		 */
-		DescribeTags(MaxItems: number, Marker: string, FileSystemId: string): Observable<DescribeTagsResponse> {
+		DescribeTags(MaxItems: number | null | undefined, Marker: string | null | undefined, FileSystemId: string): Observable<DescribeTagsResponse> {
 			return this.http.get<DescribeTagsResponse>(this.baseUri + '2015-02-01/tags/' + (FileSystemId == null ? '' : encodeURIComponent(FileSystemId)) + '/?MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), {});
 		}
 
@@ -585,7 +585,7 @@ export namespace MyNS {
 		 * @param {string} NextToken You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(ResourceId: string, MaxResults: number, NextToken: string): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(ResourceId: string, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListTagsForResourceResponse> {
 			return this.http.get<ListTagsForResourceResponse>(this.baseUri + '2015-02-01/resource-tags/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

@@ -206,7 +206,7 @@ export namespace MyNS {
 		 * @param {string} compliance_type A user passes in one or more compliance type values through this query parameter. See ComplianceTypeEnum for more information on the supported compliance types that can be passed in here. If more than one compliance type value is used, delimit these values with a comma. If no compliance type values are passed in, the listing count for all compliance types will be returned. Note: Only a canned response, with counts for all listing compliance types, is returned in the Sandbox environment. Due to this limitation, the compliance_type query parameter (if used) will not have an effect on the response.
 		 * @return {void} Success
 		 */
-		GetListingViolationsSummary(compliance_type: string): Promise<AxiosResponse<string>> {
+		GetListingViolationsSummary(compliance_type: string | null | undefined): Promise<AxiosResponse<string>> {
 			return Axios.get(this.baseUri + 'listing_violation_summary?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)), { responseType: 'text' });
 		}
 	}
@@ -225,7 +225,7 @@ export namespace MyNS {
 		 * @param {string} filter This filter allows a user to retrieve only listings that are currently out of compliance, or only listings that are at risk of becoming out of compliance. Although other filters may be added in the future, complianceState is the only supported filter type at this time. The two compliance 'states' are OUT_OF_COMPLIANCE and AT_RISK. Below is an example of how to set up this compliance state filter. Notice that the filter type and filter value are separated with a colon (:) character, and the filter value is wrapped with curly brackets. filter=complianceState:{OUT_OF_COMPLIANCE}
 		 * @return {void} Success
 		 */
-		GetListingViolations(compliance_type: string, offset: string, listing_id: string, limit: string, filter: string): Promise<AxiosResponse<string>> {
+		GetListingViolations(compliance_type: string | null | undefined, offset: string | null | undefined, listing_id: string | null | undefined, limit: string | null | undefined, filter: string | null | undefined): Promise<AxiosResponse<string>> {
 			return Axios.get(this.baseUri + 'listing_violation?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), { responseType: 'text' });
 		}
 

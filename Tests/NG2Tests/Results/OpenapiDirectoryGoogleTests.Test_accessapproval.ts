@@ -287,7 +287,7 @@ export namespace MyNS {
 		 * updated.
 		 * @return {void} Successful response
 		 */
-		Accessapproval_organizations_updateAccessApprovalSettings(name: string, updateMask: string, requestBody: AccessApprovalSettings): Observable<HttpResponse<string>> {
+		Accessapproval_organizations_updateAccessApprovalSettings(name: string, updateMask: string | null | undefined, requestBody: AccessApprovalSettings): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -339,7 +339,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying the page of results to return.
 		 * @return {void} Successful response
 		 */
-		Accessapproval_organizations_approvalRequests_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Accessapproval_organizations_approvalRequests_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/approvalRequests&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

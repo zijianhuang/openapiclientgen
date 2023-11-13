@@ -2294,7 +2294,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeRemediationExceptionsResponse} Success
 		 */
-		DescribeRemediationExceptions(Limit: string, NextToken: string, requestBody: DescribeRemediationExceptionsRequest): Observable<DescribeRemediationExceptionsResponse> {
+		DescribeRemediationExceptions(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeRemediationExceptionsRequest): Observable<DescribeRemediationExceptionsResponse> {
 			return this.http.post<DescribeRemediationExceptionsResponse>(this.baseUri + '#X-Amz-Target=StarlingDoveService.DescribeRemediationExceptions?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2305,7 +2305,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeRemediationExecutionStatusResponse} Success
 		 */
-		DescribeRemediationExecutionStatus(Limit: string, NextToken: string, requestBody: DescribeRemediationExecutionStatusRequest): Observable<DescribeRemediationExecutionStatusResponse> {
+		DescribeRemediationExecutionStatus(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeRemediationExecutionStatusRequest): Observable<DescribeRemediationExecutionStatusResponse> {
 			return this.http.post<DescribeRemediationExecutionStatusResponse>(this.baseUri + '#X-Amz-Target=StarlingDoveService.DescribeRemediationExecutionStatus?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2442,7 +2442,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourceConfigHistoryResponse} Success
 		 */
-		GetResourceConfigHistory(limit: string, nextToken: string, requestBody: GetResourceConfigHistoryRequest): Observable<GetResourceConfigHistoryResponse> {
+		GetResourceConfigHistory(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourceConfigHistoryRequest): Observable<GetResourceConfigHistoryResponse> {
 			return this.http.post<GetResourceConfigHistoryResponse>(this.baseUri + '#X-Amz-Target=StarlingDoveService.GetResourceConfigHistory?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2597,7 +2597,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {SelectAggregateResourceConfigResponse} Success
 		 */
-		SelectAggregateResourceConfig(MaxResults: string, NextToken: string, requestBody: SelectAggregateResourceConfigRequest): Observable<SelectAggregateResourceConfigResponse> {
+		SelectAggregateResourceConfig(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: SelectAggregateResourceConfigRequest): Observable<SelectAggregateResourceConfigResponse> {
 			return this.http.post<SelectAggregateResourceConfigResponse>(this.baseUri + '#X-Amz-Target=StarlingDoveService.SelectAggregateResourceConfig?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

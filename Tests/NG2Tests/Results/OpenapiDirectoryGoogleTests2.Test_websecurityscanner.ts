@@ -628,7 +628,7 @@ export namespace MyNS {
 		 * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
 		 * @return {void} Successful response
 		 */
-		Websecurityscanner_projects_scanConfigs_patch(name: string, updateMask: string, requestBody: ScanConfig): Observable<HttpResponse<string>> {
+		Websecurityscanner_projects_scanConfigs_patch(name: string, updateMask: string | null | undefined, requestBody: ScanConfig): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -669,7 +669,7 @@ export namespace MyNS {
 		 * If unspecified, the first page of results is returned.
 		 * @return {void} Successful response
 		 */
-		Websecurityscanner_projects_scanConfigs_scanRuns_crawledUrls_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Websecurityscanner_projects_scanConfigs_scanRuns_crawledUrls_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/crawledUrls&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -703,7 +703,7 @@ export namespace MyNS {
 		 * If unspecified, the first page of results is returned.
 		 * @return {void} Successful response
 		 */
-		Websecurityscanner_projects_scanConfigs_scanRuns_findings_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Websecurityscanner_projects_scanConfigs_scanRuns_findings_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/findings&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -720,7 +720,7 @@ export namespace MyNS {
 		 * If unspecified, the first page of results is returned.
 		 * @return {void} Successful response
 		 */
-		Websecurityscanner_projects_scanConfigs_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Websecurityscanner_projects_scanConfigs_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/scanConfigs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -749,7 +749,7 @@ export namespace MyNS {
 		 * If unspecified, the first page of results is returned.
 		 * @return {void} Successful response
 		 */
-		Websecurityscanner_projects_scanConfigs_scanRuns_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Websecurityscanner_projects_scanConfigs_scanRuns_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/scanRuns&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

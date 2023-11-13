@@ -707,7 +707,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetQueryResultsOutput} Success
 		 */
-		GetQueryResults(MaxResults: string, NextToken: string, requestBody: GetQueryResultsInput): Observable<GetQueryResultsOutput> {
+		GetQueryResults(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetQueryResultsInput): Observable<GetQueryResultsOutput> {
 			return this.http.post<GetQueryResultsOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.GetQueryResults?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -736,7 +736,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataCatalogsOutput} Success
 		 */
-		ListDataCatalogs(MaxResults: string, NextToken: string, requestBody: ListDataCatalogsInput): Observable<ListDataCatalogsOutput> {
+		ListDataCatalogs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDataCatalogsInput): Observable<ListDataCatalogsOutput> {
 			return this.http.post<ListDataCatalogsOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListDataCatalogs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -747,7 +747,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatabasesOutput} Success
 		 */
-		ListDatabases(MaxResults: string, NextToken: string, requestBody: ListDatabasesInput): Observable<ListDatabasesOutput> {
+		ListDatabases(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDatabasesInput): Observable<ListDatabasesOutput> {
 			return this.http.post<ListDatabasesOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListDatabases?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -758,7 +758,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNamedQueriesOutput} Success
 		 */
-		ListNamedQueries(MaxResults: string, NextToken: string, requestBody: ListNamedQueriesInput): Observable<ListNamedQueriesOutput> {
+		ListNamedQueries(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListNamedQueriesInput): Observable<ListNamedQueriesOutput> {
 			return this.http.post<ListNamedQueriesOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListNamedQueries?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -769,7 +769,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQueryExecutionsOutput} Success
 		 */
-		ListQueryExecutions(MaxResults: string, NextToken: string, requestBody: ListQueryExecutionsInput): Observable<ListQueryExecutionsOutput> {
+		ListQueryExecutions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListQueryExecutionsInput): Observable<ListQueryExecutionsOutput> {
 			return this.http.post<ListQueryExecutionsOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListQueryExecutions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -780,7 +780,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTableMetadataOutput} Success
 		 */
-		ListTableMetadata(MaxResults: string, NextToken: string, requestBody: ListTableMetadataInput): Observable<ListTableMetadataOutput> {
+		ListTableMetadata(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTableMetadataInput): Observable<ListTableMetadataOutput> {
 			return this.http.post<ListTableMetadataOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListTableMetadata?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -791,7 +791,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceOutput} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
 			return this.http.post<ListTagsForResourceOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListTagsForResource?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -802,7 +802,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkGroupsOutput} Success
 		 */
-		ListWorkGroups(MaxResults: string, NextToken: string, requestBody: ListWorkGroupsInput): Observable<ListWorkGroupsOutput> {
+		ListWorkGroups(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkGroupsInput): Observable<ListWorkGroupsOutput> {
 			return this.http.post<ListWorkGroupsOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListWorkGroups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

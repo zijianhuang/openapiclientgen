@@ -4063,7 +4063,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeActivationsResult} Success
 		 */
-		DescribeActivations(MaxResults: string, NextToken: string, requestBody: DescribeActivationsRequest): Observable<DescribeActivationsResult> {
+		DescribeActivations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeActivationsRequest): Observable<DescribeActivationsResult> {
 			return this.http.post<DescribeActivationsResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.DescribeActivations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4173,7 +4173,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeInstanceInformationResult} Success
 		 */
-		DescribeInstanceInformation(MaxResults: string, NextToken: string, requestBody: DescribeInstanceInformationRequest): Observable<DescribeInstanceInformationResult> {
+		DescribeInstanceInformation(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeInstanceInformationRequest): Observable<DescribeInstanceInformationResult> {
 			return this.http.post<DescribeInstanceInformationResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.DescribeInstanceInformation?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4301,7 +4301,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeParametersResult} Success
 		 */
-		DescribeParameters(MaxResults: string, NextToken: string, requestBody: DescribeParametersRequest): Observable<DescribeParametersResult> {
+		DescribeParameters(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeParametersRequest): Observable<DescribeParametersResult> {
 			return this.http.post<DescribeParametersResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.DescribeParameters?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4510,7 +4510,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetParameterHistoryResult} Success
 		 */
-		GetParameterHistory(MaxResults: string, NextToken: string, requestBody: GetParameterHistoryRequest): Observable<GetParameterHistoryResult> {
+		GetParameterHistory(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetParameterHistoryRequest): Observable<GetParameterHistoryResult> {
 			return this.http.post<GetParameterHistoryResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.GetParameterHistory?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4530,7 +4530,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetParametersByPathResult} Success
 		 */
-		GetParametersByPath(MaxResults: string, NextToken: string, requestBody: GetParametersByPathRequest): Observable<GetParametersByPathResult> {
+		GetParametersByPath(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetParametersByPathRequest): Observable<GetParametersByPathResult> {
 			return this.http.post<GetParametersByPathResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.GetParametersByPath?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4586,7 +4586,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAssociationsResult} Success
 		 */
-		ListAssociations(MaxResults: string, NextToken: string, requestBody: ListAssociationsRequest): Observable<ListAssociationsResult> {
+		ListAssociations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAssociationsRequest): Observable<ListAssociationsResult> {
 			return this.http.post<ListAssociationsResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.ListAssociations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4597,7 +4597,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCommandInvocationsResult} Success
 		 */
-		ListCommandInvocations(MaxResults: string, NextToken: string, requestBody: ListCommandInvocationsRequest): Observable<ListCommandInvocationsResult> {
+		ListCommandInvocations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCommandInvocationsRequest): Observable<ListCommandInvocationsResult> {
 			return this.http.post<ListCommandInvocationsResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.ListCommandInvocations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4608,7 +4608,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCommandsResult} Success
 		 */
-		ListCommands(MaxResults: string, NextToken: string, requestBody: ListCommandsRequest): Observable<ListCommandsResult> {
+		ListCommands(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCommandsRequest): Observable<ListCommandsResult> {
 			return this.http.post<ListCommandsResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.ListCommands?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4646,7 +4646,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDocumentsResult} Success
 		 */
-		ListDocuments(MaxResults: string, NextToken: string, requestBody: ListDocumentsRequest): Observable<ListDocumentsResult> {
+		ListDocuments(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDocumentsRequest): Observable<ListDocumentsResult> {
 			return this.http.post<ListDocumentsResult>(this.baseUri + '#X-Amz-Target=AmazonSSM.ListDocuments?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -71,7 +71,7 @@ export namespace MyNS {
 		 * @param {string} authEventId Filter by authEventId
 		 * @return {Array<Connection>} Success - return response of type Connections array with 0 to n Connection
 		 */
-		GetConnections(authEventId: string): Observable<Array<Connection>> {
+		GetConnections(authEventId: string | null | undefined): Observable<Array<Connection>> {
 			return this.http.get<Array<Connection>>(this.baseUri + 'connections?authEventId=' + (authEventId == null ? '' : encodeURIComponent(authEventId)), {});
 		}
 

@@ -1057,7 +1057,7 @@ export namespace MyNS {
 		 * @param {string} nameContains Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
 		 * @return {GetBotAliasesResponse} Success
 		 */
-		GetBotAliases(botName: string, nextToken: string, maxResults: number, nameContains: string): Observable<GetBotAliasesResponse> {
+		GetBotAliases(botName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetBotAliasesResponse> {
 			return this.http.get<GetBotAliasesResponse>(this.baseUri + 'bots/' + (botName == null ? '' : encodeURIComponent(botName)) + '/aliases/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&nameContains=' + (nameContains == null ? '' : encodeURIComponent(nameContains)), {});
 		}
 
@@ -1071,7 +1071,7 @@ export namespace MyNS {
 		 * @param {string} nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.
 		 * @return {GetBotChannelAssociationsResponse} Success
 		 */
-		GetBotChannelAssociations(botName: string, aliasName: string, nextToken: string, maxResults: number, nameContains: string): Observable<GetBotChannelAssociationsResponse> {
+		GetBotChannelAssociations(botName: string, aliasName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetBotChannelAssociationsResponse> {
 			return this.http.get<GetBotChannelAssociationsResponse>(this.baseUri + 'bots/' + (botName == null ? '' : encodeURIComponent(botName)) + '/aliases/' + (aliasName == null ? '' : encodeURIComponent(aliasName)) + '/channels/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&nameContains=' + (nameContains == null ? '' : encodeURIComponent(nameContains)), {});
 		}
 
@@ -1083,7 +1083,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of bot versions to return in the response. The default is 10.
 		 * @return {GetBotVersionsResponse} Success
 		 */
-		GetBotVersions(name: string, nextToken: string, maxResults: number): Observable<GetBotVersionsResponse> {
+		GetBotVersions(name: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetBotVersionsResponse> {
 			return this.http.get<GetBotVersionsResponse>(this.baseUri + 'bots/' + (name == null ? '' : encodeURIComponent(name)) + '/versions/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1095,7 +1095,7 @@ export namespace MyNS {
 		 * @param {string} nameContains Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
 		 * @return {GetBotsResponse} Success
 		 */
-		GetBots(nextToken: string, maxResults: number, nameContains: string): Observable<GetBotsResponse> {
+		GetBots(nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetBotsResponse> {
 			return this.http.get<GetBotsResponse>(this.baseUri + 'bots/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&nameContains=' + (nameContains == null ? '' : encodeURIComponent(nameContains)), {});
 		}
 
@@ -1118,7 +1118,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of intents to return in the response. The default is 10.
 		 * @return {GetBuiltinIntentsResponse} Success
 		 */
-		GetBuiltinIntents(locale: GetBuiltinIntentsLocale, signatureContains: string, nextToken: string, maxResults: number): Observable<GetBuiltinIntentsResponse> {
+		GetBuiltinIntents(locale: GetBuiltinIntentsLocale | null | undefined, signatureContains: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetBuiltinIntentsResponse> {
 			return this.http.get<GetBuiltinIntentsResponse>(this.baseUri + 'builtins/intents/?locale=' + locale + '&signatureContains=' + (signatureContains == null ? '' : encodeURIComponent(signatureContains)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1131,7 +1131,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of slot types to return in the response. The default is 10.
 		 * @return {GetBuiltinSlotTypesResponse} Success
 		 */
-		GetBuiltinSlotTypes(locale: GetBuiltinSlotTypesLocale, signatureContains: string, nextToken: string, maxResults: number): Observable<GetBuiltinSlotTypesResponse> {
+		GetBuiltinSlotTypes(locale: GetBuiltinSlotTypesLocale | null | undefined, signatureContains: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetBuiltinSlotTypesResponse> {
 			return this.http.get<GetBuiltinSlotTypesResponse>(this.baseUri + 'builtins/slottypes/?locale=' + locale + '&signatureContains=' + (signatureContains == null ? '' : encodeURIComponent(signatureContains)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1166,7 +1166,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of intent versions to return in the response. The default is 10.
 		 * @return {GetIntentVersionsResponse} Success
 		 */
-		GetIntentVersions(name: string, nextToken: string, maxResults: number): Observable<GetIntentVersionsResponse> {
+		GetIntentVersions(name: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetIntentVersionsResponse> {
 			return this.http.get<GetIntentVersionsResponse>(this.baseUri + 'intents/' + (name == null ? '' : encodeURIComponent(name)) + '/versions/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 		 * @param {string} nameContains Substring to match in intent names. An intent will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
 		 * @return {GetIntentsResponse} Success
 		 */
-		GetIntents(nextToken: string, maxResults: number, nameContains: string): Observable<GetIntentsResponse> {
+		GetIntents(nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetIntentsResponse> {
 			return this.http.get<GetIntentsResponse>(this.baseUri + 'intents/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&nameContains=' + (nameContains == null ? '' : encodeURIComponent(nameContains)), {});
 		}
 
@@ -1201,7 +1201,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of slot type versions to return in the response. The default is 10.
 		 * @return {GetSlotTypeVersionsResponse} Success
 		 */
-		GetSlotTypeVersions(name: string, nextToken: string, maxResults: number): Observable<GetSlotTypeVersionsResponse> {
+		GetSlotTypeVersions(name: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetSlotTypeVersionsResponse> {
 			return this.http.get<GetSlotTypeVersionsResponse>(this.baseUri + 'slottypes/' + (name == null ? '' : encodeURIComponent(name)) + '/versions/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1213,7 +1213,7 @@ export namespace MyNS {
 		 * @param {string} nameContains Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
 		 * @return {GetSlotTypesResponse} Success
 		 */
-		GetSlotTypes(nextToken: string, maxResults: number, nameContains: string): Observable<GetSlotTypesResponse> {
+		GetSlotTypes(nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetSlotTypesResponse> {
 			return this.http.get<GetSlotTypesResponse>(this.baseUri + 'slottypes/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&nameContains=' + (nameContains == null ? '' : encodeURIComponent(nameContains)), {});
 		}
 

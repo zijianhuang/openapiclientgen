@@ -706,7 +706,7 @@ export namespace MyNS {
 		 * @param {string} sdkVersion Google SDK version. Version takes the form "$major.$minor.$patch"
 		 * @return {void} Successful response
 		 */
-		Firebasedynamiclinks_getLinkStats(dynamicLink: string, durationDays: string, sdkVersion: string): Observable<HttpResponse<string>> {
+		Firebasedynamiclinks_getLinkStats(dynamicLink: string, durationDays: string | null | undefined, sdkVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (dynamicLink == null ? '' : encodeURIComponent(dynamicLink)) + '/linkStats&durationDays=' + (durationDays == null ? '' : encodeURIComponent(durationDays)) + '&sdkVersion=' + (sdkVersion == null ? '' : encodeURIComponent(sdkVersion)), { observe: 'response', responseType: 'text' });
 		}
 	}

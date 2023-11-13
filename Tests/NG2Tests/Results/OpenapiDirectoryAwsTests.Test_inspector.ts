@@ -931,7 +931,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetExclusionsPreviewResponse} Success
 		 */
-		GetExclusionsPreview(maxResults: string, nextToken: string, requestBody: GetExclusionsPreviewRequest): Observable<GetExclusionsPreviewResponse> {
+		GetExclusionsPreview(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetExclusionsPreviewRequest): Observable<GetExclusionsPreviewResponse> {
 			return this.http.post<GetExclusionsPreviewResponse>(this.baseUri + '#X-Amz-Target=InspectorService.GetExclusionsPreview?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -951,7 +951,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssessmentRunAgentsResponse} Success
 		 */
-		ListAssessmentRunAgents(maxResults: string, nextToken: string, requestBody: ListAssessmentRunAgentsRequest): Observable<ListAssessmentRunAgentsResponse> {
+		ListAssessmentRunAgents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssessmentRunAgentsRequest): Observable<ListAssessmentRunAgentsResponse> {
 			return this.http.post<ListAssessmentRunAgentsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListAssessmentRunAgents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -962,7 +962,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssessmentRunsResponse} Success
 		 */
-		ListAssessmentRuns(maxResults: string, nextToken: string, requestBody: ListAssessmentRunsRequest): Observable<ListAssessmentRunsResponse> {
+		ListAssessmentRuns(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssessmentRunsRequest): Observable<ListAssessmentRunsResponse> {
 			return this.http.post<ListAssessmentRunsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListAssessmentRuns?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -973,7 +973,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssessmentTargetsResponse} Success
 		 */
-		ListAssessmentTargets(maxResults: string, nextToken: string, requestBody: ListAssessmentTargetsRequest): Observable<ListAssessmentTargetsResponse> {
+		ListAssessmentTargets(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssessmentTargetsRequest): Observable<ListAssessmentTargetsResponse> {
 			return this.http.post<ListAssessmentTargetsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListAssessmentTargets?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -984,7 +984,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssessmentTemplatesResponse} Success
 		 */
-		ListAssessmentTemplates(maxResults: string, nextToken: string, requestBody: ListAssessmentTemplatesRequest): Observable<ListAssessmentTemplatesResponse> {
+		ListAssessmentTemplates(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssessmentTemplatesRequest): Observable<ListAssessmentTemplatesResponse> {
 			return this.http.post<ListAssessmentTemplatesResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListAssessmentTemplates?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -995,7 +995,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListEventSubscriptionsResponse} Success
 		 */
-		ListEventSubscriptions(maxResults: string, nextToken: string, requestBody: ListEventSubscriptionsRequest): Observable<ListEventSubscriptionsResponse> {
+		ListEventSubscriptions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListEventSubscriptionsRequest): Observable<ListEventSubscriptionsResponse> {
 			return this.http.post<ListEventSubscriptionsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListEventSubscriptions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1006,7 +1006,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListExclusionsResponse} Success
 		 */
-		ListExclusions(maxResults: string, nextToken: string, requestBody: ListExclusionsRequest): Observable<ListExclusionsResponse> {
+		ListExclusions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListExclusionsRequest): Observable<ListExclusionsResponse> {
 			return this.http.post<ListExclusionsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListExclusions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1017,7 +1017,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListFindingsResponse} Success
 		 */
-		ListFindings(maxResults: string, nextToken: string, requestBody: ListFindingsRequest): Observable<ListFindingsResponse> {
+		ListFindings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListFindingsRequest): Observable<ListFindingsResponse> {
 			return this.http.post<ListFindingsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListFindings?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1028,7 +1028,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRulesPackagesResponse} Success
 		 */
-		ListRulesPackages(maxResults: string, nextToken: string, requestBody: ListRulesPackagesRequest): Observable<ListRulesPackagesResponse> {
+		ListRulesPackages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRulesPackagesRequest): Observable<ListRulesPackagesResponse> {
 			return this.http.post<ListRulesPackagesResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListRulesPackages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1048,7 +1048,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {PreviewAgentsResponse} Success
 		 */
-		PreviewAgents(maxResults: string, nextToken: string, requestBody: PreviewAgentsRequest): Observable<PreviewAgentsResponse> {
+		PreviewAgents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: PreviewAgentsRequest): Observable<PreviewAgentsResponse> {
 			return this.http.post<PreviewAgentsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.PreviewAgents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

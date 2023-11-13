@@ -192,7 +192,7 @@ export namespace MyNS {
 		 * @param {string} userId The ID used for ACL checks (does not filter the resulting event list by the assigned value). Use the special value me to indicate the currently authenticated user.
 		 * @return {void} Successful response
 		 */
-		Appsactivity_activities_list(drive_ancestorId: string, drive_fileId: string, groupingStrategy: Appsactivity_activities_listGroupingStrategy, pageSize: number, pageToken: string, source: string, userId: string): Observable<HttpResponse<string>> {
+		Appsactivity_activities_list(drive_ancestorId: string | null | undefined, drive_fileId: string | null | undefined, groupingStrategy: Appsactivity_activities_listGroupingStrategy | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, source: string | null | undefined, userId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'activities?drive_ancestorId=' + (drive_ancestorId == null ? '' : encodeURIComponent(drive_ancestorId)) + '&drive_fileId=' + (drive_fileId == null ? '' : encodeURIComponent(drive_fileId)) + '&groupingStrategy=' + groupingStrategy + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)), { observe: 'response', responseType: 'text' });
 		}
 	}

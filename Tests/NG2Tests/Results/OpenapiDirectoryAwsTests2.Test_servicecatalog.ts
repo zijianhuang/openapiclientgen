@@ -2171,7 +2171,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListAcceptedPortfolioSharesOutput} Success
 		 */
-		ListAcceptedPortfolioShares(PageSize: string, PageToken: string, requestBody: ListAcceptedPortfolioSharesInput): Observable<ListAcceptedPortfolioSharesOutput> {
+		ListAcceptedPortfolioShares(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListAcceptedPortfolioSharesInput): Observable<ListAcceptedPortfolioSharesOutput> {
 			return this.http.post<ListAcceptedPortfolioSharesOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListAcceptedPortfolioShares?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2182,7 +2182,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListBudgetsForResourceOutput} Success
 		 */
-		ListBudgetsForResource(PageSize: string, PageToken: string, requestBody: ListBudgetsForResourceInput): Observable<ListBudgetsForResourceOutput> {
+		ListBudgetsForResource(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListBudgetsForResourceInput): Observable<ListBudgetsForResourceOutput> {
 			return this.http.post<ListBudgetsForResourceOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListBudgetsForResource?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2193,7 +2193,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListConstraintsForPortfolioOutput} Success
 		 */
-		ListConstraintsForPortfolio(PageSize: string, PageToken: string, requestBody: ListConstraintsForPortfolioInput): Observable<ListConstraintsForPortfolioOutput> {
+		ListConstraintsForPortfolio(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListConstraintsForPortfolioInput): Observable<ListConstraintsForPortfolioOutput> {
 			return this.http.post<ListConstraintsForPortfolioOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListConstraintsForPortfolio?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2204,7 +2204,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListLaunchPathsOutput} Success
 		 */
-		ListLaunchPaths(PageSize: string, PageToken: string, requestBody: ListLaunchPathsInput): Observable<ListLaunchPathsOutput> {
+		ListLaunchPaths(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListLaunchPathsInput): Observable<ListLaunchPathsOutput> {
 			return this.http.post<ListLaunchPathsOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListLaunchPaths?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2215,7 +2215,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListOrganizationPortfolioAccessOutput} Success
 		 */
-		ListOrganizationPortfolioAccess(PageSize: string, PageToken: string, requestBody: ListOrganizationPortfolioAccessInput): Observable<ListOrganizationPortfolioAccessOutput> {
+		ListOrganizationPortfolioAccess(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListOrganizationPortfolioAccessInput): Observable<ListOrganizationPortfolioAccessOutput> {
 			return this.http.post<ListOrganizationPortfolioAccessOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListOrganizationPortfolioAccess?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2226,7 +2226,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListPortfolioAccessOutput} Success
 		 */
-		ListPortfolioAccess(PageSize: string, PageToken: string, requestBody: ListPortfolioAccessInput): Observable<ListPortfolioAccessOutput> {
+		ListPortfolioAccess(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListPortfolioAccessInput): Observable<ListPortfolioAccessOutput> {
 			return this.http.post<ListPortfolioAccessOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListPortfolioAccess?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2237,7 +2237,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListPortfoliosOutput} Success
 		 */
-		ListPortfolios(PageSize: string, PageToken: string, requestBody: ListPortfoliosInput): Observable<ListPortfoliosOutput> {
+		ListPortfolios(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListPortfoliosInput): Observable<ListPortfoliosOutput> {
 			return this.http.post<ListPortfoliosOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListPortfolios?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2248,7 +2248,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListPortfoliosForProductOutput} Success
 		 */
-		ListPortfoliosForProduct(PageSize: string, PageToken: string, requestBody: ListPortfoliosForProductInput): Observable<ListPortfoliosForProductOutput> {
+		ListPortfoliosForProduct(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListPortfoliosForProductInput): Observable<ListPortfoliosForProductOutput> {
 			return this.http.post<ListPortfoliosForProductOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListPortfoliosForProduct?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2259,7 +2259,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListPrincipalsForPortfolioOutput} Success
 		 */
-		ListPrincipalsForPortfolio(PageSize: string, PageToken: string, requestBody: ListPrincipalsForPortfolioInput): Observable<ListPrincipalsForPortfolioOutput> {
+		ListPrincipalsForPortfolio(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListPrincipalsForPortfolioInput): Observable<ListPrincipalsForPortfolioOutput> {
 			return this.http.post<ListPrincipalsForPortfolioOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListPrincipalsForPortfolio?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2288,7 +2288,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListProvisioningArtifactsForServiceActionOutput} Success
 		 */
-		ListProvisioningArtifactsForServiceAction(PageSize: string, PageToken: string, requestBody: ListProvisioningArtifactsForServiceActionInput): Observable<ListProvisioningArtifactsForServiceActionOutput> {
+		ListProvisioningArtifactsForServiceAction(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListProvisioningArtifactsForServiceActionInput): Observable<ListProvisioningArtifactsForServiceActionOutput> {
 			return this.http.post<ListProvisioningArtifactsForServiceActionOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListProvisioningArtifactsForServiceAction?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2308,7 +2308,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListResourcesForTagOptionOutput} Success
 		 */
-		ListResourcesForTagOption(PageSize: string, PageToken: string, requestBody: ListResourcesForTagOptionInput): Observable<ListResourcesForTagOptionOutput> {
+		ListResourcesForTagOption(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListResourcesForTagOptionInput): Observable<ListResourcesForTagOptionOutput> {
 			return this.http.post<ListResourcesForTagOptionOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListResourcesForTagOption?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2319,7 +2319,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListServiceActionsOutput} Success
 		 */
-		ListServiceActions(PageSize: string, PageToken: string, requestBody: ListServiceActionsInput): Observable<ListServiceActionsOutput> {
+		ListServiceActions(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListServiceActionsInput): Observable<ListServiceActionsOutput> {
 			return this.http.post<ListServiceActionsOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListServiceActions?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2330,7 +2330,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListServiceActionsForProvisioningArtifactOutput} Success
 		 */
-		ListServiceActionsForProvisioningArtifact(PageSize: string, PageToken: string, requestBody: ListServiceActionsForProvisioningArtifactInput): Observable<ListServiceActionsForProvisioningArtifactOutput> {
+		ListServiceActionsForProvisioningArtifact(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListServiceActionsForProvisioningArtifactInput): Observable<ListServiceActionsForProvisioningArtifactOutput> {
 			return this.http.post<ListServiceActionsForProvisioningArtifactOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListServiceActionsForProvisioningArtifact?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2350,7 +2350,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {ListTagOptionsOutput} Success
 		 */
-		ListTagOptions(PageSize: string, PageToken: string, requestBody: ListTagOptionsInput): Observable<ListTagOptionsOutput> {
+		ListTagOptions(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: ListTagOptionsInput): Observable<ListTagOptionsOutput> {
 			return this.http.post<ListTagOptionsOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.ListTagOptions?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2388,7 +2388,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {SearchProductsOutput} Success
 		 */
-		SearchProducts(PageSize: string, PageToken: string, requestBody: SearchProductsInput): Observable<SearchProductsOutput> {
+		SearchProducts(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: SearchProductsInput): Observable<SearchProductsOutput> {
 			return this.http.post<SearchProductsOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.SearchProducts?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2399,7 +2399,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {SearchProductsAsAdminOutput} Success
 		 */
-		SearchProductsAsAdmin(PageSize: string, PageToken: string, requestBody: SearchProductsAsAdminInput): Observable<SearchProductsAsAdminOutput> {
+		SearchProductsAsAdmin(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: SearchProductsAsAdminInput): Observable<SearchProductsAsAdminOutput> {
 			return this.http.post<SearchProductsAsAdminOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.SearchProductsAsAdmin?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2410,7 +2410,7 @@ export namespace MyNS {
 		 * @param {string} PageToken Pagination token
 		 * @return {SearchProvisionedProductsOutput} Success
 		 */
-		SearchProvisionedProducts(PageSize: string, PageToken: string, requestBody: SearchProvisionedProductsInput): Observable<SearchProvisionedProductsOutput> {
+		SearchProvisionedProducts(PageSize: string | null | undefined, PageToken: string | null | undefined, requestBody: SearchProvisionedProductsInput): Observable<SearchProvisionedProductsOutput> {
 			return this.http.post<SearchProvisionedProductsOutput>(this.baseUri + '#X-Amz-Target=AWS242ServiceCatalogService.SearchProvisionedProducts?PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)) + '&PageToken=' + (PageToken == null ? '' : encodeURIComponent(PageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -628,7 +628,7 @@ export namespace MyNS {
 		 * @param {string} ExclusiveStartShardId Pagination token
 		 * @return {DescribeStreamOutput} Success
 		 */
-		DescribeStream(Limit: string, ExclusiveStartShardId: string, requestBody: DescribeStreamInput): Observable<DescribeStreamOutput> {
+		DescribeStream(Limit: string | null | undefined, ExclusiveStartShardId: string | null | undefined, requestBody: DescribeStreamInput): Observable<DescribeStreamOutput> {
 			return this.http.post<DescribeStreamOutput>(this.baseUri + '#X-Amz-Target=Kinesis_20131202.DescribeStream?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&ExclusiveStartShardId=' + (ExclusiveStartShardId == null ? '' : encodeURIComponent(ExclusiveStartShardId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -711,7 +711,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListStreamConsumersOutput} Success
 		 */
-		ListStreamConsumers(MaxResults: string, NextToken: string, requestBody: ListStreamConsumersInput): Observable<ListStreamConsumersOutput> {
+		ListStreamConsumers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListStreamConsumersInput): Observable<ListStreamConsumersOutput> {
 			return this.http.post<ListStreamConsumersOutput>(this.baseUri + '#X-Amz-Target=Kinesis_20131202.ListStreamConsumers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -722,7 +722,7 @@ export namespace MyNS {
 		 * @param {string} ExclusiveStartStreamName Pagination token
 		 * @return {ListStreamsOutput} Success
 		 */
-		ListStreams(Limit: string, ExclusiveStartStreamName: string, requestBody: ListStreamsInput): Observable<ListStreamsOutput> {
+		ListStreams(Limit: string | null | undefined, ExclusiveStartStreamName: string | null | undefined, requestBody: ListStreamsInput): Observable<ListStreamsOutput> {
 			return this.http.post<ListStreamsOutput>(this.baseUri + '#X-Amz-Target=Kinesis_20131202.ListStreams?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&ExclusiveStartStreamName=' + (ExclusiveStartStreamName == null ? '' : encodeURIComponent(ExclusiveStartStreamName)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

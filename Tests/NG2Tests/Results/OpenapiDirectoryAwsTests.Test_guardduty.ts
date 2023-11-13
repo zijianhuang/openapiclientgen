@@ -1124,7 +1124,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDetectorsResponse} Success
 		 */
-		ListDetectors(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListDetectorsResponse> {
+		ListDetectors(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDetectorsResponse> {
 			return this.http.get<ListDetectorsResponse>(this.baseUri + 'detector?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1148,7 +1148,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFiltersResponse} Success
 		 */
-		ListFilters(detectorId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListFiltersResponse> {
+		ListFilters(detectorId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListFiltersResponse> {
 			return this.http.get<ListFiltersResponse>(this.baseUri + 'detector/' + (detectorId == null ? '' : encodeURIComponent(detectorId)) + '/filter&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1172,7 +1172,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIPSetsResponse} Success
 		 */
-		ListIPSets(detectorId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListIPSetsResponse> {
+		ListIPSets(detectorId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListIPSetsResponse> {
 			return this.http.get<ListIPSetsResponse>(this.baseUri + 'detector/' + (detectorId == null ? '' : encodeURIComponent(detectorId)) + '/ipset&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1197,7 +1197,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMembersResponse} Success
 		 */
-		ListMembers(detectorId: string, maxResults: number, nextToken: string, onlyAssociated: string, MaxResults: string, NextToken: string): Observable<ListMembersResponse> {
+		ListMembers(detectorId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, onlyAssociated: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMembersResponse> {
 			return this.http.get<ListMembersResponse>(this.baseUri + 'detector/' + (detectorId == null ? '' : encodeURIComponent(detectorId)) + '/member&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&onlyAssociated=' + (onlyAssociated == null ? '' : encodeURIComponent(onlyAssociated)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1221,7 +1221,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPublishingDestinationsResponse} Success
 		 */
-		ListPublishingDestinations(detectorId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListPublishingDestinationsResponse> {
+		ListPublishingDestinations(detectorId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPublishingDestinationsResponse> {
 			return this.http.get<ListPublishingDestinationsResponse>(this.baseUri + 'detector/' + (detectorId == null ? '' : encodeURIComponent(detectorId)) + '/publishingDestination&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1255,7 +1255,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListThreatIntelSetsResponse} Success
 		 */
-		ListThreatIntelSets(detectorId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListThreatIntelSetsResponse> {
+		ListThreatIntelSets(detectorId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListThreatIntelSetsResponse> {
 			return this.http.get<ListThreatIntelSetsResponse>(this.baseUri + 'detector/' + (detectorId == null ? '' : encodeURIComponent(detectorId)) + '/threatintelset&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1564,7 +1564,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFindingsResponse} Success
 		 */
-		ListFindings(detectorId: string, MaxResults: string, NextToken: string, requestBody: ListFindingsPostBody): Observable<ListFindingsResponse> {
+		ListFindings(detectorId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFindingsPostBody): Observable<ListFindingsResponse> {
 			return this.http.post<ListFindingsResponse>(this.baseUri + 'detector/' + (detectorId == null ? '' : encodeURIComponent(detectorId)) + '/findings&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1577,7 +1577,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInvitationsResponse} Success
 		 */
-		ListInvitations(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInvitationsResponse> {
+		ListInvitations(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInvitationsResponse> {
 			return this.http.get<ListInvitationsResponse>(this.baseUri + 'invitation?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOrganizationAdminAccountsResponse} Success
 		 */
-		ListOrganizationAdminAccounts(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListOrganizationAdminAccountsResponse> {
+		ListOrganizationAdminAccounts(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListOrganizationAdminAccountsResponse> {
 			return this.http.get<ListOrganizationAdminAccountsResponse>(this.baseUri + 'admin?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

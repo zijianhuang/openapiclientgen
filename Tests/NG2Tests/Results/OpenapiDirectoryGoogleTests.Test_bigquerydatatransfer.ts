@@ -716,7 +716,7 @@ export namespace MyNS {
 		 * claim in the token request.
 		 * @return {void} Successful response
 		 */
-		Bigquerydatatransfer_projects_locations_transferConfigs_patch(name: string, authorizationCode: string, serviceAccountName: string, updateMask: string, versionInfo: string, requestBody: TransferConfig): Observable<HttpResponse<string>> {
+		Bigquerydatatransfer_projects_locations_transferConfigs_patch(name: string, authorizationCode: string | null | undefined, serviceAccountName: string | null | undefined, updateMask: string | null | undefined, versionInfo: string | null | undefined, requestBody: TransferConfig): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&authorizationCode=' + (authorizationCode == null ? '' : encodeURIComponent(authorizationCode)) + '&serviceAccountName=' + (serviceAccountName == null ? '' : encodeURIComponent(serviceAccountName)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)) + '&versionInfo=' + (versionInfo == null ? '' : encodeURIComponent(versionInfo)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -729,7 +729,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Bigquerydatatransfer_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigquerydatatransfer_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -765,7 +765,7 @@ export namespace MyNS {
 		 * `page_token` value to request the next page of list results.
 		 * @return {void} Successful response
 		 */
-		Bigquerydatatransfer_projects_locations_dataSources_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigquerydatatransfer_projects_locations_dataSources_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/dataSources&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -786,7 +786,7 @@ export namespace MyNS {
 		 * @param {Array<TransferConfigState>} states When specified, only transfer runs with requested states are returned.
 		 * @return {void} Successful response
 		 */
-		Bigquerydatatransfer_projects_locations_transferConfigs_runs_list(parent: string, pageSize: number, pageToken: string, runAttempt: Bigquerydatatransfer_projects_locations_transferConfigs_runs_listRunAttempt, states: Array<TransferConfigState>): Observable<HttpResponse<string>> {
+		Bigquerydatatransfer_projects_locations_transferConfigs_runs_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, runAttempt: Bigquerydatatransfer_projects_locations_transferConfigs_runs_listRunAttempt | null | undefined, states: Array<TransferConfigState> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/runs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&runAttempt=' + runAttempt + '&' + states.map(z => `states=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -805,7 +805,7 @@ export namespace MyNS {
 		 * `page_token` value to request the next page of list results.
 		 * @return {void} Successful response
 		 */
-		Bigquerydatatransfer_projects_locations_transferConfigs_list(parent: string, dataSourceIds: Array<string>, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigquerydatatransfer_projects_locations_transferConfigs_list(parent: string, dataSourceIds: Array<string> | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/transferConfigs&' + dataSourceIds.map(z => `dataSourceIds=${encodeURIComponent(z)}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -843,7 +843,7 @@ export namespace MyNS {
 		 * claim in the token request.
 		 * @return {void} Successful response
 		 */
-		Bigquerydatatransfer_projects_locations_transferConfigs_create(parent: string, authorizationCode: string, serviceAccountName: string, versionInfo: string, requestBody: TransferConfig): Observable<HttpResponse<string>> {
+		Bigquerydatatransfer_projects_locations_transferConfigs_create(parent: string, authorizationCode: string | null | undefined, serviceAccountName: string | null | undefined, versionInfo: string | null | undefined, requestBody: TransferConfig): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/transferConfigs&authorizationCode=' + (authorizationCode == null ? '' : encodeURIComponent(authorizationCode)) + '&serviceAccountName=' + (serviceAccountName == null ? '' : encodeURIComponent(serviceAccountName)) + '&versionInfo=' + (versionInfo == null ? '' : encodeURIComponent(versionInfo)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -863,7 +863,7 @@ export namespace MyNS {
 		 * `page_token` value to request the next page of list results.
 		 * @return {void} Successful response
 		 */
-		Bigquerydatatransfer_projects_locations_transferConfigs_runs_transferLogs_list(parent: string, messageTypes: Array<TransferMessageSeverity>, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigquerydatatransfer_projects_locations_transferConfigs_runs_transferLogs_list(parent: string, messageTypes: Array<TransferMessageSeverity> | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/transferLogs&' + messageTypes.map(z => `messageTypes=${z}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

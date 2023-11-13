@@ -386,7 +386,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSecretVersionIdsResponse} Success
 		 */
-		ListSecretVersionIds(MaxResults: string, NextToken: string, requestBody: ListSecretVersionIdsRequest): Observable<ListSecretVersionIdsResponse> {
+		ListSecretVersionIds(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListSecretVersionIdsRequest): Observable<ListSecretVersionIdsResponse> {
 			return this.http.post<ListSecretVersionIdsResponse>(this.baseUri + '#X-Amz-Target=secretsmanager.ListSecretVersionIds?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -397,7 +397,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSecretsResponse} Success
 		 */
-		ListSecrets(MaxResults: string, NextToken: string, requestBody: ListSecretsRequest): Observable<ListSecretsResponse> {
+		ListSecrets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListSecretsRequest): Observable<ListSecretsResponse> {
 			return this.http.post<ListSecretsResponse>(this.baseUri + '#X-Amz-Target=secretsmanager.ListSecrets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

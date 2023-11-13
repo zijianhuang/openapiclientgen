@@ -89,7 +89,7 @@ export namespace MyNS {
 		 * returned from the previous call to `ListShelves` method.
 		 * @return {void} Successful response
 		 */
-		Libraryagent_shelves_list(pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Libraryagent_shelves_list(pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/shelves?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -143,7 +143,7 @@ export namespace MyNS {
 		 * returned from the previous call to `ListBooks` method.
 		 * @return {void} Successful response
 		 */
-		Libraryagent_shelves_books_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Libraryagent_shelves_books_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/books&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

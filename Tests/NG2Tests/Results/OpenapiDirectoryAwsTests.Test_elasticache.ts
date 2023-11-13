@@ -1686,7 +1686,7 @@ export namespace MyNS {
 		 * @param {string} ServiceUpdateName The unique ID of the service update
 		 * @return {void} Success
 		 */
-		GET_BatchApplyUpdateAction(ReplicationGroupIds: Array<string>, CacheClusterIds: Array<string>, ServiceUpdateName: string, Action: GET_BatchApplyUpdateActionAction, Version: GET_BatchApplyUpdateActionVersion): Observable<HttpResponse<string>> {
+		GET_BatchApplyUpdateAction(ReplicationGroupIds: Array<string> | null | undefined, CacheClusterIds: Array<string> | null | undefined, ServiceUpdateName: string, Action: GET_BatchApplyUpdateActionAction, Version: GET_BatchApplyUpdateActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=BatchApplyUpdateAction?' + ReplicationGroupIds.map(z => `ReplicationGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + CacheClusterIds.map(z => `CacheClusterIds=${encodeURIComponent(z)}`).join('&') + '&ServiceUpdateName=' + (ServiceUpdateName == null ? '' : encodeURIComponent(ServiceUpdateName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 		 * @param {string} ServiceUpdateName The unique ID of the service update
 		 * @return {void} Success
 		 */
-		GET_BatchStopUpdateAction(ReplicationGroupIds: Array<string>, CacheClusterIds: Array<string>, ServiceUpdateName: string, Action: GET_BatchStopUpdateActionAction, Version: GET_BatchStopUpdateActionVersion): Observable<HttpResponse<string>> {
+		GET_BatchStopUpdateAction(ReplicationGroupIds: Array<string> | null | undefined, CacheClusterIds: Array<string> | null | undefined, ServiceUpdateName: string, Action: GET_BatchStopUpdateActionAction, Version: GET_BatchStopUpdateActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=BatchStopUpdateAction?' + ReplicationGroupIds.map(z => `ReplicationGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + CacheClusterIds.map(z => `CacheClusterIds=${encodeURIComponent(z)}`).join('&') + '&ServiceUpdateName=' + (ServiceUpdateName == null ? '' : encodeURIComponent(ServiceUpdateName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1709,7 +1709,7 @@ export namespace MyNS {
 		 * @param {boolean} Force Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.
 		 * @return {void} Success
 		 */
-		GET_CompleteMigration(ReplicationGroupId: string, Force: boolean, Action: GET_CompleteMigrationAction, Version: GET_CompleteMigrationVersion): Observable<HttpResponse<string>> {
+		GET_CompleteMigration(ReplicationGroupId: string, Force: boolean | null | undefined, Action: GET_CompleteMigrationAction, Version: GET_CompleteMigrationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CompleteMigration?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&Force=' + Force + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1722,7 +1722,7 @@ export namespace MyNS {
 		 * @param {string} KmsKeyId The ID of the KMS key used to encrypt the target snapshot.
 		 * @return {void} Success
 		 */
-		GET_CopySnapshot(SourceSnapshotName: string, TargetSnapshotName: string, TargetBucket: string, KmsKeyId: string, Action: GET_CopySnapshotAction, Version: GET_CopySnapshotVersion): Observable<HttpResponse<string>> {
+		GET_CopySnapshot(SourceSnapshotName: string, TargetSnapshotName: string, TargetBucket: string | null | undefined, KmsKeyId: string | null | undefined, Action: GET_CopySnapshotAction, Version: GET_CopySnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CopySnapshot?SourceSnapshotName=' + (SourceSnapshotName == null ? '' : encodeURIComponent(SourceSnapshotName)) + '&TargetSnapshotName=' + (TargetSnapshotName == null ? '' : encodeURIComponent(TargetSnapshotName)) + '&TargetBucket=' + (TargetBucket == null ? '' : encodeURIComponent(TargetBucket)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1754,7 +1754,7 @@ export namespace MyNS {
 		 * @param {string} AuthToken <p> <b>Reserved parameter.</b> The password used to access a password protected server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more than 128 characters in length.</p> </li> <li> <p>The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateCacheCluster(CacheClusterId: string, ReplicationGroupId: string, AZMode: GET_CreateCacheClusterAZMode, PreferredAvailabilityZone: string, PreferredAvailabilityZones: Array<string>, NumCacheNodes: number, CacheNodeType: string, Engine: string, EngineVersion: string, CacheParameterGroupName: string, CacheSubnetGroupName: string, CacheSecurityGroupNames: Array<string>, SecurityGroupIds: Array<string>, Tags: Array<Tag>, SnapshotArns: Array<string>, SnapshotName: string, PreferredMaintenanceWindow: string, Port: number, NotificationTopicArn: string, AutoMinorVersionUpgrade: boolean, SnapshotRetentionLimit: number, SnapshotWindow: string, AuthToken: string, Action: GET_CreateCacheClusterAction, Version: GET_CreateCacheClusterVersion): Observable<HttpResponse<string>> {
+		GET_CreateCacheCluster(CacheClusterId: string, ReplicationGroupId: string | null | undefined, AZMode: GET_CreateCacheClusterAZMode | null | undefined, PreferredAvailabilityZone: string | null | undefined, PreferredAvailabilityZones: Array<string> | null | undefined, NumCacheNodes: number | null | undefined, CacheNodeType: string | null | undefined, Engine: string | null | undefined, EngineVersion: string | null | undefined, CacheParameterGroupName: string | null | undefined, CacheSubnetGroupName: string | null | undefined, CacheSecurityGroupNames: Array<string> | null | undefined, SecurityGroupIds: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, SnapshotArns: Array<string> | null | undefined, SnapshotName: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, Port: number | null | undefined, NotificationTopicArn: string | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, SnapshotRetentionLimit: number | null | undefined, SnapshotWindow: string | null | undefined, AuthToken: string | null | undefined, Action: GET_CreateCacheClusterAction, Version: GET_CreateCacheClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateCacheCluster?CacheClusterId=' + (CacheClusterId == null ? '' : encodeURIComponent(CacheClusterId)) + '&ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&AZMode=' + AZMode + '&PreferredAvailabilityZone=' + (PreferredAvailabilityZone == null ? '' : encodeURIComponent(PreferredAvailabilityZone)) + '&' + PreferredAvailabilityZones.map(z => `PreferredAvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&NumCacheNodes=' + NumCacheNodes + '&CacheNodeType=' + (CacheNodeType == null ? '' : encodeURIComponent(CacheNodeType)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&CacheParameterGroupName=' + (CacheParameterGroupName == null ? '' : encodeURIComponent(CacheParameterGroupName)) + '&CacheSubnetGroupName=' + (CacheSubnetGroupName == null ? '' : encodeURIComponent(CacheSubnetGroupName)) + '&' + CacheSecurityGroupNames.map(z => `CacheSecurityGroupNames=${encodeURIComponent(z)}`).join('&') + '&' + SecurityGroupIds.map(z => `SecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&' + SnapshotArns.map(z => `SnapshotArns=${encodeURIComponent(z)}`).join('&') + '&SnapshotName=' + (SnapshotName == null ? '' : encodeURIComponent(SnapshotName)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&Port=' + Port + '&NotificationTopicArn=' + (NotificationTopicArn == null ? '' : encodeURIComponent(NotificationTopicArn)) + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&SnapshotRetentionLimit=' + SnapshotRetentionLimit + '&SnapshotWindow=' + (SnapshotWindow == null ? '' : encodeURIComponent(SnapshotWindow)) + '&AuthToken=' + (AuthToken == null ? '' : encodeURIComponent(AuthToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1801,7 +1801,7 @@ export namespace MyNS {
 		 * @param {string} PrimaryReplicationGroupId The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.
 		 * @return {void} Success
 		 */
-		GET_CreateGlobalReplicationGroup(GlobalReplicationGroupIdSuffix: string, GlobalReplicationGroupDescription: string, PrimaryReplicationGroupId: string, Action: GET_CreateGlobalReplicationGroupAction, Version: GET_CreateGlobalReplicationGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateGlobalReplicationGroup(GlobalReplicationGroupIdSuffix: string, GlobalReplicationGroupDescription: string | null | undefined, PrimaryReplicationGroupId: string, Action: GET_CreateGlobalReplicationGroupAction, Version: GET_CreateGlobalReplicationGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateGlobalReplicationGroup?GlobalReplicationGroupIdSuffix=' + (GlobalReplicationGroupIdSuffix == null ? '' : encodeURIComponent(GlobalReplicationGroupIdSuffix)) + '&GlobalReplicationGroupDescription=' + (GlobalReplicationGroupDescription == null ? '' : encodeURIComponent(GlobalReplicationGroupDescription)) + '&PrimaryReplicationGroupId=' + (PrimaryReplicationGroupId == null ? '' : encodeURIComponent(PrimaryReplicationGroupId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1840,7 +1840,7 @@ export namespace MyNS {
 		 * @param {string} KmsKeyId The ID of the KMS key used to encrypt the disk in the cluster.
 		 * @return {void} Success
 		 */
-		GET_CreateReplicationGroup(ReplicationGroupId: string, ReplicationGroupDescription: string, GlobalReplicationGroupId: string, PrimaryClusterId: string, AutomaticFailoverEnabled: boolean, MultiAZEnabled: boolean, NumCacheClusters: number, PreferredCacheClusterAZs: Array<string>, NumNodeGroups: number, ReplicasPerNodeGroup: number, NodeGroupConfiguration: Array<NodeGroupConfiguration>, CacheNodeType: string, Engine: string, EngineVersion: string, CacheParameterGroupName: string, CacheSubnetGroupName: string, CacheSecurityGroupNames: Array<string>, SecurityGroupIds: Array<string>, Tags: Array<Tag>, SnapshotArns: Array<string>, SnapshotName: string, PreferredMaintenanceWindow: string, Port: number, NotificationTopicArn: string, AutoMinorVersionUpgrade: boolean, SnapshotRetentionLimit: number, SnapshotWindow: string, AuthToken: string, TransitEncryptionEnabled: boolean, AtRestEncryptionEnabled: boolean, KmsKeyId: string, Action: GET_CreateReplicationGroupAction, Version: GET_CreateReplicationGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateReplicationGroup(ReplicationGroupId: string, ReplicationGroupDescription: string, GlobalReplicationGroupId: string | null | undefined, PrimaryClusterId: string | null | undefined, AutomaticFailoverEnabled: boolean | null | undefined, MultiAZEnabled: boolean | null | undefined, NumCacheClusters: number | null | undefined, PreferredCacheClusterAZs: Array<string> | null | undefined, NumNodeGroups: number | null | undefined, ReplicasPerNodeGroup: number | null | undefined, NodeGroupConfiguration: Array<NodeGroupConfiguration> | null | undefined, CacheNodeType: string | null | undefined, Engine: string | null | undefined, EngineVersion: string | null | undefined, CacheParameterGroupName: string | null | undefined, CacheSubnetGroupName: string | null | undefined, CacheSecurityGroupNames: Array<string> | null | undefined, SecurityGroupIds: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, SnapshotArns: Array<string> | null | undefined, SnapshotName: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, Port: number | null | undefined, NotificationTopicArn: string | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, SnapshotRetentionLimit: number | null | undefined, SnapshotWindow: string | null | undefined, AuthToken: string | null | undefined, TransitEncryptionEnabled: boolean | null | undefined, AtRestEncryptionEnabled: boolean | null | undefined, KmsKeyId: string | null | undefined, Action: GET_CreateReplicationGroupAction, Version: GET_CreateReplicationGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateReplicationGroup?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&ReplicationGroupDescription=' + (ReplicationGroupDescription == null ? '' : encodeURIComponent(ReplicationGroupDescription)) + '&GlobalReplicationGroupId=' + (GlobalReplicationGroupId == null ? '' : encodeURIComponent(GlobalReplicationGroupId)) + '&PrimaryClusterId=' + (PrimaryClusterId == null ? '' : encodeURIComponent(PrimaryClusterId)) + '&AutomaticFailoverEnabled=' + AutomaticFailoverEnabled + '&MultiAZEnabled=' + MultiAZEnabled + '&NumCacheClusters=' + NumCacheClusters + '&' + PreferredCacheClusterAZs.map(z => `PreferredCacheClusterAZs=${encodeURIComponent(z)}`).join('&') + '&NumNodeGroups=' + NumNodeGroups + '&ReplicasPerNodeGroup=' + ReplicasPerNodeGroup + '&' + NodeGroupConfiguration.map(z => `NodeGroupConfiguration=${z}`).join('&') + '&CacheNodeType=' + (CacheNodeType == null ? '' : encodeURIComponent(CacheNodeType)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&CacheParameterGroupName=' + (CacheParameterGroupName == null ? '' : encodeURIComponent(CacheParameterGroupName)) + '&CacheSubnetGroupName=' + (CacheSubnetGroupName == null ? '' : encodeURIComponent(CacheSubnetGroupName)) + '&' + CacheSecurityGroupNames.map(z => `CacheSecurityGroupNames=${encodeURIComponent(z)}`).join('&') + '&' + SecurityGroupIds.map(z => `SecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&' + SnapshotArns.map(z => `SnapshotArns=${encodeURIComponent(z)}`).join('&') + '&SnapshotName=' + (SnapshotName == null ? '' : encodeURIComponent(SnapshotName)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&Port=' + Port + '&NotificationTopicArn=' + (NotificationTopicArn == null ? '' : encodeURIComponent(NotificationTopicArn)) + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&SnapshotRetentionLimit=' + SnapshotRetentionLimit + '&SnapshotWindow=' + (SnapshotWindow == null ? '' : encodeURIComponent(SnapshotWindow)) + '&AuthToken=' + (AuthToken == null ? '' : encodeURIComponent(AuthToken)) + '&TransitEncryptionEnabled=' + TransitEncryptionEnabled + '&AtRestEncryptionEnabled=' + AtRestEncryptionEnabled + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1853,7 +1853,7 @@ export namespace MyNS {
 		 * @param {string} KmsKeyId The ID of the KMS key used to encrypt the snapshot.
 		 * @return {void} Success
 		 */
-		GET_CreateSnapshot(ReplicationGroupId: string, CacheClusterId: string, SnapshotName: string, KmsKeyId: string, Action: GET_CreateSnapshotAction, Version: GET_CreateSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_CreateSnapshot(ReplicationGroupId: string | null | undefined, CacheClusterId: string | null | undefined, SnapshotName: string, KmsKeyId: string | null | undefined, Action: GET_CreateSnapshotAction, Version: GET_CreateSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateSnapshot?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&CacheClusterId=' + (CacheClusterId == null ? '' : encodeURIComponent(CacheClusterId)) + '&SnapshotName=' + (SnapshotName == null ? '' : encodeURIComponent(SnapshotName)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1867,7 +1867,7 @@ export namespace MyNS {
 		 * @param {boolean} ApplyImmediately Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. 
 		 * @return {void} Success
 		 */
-		GET_DecreaseNodeGroupsInGlobalReplicationGroup(GlobalReplicationGroupId: string, NodeGroupCount: number, GlobalNodeGroupsToRemove: Array<string>, GlobalNodeGroupsToRetain: Array<string>, ApplyImmediately: boolean, Action: GET_DecreaseNodeGroupsInGlobalReplicationGroupAction, Version: GET_DecreaseNodeGroupsInGlobalReplicationGroupVersion): Observable<HttpResponse<string>> {
+		GET_DecreaseNodeGroupsInGlobalReplicationGroup(GlobalReplicationGroupId: string, NodeGroupCount: number, GlobalNodeGroupsToRemove: Array<string> | null | undefined, GlobalNodeGroupsToRetain: Array<string> | null | undefined, ApplyImmediately: boolean, Action: GET_DecreaseNodeGroupsInGlobalReplicationGroupAction, Version: GET_DecreaseNodeGroupsInGlobalReplicationGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DecreaseNodeGroupsInGlobalReplicationGroup?GlobalReplicationGroupId=' + (GlobalReplicationGroupId == null ? '' : encodeURIComponent(GlobalReplicationGroupId)) + '&NodeGroupCount=' + NodeGroupCount + '&' + GlobalNodeGroupsToRemove.map(z => `GlobalNodeGroupsToRemove=${encodeURIComponent(z)}`).join('&') + '&' + GlobalNodeGroupsToRetain.map(z => `GlobalNodeGroupsToRetain=${encodeURIComponent(z)}`).join('&') + '&ApplyImmediately=' + ApplyImmediately + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1881,7 +1881,7 @@ export namespace MyNS {
 		 * @param {boolean} ApplyImmediately If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code> is not currently supported.
 		 * @return {void} Success
 		 */
-		GET_DecreaseReplicaCount(ReplicationGroupId: string, NewReplicaCount: number, ReplicaConfiguration: Array<ConfigureShard>, ReplicasToRemove: Array<string>, ApplyImmediately: boolean, Action: GET_DecreaseReplicaCountAction, Version: GET_DecreaseReplicaCountVersion): Observable<HttpResponse<string>> {
+		GET_DecreaseReplicaCount(ReplicationGroupId: string, NewReplicaCount: number | null | undefined, ReplicaConfiguration: Array<ConfigureShard> | null | undefined, ReplicasToRemove: Array<string> | null | undefined, ApplyImmediately: boolean, Action: GET_DecreaseReplicaCountAction, Version: GET_DecreaseReplicaCountVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DecreaseReplicaCount?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&NewReplicaCount=' + NewReplicaCount + '&' + ReplicaConfiguration.map(z => `ReplicaConfiguration=${z}`).join('&') + '&' + ReplicasToRemove.map(z => `ReplicasToRemove=${encodeURIComponent(z)}`).join('&') + '&ApplyImmediately=' + ApplyImmediately + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1892,7 +1892,7 @@ export namespace MyNS {
 		 * @param {string} FinalSnapshotIdentifier The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.
 		 * @return {void} Success
 		 */
-		GET_DeleteCacheCluster(CacheClusterId: string, FinalSnapshotIdentifier: string, Action: GET_DeleteCacheClusterAction, Version: GET_DeleteCacheClusterVersion): Observable<HttpResponse<string>> {
+		GET_DeleteCacheCluster(CacheClusterId: string, FinalSnapshotIdentifier: string | null | undefined, Action: GET_DeleteCacheClusterAction, Version: GET_DeleteCacheClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteCacheCluster?CacheClusterId=' + (CacheClusterId == null ? '' : encodeURIComponent(CacheClusterId)) + '&FinalSnapshotIdentifier=' + (FinalSnapshotIdentifier == null ? '' : encodeURIComponent(FinalSnapshotIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1945,7 +1945,7 @@ export namespace MyNS {
 		 * @param {string} FinalSnapshotIdentifier The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.
 		 * @return {void} Success
 		 */
-		GET_DeleteReplicationGroup(ReplicationGroupId: string, RetainPrimaryCluster: boolean, FinalSnapshotIdentifier: string, Action: GET_DeleteReplicationGroupAction, Version: GET_DeleteReplicationGroupVersion): Observable<HttpResponse<string>> {
+		GET_DeleteReplicationGroup(ReplicationGroupId: string, RetainPrimaryCluster: boolean | null | undefined, FinalSnapshotIdentifier: string | null | undefined, Action: GET_DeleteReplicationGroupAction, Version: GET_DeleteReplicationGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteReplicationGroup?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&RetainPrimaryCluster=' + RetainPrimaryCluster + '&FinalSnapshotIdentifier=' + (FinalSnapshotIdentifier == null ? '' : encodeURIComponent(FinalSnapshotIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1969,7 +1969,7 @@ export namespace MyNS {
 		 * @param {boolean} ShowCacheClustersNotInReplicationGroups An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.
 		 * @return {void} Success
 		 */
-		GET_DescribeCacheClusters(CacheClusterId: string, MaxRecords: number, Marker: string, ShowCacheNodeInfo: boolean, ShowCacheClustersNotInReplicationGroups: boolean, Action: GET_DescribeCacheClustersAction, Version: GET_DescribeCacheClustersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeCacheClusters(CacheClusterId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, ShowCacheNodeInfo: boolean | null | undefined, ShowCacheClustersNotInReplicationGroups: boolean | null | undefined, Action: GET_DescribeCacheClustersAction, Version: GET_DescribeCacheClustersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeCacheClusters?CacheClusterId=' + (CacheClusterId == null ? '' : encodeURIComponent(CacheClusterId)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&ShowCacheNodeInfo=' + ShowCacheNodeInfo + '&ShowCacheClustersNotInReplicationGroups=' + ShowCacheClustersNotInReplicationGroups + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1984,7 +1984,7 @@ export namespace MyNS {
 		 * @param {boolean} DefaultOnly If <code>true</code>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.
 		 * @return {void} Success
 		 */
-		GET_DescribeCacheEngineVersions(Engine: string, EngineVersion: string, CacheParameterGroupFamily: string, MaxRecords: number, Marker: string, DefaultOnly: boolean, Action: GET_DescribeCacheEngineVersionsAction, Version: GET_DescribeCacheEngineVersionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeCacheEngineVersions(Engine: string | null | undefined, EngineVersion: string | null | undefined, CacheParameterGroupFamily: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, DefaultOnly: boolean | null | undefined, Action: GET_DescribeCacheEngineVersionsAction, Version: GET_DescribeCacheEngineVersionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeCacheEngineVersions?Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&CacheParameterGroupFamily=' + (CacheParameterGroupFamily == null ? '' : encodeURIComponent(CacheParameterGroupFamily)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&DefaultOnly=' + DefaultOnly + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1996,7 +1996,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeCacheParameterGroups(CacheParameterGroupName: string, MaxRecords: number, Marker: string, Action: GET_DescribeCacheParameterGroupsAction, Version: GET_DescribeCacheParameterGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeCacheParameterGroups(CacheParameterGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeCacheParameterGroupsAction, Version: GET_DescribeCacheParameterGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeCacheParameterGroups?CacheParameterGroupName=' + (CacheParameterGroupName == null ? '' : encodeURIComponent(CacheParameterGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2009,7 +2009,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeCacheParameters(CacheParameterGroupName: string, Source: string, MaxRecords: number, Marker: string, Action: GET_DescribeCacheParametersAction, Version: GET_DescribeCacheParametersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeCacheParameters(CacheParameterGroupName: string, Source: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeCacheParametersAction, Version: GET_DescribeCacheParametersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeCacheParameters?CacheParameterGroupName=' + (CacheParameterGroupName == null ? '' : encodeURIComponent(CacheParameterGroupName)) + '&Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2021,7 +2021,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeCacheSecurityGroups(CacheSecurityGroupName: string, MaxRecords: number, Marker: string, Action: GET_DescribeCacheSecurityGroupsAction, Version: GET_DescribeCacheSecurityGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeCacheSecurityGroups(CacheSecurityGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeCacheSecurityGroupsAction, Version: GET_DescribeCacheSecurityGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeCacheSecurityGroups?CacheSecurityGroupName=' + (CacheSecurityGroupName == null ? '' : encodeURIComponent(CacheSecurityGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2033,7 +2033,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeCacheSubnetGroups(CacheSubnetGroupName: string, MaxRecords: number, Marker: string, Action: GET_DescribeCacheSubnetGroupsAction, Version: GET_DescribeCacheSubnetGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeCacheSubnetGroups(CacheSubnetGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeCacheSubnetGroupsAction, Version: GET_DescribeCacheSubnetGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeCacheSubnetGroups?CacheSubnetGroupName=' + (CacheSubnetGroupName == null ? '' : encodeURIComponent(CacheSubnetGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2045,7 +2045,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeEngineDefaultParameters(CacheParameterGroupFamily: string, MaxRecords: number, Marker: string, Action: GET_DescribeEngineDefaultParametersAction, Version: GET_DescribeEngineDefaultParametersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEngineDefaultParameters(CacheParameterGroupFamily: string, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEngineDefaultParametersAction, Version: GET_DescribeEngineDefaultParametersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEngineDefaultParameters?CacheParameterGroupFamily=' + (CacheParameterGroupFamily == null ? '' : encodeURIComponent(CacheParameterGroupFamily)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2061,7 +2061,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeEvents(SourceIdentifier: string, SourceType: GET_DescribeEventsSourceType, StartTime: Date, EndTime: Date, Duration: number, MaxRecords: number, Marker: string, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEvents(SourceIdentifier: string | null | undefined, SourceType: GET_DescribeEventsSourceType | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Duration: number | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEvents?SourceIdentifier=' + (SourceIdentifier == null ? '' : encodeURIComponent(SourceIdentifier)) + '&SourceType=' + SourceType + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Duration=' + Duration + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2074,7 +2074,7 @@ export namespace MyNS {
 		 * @param {boolean} ShowMemberInfo Returns the list of members that comprise the Global Datastore.
 		 * @return {void} Success
 		 */
-		GET_DescribeGlobalReplicationGroups(GlobalReplicationGroupId: string, MaxRecords: number, Marker: string, ShowMemberInfo: boolean, Action: GET_DescribeGlobalReplicationGroupsAction, Version: GET_DescribeGlobalReplicationGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeGlobalReplicationGroups(GlobalReplicationGroupId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, ShowMemberInfo: boolean | null | undefined, Action: GET_DescribeGlobalReplicationGroupsAction, Version: GET_DescribeGlobalReplicationGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeGlobalReplicationGroups?GlobalReplicationGroupId=' + (GlobalReplicationGroupId == null ? '' : encodeURIComponent(GlobalReplicationGroupId)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&ShowMemberInfo=' + ShowMemberInfo + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2086,7 +2086,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeReplicationGroups(ReplicationGroupId: string, MaxRecords: number, Marker: string, Action: GET_DescribeReplicationGroupsAction, Version: GET_DescribeReplicationGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeReplicationGroups(ReplicationGroupId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReplicationGroupsAction, Version: GET_DescribeReplicationGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeReplicationGroups?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2103,7 +2103,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeReservedCacheNodes(ReservedCacheNodeId: string, ReservedCacheNodesOfferingId: string, CacheNodeType: string, Duration: string, ProductDescription: string, OfferingType: string, MaxRecords: number, Marker: string, Action: GET_DescribeReservedCacheNodesAction, Version: GET_DescribeReservedCacheNodesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeReservedCacheNodes(ReservedCacheNodeId: string | null | undefined, ReservedCacheNodesOfferingId: string | null | undefined, CacheNodeType: string | null | undefined, Duration: string | null | undefined, ProductDescription: string | null | undefined, OfferingType: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedCacheNodesAction, Version: GET_DescribeReservedCacheNodesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeReservedCacheNodes?ReservedCacheNodeId=' + (ReservedCacheNodeId == null ? '' : encodeURIComponent(ReservedCacheNodeId)) + '&ReservedCacheNodesOfferingId=' + (ReservedCacheNodesOfferingId == null ? '' : encodeURIComponent(ReservedCacheNodesOfferingId)) + '&CacheNodeType=' + (CacheNodeType == null ? '' : encodeURIComponent(CacheNodeType)) + '&Duration=' + (Duration == null ? '' : encodeURIComponent(Duration)) + '&ProductDescription=' + (ProductDescription == null ? '' : encodeURIComponent(ProductDescription)) + '&OfferingType=' + (OfferingType == null ? '' : encodeURIComponent(OfferingType)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2119,7 +2119,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeReservedCacheNodesOfferings(ReservedCacheNodesOfferingId: string, CacheNodeType: string, Duration: string, ProductDescription: string, OfferingType: string, MaxRecords: number, Marker: string, Action: GET_DescribeReservedCacheNodesOfferingsAction, Version: GET_DescribeReservedCacheNodesOfferingsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeReservedCacheNodesOfferings(ReservedCacheNodesOfferingId: string | null | undefined, CacheNodeType: string | null | undefined, Duration: string | null | undefined, ProductDescription: string | null | undefined, OfferingType: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedCacheNodesOfferingsAction, Version: GET_DescribeReservedCacheNodesOfferingsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeReservedCacheNodesOfferings?ReservedCacheNodesOfferingId=' + (ReservedCacheNodesOfferingId == null ? '' : encodeURIComponent(ReservedCacheNodesOfferingId)) + '&CacheNodeType=' + (CacheNodeType == null ? '' : encodeURIComponent(CacheNodeType)) + '&Duration=' + (Duration == null ? '' : encodeURIComponent(Duration)) + '&ProductDescription=' + (ProductDescription == null ? '' : encodeURIComponent(ProductDescription)) + '&OfferingType=' + (OfferingType == null ? '' : encodeURIComponent(OfferingType)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2132,7 +2132,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeServiceUpdates(ServiceUpdateName: string, ServiceUpdateStatus: Array<ServiceUpdateStatus>, MaxRecords: number, Marker: string, Action: GET_DescribeServiceUpdatesAction, Version: GET_DescribeServiceUpdatesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeServiceUpdates(ServiceUpdateName: string | null | undefined, ServiceUpdateStatus: Array<ServiceUpdateStatus> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeServiceUpdatesAction, Version: GET_DescribeServiceUpdatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeServiceUpdates?ServiceUpdateName=' + (ServiceUpdateName == null ? '' : encodeURIComponent(ServiceUpdateName)) + '&' + ServiceUpdateStatus.map(z => `ServiceUpdateStatus=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2148,7 +2148,7 @@ export namespace MyNS {
 		 * @param {boolean} ShowNodeGroupConfig A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.
 		 * @return {void} Success
 		 */
-		GET_DescribeSnapshots(ReplicationGroupId: string, CacheClusterId: string, SnapshotName: string, SnapshotSource: string, Marker: string, MaxRecords: number, ShowNodeGroupConfig: boolean, Action: GET_DescribeSnapshotsAction, Version: GET_DescribeSnapshotsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeSnapshots(ReplicationGroupId: string | null | undefined, CacheClusterId: string | null | undefined, SnapshotName: string | null | undefined, SnapshotSource: string | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, ShowNodeGroupConfig: boolean | null | undefined, Action: GET_DescribeSnapshotsAction, Version: GET_DescribeSnapshotsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeSnapshots?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&CacheClusterId=' + (CacheClusterId == null ? '' : encodeURIComponent(CacheClusterId)) + '&SnapshotName=' + (SnapshotName == null ? '' : encodeURIComponent(SnapshotName)) + '&SnapshotSource=' + (SnapshotSource == null ? '' : encodeURIComponent(SnapshotSource)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&ShowNodeGroupConfig=' + ShowNodeGroupConfig + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2167,7 +2167,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeUpdateActions(ServiceUpdateName: string, ReplicationGroupIds: Array<string>, CacheClusterIds: Array<string>, Engine: string, ServiceUpdateStatus: Array<ServiceUpdateStatus>, ServiceUpdateTimeRange: GET_DescribeUpdateActionsServiceUpdateTimeRange, UpdateActionStatus: Array<UpdateActionStatus>, ShowNodeLevelUpdateStatus: boolean, MaxRecords: number, Marker: string, Action: GET_DescribeUpdateActionsAction, Version: GET_DescribeUpdateActionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeUpdateActions(ServiceUpdateName: string | null | undefined, ReplicationGroupIds: Array<string> | null | undefined, CacheClusterIds: Array<string> | null | undefined, Engine: string | null | undefined, ServiceUpdateStatus: Array<ServiceUpdateStatus> | null | undefined, ServiceUpdateTimeRange: GET_DescribeUpdateActionsServiceUpdateTimeRange | null | undefined, UpdateActionStatus: Array<UpdateActionStatus> | null | undefined, ShowNodeLevelUpdateStatus: boolean | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeUpdateActionsAction, Version: GET_DescribeUpdateActionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeUpdateActions?ServiceUpdateName=' + (ServiceUpdateName == null ? '' : encodeURIComponent(ServiceUpdateName)) + '&' + ReplicationGroupIds.map(z => `ReplicationGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + CacheClusterIds.map(z => `CacheClusterIds=${encodeURIComponent(z)}`).join('&') + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&' + ServiceUpdateStatus.map(z => `ServiceUpdateStatus=${z}`).join('&') + '&ServiceUpdateTimeRange=' + ServiceUpdateTimeRange + '&' + UpdateActionStatus.map(z => `UpdateActionStatus=${z}`).join('&') + '&ShowNodeLevelUpdateStatus=' + ShowNodeLevelUpdateStatus + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2204,7 +2204,7 @@ export namespace MyNS {
 		 * @param {boolean} ApplyImmediately Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.
 		 * @return {void} Success
 		 */
-		GET_IncreaseNodeGroupsInGlobalReplicationGroup(GlobalReplicationGroupId: string, NodeGroupCount: number, RegionalConfigurations: Array<RegionalConfiguration>, ApplyImmediately: boolean, Action: GET_IncreaseNodeGroupsInGlobalReplicationGroupAction, Version: GET_IncreaseNodeGroupsInGlobalReplicationGroupVersion): Observable<HttpResponse<string>> {
+		GET_IncreaseNodeGroupsInGlobalReplicationGroup(GlobalReplicationGroupId: string, NodeGroupCount: number, RegionalConfigurations: Array<RegionalConfiguration> | null | undefined, ApplyImmediately: boolean, Action: GET_IncreaseNodeGroupsInGlobalReplicationGroupAction, Version: GET_IncreaseNodeGroupsInGlobalReplicationGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=IncreaseNodeGroupsInGlobalReplicationGroup?GlobalReplicationGroupId=' + (GlobalReplicationGroupId == null ? '' : encodeURIComponent(GlobalReplicationGroupId)) + '&NodeGroupCount=' + NodeGroupCount + '&' + RegionalConfigurations.map(z => `RegionalConfigurations=${z}`).join('&') + '&ApplyImmediately=' + ApplyImmediately + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2217,7 +2217,7 @@ export namespace MyNS {
 		 * @param {boolean} ApplyImmediately If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.
 		 * @return {void} Success
 		 */
-		GET_IncreaseReplicaCount(ReplicationGroupId: string, NewReplicaCount: number, ReplicaConfiguration: Array<ConfigureShard>, ApplyImmediately: boolean, Action: GET_IncreaseReplicaCountAction, Version: GET_IncreaseReplicaCountVersion): Observable<HttpResponse<string>> {
+		GET_IncreaseReplicaCount(ReplicationGroupId: string, NewReplicaCount: number | null | undefined, ReplicaConfiguration: Array<ConfigureShard> | null | undefined, ApplyImmediately: boolean, Action: GET_IncreaseReplicaCountAction, Version: GET_IncreaseReplicaCountVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=IncreaseReplicaCount?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&NewReplicaCount=' + NewReplicaCount + '&' + ReplicaConfiguration.map(z => `ReplicaConfiguration=${z}`).join('&') + '&ApplyImmediately=' + ApplyImmediately + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2228,7 +2228,7 @@ export namespace MyNS {
 		 * @param {string} ReplicationGroupId <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important> <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p> </important>
 		 * @return {void} Success
 		 */
-		GET_ListAllowedNodeTypeModifications(CacheClusterId: string, ReplicationGroupId: string, Action: GET_ListAllowedNodeTypeModificationsAction, Version: GET_ListAllowedNodeTypeModificationsVersion): Observable<HttpResponse<string>> {
+		GET_ListAllowedNodeTypeModifications(CacheClusterId: string | null | undefined, ReplicationGroupId: string | null | undefined, Action: GET_ListAllowedNodeTypeModificationsAction, Version: GET_ListAllowedNodeTypeModificationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListAllowedNodeTypeModifications?CacheClusterId=' + (CacheClusterId == null ? '' : encodeURIComponent(CacheClusterId)) + '&ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2266,7 +2266,7 @@ export namespace MyNS {
 		 * @param {AuthTokenUpdateStrategyType} AuthTokenUpdateStrategy <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p> <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
 		 * @return {void} Success
 		 */
-		GET_ModifyCacheCluster(CacheClusterId: string, NumCacheNodes: number, CacheNodeIdsToRemove: Array<string>, AZMode: GET_ModifyCacheClusterAZMode, NewAvailabilityZones: Array<string>, CacheSecurityGroupNames: Array<string>, SecurityGroupIds: Array<string>, PreferredMaintenanceWindow: string, NotificationTopicArn: string, CacheParameterGroupName: string, NotificationTopicStatus: string, ApplyImmediately: boolean, EngineVersion: string, AutoMinorVersionUpgrade: boolean, SnapshotRetentionLimit: number, SnapshotWindow: string, CacheNodeType: string, AuthToken: string, AuthTokenUpdateStrategy: AuthTokenUpdateStrategyType, Action: GET_ModifyCacheClusterAction, Version: GET_ModifyCacheClusterVersion): Observable<HttpResponse<string>> {
+		GET_ModifyCacheCluster(CacheClusterId: string, NumCacheNodes: number | null | undefined, CacheNodeIdsToRemove: Array<string> | null | undefined, AZMode: GET_ModifyCacheClusterAZMode | null | undefined, NewAvailabilityZones: Array<string> | null | undefined, CacheSecurityGroupNames: Array<string> | null | undefined, SecurityGroupIds: Array<string> | null | undefined, PreferredMaintenanceWindow: string | null | undefined, NotificationTopicArn: string | null | undefined, CacheParameterGroupName: string | null | undefined, NotificationTopicStatus: string | null | undefined, ApplyImmediately: boolean | null | undefined, EngineVersion: string | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, SnapshotRetentionLimit: number | null | undefined, SnapshotWindow: string | null | undefined, CacheNodeType: string | null | undefined, AuthToken: string | null | undefined, AuthTokenUpdateStrategy: AuthTokenUpdateStrategyType | null | undefined, Action: GET_ModifyCacheClusterAction, Version: GET_ModifyCacheClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyCacheCluster?CacheClusterId=' + (CacheClusterId == null ? '' : encodeURIComponent(CacheClusterId)) + '&NumCacheNodes=' + NumCacheNodes + '&' + CacheNodeIdsToRemove.map(z => `CacheNodeIdsToRemove=${encodeURIComponent(z)}`).join('&') + '&AZMode=' + AZMode + '&' + NewAvailabilityZones.map(z => `NewAvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&' + CacheSecurityGroupNames.map(z => `CacheSecurityGroupNames=${encodeURIComponent(z)}`).join('&') + '&' + SecurityGroupIds.map(z => `SecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&NotificationTopicArn=' + (NotificationTopicArn == null ? '' : encodeURIComponent(NotificationTopicArn)) + '&CacheParameterGroupName=' + (CacheParameterGroupName == null ? '' : encodeURIComponent(CacheParameterGroupName)) + '&NotificationTopicStatus=' + (NotificationTopicStatus == null ? '' : encodeURIComponent(NotificationTopicStatus)) + '&ApplyImmediately=' + ApplyImmediately + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&SnapshotRetentionLimit=' + SnapshotRetentionLimit + '&SnapshotWindow=' + (SnapshotWindow == null ? '' : encodeURIComponent(SnapshotWindow)) + '&CacheNodeType=' + (CacheNodeType == null ? '' : encodeURIComponent(CacheNodeType)) + '&AuthToken=' + (AuthToken == null ? '' : encodeURIComponent(AuthToken)) + '&AuthTokenUpdateStrategy=' + AuthTokenUpdateStrategy + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2289,7 +2289,7 @@ export namespace MyNS {
 		 * @param {Array<string>} SubnetIds The EC2 subnet IDs for the cache subnet group.
 		 * @return {void} Success
 		 */
-		GET_ModifyCacheSubnetGroup(CacheSubnetGroupName: string, CacheSubnetGroupDescription: string, SubnetIds: Array<string>, Action: GET_ModifyCacheSubnetGroupAction, Version: GET_ModifyCacheSubnetGroupVersion): Observable<HttpResponse<string>> {
+		GET_ModifyCacheSubnetGroup(CacheSubnetGroupName: string, CacheSubnetGroupDescription: string | null | undefined, SubnetIds: Array<string> | null | undefined, Action: GET_ModifyCacheSubnetGroupAction, Version: GET_ModifyCacheSubnetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyCacheSubnetGroup?CacheSubnetGroupName=' + (CacheSubnetGroupName == null ? '' : encodeURIComponent(CacheSubnetGroupName)) + '&CacheSubnetGroupDescription=' + (CacheSubnetGroupDescription == null ? '' : encodeURIComponent(CacheSubnetGroupDescription)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2304,7 +2304,7 @@ export namespace MyNS {
 		 * @param {boolean} AutomaticFailoverEnabled Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. 
 		 * @return {void} Success
 		 */
-		GET_ModifyGlobalReplicationGroup(GlobalReplicationGroupId: string, ApplyImmediately: boolean, CacheNodeType: string, EngineVersion: string, GlobalReplicationGroupDescription: string, AutomaticFailoverEnabled: boolean, Action: GET_ModifyGlobalReplicationGroupAction, Version: GET_ModifyGlobalReplicationGroupVersion): Observable<HttpResponse<string>> {
+		GET_ModifyGlobalReplicationGroup(GlobalReplicationGroupId: string, ApplyImmediately: boolean, CacheNodeType: string | null | undefined, EngineVersion: string | null | undefined, GlobalReplicationGroupDescription: string | null | undefined, AutomaticFailoverEnabled: boolean | null | undefined, Action: GET_ModifyGlobalReplicationGroupAction, Version: GET_ModifyGlobalReplicationGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyGlobalReplicationGroup?GlobalReplicationGroupId=' + (GlobalReplicationGroupId == null ? '' : encodeURIComponent(GlobalReplicationGroupId)) + '&ApplyImmediately=' + ApplyImmediately + '&CacheNodeType=' + (CacheNodeType == null ? '' : encodeURIComponent(CacheNodeType)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&GlobalReplicationGroupDescription=' + (GlobalReplicationGroupDescription == null ? '' : encodeURIComponent(GlobalReplicationGroupDescription)) + '&AutomaticFailoverEnabled=' + AutomaticFailoverEnabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2333,7 +2333,7 @@ export namespace MyNS {
 		 * @param {AuthTokenUpdateStrategyType} AuthTokenUpdateStrategy <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p> <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
 		 * @return {void} Success
 		 */
-		GET_ModifyReplicationGroup(ReplicationGroupId: string, ReplicationGroupDescription: string, PrimaryClusterId: string, SnapshottingClusterId: string, AutomaticFailoverEnabled: boolean, MultiAZEnabled: boolean, NodeGroupId: string, CacheSecurityGroupNames: Array<string>, SecurityGroupIds: Array<string>, PreferredMaintenanceWindow: string, NotificationTopicArn: string, CacheParameterGroupName: string, NotificationTopicStatus: string, ApplyImmediately: boolean, EngineVersion: string, AutoMinorVersionUpgrade: boolean, SnapshotRetentionLimit: number, SnapshotWindow: string, CacheNodeType: string, AuthToken: string, AuthTokenUpdateStrategy: AuthTokenUpdateStrategyType, Action: GET_ModifyReplicationGroupAction, Version: GET_ModifyReplicationGroupVersion): Observable<HttpResponse<string>> {
+		GET_ModifyReplicationGroup(ReplicationGroupId: string, ReplicationGroupDescription: string | null | undefined, PrimaryClusterId: string | null | undefined, SnapshottingClusterId: string | null | undefined, AutomaticFailoverEnabled: boolean | null | undefined, MultiAZEnabled: boolean | null | undefined, NodeGroupId: string | null | undefined, CacheSecurityGroupNames: Array<string> | null | undefined, SecurityGroupIds: Array<string> | null | undefined, PreferredMaintenanceWindow: string | null | undefined, NotificationTopicArn: string | null | undefined, CacheParameterGroupName: string | null | undefined, NotificationTopicStatus: string | null | undefined, ApplyImmediately: boolean | null | undefined, EngineVersion: string | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, SnapshotRetentionLimit: number | null | undefined, SnapshotWindow: string | null | undefined, CacheNodeType: string | null | undefined, AuthToken: string | null | undefined, AuthTokenUpdateStrategy: AuthTokenUpdateStrategyType | null | undefined, Action: GET_ModifyReplicationGroupAction, Version: GET_ModifyReplicationGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyReplicationGroup?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&ReplicationGroupDescription=' + (ReplicationGroupDescription == null ? '' : encodeURIComponent(ReplicationGroupDescription)) + '&PrimaryClusterId=' + (PrimaryClusterId == null ? '' : encodeURIComponent(PrimaryClusterId)) + '&SnapshottingClusterId=' + (SnapshottingClusterId == null ? '' : encodeURIComponent(SnapshottingClusterId)) + '&AutomaticFailoverEnabled=' + AutomaticFailoverEnabled + '&MultiAZEnabled=' + MultiAZEnabled + '&NodeGroupId=' + (NodeGroupId == null ? '' : encodeURIComponent(NodeGroupId)) + '&' + CacheSecurityGroupNames.map(z => `CacheSecurityGroupNames=${encodeURIComponent(z)}`).join('&') + '&' + SecurityGroupIds.map(z => `SecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&NotificationTopicArn=' + (NotificationTopicArn == null ? '' : encodeURIComponent(NotificationTopicArn)) + '&CacheParameterGroupName=' + (CacheParameterGroupName == null ? '' : encodeURIComponent(CacheParameterGroupName)) + '&NotificationTopicStatus=' + (NotificationTopicStatus == null ? '' : encodeURIComponent(NotificationTopicStatus)) + '&ApplyImmediately=' + ApplyImmediately + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&SnapshotRetentionLimit=' + SnapshotRetentionLimit + '&SnapshotWindow=' + (SnapshotWindow == null ? '' : encodeURIComponent(SnapshotWindow)) + '&CacheNodeType=' + (CacheNodeType == null ? '' : encodeURIComponent(CacheNodeType)) + '&AuthToken=' + (AuthToken == null ? '' : encodeURIComponent(AuthToken)) + '&AuthTokenUpdateStrategy=' + AuthTokenUpdateStrategy + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2348,7 +2348,7 @@ export namespace MyNS {
 		 * @param {Array<string>} NodeGroupsToRetain <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p> <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
 		 * @return {void} Success
 		 */
-		GET_ModifyReplicationGroupShardConfiguration(ReplicationGroupId: string, NodeGroupCount: number, ApplyImmediately: boolean, ReshardingConfiguration: Array<ReshardingConfiguration>, NodeGroupsToRemove: Array<string>, NodeGroupsToRetain: Array<string>, Action: GET_ModifyReplicationGroupShardConfigurationAction, Version: GET_ModifyReplicationGroupShardConfigurationVersion): Observable<HttpResponse<string>> {
+		GET_ModifyReplicationGroupShardConfiguration(ReplicationGroupId: string, NodeGroupCount: number, ApplyImmediately: boolean, ReshardingConfiguration: Array<ReshardingConfiguration> | null | undefined, NodeGroupsToRemove: Array<string> | null | undefined, NodeGroupsToRetain: Array<string> | null | undefined, Action: GET_ModifyReplicationGroupShardConfigurationAction, Version: GET_ModifyReplicationGroupShardConfigurationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyReplicationGroupShardConfiguration?ReplicationGroupId=' + (ReplicationGroupId == null ? '' : encodeURIComponent(ReplicationGroupId)) + '&NodeGroupCount=' + NodeGroupCount + '&ApplyImmediately=' + ApplyImmediately + '&' + ReshardingConfiguration.map(z => `ReshardingConfiguration=${z}`).join('&') + '&' + NodeGroupsToRemove.map(z => `NodeGroupsToRemove=${encodeURIComponent(z)}`).join('&') + '&' + NodeGroupsToRetain.map(z => `NodeGroupsToRetain=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2360,7 +2360,7 @@ export namespace MyNS {
 		 * @param {number} CacheNodeCount <p>The number of cache node instances to reserve.</p> <p>Default: <code>1</code> </p>
 		 * @return {void} Success
 		 */
-		GET_PurchaseReservedCacheNodesOffering(ReservedCacheNodesOfferingId: string, ReservedCacheNodeId: string, CacheNodeCount: number, Action: GET_PurchaseReservedCacheNodesOfferingAction, Version: GET_PurchaseReservedCacheNodesOfferingVersion): Observable<HttpResponse<string>> {
+		GET_PurchaseReservedCacheNodesOffering(ReservedCacheNodesOfferingId: string, ReservedCacheNodeId: string | null | undefined, CacheNodeCount: number | null | undefined, Action: GET_PurchaseReservedCacheNodesOfferingAction, Version: GET_PurchaseReservedCacheNodesOfferingVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PurchaseReservedCacheNodesOffering?ReservedCacheNodesOfferingId=' + (ReservedCacheNodesOfferingId == null ? '' : encodeURIComponent(ReservedCacheNodesOfferingId)) + '&ReservedCacheNodeId=' + (ReservedCacheNodeId == null ? '' : encodeURIComponent(ReservedCacheNodeId)) + '&CacheNodeCount=' + CacheNodeCount + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2405,7 +2405,7 @@ export namespace MyNS {
 		 * @param {Array<ParameterNameValue>} ParameterNameValues An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.
 		 * @return {void} Success
 		 */
-		GET_ResetCacheParameterGroup(CacheParameterGroupName: string, ResetAllParameters: boolean, ParameterNameValues: Array<ParameterNameValue>, Action: GET_ResetCacheParameterGroupAction, Version: GET_ResetCacheParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_ResetCacheParameterGroup(CacheParameterGroupName: string, ResetAllParameters: boolean | null | undefined, ParameterNameValues: Array<ParameterNameValue> | null | undefined, Action: GET_ResetCacheParameterGroupAction, Version: GET_ResetCacheParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ResetCacheParameterGroup?CacheParameterGroupName=' + (CacheParameterGroupName == null ? '' : encodeURIComponent(CacheParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + ParameterNameValues.map(z => `ParameterNameValues=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 

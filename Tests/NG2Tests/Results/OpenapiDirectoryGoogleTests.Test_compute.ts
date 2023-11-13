@@ -13457,7 +13457,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_acceleratorTypes_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_acceleratorTypes_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/acceleratorTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13477,7 +13477,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_addresses_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_addresses_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/addresses&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13497,7 +13497,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_autoscalers_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_autoscalers_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/autoscalers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13517,7 +13517,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_backendServices_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/backendServices&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13537,7 +13537,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionCommitments_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionCommitments_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/commitments&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13557,7 +13557,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_diskTypes_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_diskTypes_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/diskTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13577,7 +13577,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_disks_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_disks_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/disks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13597,7 +13597,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_forwardingRules_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_forwardingRules_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/forwardingRules&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13617,7 +13617,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_healthChecks_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_healthChecks_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/healthChecks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13637,7 +13637,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/instanceGroupManagers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13657,7 +13657,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroups_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroups_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/instanceGroups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13677,7 +13677,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instances_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instances_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/instances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13697,7 +13697,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_interconnectAttachments_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_interconnectAttachments_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/interconnectAttachments&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13717,7 +13717,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_machineTypes_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_machineTypes_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/machineTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13737,7 +13737,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_networkEndpointGroups_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_networkEndpointGroups_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/networkEndpointGroups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13757,7 +13757,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/nodeGroups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13777,7 +13777,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_nodeTemplates_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_nodeTemplates_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/nodeTemplates&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13797,7 +13797,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_nodeTypes_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_nodeTypes_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/nodeTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13817,7 +13817,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_globalOperations_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_globalOperations_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13837,7 +13837,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_packetMirrorings_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_packetMirrorings_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/packetMirrorings&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13857,7 +13857,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_reservations_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_reservations_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/reservations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13877,7 +13877,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_resourcePolicies_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_resourcePolicies_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/resourcePolicies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13897,7 +13897,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_routers_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_routers_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/routers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13917,7 +13917,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_sslCertificates_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_sslCertificates_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/sslCertificates&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13937,7 +13937,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_subnetworks_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_subnetworks_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/subnetworks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13956,7 +13956,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_subnetworks_listUsable(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_subnetworks_listUsable(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/subnetworks/listUsable&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13976,7 +13976,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpProxies_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetHttpProxies_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/targetHttpProxies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -13996,7 +13996,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpsProxies_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetHttpsProxies_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/targetHttpsProxies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14016,7 +14016,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetInstances_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetInstances_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/targetInstances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14036,7 +14036,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetPools_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/targetPools&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14056,7 +14056,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetVpnGateways_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetVpnGateways_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/targetVpnGateways&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14076,7 +14076,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_urlMaps_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_urlMaps_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/urlMaps&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14096,7 +14096,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_vpnGateways_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_vpnGateways_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/vpnGateways&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14116,7 +14116,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_vpnTunnels_aggregatedList(project: string, filter: string, includeAllScopes: boolean, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_vpnTunnels_aggregatedList(project: string, filter: string | null | undefined, includeAllScopes: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/aggregated/vpnTunnels&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeAllScopes=' + includeAllScopes + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14129,7 +14129,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_disableXpnHost(project: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_projects_disableXpnHost(project: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/disableXpnHost&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -14142,7 +14142,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_disableXpnResource(project: string, requestId: string, requestBody: ProjectsDisableXpnResourceRequest): Observable<HttpResponse<string>> {
+		Compute_projects_disableXpnResource(project: string, requestId: string | null | undefined, requestBody: ProjectsDisableXpnResourceRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/disableXpnResource&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14155,7 +14155,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_enableXpnHost(project: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_projects_enableXpnHost(project: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/enableXpnHost&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -14168,7 +14168,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_enableXpnResource(project: string, requestId: string, requestBody: ProjectsEnableXpnResourceRequest): Observable<HttpResponse<string>> {
+		Compute_projects_enableXpnResource(project: string, requestId: string | null | undefined, requestBody: ProjectsEnableXpnResourceRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/enableXpnResource&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14197,7 +14197,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_projects_getXpnResources(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_projects_getXpnResources(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/getXpnResources&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14216,7 +14216,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_globalAddresses_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_globalAddresses_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/addresses&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14229,7 +14229,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalAddresses_insert(project: string, requestId: string, requestBody: Address): Observable<HttpResponse<string>> {
+		Compute_globalAddresses_insert(project: string, requestId: string | null | undefined, requestBody: Address): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/addresses&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14243,7 +14243,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalAddresses_delete(project: string, address: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_globalAddresses_delete(project: string, address: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/addresses/' + (address == null ? '' : encodeURIComponent(address)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14273,7 +14273,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_backendBuckets_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_backendBuckets_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendBuckets&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14286,7 +14286,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendBuckets_insert(project: string, requestId: string, requestBody: BackendBucket): Observable<HttpResponse<string>> {
+		Compute_backendBuckets_insert(project: string, requestId: string | null | undefined, requestBody: BackendBucket): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendBuckets&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14300,7 +14300,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendBuckets_delete(project: string, backendBucket: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_backendBuckets_delete(project: string, backendBucket: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendBuckets/' + (backendBucket == null ? '' : encodeURIComponent(backendBucket)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14325,7 +14325,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendBuckets_patch(project: string, backendBucket: string, requestId: string, requestBody: BackendBucket): Observable<HttpResponse<string>> {
+		Compute_backendBuckets_patch(project: string, backendBucket: string, requestId: string | null | undefined, requestBody: BackendBucket): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendBuckets/' + (backendBucket == null ? '' : encodeURIComponent(backendBucket)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14339,7 +14339,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendBuckets_update(project: string, backendBucket: string, requestId: string, requestBody: BackendBucket): Observable<HttpResponse<string>> {
+		Compute_backendBuckets_update(project: string, backendBucket: string, requestId: string | null | undefined, requestBody: BackendBucket): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendBuckets/' + (backendBucket == null ? '' : encodeURIComponent(backendBucket)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14353,7 +14353,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendBuckets_addSignedUrlKey(project: string, backendBucket: string, requestId: string, requestBody: SignedUrlKey): Observable<HttpResponse<string>> {
+		Compute_backendBuckets_addSignedUrlKey(project: string, backendBucket: string, requestId: string | null | undefined, requestBody: SignedUrlKey): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendBuckets/' + (backendBucket == null ? '' : encodeURIComponent(backendBucket)) + '/addSignedUrlKey&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14368,7 +14368,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendBuckets_deleteSignedUrlKey(project: string, backendBucket: string, keyName: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_backendBuckets_deleteSignedUrlKey(project: string, backendBucket: string, keyName: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendBuckets/' + (backendBucket == null ? '' : encodeURIComponent(backendBucket)) + '/deleteSignedUrlKey&keyName=' + (keyName == null ? '' : encodeURIComponent(keyName)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -14387,7 +14387,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_backendServices_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendServices&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14400,7 +14400,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_insert(project: string, requestId: string, requestBody: BackendService): Observable<HttpResponse<string>> {
+		Compute_backendServices_insert(project: string, requestId: string | null | undefined, requestBody: BackendService): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendServices&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14414,7 +14414,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_delete(project: string, backendService: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_backendServices_delete(project: string, backendService: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14439,7 +14439,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_patch(project: string, backendService: string, requestId: string, requestBody: BackendService): Observable<HttpResponse<string>> {
+		Compute_backendServices_patch(project: string, backendService: string, requestId: string | null | undefined, requestBody: BackendService): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14453,7 +14453,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_update(project: string, backendService: string, requestId: string, requestBody: BackendService): Observable<HttpResponse<string>> {
+		Compute_backendServices_update(project: string, backendService: string, requestId: string | null | undefined, requestBody: BackendService): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14467,7 +14467,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_addSignedUrlKey(project: string, backendService: string, requestId: string, requestBody: SignedUrlKey): Observable<HttpResponse<string>> {
+		Compute_backendServices_addSignedUrlKey(project: string, backendService: string, requestId: string | null | undefined, requestBody: SignedUrlKey): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '/addSignedUrlKey&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14482,7 +14482,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_deleteSignedUrlKey(project: string, backendService: string, keyName: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_backendServices_deleteSignedUrlKey(project: string, backendService: string, keyName: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '/deleteSignedUrlKey&keyName=' + (keyName == null ? '' : encodeURIComponent(keyName)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -14506,7 +14506,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_backendServices_setSecurityPolicy(project: string, backendService: string, requestId: string, requestBody: SecurityPolicyReference): Observable<HttpResponse<string>> {
+		Compute_backendServices_setSecurityPolicy(project: string, backendService: string, requestId: string | null | undefined, requestBody: SecurityPolicyReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '/setSecurityPolicy&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14525,7 +14525,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_externalVpnGateways_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_externalVpnGateways_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/externalVpnGateways&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14538,7 +14538,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_externalVpnGateways_insert(project: string, requestId: string, requestBody: ExternalVpnGateway): Observable<HttpResponse<string>> {
+		Compute_externalVpnGateways_insert(project: string, requestId: string | null | undefined, requestBody: ExternalVpnGateway): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/externalVpnGateways&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14552,7 +14552,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_externalVpnGateways_delete(project: string, externalVpnGateway: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_externalVpnGateways_delete(project: string, externalVpnGateway: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/externalVpnGateways/' + (externalVpnGateway == null ? '' : encodeURIComponent(externalVpnGateway)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14604,7 +14604,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_firewalls_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_firewalls_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/firewalls&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14617,7 +14617,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_firewalls_insert(project: string, requestId: string, requestBody: Firewall): Observable<HttpResponse<string>> {
+		Compute_firewalls_insert(project: string, requestId: string | null | undefined, requestBody: Firewall): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/firewalls&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14631,7 +14631,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_firewalls_delete(project: string, firewall: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_firewalls_delete(project: string, firewall: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/firewalls/' + (firewall == null ? '' : encodeURIComponent(firewall)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14656,7 +14656,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_firewalls_patch(project: string, firewall: string, requestId: string, requestBody: Firewall): Observable<HttpResponse<string>> {
+		Compute_firewalls_patch(project: string, firewall: string, requestId: string | null | undefined, requestBody: Firewall): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/firewalls/' + (firewall == null ? '' : encodeURIComponent(firewall)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14670,7 +14670,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_firewalls_update(project: string, firewall: string, requestId: string, requestBody: Firewall): Observable<HttpResponse<string>> {
+		Compute_firewalls_update(project: string, firewall: string, requestId: string | null | undefined, requestBody: Firewall): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/firewalls/' + (firewall == null ? '' : encodeURIComponent(firewall)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14689,7 +14689,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_globalForwardingRules_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_globalForwardingRules_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/forwardingRules&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14702,7 +14702,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalForwardingRules_insert(project: string, requestId: string, requestBody: ForwardingRule): Observable<HttpResponse<string>> {
+		Compute_globalForwardingRules_insert(project: string, requestId: string | null | undefined, requestBody: ForwardingRule): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/forwardingRules&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14716,7 +14716,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalForwardingRules_delete(project: string, forwardingRule: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_globalForwardingRules_delete(project: string, forwardingRule: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/forwardingRules/' + (forwardingRule == null ? '' : encodeURIComponent(forwardingRule)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14741,7 +14741,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalForwardingRules_patch(project: string, forwardingRule: string, requestId: string, requestBody: ForwardingRule): Observable<HttpResponse<string>> {
+		Compute_globalForwardingRules_patch(project: string, forwardingRule: string, requestId: string | null | undefined, requestBody: ForwardingRule): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/forwardingRules/' + (forwardingRule == null ? '' : encodeURIComponent(forwardingRule)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14755,7 +14755,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalForwardingRules_setTarget(project: string, forwardingRule: string, requestId: string, requestBody: TargetReference): Observable<HttpResponse<string>> {
+		Compute_globalForwardingRules_setTarget(project: string, forwardingRule: string, requestId: string | null | undefined, requestBody: TargetReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/forwardingRules/' + (forwardingRule == null ? '' : encodeURIComponent(forwardingRule)) + '/setTarget&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14774,7 +14774,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_healthChecks_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_healthChecks_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/healthChecks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14787,7 +14787,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_healthChecks_insert(project: string, requestId: string, requestBody: HealthCheck): Observable<HttpResponse<string>> {
+		Compute_healthChecks_insert(project: string, requestId: string | null | undefined, requestBody: HealthCheck): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/healthChecks&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14801,7 +14801,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_healthChecks_delete(project: string, healthCheck: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_healthChecks_delete(project: string, healthCheck: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/healthChecks/' + (healthCheck == null ? '' : encodeURIComponent(healthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14826,7 +14826,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_healthChecks_patch(project: string, healthCheck: string, requestId: string, requestBody: HealthCheck): Observable<HttpResponse<string>> {
+		Compute_healthChecks_patch(project: string, healthCheck: string, requestId: string | null | undefined, requestBody: HealthCheck): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/healthChecks/' + (healthCheck == null ? '' : encodeURIComponent(healthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14840,7 +14840,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_healthChecks_update(project: string, healthCheck: string, requestId: string, requestBody: HealthCheck): Observable<HttpResponse<string>> {
+		Compute_healthChecks_update(project: string, healthCheck: string, requestId: string | null | undefined, requestBody: HealthCheck): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/healthChecks/' + (healthCheck == null ? '' : encodeURIComponent(healthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14859,7 +14859,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_httpHealthChecks_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_httpHealthChecks_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpHealthChecks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14872,7 +14872,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_httpHealthChecks_insert(project: string, requestId: string, requestBody: HttpHealthCheck): Observable<HttpResponse<string>> {
+		Compute_httpHealthChecks_insert(project: string, requestId: string | null | undefined, requestBody: HttpHealthCheck): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpHealthChecks&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14886,7 +14886,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_httpHealthChecks_delete(project: string, httpHealthCheck: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_httpHealthChecks_delete(project: string, httpHealthCheck: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpHealthChecks/' + (httpHealthCheck == null ? '' : encodeURIComponent(httpHealthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14911,7 +14911,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_httpHealthChecks_patch(project: string, httpHealthCheck: string, requestId: string, requestBody: HttpHealthCheck): Observable<HttpResponse<string>> {
+		Compute_httpHealthChecks_patch(project: string, httpHealthCheck: string, requestId: string | null | undefined, requestBody: HttpHealthCheck): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpHealthChecks/' + (httpHealthCheck == null ? '' : encodeURIComponent(httpHealthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14925,7 +14925,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_httpHealthChecks_update(project: string, httpHealthCheck: string, requestId: string, requestBody: HttpHealthCheck): Observable<HttpResponse<string>> {
+		Compute_httpHealthChecks_update(project: string, httpHealthCheck: string, requestId: string | null | undefined, requestBody: HttpHealthCheck): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpHealthChecks/' + (httpHealthCheck == null ? '' : encodeURIComponent(httpHealthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14944,7 +14944,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_httpsHealthChecks_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_httpsHealthChecks_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpsHealthChecks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14957,7 +14957,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_httpsHealthChecks_insert(project: string, requestId: string, requestBody: HttpsHealthCheck): Observable<HttpResponse<string>> {
+		Compute_httpsHealthChecks_insert(project: string, requestId: string | null | undefined, requestBody: HttpsHealthCheck): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpsHealthChecks&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -14971,7 +14971,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_httpsHealthChecks_delete(project: string, httpsHealthCheck: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_httpsHealthChecks_delete(project: string, httpsHealthCheck: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpsHealthChecks/' + (httpsHealthCheck == null ? '' : encodeURIComponent(httpsHealthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -14996,7 +14996,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_httpsHealthChecks_patch(project: string, httpsHealthCheck: string, requestId: string, requestBody: HttpsHealthCheck): Observable<HttpResponse<string>> {
+		Compute_httpsHealthChecks_patch(project: string, httpsHealthCheck: string, requestId: string | null | undefined, requestBody: HttpsHealthCheck): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpsHealthChecks/' + (httpsHealthCheck == null ? '' : encodeURIComponent(httpsHealthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15010,7 +15010,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_httpsHealthChecks_update(project: string, httpsHealthCheck: string, requestId: string, requestBody: HttpsHealthCheck): Observable<HttpResponse<string>> {
+		Compute_httpsHealthChecks_update(project: string, httpsHealthCheck: string, requestId: string | null | undefined, requestBody: HttpsHealthCheck): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/httpsHealthChecks/' + (httpsHealthCheck == null ? '' : encodeURIComponent(httpsHealthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15029,7 +15029,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_images_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_images_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/images&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15043,7 +15043,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_images_insert(project: string, forceCreate: boolean, requestId: string, requestBody: Image): Observable<HttpResponse<string>> {
+		Compute_images_insert(project: string, forceCreate: boolean | null | undefined, requestId: string | null | undefined, requestBody: Image): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/images&forceCreate=' + forceCreate + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15068,7 +15068,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_images_delete(project: string, image: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_images_delete(project: string, image: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/images/' + (image == null ? '' : encodeURIComponent(image)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15094,7 +15094,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_images_deprecate(project: string, image: string, requestId: string, requestBody: DeprecationStatus): Observable<HttpResponse<string>> {
+		Compute_images_deprecate(project: string, image: string, requestId: string | null | undefined, requestBody: DeprecationStatus): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/images/' + (image == null ? '' : encodeURIComponent(image)) + '/deprecate&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15157,7 +15157,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instanceTemplates_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instanceTemplates_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/instanceTemplates&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15170,7 +15170,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceTemplates_insert(project: string, requestId: string, requestBody: InstanceTemplate): Observable<HttpResponse<string>> {
+		Compute_instanceTemplates_insert(project: string, requestId: string | null | undefined, requestBody: InstanceTemplate): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/instanceTemplates&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15184,7 +15184,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceTemplates_delete(project: string, instanceTemplate: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instanceTemplates_delete(project: string, instanceTemplate: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/instanceTemplates/' + (instanceTemplate == null ? '' : encodeURIComponent(instanceTemplate)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15247,7 +15247,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_interconnectLocations_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_interconnectLocations_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/interconnectLocations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15277,7 +15277,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_interconnects_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_interconnects_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/interconnects&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15290,7 +15290,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_interconnects_insert(project: string, requestId: string, requestBody: Interconnect): Observable<HttpResponse<string>> {
+		Compute_interconnects_insert(project: string, requestId: string | null | undefined, requestBody: Interconnect): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/interconnects&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15304,7 +15304,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_interconnects_delete(project: string, interconnect: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_interconnects_delete(project: string, interconnect: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/interconnects/' + (interconnect == null ? '' : encodeURIComponent(interconnect)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15329,7 +15329,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_interconnects_patch(project: string, interconnect: string, requestId: string, requestBody: Interconnect): Observable<HttpResponse<string>> {
+		Compute_interconnects_patch(project: string, interconnect: string, requestId: string | null | undefined, requestBody: Interconnect): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/interconnects/' + (interconnect == null ? '' : encodeURIComponent(interconnect)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15381,7 +15381,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_licenses_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_licenses_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/licenses&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15394,7 +15394,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_licenses_insert(project: string, requestId: string, requestBody: License): Observable<HttpResponse<string>> {
+		Compute_licenses_insert(project: string, requestId: string | null | undefined, requestBody: License): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/licenses&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15408,7 +15408,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_licenses_delete(project: string, license: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_licenses_delete(project: string, license: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/licenses/' + (license == null ? '' : encodeURIComponent(license)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15471,7 +15471,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_globalNetworkEndpointGroups_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_globalNetworkEndpointGroups_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networkEndpointGroups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15484,7 +15484,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalNetworkEndpointGroups_insert(project: string, requestId: string, requestBody: NetworkEndpointGroup): Observable<HttpResponse<string>> {
+		Compute_globalNetworkEndpointGroups_insert(project: string, requestId: string | null | undefined, requestBody: NetworkEndpointGroup): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networkEndpointGroups&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15498,7 +15498,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalNetworkEndpointGroups_delete(project: string, networkEndpointGroup: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_globalNetworkEndpointGroups_delete(project: string, networkEndpointGroup: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networkEndpointGroups/' + (networkEndpointGroup == null ? '' : encodeURIComponent(networkEndpointGroup)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15523,7 +15523,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalNetworkEndpointGroups_attachNetworkEndpoints(project: string, networkEndpointGroup: string, requestId: string, requestBody: GlobalNetworkEndpointGroupsAttachEndpointsRequest): Observable<HttpResponse<string>> {
+		Compute_globalNetworkEndpointGroups_attachNetworkEndpoints(project: string, networkEndpointGroup: string, requestId: string | null | undefined, requestBody: GlobalNetworkEndpointGroupsAttachEndpointsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networkEndpointGroups/' + (networkEndpointGroup == null ? '' : encodeURIComponent(networkEndpointGroup)) + '/attachNetworkEndpoints&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15537,7 +15537,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_globalNetworkEndpointGroups_detachNetworkEndpoints(project: string, networkEndpointGroup: string, requestId: string, requestBody: GlobalNetworkEndpointGroupsDetachEndpointsRequest): Observable<HttpResponse<string>> {
+		Compute_globalNetworkEndpointGroups_detachNetworkEndpoints(project: string, networkEndpointGroup: string, requestId: string | null | undefined, requestBody: GlobalNetworkEndpointGroupsDetachEndpointsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networkEndpointGroups/' + (networkEndpointGroup == null ? '' : encodeURIComponent(networkEndpointGroup)) + '/detachNetworkEndpoints&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15557,7 +15557,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_globalNetworkEndpointGroups_listNetworkEndpoints(project: string, networkEndpointGroup: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_globalNetworkEndpointGroups_listNetworkEndpoints(project: string, networkEndpointGroup: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networkEndpointGroups/' + (networkEndpointGroup == null ? '' : encodeURIComponent(networkEndpointGroup)) + '/listNetworkEndpoints&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -15576,7 +15576,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_networks_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_networks_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15589,7 +15589,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networks_insert(project: string, requestId: string, requestBody: Network): Observable<HttpResponse<string>> {
+		Compute_networks_insert(project: string, requestId: string | null | undefined, requestBody: Network): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15603,7 +15603,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networks_delete(project: string, network: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_networks_delete(project: string, network: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks/' + (network == null ? '' : encodeURIComponent(network)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15628,7 +15628,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networks_patch(project: string, network: string, requestId: string, requestBody: Network): Observable<HttpResponse<string>> {
+		Compute_networks_patch(project: string, network: string, requestId: string | null | undefined, requestBody: Network): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks/' + (network == null ? '' : encodeURIComponent(network)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15642,7 +15642,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networks_addPeering(project: string, network: string, requestId: string, requestBody: NetworksAddPeeringRequest): Observable<HttpResponse<string>> {
+		Compute_networks_addPeering(project: string, network: string, requestId: string | null | undefined, requestBody: NetworksAddPeeringRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks/' + (network == null ? '' : encodeURIComponent(network)) + '/addPeering&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15665,7 +15665,7 @@ export namespace MyNS {
 		 * @param {string} region The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
 		 * @return {void} Successful response
 		 */
-		Compute_networks_listPeeringRoutes(project: string, network: string, direction: Compute_networks_listPeeringRoutesDirection, filter: string, maxResults: number, orderBy: string, pageToken: string, peeringName: string, region: string): Observable<HttpResponse<string>> {
+		Compute_networks_listPeeringRoutes(project: string, network: string, direction: Compute_networks_listPeeringRoutesDirection | null | undefined, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined, peeringName: string | null | undefined, region: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks/' + (network == null ? '' : encodeURIComponent(network)) + '/listPeeringRoutes&direction=' + direction + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&peeringName=' + (peeringName == null ? '' : encodeURIComponent(peeringName)) + '&region=' + (region == null ? '' : encodeURIComponent(region)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15679,7 +15679,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networks_removePeering(project: string, network: string, requestId: string, requestBody: NetworksRemovePeeringRequest): Observable<HttpResponse<string>> {
+		Compute_networks_removePeering(project: string, network: string, requestId: string | null | undefined, requestBody: NetworksRemovePeeringRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks/' + (network == null ? '' : encodeURIComponent(network)) + '/removePeering&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15693,7 +15693,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networks_switchToCustomMode(project: string, network: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_networks_switchToCustomMode(project: string, network: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks/' + (network == null ? '' : encodeURIComponent(network)) + '/switchToCustomMode&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -15707,7 +15707,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networks_updatePeering(project: string, network: string, requestId: string, requestBody: NetworksUpdatePeeringRequest): Observable<HttpResponse<string>> {
+		Compute_networks_updatePeering(project: string, network: string, requestId: string | null | undefined, requestBody: NetworksUpdatePeeringRequest): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/networks/' + (network == null ? '' : encodeURIComponent(network)) + '/updatePeering&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15726,7 +15726,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_globalOperations_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_globalOperations_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15781,7 +15781,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_routes_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_routes_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/routes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15794,7 +15794,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_routes_insert(project: string, requestId: string, requestBody: Route): Observable<HttpResponse<string>> {
+		Compute_routes_insert(project: string, requestId: string | null | undefined, requestBody: Route): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/routes&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15808,7 +15808,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_routes_delete(project: string, route: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_routes_delete(project: string, route: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/routes/' + (route == null ? '' : encodeURIComponent(route)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15838,7 +15838,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_securityPolicies_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_securityPolicies_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/securityPolicies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15851,7 +15851,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_securityPolicies_insert(project: string, requestId: string, requestBody: SecurityPolicy): Observable<HttpResponse<string>> {
+		Compute_securityPolicies_insert(project: string, requestId: string | null | undefined, requestBody: SecurityPolicy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/securityPolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15870,7 +15870,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_securityPolicies_listPreconfiguredExpressionSets(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_securityPolicies_listPreconfiguredExpressionSets(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/securityPolicies/listPreconfiguredExpressionSets&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15884,7 +15884,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_securityPolicies_delete(project: string, securityPolicy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_securityPolicies_delete(project: string, securityPolicy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/securityPolicies/' + (securityPolicy == null ? '' : encodeURIComponent(securityPolicy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15909,7 +15909,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_securityPolicies_patch(project: string, securityPolicy: string, requestId: string, requestBody: SecurityPolicy): Observable<HttpResponse<string>> {
+		Compute_securityPolicies_patch(project: string, securityPolicy: string, requestId: string | null | undefined, requestBody: SecurityPolicy): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/securityPolicies/' + (securityPolicy == null ? '' : encodeURIComponent(securityPolicy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15932,7 +15932,7 @@ export namespace MyNS {
 		 * @param {number} priority The priority of the rule to get from the security policy.
 		 * @return {void} Successful response
 		 */
-		Compute_securityPolicies_getRule(project: string, securityPolicy: string, priority: number): Observable<HttpResponse<string>> {
+		Compute_securityPolicies_getRule(project: string, securityPolicy: string, priority: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/securityPolicies/' + (securityPolicy == null ? '' : encodeURIComponent(securityPolicy)) + '/getRule&priority=' + priority + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -15944,7 +15944,7 @@ export namespace MyNS {
 		 * @param {number} priority The priority of the rule to patch.
 		 * @return {void} Successful response
 		 */
-		Compute_securityPolicies_patchRule(project: string, securityPolicy: string, priority: number, requestBody: SecurityPolicyRule): Observable<HttpResponse<string>> {
+		Compute_securityPolicies_patchRule(project: string, securityPolicy: string, priority: number | null | undefined, requestBody: SecurityPolicyRule): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/securityPolicies/' + (securityPolicy == null ? '' : encodeURIComponent(securityPolicy)) + '/patchRule&priority=' + priority + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -15956,7 +15956,7 @@ export namespace MyNS {
 		 * @param {number} priority The priority of the rule to remove from the security policy.
 		 * @return {void} Successful response
 		 */
-		Compute_securityPolicies_removeRule(project: string, securityPolicy: string, priority: number): Observable<HttpResponse<string>> {
+		Compute_securityPolicies_removeRule(project: string, securityPolicy: string, priority: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/securityPolicies/' + (securityPolicy == null ? '' : encodeURIComponent(securityPolicy)) + '/removeRule&priority=' + priority + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -15975,7 +15975,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_snapshots_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_snapshots_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/snapshots&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16034,7 +16034,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_snapshots_delete(project: string, snapshot: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_snapshots_delete(project: string, snapshot: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/snapshots/' + (snapshot == null ? '' : encodeURIComponent(snapshot)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16064,7 +16064,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_sslCertificates_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_sslCertificates_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/sslCertificates&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16077,7 +16077,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_sslCertificates_insert(project: string, requestId: string, requestBody: SslCertificate): Observable<HttpResponse<string>> {
+		Compute_sslCertificates_insert(project: string, requestId: string | null | undefined, requestBody: SslCertificate): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/sslCertificates&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16091,7 +16091,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_sslCertificates_delete(project: string, sslCertificate: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_sslCertificates_delete(project: string, sslCertificate: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/sslCertificates/' + (sslCertificate == null ? '' : encodeURIComponent(sslCertificate)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16121,7 +16121,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_sslPolicies_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_sslPolicies_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/sslPolicies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16134,7 +16134,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_sslPolicies_insert(project: string, requestId: string, requestBody: SslPolicy): Observable<HttpResponse<string>> {
+		Compute_sslPolicies_insert(project: string, requestId: string | null | undefined, requestBody: SslPolicy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/sslPolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16153,7 +16153,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_sslPolicies_listAvailableFeatures(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_sslPolicies_listAvailableFeatures(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/sslPolicies/listAvailableFeatures&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16167,7 +16167,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_sslPolicies_delete(project: string, sslPolicy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_sslPolicies_delete(project: string, sslPolicy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/sslPolicies/' + (sslPolicy == null ? '' : encodeURIComponent(sslPolicy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16192,7 +16192,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_sslPolicies_patch(project: string, sslPolicy: string, requestId: string, requestBody: SslPolicy): Observable<HttpResponse<string>> {
+		Compute_sslPolicies_patch(project: string, sslPolicy: string, requestId: string | null | undefined, requestBody: SslPolicy): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/sslPolicies/' + (sslPolicy == null ? '' : encodeURIComponent(sslPolicy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16211,7 +16211,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpProxies_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetHttpProxies_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetHttpProxies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16224,7 +16224,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpProxies_insert(project: string, requestId: string, requestBody: TargetHttpProxy): Observable<HttpResponse<string>> {
+		Compute_targetHttpProxies_insert(project: string, requestId: string | null | undefined, requestBody: TargetHttpProxy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetHttpProxies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16238,7 +16238,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpProxies_delete(project: string, targetHttpProxy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_targetHttpProxies_delete(project: string, targetHttpProxy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetHttpProxies/' + (targetHttpProxy == null ? '' : encodeURIComponent(targetHttpProxy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16268,7 +16268,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpsProxies_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetHttpsProxies_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetHttpsProxies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16281,7 +16281,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpsProxies_insert(project: string, requestId: string, requestBody: TargetHttpsProxy): Observable<HttpResponse<string>> {
+		Compute_targetHttpsProxies_insert(project: string, requestId: string | null | undefined, requestBody: TargetHttpsProxy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetHttpsProxies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16295,7 +16295,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpsProxies_delete(project: string, targetHttpsProxy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_targetHttpsProxies_delete(project: string, targetHttpsProxy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetHttpsProxies/' + (targetHttpsProxy == null ? '' : encodeURIComponent(targetHttpsProxy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16320,7 +16320,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpsProxies_setQuicOverride(project: string, targetHttpsProxy: string, requestId: string, requestBody: TargetHttpsProxiesSetQuicOverrideRequest): Observable<HttpResponse<string>> {
+		Compute_targetHttpsProxies_setQuicOverride(project: string, targetHttpsProxy: string, requestId: string | null | undefined, requestBody: TargetHttpsProxiesSetQuicOverrideRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetHttpsProxies/' + (targetHttpsProxy == null ? '' : encodeURIComponent(targetHttpsProxy)) + '/setQuicOverride&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16334,7 +16334,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpsProxies_setSslPolicy(project: string, targetHttpsProxy: string, requestId: string, requestBody: SslPolicyReference): Observable<HttpResponse<string>> {
+		Compute_targetHttpsProxies_setSslPolicy(project: string, targetHttpsProxy: string, requestId: string | null | undefined, requestBody: SslPolicyReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetHttpsProxies/' + (targetHttpsProxy == null ? '' : encodeURIComponent(targetHttpsProxy)) + '/setSslPolicy&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16353,7 +16353,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetSslProxies_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetSslProxies_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetSslProxies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16366,7 +16366,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetSslProxies_insert(project: string, requestId: string, requestBody: TargetSslProxy): Observable<HttpResponse<string>> {
+		Compute_targetSslProxies_insert(project: string, requestId: string | null | undefined, requestBody: TargetSslProxy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetSslProxies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16380,7 +16380,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetSslProxies_delete(project: string, targetSslProxy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_targetSslProxies_delete(project: string, targetSslProxy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetSslProxies/' + (targetSslProxy == null ? '' : encodeURIComponent(targetSslProxy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16405,7 +16405,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetSslProxies_setBackendService(project: string, targetSslProxy: string, requestId: string, requestBody: TargetSslProxiesSetBackendServiceRequest): Observable<HttpResponse<string>> {
+		Compute_targetSslProxies_setBackendService(project: string, targetSslProxy: string, requestId: string | null | undefined, requestBody: TargetSslProxiesSetBackendServiceRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetSslProxies/' + (targetSslProxy == null ? '' : encodeURIComponent(targetSslProxy)) + '/setBackendService&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16419,7 +16419,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetSslProxies_setProxyHeader(project: string, targetSslProxy: string, requestId: string, requestBody: TargetSslProxiesSetProxyHeaderRequest): Observable<HttpResponse<string>> {
+		Compute_targetSslProxies_setProxyHeader(project: string, targetSslProxy: string, requestId: string | null | undefined, requestBody: TargetSslProxiesSetProxyHeaderRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetSslProxies/' + (targetSslProxy == null ? '' : encodeURIComponent(targetSslProxy)) + '/setProxyHeader&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16433,7 +16433,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetSslProxies_setSslCertificates(project: string, targetSslProxy: string, requestId: string, requestBody: TargetSslProxiesSetSslCertificatesRequest): Observable<HttpResponse<string>> {
+		Compute_targetSslProxies_setSslCertificates(project: string, targetSslProxy: string, requestId: string | null | undefined, requestBody: TargetSslProxiesSetSslCertificatesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetSslProxies/' + (targetSslProxy == null ? '' : encodeURIComponent(targetSslProxy)) + '/setSslCertificates&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16447,7 +16447,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetSslProxies_setSslPolicy(project: string, targetSslProxy: string, requestId: string, requestBody: SslPolicyReference): Observable<HttpResponse<string>> {
+		Compute_targetSslProxies_setSslPolicy(project: string, targetSslProxy: string, requestId: string | null | undefined, requestBody: SslPolicyReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetSslProxies/' + (targetSslProxy == null ? '' : encodeURIComponent(targetSslProxy)) + '/setSslPolicy&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16466,7 +16466,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetTcpProxies_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetTcpProxies_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetTcpProxies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16479,7 +16479,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetTcpProxies_insert(project: string, requestId: string, requestBody: TargetTcpProxy): Observable<HttpResponse<string>> {
+		Compute_targetTcpProxies_insert(project: string, requestId: string | null | undefined, requestBody: TargetTcpProxy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetTcpProxies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16493,7 +16493,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetTcpProxies_delete(project: string, targetTcpProxy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_targetTcpProxies_delete(project: string, targetTcpProxy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetTcpProxies/' + (targetTcpProxy == null ? '' : encodeURIComponent(targetTcpProxy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16518,7 +16518,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetTcpProxies_setBackendService(project: string, targetTcpProxy: string, requestId: string, requestBody: TargetTcpProxiesSetBackendServiceRequest): Observable<HttpResponse<string>> {
+		Compute_targetTcpProxies_setBackendService(project: string, targetTcpProxy: string, requestId: string | null | undefined, requestBody: TargetTcpProxiesSetBackendServiceRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetTcpProxies/' + (targetTcpProxy == null ? '' : encodeURIComponent(targetTcpProxy)) + '/setBackendService&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16532,7 +16532,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetTcpProxies_setProxyHeader(project: string, targetTcpProxy: string, requestId: string, requestBody: TargetTcpProxiesSetProxyHeaderRequest): Observable<HttpResponse<string>> {
+		Compute_targetTcpProxies_setProxyHeader(project: string, targetTcpProxy: string, requestId: string | null | undefined, requestBody: TargetTcpProxiesSetProxyHeaderRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/targetTcpProxies/' + (targetTcpProxy == null ? '' : encodeURIComponent(targetTcpProxy)) + '/setProxyHeader&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16551,7 +16551,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_urlMaps_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_urlMaps_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/urlMaps&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16564,7 +16564,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_urlMaps_insert(project: string, requestId: string, requestBody: UrlMap): Observable<HttpResponse<string>> {
+		Compute_urlMaps_insert(project: string, requestId: string | null | undefined, requestBody: UrlMap): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/urlMaps&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16578,7 +16578,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_urlMaps_delete(project: string, urlMap: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_urlMaps_delete(project: string, urlMap: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/urlMaps/' + (urlMap == null ? '' : encodeURIComponent(urlMap)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16603,7 +16603,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_urlMaps_patch(project: string, urlMap: string, requestId: string, requestBody: UrlMap): Observable<HttpResponse<string>> {
+		Compute_urlMaps_patch(project: string, urlMap: string, requestId: string | null | undefined, requestBody: UrlMap): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/urlMaps/' + (urlMap == null ? '' : encodeURIComponent(urlMap)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16617,7 +16617,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_urlMaps_update(project: string, urlMap: string, requestId: string, requestBody: UrlMap): Observable<HttpResponse<string>> {
+		Compute_urlMaps_update(project: string, urlMap: string, requestId: string | null | undefined, requestBody: UrlMap): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/urlMaps/' + (urlMap == null ? '' : encodeURIComponent(urlMap)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16631,7 +16631,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_urlMaps_invalidateCache(project: string, urlMap: string, requestId: string, requestBody: CacheInvalidationRule): Observable<HttpResponse<string>> {
+		Compute_urlMaps_invalidateCache(project: string, urlMap: string, requestId: string | null | undefined, requestBody: CacheInvalidationRule): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/global/urlMaps/' + (urlMap == null ? '' : encodeURIComponent(urlMap)) + '/invalidateCache&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16661,7 +16661,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_projects_listXpnHosts(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string, requestBody: ProjectsListXpnHostsRequest): Observable<HttpResponse<string>> {
+		Compute_projects_listXpnHosts(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined, requestBody: ProjectsListXpnHostsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/listXpnHosts&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16674,7 +16674,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_moveDisk(project: string, requestId: string, requestBody: DiskMoveRequest): Observable<HttpResponse<string>> {
+		Compute_projects_moveDisk(project: string, requestId: string | null | undefined, requestBody: DiskMoveRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/moveDisk&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16687,7 +16687,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_moveInstance(project: string, requestId: string, requestBody: InstanceMoveRequest): Observable<HttpResponse<string>> {
+		Compute_projects_moveInstance(project: string, requestId: string | null | undefined, requestBody: InstanceMoveRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/moveInstance&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16706,7 +16706,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regions_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regions_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16737,7 +16737,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_addresses_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_addresses_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/addresses&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16751,7 +16751,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_addresses_insert(project: string, region: string, requestId: string, requestBody: Address): Observable<HttpResponse<string>> {
+		Compute_addresses_insert(project: string, region: string, requestId: string | null | undefined, requestBody: Address): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/addresses&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16766,7 +16766,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_addresses_delete(project: string, region: string, address: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_addresses_delete(project: string, region: string, address: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/addresses/' + (address == null ? '' : encodeURIComponent(address)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16798,7 +16798,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionAutoscalers_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionAutoscalers_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/autoscalers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16813,7 +16813,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionAutoscalers_patch(project: string, region: string, autoscaler: string, requestId: string, requestBody: Autoscaler): Observable<HttpResponse<string>> {
+		Compute_regionAutoscalers_patch(project: string, region: string, autoscaler: string | null | undefined, requestId: string | null | undefined, requestBody: Autoscaler): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/autoscalers&autoscaler=' + (autoscaler == null ? '' : encodeURIComponent(autoscaler)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16827,7 +16827,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionAutoscalers_insert(project: string, region: string, requestId: string, requestBody: Autoscaler): Observable<HttpResponse<string>> {
+		Compute_regionAutoscalers_insert(project: string, region: string, requestId: string | null | undefined, requestBody: Autoscaler): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/autoscalers&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16842,7 +16842,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionAutoscalers_update(project: string, region: string, autoscaler: string, requestId: string, requestBody: Autoscaler): Observable<HttpResponse<string>> {
+		Compute_regionAutoscalers_update(project: string, region: string, autoscaler: string | null | undefined, requestId: string | null | undefined, requestBody: Autoscaler): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/autoscalers&autoscaler=' + (autoscaler == null ? '' : encodeURIComponent(autoscaler)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16857,7 +16857,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionAutoscalers_delete(project: string, region: string, autoscaler: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionAutoscalers_delete(project: string, region: string, autoscaler: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/autoscalers/' + (autoscaler == null ? '' : encodeURIComponent(autoscaler)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16889,7 +16889,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionBackendServices_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionBackendServices_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/backendServices&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16903,7 +16903,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionBackendServices_insert(project: string, region: string, requestId: string, requestBody: BackendService): Observable<HttpResponse<string>> {
+		Compute_regionBackendServices_insert(project: string, region: string, requestId: string | null | undefined, requestBody: BackendService): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/backendServices&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16918,7 +16918,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionBackendServices_delete(project: string, region: string, backendService: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionBackendServices_delete(project: string, region: string, backendService: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -16945,7 +16945,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionBackendServices_patch(project: string, region: string, backendService: string, requestId: string, requestBody: BackendService): Observable<HttpResponse<string>> {
+		Compute_regionBackendServices_patch(project: string, region: string, backendService: string, requestId: string | null | undefined, requestBody: BackendService): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16960,7 +16960,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionBackendServices_update(project: string, region: string, backendService: string, requestId: string, requestBody: BackendService): Observable<HttpResponse<string>> {
+		Compute_regionBackendServices_update(project: string, region: string, backendService: string, requestId: string | null | undefined, requestBody: BackendService): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/backendServices/' + (backendService == null ? '' : encodeURIComponent(backendService)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -16991,7 +16991,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionCommitments_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionCommitments_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/commitments&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17005,7 +17005,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionCommitments_insert(project: string, region: string, requestId: string, requestBody: Commitment): Observable<HttpResponse<string>> {
+		Compute_regionCommitments_insert(project: string, region: string, requestId: string | null | undefined, requestBody: Commitment): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/commitments&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17037,7 +17037,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionDiskTypes_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionDiskTypes_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/diskTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17069,7 +17069,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionDisks_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionDisks_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/disks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17084,7 +17084,7 @@ export namespace MyNS {
 		 * @param {string} sourceImage Optional. Source image to restore onto a disk.
 		 * @return {void} Successful response
 		 */
-		Compute_regionDisks_insert(project: string, region: string, requestId: string, sourceImage: string, requestBody: Disk): Observable<HttpResponse<string>> {
+		Compute_regionDisks_insert(project: string, region: string, requestId: string | null | undefined, sourceImage: string | null | undefined, requestBody: Disk): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/disks&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '&sourceImage=' + (sourceImage == null ? '' : encodeURIComponent(sourceImage)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17099,7 +17099,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionDisks_delete(project: string, region: string, disk: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionDisks_delete(project: string, region: string, disk: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17126,7 +17126,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionDisks_addResourcePolicies(project: string, region: string, disk: string, requestId: string, requestBody: RegionDisksAddResourcePoliciesRequest): Observable<HttpResponse<string>> {
+		Compute_regionDisks_addResourcePolicies(project: string, region: string, disk: string, requestId: string | null | undefined, requestBody: RegionDisksAddResourcePoliciesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '/addResourcePolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17141,7 +17141,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionDisks_createSnapshot(project: string, region: string, disk: string, requestId: string, requestBody: Snapshot): Observable<HttpResponse<string>> {
+		Compute_regionDisks_createSnapshot(project: string, region: string, disk: string, requestId: string | null | undefined, requestBody: Snapshot): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '/createSnapshot&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17156,7 +17156,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionDisks_removeResourcePolicies(project: string, region: string, disk: string, requestId: string, requestBody: RegionDisksRemoveResourcePoliciesRequest): Observable<HttpResponse<string>> {
+		Compute_regionDisks_removeResourcePolicies(project: string, region: string, disk: string, requestId: string | null | undefined, requestBody: RegionDisksRemoveResourcePoliciesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '/removeResourcePolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17171,7 +17171,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionDisks_resize(project: string, region: string, disk: string, requestId: string, requestBody: RegionDisksResizeRequest): Observable<HttpResponse<string>> {
+		Compute_regionDisks_resize(project: string, region: string, disk: string, requestId: string | null | undefined, requestBody: RegionDisksResizeRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '/resize&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17186,7 +17186,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionDisks_setLabels(project: string, region: string, resource: string, requestId: string, requestBody: RegionSetLabelsRequest): Observable<HttpResponse<string>> {
+		Compute_regionDisks_setLabels(project: string, region: string, resource: string, requestId: string | null | undefined, requestBody: RegionSetLabelsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/disks/' + (resource == null ? '' : encodeURIComponent(resource)) + '/setLabels&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17218,7 +17218,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_forwardingRules_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_forwardingRules_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/forwardingRules&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17232,7 +17232,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_forwardingRules_insert(project: string, region: string, requestId: string, requestBody: ForwardingRule): Observable<HttpResponse<string>> {
+		Compute_forwardingRules_insert(project: string, region: string, requestId: string | null | undefined, requestBody: ForwardingRule): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/forwardingRules&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17247,7 +17247,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_forwardingRules_delete(project: string, region: string, forwardingRule: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_forwardingRules_delete(project: string, region: string, forwardingRule: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/forwardingRules/' + (forwardingRule == null ? '' : encodeURIComponent(forwardingRule)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17274,7 +17274,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_forwardingRules_patch(project: string, region: string, forwardingRule: string, requestId: string, requestBody: ForwardingRule): Observable<HttpResponse<string>> {
+		Compute_forwardingRules_patch(project: string, region: string, forwardingRule: string, requestId: string | null | undefined, requestBody: ForwardingRule): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/forwardingRules/' + (forwardingRule == null ? '' : encodeURIComponent(forwardingRule)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17289,7 +17289,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_forwardingRules_setTarget(project: string, region: string, forwardingRule: string, requestId: string, requestBody: TargetReference): Observable<HttpResponse<string>> {
+		Compute_forwardingRules_setTarget(project: string, region: string, forwardingRule: string, requestId: string | null | undefined, requestBody: TargetReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/forwardingRules/' + (forwardingRule == null ? '' : encodeURIComponent(forwardingRule)) + '/setTarget&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17309,7 +17309,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionHealthChecks_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionHealthChecks_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/healthChecks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17323,7 +17323,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionHealthChecks_insert(project: string, region: string, requestId: string, requestBody: HealthCheck): Observable<HttpResponse<string>> {
+		Compute_regionHealthChecks_insert(project: string, region: string, requestId: string | null | undefined, requestBody: HealthCheck): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/healthChecks&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17338,7 +17338,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionHealthChecks_delete(project: string, region: string, healthCheck: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionHealthChecks_delete(project: string, region: string, healthCheck: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/healthChecks/' + (healthCheck == null ? '' : encodeURIComponent(healthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17365,7 +17365,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionHealthChecks_patch(project: string, region: string, healthCheck: string, requestId: string, requestBody: HealthCheck): Observable<HttpResponse<string>> {
+		Compute_regionHealthChecks_patch(project: string, region: string, healthCheck: string, requestId: string | null | undefined, requestBody: HealthCheck): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/healthChecks/' + (healthCheck == null ? '' : encodeURIComponent(healthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17380,7 +17380,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionHealthChecks_update(project: string, region: string, healthCheck: string, requestId: string, requestBody: HealthCheck): Observable<HttpResponse<string>> {
+		Compute_regionHealthChecks_update(project: string, region: string, healthCheck: string, requestId: string | null | undefined, requestBody: HealthCheck): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/healthChecks/' + (healthCheck == null ? '' : encodeURIComponent(healthCheck)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17400,7 +17400,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17415,7 +17415,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_insert(project: string, region: string, requestId: string, requestBody: InstanceGroupManager): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_insert(project: string, region: string, requestId: string | null | undefined, requestBody: InstanceGroupManager): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17430,7 +17430,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_delete(project: string, region: string, instanceGroupManager: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_delete(project: string, region: string, instanceGroupManager: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17457,7 +17457,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_patch(project: string, region: string, instanceGroupManager: string, requestId: string, requestBody: InstanceGroupManager): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_patch(project: string, region: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: InstanceGroupManager): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17474,7 +17474,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_abandonInstances(project: string, region: string, instanceGroupManager: string, requestId: string, requestBody: RegionInstanceGroupManagersAbandonInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_abandonInstances(project: string, region: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: RegionInstanceGroupManagersAbandonInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/abandonInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17501,7 +17501,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_createInstances(project: string, region: string, instanceGroupManager: string, requestId: string, requestBody: RegionInstanceGroupManagersCreateInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_createInstances(project: string, region: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: RegionInstanceGroupManagersCreateInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/createInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17518,7 +17518,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_deleteInstances(project: string, region: string, instanceGroupManager: string, requestId: string, requestBody: RegionInstanceGroupManagersDeleteInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_deleteInstances(project: string, region: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: RegionInstanceGroupManagersDeleteInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/deleteInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17539,7 +17539,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_listErrors(project: string, region: string, instanceGroupManager: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_listErrors(project: string, region: string, instanceGroupManager: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/listErrors&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17560,7 +17560,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_listManagedInstances(project: string, region: string, instanceGroupManager: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_listManagedInstances(project: string, region: string, instanceGroupManager: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/listManagedInstances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -17577,7 +17577,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_recreateInstances(project: string, region: string, instanceGroupManager: string, requestId: string, requestBody: RegionInstanceGroupManagersRecreateRequest): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_recreateInstances(project: string, region: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: RegionInstanceGroupManagersRecreateRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/recreateInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17595,7 +17595,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_resize(project: string, region: string, instanceGroupManager: string, size: number, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_resize(project: string, region: string, instanceGroupManager: string, size: number, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/resize&size=' + size + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -17610,7 +17610,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_setInstanceTemplate(project: string, region: string, instanceGroupManager: string, requestId: string, requestBody: RegionInstanceGroupManagersSetTemplateRequest): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_setInstanceTemplate(project: string, region: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: RegionInstanceGroupManagersSetTemplateRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/setInstanceTemplate&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17625,7 +17625,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroupManagers_setTargetPools(project: string, region: string, instanceGroupManager: string, requestId: string, requestBody: RegionInstanceGroupManagersSetTargetPoolsRequest): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroupManagers_setTargetPools(project: string, region: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: RegionInstanceGroupManagersSetTargetPoolsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/setTargetPools&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17645,7 +17645,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroups_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroups_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17678,7 +17678,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroups_listInstances(project: string, region: string, instanceGroup: string, filter: string, maxResults: number, orderBy: string, pageToken: string, requestBody: RegionInstanceGroupsListInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroups_listInstances(project: string, region: string, instanceGroup: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined, requestBody: RegionInstanceGroupsListInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroups/' + (instanceGroup == null ? '' : encodeURIComponent(instanceGroup)) + '/listInstances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17693,7 +17693,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionInstanceGroups_setNamedPorts(project: string, region: string, instanceGroup: string, requestId: string, requestBody: RegionInstanceGroupsSetNamedPortsRequest): Observable<HttpResponse<string>> {
+		Compute_regionInstanceGroups_setNamedPorts(project: string, region: string, instanceGroup: string, requestId: string | null | undefined, requestBody: RegionInstanceGroupsSetNamedPortsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/instanceGroups/' + (instanceGroup == null ? '' : encodeURIComponent(instanceGroup)) + '/setNamedPorts&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17713,7 +17713,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_interconnectAttachments_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_interconnectAttachments_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/interconnectAttachments&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17728,7 +17728,7 @@ export namespace MyNS {
 		 * @param {boolean} validateOnly If true, the request will not be committed.
 		 * @return {void} Successful response
 		 */
-		Compute_interconnectAttachments_insert(project: string, region: string, requestId: string, validateOnly: boolean, requestBody: InterconnectAttachment): Observable<HttpResponse<string>> {
+		Compute_interconnectAttachments_insert(project: string, region: string, requestId: string | null | undefined, validateOnly: boolean | null | undefined, requestBody: InterconnectAttachment): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/interconnectAttachments&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '&validateOnly=' + validateOnly + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17743,7 +17743,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_interconnectAttachments_delete(project: string, region: string, interconnectAttachment: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_interconnectAttachments_delete(project: string, region: string, interconnectAttachment: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/interconnectAttachments/' + (interconnectAttachment == null ? '' : encodeURIComponent(interconnectAttachment)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17770,7 +17770,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_interconnectAttachments_patch(project: string, region: string, interconnectAttachment: string, requestId: string, requestBody: InterconnectAttachment): Observable<HttpResponse<string>> {
+		Compute_interconnectAttachments_patch(project: string, region: string, interconnectAttachment: string, requestId: string | null | undefined, requestBody: InterconnectAttachment): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/interconnectAttachments/' + (interconnectAttachment == null ? '' : encodeURIComponent(interconnectAttachment)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17790,7 +17790,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_nodeTemplates_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_nodeTemplates_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/nodeTemplates&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17804,7 +17804,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_nodeTemplates_insert(project: string, region: string, requestId: string, requestBody: NodeTemplate): Observable<HttpResponse<string>> {
+		Compute_nodeTemplates_insert(project: string, region: string, requestId: string | null | undefined, requestBody: NodeTemplate): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/nodeTemplates&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17819,7 +17819,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_nodeTemplates_delete(project: string, region: string, nodeTemplate: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_nodeTemplates_delete(project: string, region: string, nodeTemplate: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/nodeTemplates/' + (nodeTemplate == null ? '' : encodeURIComponent(nodeTemplate)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17887,7 +17887,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionOperations_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionOperations_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17946,7 +17946,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_packetMirrorings_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_packetMirrorings_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/packetMirrorings&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -17960,7 +17960,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_packetMirrorings_insert(project: string, region: string, requestId: string, requestBody: PacketMirroring): Observable<HttpResponse<string>> {
+		Compute_packetMirrorings_insert(project: string, region: string, requestId: string | null | undefined, requestBody: PacketMirroring): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/packetMirrorings&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -17975,7 +17975,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_packetMirrorings_delete(project: string, region: string, packetMirroring: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_packetMirrorings_delete(project: string, region: string, packetMirroring: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/packetMirrorings/' + (packetMirroring == null ? '' : encodeURIComponent(packetMirroring)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18002,7 +18002,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_packetMirrorings_patch(project: string, region: string, packetMirroring: string, requestId: string, requestBody: PacketMirroring): Observable<HttpResponse<string>> {
+		Compute_packetMirrorings_patch(project: string, region: string, packetMirroring: string, requestId: string | null | undefined, requestBody: PacketMirroring): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/packetMirrorings/' + (packetMirroring == null ? '' : encodeURIComponent(packetMirroring)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18034,7 +18034,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_resourcePolicies_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_resourcePolicies_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/resourcePolicies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18048,7 +18048,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_resourcePolicies_insert(project: string, region: string, requestId: string, requestBody: ResourcePolicy): Observable<HttpResponse<string>> {
+		Compute_resourcePolicies_insert(project: string, region: string, requestId: string | null | undefined, requestBody: ResourcePolicy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/resourcePolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18063,7 +18063,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_resourcePolicies_delete(project: string, region: string, resourcePolicy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_resourcePolicies_delete(project: string, region: string, resourcePolicy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/resourcePolicies/' + (resourcePolicy == null ? '' : encodeURIComponent(resourcePolicy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18131,7 +18131,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_routers_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_routers_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/routers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18145,7 +18145,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_routers_insert(project: string, region: string, requestId: string, requestBody: Router): Observable<HttpResponse<string>> {
+		Compute_routers_insert(project: string, region: string, requestId: string | null | undefined, requestBody: Router): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/routers&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18160,7 +18160,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_routers_delete(project: string, region: string, router: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_routers_delete(project: string, region: string, router: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/routers/' + (router == null ? '' : encodeURIComponent(router)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18187,7 +18187,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_routers_patch(project: string, region: string, router: string, requestId: string, requestBody: Router): Observable<HttpResponse<string>> {
+		Compute_routers_patch(project: string, region: string, router: string, requestId: string | null | undefined, requestBody: Router): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/routers/' + (router == null ? '' : encodeURIComponent(router)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18202,7 +18202,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_routers_update(project: string, region: string, router: string, requestId: string, requestBody: Router): Observable<HttpResponse<string>> {
+		Compute_routers_update(project: string, region: string, router: string, requestId: string | null | undefined, requestBody: Router): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/routers/' + (router == null ? '' : encodeURIComponent(router)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18223,7 +18223,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_routers_getNatMappingInfo(project: string, region: string, router: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_routers_getNatMappingInfo(project: string, region: string, router: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/routers/' + (router == null ? '' : encodeURIComponent(router)) + '/getNatMappingInfo&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18267,7 +18267,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionSslCertificates_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionSslCertificates_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/sslCertificates&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18281,7 +18281,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionSslCertificates_insert(project: string, region: string, requestId: string, requestBody: SslCertificate): Observable<HttpResponse<string>> {
+		Compute_regionSslCertificates_insert(project: string, region: string, requestId: string | null | undefined, requestBody: SslCertificate): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/sslCertificates&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18296,7 +18296,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionSslCertificates_delete(project: string, region: string, sslCertificate: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionSslCertificates_delete(project: string, region: string, sslCertificate: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/sslCertificates/' + (sslCertificate == null ? '' : encodeURIComponent(sslCertificate)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18328,7 +18328,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_subnetworks_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_subnetworks_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/subnetworks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18342,7 +18342,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_subnetworks_insert(project: string, region: string, requestId: string, requestBody: Subnetwork): Observable<HttpResponse<string>> {
+		Compute_subnetworks_insert(project: string, region: string, requestId: string | null | undefined, requestBody: Subnetwork): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/subnetworks&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18393,7 +18393,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_subnetworks_delete(project: string, region: string, subnetwork: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_subnetworks_delete(project: string, region: string, subnetwork: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/subnetworks/' + (subnetwork == null ? '' : encodeURIComponent(subnetwork)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18421,7 +18421,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_subnetworks_patch(project: string, region: string, subnetwork: string, drainTimeoutSeconds: number, requestId: string, requestBody: Subnetwork): Observable<HttpResponse<string>> {
+		Compute_subnetworks_patch(project: string, region: string, subnetwork: string, drainTimeoutSeconds: number | null | undefined, requestId: string | null | undefined, requestBody: Subnetwork): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/subnetworks/' + (subnetwork == null ? '' : encodeURIComponent(subnetwork)) + '&drainTimeoutSeconds=' + drainTimeoutSeconds + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18436,7 +18436,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_subnetworks_expandIpCidrRange(project: string, region: string, subnetwork: string, requestId: string, requestBody: SubnetworksExpandIpCidrRangeRequest): Observable<HttpResponse<string>> {
+		Compute_subnetworks_expandIpCidrRange(project: string, region: string, subnetwork: string, requestId: string | null | undefined, requestBody: SubnetworksExpandIpCidrRangeRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/subnetworks/' + (subnetwork == null ? '' : encodeURIComponent(subnetwork)) + '/expandIpCidrRange&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18451,7 +18451,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_subnetworks_setPrivateIpGoogleAccess(project: string, region: string, subnetwork: string, requestId: string, requestBody: SubnetworksSetPrivateIpGoogleAccessRequest): Observable<HttpResponse<string>> {
+		Compute_subnetworks_setPrivateIpGoogleAccess(project: string, region: string, subnetwork: string, requestId: string | null | undefined, requestBody: SubnetworksSetPrivateIpGoogleAccessRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/subnetworks/' + (subnetwork == null ? '' : encodeURIComponent(subnetwork)) + '/setPrivateIpGoogleAccess&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18471,7 +18471,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpProxies_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpProxies_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpProxies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18485,7 +18485,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpProxies_insert(project: string, region: string, requestId: string, requestBody: TargetHttpProxy): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpProxies_insert(project: string, region: string, requestId: string | null | undefined, requestBody: TargetHttpProxy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpProxies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18500,7 +18500,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpProxies_delete(project: string, region: string, targetHttpProxy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpProxies_delete(project: string, region: string, targetHttpProxy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpProxies/' + (targetHttpProxy == null ? '' : encodeURIComponent(targetHttpProxy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18527,7 +18527,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpProxies_setUrlMap(project: string, region: string, targetHttpProxy: string, requestId: string, requestBody: UrlMapReference): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpProxies_setUrlMap(project: string, region: string, targetHttpProxy: string, requestId: string | null | undefined, requestBody: UrlMapReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpProxies/' + (targetHttpProxy == null ? '' : encodeURIComponent(targetHttpProxy)) + '/setUrlMap&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18547,7 +18547,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpsProxies_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpsProxies_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpsProxies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18561,7 +18561,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpsProxies_insert(project: string, region: string, requestId: string, requestBody: TargetHttpsProxy): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpsProxies_insert(project: string, region: string, requestId: string | null | undefined, requestBody: TargetHttpsProxy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpsProxies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18576,7 +18576,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpsProxies_delete(project: string, region: string, targetHttpsProxy: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpsProxies_delete(project: string, region: string, targetHttpsProxy: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpsProxies/' + (targetHttpsProxy == null ? '' : encodeURIComponent(targetHttpsProxy)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18603,7 +18603,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpsProxies_setSslCertificates(project: string, region: string, targetHttpsProxy: string, requestId: string, requestBody: RegionTargetHttpsProxiesSetSslCertificatesRequest): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpsProxies_setSslCertificates(project: string, region: string, targetHttpsProxy: string, requestId: string | null | undefined, requestBody: RegionTargetHttpsProxiesSetSslCertificatesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpsProxies/' + (targetHttpsProxy == null ? '' : encodeURIComponent(targetHttpsProxy)) + '/setSslCertificates&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18618,7 +18618,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_regionTargetHttpsProxies_setUrlMap(project: string, region: string, targetHttpsProxy: string, requestId: string, requestBody: UrlMapReference): Observable<HttpResponse<string>> {
+		Compute_regionTargetHttpsProxies_setUrlMap(project: string, region: string, targetHttpsProxy: string, requestId: string | null | undefined, requestBody: UrlMapReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetHttpsProxies/' + (targetHttpsProxy == null ? '' : encodeURIComponent(targetHttpsProxy)) + '/setUrlMap&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18638,7 +18638,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetPools_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetPools&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18652,7 +18652,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_insert(project: string, region: string, requestId: string, requestBody: TargetPool): Observable<HttpResponse<string>> {
+		Compute_targetPools_insert(project: string, region: string, requestId: string | null | undefined, requestBody: TargetPool): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetPools&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18667,7 +18667,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_delete(project: string, region: string, targetPool: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_targetPools_delete(project: string, region: string, targetPool: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetPools/' + (targetPool == null ? '' : encodeURIComponent(targetPool)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18694,7 +18694,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_addHealthCheck(project: string, region: string, targetPool: string, requestId: string, requestBody: TargetPoolsAddHealthCheckRequest): Observable<HttpResponse<string>> {
+		Compute_targetPools_addHealthCheck(project: string, region: string, targetPool: string, requestId: string | null | undefined, requestBody: TargetPoolsAddHealthCheckRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetPools/' + (targetPool == null ? '' : encodeURIComponent(targetPool)) + '/addHealthCheck&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18709,7 +18709,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_addInstance(project: string, region: string, targetPool: string, requestId: string, requestBody: TargetPoolsAddInstanceRequest): Observable<HttpResponse<string>> {
+		Compute_targetPools_addInstance(project: string, region: string, targetPool: string, requestId: string | null | undefined, requestBody: TargetPoolsAddInstanceRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetPools/' + (targetPool == null ? '' : encodeURIComponent(targetPool)) + '/addInstance&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18736,7 +18736,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_removeHealthCheck(project: string, region: string, targetPool: string, requestId: string, requestBody: TargetPoolsRemoveHealthCheckRequest): Observable<HttpResponse<string>> {
+		Compute_targetPools_removeHealthCheck(project: string, region: string, targetPool: string, requestId: string | null | undefined, requestBody: TargetPoolsRemoveHealthCheckRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetPools/' + (targetPool == null ? '' : encodeURIComponent(targetPool)) + '/removeHealthCheck&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18751,7 +18751,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_removeInstance(project: string, region: string, targetPool: string, requestId: string, requestBody: TargetPoolsRemoveInstanceRequest): Observable<HttpResponse<string>> {
+		Compute_targetPools_removeInstance(project: string, region: string, targetPool: string, requestId: string | null | undefined, requestBody: TargetPoolsRemoveInstanceRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetPools/' + (targetPool == null ? '' : encodeURIComponent(targetPool)) + '/removeInstance&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18767,7 +18767,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetPools_setBackup(project: string, region: string, targetPool: string, failoverRatio: number, requestId: string, requestBody: TargetReference): Observable<HttpResponse<string>> {
+		Compute_targetPools_setBackup(project: string, region: string, targetPool: string, failoverRatio: number | null | undefined, requestId: string | null | undefined, requestBody: TargetReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetPools/' + (targetPool == null ? '' : encodeURIComponent(targetPool)) + '/setBackup&failoverRatio=' + failoverRatio + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18787,7 +18787,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetVpnGateways_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetVpnGateways_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetVpnGateways&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18801,7 +18801,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetVpnGateways_insert(project: string, region: string, requestId: string, requestBody: TargetVpnGateway): Observable<HttpResponse<string>> {
+		Compute_targetVpnGateways_insert(project: string, region: string, requestId: string | null | undefined, requestBody: TargetVpnGateway): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetVpnGateways&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18816,7 +18816,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetVpnGateways_delete(project: string, region: string, targetVpnGateway: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_targetVpnGateways_delete(project: string, region: string, targetVpnGateway: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/targetVpnGateways/' + (targetVpnGateway == null ? '' : encodeURIComponent(targetVpnGateway)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18848,7 +18848,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_regionUrlMaps_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_regionUrlMaps_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/urlMaps&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18860,7 +18860,7 @@ export namespace MyNS {
 		 * @param {string} requestId begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
 		 * @return {void} Successful response
 		 */
-		Compute_regionUrlMaps_insert(project: string, region: string, requestId: string, requestBody: UrlMap): Observable<HttpResponse<string>> {
+		Compute_regionUrlMaps_insert(project: string, region: string, requestId: string | null | undefined, requestBody: UrlMap): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/urlMaps&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18873,7 +18873,7 @@ export namespace MyNS {
 		 * @param {string} requestId begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
 		 * @return {void} Successful response
 		 */
-		Compute_regionUrlMaps_delete(project: string, region: string, urlMap: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_regionUrlMaps_delete(project: string, region: string, urlMap: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/urlMaps/' + (urlMap == null ? '' : encodeURIComponent(urlMap)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18898,7 +18898,7 @@ export namespace MyNS {
 		 * @param {string} requestId begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
 		 * @return {void} Successful response
 		 */
-		Compute_regionUrlMaps_patch(project: string, region: string, urlMap: string, requestId: string, requestBody: UrlMap): Observable<HttpResponse<string>> {
+		Compute_regionUrlMaps_patch(project: string, region: string, urlMap: string, requestId: string | null | undefined, requestBody: UrlMap): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/urlMaps/' + (urlMap == null ? '' : encodeURIComponent(urlMap)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18911,7 +18911,7 @@ export namespace MyNS {
 		 * @param {string} requestId begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
 		 * @return {void} Successful response
 		 */
-		Compute_regionUrlMaps_update(project: string, region: string, urlMap: string, requestId: string, requestBody: UrlMap): Observable<HttpResponse<string>> {
+		Compute_regionUrlMaps_update(project: string, region: string, urlMap: string, requestId: string | null | undefined, requestBody: UrlMap): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/urlMaps/' + (urlMap == null ? '' : encodeURIComponent(urlMap)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18943,7 +18943,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_vpnGateways_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_vpnGateways_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/vpnGateways&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -18957,7 +18957,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_vpnGateways_insert(project: string, region: string, requestId: string, requestBody: VpnGateway): Observable<HttpResponse<string>> {
+		Compute_vpnGateways_insert(project: string, region: string, requestId: string | null | undefined, requestBody: VpnGateway): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/vpnGateways&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18972,7 +18972,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_vpnGateways_setLabels(project: string, region: string, resource: string, requestId: string, requestBody: RegionSetLabelsRequest): Observable<HttpResponse<string>> {
+		Compute_vpnGateways_setLabels(project: string, region: string, resource: string, requestId: string | null | undefined, requestBody: RegionSetLabelsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/vpnGateways/' + (resource == null ? '' : encodeURIComponent(resource)) + '/setLabels&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -18999,7 +18999,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_vpnGateways_delete(project: string, region: string, vpnGateway: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_vpnGateways_delete(project: string, region: string, vpnGateway: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/vpnGateways/' + (vpnGateway == null ? '' : encodeURIComponent(vpnGateway)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19043,7 +19043,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_vpnTunnels_list(project: string, region: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_vpnTunnels_list(project: string, region: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/vpnTunnels&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19057,7 +19057,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_vpnTunnels_insert(project: string, region: string, requestId: string, requestBody: VpnTunnel): Observable<HttpResponse<string>> {
+		Compute_vpnTunnels_insert(project: string, region: string, requestId: string | null | undefined, requestBody: VpnTunnel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/vpnTunnels&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19072,7 +19072,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_vpnTunnels_delete(project: string, region: string, vpnTunnel: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_vpnTunnels_delete(project: string, region: string, vpnTunnel: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/vpnTunnels/' + (vpnTunnel == null ? '' : encodeURIComponent(vpnTunnel)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19097,7 +19097,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_setCommonInstanceMetadata(project: string, requestId: string, requestBody: Metadata): Observable<HttpResponse<string>> {
+		Compute_projects_setCommonInstanceMetadata(project: string, requestId: string | null | undefined, requestBody: Metadata): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/setCommonInstanceMetadata&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19110,7 +19110,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_setDefaultNetworkTier(project: string, requestId: string, requestBody: ProjectsSetDefaultNetworkTierRequest): Observable<HttpResponse<string>> {
+		Compute_projects_setDefaultNetworkTier(project: string, requestId: string | null | undefined, requestBody: ProjectsSetDefaultNetworkTierRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/setDefaultNetworkTier&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19123,7 +19123,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_projects_setUsageExportBucket(project: string, requestId: string, requestBody: UsageExportLocation): Observable<HttpResponse<string>> {
+		Compute_projects_setUsageExportBucket(project: string, requestId: string | null | undefined, requestBody: UsageExportLocation): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/setUsageExportBucket&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19137,7 +19137,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpProxies_setUrlMap(project: string, targetHttpProxy: string, requestId: string, requestBody: UrlMapReference): Observable<HttpResponse<string>> {
+		Compute_targetHttpProxies_setUrlMap(project: string, targetHttpProxy: string, requestId: string | null | undefined, requestBody: UrlMapReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/targetHttpProxies/' + (targetHttpProxy == null ? '' : encodeURIComponent(targetHttpProxy)) + '/setUrlMap&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19151,7 +19151,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpsProxies_setSslCertificates(project: string, targetHttpsProxy: string, requestId: string, requestBody: TargetHttpsProxiesSetSslCertificatesRequest): Observable<HttpResponse<string>> {
+		Compute_targetHttpsProxies_setSslCertificates(project: string, targetHttpsProxy: string, requestId: string | null | undefined, requestBody: TargetHttpsProxiesSetSslCertificatesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/targetHttpsProxies/' + (targetHttpsProxy == null ? '' : encodeURIComponent(targetHttpsProxy)) + '/setSslCertificates&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19165,7 +19165,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetHttpsProxies_setUrlMap(project: string, targetHttpsProxy: string, requestId: string, requestBody: UrlMapReference): Observable<HttpResponse<string>> {
+		Compute_targetHttpsProxies_setUrlMap(project: string, targetHttpsProxy: string, requestId: string | null | undefined, requestBody: UrlMapReference): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/targetHttpsProxies/' + (targetHttpsProxy == null ? '' : encodeURIComponent(targetHttpsProxy)) + '/setUrlMap&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19184,7 +19184,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_zones_list(project: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_zones_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19215,7 +19215,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_acceleratorTypes_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_acceleratorTypes_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/acceleratorTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19247,7 +19247,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_autoscalers_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_autoscalers_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/autoscalers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19262,7 +19262,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_autoscalers_patch(project: string, zone: string, autoscaler: string, requestId: string, requestBody: Autoscaler): Observable<HttpResponse<string>> {
+		Compute_autoscalers_patch(project: string, zone: string, autoscaler: string | null | undefined, requestId: string | null | undefined, requestBody: Autoscaler): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/autoscalers&autoscaler=' + (autoscaler == null ? '' : encodeURIComponent(autoscaler)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19276,7 +19276,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_autoscalers_insert(project: string, zone: string, requestId: string, requestBody: Autoscaler): Observable<HttpResponse<string>> {
+		Compute_autoscalers_insert(project: string, zone: string, requestId: string | null | undefined, requestBody: Autoscaler): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/autoscalers&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19291,7 +19291,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_autoscalers_update(project: string, zone: string, autoscaler: string, requestId: string, requestBody: Autoscaler): Observable<HttpResponse<string>> {
+		Compute_autoscalers_update(project: string, zone: string, autoscaler: string | null | undefined, requestId: string | null | undefined, requestBody: Autoscaler): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/autoscalers&autoscaler=' + (autoscaler == null ? '' : encodeURIComponent(autoscaler)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19306,7 +19306,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_autoscalers_delete(project: string, zone: string, autoscaler: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_autoscalers_delete(project: string, zone: string, autoscaler: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/autoscalers/' + (autoscaler == null ? '' : encodeURIComponent(autoscaler)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19338,7 +19338,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_diskTypes_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_diskTypes_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/diskTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19370,7 +19370,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_disks_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_disks_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/disks&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19385,7 +19385,7 @@ export namespace MyNS {
 		 * @param {string} sourceImage Optional. Source image to restore onto a disk.
 		 * @return {void} Successful response
 		 */
-		Compute_disks_insert(project: string, zone: string, requestId: string, sourceImage: string, requestBody: Disk): Observable<HttpResponse<string>> {
+		Compute_disks_insert(project: string, zone: string, requestId: string | null | undefined, sourceImage: string | null | undefined, requestBody: Disk): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/disks&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '&sourceImage=' + (sourceImage == null ? '' : encodeURIComponent(sourceImage)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19400,7 +19400,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_disks_delete(project: string, zone: string, disk: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_disks_delete(project: string, zone: string, disk: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19427,7 +19427,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_disks_addResourcePolicies(project: string, zone: string, disk: string, requestId: string, requestBody: DisksAddResourcePoliciesRequest): Observable<HttpResponse<string>> {
+		Compute_disks_addResourcePolicies(project: string, zone: string, disk: string, requestId: string | null | undefined, requestBody: DisksAddResourcePoliciesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '/addResourcePolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19443,7 +19443,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_disks_createSnapshot(project: string, zone: string, disk: string, guestFlush: boolean, requestId: string, requestBody: Snapshot): Observable<HttpResponse<string>> {
+		Compute_disks_createSnapshot(project: string, zone: string, disk: string, guestFlush: boolean | null | undefined, requestId: string | null | undefined, requestBody: Snapshot): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '/createSnapshot&guestFlush=' + guestFlush + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19458,7 +19458,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_disks_removeResourcePolicies(project: string, zone: string, disk: string, requestId: string, requestBody: DisksRemoveResourcePoliciesRequest): Observable<HttpResponse<string>> {
+		Compute_disks_removeResourcePolicies(project: string, zone: string, disk: string, requestId: string | null | undefined, requestBody: DisksRemoveResourcePoliciesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '/removeResourcePolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19473,7 +19473,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_disks_resize(project: string, zone: string, disk: string, requestId: string, requestBody: DisksResizeRequest): Observable<HttpResponse<string>> {
+		Compute_disks_resize(project: string, zone: string, disk: string, requestId: string | null | undefined, requestBody: DisksResizeRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/disks/' + (disk == null ? '' : encodeURIComponent(disk)) + '/resize&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19512,7 +19512,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_disks_setLabels(project: string, zone: string, resource: string, requestId: string, requestBody: ZoneSetLabelsRequest): Observable<HttpResponse<string>> {
+		Compute_disks_setLabels(project: string, zone: string, resource: string, requestId: string | null | undefined, requestBody: ZoneSetLabelsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/disks/' + (resource == null ? '' : encodeURIComponent(resource)) + '/setLabels&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19544,7 +19544,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19559,7 +19559,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_insert(project: string, zone: string, requestId: string, requestBody: InstanceGroupManager): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_insert(project: string, zone: string, requestId: string | null | undefined, requestBody: InstanceGroupManager): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19574,7 +19574,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_delete(project: string, zone: string, instanceGroupManager: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_delete(project: string, zone: string, instanceGroupManager: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19601,7 +19601,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_patch(project: string, zone: string, instanceGroupManager: string, requestId: string, requestBody: InstanceGroupManager): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_patch(project: string, zone: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: InstanceGroupManager): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19618,7 +19618,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_abandonInstances(project: string, zone: string, instanceGroupManager: string, requestId: string, requestBody: InstanceGroupManagersAbandonInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_abandonInstances(project: string, zone: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: InstanceGroupManagersAbandonInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/abandonInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19645,7 +19645,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_createInstances(project: string, zone: string, instanceGroupManager: string, requestId: string, requestBody: InstanceGroupManagersCreateInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_createInstances(project: string, zone: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: InstanceGroupManagersCreateInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/createInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19662,7 +19662,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_deleteInstances(project: string, zone: string, instanceGroupManager: string, requestId: string, requestBody: InstanceGroupManagersDeleteInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_deleteInstances(project: string, zone: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: InstanceGroupManagersDeleteInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/deleteInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19683,7 +19683,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_listErrors(project: string, zone: string, instanceGroupManager: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_listErrors(project: string, zone: string, instanceGroupManager: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/listErrors&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19704,7 +19704,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_listManagedInstances(project: string, zone: string, instanceGroupManager: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_listManagedInstances(project: string, zone: string, instanceGroupManager: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/listManagedInstances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -19721,7 +19721,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_recreateInstances(project: string, zone: string, instanceGroupManager: string, requestId: string, requestBody: InstanceGroupManagersRecreateInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_recreateInstances(project: string, zone: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: InstanceGroupManagersRecreateInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/recreateInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19741,7 +19741,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_resize(project: string, zone: string, instanceGroupManager: string, size: number, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_resize(project: string, zone: string, instanceGroupManager: string, size: number, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/resize&size=' + size + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -19756,7 +19756,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_setInstanceTemplate(project: string, zone: string, instanceGroupManager: string, requestId: string, requestBody: InstanceGroupManagersSetInstanceTemplateRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_setInstanceTemplate(project: string, zone: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: InstanceGroupManagersSetInstanceTemplateRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/setInstanceTemplate&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19771,7 +19771,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroupManagers_setTargetPools(project: string, zone: string, instanceGroupManager: string, requestId: string, requestBody: InstanceGroupManagersSetTargetPoolsRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroupManagers_setTargetPools(project: string, zone: string, instanceGroupManager: string, requestId: string | null | undefined, requestBody: InstanceGroupManagersSetTargetPoolsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroupManagers/' + (instanceGroupManager == null ? '' : encodeURIComponent(instanceGroupManager)) + '/setTargetPools&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19791,7 +19791,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroups_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroups_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19805,7 +19805,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroups_insert(project: string, zone: string, requestId: string, requestBody: InstanceGroup): Observable<HttpResponse<string>> {
+		Compute_instanceGroups_insert(project: string, zone: string, requestId: string | null | undefined, requestBody: InstanceGroup): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroups&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19820,7 +19820,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroups_delete(project: string, zone: string, instanceGroup: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instanceGroups_delete(project: string, zone: string, instanceGroup: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroups/' + (instanceGroup == null ? '' : encodeURIComponent(instanceGroup)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19847,7 +19847,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroups_addInstances(project: string, zone: string, instanceGroup: string, requestId: string, requestBody: InstanceGroupsAddInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroups_addInstances(project: string, zone: string, instanceGroup: string, requestId: string | null | undefined, requestBody: InstanceGroupsAddInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroups/' + (instanceGroup == null ? '' : encodeURIComponent(instanceGroup)) + '/addInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19868,7 +19868,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroups_listInstances(project: string, zone: string, instanceGroup: string, filter: string, maxResults: number, orderBy: string, pageToken: string, requestBody: InstanceGroupsListInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroups_listInstances(project: string, zone: string, instanceGroup: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined, requestBody: InstanceGroupsListInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroups/' + (instanceGroup == null ? '' : encodeURIComponent(instanceGroup)) + '/listInstances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19884,7 +19884,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroups_removeInstances(project: string, zone: string, instanceGroup: string, requestId: string, requestBody: InstanceGroupsRemoveInstancesRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroups_removeInstances(project: string, zone: string, instanceGroup: string, requestId: string | null | undefined, requestBody: InstanceGroupsRemoveInstancesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroups/' + (instanceGroup == null ? '' : encodeURIComponent(instanceGroup)) + '/removeInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19899,7 +19899,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instanceGroups_setNamedPorts(project: string, zone: string, instanceGroup: string, requestId: string, requestBody: InstanceGroupsSetNamedPortsRequest): Observable<HttpResponse<string>> {
+		Compute_instanceGroups_setNamedPorts(project: string, zone: string, instanceGroup: string, requestId: string | null | undefined, requestBody: InstanceGroupsSetNamedPortsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instanceGroups/' + (instanceGroup == null ? '' : encodeURIComponent(instanceGroup)) + '/setNamedPorts&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19919,7 +19919,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instances_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instances_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19938,7 +19938,7 @@ export namespace MyNS {
 		 * - global/instanceTemplates/instanceTemplate
 		 * @return {void} Successful response
 		 */
-		Compute_instances_insert(project: string, zone: string, requestId: string, sourceInstanceTemplate: string, requestBody: Instance): Observable<HttpResponse<string>> {
+		Compute_instances_insert(project: string, zone: string, requestId: string | null | undefined, sourceInstanceTemplate: string | null | undefined, requestBody: Instance): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '&sourceInstanceTemplate=' + (sourceInstanceTemplate == null ? '' : encodeURIComponent(sourceInstanceTemplate)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19953,7 +19953,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_delete(project: string, zone: string, instance: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instances_delete(project: string, zone: string, instance: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -19982,7 +19982,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_update(project: string, zone: string, instance: string, minimalAction: Compute_instances_updateMinimalAction, mostDisruptiveAllowedAction: Compute_instances_updateMinimalAction, requestId: string, requestBody: Instance): Observable<HttpResponse<string>> {
+		Compute_instances_update(project: string, zone: string, instance: string, minimalAction: Compute_instances_updateMinimalAction | null | undefined, mostDisruptiveAllowedAction: Compute_instances_updateMinimalAction | null | undefined, requestId: string | null | undefined, requestBody: Instance): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '&minimalAction=' + minimalAction + '&mostDisruptiveAllowedAction=' + mostDisruptiveAllowedAction + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -19998,7 +19998,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_addAccessConfig(project: string, zone: string, instance: string, networkInterface: string, requestId: string, requestBody: AccessConfig): Observable<HttpResponse<string>> {
+		Compute_instances_addAccessConfig(project: string, zone: string, instance: string, networkInterface: string, requestId: string | null | undefined, requestBody: AccessConfig): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/addAccessConfig&networkInterface=' + (networkInterface == null ? '' : encodeURIComponent(networkInterface)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20013,7 +20013,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_addResourcePolicies(project: string, zone: string, instance: string, requestId: string, requestBody: InstancesAddResourcePoliciesRequest): Observable<HttpResponse<string>> {
+		Compute_instances_addResourcePolicies(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: InstancesAddResourcePoliciesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/addResourcePolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20029,7 +20029,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_attachDisk(project: string, zone: string, instance: string, forceAttach: boolean, requestId: string, requestBody: AttachedDisk): Observable<HttpResponse<string>> {
+		Compute_instances_attachDisk(project: string, zone: string, instance: string, forceAttach: boolean | null | undefined, requestId: string | null | undefined, requestBody: AttachedDisk): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/attachDisk&forceAttach=' + forceAttach + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20046,7 +20046,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_deleteAccessConfig(project: string, zone: string, instance: string, accessConfig: string, networkInterface: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instances_deleteAccessConfig(project: string, zone: string, instance: string, accessConfig: string, networkInterface: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/deleteAccessConfig&accessConfig=' + (accessConfig == null ? '' : encodeURIComponent(accessConfig)) + '&networkInterface=' + (networkInterface == null ? '' : encodeURIComponent(networkInterface)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20062,7 +20062,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_detachDisk(project: string, zone: string, instance: string, deviceName: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instances_detachDisk(project: string, zone: string, instance: string, deviceName: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/detachDisk&deviceName=' + (deviceName == null ? '' : encodeURIComponent(deviceName)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20076,7 +20076,7 @@ export namespace MyNS {
 		 * @param {string} variableKey Specifies the key for the guest attributes entry.
 		 * @return {void} Successful response
 		 */
-		Compute_instances_getGuestAttributes(project: string, zone: string, instance: string, queryPath: string, variableKey: string): Observable<HttpResponse<string>> {
+		Compute_instances_getGuestAttributes(project: string, zone: string, instance: string, queryPath: string | null | undefined, variableKey: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/getGuestAttributes&queryPath=' + (queryPath == null ? '' : encodeURIComponent(queryPath)) + '&variableKey=' + (variableKey == null ? '' : encodeURIComponent(variableKey)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20109,7 +20109,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_instances_listReferrers(project: string, zone: string, instance: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_instances_listReferrers(project: string, zone: string, instance: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/referrers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20124,7 +20124,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_removeResourcePolicies(project: string, zone: string, instance: string, requestId: string, requestBody: InstancesRemoveResourcePoliciesRequest): Observable<HttpResponse<string>> {
+		Compute_instances_removeResourcePolicies(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: InstancesRemoveResourcePoliciesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/removeResourcePolicies&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20139,7 +20139,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_reset(project: string, zone: string, instance: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instances_reset(project: string, zone: string, instance: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/reset&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20153,7 +20153,7 @@ export namespace MyNS {
 		 * @param {string} start Returns output starting from a specific byte position. Use this to page through output when the output is too large to return in a single request. For the initial request, leave this field unspecified. For subsequent calls, this field should be set to the next value returned in the previous call.
 		 * @return {void} Successful response
 		 */
-		Compute_instances_getSerialPortOutput(project: string, zone: string, instance: string, port: number, start: string): Observable<HttpResponse<string>> {
+		Compute_instances_getSerialPortOutput(project: string, zone: string, instance: string, port: number | null | undefined, start: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/serialPort&port=' + port + '&start=' + (start == null ? '' : encodeURIComponent(start)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20170,7 +20170,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setDiskAutoDelete(project: string, zone: string, instance: string, autoDelete: boolean, deviceName: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instances_setDiskAutoDelete(project: string, zone: string, instance: string, autoDelete: boolean, deviceName: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setDiskAutoDelete&autoDelete=' + autoDelete + '&deviceName=' + (deviceName == null ? '' : encodeURIComponent(deviceName)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20185,7 +20185,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setLabels(project: string, zone: string, instance: string, requestId: string, requestBody: InstancesSetLabelsRequest): Observable<HttpResponse<string>> {
+		Compute_instances_setLabels(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: InstancesSetLabelsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setLabels&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20200,7 +20200,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setMachineResources(project: string, zone: string, instance: string, requestId: string, requestBody: InstancesSetMachineResourcesRequest): Observable<HttpResponse<string>> {
+		Compute_instances_setMachineResources(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: InstancesSetMachineResourcesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setMachineResources&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20215,7 +20215,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setMachineType(project: string, zone: string, instance: string, requestId: string, requestBody: InstancesSetMachineTypeRequest): Observable<HttpResponse<string>> {
+		Compute_instances_setMachineType(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: InstancesSetMachineTypeRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setMachineType&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20230,7 +20230,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setMetadata(project: string, zone: string, instance: string, requestId: string, requestBody: Metadata): Observable<HttpResponse<string>> {
+		Compute_instances_setMetadata(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: Metadata): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setMetadata&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20245,7 +20245,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setMinCpuPlatform(project: string, zone: string, instance: string, requestId: string, requestBody: InstancesSetMinCpuPlatformRequest): Observable<HttpResponse<string>> {
+		Compute_instances_setMinCpuPlatform(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: InstancesSetMinCpuPlatformRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setMinCpuPlatform&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20260,7 +20260,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setScheduling(project: string, zone: string, instance: string, requestId: string, requestBody: Scheduling): Observable<HttpResponse<string>> {
+		Compute_instances_setScheduling(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: Scheduling): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setScheduling&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20275,7 +20275,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setServiceAccount(project: string, zone: string, instance: string, requestId: string, requestBody: InstancesSetServiceAccountRequest): Observable<HttpResponse<string>> {
+		Compute_instances_setServiceAccount(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: InstancesSetServiceAccountRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setServiceAccount&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20290,7 +20290,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setShieldedInstanceIntegrityPolicy(project: string, zone: string, instance: string, requestId: string, requestBody: ShieldedInstanceIntegrityPolicy): Observable<HttpResponse<string>> {
+		Compute_instances_setShieldedInstanceIntegrityPolicy(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: ShieldedInstanceIntegrityPolicy): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setShieldedInstanceIntegrityPolicy&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20305,7 +20305,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setTags(project: string, zone: string, instance: string, requestId: string, requestBody: Tags): Observable<HttpResponse<string>> {
+		Compute_instances_setTags(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: Tags): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/setTags&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20332,7 +20332,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_start(project: string, zone: string, instance: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instances_start(project: string, zone: string, instance: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/start&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20347,7 +20347,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_startWithEncryptionKey(project: string, zone: string, instance: string, requestId: string, requestBody: InstancesStartWithEncryptionKeyRequest): Observable<HttpResponse<string>> {
+		Compute_instances_startWithEncryptionKey(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: InstancesStartWithEncryptionKeyRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/startWithEncryptionKey&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20362,7 +20362,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_stop(project: string, zone: string, instance: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instances_stop(project: string, zone: string, instance: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/stop&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20378,7 +20378,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_updateAccessConfig(project: string, zone: string, instance: string, networkInterface: string, requestId: string, requestBody: AccessConfig): Observable<HttpResponse<string>> {
+		Compute_instances_updateAccessConfig(project: string, zone: string, instance: string, networkInterface: string, requestId: string | null | undefined, requestBody: AccessConfig): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/updateAccessConfig&networkInterface=' + (networkInterface == null ? '' : encodeURIComponent(networkInterface)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20393,7 +20393,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_updateDisplayDevice(project: string, zone: string, instance: string, requestId: string, requestBody: DisplayDevice): Observable<HttpResponse<string>> {
+		Compute_instances_updateDisplayDevice(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: DisplayDevice): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/updateDisplayDevice&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20409,7 +20409,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_updateNetworkInterface(project: string, zone: string, instance: string, networkInterface: string, requestId: string, requestBody: NetworkInterface): Observable<HttpResponse<string>> {
+		Compute_instances_updateNetworkInterface(project: string, zone: string, instance: string, networkInterface: string, requestId: string | null | undefined, requestBody: NetworkInterface): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/updateNetworkInterface&networkInterface=' + (networkInterface == null ? '' : encodeURIComponent(networkInterface)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20424,7 +20424,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_updateShieldedInstanceConfig(project: string, zone: string, instance: string, requestId: string, requestBody: ShieldedInstanceConfig): Observable<HttpResponse<string>> {
+		Compute_instances_updateShieldedInstanceConfig(project: string, zone: string, instance: string, requestId: string | null | undefined, requestBody: ShieldedInstanceConfig): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/updateShieldedInstanceConfig&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20452,7 +20452,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_instances_setDeletionProtection(project: string, zone: string, resource: string, deletionProtection: boolean, requestId: string): Observable<HttpResponse<string>> {
+		Compute_instances_setDeletionProtection(project: string, zone: string, resource: string, deletionProtection: boolean | null | undefined, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/instances/' + (resource == null ? '' : encodeURIComponent(resource)) + '/setDeletionProtection&deletionProtection=' + deletionProtection + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20496,7 +20496,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_machineTypes_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_machineTypes_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/machineTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20528,7 +20528,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_networkEndpointGroups_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_networkEndpointGroups_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/networkEndpointGroups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20542,7 +20542,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networkEndpointGroups_insert(project: string, zone: string, requestId: string, requestBody: NetworkEndpointGroup): Observable<HttpResponse<string>> {
+		Compute_networkEndpointGroups_insert(project: string, zone: string, requestId: string | null | undefined, requestBody: NetworkEndpointGroup): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/networkEndpointGroups&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20557,7 +20557,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networkEndpointGroups_delete(project: string, zone: string, networkEndpointGroup: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_networkEndpointGroups_delete(project: string, zone: string, networkEndpointGroup: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/networkEndpointGroups/' + (networkEndpointGroup == null ? '' : encodeURIComponent(networkEndpointGroup)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20584,7 +20584,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networkEndpointGroups_attachNetworkEndpoints(project: string, zone: string, networkEndpointGroup: string, requestId: string, requestBody: NetworkEndpointGroupsAttachEndpointsRequest): Observable<HttpResponse<string>> {
+		Compute_networkEndpointGroups_attachNetworkEndpoints(project: string, zone: string, networkEndpointGroup: string, requestId: string | null | undefined, requestBody: NetworkEndpointGroupsAttachEndpointsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/networkEndpointGroups/' + (networkEndpointGroup == null ? '' : encodeURIComponent(networkEndpointGroup)) + '/attachNetworkEndpoints&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20599,7 +20599,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_networkEndpointGroups_detachNetworkEndpoints(project: string, zone: string, networkEndpointGroup: string, requestId: string, requestBody: NetworkEndpointGroupsDetachEndpointsRequest): Observable<HttpResponse<string>> {
+		Compute_networkEndpointGroups_detachNetworkEndpoints(project: string, zone: string, networkEndpointGroup: string, requestId: string | null | undefined, requestBody: NetworkEndpointGroupsDetachEndpointsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/networkEndpointGroups/' + (networkEndpointGroup == null ? '' : encodeURIComponent(networkEndpointGroup)) + '/detachNetworkEndpoints&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20620,7 +20620,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_networkEndpointGroups_listNetworkEndpoints(project: string, zone: string, networkEndpointGroup: string, filter: string, maxResults: number, orderBy: string, pageToken: string, requestBody: NetworkEndpointGroupsListEndpointsRequest): Observable<HttpResponse<string>> {
+		Compute_networkEndpointGroups_listNetworkEndpoints(project: string, zone: string, networkEndpointGroup: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined, requestBody: NetworkEndpointGroupsListEndpointsRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/networkEndpointGroups/' + (networkEndpointGroup == null ? '' : encodeURIComponent(networkEndpointGroup)) + '/listNetworkEndpoints&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20652,7 +20652,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeGroups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20667,7 +20667,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_insert(project: string, zone: string, initialNodeCount: number, requestId: string, requestBody: NodeGroup): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_insert(project: string, zone: string, initialNodeCount: number, requestId: string | null | undefined, requestBody: NodeGroup): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeGroups&initialNodeCount=' + initialNodeCount + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20682,7 +20682,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_delete(project: string, zone: string, nodeGroup: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_delete(project: string, zone: string, nodeGroup: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeGroups/' + (nodeGroup == null ? '' : encodeURIComponent(nodeGroup)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20709,7 +20709,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_patch(project: string, zone: string, nodeGroup: string, requestId: string, requestBody: NodeGroup): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_patch(project: string, zone: string, nodeGroup: string, requestId: string | null | undefined, requestBody: NodeGroup): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeGroups/' + (nodeGroup == null ? '' : encodeURIComponent(nodeGroup)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20724,7 +20724,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_addNodes(project: string, zone: string, nodeGroup: string, requestId: string, requestBody: NodeGroupsAddNodesRequest): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_addNodes(project: string, zone: string, nodeGroup: string, requestId: string | null | undefined, requestBody: NodeGroupsAddNodesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeGroups/' + (nodeGroup == null ? '' : encodeURIComponent(nodeGroup)) + '/addNodes&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20739,7 +20739,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_deleteNodes(project: string, zone: string, nodeGroup: string, requestId: string, requestBody: NodeGroupsDeleteNodesRequest): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_deleteNodes(project: string, zone: string, nodeGroup: string, requestId: string | null | undefined, requestBody: NodeGroupsDeleteNodesRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeGroups/' + (nodeGroup == null ? '' : encodeURIComponent(nodeGroup)) + '/deleteNodes&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20760,7 +20760,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_listNodes(project: string, zone: string, nodeGroup: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_listNodes(project: string, zone: string, nodeGroup: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeGroups/' + (nodeGroup == null ? '' : encodeURIComponent(nodeGroup)) + '/listNodes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -20775,7 +20775,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_nodeGroups_setNodeTemplate(project: string, zone: string, nodeGroup: string, requestId: string, requestBody: NodeGroupsSetNodeTemplateRequest): Observable<HttpResponse<string>> {
+		Compute_nodeGroups_setNodeTemplate(project: string, zone: string, nodeGroup: string, requestId: string | null | undefined, requestBody: NodeGroupsSetNodeTemplateRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeGroups/' + (nodeGroup == null ? '' : encodeURIComponent(nodeGroup)) + '/setNodeTemplate&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20831,7 +20831,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_nodeTypes_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_nodeTypes_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/nodeTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20863,7 +20863,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_zoneOperations_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_zoneOperations_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20922,7 +20922,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_reservations_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_reservations_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/reservations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20936,7 +20936,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_reservations_insert(project: string, zone: string, requestId: string, requestBody: Reservation): Observable<HttpResponse<string>> {
+		Compute_reservations_insert(project: string, zone: string, requestId: string | null | undefined, requestBody: Reservation): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/reservations&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -20951,7 +20951,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_reservations_delete(project: string, zone: string, reservation: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_reservations_delete(project: string, zone: string, reservation: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/reservations/' + (reservation == null ? '' : encodeURIComponent(reservation)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -20978,7 +20978,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_reservations_resize(project: string, zone: string, reservation: string, requestId: string, requestBody: ReservationsResizeRequest): Observable<HttpResponse<string>> {
+		Compute_reservations_resize(project: string, zone: string, reservation: string, requestId: string | null | undefined, requestBody: ReservationsResizeRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/reservations/' + (reservation == null ? '' : encodeURIComponent(reservation)) + '/resize&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21034,7 +21034,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
 		 * @return {void} Successful response
 		 */
-		Compute_targetInstances_list(project: string, zone: string, filter: string, maxResults: number, orderBy: string, pageToken: string): Observable<HttpResponse<string>> {
+		Compute_targetInstances_list(project: string, zone: string, filter: string | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/targetInstances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -21048,7 +21048,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetInstances_insert(project: string, zone: string, requestId: string, requestBody: TargetInstance): Observable<HttpResponse<string>> {
+		Compute_targetInstances_insert(project: string, zone: string, requestId: string | null | undefined, requestBody: TargetInstance): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/targetInstances&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -21063,7 +21063,7 @@ export namespace MyNS {
 		 * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
 		 * @return {void} Successful response
 		 */
-		Compute_targetInstances_delete(project: string, zone: string, targetInstance: string, requestId: string): Observable<HttpResponse<string>> {
+		Compute_targetInstances_delete(project: string, zone: string, targetInstance: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/targetInstances/' + (targetInstance == null ? '' : encodeURIComponent(targetInstance)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '', { observe: 'response', responseType: 'text' });
 		}
 

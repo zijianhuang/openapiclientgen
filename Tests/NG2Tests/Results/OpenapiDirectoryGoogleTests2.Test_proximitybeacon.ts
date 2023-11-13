@@ -684,7 +684,7 @@ export namespace MyNS {
 		 * /v1beta1/beacons?q=status:active%20lat:51.123%20lng:-1.095%20radius:1000`
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_list(pageSize: number, pageToken: string, projectId: string, q: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_list(pageSize: number | null | undefined, pageToken: string | null | undefined, projectId: string | null | undefined, q: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/beacons?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -702,7 +702,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_register(projectId: string, requestBody: Beacon): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_register(projectId: string | null | undefined, requestBody: Beacon): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/beacons:register?projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -734,7 +734,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_namespaces_list(projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_namespaces_list(projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/namespaces?projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -760,7 +760,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_attachments_delete(attachmentName: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_attachments_delete(attachmentName: string, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1beta1/' + (attachmentName == null ? '' : encodeURIComponent(attachmentName)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -785,7 +785,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_delete(beaconName: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_delete(beaconName: string, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -814,7 +814,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_get(beaconName: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_get(beaconName: string, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -843,7 +843,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_update(beaconName: string, projectId: string, requestBody: Beacon): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_update(beaconName: string, projectId: string | null | undefined, requestBody: Beacon): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -877,7 +877,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_attachments_list(beaconName: string, namespacedType: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_attachments_list(beaconName: string, namespacedType: string | null | undefined, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + '/attachments&namespacedType=' + (namespacedType == null ? '' : encodeURIComponent(namespacedType)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -911,7 +911,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_attachments_create(beaconName: string, projectId: string, requestBody: BeaconAttachment): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_attachments_create(beaconName: string, projectId: string | null | undefined, requestBody: BeaconAttachment): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + '/attachments&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -946,7 +946,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_attachments_batchDelete(beaconName: string, namespacedType: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_attachments_batchDelete(beaconName: string, namespacedType: string | null | undefined, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + '/attachments:batchDelete&namespacedType=' + (namespacedType == null ? '' : encodeURIComponent(namespacedType)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -971,7 +971,7 @@ export namespace MyNS {
 		 * diagnostic records. Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_diagnostics_list(beaconName: string, alertFilter: Proximitybeacon_beacons_diagnostics_listAlertFilter, pageSize: number, pageToken: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_diagnostics_list(beaconName: string, alertFilter: Proximitybeacon_beacons_diagnostics_listAlertFilter | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + '/diagnostics&alertFilter=' + alertFilter + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -998,7 +998,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_activate(beaconName: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_activate(beaconName: string, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + ':activate&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1025,7 +1025,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_deactivate(beaconName: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_deactivate(beaconName: string, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + ':deactivate&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1052,7 +1052,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_beacons_decommission(beaconName: string, projectId: string): Observable<HttpResponse<string>> {
+		Proximitybeacon_beacons_decommission(beaconName: string, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (beaconName == null ? '' : encodeURIComponent(beaconName)) + ':decommission&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1068,7 +1068,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Proximitybeacon_namespaces_update(namespaceName: string, projectId: string, requestBody: Namespace): Observable<HttpResponse<string>> {
+		Proximitybeacon_namespaces_update(namespaceName: string, projectId: string | null | undefined, requestBody: Namespace): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1beta1/' + (namespaceName == null ? '' : encodeURIComponent(namespaceName)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

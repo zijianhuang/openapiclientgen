@@ -711,7 +711,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {BatchGetTracesResult} Success
 		 */
-		BatchGetTraces(NextToken: string, requestBody: BatchGetTracesPostBody): Observable<BatchGetTracesResult> {
+		BatchGetTraces(NextToken: string | null | undefined, requestBody: BatchGetTracesPostBody): Observable<BatchGetTracesResult> {
 			return this.http.post<BatchGetTracesResult>(this.baseUri + 'Traces?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -775,7 +775,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetGroupsResult} Success
 		 */
-		GetGroups(NextToken: string, requestBody: GetGroupsPostBody): Observable<GetGroupsResult> {
+		GetGroups(NextToken: string | null | undefined, requestBody: GetGroupsPostBody): Observable<GetGroupsResult> {
 			return this.http.post<GetGroupsResult>(this.baseUri + 'Groups?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -785,7 +785,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSamplingRulesResult} Success
 		 */
-		GetSamplingRules(NextToken: string, requestBody: GetSamplingRulesPostBody): Observable<GetSamplingRulesResult> {
+		GetSamplingRules(NextToken: string | null | undefined, requestBody: GetSamplingRulesPostBody): Observable<GetSamplingRulesResult> {
 			return this.http.post<GetSamplingRulesResult>(this.baseUri + 'GetSamplingRules?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -795,7 +795,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSamplingStatisticSummariesResult} Success
 		 */
-		GetSamplingStatisticSummaries(NextToken: string, requestBody: GetSamplingStatisticSummariesPostBody): Observable<GetSamplingStatisticSummariesResult> {
+		GetSamplingStatisticSummaries(NextToken: string | null | undefined, requestBody: GetSamplingStatisticSummariesPostBody): Observable<GetSamplingStatisticSummariesResult> {
 			return this.http.post<GetSamplingStatisticSummariesResult>(this.baseUri + 'SamplingStatisticSummaries?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -814,7 +814,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetServiceGraphResult} Success
 		 */
-		GetServiceGraph(NextToken: string, requestBody: GetServiceGraphPostBody): Observable<GetServiceGraphResult> {
+		GetServiceGraph(NextToken: string | null | undefined, requestBody: GetServiceGraphPostBody): Observable<GetServiceGraphResult> {
 			return this.http.post<GetServiceGraphResult>(this.baseUri + 'ServiceGraph?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -824,7 +824,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTimeSeriesServiceStatisticsResult} Success
 		 */
-		GetTimeSeriesServiceStatistics(NextToken: string, requestBody: GetTimeSeriesServiceStatisticsPostBody): Observable<GetTimeSeriesServiceStatisticsResult> {
+		GetTimeSeriesServiceStatistics(NextToken: string | null | undefined, requestBody: GetTimeSeriesServiceStatisticsPostBody): Observable<GetTimeSeriesServiceStatisticsResult> {
 			return this.http.post<GetTimeSeriesServiceStatisticsResult>(this.baseUri + 'TimeSeriesServiceStatistics?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -834,7 +834,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTraceGraphResult} Success
 		 */
-		GetTraceGraph(NextToken: string, requestBody: GetTraceGraphPostBody): Observable<GetTraceGraphResult> {
+		GetTraceGraph(NextToken: string | null | undefined, requestBody: GetTraceGraphPostBody): Observable<GetTraceGraphResult> {
 			return this.http.post<GetTraceGraphResult>(this.baseUri + 'TraceGraph?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -844,7 +844,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTraceSummariesResult} Success
 		 */
-		GetTraceSummaries(NextToken: string, requestBody: GetTraceSummariesPostBody): Observable<GetTraceSummariesResult> {
+		GetTraceSummaries(NextToken: string | null | undefined, requestBody: GetTraceSummariesPostBody): Observable<GetTraceSummariesResult> {
 			return this.http.post<GetTraceSummariesResult>(this.baseUri + 'TraceSummaries?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

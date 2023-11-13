@@ -189,7 +189,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {GetComplianceSummaryOutput} Success
 		 */
-		GetComplianceSummary(MaxResults: string, PaginationToken: string, requestBody: GetComplianceSummaryInput): Observable<GetComplianceSummaryOutput> {
+		GetComplianceSummary(MaxResults: string | null | undefined, PaginationToken: string | null | undefined, requestBody: GetComplianceSummaryInput): Observable<GetComplianceSummaryOutput> {
 			return this.http.post<GetComplianceSummaryOutput>(this.baseUri + '#X-Amz-Target=ResourceGroupsTaggingAPI_20170126.GetComplianceSummary?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -200,7 +200,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {GetResourcesOutput} Success
 		 */
-		GetResources(ResourcesPerPage: string, PaginationToken: string, requestBody: GetResourcesInput): Observable<GetResourcesOutput> {
+		GetResources(ResourcesPerPage: string | null | undefined, PaginationToken: string | null | undefined, requestBody: GetResourcesInput): Observable<GetResourcesOutput> {
 			return this.http.post<GetResourcesOutput>(this.baseUri + '#X-Amz-Target=ResourceGroupsTaggingAPI_20170126.GetResources?ResourcesPerPage=' + (ResourcesPerPage == null ? '' : encodeURIComponent(ResourcesPerPage)) + '&PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -210,7 +210,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {GetTagKeysOutput} Success
 		 */
-		GetTagKeys(PaginationToken: string, requestBody: GetTagKeysInput): Observable<GetTagKeysOutput> {
+		GetTagKeys(PaginationToken: string | null | undefined, requestBody: GetTagKeysInput): Observable<GetTagKeysOutput> {
 			return this.http.post<GetTagKeysOutput>(this.baseUri + '#X-Amz-Target=ResourceGroupsTaggingAPI_20170126.GetTagKeys?PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -220,7 +220,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {GetTagValuesOutput} Success
 		 */
-		GetTagValues(PaginationToken: string, requestBody: GetTagValuesInput): Observable<GetTagValuesOutput> {
+		GetTagValues(PaginationToken: string | null | undefined, requestBody: GetTagValuesInput): Observable<GetTagValuesOutput> {
 			return this.http.post<GetTagValuesOutput>(this.baseUri + '#X-Amz-Target=ResourceGroupsTaggingAPI_20170126.GetTagValues?PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

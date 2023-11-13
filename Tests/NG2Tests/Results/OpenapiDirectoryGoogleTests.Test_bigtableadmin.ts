@@ -1274,7 +1274,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreWarnings Required. If true, ignore safety checks when deleting the app profile.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_tables_delete(name: string, ignoreWarnings: boolean): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_tables_delete(name: string, ignoreWarnings: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&ignoreWarnings=' + ignoreWarnings, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1288,7 +1288,7 @@ export namespace MyNS {
 		 * Defaults to `SCHEMA_VIEW` if unspecified.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_tables_get(name: string, view: Bigtableadmin_projects_instances_tables_getView): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_tables_get(name: string, view: Bigtableadmin_projects_instances_tables_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 		 * If unset, all fields will be replaced.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_appProfiles_patch(name: string, ignoreWarnings: boolean, updateMask: string, requestBody: AppProfile): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_appProfiles_patch(name: string, ignoreWarnings: boolean | null | undefined, updateMask: string | null | undefined, requestBody: AppProfile): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&ignoreWarnings=' + ignoreWarnings + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1328,7 +1328,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1349,7 +1349,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_operations_projects_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_operations_projects_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1448,7 +1448,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The value of `next_page_token` returned by a previous call.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_appProfiles_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_appProfiles_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/appProfiles&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1464,7 +1464,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreWarnings If true, ignore safety checks when creating the app profile.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_appProfiles_create(parent: string, appProfileId: string, ignoreWarnings: boolean, requestBody: AppProfile): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_appProfiles_create(parent: string, appProfileId: string | null | undefined, ignoreWarnings: boolean | null | undefined, requestBody: AppProfile): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/appProfiles&appProfileId=' + (appProfileId == null ? '' : encodeURIComponent(appProfileId)) + '&ignoreWarnings=' + ignoreWarnings, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1478,7 +1478,7 @@ export namespace MyNS {
 		 * @param {string} pageToken DEPRECATED: This field is unused and ignored.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_clusters_list(parent: string, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_clusters_list(parent: string, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/clusters&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1493,7 +1493,7 @@ export namespace MyNS {
 		 * `projects/myproject/instances/myinstance/clusters/mycluster`.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_clusters_create(parent: string, clusterId: string, requestBody: Cluster): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_clusters_create(parent: string, clusterId: string | null | undefined, requestBody: Cluster): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/clusters&clusterId=' + (clusterId == null ? '' : encodeURIComponent(clusterId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 		 * @param {string} pageToken DEPRECATED: This field is unused and ignored.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_list(parent: string, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_list(parent: string, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/instances&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1537,7 +1537,7 @@ export namespace MyNS {
 		 * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_tables_list(parent: string, pageSize: number, pageToken: string, view: Bigtableadmin_projects_instances_tables_getView): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_tables_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Bigtableadmin_projects_instances_tables_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tables&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 

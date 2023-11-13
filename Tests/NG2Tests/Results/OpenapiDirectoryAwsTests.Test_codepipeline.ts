@@ -1434,7 +1434,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListActionExecutionsOutput} Success
 		 */
-		ListActionExecutions(maxResults: string, nextToken: string, requestBody: ListActionExecutionsInput): Observable<ListActionExecutionsOutput> {
+		ListActionExecutions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListActionExecutionsInput): Observable<ListActionExecutionsOutput> {
 			return this.http.post<ListActionExecutionsOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListActionExecutions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1444,7 +1444,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListActionTypesOutput} Success
 		 */
-		ListActionTypes(nextToken: string, requestBody: ListActionTypesInput): Observable<ListActionTypesOutput> {
+		ListActionTypes(nextToken: string | null | undefined, requestBody: ListActionTypesInput): Observable<ListActionTypesOutput> {
 			return this.http.post<ListActionTypesOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListActionTypes?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPipelineExecutionsOutput} Success
 		 */
-		ListPipelineExecutions(maxResults: string, nextToken: string, requestBody: ListPipelineExecutionsInput): Observable<ListPipelineExecutionsOutput> {
+		ListPipelineExecutions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListPipelineExecutionsInput): Observable<ListPipelineExecutionsOutput> {
 			return this.http.post<ListPipelineExecutionsOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListPipelineExecutions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1465,7 +1465,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPipelinesOutput} Success
 		 */
-		ListPipelines(nextToken: string, requestBody: ListPipelinesInput): Observable<ListPipelinesOutput> {
+		ListPipelines(nextToken: string | null | undefined, requestBody: ListPipelinesInput): Observable<ListPipelinesOutput> {
 			return this.http.post<ListPipelinesOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListPipelines?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1476,7 +1476,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTagsForResourceOutput} Success
 		 */
-		ListTagsForResource(maxResults: string, nextToken: string, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
+		ListTagsForResource(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
 			return this.http.post<ListTagsForResourceOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListTagsForResource?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1487,7 +1487,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWebhooksOutput} Success
 		 */
-		ListWebhooks(MaxResults: string, NextToken: string, requestBody: ListWebhooksInput): Observable<ListWebhooksOutput> {
+		ListWebhooks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWebhooksInput): Observable<ListWebhooksOutput> {
 			return this.http.post<ListWebhooksOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListWebhooks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

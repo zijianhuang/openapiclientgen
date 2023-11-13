@@ -291,7 +291,7 @@ export namespace MyNS {
 		 * @param {string} marketplace_id This path parameter specifies the eBay marketplace for which policy information is retrieved. &gt;Note: Only the following eBay marketplaces support automotive parts compatibility: EBAY_US EBAY_AU EBAY_CA EBAY_DE EBAY_ES EBAY_FR EBAY_GB EBAY_IT
 		 * @return {AutomotivePartsCompatibilityPolicyResponse} Success
 		 */
-		GetAutomotivePartsCompatibilityPolicies(filter: string, marketplace_id: string): Promise<AutomotivePartsCompatibilityPolicyResponse> {
+		GetAutomotivePartsCompatibilityPolicies(filter: string | null | undefined, marketplace_id: string): Promise<AutomotivePartsCompatibilityPolicyResponse> {
 			return Axios.get<AutomotivePartsCompatibilityPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_automotive_parts_compatibility_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
@@ -302,7 +302,7 @@ export namespace MyNS {
 		 * @param {string} marketplace_id This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.
 		 * @return {ItemConditionPolicyResponse} Success
 		 */
-		GetItemConditionPolicies(filter: string, marketplace_id: string): Promise<ItemConditionPolicyResponse> {
+		GetItemConditionPolicies(filter: string | null | undefined, marketplace_id: string): Promise<ItemConditionPolicyResponse> {
 			return Axios.get<ItemConditionPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_item_condition_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
@@ -313,7 +313,7 @@ export namespace MyNS {
 		 * @param {string} marketplace_id This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.
 		 * @return {ListingStructurePolicyResponse} Success
 		 */
-		GetListingStructurePolicies(filter: string, marketplace_id: string): Promise<ListingStructurePolicyResponse> {
+		GetListingStructurePolicies(filter: string | null | undefined, marketplace_id: string): Promise<ListingStructurePolicyResponse> {
 			return Axios.get<ListingStructurePolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_listing_structure_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
@@ -324,7 +324,7 @@ export namespace MyNS {
 		 * @param {string} marketplace_id This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.
 		 * @return {NegotiatedPricePolicyResponse} Success
 		 */
-		GetNegotiatedPricePolicies(filter: string, marketplace_id: string): Promise<NegotiatedPricePolicyResponse> {
+		GetNegotiatedPricePolicies(filter: string | null | undefined, marketplace_id: string): Promise<NegotiatedPricePolicyResponse> {
 			return Axios.get<NegotiatedPricePolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_negotiated_price_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
@@ -335,7 +335,7 @@ export namespace MyNS {
 		 * @param {string} marketplace_id This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.
 		 * @return {ProductAdoptionPolicyResponse} Success
 		 */
-		GetProductAdoptionPolicies(filter: string, marketplace_id: string): Promise<ProductAdoptionPolicyResponse> {
+		GetProductAdoptionPolicies(filter: string | null | undefined, marketplace_id: string): Promise<ProductAdoptionPolicyResponse> {
 			return Axios.get<ProductAdoptionPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_product_adoption_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
@@ -346,7 +346,7 @@ export namespace MyNS {
 		 * @param {string} marketplace_id This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.
 		 * @return {ReturnPolicyResponse} Success
 		 */
-		GetReturnPolicies(filter: string, marketplace_id: string): Promise<ReturnPolicyResponse> {
+		GetReturnPolicies(filter: string | null | undefined, marketplace_id: string): Promise<ReturnPolicyResponse> {
 			return Axios.get<ReturnPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_return_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 	}

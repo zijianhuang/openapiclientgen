@@ -1002,7 +1002,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token identifying which result to start with, which is returned by a previous list call.<br><br> Pagination is only supported when querying for a specific function.
 		 * @return {void} Successful response
 		 */
-		Cloudfunctions_operations_list(filter: string, name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudfunctions_operations_list(filter: string | null | undefined, name: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/operations?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1049,7 +1049,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Required list of fields to be updated in this request.
 		 * @return {void} Successful response
 		 */
-		Cloudfunctions_projects_locations_functions_patch(name: string, updateMask: string, requestBody: CloudFunction): Observable<HttpResponse<string>> {
+		Cloudfunctions_projects_locations_functions_patch(name: string, updateMask: string | null | undefined, requestBody: CloudFunction): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1062,7 +1062,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Cloudfunctions_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudfunctions_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1110,7 +1110,7 @@ export namespace MyNS {
 		 * system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Cloudfunctions_projects_locations_functions_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudfunctions_projects_locations_functions_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/functions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1158,7 +1158,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Cloudfunctions_projects_locations_functions_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Cloudfunctions_projects_locations_functions_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

@@ -416,7 +416,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSignalingChannelsOutput} Success
 		 */
-		ListSignalingChannels(MaxResults: string, NextToken: string, requestBody: ListSignalingChannelsPostBody): Observable<ListSignalingChannelsOutput> {
+		ListSignalingChannels(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListSignalingChannelsPostBody): Observable<ListSignalingChannelsOutput> {
 			return this.http.post<ListSignalingChannelsOutput>(this.baseUri + 'listSignalingChannels?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -427,7 +427,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListStreamsOutput} Success
 		 */
-		ListStreams(MaxResults: string, NextToken: string, requestBody: ListStreamsPostBody): Observable<ListStreamsOutput> {
+		ListStreams(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListStreamsPostBody): Observable<ListStreamsOutput> {
 			return this.http.post<ListStreamsOutput>(this.baseUri + 'listStreams?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

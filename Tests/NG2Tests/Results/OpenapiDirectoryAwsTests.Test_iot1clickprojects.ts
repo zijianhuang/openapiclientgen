@@ -268,7 +268,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.
 		 * @return {ListPlacementsResponse} Success
 		 */
-		ListPlacements(projectName: string, nextToken: string, maxResults: number): Observable<ListPlacementsResponse> {
+		ListPlacements(projectName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPlacementsResponse> {
 			return this.http.get<ListPlacementsResponse>(this.baseUri + 'projects/' + (projectName == null ? '' : encodeURIComponent(projectName)) + '/placements&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -288,7 +288,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.
 		 * @return {ListProjectsResponse} Success
 		 */
-		ListProjects(nextToken: string, maxResults: number): Observable<ListProjectsResponse> {
+		ListProjects(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProjectsResponse> {
 			return this.http.get<ListProjectsResponse>(this.baseUri + 'projects?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 

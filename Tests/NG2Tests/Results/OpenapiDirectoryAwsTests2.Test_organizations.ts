@@ -1090,7 +1090,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAWSServiceAccessForOrganizationResponse} Success
 		 */
-		ListAWSServiceAccessForOrganization(MaxResults: string, NextToken: string, requestBody: ListAWSServiceAccessForOrganizationRequest): Observable<ListAWSServiceAccessForOrganizationResponse> {
+		ListAWSServiceAccessForOrganization(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAWSServiceAccessForOrganizationRequest): Observable<ListAWSServiceAccessForOrganizationResponse> {
 			return this.http.post<ListAWSServiceAccessForOrganizationResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListAWSServiceAccessForOrganization?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1101,7 +1101,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAccountsResponse} Success
 		 */
-		ListAccounts(MaxResults: string, NextToken: string, requestBody: ListAccountsRequest): Observable<ListAccountsResponse> {
+		ListAccounts(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAccountsRequest): Observable<ListAccountsResponse> {
 			return this.http.post<ListAccountsResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListAccounts?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1112,7 +1112,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAccountsForParentResponse} Success
 		 */
-		ListAccountsForParent(MaxResults: string, NextToken: string, requestBody: ListAccountsForParentRequest): Observable<ListAccountsForParentResponse> {
+		ListAccountsForParent(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAccountsForParentRequest): Observable<ListAccountsForParentResponse> {
 			return this.http.post<ListAccountsForParentResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListAccountsForParent?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1123,7 +1123,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChildrenResponse} Success
 		 */
-		ListChildren(MaxResults: string, NextToken: string, requestBody: ListChildrenRequest): Observable<ListChildrenResponse> {
+		ListChildren(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListChildrenRequest): Observable<ListChildrenResponse> {
 			return this.http.post<ListChildrenResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListChildren?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCreateAccountStatusResponse} Success
 		 */
-		ListCreateAccountStatus(MaxResults: string, NextToken: string, requestBody: ListCreateAccountStatusRequest): Observable<ListCreateAccountStatusResponse> {
+		ListCreateAccountStatus(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCreateAccountStatusRequest): Observable<ListCreateAccountStatusResponse> {
 			return this.http.post<ListCreateAccountStatusResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListCreateAccountStatus?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1145,7 +1145,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDelegatedAdministratorsResponse} Success
 		 */
-		ListDelegatedAdministrators(MaxResults: string, NextToken: string, requestBody: ListDelegatedAdministratorsRequest): Observable<ListDelegatedAdministratorsResponse> {
+		ListDelegatedAdministrators(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDelegatedAdministratorsRequest): Observable<ListDelegatedAdministratorsResponse> {
 			return this.http.post<ListDelegatedAdministratorsResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListDelegatedAdministrators?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1156,7 +1156,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDelegatedServicesForAccountResponse} Success
 		 */
-		ListDelegatedServicesForAccount(MaxResults: string, NextToken: string, requestBody: ListDelegatedServicesForAccountRequest): Observable<ListDelegatedServicesForAccountResponse> {
+		ListDelegatedServicesForAccount(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDelegatedServicesForAccountRequest): Observable<ListDelegatedServicesForAccountResponse> {
 			return this.http.post<ListDelegatedServicesForAccountResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListDelegatedServicesForAccount?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1167,7 +1167,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHandshakesForAccountResponse} Success
 		 */
-		ListHandshakesForAccount(MaxResults: string, NextToken: string, requestBody: ListHandshakesForAccountRequest): Observable<ListHandshakesForAccountResponse> {
+		ListHandshakesForAccount(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListHandshakesForAccountRequest): Observable<ListHandshakesForAccountResponse> {
 			return this.http.post<ListHandshakesForAccountResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListHandshakesForAccount?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHandshakesForOrganizationResponse} Success
 		 */
-		ListHandshakesForOrganization(MaxResults: string, NextToken: string, requestBody: ListHandshakesForOrganizationRequest): Observable<ListHandshakesForOrganizationResponse> {
+		ListHandshakesForOrganization(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListHandshakesForOrganizationRequest): Observable<ListHandshakesForOrganizationResponse> {
 			return this.http.post<ListHandshakesForOrganizationResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListHandshakesForOrganization?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1189,7 +1189,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOrganizationalUnitsForParentResponse} Success
 		 */
-		ListOrganizationalUnitsForParent(MaxResults: string, NextToken: string, requestBody: ListOrganizationalUnitsForParentRequest): Observable<ListOrganizationalUnitsForParentResponse> {
+		ListOrganizationalUnitsForParent(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListOrganizationalUnitsForParentRequest): Observable<ListOrganizationalUnitsForParentResponse> {
 			return this.http.post<ListOrganizationalUnitsForParentResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListOrganizationalUnitsForParent?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1200,7 +1200,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListParentsResponse} Success
 		 */
-		ListParents(MaxResults: string, NextToken: string, requestBody: ListParentsRequest): Observable<ListParentsResponse> {
+		ListParents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListParentsRequest): Observable<ListParentsResponse> {
 			return this.http.post<ListParentsResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListParents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1211,7 +1211,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPoliciesResponse} Success
 		 */
-		ListPolicies(MaxResults: string, NextToken: string, requestBody: ListPoliciesRequest): Observable<ListPoliciesResponse> {
+		ListPolicies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPoliciesRequest): Observable<ListPoliciesResponse> {
 			return this.http.post<ListPoliciesResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListPolicies?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1222,7 +1222,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPoliciesForTargetResponse} Success
 		 */
-		ListPoliciesForTarget(MaxResults: string, NextToken: string, requestBody: ListPoliciesForTargetRequest): Observable<ListPoliciesForTargetResponse> {
+		ListPoliciesForTarget(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPoliciesForTargetRequest): Observable<ListPoliciesForTargetResponse> {
 			return this.http.post<ListPoliciesForTargetResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListPoliciesForTarget?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1233,7 +1233,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRootsResponse} Success
 		 */
-		ListRoots(MaxResults: string, NextToken: string, requestBody: ListRootsRequest): Observable<ListRootsResponse> {
+		ListRoots(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListRootsRequest): Observable<ListRootsResponse> {
 			return this.http.post<ListRootsResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListRoots?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1243,7 +1243,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(NextToken: string, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(NextToken: string | null | undefined, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListTagsForResource?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1254,7 +1254,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTargetsForPolicyResponse} Success
 		 */
-		ListTargetsForPolicy(MaxResults: string, NextToken: string, requestBody: ListTargetsForPolicyRequest): Observable<ListTargetsForPolicyResponse> {
+		ListTargetsForPolicy(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTargetsForPolicyRequest): Observable<ListTargetsForPolicyResponse> {
 			return this.http.post<ListTargetsForPolicyResponse>(this.baseUri + '#X-Amz-Target=AWSOrganizationsV20161128.ListTargetsForPolicy?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

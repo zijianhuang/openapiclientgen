@@ -1301,7 +1301,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListAccessPoliciesResponse} Success
 		 */
-		ListAccessPolicies(identityType: IdentityType, identityId: string, resourceType: ResourceType, resourceId: string, nextToken: string, maxResults: number): Observable<ListAccessPoliciesResponse> {
+		ListAccessPolicies(identityType: IdentityType | null | undefined, identityId: string | null | undefined, resourceType: ResourceType | null | undefined, resourceId: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAccessPoliciesResponse> {
 			return this.http.get<ListAccessPoliciesResponse>(this.baseUri + 'access-policies?identityType=' + identityType + '&identityId=' + (identityId == null ? '' : encodeURIComponent(identityId)) + '&resourceType=' + resourceType + '&resourceId=' + (resourceId == null ? '' : encodeURIComponent(resourceId)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1323,7 +1323,7 @@ export namespace MyNS {
 		 * @param {ListAssetsFilter} filter <p>The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li> </ul>
 		 * @return {ListAssetsResponse} Success
 		 */
-		ListAssets(nextToken: string, maxResults: number, assetModelId: string, filter: ListAssetsFilter): Observable<ListAssetsResponse> {
+		ListAssets(nextToken: string | null | undefined, maxResults: number | null | undefined, assetModelId: string | null | undefined, filter: ListAssetsFilter | null | undefined): Observable<ListAssetsResponse> {
 			return this.http.get<ListAssetsResponse>(this.baseUri + 'assets?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&assetModelId=' + (assetModelId == null ? '' : encodeURIComponent(assetModelId)) + '&filter=' + filter, {});
 		}
 
@@ -1343,7 +1343,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListAssetModelsResponse} Success
 		 */
-		ListAssetModels(nextToken: string, maxResults: number): Observable<ListAssetModelsResponse> {
+		ListAssetModels(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssetModelsResponse> {
 			return this.http.get<ListAssetModelsResponse>(this.baseUri + 'asset-models?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1372,7 +1372,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListGatewaysResponse} Success
 		 */
-		ListGateways(nextToken: string, maxResults: number): Observable<ListGatewaysResponse> {
+		ListGateways(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListGatewaysResponse> {
 			return this.http.get<ListGatewaysResponse>(this.baseUri + '20200301/gateways?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1392,7 +1392,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListPortalsResponse} Success
 		 */
-		ListPortals(nextToken: string, maxResults: number): Observable<ListPortalsResponse> {
+		ListPortals(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPortalsResponse> {
 			return this.http.get<ListPortalsResponse>(this.baseUri + 'portals?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1412,7 +1412,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteAccessPolicy(accessPolicyId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteAccessPolicy(accessPolicyId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'access-policies/' + (accessPolicyId == null ? '' : encodeURIComponent(accessPolicyId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteAsset(assetId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteAsset(assetId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'assets/' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1474,7 +1474,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteAssetModel(assetModelId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteAssetModel(assetModelId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'asset-models/' + (assetModelId == null ? '' : encodeURIComponent(assetModelId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteDashboard(dashboardId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteDashboard(dashboardId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'dashboards/' + (dashboardId == null ? '' : encodeURIComponent(dashboardId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1566,7 +1566,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeletePortal(portalId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeletePortal(portalId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'portals/' + (portalId == null ? '' : encodeURIComponent(portalId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteProject(projectId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteProject(projectId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {GetAssetPropertyAggregatesResponse} Success
 		 */
-		GetAssetPropertyAggregates(assetId: string, propertyId: string, propertyAlias: string, aggregateTypes: Array<AggregateType>, resolution: string, qualities: Array<Quality>, startDate: Date, endDate: Date, timeOrdering: TimeOrdering, nextToken: string, maxResults: number): Observable<GetAssetPropertyAggregatesResponse> {
+		GetAssetPropertyAggregates(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, aggregateTypes: Array<AggregateType>, resolution: string, qualities: Array<Quality> | null | undefined, startDate: Date, endDate: Date, timeOrdering: TimeOrdering | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetAssetPropertyAggregatesResponse> {
 			return this.http.get<GetAssetPropertyAggregatesResponse>(this.baseUri + 'properties/aggregates#aggregateTypes&resolution&startDate&endDate?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)) + '&' + aggregateTypes.map(z => `aggregateTypes=${z}`).join('&') + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&' + qualities.map(z => `qualities=${z}`).join('&') + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&timeOrdering=' + timeOrdering + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1710,7 +1710,7 @@ export namespace MyNS {
 		 * @param {string} propertyAlias The property alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
 		 * @return {GetAssetPropertyValueResponse} Success
 		 */
-		GetAssetPropertyValue(assetId: string, propertyId: string, propertyAlias: string): Observable<GetAssetPropertyValueResponse> {
+		GetAssetPropertyValue(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined): Observable<GetAssetPropertyValueResponse> {
 			return this.http.get<GetAssetPropertyValueResponse>(this.baseUri + 'properties/latest?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)), {});
 		}
 
@@ -1728,7 +1728,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {GetAssetPropertyValueHistoryResponse} Success
 		 */
-		GetAssetPropertyValueHistory(assetId: string, propertyId: string, propertyAlias: string, startDate: Date, endDate: Date, qualities: Array<Quality>, timeOrdering: TimeOrdering, nextToken: string, maxResults: number): Observable<GetAssetPropertyValueHistoryResponse> {
+		GetAssetPropertyValueHistory(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, startDate: Date, endDate: Date, qualities: Array<Quality> | null | undefined, timeOrdering: TimeOrdering | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetAssetPropertyValueHistoryResponse> {
 			return this.http.get<GetAssetPropertyValueHistoryResponse>(this.baseUri + 'properties/history#startDate&endDate?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)) + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&' + qualities.map(z => `qualities=${z}`).join('&') + '&timeOrdering=' + timeOrdering + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1741,7 +1741,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListAssociatedAssetsResponse} Success
 		 */
-		ListAssociatedAssets(assetId: string, hierarchyId: string, nextToken: string, maxResults: number): Observable<ListAssociatedAssetsResponse> {
+		ListAssociatedAssets(assetId: string, hierarchyId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssociatedAssetsResponse> {
 			return this.http.get<ListAssociatedAssetsResponse>(this.baseUri + 'assets/' + (assetId == null ? '' : encodeURIComponent(assetId)) + '/hierarchies#hierarchyId&hierarchyId=' + (hierarchyId == null ? '' : encodeURIComponent(hierarchyId)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1753,7 +1753,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListDashboardsResponse} Success
 		 */
-		ListDashboards(projectId: string, nextToken: string, maxResults: number): Observable<ListDashboardsResponse> {
+		ListDashboards(projectId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDashboardsResponse> {
 			return this.http.get<ListDashboardsResponse>(this.baseUri + 'dashboards#projectId?projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListProjectAssetsResponse} Success
 		 */
-		ListProjectAssets(projectId: string, nextToken: string, maxResults: number): Observable<ListProjectAssetsResponse> {
+		ListProjectAssets(projectId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProjectAssetsResponse> {
 			return this.http.get<ListProjectAssetsResponse>(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/assets&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1777,7 +1777,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListProjectsResponse} Success
 		 */
-		ListProjects(portalId: string, nextToken: string, maxResults: number): Observable<ListProjectsResponse> {
+		ListProjects(portalId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProjectsResponse> {
 			return this.http.get<ListProjectsResponse>(this.baseUri + 'projects#portalId?portalId=' + (portalId == null ? '' : encodeURIComponent(portalId)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 

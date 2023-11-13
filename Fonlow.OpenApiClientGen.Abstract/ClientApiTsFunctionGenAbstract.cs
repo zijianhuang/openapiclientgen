@@ -6,6 +6,7 @@ using System.CodeDom;
 using System.Diagnostics;
 using System.Text;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -138,7 +139,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			builder.AppendLine(HttpMethod + " " + RelativePath);
-			foreach (ParameterDescription item in ParameterDescriptions)
+			foreach (ParameterDescription item in this.ParameterDescriptions)
 			{
 				CodeTypeReference tsParameterType = item.ParameterTypeReference;
 				if (!String.IsNullOrEmpty(item.Documentation))
@@ -187,6 +188,16 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			return s;
+		}
+
+		protected CodeParameterDeclarationExpression[] CreateCodeParameterDeclarationExpressions()
+		{
+			return this.ParameterDescriptions.Select(d =>
+			{
+				var optionalNullTypeText = d.ParameterDescriptor.IsRequired ? String.Empty : " | null | undefined";
+				//var optionalParamText = d.ParameterDescriptor.IsRequired ? String.Empty : "?";
+				return new CodeParameterDeclarationExpression(TypeMapper.MapCodeTypeReferenceToTsText(d.ParameterTypeReference) + optionalNullTypeText, d.Name);
+			}).ToArray();
 		}
 
 		protected abstract CodeMemberMethod CreateMethodName();

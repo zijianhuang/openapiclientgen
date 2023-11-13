@@ -422,7 +422,7 @@ export namespace MyNS {
 		 * @param {string} nextToken String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @return {ListSigningJobsResponse} Success
 		 */
-		ListSigningJobs(status: DescribeSigningJobResponseStatus, platformId: string, requestedBy: string, maxResults: number, nextToken: string): Observable<ListSigningJobsResponse> {
+		ListSigningJobs(status: DescribeSigningJobResponseStatus | null | undefined, platformId: string | null | undefined, requestedBy: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSigningJobsResponse> {
 			return this.http.get<ListSigningJobsResponse>(this.baseUri + 'signing-jobs?status=' + status + '&platformId=' + (platformId == null ? '' : encodeURIComponent(platformId)) + '&requestedBy=' + (requestedBy == null ? '' : encodeURIComponent(requestedBy)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @return {ListSigningPlatformsResponse} Success
 		 */
-		ListSigningPlatforms(category: string, partner: string, target: string, maxResults: number, nextToken: string): Observable<ListSigningPlatformsResponse> {
+		ListSigningPlatforms(category: string | null | undefined, partner: string | null | undefined, target: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSigningPlatformsResponse> {
 			return this.http.get<ListSigningPlatformsResponse>(this.baseUri + 'signing-platforms?category=' + (category == null ? '' : encodeURIComponent(category)) + '&partner=' + (partner == null ? '' : encodeURIComponent(partner)) + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -457,7 +457,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @return {ListSigningProfilesResponse} Success
 		 */
-		ListSigningProfiles(includeCanceled: boolean, maxResults: number, nextToken: string): Observable<ListSigningProfilesResponse> {
+		ListSigningProfiles(includeCanceled: boolean | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSigningProfilesResponse> {
 			return this.http.get<ListSigningProfilesResponse>(this.baseUri + 'signing-profiles?includeCanceled=' + includeCanceled + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 

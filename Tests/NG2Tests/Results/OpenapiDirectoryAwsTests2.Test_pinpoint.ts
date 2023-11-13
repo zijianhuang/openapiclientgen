@@ -3941,7 +3941,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetAppsResponse} Success
 		 */
-		GetApps(page_size: string, token: string): Observable<GetAppsResponse> {
+		GetApps(page_size: string | null | undefined, token: string | null | undefined): Observable<GetAppsResponse> {
 			return this.http.get<GetAppsResponse>(this.baseUri + 'v1/apps?page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -3963,7 +3963,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetCampaignsResponse} Success
 		 */
-		GetCampaigns(application_id: string, page_size: string, token: string): Observable<GetCampaignsResponse> {
+		GetCampaigns(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetCampaignsResponse> {
 			return this.http.get<GetCampaignsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/campaigns&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -3984,7 +3984,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		DeleteEmailTemplate(template_name: string, version: string): Observable<HttpResponse<string>> {
+		DeleteEmailTemplate(template_name: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/email&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3995,7 +3995,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {GetEmailTemplateResponse} Success
 		 */
-		GetEmailTemplate(template_name: string, version: string): Observable<GetEmailTemplateResponse> {
+		GetEmailTemplate(template_name: string, version: string | null | undefined): Observable<GetEmailTemplateResponse> {
 			return this.http.get<GetEmailTemplateResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/email&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -4007,7 +4007,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		UpdateEmailTemplate(create_new_version: boolean, template_name: string, version: string, requestBody: UpdateEmailTemplatePutBody): Observable<HttpResponse<string>> {
+		UpdateEmailTemplate(create_new_version: boolean | null | undefined, template_name: string, version: string | null | undefined, requestBody: UpdateEmailTemplatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/email?create_new_version=' + create_new_version + '&version=' + (version == null ? '' : encodeURIComponent(version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4029,7 +4029,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetExportJobsResponse} Success
 		 */
-		GetExportJobs(application_id: string, page_size: string, token: string): Observable<GetExportJobsResponse> {
+		GetExportJobs(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetExportJobsResponse> {
 			return this.http.get<GetExportJobsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/jobs/export&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4051,7 +4051,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetImportJobsResponse} Success
 		 */
-		GetImportJobs(application_id: string, page_size: string, token: string): Observable<GetImportJobsResponse> {
+		GetImportJobs(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetImportJobsResponse> {
 			return this.http.get<GetImportJobsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/jobs/import&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4073,7 +4073,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListJourneysResponse} Success
 		 */
-		ListJourneys(application_id: string, page_size: string, token: string): Observable<ListJourneysResponse> {
+		ListJourneys(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<ListJourneysResponse> {
 			return this.http.get<ListJourneysResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/journeys&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4094,7 +4094,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		DeletePushTemplate(template_name: string, version: string): Observable<HttpResponse<string>> {
+		DeletePushTemplate(template_name: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/push&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4105,7 +4105,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {GetPushTemplateResponse} Success
 		 */
-		GetPushTemplate(template_name: string, version: string): Observable<GetPushTemplateResponse> {
+		GetPushTemplate(template_name: string, version: string | null | undefined): Observable<GetPushTemplateResponse> {
 			return this.http.get<GetPushTemplateResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/push&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -4117,7 +4117,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		UpdatePushTemplate(create_new_version: boolean, template_name: string, version: string, requestBody: UpdatePushTemplatePutBody): Observable<HttpResponse<string>> {
+		UpdatePushTemplate(create_new_version: boolean | null | undefined, template_name: string, version: string | null | undefined, requestBody: UpdatePushTemplatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/push?create_new_version=' + create_new_version + '&version=' + (version == null ? '' : encodeURIComponent(version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4137,7 +4137,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetRecommenderConfigurationsResponse} Success
 		 */
-		GetRecommenderConfigurations(page_size: string, token: string): Observable<GetRecommenderConfigurationsResponse> {
+		GetRecommenderConfigurations(page_size: string | null | undefined, token: string | null | undefined): Observable<GetRecommenderConfigurationsResponse> {
 			return this.http.get<GetRecommenderConfigurationsResponse>(this.baseUri + 'v1/recommenders?page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4159,7 +4159,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetSegmentsResponse} Success
 		 */
-		GetSegments(application_id: string, page_size: string, token: string): Observable<GetSegmentsResponse> {
+		GetSegments(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetSegmentsResponse> {
 			return this.http.get<GetSegmentsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/segments&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4180,7 +4180,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		DeleteSmsTemplate(template_name: string, version: string): Observable<HttpResponse<string>> {
+		DeleteSmsTemplate(template_name: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/sms&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4191,7 +4191,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {GetSmsTemplateResponse} Success
 		 */
-		GetSmsTemplate(template_name: string, version: string): Observable<GetSmsTemplateResponse> {
+		GetSmsTemplate(template_name: string, version: string | null | undefined): Observable<GetSmsTemplateResponse> {
 			return this.http.get<GetSmsTemplateResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/sms&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -4203,7 +4203,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		UpdateSmsTemplate(create_new_version: boolean, template_name: string, version: string, requestBody: UpdateSmsTemplatePutBody): Observable<HttpResponse<string>> {
+		UpdateSmsTemplate(create_new_version: boolean | null | undefined, template_name: string, version: string | null | undefined, requestBody: UpdateSmsTemplatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/sms?create_new_version=' + create_new_version + '&version=' + (version == null ? '' : encodeURIComponent(version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4224,7 +4224,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		DeleteVoiceTemplate(template_name: string, version: string): Observable<HttpResponse<string>> {
+		DeleteVoiceTemplate(template_name: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/voice&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4235,7 +4235,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {GetVoiceTemplateResponse} Success
 		 */
-		GetVoiceTemplate(template_name: string, version: string): Observable<GetVoiceTemplateResponse> {
+		GetVoiceTemplate(template_name: string, version: string | null | undefined): Observable<GetVoiceTemplateResponse> {
 			return this.http.get<GetVoiceTemplateResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/voice&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -4247,7 +4247,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		UpdateVoiceTemplate(create_new_version: boolean, template_name: string, version: string, requestBody: UpdateVoiceTemplatePutBody): Observable<HttpResponse<string>> {
+		UpdateVoiceTemplate(create_new_version: boolean | null | undefined, template_name: string, version: string | null | undefined, requestBody: UpdateVoiceTemplatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/voice?create_new_version=' + create_new_version + '&version=' + (version == null ? '' : encodeURIComponent(version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4796,7 +4796,7 @@ export namespace MyNS {
 		 * @param {Date} start_time The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 		 * @return {GetApplicationDateRangeKpiResponse} Success
 		 */
-		GetApplicationDateRangeKpi(application_id: string, end_time: Date, kpi_name: string, next_token: string, page_size: string, start_time: Date): Observable<GetApplicationDateRangeKpiResponse> {
+		GetApplicationDateRangeKpi(application_id: string, end_time: Date | null | undefined, kpi_name: string, next_token: string | null | undefined, page_size: string | null | undefined, start_time: Date | null | undefined): Observable<GetApplicationDateRangeKpiResponse> {
 			return this.http.get<GetApplicationDateRangeKpiResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/kpis/daterange/' + (kpi_name == null ? '' : encodeURIComponent(kpi_name)) + '&end_time=' + end_time.toISOString() + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&start_time=' + start_time.toISOString(), {});
 		}
 
@@ -4829,7 +4829,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetCampaignActivitiesResponse} Success
 		 */
-		GetCampaignActivities(application_id: string, campaign_id: string, page_size: string, token: string): Observable<GetCampaignActivitiesResponse> {
+		GetCampaignActivities(application_id: string, campaign_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetCampaignActivitiesResponse> {
 			return this.http.get<GetCampaignActivitiesResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/campaigns/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/activities&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4845,7 +4845,7 @@ export namespace MyNS {
 		 * @param {Date} start_time The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 		 * @return {GetCampaignDateRangeKpiResponse} Success
 		 */
-		GetCampaignDateRangeKpi(application_id: string, campaign_id: string, end_time: Date, kpi_name: string, next_token: string, page_size: string, start_time: Date): Observable<GetCampaignDateRangeKpiResponse> {
+		GetCampaignDateRangeKpi(application_id: string, campaign_id: string, end_time: Date | null | undefined, kpi_name: string, next_token: string | null | undefined, page_size: string | null | undefined, start_time: Date | null | undefined): Observable<GetCampaignDateRangeKpiResponse> {
 			return this.http.get<GetCampaignDateRangeKpiResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/campaigns/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/kpis/daterange/' + (kpi_name == null ? '' : encodeURIComponent(kpi_name)) + '&end_time=' + end_time.toISOString() + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&start_time=' + start_time.toISOString(), {});
 		}
 
@@ -4870,7 +4870,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetCampaignVersionsResponse} Success
 		 */
-		GetCampaignVersions(application_id: string, campaign_id: string, page_size: string, token: string): Observable<GetCampaignVersionsResponse> {
+		GetCampaignVersions(application_id: string, campaign_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetCampaignVersionsResponse> {
 			return this.http.get<GetCampaignVersionsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/campaigns/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/versions&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4918,7 +4918,7 @@ export namespace MyNS {
 		 * @param {Date} start_time The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 		 * @return {GetJourneyDateRangeKpiResponse} Success
 		 */
-		GetJourneyDateRangeKpi(application_id: string, end_time: Date, journey_id: string, kpi_name: string, next_token: string, page_size: string, start_time: Date): Observable<GetJourneyDateRangeKpiResponse> {
+		GetJourneyDateRangeKpi(application_id: string, end_time: Date | null | undefined, journey_id: string, kpi_name: string, next_token: string | null | undefined, page_size: string | null | undefined, start_time: Date | null | undefined): Observable<GetJourneyDateRangeKpiResponse> {
 			return this.http.get<GetJourneyDateRangeKpiResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/journeys/' + (journey_id == null ? '' : encodeURIComponent(journey_id)) + '/kpis/daterange/' + (kpi_name == null ? '' : encodeURIComponent(kpi_name)) + '&end_time=' + end_time.toISOString() + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&start_time=' + start_time.toISOString(), {});
 		}
 
@@ -4932,7 +4932,7 @@ export namespace MyNS {
 		 * @param {string} page_size The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 		 * @return {GetJourneyExecutionActivityMetricsResponse} Success
 		 */
-		GetJourneyExecutionActivityMetrics(application_id: string, journey_activity_id: string, journey_id: string, next_token: string, page_size: string): Observable<GetJourneyExecutionActivityMetricsResponse> {
+		GetJourneyExecutionActivityMetrics(application_id: string, journey_activity_id: string, journey_id: string, next_token: string | null | undefined, page_size: string | null | undefined): Observable<GetJourneyExecutionActivityMetricsResponse> {
 			return this.http.get<GetJourneyExecutionActivityMetricsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/journeys/' + (journey_id == null ? '' : encodeURIComponent(journey_id)) + '/activities/' + (journey_activity_id == null ? '' : encodeURIComponent(journey_activity_id)) + '/execution-metrics&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)), {});
 		}
 
@@ -4945,7 +4945,7 @@ export namespace MyNS {
 		 * @param {string} page_size The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 		 * @return {GetJourneyExecutionMetricsResponse} Success
 		 */
-		GetJourneyExecutionMetrics(application_id: string, journey_id: string, next_token: string, page_size: string): Observable<GetJourneyExecutionMetricsResponse> {
+		GetJourneyExecutionMetrics(application_id: string, journey_id: string, next_token: string | null | undefined, page_size: string | null | undefined): Observable<GetJourneyExecutionMetricsResponse> {
 			return this.http.get<GetJourneyExecutionMetricsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/journeys/' + (journey_id == null ? '' : encodeURIComponent(journey_id)) + '/execution-metrics&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)), {});
 		}
 
@@ -4958,7 +4958,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetSegmentExportJobsResponse} Success
 		 */
-		GetSegmentExportJobs(application_id: string, page_size: string, segment_id: string, token: string): Observable<GetSegmentExportJobsResponse> {
+		GetSegmentExportJobs(application_id: string, page_size: string | null | undefined, segment_id: string, token: string | null | undefined): Observable<GetSegmentExportJobsResponse> {
 			return this.http.get<GetSegmentExportJobsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/segments/' + (segment_id == null ? '' : encodeURIComponent(segment_id)) + '/jobs/export&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4971,7 +4971,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetSegmentImportJobsResponse} Success
 		 */
-		GetSegmentImportJobs(application_id: string, page_size: string, segment_id: string, token: string): Observable<GetSegmentImportJobsResponse> {
+		GetSegmentImportJobs(application_id: string, page_size: string | null | undefined, segment_id: string, token: string | null | undefined): Observable<GetSegmentImportJobsResponse> {
 			return this.http.get<GetSegmentImportJobsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/segments/' + (segment_id == null ? '' : encodeURIComponent(segment_id)) + '/jobs/import&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4996,7 +4996,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetSegmentVersionsResponse} Success
 		 */
-		GetSegmentVersions(application_id: string, page_size: string, segment_id: string, token: string): Observable<GetSegmentVersionsResponse> {
+		GetSegmentVersions(application_id: string, page_size: string | null | undefined, segment_id: string, token: string | null | undefined): Observable<GetSegmentVersionsResponse> {
 			return this.http.get<GetSegmentVersionsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/segments/' + (segment_id == null ? '' : encodeURIComponent(segment_id)) + '/versions&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -5029,7 +5029,7 @@ export namespace MyNS {
 		 * @param {string} template_type The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.
 		 * @return {ListTemplateVersionsResponse} Success
 		 */
-		ListTemplateVersions(next_token: string, page_size: string, template_name: string, template_type: string): Observable<ListTemplateVersionsResponse> {
+		ListTemplateVersions(next_token: string | null | undefined, page_size: string | null | undefined, template_name: string, template_type: string): Observable<ListTemplateVersionsResponse> {
 			return this.http.get<ListTemplateVersionsResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/' + (template_type == null ? '' : encodeURIComponent(template_type)) + '/versions?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)), {});
 		}
 
@@ -5042,7 +5042,7 @@ export namespace MyNS {
 		 * @param {string} template_type The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.
 		 * @return {ListTemplatesResponse} Success
 		 */
-		ListTemplates(next_token: string, page_size: string, prefix: string, template_type: string): Observable<ListTemplatesResponse> {
+		ListTemplates(next_token: string | null | undefined, page_size: string | null | undefined, prefix: string | null | undefined, template_type: string | null | undefined): Observable<ListTemplatesResponse> {
 			return this.http.get<ListTemplatesResponse>(this.baseUri + 'v1/templates?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&prefix=' + (prefix == null ? '' : encodeURIComponent(prefix)) + '&template_type=' + (template_type == null ? '' : encodeURIComponent(template_type)), {});
 		}
 

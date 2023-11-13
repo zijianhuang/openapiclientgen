@@ -297,7 +297,7 @@ export namespace MyNS {
 		 * @param {string} NextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.
 		 * @return {DescribeVoicesOutput} Success
 		 */
-		DescribeVoices(Engine: Engine, LanguageCode: DescribeVoicesLanguageCode, IncludeAdditionalLanguageCodes: boolean, NextToken: string): Observable<DescribeVoicesOutput> {
+		DescribeVoices(Engine: Engine | null | undefined, LanguageCode: DescribeVoicesLanguageCode | null | undefined, IncludeAdditionalLanguageCodes: boolean | null | undefined, NextToken: string | null | undefined): Observable<DescribeVoicesOutput> {
 			return this.http.get<DescribeVoicesOutput>(this.baseUri + 'v1/voices?Engine=' + Engine + '&LanguageCode=' + LanguageCode + '&IncludeAdditionalLanguageCodes=' + IncludeAdditionalLanguageCodes + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -317,7 +317,7 @@ export namespace MyNS {
 		 * @param {string} NextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.
 		 * @return {ListLexiconsOutput} Success
 		 */
-		ListLexicons(NextToken: string): Observable<ListLexiconsOutput> {
+		ListLexicons(NextToken: string | null | undefined): Observable<ListLexiconsOutput> {
 			return this.http.get<ListLexiconsOutput>(this.baseUri + 'v1/lexicons?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -329,7 +329,7 @@ export namespace MyNS {
 		 * @param {SynthesisTaskTaskStatus} Status Status of the speech synthesis tasks returned in a List operation
 		 * @return {ListSpeechSynthesisTasksOutput} Success
 		 */
-		ListSpeechSynthesisTasks(MaxResults: number, NextToken: string, Status: SynthesisTaskTaskStatus): Observable<ListSpeechSynthesisTasksOutput> {
+		ListSpeechSynthesisTasks(MaxResults: number | null | undefined, NextToken: string | null | undefined, Status: SynthesisTaskTaskStatus | null | undefined): Observable<ListSpeechSynthesisTasksOutput> {
 			return this.http.get<ListSpeechSynthesisTasksOutput>(this.baseUri + 'v1/synthesisTasks?MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Status=' + Status, {});
 		}
 

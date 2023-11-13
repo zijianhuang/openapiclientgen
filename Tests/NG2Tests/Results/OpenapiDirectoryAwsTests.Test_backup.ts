@@ -792,7 +792,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupPlansOutput} Success
 		 */
-		ListBackupPlans(nextToken: string, maxResults: number, includeDeleted: boolean, MaxResults: string, NextToken: string): Observable<ListBackupPlansOutput> {
+		ListBackupPlans(nextToken: string | null | undefined, maxResults: number | null | undefined, includeDeleted: boolean | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupPlansOutput> {
 			return this.http.get<ListBackupPlansOutput>(this.baseUri + 'backup/plans/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&includeDeleted=' + includeDeleted + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -816,7 +816,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupSelectionsOutput} Success
 		 */
-		ListBackupSelections(backupPlanId: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListBackupSelectionsOutput> {
+		ListBackupSelections(backupPlanId: string, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupSelectionsOutput> {
 			return this.http.get<ListBackupSelectionsOutput>(this.baseUri + 'backup/plans/' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '/selections/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 		 * @param {string} versionId Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.
 		 * @return {GetBackupPlanOutput} Success
 		 */
-		GetBackupPlan(backupPlanId: string, versionId: string): Observable<GetBackupPlanOutput> {
+		GetBackupPlan(backupPlanId: string, versionId: string | null | undefined): Observable<GetBackupPlanOutput> {
 			return this.http.get<GetBackupPlanOutput>(this.baseUri + 'backup/plans/' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '/&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)), {});
 		}
 
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupJobsOutput} Success
 		 */
-		ListBackupJobs(nextToken: string, maxResults: number, resourceArn: string, state: DescribeBackupJobOutputState, backupVaultName: string, createdBefore: Date, createdAfter: Date, resourceType: string, MaxResults: string, NextToken: string): Observable<ListBackupJobsOutput> {
+		ListBackupJobs(nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, state: DescribeBackupJobOutputState | null | undefined, backupVaultName: string | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, resourceType: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupJobsOutput> {
 			return this.http.get<ListBackupJobsOutput>(this.baseUri + 'backup-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&state=' + state + '&backupVaultName=' + (backupVaultName == null ? '' : encodeURIComponent(backupVaultName)) + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1141,7 +1141,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupPlanTemplatesOutput} Success
 		 */
-		ListBackupPlanTemplates(nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListBackupPlanTemplatesOutput> {
+		ListBackupPlanTemplates(nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupPlanTemplatesOutput> {
 			return this.http.get<ListBackupPlanTemplatesOutput>(this.baseUri + 'backup/template/plans?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1155,7 +1155,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupPlanVersionsOutput} Success
 		 */
-		ListBackupPlanVersions(backupPlanId: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListBackupPlanVersionsOutput> {
+		ListBackupPlanVersions(backupPlanId: string, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupPlanVersionsOutput> {
 			return this.http.get<ListBackupPlanVersionsOutput>(this.baseUri + 'backup/plans/' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '/versions/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1168,7 +1168,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupVaultsOutput} Success
 		 */
-		ListBackupVaults(nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListBackupVaultsOutput> {
+		ListBackupVaults(nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupVaultsOutput> {
 			return this.http.get<ListBackupVaultsOutput>(this.baseUri + 'backup-vaults/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1187,7 +1187,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCopyJobsOutput} Success
 		 */
-		ListCopyJobs(nextToken: string, maxResults: number, resourceArn: string, state: CopyJobState, createdBefore: Date, createdAfter: Date, resourceType: string, destinationVaultArn: string, MaxResults: string, NextToken: string): Observable<ListCopyJobsOutput> {
+		ListCopyJobs(nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, state: CopyJobState | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, resourceType: string | null | undefined, destinationVaultArn: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListCopyJobsOutput> {
 			return this.http.get<ListCopyJobsOutput>(this.baseUri + 'copy-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&state=' + state + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&destinationVaultArn=' + (destinationVaultArn == null ? '' : encodeURIComponent(destinationVaultArn)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1200,7 +1200,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProtectedResourcesOutput} Success
 		 */
-		ListProtectedResources(nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListProtectedResourcesOutput> {
+		ListProtectedResources(nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListProtectedResourcesOutput> {
 			return this.http.get<ListProtectedResourcesOutput>(this.baseUri + 'resources/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1219,7 +1219,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRecoveryPointsByBackupVaultOutput} Success
 		 */
-		ListRecoveryPointsByBackupVault(backupVaultName: string, nextToken: string, maxResults: number, resourceArn: string, resourceType: string, backupPlanId: string, createdBefore: Date, createdAfter: Date, MaxResults: string, NextToken: string): Observable<ListRecoveryPointsByBackupVaultOutput> {
+		ListRecoveryPointsByBackupVault(backupVaultName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, resourceType: string | null | undefined, backupPlanId: string | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRecoveryPointsByBackupVaultOutput> {
 			return this.http.get<ListRecoveryPointsByBackupVaultOutput>(this.baseUri + 'backup-vaults/' + (backupVaultName == null ? '' : encodeURIComponent(backupVaultName)) + '/recovery-points/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&backupPlanId=' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1233,7 +1233,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRecoveryPointsByResourceOutput} Success
 		 */
-		ListRecoveryPointsByResource(resourceArn: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListRecoveryPointsByResourceOutput> {
+		ListRecoveryPointsByResource(resourceArn: string, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRecoveryPointsByResourceOutput> {
 			return this.http.get<ListRecoveryPointsByResourceOutput>(this.baseUri + 'resources/' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '/recovery-points/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1246,7 +1246,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRestoreJobsOutput} Success
 		 */
-		ListRestoreJobs(nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListRestoreJobsOutput> {
+		ListRestoreJobs(nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRestoreJobsOutput> {
 			return this.http.get<ListRestoreJobsOutput>(this.baseUri + 'restore-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1260,7 +1260,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsOutput} Success
 		 */
-		ListTags(resourceArn: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListTagsOutput> {
+		ListTags(resourceArn: string, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListTagsOutput> {
 			return this.http.get<ListTagsOutput>(this.baseUri + 'tags/' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

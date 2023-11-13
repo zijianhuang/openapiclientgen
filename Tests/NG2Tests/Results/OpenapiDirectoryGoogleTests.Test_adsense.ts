@@ -506,7 +506,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through accounts. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_list(maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_list(maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts?maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -517,7 +517,7 @@ export namespace MyNS {
 		 * @param {boolean} tree Whether the tree of sub accounts should be returned.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_get(accountId: string, tree: boolean): Observable<HttpResponse<string>> {
+		Adsense_accounts_get(accountId: string, tree: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&tree=' + tree, { observe: 'response', responseType: 'text' });
 		}
 
@@ -529,7 +529,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_adclients_list(accountId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_adclients_list(accountId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -554,7 +554,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_adunits_list(accountId: string, adClientId: string, includeInactive: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_adunits_list(accountId: string, adClientId: string, includeInactive: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/adunits&includeInactive=' + includeInactive + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -592,7 +592,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_adunits_customchannels_list(accountId: string, adClientId: string, adUnitId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_adunits_customchannels_list(accountId: string, adClientId: string, adUnitId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/adunits/' + (adUnitId == null ? '' : encodeURIComponent(adUnitId)) + '/customchannels&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -605,7 +605,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_customchannels_list(accountId: string, adClientId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_customchannels_list(accountId: string, adClientId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/customchannels&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -632,7 +632,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_customchannels_adunits_list(accountId: string, adClientId: string, customChannelId: string, includeInactive: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_customchannels_adunits_list(accountId: string, adClientId: string, customChannelId: string, includeInactive: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/customchannels/' + (customChannelId == null ? '' : encodeURIComponent(customChannelId)) + '/adunits&includeInactive=' + includeInactive + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -645,7 +645,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_urlchannels_list(accountId: string, adClientId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_urlchannels_list(accountId: string, adClientId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/urlchannels&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -656,7 +656,7 @@ export namespace MyNS {
 		 * @param {string} locale The locale to use for translating alert messages. The account locale will be used if this is not supplied. The AdSense default (English) will be used if the supplied locale is invalid or unsupported.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_alerts_list(accountId: string, locale: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_alerts_list(accountId: string, locale: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/alerts&locale=' + (locale == null ? '' : encodeURIComponent(locale)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -698,7 +698,7 @@ export namespace MyNS {
 		 * @param {boolean} useTimezoneReporting Whether the report should be generated in the AdSense account's local timezone. If false default PST/PDT timezone will be used.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_reports_generate(accountId: string, startDate: string, endDate: string, currency: string, dimension: Array<string>, filter: Array<string>, locale: string, maxResults: number, metric: Array<string>, sort: Array<string>, startIndex: number, useTimezoneReporting: boolean): Observable<HttpResponse<string>> {
+		Adsense_accounts_reports_generate(accountId: string, startDate: string, endDate: string, currency: string | null | undefined, dimension: Array<string> | null | undefined, filter: Array<string> | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, metric: Array<string> | null | undefined, sort: Array<string> | null | undefined, startIndex: number | null | undefined, useTimezoneReporting: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/reports&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&currency=' + (currency == null ? '' : encodeURIComponent(currency)) + '&' + dimension.map(z => `dimension=${encodeURIComponent(z)}`).join('&') + '&' + filter.map(z => `filter=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + metric.map(z => `metric=${encodeURIComponent(z)}`).join('&') + '&' + sort.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&startIndex=' + startIndex + '&useTimezoneReporting=' + useTimezoneReporting, { observe: 'response', responseType: 'text' });
 		}
 
@@ -710,7 +710,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_reports_saved_list(accountId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_reports_saved_list(accountId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/reports/saved&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -724,7 +724,7 @@ export namespace MyNS {
 		 * @param {number} startIndex Index of the first row of report data to return.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_reports_saved_generate(accountId: string, savedReportId: string, locale: string, maxResults: number, startIndex: number): Observable<HttpResponse<string>> {
+		Adsense_accounts_reports_saved_generate(accountId: string, savedReportId: string, locale: string | null | undefined, maxResults: number | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/reports/' + (savedReportId == null ? '' : encodeURIComponent(savedReportId)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 
@@ -736,7 +736,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through saved ad styles. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_accounts_savedadstyles_list(accountId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_accounts_savedadstyles_list(accountId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/savedadstyles&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -758,7 +758,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_adclients_list(maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_adclients_list(maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients?maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -771,7 +771,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_adunits_list(adClientId: string, includeInactive: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_adunits_list(adClientId: string, includeInactive: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/adunits&includeInactive=' + includeInactive + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -806,7 +806,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_adunits_customchannels_list(adClientId: string, adUnitId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_adunits_customchannels_list(adClientId: string, adUnitId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/adunits/' + (adUnitId == null ? '' : encodeURIComponent(adUnitId)) + '/customchannels&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -818,7 +818,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_customchannels_list(adClientId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_customchannels_list(adClientId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/customchannels&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -843,7 +843,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_customchannels_adunits_list(adClientId: string, customChannelId: string, includeInactive: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_customchannels_adunits_list(adClientId: string, customChannelId: string, includeInactive: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/customchannels/' + (customChannelId == null ? '' : encodeURIComponent(customChannelId)) + '/adunits&includeInactive=' + includeInactive + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -855,7 +855,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_urlchannels_list(adClientId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_urlchannels_list(adClientId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/urlchannels&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -865,7 +865,7 @@ export namespace MyNS {
 		 * @param {string} locale The locale to use for translating alert messages. The account locale will be used if this is not supplied. The AdSense default (English) will be used if the supplied locale is invalid or unsupported.
 		 * @return {void} Successful response
 		 */
-		Adsense_alerts_list(locale: string): Observable<HttpResponse<string>> {
+		Adsense_alerts_list(locale: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'alerts?locale=' + (locale == null ? '' : encodeURIComponent(locale)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -923,7 +923,7 @@ export namespace MyNS {
 		 * @param {boolean} useTimezoneReporting Whether the report should be generated in the AdSense account's local timezone. If false default PST/PDT timezone will be used.
 		 * @return {void} Successful response
 		 */
-		Adsense_reports_generate(startDate: string, endDate: string, accountId: Array<string>, currency: string, dimension: Array<string>, filter: Array<string>, locale: string, maxResults: number, metric: Array<string>, sort: Array<string>, startIndex: number, useTimezoneReporting: boolean): Observable<HttpResponse<string>> {
+		Adsense_reports_generate(startDate: string, endDate: string, accountId: Array<string> | null | undefined, currency: string | null | undefined, dimension: Array<string> | null | undefined, filter: Array<string> | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, metric: Array<string> | null | undefined, sort: Array<string> | null | undefined, startIndex: number | null | undefined, useTimezoneReporting: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'reports?startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&' + accountId.map(z => `accountId=${encodeURIComponent(z)}`).join('&') + '&currency=' + (currency == null ? '' : encodeURIComponent(currency)) + '&' + dimension.map(z => `dimension=${encodeURIComponent(z)}`).join('&') + '&' + filter.map(z => `filter=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + metric.map(z => `metric=${encodeURIComponent(z)}`).join('&') + '&' + sort.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&startIndex=' + startIndex + '&useTimezoneReporting=' + useTimezoneReporting, { observe: 'response', responseType: 'text' });
 		}
 
@@ -934,7 +934,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_reports_saved_list(maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_reports_saved_list(maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'reports/saved?maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -947,7 +947,7 @@ export namespace MyNS {
 		 * @param {number} startIndex Index of the first row of report data to return.
 		 * @return {void} Successful response
 		 */
-		Adsense_reports_saved_generate(savedReportId: string, locale: string, maxResults: number, startIndex: number): Observable<HttpResponse<string>> {
+		Adsense_reports_saved_generate(savedReportId: string, locale: string | null | undefined, maxResults: number | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'reports/' + (savedReportId == null ? '' : encodeURIComponent(savedReportId)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 
@@ -958,7 +958,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through saved ad styles. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsense_savedadstyles_list(maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsense_savedadstyles_list(maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'savedadstyles?maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

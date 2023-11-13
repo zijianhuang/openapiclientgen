@@ -208,7 +208,7 @@ export namespace MyNS {
 		 * supported "yue-*" voices.
 		 * @return {void} Successful response
 		 */
-		Texttospeech_voices_list(languageCode: string): Observable<HttpResponse<string>> {
+		Texttospeech_voices_list(languageCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/voices?languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)), { observe: 'response', responseType: 'text' });
 		}
 	}

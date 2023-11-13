@@ -807,7 +807,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeModelVersionsResult} Success
 		 */
-		DescribeModelVersions(maxResults: string, nextToken: string, requestBody: DescribeModelVersionsRequest): Observable<DescribeModelVersionsResult> {
+		DescribeModelVersions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeModelVersionsRequest): Observable<DescribeModelVersionsResult> {
 			return this.http.post<DescribeModelVersionsResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.DescribeModelVersions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -827,7 +827,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetDetectorsResult} Success
 		 */
-		GetDetectors(maxResults: string, nextToken: string, requestBody: GetDetectorsRequest): Observable<GetDetectorsResult> {
+		GetDetectors(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetDetectorsRequest): Observable<GetDetectorsResult> {
 			return this.http.post<GetDetectorsResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetDetectors?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -838,7 +838,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetExternalModelsResult} Success
 		 */
-		GetExternalModels(maxResults: string, nextToken: string, requestBody: GetExternalModelsRequest): Observable<GetExternalModelsResult> {
+		GetExternalModels(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetExternalModelsRequest): Observable<GetExternalModelsResult> {
 			return this.http.post<GetExternalModelsResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetExternalModels?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -858,7 +858,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetModelsResult} Success
 		 */
-		GetModels(maxResults: string, nextToken: string, requestBody: GetModelsRequest): Observable<GetModelsResult> {
+		GetModels(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetModelsRequest): Observable<GetModelsResult> {
 			return this.http.post<GetModelsResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetModels?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -869,7 +869,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetOutcomesResult} Success
 		 */
-		GetOutcomes(maxResults: string, nextToken: string, requestBody: GetOutcomesRequest): Observable<GetOutcomesResult> {
+		GetOutcomes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetOutcomesRequest): Observable<GetOutcomesResult> {
 			return this.http.post<GetOutcomesResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetOutcomes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -889,7 +889,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetRulesResult} Success
 		 */
-		GetRules(maxResults: string, nextToken: string, requestBody: GetRulesRequest): Observable<GetRulesResult> {
+		GetRules(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetRulesRequest): Observable<GetRulesResult> {
 			return this.http.post<GetRulesResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetRules?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -900,7 +900,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetVariablesResult} Success
 		 */
-		GetVariables(maxResults: string, nextToken: string, requestBody: GetVariablesRequest): Observable<GetVariablesResult> {
+		GetVariables(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetVariablesRequest): Observable<GetVariablesResult> {
 			return this.http.post<GetVariablesResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetVariables?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

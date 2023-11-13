@@ -255,7 +255,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEnvironmentMembershipsResult} Success
 		 */
-		DescribeEnvironmentMemberships(maxResults: string, nextToken: string, requestBody: DescribeEnvironmentMembershipsRequest): Observable<DescribeEnvironmentMembershipsResult> {
+		DescribeEnvironmentMemberships(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEnvironmentMembershipsRequest): Observable<DescribeEnvironmentMembershipsResult> {
 			return this.http.post<DescribeEnvironmentMembershipsResult>(this.baseUri + '#X-Amz-Target=AWSCloud9WorkspaceManagementService.DescribeEnvironmentMemberships?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -284,7 +284,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListEnvironmentsResult} Success
 		 */
-		ListEnvironments(maxResults: string, nextToken: string, requestBody: ListEnvironmentsRequest): Observable<ListEnvironmentsResult> {
+		ListEnvironments(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListEnvironmentsRequest): Observable<ListEnvironmentsResult> {
 			return this.http.post<ListEnvironmentsResult>(this.baseUri + '#X-Amz-Target=AWSCloud9WorkspaceManagementService.ListEnvironments?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

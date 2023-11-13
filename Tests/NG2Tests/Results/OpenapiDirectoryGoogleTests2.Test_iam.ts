@@ -1269,7 +1269,7 @@ export namespace MyNS {
 		 * return the `includedPermissions` field.
 		 * @return {void} Successful response
 		 */
-		Iam_roles_list(pageSize: number, pageToken: string, parent: string, showDeleted: boolean, view: QueryGrantableRolesRequestView): Observable<HttpResponse<string>> {
+		Iam_roles_list(pageSize: number | null | undefined, pageToken: string | null | undefined, parent: string | null | undefined, showDeleted: boolean | null | undefined, view: QueryGrantableRolesRequestView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/roles?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&showDeleted=' + showDeleted + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1313,7 +1313,7 @@ export namespace MyNS {
 		 * @param {string} etag Used to perform a consistent read-modify-write.
 		 * @return {void} Successful response
 		 */
-		Iam_organizations_roles_delete(name: string, etag: string): Observable<HttpResponse<string>> {
+		Iam_organizations_roles_delete(name: string, etag: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&etag=' + (etag == null ? '' : encodeURIComponent(etag)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1347,7 +1347,7 @@ export namespace MyNS {
 		 * X509_PEM is the default output format.
 		 * @return {void} Successful response
 		 */
-		Iam_organizations_roles_get(name: string, publicKeyType: Iam_organizations_roles_getPublicKeyType): Observable<HttpResponse<string>> {
+		Iam_organizations_roles_get(name: string, publicKeyType: Iam_organizations_roles_getPublicKeyType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&publicKeyType=' + publicKeyType, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1374,7 +1374,7 @@ export namespace MyNS {
 		 * @param {string} updateMask A mask describing which fields in the Role have changed.
 		 * @return {void} Successful response
 		 */
-		Iam_organizations_roles_patch(name: string, updateMask: string, requestBody: Role): Observable<HttpResponse<string>> {
+		Iam_organizations_roles_patch(name: string, updateMask: string | null | undefined, requestBody: Role): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1411,7 +1411,7 @@ export namespace MyNS {
 		 * is provided, all keys are returned.
 		 * @return {void} Successful response
 		 */
-		Iam_projects_serviceAccounts_keys_list(name: string, keyTypes: Array<ServiceAccountKeyKeyType>): Observable<HttpResponse<string>> {
+		Iam_projects_serviceAccounts_keys_list(name: string, keyTypes: Array<ServiceAccountKeyKeyType> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/keys&' + keyTypes.map(z => `keyTypes=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1460,7 +1460,7 @@ export namespace MyNS {
 		 * ListServiceAccountsResponse.next_page_token.
 		 * @return {void} Successful response
 		 */
-		Iam_projects_serviceAccounts_list(name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Iam_projects_serviceAccounts_list(name: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/serviceAccounts&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 		 * return the `includedPermissions` field.
 		 * @return {void} Successful response
 		 */
-		Iam_organizations_roles_list(parent: string, pageSize: number, pageToken: string, showDeleted: boolean, view: QueryGrantableRolesRequestView): Observable<HttpResponse<string>> {
+		Iam_organizations_roles_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, view: QueryGrantableRolesRequestView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/roles&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1677,7 +1677,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Iam_projects_serviceAccounts_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Iam_projects_serviceAccounts_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, null, { observe: 'response', responseType: 'text' });
 		}
 

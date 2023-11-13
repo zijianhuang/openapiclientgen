@@ -4225,7 +4225,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJobsResponse} Success
 		 */
-		ListJobs(maxResults: number, nextToken: string, order: Order, queue: string, status: JobStatus, MaxResults: string, NextToken: string): Observable<ListJobsResponse> {
+		ListJobs(maxResults: number | null | undefined, nextToken: string | null | undefined, order: Order | null | undefined, queue: string | null | undefined, status: JobStatus | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJobsResponse> {
 			return this.http.get<ListJobsResponse>(this.baseUri + '2017-08-29/jobs?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&order=' + order + '&queue=' + (queue == null ? '' : encodeURIComponent(queue)) + '&status=' + status + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -4250,7 +4250,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJobTemplatesResponse} Success
 		 */
-		ListJobTemplates(category: string, listBy: JobTemplateListBy, maxResults: number, nextToken: string, order: Order, MaxResults: string, NextToken: string): Observable<ListJobTemplatesResponse> {
+		ListJobTemplates(category: string | null | undefined, listBy: JobTemplateListBy | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, order: Order | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJobTemplatesResponse> {
 			return this.http.get<ListJobTemplatesResponse>(this.baseUri + '2017-08-29/jobTemplates?category=' + (category == null ? '' : encodeURIComponent(category)) + '&listBy=' + listBy + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&order=' + order + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -4275,7 +4275,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPresetsResponse} Success
 		 */
-		ListPresets(category: string, listBy: JobTemplateListBy, maxResults: number, nextToken: string, order: Order, MaxResults: string, NextToken: string): Observable<ListPresetsResponse> {
+		ListPresets(category: string | null | undefined, listBy: JobTemplateListBy | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, order: Order | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPresetsResponse> {
 			return this.http.get<ListPresetsResponse>(this.baseUri + '2017-08-29/presets?category=' + (category == null ? '' : encodeURIComponent(category)) + '&listBy=' + listBy + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&order=' + order + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -4299,7 +4299,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQueuesResponse} Success
 		 */
-		ListQueues(listBy: QueueListBy, maxResults: number, nextToken: string, order: Order, MaxResults: string, NextToken: string): Observable<ListQueuesResponse> {
+		ListQueues(listBy: QueueListBy | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, order: Order | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListQueuesResponse> {
 			return this.http.get<ListQueuesResponse>(this.baseUri + '2017-08-29/queues?listBy=' + listBy + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&order=' + order + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -4400,7 +4400,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeEndpointsResponse} Success
 		 */
-		DescribeEndpoints(MaxResults: string, NextToken: string, requestBody: DescribeEndpointsPostBody): Observable<DescribeEndpointsResponse> {
+		DescribeEndpoints(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeEndpointsPostBody): Observable<DescribeEndpointsResponse> {
 			return this.http.post<DescribeEndpointsResponse>(this.baseUri + '2017-08-29/endpoints?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

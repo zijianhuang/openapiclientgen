@@ -1025,7 +1025,7 @@ export namespace MyNS {
 		 * should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Pubsub_projects_snapshots_list(project: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Pubsub_projects_snapshots_list(project: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (project == null ? '' : encodeURIComponent(project)) + '/snapshots&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1040,7 +1040,7 @@ export namespace MyNS {
 		 * system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Pubsub_projects_subscriptions_list(project: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Pubsub_projects_subscriptions_list(project: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (project == null ? '' : encodeURIComponent(project)) + '/subscriptions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1055,7 +1055,7 @@ export namespace MyNS {
 		 * return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Pubsub_projects_topics_list(project: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Pubsub_projects_topics_list(project: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (project == null ? '' : encodeURIComponent(project)) + '/topics&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1074,7 +1074,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Pubsub_projects_topics_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Pubsub_projects_topics_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1286,7 +1286,7 @@ export namespace MyNS {
 		 * that the system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Pubsub_projects_topics_snapshots_list(topic: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Pubsub_projects_topics_snapshots_list(topic: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (topic == null ? '' : encodeURIComponent(topic)) + '/snapshots&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1301,7 +1301,7 @@ export namespace MyNS {
 		 * that the system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Pubsub_projects_topics_subscriptions_list(topic: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Pubsub_projects_topics_subscriptions_list(topic: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (topic == null ? '' : encodeURIComponent(topic)) + '/subscriptions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

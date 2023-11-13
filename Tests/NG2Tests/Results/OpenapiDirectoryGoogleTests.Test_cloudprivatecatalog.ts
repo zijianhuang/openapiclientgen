@@ -267,7 +267,7 @@ export namespace MyNS {
 		 * * Get a single catalog: `name=catalogs/{catalog_id}`
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalog_organizations_catalogs_search(resource: string, pageSize: number, pageToken: string, query: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalog_organizations_catalogs_search(resource: string, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + '/catalogs:search&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -289,7 +289,7 @@ export namespace MyNS {
 		 * `name=catalogs/{catalog_id}/products/{product_id}`
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalog_organizations_products_search(resource: string, pageSize: number, pageToken: string, query: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalog_organizations_products_search(resource: string, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + '/products:search&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -311,7 +311,7 @@ export namespace MyNS {
 		 * `name=catalogs/{catalog_id}/products/{product_id}/versions/{version_id}`
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalog_organizations_versions_search(resource: string, pageSize: number, pageToken: string, query: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalog_organizations_versions_search(resource: string, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + '/versions:search&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 	}

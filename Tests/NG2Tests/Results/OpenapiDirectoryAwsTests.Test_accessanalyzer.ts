@@ -429,7 +429,7 @@ export namespace MyNS {
 		 * @param {AnalyzerSummaryType} type The type of analyzer.
 		 * @return {ListAnalyzersResponse} Success
 		 */
-		ListAnalyzers(maxResults: number, nextToken: string, type: AnalyzerSummaryType): Observable<ListAnalyzersResponse> {
+		ListAnalyzers(maxResults: number | null | undefined, nextToken: string | null | undefined, type: AnalyzerSummaryType | null | undefined): Observable<ListAnalyzersResponse> {
 			return this.http.get<ListAnalyzersResponse>(this.baseUri + 'analyzer?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&type=' + type, {});
 		}
 
@@ -451,7 +451,7 @@ export namespace MyNS {
 		 * @param {string} nextToken A token used for pagination of results returned.
 		 * @return {ListArchiveRulesResponse} Success
 		 */
-		ListArchiveRules(analyzerName: string, maxResults: number, nextToken: string): Observable<ListArchiveRulesResponse> {
+		ListArchiveRules(analyzerName: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListArchiveRulesResponse> {
 			return this.http.get<ListArchiveRulesResponse>(this.baseUri + 'analyzer/' + (analyzerName == null ? '' : encodeURIComponent(analyzerName)) + '/archive-rule&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -462,7 +462,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A client token.
 		 * @return {void} Success
 		 */
-		DeleteAnalyzer(analyzerName: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteAnalyzer(analyzerName: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'analyzer/' + (analyzerName == null ? '' : encodeURIComponent(analyzerName)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -484,7 +484,7 @@ export namespace MyNS {
 		 * @param {string} ruleName The name of the rule to delete.
 		 * @return {void} Success
 		 */
-		DeleteArchiveRule(analyzerName: string, clientToken: string, ruleName: string): Observable<HttpResponse<string>> {
+		DeleteArchiveRule(analyzerName: string, clientToken: string | null | undefined, ruleName: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'analyzer/' + (analyzerName == null ? '' : encodeURIComponent(analyzerName)) + '/archive-rule/' + (ruleName == null ? '' : encodeURIComponent(ruleName)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -539,7 +539,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAnalyzedResourcesResponse} Success
 		 */
-		ListAnalyzedResources(maxResults: string, nextToken: string, requestBody: ListAnalyzedResourcesPostBody): Observable<ListAnalyzedResourcesResponse> {
+		ListAnalyzedResources(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAnalyzedResourcesPostBody): Observable<ListAnalyzedResourcesResponse> {
 			return this.http.post<ListAnalyzedResourcesResponse>(this.baseUri + 'analyzed-resource?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -550,7 +550,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListFindingsResponse} Success
 		 */
-		ListFindings(maxResults: string, nextToken: string, requestBody: ListFindingsPostBody): Observable<ListFindingsResponse> {
+		ListFindings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListFindingsPostBody): Observable<ListFindingsResponse> {
 			return this.http.post<ListFindingsResponse>(this.baseUri + 'finding?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

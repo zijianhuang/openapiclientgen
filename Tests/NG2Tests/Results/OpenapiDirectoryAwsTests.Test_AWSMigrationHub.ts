@@ -389,7 +389,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationStatesResult} Success
 		 */
-		ListApplicationStates(MaxResults: string, NextToken: string, requestBody: ListApplicationStatesRequest): Observable<ListApplicationStatesResult> {
+		ListApplicationStates(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListApplicationStatesRequest): Observable<ListApplicationStatesResult> {
 			return this.http.post<ListApplicationStatesResult>(this.baseUri + '#X-Amz-Target=AWSMigrationHub.ListApplicationStates?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -400,7 +400,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCreatedArtifactsResult} Success
 		 */
-		ListCreatedArtifacts(MaxResults: string, NextToken: string, requestBody: ListCreatedArtifactsRequest): Observable<ListCreatedArtifactsResult> {
+		ListCreatedArtifacts(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCreatedArtifactsRequest): Observable<ListCreatedArtifactsResult> {
 			return this.http.post<ListCreatedArtifactsResult>(this.baseUri + '#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -411,7 +411,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDiscoveredResourcesResult} Success
 		 */
-		ListDiscoveredResources(MaxResults: string, NextToken: string, requestBody: ListDiscoveredResourcesRequest): Observable<ListDiscoveredResourcesResult> {
+		ListDiscoveredResources(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDiscoveredResourcesRequest): Observable<ListDiscoveredResourcesResult> {
 			return this.http.post<ListDiscoveredResourcesResult>(this.baseUri + '#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -422,7 +422,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMigrationTasksResult} Success
 		 */
-		ListMigrationTasks(MaxResults: string, NextToken: string, requestBody: ListMigrationTasksRequest): Observable<ListMigrationTasksResult> {
+		ListMigrationTasks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMigrationTasksRequest): Observable<ListMigrationTasksResult> {
 			return this.http.post<ListMigrationTasksResult>(this.baseUri + '#X-Amz-Target=AWSMigrationHub.ListMigrationTasks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -433,7 +433,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProgressUpdateStreamsResult} Success
 		 */
-		ListProgressUpdateStreams(MaxResults: string, NextToken: string, requestBody: ListProgressUpdateStreamsRequest): Observable<ListProgressUpdateStreamsResult> {
+		ListProgressUpdateStreams(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListProgressUpdateStreamsRequest): Observable<ListProgressUpdateStreamsResult> {
 			return this.http.post<ListProgressUpdateStreamsResult>(this.baseUri + '#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -1233,7 +1233,7 @@ export namespace MyNS {
 		 * @param {string} projectNumber GCP project number of the request.
 		 * @return {void} Successful response
 		 */
-		Identitytoolkit_relyingparty_getProjectConfig(delegatedProjectNumber: string, projectNumber: string): Observable<HttpResponse<string>> {
+		Identitytoolkit_relyingparty_getProjectConfig(delegatedProjectNumber: string | null | undefined, projectNumber: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'getProjectConfig?delegatedProjectNumber=' + (delegatedProjectNumber == null ? '' : encodeURIComponent(delegatedProjectNumber)) + '&projectNumber=' + (projectNumber == null ? '' : encodeURIComponent(projectNumber)), { observe: 'response', responseType: 'text' });
 		}
 

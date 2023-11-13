@@ -16,7 +16,7 @@ export namespace MyNS {
 		 * @param {string} key API key.
 		 * @return {void} Get response from IP2Proxy
 		 */
-		GetBy_packageAndIpAndFormatAndKey(_package: string, ip: string, format: GetBy_packageAndIpAndFormatAndKeyFormat, key: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		GetBy_packageAndIpAndFormatAndKey(_package: string | null | undefined, ip: string, format: GetBy_packageAndIpAndFormatAndKeyFormat | null | undefined, key: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '?_package=' + (_package == null ? '' : encodeURIComponent(_package)) + '&ip=' + (ip == null ? '' : encodeURIComponent(ip)) + '&format=' + format + '&key=' + (key == null ? '' : encodeURIComponent(key)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}

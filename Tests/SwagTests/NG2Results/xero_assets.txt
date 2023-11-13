@@ -254,7 +254,7 @@ export namespace MyNS {
 		 * @param {GetAssetsFilterBy} filterBy A string that can be used to filter the list to only return assets containing the text. Checks it against the AssetName, AssetNumber, Description and AssetTypeName fields.
 		 * @return {Assets} search results matching criteria
 		 */
-		GetAssets(status: AssetStatusQueryParam, page: number, pageSize: number, orderBy: GetAssetsOrderBy, sortDirection: GetAssetsSortDirection, filterBy: GetAssetsFilterBy): Observable<Assets> {
+		GetAssets(status: AssetStatusQueryParam, page: number | null | undefined, pageSize: number | null | undefined, orderBy: GetAssetsOrderBy | null | undefined, sortDirection: GetAssetsSortDirection | null | undefined, filterBy: GetAssetsFilterBy | null | undefined): Observable<Assets> {
 			return this.http.get<Assets>(this.baseUri + 'Assets?status=' + status + '&page=' + page + '&pageSize=' + pageSize + '&orderBy=' + orderBy + '&sortDirection=' + sortDirection + '&filterBy=' + filterBy, {});
 		}
 

@@ -245,7 +245,7 @@ export namespace MyNS {
 		 * @param {Array<string>} tagsToAdd <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.</p>
 		 * @return {GetLifecyclePoliciesResponse} Success
 		 */
-		GetLifecyclePolicies(policyIds: Array<string>, state: LifecyclePolicySummaryState, resourceTypes: Array<ResourceTypeValues>, targetTags: Array<string>, tagsToAdd: Array<string>): Observable<GetLifecyclePoliciesResponse> {
+		GetLifecyclePolicies(policyIds: Array<string> | null | undefined, state: LifecyclePolicySummaryState | null | undefined, resourceTypes: Array<ResourceTypeValues> | null | undefined, targetTags: Array<string> | null | undefined, tagsToAdd: Array<string> | null | undefined): Observable<GetLifecyclePoliciesResponse> {
 			return this.http.get<GetLifecyclePoliciesResponse>(this.baseUri + 'policies?' + policyIds.map(z => `policyIds=${encodeURIComponent(z)}`).join('&') + '&state=' + state + '&' + resourceTypes.map(z => `resourceTypes=${z}`).join('&') + '&' + targetTags.map(z => `targetTags=${encodeURIComponent(z)}`).join('&') + '&' + tagsToAdd.map(z => `tagsToAdd=${encodeURIComponent(z)}`).join('&'), {});
 		}
 

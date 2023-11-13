@@ -394,7 +394,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetEffectivePermissionsForPathResponse} Success
 		 */
-		GetEffectivePermissionsForPath(MaxResults: string, NextToken: string, requestBody: GetEffectivePermissionsForPathRequest): Observable<GetEffectivePermissionsForPathResponse> {
+		GetEffectivePermissionsForPath(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetEffectivePermissionsForPathRequest): Observable<GetEffectivePermissionsForPathResponse> {
 			return this.http.post<GetEffectivePermissionsForPathResponse>(this.baseUri + '#X-Amz-Target=AWSLakeFormation.GetEffectivePermissionsForPath?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -414,7 +414,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPermissionsResponse} Success
 		 */
-		ListPermissions(MaxResults: string, NextToken: string, requestBody: ListPermissionsRequest): Observable<ListPermissionsResponse> {
+		ListPermissions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPermissionsRequest): Observable<ListPermissionsResponse> {
 			return this.http.post<ListPermissionsResponse>(this.baseUri + '#X-Amz-Target=AWSLakeFormation.ListPermissions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -425,7 +425,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListResourcesResponse} Success
 		 */
-		ListResources(MaxResults: string, NextToken: string, requestBody: ListResourcesRequest): Observable<ListResourcesResponse> {
+		ListResources(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListResourcesRequest): Observable<ListResourcesResponse> {
 			return this.http.post<ListResourcesResponse>(this.baseUri + '#X-Amz-Target=AWSLakeFormation.ListResources?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

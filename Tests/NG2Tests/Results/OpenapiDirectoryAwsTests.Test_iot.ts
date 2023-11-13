@@ -4157,7 +4157,7 @@ export namespace MyNS {
 		 * @param {boolean} setAsActive Specifies whether the certificate is active.
 		 * @return {void} Success
 		 */
-		AcceptCertificateTransfer(certificateId: string, setAsActive: boolean): Observable<HttpResponse<string>> {
+		AcceptCertificateTransfer(certificateId: string, setAsActive: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'accept-certificate-transfer/' + (certificateId == null ? '' : encodeURIComponent(certificateId)) + '&setAsActive=' + setAsActive, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4308,7 +4308,7 @@ export namespace MyNS {
 		 * @param {boolean} force <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p> <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
 		 * @return {CancelJobResponse} Success
 		 */
-		CancelJob(jobId: string, force: boolean, requestBody: CancelJobPutBody): Observable<CancelJobResponse> {
+		CancelJob(jobId: string, force: boolean | null | undefined, requestBody: CancelJobPutBody): Observable<CancelJobResponse> {
 			return this.http.put<CancelJobResponse>(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/cancel&force=' + force, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4320,7 +4320,7 @@ export namespace MyNS {
 		 * @param {boolean} force <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p> <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
 		 * @return {void} Success
 		 */
-		CancelJobExecution(jobId: string, thingName: string, force: boolean, requestBody: CancelJobExecutionPutBody): Observable<HttpResponse<string>> {
+		CancelJobExecution(jobId: string, thingName: string, force: boolean | null | undefined, requestBody: CancelJobExecutionPutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'things/' + (thingName == null ? '' : encodeURIComponent(thingName)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/cancel&force=' + force, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4418,7 +4418,7 @@ export namespace MyNS {
 		 * @param {number} expectedVersion The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.
 		 * @return {DeleteBillingGroupResponse} Success
 		 */
-		DeleteBillingGroup(billingGroupName: string, expectedVersion: number): Observable<DeleteBillingGroupResponse> {
+		DeleteBillingGroup(billingGroupName: string, expectedVersion: number | null | undefined): Observable<DeleteBillingGroupResponse> {
 			return this.http.delete<DeleteBillingGroupResponse>(this.baseUri + 'billing-groups/' + (billingGroupName == null ? '' : encodeURIComponent(billingGroupName)) + '&expectedVersion=' + expectedVersion, {});
 		}
 
@@ -4448,7 +4448,7 @@ export namespace MyNS {
 		 * @param {boolean} setAsActive Specifies whether the certificate is active.
 		 * @return {CreateCertificateFromCsrResponse} Success
 		 */
-		CreateCertificateFromCsr(setAsActive: boolean, requestBody: CreateCertificateFromCsrPostBody): Observable<CreateCertificateFromCsrResponse> {
+		CreateCertificateFromCsr(setAsActive: boolean | null | undefined, requestBody: CreateCertificateFromCsrPostBody): Observable<CreateCertificateFromCsrResponse> {
 			return this.http.post<CreateCertificateFromCsrResponse>(this.baseUri + 'certificates?setAsActive=' + setAsActive, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4460,7 +4460,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.
 		 * @return {ListCertificatesResponse} Success
 		 */
-		ListCertificates(pageSize: number, marker: string, isAscendingOrder: boolean): Observable<ListCertificatesResponse> {
+		ListCertificates(pageSize: number | null | undefined, marker: string | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListCertificatesResponse> {
 			return this.http.get<ListCertificatesResponse>(this.baseUri + 'certificates?pageSize=' + pageSize + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -4561,7 +4561,7 @@ export namespace MyNS {
 		 * @param {number} expectedVersion The expected version of the dynamic thing group to delete.
 		 * @return {DeleteDynamicThingGroupResponse} Success
 		 */
-		DeleteDynamicThingGroup(thingGroupName: string, expectedVersion: number): Observable<DeleteDynamicThingGroupResponse> {
+		DeleteDynamicThingGroup(thingGroupName: string, expectedVersion: number | null | undefined): Observable<DeleteDynamicThingGroupResponse> {
 			return this.http.delete<DeleteDynamicThingGroupResponse>(this.baseUri + 'dynamic-thing-groups/' + (thingGroupName == null ? '' : encodeURIComponent(thingGroupName)) + '&expectedVersion=' + expectedVersion, {});
 		}
 
@@ -4592,7 +4592,7 @@ export namespace MyNS {
 		 * @param {boolean} force <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note> <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p> </note>
 		 * @return {void} Success
 		 */
-		DeleteJob(jobId: string, force: boolean): Observable<HttpResponse<string>> {
+		DeleteJob(jobId: string, force: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&force=' + force, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4622,7 +4622,7 @@ export namespace MyNS {
 		 * @param {boolean} setAsActive Specifies whether the certificate is active.
 		 * @return {CreateKeysAndCertificateResponse} Success
 		 */
-		CreateKeysAndCertificate(setAsActive: boolean): Observable<CreateKeysAndCertificateResponse> {
+		CreateKeysAndCertificate(setAsActive: boolean | null | undefined): Observable<CreateKeysAndCertificateResponse> {
 			return this.http.post<CreateKeysAndCertificateResponse>(this.baseUri + 'keys-and-certificate?setAsActive=' + setAsActive, null, {});
 		}
 
@@ -4684,7 +4684,7 @@ export namespace MyNS {
 		 * @param {boolean} forceDeleteAWSJob Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
 		 * @return {DeleteOTAUpdateResponse} Success
 		 */
-		DeleteOTAUpdate(otaUpdateId: string, deleteStream: boolean, forceDeleteAWSJob: boolean): Observable<DeleteOTAUpdateResponse> {
+		DeleteOTAUpdate(otaUpdateId: string, deleteStream: boolean | null | undefined, forceDeleteAWSJob: boolean | null | undefined): Observable<DeleteOTAUpdateResponse> {
 			return this.http.delete<DeleteOTAUpdateResponse>(this.baseUri + 'otaUpdates/' + (otaUpdateId == null ? '' : encodeURIComponent(otaUpdateId)) + '&deleteStream=' + deleteStream + '&forceDeleteAWSJob=' + forceDeleteAWSJob, {});
 		}
 
@@ -4735,7 +4735,7 @@ export namespace MyNS {
 		 * @param {boolean} setAsDefault Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).
 		 * @return {CreatePolicyVersionResponse} Success
 		 */
-		CreatePolicyVersion(policyName: string, setAsDefault: boolean, requestBody: CreatePolicyVersionPostBody): Observable<CreatePolicyVersionResponse> {
+		CreatePolicyVersion(policyName: string, setAsDefault: boolean | null | undefined, requestBody: CreatePolicyVersionPostBody): Observable<CreatePolicyVersionResponse> {
 			return this.http.post<CreatePolicyVersionResponse>(this.baseUri + 'policies/' + (policyName == null ? '' : encodeURIComponent(policyName)) + '/version&setAsDefault=' + setAsDefault, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4775,7 +4775,7 @@ export namespace MyNS {
 		 * @param {string} nextToken A token to retrieve the next set of results.
 		 * @return {ListProvisioningTemplatesResponse} Success
 		 */
-		ListProvisioningTemplates(maxResults: number, nextToken: string): Observable<ListProvisioningTemplatesResponse> {
+		ListProvisioningTemplates(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListProvisioningTemplatesResponse> {
 			return this.http.get<ListProvisioningTemplatesResponse>(this.baseUri + 'provisioning-templates?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -4786,7 +4786,7 @@ export namespace MyNS {
 		 * @param {boolean} setAsDefault Sets a fleet provision template version as the default version.
 		 * @return {CreateProvisioningTemplateVersionResponse} Success
 		 */
-		CreateProvisioningTemplateVersion(templateName: string, setAsDefault: boolean, requestBody: CreateProvisioningTemplateVersionPostBody): Observable<CreateProvisioningTemplateVersionResponse> {
+		CreateProvisioningTemplateVersion(templateName: string, setAsDefault: boolean | null | undefined, requestBody: CreateProvisioningTemplateVersionPostBody): Observable<CreateProvisioningTemplateVersionResponse> {
 			return this.http.post<CreateProvisioningTemplateVersionResponse>(this.baseUri + 'provisioning-templates/' + (templateName == null ? '' : encodeURIComponent(templateName)) + '/versions&setAsDefault=' + setAsDefault, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4798,7 +4798,7 @@ export namespace MyNS {
 		 * @param {string} nextToken A token to retrieve the next set of results.
 		 * @return {ListProvisioningTemplateVersionsResponse} Success
 		 */
-		ListProvisioningTemplateVersions(templateName: string, maxResults: number, nextToken: string): Observable<ListProvisioningTemplateVersionsResponse> {
+		ListProvisioningTemplateVersions(templateName: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListProvisioningTemplateVersionsResponse> {
 			return this.http.get<ListProvisioningTemplateVersionsResponse>(this.baseUri + 'provisioning-templates/' + (templateName == null ? '' : encodeURIComponent(templateName)) + '/versions&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -4899,7 +4899,7 @@ export namespace MyNS {
 		 * @param {number} expectedVersion The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.
 		 * @return {DeleteSecurityProfileResponse} Success
 		 */
-		DeleteSecurityProfile(securityProfileName: string, expectedVersion: number): Observable<DeleteSecurityProfileResponse> {
+		DeleteSecurityProfile(securityProfileName: string, expectedVersion: number | null | undefined): Observable<DeleteSecurityProfileResponse> {
 			return this.http.delete<DeleteSecurityProfileResponse>(this.baseUri + 'security-profiles/' + (securityProfileName == null ? '' : encodeURIComponent(securityProfileName)) + '&expectedVersion=' + expectedVersion, {});
 		}
 
@@ -4920,7 +4920,7 @@ export namespace MyNS {
 		 * @param {number} expectedVersion The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.
 		 * @return {UpdateSecurityProfileResponse} Success
 		 */
-		UpdateSecurityProfile(securityProfileName: string, expectedVersion: number, requestBody: UpdateSecurityProfilePatchBody): Observable<UpdateSecurityProfileResponse> {
+		UpdateSecurityProfile(securityProfileName: string, expectedVersion: number | null | undefined, requestBody: UpdateSecurityProfilePatchBody): Observable<UpdateSecurityProfileResponse> {
 			return this.http.patch<UpdateSecurityProfileResponse>(this.baseUri + 'security-profiles/' + (securityProfileName == null ? '' : encodeURIComponent(securityProfileName)) + '&expectedVersion=' + expectedVersion, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4981,7 +4981,7 @@ export namespace MyNS {
 		 * @param {number} expectedVersion The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.
 		 * @return {DeleteThingResponse} Success
 		 */
-		DeleteThing(thingName: string, expectedVersion: number): Observable<DeleteThingResponse> {
+		DeleteThing(thingName: string, expectedVersion: number | null | undefined): Observable<DeleteThingResponse> {
 			return this.http.delete<DeleteThingResponse>(this.baseUri + 'things/' + (thingName == null ? '' : encodeURIComponent(thingName)) + '&expectedVersion=' + expectedVersion, {});
 		}
 
@@ -5022,7 +5022,7 @@ export namespace MyNS {
 		 * @param {number} expectedVersion The expected version of the thing group to delete.
 		 * @return {DeleteThingGroupResponse} Success
 		 */
-		DeleteThingGroup(thingGroupName: string, expectedVersion: number): Observable<DeleteThingGroupResponse> {
+		DeleteThingGroup(thingGroupName: string, expectedVersion: number | null | undefined): Observable<DeleteThingGroupResponse> {
 			return this.http.delete<DeleteThingGroupResponse>(this.baseUri + 'thing-groups/' + (thingGroupName == null ? '' : encodeURIComponent(thingGroupName)) + '&expectedVersion=' + expectedVersion, {});
 		}
 
@@ -5132,7 +5132,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @return {ListTopicRuleDestinationsResponse} Success
 		 */
-		ListTopicRuleDestinations(maxResults: number, nextToken: string): Observable<ListTopicRuleDestinationsResponse> {
+		ListTopicRuleDestinations(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListTopicRuleDestinationsResponse> {
 			return this.http.get<ListTopicRuleDestinationsResponse>(this.baseUri + 'destinations?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -5151,7 +5151,7 @@ export namespace MyNS {
 		 * @param {boolean} deleteScheduledAudits If true, all scheduled audits are deleted.
 		 * @return {DeleteAccountAuditConfigurationResponse} Success
 		 */
-		DeleteAccountAuditConfiguration(deleteScheduledAudits: boolean): Observable<DeleteAccountAuditConfigurationResponse> {
+		DeleteAccountAuditConfiguration(deleteScheduledAudits: boolean | null | undefined): Observable<DeleteAccountAuditConfigurationResponse> {
 			return this.http.delete<DeleteAccountAuditConfigurationResponse>(this.baseUri + 'audit/configuration?deleteScheduledAudits=' + deleteScheduledAudits, {});
 		}
 
@@ -5201,7 +5201,7 @@ export namespace MyNS {
 		 * @param {CACertificateDescriptionAutoRegistrationStatus} newAutoRegistrationStatus The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".
 		 * @return {void} Success
 		 */
-		UpdateCACertificate(caCertificateId: string, newStatus: AuthorizerDescriptionStatus, newAutoRegistrationStatus: CACertificateDescriptionAutoRegistrationStatus, requestBody: UpdateCACertificatePutBody): Observable<HttpResponse<string>> {
+		UpdateCACertificate(caCertificateId: string, newStatus: AuthorizerDescriptionStatus | null | undefined, newAutoRegistrationStatus: CACertificateDescriptionAutoRegistrationStatus | null | undefined, requestBody: UpdateCACertificatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'cacertificate/' + (caCertificateId == null ? '' : encodeURIComponent(caCertificateId)) + '&newStatus=' + newStatus + '&newAutoRegistrationStatus=' + newAutoRegistrationStatus, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5212,7 +5212,7 @@ export namespace MyNS {
 		 * @param {boolean} forceDelete Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
 		 * @return {void} Success
 		 */
-		DeleteCertificate(certificateId: string, forceDelete: boolean): Observable<HttpResponse<string>> {
+		DeleteCertificate(certificateId: string, forceDelete: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'certificates/' + (certificateId == null ? '' : encodeURIComponent(certificateId)) + '&forceDelete=' + forceDelete, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5235,7 +5235,7 @@ export namespace MyNS {
 		 * @param {boolean} force <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note> <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p> </note>
 		 * @return {void} Success
 		 */
-		DeleteJobExecution(jobId: string, thingName: string, executionNumber: number, force: boolean): Observable<HttpResponse<string>> {
+		DeleteJobExecution(jobId: string, thingName: string, executionNumber: number, force: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'things/' + (thingName == null ? '' : encodeURIComponent(thingName)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/executionNumber/' + executionNumber + '&force=' + force, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5429,7 +5429,7 @@ export namespace MyNS {
 		 * @param {string} endpointType <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
 		 * @return {DescribeEndpointResponse} Success
 		 */
-		DescribeEndpoint(endpointType: string): Observable<DescribeEndpointResponse> {
+		DescribeEndpoint(endpointType: string | null | undefined): Observable<DescribeEndpointResponse> {
 			return this.http.get<DescribeEndpointResponse>(this.baseUri + 'endpoint?endpointType=' + (endpointType == null ? '' : encodeURIComponent(endpointType)), {});
 		}
 
@@ -5469,7 +5469,7 @@ export namespace MyNS {
 		 * @param {number} executionNumber A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.
 		 * @return {DescribeJobExecutionResponse} Success
 		 */
-		DescribeJobExecution(jobId: string, thingName: string, executionNumber: number): Observable<DescribeJobExecutionResponse> {
+		DescribeJobExecution(jobId: string, thingName: string, executionNumber: number | null | undefined): Observable<DescribeJobExecutionResponse> {
 			return this.http.get<DescribeJobExecutionResponse>(this.baseUri + 'things/' + (thingName == null ? '' : encodeURIComponent(thingName)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&executionNumber=' + executionNumber, {});
 		}
 
@@ -5518,7 +5518,7 @@ export namespace MyNS {
 		 * @param {string} thingName The thing name.
 		 * @return {GetEffectivePoliciesResponse} Success
 		 */
-		GetEffectivePolicies(thingName: string, requestBody: GetEffectivePoliciesPostBody): Observable<GetEffectivePoliciesResponse> {
+		GetEffectivePolicies(thingName: string | null | undefined, requestBody: GetEffectivePoliciesPostBody): Observable<GetEffectivePoliciesResponse> {
 			return this.http.post<GetEffectivePoliciesResponse>(this.baseUri + 'effective-policies?thingName=' + (thingName == null ? '' : encodeURIComponent(thingName)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5613,7 +5613,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListActiveViolationsResponse} Success
 		 */
-		ListActiveViolations(thingName: string, securityProfileName: string, nextToken: string, maxResults: number): Observable<ListActiveViolationsResponse> {
+		ListActiveViolations(thingName: string | null | undefined, securityProfileName: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListActiveViolationsResponse> {
 			return this.http.get<ListActiveViolationsResponse>(this.baseUri + 'active-violations?thingName=' + (thingName == null ? '' : encodeURIComponent(thingName)) + '&securityProfileName=' + (securityProfileName == null ? '' : encodeURIComponent(securityProfileName)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -5626,7 +5626,7 @@ export namespace MyNS {
 		 * @param {number} pageSize The maximum number of results to be returned per request.
 		 * @return {ListAttachedPoliciesResponse} Success
 		 */
-		ListAttachedPolicies(target: string, recursive: boolean, marker: string, pageSize: number): Observable<ListAttachedPoliciesResponse> {
+		ListAttachedPolicies(target: string, recursive: boolean | null | undefined, marker: string | null | undefined, pageSize: number | null | undefined): Observable<ListAttachedPoliciesResponse> {
 			return this.http.post<ListAttachedPoliciesResponse>(this.baseUri + 'attached-policies/' + (target == null ? '' : encodeURIComponent(target)) + '&recursive=' + recursive + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&pageSize=' + pageSize, null, {});
 		}
 
@@ -5649,7 +5649,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token for the next set of results.
 		 * @return {ListAuditMitigationActionsExecutionsResponse} Success
 		 */
-		ListAuditMitigationActionsExecutions(taskId: string, actionStatus: AuditMitigationActionExecutionMetadataStatus, findingId: string, maxResults: number, nextToken: string): Observable<ListAuditMitigationActionsExecutionsResponse> {
+		ListAuditMitigationActionsExecutions(taskId: string, actionStatus: AuditMitigationActionExecutionMetadataStatus | null | undefined, findingId: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListAuditMitigationActionsExecutionsResponse> {
 			return this.http.get<ListAuditMitigationActionsExecutionsResponse>(this.baseUri + 'audit/mitigationactions/executions#taskId&findingId?taskId=' + (taskId == null ? '' : encodeURIComponent(taskId)) + '&actionStatus=' + actionStatus + '&findingId=' + (findingId == null ? '' : encodeURIComponent(findingId)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -5665,7 +5665,7 @@ export namespace MyNS {
 		 * @param {Date} endTime Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.
 		 * @return {ListAuditMitigationActionsTasksResponse} Success
 		 */
-		ListAuditMitigationActionsTasks(auditTaskId: string, findingId: string, taskStatus: DescribeAuditMitigationActionsTaskResponseTaskStatus, maxResults: number, nextToken: string, startTime: Date, endTime: Date): Observable<ListAuditMitigationActionsTasksResponse> {
+		ListAuditMitigationActionsTasks(auditTaskId: string | null | undefined, findingId: string | null | undefined, taskStatus: DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, startTime: Date, endTime: Date): Observable<ListAuditMitigationActionsTasksResponse> {
 			return this.http.get<ListAuditMitigationActionsTasksResponse>(this.baseUri + 'audit/mitigationactions/tasks#startTime&endTime?auditTaskId=' + (auditTaskId == null ? '' : encodeURIComponent(auditTaskId)) + '&findingId=' + (findingId == null ? '' : encodeURIComponent(findingId)) + '&taskStatus=' + taskStatus + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&startTime=' + startTime.toISOString() + '&endTime=' + endTime.toISOString(), {});
 		}
 
@@ -5680,7 +5680,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time. The default is 25.
 		 * @return {ListAuditTasksResponse} Success
 		 */
-		ListAuditTasks(startTime: Date, endTime: Date, taskType: DescribeAuditTaskResponseTaskType, taskStatus: DescribeAuditMitigationActionsTaskResponseTaskStatus, nextToken: string, maxResults: number): Observable<ListAuditTasksResponse> {
+		ListAuditTasks(startTime: Date, endTime: Date, taskType: DescribeAuditTaskResponseTaskType | null | undefined, taskStatus: DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAuditTasksResponse> {
 			return this.http.get<ListAuditTasksResponse>(this.baseUri + 'audit/tasks#startTime&endTime?startTime=' + startTime.toISOString() + '&endTime=' + endTime.toISOString() + '&taskType=' + taskType + '&taskStatus=' + taskStatus + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -5693,7 +5693,7 @@ export namespace MyNS {
 		 * @param {AuthorizerDescriptionStatus} status The status of the list authorizers request.
 		 * @return {ListAuthorizersResponse} Success
 		 */
-		ListAuthorizers(pageSize: number, marker: string, isAscendingOrder: boolean, status: AuthorizerDescriptionStatus): Observable<ListAuthorizersResponse> {
+		ListAuthorizers(pageSize: number | null | undefined, marker: string | null | undefined, isAscendingOrder: boolean | null | undefined, status: AuthorizerDescriptionStatus | null | undefined): Observable<ListAuthorizersResponse> {
 			return this.http.get<ListAuthorizersResponse>(this.baseUri + 'authorizers/?pageSize=' + pageSize + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&isAscendingOrder=' + isAscendingOrder + '&status=' + status, {});
 		}
 
@@ -5705,7 +5705,7 @@ export namespace MyNS {
 		 * @param {string} namePrefixFilter Limit the results to billing groups whose names have the given prefix.
 		 * @return {ListBillingGroupsResponse} Success
 		 */
-		ListBillingGroups(nextToken: string, maxResults: number, namePrefixFilter: string): Observable<ListBillingGroupsResponse> {
+		ListBillingGroups(nextToken: string | null | undefined, maxResults: number | null | undefined, namePrefixFilter: string | null | undefined): Observable<ListBillingGroupsResponse> {
 			return this.http.get<ListBillingGroupsResponse>(this.baseUri + 'billing-groups?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&namePrefixFilter=' + (namePrefixFilter == null ? '' : encodeURIComponent(namePrefixFilter)), {});
 		}
 
@@ -5717,7 +5717,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Determines the order of the results.
 		 * @return {ListCACertificatesResponse} Success
 		 */
-		ListCACertificates(pageSize: number, marker: string, isAscendingOrder: boolean): Observable<ListCACertificatesResponse> {
+		ListCACertificates(pageSize: number | null | undefined, marker: string | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListCACertificatesResponse> {
 			return this.http.get<ListCACertificatesResponse>(this.baseUri + 'cacertificates?pageSize=' + pageSize + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -5730,7 +5730,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.
 		 * @return {ListCertificatesByCAResponse} Success
 		 */
-		ListCertificatesByCA(caCertificateId: string, pageSize: number, marker: string, isAscendingOrder: boolean): Observable<ListCertificatesByCAResponse> {
+		ListCertificatesByCA(caCertificateId: string, pageSize: number | null | undefined, marker: string | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListCertificatesByCAResponse> {
 			return this.http.get<ListCertificatesByCAResponse>(this.baseUri + 'certificates-by-ca/' + (caCertificateId == null ? '' : encodeURIComponent(caCertificateId)) + '&pageSize=' + pageSize + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -5741,7 +5741,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to retrieve at one time.
 		 * @return {ListDimensionsResponse} Success
 		 */
-		ListDimensions(nextToken: string, maxResults: number): Observable<ListDimensionsResponse> {
+		ListDimensions(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDimensionsResponse> {
 			return this.http.get<ListDimensionsResponse>(this.baseUri + 'dimensions?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -5753,7 +5753,7 @@ export namespace MyNS {
 		 * @param {DescribeDomainConfigurationResponseServiceType} serviceType The type of service delivered by the endpoint.
 		 * @return {ListDomainConfigurationsResponse} Success
 		 */
-		ListDomainConfigurations(marker: string, pageSize: number, serviceType: DescribeDomainConfigurationResponseServiceType): Observable<ListDomainConfigurationsResponse> {
+		ListDomainConfigurations(marker: string | null | undefined, pageSize: number | null | undefined, serviceType: DescribeDomainConfigurationResponseServiceType | null | undefined): Observable<ListDomainConfigurationsResponse> {
 			return this.http.get<ListDomainConfigurationsResponse>(this.baseUri + 'domainConfigurations?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&pageSize=' + pageSize + '&serviceType=' + serviceType, {});
 		}
 
@@ -5764,7 +5764,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListIndicesResponse} Success
 		 */
-		ListIndices(nextToken: string, maxResults: number): Observable<ListIndicesResponse> {
+		ListIndices(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListIndicesResponse> {
 			return this.http.get<ListIndicesResponse>(this.baseUri + 'indices?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -5777,7 +5777,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @return {ListJobExecutionsForJobResponse} Success
 		 */
-		ListJobExecutionsForJob(jobId: string, status: JobExecutionStatus, maxResults: number, nextToken: string): Observable<ListJobExecutionsForJobResponse> {
+		ListJobExecutionsForJob(jobId: string, status: JobExecutionStatus | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListJobExecutionsForJobResponse> {
 			return this.http.get<ListJobExecutionsForJobResponse>(this.baseUri + 'jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/things&status=' + status + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -5790,7 +5790,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @return {ListJobExecutionsForThingResponse} Success
 		 */
-		ListJobExecutionsForThing(thingName: string, status: JobExecutionStatus, maxResults: number, nextToken: string): Observable<ListJobExecutionsForThingResponse> {
+		ListJobExecutionsForThing(thingName: string, status: JobExecutionStatus | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListJobExecutionsForThingResponse> {
 			return this.http.get<ListJobExecutionsForThingResponse>(this.baseUri + 'things/' + (thingName == null ? '' : encodeURIComponent(thingName)) + '/jobs&status=' + status + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -5805,7 +5805,7 @@ export namespace MyNS {
 		 * @param {string} thingGroupId A filter that limits the returned jobs to those for the specified group.
 		 * @return {ListJobsResponse} Success
 		 */
-		ListJobs(status: JobStatus, targetSelection: JobTargetSelection, maxResults: number, nextToken: string, thingGroupName: string, thingGroupId: string): Observable<ListJobsResponse> {
+		ListJobs(status: JobStatus | null | undefined, targetSelection: JobTargetSelection | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, thingGroupName: string | null | undefined, thingGroupId: string | null | undefined): Observable<ListJobsResponse> {
 			return this.http.get<ListJobsResponse>(this.baseUri + 'jobs?status=' + status + '&targetSelection=' + targetSelection + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&thingGroupName=' + (thingGroupName == null ? '' : encodeURIComponent(thingGroupName)) + '&thingGroupId=' + (thingGroupId == null ? '' : encodeURIComponent(thingGroupId)), {});
 		}
 
@@ -5817,7 +5817,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token for the next set of results.
 		 * @return {ListMitigationActionsResponse} Success
 		 */
-		ListMitigationActions(actionType: DescribeMitigationActionResponseActionType, maxResults: number, nextToken: string): Observable<ListMitigationActionsResponse> {
+		ListMitigationActions(actionType: DescribeMitigationActionResponseActionType | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListMitigationActionsResponse> {
 			return this.http.get<ListMitigationActionsResponse>(this.baseUri + 'mitigationactions/actions?actionType=' + actionType + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -5829,7 +5829,7 @@ export namespace MyNS {
 		 * @param {CreateOTAUpdateResponseOtaUpdateStatus} otaUpdateStatus The OTA update job status.
 		 * @return {ListOTAUpdatesResponse} Success
 		 */
-		ListOTAUpdates(maxResults: number, nextToken: string, otaUpdateStatus: CreateOTAUpdateResponseOtaUpdateStatus): Observable<ListOTAUpdatesResponse> {
+		ListOTAUpdates(maxResults: number | null | undefined, nextToken: string | null | undefined, otaUpdateStatus: CreateOTAUpdateResponseOtaUpdateStatus | null | undefined): Observable<ListOTAUpdatesResponse> {
 			return this.http.get<ListOTAUpdatesResponse>(this.baseUri + 'otaUpdates?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&otaUpdateStatus=' + otaUpdateStatus, {});
 		}
 
@@ -5841,7 +5841,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.
 		 * @return {ListOutgoingCertificatesResponse} Success
 		 */
-		ListOutgoingCertificates(pageSize: number, marker: string, isAscendingOrder: boolean): Observable<ListOutgoingCertificatesResponse> {
+		ListOutgoingCertificates(pageSize: number | null | undefined, marker: string | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListOutgoingCertificatesResponse> {
 			return this.http.get<ListOutgoingCertificatesResponse>(this.baseUri + 'certificates-out-going?pageSize=' + pageSize + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -5853,7 +5853,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.
 		 * @return {ListPoliciesResponse} Success
 		 */
-		ListPolicies(marker: string, pageSize: number, isAscendingOrder: boolean): Observable<ListPoliciesResponse> {
+		ListPolicies(marker: string | null | undefined, pageSize: number | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListPoliciesResponse> {
 			return this.http.get<ListPoliciesResponse>(this.baseUri + 'policies?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&pageSize=' + pageSize + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -5865,7 +5865,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.
 		 * @return {ListPolicyPrincipalsResponse} Success
 		 */
-		ListPolicyPrincipals(marker: string, pageSize: number, isAscendingOrder: boolean): Observable<ListPolicyPrincipalsResponse> {
+		ListPolicyPrincipals(marker: string | null | undefined, pageSize: number | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListPolicyPrincipalsResponse> {
 			return this.http.get<ListPolicyPrincipalsResponse>(this.baseUri + 'policy-principals#x-amzn-iot-policy?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&pageSize=' + pageSize + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -5877,7 +5877,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If true, results are returned in ascending creation order.
 		 * @return {ListPrincipalPoliciesResponse} Success
 		 */
-		ListPrincipalPolicies(marker: string, pageSize: number, isAscendingOrder: boolean): Observable<ListPrincipalPoliciesResponse> {
+		ListPrincipalPolicies(marker: string | null | undefined, pageSize: number | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListPrincipalPoliciesResponse> {
 			return this.http.get<ListPrincipalPoliciesResponse>(this.baseUri + 'principal-policies#x-amzn-iot-principal?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&pageSize=' + pageSize + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -5888,7 +5888,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return in this operation.
 		 * @return {ListPrincipalThingsResponse} Success
 		 */
-		ListPrincipalThings(nextToken: string, maxResults: number): Observable<ListPrincipalThingsResponse> {
+		ListPrincipalThings(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPrincipalThingsResponse> {
 			return this.http.get<ListPrincipalThingsResponse>(this.baseUri + 'principals/things#x-amzn-principal?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -5900,7 +5900,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Return the list of role aliases in ascending alphabetical order.
 		 * @return {ListRoleAliasesResponse} Success
 		 */
-		ListRoleAliases(pageSize: number, marker: string, isAscendingOrder: boolean): Observable<ListRoleAliasesResponse> {
+		ListRoleAliases(pageSize: number | null | undefined, marker: string | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListRoleAliasesResponse> {
 			return this.http.get<ListRoleAliasesResponse>(this.baseUri + 'role-aliases?pageSize=' + pageSize + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -5911,7 +5911,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time. The default is 25.
 		 * @return {ListScheduledAuditsResponse} Success
 		 */
-		ListScheduledAudits(nextToken: string, maxResults: number): Observable<ListScheduledAuditsResponse> {
+		ListScheduledAudits(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListScheduledAuditsResponse> {
 			return this.http.get<ListScheduledAuditsResponse>(this.baseUri + 'audit/scheduledaudits?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -5923,7 +5923,7 @@ export namespace MyNS {
 		 * @param {string} dimensionName A filter to limit results to the security profiles that use the defined dimension.
 		 * @return {ListSecurityProfilesResponse} Success
 		 */
-		ListSecurityProfiles(nextToken: string, maxResults: number, dimensionName: string): Observable<ListSecurityProfilesResponse> {
+		ListSecurityProfiles(nextToken: string | null | undefined, maxResults: number | null | undefined, dimensionName: string | null | undefined): Observable<ListSecurityProfilesResponse> {
 			return this.http.get<ListSecurityProfilesResponse>(this.baseUri + 'security-profiles?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&dimensionName=' + (dimensionName == null ? '' : encodeURIComponent(dimensionName)), {});
 		}
 
@@ -5936,7 +5936,7 @@ export namespace MyNS {
 		 * @param {string} securityProfileTargetArn The ARN of the target (thing group) whose attached security profiles you want to get.
 		 * @return {ListSecurityProfilesForTargetResponse} Success
 		 */
-		ListSecurityProfilesForTarget(nextToken: string, maxResults: number, recursive: boolean, securityProfileTargetArn: string): Observable<ListSecurityProfilesForTargetResponse> {
+		ListSecurityProfilesForTarget(nextToken: string | null | undefined, maxResults: number | null | undefined, recursive: boolean | null | undefined, securityProfileTargetArn: string): Observable<ListSecurityProfilesForTargetResponse> {
 			return this.http.get<ListSecurityProfilesForTargetResponse>(this.baseUri + 'security-profiles-for-target#securityProfileTargetArn?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&recursive=' + recursive + '&securityProfileTargetArn=' + (securityProfileTargetArn == null ? '' : encodeURIComponent(securityProfileTargetArn)), {});
 		}
 
@@ -5948,7 +5948,7 @@ export namespace MyNS {
 		 * @param {boolean} isAscendingOrder Set to true to return the list of streams in ascending order.
 		 * @return {ListStreamsResponse} Success
 		 */
-		ListStreams(maxResults: number, nextToken: string, isAscendingOrder: boolean): Observable<ListStreamsResponse> {
+		ListStreams(maxResults: number | null | undefined, nextToken: string | null | undefined, isAscendingOrder: boolean | null | undefined): Observable<ListStreamsResponse> {
 			return this.http.get<ListStreamsResponse>(this.baseUri + 'streams?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&isAscendingOrder=' + isAscendingOrder, {});
 		}
 
@@ -5959,7 +5959,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(resourceArn: string, nextToken: string): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(resourceArn: string, nextToken: string | null | undefined): Observable<ListTagsForResourceResponse> {
 			return this.http.get<ListTagsForResourceResponse>(this.baseUri + 'tags#resourceArn?resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -5971,7 +5971,7 @@ export namespace MyNS {
 		 * @param {number} pageSize The maximum number of results to return at one time.
 		 * @return {ListTargetsForPolicyResponse} Success
 		 */
-		ListTargetsForPolicy(policyName: string, marker: string, pageSize: number): Observable<ListTargetsForPolicyResponse> {
+		ListTargetsForPolicy(policyName: string, marker: string | null | undefined, pageSize: number | null | undefined): Observable<ListTargetsForPolicyResponse> {
 			return this.http.post<ListTargetsForPolicyResponse>(this.baseUri + 'policy-targets/' + (policyName == null ? '' : encodeURIComponent(policyName)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&pageSize=' + pageSize, null, {});
 		}
 
@@ -5983,7 +5983,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListTargetsForSecurityProfileResponse} Success
 		 */
-		ListTargetsForSecurityProfile(securityProfileName: string, nextToken: string, maxResults: number): Observable<ListTargetsForSecurityProfileResponse> {
+		ListTargetsForSecurityProfile(securityProfileName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListTargetsForSecurityProfileResponse> {
 			return this.http.get<ListTargetsForSecurityProfileResponse>(this.baseUri + 'security-profiles/' + (securityProfileName == null ? '' : encodeURIComponent(securityProfileName)) + '/targets&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -5997,7 +5997,7 @@ export namespace MyNS {
 		 * @param {boolean} recursive If true, return child groups as well.
 		 * @return {ListThingGroupsResponse} Success
 		 */
-		ListThingGroups(nextToken: string, maxResults: number, parentGroup: string, namePrefixFilter: string, recursive: boolean): Observable<ListThingGroupsResponse> {
+		ListThingGroups(nextToken: string | null | undefined, maxResults: number | null | undefined, parentGroup: string | null | undefined, namePrefixFilter: string | null | undefined, recursive: boolean | null | undefined): Observable<ListThingGroupsResponse> {
 			return this.http.get<ListThingGroupsResponse>(this.baseUri + 'thing-groups?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&parentGroup=' + (parentGroup == null ? '' : encodeURIComponent(parentGroup)) + '&namePrefixFilter=' + (namePrefixFilter == null ? '' : encodeURIComponent(namePrefixFilter)) + '&recursive=' + recursive, {});
 		}
 
@@ -6009,7 +6009,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListThingGroupsForThingResponse} Success
 		 */
-		ListThingGroupsForThing(thingName: string, nextToken: string, maxResults: number): Observable<ListThingGroupsForThingResponse> {
+		ListThingGroupsForThing(thingName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThingGroupsForThingResponse> {
 			return this.http.get<ListThingGroupsForThingResponse>(this.baseUri + 'things/' + (thingName == null ? '' : encodeURIComponent(thingName)) + '/thing-groups&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -6032,7 +6032,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return per request.
 		 * @return {ListThingRegistrationTaskReportsResponse} Success
 		 */
-		ListThingRegistrationTaskReports(taskId: string, reportType: ListThingRegistrationTaskReportsResponseReportType, nextToken: string, maxResults: number): Observable<ListThingRegistrationTaskReportsResponse> {
+		ListThingRegistrationTaskReports(taskId: string, reportType: ListThingRegistrationTaskReportsResponseReportType, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThingRegistrationTaskReportsResponse> {
 			return this.http.get<ListThingRegistrationTaskReportsResponse>(this.baseUri + 'thing-registration-tasks/' + (taskId == null ? '' : encodeURIComponent(taskId)) + '/reports#reportType&reportType=' + reportType + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -6044,7 +6044,7 @@ export namespace MyNS {
 		 * @param {DescribeThingRegistrationTaskResponseStatus} status The status of the bulk thing provisioning task.
 		 * @return {ListThingRegistrationTasksResponse} Success
 		 */
-		ListThingRegistrationTasks(nextToken: string, maxResults: number, status: DescribeThingRegistrationTaskResponseStatus): Observable<ListThingRegistrationTasksResponse> {
+		ListThingRegistrationTasks(nextToken: string | null | undefined, maxResults: number | null | undefined, status: DescribeThingRegistrationTaskResponseStatus | null | undefined): Observable<ListThingRegistrationTasksResponse> {
 			return this.http.get<ListThingRegistrationTasksResponse>(this.baseUri + 'thing-registration-tasks?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&status=' + status, {});
 		}
 
@@ -6065,7 +6065,7 @@ export namespace MyNS {
 		 * @param {string} thingTypeName The name of the thing type.
 		 * @return {ListThingTypesResponse} Success
 		 */
-		ListThingTypes(nextToken: string, maxResults: number, thingTypeName: string): Observable<ListThingTypesResponse> {
+		ListThingTypes(nextToken: string | null | undefined, maxResults: number | null | undefined, thingTypeName: string | null | undefined): Observable<ListThingTypesResponse> {
 			return this.http.get<ListThingTypesResponse>(this.baseUri + 'thing-types?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&thingTypeName=' + (thingTypeName == null ? '' : encodeURIComponent(thingTypeName)), {});
 		}
 
@@ -6079,7 +6079,7 @@ export namespace MyNS {
 		 * @param {string} thingTypeName The name of the thing type used to search for things.
 		 * @return {ListThingsResponse} Success
 		 */
-		ListThings(nextToken: string, maxResults: number, attributeName: string, attributeValue: string, thingTypeName: string): Observable<ListThingsResponse> {
+		ListThings(nextToken: string | null | undefined, maxResults: number | null | undefined, attributeName: string | null | undefined, attributeValue: string | null | undefined, thingTypeName: string | null | undefined): Observable<ListThingsResponse> {
 			return this.http.get<ListThingsResponse>(this.baseUri + 'things?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&attributeName=' + (attributeName == null ? '' : encodeURIComponent(attributeName)) + '&attributeValue=' + (attributeValue == null ? '' : encodeURIComponent(attributeValue)) + '&thingTypeName=' + (thingTypeName == null ? '' : encodeURIComponent(thingTypeName)), {});
 		}
 
@@ -6100,7 +6100,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return per request.
 		 * @return {ListThingsInBillingGroupResponse} Success
 		 */
-		ListThingsInBillingGroup(billingGroupName: string, nextToken: string, maxResults: number): Observable<ListThingsInBillingGroupResponse> {
+		ListThingsInBillingGroup(billingGroupName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThingsInBillingGroupResponse> {
 			return this.http.get<ListThingsInBillingGroupResponse>(this.baseUri + 'billing-groups/' + (billingGroupName == null ? '' : encodeURIComponent(billingGroupName)) + '/things&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -6113,7 +6113,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListThingsInThingGroupResponse} Success
 		 */
-		ListThingsInThingGroup(thingGroupName: string, recursive: boolean, nextToken: string, maxResults: number): Observable<ListThingsInThingGroupResponse> {
+		ListThingsInThingGroup(thingGroupName: string, recursive: boolean | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThingsInThingGroupResponse> {
 			return this.http.get<ListThingsInThingGroupResponse>(this.baseUri + 'thing-groups/' + (thingGroupName == null ? '' : encodeURIComponent(thingGroupName)) + '/things&recursive=' + recursive + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -6126,7 +6126,7 @@ export namespace MyNS {
 		 * @param {boolean} ruleDisabled Specifies whether the rule is disabled.
 		 * @return {ListTopicRulesResponse} Success
 		 */
-		ListTopicRules(topic: string, maxResults: number, nextToken: string, ruleDisabled: boolean): Observable<ListTopicRulesResponse> {
+		ListTopicRules(topic: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, ruleDisabled: boolean | null | undefined): Observable<ListTopicRulesResponse> {
 			return this.http.get<ListTopicRulesResponse>(this.baseUri + 'rules?topic=' + (topic == null ? '' : encodeURIComponent(topic)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&ruleDisabled=' + ruleDisabled, {});
 		}
 
@@ -6138,7 +6138,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListV2LoggingLevelsResponse} Success
 		 */
-		ListV2LoggingLevels(targetType: LogTargetTargetType, nextToken: string, maxResults: number): Observable<ListV2LoggingLevelsResponse> {
+		ListV2LoggingLevels(targetType: LogTargetTargetType | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListV2LoggingLevelsResponse> {
 			return this.http.get<ListV2LoggingLevelsResponse>(this.baseUri + 'v2LoggingLevel?targetType=' + targetType + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -6162,7 +6162,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListViolationEventsResponse} Success
 		 */
-		ListViolationEvents(startTime: Date, endTime: Date, thingName: string, securityProfileName: string, nextToken: string, maxResults: number): Observable<ListViolationEventsResponse> {
+		ListViolationEvents(startTime: Date, endTime: Date, thingName: string | null | undefined, securityProfileName: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListViolationEventsResponse> {
 			return this.http.get<ListViolationEventsResponse>(this.baseUri + 'violation-events#startTime&endTime?startTime=' + startTime.toISOString() + '&endTime=' + endTime.toISOString() + '&thingName=' + (thingName == null ? '' : encodeURIComponent(thingName)) + '&securityProfileName=' + (securityProfileName == null ? '' : encodeURIComponent(securityProfileName)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -6173,7 +6173,7 @@ export namespace MyNS {
 		 * @param {boolean} allowAutoRegistration Allows this CA certificate to be used for auto registration of device certificates.
 		 * @return {RegisterCACertificateResponse} Success
 		 */
-		RegisterCACertificate(setAsActive: boolean, allowAutoRegistration: boolean, requestBody: RegisterCACertificatePostBody): Observable<RegisterCACertificateResponse> {
+		RegisterCACertificate(setAsActive: boolean | null | undefined, allowAutoRegistration: boolean | null | undefined, requestBody: RegisterCACertificatePostBody): Observable<RegisterCACertificateResponse> {
 			return this.http.post<RegisterCACertificateResponse>(this.baseUri + 'cacertificate?setAsActive=' + setAsActive + '&allowAutoRegistration=' + allowAutoRegistration, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6183,7 +6183,7 @@ export namespace MyNS {
 		 * @param {boolean} setAsActive A boolean value that specifies if the certificate is set to active.
 		 * @return {RegisterCertificateResponse} Success
 		 */
-		RegisterCertificate(setAsActive: boolean, requestBody: RegisterCertificatePostBody): Observable<RegisterCertificateResponse> {
+		RegisterCertificate(setAsActive: boolean | null | undefined, requestBody: RegisterCertificatePostBody): Observable<RegisterCertificateResponse> {
 			return this.http.post<RegisterCertificateResponse>(this.baseUri + 'certificate/register?setAsActive=' + setAsActive, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -6267,7 +6267,7 @@ export namespace MyNS {
 		 * @param {string} clientId The MQTT client ID.
 		 * @return {TestAuthorizationResponse} Success
 		 */
-		TestAuthorization(clientId: string, requestBody: TestAuthorizationPostBody): Observable<TestAuthorizationResponse> {
+		TestAuthorization(clientId: string | null | undefined, requestBody: TestAuthorizationPostBody): Observable<TestAuthorizationResponse> {
 			return this.http.post<TestAuthorizationResponse>(this.baseUri + 'test-authorization?clientId=' + (clientId == null ? '' : encodeURIComponent(clientId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

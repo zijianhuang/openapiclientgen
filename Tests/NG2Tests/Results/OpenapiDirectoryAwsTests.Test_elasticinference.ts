@@ -154,7 +154,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeAcceleratorsResponse} Success
 		 */
-		DescribeAccelerators(maxResults: string, nextToken: string, requestBody: DescribeAcceleratorsPostBody): Observable<DescribeAcceleratorsResponse> {
+		DescribeAccelerators(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeAcceleratorsPostBody): Observable<DescribeAcceleratorsResponse> {
 			return this.http.post<DescribeAcceleratorsResponse>(this.baseUri + 'describe-accelerators?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

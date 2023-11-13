@@ -5629,7 +5629,7 @@ export namespace MyNS {
 		 * @param {boolean} openapi Return an OpenAPI specification.
 		 * @return {void} Standard request.
 		 */
-		Get_endpoints(openapi: boolean): Observable<HttpResponse<string>> {
+		Get_endpoints(openapi: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '?openapi=' + openapi, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5643,7 +5643,7 @@ export namespace MyNS {
 		 * @param {Get_categoriesSort} sort The way to sort the results.
 		 * @return {void} The categories were returned.
 		 */
-		Get_categories(direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_categoriesSort): Observable<HttpResponse<string>> {
+		Get_categories(direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_categoriesSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'categories?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5668,7 +5668,7 @@ export namespace MyNS {
 		 * @param {Get_category_channelsSort} sort The way to sort the results.
 		 * @return {void} The channels were returned.
 		 */
-		Get_category_channels(category: string, direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_category_channelsSort): Observable<HttpResponse<string>> {
+		Get_category_channels(category: string, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_category_channelsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'categories/' + (category == null ? '' : encodeURIComponent(category)) + '/channels&direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5683,7 +5683,7 @@ export namespace MyNS {
 		 * @param {Get_category_groupsSort} sort The way to sort the results.
 		 * @return {void} The groups were returned.
 		 */
-		Get_category_groups(category: string, direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_category_groupsSort): Observable<HttpResponse<string>> {
+		Get_category_groups(category: string, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_category_groupsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'categories/' + (category == null ? '' : encodeURIComponent(category)) + '/groups&direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5702,7 +5702,7 @@ export namespace MyNS {
 		 * @param {Get_category_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_category_videos(category: string, direction: Get_categoriesDirection, filter: Get_category_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_category_videosSort): Observable<HttpResponse<string>> {
+		Get_category_videos(category: string, direction: Get_categoriesDirection | null | undefined, filter: Get_category_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_category_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'categories/' + (category == null ? '' : encodeURIComponent(category)) + '/videos&direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5730,7 +5730,7 @@ export namespace MyNS {
 		 *  * `relevant` - Relevant sorting is available only for search queries.
 		 * @return {void} The channels were returned.
 		 */
-		Get_channels(direction: Get_categoriesDirection, filter: Get_channelsFilter, page: number, per_page: number, query: string, sort: Get_channelsSort): Observable<HttpResponse<string>> {
+		Get_channels(direction: Get_categoriesDirection | null | undefined, filter: Get_channelsFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channelsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5821,7 +5821,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The moderators were returned.
 		 */
-		Get_channel_moderators(channel_id: number, direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_channel_moderators(channel_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/moderators?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5888,7 +5888,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The users were returned.
 		 */
-		Get_channel_privacy_users(channel_id: number, direction: Get_categoriesDirection, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_channel_privacy_users(channel_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/privacy/users?direction=' + direction + '&page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5975,7 +5975,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The followers were returned.
 		 */
-		Get_channel_subscribers(channel_id: number, direction: Get_categoriesDirection, filter: Get_channel_subscribersFilter, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_channel_subscribers(channel_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_subscribersFilter, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/users?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6003,7 +6003,7 @@ export namespace MyNS {
 		 * @param {Get_channel_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_channel_videos(channel_id: number, containing_uri: string, direction: Get_categoriesDirection, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_channel_videosSort): Observable<HttpResponse<string>> {
+		Get_channel_videos(channel_id: number, containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6061,7 +6061,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The comments were returned.
 		 */
-		Get_comments_alt1(channel_id: number, video_id: number, direction: Get_categoriesDirection, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_comments_alt1(channel_id: number, video_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/videos/' + video_id + '/comments?direction=' + direction + '&page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6077,7 +6077,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
 		 */
-		Get_video_credits_alt1(channel_id: number, video_id: number, direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_video_credits_alt1(channel_id: number, video_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/videos/' + video_id + '/credits?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6092,7 +6092,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
 		 */
-		Get_video_likes_alt1(channel_id: number, video_id: number, direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_video_likes_alt1(channel_id: number, video_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/videos/' + video_id + '/likes?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6105,7 +6105,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The thumbnails were returned.
 		 */
-		Get_video_thumbnails_alt1(channel_id: number, video_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_video_thumbnails_alt1(channel_id: number, video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/videos/' + video_id + '/pictures?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6118,7 +6118,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The users were returned.
 		 */
-		Get_video_privacy_users_alt1(channel_id: number, video_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_video_privacy_users_alt1(channel_id: number, video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'channels/' + channel_id + '/videos/' + video_id + '/privacy/users?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6178,7 +6178,7 @@ export namespace MyNS {
 		 *  * `relevant` - Relevant sorting is available only for search queries.
 		 * @return {void} The groups were returned.
 		 */
-		Get_groups(direction: Get_categoriesDirection, filter: Get_channelsFilter, page: number, per_page: number, query: string, sort: Get_channelsSort): Observable<HttpResponse<string>> {
+		Get_groups(direction: Get_categoriesDirection | null | undefined, filter: Get_channelsFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channelsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'groups?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6214,7 +6214,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The members were returned.
 		 */
-		Get_group_members(group_id: number, direction: Get_categoriesDirection, filter: Get_channel_subscribersFilter, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_group_members(group_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_subscribersFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'groups/' + group_id + '/users?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6231,7 +6231,7 @@ export namespace MyNS {
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_group_videos(group_id: number, direction: Get_categoriesDirection, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_group_videosSort): Observable<HttpResponse<string>> {
+		Get_group_videos(group_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_group_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'groups/' + group_id + '/videos?direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6277,7 +6277,7 @@ export namespace MyNS {
 		 *  * `texttracks` - Only return text track supported languages
 		 * @return {void} The languages were returned.
 		 */
-		Get_languages(filter: Get_languagesFilter): Observable<HttpResponse<string>> {
+		Get_languages(filter: Get_languagesFilter | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'languages?filter=' + filter, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6300,7 +6300,7 @@ export namespace MyNS {
 		 * @param {Get_albums_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Album>} The albums were returned.
 		 */
-		Get_albums_alt1(direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_albums_alt1Sort): Observable<Array<Album>> {
+		Get_albums_alt1(direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_albums_alt1Sort | null | undefined): Observable<Array<Album>> {
 			return this.http.get<Array<Album>>(this.baseUri + 'me/albums?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, {});
 		}
 
@@ -6340,7 +6340,7 @@ export namespace MyNS {
 		 * @param {boolean} weak_search Whether to include private videos in the search. Please note that a separate search service provides this functionality. The service performs a partial text search on the video's name.
 		 * @return {void} The videos were returned.
 		 */
-		Get_album_videos_alt1(album_id: number, containing_uri: string, direction: Get_categoriesDirection, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, password: string, per_page: number, query: string, sort: Get_album_videos_alt1Sort, weak_search: boolean): Observable<HttpResponse<string>> {
+		Get_album_videos_alt1(album_id: number, containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, password: string | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_album_videos_alt1Sort | null | undefined, weak_search: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/albums/' + album_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&password=' + (password == null ? '' : encodeURIComponent(password)) + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort + '&weak_search=' + weak_search, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6375,7 +6375,7 @@ export namespace MyNS {
 		 * @param {string} password The password of the album.
 		 * @return {void} The video was returned.
 		 */
-		Get_album_video_alt1(album_id: number, video_id: number, password: string): Observable<HttpResponse<string>> {
+		Get_album_video_alt1(album_id: number, video_id: number, password: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/albums/' + album_id + '/videos/' + video_id + '?password=' + (password == null ? '' : encodeURIComponent(password)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6413,7 +6413,7 @@ export namespace MyNS {
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_appearances_alt1(direction: Get_categoriesDirection, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_group_videosSort): Observable<HttpResponse<string>> {
+		Get_appearances_alt1(direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_group_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/appearances?direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6426,7 +6426,7 @@ export namespace MyNS {
 		 * @param {Get_category_subscriptions_alt1Sort} sort The way to sort the results.
 		 * @return {void} The categories were returned.
 		 */
-		Get_category_subscriptions_alt1(direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_category_subscriptions_alt1Sort): Observable<HttpResponse<string>> {
+		Get_category_subscriptions_alt1(direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_category_subscriptions_alt1Sort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/categories?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6471,7 +6471,7 @@ export namespace MyNS {
 		 * @param {Get_category_channelsSort} sort The way to sort the results.
 		 * @return {void} The channels were returned.
 		 */
-		Get_channel_subscriptions_alt1(direction: Get_categoriesDirection, filter: Get_channel_subscriptions_alt1Filter, page: number, per_page: number, query: string, sort: Get_category_channelsSort): Observable<HttpResponse<string>> {
+		Get_channel_subscriptions_alt1(direction: Get_categoriesDirection | null | undefined, filter: Get_channel_subscriptions_alt1Filter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_category_channelsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/channels?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6542,7 +6542,7 @@ export namespace MyNS {
 		 * @param {Get_feed_alt1Type} type The feed type.
 		 * @return {void} The videos were returned.
 		 */
-		Get_feed_alt1(offset: string, page: number, per_page: number, type: Get_feed_alt1Type): Observable<HttpResponse<string>> {
+		Get_feed_alt1(offset: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, type: Get_feed_alt1Type | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/feed?offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&page=' + page + '&per_page=' + per_page + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6556,7 +6556,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The user's followers were returned.
 		 */
-		Get_followers_alt1(direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_followers_alt1(direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/followers?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6571,7 +6571,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The followed users were returned.
 		 */
-		Get_user_following_alt1(direction: Get_categoriesDirection, filter: Get_user_following_alt1Filter, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_user_following_alt1(direction: Get_categoriesDirection | null | undefined, filter: Get_user_following_alt1Filter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/following?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6625,7 +6625,7 @@ export namespace MyNS {
 		 * @param {Get_category_groupsSort} sort The way to sort the results.
 		 * @return {void} The groups were returned.
 		 */
-		Get_user_groups_alt1(direction: Get_categoriesDirection, filter: Get_channel_subscriptions_alt1Filter, page: number, per_page: number, query: string, sort: Get_category_groupsSort): Observable<HttpResponse<string>> {
+		Get_user_groups_alt1(direction: Get_categoriesDirection | null | undefined, filter: Get_channel_subscriptions_alt1Filter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_category_groupsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/groups?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6670,7 +6670,7 @@ export namespace MyNS {
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_likes_alt1(filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_group_videosSort): Observable<HttpResponse<string>> {
+		Get_likes_alt1(filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_group_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/likes?filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6714,7 +6714,7 @@ export namespace MyNS {
 		 * @param {Get_user_vods_alt1Sort} sort The way to sort the results.
 		 * @return {void} The On Demand pages were returned.
 		 */
-		Get_user_vods_alt1(direction: Get_categoriesDirection, filter: On_demand_pageType, page: number, per_page: number, sort: Get_user_vods_alt1Sort): Observable<HttpResponse<string>> {
+		Get_user_vods_alt1(direction: Get_categoriesDirection | null | undefined, filter: On_demand_pageType | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_user_vods_alt1Sort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/ondemand/pages?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6739,7 +6739,7 @@ export namespace MyNS {
 		 * @param {Get_vod_purchasesSort} sort The way to sort the results.
 		 * @return {void} The purchases and rentals were returned.
 		 */
-		Get_vod_purchases(direction: Get_categoriesDirection, filter: Get_vod_purchasesFilter, page: number, per_page: number, sort: Get_vod_purchasesSort): Observable<HttpResponse<string>> {
+		Get_vod_purchases(direction: Get_categoriesDirection | null | undefined, filter: Get_vod_purchasesFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_vod_purchasesSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/ondemand/purchases?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6760,7 +6760,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The pictures were returned.
 		 */
-		Get_pictures_alt1(page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_pictures_alt1(page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/pictures?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6803,7 +6803,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The portfolios were returned.
 		 */
-		Get_portfolios_alt1(direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_portfolios_alt1(direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/portfolios?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6831,7 +6831,7 @@ export namespace MyNS {
 		 *  * `default` - This will sort to the default sort set on the portfolio.
 		 * @return {void} The videos were returned.
 		 */
-		Get_portfolio_videos_alt1(portfolio_id: number, containing_uri: string, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, sort: Get_portfolio_videos_alt1Sort): Observable<HttpResponse<string>> {
+		Get_portfolio_videos_alt1(portfolio_id: number, containing_uri: string | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_portfolio_videos_alt1Sort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/portfolios/' + portfolio_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6875,7 +6875,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The embed presets were returned.
 		 */
-		Get_embed_presets_alt1(page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_embed_presets_alt1(page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/presets?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6897,7 +6897,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The videos were returned.
 		 */
-		Get_embed_preset_videos_alt1(preset_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_embed_preset_videos_alt1(preset_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/presets/' + preset_id + '/videos?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6911,7 +6911,7 @@ export namespace MyNS {
 		 * @param {Get_projects_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Project>} The projects were returned.
 		 */
-		Get_projects_alt1(direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_projects_alt1Sort): Observable<Array<Project>> {
+		Get_projects_alt1(direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_projects_alt1Sort | null | undefined): Observable<Array<Project>> {
 			return this.http.get<Array<Project>>(this.baseUri + 'me/projects?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, {});
 		}
 
@@ -6933,7 +6933,7 @@ export namespace MyNS {
 		 * @param {boolean} should_delete_clips Whether to delete all the videos in the project along with the project itself.
 		 * @return {void} 
 		 */
-		Delete_project_alt1(project_id: number, should_delete_clips: boolean): Observable<HttpResponse<string>> {
+		Delete_project_alt1(project_id: number, should_delete_clips: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'me/projects/' + project_id + '?should_delete_clips=' + should_delete_clips, { observe: 'response', responseType: 'text' });
 		}
 
@@ -6968,7 +6968,7 @@ export namespace MyNS {
 		 * @param {string} uris A comma-separated list of the video URIs to remove.
 		 * @return {void} 
 		 */
-		Remove_videos_from_project_alt1(project_id: number, should_delete_clips: boolean, uris: string): Observable<HttpResponse<string>> {
+		Remove_videos_from_project_alt1(project_id: number, should_delete_clips: boolean | null | undefined, uris: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'me/projects/' + project_id + '/videos?should_delete_clips=' + should_delete_clips + '&uris=' + (uris == null ? '' : encodeURIComponent(uris)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6983,7 +6983,7 @@ export namespace MyNS {
 		 * @param {Get_project_videos_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Video>} The videos were returned.
 		 */
-		Get_project_videos_alt1(project_id: number, direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_project_videos_alt1Sort): Observable<Array<Video>> {
+		Get_project_videos_alt1(project_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_project_videos_alt1Sort | null | undefined): Observable<Array<Video>> {
 			return this.http.get<Array<Video>>(this.baseUri + 'me/projects/' + project_id + '/videos?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, {});
 		}
 
@@ -7037,7 +7037,7 @@ export namespace MyNS {
 		 * @param {Get_videos_alt1Sort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_videos_alt1(containing_uri: string, direction: Get_categoriesDirection, filter: Get_videos_alt1Filter, filter_embeddable: boolean, filter_playable: boolean, page: number, per_page: number, query: string, sort: Get_videos_alt1Sort): Observable<HttpResponse<string>> {
+		Get_videos_alt1(containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_videos_alt1Filter | null | undefined, filter_embeddable: boolean | null | undefined, filter_playable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_videos_alt1Sort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&filter_playable=' + filter_playable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7067,7 +7067,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The videos were returned.
 		 */
-		Get_watch_history(page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_watch_history(page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/watched/videos?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7093,7 +7093,7 @@ export namespace MyNS {
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_watch_later_queue_alt1(direction: Get_categoriesDirection, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_group_videosSort): Observable<HttpResponse<string>> {
+		Get_watch_later_queue_alt1(direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_group_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'me/watchlater?direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7167,7 +7167,7 @@ export namespace MyNS {
 		 * @param {Get_genre_vodsSort} sort The way to sort the results.
 		 * @return {void} The On Demand pages were returned.
 		 */
-		Get_genre_vods(genre_id: string, direction: Get_categoriesDirection, filter: Get_genre_vodsFilter, page: number, per_page: number, query: string, sort: Get_genre_vodsSort): Observable<HttpResponse<string>> {
+		Get_genre_vods(genre_id: string, direction: Get_categoriesDirection | null | undefined, filter: Get_genre_vodsFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_genre_vodsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/genres/' + (genre_id == null ? '' : encodeURIComponent(genre_id)) + '/pages&direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7211,7 +7211,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The background images were returned.
 		 */
-		Get_vod_backgrounds(ondemand_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_vod_backgrounds(ondemand_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/pages/' + ondemand_id + '/backgrounds?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7302,7 +7302,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
 		 */
-		Get_vod_likes(ondemand_id: number, direction: Get_categoriesDirection, filter: On_demand_videoType, page: number, per_page: number, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_vod_likes(ondemand_id: number, direction: Get_categoriesDirection | null | undefined, filter: On_demand_videoType | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/pages/' + ondemand_id + '/likes?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7314,7 +7314,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The posters were returned.
 		 */
-		Get_vod_posters(ondemand_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_vod_posters(ondemand_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/pages/' + ondemand_id + '/pictures?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7348,7 +7348,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The promotions were returned.
 		 */
-		Get_vod_promotions(ondemand_id: number, filter: Get_vod_promotionsFilter, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_vod_promotions(ondemand_id: number, filter: Get_vod_promotionsFilter, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/pages/' + ondemand_id + '/promotions?filter=' + filter + '&page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7383,7 +7383,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The codes were returned.
 		 */
-		Get_vod_promotion_codes(ondemand_id: number, promotion_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_vod_promotion_codes(ondemand_id: number, promotion_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/pages/' + ondemand_id + '/promotions/' + promotion_id + '/codes?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7452,7 +7452,7 @@ export namespace MyNS {
 		 * @param {Get_vod_seasonsSort} sort The way to sort the results.
 		 * @return {void} The seasons were returned.
 		 */
-		Get_vod_seasons(ondemand_id: number, direction: Get_categoriesDirection, filter: Get_vod_seasonsFilter, page: number, per_page: number, sort: Get_vod_seasonsSort): Observable<HttpResponse<string>> {
+		Get_vod_seasons(ondemand_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_vod_seasonsFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_vod_seasonsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/pages/' + ondemand_id + '/seasons?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7478,7 +7478,7 @@ export namespace MyNS {
 		 * @param {Get_vod_season_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_vod_season_videos(ondemand_id: number, season_id: number, filter: Get_vod_seasonsFilter, page: number, per_page: number, sort: Get_vod_season_videosSort): Observable<HttpResponse<string>> {
+		Get_vod_season_videos(ondemand_id: number, season_id: number, filter: Get_vod_seasonsFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_vod_season_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/pages/' + ondemand_id + '/seasons/' + season_id + '/videos?filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7494,7 +7494,7 @@ export namespace MyNS {
 		 * @return {void} * The videos were returned.
 		 * * The videos were returned.
 		 */
-		Get_vod_videos(ondemand_id: number, direction: Get_categoriesDirection, filter: Get_vod_videosFilter, page: number, per_page: number, sort: Get_vod_videosSort): Observable<HttpResponse<string>> {
+		Get_vod_videos(ondemand_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_vod_videosFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_vod_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'ondemand/pages/' + ondemand_id + '/videos?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7559,7 +7559,7 @@ export namespace MyNS {
 		 * @param {Get_videos_with_tagSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_videos_with_tag(word: string, direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_videos_with_tagSort): Observable<HttpResponse<string>> {
+		Get_videos_with_tag(word: string, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_videos_with_tagSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'tags/' + (word == null ? '' : encodeURIComponent(word)) + '/videos&direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7583,7 +7583,7 @@ export namespace MyNS {
 		 * @param {Get_channelsSort} sort The way to sort the results.
 		 * @return {void} The search results were returned.
 		 */
-		Search_users(direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_channelsSort): Observable<HttpResponse<string>> {
+		Search_users(direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channelsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7608,7 +7608,7 @@ export namespace MyNS {
 		 * @param {Get_albums_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Album>} The albums were returned.
 		 */
-		Get_albums(user_id: number, direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_albums_alt1Sort): Observable<Array<Album>> {
+		Get_albums(user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_albums_alt1Sort | null | undefined): Observable<Array<Album>> {
 			return this.http.get<Array<Album>>(this.baseUri + 'users/' + user_id + '/albums?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, {});
 		}
 
@@ -7643,7 +7643,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The custom uploaded thumbnails were returned.
 		 */
-		Get_album_custom_thumbs(album_id: number, user_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_album_custom_thumbs(album_id: number, user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/albums/' + album_id + '/custom_thumbnails?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7692,7 +7692,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The custom logos were returned.
 		 */
-		Get_album_logos(album_id: number, user_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_album_logos(album_id: number, user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/albums/' + album_id + '/logos?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7749,7 +7749,7 @@ export namespace MyNS {
 		 * @param {boolean} weak_search Whether to include private videos in the search. Please note that a separate search service provides this functionality. The service performs a partial text search on the video's name.
 		 * @return {void} The videos were returned.
 		 */
-		Get_album_videos(album_id: number, user_id: number, containing_uri: string, direction: Get_categoriesDirection, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, password: string, per_page: number, query: string, sort: Get_album_videosSort, weak_search: boolean): Observable<HttpResponse<string>> {
+		Get_album_videos(album_id: number, user_id: number, containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, password: string | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_album_videosSort | null | undefined, weak_search: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/albums/' + album_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&password=' + (password == null ? '' : encodeURIComponent(password)) + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort + '&weak_search=' + weak_search, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7787,7 +7787,7 @@ export namespace MyNS {
 		 * @param {string} password The password of the album.
 		 * @return {void} The video was returned.
 		 */
-		Get_album_video(album_id: number, user_id: number, video_id: number, password: string): Observable<HttpResponse<string>> {
+		Get_album_video(album_id: number, user_id: number, video_id: number, password: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/albums/' + album_id + '/videos/' + video_id + '?password=' + (password == null ? '' : encodeURIComponent(password)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -7828,7 +7828,7 @@ export namespace MyNS {
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_appearances(user_id: number, direction: Get_categoriesDirection, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_group_videosSort): Observable<HttpResponse<string>> {
+		Get_appearances(user_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_group_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/appearances?direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7842,7 +7842,7 @@ export namespace MyNS {
 		 * @param {Get_category_subscriptions_alt1Sort} sort The way to sort the results.
 		 * @return {void} The categories were returned.
 		 */
-		Get_category_subscriptions(user_id: number, direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_category_subscriptions_alt1Sort): Observable<HttpResponse<string>> {
+		Get_category_subscriptions(user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_category_subscriptions_alt1Sort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/categories?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7891,7 +7891,7 @@ export namespace MyNS {
 		 * @param {Get_category_channelsSort} sort The way to sort the results.
 		 * @return {void} The channels were returned.
 		 */
-		Get_channel_subscriptions(user_id: number, direction: Get_categoriesDirection, filter: Get_channel_subscriptions_alt1Filter, page: number, per_page: number, query: string, sort: Get_category_channelsSort): Observable<HttpResponse<string>> {
+		Get_channel_subscriptions(user_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_subscriptions_alt1Filter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_category_channelsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/channels?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7969,7 +7969,7 @@ export namespace MyNS {
 		 * @param {Get_feed_alt1Type} type The feed type.
 		 * @return {void} The videos were returned.
 		 */
-		Get_feed(user_id: number, offset: string, page: number, per_page: number, type: Get_feed_alt1Type): Observable<HttpResponse<string>> {
+		Get_feed(user_id: number, offset: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, type: Get_feed_alt1Type | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/feed?offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&page=' + page + '&per_page=' + per_page + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7984,7 +7984,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The user's followers were returned.
 		 */
-		Get_followers(user_id: number, direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_followers(user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/followers?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8000,7 +8000,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The followed users were returned.
 		 */
-		Get_user_following(user_id: number, direction: Get_categoriesDirection, filter: Get_user_following_alt1Filter, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_user_following(user_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_user_following_alt1Filter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/following?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8059,7 +8059,7 @@ export namespace MyNS {
 		 * @param {Get_category_groupsSort} sort The way to sort the results.
 		 * @return {void} The groups were returned.
 		 */
-		Get_user_groups(user_id: number, direction: Get_categoriesDirection, filter: Get_channel_subscriptions_alt1Filter, page: number, per_page: number, query: string, sort: Get_category_groupsSort): Observable<HttpResponse<string>> {
+		Get_user_groups(user_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_subscriptions_alt1Filter | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_category_groupsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/groups?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8108,7 +8108,7 @@ export namespace MyNS {
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_likes(user_id: number, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_group_videosSort): Observable<HttpResponse<string>> {
+		Get_likes(user_id: number, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_group_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/likes?filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8156,7 +8156,7 @@ export namespace MyNS {
 		 * @param {Get_user_vodsSort} sort The way to sort the results.
 		 * @return {void} The On Demand pages were returned.
 		 */
-		Get_user_vods(user_id: number, direction: Get_categoriesDirection, filter: On_demand_pageType, page: number, per_page: number, sort: Get_user_vodsSort): Observable<HttpResponse<string>> {
+		Get_user_vods(user_id: number, direction: Get_categoriesDirection | null | undefined, filter: On_demand_pageType | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_user_vodsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/ondemand/pages?direction=' + direction + '&filter=' + filter + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8188,7 +8188,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The pictures were returned.
 		 */
-		Get_pictures(user_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_pictures(user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/pictures?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8235,7 +8235,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The portfolios were returned.
 		 */
-		Get_portfolios(user_id: number, direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_portfolios(user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/portfolios?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8265,7 +8265,7 @@ export namespace MyNS {
 		 *  * `default` - This will sort to the default sort set on the portfolio.
 		 * @return {void} The videos were returned.
 		 */
-		Get_portfolio_videos(portfolio_id: number, user_id: number, containing_uri: string, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, sort: Get_portfolio_videosSort): Observable<HttpResponse<string>> {
+		Get_portfolio_videos(portfolio_id: number, user_id: number, containing_uri: string | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_portfolio_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/portfolios/' + portfolio_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8313,7 +8313,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The embed presets were returned.
 		 */
-		Get_embed_presets(user_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_embed_presets(user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/presets?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8337,7 +8337,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The videos were returned.
 		 */
-		Get_embed_preset_videos(preset_id: number, user_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_embed_preset_videos(preset_id: number, user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/presets/' + preset_id + '/videos?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8352,7 +8352,7 @@ export namespace MyNS {
 		 * @param {Get_projectsSort} sort The way to sort the results.
 		 * @return {Array<Project>} The projects were returned.
 		 */
-		Get_projects(user_id: number, direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_projectsSort): Observable<Array<Project>> {
+		Get_projects(user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_projectsSort | null | undefined): Observable<Array<Project>> {
 			return this.http.get<Array<Project>>(this.baseUri + 'users/' + user_id + '/projects?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, {});
 		}
 
@@ -8376,7 +8376,7 @@ export namespace MyNS {
 		 * @param {boolean} should_delete_clips Whether to delete all the videos in the project along with the project itself.
 		 * @return {void} 
 		 */
-		Delete_project(project_id: number, user_id: number, should_delete_clips: boolean): Observable<HttpResponse<string>> {
+		Delete_project(project_id: number, user_id: number, should_delete_clips: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'users/' + user_id + '/projects/' + project_id + '?should_delete_clips=' + should_delete_clips, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8414,7 +8414,7 @@ export namespace MyNS {
 		 * @param {string} uris A comma-separated list of the video URIs to remove.
 		 * @return {void} 
 		 */
-		Remove_videos_from_project(project_id: number, user_id: number, should_delete_clips: boolean, uris: string): Observable<HttpResponse<string>> {
+		Remove_videos_from_project(project_id: number, user_id: number, should_delete_clips: boolean | null | undefined, uris: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'users/' + user_id + '/projects/' + project_id + '/videos?should_delete_clips=' + should_delete_clips + '&uris=' + (uris == null ? '' : encodeURIComponent(uris)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -8430,7 +8430,7 @@ export namespace MyNS {
 		 * @param {Get_project_videosSort} sort The way to sort the results.
 		 * @return {Array<Video>} The videos were returned.
 		 */
-		Get_project_videos(project_id: number, user_id: number, direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_project_videosSort): Observable<Array<Video>> {
+		Get_project_videos(project_id: number, user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_project_videosSort | null | undefined): Observable<Array<Video>> {
 			return this.http.get<Array<Video>>(this.baseUri + 'users/' + user_id + '/projects/' + project_id + '/videos?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, {});
 		}
 
@@ -8512,7 +8512,7 @@ export namespace MyNS {
 		 * @param {Get_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_videos(user_id: number, containing_uri: string, direction: Get_categoriesDirection, filter: Get_videos_alt1Filter, filter_embeddable: boolean, filter_playable: boolean, page: number, per_page: number, query: string, sort: Get_videosSort): Observable<HttpResponse<string>> {
+		Get_videos(user_id: number, containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_videos_alt1Filter | null | undefined, filter_embeddable: boolean | null | undefined, filter_playable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&filter_playable=' + filter_playable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8540,7 +8540,7 @@ export namespace MyNS {
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_watch_later_queue(user_id: number, direction: Get_categoriesDirection, filter: Get_channel_videosFilter, filter_embeddable: boolean, page: number, per_page: number, query: string, sort: Get_group_videosSort): Observable<HttpResponse<string>> {
+		Get_watch_later_queue(user_id: number, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_group_videosSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/watchlater?direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8590,7 +8590,7 @@ export namespace MyNS {
 		 * @param {string} uris The comma-separated list of videos to find.
 		 * @return {void} The search results were returned.
 		 */
-		Search_videos(direction: Get_categoriesDirection, filter: Search_videosFilter, links: string, page: number, per_page: number, query: string, sort: Search_videosSort, uris: string): Observable<HttpResponse<string>> {
+		Search_videos(direction: Get_categoriesDirection | null | undefined, filter: Search_videosFilter | null | undefined, links: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string, sort: Search_videosSort | null | undefined, uris: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos?direction=' + direction + '&filter=' + filter + '&links=' + (links == null ? '' : encodeURIComponent(links)) + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort + '&uris=' + (uris == null ? '' : encodeURIComponent(uris)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -8643,7 +8643,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The comments were returned.
 		 */
-		Get_comments(video_id: number, direction: Get_categoriesDirection, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_comments(video_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/' + video_id + '/comments?direction=' + direction + '&page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8678,7 +8678,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The replies were returned.
 		 */
-		Get_comment_replies(comment_id: number, video_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_comment_replies(comment_id: number, video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/' + video_id + '/comments/' + comment_id + '/replies?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8693,7 +8693,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
 		 */
-		Get_video_credits(video_id: number, direction: Get_categoriesDirection, page: number, per_page: number, query: string, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_video_credits(video_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/' + video_id + '/credits?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8729,7 +8729,7 @@ export namespace MyNS {
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
 		 */
-		Get_video_likes(video_id: number, direction: Get_categoriesDirection, page: number, per_page: number, sort: Get_channel_moderatorsSort): Observable<HttpResponse<string>> {
+		Get_video_likes(video_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_channel_moderatorsSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/' + video_id + '/likes?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8741,7 +8741,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The thumbnails were returned.
 		 */
-		Get_video_thumbnails(video_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_video_thumbnails(video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/' + video_id + '/pictures?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8808,7 +8808,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The domains were returned.
 		 */
-		Get_video_privacy_domains(video_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_video_privacy_domains(video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/' + video_id + '/privacy/domains?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8843,7 +8843,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The users were returned.
 		 */
-		Get_video_privacy_users(video_id: number, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_video_privacy_users(video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/' + video_id + '/privacy/users?page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8987,7 +8987,7 @@ export namespace MyNS {
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @return {void} The related videos were returned.
 		 */
-		Get_related_videos(video_id: number, filter: Get_related_videosFilter, page: number, per_page: number): Observable<HttpResponse<string>> {
+		Get_related_videos(video_id: number, filter: Get_related_videosFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'videos/' + video_id + '/videos?filter=' + filter + '&page=' + page + '&per_page=' + per_page, { observe: 'response', responseType: 'text' });
 		}
 	}

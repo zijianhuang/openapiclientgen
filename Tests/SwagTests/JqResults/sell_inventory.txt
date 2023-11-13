@@ -1419,7 +1419,7 @@ export namespace MyNS {
 		 * @param {string} offset Specifies the number of locations to skip in the result set before returning the first location in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 items from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0
 		 * @return {LocationResponse} Success
 		 */
-		GetInventoryLocations(limit: string, offset: string, callback: (data : LocationResponse) => any) {
+		GetInventoryLocations(limit: string | null | undefined, offset: string | null | undefined, callback: (data : LocationResponse) => any) {
 			this.httpClient.get(this.baseUri + 'location?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), callback, this.error, this.statusCode);
 		}
 
@@ -1477,7 +1477,7 @@ export namespace MyNS {
 		 * @param {string} offset The value passed in this query parameter sets the page number to retrieve. The first page of records has a value of 0, the second page of records has a value of 1, and so on. If this query parameter is not set, its value defaults to 0, and the first page of records is returned.
 		 * @return {InventoryItems} Success
 		 */
-		GetInventoryItems(limit: string, offset: string, callback: (data : InventoryItems) => any) {
+		GetInventoryItems(limit: string | null | undefined, offset: string | null | undefined, callback: (data : InventoryItems) => any) {
 			this.httpClient.get(this.baseUri + 'inventory_item?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), callback, this.error, this.statusCode);
 		}
 
@@ -1562,7 +1562,7 @@ export namespace MyNS {
 		 * @param {string} offset The value passed in this query parameter sets the page number to retrieve. Although this field is a string, the value passed in this field should be a integer value equal to or greater than 0. The first page of records has a value of 0, the second page of records has a value of 1, and so on. If this query parameter is not set, its value defaults to 0, and the first page of records is returned.
 		 * @return {Offers} Success
 		 */
-		GetOffers(sku: string, marketplace_id: string, format: string, limit: string, offset: string, callback: (data : Offers) => any) {
+		GetOffers(sku: string | null | undefined, marketplace_id: string | null | undefined, format: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, callback: (data : Offers) => any) {
 			this.httpClient.get(this.baseUri + 'offer?sku=' + (sku == null ? '' : encodeURIComponent(sku)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), callback, this.error, this.statusCode);
 		}
 

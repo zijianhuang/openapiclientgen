@@ -216,7 +216,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeReportDefinitionsResponse} Success
 		 */
-		DescribeReportDefinitions(MaxResults: string, NextToken: string, requestBody: DescribeReportDefinitionsRequest): Observable<DescribeReportDefinitionsResponse> {
+		DescribeReportDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeReportDefinitionsRequest): Observable<DescribeReportDefinitionsResponse> {
 			return this.http.post<DescribeReportDefinitionsResponse>(this.baseUri + '#X-Amz-Target=AWSOrigamiServiceGatewayService.DescribeReportDefinitions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

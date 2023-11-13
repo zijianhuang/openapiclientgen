@@ -144,7 +144,7 @@ export namespace MyNS {
 		 * @param {string} updatedMin Lower bound for a task's last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.
 		 * @return {void} Successful response
 		 */
-		Tasks_tasks_list(tasklist: string, completedMax: string, completedMin: string, dueMax: string, dueMin: string, maxResults: string, pageToken: string, showCompleted: boolean, showDeleted: boolean, showHidden: boolean, updatedMin: string): Observable<HttpResponse<string>> {
+		Tasks_tasks_list(tasklist: string, completedMax: string | null | undefined, completedMin: string | null | undefined, dueMax: string | null | undefined, dueMin: string | null | undefined, maxResults: string | null | undefined, pageToken: string | null | undefined, showCompleted: boolean | null | undefined, showDeleted: boolean | null | undefined, showHidden: boolean | null | undefined, updatedMin: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks&completedMax=' + (completedMax == null ? '' : encodeURIComponent(completedMax)) + '&completedMin=' + (completedMin == null ? '' : encodeURIComponent(completedMin)) + '&dueMax=' + (dueMax == null ? '' : encodeURIComponent(dueMax)) + '&dueMin=' + (dueMin == null ? '' : encodeURIComponent(dueMin)) + '&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showCompleted=' + showCompleted + '&showDeleted=' + showDeleted + '&showHidden=' + showHidden + '&updatedMin=' + (updatedMin == null ? '' : encodeURIComponent(updatedMin)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -156,7 +156,7 @@ export namespace MyNS {
 		 * @param {string} previous Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.
 		 * @return {void} Successful response
 		 */
-		Tasks_tasks_insert(tasklist: string, parent: string, previous: string, requestBody: Task_): Observable<HttpResponse<string>> {
+		Tasks_tasks_insert(tasklist: string, parent: string | null | undefined, previous: string | null | undefined, requestBody: Task_): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&previous=' + (previous == null ? '' : encodeURIComponent(previous)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -213,7 +213,7 @@ export namespace MyNS {
 		 * @param {string} previous New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.
 		 * @return {void} Successful response
 		 */
-		Tasks_tasks_move(tasklist: string, task: string, parent: string, previous: string): Observable<HttpResponse<string>> {
+		Tasks_tasks_move(tasklist: string, task: string, parent: string | null | undefined, previous: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)) + '/move&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&previous=' + (previous == null ? '' : encodeURIComponent(previous)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -224,7 +224,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token specifying the result page to return. Optional.
 		 * @return {void} Successful response
 		 */
-		Tasks_tasklists_list(maxResults: string, pageToken: string): Observable<HttpResponse<string>> {
+		Tasks_tasklists_list(maxResults: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/@me/lists?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

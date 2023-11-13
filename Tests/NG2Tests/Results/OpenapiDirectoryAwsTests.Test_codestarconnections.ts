@@ -135,7 +135,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListConnectionsOutput} Success
 		 */
-		ListConnections(MaxResults: string, NextToken: string, requestBody: ListConnectionsInput): Observable<ListConnectionsOutput> {
+		ListConnections(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListConnectionsInput): Observable<ListConnectionsOutput> {
 			return this.http.post<ListConnectionsOutput>(this.baseUri + '#X-Amz-Target=com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListConnections?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

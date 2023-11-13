@@ -704,7 +704,7 @@ export namespace MyNS {
 		 * the specified user access levels.
 		 * @return {void} Successful response
 		 */
-		Script_processes_list(pageSize: number, pageToken: string, userProcessFilter_deploymentId: string, userProcessFilter_endTime: string, userProcessFilter_functionName: string, userProcessFilter_projectName: string, userProcessFilter_scriptId: string, userProcessFilter_startTime: string, userProcessFilter_statuses: Array<GoogleAppsScriptTypeProcessProcessStatus>, userProcessFilter_types: Array<GoogleAppsScriptTypeProcessProcessType>, userProcessFilter_userAccessLevels: Array<GoogleAppsScriptTypeProcessUserAccessLevel>): Observable<HttpResponse<string>> {
+		Script_processes_list(pageSize: number | null | undefined, pageToken: string | null | undefined, userProcessFilter_deploymentId: string | null | undefined, userProcessFilter_endTime: string | null | undefined, userProcessFilter_functionName: string | null | undefined, userProcessFilter_projectName: string | null | undefined, userProcessFilter_scriptId: string | null | undefined, userProcessFilter_startTime: string | null | undefined, userProcessFilter_statuses: Array<GoogleAppsScriptTypeProcessProcessStatus> | null | undefined, userProcessFilter_types: Array<GoogleAppsScriptTypeProcessProcessType> | null | undefined, userProcessFilter_userAccessLevels: Array<GoogleAppsScriptTypeProcessUserAccessLevel> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/processes?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&userProcessFilter_deploymentId=' + (userProcessFilter_deploymentId == null ? '' : encodeURIComponent(userProcessFilter_deploymentId)) + '&userProcessFilter_endTime=' + (userProcessFilter_endTime == null ? '' : encodeURIComponent(userProcessFilter_endTime)) + '&userProcessFilter_functionName=' + (userProcessFilter_functionName == null ? '' : encodeURIComponent(userProcessFilter_functionName)) + '&userProcessFilter_projectName=' + (userProcessFilter_projectName == null ? '' : encodeURIComponent(userProcessFilter_projectName)) + '&userProcessFilter_scriptId=' + (userProcessFilter_scriptId == null ? '' : encodeURIComponent(userProcessFilter_scriptId)) + '&userProcessFilter_startTime=' + (userProcessFilter_startTime == null ? '' : encodeURIComponent(userProcessFilter_startTime)) + '&' + userProcessFilter_statuses.map(z => `userProcessFilter_statuses=${z}`).join('&') + '&' + userProcessFilter_types.map(z => `userProcessFilter_types=${z}`).join('&') + '&' + userProcessFilter_userAccessLevels.map(z => `userProcessFilter_userAccessLevels=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -733,7 +733,7 @@ export namespace MyNS {
 		 * the specified user access levels.
 		 * @return {void} Successful response
 		 */
-		Script_processes_listScriptProcesses(pageSize: number, pageToken: string, scriptId: string, scriptProcessFilter_deploymentId: string, scriptProcessFilter_endTime: string, scriptProcessFilter_functionName: string, scriptProcessFilter_startTime: string, scriptProcessFilter_statuses: Array<GoogleAppsScriptTypeProcessProcessStatus>, scriptProcessFilter_types: Array<GoogleAppsScriptTypeProcessProcessType>, scriptProcessFilter_userAccessLevels: Array<GoogleAppsScriptTypeProcessUserAccessLevel>): Observable<HttpResponse<string>> {
+		Script_processes_listScriptProcesses(pageSize: number | null | undefined, pageToken: string | null | undefined, scriptId: string | null | undefined, scriptProcessFilter_deploymentId: string | null | undefined, scriptProcessFilter_endTime: string | null | undefined, scriptProcessFilter_functionName: string | null | undefined, scriptProcessFilter_startTime: string | null | undefined, scriptProcessFilter_statuses: Array<GoogleAppsScriptTypeProcessProcessStatus> | null | undefined, scriptProcessFilter_types: Array<GoogleAppsScriptTypeProcessProcessType> | null | undefined, scriptProcessFilter_userAccessLevels: Array<GoogleAppsScriptTypeProcessUserAccessLevel> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/processes:listScriptProcesses?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&scriptId=' + (scriptId == null ? '' : encodeURIComponent(scriptId)) + '&scriptProcessFilter_deploymentId=' + (scriptProcessFilter_deploymentId == null ? '' : encodeURIComponent(scriptProcessFilter_deploymentId)) + '&scriptProcessFilter_endTime=' + (scriptProcessFilter_endTime == null ? '' : encodeURIComponent(scriptProcessFilter_endTime)) + '&scriptProcessFilter_functionName=' + (scriptProcessFilter_functionName == null ? '' : encodeURIComponent(scriptProcessFilter_functionName)) + '&scriptProcessFilter_startTime=' + (scriptProcessFilter_startTime == null ? '' : encodeURIComponent(scriptProcessFilter_startTime)) + '&' + scriptProcessFilter_statuses.map(z => `scriptProcessFilter_statuses=${z}`).join('&') + '&' + scriptProcessFilter_types.map(z => `scriptProcessFilter_types=${z}`).join('&') + '&' + scriptProcessFilter_userAccessLevels.map(z => `scriptProcessFilter_userAccessLevels=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -766,7 +766,7 @@ export namespace MyNS {
 		 * project's HEAD version is returned.
 		 * @return {void} Successful response
 		 */
-		Script_projects_getContent(scriptId: string, versionNumber: number): Observable<HttpResponse<string>> {
+		Script_projects_getContent(scriptId: string, versionNumber: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (scriptId == null ? '' : encodeURIComponent(scriptId)) + '/content&versionNumber=' + versionNumber, { observe: 'response', responseType: 'text' });
 		}
 
@@ -793,7 +793,7 @@ export namespace MyNS {
 		 * should be set to the value of `nextPageToken` from a previous response.
 		 * @return {void} Successful response
 		 */
-		Script_projects_deployments_list(scriptId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Script_projects_deployments_list(scriptId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (scriptId == null ? '' : encodeURIComponent(scriptId)) + '/deployments&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -849,7 +849,7 @@ export namespace MyNS {
 		 * @param {Script_projects_getMetricsMetricsGranularity} metricsGranularity Required field indicating what granularity of metrics are returned.
 		 * @return {void} Successful response
 		 */
-		Script_projects_getMetrics(scriptId: string, metricsFilter_deploymentId: string, metricsGranularity: Script_projects_getMetricsMetricsGranularity): Observable<HttpResponse<string>> {
+		Script_projects_getMetrics(scriptId: string, metricsFilter_deploymentId: string | null | undefined, metricsGranularity: Script_projects_getMetricsMetricsGranularity | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (scriptId == null ? '' : encodeURIComponent(scriptId)) + '/metrics&metricsFilter_deploymentId=' + (metricsFilter_deploymentId == null ? '' : encodeURIComponent(metricsFilter_deploymentId)) + '&metricsGranularity=' + metricsGranularity, { observe: 'response', responseType: 'text' });
 		}
 
@@ -862,7 +862,7 @@ export namespace MyNS {
 		 * should be set to the value of `nextPageToken` from a previous response.
 		 * @return {void} Successful response
 		 */
-		Script_projects_versions_list(scriptId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Script_projects_versions_list(scriptId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (scriptId == null ? '' : encodeURIComponent(scriptId)) + '/versions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

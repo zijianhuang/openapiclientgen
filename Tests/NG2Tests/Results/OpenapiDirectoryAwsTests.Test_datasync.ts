@@ -862,7 +862,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAgentsResponse} Success
 		 */
-		ListAgents(MaxResults: string, NextToken: string, requestBody: ListAgentsRequest): Observable<ListAgentsResponse> {
+		ListAgents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAgentsRequest): Observable<ListAgentsResponse> {
 			return this.http.post<ListAgentsResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListAgents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -873,7 +873,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLocationsResponse} Success
 		 */
-		ListLocations(MaxResults: string, NextToken: string, requestBody: ListLocationsRequest): Observable<ListLocationsResponse> {
+		ListLocations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListLocationsRequest): Observable<ListLocationsResponse> {
 			return this.http.post<ListLocationsResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListLocations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -884,7 +884,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListTagsForResource?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -895,7 +895,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTaskExecutionsResponse} Success
 		 */
-		ListTaskExecutions(MaxResults: string, NextToken: string, requestBody: ListTaskExecutionsRequest): Observable<ListTaskExecutionsResponse> {
+		ListTaskExecutions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTaskExecutionsRequest): Observable<ListTaskExecutionsResponse> {
 			return this.http.post<ListTaskExecutionsResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListTaskExecutions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -906,7 +906,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTasksResponse} Success
 		 */
-		ListTasks(MaxResults: string, NextToken: string, requestBody: ListTasksRequest): Observable<ListTasksResponse> {
+		ListTasks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTasksRequest): Observable<ListTasksResponse> {
 			return this.http.post<ListTasksResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListTasks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

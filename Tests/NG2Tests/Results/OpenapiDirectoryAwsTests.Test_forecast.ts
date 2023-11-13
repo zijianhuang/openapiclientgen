@@ -858,7 +858,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatasetGroupsResponse} Success
 		 */
-		ListDatasetGroups(MaxResults: string, NextToken: string, requestBody: ListDatasetGroupsRequest): Observable<ListDatasetGroupsResponse> {
+		ListDatasetGroups(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDatasetGroupsRequest): Observable<ListDatasetGroupsResponse> {
 			return this.http.post<ListDatasetGroupsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListDatasetGroups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -869,7 +869,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatasetImportJobsResponse} Success
 		 */
-		ListDatasetImportJobs(MaxResults: string, NextToken: string, requestBody: ListDatasetImportJobsRequest): Observable<ListDatasetImportJobsResponse> {
+		ListDatasetImportJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDatasetImportJobsRequest): Observable<ListDatasetImportJobsResponse> {
 			return this.http.post<ListDatasetImportJobsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListDatasetImportJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -880,7 +880,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatasetsResponse} Success
 		 */
-		ListDatasets(MaxResults: string, NextToken: string, requestBody: ListDatasetsRequest): Observable<ListDatasetsResponse> {
+		ListDatasets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDatasetsRequest): Observable<ListDatasetsResponse> {
 			return this.http.post<ListDatasetsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListDatasets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -891,7 +891,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListForecastExportJobsResponse} Success
 		 */
-		ListForecastExportJobs(MaxResults: string, NextToken: string, requestBody: ListForecastExportJobsRequest): Observable<ListForecastExportJobsResponse> {
+		ListForecastExportJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListForecastExportJobsRequest): Observable<ListForecastExportJobsResponse> {
 			return this.http.post<ListForecastExportJobsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListForecastExportJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -902,7 +902,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListForecastsResponse} Success
 		 */
-		ListForecasts(MaxResults: string, NextToken: string, requestBody: ListForecastsRequest): Observable<ListForecastsResponse> {
+		ListForecasts(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListForecastsRequest): Observable<ListForecastsResponse> {
 			return this.http.post<ListForecastsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListForecasts?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -913,7 +913,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPredictorsResponse} Success
 		 */
-		ListPredictors(MaxResults: string, NextToken: string, requestBody: ListPredictorsRequest): Observable<ListPredictorsResponse> {
+		ListPredictors(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPredictorsRequest): Observable<ListPredictorsResponse> {
 			return this.http.post<ListPredictorsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListPredictors?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

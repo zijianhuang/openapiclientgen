@@ -753,7 +753,7 @@ export namespace MyNS {
 		 * @param {number} CookieExpirationPeriod The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.
 		 * @return {void} Success
 		 */
-		GET_CreateLBCookieStickinessPolicy(LoadBalancerName: string, PolicyName: string, CookieExpirationPeriod: number, Action: GET_CreateLBCookieStickinessPolicyAction, Version: GET_CreateLBCookieStickinessPolicyVersion): Observable<HttpResponse<string>> {
+		GET_CreateLBCookieStickinessPolicy(LoadBalancerName: string, PolicyName: string, CookieExpirationPeriod: number | null | undefined, Action: GET_CreateLBCookieStickinessPolicyAction, Version: GET_CreateLBCookieStickinessPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateLBCookieStickinessPolicy?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&CookieExpirationPeriod=' + CookieExpirationPeriod + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -769,7 +769,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>A list of tags to assign to the load balancer.</p> <p>For more information about tagging your load balancer, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateLoadBalancer(LoadBalancerName: string, Listeners: Array<Listener>, AvailabilityZones: Array<string>, Subnets: Array<string>, SecurityGroups: Array<string>, Scheme: string, Tags: Array<Tag>, Action: GET_CreateLoadBalancerAction, Version: GET_CreateLoadBalancerVersion): Observable<HttpResponse<string>> {
+		GET_CreateLoadBalancer(LoadBalancerName: string, Listeners: Array<Listener>, AvailabilityZones: Array<string> | null | undefined, Subnets: Array<string> | null | undefined, SecurityGroups: Array<string> | null | undefined, Scheme: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateLoadBalancerAction, Version: GET_CreateLoadBalancerVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateLoadBalancer?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + Listeners.map(z => `Listeners=${z}`).join('&') + '&' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&' + Subnets.map(z => `Subnets=${encodeURIComponent(z)}`).join('&') + '&' + SecurityGroups.map(z => `SecurityGroups=${encodeURIComponent(z)}`).join('&') + '&Scheme=' + (Scheme == null ? '' : encodeURIComponent(Scheme)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -793,7 +793,7 @@ export namespace MyNS {
 		 * @param {Array<PolicyAttribute>} PolicyAttributes The policy attributes.
 		 * @return {void} Success
 		 */
-		GET_CreateLoadBalancerPolicy(LoadBalancerName: string, PolicyName: string, PolicyTypeName: string, PolicyAttributes: Array<PolicyAttribute>, Action: GET_CreateLoadBalancerPolicyAction, Version: GET_CreateLoadBalancerPolicyVersion): Observable<HttpResponse<string>> {
+		GET_CreateLoadBalancerPolicy(LoadBalancerName: string, PolicyName: string, PolicyTypeName: string, PolicyAttributes: Array<PolicyAttribute> | null | undefined, Action: GET_CreateLoadBalancerPolicyAction, Version: GET_CreateLoadBalancerPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateLoadBalancerPolicy?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&PolicyTypeName=' + (PolicyTypeName == null ? '' : encodeURIComponent(PolicyTypeName)) + '&' + PolicyAttributes.map(z => `PolicyAttributes=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -847,7 +847,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call.
 		 * @return {void} Success
 		 */
-		GET_DescribeAccountLimits(Marker: string, PageSize: number, Action: GET_DescribeAccountLimitsAction, Version: GET_DescribeAccountLimitsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAccountLimits(Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeAccountLimitsAction, Version: GET_DescribeAccountLimitsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAccountLimits?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -858,7 +858,7 @@ export namespace MyNS {
 		 * @param {Array<Instance>} Instances The IDs of the instances.
 		 * @return {void} Success
 		 */
-		GET_DescribeInstanceHealth(LoadBalancerName: string, Instances: Array<Instance>, Action: GET_DescribeInstanceHealthAction, Version: GET_DescribeInstanceHealthVersion): Observable<HttpResponse<string>> {
+		GET_DescribeInstanceHealth(LoadBalancerName: string, Instances: Array<Instance> | null | undefined, Action: GET_DescribeInstanceHealthAction, Version: GET_DescribeInstanceHealthVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeInstanceHealth?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + Instances.map(z => `Instances=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -879,7 +879,7 @@ export namespace MyNS {
 		 * @param {Array<string>} PolicyNames The names of the policies.
 		 * @return {void} Success
 		 */
-		GET_DescribeLoadBalancerPolicies(LoadBalancerName: string, PolicyNames: Array<string>, Action: GET_DescribeLoadBalancerPoliciesAction, Version: GET_DescribeLoadBalancerPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLoadBalancerPolicies(LoadBalancerName: string | null | undefined, PolicyNames: Array<string> | null | undefined, Action: GET_DescribeLoadBalancerPoliciesAction, Version: GET_DescribeLoadBalancerPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancerPolicies?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + PolicyNames.map(z => `PolicyNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -889,7 +889,7 @@ export namespace MyNS {
 		 * @param {Array<string>} PolicyTypeNames The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.
 		 * @return {void} Success
 		 */
-		GET_DescribeLoadBalancerPolicyTypes(PolicyTypeNames: Array<string>, Action: GET_DescribeLoadBalancerPolicyTypesAction, Version: GET_DescribeLoadBalancerPolicyTypesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLoadBalancerPolicyTypes(PolicyTypeNames: Array<string> | null | undefined, Action: GET_DescribeLoadBalancerPolicyTypesAction, Version: GET_DescribeLoadBalancerPolicyTypesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancerPolicyTypes?' + PolicyTypeNames.map(z => `PolicyTypeNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -901,7 +901,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call (a number from 1 to 400). The default is 400.
 		 * @return {void} Success
 		 */
-		GET_DescribeLoadBalancers(LoadBalancerNames: Array<string>, Marker: string, PageSize: number, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLoadBalancers(LoadBalancerNames: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancers?' + LoadBalancerNames.map(z => `LoadBalancerNames=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 

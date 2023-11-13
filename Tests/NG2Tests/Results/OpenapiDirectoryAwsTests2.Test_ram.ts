@@ -525,7 +525,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * @return {DeleteResourceShareResponse} Success
 		 */
-		DeleteResourceShare(resourceShareArn: string, clientToken: string): Observable<DeleteResourceShareResponse> {
+		DeleteResourceShare(resourceShareArn: string, clientToken: string | null | undefined): Observable<DeleteResourceShareResponse> {
 			return this.http.delete<DeleteResourceShareResponse>(this.baseUri + 'deleteresourceshare#resourceShareArn?resourceShareArn=' + (resourceShareArn == null ? '' : encodeURIComponent(resourceShareArn)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), {});
 		}
 
@@ -572,7 +572,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourcePoliciesResponse} Success
 		 */
-		GetResourcePolicies(maxResults: string, nextToken: string, requestBody: GetResourcePoliciesPostBody): Observable<GetResourcePoliciesResponse> {
+		GetResourcePolicies(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourcePoliciesPostBody): Observable<GetResourcePoliciesResponse> {
 			return this.http.post<GetResourcePoliciesResponse>(this.baseUri + 'getresourcepolicies?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -583,7 +583,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourceShareAssociationsResponse} Success
 		 */
-		GetResourceShareAssociations(maxResults: string, nextToken: string, requestBody: GetResourceShareAssociationsPostBody): Observable<GetResourceShareAssociationsResponse> {
+		GetResourceShareAssociations(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourceShareAssociationsPostBody): Observable<GetResourceShareAssociationsResponse> {
 			return this.http.post<GetResourceShareAssociationsResponse>(this.baseUri + 'getresourceshareassociations?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -594,7 +594,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourceShareInvitationsResponse} Success
 		 */
-		GetResourceShareInvitations(maxResults: string, nextToken: string, requestBody: GetResourceShareInvitationsPostBody): Observable<GetResourceShareInvitationsResponse> {
+		GetResourceShareInvitations(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourceShareInvitationsPostBody): Observable<GetResourceShareInvitationsResponse> {
 			return this.http.post<GetResourceShareInvitationsResponse>(this.baseUri + 'getresourceshareinvitations?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -605,7 +605,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourceSharesResponse} Success
 		 */
-		GetResourceShares(maxResults: string, nextToken: string, requestBody: GetResourceSharesPostBody): Observable<GetResourceSharesResponse> {
+		GetResourceShares(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourceSharesPostBody): Observable<GetResourceSharesResponse> {
 			return this.http.post<GetResourceSharesResponse>(this.baseUri + 'getresourceshares?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -616,7 +616,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPendingInvitationResourcesResponse} Success
 		 */
-		ListPendingInvitationResources(maxResults: string, nextToken: string, requestBody: ListPendingInvitationResourcesPostBody): Observable<ListPendingInvitationResourcesResponse> {
+		ListPendingInvitationResources(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListPendingInvitationResourcesPostBody): Observable<ListPendingInvitationResourcesResponse> {
 			return this.http.post<ListPendingInvitationResourcesResponse>(this.baseUri + 'listpendinginvitationresources?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -636,7 +636,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPrincipalsResponse} Success
 		 */
-		ListPrincipals(maxResults: string, nextToken: string, requestBody: ListPrincipalsPostBody): Observable<ListPrincipalsResponse> {
+		ListPrincipals(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListPrincipalsPostBody): Observable<ListPrincipalsResponse> {
 			return this.http.post<ListPrincipalsResponse>(this.baseUri + 'listprincipals?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -665,7 +665,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListResourcesResponse} Success
 		 */
-		ListResources(maxResults: string, nextToken: string, requestBody: ListResourcesPostBody): Observable<ListResourcesResponse> {
+		ListResources(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListResourcesPostBody): Observable<ListResourcesResponse> {
 			return this.http.post<ListResourcesResponse>(this.baseUri + 'listresources?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -895,7 +895,7 @@ export namespace MyNS {
 		 * next_page_token field.
 		 * @return {void} Successful response
 		 */
-		Alertcenter_alerts_list(customerId: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Alertcenter_alerts_list(customerId: string | null | undefined, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/alerts?customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -912,7 +912,7 @@ export namespace MyNS {
 		 * Inferred from the caller identity if not provided.
 		 * @return {void} Successful response
 		 */
-		Alertcenter_alerts_delete(alertId: string, customerId: string): Observable<HttpResponse<string>> {
+		Alertcenter_alerts_delete(alertId: string, customerId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1beta1/alerts/' + (alertId == null ? '' : encodeURIComponent(alertId)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -926,7 +926,7 @@ export namespace MyNS {
 		 * Inferred from the caller identity if not provided.
 		 * @return {void} Successful response
 		 */
-		Alertcenter_alerts_get(alertId: string, customerId: string): Observable<HttpResponse<string>> {
+		Alertcenter_alerts_get(alertId: string, customerId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/alerts/' + (alertId == null ? '' : encodeURIComponent(alertId)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -946,7 +946,7 @@ export namespace MyNS {
 		 * fields](/admin-sdk/alertcenter/reference/filter-fields#alerts.feedback.list).
 		 * @return {void} Successful response
 		 */
-		Alertcenter_alerts_feedback_list(alertId: string, customerId: string, filter: string): Observable<HttpResponse<string>> {
+		Alertcenter_alerts_feedback_list(alertId: string, customerId: string | null | undefined, filter: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/alerts/' + (alertId == null ? '' : encodeURIComponent(alertId)) + '/feedback&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -962,7 +962,7 @@ export namespace MyNS {
 		 * Inferred from the caller identity if not provided.
 		 * @return {void} Successful response
 		 */
-		Alertcenter_alerts_feedback_create(alertId: string, customerId: string, requestBody: AlertFeedback): Observable<HttpResponse<string>> {
+		Alertcenter_alerts_feedback_create(alertId: string, customerId: string | null | undefined, requestBody: AlertFeedback): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/alerts/' + (alertId == null ? '' : encodeURIComponent(alertId)) + '/feedback&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -976,7 +976,7 @@ export namespace MyNS {
 		 * Inferred from the caller identity if not provided.
 		 * @return {void} Successful response
 		 */
-		Alertcenter_alerts_getMetadata(alertId: string, customerId: string): Observable<HttpResponse<string>> {
+		Alertcenter_alerts_getMetadata(alertId: string, customerId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/alerts/' + (alertId == null ? '' : encodeURIComponent(alertId)) + '/metadata&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 		 * Inferred from the caller identity if not provided.
 		 * @return {void} Successful response
 		 */
-		Alertcenter_getSettings(customerId: string): Observable<HttpResponse<string>> {
+		Alertcenter_getSettings(customerId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/settings?customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1032,7 +1032,7 @@ export namespace MyNS {
 		 * Inferred from the caller identity if not provided.
 		 * @return {void} Successful response
 		 */
-		Alertcenter_updateSettings(customerId: string, requestBody: Settings): Observable<HttpResponse<string>> {
+		Alertcenter_updateSettings(customerId: string | null | undefined, requestBody: Settings): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/settings?customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

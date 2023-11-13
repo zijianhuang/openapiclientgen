@@ -2246,7 +2246,7 @@ export namespace MyNS {
 		 * @param {CompletionResultType} type Optional. The completion topic. The default is CompletionType.COMBINED.
 		 * @return {void} Successful response
 		 */
-		Jobs_projects_complete(name: string, companyName: string, languageCode: string, languageCodes: Array<string>, pageSize: number, query: string, scope: Jobs_projects_completeScope, type: CompletionResultType): Observable<HttpResponse<string>> {
+		Jobs_projects_complete(name: string, companyName: string | null | undefined, languageCode: string | null | undefined, languageCodes: Array<string> | null | undefined, pageSize: number | null | undefined, query: string | null | undefined, scope: Jobs_projects_completeScope | null | undefined, type: CompletionResultType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + ':complete&companyName=' + (companyName == null ? '' : encodeURIComponent(companyName)) + '&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&' + languageCodes.map(z => `languageCodes=${encodeURIComponent(z)}`).join('&') + '&pageSize=' + pageSize + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&scope=' + scope + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2281,7 +2281,7 @@ export namespace MyNS {
 		 * only those with open jobs are returned.
 		 * @return {void} Successful response
 		 */
-		Jobs_projects_companies_list(parent: string, pageSize: number, pageToken: string, requireOpenJobs: boolean): Observable<HttpResponse<string>> {
+		Jobs_projects_companies_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, requireOpenJobs: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (parent == null ? '' : encodeURIComponent(parent)) + '/companies&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&requireOpenJobs=' + requireOpenJobs, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2322,7 +2322,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. The starting point of a query result.
 		 * @return {void} Successful response
 		 */
-		Jobs_projects_jobs_list(parent: string, filter: string, jobView: SearchJobsRequestJobView, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Jobs_projects_jobs_list(parent: string, filter: string | null | undefined, jobView: SearchJobsRequestJobView | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (parent == null ? '' : encodeURIComponent(parent)) + '/jobs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&jobView=' + jobView + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

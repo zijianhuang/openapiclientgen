@@ -2442,7 +2442,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @return {void} Successful response
 		 */
-		Bigquery_projects_list(maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigquery_projects_list(maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects?maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2456,7 +2456,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @return {void} Successful response
 		 */
-		Bigquery_datasets_list(projectId: string, all: boolean, filter: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigquery_datasets_list(projectId: string, all: boolean | null | undefined, filter: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/datasets&all=' + all + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2478,7 +2478,7 @@ export namespace MyNS {
 		 * @param {boolean} deleteContents If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False
 		 * @return {void} Successful response
 		 */
-		Bigquery_datasets_delete(projectId: string, datasetId: string, deleteContents: boolean): Observable<HttpResponse<string>> {
+		Bigquery_datasets_delete(projectId: string, datasetId: string, deleteContents: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '&deleteContents=' + deleteContents, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2527,7 +2527,7 @@ export namespace MyNS {
 		 * results
 		 * @return {void} Successful response
 		 */
-		Bigquery_models_list(projectId: string, datasetId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigquery_models_list(projectId: string, datasetId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '/models&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2588,7 +2588,7 @@ export namespace MyNS {
 		 * last_modified_time, and language.
 		 * @return {void} Successful response
 		 */
-		Bigquery_routines_list(projectId: string, datasetId: string, filter: string, maxResults: number, pageToken: string, readMask: string): Observable<HttpResponse<string>> {
+		Bigquery_routines_list(projectId: string, datasetId: string, filter: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, readMask: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '/routines&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&readMask=' + (readMask == null ? '' : encodeURIComponent(readMask)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2625,7 +2625,7 @@ export namespace MyNS {
 		 * response. If unset, all Routine fields are returned.
 		 * @return {void} Successful response
 		 */
-		Bigquery_routines_get(projectId: string, datasetId: string, routineId: string, readMask: string): Observable<HttpResponse<string>> {
+		Bigquery_routines_get(projectId: string, datasetId: string, routineId: string, readMask: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '/routines/' + (routineId == null ? '' : encodeURIComponent(routineId)) + '&readMask=' + (readMask == null ? '' : encodeURIComponent(readMask)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2651,7 +2651,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Page token, returned by a previous call, to request the next page of results
 		 * @return {void} Successful response
 		 */
-		Bigquery_tables_list(projectId: string, datasetId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigquery_tables_list(projectId: string, datasetId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '/tables&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2687,7 +2687,7 @@ export namespace MyNS {
 		 * @param {string} selectedFields List of fields to return (comma-separated). If unspecified, all fields are returned
 		 * @return {void} Successful response
 		 */
-		Bigquery_tables_get(projectId: string, datasetId: string, tableId: string, selectedFields: string): Observable<HttpResponse<string>> {
+		Bigquery_tables_get(projectId: string, datasetId: string, tableId: string, selectedFields: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '/tables/' + (tableId == null ? '' : encodeURIComponent(tableId)) + '&selectedFields=' + (selectedFields == null ? '' : encodeURIComponent(selectedFields)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2727,7 +2727,7 @@ export namespace MyNS {
 		 * @param {string} startIndex Zero-based index of the starting row to read
 		 * @return {void} Successful response
 		 */
-		Bigquery_tabledata_list(projectId: string, datasetId: string, tableId: string, maxResults: number, pageToken: string, selectedFields: string, startIndex: string): Observable<HttpResponse<string>> {
+		Bigquery_tabledata_list(projectId: string, datasetId: string, tableId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, selectedFields: string | null | undefined, startIndex: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '/tables/' + (tableId == null ? '' : encodeURIComponent(tableId)) + '/data&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&selectedFields=' + (selectedFields == null ? '' : encodeURIComponent(selectedFields)) + '&startIndex=' + (startIndex == null ? '' : encodeURIComponent(startIndex)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2757,7 +2757,7 @@ export namespace MyNS {
 		 * @param {Array<string>} stateFilter Filter for job state
 		 * @return {void} Successful response
 		 */
-		Bigquery_jobs_list(projectId: string, allUsers: boolean, maxCreationTime: string, maxResults: number, minCreationTime: string, pageToken: string, parentJobId: string, projection: Bigquery_jobs_listProjection, stateFilter: Array<string>): Observable<HttpResponse<string>> {
+		Bigquery_jobs_list(projectId: string, allUsers: boolean | null | undefined, maxCreationTime: string | null | undefined, maxResults: number | null | undefined, minCreationTime: string | null | undefined, pageToken: string | null | undefined, parentJobId: string | null | undefined, projection: Bigquery_jobs_listProjection | null | undefined, stateFilter: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs&allUsers=' + allUsers + '&maxCreationTime=' + (maxCreationTime == null ? '' : encodeURIComponent(maxCreationTime)) + '&maxResults=' + maxResults + '&minCreationTime=' + (minCreationTime == null ? '' : encodeURIComponent(minCreationTime)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parentJobId=' + (parentJobId == null ? '' : encodeURIComponent(parentJobId)) + '&projection=' + projection + '&' + stateFilter.map(z => `stateFilter=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2769,7 +2769,7 @@ export namespace MyNS {
 		 * @param {string} location The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
 		 * @return {void} Successful response
 		 */
-		Bigquery_jobs_get(projectId: string, jobId: string, location: string): Observable<HttpResponse<string>> {
+		Bigquery_jobs_get(projectId: string, jobId: string, location: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2781,7 +2781,7 @@ export namespace MyNS {
 		 * @param {string} location The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
 		 * @return {void} Successful response
 		 */
-		Bigquery_jobs_cancel(projectId: string, jobId: string, location: string): Observable<HttpResponse<string>> {
+		Bigquery_jobs_cancel(projectId: string, jobId: string, location: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/cancel&location=' + (location == null ? '' : encodeURIComponent(location)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2807,7 +2807,7 @@ export namespace MyNS {
 		 * @param {number} timeoutMs How long to wait for the query to complete, in milliseconds, before returning. Default is 10 seconds. If the timeout passes before the job completes, the 'jobComplete' field in the response will be false
 		 * @return {void} Successful response
 		 */
-		Bigquery_jobs_getQueryResults(projectId: string, jobId: string, location: string, maxResults: number, pageToken: string, startIndex: string, timeoutMs: number): Observable<HttpResponse<string>> {
+		Bigquery_jobs_getQueryResults(projectId: string, jobId: string, location: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startIndex: string | null | undefined, timeoutMs: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/queries/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startIndex=' + (startIndex == null ? '' : encodeURIComponent(startIndex)) + '&timeoutMs=' + timeoutMs, { observe: 'response', responseType: 'text' });
 		}
 

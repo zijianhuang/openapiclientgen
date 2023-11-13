@@ -2556,7 +2556,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {AdminListGroupsForUserResponse} Success
 		 */
-		AdminListGroupsForUser(Limit: string, NextToken: string, requestBody: AdminListGroupsForUserRequest): Observable<AdminListGroupsForUserResponse> {
+		AdminListGroupsForUser(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: AdminListGroupsForUserRequest): Observable<AdminListGroupsForUserResponse> {
 			return this.http.post<AdminListGroupsForUserResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.AdminListGroupsForUser?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2567,7 +2567,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {AdminListUserAuthEventsResponse} Success
 		 */
-		AdminListUserAuthEvents(MaxResults: string, NextToken: string, requestBody: AdminListUserAuthEventsRequest): Observable<AdminListUserAuthEventsResponse> {
+		AdminListUserAuthEvents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: AdminListUserAuthEventsRequest): Observable<AdminListUserAuthEventsResponse> {
 			return this.http.post<AdminListUserAuthEventsResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.AdminListUserAuthEvents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3037,7 +3037,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupsResponse} Success
 		 */
-		ListGroups(Limit: string, NextToken: string, requestBody: ListGroupsRequest): Observable<ListGroupsResponse> {
+		ListGroups(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: ListGroupsRequest): Observable<ListGroupsResponse> {
 			return this.http.post<ListGroupsResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.ListGroups?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3048,7 +3048,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIdentityProvidersResponse} Success
 		 */
-		ListIdentityProviders(MaxResults: string, NextToken: string, requestBody: ListIdentityProvidersRequest): Observable<ListIdentityProvidersResponse> {
+		ListIdentityProviders(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListIdentityProvidersRequest): Observable<ListIdentityProvidersResponse> {
 			return this.http.post<ListIdentityProvidersResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.ListIdentityProviders?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3059,7 +3059,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListResourceServersResponse} Success
 		 */
-		ListResourceServers(MaxResults: string, NextToken: string, requestBody: ListResourceServersRequest): Observable<ListResourceServersResponse> {
+		ListResourceServers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListResourceServersRequest): Observable<ListResourceServersResponse> {
 			return this.http.post<ListResourceServersResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.ListResourceServers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3088,7 +3088,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUserPoolClientsResponse} Success
 		 */
-		ListUserPoolClients(MaxResults: string, NextToken: string, requestBody: ListUserPoolClientsRequest): Observable<ListUserPoolClientsResponse> {
+		ListUserPoolClients(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListUserPoolClientsRequest): Observable<ListUserPoolClientsResponse> {
 			return this.http.post<ListUserPoolClientsResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.ListUserPoolClients?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3099,7 +3099,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUserPoolsResponse} Success
 		 */
-		ListUserPools(MaxResults: string, NextToken: string, requestBody: ListUserPoolsRequest): Observable<ListUserPoolsResponse> {
+		ListUserPools(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListUserPoolsRequest): Observable<ListUserPoolsResponse> {
 			return this.http.post<ListUserPoolsResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.ListUserPools?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3110,7 +3110,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {ListUsersResponse} Success
 		 */
-		ListUsers(Limit: string, PaginationToken: string, requestBody: ListUsersRequest): Observable<ListUsersResponse> {
+		ListUsers(Limit: string | null | undefined, PaginationToken: string | null | undefined, requestBody: ListUsersRequest): Observable<ListUsersResponse> {
 			return this.http.post<ListUsersResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.ListUsers?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3121,7 +3121,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUsersInGroupResponse} Success
 		 */
-		ListUsersInGroup(Limit: string, NextToken: string, requestBody: ListUsersInGroupRequest): Observable<ListUsersInGroupResponse> {
+		ListUsersInGroup(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: ListUsersInGroupRequest): Observable<ListUsersInGroupResponse> {
 			return this.http.post<ListUsersInGroupResponse>(this.baseUri + '#X-Amz-Target=AWSCognitoIdentityProviderService.ListUsersInGroup?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

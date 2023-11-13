@@ -952,7 +952,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListAliasesResponse} Success
 		 */
-		ListAliases(Limit: string, Marker: string, requestBody: ListAliasesRequest): Observable<ListAliasesResponse> {
+		ListAliases(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListAliasesRequest): Observable<ListAliasesResponse> {
 			return this.http.post<ListAliasesResponse>(this.baseUri + '#X-Amz-Target=TrentService.ListAliases?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -963,7 +963,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListGrantsResponse} Success
 		 */
-		ListGrants(Limit: string, Marker: string, requestBody: ListGrantsRequest): Observable<ListGrantsResponse> {
+		ListGrants(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListGrantsRequest): Observable<ListGrantsResponse> {
 			return this.http.post<ListGrantsResponse>(this.baseUri + '#X-Amz-Target=TrentService.ListGrants?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -974,7 +974,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListKeyPoliciesResponse} Success
 		 */
-		ListKeyPolicies(Limit: string, Marker: string, requestBody: ListKeyPoliciesRequest): Observable<ListKeyPoliciesResponse> {
+		ListKeyPolicies(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListKeyPoliciesRequest): Observable<ListKeyPoliciesResponse> {
 			return this.http.post<ListKeyPoliciesResponse>(this.baseUri + '#X-Amz-Target=TrentService.ListKeyPolicies?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -985,7 +985,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListKeysResponse} Success
 		 */
-		ListKeys(Limit: string, Marker: string, requestBody: ListKeysRequest): Observable<ListKeysResponse> {
+		ListKeys(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListKeysRequest): Observable<ListKeysResponse> {
 			return this.http.post<ListKeysResponse>(this.baseUri + '#X-Amz-Target=TrentService.ListKeys?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

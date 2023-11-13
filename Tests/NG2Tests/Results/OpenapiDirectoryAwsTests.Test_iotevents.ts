@@ -612,7 +612,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListDetectorModelsResponse} Success
 		 */
-		ListDetectorModels(nextToken: string, maxResults: number): Observable<ListDetectorModelsResponse> {
+		ListDetectorModels(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDetectorModelsResponse> {
 			return this.http.get<ListDetectorModelsResponse>(this.baseUri + 'detector-models?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -632,7 +632,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListInputsResponse} Success
 		 */
-		ListInputs(nextToken: string, maxResults: number): Observable<ListInputsResponse> {
+		ListInputs(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListInputsResponse> {
 			return this.http.get<ListInputsResponse>(this.baseUri + 'inputs?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -653,7 +653,7 @@ export namespace MyNS {
 		 * @param {string} version The version of the detector model.
 		 * @return {DescribeDetectorModelResponse} Success
 		 */
-		DescribeDetectorModel(detectorModelName: string, version: string): Observable<DescribeDetectorModelResponse> {
+		DescribeDetectorModel(detectorModelName: string, version: string | null | undefined): Observable<DescribeDetectorModelResponse> {
 			return this.http.get<DescribeDetectorModelResponse>(this.baseUri + 'detector-models/' + (detectorModelName == null ? '' : encodeURIComponent(detectorModelName)) + '&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListDetectorModelVersionsResponse} Success
 		 */
-		ListDetectorModelVersions(detectorModelName: string, nextToken: string, maxResults: number): Observable<ListDetectorModelVersionsResponse> {
+		ListDetectorModelVersions(detectorModelName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDetectorModelVersionsResponse> {
 			return this.http.get<ListDetectorModelVersionsResponse>(this.baseUri + 'detector-models/' + (detectorModelName == null ? '' : encodeURIComponent(detectorModelName)) + '/versions&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 

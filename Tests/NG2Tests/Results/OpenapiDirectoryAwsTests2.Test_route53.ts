@@ -1438,7 +1438,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {void} Success
 		 */
-		ListHealthChecks(marker: string, maxitems: string, MaxItems: string, Marker: string): Observable<HttpResponse<string>> {
+		ListHealthChecks(marker: string | null | undefined, maxitems: string | null | undefined, MaxItems: string | null | undefined, Marker: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/healthcheck?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {void} Success
 		 */
-		ListHostedZones(marker: string, maxitems: string, delegationsetid: string, MaxItems: string, Marker: string): Observable<HttpResponse<string>> {
+		ListHostedZones(marker: string | null | undefined, maxitems: string | null | undefined, delegationsetid: string | null | undefined, MaxItems: string | null | undefined, Marker: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/hostedzone?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)) + '&delegationsetid=' + (delegationsetid == null ? '' : encodeURIComponent(delegationsetid)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1466,7 +1466,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {void} Success
 		 */
-		ListQueryLoggingConfigs(hostedzoneid: string, nexttoken: string, maxresults: string, MaxResults: string, NextToken: string): Observable<HttpResponse<string>> {
+		ListQueryLoggingConfigs(hostedzoneid: string | null | undefined, nexttoken: string | null | undefined, maxresults: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/queryloggingconfig?hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&nexttoken=' + (nexttoken == null ? '' : encodeURIComponent(nexttoken)) + '&maxresults=' + (maxresults == null ? '' : encodeURIComponent(maxresults)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1477,7 +1477,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request. If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.
 		 * @return {void} Success
 		 */
-		ListReusableDelegationSets(marker: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListReusableDelegationSets(marker: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/delegationset?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 		 * @param {string} maxresults  <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
 		 * @return {void} Success
 		 */
-		ListVPCAssociationAuthorizations(Id: string, nexttoken: string, maxresults: string): Observable<HttpResponse<string>> {
+		ListVPCAssociationAuthorizations(Id: string, nexttoken: string | null | undefined, maxresults: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/hostedzone/' + (Id == null ? '' : encodeURIComponent(Id)) + '/authorizevpcassociation&nexttoken=' + (nexttoken == null ? '' : encodeURIComponent(nexttoken)) + '&maxresults=' + (maxresults == null ? '' : encodeURIComponent(maxresults)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1652,7 +1652,7 @@ export namespace MyNS {
 		 * @param {string} subdivisioncode <p>For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p> <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
 		 * @return {void} Success
 		 */
-		GetGeoLocation(continentcode: string, countrycode: string, subdivisioncode: string): Observable<HttpResponse<string>> {
+		GetGeoLocation(continentcode: string | null | undefined, countrycode: string | null | undefined, subdivisioncode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/geolocation?continentcode=' + (continentcode == null ? '' : encodeURIComponent(continentcode)) + '&countrycode=' + (countrycode == null ? '' : encodeURIComponent(countrycode)) + '&subdivisioncode=' + (subdivisioncode == null ? '' : encodeURIComponent(subdivisioncode)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1734,7 +1734,7 @@ export namespace MyNS {
 		 * @param {string} maxitems (Optional) The maximum number of geolocations to be included in the response body for this request. If more than <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in the response is <code>true</code>.
 		 * @return {void} Success
 		 */
-		ListGeoLocations(startcontinentcode: string, startcountrycode: string, startsubdivisioncode: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListGeoLocations(startcontinentcode: string | null | undefined, startcountrycode: string | null | undefined, startsubdivisioncode: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/geolocations?startcontinentcode=' + (startcontinentcode == null ? '' : encodeURIComponent(startcontinentcode)) + '&startcountrycode=' + (startcountrycode == null ? '' : encodeURIComponent(startcountrycode)) + '&startsubdivisioncode=' + (startsubdivisioncode == null ? '' : encodeURIComponent(startsubdivisioncode)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1746,7 +1746,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of hosted zones to be included in the response body for this request. If you have more than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone in the next group of <code>maxitems</code> hosted zones. 
 		 * @return {void} Success
 		 */
-		ListHostedZonesByName(dnsname: string, hostedzoneid: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListHostedZonesByName(dnsname: string | null | undefined, hostedzoneid: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/hostedzonesbyname?dnsname=' + (dnsname == null ? '' : encodeURIComponent(dnsname)) + '&hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1764,7 +1764,7 @@ export namespace MyNS {
 		 * @param {string} StartRecordIdentifier Pagination token
 		 * @return {void} Success
 		 */
-		ListResourceRecordSets(Id: string, name: string, type: ResourceRecordSetType, identifier: string, maxitems: string, MaxItems: string, StartRecordName: string, StartRecordType: string, StartRecordIdentifier: string): Observable<HttpResponse<string>> {
+		ListResourceRecordSets(Id: string, name: string | null | undefined, type: ResourceRecordSetType | null | undefined, identifier: string | null | undefined, maxitems: string | null | undefined, MaxItems: string | null | undefined, StartRecordName: string | null | undefined, StartRecordType: string | null | undefined, StartRecordIdentifier: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/hostedzone/' + (Id == null ? '' : encodeURIComponent(Id)) + '/rrset&name=' + (name == null ? '' : encodeURIComponent(name)) + '&type=' + type + '&identifier=' + (identifier == null ? '' : encodeURIComponent(identifier)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&StartRecordName=' + (StartRecordName == null ? '' : encodeURIComponent(StartRecordName)) + '&StartRecordType=' + (StartRecordType == null ? '' : encodeURIComponent(StartRecordType)) + '&StartRecordIdentifier=' + (StartRecordIdentifier == null ? '' : encodeURIComponent(StartRecordIdentifier)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1775,7 +1775,7 @@ export namespace MyNS {
 		 * @param {string} maxitems (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicies(trafficpolicyid: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicies(trafficpolicyid: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicies?trafficpolicyid=' + (trafficpolicyid == null ? '' : encodeURIComponent(trafficpolicyid)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1788,7 +1788,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of traffic policy instances that you want Amazon Route 53 to return in response to a <code>ListTrafficPolicyInstances</code> request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicyInstances(hostedzoneid: string, trafficpolicyinstancename: string, trafficpolicyinstancetype: ResourceRecordSetType, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicyInstances(hostedzoneid: string | null | undefined, trafficpolicyinstancename: string | null | undefined, trafficpolicyinstancetype: ResourceRecordSetType | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicyinstances?hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&trafficpolicyinstancename=' + (trafficpolicyinstancename == null ? '' : encodeURIComponent(trafficpolicyinstancename)) + '&trafficpolicyinstancetype=' + trafficpolicyinstancetype + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1801,7 +1801,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicyInstancesByHostedZone(id: string, trafficpolicyinstancename: string, trafficpolicyinstancetype: ResourceRecordSetType, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicyInstancesByHostedZone(id: string, trafficpolicyinstancename: string | null | undefined, trafficpolicyinstancetype: ResourceRecordSetType | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicyinstances/hostedzone#id?id=' + (id == null ? '' : encodeURIComponent(id)) + '&trafficpolicyinstancename=' + (trafficpolicyinstancename == null ? '' : encodeURIComponent(trafficpolicyinstancename)) + '&trafficpolicyinstancetype=' + trafficpolicyinstancetype + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1816,7 +1816,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicyInstancesByPolicy(id: string, version: number, hostedzoneid: string, trafficpolicyinstancename: string, trafficpolicyinstancetype: ResourceRecordSetType, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicyInstancesByPolicy(id: string, version: number, hostedzoneid: string | null | undefined, trafficpolicyinstancename: string | null | undefined, trafficpolicyinstancetype: ResourceRecordSetType | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicyinstances/trafficpolicy#id&version?id=' + (id == null ? '' : encodeURIComponent(id)) + '&version=' + version + '&hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&trafficpolicyinstancename=' + (trafficpolicyinstancename == null ? '' : encodeURIComponent(trafficpolicyinstancename)) + '&trafficpolicyinstancetype=' + trafficpolicyinstancetype + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1828,7 +1828,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicyVersions(Id: string, trafficpolicyversion: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicyVersions(Id: string, trafficpolicyversion: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicies/' + (Id == null ? '' : encodeURIComponent(Id)) + '/versions&trafficpolicyversion=' + (trafficpolicyversion == null ? '' : encodeURIComponent(trafficpolicyversion)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1843,7 +1843,7 @@ export namespace MyNS {
 		 * @param {string} edns0clientsubnetmask <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p> <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p> <ul> <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li> <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		TestDNSAnswer(hostedzoneid: string, recordname: string, recordtype: ResourceRecordSetType, resolverip: string, edns0clientsubnetip: string, edns0clientsubnetmask: string): Observable<HttpResponse<string>> {
+		TestDNSAnswer(hostedzoneid: string, recordname: string, recordtype: ResourceRecordSetType, resolverip: string | null | undefined, edns0clientsubnetip: string | null | undefined, edns0clientsubnetmask: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/testdnsanswer#hostedzoneid&recordname&recordtype?hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&recordname=' + (recordname == null ? '' : encodeURIComponent(recordname)) + '&recordtype=' + recordtype + '&resolverip=' + (resolverip == null ? '' : encodeURIComponent(resolverip)) + '&edns0clientsubnetip=' + (edns0clientsubnetip == null ? '' : encodeURIComponent(edns0clientsubnetip)) + '&edns0clientsubnetmask=' + (edns0clientsubnetmask == null ? '' : encodeURIComponent(edns0clientsubnetmask)), { observe: 'response', responseType: 'text' });
 		}
 	}

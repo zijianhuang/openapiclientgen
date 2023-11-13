@@ -2258,7 +2258,7 @@ export namespace MyNS {
 		 * When unspecified, equivalent to FULL.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_messages_get(name: string, view: Healthcare_projects_locations_datasets_hl7V2Stores_messages_getView): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_messages_get(name: string, view: Healthcare_projects_locations_datasets_hl7V2Stores_messages_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2278,7 +2278,7 @@ export namespace MyNS {
 		 * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_messages_patch(name: string, updateMask: string, requestBody: Message): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_messages_patch(name: string, updateMask: string | null | undefined, requestBody: Message): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2333,7 +2333,7 @@ export namespace MyNS {
 		 * date is provided, all records prior to the end date are in scope.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_fhir_Patient_everything(name: string, _count: number, _page_token: string, end: string, start: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_fhir_Patient_everything(name: string, _count: number | null | undefined, _page_token: string | null | undefined, end: string | null | undefined, start: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/$everything&_count=' + _count + '&_page_token=' + (_page_token == null ? '' : encodeURIComponent(_page_token)) + '&end=' + (end == null ? '' : encodeURIComponent(end)) + '&start=' + (start == null ? '' : encodeURIComponent(start)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2388,7 +2388,7 @@ export namespace MyNS {
 		 * include a time zone.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_fhir_history(name: string, _at: string, _count: number, _page_token: string, _since: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_fhir_history(name: string, _at: string | null | undefined, _count: number | null | undefined, _page_token: string | null | undefined, _since: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/_history&_at=' + (_at == null ? '' : encodeURIComponent(_at)) + '&_count=' + _count + '&_page_token=' + (_page_token == null ? '' : encodeURIComponent(_page_token)) + '&_since=' + (_since == null ? '' : encodeURIComponent(_since)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2425,7 +2425,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2446,7 +2446,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2515,7 +2515,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/datasets&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2534,7 +2534,7 @@ export namespace MyNS {
 		 * The string must match the following regex: `[\p{L}\p{N}_\-\.]{1,256}`.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_create(parent: string, datasetId: string, requestBody: Dataset): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_create(parent: string, datasetId: string | null | undefined, requestBody: Dataset): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/datasets&datasetId=' + (datasetId == null ? '' : encodeURIComponent(datasetId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2550,7 +2550,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_dicomStores_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_dicomStores_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/dicomStores&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2562,7 +2562,7 @@ export namespace MyNS {
 		 * Any string value up to 256 characters in length.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_dicomStores_create(parent: string, dicomStoreId: string, requestBody: DicomStore): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_dicomStores_create(parent: string, dicomStoreId: string | null | undefined, requestBody: DicomStore): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/dicomStores&dicomStoreId=' + (dicomStoreId == null ? '' : encodeURIComponent(dicomStoreId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2670,7 +2670,7 @@ export namespace MyNS {
 		 * [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_search(parent: string, resourceType: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_search(parent: string, resourceType: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/fhir&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2954,7 +2954,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/fhirStores&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2966,7 +2966,7 @@ export namespace MyNS {
 		 * The string must match the following regex: `[\p{L}\p{N}_\-\.]{1,256}`.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_create(parent: string, fhirStoreId: string, requestBody: FhirStore): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_create(parent: string, fhirStoreId: string | null | undefined, requestBody: FhirStore): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/fhirStores&fhirStoreId=' + (fhirStoreId == null ? '' : encodeURIComponent(fhirStoreId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2982,7 +2982,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/hl7V2Stores&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2994,7 +2994,7 @@ export namespace MyNS {
 		 * The string must match the following regex: `[\p{L}\p{N}_\-\.]{1,256}`.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_create(parent: string, hl7V2StoreId: string, requestBody: Hl7V2Store): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_create(parent: string, hl7V2StoreId: string | null | undefined, requestBody: Hl7V2Store): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/hl7V2Stores&hl7V2StoreId=' + (hl7V2StoreId == null ? '' : encodeURIComponent(hl7V2StoreId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3038,7 +3038,7 @@ export namespace MyNS {
 		 * response, which impacts the performance of this method.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_messages_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string, view: Healthcare_projects_locations_datasets_hl7V2Stores_messages_getView): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_messages_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Healthcare_projects_locations_datasets_hl7V2Stores_messages_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/messages&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3084,7 +3084,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_annotationStores_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_annotationStores_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

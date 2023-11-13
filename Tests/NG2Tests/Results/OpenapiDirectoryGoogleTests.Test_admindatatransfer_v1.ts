@@ -123,7 +123,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to specify next page in the list.
 		 * @return {void} Successful response
 		 */
-		Datatransfer_applications_list(customerId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Datatransfer_applications_list(customerId: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'applications?customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -148,7 +148,7 @@ export namespace MyNS {
 		 * @param {string} status Status of the transfer.
 		 * @return {void} Successful response
 		 */
-		Datatransfer_transfers_list(customerId: string, maxResults: number, newOwnerUserId: string, oldOwnerUserId: string, pageToken: string, status: string): Observable<HttpResponse<string>> {
+		Datatransfer_transfers_list(customerId: string | null | undefined, maxResults: number | null | undefined, newOwnerUserId: string | null | undefined, oldOwnerUserId: string | null | undefined, pageToken: string | null | undefined, status: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'transfers?customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&maxResults=' + maxResults + '&newOwnerUserId=' + (newOwnerUserId == null ? '' : encodeURIComponent(newOwnerUserId)) + '&oldOwnerUserId=' + (oldOwnerUserId == null ? '' : encodeURIComponent(oldOwnerUserId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&status=' + (status == null ? '' : encodeURIComponent(status)), { observe: 'response', responseType: 'text' });
 		}
 

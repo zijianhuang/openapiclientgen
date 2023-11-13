@@ -796,7 +796,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetExecutionHistoryOutput} Success
 		 */
-		GetExecutionHistory(maxResults: string, nextToken: string, requestBody: GetExecutionHistoryInput): Observable<GetExecutionHistoryOutput> {
+		GetExecutionHistory(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetExecutionHistoryInput): Observable<GetExecutionHistoryOutput> {
 			return this.http.post<GetExecutionHistoryOutput>(this.baseUri + '#X-Amz-Target=AWSStepFunctions.GetExecutionHistory?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -807,7 +807,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListActivitiesOutput} Success
 		 */
-		ListActivities(maxResults: string, nextToken: string, requestBody: ListActivitiesInput): Observable<ListActivitiesOutput> {
+		ListActivities(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListActivitiesInput): Observable<ListActivitiesOutput> {
 			return this.http.post<ListActivitiesOutput>(this.baseUri + '#X-Amz-Target=AWSStepFunctions.ListActivities?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -818,7 +818,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListExecutionsOutput} Success
 		 */
-		ListExecutions(maxResults: string, nextToken: string, requestBody: ListExecutionsInput): Observable<ListExecutionsOutput> {
+		ListExecutions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListExecutionsInput): Observable<ListExecutionsOutput> {
 			return this.http.post<ListExecutionsOutput>(this.baseUri + '#X-Amz-Target=AWSStepFunctions.ListExecutions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -829,7 +829,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListStateMachinesOutput} Success
 		 */
-		ListStateMachines(maxResults: string, nextToken: string, requestBody: ListStateMachinesInput): Observable<ListStateMachinesOutput> {
+		ListStateMachines(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListStateMachinesInput): Observable<ListStateMachinesOutput> {
 			return this.http.post<ListStateMachinesOutput>(this.baseUri + '#X-Amz-Target=AWSStepFunctions.ListStateMachines?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

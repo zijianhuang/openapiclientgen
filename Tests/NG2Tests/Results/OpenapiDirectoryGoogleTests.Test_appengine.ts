@@ -1278,7 +1278,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_patch(appsId: string, updateMask: string, requestBody: Application): Observable<HttpResponse<string>> {
+		Appengine_apps_patch(appsId: string, updateMask: string | null | undefined, requestBody: Application): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1291,7 +1291,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_authorizedCertificates_listView} view Controls the set of fields returned in the LIST response.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_authorizedCertificates_list(appsId: string, pageSize: number, pageToken: string, view: Appengine_apps_authorizedCertificates_listView): Observable<HttpResponse<string>> {
+		Appengine_apps_authorizedCertificates_list(appsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Appengine_apps_authorizedCertificates_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/authorizedCertificates&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1324,7 +1324,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_authorizedCertificates_listView} view Controls the set of fields returned in the GET response.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_authorizedCertificates_get(appsId: string, authorizedCertificatesId: string, view: Appengine_apps_authorizedCertificates_listView): Observable<HttpResponse<string>> {
+		Appengine_apps_authorizedCertificates_get(appsId: string, authorizedCertificatesId: string, view: Appengine_apps_authorizedCertificates_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/authorizedCertificates/' + (authorizedCertificatesId == null ? '' : encodeURIComponent(authorizedCertificatesId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1336,7 +1336,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated. Updates are only supported on the certificate_raw_data and display_name fields.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_authorizedCertificates_patch(appsId: string, authorizedCertificatesId: string, updateMask: string, requestBody: AuthorizedCertificate): Observable<HttpResponse<string>> {
+		Appengine_apps_authorizedCertificates_patch(appsId: string, authorizedCertificatesId: string, updateMask: string | null | undefined, requestBody: AuthorizedCertificate): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/authorizedCertificates/' + (authorizedCertificatesId == null ? '' : encodeURIComponent(authorizedCertificatesId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1348,7 +1348,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_authorizedDomains_list(appsId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_authorizedDomains_list(appsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/authorizedDomains&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1360,7 +1360,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_domainMappings_list(appsId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_domainMappings_list(appsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/domainMappings&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_domainMappings_createOverrideStrategy} overrideStrategy Whether the domain creation should override any existing mappings for this domain. By default, overrides are rejected.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_domainMappings_create(appsId: string, overrideStrategy: Appengine_apps_domainMappings_createOverrideStrategy, requestBody: DomainMapping): Observable<HttpResponse<string>> {
+		Appengine_apps_domainMappings_create(appsId: string, overrideStrategy: Appengine_apps_domainMappings_createOverrideStrategy | null | undefined, requestBody: DomainMapping): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/domainMappings&overrideStrategy=' + overrideStrategy, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1405,7 +1405,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_domainMappings_patch(appsId: string, domainMappingsId: string, updateMask: string, requestBody: DomainMapping): Observable<HttpResponse<string>> {
+		Appengine_apps_domainMappings_patch(appsId: string, domainMappingsId: string, updateMask: string | null | undefined, requestBody: DomainMapping): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/domainMappings/' + (domainMappingsId == null ? '' : encodeURIComponent(domainMappingsId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1418,7 +1418,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_firewall_ingressRules_list(appsId: string, matchingAddress: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_firewall_ingressRules_list(appsId: string, matchingAddress: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/firewall/ingressRules&matchingAddress=' + (matchingAddress == null ? '' : encodeURIComponent(matchingAddress)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1462,7 +1462,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_firewall_ingressRules_patch(appsId: string, ingressRulesId: string, updateMask: string, requestBody: FirewallRule): Observable<HttpResponse<string>> {
+		Appengine_apps_firewall_ingressRules_patch(appsId: string, ingressRulesId: string, updateMask: string | null | undefined, requestBody: FirewallRule): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/firewall/ingressRules/' + (ingressRulesId == null ? '' : encodeURIComponent(ingressRulesId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1485,7 +1485,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_locations_list(appsId: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_locations_list(appsId: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1509,7 +1509,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_operations_list(appsId: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_operations_list(appsId: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1532,7 +1532,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_list(appsId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_services_list(appsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1567,7 +1567,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_patch(appsId: string, servicesId: string, migrateTraffic: boolean, updateMask: string, requestBody: Service): Observable<HttpResponse<string>> {
+		Appengine_apps_services_patch(appsId: string, servicesId: string, migrateTraffic: boolean | null | undefined, updateMask: string | null | undefined, requestBody: Service): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '&migrateTraffic=' + migrateTraffic + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1581,7 +1581,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_services_versions_listView} view Controls the set of fields returned in the List response.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_versions_list(appsId: string, servicesId: string, pageSize: number, pageToken: string, view: Appengine_apps_services_versions_listView): Observable<HttpResponse<string>> {
+		Appengine_apps_services_versions_list(appsId: string, servicesId: string, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Appengine_apps_services_versions_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '/versions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1617,7 +1617,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_services_versions_listView} view Controls the set of fields returned in the Get response.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_versions_get(appsId: string, servicesId: string, versionsId: string, view: Appengine_apps_services_versions_listView): Observable<HttpResponse<string>> {
+		Appengine_apps_services_versions_get(appsId: string, servicesId: string, versionsId: string, view: Appengine_apps_services_versions_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '/versions/' + (versionsId == null ? '' : encodeURIComponent(versionsId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_versions_patch(appsId: string, servicesId: string, versionsId: string, updateMask: string, requestBody: Version): Observable<HttpResponse<string>> {
+		Appengine_apps_services_versions_patch(appsId: string, servicesId: string, versionsId: string, updateMask: string | null | undefined, requestBody: Version): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '/versions/' + (versionsId == null ? '' : encodeURIComponent(versionsId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1657,7 +1657,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_versions_instances_list(appsId: string, servicesId: string, versionsId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_services_versions_instances_list(appsId: string, servicesId: string, versionsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '/versions/' + (versionsId == null ? '' : encodeURIComponent(versionsId)) + '/instances&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

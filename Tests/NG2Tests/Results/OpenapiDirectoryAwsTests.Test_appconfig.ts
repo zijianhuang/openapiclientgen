@@ -329,7 +329,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {Applications} Success
 		 */
-		ListApplications(max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<Applications> {
+		ListApplications(max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<Applications> {
 			return this.http.get<Applications>(this.baseUri + 'applications?max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -353,7 +353,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ConfigurationProfiles} Success
 		 */
-		ListConfigurationProfiles(ApplicationId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ConfigurationProfiles> {
+		ListConfigurationProfiles(ApplicationId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ConfigurationProfiles> {
 			return this.http.get<ConfigurationProfiles>(this.baseUri + 'applications/' + (ApplicationId == null ? '' : encodeURIComponent(ApplicationId)) + '/configurationprofiles&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -375,7 +375,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DeploymentStrategies} Success
 		 */
-		ListDeploymentStrategies(max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<DeploymentStrategies> {
+		ListDeploymentStrategies(max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<DeploymentStrategies> {
 			return this.http.get<DeploymentStrategies>(this.baseUri + 'deploymentstrategies?max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -399,7 +399,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {Environments} Success
 		 */
-		ListEnvironments(ApplicationId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<Environments> {
+		ListEnvironments(ApplicationId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<Environments> {
 			return this.http.get<Environments>(this.baseUri + 'applications/' + (ApplicationId == null ? '' : encodeURIComponent(ApplicationId)) + '/environments&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -519,7 +519,7 @@ export namespace MyNS {
 		 * @param {string} client_configuration_version <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p> <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
 		 * @return {Configuration} Success
 		 */
-		GetConfiguration(Application: string, Environment: string, Configuration: string, client_id: string, client_configuration_version: string): Observable<Configuration> {
+		GetConfiguration(Application: string, Environment: string, Configuration: string, client_id: string, client_configuration_version: string | null | undefined): Observable<Configuration> {
 			return this.http.get<Configuration>(this.baseUri + 'applications/' + (Application == null ? '' : encodeURIComponent(Application)) + '/environments/' + (Environment == null ? '' : encodeURIComponent(Environment)) + '/configurations/' + (Configuration == null ? '' : encodeURIComponent(Configuration)) + '#client_id&client_id=' + (client_id == null ? '' : encodeURIComponent(client_id)) + '&client_configuration_version=' + (client_configuration_version == null ? '' : encodeURIComponent(client_configuration_version)), {});
 		}
 
@@ -578,7 +578,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {Deployments} Success
 		 */
-		ListDeployments(ApplicationId: string, EnvironmentId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<Deployments> {
+		ListDeployments(ApplicationId: string, EnvironmentId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<Deployments> {
 			return this.http.get<Deployments>(this.baseUri + 'applications/' + (ApplicationId == null ? '' : encodeURIComponent(ApplicationId)) + '/environments/' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '/deployments&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

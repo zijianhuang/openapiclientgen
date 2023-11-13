@@ -552,7 +552,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_projects_get(project: string, clientOperationId: string): Observable<HttpResponse<string>> {
+		Dns_projects_get(project: string, clientOperationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -565,7 +565,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @return {void} Successful response
 		 */
-		Dns_managedZones_list(project: string, dnsName: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dns_managedZones_list(project: string, dnsName: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones&dnsName=' + (dnsName == null ? '' : encodeURIComponent(dnsName)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -576,7 +576,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_managedZones_create(project: string, clientOperationId: string, requestBody: ManagedZone): Observable<HttpResponse<string>> {
+		Dns_managedZones_create(project: string, clientOperationId: string | null | undefined, requestBody: ManagedZone): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -588,7 +588,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_managedZones_delete(project: string, managedZone: string, clientOperationId: string): Observable<HttpResponse<string>> {
+		Dns_managedZones_delete(project: string, managedZone: string, clientOperationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -600,7 +600,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_managedZones_get(project: string, managedZone: string, clientOperationId: string): Observable<HttpResponse<string>> {
+		Dns_managedZones_get(project: string, managedZone: string, clientOperationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -612,7 +612,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_managedZones_patch(project: string, managedZone: string, clientOperationId: string, requestBody: ManagedZone): Observable<HttpResponse<string>> {
+		Dns_managedZones_patch(project: string, managedZone: string, clientOperationId: string | null | undefined, requestBody: ManagedZone): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -624,7 +624,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_managedZones_update(project: string, managedZone: string, clientOperationId: string, requestBody: ManagedZone): Observable<HttpResponse<string>> {
+		Dns_managedZones_update(project: string, managedZone: string, clientOperationId: string | null | undefined, requestBody: ManagedZone): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -639,7 +639,7 @@ export namespace MyNS {
 		 * @param {string} sortOrder Sorting order direction: 'ascending' or 'descending'.
 		 * @return {void} Successful response
 		 */
-		Dns_changes_list(project: string, managedZone: string, maxResults: number, pageToken: string, sortBy: Dns_changes_listSortBy, sortOrder: string): Observable<HttpResponse<string>> {
+		Dns_changes_list(project: string, managedZone: string, maxResults: number | null | undefined, pageToken: string | null | undefined, sortBy: Dns_changes_listSortBy | null | undefined, sortOrder: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '/changes&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&sortBy=' + sortBy + '&sortOrder=' + (sortOrder == null ? '' : encodeURIComponent(sortOrder)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -651,7 +651,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_changes_create(project: string, managedZone: string, clientOperationId: string, requestBody: Change): Observable<HttpResponse<string>> {
+		Dns_changes_create(project: string, managedZone: string, clientOperationId: string | null | undefined, requestBody: Change): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '/changes&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -664,7 +664,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_changes_get(project: string, managedZone: string, changeId: string, clientOperationId: string): Observable<HttpResponse<string>> {
+		Dns_changes_get(project: string, managedZone: string, changeId: string, clientOperationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '/changes/' + (changeId == null ? '' : encodeURIComponent(changeId)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -678,7 +678,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @return {void} Successful response
 		 */
-		Dns_dnsKeys_list(project: string, managedZone: string, digestType: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dns_dnsKeys_list(project: string, managedZone: string, digestType: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '/dnsKeys&digestType=' + (digestType == null ? '' : encodeURIComponent(digestType)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -692,7 +692,7 @@ export namespace MyNS {
 		 * @param {string} digestType An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type will be computed and displayed.
 		 * @return {void} Successful response
 		 */
-		Dns_dnsKeys_get(project: string, managedZone: string, dnsKeyId: string, clientOperationId: string, digestType: string): Observable<HttpResponse<string>> {
+		Dns_dnsKeys_get(project: string, managedZone: string, dnsKeyId: string, clientOperationId: string | null | undefined, digestType: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '/dnsKeys/' + (dnsKeyId == null ? '' : encodeURIComponent(dnsKeyId)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '&digestType=' + (digestType == null ? '' : encodeURIComponent(digestType)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -706,7 +706,7 @@ export namespace MyNS {
 		 * @param {Dns_managedZoneOperations_listSortBy} sortBy Sorting criterion. The only supported values are START_TIME and ID.
 		 * @return {void} Successful response
 		 */
-		Dns_managedZoneOperations_list(project: string, managedZone: string, maxResults: number, pageToken: string, sortBy: Dns_managedZoneOperations_listSortBy): Observable<HttpResponse<string>> {
+		Dns_managedZoneOperations_list(project: string, managedZone: string, maxResults: number | null | undefined, pageToken: string | null | undefined, sortBy: Dns_managedZoneOperations_listSortBy | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '/operations&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&sortBy=' + sortBy + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -719,7 +719,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_managedZoneOperations_get(project: string, managedZone: string, operation: string, clientOperationId: string): Observable<HttpResponse<string>> {
+		Dns_managedZoneOperations_get(project: string, managedZone: string, operation: string, clientOperationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '/operations/' + (operation == null ? '' : encodeURIComponent(operation)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -734,7 +734,7 @@ export namespace MyNS {
 		 * @param {string} type Restricts the list to return only records of this type. If present, the "name" parameter must also be present.
 		 * @return {void} Successful response
 		 */
-		Dns_resourceRecordSets_list(project: string, managedZone: string, maxResults: number, name: string, pageToken: string, type: string): Observable<HttpResponse<string>> {
+		Dns_resourceRecordSets_list(project: string, managedZone: string, maxResults: number | null | undefined, name: string | null | undefined, pageToken: string | null | undefined, type: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/managedZones/' + (managedZone == null ? '' : encodeURIComponent(managedZone)) + '/rrsets&maxResults=' + maxResults + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&type=' + (type == null ? '' : encodeURIComponent(type)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @return {void} Successful response
 		 */
-		Dns_policies_list(project: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dns_policies_list(project: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/policies&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -757,7 +757,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_policies_create(project: string, clientOperationId: string, requestBody: Policy): Observable<HttpResponse<string>> {
+		Dns_policies_create(project: string, clientOperationId: string | null | undefined, requestBody: Policy): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/policies&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -769,7 +769,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_policies_delete(project: string, policy: string, clientOperationId: string): Observable<HttpResponse<string>> {
+		Dns_policies_delete(project: string, policy: string, clientOperationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/policies/' + (policy == null ? '' : encodeURIComponent(policy)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -781,7 +781,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_policies_get(project: string, policy: string, clientOperationId: string): Observable<HttpResponse<string>> {
+		Dns_policies_get(project: string, policy: string, clientOperationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/policies/' + (policy == null ? '' : encodeURIComponent(policy)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -793,7 +793,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_policies_patch(project: string, policy: string, clientOperationId: string, requestBody: Policy): Observable<HttpResponse<string>> {
+		Dns_policies_patch(project: string, policy: string, clientOperationId: string | null | undefined, requestBody: Policy): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/policies/' + (policy == null ? '' : encodeURIComponent(policy)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -805,7 +805,7 @@ export namespace MyNS {
 		 * @param {string} clientOperationId For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
 		 * @return {void} Successful response
 		 */
-		Dns_policies_update(project: string, policy: string, clientOperationId: string, requestBody: Policy): Observable<HttpResponse<string>> {
+		Dns_policies_update(project: string, policy: string, clientOperationId: string | null | undefined, requestBody: Policy): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (project == null ? '' : encodeURIComponent(project)) + '/policies/' + (policy == null ? '' : encodeURIComponent(policy)) + '&clientOperationId=' + (clientOperationId == null ? '' : encodeURIComponent(clientOperationId)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

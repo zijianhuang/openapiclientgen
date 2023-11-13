@@ -1264,7 +1264,7 @@ export namespace MyNS {
 		 * Get api2/json/stripeConnect
 		 * @return {void} 
 		 */
-		StripeConnect(scope: string, code: string, error: string, error_description: string): Observable<HttpResponse<string>> {
+		StripeConnect(scope: string | null | undefined, code: string | null | undefined, error: string | null | undefined, error_description: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api2/json/stripeConnect?scope=' + (scope == null ? '' : encodeURIComponent(scope)) + '&code=' + (code == null ? '' : encodeURIComponent(code)) + '&error=' + (error == null ? '' : encodeURIComponent(error)) + '&error_description=' + (error_description == null ? '' : encodeURIComponent(error_description)), { observe: 'response', responseType: 'text' });
 		}
 

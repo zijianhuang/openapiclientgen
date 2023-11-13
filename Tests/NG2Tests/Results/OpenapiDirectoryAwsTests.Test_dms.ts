@@ -1562,7 +1562,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeCertificatesResponse} Success
 		 */
-		DescribeCertificates(MaxRecords: string, Marker: string, requestBody: DescribeCertificatesMessage): Observable<DescribeCertificatesResponse> {
+		DescribeCertificates(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeCertificatesMessage): Observable<DescribeCertificatesResponse> {
 			return this.http.post<DescribeCertificatesResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeCertificates?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1573,7 +1573,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeConnectionsResponse} Success
 		 */
-		DescribeConnections(MaxRecords: string, Marker: string, requestBody: DescribeConnectionsMessage): Observable<DescribeConnectionsResponse> {
+		DescribeConnections(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeConnectionsMessage): Observable<DescribeConnectionsResponse> {
 			return this.http.post<DescribeConnectionsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeConnections?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1584,7 +1584,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeEndpointTypesResponse} Success
 		 */
-		DescribeEndpointTypes(MaxRecords: string, Marker: string, requestBody: DescribeEndpointTypesMessage): Observable<DescribeEndpointTypesResponse> {
+		DescribeEndpointTypes(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeEndpointTypesMessage): Observable<DescribeEndpointTypesResponse> {
 			return this.http.post<DescribeEndpointTypesResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeEndpointTypes?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1595,7 +1595,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeEndpointsResponse} Success
 		 */
-		DescribeEndpoints(MaxRecords: string, Marker: string, requestBody: DescribeEndpointsMessage): Observable<DescribeEndpointsResponse> {
+		DescribeEndpoints(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeEndpointsMessage): Observable<DescribeEndpointsResponse> {
 			return this.http.post<DescribeEndpointsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeEndpoints?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1615,7 +1615,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeEventSubscriptionsResponse} Success
 		 */
-		DescribeEventSubscriptions(MaxRecords: string, Marker: string, requestBody: DescribeEventSubscriptionsMessage): Observable<DescribeEventSubscriptionsResponse> {
+		DescribeEventSubscriptions(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeEventSubscriptionsMessage): Observable<DescribeEventSubscriptionsResponse> {
 			return this.http.post<DescribeEventSubscriptionsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeEventSubscriptions?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1626,7 +1626,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeEventsResponse} Success
 		 */
-		DescribeEvents(MaxRecords: string, Marker: string, requestBody: DescribeEventsMessage): Observable<DescribeEventsResponse> {
+		DescribeEvents(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeEventsMessage): Observable<DescribeEventsResponse> {
 			return this.http.post<DescribeEventsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeEvents?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1637,7 +1637,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeOrderableReplicationInstancesResponse} Success
 		 */
-		DescribeOrderableReplicationInstances(MaxRecords: string, Marker: string, requestBody: DescribeOrderableReplicationInstancesMessage): Observable<DescribeOrderableReplicationInstancesResponse> {
+		DescribeOrderableReplicationInstances(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeOrderableReplicationInstancesMessage): Observable<DescribeOrderableReplicationInstancesResponse> {
 			return this.http.post<DescribeOrderableReplicationInstancesResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeOrderableReplicationInstances?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1648,7 +1648,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribePendingMaintenanceActionsResponse} Success
 		 */
-		DescribePendingMaintenanceActions(MaxRecords: string, Marker: string, requestBody: DescribePendingMaintenanceActionsMessage): Observable<DescribePendingMaintenanceActionsResponse> {
+		DescribePendingMaintenanceActions(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribePendingMaintenanceActionsMessage): Observable<DescribePendingMaintenanceActionsResponse> {
 			return this.http.post<DescribePendingMaintenanceActionsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribePendingMaintenanceActions?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1668,7 +1668,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeReplicationInstanceTaskLogsResponse} Success
 		 */
-		DescribeReplicationInstanceTaskLogs(MaxRecords: string, Marker: string, requestBody: DescribeReplicationInstanceTaskLogsMessage): Observable<DescribeReplicationInstanceTaskLogsResponse> {
+		DescribeReplicationInstanceTaskLogs(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeReplicationInstanceTaskLogsMessage): Observable<DescribeReplicationInstanceTaskLogsResponse> {
 			return this.http.post<DescribeReplicationInstanceTaskLogsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1679,7 +1679,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeReplicationInstancesResponse} Success
 		 */
-		DescribeReplicationInstances(MaxRecords: string, Marker: string, requestBody: DescribeReplicationInstancesMessage): Observable<DescribeReplicationInstancesResponse> {
+		DescribeReplicationInstances(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeReplicationInstancesMessage): Observable<DescribeReplicationInstancesResponse> {
 			return this.http.post<DescribeReplicationInstancesResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationInstances?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1690,7 +1690,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeReplicationSubnetGroupsResponse} Success
 		 */
-		DescribeReplicationSubnetGroups(MaxRecords: string, Marker: string, requestBody: DescribeReplicationSubnetGroupsMessage): Observable<DescribeReplicationSubnetGroupsResponse> {
+		DescribeReplicationSubnetGroups(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeReplicationSubnetGroupsMessage): Observable<DescribeReplicationSubnetGroupsResponse> {
 			return this.http.post<DescribeReplicationSubnetGroupsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationSubnetGroups?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1701,7 +1701,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeReplicationTaskAssessmentResultsResponse} Success
 		 */
-		DescribeReplicationTaskAssessmentResults(MaxRecords: string, Marker: string, requestBody: DescribeReplicationTaskAssessmentResultsMessage): Observable<DescribeReplicationTaskAssessmentResultsResponse> {
+		DescribeReplicationTaskAssessmentResults(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeReplicationTaskAssessmentResultsMessage): Observable<DescribeReplicationTaskAssessmentResultsResponse> {
 			return this.http.post<DescribeReplicationTaskAssessmentResultsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1712,7 +1712,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeReplicationTasksResponse} Success
 		 */
-		DescribeReplicationTasks(MaxRecords: string, Marker: string, requestBody: DescribeReplicationTasksMessage): Observable<DescribeReplicationTasksResponse> {
+		DescribeReplicationTasks(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeReplicationTasksMessage): Observable<DescribeReplicationTasksResponse> {
 			return this.http.post<DescribeReplicationTasksResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeReplicationTasks?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1723,7 +1723,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeSchemasResponse} Success
 		 */
-		DescribeSchemas(MaxRecords: string, Marker: string, requestBody: DescribeSchemasMessage): Observable<DescribeSchemasResponse> {
+		DescribeSchemas(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeSchemasMessage): Observable<DescribeSchemasResponse> {
 			return this.http.post<DescribeSchemasResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeSchemas?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1734,7 +1734,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeTableStatisticsResponse} Success
 		 */
-		DescribeTableStatistics(MaxRecords: string, Marker: string, requestBody: DescribeTableStatisticsMessage): Observable<DescribeTableStatisticsResponse> {
+		DescribeTableStatistics(MaxRecords: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeTableStatisticsMessage): Observable<DescribeTableStatisticsResponse> {
 			return this.http.post<DescribeTableStatisticsResponse>(this.baseUri + '#X-Amz-Target=AmazonDMSv20160101.DescribeTableStatistics?MaxRecords=' + (MaxRecords == null ? '' : encodeURIComponent(MaxRecords)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

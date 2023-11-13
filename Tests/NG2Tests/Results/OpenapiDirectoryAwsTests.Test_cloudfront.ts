@@ -1875,7 +1875,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of origin access identities you want in the response body. 
 		 * @return {void} Success
 		 */
-		ListCloudFrontOriginAccessIdentities2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListCloudFrontOriginAccessIdentities2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/origin-access-identity/cloudfront?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1886,7 +1886,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of distributions you want in the response body.
 		 * @return {void} Success
 		 */
-		ListDistributions2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListDistributions2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/distribution?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1897,7 +1897,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of field-level encryption configurations you want in the response body. 
 		 * @return {void} Success
 		 */
-		ListFieldLevelEncryptionConfigs2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListFieldLevelEncryptionConfigs2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/field-level-encryption?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1908,7 +1908,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of field-level encryption profiles you want in the response body. 
 		 * @return {void} Success
 		 */
-		ListFieldLevelEncryptionProfiles2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListFieldLevelEncryptionProfiles2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/field-level-encryption-profile?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1920,7 +1920,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of invalidation batches that you want in the response body.
 		 * @return {void} Success
 		 */
-		ListInvalidations2019_03_26(DistributionId: string, Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListInvalidations2019_03_26(DistributionId: string, Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/distribution/' + (DistributionId == null ? '' : encodeURIComponent(DistributionId)) + '/invalidation&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1931,7 +1931,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of public keys you want in the response body. 
 		 * @return {void} Success
 		 */
-		ListPublicKeys2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListPublicKeys2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/public-key?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1942,7 +1942,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The value that you provided for the <code>MaxItems</code> request parameter.
 		 * @return {void} Success
 		 */
-		ListStreamingDistributions2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListStreamingDistributions2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/streaming-distribution?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2145,7 +2145,7 @@ export namespace MyNS {
 		 * @param {string} WebACLId The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL. 
 		 * @return {void} Success
 		 */
-		ListDistributionsByWebACLId2019_03_26(Marker: string, MaxItems: string, WebACLId: string): Observable<HttpResponse<string>> {
+		ListDistributionsByWebACLId2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined, WebACLId: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/distributionsByWebACLId/' + (WebACLId == null ? '' : encodeURIComponent(WebACLId)) + '?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 

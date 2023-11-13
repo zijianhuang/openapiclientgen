@@ -28,7 +28,7 @@ namespace SwagTests
 		}
 
 		/// <summary>
-		/// Set to true when there are sigificant changes to generated codes.
+		/// Set to true when there are significant changes to generated codes.
 		/// </summary>
 		public static readonly bool BuildToValidate = true;
 	}

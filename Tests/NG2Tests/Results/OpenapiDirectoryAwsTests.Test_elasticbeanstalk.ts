@@ -1309,7 +1309,7 @@ export namespace MyNS {
 		 * @param {string} EnvironmentName This specifies the name of the environment with the in-progress update that you want to cancel.
 		 * @return {void} Success
 		 */
-		GET_AbortEnvironmentUpdate(EnvironmentId: string, EnvironmentName: string, Action: GET_AbortEnvironmentUpdateAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
+		GET_AbortEnvironmentUpdate(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_AbortEnvironmentUpdateAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=AbortEnvironmentUpdate?EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1321,7 +1321,7 @@ export namespace MyNS {
 		 * @param {string} ActionId The action ID of the scheduled managed action to execute.
 		 * @return {void} Success
 		 */
-		GET_ApplyEnvironmentManagedAction(EnvironmentName: string, EnvironmentId: string, ActionId: string, Action: GET_ApplyEnvironmentManagedActionAction, Version: GET_ApplyEnvironmentManagedActionVersion): Observable<HttpResponse<string>> {
+		GET_ApplyEnvironmentManagedAction(EnvironmentName: string | null | undefined, EnvironmentId: string | null | undefined, ActionId: string, Action: GET_ApplyEnvironmentManagedActionAction, Version: GET_ApplyEnvironmentManagedActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ApplyEnvironmentManagedAction?EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&ActionId=' + (ActionId == null ? '' : encodeURIComponent(ActionId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1354,7 +1354,7 @@ export namespace MyNS {
 		 * @param {Array<string>} VersionLabels A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.
 		 * @return {void} Success
 		 */
-		GET_ComposeEnvironments(ApplicationName: string, GroupName: string, VersionLabels: Array<string>, Action: GET_ComposeEnvironmentsAction, Version: GET_ComposeEnvironmentsVersion): Observable<HttpResponse<string>> {
+		GET_ComposeEnvironments(ApplicationName: string | null | undefined, GroupName: string | null | undefined, VersionLabels: Array<string> | null | undefined, Action: GET_ComposeEnvironmentsAction, Version: GET_ComposeEnvironmentsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ComposeEnvironments?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&' + VersionLabels.map(z => `VersionLabels=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1367,7 +1367,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateApplication(ApplicationName: string, Description: string, ResourceLifecycleConfig: GET_CreateApplicationResourceLifecycleConfig, Tags: Array<Tag>, Action: GET_CreateApplicationAction, Version: GET_CreateApplicationVersion): Observable<HttpResponse<string>> {
+		GET_CreateApplication(ApplicationName: string, Description: string | null | undefined, ResourceLifecycleConfig: GET_CreateApplicationResourceLifecycleConfig | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateApplicationAction, Version: GET_CreateApplicationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateApplication?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&ResourceLifecycleConfig=' + ResourceLifecycleConfig + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1385,7 +1385,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>Specifies the tags applied to the application version.</p> <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateApplicationVersion(ApplicationName: string, VersionLabel: string, Description: string, SourceBuildInformation: GET_CreateApplicationVersionSourceBuildInformation, SourceBundle: GET_CreateApplicationVersionSourceBundle, BuildConfiguration: GET_CreateApplicationVersionBuildConfiguration, AutoCreateApplication: boolean, Process: boolean, Tags: Array<Tag>, Action: GET_CreateApplicationVersionAction, Version: GET_CreateApplicationVersionVersion): Observable<HttpResponse<string>> {
+		GET_CreateApplicationVersion(ApplicationName: string, VersionLabel: string, Description: string | null | undefined, SourceBuildInformation: GET_CreateApplicationVersionSourceBuildInformation | null | undefined, SourceBundle: GET_CreateApplicationVersionSourceBundle | null | undefined, BuildConfiguration: GET_CreateApplicationVersionBuildConfiguration | null | undefined, AutoCreateApplication: boolean | null | undefined, Process: boolean | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateApplicationVersionAction, Version: GET_CreateApplicationVersionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateApplicationVersion?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&SourceBuildInformation=' + SourceBuildInformation + '&SourceBundle=' + SourceBundle + '&BuildConfiguration=' + BuildConfiguration + '&AutoCreateApplication=' + AutoCreateApplication + '&Process=' + Process + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1403,7 +1403,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags Specifies the tags applied to the configuration template.
 		 * @return {void} Success
 		 */
-		GET_CreateConfigurationTemplate(ApplicationName: string, TemplateName: string, SolutionStackName: string, PlatformArn: string, SourceConfiguration: GET_CreateConfigurationTemplateSourceConfiguration, EnvironmentId: string, Description: string, OptionSettings: Array<ConfigurationOptionSetting>, Tags: Array<Tag>, Action: GET_CreateConfigurationTemplateAction, Version: GET_CreateConfigurationTemplateVersion): Observable<HttpResponse<string>> {
+		GET_CreateConfigurationTemplate(ApplicationName: string, TemplateName: string, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, SourceConfiguration: GET_CreateConfigurationTemplateSourceConfiguration | null | undefined, EnvironmentId: string | null | undefined, Description: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateConfigurationTemplateAction, Version: GET_CreateConfigurationTemplateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateConfigurationTemplate?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&SourceConfiguration=' + SourceConfiguration + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1426,7 +1426,7 @@ export namespace MyNS {
 		 * @param {string} OperationsRole The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
 		 * @return {void} Success
 		 */
-		GET_CreateEnvironment(ApplicationName: string, EnvironmentName: string, GroupName: string, Description: string, CNAMEPrefix: string, Tier: GET_CreateEnvironmentTier, Tags: Array<Tag>, VersionLabel: string, TemplateName: string, SolutionStackName: string, PlatformArn: string, OptionSettings: Array<ConfigurationOptionSetting>, OptionsToRemove: Array<OptionSpecification>, OperationsRole: string, Action: GET_CreateEnvironmentAction, Version: GET_CreateEnvironmentVersion): Observable<HttpResponse<string>> {
+		GET_CreateEnvironment(ApplicationName: string, EnvironmentName: string | null | undefined, GroupName: string | null | undefined, Description: string | null | undefined, CNAMEPrefix: string | null | undefined, Tier: GET_CreateEnvironmentTier | null | undefined, Tags: Array<Tag> | null | undefined, VersionLabel: string | null | undefined, TemplateName: string | null | undefined, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, OptionsToRemove: Array<OptionSpecification> | null | undefined, OperationsRole: string | null | undefined, Action: GET_CreateEnvironmentAction, Version: GET_CreateEnvironmentVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateEnvironment?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&CNAMEPrefix=' + (CNAMEPrefix == null ? '' : encodeURIComponent(CNAMEPrefix)) + '&Tier=' + Tier + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove.map(z => `OptionsToRemove=${z}`).join('&') + '&OperationsRole=' + (OperationsRole == null ? '' : encodeURIComponent(OperationsRole)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>Specifies the tags applied to the new platform version.</p> <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
 		 * @return {void} Success
 		 */
-		GET_CreatePlatformVersion(PlatformName: string, PlatformVersion: string, PlatformDefinitionBundle: GET_CreatePlatformVersionPlatformDefinitionBundle, EnvironmentName: string, OptionSettings: Array<ConfigurationOptionSetting>, Tags: Array<Tag>, Action: GET_CreatePlatformVersionAction, Version: GET_CreatePlatformVersionVersion): Observable<HttpResponse<string>> {
+		GET_CreatePlatformVersion(PlatformName: string, PlatformVersion: string, PlatformDefinitionBundle: GET_CreatePlatformVersionPlatformDefinitionBundle, EnvironmentName: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreatePlatformVersionAction, Version: GET_CreatePlatformVersionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreatePlatformVersion?PlatformName=' + (PlatformName == null ? '' : encodeURIComponent(PlatformName)) + '&PlatformVersion=' + (PlatformVersion == null ? '' : encodeURIComponent(PlatformVersion)) + '&PlatformDefinitionBundle=' + PlatformDefinitionBundle + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1470,7 +1470,7 @@ export namespace MyNS {
 		 * @param {boolean} TerminateEnvByForce When set to true, running environments will be terminated before deleting the application.
 		 * @return {void} Success
 		 */
-		GET_DeleteApplication(ApplicationName: string, TerminateEnvByForce: boolean, Action: GET_DeleteApplicationAction, Version: GET_DeleteApplicationVersion): Observable<HttpResponse<string>> {
+		GET_DeleteApplication(ApplicationName: string, TerminateEnvByForce: boolean | null | undefined, Action: GET_DeleteApplicationAction, Version: GET_DeleteApplicationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteApplication?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TerminateEnvByForce=' + TerminateEnvByForce + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1482,7 +1482,7 @@ export namespace MyNS {
 		 * @param {boolean} DeleteSourceBundle Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.
 		 * @return {void} Success
 		 */
-		GET_DeleteApplicationVersion(ApplicationName: string, VersionLabel: string, DeleteSourceBundle: boolean, Action: GET_DeleteApplicationVersionAction, Version: GET_DeleteApplicationVersionVersion): Observable<HttpResponse<string>> {
+		GET_DeleteApplicationVersion(ApplicationName: string, VersionLabel: string, DeleteSourceBundle: boolean | null | undefined, Action: GET_DeleteApplicationVersionAction, Version: GET_DeleteApplicationVersionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteApplicationVersion?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&DeleteSourceBundle=' + DeleteSourceBundle + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1514,7 +1514,7 @@ export namespace MyNS {
 		 * @param {string} PlatformArn The ARN of the version of the custom platform.
 		 * @return {void} Success
 		 */
-		GET_DeletePlatformVersion(PlatformArn: string, Action: GET_DeletePlatformVersionAction, Version: GET_DeletePlatformVersionVersion): Observable<HttpResponse<string>> {
+		GET_DeletePlatformVersion(PlatformArn: string | null | undefined, Action: GET_DeletePlatformVersionAction, Version: GET_DeletePlatformVersionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeletePlatformVersion?PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1545,7 +1545,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeApplicationVersions(ApplicationName: string, VersionLabels: Array<string>, MaxRecords: number, NextToken: string, Action: GET_DescribeApplicationVersionsAction, Version: GET_DescribeApplicationVersionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeApplicationVersions(ApplicationName: string | null | undefined, VersionLabels: Array<string> | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeApplicationVersionsAction, Version: GET_DescribeApplicationVersionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeApplicationVersions?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&' + VersionLabels.map(z => `VersionLabels=${encodeURIComponent(z)}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1555,7 +1555,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ApplicationNames If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.
 		 * @return {void} Success
 		 */
-		GET_DescribeApplications(ApplicationNames: Array<string>, Action: GET_DescribeApplicationsAction, Version: GET_DescribeApplicationsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeApplications(ApplicationNames: Array<string> | null | undefined, Action: GET_DescribeApplicationsAction, Version: GET_DescribeApplicationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeApplications?' + ApplicationNames.map(z => `ApplicationNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1570,7 +1570,7 @@ export namespace MyNS {
 		 * @param {Array<OptionSpecification>} Options If specified, restricts the descriptions to only the specified options.
 		 * @return {void} Success
 		 */
-		GET_DescribeConfigurationOptions(ApplicationName: string, TemplateName: string, EnvironmentName: string, SolutionStackName: string, PlatformArn: string, Options: Array<OptionSpecification>, Action: GET_DescribeConfigurationOptionsAction, Version: GET_DescribeConfigurationOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeConfigurationOptions(ApplicationName: string | null | undefined, TemplateName: string | null | undefined, EnvironmentName: string | null | undefined, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, Options: Array<OptionSpecification> | null | undefined, Action: GET_DescribeConfigurationOptionsAction, Version: GET_DescribeConfigurationOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeConfigurationOptions?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + Options.map(z => `Options=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1582,7 +1582,7 @@ export namespace MyNS {
 		 * @param {string} EnvironmentName <p>The name of the environment to describe.</p> <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @return {void} Success
 		 */
-		GET_DescribeConfigurationSettings(ApplicationName: string, TemplateName: string, EnvironmentName: string, Action: GET_DescribeConfigurationSettingsAction, Version: GET_DescribeConfigurationSettingsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeConfigurationSettings(ApplicationName: string, TemplateName: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_DescribeConfigurationSettingsAction, Version: GET_DescribeConfigurationSettingsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeConfigurationSettings?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1594,7 +1594,7 @@ export namespace MyNS {
 		 * @param {Array<EnvironmentHealthAttribute>} AttributeNames Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.
 		 * @return {void} Success
 		 */
-		GET_DescribeEnvironmentHealth(EnvironmentName: string, EnvironmentId: string, AttributeNames: Array<EnvironmentHealthAttribute>, Action: GET_DescribeEnvironmentHealthAction, Version: GET_DescribeEnvironmentHealthVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEnvironmentHealth(EnvironmentName: string | null | undefined, EnvironmentId: string | null | undefined, AttributeNames: Array<EnvironmentHealthAttribute> | null | undefined, Action: GET_DescribeEnvironmentHealthAction, Version: GET_DescribeEnvironmentHealthVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEnvironmentHealth?EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&' + AttributeNames.map(z => `AttributeNames=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1607,7 +1607,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of items to return for a single request.
 		 * @return {void} Success
 		 */
-		GET_DescribeEnvironmentManagedActionHistory(EnvironmentId: string, EnvironmentName: string, NextToken: string, MaxItems: number, Action: GET_DescribeEnvironmentManagedActionHistoryAction, Version: GET_DescribeEnvironmentManagedActionHistoryVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEnvironmentManagedActionHistory(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_DescribeEnvironmentManagedActionHistoryAction, Version: GET_DescribeEnvironmentManagedActionHistoryVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEnvironmentManagedActionHistory?EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1619,7 +1619,7 @@ export namespace MyNS {
 		 * @param {ManagedActionStatus} Status To show only actions with a particular status, specify a status.
 		 * @return {void} Success
 		 */
-		GET_DescribeEnvironmentManagedActions(EnvironmentName: string, EnvironmentId: string, Status: ManagedActionStatus, Action: GET_DescribeEnvironmentManagedActionsAction, Version: GET_DescribeEnvironmentManagedActionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEnvironmentManagedActions(EnvironmentName: string | null | undefined, EnvironmentId: string | null | undefined, Status: ManagedActionStatus | null | undefined, Action: GET_DescribeEnvironmentManagedActionsAction, Version: GET_DescribeEnvironmentManagedActionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEnvironmentManagedActions?EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&Status=' + Status + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1630,7 +1630,7 @@ export namespace MyNS {
 		 * @param {string} EnvironmentName <p>The name of the environment to retrieve AWS resource usage data.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @return {void} Success
 		 */
-		GET_DescribeEnvironmentResources(EnvironmentId: string, EnvironmentName: string, Action: GET_DescribeEnvironmentResourcesAction, Version: GET_DescribeEnvironmentResourcesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEnvironmentResources(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_DescribeEnvironmentResourcesAction, Version: GET_DescribeEnvironmentResourcesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEnvironmentResources?EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1647,7 +1647,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeEnvironments(ApplicationName: string, VersionLabel: string, EnvironmentIds: Array<string>, EnvironmentNames: Array<string>, IncludeDeleted: boolean, IncludedDeletedBackTo: Date, MaxRecords: number, NextToken: string, Action: GET_DescribeEnvironmentsAction, Version: GET_DescribeEnvironmentsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEnvironments(ApplicationName: string | null | undefined, VersionLabel: string | null | undefined, EnvironmentIds: Array<string> | null | undefined, EnvironmentNames: Array<string> | null | undefined, IncludeDeleted: boolean | null | undefined, IncludedDeletedBackTo: Date | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeEnvironmentsAction, Version: GET_DescribeEnvironmentsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEnvironments?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&' + EnvironmentIds.map(z => `EnvironmentIds=${encodeURIComponent(z)}`).join('&') + '&' + EnvironmentNames.map(z => `EnvironmentNames=${encodeURIComponent(z)}`).join('&') + '&IncludeDeleted=' + IncludeDeleted + '&IncludedDeletedBackTo=' + IncludedDeletedBackTo.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1668,7 +1668,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token. If specified, the events return the next batch of results.
 		 * @return {void} Success
 		 */
-		GET_DescribeEvents(ApplicationName: string, VersionLabel: string, TemplateName: string, EnvironmentId: string, EnvironmentName: string, PlatformArn: string, RequestId: string, Severity: EventDescriptionSeverity, StartTime: Date, EndTime: Date, MaxRecords: number, NextToken: string, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEvents(ApplicationName: string | null | undefined, VersionLabel: string | null | undefined, TemplateName: string | null | undefined, EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, PlatformArn: string | null | undefined, RequestId: string | null | undefined, Severity: EventDescriptionSeverity | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEvents?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&RequestId=' + (RequestId == null ? '' : encodeURIComponent(RequestId)) + '&Severity=' + Severity + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1681,7 +1681,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Specify the pagination token returned by a previous call.
 		 * @return {void} Success
 		 */
-		GET_DescribeInstancesHealth(EnvironmentName: string, EnvironmentId: string, AttributeNames: Array<InstancesHealthAttribute>, NextToken: string, Action: GET_DescribeInstancesHealthAction, Version: GET_DescribeInstancesHealthVersion): Observable<HttpResponse<string>> {
+		GET_DescribeInstancesHealth(EnvironmentName: string | null | undefined, EnvironmentId: string | null | undefined, AttributeNames: Array<InstancesHealthAttribute> | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeInstancesHealthAction, Version: GET_DescribeInstancesHealthVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeInstancesHealth?EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&' + AttributeNames.map(z => `AttributeNames=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1691,7 +1691,7 @@ export namespace MyNS {
 		 * @param {string} PlatformArn The ARN of the platform version.
 		 * @return {void} Success
 		 */
-		GET_DescribePlatformVersion(PlatformArn: string, Action: GET_DescribePlatformVersionAction, Version: GET_DescribePlatformVersionVersion): Observable<HttpResponse<string>> {
+		GET_DescribePlatformVersion(PlatformArn: string | null | undefined, Action: GET_DescribePlatformVersionAction, Version: GET_DescribePlatformVersionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribePlatformVersion?PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1731,7 +1731,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
 		 * @return {void} Success
 		 */
-		GET_ListPlatformBranches(Filters: Array<SearchFilter>, MaxRecords: number, NextToken: string, Action: GET_ListPlatformBranchesAction, Version: GET_ListPlatformBranchesVersion): Observable<HttpResponse<string>> {
+		GET_ListPlatformBranches(Filters: Array<SearchFilter> | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_ListPlatformBranchesAction, Version: GET_ListPlatformBranchesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListPlatformBranches?' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1743,7 +1743,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
 		 * @return {void} Success
 		 */
-		GET_ListPlatformVersions(Filters: Array<PlatformFilter>, MaxRecords: number, NextToken: string, Action: GET_ListPlatformVersionsAction, Version: GET_ListPlatformVersionsVersion): Observable<HttpResponse<string>> {
+		GET_ListPlatformVersions(Filters: Array<PlatformFilter> | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_ListPlatformVersionsAction, Version: GET_ListPlatformVersionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListPlatformVersions?' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1764,7 +1764,7 @@ export namespace MyNS {
 		 * @param {string} EnvironmentName <p>The name of the environment to rebuild.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @return {void} Success
 		 */
-		GET_RebuildEnvironment(EnvironmentId: string, EnvironmentName: string, Action: GET_RebuildEnvironmentAction, Version: GET_RebuildEnvironmentVersion): Observable<HttpResponse<string>> {
+		GET_RebuildEnvironment(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_RebuildEnvironmentAction, Version: GET_RebuildEnvironmentVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RebuildEnvironment?EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1776,7 +1776,7 @@ export namespace MyNS {
 		 * @param {EnvironmentInfoDescriptionInfoType} InfoType The type of information to request.
 		 * @return {void} Success
 		 */
-		GET_RequestEnvironmentInfo(EnvironmentId: string, EnvironmentName: string, InfoType: EnvironmentInfoDescriptionInfoType, Action: GET_RequestEnvironmentInfoAction, Version: GET_RequestEnvironmentInfoVersion): Observable<HttpResponse<string>> {
+		GET_RequestEnvironmentInfo(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, InfoType: EnvironmentInfoDescriptionInfoType, Action: GET_RequestEnvironmentInfoAction, Version: GET_RequestEnvironmentInfoVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RequestEnvironmentInfo?EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&InfoType=' + InfoType + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1787,7 +1787,7 @@ export namespace MyNS {
 		 * @param {string} EnvironmentName <p>The name of the environment to restart the server for.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @return {void} Success
 		 */
-		GET_RestartAppServer(EnvironmentId: string, EnvironmentName: string, Action: GET_RestartAppServerAction, Version: GET_RestartAppServerVersion): Observable<HttpResponse<string>> {
+		GET_RestartAppServer(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_RestartAppServerAction, Version: GET_RestartAppServerVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestartAppServer?EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1799,7 +1799,7 @@ export namespace MyNS {
 		 * @param {EnvironmentInfoDescriptionInfoType} InfoType The type of information to retrieve.
 		 * @return {void} Success
 		 */
-		GET_RetrieveEnvironmentInfo(EnvironmentId: string, EnvironmentName: string, InfoType: EnvironmentInfoDescriptionInfoType, Action: GET_RetrieveEnvironmentInfoAction, Version: GET_RetrieveEnvironmentInfoVersion): Observable<HttpResponse<string>> {
+		GET_RetrieveEnvironmentInfo(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, InfoType: EnvironmentInfoDescriptionInfoType, Action: GET_RetrieveEnvironmentInfoAction, Version: GET_RetrieveEnvironmentInfoVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RetrieveEnvironmentInfo?EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&InfoType=' + InfoType + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1812,7 +1812,7 @@ export namespace MyNS {
 		 * @param {string} DestinationEnvironmentName <p>The name of the destination environment.</p> <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
 		 * @return {void} Success
 		 */
-		GET_SwapEnvironmentCNAMEs(SourceEnvironmentId: string, SourceEnvironmentName: string, DestinationEnvironmentId: string, DestinationEnvironmentName: string, Action: GET_SwapEnvironmentCNAMEsAction, Version: GET_SwapEnvironmentCNAMEsVersion): Observable<HttpResponse<string>> {
+		GET_SwapEnvironmentCNAMEs(SourceEnvironmentId: string | null | undefined, SourceEnvironmentName: string | null | undefined, DestinationEnvironmentId: string | null | undefined, DestinationEnvironmentName: string | null | undefined, Action: GET_SwapEnvironmentCNAMEsAction, Version: GET_SwapEnvironmentCNAMEsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SwapEnvironmentCNAMEs?SourceEnvironmentId=' + (SourceEnvironmentId == null ? '' : encodeURIComponent(SourceEnvironmentId)) + '&SourceEnvironmentName=' + (SourceEnvironmentName == null ? '' : encodeURIComponent(SourceEnvironmentName)) + '&DestinationEnvironmentId=' + (DestinationEnvironmentId == null ? '' : encodeURIComponent(DestinationEnvironmentId)) + '&DestinationEnvironmentName=' + (DestinationEnvironmentName == null ? '' : encodeURIComponent(DestinationEnvironmentName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1825,7 +1825,7 @@ export namespace MyNS {
 		 * @param {boolean} ForceTerminate Terminates the target environment even if another environment in the same group is dependent on it.
 		 * @return {void} Success
 		 */
-		GET_TerminateEnvironment(EnvironmentId: string, EnvironmentName: string, TerminateResources: boolean, ForceTerminate: boolean, Action: GET_TerminateEnvironmentAction, Version: GET_TerminateEnvironmentVersion): Observable<HttpResponse<string>> {
+		GET_TerminateEnvironment(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, TerminateResources: boolean | null | undefined, ForceTerminate: boolean | null | undefined, Action: GET_TerminateEnvironmentAction, Version: GET_TerminateEnvironmentVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=TerminateEnvironment?EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&TerminateResources=' + TerminateResources + '&ForceTerminate=' + ForceTerminate + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1836,7 +1836,7 @@ export namespace MyNS {
 		 * @param {string} Description <p>A new description for the application.</p> <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateApplication(ApplicationName: string, Description: string, Action: GET_UpdateApplicationAction, Version: GET_UpdateApplicationVersion): Observable<HttpResponse<string>> {
+		GET_UpdateApplication(ApplicationName: string, Description: string | null | undefined, Action: GET_UpdateApplicationAction, Version: GET_UpdateApplicationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateApplication?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1859,7 +1859,7 @@ export namespace MyNS {
 		 * @param {string} Description A new description for this version.
 		 * @return {void} Success
 		 */
-		GET_UpdateApplicationVersion(ApplicationName: string, VersionLabel: string, Description: string, Action: GET_UpdateApplicationVersionAction, Version: GET_UpdateApplicationVersionVersion): Observable<HttpResponse<string>> {
+		GET_UpdateApplicationVersion(ApplicationName: string, VersionLabel: string, Description: string | null | undefined, Action: GET_UpdateApplicationVersionAction, Version: GET_UpdateApplicationVersionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateApplicationVersion?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1873,7 +1873,7 @@ export namespace MyNS {
 		 * @param {Array<OptionSpecification>} OptionsToRemove <p>A list of configuration options to remove from the configuration set.</p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
 		 * @return {void} Success
 		 */
-		GET_UpdateConfigurationTemplate(ApplicationName: string, TemplateName: string, Description: string, OptionSettings: Array<ConfigurationOptionSetting>, OptionsToRemove: Array<OptionSpecification>, Action: GET_UpdateConfigurationTemplateAction, Version: GET_UpdateConfigurationTemplateVersion): Observable<HttpResponse<string>> {
+		GET_UpdateConfigurationTemplate(ApplicationName: string, TemplateName: string, Description: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, OptionsToRemove: Array<OptionSpecification> | null | undefined, Action: GET_UpdateConfigurationTemplateAction, Version: GET_UpdateConfigurationTemplateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateConfigurationTemplate?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove.map(z => `OptionsToRemove=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1894,7 +1894,7 @@ export namespace MyNS {
 		 * @param {Array<OptionSpecification>} OptionsToRemove A list of custom user-defined configuration options to remove from the configuration set for this environment.
 		 * @return {void} Success
 		 */
-		GET_UpdateEnvironment(ApplicationName: string, EnvironmentId: string, EnvironmentName: string, GroupName: string, Description: string, Tier: GET_UpdateEnvironmentTier, VersionLabel: string, TemplateName: string, SolutionStackName: string, PlatformArn: string, OptionSettings: Array<ConfigurationOptionSetting>, OptionsToRemove: Array<OptionSpecification>, Action: GET_UpdateEnvironmentAction, Version: GET_UpdateEnvironmentVersion): Observable<HttpResponse<string>> {
+		GET_UpdateEnvironment(ApplicationName: string | null | undefined, EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, GroupName: string | null | undefined, Description: string | null | undefined, Tier: GET_UpdateEnvironmentTier | null | undefined, VersionLabel: string | null | undefined, TemplateName: string | null | undefined, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, OptionsToRemove: Array<OptionSpecification> | null | undefined, Action: GET_UpdateEnvironmentAction, Version: GET_UpdateEnvironmentVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateEnvironment?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&Tier=' + Tier + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove.map(z => `OptionsToRemove=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1906,7 +1906,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagsToRemove <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p> <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateTagsForResource(ResourceArn: string, TagsToAdd: Array<Tag>, TagsToRemove: Array<string>, Action: GET_UpdateTagsForResourceAction, Version: GET_UpdateTagsForResourceVersion): Observable<HttpResponse<string>> {
+		GET_UpdateTagsForResource(ResourceArn: string, TagsToAdd: Array<Tag> | null | undefined, TagsToRemove: Array<string> | null | undefined, Action: GET_UpdateTagsForResourceAction, Version: GET_UpdateTagsForResourceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateTagsForResource?ResourceArn=' + (ResourceArn == null ? '' : encodeURIComponent(ResourceArn)) + '&' + TagsToAdd.map(z => `TagsToAdd=${z}`).join('&') + '&' + TagsToRemove.map(z => `TagsToRemove=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1919,7 +1919,7 @@ export namespace MyNS {
 		 * @param {Array<ConfigurationOptionSetting>} OptionSettings A list of the options and desired values to evaluate.
 		 * @return {void} Success
 		 */
-		GET_ValidateConfigurationSettings(ApplicationName: string, TemplateName: string, EnvironmentName: string, OptionSettings: Array<ConfigurationOptionSetting>, Action: GET_ValidateConfigurationSettingsAction, Version: GET_ValidateConfigurationSettingsVersion): Observable<HttpResponse<string>> {
+		GET_ValidateConfigurationSettings(ApplicationName: string, TemplateName: string | null | undefined, EnvironmentName: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting>, Action: GET_ValidateConfigurationSettingsAction, Version: GET_ValidateConfigurationSettingsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ValidateConfigurationSettings?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}

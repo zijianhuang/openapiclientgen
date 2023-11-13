@@ -91,7 +91,7 @@ export namespace MyNS {
 		 * @param {number} showQuoteMark showing/hiding quote mark
 		 * @return {void} OK
 		 */
-		V1ImagesQuoteGetByQuoteAndAuthorAndFontSizeAndQuoteFontAndQuoteFontColorAndAuthorFontAndAuthorFontColorAndEnableHighlightAndHighlightColorAndBgTypeAndBackgroundColorAndGradientTypeAndGradientColor1AndGradientColor2AndBrandLogoAndAnimationAndShowQuoteMark(quote: string, author: string, fontSize: number, quoteFont: string, quoteFontColor: string, authorFont: string, authorFontColor: string, enableHighlight: number, highlightColor: string, bgType: string, backgroundColor: string, gradientType: string, gradientColor1: string, gradientColor2: string, brandLogo: string, animation: string, showQuoteMark: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		V1ImagesQuoteGetByQuoteAndAuthorAndFontSizeAndQuoteFontAndQuoteFontColorAndAuthorFontAndAuthorFontColorAndEnableHighlightAndHighlightColorAndBgTypeAndBackgroundColorAndGradientTypeAndGradientColor1AndGradientColor2AndBrandLogoAndAnimationAndShowQuoteMark(quote: string, author: string, fontSize: number, quoteFont: string, quoteFontColor: string, authorFont: string, authorFontColor: string, enableHighlight: number, highlightColor: string, bgType: string, backgroundColor: string, gradientType: string, gradientColor1: string, gradientColor2: string, brandLogo: string, animation: string, showQuoteMark: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/images/quote?quote=' + (quote == null ? '' : encodeURIComponent(quote)) + '&author=' + (author == null ? '' : encodeURIComponent(author)) + '&fontSize=' + fontSize + '&quoteFont=' + (quoteFont == null ? '' : encodeURIComponent(quoteFont)) + '&quoteFontColor=' + (quoteFontColor == null ? '' : encodeURIComponent(quoteFontColor)) + '&authorFont=' + (authorFont == null ? '' : encodeURIComponent(authorFont)) + '&authorFontColor=' + (authorFontColor == null ? '' : encodeURIComponent(authorFontColor)) + '&enableHighlight=' + enableHighlight + '&highlightColor=' + (highlightColor == null ? '' : encodeURIComponent(highlightColor)) + '&bgType=' + (bgType == null ? '' : encodeURIComponent(bgType)) + '&backgroundColor=' + (backgroundColor == null ? '' : encodeURIComponent(backgroundColor)) + '&gradientType=' + (gradientType == null ? '' : encodeURIComponent(gradientType)) + '&gradientColor1=' + (gradientColor1 == null ? '' : encodeURIComponent(gradientColor1)) + '&gradientColor2=' + (gradientColor2 == null ? '' : encodeURIComponent(gradientColor2)) + '&brandLogo=' + (brandLogo == null ? '' : encodeURIComponent(brandLogo)) + '&animation=' + (animation == null ? '' : encodeURIComponent(animation)) + '&showQuoteMark=' + showQuoteMark, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -125,7 +125,7 @@ export namespace MyNS {
 		 * @param {boolean} latin Restrict results only to hashtags with latin characters
 		 * @return {void} OK
 		 */
-		V1SearchTrendingGetByGreenAndLatin(green: boolean, latin: boolean, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		V1SearchTrendingGetByGreenAndLatin(green: boolean | null | undefined, latin: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/search/trending?green=' + green + '&latin=' + latin, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -138,7 +138,7 @@ export namespace MyNS {
 		 * @param {string} hashtagPosition Position of hashtags: end => at the end, auto => anywhere
 		 * @return {void} OK
 		 */
-		V1StatsAuto_hashtagGetByPostAndMaxHashtagsAndHashtagPosition(post: string, maxHashtags: number, hashtagPosition: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		V1StatsAuto_hashtagGetByPostAndMaxHashtagsAndHashtagPosition(post: string, maxHashtags: number | null | undefined, hashtagPosition: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/auto-hashtag?post=' + (post == null ? '' : encodeURIComponent(post)) + '&maxHashtags=' + maxHashtags + '&hashtagPosition=' + (hashtagPosition == null ? '' : encodeURIComponent(hashtagPosition)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 

@@ -529,7 +529,7 @@ export namespace MyNS {
 		 * @param {string} clientVersion The version of the client implementation.
 		 * @return {void} Successful response
 		 */
-		Safebrowsing_encodedFullHashes_get(encodedRequest: string, clientId: string, clientVersion: string): Observable<HttpResponse<string>> {
+		Safebrowsing_encodedFullHashes_get(encodedRequest: string, clientId: string | null | undefined, clientVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v4/encodedFullHashes/' + (encodedRequest == null ? '' : encodeURIComponent(encodedRequest)) + '&clientId=' + (clientId == null ? '' : encodeURIComponent(clientId)) + '&clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -541,7 +541,7 @@ export namespace MyNS {
 		 * @param {string} clientVersion The version of the client implementation.
 		 * @return {void} Successful response
 		 */
-		Safebrowsing_encodedUpdates_get(encodedRequest: string, clientId: string, clientVersion: string): Observable<HttpResponse<string>> {
+		Safebrowsing_encodedUpdates_get(encodedRequest: string, clientId: string | null | undefined, clientVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v4/encodedUpdates/' + (encodedRequest == null ? '' : encodeURIComponent(encodedRequest)) + '&clientId=' + (clientId == null ? '' : encodeURIComponent(clientId)) + '&clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)), { observe: 'response', responseType: 'text' });
 		}
 

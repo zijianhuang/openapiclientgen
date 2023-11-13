@@ -1405,7 +1405,7 @@ export namespace MyNS {
 		 * @param {string} name The document name. It can be set only if the drive_document_id is set.
 		 * @return {void} Successful response
 		 */
-		Books_cloudloading_addBook(drive_document_id: string, mime_type: string, name: string, upload_client_token: string): Observable<HttpResponse<string>> {
+		Books_cloudloading_addBook(drive_document_id: string | null | undefined, mime_type: string | null | undefined, name: string | null | undefined, upload_client_token: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'cloudloading/addBook?drive_document_id=' + (drive_document_id == null ? '' : encodeURIComponent(drive_document_id)) + '&mime_type=' + (mime_type == null ? '' : encodeURIComponent(mime_type)) + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&upload_client_token=' + (upload_client_token == null ? '' : encodeURIComponent(upload_client_token)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_familysharing_getFamilyInfo(source: string): Observable<HttpResponse<string>> {
+		Books_familysharing_getFamilyInfo(source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'familysharing/getFamilyInfo?source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 		 * @param {string} volumeId The volume to share.
 		 * @return {void} Successful response
 		 */
-		Books_familysharing_share(docId: string, source: string, volumeId: string): Observable<HttpResponse<string>> {
+		Books_familysharing_share(docId: string | null | undefined, source: string | null | undefined, volumeId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'familysharing/share?docId=' + (docId == null ? '' : encodeURIComponent(docId)) + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1467,7 +1467,7 @@ export namespace MyNS {
 		 * @param {string} volumeId The volume to unshare.
 		 * @return {void} Successful response
 		 */
-		Books_familysharing_unshare(docId: string, source: string, volumeId: string): Observable<HttpResponse<string>> {
+		Books_familysharing_unshare(docId: string | null | undefined, source: string | null | undefined, volumeId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'familysharing/unshare?docId=' + (docId == null ? '' : encodeURIComponent(docId)) + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_myconfig_releaseDownloadAccess(volumeIds: Array<string>, cpksver: string, locale: string, source: string): Observable<HttpResponse<string>> {
+		Books_myconfig_releaseDownloadAccess(volumeIds: Array<string>, cpksver: string, locale: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'myconfig/releaseDownloadAccess?' + volumeIds.map(z => `volumeIds=${encodeURIComponent(z)}`).join('&') + '&cpksver=' + (cpksver == null ? '' : encodeURIComponent(cpksver)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1504,7 +1504,7 @@ export namespace MyNS {
 		 * @param {string} locale ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
 		 * @return {void} Successful response
 		 */
-		Books_myconfig_requestAccess(source: string, volumeId: string, nonce: string, cpksver: string, licenseTypes: Books_myconfig_requestAccessLicenseTypes, locale: string): Observable<HttpResponse<string>> {
+		Books_myconfig_requestAccess(source: string, volumeId: string, nonce: string, cpksver: string, licenseTypes: Books_myconfig_requestAccessLicenseTypes | null | undefined, locale: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'myconfig/requestAccess?source=' + (source == null ? '' : encodeURIComponent(source)) + '&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '&nonce=' + (nonce == null ? '' : encodeURIComponent(nonce)) + '&cpksver=' + (cpksver == null ? '' : encodeURIComponent(cpksver)) + '&licenseTypes=' + licenseTypes + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1521,7 +1521,7 @@ export namespace MyNS {
 		 * @param {Array<string>} volumeIds The volume(s) to request download restrictions for.
 		 * @return {void} Successful response
 		 */
-		Books_myconfig_syncVolumeLicenses(source: string, nonce: string, cpksver: string, features: Array<string>, includeNonComicsSeries: boolean, locale: string, showPreorders: boolean, volumeIds: Array<string>): Observable<HttpResponse<string>> {
+		Books_myconfig_syncVolumeLicenses(source: string, nonce: string, cpksver: string, features: Array<string> | null | undefined, includeNonComicsSeries: boolean | null | undefined, locale: string | null | undefined, showPreorders: boolean | null | undefined, volumeIds: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'myconfig/syncVolumeLicenses?source=' + (source == null ? '' : encodeURIComponent(source)) + '&nonce=' + (nonce == null ? '' : encodeURIComponent(nonce)) + '&cpksver=' + (cpksver == null ? '' : encodeURIComponent(cpksver)) + '&' + features.map(z => `features=${encodeURIComponent(z)}`).join('&') + '&includeNonComicsSeries=' + includeNonComicsSeries + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&showPreorders=' + showPreorders + '&' + volumeIds.map(z => `volumeIds=${encodeURIComponent(z)}`).join('&'), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1549,7 +1549,7 @@ export namespace MyNS {
 		 * @param {string} volumeId The volume to restrict annotations to.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_annotations_list(contentVersion: string, layerId: string, layerIds: Array<string>, maxResults: number, pageToken: string, showDeleted: boolean, source: string, updatedMax: string, updatedMin: string, volumeId: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_annotations_list(contentVersion: string | null | undefined, layerId: string | null | undefined, layerIds: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, source: string | null | undefined, updatedMax: string | null | undefined, updatedMin: string | null | undefined, volumeId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'mylibrary/annotations?contentVersion=' + (contentVersion == null ? '' : encodeURIComponent(contentVersion)) + '&layerId=' + (layerId == null ? '' : encodeURIComponent(layerId)) + '&' + layerIds.map(z => `layerIds=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&updatedMax=' + (updatedMax == null ? '' : encodeURIComponent(updatedMax)) + '&updatedMin=' + (updatedMin == null ? '' : encodeURIComponent(updatedMin)) + '&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1562,7 +1562,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_annotations_insert(annotationId: string, country: string, showOnlySummaryInResponse: boolean, source: string, requestBody: Annotation): Observable<HttpResponse<string>> {
+		Books_mylibrary_annotations_insert(annotationId: string | null | undefined, country: string | null | undefined, showOnlySummaryInResponse: boolean | null | undefined, source: string | null | undefined, requestBody: Annotation): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'mylibrary/annotations?annotationId=' + (annotationId == null ? '' : encodeURIComponent(annotationId)) + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&showOnlySummaryInResponse=' + showOnlySummaryInResponse + '&source=' + (source == null ? '' : encodeURIComponent(source)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1584,7 +1584,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_annotations_delete(annotationId: string, source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_annotations_delete(annotationId: string, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'mylibrary/annotations/' + (annotationId == null ? '' : encodeURIComponent(annotationId)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1595,7 +1595,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_annotations_update(annotationId: string, source: string, requestBody: Annotation): Observable<HttpResponse<string>> {
+		Books_mylibrary_annotations_update(annotationId: string, source: string | null | undefined, requestBody: Annotation): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'mylibrary/annotations/' + (annotationId == null ? '' : encodeURIComponent(annotationId)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1605,7 +1605,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_bookshelves_list(source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_bookshelves_list(source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'mylibrary/bookshelves?source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1616,7 +1616,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_bookshelves_get(shelf: string, source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_bookshelves_get(shelf: string, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'mylibrary/bookshelves/' + (shelf == null ? '' : encodeURIComponent(shelf)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1629,7 +1629,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_bookshelves_addVolume(shelf: string, volumeId: string, reason: Books_mylibrary_bookshelves_addVolumeReason, source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_bookshelves_addVolume(shelf: string, volumeId: string, reason: Books_mylibrary_bookshelves_addVolumeReason | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'mylibrary/bookshelves/' + (shelf == null ? '' : encodeURIComponent(shelf)) + '/addVolume&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '&reason=' + reason + '&source=' + (source == null ? '' : encodeURIComponent(source)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1640,7 +1640,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_bookshelves_clearVolumes(shelf: string, source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_bookshelves_clearVolumes(shelf: string, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'mylibrary/bookshelves/' + (shelf == null ? '' : encodeURIComponent(shelf)) + '/clearVolumes&source=' + (source == null ? '' : encodeURIComponent(source)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1653,7 +1653,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_bookshelves_moveVolume(shelf: string, volumeId: string, volumePosition: number, source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_bookshelves_moveVolume(shelf: string, volumeId: string, volumePosition: number, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'mylibrary/bookshelves/' + (shelf == null ? '' : encodeURIComponent(shelf)) + '/moveVolume&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '&volumePosition=' + volumePosition + '&source=' + (source == null ? '' : encodeURIComponent(source)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1666,7 +1666,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_bookshelves_removeVolume(shelf: string, volumeId: string, reason: Books_mylibrary_bookshelves_removeVolumeReason, source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_bookshelves_removeVolume(shelf: string, volumeId: string, reason: Books_mylibrary_bookshelves_removeVolumeReason | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'mylibrary/bookshelves/' + (shelf == null ? '' : encodeURIComponent(shelf)) + '/removeVolume&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '&reason=' + reason + '&source=' + (source == null ? '' : encodeURIComponent(source)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1683,7 +1683,7 @@ export namespace MyNS {
 		 * @param {number} startIndex Index of the first element to return (starts at 0)
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_bookshelves_volumes_list(shelf: string, country: string, maxResults: number, projection: Books_mylibrary_bookshelves_volumes_listProjection, q: string, showPreorders: boolean, source: string, startIndex: number): Observable<HttpResponse<string>> {
+		Books_mylibrary_bookshelves_volumes_list(shelf: string, country: string | null | undefined, maxResults: number | null | undefined, projection: Books_mylibrary_bookshelves_volumes_listProjection | null | undefined, q: string | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'mylibrary/bookshelves/' + (shelf == null ? '' : encodeURIComponent(shelf)) + '/volumes&country=' + (country == null ? '' : encodeURIComponent(country)) + '&maxResults=' + maxResults + '&projection=' + projection + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&showPreorders=' + showPreorders + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1695,7 +1695,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_readingpositions_get(volumeId: string, contentVersion: string, source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_readingpositions_get(volumeId: string, contentVersion: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'mylibrary/readingpositions/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '&contentVersion=' + (contentVersion == null ? '' : encodeURIComponent(contentVersion)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1711,7 +1711,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_mylibrary_readingpositions_setPosition(volumeId: string, timestamp: string, position: string, action: Books_mylibrary_readingpositions_setPositionAction, contentVersion: string, deviceCookie: string, source: string): Observable<HttpResponse<string>> {
+		Books_mylibrary_readingpositions_setPosition(volumeId: string, timestamp: string, position: string, action: Books_mylibrary_readingpositions_setPositionAction | null | undefined, contentVersion: string | null | undefined, deviceCookie: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'mylibrary/readingpositions/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '/setPosition&timestamp=' + (timestamp == null ? '' : encodeURIComponent(timestamp)) + '&position=' + (position == null ? '' : encodeURIComponent(position)) + '&action=' + action + '&contentVersion=' + (contentVersion == null ? '' : encodeURIComponent(contentVersion)) + '&deviceCookie=' + (deviceCookie == null ? '' : encodeURIComponent(deviceCookie)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1723,7 +1723,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_notification_get(notification_id: string, locale: string, source: string): Observable<HttpResponse<string>> {
+		Books_notification_get(notification_id: string, locale: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'notification/get?notification_id=' + (notification_id == null ? '' : encodeURIComponent(notification_id)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1733,7 +1733,7 @@ export namespace MyNS {
 		 * @param {string} locale ISO-639-1 language and ISO-3166-1 country code. Default is en-US if unset.
 		 * @return {void} Successful response
 		 */
-		Books_onboarding_listCategories(locale: string): Observable<HttpResponse<string>> {
+		Books_onboarding_listCategories(locale: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'onboarding/listCategories?locale=' + (locale == null ? '' : encodeURIComponent(locale)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1747,7 +1747,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The value of the nextToken from the previous page.
 		 * @return {void} Successful response
 		 */
-		Books_onboarding_listCategoryVolumes(categoryId: Array<string>, locale: string, maxAllowedMaturityRating: Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Books_onboarding_listCategoryVolumes(categoryId: Array<string> | null | undefined, locale: string | null | undefined, maxAllowedMaturityRating: Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'onboarding/listCategoryVolumes?' + categoryId.map(z => `categoryId=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxAllowedMaturityRating=' + maxAllowedMaturityRating + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1759,7 +1759,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_personalizedstream_get(locale: string, maxAllowedMaturityRating: Books_personalizedstream_getMaxAllowedMaturityRating, source: string): Observable<HttpResponse<string>> {
+		Books_personalizedstream_get(locale: string | null | undefined, maxAllowedMaturityRating: Books_personalizedstream_getMaxAllowedMaturityRating | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'personalizedstream/get?locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxAllowedMaturityRating=' + maxAllowedMaturityRating + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1774,7 +1774,7 @@ export namespace MyNS {
 		 * @param {string} volumeId Volume id to exercise the offer
 		 * @return {void} Successful response
 		 */
-		Books_promooffer_accept(androidId: string, device: string, manufacturer: string, model: string, offerId: string, product: string, serial: string, volumeId: string): Observable<HttpResponse<string>> {
+		Books_promooffer_accept(androidId: string | null | undefined, device: string | null | undefined, manufacturer: string | null | undefined, model: string | null | undefined, offerId: string | null | undefined, product: string | null | undefined, serial: string | null | undefined, volumeId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'promooffer/accept?androidId=' + (androidId == null ? '' : encodeURIComponent(androidId)) + '&device=' + (device == null ? '' : encodeURIComponent(device)) + '&manufacturer=' + (manufacturer == null ? '' : encodeURIComponent(manufacturer)) + '&model=' + (model == null ? '' : encodeURIComponent(model)) + '&offerId=' + (offerId == null ? '' : encodeURIComponent(offerId)) + '&product=' + (product == null ? '' : encodeURIComponent(product)) + '&serial=' + (serial == null ? '' : encodeURIComponent(serial)) + '&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1789,7 +1789,7 @@ export namespace MyNS {
 		 * @param {string} serial device serial
 		 * @return {void} Successful response
 		 */
-		Books_promooffer_dismiss(androidId: string, device: string, manufacturer: string, model: string, offerId: string, product: string, serial: string): Observable<HttpResponse<string>> {
+		Books_promooffer_dismiss(androidId: string | null | undefined, device: string | null | undefined, manufacturer: string | null | undefined, model: string | null | undefined, offerId: string | null | undefined, product: string | null | undefined, serial: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'promooffer/dismiss?androidId=' + (androidId == null ? '' : encodeURIComponent(androidId)) + '&device=' + (device == null ? '' : encodeURIComponent(device)) + '&manufacturer=' + (manufacturer == null ? '' : encodeURIComponent(manufacturer)) + '&model=' + (model == null ? '' : encodeURIComponent(model)) + '&offerId=' + (offerId == null ? '' : encodeURIComponent(offerId)) + '&product=' + (product == null ? '' : encodeURIComponent(product)) + '&serial=' + (serial == null ? '' : encodeURIComponent(serial)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1804,7 +1804,7 @@ export namespace MyNS {
 		 * @param {string} serial device serial
 		 * @return {void} Successful response
 		 */
-		Books_promooffer_get(androidId: string, device: string, manufacturer: string, model: string, product: string, serial: string): Observable<HttpResponse<string>> {
+		Books_promooffer_get(androidId: string | null | undefined, device: string | null | undefined, manufacturer: string | null | undefined, model: string | null | undefined, product: string | null | undefined, serial: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'promooffer/get?androidId=' + (androidId == null ? '' : encodeURIComponent(androidId)) + '&device=' + (device == null ? '' : encodeURIComponent(device)) + '&manufacturer=' + (manufacturer == null ? '' : encodeURIComponent(manufacturer)) + '&model=' + (model == null ? '' : encodeURIComponent(model)) + '&product=' + (product == null ? '' : encodeURIComponent(product)) + '&serial=' + (serial == null ? '' : encodeURIComponent(serial)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1826,7 +1826,7 @@ export namespace MyNS {
 		 * @param {string} page_token The value of the nextToken from the previous page.
 		 * @return {void} Successful response
 		 */
-		Books_series_membership_get(series_id: string, page_size: number, page_token: string): Observable<HttpResponse<string>> {
+		Books_series_membership_get(series_id: string, page_size: number | null | undefined, page_token: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'series/membership/get?series_id=' + (series_id == null ? '' : encodeURIComponent(series_id)) + '&page_size=' + page_size + '&page_token=' + (page_token == null ? '' : encodeURIComponent(page_token)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1837,7 +1837,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_bookshelves_list(userId: string, source: string): Observable<HttpResponse<string>> {
+		Books_bookshelves_list(userId: string, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/bookshelves&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1849,7 +1849,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_bookshelves_get(userId: string, shelf: string, source: string): Observable<HttpResponse<string>> {
+		Books_bookshelves_get(userId: string, shelf: string, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/bookshelves/' + (shelf == null ? '' : encodeURIComponent(shelf)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1864,7 +1864,7 @@ export namespace MyNS {
 		 * @param {number} startIndex Index of the first element to return (starts at 0)
 		 * @return {void} Successful response
 		 */
-		Books_bookshelves_volumes_list(userId: string, shelf: string, maxResults: number, showPreorders: boolean, source: string, startIndex: number): Observable<HttpResponse<string>> {
+		Books_bookshelves_volumes_list(userId: string, shelf: string, maxResults: number | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/bookshelves/' + (shelf == null ? '' : encodeURIComponent(shelf)) + '/volumes&maxResults=' + maxResults + '&showPreorders=' + showPreorders + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1887,7 +1887,7 @@ export namespace MyNS {
 		 * @param {number} startIndex Index of the first result to return (starts at 0)
 		 * @return {void} Successful response
 		 */
-		Books_volumes_list(q: string, download: Books_volumes_listDownload, filter: Books_volumes_listFilter, langRestrict: string, libraryRestrict: Books_volumes_listLibraryRestrict, maxAllowedMaturityRating: Books_volumes_listMaxAllowedMaturityRating, maxResults: number, orderBy: Books_volumes_listOrderBy, partner: string, printType: Books_volumes_listPrintType, projection: Books_mylibrary_bookshelves_volumes_listProjection, showPreorders: boolean, source: string, startIndex: number): Observable<HttpResponse<string>> {
+		Books_volumes_list(q: string, download: Books_volumes_listDownload | null | undefined, filter: Books_volumes_listFilter | null | undefined, langRestrict: string | null | undefined, libraryRestrict: Books_volumes_listLibraryRestrict | null | undefined, maxAllowedMaturityRating: Books_volumes_listMaxAllowedMaturityRating | null | undefined, maxResults: number | null | undefined, orderBy: Books_volumes_listOrderBy | null | undefined, partner: string | null | undefined, printType: Books_volumes_listPrintType | null | undefined, projection: Books_mylibrary_bookshelves_volumes_listProjection | null | undefined, showPreorders: boolean | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes?q=' + (q == null ? '' : encodeURIComponent(q)) + '&download=' + download + '&filter=' + filter + '&langRestrict=' + (langRestrict == null ? '' : encodeURIComponent(langRestrict)) + '&libraryRestrict=' + libraryRestrict + '&maxAllowedMaturityRating=' + maxAllowedMaturityRating + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&partner=' + (partner == null ? '' : encodeURIComponent(partner)) + '&printType=' + printType + '&projection=' + projection + '&showPreorders=' + showPreorders + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1903,7 +1903,7 @@ export namespace MyNS {
 		 * @param {number} startIndex Index of the first result to return (starts at 0)
 		 * @return {void} Successful response
 		 */
-		Books_volumes_mybooks_list(acquireMethod: Array<string>, country: string, locale: string, maxResults: number, processingState: Array<string>, source: string, startIndex: number): Observable<HttpResponse<string>> {
+		Books_volumes_mybooks_list(acquireMethod: Array<string> | null | undefined, country: string | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, processingState: Array<string> | null | undefined, source: string | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/mybooks?' + acquireMethod.map(z => `acquireMethod=${encodeURIComponent(z)}`).join('&') + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + processingState.map(z => `processingState=${encodeURIComponent(z)}`).join('&') + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1915,7 +1915,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_volumes_recommended_list(locale: string, maxAllowedMaturityRating: Books_volumes_recommended_listMaxAllowedMaturityRating, source: string): Observable<HttpResponse<string>> {
+		Books_volumes_recommended_list(locale: string | null | undefined, maxAllowedMaturityRating: Books_volumes_recommended_listMaxAllowedMaturityRating | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/recommended?locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxAllowedMaturityRating=' + maxAllowedMaturityRating + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1928,7 +1928,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_volumes_recommended_rate(rating: Books_volumes_recommended_rateRating, volumeId: string, locale: string, source: string): Observable<HttpResponse<string>> {
+		Books_volumes_recommended_rate(rating: Books_volumes_recommended_rateRating, volumeId: string, locale: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'volumes/recommended/rate?rating=' + rating + '&volumeId=' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1943,7 +1943,7 @@ export namespace MyNS {
 		 * @param {Array<string>} volumeId The ids of the volumes to be returned. If not specified all that match the processingState are returned.
 		 * @return {void} Successful response
 		 */
-		Books_volumes_useruploaded_list(locale: string, maxResults: number, processingState: Array<string>, source: string, startIndex: number, volumeId: Array<string>): Observable<HttpResponse<string>> {
+		Books_volumes_useruploaded_list(locale: string | null | undefined, maxResults: number | null | undefined, processingState: Array<string> | null | undefined, source: string | null | undefined, startIndex: number | null | undefined, volumeId: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/useruploaded?locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + processingState.map(z => `processingState=${encodeURIComponent(z)}`).join('&') + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&startIndex=' + startIndex + '&' + volumeId.map(z => `volumeId=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1958,7 +1958,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_volumes_get(volumeId: string, country: string, includeNonComicsSeries: boolean, partner: string, projection: Books_mylibrary_bookshelves_volumes_listProjection, source: string, user_library_consistent_read: boolean): Observable<HttpResponse<string>> {
+		Books_volumes_get(volumeId: string, country: string | null | undefined, includeNonComicsSeries: boolean | null | undefined, partner: string | null | undefined, projection: Books_mylibrary_bookshelves_volumes_listProjection | null | undefined, source: string | null | undefined, user_library_consistent_read: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&includeNonComicsSeries=' + includeNonComicsSeries + '&partner=' + (partner == null ? '' : encodeURIComponent(partner)) + '&projection=' + projection + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&user_library_consistent_read=' + user_library_consistent_read, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1972,7 +1972,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_volumes_associated_list(volumeId: string, association: Books_volumes_associated_listAssociation, locale: string, maxAllowedMaturityRating: Books_volumes_associated_listMaxAllowedMaturityRating, source: string): Observable<HttpResponse<string>> {
+		Books_volumes_associated_list(volumeId: string, association: Books_volumes_associated_listAssociation | null | undefined, locale: string | null | undefined, maxAllowedMaturityRating: Books_volumes_associated_listMaxAllowedMaturityRating | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '/associated&association=' + association + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxAllowedMaturityRating=' + maxAllowedMaturityRating + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1996,7 +1996,7 @@ export namespace MyNS {
 		 * @param {string} volumeAnnotationsVersion The version of the volume annotations that you are requesting.
 		 * @return {void} Successful response
 		 */
-		Books_layers_volumeAnnotations_list(volumeId: string, layerId: string, contentVersion: string, endOffset: string, endPosition: string, locale: string, maxResults: number, pageToken: string, showDeleted: boolean, source: string, startOffset: string, startPosition: string, updatedMax: string, updatedMin: string, volumeAnnotationsVersion: string): Observable<HttpResponse<string>> {
+		Books_layers_volumeAnnotations_list(volumeId: string, layerId: string, contentVersion: string, endOffset: string | null | undefined, endPosition: string | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, source: string | null | undefined, startOffset: string | null | undefined, startPosition: string | null | undefined, updatedMax: string | null | undefined, updatedMin: string | null | undefined, volumeAnnotationsVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '/layers/' + (layerId == null ? '' : encodeURIComponent(layerId)) + '&contentVersion=' + (contentVersion == null ? '' : encodeURIComponent(contentVersion)) + '&endOffset=' + (endOffset == null ? '' : encodeURIComponent(endOffset)) + '&endPosition=' + (endPosition == null ? '' : encodeURIComponent(endPosition)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&startOffset=' + (startOffset == null ? '' : encodeURIComponent(startOffset)) + '&startPosition=' + (startPosition == null ? '' : encodeURIComponent(startPosition)) + '&updatedMax=' + (updatedMax == null ? '' : encodeURIComponent(updatedMax)) + '&updatedMin=' + (updatedMin == null ? '' : encodeURIComponent(updatedMin)) + '&volumeAnnotationsVersion=' + (volumeAnnotationsVersion == null ? '' : encodeURIComponent(volumeAnnotationsVersion)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2010,7 +2010,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_layers_volumeAnnotations_get(volumeId: string, layerId: string, annotationId: string, locale: string, source: string): Observable<HttpResponse<string>> {
+		Books_layers_volumeAnnotations_get(volumeId: string, layerId: string, annotationId: string, locale: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '/layers/' + (layerId == null ? '' : encodeURIComponent(layerId)) + '/annotations/' + (annotationId == null ? '' : encodeURIComponent(annotationId)) + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2032,7 +2032,7 @@ export namespace MyNS {
 		 * @param {number} w The requested pixel width for any images. If width is provided height must also be provided.
 		 * @return {void} Successful response
 		 */
-		Books_layers_annotationData_list(volumeId: string, layerId: string, contentVersion: string, annotationDataId: Array<string>, h: number, locale: string, maxResults: number, pageToken: string, scale: number, source: string, updatedMax: string, updatedMin: string, w: number): Observable<HttpResponse<string>> {
+		Books_layers_annotationData_list(volumeId: string, layerId: string, contentVersion: string, annotationDataId: Array<string> | null | undefined, h: number | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, scale: number | null | undefined, source: string | null | undefined, updatedMax: string | null | undefined, updatedMin: string | null | undefined, w: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '/layers/' + (layerId == null ? '' : encodeURIComponent(layerId)) + '/data&contentVersion=' + (contentVersion == null ? '' : encodeURIComponent(contentVersion)) + '&' + annotationDataId.map(z => `annotationDataId=${encodeURIComponent(z)}`).join('&') + '&h=' + h + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&scale=' + scale + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&updatedMax=' + (updatedMax == null ? '' : encodeURIComponent(updatedMax)) + '&updatedMin=' + (updatedMin == null ? '' : encodeURIComponent(updatedMin)) + '&w=' + w, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2051,7 +2051,7 @@ export namespace MyNS {
 		 * @param {number} w The requested pixel width for any images. If width is provided height must also be provided.
 		 * @return {void} Successful response
 		 */
-		Books_layers_annotationData_get(volumeId: string, layerId: string, annotationDataId: string, contentVersion: string, allowWebDefinitions: boolean, h: number, locale: string, scale: number, source: string, w: number): Observable<HttpResponse<string>> {
+		Books_layers_annotationData_get(volumeId: string, layerId: string, annotationDataId: string, contentVersion: string, allowWebDefinitions: boolean | null | undefined, h: number | null | undefined, locale: string | null | undefined, scale: number | null | undefined, source: string | null | undefined, w: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '/layers/' + (layerId == null ? '' : encodeURIComponent(layerId)) + '/data/' + (annotationDataId == null ? '' : encodeURIComponent(annotationDataId)) + '&contentVersion=' + (contentVersion == null ? '' : encodeURIComponent(contentVersion)) + '&allowWebDefinitions=' + allowWebDefinitions + '&h=' + h + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&scale=' + scale + '&source=' + (source == null ? '' : encodeURIComponent(source)) + '&w=' + w, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2065,7 +2065,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_layers_list(volumeId: string, contentVersion: string, maxResults: number, pageToken: string, source: string): Observable<HttpResponse<string>> {
+		Books_layers_list(volumeId: string, contentVersion: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '/layersummary&contentVersion=' + (contentVersion == null ? '' : encodeURIComponent(contentVersion)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2078,7 +2078,7 @@ export namespace MyNS {
 		 * @param {string} source String to identify the originator of this request.
 		 * @return {void} Successful response
 		 */
-		Books_layers_get(volumeId: string, summaryId: string, contentVersion: string, source: string): Observable<HttpResponse<string>> {
+		Books_layers_get(volumeId: string, summaryId: string, contentVersion: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'volumes/' + (volumeId == null ? '' : encodeURIComponent(volumeId)) + '/layersummary/' + (summaryId == null ? '' : encodeURIComponent(summaryId)) + '&contentVersion=' + (contentVersion == null ? '' : encodeURIComponent(contentVersion)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -387,7 +387,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLedgersResponse} Success
 		 */
-		ListLedgers(max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListLedgersResponse> {
+		ListLedgers(max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListLedgersResponse> {
 			return this.http.get<ListLedgersResponse>(this.baseUri + 'ledgers?max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -452,7 +452,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalS3ExportsForLedgerResponse} Success
 		 */
-		ListJournalS3ExportsForLedger(name: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListJournalS3ExportsForLedgerResponse> {
+		ListJournalS3ExportsForLedger(name: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJournalS3ExportsForLedgerResponse> {
 			return this.http.get<ListJournalS3ExportsForLedgerResponse>(this.baseUri + 'ledgers/' + (name == null ? '' : encodeURIComponent(name)) + '/journal-s3-exports&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -496,7 +496,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalKinesisStreamsForLedgerResponse} Success
 		 */
-		ListJournalKinesisStreamsForLedger(name: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListJournalKinesisStreamsForLedgerResponse> {
+		ListJournalKinesisStreamsForLedger(name: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJournalKinesisStreamsForLedgerResponse> {
 			return this.http.get<ListJournalKinesisStreamsForLedgerResponse>(this.baseUri + 'ledgers/' + (name == null ? '' : encodeURIComponent(name)) + '/journal-kinesis-streams&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -519,7 +519,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalS3ExportsResponse} Success
 		 */
-		ListJournalS3Exports(max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListJournalS3ExportsResponse> {
+		ListJournalS3Exports(max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJournalS3ExportsResponse> {
 			return this.http.get<ListJournalS3ExportsResponse>(this.baseUri + 'journal-s3-exports?max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

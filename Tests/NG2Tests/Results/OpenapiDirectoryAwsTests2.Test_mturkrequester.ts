@@ -1062,7 +1062,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAssignmentsForHITResponse} Success
 		 */
-		ListAssignmentsForHIT(MaxResults: string, NextToken: string, requestBody: ListAssignmentsForHITRequest): Observable<ListAssignmentsForHITResponse> {
+		ListAssignmentsForHIT(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAssignmentsForHITRequest): Observable<ListAssignmentsForHITResponse> {
 			return this.http.post<ListAssignmentsForHITResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListAssignmentsForHIT?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1073,7 +1073,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBonusPaymentsResponse} Success
 		 */
-		ListBonusPayments(MaxResults: string, NextToken: string, requestBody: ListBonusPaymentsRequest): Observable<ListBonusPaymentsResponse> {
+		ListBonusPayments(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListBonusPaymentsRequest): Observable<ListBonusPaymentsResponse> {
 			return this.http.post<ListBonusPaymentsResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListBonusPayments?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1084,7 +1084,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHITsResponse} Success
 		 */
-		ListHITs(MaxResults: string, NextToken: string, requestBody: ListHITsRequest): Observable<ListHITsResponse> {
+		ListHITs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListHITsRequest): Observable<ListHITsResponse> {
 			return this.http.post<ListHITsResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListHITs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1095,7 +1095,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHITsForQualificationTypeResponse} Success
 		 */
-		ListHITsForQualificationType(MaxResults: string, NextToken: string, requestBody: ListHITsForQualificationTypeRequest): Observable<ListHITsForQualificationTypeResponse> {
+		ListHITsForQualificationType(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListHITsForQualificationTypeRequest): Observable<ListHITsForQualificationTypeResponse> {
 			return this.http.post<ListHITsForQualificationTypeResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListHITsForQualificationType?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1106,7 +1106,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQualificationRequestsResponse} Success
 		 */
-		ListQualificationRequests(MaxResults: string, NextToken: string, requestBody: ListQualificationRequestsRequest): Observable<ListQualificationRequestsResponse> {
+		ListQualificationRequests(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListQualificationRequestsRequest): Observable<ListQualificationRequestsResponse> {
 			return this.http.post<ListQualificationRequestsResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListQualificationRequests?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1117,7 +1117,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQualificationTypesResponse} Success
 		 */
-		ListQualificationTypes(MaxResults: string, NextToken: string, requestBody: ListQualificationTypesRequest): Observable<ListQualificationTypesResponse> {
+		ListQualificationTypes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListQualificationTypesRequest): Observable<ListQualificationTypesResponse> {
 			return this.http.post<ListQualificationTypesResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListQualificationTypes?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListReviewPolicyResultsForHITResponse} Success
 		 */
-		ListReviewPolicyResultsForHIT(MaxResults: string, NextToken: string, requestBody: ListReviewPolicyResultsForHITRequest): Observable<ListReviewPolicyResultsForHITResponse> {
+		ListReviewPolicyResultsForHIT(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListReviewPolicyResultsForHITRequest): Observable<ListReviewPolicyResultsForHITResponse> {
 			return this.http.post<ListReviewPolicyResultsForHITResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListReviewPolicyResultsForHIT?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListReviewableHITsResponse} Success
 		 */
-		ListReviewableHITs(MaxResults: string, NextToken: string, requestBody: ListReviewableHITsRequest): Observable<ListReviewableHITsResponse> {
+		ListReviewableHITs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListReviewableHITsRequest): Observable<ListReviewableHITsResponse> {
 			return this.http.post<ListReviewableHITsResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListReviewableHITs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1150,7 +1150,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkerBlocksResponse} Success
 		 */
-		ListWorkerBlocks(MaxResults: string, NextToken: string, requestBody: ListWorkerBlocksRequest): Observable<ListWorkerBlocksResponse> {
+		ListWorkerBlocks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkerBlocksRequest): Observable<ListWorkerBlocksResponse> {
 			return this.http.post<ListWorkerBlocksResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListWorkerBlocks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkersWithQualificationTypeResponse} Success
 		 */
-		ListWorkersWithQualificationType(MaxResults: string, NextToken: string, requestBody: ListWorkersWithQualificationTypeRequest): Observable<ListWorkersWithQualificationTypeResponse> {
+		ListWorkersWithQualificationType(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkersWithQualificationTypeRequest): Observable<ListWorkersWithQualificationTypeResponse> {
 			return this.http.post<ListWorkersWithQualificationTypeResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListWorkersWithQualificationType?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

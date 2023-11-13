@@ -2350,7 +2350,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeMergeConflictsOutput} Success
 		 */
-		DescribeMergeConflicts(maxMergeHunks: string, nextToken: string, requestBody: DescribeMergeConflictsInput): Observable<DescribeMergeConflictsOutput> {
+		DescribeMergeConflicts(maxMergeHunks: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeMergeConflictsInput): Observable<DescribeMergeConflictsOutput> {
 			return this.http.post<DescribeMergeConflictsOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.DescribeMergeConflicts?maxMergeHunks=' + (maxMergeHunks == null ? '' : encodeURIComponent(maxMergeHunks)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2361,7 +2361,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribePullRequestEventsOutput} Success
 		 */
-		DescribePullRequestEvents(maxResults: string, nextToken: string, requestBody: DescribePullRequestEventsInput): Observable<DescribePullRequestEventsOutput> {
+		DescribePullRequestEvents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribePullRequestEventsInput): Observable<DescribePullRequestEventsOutput> {
 			return this.http.post<DescribePullRequestEventsOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.DescribePullRequestEvents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2426,7 +2426,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetCommentsForComparedCommitOutput} Success
 		 */
-		GetCommentsForComparedCommit(maxResults: string, nextToken: string, requestBody: GetCommentsForComparedCommitInput): Observable<GetCommentsForComparedCommitOutput> {
+		GetCommentsForComparedCommit(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetCommentsForComparedCommitInput): Observable<GetCommentsForComparedCommitOutput> {
 			return this.http.post<GetCommentsForComparedCommitOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.GetCommentsForComparedCommit?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2437,7 +2437,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetCommentsForPullRequestOutput} Success
 		 */
-		GetCommentsForPullRequest(maxResults: string, nextToken: string, requestBody: GetCommentsForPullRequestInput): Observable<GetCommentsForPullRequestOutput> {
+		GetCommentsForPullRequest(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetCommentsForPullRequestInput): Observable<GetCommentsForPullRequestOutput> {
 			return this.http.post<GetCommentsForPullRequestOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.GetCommentsForPullRequest?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2457,7 +2457,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDifferencesOutput} Success
 		 */
-		GetDifferences(MaxResults: string, NextToken: string, requestBody: GetDifferencesInput): Observable<GetDifferencesOutput> {
+		GetDifferences(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetDifferencesInput): Observable<GetDifferencesOutput> {
 			return this.http.post<GetDifferencesOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.GetDifferences?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2495,7 +2495,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetMergeConflictsOutput} Success
 		 */
-		GetMergeConflicts(maxConflictFiles: string, nextToken: string, requestBody: GetMergeConflictsInput): Observable<GetMergeConflictsOutput> {
+		GetMergeConflicts(maxConflictFiles: string | null | undefined, nextToken: string | null | undefined, requestBody: GetMergeConflictsInput): Observable<GetMergeConflictsOutput> {
 			return this.http.post<GetMergeConflictsOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.GetMergeConflicts?maxConflictFiles=' + (maxConflictFiles == null ? '' : encodeURIComponent(maxConflictFiles)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2560,7 +2560,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListApprovalRuleTemplatesOutput} Success
 		 */
-		ListApprovalRuleTemplates(maxResults: string, nextToken: string, requestBody: ListApprovalRuleTemplatesInput): Observable<ListApprovalRuleTemplatesOutput> {
+		ListApprovalRuleTemplates(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListApprovalRuleTemplatesInput): Observable<ListApprovalRuleTemplatesOutput> {
 			return this.http.post<ListApprovalRuleTemplatesOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListApprovalRuleTemplates?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2571,7 +2571,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssociatedApprovalRuleTemplatesForRepositoryOutput} Success
 		 */
-		ListAssociatedApprovalRuleTemplatesForRepository(maxResults: string, nextToken: string, requestBody: ListAssociatedApprovalRuleTemplatesForRepositoryInput): Observable<ListAssociatedApprovalRuleTemplatesForRepositoryOutput> {
+		ListAssociatedApprovalRuleTemplatesForRepository(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssociatedApprovalRuleTemplatesForRepositoryInput): Observable<ListAssociatedApprovalRuleTemplatesForRepositoryOutput> {
 			return this.http.post<ListAssociatedApprovalRuleTemplatesForRepositoryOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListAssociatedApprovalRuleTemplatesForRepository?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2581,7 +2581,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBranchesOutput} Success
 		 */
-		ListBranches(nextToken: string, requestBody: ListBranchesInput): Observable<ListBranchesOutput> {
+		ListBranches(nextToken: string | null | undefined, requestBody: ListBranchesInput): Observable<ListBranchesOutput> {
 			return this.http.post<ListBranchesOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListBranches?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2592,7 +2592,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPullRequestsOutput} Success
 		 */
-		ListPullRequests(maxResults: string, nextToken: string, requestBody: ListPullRequestsInput): Observable<ListPullRequestsOutput> {
+		ListPullRequests(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListPullRequestsInput): Observable<ListPullRequestsOutput> {
 			return this.http.post<ListPullRequestsOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListPullRequests?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2602,7 +2602,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRepositoriesOutput} Success
 		 */
-		ListRepositories(nextToken: string, requestBody: ListRepositoriesInput): Observable<ListRepositoriesOutput> {
+		ListRepositories(nextToken: string | null | undefined, requestBody: ListRepositoriesInput): Observable<ListRepositoriesOutput> {
 			return this.http.post<ListRepositoriesOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListRepositories?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2613,7 +2613,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRepositoriesForApprovalRuleTemplateOutput} Success
 		 */
-		ListRepositoriesForApprovalRuleTemplate(maxResults: string, nextToken: string, requestBody: ListRepositoriesForApprovalRuleTemplateInput): Observable<ListRepositoriesForApprovalRuleTemplateOutput> {
+		ListRepositoriesForApprovalRuleTemplate(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRepositoriesForApprovalRuleTemplateInput): Observable<ListRepositoriesForApprovalRuleTemplateOutput> {
 			return this.http.post<ListRepositoriesForApprovalRuleTemplateOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListRepositoriesForApprovalRuleTemplate?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

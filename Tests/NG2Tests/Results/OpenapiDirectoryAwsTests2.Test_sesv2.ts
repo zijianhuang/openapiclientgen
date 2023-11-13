@@ -1398,7 +1398,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {ListConfigurationSetsResponse} Success
 		 */
-		ListConfigurationSets(NextToken: string, PageSize: number): Observable<ListConfigurationSetsResponse> {
+		ListConfigurationSets(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListConfigurationSetsResponse> {
 			return this.http.get<ListConfigurationSetsResponse>(this.baseUri + 'v2/email/configuration-sets?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1438,7 +1438,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {ListDedicatedIpPoolsResponse} Success
 		 */
-		ListDedicatedIpPools(NextToken: string, PageSize: number): Observable<ListDedicatedIpPoolsResponse> {
+		ListDedicatedIpPools(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDedicatedIpPoolsResponse> {
 			return this.http.get<ListDedicatedIpPoolsResponse>(this.baseUri + 'v2/email/dedicated-ip-pools?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1467,7 +1467,7 @@ export namespace MyNS {
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
 		 * @return {ListEmailIdentitiesResponse} Success
 		 */
-		ListEmailIdentities(NextToken: string, PageSize: number): Observable<ListEmailIdentitiesResponse> {
+		ListEmailIdentities(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListEmailIdentitiesResponse> {
 			return this.http.get<ListEmailIdentitiesResponse>(this.baseUri + 'v2/email/identities?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1600,7 +1600,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {GetDedicatedIpsResponse} Success
 		 */
-		GetDedicatedIps(PoolName: string, NextToken: string, PageSize: number): Observable<GetDedicatedIpsResponse> {
+		GetDedicatedIps(PoolName: string | null | undefined, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<GetDedicatedIpsResponse> {
 			return this.http.get<GetDedicatedIpsResponse>(this.baseUri + 'v2/email/dedicated-ips?PoolName=' + (PoolName == null ? '' : encodeURIComponent(PoolName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1661,7 +1661,7 @@ export namespace MyNS {
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
 		 * @return {ListDeliverabilityTestReportsResponse} Success
 		 */
-		ListDeliverabilityTestReports(NextToken: string, PageSize: number): Observable<ListDeliverabilityTestReportsResponse> {
+		ListDeliverabilityTestReports(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDeliverabilityTestReportsResponse> {
 			return this.http.get<ListDeliverabilityTestReportsResponse>(this.baseUri + 'v2/email/deliverability-dashboard/test-reports?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1675,7 +1675,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {ListDomainDeliverabilityCampaignsResponse} Success
 		 */
-		ListDomainDeliverabilityCampaigns(StartDate: Date, EndDate: Date, SubscribedDomain: string, NextToken: string, PageSize: number): Observable<ListDomainDeliverabilityCampaignsResponse> {
+		ListDomainDeliverabilityCampaigns(StartDate: Date, EndDate: Date, SubscribedDomain: string, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDomainDeliverabilityCampaignsResponse> {
 			return this.http.get<ListDomainDeliverabilityCampaignsResponse>(this.baseUri + 'v2/email/deliverability-dashboard/domains/' + (SubscribedDomain == null ? '' : encodeURIComponent(SubscribedDomain)) + '/campaigns#StartDate&EndDate?StartDate=' + StartDate.toISOString() + '&EndDate=' + EndDate.toISOString() + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1689,7 +1689,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {ListSuppressedDestinationsResponse} Success
 		 */
-		ListSuppressedDestinations(Reason: Array<SuppressionListReason>, StartDate: Date, EndDate: Date, NextToken: string, PageSize: number): Observable<ListSuppressedDestinationsResponse> {
+		ListSuppressedDestinations(Reason: Array<SuppressionListReason> | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListSuppressedDestinationsResponse> {
 			return this.http.get<ListSuppressedDestinationsResponse>(this.baseUri + 'v2/email/suppression/addresses?' + Reason.map(z => `Reason=${z}`).join('&') + '&StartDate=' + StartDate.toISOString() + '&EndDate=' + EndDate.toISOString() + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 

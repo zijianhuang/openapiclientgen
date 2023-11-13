@@ -903,7 +903,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token specifying which result page to return.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_customers_list(pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_customers_list(pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/customers?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -929,7 +929,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_partners_customers_list(partnerId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_partners_customers_list(partnerId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/partners/' + (partnerId == null ? '' : encodeURIComponent(partnerId)) + '/customers&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1052,7 +1052,7 @@ export namespace MyNS {
 		 * the Protocol Buffers documentation.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_customers_configurations_patch(name: string, updateMask: string, requestBody: Configuration): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_customers_configurations_patch(name: string, updateMask: string | null | undefined, requestBody: Configuration): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_partners_vendors_customers_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_partners_vendors_customers_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/customers&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1117,7 +1117,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token specifying which result page to return.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_customers_devices_list(parent: string, pageSize: string, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_customers_devices_list(parent: string, pageSize: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/devices&pageSize=' + (pageSize == null ? '' : encodeURIComponent(pageSize)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1179,7 +1179,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_partners_vendors_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_partners_vendors_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/vendors&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

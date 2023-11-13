@@ -21,7 +21,7 @@ export namespace MyNS {
 		 * Get query
 		 * @return {void} Search results
 		 */
-		QueryGetByQAndStartAndCount(q: string, start: number, count: number): Observable<HttpResponse<string>> {
+		QueryGetByQAndStartAndCount(q: string, start: number | null | undefined, count: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'query?q=' + (q == null ? '' : encodeURIComponent(q)) + '&start=' + start + '&count=' + count, { observe: 'response', responseType: 'text' });
 		}
 
@@ -31,7 +31,7 @@ export namespace MyNS {
 		 * @param {QueryGetByExtensionAndQAndStartAndCountExtension} extension extension
 		 * @return {void} Search results
 		 */
-		QueryGetByExtensionAndQAndStartAndCount(extension: QueryGetByExtensionAndQAndStartAndCountExtension, q: string, start: number, count: number): Observable<HttpResponse<string>> {
+		QueryGetByExtensionAndQAndStartAndCount(extension: QueryGetByExtensionAndQAndStartAndCountExtension, q: string, start: number | null | undefined, count: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'query.' + extension + '?q=' + (q == null ? '' : encodeURIComponent(q)) + '&start=' + start + '&count=' + count, { observe: 'response', responseType: 'text' });
 		}
 	}

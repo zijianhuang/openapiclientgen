@@ -1539,7 +1539,7 @@ export namespace MyNS {
 		 * @param {GET_CreateReceiptRuleRule} Rule A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.
 		 * @return {void} Success
 		 */
-		GET_CreateReceiptRule(RuleSetName: string, After: string, Rule: GET_CreateReceiptRuleRule, Action: GET_CreateReceiptRuleAction, Version: GET_CreateReceiptRuleVersion): Observable<HttpResponse<string>> {
+		GET_CreateReceiptRule(RuleSetName: string, After: string | null | undefined, Rule: GET_CreateReceiptRuleRule, Action: GET_CreateReceiptRuleAction, Version: GET_CreateReceiptRuleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateReceiptRule?RuleSetName=' + (RuleSetName == null ? '' : encodeURIComponent(RuleSetName)) + '&After=' + (After == null ? '' : encodeURIComponent(After)) + '&Rule=' + Rule + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1692,7 +1692,7 @@ export namespace MyNS {
 		 * @param {Array<ConfigurationSetAttribute>} ConfigurationSetAttributeNames A list of configuration set attributes to return.
 		 * @return {void} Success
 		 */
-		GET_DescribeConfigurationSet(ConfigurationSetName: string, ConfigurationSetAttributeNames: Array<ConfigurationSetAttribute>, Action: GET_DescribeConfigurationSetAction, Version: GET_DescribeConfigurationSetVersion): Observable<HttpResponse<string>> {
+		GET_DescribeConfigurationSet(ConfigurationSetName: string, ConfigurationSetAttributeNames: Array<ConfigurationSetAttribute> | null | undefined, Action: GET_DescribeConfigurationSetAction, Version: GET_DescribeConfigurationSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeConfigurationSet?ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&' + ConfigurationSetAttributeNames.map(z => `ConfigurationSetAttributeNames=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1849,7 +1849,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The number of configuration sets to return.
 		 * @return {void} Success
 		 */
-		GET_ListConfigurationSets(NextToken: string, MaxItems: number, Action: GET_ListConfigurationSetsAction, Version: GET_ListConfigurationSetsVersion): Observable<HttpResponse<string>> {
+		GET_ListConfigurationSets(NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListConfigurationSetsAction, Version: GET_ListConfigurationSetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListConfigurationSets?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1860,7 +1860,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.
 		 * @return {void} Success
 		 */
-		GET_ListCustomVerificationEmailTemplates(NextToken: string, MaxResults: number, Action: GET_ListCustomVerificationEmailTemplatesAction, Version: GET_ListCustomVerificationEmailTemplatesVersion): Observable<HttpResponse<string>> {
+		GET_ListCustomVerificationEmailTemplates(NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_ListCustomVerificationEmailTemplatesAction, Version: GET_ListCustomVerificationEmailTemplatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListCustomVerificationEmailTemplates?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1872,7 +1872,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of identities per page. Possible values are 1-1000 inclusive.
 		 * @return {void} Success
 		 */
-		GET_ListIdentities(IdentityType: IdentityType, NextToken: string, MaxItems: number, Action: GET_ListIdentitiesAction, Version: GET_ListIdentitiesVersion): Observable<HttpResponse<string>> {
+		GET_ListIdentities(IdentityType: IdentityType | null | undefined, NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListIdentitiesAction, Version: GET_ListIdentitiesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListIdentities?IdentityType=' + IdentityType + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1901,7 +1901,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.
 		 * @return {void} Success
 		 */
-		GET_ListReceiptRuleSets(NextToken: string, Action: GET_ListReceiptRuleSetsAction, Version: GET_ListReceiptRuleSetsVersion): Observable<HttpResponse<string>> {
+		GET_ListReceiptRuleSets(NextToken: string | null | undefined, Action: GET_ListReceiptRuleSetsAction, Version: GET_ListReceiptRuleSetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListReceiptRuleSets?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1912,7 +1912,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.
 		 * @return {void} Success
 		 */
-		GET_ListTemplates(NextToken: string, MaxItems: number, Action: GET_ListTemplatesAction, Version: GET_ListTemplatesVersion): Observable<HttpResponse<string>> {
+		GET_ListTemplates(NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListTemplatesAction, Version: GET_ListTemplatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListTemplates?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1941,7 +1941,7 @@ export namespace MyNS {
 		 * @param {GET_PutConfigurationSetDeliveryOptionsDeliveryOptions} DeliveryOptions Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).
 		 * @return {void} Success
 		 */
-		GET_PutConfigurationSetDeliveryOptions(ConfigurationSetName: string, DeliveryOptions: GET_PutConfigurationSetDeliveryOptionsDeliveryOptions, Action: GET_PutConfigurationSetDeliveryOptionsAction, Version: GET_PutConfigurationSetDeliveryOptionsVersion): Observable<HttpResponse<string>> {
+		GET_PutConfigurationSetDeliveryOptions(ConfigurationSetName: string, DeliveryOptions: GET_PutConfigurationSetDeliveryOptionsDeliveryOptions | null | undefined, Action: GET_PutConfigurationSetDeliveryOptionsAction, Version: GET_PutConfigurationSetDeliveryOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutConfigurationSetDeliveryOptions?ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&DeliveryOptions=' + DeliveryOptions + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1979,7 +1979,7 @@ export namespace MyNS {
 		 * @param {string} BounceSenderArn This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.
 		 * @return {void} Success
 		 */
-		GET_SendBounce(OriginalMessageId: string, BounceSender: string, Explanation: string, MessageDsn: GET_SendBounceMessageDsn, BouncedRecipientInfoList: Array<BouncedRecipientInfo>, BounceSenderArn: string, Action: GET_SendBounceAction, Version: GET_SendBounceVersion): Observable<HttpResponse<string>> {
+		GET_SendBounce(OriginalMessageId: string, BounceSender: string, Explanation: string | null | undefined, MessageDsn: GET_SendBounceMessageDsn | null | undefined, BouncedRecipientInfoList: Array<BouncedRecipientInfo>, BounceSenderArn: string | null | undefined, Action: GET_SendBounceAction, Version: GET_SendBounceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendBounce?OriginalMessageId=' + (OriginalMessageId == null ? '' : encodeURIComponent(OriginalMessageId)) + '&BounceSender=' + (BounceSender == null ? '' : encodeURIComponent(BounceSender)) + '&Explanation=' + (Explanation == null ? '' : encodeURIComponent(Explanation)) + '&MessageDsn=' + MessageDsn + '&' + BouncedRecipientInfoList.map(z => `BouncedRecipientInfoList=${z}`).join('&') + '&BounceSenderArn=' + (BounceSenderArn == null ? '' : encodeURIComponent(BounceSenderArn)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1999,7 +1999,7 @@ export namespace MyNS {
 		 * @param {Array<BulkEmailDestination>} Destinations One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.
 		 * @return {void} Success
 		 */
-		GET_SendBulkTemplatedEmail(Source: string, SourceArn: string, ReplyToAddresses: Array<string>, ReturnPath: string, ReturnPathArn: string, ConfigurationSetName: string, DefaultTags: Array<MessageTag>, Template: string, TemplateArn: string, DefaultTemplateData: string, Destinations: Array<BulkEmailDestination>, Action: GET_SendBulkTemplatedEmailAction, Version: GET_SendBulkTemplatedEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendBulkTemplatedEmail(Source: string, SourceArn: string | null | undefined, ReplyToAddresses: Array<string> | null | undefined, ReturnPath: string | null | undefined, ReturnPathArn: string | null | undefined, ConfigurationSetName: string | null | undefined, DefaultTags: Array<MessageTag> | null | undefined, Template: string, TemplateArn: string | null | undefined, DefaultTemplateData: string | null | undefined, Destinations: Array<BulkEmailDestination>, Action: GET_SendBulkTemplatedEmailAction, Version: GET_SendBulkTemplatedEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendBulkTemplatedEmail?Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&' + ReplyToAddresses.map(z => `ReplyToAddresses=${encodeURIComponent(z)}`).join('&') + '&ReturnPath=' + (ReturnPath == null ? '' : encodeURIComponent(ReturnPath)) + '&ReturnPathArn=' + (ReturnPathArn == null ? '' : encodeURIComponent(ReturnPathArn)) + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&' + DefaultTags.map(z => `DefaultTags=${z}`).join('&') + '&Template=' + (Template == null ? '' : encodeURIComponent(Template)) + '&TemplateArn=' + (TemplateArn == null ? '' : encodeURIComponent(TemplateArn)) + '&DefaultTemplateData=' + (DefaultTemplateData == null ? '' : encodeURIComponent(DefaultTemplateData)) + '&' + Destinations.map(z => `Destinations=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2011,7 +2011,7 @@ export namespace MyNS {
 		 * @param {string} ConfigurationSetName Name of a configuration set to use when sending the verification email.
 		 * @return {void} Success
 		 */
-		GET_SendCustomVerificationEmail(EmailAddress: string, TemplateName: string, ConfigurationSetName: string, Action: GET_SendCustomVerificationEmailAction, Version: GET_SendCustomVerificationEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendCustomVerificationEmail(EmailAddress: string, TemplateName: string, ConfigurationSetName: string | null | undefined, Action: GET_SendCustomVerificationEmailAction, Version: GET_SendCustomVerificationEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendCustomVerificationEmail?EmailAddress=' + (EmailAddress == null ? '' : encodeURIComponent(EmailAddress)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2029,7 +2029,7 @@ export namespace MyNS {
 		 * @param {string} ConfigurationSetName The name of the configuration set to use when you send an email using <code>SendEmail</code>.
 		 * @return {void} Success
 		 */
-		GET_SendEmail(Source: string, Destination: GET_SendEmailDestination, Message: GET_SendEmailMessage, ReplyToAddresses: Array<string>, ReturnPath: string, SourceArn: string, ReturnPathArn: string, Tags: Array<MessageTag>, ConfigurationSetName: string, Action: GET_SendEmailAction, Version: GET_SendEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendEmail(Source: string, Destination: GET_SendEmailDestination, Message: GET_SendEmailMessage, ReplyToAddresses: Array<string> | null | undefined, ReturnPath: string | null | undefined, SourceArn: string | null | undefined, ReturnPathArn: string | null | undefined, Tags: Array<MessageTag> | null | undefined, ConfigurationSetName: string | null | undefined, Action: GET_SendEmailAction, Version: GET_SendEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendEmail?Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&Destination=' + Destination + '&Message=' + Message + '&' + ReplyToAddresses.map(z => `ReplyToAddresses=${encodeURIComponent(z)}`).join('&') + '&ReturnPath=' + (ReturnPath == null ? '' : encodeURIComponent(ReturnPath)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&ReturnPathArn=' + (ReturnPathArn == null ? '' : encodeURIComponent(ReturnPathArn)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2046,7 +2046,7 @@ export namespace MyNS {
 		 * @param {string} ConfigurationSetName The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.
 		 * @return {void} Success
 		 */
-		GET_SendRawEmail(Source: string, Destinations: Array<string>, RawMessage: GET_SendRawEmailRawMessage, FromArn: string, SourceArn: string, ReturnPathArn: string, Tags: Array<MessageTag>, ConfigurationSetName: string, Action: GET_SendRawEmailAction, Version: GET_SendRawEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendRawEmail(Source: string | null | undefined, Destinations: Array<string> | null | undefined, RawMessage: GET_SendRawEmailRawMessage, FromArn: string | null | undefined, SourceArn: string | null | undefined, ReturnPathArn: string | null | undefined, Tags: Array<MessageTag> | null | undefined, ConfigurationSetName: string | null | undefined, Action: GET_SendRawEmailAction, Version: GET_SendRawEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendRawEmail?Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&' + Destinations.map(z => `Destinations=${encodeURIComponent(z)}`).join('&') + '&RawMessage=' + RawMessage + '&FromArn=' + (FromArn == null ? '' : encodeURIComponent(FromArn)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&ReturnPathArn=' + (ReturnPathArn == null ? '' : encodeURIComponent(ReturnPathArn)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2066,7 +2066,7 @@ export namespace MyNS {
 		 * @param {string} TemplateData A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.
 		 * @return {void} Success
 		 */
-		GET_SendTemplatedEmail(Source: string, Destination: GET_SendTemplatedEmailDestination, ReplyToAddresses: Array<string>, ReturnPath: string, SourceArn: string, ReturnPathArn: string, Tags: Array<MessageTag>, ConfigurationSetName: string, Template: string, TemplateArn: string, TemplateData: string, Action: GET_SendTemplatedEmailAction, Version: GET_SendTemplatedEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendTemplatedEmail(Source: string, Destination: GET_SendTemplatedEmailDestination, ReplyToAddresses: Array<string> | null | undefined, ReturnPath: string | null | undefined, SourceArn: string | null | undefined, ReturnPathArn: string | null | undefined, Tags: Array<MessageTag> | null | undefined, ConfigurationSetName: string | null | undefined, Template: string, TemplateArn: string | null | undefined, TemplateData: string, Action: GET_SendTemplatedEmailAction, Version: GET_SendTemplatedEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendTemplatedEmail?Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&Destination=' + Destination + '&' + ReplyToAddresses.map(z => `ReplyToAddresses=${encodeURIComponent(z)}`).join('&') + '&ReturnPath=' + (ReturnPath == null ? '' : encodeURIComponent(ReturnPath)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&ReturnPathArn=' + (ReturnPathArn == null ? '' : encodeURIComponent(ReturnPathArn)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&Template=' + (Template == null ? '' : encodeURIComponent(Template)) + '&TemplateArn=' + (TemplateArn == null ? '' : encodeURIComponent(TemplateArn)) + '&TemplateData=' + (TemplateData == null ? '' : encodeURIComponent(TemplateData)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2076,7 +2076,7 @@ export namespace MyNS {
 		 * @param {string} RuleSetName The name of the receipt rule set to make active. Setting this value to null disables all email receiving.
 		 * @return {void} Success
 		 */
-		GET_SetActiveReceiptRuleSet(RuleSetName: string, Action: GET_SetActiveReceiptRuleSetAction, Version: GET_SetActiveReceiptRuleSetVersion): Observable<HttpResponse<string>> {
+		GET_SetActiveReceiptRuleSet(RuleSetName: string | null | undefined, Action: GET_SetActiveReceiptRuleSetAction, Version: GET_SetActiveReceiptRuleSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetActiveReceiptRuleSet?RuleSetName=' + (RuleSetName == null ? '' : encodeURIComponent(RuleSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2122,7 +2122,7 @@ export namespace MyNS {
 		 * @param {BehaviorOnMXFailure} BehaviorOnMXFailure <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p> <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
 		 * @return {void} Success
 		 */
-		GET_SetIdentityMailFromDomain(Identity: string, MailFromDomain: string, BehaviorOnMXFailure: BehaviorOnMXFailure, Action: GET_SetIdentityMailFromDomainAction, Version: GET_SetIdentityMailFromDomainVersion): Observable<HttpResponse<string>> {
+		GET_SetIdentityMailFromDomain(Identity: string, MailFromDomain: string | null | undefined, BehaviorOnMXFailure: BehaviorOnMXFailure | null | undefined, Action: GET_SetIdentityMailFromDomainAction, Version: GET_SetIdentityMailFromDomainVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetIdentityMailFromDomain?Identity=' + (Identity == null ? '' : encodeURIComponent(Identity)) + '&MailFromDomain=' + (MailFromDomain == null ? '' : encodeURIComponent(MailFromDomain)) + '&BehaviorOnMXFailure=' + BehaviorOnMXFailure + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2134,7 +2134,7 @@ export namespace MyNS {
 		 * @param {string} SnsTopic The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.
 		 * @return {void} Success
 		 */
-		GET_SetIdentityNotificationTopic(Identity: string, NotificationType: NotificationType, SnsTopic: string, Action: GET_SetIdentityNotificationTopicAction, Version: GET_SetIdentityNotificationTopicVersion): Observable<HttpResponse<string>> {
+		GET_SetIdentityNotificationTopic(Identity: string, NotificationType: NotificationType, SnsTopic: string | null | undefined, Action: GET_SetIdentityNotificationTopicAction, Version: GET_SetIdentityNotificationTopicVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetIdentityNotificationTopic?Identity=' + (Identity == null ? '' : encodeURIComponent(Identity)) + '&NotificationType=' + NotificationType + '&SnsTopic=' + (SnsTopic == null ? '' : encodeURIComponent(SnsTopic)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2146,7 +2146,7 @@ export namespace MyNS {
 		 * @param {string} After The name of the receipt rule after which to place the specified receipt rule.
 		 * @return {void} Success
 		 */
-		GET_SetReceiptRulePosition(RuleSetName: string, RuleName: string, After: string, Action: GET_SetReceiptRulePositionAction, Version: GET_SetReceiptRulePositionVersion): Observable<HttpResponse<string>> {
+		GET_SetReceiptRulePosition(RuleSetName: string, RuleName: string, After: string | null | undefined, Action: GET_SetReceiptRulePositionAction, Version: GET_SetReceiptRulePositionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetReceiptRulePosition?RuleSetName=' + (RuleSetName == null ? '' : encodeURIComponent(RuleSetName)) + '&RuleName=' + (RuleName == null ? '' : encodeURIComponent(RuleName)) + '&After=' + (After == null ? '' : encodeURIComponent(After)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2167,7 +2167,7 @@ export namespace MyNS {
 		 * @param {boolean} Enabled Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
 		 * @return {void} Success
 		 */
-		GET_UpdateAccountSendingEnabled(Enabled: boolean, Action: GET_UpdateAccountSendingEnabledAction, Version: GET_UpdateAccountSendingEnabledVersion): Observable<HttpResponse<string>> {
+		GET_UpdateAccountSendingEnabled(Enabled: boolean | null | undefined, Action: GET_UpdateAccountSendingEnabledAction, Version: GET_UpdateAccountSendingEnabledVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateAccountSendingEnabled?Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2225,7 +2225,7 @@ export namespace MyNS {
 		 * @param {string} FailureRedirectionURL The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.
 		 * @return {void} Success
 		 */
-		GET_UpdateCustomVerificationEmailTemplate(TemplateName: string, FromEmailAddress: string, TemplateSubject: string, TemplateContent: string, SuccessRedirectionURL: string, FailureRedirectionURL: string, Action: GET_UpdateCustomVerificationEmailTemplateAction, Version: GET_UpdateCustomVerificationEmailTemplateVersion): Observable<HttpResponse<string>> {
+		GET_UpdateCustomVerificationEmailTemplate(TemplateName: string, FromEmailAddress: string | null | undefined, TemplateSubject: string | null | undefined, TemplateContent: string | null | undefined, SuccessRedirectionURL: string | null | undefined, FailureRedirectionURL: string | null | undefined, Action: GET_UpdateCustomVerificationEmailTemplateAction, Version: GET_UpdateCustomVerificationEmailTemplateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateCustomVerificationEmailTemplate?TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&FromEmailAddress=' + (FromEmailAddress == null ? '' : encodeURIComponent(FromEmailAddress)) + '&TemplateSubject=' + (TemplateSubject == null ? '' : encodeURIComponent(TemplateSubject)) + '&TemplateContent=' + (TemplateContent == null ? '' : encodeURIComponent(TemplateContent)) + '&SuccessRedirectionURL=' + (SuccessRedirectionURL == null ? '' : encodeURIComponent(SuccessRedirectionURL)) + '&FailureRedirectionURL=' + (FailureRedirectionURL == null ? '' : encodeURIComponent(FailureRedirectionURL)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 

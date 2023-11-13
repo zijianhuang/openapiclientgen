@@ -460,7 +460,7 @@ export namespace MyNS {
 		 * Get #Operation=CancelJob&Action=CancelJob
 		 * @return {void} Success
 		 */
-		GET_CancelJob(JobId: string, APIVersion: string, Operation: GET_CancelJobOperation, Action: GET_CancelJobOperation, Version: GET_CancelJobVersion): Observable<HttpResponse<string>> {
+		GET_CancelJob(JobId: string, APIVersion: string | null | undefined, Operation: GET_CancelJobOperation, Action: GET_CancelJobOperation, Version: GET_CancelJobVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=CancelJob&Action=CancelJob?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -469,7 +469,7 @@ export namespace MyNS {
 		 * Get #Operation=CreateJob&Action=CreateJob
 		 * @return {void} Success
 		 */
-		GET_CreateJob(JobType: CreateJobOutputJobType, Manifest: string, ManifestAddendum: string, ValidateOnly: boolean, APIVersion: string, Operation: GET_CreateJobOperation, Action: GET_CreateJobOperation, Version: GET_CreateJobVersion): Observable<HttpResponse<string>> {
+		GET_CreateJob(JobType: CreateJobOutputJobType, Manifest: string, ManifestAddendum: string | null | undefined, ValidateOnly: boolean, APIVersion: string | null | undefined, Operation: GET_CreateJobOperation, Action: GET_CreateJobOperation, Version: GET_CreateJobVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=CreateJob&Action=CreateJob?JobType=' + JobType + '&Manifest=' + (Manifest == null ? '' : encodeURIComponent(Manifest)) + '&ManifestAddendum=' + (ManifestAddendum == null ? '' : encodeURIComponent(ManifestAddendum)) + '&ValidateOnly=' + ValidateOnly + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -478,7 +478,7 @@ export namespace MyNS {
 		 * Get #Operation=GetShippingLabel&Action=GetShippingLabel
 		 * @return {void} Success
 		 */
-		GET_GetShippingLabel(jobIds: Array<string>, name: string, company: string, phoneNumber: string, country: string, stateOrProvince: string, city: string, postalCode: string, street1: string, street2: string, street3: string, APIVersion: string, Operation: GET_GetShippingLabelOperation, Action: GET_GetShippingLabelOperation, Version: GET_GetShippingLabelVersion): Observable<HttpResponse<string>> {
+		GET_GetShippingLabel(jobIds: Array<string>, name: string | null | undefined, company: string | null | undefined, phoneNumber: string | null | undefined, country: string | null | undefined, stateOrProvince: string | null | undefined, city: string | null | undefined, postalCode: string | null | undefined, street1: string | null | undefined, street2: string | null | undefined, street3: string | null | undefined, APIVersion: string | null | undefined, Operation: GET_GetShippingLabelOperation, Action: GET_GetShippingLabelOperation, Version: GET_GetShippingLabelVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=GetShippingLabel&Action=GetShippingLabel?' + jobIds.map(z => `jobIds=${encodeURIComponent(z)}`).join('&') + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&company=' + (company == null ? '' : encodeURIComponent(company)) + '&phoneNumber=' + (phoneNumber == null ? '' : encodeURIComponent(phoneNumber)) + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&stateOrProvince=' + (stateOrProvince == null ? '' : encodeURIComponent(stateOrProvince)) + '&city=' + (city == null ? '' : encodeURIComponent(city)) + '&postalCode=' + (postalCode == null ? '' : encodeURIComponent(postalCode)) + '&street1=' + (street1 == null ? '' : encodeURIComponent(street1)) + '&street2=' + (street2 == null ? '' : encodeURIComponent(street2)) + '&street3=' + (street3 == null ? '' : encodeURIComponent(street3)) + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -487,7 +487,7 @@ export namespace MyNS {
 		 * Get #Operation=GetStatus&Action=GetStatus
 		 * @return {void} Success
 		 */
-		GET_GetStatus(JobId: string, APIVersion: string, Operation: GET_GetStatusOperation, Action: GET_GetStatusOperation, Version: GET_GetStatusVersion): Observable<HttpResponse<string>> {
+		GET_GetStatus(JobId: string, APIVersion: string | null | undefined, Operation: GET_GetStatusOperation, Action: GET_GetStatusOperation, Version: GET_GetStatusVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=GetStatus&Action=GetStatus?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -496,7 +496,7 @@ export namespace MyNS {
 		 * Get #Operation=ListJobs&Action=ListJobs
 		 * @return {void} Success
 		 */
-		GET_ListJobs(MaxJobs: number, Marker: string, APIVersion: string, Operation: GET_ListJobsOperation, Action: GET_ListJobsOperation, Version: GET_ListJobsVersion): Observable<HttpResponse<string>> {
+		GET_ListJobs(MaxJobs: number | null | undefined, Marker: string | null | undefined, APIVersion: string | null | undefined, Operation: GET_ListJobsOperation, Action: GET_ListJobsOperation, Version: GET_ListJobsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=ListJobs&Action=ListJobs?MaxJobs=' + MaxJobs + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -505,7 +505,7 @@ export namespace MyNS {
 		 * Get #Operation=UpdateJob&Action=UpdateJob
 		 * @return {void} Success
 		 */
-		GET_UpdateJob(JobId: string, Manifest: string, JobType: CreateJobOutputJobType, ValidateOnly: boolean, APIVersion: string, Operation: GET_UpdateJobOperation, Action: GET_UpdateJobOperation, Version: GET_UpdateJobVersion): Observable<HttpResponse<string>> {
+		GET_UpdateJob(JobId: string, Manifest: string, JobType: CreateJobOutputJobType, ValidateOnly: boolean, APIVersion: string | null | undefined, Operation: GET_UpdateJobOperation, Action: GET_UpdateJobOperation, Version: GET_UpdateJobVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=UpdateJob&Action=UpdateJob?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&Manifest=' + (Manifest == null ? '' : encodeURIComponent(Manifest)) + '&JobType=' + JobType + '&ValidateOnly=' + ValidateOnly + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -887,7 +887,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {void} Successful response
 		 */
-		Logging_monitoredResourceDescriptors_list(pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Logging_monitoredResourceDescriptors_list(pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/monitoredResourceDescriptors?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -982,7 +982,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Required. A non-empty list of fields to change in the existing exclusion. New values for the fields are taken from the corresponding fields in the LogExclusion included in this request. Fields not mentioned in update_mask are not changed and are ignored in the request.For example, to change the filter and description of an exclusion, specify an update_mask of "filter,description".
 		 * @return {void} Successful response
 		 */
-		Logging_organizations_exclusions_patch(name: string, updateMask: string, requestBody: LogExclusion): Observable<HttpResponse<string>> {
+		Logging_organizations_exclusions_patch(name: string, updateMask: string | null | undefined, requestBody: LogExclusion): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1013,7 +1013,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Optional. Field mask identifying which fields from cmek_settings should be updated. A field will be overwritten if and only if it is in the update mask. Output only fields cannot be updated.See FieldMask for more information.Example: "updateMask=kmsKeyName"
 		 * @return {void} Successful response
 		 */
-		Logging_organizations_updateCmekSettings(name: string, updateMask: string, requestBody: CmekSettings): Observable<HttpResponse<string>> {
+		Logging_organizations_updateCmekSettings(name: string, updateMask: string | null | undefined, requestBody: CmekSettings): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '/cmekSettings&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {void} Successful response
 		 */
-		Logging_organizations_locations_buckets_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Logging_organizations_locations_buckets_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/buckets&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1046,7 +1046,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {void} Successful response
 		 */
-		Logging_organizations_exclusions_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Logging_organizations_exclusions_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/exclusions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1077,7 +1077,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {void} Successful response
 		 */
-		Logging_logs_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Logging_logs_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/logs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1090,7 +1090,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {void} Successful response
 		 */
-		Logging_projects_metrics_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Logging_projects_metrics_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/metrics&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1118,7 +1118,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {void} Successful response
 		 */
-		Logging_sinks_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Logging_sinks_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/sinks&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1134,7 +1134,7 @@ export namespace MyNS {
 		 * @param {boolean} uniqueWriterIdentity Optional. Determines the kind of IAM identity returned as writer_identity in the new sink. If this value is omitted or set to false, and if the sink's parent is a project, then the value returned as writer_identity is the same group or service account used by Logging before the addition of writer identities to this API. The sink's destination must be in the same project as the sink itself.If this field is set to true, or if the sink is owned by a non-project resource such as an organization, then the value of writer_identity will be a unique service account used only for exports from the new sink. For more information, see writer_identity in LogSink.
 		 * @return {void} Successful response
 		 */
-		Logging_sinks_create(parent: string, uniqueWriterIdentity: boolean, requestBody: LogSink): Observable<HttpResponse<string>> {
+		Logging_sinks_create(parent: string, uniqueWriterIdentity: boolean | null | undefined, requestBody: LogSink): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/sinks&uniqueWriterIdentity=' + uniqueWriterIdentity, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1184,7 +1184,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:  destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
 		 * @return {void} Successful response
 		 */
-		Logging_organizations_sinks_patch(sinkName: string, uniqueWriterIdentity: boolean, updateMask: string, requestBody: LogSink): Observable<HttpResponse<string>> {
+		Logging_organizations_sinks_patch(sinkName: string, uniqueWriterIdentity: boolean | null | undefined, updateMask: string | null | undefined, requestBody: LogSink): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (sinkName == null ? '' : encodeURIComponent(sinkName)) + '&uniqueWriterIdentity=' + uniqueWriterIdentity + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1204,7 +1204,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:  destination,filter,includeChildren At some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskExample: updateMask=filter.
 		 * @return {void} Successful response
 		 */
-		Logging_sinks_update(sinkName: string, uniqueWriterIdentity: boolean, updateMask: string, requestBody: LogSink): Observable<HttpResponse<string>> {
+		Logging_sinks_update(sinkName: string, uniqueWriterIdentity: boolean | null | undefined, updateMask: string | null | undefined, requestBody: LogSink): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v2/' + (sinkName == null ? '' : encodeURIComponent(sinkName)) + '&uniqueWriterIdentity=' + uniqueWriterIdentity + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

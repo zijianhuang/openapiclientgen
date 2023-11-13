@@ -198,7 +198,7 @@ export namespace MyNS {
 		 * @param {string} keyValue A filter used to limit results to detectors (instances) created because of the given key ID.
 		 * @return {DescribeDetectorResponse} Success
 		 */
-		DescribeDetector(detectorModelName: string, keyValue: string): Observable<DescribeDetectorResponse> {
+		DescribeDetector(detectorModelName: string, keyValue: string | null | undefined): Observable<DescribeDetectorResponse> {
 			return this.http.get<DescribeDetectorResponse>(this.baseUri + 'detectors/' + (detectorModelName == null ? '' : encodeURIComponent(detectorModelName)) + '/keyValues/&keyValue=' + (keyValue == null ? '' : encodeURIComponent(keyValue)), {});
 		}
 
@@ -211,7 +211,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListDetectorsResponse} Success
 		 */
-		ListDetectors(detectorModelName: string, stateName: string, nextToken: string, maxResults: number): Observable<ListDetectorsResponse> {
+		ListDetectors(detectorModelName: string, stateName: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDetectorsResponse> {
 			return this.http.get<ListDetectorsResponse>(this.baseUri + 'detectors/' + (detectorModelName == null ? '' : encodeURIComponent(detectorModelName)) + '&stateName=' + (stateName == null ? '' : encodeURIComponent(stateName)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 	}

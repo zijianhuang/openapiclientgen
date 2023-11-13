@@ -506,7 +506,7 @@ export namespace MyNS {
 		 * @param {string} requestId Request ID used for debugging.
 		 * @return {void} Successful response
 		 */
-		Homegraph_agentUsers_delete(agentUserId: string, requestId: string): Observable<HttpResponse<string>> {
+		Homegraph_agentUsers_delete(agentUserId: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (agentUserId == null ? '' : encodeURIComponent(agentUserId)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -776,7 +776,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetFlowTemplateRevisionsResponse} Success
 		 */
-		GetFlowTemplateRevisions(maxResults: string, nextToken: string, requestBody: GetFlowTemplateRevisionsRequest): Observable<GetFlowTemplateRevisionsResponse> {
+		GetFlowTemplateRevisions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetFlowTemplateRevisionsRequest): Observable<GetFlowTemplateRevisionsResponse> {
 			return this.http.post<GetFlowTemplateRevisionsResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.GetFlowTemplateRevisions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -814,7 +814,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetSystemTemplateRevisionsResponse} Success
 		 */
-		GetSystemTemplateRevisions(maxResults: string, nextToken: string, requestBody: GetSystemTemplateRevisionsRequest): Observable<GetSystemTemplateRevisionsResponse> {
+		GetSystemTemplateRevisions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetSystemTemplateRevisionsRequest): Observable<GetSystemTemplateRevisionsResponse> {
 			return this.http.post<GetSystemTemplateRevisionsResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.GetSystemTemplateRevisions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -834,7 +834,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListFlowExecutionMessagesResponse} Success
 		 */
-		ListFlowExecutionMessages(maxResults: string, nextToken: string, requestBody: ListFlowExecutionMessagesRequest): Observable<ListFlowExecutionMessagesResponse> {
+		ListFlowExecutionMessages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListFlowExecutionMessagesRequest): Observable<ListFlowExecutionMessagesResponse> {
 			return this.http.post<ListFlowExecutionMessagesResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.ListFlowExecutionMessages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -845,7 +845,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(maxResults: string, nextToken: string, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.ListTagsForResource?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -856,7 +856,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {SearchEntitiesResponse} Success
 		 */
-		SearchEntities(maxResults: string, nextToken: string, requestBody: SearchEntitiesRequest): Observable<SearchEntitiesResponse> {
+		SearchEntities(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: SearchEntitiesRequest): Observable<SearchEntitiesResponse> {
 			return this.http.post<SearchEntitiesResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.SearchEntities?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -867,7 +867,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {SearchFlowExecutionsResponse} Success
 		 */
-		SearchFlowExecutions(maxResults: string, nextToken: string, requestBody: SearchFlowExecutionsRequest): Observable<SearchFlowExecutionsResponse> {
+		SearchFlowExecutions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: SearchFlowExecutionsRequest): Observable<SearchFlowExecutionsResponse> {
 			return this.http.post<SearchFlowExecutionsResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.SearchFlowExecutions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -878,7 +878,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {SearchFlowTemplatesResponse} Success
 		 */
-		SearchFlowTemplates(maxResults: string, nextToken: string, requestBody: SearchFlowTemplatesRequest): Observable<SearchFlowTemplatesResponse> {
+		SearchFlowTemplates(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: SearchFlowTemplatesRequest): Observable<SearchFlowTemplatesResponse> {
 			return this.http.post<SearchFlowTemplatesResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.SearchFlowTemplates?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -889,7 +889,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {SearchSystemInstancesResponse} Success
 		 */
-		SearchSystemInstances(maxResults: string, nextToken: string, requestBody: SearchSystemInstancesRequest): Observable<SearchSystemInstancesResponse> {
+		SearchSystemInstances(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: SearchSystemInstancesRequest): Observable<SearchSystemInstancesResponse> {
 			return this.http.post<SearchSystemInstancesResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.SearchSystemInstances?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -900,7 +900,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {SearchSystemTemplatesResponse} Success
 		 */
-		SearchSystemTemplates(maxResults: string, nextToken: string, requestBody: SearchSystemTemplatesRequest): Observable<SearchSystemTemplatesResponse> {
+		SearchSystemTemplates(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: SearchSystemTemplatesRequest): Observable<SearchSystemTemplatesResponse> {
 			return this.http.post<SearchSystemTemplatesResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.SearchSystemTemplates?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -911,7 +911,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {SearchThingsResponse} Success
 		 */
-		SearchThings(maxResults: string, nextToken: string, requestBody: SearchThingsRequest): Observable<SearchThingsResponse> {
+		SearchThings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: SearchThingsRequest): Observable<SearchThingsResponse> {
 			return this.http.post<SearchThingsResponse>(this.baseUri + '#X-Amz-Target=IotThingsGraphFrontEndService.SearchThings?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -941,7 +941,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeWorkspaceBundlesResult} Success
 		 */
-		DescribeWorkspaceBundles(NextToken: string, requestBody: DescribeWorkspaceBundlesRequest): Observable<DescribeWorkspaceBundlesResult> {
+		DescribeWorkspaceBundles(NextToken: string | null | undefined, requestBody: DescribeWorkspaceBundlesRequest): Observable<DescribeWorkspaceBundlesResult> {
 			return this.http.post<DescribeWorkspaceBundlesResult>(this.baseUri + '#X-Amz-Target=WorkspacesService.DescribeWorkspaceBundles?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -951,7 +951,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeWorkspaceDirectoriesResult} Success
 		 */
-		DescribeWorkspaceDirectories(NextToken: string, requestBody: DescribeWorkspaceDirectoriesRequest): Observable<DescribeWorkspaceDirectoriesResult> {
+		DescribeWorkspaceDirectories(NextToken: string | null | undefined, requestBody: DescribeWorkspaceDirectoriesRequest): Observable<DescribeWorkspaceDirectoriesResult> {
 			return this.http.post<DescribeWorkspaceDirectoriesResult>(this.baseUri + '#X-Amz-Target=WorkspacesService.DescribeWorkspaceDirectories?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -980,7 +980,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeWorkspacesResult} Success
 		 */
-		DescribeWorkspaces(Limit: string, NextToken: string, requestBody: DescribeWorkspacesRequest): Observable<DescribeWorkspacesResult> {
+		DescribeWorkspaces(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeWorkspacesRequest): Observable<DescribeWorkspacesResult> {
 			return this.http.post<DescribeWorkspacesResult>(this.baseUri + '#X-Amz-Target=WorkspacesService.DescribeWorkspaces?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -198,7 +198,7 @@ export namespace MyNS {
 		 * @param {string} sitemapIndex A URL of a site's sitemap index. For example: http://www.example.com/sitemapindex.xml
 		 * @return {void} Successful response
 		 */
-		Webmasters_sitemaps_list(siteUrl: string, sitemapIndex: string): Observable<HttpResponse<string>> {
+		Webmasters_sitemaps_list(siteUrl: string, sitemapIndex: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sites/' + (siteUrl == null ? '' : encodeURIComponent(siteUrl)) + '/sitemaps&sitemapIndex=' + (sitemapIndex == null ? '' : encodeURIComponent(sitemapIndex)), { observe: 'response', responseType: 'text' });
 		}
 

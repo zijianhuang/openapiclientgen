@@ -1641,7 +1641,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call. NOTE: this field is not yet implemented
 		 * @return {void} Successful response
 		 */
-		Monitoring_uptimeCheckIps_list(pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_uptimeCheckIps_list(pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/uptimeCheckIps?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1654,7 +1654,7 @@ export namespace MyNS {
 		 * @param {boolean} force If true, the notification channel will be deleted regardless of its use in alert policies (the policies will be updated to remove the channel). If false, channels that are still referenced by an existing alerting policy will fail to be deleted in a delete operation.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_metricDescriptors_delete(name: string, force: boolean): Observable<HttpResponse<string>> {
+		Monitoring_projects_metricDescriptors_delete(name: string, force: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '&force=' + force, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1667,7 +1667,7 @@ export namespace MyNS {
 		 * @param {Monitoring_projects_metricDescriptors_getView} view View of the ServiceLevelObjective to return. If DEFAULT, return the ServiceLevelObjective as originally defined. If EXPLICIT and the ServiceLevelObjective is defined in terms of a BasicSli, replace the BasicSli with a RequestBasedSli spelling out how the SLI is computed.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_metricDescriptors_get(name: string, view: Monitoring_projects_metricDescriptors_getView): Observable<HttpResponse<string>> {
+		Monitoring_projects_metricDescriptors_get(name: string, view: Monitoring_projects_metricDescriptors_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1682,7 +1682,7 @@ export namespace MyNS {
 		 * Conditions in the new policy will keep their former [CONDITION_ID] if the supplied condition includes the name field with that [CONDITION_ID]. If the supplied condition omits the name field, then a new [CONDITION_ID] is created.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_alertPolicies_patch(name: string, updateMask: string, requestBody: AlertPolicy): Observable<HttpResponse<string>> {
+		Monitoring_projects_alertPolicies_patch(name: string, updateMask: string | null | undefined, requestBody: AlertPolicy): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1695,7 +1695,7 @@ export namespace MyNS {
 		 * @param {boolean} validateOnly If true, validate this request but do not update the existing group.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_groups_update(name: string, validateOnly: boolean, requestBody: Group): Observable<HttpResponse<string>> {
+		Monitoring_projects_groups_update(name: string, validateOnly: boolean | null | undefined, requestBody: Group): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '&validateOnly=' + validateOnly, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1711,7 +1711,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_alertPolicies_list(name: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_projects_alertPolicies_list(name: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/alertPolicies&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1756,7 +1756,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If this field is not empty then it must contain the next_page_token value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_groups_list(name: string, ancestorsOfGroup: string, childrenOfGroup: string, descendantsOfGroup: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_projects_groups_list(name: string, ancestorsOfGroup: string | null | undefined, childrenOfGroup: string | null | undefined, descendantsOfGroup: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/groups&ancestorsOfGroup=' + (ancestorsOfGroup == null ? '' : encodeURIComponent(ancestorsOfGroup)) + '&childrenOfGroup=' + (childrenOfGroup == null ? '' : encodeURIComponent(childrenOfGroup)) + '&descendantsOfGroup=' + (descendantsOfGroup == null ? '' : encodeURIComponent(descendantsOfGroup)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1768,7 +1768,7 @@ export namespace MyNS {
 		 * @param {boolean} validateOnly If true, validate this request but do not create the group.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_groups_create(name: string, validateOnly: boolean, requestBody: Group): Observable<HttpResponse<string>> {
+		Monitoring_projects_groups_create(name: string, validateOnly: boolean | null | undefined, requestBody: Group): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/groups&validateOnly=' + validateOnly, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1785,7 +1785,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If this field is not empty then it must contain the next_page_token value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_groups_members_list(name: string, filter: string, interval_endTime: string, interval_startTime: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_projects_groups_members_list(name: string, filter: string | null | undefined, interval_endTime: string | null | undefined, interval_startTime: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/members&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&interval_endTime=' + (interval_endTime == null ? '' : encodeURIComponent(interval_endTime)) + '&interval_startTime=' + (interval_startTime == null ? '' : encodeURIComponent(interval_startTime)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1800,7 +1800,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_metricDescriptors_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_projects_metricDescriptors_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/metricDescriptors&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1826,7 +1826,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_monitoredResourceDescriptors_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_projects_monitoredResourceDescriptors_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/monitoredResourceDescriptors&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1840,7 +1840,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_notificationChannelDescriptors_list(name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_projects_notificationChannelDescriptors_list(name: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/notificationChannelDescriptors&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1856,7 +1856,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_notificationChannels_list(name: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_projects_notificationChannels_list(name: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/notificationChannels&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1892,7 +1892,7 @@ export namespace MyNS {
 		 * @param {Monitoring_projects_timeSeries_listView} view Required. Specifies which information is returned about the time series.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_timeSeries_list(name: string, aggregation_alignmentPeriod: string, aggregation_crossSeriesReducer: AggregationCrossSeriesReducer, aggregation_groupByFields: Array<string>, aggregation_perSeriesAligner: AggregationPerSeriesAligner, filter: string, interval_endTime: string, interval_startTime: string, orderBy: string, pageSize: number, pageToken: string, view: Monitoring_projects_timeSeries_listView): Observable<HttpResponse<string>> {
+		Monitoring_projects_timeSeries_list(name: string, aggregation_alignmentPeriod: string | null | undefined, aggregation_crossSeriesReducer: AggregationCrossSeriesReducer | null | undefined, aggregation_groupByFields: Array<string> | null | undefined, aggregation_perSeriesAligner: AggregationPerSeriesAligner | null | undefined, filter: string | null | undefined, interval_endTime: string | null | undefined, interval_startTime: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Monitoring_projects_timeSeries_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (name == null ? '' : encodeURIComponent(name)) + '/timeSeries&aggregation_alignmentPeriod=' + (aggregation_alignmentPeriod == null ? '' : encodeURIComponent(aggregation_alignmentPeriod)) + '&aggregation_crossSeriesReducer=' + aggregation_crossSeriesReducer + '&' + aggregation_groupByFields.map(z => `aggregation_groupByFields=${encodeURIComponent(z)}`).join('&') + '&aggregation_perSeriesAligner=' + aggregation_perSeriesAligner + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&interval_endTime=' + (interval_endTime == null ? '' : encodeURIComponent(interval_endTime)) + '&interval_startTime=' + (interval_startTime == null ? '' : encodeURIComponent(interval_startTime)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1960,7 +1960,7 @@ export namespace MyNS {
 		 * @param {Monitoring_projects_metricDescriptors_getView} view View of the ServiceLevelObjectives to return. If DEFAULT, return each ServiceLevelObjective as originally defined. If EXPLICIT and the ServiceLevelObjective is defined in terms of a BasicSli, replace the BasicSli with a RequestBasedSli spelling out how the SLI is computed.
 		 * @return {void} Successful response
 		 */
-		Monitoring_services_serviceLevelObjectives_list(parent: string, filter: string, pageSize: number, pageToken: string, view: Monitoring_projects_metricDescriptors_getView): Observable<HttpResponse<string>> {
+		Monitoring_services_serviceLevelObjectives_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Monitoring_projects_metricDescriptors_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (parent == null ? '' : encodeURIComponent(parent)) + '/serviceLevelObjectives&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1972,7 +1972,7 @@ export namespace MyNS {
 		 * @param {string} serviceLevelObjectiveId Optional. The ServiceLevelObjective id to use for this ServiceLevelObjective. If omitted, an id will be generated instead. Must match the pattern [a-z0-9\-]+
 		 * @return {void} Successful response
 		 */
-		Monitoring_services_serviceLevelObjectives_create(parent: string, serviceLevelObjectiveId: string, requestBody: ServiceLevelObjective): Observable<HttpResponse<string>> {
+		Monitoring_services_serviceLevelObjectives_create(parent: string, serviceLevelObjectiveId: string | null | undefined, requestBody: ServiceLevelObjective): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/' + (parent == null ? '' : encodeURIComponent(parent)) + '/serviceLevelObjectives&serviceLevelObjectiveId=' + (serviceLevelObjectiveId == null ? '' : encodeURIComponent(serviceLevelObjectiveId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1995,7 +1995,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {void} Successful response
 		 */
-		Monitoring_services_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_services_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (parent == null ? '' : encodeURIComponent(parent)) + '/services&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2007,7 +2007,7 @@ export namespace MyNS {
 		 * @param {string} serviceId Optional. The Service id to use for this Service. If omitted, an id will be generated instead. Must match the pattern [a-z0-9\-]+
 		 * @return {void} Successful response
 		 */
-		Monitoring_services_create(parent: string, serviceId: string, requestBody: Service): Observable<HttpResponse<string>> {
+		Monitoring_services_create(parent: string, serviceId: string | null | undefined, requestBody: Service): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/' + (parent == null ? '' : encodeURIComponent(parent)) + '/services&serviceId=' + (serviceId == null ? '' : encodeURIComponent(serviceId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2020,7 +2020,7 @@ export namespace MyNS {
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
 		 * @return {void} Successful response
 		 */
-		Monitoring_projects_uptimeCheckConfigs_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Monitoring_projects_uptimeCheckConfigs_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/' + (parent == null ? '' : encodeURIComponent(parent)) + '/uptimeCheckConfigs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

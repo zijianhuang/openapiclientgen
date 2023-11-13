@@ -716,7 +716,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeComputeEnvironmentsResponse} Success
 		 */
-		DescribeComputeEnvironments(maxResults: string, nextToken: string, requestBody: DescribeComputeEnvironmentsPostBody): Observable<DescribeComputeEnvironmentsResponse> {
+		DescribeComputeEnvironments(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeComputeEnvironmentsPostBody): Observable<DescribeComputeEnvironmentsResponse> {
 			return this.http.post<DescribeComputeEnvironmentsResponse>(this.baseUri + 'v1/describecomputeenvironments?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -727,7 +727,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeJobDefinitionsResponse} Success
 		 */
-		DescribeJobDefinitions(maxResults: string, nextToken: string, requestBody: DescribeJobDefinitionsPostBody): Observable<DescribeJobDefinitionsResponse> {
+		DescribeJobDefinitions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeJobDefinitionsPostBody): Observable<DescribeJobDefinitionsResponse> {
 			return this.http.post<DescribeJobDefinitionsResponse>(this.baseUri + 'v1/describejobdefinitions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -738,7 +738,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeJobQueuesResponse} Success
 		 */
-		DescribeJobQueues(maxResults: string, nextToken: string, requestBody: DescribeJobQueuesPostBody): Observable<DescribeJobQueuesResponse> {
+		DescribeJobQueues(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeJobQueuesPostBody): Observable<DescribeJobQueuesResponse> {
 			return this.http.post<DescribeJobQueuesResponse>(this.baseUri + 'v1/describejobqueues?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -758,7 +758,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListJobsResponse} Success
 		 */
-		ListJobs(maxResults: string, nextToken: string, requestBody: ListJobsPostBody): Observable<ListJobsResponse> {
+		ListJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListJobsPostBody): Observable<ListJobsResponse> {
 			return this.http.post<ListJobsResponse>(this.baseUri + 'v1/listjobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

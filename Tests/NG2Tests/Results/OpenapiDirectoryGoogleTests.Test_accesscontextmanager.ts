@@ -712,7 +712,7 @@ export namespace MyNS {
 		 * `organizations/{org_id}`
 		 * @return {void} Successful response
 		 */
-		Accesscontextmanager_accessPolicies_list(pageSize: number, pageToken: string, parent: string): Observable<HttpResponse<string>> {
+		Accesscontextmanager_accessPolicies_list(pageSize: number | null | undefined, pageToken: string | null | undefined, parent: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/accessPolicies?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parent=' + (parent == null ? '' : encodeURIComponent(parent)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -760,7 +760,7 @@ export namespace MyNS {
 		 * `CustomLevels`.
 		 * @return {void} Successful response
 		 */
-		Accesscontextmanager_accessPolicies_servicePerimeters_get(name: string, accessLevelFormat: Accesscontextmanager_accessPolicies_servicePerimeters_getAccessLevelFormat): Observable<HttpResponse<string>> {
+		Accesscontextmanager_accessPolicies_servicePerimeters_get(name: string, accessLevelFormat: Accesscontextmanager_accessPolicies_servicePerimeters_getAccessLevelFormat | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&accessLevelFormat=' + accessLevelFormat, { observe: 'response', responseType: 'text' });
 		}
 
@@ -777,7 +777,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Required. Mask to control which fields get updated. Must be non-empty.
 		 * @return {void} Successful response
 		 */
-		Accesscontextmanager_accessPolicies_servicePerimeters_patch(name: string, updateMask: string, requestBody: ServicePerimeter): Observable<HttpResponse<string>> {
+		Accesscontextmanager_accessPolicies_servicePerimeters_patch(name: string, updateMask: string | null | undefined, requestBody: ServicePerimeter): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -816,7 +816,7 @@ export namespace MyNS {
 		 * Defaults to the first page of results.
 		 * @return {void} Successful response
 		 */
-		Accesscontextmanager_accessPolicies_accessLevels_list(parent: string, accessLevelFormat: Accesscontextmanager_accessPolicies_servicePerimeters_getAccessLevelFormat, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Accesscontextmanager_accessPolicies_accessLevels_list(parent: string, accessLevelFormat: Accesscontextmanager_accessPolicies_servicePerimeters_getAccessLevelFormat | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/accessLevels&accessLevelFormat=' + accessLevelFormat + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -872,7 +872,7 @@ export namespace MyNS {
 		 * Defaults to the first page of results.
 		 * @return {void} Successful response
 		 */
-		Accesscontextmanager_accessPolicies_servicePerimeters_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Accesscontextmanager_accessPolicies_servicePerimeters_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/servicePerimeters&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

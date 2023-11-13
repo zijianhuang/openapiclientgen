@@ -144,7 +144,7 @@ export namespace MyNS {
 		 * @param {number} qos The Quality of Service (QoS) level.
 		 * @return {void} Success
 		 */
-		Publish(topic: string, qos: number, requestBody: PublishPostBody): Observable<HttpResponse<string>> {
+		Publish(topic: string, qos: number | null | undefined, requestBody: PublishPostBody): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'topics/' + (topic == null ? '' : encodeURIComponent(topic)) + '&qos=' + qos, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

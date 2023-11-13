@@ -290,7 +290,7 @@ export namespace MyNS {
 		 * Get outposts
 		 * @return {ListOutpostsOutput} Success
 		 */
-		ListOutposts(NextToken: string, MaxResults: number): Observable<ListOutpostsOutput> {
+		ListOutposts(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListOutpostsOutput> {
 			return this.http.get<ListOutpostsOutput>(this.baseUri + 'outposts?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -326,7 +326,7 @@ export namespace MyNS {
 		 * Get outposts/{OutpostId}/instanceTypes
 		 * @return {GetOutpostInstanceTypesOutput} Success
 		 */
-		GetOutpostInstanceTypes(OutpostId: string, NextToken: string, MaxResults: number): Observable<GetOutpostInstanceTypesOutput> {
+		GetOutpostInstanceTypes(OutpostId: string, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<GetOutpostInstanceTypesOutput> {
 			return this.http.get<GetOutpostInstanceTypesOutput>(this.baseUri + 'outposts/' + (OutpostId == null ? '' : encodeURIComponent(OutpostId)) + '/instanceTypes&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -335,7 +335,7 @@ export namespace MyNS {
 		 * Get sites
 		 * @return {ListSitesOutput} Success
 		 */
-		ListSites(NextToken: string, MaxResults: number): Observable<ListSitesOutput> {
+		ListSites(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListSitesOutput> {
 			return this.http.get<ListSitesOutput>(this.baseUri + 'sites?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 	}

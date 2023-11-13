@@ -1162,7 +1162,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeTestCasesOutput} Success
 		 */
-		DescribeTestCases(maxResults: string, nextToken: string, requestBody: DescribeTestCasesInput): Observable<DescribeTestCasesOutput> {
+		DescribeTestCases(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeTestCasesInput): Observable<DescribeTestCasesOutput> {
 			return this.http.post<DescribeTestCasesOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.DescribeTestCases?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1199,7 +1199,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBuildsOutput} Success
 		 */
-		ListBuilds(nextToken: string, requestBody: ListBuildsInput): Observable<ListBuildsOutput> {
+		ListBuilds(nextToken: string | null | undefined, requestBody: ListBuildsInput): Observable<ListBuildsOutput> {
 			return this.http.post<ListBuildsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListBuilds?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1209,7 +1209,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBuildsForProjectOutput} Success
 		 */
-		ListBuildsForProject(nextToken: string, requestBody: ListBuildsForProjectInput): Observable<ListBuildsForProjectOutput> {
+		ListBuildsForProject(nextToken: string | null | undefined, requestBody: ListBuildsForProjectInput): Observable<ListBuildsForProjectOutput> {
 			return this.http.post<ListBuildsForProjectOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListBuildsForProject?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1228,7 +1228,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListProjectsOutput} Success
 		 */
-		ListProjects(nextToken: string, requestBody: ListProjectsInput): Observable<ListProjectsOutput> {
+		ListProjects(nextToken: string | null | undefined, requestBody: ListProjectsInput): Observable<ListProjectsOutput> {
 			return this.http.post<ListProjectsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListProjects?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1239,7 +1239,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListReportGroupsOutput} Success
 		 */
-		ListReportGroups(maxResults: string, nextToken: string, requestBody: ListReportGroupsInput): Observable<ListReportGroupsOutput> {
+		ListReportGroups(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListReportGroupsInput): Observable<ListReportGroupsOutput> {
 			return this.http.post<ListReportGroupsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListReportGroups?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1250,7 +1250,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListReportsOutput} Success
 		 */
-		ListReports(maxResults: string, nextToken: string, requestBody: ListReportsInput): Observable<ListReportsOutput> {
+		ListReports(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListReportsInput): Observable<ListReportsOutput> {
 			return this.http.post<ListReportsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListReports?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1261,7 +1261,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListReportsForReportGroupOutput} Success
 		 */
-		ListReportsForReportGroup(maxResults: string, nextToken: string, requestBody: ListReportsForReportGroupInput): Observable<ListReportsForReportGroupOutput> {
+		ListReportsForReportGroup(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListReportsForReportGroupInput): Observable<ListReportsForReportGroupOutput> {
 			return this.http.post<ListReportsForReportGroupOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListReportsForReportGroup?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1272,7 +1272,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSharedProjectsOutput} Success
 		 */
-		ListSharedProjects(maxResults: string, nextToken: string, requestBody: ListSharedProjectsInput): Observable<ListSharedProjectsOutput> {
+		ListSharedProjects(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSharedProjectsInput): Observable<ListSharedProjectsOutput> {
 			return this.http.post<ListSharedProjectsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListSharedProjects?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSharedReportGroupsOutput} Success
 		 */
-		ListSharedReportGroups(maxResults: string, nextToken: string, requestBody: ListSharedReportGroupsInput): Observable<ListSharedReportGroupsOutput> {
+		ListSharedReportGroups(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSharedReportGroupsInput): Observable<ListSharedReportGroupsOutput> {
 			return this.http.post<ListSharedReportGroupsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListSharedReportGroups?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

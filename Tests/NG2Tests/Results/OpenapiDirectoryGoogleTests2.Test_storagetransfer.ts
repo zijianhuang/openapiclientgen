@@ -912,7 +912,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The list page token.
 		 * @return {void} Successful response
 		 */
-		Storagetransfer_transferJobs_list(filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Storagetransfer_transferJobs_list(filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/transferJobs?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -933,7 +933,7 @@ export namespace MyNS {
 		 * job.
 		 * @return {void} Successful response
 		 */
-		Storagetransfer_transferJobs_get(jobName: string, projectId: string): Observable<HttpResponse<string>> {
+		Storagetransfer_transferJobs_get(jobName: string, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (jobName == null ? '' : encodeURIComponent(jobName)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 

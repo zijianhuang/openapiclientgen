@@ -1522,7 +1522,7 @@ export namespace MyNS {
 		 * * the string literal `"me"`, indicating the requesting user
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_list(courseStates: Array<CourseCourseState>, pageSize: number, pageToken: string, studentId: string, teacherId: string): Observable<HttpResponse<string>> {
+		Classroom_courses_list(courseStates: Array<CourseCourseState> | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, studentId: string | null | undefined, teacherId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/courses?' + courseStates.map(z => `courseStates=${z}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&studentId=' + (studentId == null ? '' : encodeURIComponent(studentId)) + '&teacherId=' + (teacherId == null ? '' : encodeURIComponent(teacherId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1567,7 +1567,7 @@ export namespace MyNS {
 		 * must be otherwise identical to the one that resulted in this token.
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_aliases_list(courseId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Classroom_courses_aliases_list(courseId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/aliases&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 		 * must be otherwise identical to the one that resulted in this token.
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_announcements_list(courseId: string, announcementStates: Array<AnnouncementState>, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Classroom_courses_announcements_list(courseId: string, announcementStates: Array<AnnouncementState> | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/announcements&' + announcementStates.map(z => `announcementStates=${z}`).join('&') + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1736,7 +1736,7 @@ export namespace MyNS {
 		 * * `scheduled_time`
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_announcements_patch(courseId: string, id: string, updateMask: string, requestBody: Announcement): Observable<HttpResponse<string>> {
+		Classroom_courses_announcements_patch(courseId: string, id: string, updateMask: string | null | undefined, requestBody: Announcement): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/announcements/' + (id == null ? '' : encodeURIComponent(id)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1792,7 +1792,7 @@ export namespace MyNS {
 		 * must be otherwise identical to the one that resulted in this token.
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_courseWork_list(courseId: string, courseWorkStates: Array<CourseWorkState>, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Classroom_courses_courseWork_list(courseId: string, courseWorkStates: Array<CourseWorkState> | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/courseWork&' + courseWorkStates.map(z => `courseWorkStates=${z}`).join('&') + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1863,7 +1863,7 @@ export namespace MyNS {
 		 * * the string literal `"me"`, indicating the requesting user
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_courseWork_studentSubmissions_list(courseId: string, courseWorkId: string, late: Classroom_courses_courseWork_studentSubmissions_listLate, pageSize: number, pageToken: string, states: Array<StudentSubmissionState>, userId: string): Observable<HttpResponse<string>> {
+		Classroom_courses_courseWork_studentSubmissions_list(courseId: string, courseWorkId: string, late: Classroom_courses_courseWork_studentSubmissions_listLate | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, states: Array<StudentSubmissionState> | null | undefined, userId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/courseWork/' + (courseWorkId == null ? '' : encodeURIComponent(courseWorkId)) + '/studentSubmissions&late=' + late + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + states.map(z => `states=${z}`).join('&') + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1916,7 +1916,7 @@ export namespace MyNS {
 		 * * `assigned_grade`
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_courseWork_studentSubmissions_patch(courseId: string, courseWorkId: string, id: string, updateMask: string, requestBody: StudentSubmission): Observable<HttpResponse<string>> {
+		Classroom_courses_courseWork_studentSubmissions_patch(courseId: string, courseWorkId: string, id: string, updateMask: string | null | undefined, requestBody: StudentSubmission): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/courseWork/' + (courseWorkId == null ? '' : encodeURIComponent(courseWorkId)) + '/studentSubmissions/' + (id == null ? '' : encodeURIComponent(id)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2117,7 +2117,7 @@ export namespace MyNS {
 		 * * `topic_id`
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_courseWork_patch(courseId: string, id: string, updateMask: string, requestBody: CourseWork): Observable<HttpResponse<string>> {
+		Classroom_courses_courseWork_patch(courseId: string, id: string, updateMask: string | null | undefined, requestBody: CourseWork): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/courseWork/' + (id == null ? '' : encodeURIComponent(id)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2161,7 +2161,7 @@ export namespace MyNS {
 		 * otherwise identical to the one that resulted in this token.
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_students_list(courseId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Classroom_courses_students_list(courseId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/students&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2188,7 +2188,7 @@ export namespace MyNS {
 		 * user has administrative permissions to create students for any user.
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_students_create(courseId: string, enrollmentCode: string, requestBody: Student): Observable<HttpResponse<string>> {
+		Classroom_courses_students_create(courseId: string, enrollmentCode: string | null | undefined, requestBody: Student): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/students&enrollmentCode=' + (enrollmentCode == null ? '' : encodeURIComponent(enrollmentCode)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2256,7 +2256,7 @@ export namespace MyNS {
 		 * otherwise identical to the one that resulted in this token.
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_teachers_list(courseId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Classroom_courses_teachers_list(courseId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/teachers&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2352,7 +2352,7 @@ export namespace MyNS {
 		 * must be otherwise identical to the one that resulted in this token.
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_topics_list(courseId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Classroom_courses_topics_list(courseId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/topics&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2432,7 +2432,7 @@ export namespace MyNS {
 		 * * `name`
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_topics_patch(courseId: string, id: string, updateMask: string, requestBody: Topic): Observable<HttpResponse<string>> {
+		Classroom_courses_topics_patch(courseId: string, id: string, updateMask: string | null | undefined, requestBody: Topic): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/topics/' + (id == null ? '' : encodeURIComponent(id)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2499,7 +2499,7 @@ export namespace MyNS {
 		 * `updateMask=<field1>,<field2>,...`
 		 * @return {void} Successful response
 		 */
-		Classroom_courses_patch(id: string, updateMask: string, requestBody: Course): Observable<HttpResponse<string>> {
+		Classroom_courses_patch(id: string, updateMask: string | null | undefined, requestBody: Course): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/courses/' + (id == null ? '' : encodeURIComponent(id)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2546,7 +2546,7 @@ export namespace MyNS {
 		 * * the string literal `"me"`, indicating the requesting user
 		 * @return {void} Successful response
 		 */
-		Classroom_invitations_list(courseId: string, pageSize: number, pageToken: string, userId: string): Observable<HttpResponse<string>> {
+		Classroom_invitations_list(courseId: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, userId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/invitations?courseId=' + (courseId == null ? '' : encodeURIComponent(courseId)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2701,7 +2701,7 @@ export namespace MyNS {
 		 * returned. Otherwise, results with a `state` of `PENDING` are returned.
 		 * @return {void} Successful response
 		 */
-		Classroom_userProfiles_guardianInvitations_list(studentId: string, invitedEmailAddress: string, pageSize: number, pageToken: string, states: Array<GuardianInvitationState>): Observable<HttpResponse<string>> {
+		Classroom_userProfiles_guardianInvitations_list(studentId: string, invitedEmailAddress: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, states: Array<GuardianInvitationState> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/userProfiles/' + (studentId == null ? '' : encodeURIComponent(studentId)) + '/guardianInvitations&invitedEmailAddress=' + (invitedEmailAddress == null ? '' : encodeURIComponent(invitedEmailAddress)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + states.map(z => `states=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2789,7 +2789,7 @@ export namespace MyNS {
 		 * `updateMask=<field1>,<field2>,...`
 		 * @return {void} Successful response
 		 */
-		Classroom_userProfiles_guardianInvitations_patch(studentId: string, invitationId: string, updateMask: string, requestBody: GuardianInvitation): Observable<HttpResponse<string>> {
+		Classroom_userProfiles_guardianInvitations_patch(studentId: string, invitationId: string, updateMask: string | null | undefined, requestBody: GuardianInvitation): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/userProfiles/' + (studentId == null ? '' : encodeURIComponent(studentId)) + '/guardianInvitations/' + (invitationId == null ? '' : encodeURIComponent(invitationId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2833,7 +2833,7 @@ export namespace MyNS {
 		 * must be otherwise identical to the one that resulted in this token.
 		 * @return {void} Successful response
 		 */
-		Classroom_userProfiles_guardians_list(studentId: string, invitedEmailAddress: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Classroom_userProfiles_guardians_list(studentId: string, invitedEmailAddress: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/userProfiles/' + (studentId == null ? '' : encodeURIComponent(studentId)) + '/guardians&invitedEmailAddress=' + (invitedEmailAddress == null ? '' : encodeURIComponent(invitedEmailAddress)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

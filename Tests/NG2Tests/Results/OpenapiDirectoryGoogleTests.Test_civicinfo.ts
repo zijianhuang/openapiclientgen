@@ -650,7 +650,7 @@ export namespace MyNS {
 		 * @param {string} query The search query. Queries can cover any parts of a OCD ID or a human readable division name. All words given in the query are treated as required patterns. In addition to that, most query operators of the Apache Lucene library are supported. See http://lucene.apache.org/core/2_9_4/queryparsersyntax.html
 		 * @return {void} Successful response
 		 */
-		Civicinfo_divisions_search(query: string): Observable<HttpResponse<string>> {
+		Civicinfo_divisions_search(query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'divisions?query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -672,7 +672,7 @@ export namespace MyNS {
 		 * @param {Array<string>} roles A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned.
 		 * @return {void} Successful response
 		 */
-		Civicinfo_representatives_representativeInfoByAddress(address: string, includeOffices: boolean, levels: Array<string>, roles: Array<string>): Observable<HttpResponse<string>> {
+		Civicinfo_representatives_representativeInfoByAddress(address: string | null | undefined, includeOffices: boolean | null | undefined, levels: Array<string> | null | undefined, roles: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'representatives?address=' + (address == null ? '' : encodeURIComponent(address)) + '&includeOffices=' + includeOffices + '&' + levels.map(z => `levels=${encodeURIComponent(z)}`).join('&') + '&' + roles.map(z => `roles=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -685,7 +685,7 @@ export namespace MyNS {
 		 * @param {Array<string>} roles A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned.
 		 * @return {void} Successful response
 		 */
-		Civicinfo_representatives_representativeInfoByDivision(ocdId: string, levels: Array<string>, recursive: boolean, roles: Array<string>): Observable<HttpResponse<string>> {
+		Civicinfo_representatives_representativeInfoByDivision(ocdId: string, levels: Array<string> | null | undefined, recursive: boolean | null | undefined, roles: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'representatives/' + (ocdId == null ? '' : encodeURIComponent(ocdId)) + '&' + levels.map(z => `levels=${encodeURIComponent(z)}`).join('&') + '&recursive=' + recursive + '&' + roles.map(z => `roles=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -698,7 +698,7 @@ export namespace MyNS {
 		 * @param {boolean} returnAllAvailableData If set to true, the query will return the success codeand include any partial information when it is unable to determine a matching address or unable to determine the election for electionId=0 queries.
 		 * @return {void} Successful response
 		 */
-		Civicinfo_elections_voterInfoQuery(address: string, electionId: string, officialOnly: boolean, returnAllAvailableData: boolean): Observable<HttpResponse<string>> {
+		Civicinfo_elections_voterInfoQuery(address: string, electionId: string | null | undefined, officialOnly: boolean | null | undefined, returnAllAvailableData: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'voterinfo?address=' + (address == null ? '' : encodeURIComponent(address)) + '&electionId=' + (electionId == null ? '' : encodeURIComponent(electionId)) + '&officialOnly=' + officialOnly + '&returnAllAvailableData=' + returnAllAvailableData, { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -1259,7 +1259,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBatchInferenceJobsResponse} Success
 		 */
-		ListBatchInferenceJobs(maxResults: string, nextToken: string, requestBody: ListBatchInferenceJobsRequest): Observable<ListBatchInferenceJobsResponse> {
+		ListBatchInferenceJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListBatchInferenceJobsRequest): Observable<ListBatchInferenceJobsResponse> {
 			return this.http.post<ListBatchInferenceJobsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListBatchInferenceJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1270,7 +1270,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListCampaignsResponse} Success
 		 */
-		ListCampaigns(maxResults: string, nextToken: string, requestBody: ListCampaignsRequest): Observable<ListCampaignsResponse> {
+		ListCampaigns(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListCampaignsRequest): Observable<ListCampaignsResponse> {
 			return this.http.post<ListCampaignsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListCampaigns?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDatasetGroupsResponse} Success
 		 */
-		ListDatasetGroups(maxResults: string, nextToken: string, requestBody: ListDatasetGroupsRequest): Observable<ListDatasetGroupsResponse> {
+		ListDatasetGroups(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDatasetGroupsRequest): Observable<ListDatasetGroupsResponse> {
 			return this.http.post<ListDatasetGroupsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListDatasetGroups?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1292,7 +1292,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDatasetImportJobsResponse} Success
 		 */
-		ListDatasetImportJobs(maxResults: string, nextToken: string, requestBody: ListDatasetImportJobsRequest): Observable<ListDatasetImportJobsResponse> {
+		ListDatasetImportJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDatasetImportJobsRequest): Observable<ListDatasetImportJobsResponse> {
 			return this.http.post<ListDatasetImportJobsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListDatasetImportJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDatasetsResponse} Success
 		 */
-		ListDatasets(maxResults: string, nextToken: string, requestBody: ListDatasetsRequest): Observable<ListDatasetsResponse> {
+		ListDatasets(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDatasetsRequest): Observable<ListDatasetsResponse> {
 			return this.http.post<ListDatasetsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListDatasets?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1314,7 +1314,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListEventTrackersResponse} Success
 		 */
-		ListEventTrackers(maxResults: string, nextToken: string, requestBody: ListEventTrackersRequest): Observable<ListEventTrackersResponse> {
+		ListEventTrackers(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListEventTrackersRequest): Observable<ListEventTrackersResponse> {
 			return this.http.post<ListEventTrackersResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListEventTrackers?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1334,7 +1334,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRecipesResponse} Success
 		 */
-		ListRecipes(maxResults: string, nextToken: string, requestBody: ListRecipesRequest): Observable<ListRecipesResponse> {
+		ListRecipes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRecipesRequest): Observable<ListRecipesResponse> {
 			return this.http.post<ListRecipesResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListRecipes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1345,7 +1345,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSchemasResponse} Success
 		 */
-		ListSchemas(maxResults: string, nextToken: string, requestBody: ListSchemasRequest): Observable<ListSchemasResponse> {
+		ListSchemas(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSchemasRequest): Observable<ListSchemasResponse> {
 			return this.http.post<ListSchemasResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListSchemas?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1356,7 +1356,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSolutionVersionsResponse} Success
 		 */
-		ListSolutionVersions(maxResults: string, nextToken: string, requestBody: ListSolutionVersionsRequest): Observable<ListSolutionVersionsResponse> {
+		ListSolutionVersions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSolutionVersionsRequest): Observable<ListSolutionVersionsResponse> {
 			return this.http.post<ListSolutionVersionsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListSolutionVersions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1367,7 +1367,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSolutionsResponse} Success
 		 */
-		ListSolutions(maxResults: string, nextToken: string, requestBody: ListSolutionsRequest): Observable<ListSolutionsResponse> {
+		ListSolutions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSolutionsRequest): Observable<ListSolutionsResponse> {
 			return this.http.post<ListSolutionsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListSolutions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

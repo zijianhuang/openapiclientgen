@@ -26,8 +26,8 @@ export namespace MyNS {
 		 * @param {number} limit maximum number of results to return
 		 * @return {Array<Pet>} pet response
 		 */
-		FindPets(tags: Array<string>, limit: number): Promise<Array<Pet>> {
-			return fetch(this.baseUri + 'pets?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, { method: 'get' }).then(d => d.json());
+		FindPets(tags: Array<string> | null | undefined, limit: number | null | undefined): Promise<Array<Pet>> {
+			return fetch(this.baseUri + 'pets?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, { method: 'get' }).then(d => d.json());
 		}
 
 		/**

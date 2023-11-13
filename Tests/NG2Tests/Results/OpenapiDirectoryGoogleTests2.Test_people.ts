@@ -1452,7 +1452,7 @@ export namespace MyNS {
 		 * Only resources changed since the sync token was created will be returned.
 		 * @return {void} Successful response
 		 */
-		People_contactGroups_list(pageSize: number, pageToken: string, syncToken: string): Observable<HttpResponse<string>> {
+		People_contactGroups_list(pageSize: number | null | undefined, pageToken: string | null | undefined, syncToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/contactGroups?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1474,7 +1474,7 @@ export namespace MyNS {
 		 * @param {Array<string>} resourceNames Required. The resource names of the contact groups to get.
 		 * @return {void} Successful response
 		 */
-		People_contactGroups_batchGet(maxMembers: number, resourceNames: Array<string>): Observable<HttpResponse<string>> {
+		People_contactGroups_batchGet(maxMembers: number | null | undefined, resourceNames: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/contactGroups:batchGet?maxMembers=' + maxMembers + '&' + resourceNames.map(z => `resourceNames=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1524,7 +1524,7 @@ export namespace MyNS {
 		 * You can include up to 50 resource names in one request.
 		 * @return {void} Successful response
 		 */
-		People_people_getBatchGet(personFields: string, requestMask_includeField: string, resourceNames: Array<string>): Observable<HttpResponse<string>> {
+		People_people_getBatchGet(personFields: string | null | undefined, requestMask_includeField: string | null | undefined, resourceNames: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/people:batchGet?personFields=' + (personFields == null ? '' : encodeURIComponent(personFields)) + '&requestMask_includeField=' + (requestMask_includeField == null ? '' : encodeURIComponent(requestMask_includeField)) + '&' + resourceNames.map(z => `resourceNames=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1545,7 +1545,7 @@ export namespace MyNS {
 		 * @param {boolean} deleteContacts Optional. Set to true to also delete the contacts in the specified group.
 		 * @return {void} Successful response
 		 */
-		People_contactGroups_delete(resourceName: string, deleteContacts: boolean): Observable<HttpResponse<string>> {
+		People_contactGroups_delete(resourceName: string, deleteContacts: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (resourceName == null ? '' : encodeURIComponent(resourceName)) + '&deleteContacts=' + deleteContacts, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 		 * `person.photos`.
 		 * @return {void} Successful response
 		 */
-		People_contactGroups_get(resourceName: string, maxMembers: number, requestMask_includeField: string): Observable<HttpResponse<string>> {
+		People_contactGroups_get(resourceName: string, maxMembers: number | null | undefined, requestMask_includeField: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resourceName == null ? '' : encodeURIComponent(resourceName)) + '&maxMembers=' + maxMembers + '&requestMask_includeField=' + (requestMask_includeField == null ? '' : encodeURIComponent(requestMask_includeField)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1632,7 +1632,7 @@ export namespace MyNS {
 		 * must match the call that provided the sync token.
 		 * @return {void} Successful response
 		 */
-		People_people_connections_list(resourceName: string, pageSize: number, pageToken: string, personFields: string, requestMask_includeField: string, requestSyncToken: boolean, sortOrder: People_people_connections_listSortOrder, syncToken: string): Observable<HttpResponse<string>> {
+		People_people_connections_list(resourceName: string, pageSize: number | null | undefined, pageToken: string | null | undefined, personFields: string | null | undefined, requestMask_includeField: string | null | undefined, requestSyncToken: boolean | null | undefined, sortOrder: People_people_connections_listSortOrder | null | undefined, syncToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resourceName == null ? '' : encodeURIComponent(resourceName)) + '/connections&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&personFields=' + (personFields == null ? '' : encodeURIComponent(personFields)) + '&requestMask_includeField=' + (requestMask_includeField == null ? '' : encodeURIComponent(requestMask_includeField)) + '&requestSyncToken=' + requestSyncToken + '&sortOrder=' + sortOrder + '&syncToken=' + (syncToken == null ? '' : encodeURIComponent(syncToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1693,7 +1693,7 @@ export namespace MyNS {
 		 * * userDefined
 		 * @return {void} Successful response
 		 */
-		People_people_deleteContactPhoto(resourceName: string, personFields: string): Observable<HttpResponse<string>> {
+		People_people_deleteContactPhoto(resourceName: string, personFields: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (resourceName == null ? '' : encodeURIComponent(resourceName)) + ':deleteContactPhoto&personFields=' + (personFields == null ? '' : encodeURIComponent(personFields)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1737,7 +1737,7 @@ export namespace MyNS {
 		 * * userDefined
 		 * @return {void} Successful response
 		 */
-		People_people_updateContact(resourceName: string, updatePersonFields: string, requestBody: Person): Observable<HttpResponse<string>> {
+		People_people_updateContact(resourceName: string, updatePersonFields: string | null | undefined, requestBody: Person): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (resourceName == null ? '' : encodeURIComponent(resourceName)) + ':updateContact&updatePersonFields=' + (updatePersonFields == null ? '' : encodeURIComponent(updatePersonFields)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

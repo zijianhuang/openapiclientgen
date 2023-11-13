@@ -122,7 +122,7 @@ export namespace MyNS {
 		 * @param {number} executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.
 		 * @return {DescribeJobExecutionResponse} Success
 		 */
-		DescribeJobExecution(jobId: string, thingName: string, includeJobDocument: boolean, executionNumber: number): Observable<DescribeJobExecutionResponse> {
+		DescribeJobExecution(jobId: string, thingName: string, includeJobDocument: boolean | null | undefined, executionNumber: number | null | undefined): Observable<DescribeJobExecutionResponse> {
 			return this.http.get<DescribeJobExecutionResponse>(this.baseUri + 'things/' + (thingName == null ? '' : encodeURIComponent(thingName)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&includeJobDocument=' + includeJobDocument + '&executionNumber=' + executionNumber, {});
 		}
 

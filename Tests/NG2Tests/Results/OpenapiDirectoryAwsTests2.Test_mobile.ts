@@ -309,7 +309,7 @@ export namespace MyNS {
 		 * @param {string} snapshotId  Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. 
 		 * @return {CreateProjectResult} Success
 		 */
-		CreateProject(name: string, region: string, snapshotId: string, requestBody: CreateProjectPostBody): Observable<CreateProjectResult> {
+		CreateProject(name: string | null | undefined, region: string | null | undefined, snapshotId: string | null | undefined, requestBody: CreateProjectPostBody): Observable<CreateProjectResult> {
 			return this.http.post<CreateProjectResult>(this.baseUri + 'projects?name=' + (name == null ? '' : encodeURIComponent(name)) + '&region=' + (region == null ? '' : encodeURIComponent(region)) + '&snapshotId=' + (snapshotId == null ? '' : encodeURIComponent(snapshotId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -320,7 +320,7 @@ export namespace MyNS {
 		 * @param {string} nextToken  Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. 
 		 * @return {ListProjectsResult} Success
 		 */
-		ListProjects(maxResults: number, nextToken: string): Observable<ListProjectsResult> {
+		ListProjects(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListProjectsResult> {
 			return this.http.get<ListProjectsResult>(this.baseUri + 'projects?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -352,7 +352,7 @@ export namespace MyNS {
 		 * @param {Platform} platform  Developer desktop or target application platform. 
 		 * @return {ExportBundleResult} Success
 		 */
-		ExportBundle(bundleId: string, projectId: string, platform: Platform): Observable<ExportBundleResult> {
+		ExportBundle(bundleId: string, projectId: string | null | undefined, platform: Platform | null | undefined): Observable<ExportBundleResult> {
 			return this.http.post<ExportBundleResult>(this.baseUri + 'bundles/' + (bundleId == null ? '' : encodeURIComponent(bundleId)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&platform=' + platform, null, {});
 		}
 
@@ -363,7 +363,7 @@ export namespace MyNS {
 		 * @param {boolean} syncFromResources  If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. 
 		 * @return {DescribeProjectResult} Success
 		 */
-		DescribeProject(projectId: string, syncFromResources: boolean): Observable<DescribeProjectResult> {
+		DescribeProject(projectId: string, syncFromResources: boolean | null | undefined): Observable<DescribeProjectResult> {
 			return this.http.get<DescribeProjectResult>(this.baseUri + 'project#projectId?projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&syncFromResources=' + syncFromResources, {});
 		}
 
@@ -384,7 +384,7 @@ export namespace MyNS {
 		 * @param {string} nextToken  Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. 
 		 * @return {ListBundlesResult} Success
 		 */
-		ListBundles(maxResults: number, nextToken: string): Observable<ListBundlesResult> {
+		ListBundles(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListBundlesResult> {
 			return this.http.get<ListBundlesResult>(this.baseUri + 'bundles?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 

@@ -331,7 +331,7 @@ export namespace MyNS {
 		 * @param {string} startTime Sets the beginning of the range of time shown in the report. The date is in the RFC 3339 format, for example 2010-10-28T10:26:35.000Z. The report returns all activities from startTime until endTime. The startTime must be before the endTime (if specified) and the current time when the request is made, or the API returns an error.
 		 * @return {void} Successful response
 		 */
-		Reports_activities_list(userKey: string, applicationName: Reports_activities_listApplicationName, actorIpAddress: string, customerId: string, endTime: string, eventName: string, filters: string, maxResults: number, orgUnitID: string, pageToken: string, startTime: string): Observable<HttpResponse<string>> {
+		Reports_activities_list(userKey: string, applicationName: Reports_activities_listApplicationName, actorIpAddress: string | null | undefined, customerId: string | null | undefined, endTime: string | null | undefined, eventName: string | null | undefined, filters: string | null | undefined, maxResults: number | null | undefined, orgUnitID: string | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'activity/users/' + (userKey == null ? '' : encodeURIComponent(userKey)) + '/applications/' + applicationName + '&actorIpAddress=' + (actorIpAddress == null ? '' : encodeURIComponent(actorIpAddress)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&eventName=' + (eventName == null ? '' : encodeURIComponent(eventName)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&maxResults=' + maxResults + '&orgUnitID=' + (orgUnitID == null ? '' : encodeURIComponent(orgUnitID)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -368,7 +368,7 @@ export namespace MyNS {
 		 * @param {string} startTime Sets the beginning of the range of time shown in the report. The date is in the RFC 3339 format, for example 2010-10-28T10:26:35.000Z. The report returns all activities from startTime until endTime. The startTime must be before the endTime (if specified) and the current time when the request is made, or the API returns an error.
 		 * @return {void} Successful response
 		 */
-		Reports_activities_watch(userKey: string, applicationName: Reports_activities_listApplicationName, actorIpAddress: string, customerId: string, endTime: string, eventName: string, filters: string, maxResults: number, orgUnitID: string, pageToken: string, startTime: string, requestBody: Channel): Observable<HttpResponse<string>> {
+		Reports_activities_watch(userKey: string, applicationName: Reports_activities_listApplicationName, actorIpAddress: string | null | undefined, customerId: string | null | undefined, endTime: string | null | undefined, eventName: string | null | undefined, filters: string | null | undefined, maxResults: number | null | undefined, orgUnitID: string | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'activity/users/' + (userKey == null ? '' : encodeURIComponent(userKey)) + '/applications/' + applicationName + '/watch&actorIpAddress=' + (actorIpAddress == null ? '' : encodeURIComponent(actorIpAddress)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&eventName=' + (eventName == null ? '' : encodeURIComponent(eventName)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&maxResults=' + maxResults + '&orgUnitID=' + (orgUnitID == null ? '' : encodeURIComponent(orgUnitID)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -394,7 +394,7 @@ export namespace MyNS {
 		 * An example of an invalid request parameter is one that does not belong to the application. If no parameters are requested, all parameters are returned.
 		 * @return {void} Successful response
 		 */
-		Reports_customerUsageReports_get(date: string, customerId: string, pageToken: string, parameters: string): Observable<HttpResponse<string>> {
+		Reports_customerUsageReports_get(date: string, customerId: string | null | undefined, pageToken: string | null | undefined, parameters: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'usage/dates/' + (date == null ? '' : encodeURIComponent(date)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parameters=' + (parameters == null ? '' : encodeURIComponent(parameters)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -426,7 +426,7 @@ export namespace MyNS {
 		 * An example of an invalid request parameter is one that does not belong to the application. If no parameters are requested, all parameters are returned.
 		 * @return {void} Successful response
 		 */
-		Reports_userUsageReport_get(userKey: string, date: string, customerId: string, filters: string, maxResults: number, orgUnitID: string, pageToken: string, parameters: string): Observable<HttpResponse<string>> {
+		Reports_userUsageReport_get(userKey: string, date: string, customerId: string | null | undefined, filters: string | null | undefined, maxResults: number | null | undefined, orgUnitID: string | null | undefined, pageToken: string | null | undefined, parameters: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'usage/users/' + (userKey == null ? '' : encodeURIComponent(userKey)) + '/dates/' + (date == null ? '' : encodeURIComponent(date)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&maxResults=' + maxResults + '&orgUnitID=' + (orgUnitID == null ? '' : encodeURIComponent(orgUnitID)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parameters=' + (parameters == null ? '' : encodeURIComponent(parameters)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -457,7 +457,7 @@ export namespace MyNS {
 		 * An example of an invalid request parameter is one that does not belong to the application. If no parameters are requested, all parameters are returned.
 		 * @return {void} Successful response
 		 */
-		Reports_entityUsageReports_get(entityType: Reports_entityUsageReports_getEntityType, entityKey: Reports_entityUsageReports_getEntityKey, date: string, customerId: string, filters: string, maxResults: number, pageToken: string, parameters: string): Observable<HttpResponse<string>> {
+		Reports_entityUsageReports_get(entityType: Reports_entityUsageReports_getEntityType, entityKey: Reports_entityUsageReports_getEntityKey, date: string, customerId: string | null | undefined, filters: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, parameters: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'usage/' + entityType + '/' + entityKey + '/dates/' + (date == null ? '' : encodeURIComponent(date)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parameters=' + (parameters == null ? '' : encodeURIComponent(parameters)), { observe: 'response', responseType: 'text' });
 		}
 	}

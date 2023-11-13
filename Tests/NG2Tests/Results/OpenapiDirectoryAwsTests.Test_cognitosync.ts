@@ -521,7 +521,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned.
 		 * @return {ListDatasetsResponse} Success
 		 */
-		ListDatasets(IdentityPoolId: string, IdentityId: string, nextToken: string, maxResults: number): Observable<ListDatasetsResponse> {
+		ListDatasets(IdentityPoolId: string, IdentityId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatasetsResponse> {
 			return this.http.get<ListDatasetsResponse>(this.baseUri + 'identitypools/' + (IdentityPoolId == null ? '' : encodeURIComponent(IdentityPoolId)) + '/identities/' + (IdentityId == null ? '' : encodeURIComponent(IdentityId)) + '/datasets&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -532,7 +532,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned.
 		 * @return {ListIdentityPoolUsageResponse} Success
 		 */
-		ListIdentityPoolUsage(nextToken: string, maxResults: number): Observable<ListIdentityPoolUsageResponse> {
+		ListIdentityPoolUsage(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListIdentityPoolUsageResponse> {
 			return this.http.get<ListIdentityPoolUsageResponse>(this.baseUri + 'identitypools?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -548,7 +548,7 @@ export namespace MyNS {
 		 * @param {string} syncSessionToken A token containing a session ID, identity ID, and expiration.
 		 * @return {ListRecordsResponse} Success
 		 */
-		ListRecords(IdentityPoolId: string, IdentityId: string, DatasetName: string, lastSyncCount: number, nextToken: string, maxResults: number, syncSessionToken: string): Observable<ListRecordsResponse> {
+		ListRecords(IdentityPoolId: string, IdentityId: string, DatasetName: string, lastSyncCount: number | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined, syncSessionToken: string | null | undefined): Observable<ListRecordsResponse> {
 			return this.http.get<ListRecordsResponse>(this.baseUri + 'identitypools/' + (IdentityPoolId == null ? '' : encodeURIComponent(IdentityPoolId)) + '/identities/' + (IdentityId == null ? '' : encodeURIComponent(IdentityId)) + '/datasets/' + (DatasetName == null ? '' : encodeURIComponent(DatasetName)) + '/records&lastSyncCount=' + lastSyncCount + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&syncSessionToken=' + (syncSessionToken == null ? '' : encodeURIComponent(syncSessionToken)), {});
 		}
 

@@ -557,7 +557,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeAddressesResult} Success
 		 */
-		DescribeAddresses(MaxResults: string, NextToken: string, requestBody: DescribeAddressesRequest): Observable<DescribeAddressesResult> {
+		DescribeAddresses(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeAddressesRequest): Observable<DescribeAddressesResult> {
 			return this.http.post<DescribeAddressesResult>(this.baseUri + '#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddresses?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -649,7 +649,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJobsResult} Success
 		 */
-		ListJobs(MaxResults: string, NextToken: string, requestBody: ListJobsRequest): Observable<ListJobsResult> {
+		ListJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListJobsRequest): Observable<ListJobsResult> {
 			return this.http.post<ListJobsResult>(this.baseUri + '#X-Amz-Target=AWSIESnowballJobManagementService.ListJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

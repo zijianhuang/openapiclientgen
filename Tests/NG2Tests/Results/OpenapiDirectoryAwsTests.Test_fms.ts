@@ -378,7 +378,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListComplianceStatusResponse} Success
 		 */
-		ListComplianceStatus(MaxResults: string, NextToken: string, requestBody: ListComplianceStatusRequest): Observable<ListComplianceStatusResponse> {
+		ListComplianceStatus(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListComplianceStatusRequest): Observable<ListComplianceStatusResponse> {
 			return this.http.post<ListComplianceStatusResponse>(this.baseUri + '#X-Amz-Target=AWSFMS_20180101.ListComplianceStatus?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -389,7 +389,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMemberAccountsResponse} Success
 		 */
-		ListMemberAccounts(MaxResults: string, NextToken: string, requestBody: ListMemberAccountsRequest): Observable<ListMemberAccountsResponse> {
+		ListMemberAccounts(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMemberAccountsRequest): Observable<ListMemberAccountsResponse> {
 			return this.http.post<ListMemberAccountsResponse>(this.baseUri + '#X-Amz-Target=AWSFMS_20180101.ListMemberAccounts?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -400,7 +400,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPoliciesResponse} Success
 		 */
-		ListPolicies(MaxResults: string, NextToken: string, requestBody: ListPoliciesRequest): Observable<ListPoliciesResponse> {
+		ListPolicies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPoliciesRequest): Observable<ListPoliciesResponse> {
 			return this.http.post<ListPoliciesResponse>(this.baseUri + '#X-Amz-Target=AWSFMS_20180101.ListPolicies?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

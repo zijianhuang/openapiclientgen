@@ -996,7 +996,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Cloudbuild_projects_builds_list(projectId: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudbuild_projects_builds_list(projectId: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/builds&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1076,7 +1076,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Cloudbuild_projects_triggers_list(projectId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudbuild_projects_triggers_list(projectId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/triggers&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

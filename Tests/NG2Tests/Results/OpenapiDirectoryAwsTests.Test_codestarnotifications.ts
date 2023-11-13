@@ -290,7 +290,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEventTypesResult} Success
 		 */
-		ListEventTypes(MaxResults: string, NextToken: string, requestBody: ListEventTypesPostBody): Observable<ListEventTypesResult> {
+		ListEventTypes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListEventTypesPostBody): Observable<ListEventTypesResult> {
 			return this.http.post<ListEventTypesResult>(this.baseUri + 'listEventTypes?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -301,7 +301,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNotificationRulesResult} Success
 		 */
-		ListNotificationRules(MaxResults: string, NextToken: string, requestBody: ListNotificationRulesPostBody): Observable<ListNotificationRulesResult> {
+		ListNotificationRules(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListNotificationRulesPostBody): Observable<ListNotificationRulesResult> {
 			return this.http.post<ListNotificationRulesResult>(this.baseUri + 'listNotificationRules?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -321,7 +321,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTargetsResult} Success
 		 */
-		ListTargets(MaxResults: string, NextToken: string, requestBody: ListTargetsPostBody): Observable<ListTargetsResult> {
+		ListTargets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTargetsPostBody): Observable<ListTargetsResult> {
 			return this.http.post<ListTargetsResult>(this.baseUri + 'listTargets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

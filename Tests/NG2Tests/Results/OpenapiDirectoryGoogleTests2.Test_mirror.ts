@@ -645,7 +645,7 @@ export namespace MyNS {
 		 * @param {string} sourceItemId If provided, only items with the given sourceItemId will be returned.
 		 * @return {void} Successful response
 		 */
-		Mirror_timeline_list(bundleId: string, includeDeleted: boolean, maxResults: number, orderBy: Mirror_timeline_listOrderBy, pageToken: string, pinnedOnly: boolean, sourceItemId: string): Observable<HttpResponse<string>> {
+		Mirror_timeline_list(bundleId: string | null | undefined, includeDeleted: boolean | null | undefined, maxResults: number | null | undefined, orderBy: Mirror_timeline_listOrderBy | null | undefined, pageToken: string | null | undefined, pinnedOnly: boolean | null | undefined, sourceItemId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'timeline?bundleId=' + (bundleId == null ? '' : encodeURIComponent(bundleId)) + '&includeDeleted=' + includeDeleted + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&pinnedOnly=' + pinnedOnly + '&sourceItemId=' + (sourceItemId == null ? '' : encodeURIComponent(sourceItemId)), { observe: 'response', responseType: 'text' });
 		}
 

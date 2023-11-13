@@ -2483,7 +2483,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_data_ga_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string, filters: string, include_empty_rows: boolean, max_results: number, output: Analytics_data_ga_getOutput, samplingLevel: Analytics_data_ga_getSamplingLevel, segment: string, sort: string, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_data_ga_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, include_empty_rows: boolean | null | undefined, max_results: number | null | undefined, output: Analytics_data_ga_getOutput | null | undefined, samplingLevel: Analytics_data_ga_getSamplingLevel | null | undefined, segment: string | null | undefined, sort: string | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/ga?ids=' + (ids == null ? '' : encodeURIComponent(ids)) + '&start_date=' + (start_date == null ? '' : encodeURIComponent(start_date)) + '&end_date=' + (end_date == null ? '' : encodeURIComponent(end_date)) + '&metrics=' + (metrics == null ? '' : encodeURIComponent(metrics)) + '&dimensions=' + (dimensions == null ? '' : encodeURIComponent(dimensions)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&include_empty_rows=' + include_empty_rows + '&max_results=' + max_results + '&output=' + output + '&samplingLevel=' + samplingLevel + '&segment=' + (segment == null ? '' : encodeURIComponent(segment)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2502,7 +2502,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_data_mcf_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string, filters: string, max_results: number, samplingLevel: Analytics_data_ga_getSamplingLevel, sort: string, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_data_mcf_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, max_results: number | null | undefined, samplingLevel: Analytics_data_ga_getSamplingLevel | null | undefined, sort: string | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/mcf?ids=' + (ids == null ? '' : encodeURIComponent(ids)) + '&start_date=' + (start_date == null ? '' : encodeURIComponent(start_date)) + '&end_date=' + (end_date == null ? '' : encodeURIComponent(end_date)) + '&metrics=' + (metrics == null ? '' : encodeURIComponent(metrics)) + '&dimensions=' + (dimensions == null ? '' : encodeURIComponent(dimensions)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&max_results=' + max_results + '&samplingLevel=' + samplingLevel + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2517,7 +2517,7 @@ export namespace MyNS {
 		 * @param {string} sort A comma-separated list of dimensions or metrics that determine the sort order for real time data.
 		 * @return {void} Successful response
 		 */
-		Analytics_data_realtime_get(ids: string, metrics: string, dimensions: string, filters: string, max_results: number, sort: string): Observable<HttpResponse<string>> {
+		Analytics_data_realtime_get(ids: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, max_results: number | null | undefined, sort: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/realtime?ids=' + (ids == null ? '' : encodeURIComponent(ids)) + '&metrics=' + (metrics == null ? '' : encodeURIComponent(metrics)) + '&dimensions=' + (dimensions == null ? '' : encodeURIComponent(dimensions)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&max_results=' + max_results + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2528,7 +2528,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_accountSummaries_list(max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_accountSummaries_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accountSummaries?max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2539,7 +2539,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_accounts_list(max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_accounts_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts?max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2551,7 +2551,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_accountUserLinks_list(accountId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_accountUserLinks_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/entityUserLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2595,7 +2595,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_filters_list(accountId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_filters_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/filters&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2661,7 +2661,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_webproperties_list(accountId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_webproperties_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2717,7 +2717,7 @@ export namespace MyNS {
 		 * @param {number} start_index A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customDataSources_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_customDataSources_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDataSources&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2743,7 +2743,7 @@ export namespace MyNS {
 		 * @param {number} start_index A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_uploads_list(accountId: string, webPropertyId: string, customDataSourceId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_uploads_list(accountId: string, webPropertyId: string, customDataSourceId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDataSources/' + (customDataSourceId == null ? '' : encodeURIComponent(customDataSourceId)) + '/uploads&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2781,7 +2781,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customDimensions_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_customDimensions_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDimensions&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2817,7 +2817,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreCustomDataSourceLinks Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customDimensions_patch(accountId: string, webPropertyId: string, customDimensionId: string, ignoreCustomDataSourceLinks: boolean, requestBody: CustomDimension): Observable<HttpResponse<string>> {
+		Analytics_management_customDimensions_patch(accountId: string, webPropertyId: string, customDimensionId: string, ignoreCustomDataSourceLinks: boolean | null | undefined, requestBody: CustomDimension): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDimensions/' + (customDimensionId == null ? '' : encodeURIComponent(customDimensionId)) + '&ignoreCustomDataSourceLinks=' + ignoreCustomDataSourceLinks, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2830,7 +2830,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreCustomDataSourceLinks Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customDimensions_update(accountId: string, webPropertyId: string, customDimensionId: string, ignoreCustomDataSourceLinks: boolean, requestBody: CustomDimension): Observable<HttpResponse<string>> {
+		Analytics_management_customDimensions_update(accountId: string, webPropertyId: string, customDimensionId: string, ignoreCustomDataSourceLinks: boolean | null | undefined, requestBody: CustomDimension): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDimensions/' + (customDimensionId == null ? '' : encodeURIComponent(customDimensionId)) + '&ignoreCustomDataSourceLinks=' + ignoreCustomDataSourceLinks, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2843,7 +2843,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customMetrics_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_customMetrics_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customMetrics&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2879,7 +2879,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreCustomDataSourceLinks Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customMetrics_patch(accountId: string, webPropertyId: string, customMetricId: string, ignoreCustomDataSourceLinks: boolean, requestBody: CustomMetric): Observable<HttpResponse<string>> {
+		Analytics_management_customMetrics_patch(accountId: string, webPropertyId: string, customMetricId: string, ignoreCustomDataSourceLinks: boolean | null | undefined, requestBody: CustomMetric): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customMetrics/' + (customMetricId == null ? '' : encodeURIComponent(customMetricId)) + '&ignoreCustomDataSourceLinks=' + ignoreCustomDataSourceLinks, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2892,7 +2892,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreCustomDataSourceLinks Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customMetrics_update(accountId: string, webPropertyId: string, customMetricId: string, ignoreCustomDataSourceLinks: boolean, requestBody: CustomMetric): Observable<HttpResponse<string>> {
+		Analytics_management_customMetrics_update(accountId: string, webPropertyId: string, customMetricId: string, ignoreCustomDataSourceLinks: boolean | null | undefined, requestBody: CustomMetric): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customMetrics/' + (customMetricId == null ? '' : encodeURIComponent(customMetricId)) + '&ignoreCustomDataSourceLinks=' + ignoreCustomDataSourceLinks, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2905,7 +2905,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_webPropertyAdWordsLinks_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_webPropertyAdWordsLinks_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/entityAdWordsLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2977,7 +2977,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_webpropertyUserLinks_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_webpropertyUserLinks_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/entityUserLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3025,7 +3025,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_profiles_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_profiles_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3098,7 +3098,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_profileUserLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_profileUserLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/entityUserLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3150,7 +3150,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_experiments_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_experiments_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/experiments&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3228,7 +3228,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_goals_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_goals_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/goals&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3293,7 +3293,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_profileFilterLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_profileFilterLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/profileFilterLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3371,7 +3371,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_unsampledReports_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_unsampledReports_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/unsampledReports&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3422,7 +3422,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_remarketingAudience_list(accountId: string, webPropertyId: string, max_results: number, start_index: number, type: string): Observable<HttpResponse<string>> {
+		Analytics_management_remarketingAudience_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined, type: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/remarketingAudiences&max_results=' + max_results + '&start_index=' + start_index + '&type=' + (type == null ? '' : encodeURIComponent(type)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3501,7 +3501,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_segments_list(max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_segments_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/segments?max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 

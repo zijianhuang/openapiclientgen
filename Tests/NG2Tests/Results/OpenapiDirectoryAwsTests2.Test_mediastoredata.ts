@@ -114,7 +114,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15 minutes.</p>
 		 * @return {ListItemsResponse} Success
 		 */
-		ListItems(Path: string, MaxResults: number, NextToken: string): Observable<ListItemsResponse> {
+		ListItems(Path: string | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListItemsResponse> {
 			return this.http.get<ListItemsResponse>(this.baseUri + '?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 	}

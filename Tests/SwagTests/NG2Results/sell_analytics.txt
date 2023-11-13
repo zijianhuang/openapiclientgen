@@ -374,7 +374,7 @@ export namespace MyNS {
 		 * @param {string} sort This query parameter sorts the report on the specified metric. The metric you specify must be included in the configuration of the report's metric parameter. Sorting is helpful when you want to review how a specific metric is performing, such as the CLICK_THROUGH_RATE. Reports can be sorted in ascending or descending order. Precede the value of a descending-order request with a minus sign (&quot;-&quot;), for example: sort=-CLICK_THROUGH_RATE. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/analytics/types/SortField.html
 		 * @return {Report} Success
 		 */
-		GetTrafficReport(dimension: string, filter: string, metric: string, sort: string): Observable<Report> {
+		GetTrafficReport(dimension: string | null | undefined, filter: string | null | undefined, metric: string | null | undefined, sort: string | null | undefined): Observable<Report> {
 			return this.http.get<Report>(this.baseUri + 'traffic_report?dimension=' + (dimension == null ? '' : encodeURIComponent(dimension)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&metric=' + (metric == null ? '' : encodeURIComponent(metric)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 	}

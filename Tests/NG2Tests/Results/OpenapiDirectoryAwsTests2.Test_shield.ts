@@ -556,7 +556,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAttacksResponse} Success
 		 */
-		ListAttacks(MaxResults: string, NextToken: string, requestBody: ListAttacksRequest): Observable<ListAttacksResponse> {
+		ListAttacks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAttacksRequest): Observable<ListAttacksResponse> {
 			return this.http.post<ListAttacksResponse>(this.baseUri + '#X-Amz-Target=AWSShield_20160616.ListAttacks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -567,7 +567,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProtectionsResponse} Success
 		 */
-		ListProtections(MaxResults: string, NextToken: string, requestBody: ListProtectionsRequest): Observable<ListProtectionsResponse> {
+		ListProtections(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListProtectionsRequest): Observable<ListProtectionsResponse> {
 			return this.http.post<ListProtectionsResponse>(this.baseUri + '#X-Amz-Target=AWSShield_20160616.ListProtections?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

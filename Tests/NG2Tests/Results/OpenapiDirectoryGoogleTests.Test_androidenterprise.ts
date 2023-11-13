@@ -1260,7 +1260,7 @@ export namespace MyNS {
 		 * @param {string} notificationSetId The notification set ID as returned by Enterprises.PullNotificationSet. This must be provided.
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_enterprises_acknowledgeNotificationSet(notificationSetId: string): Observable<HttpResponse<string>> {
+		Androidenterprise_enterprises_acknowledgeNotificationSet(notificationSetId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'enterprises/acknowledgeNotificationSet?notificationSetId=' + (notificationSetId == null ? '' : encodeURIComponent(notificationSetId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 		 * @param {string} enterpriseToken The Enterprise token appended to the Callback URL.
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_enterprises_completeSignup(completionToken: string, enterpriseToken: string): Observable<HttpResponse<string>> {
+		Androidenterprise_enterprises_completeSignup(completionToken: string | null | undefined, enterpriseToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'enterprises/completeSignup?completionToken=' + (completionToken == null ? '' : encodeURIComponent(completionToken)) + '&enterpriseToken=' + (enterpriseToken == null ? '' : encodeURIComponent(enterpriseToken)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1298,7 +1298,7 @@ export namespace MyNS {
 		 * If omitted, defaults to waitForNotifications.
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_enterprises_pullNotificationSet(requestMode: Androidenterprise_enterprises_pullNotificationSetRequestMode): Observable<HttpResponse<string>> {
+		Androidenterprise_enterprises_pullNotificationSet(requestMode: Androidenterprise_enterprises_pullNotificationSetRequestMode | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'enterprises/pullNotificationSet?requestMode=' + requestMode, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1309,7 +1309,7 @@ export namespace MyNS {
 		 * Beware that this means that the URL will be parsed, the parameter added and then a new URL formatted, i.e. there may be some minor formatting changes and, more importantly, the URL must be well-formed so that it can be parsed.
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_enterprises_generateSignupUrl(callbackUrl: string): Observable<HttpResponse<string>> {
+		Androidenterprise_enterprises_generateSignupUrl(callbackUrl: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'enterprises/signupUrl?callbackUrl=' + (callbackUrl == null ? '' : encodeURIComponent(callbackUrl)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1386,7 +1386,7 @@ export namespace MyNS {
 		 * @param {string} token A pagination token is contained in a request's response when there are more products. The token can be used in a subsequent request to obtain more products, and so forth. This parameter cannot be used in the initial request.
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_products_list(enterpriseId: string, approved: boolean, language: string, maxResults: number, query: string, token: string): Observable<HttpResponse<string>> {
+		Androidenterprise_products_list(enterpriseId: string, approved: boolean | null | undefined, language: string | null | undefined, maxResults: number | null | undefined, query: string | null | undefined, token: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'enterprises/' + (enterpriseId == null ? '' : encodeURIComponent(enterpriseId)) + '/products&approved=' + approved + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '&maxResults=' + maxResults + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1398,7 +1398,7 @@ export namespace MyNS {
 		 * @param {string} language The BCP47 tag for the user's preferred language (e.g. "en-US", "de").
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_products_get(enterpriseId: string, productId: string, language: string): Observable<HttpResponse<string>> {
+		Androidenterprise_products_get(enterpriseId: string, productId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'enterprises/' + (enterpriseId == null ? '' : encodeURIComponent(enterpriseId)) + '/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '&language=' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1410,7 +1410,7 @@ export namespace MyNS {
 		 * @param {string} language The BCP47 tag for the user's preferred language (e.g. "en-US", "de").
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_products_getAppRestrictionsSchema(enterpriseId: string, productId: string, language: string): Observable<HttpResponse<string>> {
+		Androidenterprise_products_getAppRestrictionsSchema(enterpriseId: string, productId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'enterprises/' + (enterpriseId == null ? '' : encodeURIComponent(enterpriseId)) + '/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/appRestrictionsSchema&language=' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1435,7 +1435,7 @@ export namespace MyNS {
 		 * @param {string} languageCode The BCP 47 language code used for permission names and descriptions in the returned iframe, for instance "en-US".
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_products_generateApprovalUrl(enterpriseId: string, productId: string, languageCode: string): Observable<HttpResponse<string>> {
+		Androidenterprise_products_generateApprovalUrl(enterpriseId: string, productId: string, languageCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'enterprises/' + (enterpriseId == null ? '' : encodeURIComponent(enterpriseId)) + '/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '/generateApprovalUrl&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1492,7 +1492,7 @@ export namespace MyNS {
 		 * @param {Androidenterprise_enterprises_getServiceAccountKeyType} keyType The type of credential to return with the service account. Required.
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_enterprises_getServiceAccount(enterpriseId: string, keyType: Androidenterprise_enterprises_getServiceAccountKeyType): Observable<HttpResponse<string>> {
+		Androidenterprise_enterprises_getServiceAccount(enterpriseId: string, keyType: Androidenterprise_enterprises_getServiceAccountKeyType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'enterprises/' + (enterpriseId == null ? '' : encodeURIComponent(enterpriseId)) + '/serviceAccount&keyType=' + keyType, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1806,7 +1806,7 @@ export namespace MyNS {
 		 * When set in a query parameter, this field should be specified as updateMask=<field1>,<field2>,...
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_devices_update(enterpriseId: string, userId: string, deviceId: string, updateMask: string, requestBody: Device): Observable<HttpResponse<string>> {
+		Androidenterprise_devices_update(enterpriseId: string, userId: string, deviceId: string, updateMask: string | null | undefined, requestBody: Device): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'enterprises/' + (enterpriseId == null ? '' : encodeURIComponent(enterpriseId)) + '/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/devices/' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1992,7 +1992,7 @@ export namespace MyNS {
 		 * @param {boolean} install Set to true to also install the product on all the user's devices where possible. Failure to install on one or more devices will not prevent this operation from returning successfully, as long as the entitlement was successfully assigned to the user.
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_entitlements_update(enterpriseId: string, userId: string, entitlementId: string, install: boolean, requestBody: Entitlement): Observable<HttpResponse<string>> {
+		Androidenterprise_entitlements_update(enterpriseId: string, userId: string, entitlementId: string, install: boolean | null | undefined, requestBody: Entitlement): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'enterprises/' + (enterpriseId == null ? '' : encodeURIComponent(enterpriseId)) + '/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/entitlements/' + (entitlementId == null ? '' : encodeURIComponent(entitlementId)) + '&install=' + install, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2126,7 +2126,7 @@ export namespace MyNS {
 		 * @param {string} language The BCP47 tag for the user's preferred language (e.g. "en-US", "de")
 		 * @return {void} Successful response
 		 */
-		Androidenterprise_permissions_get(permissionId: string, language: string): Observable<HttpResponse<string>> {
+		Androidenterprise_permissions_get(permissionId: string, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'permissions/' + (permissionId == null ? '' : encodeURIComponent(permissionId)) + '&language=' + (language == null ? '' : encodeURIComponent(language)), { observe: 'response', responseType: 'text' });
 		}
 	}

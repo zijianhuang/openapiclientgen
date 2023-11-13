@@ -14,7 +14,7 @@ export namespace MyNS {
 		 * @param {string} id The id or name of the organization
 		 * @return {void} List of an organization's activities
 		 */
-		ActionOrganization_activity_listGetById(id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_activity_listGetById(id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_activity_list?id=' + (id == null ? '' : encodeURIComponent(id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -25,7 +25,7 @@ export namespace MyNS {
 		 * @param {string} id The id or name of the organization
 		 * @return {void} List of an organization's activities in HTML
 		 */
-		ActionOrganization_activity_list_htmlGetById(id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_activity_list_htmlGetById(id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_activity_list_html?id=' + (id == null ? '' : encodeURIComponent(id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -37,7 +37,7 @@ export namespace MyNS {
 		 * @param {number} limit The maximum number of organizations to return (optional)
 		 * @return {void} List of organizations
 		 */
-		ActionOrganization_autocompleteGetByQAndLimit(q: string, limit: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_autocompleteGetByQAndLimit(q: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_autocomplete?q=' + (q == null ? '' : encodeURIComponent(q)) + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -48,7 +48,7 @@ export namespace MyNS {
 		 * @param {string} id The id or name of the organization
 		 * @return {void} Count of organization followers
 		 */
-		ActionOrganization_follower_countGetById(id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_follower_countGetById(id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_follower_count?id=' + (id == null ? '' : encodeURIComponent(id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -59,7 +59,7 @@ export namespace MyNS {
 		 * @param {string} id The id or name of the organization
 		 * @return {void} List of organization followers
 		 */
-		ActionOrganization_follower_listGetById(id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_follower_listGetById(id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_follower_list?id=' + (id == null ? '' : encodeURIComponent(id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -71,7 +71,7 @@ export namespace MyNS {
 		 * @param {number} limit The number of organizations to be returned per page
 		 * @return {void} List of organizations
 		 */
-		ActionOrganization_listGetByOffsetAndLimit(offset: number, limit: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_listGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_list?offset=' + offset + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -82,7 +82,7 @@ export namespace MyNS {
 		 * @param {string} permission The permission the user has against the returned organization
 		 * @return {void} List of organizations for given permission
 		 */
-		ActionOrganization_list_for_userGetByPermission(permission: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_list_for_userGetByPermission(permission: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_list_for_user?permission=' + (permission == null ? '' : encodeURIComponent(permission)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -93,7 +93,7 @@ export namespace MyNS {
 		 * @param {string} id The name or id of the organization
 		 * @return {void} List of an organization's revisions
 		 */
-		ActionOrganization_revision_listGetById(id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_revision_listGetById(id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_revision_list?id=' + (id == null ? '' : encodeURIComponent(id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -105,7 +105,7 @@ export namespace MyNS {
 		 * @param {boolean} include_datasets include a list of the organization's datasets
 		 * @return {void} List organization details
 		 */
-		ActionOrganization_showGetByIdAndInclude_datasets(id: string, include_datasets: boolean, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionOrganization_showGetByIdAndInclude_datasets(id: string | null | undefined, include_datasets: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/organization_show?id=' + (id == null ? '' : encodeURIComponent(id)) + '&include_datasets=' + include_datasets, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -118,7 +118,7 @@ export namespace MyNS {
 		 * @param {number} limit The maximum number of activities to return
 		 * @return {void} List of activities
 		 */
-		ActionPackage_activity_listGetByIdAndOffsetAndLimit(id: string, offset: number, limit: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionPackage_activity_listGetByIdAndOffsetAndLimit(id: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/package_activity_list?id=' + (id == null ? '' : encodeURIComponent(id)) + '&offset=' + offset + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -131,7 +131,7 @@ export namespace MyNS {
 		 * @param {number} limit The maximum number of activities to return
 		 * @return {void} List of activities rendered as HTML snippet
 		 */
-		ActionPackage_activity_list_htmlGetByIdAndOffsetAndLimit(id: string, offset: number, limit: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionPackage_activity_list_htmlGetByIdAndOffsetAndLimit(id: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/package_activity_list_html?id=' + (id == null ? '' : encodeURIComponent(id)) + '&offset=' + offset + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -143,7 +143,7 @@ export namespace MyNS {
 		 * @param {number} limit The maximum number of resource formats to return
 		 * @return {void} List of datasets that match a string
 		 */
-		ActionPackage_autocompleteGetByQAndLimit(q: string, limit: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionPackage_autocompleteGetByQAndLimit(q: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/package_autocomplete?q=' + (q == null ? '' : encodeURIComponent(q)) + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -155,7 +155,7 @@ export namespace MyNS {
 		 * @param {number} limit The number of packages to be returned per page
 		 * @return {void} List of packages
 		 */
-		ActionPackage_listGetByOffsetAndLimit(offset: number, limit: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionPackage_listGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/package_list?offset=' + offset + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -168,7 +168,7 @@ export namespace MyNS {
 		 * @param {string} rel relationship as string
 		 * @return {void} List of dataset relationships
 		 */
-		ActionPackage_relationships_listGetByIdAndId2AndRel(id: string, id2: string, rel: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionPackage_relationships_listGetByIdAndId2AndRel(id: string | null | undefined, id2: string | null | undefined, rel: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/package_relationships_list?id=' + (id == null ? '' : encodeURIComponent(id)) + '&id2=' + (id2 == null ? '' : encodeURIComponent(id2)) + '&rel=' + (rel == null ? '' : encodeURIComponent(rel)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -179,7 +179,7 @@ export namespace MyNS {
 		 * @param {string} id The id or name of the dataset
 		 * @return {void} List of dataset revisions
 		 */
-		ActionPackage_revision_listGetById(id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionPackage_revision_listGetById(id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/package_revision_list?id=' + (id == null ? '' : encodeURIComponent(id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * @param {string} q A query string
 		 * @return {void} List of packages
 		 */
-		ActionPackage_searchGetByQ(q: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionPackage_searchGetByQ(q: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/package_search?q=' + (q == null ? '' : encodeURIComponent(q)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -201,7 +201,7 @@ export namespace MyNS {
 		 * @param {string} id The package name
 		 * @return {void} A package metadata object
 		 */
-		ActionPackage_showGetById(id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionPackage_showGetById(id: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/package_show?id=' + (id == null ? '' : encodeURIComponent(id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -216,7 +216,7 @@ export namespace MyNS {
 		 * @param {string} featured whether or not to restrict the results to only featured items
 		 * @return {void} Search for related items
 		 */
-		ActionRelated_listGetByIdAndDatasetAndType_filterAndSortAndFeatured(id: string, dataset: string, type_filter: string, sort: string, featured: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionRelated_listGetByIdAndDatasetAndType_filterAndSortAndFeatured(id: string | null | undefined, dataset: string | null | undefined, type_filter: string | null | undefined, sort: string | null | undefined, featured: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/related_list?id=' + (id == null ? '' : encodeURIComponent(id)) + '&dataset=' + (dataset == null ? '' : encodeURIComponent(dataset)) + '&type_filter=' + (type_filter == null ? '' : encodeURIComponent(type_filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&featured=' + (featured == null ? '' : encodeURIComponent(featured)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -231,7 +231,7 @@ export namespace MyNS {
 		 * @param {number} limit Apply a limit to the query
 		 * @return {void} Search for resources
 		 */
-		ActionResource_searchGetByQueryAndFieldsAndOrder_byAndOffsetAndLimit(query: string, fields: string, order_by: string, offset: number, limit: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionResource_searchGetByQueryAndFieldsAndOrder_byAndOffsetAndLimit(query: string | null | undefined, fields: string | null | undefined, order_by: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/resource_search?query=' + (query == null ? '' : encodeURIComponent(query)) + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&order_by=' + (order_by == null ? '' : encodeURIComponent(order_by)) + '&offset=' + offset + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -243,7 +243,7 @@ export namespace MyNS {
 		 * @param {boolean} include_tracking Add tracking information to dataset
 		 * @return {void} Return metadata of a resource
 		 */
-		ActionResource_showGetByIdAndInclude_tracking(id: string, include_tracking: boolean, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionResource_showGetByIdAndInclude_tracking(id: string | null | undefined, include_tracking: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/resource_show?id=' + (id == null ? '' : encodeURIComponent(id)) + '&include_tracking=' + include_tracking, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -265,7 +265,7 @@ export namespace MyNS {
 		 * @param {number} limit The number of tags to be returned per page
 		 * @return {void} List of tags
 		 */
-		ActionTag_listGetByOffsetAndLimit(offset: number, limit: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ActionTag_listGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'action/tag_list?offset=' + offset + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}

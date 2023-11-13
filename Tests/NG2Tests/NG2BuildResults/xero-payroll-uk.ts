@@ -1586,7 +1586,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {Employees} search results matching criteria
 		 */
-		GetEmployees(firstName: string, lastName: string, page: number): Observable<Employees> {
+		GetEmployees(firstName: string | null | undefined, lastName: string | null | undefined, page: number | null | undefined): Observable<Employees> {
 			return this.http.get<Employees>(this.baseUri + 'Employees?firstName=' + (firstName == null ? '' : encodeURIComponent(firstName)) + '&lastName=' + (lastName == null ? '' : encodeURIComponent(lastName)) + '&page=' + page, {});
 		}
 
@@ -1740,7 +1740,7 @@ export namespace MyNS {
 		 * @param {Date} AsOfDate The date from which to calculate balance remaining. If not specified, current date UTC is used.
 		 * @return {EmployeeStatutoryLeaveBalanceObject} search results matching criteria
 		 */
-		GetEmployeeStatutoryLeaveBalances(EmployeeId: string, LeaveType: string, AsOfDate: Date): Observable<EmployeeStatutoryLeaveBalanceObject> {
+		GetEmployeeStatutoryLeaveBalances(EmployeeId: string, LeaveType: string | null | undefined, AsOfDate: Date | null | undefined): Observable<EmployeeStatutoryLeaveBalanceObject> {
 			return this.http.get<EmployeeStatutoryLeaveBalanceObject>(this.baseUri + 'Employees/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '/StatutoryLeaveBalance&LeaveType=' + (LeaveType == null ? '' : encodeURIComponent(LeaveType)) + '&AsOfDate=' + AsOfDate.toISOString(), {});
 		}
 
@@ -1751,7 +1751,7 @@ export namespace MyNS {
 		 * @param {boolean} activeOnly Filter response with leaves that are currently active or yet to be taken. If not specified, all leaves (past, current, and future scheduled) are returned
 		 * @return {EmployeeStatutoryLeavesSummaries} search results matching criteria
 		 */
-		GetStatutoryLeaveSummary(EmployeeId: string, activeOnly: boolean): Observable<EmployeeStatutoryLeavesSummaries> {
+		GetStatutoryLeaveSummary(EmployeeId: string, activeOnly: boolean | null | undefined): Observable<EmployeeStatutoryLeavesSummaries> {
 			return this.http.get<EmployeeStatutoryLeavesSummaries>(this.baseUri + 'statutoryleaves/summary/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '&activeOnly=' + activeOnly, {});
 		}
 
@@ -1782,7 +1782,7 @@ export namespace MyNS {
 		 * @param {Date} endDate Filter by end date
 		 * @return {LeavePeriods} search results matching criteria
 		 */
-		GetEmployeeLeavePeriods(EmployeeId: string, startDate: Date, endDate: Date): Observable<LeavePeriods> {
+		GetEmployeeLeavePeriods(EmployeeId: string, startDate: Date | null | undefined, endDate: Date | null | undefined): Observable<LeavePeriods> {
 			return this.http.get<LeavePeriods>(this.baseUri + 'Employees/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '/LeavePeriods&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString(), {});
 		}
 
@@ -1884,7 +1884,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {Benefits} search results matching criteria
 		 */
-		GetBenefits(page: number): Observable<Benefits> {
+		GetBenefits(page: number | null | undefined): Observable<Benefits> {
 			return this.http.get<Benefits>(this.baseUri + 'Benefits?page=' + page, {});
 		}
 
@@ -1913,7 +1913,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {Deductions} search results matching criteria
 		 */
-		GetDeductions(page: number): Observable<Deductions> {
+		GetDeductions(page: number | null | undefined): Observable<Deductions> {
 			return this.http.get<Deductions>(this.baseUri + 'Deductions?page=' + page, {});
 		}
 
@@ -1942,7 +1942,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {EarningsOrders} search results matching criteria
 		 */
-		GetEarningsOrders(page: number): Observable<EarningsOrders> {
+		GetEarningsOrders(page: number | null | undefined): Observable<EarningsOrders> {
 			return this.http.get<EarningsOrders>(this.baseUri + 'EarningsOrders?page=' + page, {});
 		}
 
@@ -1962,7 +1962,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {EarningsRates} search results matching criteria
 		 */
-		GetEarningsRates(page: number): Observable<EarningsRates> {
+		GetEarningsRates(page: number | null | undefined): Observable<EarningsRates> {
 			return this.http.get<EarningsRates>(this.baseUri + 'EarningsRates?page=' + page, {});
 		}
 
@@ -1992,7 +1992,7 @@ export namespace MyNS {
 		 * @param {boolean} ActiveOnly Filters leave types by active status. By default the API returns all leave types.
 		 * @return {LeaveTypes} search results matching criteria
 		 */
-		GetLeaveTypes(page: number, ActiveOnly: boolean): Observable<LeaveTypes> {
+		GetLeaveTypes(page: number | null | undefined, ActiveOnly: boolean | null | undefined): Observable<LeaveTypes> {
 			return this.http.get<LeaveTypes>(this.baseUri + 'LeaveTypes?page=' + page + '&ActiveOnly=' + ActiveOnly, {});
 		}
 
@@ -2021,7 +2021,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {Reimbursements} search results matching criteria
 		 */
-		GetReimbursements(page: number): Observable<Reimbursements> {
+		GetReimbursements(page: number | null | undefined): Observable<Reimbursements> {
 			return this.http.get<Reimbursements>(this.baseUri + 'Reimbursements?page=' + page, {});
 		}
 
@@ -2052,7 +2052,7 @@ export namespace MyNS {
 		 * @param {string} payrollCalendarId By default get Timesheets will return all the timesheets for an organization. You can add GET https://…/timesheets?filter=payrollCalendarId=={PayrollCalendarID} to filter the timesheets by payroll calendar id
 		 * @return {Timesheets} search results matching criteria
 		 */
-		GetTimesheets(page: number, employeeId: string, payrollCalendarId: string): Observable<Timesheets> {
+		GetTimesheets(page: number | null | undefined, employeeId: string | null | undefined, payrollCalendarId: string | null | undefined): Observable<Timesheets> {
 			return this.http.get<Timesheets>(this.baseUri + 'Timesheets?page=' + page + '&employeeId=' + (employeeId == null ? '' : encodeURIComponent(employeeId)) + '&payrollCalendarId=' + (payrollCalendarId == null ? '' : encodeURIComponent(payrollCalendarId)), {});
 		}
 
@@ -2143,7 +2143,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {PayRunCalendars} search results matching criteria
 		 */
-		GetPayRunCalendars(page: number): Observable<PayRunCalendars> {
+		GetPayRunCalendars(page: number | null | undefined): Observable<PayRunCalendars> {
 			return this.http.get<PayRunCalendars>(this.baseUri + 'PayRunCalendars?page=' + page, {});
 		}
 
@@ -2173,7 +2173,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {SalaryAndWages} search results matching criteria
 		 */
-		GetEmployeeSalaryAndWages(EmployeeId: string, page: number): Observable<SalaryAndWages> {
+		GetEmployeeSalaryAndWages(EmployeeId: string, page: number | null | undefined): Observable<SalaryAndWages> {
 			return this.http.get<SalaryAndWages>(this.baseUri + 'Employees/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '/SalaryAndWages&page=' + page, {});
 		}
 
@@ -2227,7 +2227,7 @@ export namespace MyNS {
 		 * @param {PayRunPayRunStatus} status By default get payruns will return all the payruns for an organization. You can add GET https://api.xero.com/payroll.xro/2.0/payRuns?statu={PayRunStatus} to filter the payruns by status.
 		 * @return {PayRuns} search results matching criteria
 		 */
-		GetPayRuns(page: number, status: PayRunPayRunStatus): Observable<PayRuns> {
+		GetPayRuns(page: number | null | undefined, status: PayRunPayRunStatus | null | undefined): Observable<PayRuns> {
 			return this.http.get<PayRuns>(this.baseUri + 'PayRuns?page=' + page + '&status=' + status, {});
 		}
 
@@ -2258,7 +2258,7 @@ export namespace MyNS {
 		 * @param {string} PayRunID PayrunID which specifies the containing payrun of payslips to retrieve. By default, the API does not group payslips by payrun.
 		 * @return {Payslips} search results matching criteria
 		 */
-		GetPayslips(page: number, PayRunID: string): Observable<Payslips> {
+		GetPayslips(page: number | null | undefined, PayRunID: string): Observable<Payslips> {
 			return this.http.get<Payslips>(this.baseUri + 'Payslips?page=' + page + '&PayRunID=' + (PayRunID == null ? '' : encodeURIComponent(PayRunID)), {});
 		}
 

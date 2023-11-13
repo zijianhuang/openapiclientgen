@@ -979,7 +979,7 @@ export namespace MyNS {
 		 * @param {number} maxResults <p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
 		 * @return {ListChannelsResponse} Success
 		 */
-		ListChannels(nextToken: string, maxResults: number): Observable<ListChannelsResponse> {
+		ListChannels(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListChannelsResponse> {
 			return this.http.get<ListChannelsResponse>(this.baseUri + 'channels?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -999,7 +999,7 @@ export namespace MyNS {
 		 * @param {number} maxResults <p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
 		 * @return {ListDatasetsResponse} Success
 		 */
-		ListDatasets(nextToken: string, maxResults: number): Observable<ListDatasetsResponse> {
+		ListDatasets(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatasetsResponse> {
 			return this.http.get<ListDatasetsResponse>(this.baseUri + 'datasets?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 		 * @param {string} versionId The version of the data set whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.
 		 * @return {void} 
 		 */
-		DeleteDatasetContent(datasetName: string, versionId: string): Observable<HttpResponse<string>> {
+		DeleteDatasetContent(datasetName: string, versionId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'datasets/' + (datasetName == null ? '' : encodeURIComponent(datasetName)) + '/content&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1031,7 +1031,7 @@ export namespace MyNS {
 		 * @param {string} versionId The version of the data set whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.
 		 * @return {GetDatasetContentResponse} Success
 		 */
-		GetDatasetContent(datasetName: string, versionId: string): Observable<GetDatasetContentResponse> {
+		GetDatasetContent(datasetName: string, versionId: string | null | undefined): Observable<GetDatasetContentResponse> {
 			return this.http.get<GetDatasetContentResponse>(this.baseUri + 'datasets/' + (datasetName == null ? '' : encodeURIComponent(datasetName)) + '/content&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)), {});
 		}
 
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 		 * @param {number} maxResults <p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
 		 * @return {ListDatastoresResponse} Success
 		 */
-		ListDatastores(nextToken: string, maxResults: number): Observable<ListDatastoresResponse> {
+		ListDatastores(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatastoresResponse> {
 			return this.http.get<ListDatastoresResponse>(this.baseUri + 'datastores?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1071,7 +1071,7 @@ export namespace MyNS {
 		 * @param {number} maxResults <p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
 		 * @return {ListPipelinesResponse} Success
 		 */
-		ListPipelines(nextToken: string, maxResults: number): Observable<ListPipelinesResponse> {
+		ListPipelines(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPipelinesResponse> {
 			return this.http.get<ListPipelinesResponse>(this.baseUri + 'pipelines?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1092,7 +1092,7 @@ export namespace MyNS {
 		 * @param {boolean} includeStatistics If true, additional statistical information about the channel is included in the response. This feature cannot be used with a channel whose S3 storage is customer-managed.
 		 * @return {DescribeChannelResponse} Success
 		 */
-		DescribeChannel(channelName: string, includeStatistics: boolean): Observable<DescribeChannelResponse> {
+		DescribeChannel(channelName: string, includeStatistics: boolean | null | undefined): Observable<DescribeChannelResponse> {
 			return this.http.get<DescribeChannelResponse>(this.baseUri + 'channels/' + (channelName == null ? '' : encodeURIComponent(channelName)) + '&includeStatistics=' + includeStatistics, {});
 		}
 
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 		 * @param {boolean} includeStatistics If true, additional statistical information about the data store is included in the response. This feature cannot be used with a data store whose S3 storage is customer-managed.
 		 * @return {DescribeDatastoreResponse} Success
 		 */
-		DescribeDatastore(datastoreName: string, includeStatistics: boolean): Observable<DescribeDatastoreResponse> {
+		DescribeDatastore(datastoreName: string, includeStatistics: boolean | null | undefined): Observable<DescribeDatastoreResponse> {
 			return this.http.get<DescribeDatastoreResponse>(this.baseUri + 'datastores/' + (datastoreName == null ? '' : encodeURIComponent(datastoreName)) + '&includeStatistics=' + includeStatistics, {});
 		}
 
@@ -1225,7 +1225,7 @@ export namespace MyNS {
 		 * @param {Date} scheduledBefore A filter to limit results to those data set contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
 		 * @return {ListDatasetContentsResponse} Success
 		 */
-		ListDatasetContents(datasetName: string, nextToken: string, maxResults: number, scheduledOnOrAfter: Date, scheduledBefore: Date): Observable<ListDatasetContentsResponse> {
+		ListDatasetContents(datasetName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, scheduledOnOrAfter: Date | null | undefined, scheduledBefore: Date | null | undefined): Observable<ListDatasetContentsResponse> {
 			return this.http.get<ListDatasetContentsResponse>(this.baseUri + 'datasets/' + (datasetName == null ? '' : encodeURIComponent(datasetName)) + '/contents&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&scheduledOnOrAfter=' + scheduledOnOrAfter.toISOString() + '&scheduledBefore=' + scheduledBefore.toISOString(), {});
 		}
 
@@ -1267,7 +1267,7 @@ export namespace MyNS {
 		 * @param {Date} endTime The end of the time window from which sample messages are retrieved.
 		 * @return {SampleChannelDataResponse} Success
 		 */
-		SampleChannelData(channelName: string, maxMessages: number, startTime: Date, endTime: Date): Observable<SampleChannelDataResponse> {
+		SampleChannelData(channelName: string, maxMessages: number | null | undefined, startTime: Date | null | undefined, endTime: Date | null | undefined): Observable<SampleChannelDataResponse> {
 			return this.http.get<SampleChannelDataResponse>(this.baseUri + 'channels/' + (channelName == null ? '' : encodeURIComponent(channelName)) + '/sample&maxMessages=' + maxMessages + '&startTime=' + startTime.toISOString() + '&endTime=' + endTime.toISOString(), {});
 		}
 

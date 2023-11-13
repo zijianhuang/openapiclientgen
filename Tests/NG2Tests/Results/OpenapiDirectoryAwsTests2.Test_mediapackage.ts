@@ -770,7 +770,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsResponse} Success
 		 */
-		ListChannels(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListChannelsResponse> {
+		ListChannels(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListChannelsResponse> {
 			return this.http.get<ListChannelsResponse>(this.baseUri + 'channels?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -794,7 +794,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHarvestJobsResponse} Success
 		 */
-		ListHarvestJobs(includeChannelId: string, includeStatus: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListHarvestJobsResponse> {
+		ListHarvestJobs(includeChannelId: string | null | undefined, includeStatus: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListHarvestJobsResponse> {
 			return this.http.get<ListHarvestJobsResponse>(this.baseUri + 'harvest_jobs?includeChannelId=' + (includeChannelId == null ? '' : encodeURIComponent(includeChannelId)) + '&includeStatus=' + (includeStatus == null ? '' : encodeURIComponent(includeStatus)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -817,7 +817,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOriginEndpointsResponse} Success
 		 */
-		ListOriginEndpoints(channelId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListOriginEndpointsResponse> {
+		ListOriginEndpoints(channelId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListOriginEndpointsResponse> {
 			return this.http.get<ListOriginEndpointsResponse>(this.baseUri + 'origin_endpoints?channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

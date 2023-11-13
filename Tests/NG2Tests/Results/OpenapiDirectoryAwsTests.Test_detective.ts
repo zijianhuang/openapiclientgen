@@ -223,7 +223,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGraphsResponse} Success
 		 */
-		ListGraphs(MaxResults: string, NextToken: string, requestBody: ListGraphsPostBody): Observable<ListGraphsResponse> {
+		ListGraphs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListGraphsPostBody): Observable<ListGraphsResponse> {
 			return this.http.post<ListGraphsResponse>(this.baseUri + 'graphs/list?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -234,7 +234,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInvitationsResponse} Success
 		 */
-		ListInvitations(MaxResults: string, NextToken: string, requestBody: ListInvitationsPostBody): Observable<ListInvitationsResponse> {
+		ListInvitations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListInvitationsPostBody): Observable<ListInvitationsResponse> {
 			return this.http.post<ListInvitationsResponse>(this.baseUri + 'invitations/list?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -245,7 +245,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMembersResponse} Success
 		 */
-		ListMembers(MaxResults: string, NextToken: string, requestBody: ListMembersPostBody): Observable<ListMembersResponse> {
+		ListMembers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMembersPostBody): Observable<ListMembersResponse> {
 			return this.http.post<ListMembersResponse>(this.baseUri + 'graph/members/list?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

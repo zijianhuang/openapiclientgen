@@ -1410,7 +1410,7 @@ export namespace MyNS {
 		 * permission on the Task resource.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_tasks_get(name: string, responseView: CreateTaskRequestResponseView): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_queues_tasks_get(name: string, responseView: CreateTaskRequestResponseView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&responseView=' + responseView, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1448,7 +1448,7 @@ export namespace MyNS {
 		 * If empty, then all fields will be updated.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_patch(name: string, updateMask: string, requestBody: Queue): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_queues_patch(name: string, updateMask: string | null | undefined, requestBody: Queue): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1575,7 +1575,7 @@ export namespace MyNS {
 		 * filter while iterating through pages.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_queues_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/queues&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1638,7 +1638,7 @@ export namespace MyNS {
 		 * permission on the Task resource.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_tasks_list(parent: string, pageSize: number, pageToken: string, responseView: CreateTaskRequestResponseView): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_queues_tasks_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, responseView: CreateTaskRequestResponseView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tasks&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&responseView=' + responseView, { observe: 'response', responseType: 'text' });
 		}
 

@@ -509,7 +509,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAssetsResponse} Success
 		 */
-		ListAssets(maxResults: number, nextToken: string, packagingGroupId: string, MaxResults: string, NextToken: string): Observable<ListAssetsResponse> {
+		ListAssets(maxResults: number | null | undefined, nextToken: string | null | undefined, packagingGroupId: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListAssetsResponse> {
 			return this.http.get<ListAssetsResponse>(this.baseUri + 'assets?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&packagingGroupId=' + (packagingGroupId == null ? '' : encodeURIComponent(packagingGroupId)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -532,7 +532,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPackagingConfigurationsResponse} Success
 		 */
-		ListPackagingConfigurations(maxResults: number, nextToken: string, packagingGroupId: string, MaxResults: string, NextToken: string): Observable<ListPackagingConfigurationsResponse> {
+		ListPackagingConfigurations(maxResults: number | null | undefined, nextToken: string | null | undefined, packagingGroupId: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPackagingConfigurationsResponse> {
 			return this.http.get<ListPackagingConfigurationsResponse>(this.baseUri + 'packaging_configurations?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&packagingGroupId=' + (packagingGroupId == null ? '' : encodeURIComponent(packagingGroupId)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -554,7 +554,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPackagingGroupsResponse} Success
 		 */
-		ListPackagingGroups(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListPackagingGroupsResponse> {
+		ListPackagingGroups(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPackagingGroupsResponse> {
 			return this.http.get<ListPackagingGroupsResponse>(this.baseUri + 'packaging_groups?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

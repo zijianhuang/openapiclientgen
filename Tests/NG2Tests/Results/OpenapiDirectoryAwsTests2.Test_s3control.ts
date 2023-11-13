@@ -612,7 +612,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {void} Success
 		 */
-		ListJobs(jobStatuses: Array<JobStatus>, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<HttpResponse<string>> {
+		ListJobs(jobStatuses: Array<JobStatus> | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v20180820/jobs#x-amz-account-id?' + jobStatuses.map(z => `jobStatuses=${z}`).join('&') + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -704,7 +704,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {void} Success
 		 */
-		ListAccessPoints(bucket: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<HttpResponse<string>> {
+		ListAccessPoints(bucket: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v20180820/accesspoint#x-amz-account-id?bucket=' + (bucket == null ? '' : encodeURIComponent(bucket)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -727,7 +727,7 @@ export namespace MyNS {
 		 * @param {string} statusUpdateReason A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.
 		 * @return {void} Success
 		 */
-		UpdateJobStatus(id: string, requestedJobStatus: RequestedJobStatus, statusUpdateReason: string): Observable<HttpResponse<string>> {
+		UpdateJobStatus(id: string, requestedJobStatus: RequestedJobStatus, statusUpdateReason: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v20180820/jobs/' + (id == null ? '' : encodeURIComponent(id)) + '/status#x-amz-account-id&requestedJobStatus&requestedJobStatus=' + requestedJobStatus + '&statusUpdateReason=' + (statusUpdateReason == null ? '' : encodeURIComponent(statusUpdateReason)), null, { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -805,7 +805,7 @@ export namespace MyNS {
 		 * @param {Vault_matters_listView} view Specifies which parts of the matter to return in response.
 		 * @return {void} Successful response
 		 */
-		Vault_matters_list(pageSize: number, pageToken: string, state: MatterState, view: Vault_matters_listView): Observable<HttpResponse<string>> {
+		Vault_matters_list(pageSize: number | null | undefined, pageToken: string | null | undefined, state: MatterState | null | undefined, view: Vault_matters_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/matters?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&state=' + state + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -837,7 +837,7 @@ export namespace MyNS {
 		 * @param {Vault_matters_listView} view Specifies which parts of the Matter to return in the response.
 		 * @return {void} Successful response
 		 */
-		Vault_matters_get(matterId: string, view: Vault_matters_listView): Observable<HttpResponse<string>> {
+		Vault_matters_get(matterId: string, view: Vault_matters_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/matters/' + (matterId == null ? '' : encodeURIComponent(matterId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -862,7 +862,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The pagination token as returned in the response.
 		 * @return {void} Successful response
 		 */
-		Vault_matters_exports_list(matterId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Vault_matters_exports_list(matterId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/matters/' + (matterId == null ? '' : encodeURIComponent(matterId)) + '/exports&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -910,7 +910,7 @@ export namespace MyNS {
 		 * @param {Vault_matters_holds_listView} view Specifies which parts of the Hold to return.
 		 * @return {void} Successful response
 		 */
-		Vault_matters_holds_list(matterId: string, pageSize: number, pageToken: string, view: Vault_matters_holds_listView): Observable<HttpResponse<string>> {
+		Vault_matters_holds_list(matterId: string, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Vault_matters_holds_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/matters/' + (matterId == null ? '' : encodeURIComponent(matterId)) + '/holds&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -943,7 +943,7 @@ export namespace MyNS {
 		 * @param {Vault_matters_holds_listView} view Specifies which parts of the Hold to return.
 		 * @return {void} Successful response
 		 */
-		Vault_matters_holds_get(matterId: string, holdId: string, view: Vault_matters_holds_listView): Observable<HttpResponse<string>> {
+		Vault_matters_holds_get(matterId: string, holdId: string, view: Vault_matters_holds_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/matters/' + (matterId == null ? '' : encodeURIComponent(matterId)) + '/holds/' + (holdId == null ? '' : encodeURIComponent(holdId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1037,7 +1037,7 @@ export namespace MyNS {
 		 * An empty token means start from the beginning.
 		 * @return {void} Successful response
 		 */
-		Vault_matters_savedQueries_list(matterId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Vault_matters_savedQueries_list(matterId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/matters/' + (matterId == null ? '' : encodeURIComponent(matterId)) + '/savedQueries&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

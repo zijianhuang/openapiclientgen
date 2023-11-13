@@ -401,7 +401,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAWSDefaultServiceQuotasResponse} Success
 		 */
-		ListAWSDefaultServiceQuotas(MaxResults: string, NextToken: string, requestBody: ListAWSDefaultServiceQuotasRequest): Observable<ListAWSDefaultServiceQuotasResponse> {
+		ListAWSDefaultServiceQuotas(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAWSDefaultServiceQuotasRequest): Observable<ListAWSDefaultServiceQuotasResponse> {
 			return this.http.post<ListAWSDefaultServiceQuotasResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListAWSDefaultServiceQuotas?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -412,7 +412,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRequestedServiceQuotaChangeHistoryResponse} Success
 		 */
-		ListRequestedServiceQuotaChangeHistory(MaxResults: string, NextToken: string, requestBody: ListRequestedServiceQuotaChangeHistoryRequest): Observable<ListRequestedServiceQuotaChangeHistoryResponse> {
+		ListRequestedServiceQuotaChangeHistory(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListRequestedServiceQuotaChangeHistoryRequest): Observable<ListRequestedServiceQuotaChangeHistoryResponse> {
 			return this.http.post<ListRequestedServiceQuotaChangeHistoryResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistory?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -423,7 +423,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRequestedServiceQuotaChangeHistoryByQuotaResponse} Success
 		 */
-		ListRequestedServiceQuotaChangeHistoryByQuota(MaxResults: string, NextToken: string, requestBody: ListRequestedServiceQuotaChangeHistoryByQuotaRequest): Observable<ListRequestedServiceQuotaChangeHistoryByQuotaResponse> {
+		ListRequestedServiceQuotaChangeHistoryByQuota(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListRequestedServiceQuotaChangeHistoryByQuotaRequest): Observable<ListRequestedServiceQuotaChangeHistoryByQuotaResponse> {
 			return this.http.post<ListRequestedServiceQuotaChangeHistoryByQuotaResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistoryByQuota?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -434,7 +434,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServiceQuotaIncreaseRequestsInTemplateResponse} Success
 		 */
-		ListServiceQuotaIncreaseRequestsInTemplate(MaxResults: string, NextToken: string, requestBody: ListServiceQuotaIncreaseRequestsInTemplateRequest): Observable<ListServiceQuotaIncreaseRequestsInTemplateResponse> {
+		ListServiceQuotaIncreaseRequestsInTemplate(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServiceQuotaIncreaseRequestsInTemplateRequest): Observable<ListServiceQuotaIncreaseRequestsInTemplateResponse> {
 			return this.http.post<ListServiceQuotaIncreaseRequestsInTemplateResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListServiceQuotaIncreaseRequestsInTemplate?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServiceQuotasResponse} Success
 		 */
-		ListServiceQuotas(MaxResults: string, NextToken: string, requestBody: ListServiceQuotasRequest): Observable<ListServiceQuotasResponse> {
+		ListServiceQuotas(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServiceQuotasRequest): Observable<ListServiceQuotasResponse> {
 			return this.http.post<ListServiceQuotasResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListServiceQuotas?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -456,7 +456,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServicesResponse} Success
 		 */
-		ListServices(MaxResults: string, NextToken: string, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
+		ListServices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
 			return this.http.post<ListServicesResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListServices?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

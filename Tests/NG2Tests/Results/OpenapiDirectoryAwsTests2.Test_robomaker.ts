@@ -1375,7 +1375,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentJobsResponse} Success
 		 */
-		ListDeploymentJobs(maxResults: string, nextToken: string, requestBody: ListDeploymentJobsPostBody): Observable<ListDeploymentJobsResponse> {
+		ListDeploymentJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDeploymentJobsPostBody): Observable<ListDeploymentJobsResponse> {
 			return this.http.post<ListDeploymentJobsResponse>(this.baseUri + 'listDeploymentJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1386,7 +1386,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListFleetsResponse} Success
 		 */
-		ListFleets(maxResults: string, nextToken: string, requestBody: ListFleetsPostBody): Observable<ListFleetsResponse> {
+		ListFleets(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListFleetsPostBody): Observable<ListFleetsResponse> {
 			return this.http.post<ListFleetsResponse>(this.baseUri + 'listFleets?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1397,7 +1397,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRobotApplicationsResponse} Success
 		 */
-		ListRobotApplications(maxResults: string, nextToken: string, requestBody: ListRobotApplicationsPostBody): Observable<ListRobotApplicationsResponse> {
+		ListRobotApplications(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRobotApplicationsPostBody): Observable<ListRobotApplicationsResponse> {
 			return this.http.post<ListRobotApplicationsResponse>(this.baseUri + 'listRobotApplications?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1408,7 +1408,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRobotsResponse} Success
 		 */
-		ListRobots(maxResults: string, nextToken: string, requestBody: ListRobotsPostBody): Observable<ListRobotsResponse> {
+		ListRobots(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRobotsPostBody): Observable<ListRobotsResponse> {
 			return this.http.post<ListRobotsResponse>(this.baseUri + 'listRobots?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1419,7 +1419,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSimulationApplicationsResponse} Success
 		 */
-		ListSimulationApplications(maxResults: string, nextToken: string, requestBody: ListSimulationApplicationsPostBody): Observable<ListSimulationApplicationsResponse> {
+		ListSimulationApplications(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSimulationApplicationsPostBody): Observable<ListSimulationApplicationsResponse> {
 			return this.http.post<ListSimulationApplicationsResponse>(this.baseUri + 'listSimulationApplications?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1430,7 +1430,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSimulationJobBatchesResponse} Success
 		 */
-		ListSimulationJobBatches(maxResults: string, nextToken: string, requestBody: ListSimulationJobBatchesPostBody): Observable<ListSimulationJobBatchesResponse> {
+		ListSimulationJobBatches(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSimulationJobBatchesPostBody): Observable<ListSimulationJobBatchesResponse> {
 			return this.http.post<ListSimulationJobBatchesResponse>(this.baseUri + 'listSimulationJobBatches?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSimulationJobsResponse} Success
 		 */
-		ListSimulationJobs(maxResults: string, nextToken: string, requestBody: ListSimulationJobsPostBody): Observable<ListSimulationJobsResponse> {
+		ListSimulationJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSimulationJobsPostBody): Observable<ListSimulationJobsResponse> {
 			return this.http.post<ListSimulationJobsResponse>(this.baseUri + 'listSimulationJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

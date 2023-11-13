@@ -553,7 +553,7 @@ export namespace MyNS {
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @return {ListClustersResponse} Success
 		 */
-		ListClusters(maxResults: number, nextToken: string): Observable<ListClustersResponse> {
+		ListClusters(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListClustersResponse> {
 			return this.http.get<ListClustersResponse>(this.baseUri + 'clusters?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -575,7 +575,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListFargateProfilesResponse} Success
 		 */
-		ListFargateProfiles(name: string, maxResults: number, nextToken: string): Observable<ListFargateProfilesResponse> {
+		ListFargateProfiles(name: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListFargateProfilesResponse> {
 			return this.http.get<ListFargateProfilesResponse>(this.baseUri + 'clusters/' + (name == null ? '' : encodeURIComponent(name)) + '/fargate-profiles&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -597,7 +597,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListNodegroupsResponse} Success
 		 */
-		ListNodegroups(name: string, maxResults: number, nextToken: string): Observable<ListNodegroupsResponse> {
+		ListNodegroups(name: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListNodegroupsResponse> {
 			return this.http.get<ListNodegroupsResponse>(this.baseUri + 'clusters/' + (name == null ? '' : encodeURIComponent(name)) + '/node-groups&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -673,7 +673,7 @@ export namespace MyNS {
 		 * @param {string} nodegroupName The name of the Amazon EKS node group associated with the update.
 		 * @return {DescribeUpdateResponse} Success
 		 */
-		DescribeUpdate(name: string, updateId: string, nodegroupName: string): Observable<DescribeUpdateResponse> {
+		DescribeUpdate(name: string, updateId: string, nodegroupName: string | null | undefined): Observable<DescribeUpdateResponse> {
 			return this.http.get<DescribeUpdateResponse>(this.baseUri + 'clusters/' + (name == null ? '' : encodeURIComponent(name)) + '/updates/' + (updateId == null ? '' : encodeURIComponent(updateId)) + '&nodegroupName=' + (nodegroupName == null ? '' : encodeURIComponent(nodegroupName)), {});
 		}
 
@@ -706,7 +706,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
 		 * @return {ListUpdatesResponse} Success
 		 */
-		ListUpdates(name: string, nodegroupName: string, nextToken: string, maxResults: number): Observable<ListUpdatesResponse> {
+		ListUpdates(name: string, nodegroupName: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListUpdatesResponse> {
 			return this.http.get<ListUpdatesResponse>(this.baseUri + 'clusters/' + (name == null ? '' : encodeURIComponent(name)) + '/updates&nodegroupName=' + (nodegroupName == null ? '' : encodeURIComponent(nodegroupName)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 

@@ -936,7 +936,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeDestinationsResponse} Success
 		 */
-		DescribeDestinations(limit: string, nextToken: string, requestBody: DescribeDestinationsRequest): Observable<DescribeDestinationsResponse> {
+		DescribeDestinations(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeDestinationsRequest): Observable<DescribeDestinationsResponse> {
 			return this.http.post<DescribeDestinationsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeDestinations?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -956,7 +956,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeLogGroupsResponse} Success
 		 */
-		DescribeLogGroups(limit: string, nextToken: string, requestBody: DescribeLogGroupsRequest): Observable<DescribeLogGroupsResponse> {
+		DescribeLogGroups(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeLogGroupsRequest): Observable<DescribeLogGroupsResponse> {
 			return this.http.post<DescribeLogGroupsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeLogGroups?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -967,7 +967,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeLogStreamsResponse} Success
 		 */
-		DescribeLogStreams(limit: string, nextToken: string, requestBody: DescribeLogStreamsRequest): Observable<DescribeLogStreamsResponse> {
+		DescribeLogStreams(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeLogStreamsRequest): Observable<DescribeLogStreamsResponse> {
 			return this.http.post<DescribeLogStreamsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeLogStreams?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -978,7 +978,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeMetricFiltersResponse} Success
 		 */
-		DescribeMetricFilters(limit: string, nextToken: string, requestBody: DescribeMetricFiltersRequest): Observable<DescribeMetricFiltersResponse> {
+		DescribeMetricFilters(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeMetricFiltersRequest): Observable<DescribeMetricFiltersResponse> {
 			return this.http.post<DescribeMetricFiltersResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeMetricFilters?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeSubscriptionFiltersResponse} Success
 		 */
-		DescribeSubscriptionFilters(limit: string, nextToken: string, requestBody: DescribeSubscriptionFiltersRequest): Observable<DescribeSubscriptionFiltersResponse> {
+		DescribeSubscriptionFilters(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeSubscriptionFiltersRequest): Observable<DescribeSubscriptionFiltersResponse> {
 			return this.http.post<DescribeSubscriptionFiltersResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeSubscriptionFilters?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1035,7 +1035,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {FilterLogEventsResponse} Success
 		 */
-		FilterLogEvents(limit: string, nextToken: string, requestBody: FilterLogEventsRequest): Observable<FilterLogEventsResponse> {
+		FilterLogEvents(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: FilterLogEventsRequest): Observable<FilterLogEventsResponse> {
 			return this.http.post<FilterLogEventsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.FilterLogEvents?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1046,7 +1046,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetLogEventsResponse} Success
 		 */
-		GetLogEvents(limit: string, nextToken: string, requestBody: GetLogEventsRequest): Observable<GetLogEventsResponse> {
+		GetLogEvents(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: GetLogEventsRequest): Observable<GetLogEventsResponse> {
 			return this.http.post<GetLogEventsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.GetLogEvents?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

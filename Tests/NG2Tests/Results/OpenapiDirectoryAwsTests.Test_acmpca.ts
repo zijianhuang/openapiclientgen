@@ -488,7 +488,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCertificateAuthoritiesResponse} Success
 		 */
-		ListCertificateAuthorities(MaxResults: string, NextToken: string, requestBody: ListCertificateAuthoritiesRequest): Observable<ListCertificateAuthoritiesResponse> {
+		ListCertificateAuthorities(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCertificateAuthoritiesRequest): Observable<ListCertificateAuthoritiesResponse> {
 			return this.http.post<ListCertificateAuthoritiesResponse>(this.baseUri + '#X-Amz-Target=ACMPrivateCA.ListCertificateAuthorities?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -499,7 +499,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPermissionsResponse} Success
 		 */
-		ListPermissions(MaxResults: string, NextToken: string, requestBody: ListPermissionsRequest): Observable<ListPermissionsResponse> {
+		ListPermissions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPermissionsRequest): Observable<ListPermissionsResponse> {
 			return this.http.post<ListPermissionsResponse>(this.baseUri + '#X-Amz-Target=ACMPrivateCA.ListPermissions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -510,7 +510,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsResponse} Success
 		 */
-		ListTags(MaxResults: string, NextToken: string, requestBody: ListTagsRequest): Observable<ListTagsResponse> {
+		ListTags(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsRequest): Observable<ListTagsResponse> {
 			return this.http.post<ListTagsResponse>(this.baseUri + '#X-Amz-Target=ACMPrivateCA.ListTags?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

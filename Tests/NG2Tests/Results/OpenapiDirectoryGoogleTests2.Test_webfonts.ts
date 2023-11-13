@@ -49,7 +49,7 @@ export namespace MyNS {
 		 * @param {Webfonts_webfonts_listSort} sort Enables sorting of the list
 		 * @return {void} Successful response
 		 */
-		Webfonts_webfonts_list(sort: Webfonts_webfonts_listSort): Observable<HttpResponse<string>> {
+		Webfonts_webfonts_list(sort: Webfonts_webfonts_listSort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'webfonts?sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 	}

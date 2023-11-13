@@ -606,7 +606,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMembersOutput} Success
 		 */
-		ListMembers(networkId: string, name: string, status: MemberStatus, isOwned: boolean, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListMembersOutput> {
+		ListMembers(networkId: string, name: string | null | undefined, status: MemberStatus | null | undefined, isOwned: boolean | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMembersOutput> {
 			return this.http.get<ListMembersOutput>(this.baseUri + 'networks/' + (networkId == null ? '' : encodeURIComponent(networkId)) + '/members&name=' + (name == null ? '' : encodeURIComponent(name)) + '&status=' + status + '&isOwned=' + isOwned + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -631,7 +631,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNetworksOutput} Success
 		 */
-		ListNetworks(name: string, framework: NetworkFramework, status: NetworkStatus, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListNetworksOutput> {
+		ListNetworks(name: string | null | undefined, framework: NetworkFramework | null | undefined, status: NetworkStatus | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListNetworksOutput> {
 			return this.http.get<ListNetworksOutput>(this.baseUri + 'networks?name=' + (name == null ? '' : encodeURIComponent(name)) + '&framework=' + framework + '&status=' + status + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -658,7 +658,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNodesOutput} Success
 		 */
-		ListNodes(networkId: string, memberId: string, status: NodeStatus, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListNodesOutput> {
+		ListNodes(networkId: string, memberId: string, status: NodeStatus | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListNodesOutput> {
 			return this.http.get<ListNodesOutput>(this.baseUri + 'networks/' + (networkId == null ? '' : encodeURIComponent(networkId)) + '/members/' + (memberId == null ? '' : encodeURIComponent(memberId)) + '/nodes&status=' + status + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -682,7 +682,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProposalsOutput} Success
 		 */
-		ListProposals(networkId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListProposalsOutput> {
+		ListProposals(networkId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListProposalsOutput> {
 			return this.http.get<ListProposalsOutput>(this.baseUri + 'networks/' + (networkId == null ? '' : encodeURIComponent(networkId)) + '/proposals&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -785,7 +785,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInvitationsOutput} Success
 		 */
-		ListInvitations(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInvitationsOutput> {
+		ListInvitations(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInvitationsOutput> {
 			return this.http.get<ListInvitationsOutput>(this.baseUri + 'invitations?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -800,7 +800,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProposalVotesOutput} Success
 		 */
-		ListProposalVotes(networkId: string, proposalId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListProposalVotesOutput> {
+		ListProposalVotes(networkId: string, proposalId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListProposalVotesOutput> {
 			return this.http.get<ListProposalVotesOutput>(this.baseUri + 'networks/' + (networkId == null ? '' : encodeURIComponent(networkId)) + '/proposals/' + (proposalId == null ? '' : encodeURIComponent(proposalId)) + '/votes&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

@@ -393,7 +393,7 @@ export namespace MyNS {
 		 * @param {string} sort Sort calls by property
 		 * @return {Array<Call>} Successful
 		 */
-		ListCalls(fromDate: number, toDate: number, direction: CallDirection, states: ListCallsStates, offset: number, size: number, order: ListCallsOrder, sort: string): Observable<Array<Call>> {
+		ListCalls(fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: ListCallsStates | null | undefined, offset: number | null | undefined, size: number | null | undefined, order: ListCallsOrder | null | undefined, sort: string | null | undefined): Observable<Array<Call>> {
 			return this.http.get<Array<Call>>(this.baseUri + 'self/calls?fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states + '&offset=' + offset + '&size=' + size + '&order=' + order + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -416,7 +416,7 @@ export namespace MyNS {
 		 * @param {ListCallsStates} states Filter calls by state. For multiple criteria, seperate values by a comma.
 		 * @return {EventsCount} Successful
 		 */
-		GetCallsCount(fromDate: number, toDate: number, direction: CallDirection, states: ListCallsStates): Observable<EventsCount> {
+		GetCallsCount(fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: ListCallsStates | null | undefined): Observable<EventsCount> {
 			return this.http.get<EventsCount>(this.baseUri + 'self/calls/count?fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states, {});
 		}
 
@@ -505,7 +505,7 @@ export namespace MyNS {
 		 * @param {string} sort Sort events by property
 		 * @return {Array<Event>} Successful
 		 */
-		ListEvents(types: CallType, fromDate: number, toDate: number, direction: CallDirection, states: CallState, offset: number, size: number, order: ListCallsOrder, sort: string): Observable<Array<Event>> {
+		ListEvents(types: CallType | null | undefined, fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: CallState | null | undefined, offset: number | null | undefined, size: number | null | undefined, order: ListCallsOrder | null | undefined, sort: string | null | undefined): Observable<Array<Event>> {
 			return this.http.get<Array<Event>>(this.baseUri + 'self/events?types=' + types + '&fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states + '&offset=' + offset + '&size=' + size + '&order=' + order + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -518,7 +518,7 @@ export namespace MyNS {
 		 * @param {ListCallsStates} states Filter events by state
 		 * @return {EventsCount} Successful
 		 */
-		GetEventsCount(fromDate: number, toDate: number, direction: CallDirection, states: ListCallsStates): Observable<EventsCount> {
+		GetEventsCount(fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: ListCallsStates | null | undefined): Observable<EventsCount> {
 			return this.http.get<EventsCount>(this.baseUri + 'self/events/count?fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states, {});
 		}
 

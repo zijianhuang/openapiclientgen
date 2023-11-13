@@ -702,7 +702,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListDomainsResponse} Success
 		 */
-		ListDomains(MaxItems: string, Marker: string, requestBody: ListDomainsRequest): Observable<ListDomainsResponse> {
+		ListDomains(MaxItems: string | null | undefined, Marker: string | null | undefined, requestBody: ListDomainsRequest): Observable<ListDomainsResponse> {
 			return this.http.post<ListDomainsResponse>(this.baseUri + '#X-Amz-Target=Route53Domains_v20140515.ListDomains?MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -713,7 +713,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListOperationsResponse} Success
 		 */
-		ListOperations(MaxItems: string, Marker: string, requestBody: ListOperationsRequest): Observable<ListOperationsResponse> {
+		ListOperations(MaxItems: string | null | undefined, Marker: string | null | undefined, requestBody: ListOperationsRequest): Observable<ListOperationsResponse> {
 			return this.http.post<ListOperationsResponse>(this.baseUri + '#X-Amz-Target=Route53Domains_v20140515.ListOperations?MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

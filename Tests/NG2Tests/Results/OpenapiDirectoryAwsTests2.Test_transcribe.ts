@@ -664,7 +664,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMedicalTranscriptionJobsResponse} Success
 		 */
-		ListMedicalTranscriptionJobs(MaxResults: string, NextToken: string, requestBody: ListMedicalTranscriptionJobsRequest): Observable<ListMedicalTranscriptionJobsResponse> {
+		ListMedicalTranscriptionJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMedicalTranscriptionJobsRequest): Observable<ListMedicalTranscriptionJobsResponse> {
 			return this.http.post<ListMedicalTranscriptionJobsResponse>(this.baseUri + '#X-Amz-Target=Transcribe.ListMedicalTranscriptionJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -675,7 +675,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMedicalVocabulariesResponse} Success
 		 */
-		ListMedicalVocabularies(MaxResults: string, NextToken: string, requestBody: ListMedicalVocabulariesRequest): Observable<ListMedicalVocabulariesResponse> {
+		ListMedicalVocabularies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMedicalVocabulariesRequest): Observable<ListMedicalVocabulariesResponse> {
 			return this.http.post<ListMedicalVocabulariesResponse>(this.baseUri + '#X-Amz-Target=Transcribe.ListMedicalVocabularies?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -686,7 +686,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTranscriptionJobsResponse} Success
 		 */
-		ListTranscriptionJobs(MaxResults: string, NextToken: string, requestBody: ListTranscriptionJobsRequest): Observable<ListTranscriptionJobsResponse> {
+		ListTranscriptionJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTranscriptionJobsRequest): Observable<ListTranscriptionJobsResponse> {
 			return this.http.post<ListTranscriptionJobsResponse>(this.baseUri + '#X-Amz-Target=Transcribe.ListTranscriptionJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -697,7 +697,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVocabulariesResponse} Success
 		 */
-		ListVocabularies(MaxResults: string, NextToken: string, requestBody: ListVocabulariesRequest): Observable<ListVocabulariesResponse> {
+		ListVocabularies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListVocabulariesRequest): Observable<ListVocabulariesResponse> {
 			return this.http.post<ListVocabulariesResponse>(this.baseUri + '#X-Amz-Target=Transcribe.ListVocabularies?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -708,7 +708,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVocabularyFiltersResponse} Success
 		 */
-		ListVocabularyFilters(MaxResults: string, NextToken: string, requestBody: ListVocabularyFiltersRequest): Observable<ListVocabularyFiltersResponse> {
+		ListVocabularyFilters(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListVocabularyFiltersRequest): Observable<ListVocabularyFiltersResponse> {
 			return this.http.post<ListVocabularyFiltersResponse>(this.baseUri + '#X-Amz-Target=Transcribe.ListVocabularyFilters?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

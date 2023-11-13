@@ -20,7 +20,7 @@ export namespace MyNS {
 		 * @param {number} limit How many items to return at one time (max 100)
 		 * @return {Array<Pet>} A paged array of pets
 		 */
-		ListPets(limit: number): Promise<Array<Pet>> {
+		ListPets(limit: number | null | undefined): Promise<Array<Pet>> {
 			return fetch(this.baseUri + 'pets?limit=' + limit, { method: 'get' }).then(d => d.json());
 		}
 

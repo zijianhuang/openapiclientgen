@@ -1658,7 +1658,7 @@ export namespace MyNS {
 		 * @param {string} readTimeWindow_startTime Start time of the time window (exclusive).
 		 * @return {void} Successful response
 		 */
-		Cloudasset_batchGetAssetsHistory(parent: string, assetNames: Array<string>, contentType: FeedContentType, readTimeWindow_endTime: string, readTimeWindow_startTime: string): Observable<HttpResponse<string>> {
+		Cloudasset_batchGetAssetsHistory(parent: string, assetNames: Array<string> | null | undefined, contentType: FeedContentType | null | undefined, readTimeWindow_endTime: string | null | undefined, readTimeWindow_startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + ':batchGetAssetsHistory&' + assetNames.map(z => `assetNames=${encodeURIComponent(z)}`).join('&') + '&contentType=' + contentType + '&readTimeWindow_endTime=' + (readTimeWindow_endTime == null ? '' : encodeURIComponent(readTimeWindow_endTime)) + '&readTimeWindow_startTime=' + (readTimeWindow_startTime == null ? '' : encodeURIComponent(readTimeWindow_startTime)), { observe: 'response', responseType: 'text' });
 		}
 

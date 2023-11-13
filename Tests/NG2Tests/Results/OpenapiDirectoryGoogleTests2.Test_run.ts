@@ -2727,7 +2727,7 @@ export namespace MyNS {
 		 * This field is currently unused.
 		 * @return {void} Successful response
 		 */
-		Run_api_v1_namespaces_patch(name: string, updateMask: string, requestBody: Namespace): Observable<HttpResponse<string>> {
+		Run_api_v1_namespaces_patch(name: string, updateMask: string | null | undefined, requestBody: Namespace): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'api/v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2772,7 +2772,7 @@ export namespace MyNS {
 		 * more information.
 		 * @return {void} Successful response
 		 */
-		Run_namespaces_domainmappings_delete(name: string, apiVersion: string, kind: string, propagationPolicy: string): Observable<HttpResponse<string>> {
+		Run_namespaces_domainmappings_delete(name: string, apiVersion: string | null | undefined, kind: string | null | undefined, propagationPolicy: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'apis/domains.cloudrun.com/v1/' + (name == null ? '' : encodeURIComponent(name)) + '&apiVersion=' + (apiVersion == null ? '' : encodeURIComponent(apiVersion)) + '&kind=' + (kind == null ? '' : encodeURIComponent(kind)) + '&propagationPolicy=' + (propagationPolicy == null ? '' : encodeURIComponent(propagationPolicy)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2796,7 +2796,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Run_namespaces_authorizeddomains_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Run_namespaces_authorizeddomains_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'apis/domains.cloudrun.com/v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/authorizeddomains&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2820,7 +2820,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_namespaces_domainmappings_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_namespaces_domainmappings_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'apis/domains.cloudrun.com/v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/domainmappings&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2852,7 +2852,7 @@ export namespace MyNS {
 		 * more information.
 		 * @return {void} Successful response
 		 */
-		Run_namespaces_services_delete(name: string, apiVersion: string, kind: string, propagationPolicy: string): Observable<HttpResponse<string>> {
+		Run_namespaces_services_delete(name: string, apiVersion: string | null | undefined, kind: string | null | undefined, propagationPolicy: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'apis/serving.knative.dev/v1/' + (name == null ? '' : encodeURIComponent(name)) + '&apiVersion=' + (apiVersion == null ? '' : encodeURIComponent(apiVersion)) + '&kind=' + (kind == null ? '' : encodeURIComponent(kind)) + '&propagationPolicy=' + (propagationPolicy == null ? '' : encodeURIComponent(propagationPolicy)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2905,7 +2905,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_namespaces_configurations_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_namespaces_configurations_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'apis/serving.knative.dev/v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/configurations&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2929,7 +2929,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_namespaces_revisions_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_namespaces_revisions_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'apis/serving.knative.dev/v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/revisions&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2953,7 +2953,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_namespaces_routes_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_namespaces_routes_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'apis/serving.knative.dev/v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/routes&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2977,7 +2977,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_namespaces_services_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_namespaces_services_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'apis/serving.knative.dev/v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/services&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3007,7 +3007,7 @@ export namespace MyNS {
 		 * more information.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_domainmappings_delete(name: string, apiVersion: string, kind: string, propagationPolicy: string): Observable<HttpResponse<string>> {
+		Run_projects_locations_domainmappings_delete(name: string, apiVersion: string | null | undefined, kind: string | null | undefined, propagationPolicy: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&apiVersion=' + (apiVersion == null ? '' : encodeURIComponent(apiVersion)) + '&kind=' + (kind == null ? '' : encodeURIComponent(kind)) + '&propagationPolicy=' + (propagationPolicy == null ? '' : encodeURIComponent(propagationPolicy)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3031,7 +3031,7 @@ export namespace MyNS {
 		 * This field is currently unused.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_namespaces_patch(name: string, updateMask: string, requestBody: Namespace): Observable<HttpResponse<string>> {
+		Run_projects_locations_namespaces_patch(name: string, updateMask: string | null | undefined, requestBody: Namespace): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3060,7 +3060,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Run_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3072,7 +3072,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_authorizeddomains_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Run_projects_locations_authorizeddomains_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/authorizeddomains&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3096,7 +3096,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_configurations_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_projects_locations_configurations_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/configurations&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3120,7 +3120,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_domainmappings_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_projects_locations_domainmappings_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/domainmappings&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3156,7 +3156,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_revisions_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_projects_locations_revisions_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/revisions&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3180,7 +3180,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_routes_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_projects_locations_routes_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/routes&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3215,7 +3215,7 @@ export namespace MyNS {
 		 * Not currently used by Cloud Run.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_services_list(parent: string, _continue: string, fieldSelector: string, includeUninitialized: boolean, labelSelector: string, limit: number, resourceVersion: string, watch: boolean): Observable<HttpResponse<string>> {
+		Run_projects_locations_services_list(parent: string, _continue: string | null | undefined, fieldSelector: string | null | undefined, includeUninitialized: boolean | null | undefined, labelSelector: string | null | undefined, limit: number | null | undefined, resourceVersion: string | null | undefined, watch: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/services&_continue=' + (_continue == null ? '' : encodeURIComponent(_continue)) + '&fieldSelector=' + (fieldSelector == null ? '' : encodeURIComponent(fieldSelector)) + '&includeUninitialized=' + includeUninitialized + '&labelSelector=' + (labelSelector == null ? '' : encodeURIComponent(labelSelector)) + '&limit=' + limit + '&resourceVersion=' + (resourceVersion == null ? '' : encodeURIComponent(resourceVersion)) + '&watch=' + watch, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3245,7 +3245,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Run_projects_locations_services_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Run_projects_locations_services_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

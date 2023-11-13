@@ -409,7 +409,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Bigqueryreservation_projects_locations_reservations_get(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigqueryreservation_projects_locations_reservations_get(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -421,7 +421,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Bigqueryreservation_projects_locations_reservations_patch(name: string, updateMask: string, requestBody: Reservation): Observable<HttpResponse<string>> {
+		Bigqueryreservation_projects_locations_reservations_patch(name: string, updateMask: string | null | undefined, requestBody: Reservation): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -479,7 +479,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Bigqueryreservation_projects_locations_reservations_assignments_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigqueryreservation_projects_locations_reservations_assignments_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/assignments&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -519,7 +519,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Bigqueryreservation_projects_locations_capacityCommitments_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigqueryreservation_projects_locations_capacityCommitments_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/capacityCommitments&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -532,7 +532,7 @@ export namespace MyNS {
 		 * capacity commitment.
 		 * @return {void} Successful response
 		 */
-		Bigqueryreservation_projects_locations_capacityCommitments_create(parent: string, enforceSingleAdminProjectPerOrg: boolean, requestBody: CapacityCommitment): Observable<HttpResponse<string>> {
+		Bigqueryreservation_projects_locations_capacityCommitments_create(parent: string, enforceSingleAdminProjectPerOrg: boolean | null | undefined, requestBody: CapacityCommitment): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/capacityCommitments&enforceSingleAdminProjectPerOrg=' + enforceSingleAdminProjectPerOrg, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -559,7 +559,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Bigqueryreservation_projects_locations_reservations_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigqueryreservation_projects_locations_reservations_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/reservations&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -572,7 +572,7 @@ export namespace MyNS {
 		 * characters or dash. Max length is 64 characters.
 		 * @return {void} Successful response
 		 */
-		Bigqueryreservation_projects_locations_reservations_create(parent: string, reservationId: string, requestBody: Reservation): Observable<HttpResponse<string>> {
+		Bigqueryreservation_projects_locations_reservations_create(parent: string, reservationId: string | null | undefined, requestBody: Reservation): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/reservations&reservationId=' + (reservationId == null ? '' : encodeURIComponent(reservationId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -605,7 +605,7 @@ export namespace MyNS {
 		 *       "assignee=organizations/456"
 		 * @return {void} Successful response
 		 */
-		Bigqueryreservation_projects_locations_searchAssignments(parent: string, pageSize: number, pageToken: string, query: string): Observable<HttpResponse<string>> {
+		Bigqueryreservation_projects_locations_searchAssignments(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + ':searchAssignments&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -1533,7 +1533,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListConnectorDefinitionsResponse} Success
 		 */
-		ListConnectorDefinitions(MaxResults: string, NextToken: string): Observable<ListConnectorDefinitionsResponse> {
+		ListConnectorDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListConnectorDefinitionsResponse> {
 			return this.http.get<ListConnectorDefinitionsResponse>(this.baseUri + 'greengrass/definition/connectors?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1555,7 +1555,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListConnectorDefinitionVersionsResponse} Success
 		 */
-		ListConnectorDefinitionVersions(ConnectorDefinitionId: string, MaxResults: string, NextToken: string): Observable<ListConnectorDefinitionVersionsResponse> {
+		ListConnectorDefinitionVersions(ConnectorDefinitionId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListConnectorDefinitionVersionsResponse> {
 			return this.http.get<ListConnectorDefinitionVersionsResponse>(this.baseUri + 'greengrass/definition/connectors/' + (ConnectorDefinitionId == null ? '' : encodeURIComponent(ConnectorDefinitionId)) + '/versions&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1575,7 +1575,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListCoreDefinitionsResponse} Success
 		 */
-		ListCoreDefinitions(MaxResults: string, NextToken: string): Observable<ListCoreDefinitionsResponse> {
+		ListCoreDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListCoreDefinitionsResponse> {
 			return this.http.get<ListCoreDefinitionsResponse>(this.baseUri + 'greengrass/definition/cores?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListCoreDefinitionVersionsResponse} Success
 		 */
-		ListCoreDefinitionVersions(CoreDefinitionId: string, MaxResults: string, NextToken: string): Observable<ListCoreDefinitionVersionsResponse> {
+		ListCoreDefinitionVersions(CoreDefinitionId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListCoreDefinitionVersionsResponse> {
 			return this.http.get<ListCoreDefinitionVersionsResponse>(this.baseUri + 'greengrass/definition/cores/' + (CoreDefinitionId == null ? '' : encodeURIComponent(CoreDefinitionId)) + '/versions&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1619,7 +1619,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListDeploymentsResponse} Success
 		 */
-		ListDeployments(GroupId: string, MaxResults: string, NextToken: string): Observable<ListDeploymentsResponse> {
+		ListDeployments(GroupId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDeploymentsResponse> {
 			return this.http.get<ListDeploymentsResponse>(this.baseUri + 'greengrass/groups/' + (GroupId == null ? '' : encodeURIComponent(GroupId)) + '/deployments&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1639,7 +1639,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListDeviceDefinitionsResponse} Success
 		 */
-		ListDeviceDefinitions(MaxResults: string, NextToken: string): Observable<ListDeviceDefinitionsResponse> {
+		ListDeviceDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDeviceDefinitionsResponse> {
 			return this.http.get<ListDeviceDefinitionsResponse>(this.baseUri + 'greengrass/definition/devices?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1661,7 +1661,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListDeviceDefinitionVersionsResponse} Success
 		 */
-		ListDeviceDefinitionVersions(DeviceDefinitionId: string, MaxResults: string, NextToken: string): Observable<ListDeviceDefinitionVersionsResponse> {
+		ListDeviceDefinitionVersions(DeviceDefinitionId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDeviceDefinitionVersionsResponse> {
 			return this.http.get<ListDeviceDefinitionVersionsResponse>(this.baseUri + 'greengrass/definition/devices/' + (DeviceDefinitionId == null ? '' : encodeURIComponent(DeviceDefinitionId)) + '/versions&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1681,7 +1681,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListFunctionDefinitionsResponse} Success
 		 */
-		ListFunctionDefinitions(MaxResults: string, NextToken: string): Observable<ListFunctionDefinitionsResponse> {
+		ListFunctionDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListFunctionDefinitionsResponse> {
 			return this.http.get<ListFunctionDefinitionsResponse>(this.baseUri + 'greengrass/definition/functions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1703,7 +1703,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListFunctionDefinitionVersionsResponse} Success
 		 */
-		ListFunctionDefinitionVersions(FunctionDefinitionId: string, MaxResults: string, NextToken: string): Observable<ListFunctionDefinitionVersionsResponse> {
+		ListFunctionDefinitionVersions(FunctionDefinitionId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListFunctionDefinitionVersionsResponse> {
 			return this.http.get<ListFunctionDefinitionVersionsResponse>(this.baseUri + 'greengrass/definition/functions/' + (FunctionDefinitionId == null ? '' : encodeURIComponent(FunctionDefinitionId)) + '/versions&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1723,7 +1723,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListGroupsResponse} Success
 		 */
-		ListGroups(MaxResults: string, NextToken: string): Observable<ListGroupsResponse> {
+		ListGroups(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListGroupsResponse> {
 			return this.http.get<ListGroupsResponse>(this.baseUri + 'greengrass/groups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListGroupVersionsResponse} Success
 		 */
-		ListGroupVersions(GroupId: string, MaxResults: string, NextToken: string): Observable<ListGroupVersionsResponse> {
+		ListGroupVersions(GroupId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListGroupVersionsResponse> {
 			return this.http.get<ListGroupVersionsResponse>(this.baseUri + 'greengrass/groups/' + (GroupId == null ? '' : encodeURIComponent(GroupId)) + '/versions&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1785,7 +1785,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListLoggerDefinitionsResponse} Success
 		 */
-		ListLoggerDefinitions(MaxResults: string, NextToken: string): Observable<ListLoggerDefinitionsResponse> {
+		ListLoggerDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListLoggerDefinitionsResponse> {
 			return this.http.get<ListLoggerDefinitionsResponse>(this.baseUri + 'greengrass/definition/loggers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1807,7 +1807,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListLoggerDefinitionVersionsResponse} Success
 		 */
-		ListLoggerDefinitionVersions(LoggerDefinitionId: string, MaxResults: string, NextToken: string): Observable<ListLoggerDefinitionVersionsResponse> {
+		ListLoggerDefinitionVersions(LoggerDefinitionId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListLoggerDefinitionVersionsResponse> {
 			return this.http.get<ListLoggerDefinitionVersionsResponse>(this.baseUri + 'greengrass/definition/loggers/' + (LoggerDefinitionId == null ? '' : encodeURIComponent(LoggerDefinitionId)) + '/versions&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1827,7 +1827,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListResourceDefinitionsResponse} Success
 		 */
-		ListResourceDefinitions(MaxResults: string, NextToken: string): Observable<ListResourceDefinitionsResponse> {
+		ListResourceDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListResourceDefinitionsResponse> {
 			return this.http.get<ListResourceDefinitionsResponse>(this.baseUri + 'greengrass/definition/resources?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1849,7 +1849,7 @@ export namespace MyNS {
 		 * @param {string} ResourceDefinitionId The ID of the resource definition.
 		 * @return {ListResourceDefinitionVersionsResponse} Success
 		 */
-		ListResourceDefinitionVersions(MaxResults: string, NextToken: string, ResourceDefinitionId: string): Observable<ListResourceDefinitionVersionsResponse> {
+		ListResourceDefinitionVersions(MaxResults: string | null | undefined, NextToken: string | null | undefined, ResourceDefinitionId: string): Observable<ListResourceDefinitionVersionsResponse> {
 			return this.http.get<ListResourceDefinitionVersionsResponse>(this.baseUri + 'greengrass/definition/resources/' + (ResourceDefinitionId == null ? '' : encodeURIComponent(ResourceDefinitionId)) + '/versions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1878,7 +1878,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListSubscriptionDefinitionsResponse} Success
 		 */
-		ListSubscriptionDefinitions(MaxResults: string, NextToken: string): Observable<ListSubscriptionDefinitionsResponse> {
+		ListSubscriptionDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListSubscriptionDefinitionsResponse> {
 			return this.http.get<ListSubscriptionDefinitionsResponse>(this.baseUri + 'greengrass/definition/subscriptions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1900,7 +1900,7 @@ export namespace MyNS {
 		 * @param {string} SubscriptionDefinitionId The ID of the subscription definition.
 		 * @return {ListSubscriptionDefinitionVersionsResponse} Success
 		 */
-		ListSubscriptionDefinitionVersions(MaxResults: string, NextToken: string, SubscriptionDefinitionId: string): Observable<ListSubscriptionDefinitionVersionsResponse> {
+		ListSubscriptionDefinitionVersions(MaxResults: string | null | undefined, NextToken: string | null | undefined, SubscriptionDefinitionId: string): Observable<ListSubscriptionDefinitionVersionsResponse> {
 			return this.http.get<ListSubscriptionDefinitionVersionsResponse>(this.baseUri + 'greengrass/definition/subscriptions/' + (SubscriptionDefinitionId == null ? '' : encodeURIComponent(SubscriptionDefinitionId)) + '/versions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2182,7 +2182,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {GetConnectorDefinitionVersionResponse} Success
 		 */
-		GetConnectorDefinitionVersion(ConnectorDefinitionId: string, ConnectorDefinitionVersionId: string, NextToken: string): Observable<GetConnectorDefinitionVersionResponse> {
+		GetConnectorDefinitionVersion(ConnectorDefinitionId: string, ConnectorDefinitionVersionId: string, NextToken: string | null | undefined): Observable<GetConnectorDefinitionVersionResponse> {
 			return this.http.get<GetConnectorDefinitionVersionResponse>(this.baseUri + 'greengrass/definition/connectors/' + (ConnectorDefinitionId == null ? '' : encodeURIComponent(ConnectorDefinitionId)) + '/versions/' + (ConnectorDefinitionVersionId == null ? '' : encodeURIComponent(ConnectorDefinitionVersionId)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2216,7 +2216,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {GetDeviceDefinitionVersionResponse} Success
 		 */
-		GetDeviceDefinitionVersion(DeviceDefinitionId: string, DeviceDefinitionVersionId: string, NextToken: string): Observable<GetDeviceDefinitionVersionResponse> {
+		GetDeviceDefinitionVersion(DeviceDefinitionId: string, DeviceDefinitionVersionId: string, NextToken: string | null | undefined): Observable<GetDeviceDefinitionVersionResponse> {
 			return this.http.get<GetDeviceDefinitionVersionResponse>(this.baseUri + 'greengrass/definition/devices/' + (DeviceDefinitionId == null ? '' : encodeURIComponent(DeviceDefinitionId)) + '/versions/' + (DeviceDefinitionVersionId == null ? '' : encodeURIComponent(DeviceDefinitionVersionId)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2228,7 +2228,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {GetFunctionDefinitionVersionResponse} Success
 		 */
-		GetFunctionDefinitionVersion(FunctionDefinitionId: string, FunctionDefinitionVersionId: string, NextToken: string): Observable<GetFunctionDefinitionVersionResponse> {
+		GetFunctionDefinitionVersion(FunctionDefinitionId: string, FunctionDefinitionVersionId: string, NextToken: string | null | undefined): Observable<GetFunctionDefinitionVersionResponse> {
 			return this.http.get<GetFunctionDefinitionVersionResponse>(this.baseUri + 'greengrass/definition/functions/' + (FunctionDefinitionId == null ? '' : encodeURIComponent(FunctionDefinitionId)) + '/versions/' + (FunctionDefinitionVersionId == null ? '' : encodeURIComponent(FunctionDefinitionVersionId)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2282,7 +2282,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {GetLoggerDefinitionVersionResponse} Success
 		 */
-		GetLoggerDefinitionVersion(LoggerDefinitionId: string, LoggerDefinitionVersionId: string, NextToken: string): Observable<GetLoggerDefinitionVersionResponse> {
+		GetLoggerDefinitionVersion(LoggerDefinitionId: string, LoggerDefinitionVersionId: string, NextToken: string | null | undefined): Observable<GetLoggerDefinitionVersionResponse> {
 			return this.http.get<GetLoggerDefinitionVersionResponse>(this.baseUri + 'greengrass/definition/loggers/' + (LoggerDefinitionId == null ? '' : encodeURIComponent(LoggerDefinitionId)) + '/versions/' + (LoggerDefinitionVersionId == null ? '' : encodeURIComponent(LoggerDefinitionVersionId)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2305,7 +2305,7 @@ export namespace MyNS {
 		 * @param {string} SubscriptionDefinitionVersionId The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
 		 * @return {GetSubscriptionDefinitionVersionResponse} Success
 		 */
-		GetSubscriptionDefinitionVersion(NextToken: string, SubscriptionDefinitionId: string, SubscriptionDefinitionVersionId: string): Observable<GetSubscriptionDefinitionVersionResponse> {
+		GetSubscriptionDefinitionVersion(NextToken: string | null | undefined, SubscriptionDefinitionId: string, SubscriptionDefinitionVersionId: string): Observable<GetSubscriptionDefinitionVersionResponse> {
 			return this.http.get<GetSubscriptionDefinitionVersionResponse>(this.baseUri + 'greengrass/definition/subscriptions/' + (SubscriptionDefinitionId == null ? '' : encodeURIComponent(SubscriptionDefinitionId)) + '/versions/' + (SubscriptionDefinitionVersionId == null ? '' : encodeURIComponent(SubscriptionDefinitionVersionId)) + '?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2317,7 +2317,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListBulkDeploymentDetailedReportsResponse} Success
 		 */
-		ListBulkDeploymentDetailedReports(BulkDeploymentId: string, MaxResults: string, NextToken: string): Observable<ListBulkDeploymentDetailedReportsResponse> {
+		ListBulkDeploymentDetailedReports(BulkDeploymentId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBulkDeploymentDetailedReportsResponse> {
 			return this.http.get<ListBulkDeploymentDetailedReportsResponse>(this.baseUri + 'greengrass/bulk/deployments/' + (BulkDeploymentId == null ? '' : encodeURIComponent(BulkDeploymentId)) + '/detailed-reports&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2328,7 +2328,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of results, or ''null'' if there are no additional results.
 		 * @return {ListBulkDeploymentsResponse} Success
 		 */
-		ListBulkDeployments(MaxResults: string, NextToken: string): Observable<ListBulkDeploymentsResponse> {
+		ListBulkDeployments(MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBulkDeploymentsResponse> {
 			return this.http.get<ListBulkDeploymentsResponse>(this.baseUri + 'greengrass/bulk/deployments?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

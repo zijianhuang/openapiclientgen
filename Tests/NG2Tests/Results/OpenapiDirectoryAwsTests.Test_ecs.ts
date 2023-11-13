@@ -1831,7 +1831,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAccountSettingsResponse} Success
 		 */
-		ListAccountSettings(maxResults: string, nextToken: string, requestBody: ListAccountSettingsRequest): Observable<ListAccountSettingsResponse> {
+		ListAccountSettings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAccountSettingsRequest): Observable<ListAccountSettingsResponse> {
 			return this.http.post<ListAccountSettingsResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListAccountSettings?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1842,7 +1842,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAttributesResponse} Success
 		 */
-		ListAttributes(maxResults: string, nextToken: string, requestBody: ListAttributesRequest): Observable<ListAttributesResponse> {
+		ListAttributes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAttributesRequest): Observable<ListAttributesResponse> {
 			return this.http.post<ListAttributesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListAttributes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1853,7 +1853,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListClustersResponse} Success
 		 */
-		ListClusters(maxResults: string, nextToken: string, requestBody: ListClustersRequest): Observable<ListClustersResponse> {
+		ListClusters(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListClustersRequest): Observable<ListClustersResponse> {
 			return this.http.post<ListClustersResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListClusters?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1864,7 +1864,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListContainerInstancesResponse} Success
 		 */
-		ListContainerInstances(maxResults: string, nextToken: string, requestBody: ListContainerInstancesRequest): Observable<ListContainerInstancesResponse> {
+		ListContainerInstances(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListContainerInstancesRequest): Observable<ListContainerInstancesResponse> {
 			return this.http.post<ListContainerInstancesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListContainerInstances?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1875,7 +1875,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListServicesResponse} Success
 		 */
-		ListServices(maxResults: string, nextToken: string, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
+		ListServices(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
 			return this.http.post<ListServicesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListServices?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1895,7 +1895,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTaskDefinitionFamiliesResponse} Success
 		 */
-		ListTaskDefinitionFamilies(maxResults: string, nextToken: string, requestBody: ListTaskDefinitionFamiliesRequest): Observable<ListTaskDefinitionFamiliesResponse> {
+		ListTaskDefinitionFamilies(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTaskDefinitionFamiliesRequest): Observable<ListTaskDefinitionFamiliesResponse> {
 			return this.http.post<ListTaskDefinitionFamiliesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1906,7 +1906,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTaskDefinitionsResponse} Success
 		 */
-		ListTaskDefinitions(maxResults: string, nextToken: string, requestBody: ListTaskDefinitionsRequest): Observable<ListTaskDefinitionsResponse> {
+		ListTaskDefinitions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTaskDefinitionsRequest): Observable<ListTaskDefinitionsResponse> {
 			return this.http.post<ListTaskDefinitionsResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListTaskDefinitions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1917,7 +1917,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTasksResponse} Success
 		 */
-		ListTasks(maxResults: string, nextToken: string, requestBody: ListTasksRequest): Observable<ListTasksResponse> {
+		ListTasks(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTasksRequest): Observable<ListTasksResponse> {
 			return this.http.post<ListTasksResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListTasks?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -1406,7 +1406,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeBackupsResponse} Success
 		 */
-		DescribeBackups(MaxResults: string, NextToken: string, requestBody: DescribeBackupsRequest): Observable<DescribeBackupsResponse> {
+		DescribeBackups(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeBackupsRequest): Observable<DescribeBackupsResponse> {
 			return this.http.post<DescribeBackupsResponse>(this.baseUri + '#X-Amz-Target=AWSSimbaAPIService_v20180301.DescribeBackups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1417,7 +1417,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeDataRepositoryTasksResponse} Success
 		 */
-		DescribeDataRepositoryTasks(MaxResults: string, NextToken: string, requestBody: DescribeDataRepositoryTasksRequest): Observable<DescribeDataRepositoryTasksResponse> {
+		DescribeDataRepositoryTasks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeDataRepositoryTasksRequest): Observable<DescribeDataRepositoryTasksResponse> {
 			return this.http.post<DescribeDataRepositoryTasksResponse>(this.baseUri + '#X-Amz-Target=AWSSimbaAPIService_v20180301.DescribeDataRepositoryTasks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1428,7 +1428,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeFileSystemsResponse} Success
 		 */
-		DescribeFileSystems(MaxResults: string, NextToken: string, requestBody: DescribeFileSystemsRequest): Observable<DescribeFileSystemsResponse> {
+		DescribeFileSystems(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeFileSystemsRequest): Observable<DescribeFileSystemsResponse> {
 			return this.http.post<DescribeFileSystemsResponse>(this.baseUri + '#X-Amz-Target=AWSSimbaAPIService_v20180301.DescribeFileSystems?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

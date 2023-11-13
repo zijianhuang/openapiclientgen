@@ -29,7 +29,7 @@ namespace SwagTests
 				DataAnnotationsToComments = true,
 			});
 
-			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			File.WriteAllText(expectedFile, s); // *** To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 
@@ -50,7 +50,6 @@ namespace SwagTests
 			var currentDir = Directory.GetCurrentDirectory();
 			Directory.SetCurrentDirectory(ng2Dir); // setting ProcessStartInfo.WorkingDirectory is not always working. Working in this demo, but not working in other heavier .net core Web app.
 			var ngCmd = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "npm\\ng.cmd");
-			//npm install -g @angular/cli is required
 			ProcessStartInfo info = new(ngCmd, "build --source-map=false --build-optimizer=false")
 			{
 				UseShellExecute = false,

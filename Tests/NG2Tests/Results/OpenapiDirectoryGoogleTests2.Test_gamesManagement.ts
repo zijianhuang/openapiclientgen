@@ -293,7 +293,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		GamesManagement_applications_listHidden(applicationId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		GamesManagement_applications_listHidden(applicationId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '/players/hidden&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

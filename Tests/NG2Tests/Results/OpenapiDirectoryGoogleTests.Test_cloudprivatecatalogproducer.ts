@@ -915,7 +915,7 @@ export namespace MyNS {
 		 * @param {string} parent The resource name of the parent resource.
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalogproducer_catalogs_list(pageSize: number, pageToken: string, parent: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalogproducer_catalogs_list(pageSize: number | null | undefined, pageToken: string | null | undefined, parent: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/catalogs?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parent=' + (parent == null ? '' : encodeURIComponent(parent)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -945,7 +945,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalogproducer_operations_list(filter: string, name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalogproducer_operations_list(filter: string | null | undefined, name: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/operations?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -958,7 +958,7 @@ export namespace MyNS {
 		 * force is not set to true, then the operation fails.
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalogproducer_catalogs_products_versions_delete(name: string, force: boolean): Observable<HttpResponse<string>> {
+		Cloudprivatecatalogproducer_catalogs_products_versions_delete(name: string, force: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&force=' + force, { observe: 'response', responseType: 'text' });
 		}
 
@@ -983,7 +983,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Field mask that controls which fields of the version should be updated.
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalogproducer_catalogs_products_versions_patch(name: string, updateMask: string, requestBody: GoogleCloudPrivatecatalogproducerV1beta1Version): Observable<HttpResponse<string>> {
+		Cloudprivatecatalogproducer_catalogs_products_versions_patch(name: string, updateMask: string | null | undefined, requestBody: GoogleCloudPrivatecatalogproducerV1beta1Version): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 		 * `ListAssociations`.
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalogproducer_catalogs_associations_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalogproducer_catalogs_associations_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/associations&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 		 * This field is optional.
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalogproducer_catalogs_products_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalogproducer_catalogs_products_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/products&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 		 * This field is optional.
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalogproducer_catalogs_products_versions_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalogproducer_catalogs_products_versions_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/versions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1130,7 +1130,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalogproducer_catalogs_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Cloudprivatecatalogproducer_catalogs_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

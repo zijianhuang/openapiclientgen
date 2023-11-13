@@ -701,7 +701,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetConnectorsResponse} Success
 		 */
-		GetConnectors(maxResults: string, nextToken: string, requestBody: GetConnectorsRequest): Observable<GetConnectorsResponse> {
+		GetConnectors(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetConnectorsRequest): Observable<GetConnectorsResponse> {
 			return this.http.post<GetConnectorsResponse>(this.baseUri + '#X-Amz-Target=AWSServerMigrationService_V2016_10_24.GetConnectors?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -712,7 +712,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetReplicationJobsResponse} Success
 		 */
-		GetReplicationJobs(maxResults: string, nextToken: string, requestBody: GetReplicationJobsRequest): Observable<GetReplicationJobsResponse> {
+		GetReplicationJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetReplicationJobsRequest): Observable<GetReplicationJobsResponse> {
 			return this.http.post<GetReplicationJobsResponse>(this.baseUri + '#X-Amz-Target=AWSServerMigrationService_V2016_10_24.GetReplicationJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetReplicationRunsResponse} Success
 		 */
-		GetReplicationRuns(maxResults: string, nextToken: string, requestBody: GetReplicationRunsRequest): Observable<GetReplicationRunsResponse> {
+		GetReplicationRuns(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetReplicationRunsRequest): Observable<GetReplicationRunsResponse> {
 			return this.http.post<GetReplicationRunsResponse>(this.baseUri + '#X-Amz-Target=AWSServerMigrationService_V2016_10_24.GetReplicationRuns?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -734,7 +734,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetServersResponse} Success
 		 */
-		GetServers(maxResults: string, nextToken: string, requestBody: GetServersRequest): Observable<GetServersResponse> {
+		GetServers(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetServersRequest): Observable<GetServersResponse> {
 			return this.http.post<GetServersResponse>(this.baseUri + '#X-Amz-Target=AWSServerMigrationService_V2016_10_24.GetServers?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

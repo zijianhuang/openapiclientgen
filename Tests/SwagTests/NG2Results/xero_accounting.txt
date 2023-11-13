@@ -2485,7 +2485,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {Accounts} Success - return response of type Accounts array with 0 to n Account
 		 */
-		GetAccounts(where: string, order: string): Observable<Accounts> {
+		GetAccounts(where: string | null | undefined, order: string | null | undefined): Observable<Accounts> {
 			return this.http.get<Accounts>(this.baseUri + 'Accounts?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
@@ -2569,7 +2569,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {BatchPayments} Success - return response of type BatchPayments array of BatchPayment objects
 		 */
-		GetBatchPayments(where: string, order: string): Observable<BatchPayments> {
+		GetBatchPayments(where: string | null | undefined, order: string | null | undefined): Observable<BatchPayments> {
 			return this.http.get<BatchPayments>(this.baseUri + 'BatchPayments?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
@@ -2580,7 +2580,7 @@ export namespace MyNS {
 		 * @param {BatchPayments} requestBody BatchPayments with an array of Payments in body of request
 		 * @return {BatchPayments} Success - return response of type BatchPayments array of BatchPayment objects
 		 */
-		CreateBatchPayment(summarizeErrors: boolean, requestBody: BatchPayments): Observable<BatchPayments> {
+		CreateBatchPayment(summarizeErrors: boolean | null | undefined, requestBody: BatchPayments): Observable<BatchPayments> {
 			return this.http.put<BatchPayments>(this.baseUri + 'BatchPayments?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2614,7 +2614,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with 0 to n BankTransaction
 		 */
-		GetBankTransactions(where: string, order: string, page: number, unitdp: number): Observable<BankTransactions> {
+		GetBankTransactions(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined): Observable<BankTransactions> {
 			return this.http.get<BankTransactions>(this.baseUri + 'BankTransactions?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page + '&unitdp=' + unitdp, {});
 		}
 
@@ -2626,7 +2626,7 @@ export namespace MyNS {
 		 * @param {BankTransactions} requestBody BankTransactions with an array of BankTransaction objects in body of request
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with new BankTransaction
 		 */
-		CreateBankTransactions(summarizeErrors: boolean, unitdp: number, requestBody: BankTransactions): Observable<BankTransactions> {
+		CreateBankTransactions(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: BankTransactions): Observable<BankTransactions> {
 			return this.http.put<BankTransactions>(this.baseUri + 'BankTransactions?summarizeErrors=' + summarizeErrors + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2637,7 +2637,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with new BankTransaction
 		 */
-		UpdateOrCreateBankTransactions(summarizeErrors: boolean, unitdp: number, requestBody: BankTransactions): Observable<BankTransactions> {
+		UpdateOrCreateBankTransactions(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: BankTransactions): Observable<BankTransactions> {
 			return this.http.post<BankTransactions>(this.baseUri + 'BankTransactions?summarizeErrors=' + summarizeErrors + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2648,7 +2648,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with a specific BankTransaction
 		 */
-		GetBankTransaction(BankTransactionID: string, unitdp: number): Observable<BankTransactions> {
+		GetBankTransaction(BankTransactionID: string, unitdp: number | null | undefined): Observable<BankTransactions> {
 			return this.http.get<BankTransactions>(this.baseUri + 'BankTransactions/' + (BankTransactionID == null ? '' : encodeURIComponent(BankTransactionID)) + '&unitdp=' + unitdp, {});
 		}
 
@@ -2659,7 +2659,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {BankTransactions} Success - return response of type BankTransactions array with updated BankTransaction
 		 */
-		UpdateBankTransaction(BankTransactionID: string, unitdp: number, requestBody: BankTransactions): Observable<BankTransactions> {
+		UpdateBankTransaction(BankTransactionID: string, unitdp: number | null | undefined, requestBody: BankTransactions): Observable<BankTransactions> {
 			return this.http.post<BankTransactions>(this.baseUri + 'BankTransactions/' + (BankTransactionID == null ? '' : encodeURIComponent(BankTransactionID)) + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2723,7 +2723,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {BankTransfers} Success - return response of BankTransfers array of 0 to N BankTransfer
 		 */
-		GetBankTransfers(where: string, order: string): Observable<BankTransfers> {
+		GetBankTransfers(where: string | null | undefined, order: string | null | undefined): Observable<BankTransfers> {
 			return this.http.get<BankTransfers>(this.baseUri + 'BankTransfers?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
@@ -2849,8 +2849,8 @@ export namespace MyNS {
 		 * @param {boolean} includeArchived e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
 		 * @return {Contacts} Success - return response of type Contacts array with 0 to N Contact
 		 */
-		GetContacts(where: string, order: string, IDs: Array<string>, page: number, includeArchived: boolean): Observable<Contacts> {
-			return this.http.get<Contacts>(this.baseUri + 'Contacts?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&' + IDs.map(z => `IDs=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&includeArchived=' + includeArchived, {});
+		GetContacts(where: string | null | undefined, order: string | null | undefined, IDs: Array<string> | null | undefined, page: number | null | undefined, includeArchived: boolean | null | undefined): Observable<Contacts> {
+			return this.http.get<Contacts>(this.baseUri + 'Contacts?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&' + IDs?.map(z => `IDs=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&includeArchived=' + includeArchived, {});
 		}
 
 		/**
@@ -2860,7 +2860,7 @@ export namespace MyNS {
 		 * @param {Contacts} requestBody Contacts with an array of Contact objects to create in body of request
 		 * @return {Contacts} Success - return response of type Contacts array with newly created Contact
 		 */
-		CreateContacts(summarizeErrors: boolean, requestBody: Contacts): Observable<Contacts> {
+		CreateContacts(summarizeErrors: boolean | null | undefined, requestBody: Contacts): Observable<Contacts> {
 			return this.http.put<Contacts>(this.baseUri + 'Contacts?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2870,7 +2870,7 @@ export namespace MyNS {
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @return {Contacts} Success - return response of type Contacts array with newly created Contact
 		 */
-		UpdateOrCreateContacts(summarizeErrors: boolean, requestBody: Contacts): Observable<Contacts> {
+		UpdateOrCreateContacts(summarizeErrors: boolean | null | undefined, requestBody: Contacts): Observable<Contacts> {
 			return this.http.post<Contacts>(this.baseUri + 'Contacts?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2974,7 +2974,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {ContactGroups} Success - return response of type Contact Groups array of Contact Group
 		 */
-		GetContactGroups(where: string, order: string): Observable<ContactGroups> {
+		GetContactGroups(where: string | null | undefined, order: string | null | undefined): Observable<ContactGroups> {
 			return this.http.get<ContactGroups>(this.baseUri + 'ContactGroups?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
@@ -3050,7 +3050,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {CreditNotes} Success - return response of type Credit Notes array of CreditNote
 		 */
-		GetCreditNotes(where: string, order: string, page: number, unitdp: number): Observable<CreditNotes> {
+		GetCreditNotes(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined): Observable<CreditNotes> {
 			return this.http.get<CreditNotes>(this.baseUri + 'CreditNotes?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page + '&unitdp=' + unitdp, {});
 		}
 
@@ -3062,7 +3062,7 @@ export namespace MyNS {
 		 * @param {CreditNotes} requestBody Credit Notes with array of CreditNote object in body of request
 		 * @return {CreditNotes} Success - return response of type Credit Notes array of newly created CreditNote
 		 */
-		CreateCreditNotes(summarizeErrors: boolean, unitdp: number, requestBody: CreditNotes): Observable<CreditNotes> {
+		CreateCreditNotes(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: CreditNotes): Observable<CreditNotes> {
 			return this.http.put<CreditNotes>(this.baseUri + 'CreditNotes?summarizeErrors=' + summarizeErrors + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3074,7 +3074,7 @@ export namespace MyNS {
 		 * @param {CreditNotes} requestBody an array of Credit Notes with a single CreditNote object.
 		 * @return {CreditNotes} Success - return response of type Credit Notes array of newly created CreditNote
 		 */
-		UpdateOrCreateCreditNotes(summarizeErrors: boolean, unitdp: number, requestBody: CreditNotes): Observable<CreditNotes> {
+		UpdateOrCreateCreditNotes(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: CreditNotes): Observable<CreditNotes> {
 			return this.http.post<CreditNotes>(this.baseUri + 'CreditNotes?summarizeErrors=' + summarizeErrors + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3085,7 +3085,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {CreditNotes} Success - return response of type Credit Notes array with a unique CreditNote
 		 */
-		GetCreditNote(CreditNoteID: string, unitdp: number): Observable<CreditNotes> {
+		GetCreditNote(CreditNoteID: string, unitdp: number | null | undefined): Observable<CreditNotes> {
 			return this.http.get<CreditNotes>(this.baseUri + 'CreditNotes/' + (CreditNoteID == null ? '' : encodeURIComponent(CreditNoteID)) + '&unitdp=' + unitdp, {});
 		}
 
@@ -3097,7 +3097,7 @@ export namespace MyNS {
 		 * @param {CreditNotes} requestBody an array of Credit Notes containing credit note details to update
 		 * @return {CreditNotes} Success - return response of type Credit Notes array with updated CreditNote
 		 */
-		UpdateCreditNote(CreditNoteID: string, unitdp: number, requestBody: CreditNotes): Observable<CreditNotes> {
+		UpdateCreditNote(CreditNoteID: string, unitdp: number | null | undefined, requestBody: CreditNotes): Observable<CreditNotes> {
 			return this.http.post<CreditNotes>(this.baseUri + 'CreditNotes/' + (CreditNoteID == null ? '' : encodeURIComponent(CreditNoteID)) + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3151,7 +3151,7 @@ export namespace MyNS {
 		 * @param {Allocations} requestBody Allocations with array of Allocation object in body of request.
 		 * @return {Allocations} Success - return response of type Allocations array with newly created Allocation for specific Credit Note
 		 */
-		CreateCreditNoteAllocation(CreditNoteID: string, summarizeErrors: boolean, requestBody: Allocations): Observable<Allocations> {
+		CreateCreditNoteAllocation(CreditNoteID: string, summarizeErrors: boolean | null | undefined, requestBody: Allocations): Observable<Allocations> {
 			return this.http.put<Allocations>(this.baseUri + 'CreditNotes/' + (CreditNoteID == null ? '' : encodeURIComponent(CreditNoteID)) + '/Allocations&summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3183,7 +3183,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {Currencies} Success - return response of type Currencies array with all Currencies
 		 */
-		GetCurrencies(where: string, order: string): Observable<Currencies> {
+		GetCurrencies(where: string | null | undefined, order: string | null | undefined): Observable<Currencies> {
 			return this.http.get<Currencies>(this.baseUri + 'Currencies?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
@@ -3203,7 +3203,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {Employees} Success - return response of type Employees array with all Employee
 		 */
-		GetEmployees(where: string, order: string): Observable<Employees> {
+		GetEmployees(where: string | null | undefined, order: string | null | undefined): Observable<Employees> {
 			return this.http.get<Employees>(this.baseUri + 'Employees?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
@@ -3214,7 +3214,7 @@ export namespace MyNS {
 		 * @param {Employees} requestBody Employees with array of Employee object in body of request
 		 * @return {Employees} Success - return response of type Employees array with new Employee
 		 */
-		CreateEmployees(summarizeErrors: boolean, requestBody: Employees): Observable<Employees> {
+		CreateEmployees(summarizeErrors: boolean | null | undefined, requestBody: Employees): Observable<Employees> {
 			return this.http.put<Employees>(this.baseUri + 'Employees?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3225,7 +3225,7 @@ export namespace MyNS {
 		 * @param {Employees} requestBody Employees with array of Employee object in body of request
 		 * @return {Employees} Success - return response of type Employees array with new Employee
 		 */
-		UpdateOrCreateEmployees(summarizeErrors: boolean, requestBody: Employees): Observable<Employees> {
+		UpdateOrCreateEmployees(summarizeErrors: boolean | null | undefined, requestBody: Employees): Observable<Employees> {
 			return this.http.post<Employees>(this.baseUri + 'Employees?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3246,7 +3246,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {ExpenseClaims} Success - return response of type ExpenseClaims array with all ExpenseClaims
 		 */
-		GetExpenseClaims(where: string, order: string): Observable<ExpenseClaims> {
+		GetExpenseClaims(where: string | null | undefined, order: string | null | undefined): Observable<ExpenseClaims> {
 			return this.http.get<ExpenseClaims>(this.baseUri + 'ExpenseClaims?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
@@ -3316,8 +3316,8 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Invoices} Success - return response of type Invoices array with all Invoices
 		 */
-		GetInvoices(where: string, order: string, IDs: Array<string>, InvoiceNumbers: Array<string>, ContactIDs: Array<string>, Statuses: Array<string>, page: number, includeArchived: boolean, createdByMyApp: boolean, unitdp: number): Observable<Invoices> {
-			return this.http.get<Invoices>(this.baseUri + 'Invoices?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&' + IDs.map(z => `IDs=${encodeURIComponent(z)}`).join('&') + '&' + InvoiceNumbers.map(z => `InvoiceNumbers=${encodeURIComponent(z)}`).join('&') + '&' + ContactIDs.map(z => `ContactIDs=${encodeURIComponent(z)}`).join('&') + '&' + Statuses.map(z => `Statuses=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&includeArchived=' + includeArchived + '&createdByMyApp=' + createdByMyApp + '&unitdp=' + unitdp, {});
+		GetInvoices(where: string | null | undefined, order: string | null | undefined, IDs: Array<string> | null | undefined, InvoiceNumbers: Array<string> | null | undefined, ContactIDs: Array<string> | null | undefined, Statuses: Array<string> | null | undefined, page: number | null | undefined, includeArchived: boolean | null | undefined, createdByMyApp: boolean | null | undefined, unitdp: number | null | undefined): Observable<Invoices> {
+			return this.http.get<Invoices>(this.baseUri + 'Invoices?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&' + IDs?.map(z => `IDs=${encodeURIComponent(z)}`).join('&') + '&' + InvoiceNumbers?.map(z => `InvoiceNumbers=${encodeURIComponent(z)}`).join('&') + '&' + ContactIDs?.map(z => `ContactIDs=${encodeURIComponent(z)}`).join('&') + '&' + Statuses?.map(z => `Statuses=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&includeArchived=' + includeArchived + '&createdByMyApp=' + createdByMyApp + '&unitdp=' + unitdp, {});
 		}
 
 		/**
@@ -3328,7 +3328,7 @@ export namespace MyNS {
 		 * @param {Invoices} requestBody Invoices with an array of invoice objects in body of request
 		 * @return {Invoices} Success - return response of type Invoices array with newly created Invoice
 		 */
-		CreateInvoices(summarizeErrors: boolean, unitdp: number, requestBody: Invoices): Observable<Invoices> {
+		CreateInvoices(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: Invoices): Observable<Invoices> {
 			return this.http.put<Invoices>(this.baseUri + 'Invoices?summarizeErrors=' + summarizeErrors + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3339,7 +3339,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Invoices} Success - return response of type Invoices array with newly created Invoice
 		 */
-		UpdateOrCreateInvoices(summarizeErrors: boolean, unitdp: number, requestBody: Invoices): Observable<Invoices> {
+		UpdateOrCreateInvoices(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: Invoices): Observable<Invoices> {
 			return this.http.post<Invoices>(this.baseUri + 'Invoices?summarizeErrors=' + summarizeErrors + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3350,7 +3350,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Invoices} Success - return response of type Invoices array with specified Invoices
 		 */
-		GetInvoice(InvoiceID: string, unitdp: number): Observable<Invoices> {
+		GetInvoice(InvoiceID: string, unitdp: number | null | undefined): Observable<Invoices> {
 			return this.http.get<Invoices>(this.baseUri + 'Invoices/' + (InvoiceID == null ? '' : encodeURIComponent(InvoiceID)) + '&unitdp=' + unitdp, {});
 		}
 
@@ -3361,7 +3361,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Invoices} Success - return response of type Invoices array with updated Invoice
 		 */
-		UpdateInvoice(InvoiceID: string, unitdp: number, requestBody: Invoices): Observable<Invoices> {
+		UpdateInvoice(InvoiceID: string, unitdp: number | null | undefined, requestBody: Invoices): Observable<Invoices> {
 			return this.http.post<Invoices>(this.baseUri + 'Invoices/' + (InvoiceID == null ? '' : encodeURIComponent(InvoiceID)) + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3465,7 +3465,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Items} Success - return response of type Items array with all Item
 		 */
-		GetItems(where: string, order: string, unitdp: number): Observable<Items> {
+		GetItems(where: string | null | undefined, order: string | null | undefined, unitdp: number | null | undefined): Observable<Items> {
 			return this.http.get<Items>(this.baseUri + 'Items?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&unitdp=' + unitdp, {});
 		}
 
@@ -3477,7 +3477,7 @@ export namespace MyNS {
 		 * @param {Items} requestBody Items with an array of Item objects in body of request
 		 * @return {Items} Success - return response of type Items array with newly created Item
 		 */
-		CreateItems(summarizeErrors: boolean, unitdp: number, requestBody: Items): Observable<Items> {
+		CreateItems(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: Items): Observable<Items> {
 			return this.http.put<Items>(this.baseUri + 'Items?summarizeErrors=' + summarizeErrors + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3488,7 +3488,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Items} Success - return response of type Items array with newly created Item
 		 */
-		UpdateOrCreateItems(summarizeErrors: boolean, unitdp: number, requestBody: Items): Observable<Items> {
+		UpdateOrCreateItems(summarizeErrors: boolean | null | undefined, unitdp: number | null | undefined, requestBody: Items): Observable<Items> {
 			return this.http.post<Items>(this.baseUri + 'Items?summarizeErrors=' + summarizeErrors + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3499,7 +3499,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Items} Success - return response of type Items array with specified Item
 		 */
-		GetItem(ItemID: string, unitdp: number): Observable<Items> {
+		GetItem(ItemID: string, unitdp: number | null | undefined): Observable<Items> {
 			return this.http.get<Items>(this.baseUri + 'Items/' + (ItemID == null ? '' : encodeURIComponent(ItemID)) + '&unitdp=' + unitdp, {});
 		}
 
@@ -3510,7 +3510,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Items} Success - return response of type Items array with updated Item
 		 */
-		UpdateItem(ItemID: string, unitdp: number, requestBody: Items): Observable<Items> {
+		UpdateItem(ItemID: string, unitdp: number | null | undefined, requestBody: Items): Observable<Items> {
 			return this.http.post<Items>(this.baseUri + 'Items/' + (ItemID == null ? '' : encodeURIComponent(ItemID)) + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3552,7 +3552,7 @@ export namespace MyNS {
 		 * @param {boolean} paymentsOnly Filter to retrieve journals on a cash basis. Journals are returned on an accrual basis by default.
 		 * @return {Journals} Success - return response of type Journals array with all Journals
 		 */
-		GetJournals(offset: number, paymentsOnly: boolean): Observable<Journals> {
+		GetJournals(offset: number | null | undefined, paymentsOnly: boolean | null | undefined): Observable<Journals> {
 			return this.http.get<Journals>(this.baseUri + 'Journals?offset=' + offset + '&paymentsOnly=' + paymentsOnly, {});
 		}
 
@@ -3577,7 +3577,7 @@ export namespace MyNS {
 		 * @param {string} TargetTransactionID Filter by the TargetTransactionID. Get all the linked transactions allocated to a particular ACCREC invoice
 		 * @return {LinkedTransactions} Success - return response of type LinkedTransactions array with all LinkedTransaction
 		 */
-		GetLinkedTransactions(page: number, LinkedTransactionID: string, SourceTransactionID: string, ContactID: string, Status: string, TargetTransactionID: string): Observable<LinkedTransactions> {
+		GetLinkedTransactions(page: number | null | undefined, LinkedTransactionID: string | null | undefined, SourceTransactionID: string | null | undefined, ContactID: string | null | undefined, Status: string | null | undefined, TargetTransactionID: string | null | undefined): Observable<LinkedTransactions> {
 			return this.http.get<LinkedTransactions>(this.baseUri + 'LinkedTransactions?page=' + page + '&LinkedTransactionID=' + (LinkedTransactionID == null ? '' : encodeURIComponent(LinkedTransactionID)) + '&SourceTransactionID=' + (SourceTransactionID == null ? '' : encodeURIComponent(SourceTransactionID)) + '&ContactID=' + (ContactID == null ? '' : encodeURIComponent(ContactID)) + '&Status=' + (Status == null ? '' : encodeURIComponent(Status)) + '&TargetTransactionID=' + (TargetTransactionID == null ? '' : encodeURIComponent(TargetTransactionID)), {});
 		}
 
@@ -3629,7 +3629,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 � Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment
 		 * @return {ManualJournals} Success - return response of type ManualJournals array with a all ManualJournals
 		 */
-		GetManualJournals(where: string, order: string, page: number): Observable<ManualJournals> {
+		GetManualJournals(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<ManualJournals> {
 			return this.http.get<ManualJournals>(this.baseUri + 'ManualJournals?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -3640,7 +3640,7 @@ export namespace MyNS {
 		 * @param {ManualJournals} requestBody ManualJournals array with ManualJournal object in body of request
 		 * @return {ManualJournals} Success - return response of type ManualJournals array with newly created ManualJournal
 		 */
-		CreateManualJournals(summarizeErrors: boolean, requestBody: ManualJournals): Observable<ManualJournals> {
+		CreateManualJournals(summarizeErrors: boolean | null | undefined, requestBody: ManualJournals): Observable<ManualJournals> {
 			return this.http.put<ManualJournals>(this.baseUri + 'ManualJournals?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3651,7 +3651,7 @@ export namespace MyNS {
 		 * @param {ManualJournals} requestBody ManualJournals array with ManualJournal object in body of request
 		 * @return {ManualJournals} Success - return response of type ManualJournals array with newly created ManualJournal
 		 */
-		UpdateOrCreateManualJournals(summarizeErrors: boolean, requestBody: ManualJournals): Observable<ManualJournals> {
+		UpdateOrCreateManualJournals(summarizeErrors: boolean | null | undefined, requestBody: ManualJournals): Observable<ManualJournals> {
 			return this.http.post<ManualJournals>(this.baseUri + 'ManualJournals?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3735,7 +3735,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Overpayments} Success - return response of type Overpayments array with all Overpayments
 		 */
-		GetOverpayments(where: string, order: string, page: number, unitdp: number): Observable<Overpayments> {
+		GetOverpayments(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined): Observable<Overpayments> {
 			return this.http.get<Overpayments>(this.baseUri + 'Overpayments?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page + '&unitdp=' + unitdp, {});
 		}
 
@@ -3757,7 +3757,7 @@ export namespace MyNS {
 		 * @param {Allocations} requestBody Allocations array with Allocation object in body of request
 		 * @return {Allocations} Success - return response of type Allocations array with all Allocation for Overpayments
 		 */
-		CreateOverpaymentAllocations(OverpaymentID: string, summarizeErrors: boolean, requestBody: Allocations): Observable<Allocations> {
+		CreateOverpaymentAllocations(OverpaymentID: string, summarizeErrors: boolean | null | undefined, requestBody: Allocations): Observable<Allocations> {
 			return this.http.put<Allocations>(this.baseUri + 'Overpayments/' + (OverpaymentID == null ? '' : encodeURIComponent(OverpaymentID)) + '/Allocations&summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3790,7 +3790,7 @@ export namespace MyNS {
 		 * @param {number} page Up to 100 payments will be returned in a single API call
 		 * @return {Payments} Success - return response of type Payments array for all Payments
 		 */
-		GetPayments(where: string, order: string, page: number): Observable<Payments> {
+		GetPayments(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<Payments> {
 			return this.http.get<Payments>(this.baseUri + 'Payments?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -3801,7 +3801,7 @@ export namespace MyNS {
 		 * @param {Payments} requestBody Payments array with Payment object in body of request
 		 * @return {Payments} Success - return response of type Payments array for newly created Payment
 		 */
-		CreatePayments(summarizeErrors: boolean, requestBody: Payments): Observable<Payments> {
+		CreatePayments(summarizeErrors: boolean | null | undefined, requestBody: Payments): Observable<Payments> {
 			return this.http.put<Payments>(this.baseUri + 'Payments?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3884,7 +3884,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Prepayments} Success - return response of type Prepayments array for all Prepayment
 		 */
-		GetPrepayments(where: string, order: string, page: number, unitdp: number): Observable<Prepayments> {
+		GetPrepayments(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined, unitdp: number | null | undefined): Observable<Prepayments> {
 			return this.http.get<Prepayments>(this.baseUri + 'Prepayments?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page + '&unitdp=' + unitdp, {});
 		}
 
@@ -3906,7 +3906,7 @@ export namespace MyNS {
 		 * @param {Allocations} requestBody Allocations with an array of Allocation object in body of request
 		 * @return {Allocations} Success - return response of type Allocations array of Allocation for all Prepayment
 		 */
-		CreatePrepaymentAllocations(PrepaymentID: string, summarizeErrors: boolean, requestBody: Allocations): Observable<Allocations> {
+		CreatePrepaymentAllocations(PrepaymentID: string, summarizeErrors: boolean | null | undefined, requestBody: Allocations): Observable<Allocations> {
 			return this.http.put<Allocations>(this.baseUri + 'Prepayments/' + (PrepaymentID == null ? '' : encodeURIComponent(PrepaymentID)) + '/Allocations&summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3941,7 +3941,7 @@ export namespace MyNS {
 		 * @param {number} page To specify a page, append the page parameter to the URL e.g. ?page=1. If there are 100 records in the response you will need to check if there is any more data by fetching the next page e.g ?page=2 and continuing this process until no more results are returned.
 		 * @return {PurchaseOrders} Success - return response of type PurchaseOrder array of all PurchaseOrder
 		 */
-		GetPurchaseOrders(Status: PurchaseOrderStatus, DateFrom: string, DateTo: string, order: string, page: number): Observable<PurchaseOrders> {
+		GetPurchaseOrders(Status: PurchaseOrderStatus | null | undefined, DateFrom: string | null | undefined, DateTo: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PurchaseOrders> {
 			return this.http.get<PurchaseOrders>(this.baseUri + 'PurchaseOrders?Status=' + Status + '&DateFrom=' + (DateFrom == null ? '' : encodeURIComponent(DateFrom)) + '&DateTo=' + (DateTo == null ? '' : encodeURIComponent(DateTo)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -3952,7 +3952,7 @@ export namespace MyNS {
 		 * @param {PurchaseOrders} requestBody PurchaseOrders with an array of PurchaseOrder object in body of request
 		 * @return {PurchaseOrders} Success - return response of type PurchaseOrder array for specified PurchaseOrder
 		 */
-		CreatePurchaseOrders(summarizeErrors: boolean, requestBody: PurchaseOrders): Observable<PurchaseOrders> {
+		CreatePurchaseOrders(summarizeErrors: boolean | null | undefined, requestBody: PurchaseOrders): Observable<PurchaseOrders> {
 			return this.http.put<PurchaseOrders>(this.baseUri + 'PurchaseOrders?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3962,7 +3962,7 @@ export namespace MyNS {
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @return {PurchaseOrders} Success - return response of type PurchaseOrder array for specified PurchaseOrder
 		 */
-		UpdateOrCreatePurchaseOrders(summarizeErrors: boolean, requestBody: PurchaseOrders): Observable<PurchaseOrders> {
+		UpdateOrCreatePurchaseOrders(summarizeErrors: boolean | null | undefined, requestBody: PurchaseOrders): Observable<PurchaseOrders> {
 			return this.http.post<PurchaseOrders>(this.baseUri + 'PurchaseOrders?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4040,8 +4040,8 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {Quotes} Success - return response of type quotes array with all quotes
 		 */
-		GetQuotes(DateFrom: Date, DateTo: Date, ExpiryDateFrom: Date, ExpiryDateTo: Date, ContactID: string, Status: string, page: number, order: string): Observable<Quotes> {
-			return this.http.get<Quotes>(this.baseUri + 'Quotes?DateFrom=' + DateFrom.toISOString() + '&DateTo=' + DateTo.toISOString() + '&ExpiryDateFrom=' + ExpiryDateFrom.toISOString() + '&ExpiryDateTo=' + ExpiryDateTo.toISOString() + '&ContactID=' + (ContactID == null ? '' : encodeURIComponent(ContactID)) + '&Status=' + (Status == null ? '' : encodeURIComponent(Status)) + '&page=' + page + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
+		GetQuotes(DateFrom: Date | null | undefined, DateTo: Date | null | undefined, ExpiryDateFrom: Date | null | undefined, ExpiryDateTo: Date | null | undefined, ContactID: string | null | undefined, Status: string | null | undefined, page: number | null | undefined, order: string | null | undefined): Observable<Quotes> {
+			return this.http.get<Quotes>(this.baseUri + 'Quotes?DateFrom=' + DateFrom?.toISOString() + '&DateTo=' + DateTo?.toISOString() + '&ExpiryDateFrom=' + ExpiryDateFrom?.toISOString() + '&ExpiryDateTo=' + ExpiryDateTo?.toISOString() + '&ContactID=' + (ContactID == null ? '' : encodeURIComponent(ContactID)) + '&Status=' + (Status == null ? '' : encodeURIComponent(Status)) + '&page=' + page + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
 		/**
@@ -4051,7 +4051,7 @@ export namespace MyNS {
 		 * @param {Quotes} requestBody Quotes with an array of Quote object in body of request
 		 * @return {Quotes} Success - return response of type Quotes with array with newly created Quote
 		 */
-		CreateQuotes(summarizeErrors: boolean, requestBody: Quotes): Observable<Quotes> {
+		CreateQuotes(summarizeErrors: boolean | null | undefined, requestBody: Quotes): Observable<Quotes> {
 			return this.http.put<Quotes>(this.baseUri + 'Quotes?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4061,7 +4061,7 @@ export namespace MyNS {
 		 * @param {boolean} summarizeErrors If false return 200 OK and mix of successfully created obejcts and any with validation errors
 		 * @return {Quotes} Success - return response of type Quotes array with updated or created Quote
 		 */
-		UpdateOrCreateQuotes(summarizeErrors: boolean, requestBody: Quotes): Observable<Quotes> {
+		UpdateOrCreateQuotes(summarizeErrors: boolean | null | undefined, requestBody: Quotes): Observable<Quotes> {
 			return this.http.post<Quotes>(this.baseUri + 'Quotes?summarizeErrors=' + summarizeErrors, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4156,7 +4156,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Receipts} Success - return response of type Receipts array for all Receipt
 		 */
-		GetReceipts(where: string, order: string, unitdp: number): Observable<Receipts> {
+		GetReceipts(where: string | null | undefined, order: string | null | undefined, unitdp: number | null | undefined): Observable<Receipts> {
 			return this.http.get<Receipts>(this.baseUri + 'Receipts?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&unitdp=' + unitdp, {});
 		}
 
@@ -4167,7 +4167,7 @@ export namespace MyNS {
 		 * @param {Receipts} requestBody Receipts with an array of Receipt object in body of request
 		 * @return {Receipts} Success - return response of type Receipts array for newly created Receipt
 		 */
-		CreateReceipt(unitdp: number, requestBody: Receipts): Observable<Receipts> {
+		CreateReceipt(unitdp: number | null | undefined, requestBody: Receipts): Observable<Receipts> {
 			return this.http.put<Receipts>(this.baseUri + 'Receipts?unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4178,7 +4178,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Receipts} Success - return response of type Receipts array for a specified Receipt
 		 */
-		GetReceipt(ReceiptID: string, unitdp: number): Observable<Receipts> {
+		GetReceipt(ReceiptID: string, unitdp: number | null | undefined): Observable<Receipts> {
 			return this.http.get<Receipts>(this.baseUri + 'Receipts/' + (ReceiptID == null ? '' : encodeURIComponent(ReceiptID)) + '&unitdp=' + unitdp, {});
 		}
 
@@ -4189,7 +4189,7 @@ export namespace MyNS {
 		 * @param {number} unitdp e.g. unitdp=4 � (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
 		 * @return {Receipts} Success - return response of type Receipts array for updated Receipt
 		 */
-		UpdateReceipt(ReceiptID: string, unitdp: number, requestBody: Receipts): Observable<Receipts> {
+		UpdateReceipt(ReceiptID: string, unitdp: number | null | undefined, requestBody: Receipts): Observable<Receipts> {
 			return this.http.post<Receipts>(this.baseUri + 'Receipts/' + (ReceiptID == null ? '' : encodeURIComponent(ReceiptID)) + '&unitdp=' + unitdp, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -4253,7 +4253,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {RepeatingInvoices} Success - return response of type Repeating Invoices array for all Repeating Invoice
 		 */
-		GetRepeatingInvoices(where: string, order: string): Observable<RepeatingInvoices> {
+		GetRepeatingInvoices(where: string | null | undefined, order: string | null | undefined): Observable<RepeatingInvoices> {
 			return this.http.get<RepeatingInvoices>(this.baseUri + 'RepeatingInvoices?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
@@ -4326,7 +4326,7 @@ export namespace MyNS {
 		 * @param {string} reportYear The year of the 1099 report
 		 * @return {Reports} Success - return response of type Reports
 		 */
-		GetReportTenNinetyNine(reportYear: string): Observable<Reports> {
+		GetReportTenNinetyNine(reportYear: string | null | undefined): Observable<Reports> {
 			return this.http.get<Reports>(this.baseUri + 'Reports/TenNinetyNine?reportYear=' + (reportYear == null ? '' : encodeURIComponent(reportYear)), {});
 		}
 
@@ -4339,8 +4339,8 @@ export namespace MyNS {
 		 * @param {Date} toDate The to date of the Aged Payables By Contact report
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
-		GetReportAgedPayablesByContact(contactId: string, date: Date, fromDate: Date, toDate: Date): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/AgedPayablesByContact?contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&date=' + date.toISOString() + '&fromDate=' + fromDate.toISOString() + '&toDate=' + toDate.toISOString(), {});
+		GetReportAgedPayablesByContact(contactId: string, date: Date | null | undefined, fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/AgedPayablesByContact?contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&date=' + date?.toISOString() + '&fromDate=' + fromDate?.toISOString() + '&toDate=' + toDate?.toISOString(), {});
 		}
 
 		/**
@@ -4352,8 +4352,8 @@ export namespace MyNS {
 		 * @param {Date} toDate The to date of the Aged Receivables By Contact report
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
-		GetReportAgedReceivablesByContact(contactId: string, date: Date, fromDate: Date, toDate: Date): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/AgedReceivablesByContact?contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&date=' + date.toISOString() + '&fromDate=' + fromDate.toISOString() + '&toDate=' + toDate.toISOString(), {});
+		GetReportAgedReceivablesByContact(contactId: string, date: Date | null | undefined, fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/AgedReceivablesByContact?contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&date=' + date?.toISOString() + '&fromDate=' + fromDate?.toISOString() + '&toDate=' + toDate?.toISOString(), {});
 		}
 
 		/**
@@ -4368,7 +4368,7 @@ export namespace MyNS {
 		 * @param {boolean} paymentsOnly return a cash basis for the Balance Sheet report
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
-		GetReportBalanceSheet(date: string, periods: number, timeframe: GetReportBalanceSheetTimeframe, trackingOptionID1: string, trackingOptionID2: string, standardLayout: boolean, paymentsOnly: boolean): Observable<ReportWithRows> {
+		GetReportBalanceSheet(date: string | null | undefined, periods: number | null | undefined, timeframe: GetReportBalanceSheetTimeframe | null | undefined, trackingOptionID1: string | null | undefined, trackingOptionID2: string | null | undefined, standardLayout: boolean | null | undefined, paymentsOnly: boolean | null | undefined): Observable<ReportWithRows> {
 			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BalanceSheet?date=' + (date == null ? '' : encodeURIComponent(date)) + '&periods=' + periods + '&timeframe=' + timeframe + '&trackingOptionID1=' + (trackingOptionID1 == null ? '' : encodeURIComponent(trackingOptionID1)) + '&trackingOptionID2=' + (trackingOptionID2 == null ? '' : encodeURIComponent(trackingOptionID2)) + '&standardLayout=' + standardLayout + '&paymentsOnly=' + paymentsOnly, {});
 		}
 
@@ -4379,8 +4379,8 @@ export namespace MyNS {
 		 * @param {Date} toDate The to date for the Bank Summary report e.g. 2018-03-31
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
-		GetReportBankSummary(fromDate: Date, toDate: Date): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BankSummary?fromDate=' + fromDate.toISOString() + '&toDate=' + toDate.toISOString(), {});
+		GetReportBankSummary(fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BankSummary?fromDate=' + fromDate?.toISOString() + '&toDate=' + toDate?.toISOString(), {});
 		}
 
 		/**
@@ -4410,8 +4410,8 @@ export namespace MyNS {
 		 * @param {number} timeframe The period size to compare to (1=month, 3=quarter, 12=year)
 		 * @return {ReportWithRows} success- return a Report with Rows object
 		 */
-		GetReportBudgetSummary(date: Date, period: number, timeframe: number): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BudgetSummary?date=' + date.toISOString() + '&period=' + period + '&timeframe=' + timeframe, {});
+		GetReportBudgetSummary(date: Date | null | undefined, period: number | null | undefined, timeframe: number | null | undefined): Observable<ReportWithRows> {
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BudgetSummary?date=' + date?.toISOString() + '&period=' + period + '&timeframe=' + timeframe, {});
 		}
 
 		/**
@@ -4420,8 +4420,8 @@ export namespace MyNS {
 		 * @param {Date} date The date for the Bank Summary report e.g. 2018-03-31
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
-		GetReportExecutiveSummary(date: Date): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/ExecutiveSummary?date=' + date.toISOString(), {});
+		GetReportExecutiveSummary(date: Date | null | undefined): Observable<ReportWithRows> {
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/ExecutiveSummary?date=' + date?.toISOString(), {});
 		}
 
 		/**
@@ -4439,8 +4439,8 @@ export namespace MyNS {
 		 * @param {boolean} paymentsOnly Return cash only basis for the ProfitAndLoss report
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
-		GetReportProfitAndLoss(fromDate: Date, toDate: Date, periods: number, timeframe: GetReportBalanceSheetTimeframe, trackingCategoryID: string, trackingCategoryID2: string, trackingOptionID: string, trackingOptionID2: string, standardLayout: boolean, paymentsOnly: boolean): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/ProfitAndLoss?fromDate=' + fromDate.toISOString() + '&toDate=' + toDate.toISOString() + '&periods=' + periods + '&timeframe=' + timeframe + '&trackingCategoryID=' + (trackingCategoryID == null ? '' : encodeURIComponent(trackingCategoryID)) + '&trackingCategoryID2=' + (trackingCategoryID2 == null ? '' : encodeURIComponent(trackingCategoryID2)) + '&trackingOptionID=' + (trackingOptionID == null ? '' : encodeURIComponent(trackingOptionID)) + '&trackingOptionID2=' + (trackingOptionID2 == null ? '' : encodeURIComponent(trackingOptionID2)) + '&standardLayout=' + standardLayout + '&paymentsOnly=' + paymentsOnly, {});
+		GetReportProfitAndLoss(fromDate: Date | null | undefined, toDate: Date | null | undefined, periods: number | null | undefined, timeframe: GetReportBalanceSheetTimeframe | null | undefined, trackingCategoryID: string | null | undefined, trackingCategoryID2: string | null | undefined, trackingOptionID: string | null | undefined, trackingOptionID2: string | null | undefined, standardLayout: boolean | null | undefined, paymentsOnly: boolean | null | undefined): Observable<ReportWithRows> {
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/ProfitAndLoss?fromDate=' + fromDate?.toISOString() + '&toDate=' + toDate?.toISOString() + '&periods=' + periods + '&timeframe=' + timeframe + '&trackingCategoryID=' + (trackingCategoryID == null ? '' : encodeURIComponent(trackingCategoryID)) + '&trackingCategoryID2=' + (trackingCategoryID2 == null ? '' : encodeURIComponent(trackingCategoryID2)) + '&trackingOptionID=' + (trackingOptionID == null ? '' : encodeURIComponent(trackingOptionID)) + '&trackingOptionID2=' + (trackingOptionID2 == null ? '' : encodeURIComponent(trackingOptionID2)) + '&standardLayout=' + standardLayout + '&paymentsOnly=' + paymentsOnly, {});
 		}
 
 		/**
@@ -4450,8 +4450,8 @@ export namespace MyNS {
 		 * @param {boolean} paymentsOnly Return cash only basis for the Trial Balance report
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
-		GetReportTrialBalance(date: Date, paymentsOnly: boolean): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/TrialBalance?date=' + date.toISOString() + '&paymentsOnly=' + paymentsOnly, {});
+		GetReportTrialBalance(date: Date | null | undefined, paymentsOnly: boolean | null | undefined): Observable<ReportWithRows> {
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/TrialBalance?date=' + date?.toISOString() + '&paymentsOnly=' + paymentsOnly, {});
 		}
 
 		/**
@@ -4462,7 +4462,7 @@ export namespace MyNS {
 		 * @param {string} TaxType Filter by tax type
 		 * @return {TaxRates} Success - return response of type TaxRates array with TaxRates
 		 */
-		GetTaxRates(where: string, order: string, TaxType: string): Observable<TaxRates> {
+		GetTaxRates(where: string | null | undefined, order: string | null | undefined, TaxType: string | null | undefined): Observable<TaxRates> {
 			return this.http.get<TaxRates>(this.baseUri + 'TaxRates?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&TaxType=' + (TaxType == null ? '' : encodeURIComponent(TaxType)), {});
 		}
 
@@ -4493,7 +4493,7 @@ export namespace MyNS {
 		 * @param {boolean} includeArchived e.g. includeArchived=true - Categories and options with a status of ARCHIVED will be included in the response
 		 * @return {TrackingCategories} Success - return response of type TrackingCategories array of TrackingCategory
 		 */
-		GetTrackingCategories(where: string, order: string, includeArchived: boolean): Observable<TrackingCategories> {
+		GetTrackingCategories(where: string | null | undefined, order: string | null | undefined, includeArchived: boolean | null | undefined): Observable<TrackingCategories> {
 			return this.http.get<TrackingCategories>(this.baseUri + 'TrackingCategories?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&includeArchived=' + includeArchived, {});
 		}
 
@@ -4577,7 +4577,7 @@ export namespace MyNS {
 		 * @param {string} order Order by an any element
 		 * @return {Users} Success - return response of type Users array of all User
 		 */
-		GetUsers(where: string, order: string): Observable<Users> {
+		GetUsers(where: string | null | undefined, order: string | null | undefined): Observable<Users> {
 			return this.http.get<Users>(this.baseUri + 'Users?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 

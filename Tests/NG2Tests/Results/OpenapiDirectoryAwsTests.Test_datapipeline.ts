@@ -476,7 +476,7 @@ export namespace MyNS {
 		 * @param {string} marker Pagination token
 		 * @return {DescribeObjectsOutput} Success
 		 */
-		DescribeObjects(marker: string, requestBody: DescribeObjectsInput): Observable<DescribeObjectsOutput> {
+		DescribeObjects(marker: string | null | undefined, requestBody: DescribeObjectsInput): Observable<DescribeObjectsOutput> {
 			return this.http.post<DescribeObjectsOutput>(this.baseUri + '#X-Amz-Target=DataPipeline.DescribeObjects?marker=' + (marker == null ? '' : encodeURIComponent(marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -513,7 +513,7 @@ export namespace MyNS {
 		 * @param {string} marker Pagination token
 		 * @return {ListPipelinesOutput} Success
 		 */
-		ListPipelines(marker: string, requestBody: ListPipelinesInput): Observable<ListPipelinesOutput> {
+		ListPipelines(marker: string | null | undefined, requestBody: ListPipelinesInput): Observable<ListPipelinesOutput> {
 			return this.http.post<ListPipelinesOutput>(this.baseUri + '#X-Amz-Target=DataPipeline.ListPipelines?marker=' + (marker == null ? '' : encodeURIComponent(marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -542,7 +542,7 @@ export namespace MyNS {
 		 * @param {string} marker Pagination token
 		 * @return {QueryObjectsOutput} Success
 		 */
-		QueryObjects(limit: string, marker: string, requestBody: QueryObjectsInput): Observable<QueryObjectsOutput> {
+		QueryObjects(limit: string | null | undefined, marker: string | null | undefined, requestBody: QueryObjectsInput): Observable<QueryObjectsOutput> {
 			return this.http.post<QueryObjectsOutput>(this.baseUri + '#X-Amz-Target=DataPipeline.QueryObjects?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

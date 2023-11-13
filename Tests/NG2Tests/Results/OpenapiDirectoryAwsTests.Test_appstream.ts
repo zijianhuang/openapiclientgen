@@ -1256,7 +1256,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeImagePermissionsResult} Success
 		 */
-		DescribeImagePermissions(MaxResults: string, NextToken: string, requestBody: DescribeImagePermissionsRequest): Observable<DescribeImagePermissionsResult> {
+		DescribeImagePermissions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeImagePermissionsRequest): Observable<DescribeImagePermissionsResult> {
 			return this.http.post<DescribeImagePermissionsResult>(this.baseUri + '#X-Amz-Target=PhotonAdminProxyService.DescribeImagePermissions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1267,7 +1267,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeImagesResult} Success
 		 */
-		DescribeImages(MaxResults: string, NextToken: string, requestBody: DescribeImagesRequest): Observable<DescribeImagesResult> {
+		DescribeImages(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeImagesRequest): Observable<DescribeImagesResult> {
 			return this.http.post<DescribeImagesResult>(this.baseUri + '#X-Amz-Target=PhotonAdminProxyService.DescribeImages?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

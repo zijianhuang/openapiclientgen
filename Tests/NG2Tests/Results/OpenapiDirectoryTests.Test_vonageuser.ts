@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * @param {string} email Filter by email address
 		 * @return {UsersHalResponse} Success
 		 */
-		UserCtrl_getUsers(account_id: string, page_size: number, page: number, first_name: string, last_name: string, login_name: string, email: string): Observable<UsersHalResponse> {
+		UserCtrl_getUsers(account_id: string, page_size: number | null | undefined, page: number | null | undefined, first_name: string | null | undefined, last_name: string | null | undefined, login_name: string | null | undefined, email: string | null | undefined): Observable<UsersHalResponse> {
 			return this.http.get<UsersHalResponse>(this.baseUri + 'api/accounts/' + (account_id == null ? '' : encodeURIComponent(account_id)) + '/users&page_size=' + page_size + '&page=' + page + '&first_name=' + (first_name == null ? '' : encodeURIComponent(first_name)) + '&last_name=' + (last_name == null ? '' : encodeURIComponent(last_name)) + '&login_name=' + (login_name == null ? '' : encodeURIComponent(login_name)) + '&email=' + (email == null ? '' : encodeURIComponent(email)), {});
 		}
 

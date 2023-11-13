@@ -274,7 +274,7 @@ export namespace MyNS {
 		 * @param {GET_DeleteAttributesExpected} Expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.
 		 * @return {void} Success
 		 */
-		GET_DeleteAttributes(DomainName: string, ItemName: string, Attributes: Array<DeletableAttribute>, Expected: GET_DeleteAttributesExpected, Action: GET_DeleteAttributesAction, Version: GET_DeleteAttributesVersion): Observable<HttpResponse<string>> {
+		GET_DeleteAttributes(DomainName: string, ItemName: string, Attributes: Array<DeletableAttribute> | null | undefined, Expected: GET_DeleteAttributesExpected | null | undefined, Action: GET_DeleteAttributesAction, Version: GET_DeleteAttributesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteAttributes?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&ItemName=' + (ItemName == null ? '' : encodeURIComponent(ItemName)) + '&' + Attributes.map(z => `Attributes=${z}`).join('&') + '&Expected=' + Expected + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -307,7 +307,7 @@ export namespace MyNS {
 		 * @param {boolean} ConsistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.
 		 * @return {void} Success
 		 */
-		GET_GetAttributes(DomainName: string, ItemName: string, AttributeNames: Array<string>, ConsistentRead: boolean, Action: GET_GetAttributesAction, Version: GET_GetAttributesVersion): Observable<HttpResponse<string>> {
+		GET_GetAttributes(DomainName: string, ItemName: string, AttributeNames: Array<string> | null | undefined, ConsistentRead: boolean | null | undefined, Action: GET_GetAttributesAction, Version: GET_GetAttributesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetAttributes?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&ItemName=' + (ItemName == null ? '' : encodeURIComponent(ItemName)) + '&' + AttributeNames.map(z => `AttributeNames=${encodeURIComponent(z)}`).join('&') + '&ConsistentRead=' + ConsistentRead + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -318,7 +318,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string informing Amazon SimpleDB where to start the next list of domain names.
 		 * @return {void} Success
 		 */
-		GET_ListDomains(MaxNumberOfDomains: number, NextToken: string, Action: GET_ListDomainsAction, Version: GET_ListDomainsVersion): Observable<HttpResponse<string>> {
+		GET_ListDomains(MaxNumberOfDomains: number | null | undefined, NextToken: string | null | undefined, Action: GET_ListDomainsAction, Version: GET_ListDomainsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListDomains?MaxNumberOfDomains=' + MaxNumberOfDomains + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -331,7 +331,7 @@ export namespace MyNS {
 		 * @param {GET_PutAttributesExpected} Expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.
 		 * @return {void} Success
 		 */
-		GET_PutAttributes(DomainName: string, ItemName: string, Attributes: Array<ReplaceableAttribute>, Expected: GET_PutAttributesExpected, Action: GET_PutAttributesAction, Version: GET_PutAttributesVersion): Observable<HttpResponse<string>> {
+		GET_PutAttributes(DomainName: string, ItemName: string, Attributes: Array<ReplaceableAttribute>, Expected: GET_PutAttributesExpected | null | undefined, Action: GET_PutAttributesAction, Version: GET_PutAttributesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutAttributes?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&ItemName=' + (ItemName == null ? '' : encodeURIComponent(ItemName)) + '&' + Attributes.map(z => `Attributes=${z}`).join('&') + '&Expected=' + Expected + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -343,7 +343,7 @@ export namespace MyNS {
 		 * @param {boolean} ConsistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.
 		 * @return {void} Success
 		 */
-		GET_Select(SelectExpression: string, NextToken: string, ConsistentRead: boolean, Action: GET_SelectAction, Version: GET_SelectVersion): Observable<HttpResponse<string>> {
+		GET_Select(SelectExpression: string, NextToken: string | null | undefined, ConsistentRead: boolean | null | undefined, Action: GET_SelectAction, Version: GET_SelectVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=Select?SelectExpression=' + (SelectExpression == null ? '' : encodeURIComponent(SelectExpression)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&ConsistentRead=' + ConsistentRead + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}

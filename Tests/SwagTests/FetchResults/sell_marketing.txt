@@ -1193,7 +1193,7 @@ export namespace MyNS {
 		 * @param {string} offset Specifies the number of ads to skip in the result set before returning the first ad in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 items from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0
 		 * @return {AdPagedCollection} Success
 		 */
-		GetAds(campaign_id: string, limit: string, listing_ids: string, offset: string): Promise<AdPagedCollection> {
+		GetAds(campaign_id: string, limit: string | null | undefined, listing_ids: string, offset: string | null | undefined): Promise<AdPagedCollection> {
 			return fetch(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&listing_ids=' + (listing_ids == null ? '' : encodeURIComponent(listing_ids)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => d.json());
 		}
 
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 		 * @param {string} start_date_range Specifies the range of a campaign's start date in which to filter the results. The results are filtered to include only campaigns with a start date that is equal to this date or is within specified range. Valid format (UTC): &nbsp;&nbsp;&nbsp;&nbsp;yyyy-MM-ddThh:mm:ssZ..yyyy-MM-ddThh:mm:ssZ&nbsp;&nbsp; (starts within this range) &nbsp;&nbsp;&nbsp;&nbsp;yyyy-MM-ddThh:mm:ssZ..&nbsp;&nbsp;(campaign starts on or after this date) &nbsp;&nbsp;&nbsp;&nbsp;..yyyy-MM-ddThh:mm:ssZ&nbsp;&nbsp; (campaign starts on or before this date) &nbsp;&nbsp;&nbsp;&nbsp;2016-09-08T00:00.00.000Z..2016-09-09T00:00:00Z&nbsp;&nbsp; (campaign starts on September 8, 2016) Note: The results might not include all the campaigns with this start date if other filters exclude them.
 		 * @return {CampaignPagedCollection} Success
 		 */
-		GetCampaigns(campaign_name: string, campaign_status: string, end_date_range: string, limit: string, offset: string, start_date_range: string): Promise<CampaignPagedCollection> {
+		GetCampaigns(campaign_name: string | null | undefined, campaign_status: string | null | undefined, end_date_range: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, start_date_range: string | null | undefined): Promise<CampaignPagedCollection> {
 			return fetch(this.baseUri + 'ad_campaign?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)) + '&campaign_status=' + (campaign_status == null ? '' : encodeURIComponent(campaign_status)) + '&end_date_range=' + (end_date_range == null ? '' : encodeURIComponent(end_date_range)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&start_date_range=' + (start_date_range == null ? '' : encodeURIComponent(start_date_range)), { method: 'get' }).then(d => d.json());
 		}
 
@@ -1355,7 +1355,7 @@ export namespace MyNS {
 		 * @param {string} listing_id Identifier of the eBay listing associated with the ad.
 		 * @return {Campaigns} Success
 		 */
-		FindCampaignByAdReference(inventory_reference_id: string, inventory_reference_type: string, listing_id: string): Promise<Campaigns> {
+		FindCampaignByAdReference(inventory_reference_id: string | null | undefined, inventory_reference_type: string | null | undefined, listing_id: string | null | undefined): Promise<Campaigns> {
 			return fetch(this.baseUri + 'ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)), { method: 'get' }).then(d => d.json());
 		}
 
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 		 * @param {string} report_task_statuses This parameter filters the returned report tasks by their status. Supply a comma-separated list of the report statuses you want returned. The results are filtered to include only the report statuses you specify. Note: The results might not include some report tasks if other search conditions exclude them. Valid values: &nbsp;&nbsp;&nbsp;PENDING &nbsp;&nbsp;&nbsp;SUCCESS &nbsp;&nbsp;&nbsp;FAILED
 		 * @return {ReportTaskPagedCollection} Success
 		 */
-		GetReportTasks(limit: string, offset: string, report_task_statuses: string): Promise<ReportTaskPagedCollection> {
+		GetReportTasks(limit: string | null | undefined, offset: string | null | undefined, report_task_statuses: string | null | undefined): Promise<ReportTaskPagedCollection> {
 			return fetch(this.baseUri + 'ad_report_task?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&report_task_statuses=' + (report_task_statuses == null ? '' : encodeURIComponent(report_task_statuses)), { method: 'get' }).then(d => d.json());
 		}
 
@@ -1594,7 +1594,7 @@ export namespace MyNS {
 		 * @param {string} status This query parameter applies only to markdown promotions. It filters the response based on the indicated status of the promotion. Currently, the only supported value for this parameter is MARKED_DOWN, which indicates active markdown promotions. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/marketing/types/ItemMarkdownStatusEnum.html
 		 * @return {void} 
 		 */
-		GetListingSet(limit: string, offset: string, promotion_id: string, q: string, sort: string, status: string): Promise<Response> {
+		GetListingSet(limit: string | null | undefined, offset: string | null | undefined, promotion_id: string, q: string | null | undefined, sort: string | null | undefined, status: string | null | undefined): Promise<Response> {
 			return fetch(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/get_listing_set?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&status=' + (status == null ? '' : encodeURIComponent(status)), { method: 'get' });
 		}
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @param {string} sort Specifies the order for how to sort the response. If you precede the supplied value with a dash, the response is sorted in reverse order. Example: &nbsp;&nbsp;&nbsp;sort=END_DATE &nbsp; Sorts the promotions in the response by their end dates in ascending order &nbsp;&nbsp;&nbsp;sort=-PROMOTION_NAME &nbsp; Sorts the promotions by their promotion name in descending alphabetical order (Z-Az-a) Valid values: START_DATE END_DATE PROMOTION_NAME For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/marketing/types/SortField.html
 		 * @return {PromotionsPagedCollection} Success
 		 */
-		GetPromotions(limit: string, marketplace_id: string, offset: string, promotion_status: string, promotion_type: string, q: string, sort: string): Promise<PromotionsPagedCollection> {
+		GetPromotions(limit: string | null | undefined, marketplace_id: string, offset: string | null | undefined, promotion_status: string | null | undefined, promotion_type: string | null | undefined, q: string | null | undefined, sort: string | null | undefined): Promise<PromotionsPagedCollection> {
 			return fetch(this.baseUri + 'promotion?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), { method: 'get' }).then(d => d.json());
 		}
 
@@ -1650,7 +1650,7 @@ export namespace MyNS {
 		 * @param {string} q A string consisting of one or more keywords. eBay filters the response by returning only the promotions that contain the supplied keywords in the promotion title. Example: &quot;iPhone&quot; or &quot;Harry Potter.&quot; Commas that separate keywords are ignored. For example, a keyword string of &quot;iPhone, iPad&quot; equals &quot;iPhone iPad&quot;, and each results in a response that contains promotions with both &quot;iPhone&quot; and &quot;iPad&quot; in the title.
 		 * @return {PromotionsReportPagedCollection} Success
 		 */
-		GetPromotionReports(limit: string, marketplace_id: string, offset: string, promotion_status: string, promotion_type: string, q: string): Promise<PromotionsReportPagedCollection> {
+		GetPromotionReports(limit: string | null | undefined, marketplace_id: string, offset: string | null | undefined, promotion_status: string | null | undefined, promotion_type: string | null | undefined, q: string | null | undefined): Promise<PromotionsReportPagedCollection> {
 			return fetch(this.baseUri + 'promotion_report?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), { method: 'get' }).then(d => d.json());
 		}
 	}

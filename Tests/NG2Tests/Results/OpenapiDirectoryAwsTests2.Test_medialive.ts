@@ -6844,7 +6844,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScheduleResponse} Success
 		 */
-		DescribeSchedule(channelId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<DescribeScheduleResponse> {
+		DescribeSchedule(channelId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<DescribeScheduleResponse> {
 			return this.http.get<DescribeScheduleResponse>(this.baseUri + 'prod/channels/' + (channelId == null ? '' : encodeURIComponent(channelId)) + '/schedule&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6864,7 +6864,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsResponse} Success
 		 */
-		ListChannels(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListChannelsResponse> {
+		ListChannels(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListChannelsResponse> {
 			return this.http.get<ListChannelsResponse>(this.baseUri + 'prod/channels?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6884,7 +6884,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputsResponse} Success
 		 */
-		ListInputs(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInputsResponse> {
+		ListInputs(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInputsResponse> {
 			return this.http.get<ListInputsResponse>(this.baseUri + 'prod/inputs?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6904,7 +6904,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputSecurityGroupsResponse} Success
 		 */
-		ListInputSecurityGroups(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInputSecurityGroupsResponse> {
+		ListInputSecurityGroups(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInputSecurityGroupsResponse> {
 			return this.http.get<ListInputSecurityGroupsResponse>(this.baseUri + 'prod/inputSecurityGroups?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6926,7 +6926,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMultiplexesResponse} Success
 		 */
-		ListMultiplexes(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListMultiplexesResponse> {
+		ListMultiplexes(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMultiplexesResponse> {
 			return this.http.get<ListMultiplexesResponse>(this.baseUri + 'prod/multiplexes?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6950,7 +6950,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMultiplexProgramsResponse} Success
 		 */
-		ListMultiplexPrograms(maxResults: number, multiplexId: string, nextToken: string, MaxResults: string, NextToken: string): Observable<ListMultiplexProgramsResponse> {
+		ListMultiplexPrograms(maxResults: number | null | undefined, multiplexId: string, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMultiplexProgramsResponse> {
 			return this.http.get<ListMultiplexProgramsResponse>(this.baseUri + 'prod/multiplexes/' + (multiplexId == null ? '' : encodeURIComponent(multiplexId)) + '/programs?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -7202,7 +7202,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputDevicesResponse} Success
 		 */
-		ListInputDevices(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInputDevicesResponse> {
+		ListInputDevices(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInputDevicesResponse> {
 			return this.http.get<ListInputDevicesResponse>(this.baseUri + 'prod/inputDevices?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -7223,7 +7223,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOfferingsResponse} Success
 		 */
-		ListOfferings(channelClass: string, channelConfiguration: string, codec: string, duration: string, maxResults: number, maximumBitrate: string, maximumFramerate: string, nextToken: string, resolution: string, resourceType: string, specialFeature: string, videoQuality: string, MaxResults: string, NextToken: string): Observable<ListOfferingsResponse> {
+		ListOfferings(channelClass: string | null | undefined, channelConfiguration: string | null | undefined, codec: string | null | undefined, duration: string | null | undefined, maxResults: number | null | undefined, maximumBitrate: string | null | undefined, maximumFramerate: string | null | undefined, nextToken: string | null | undefined, resolution: string | null | undefined, resourceType: string | null | undefined, specialFeature: string | null | undefined, videoQuality: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListOfferingsResponse> {
 			return this.http.get<ListOfferingsResponse>(this.baseUri + 'prod/offerings?channelClass=' + (channelClass == null ? '' : encodeURIComponent(channelClass)) + '&channelConfiguration=' + (channelConfiguration == null ? '' : encodeURIComponent(channelConfiguration)) + '&codec=' + (codec == null ? '' : encodeURIComponent(codec)) + '&duration=' + (duration == null ? '' : encodeURIComponent(duration)) + '&maxResults=' + maxResults + '&maximumBitrate=' + (maximumBitrate == null ? '' : encodeURIComponent(maximumBitrate)) + '&maximumFramerate=' + (maximumFramerate == null ? '' : encodeURIComponent(maximumFramerate)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&specialFeature=' + (specialFeature == null ? '' : encodeURIComponent(specialFeature)) + '&videoQuality=' + (videoQuality == null ? '' : encodeURIComponent(videoQuality)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -7242,7 +7242,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListReservationsResponse} Success
 		 */
-		ListReservations(channelClass: string, codec: string, maxResults: number, maximumBitrate: string, maximumFramerate: string, nextToken: string, resolution: string, resourceType: string, specialFeature: string, videoQuality: string, MaxResults: string, NextToken: string): Observable<ListReservationsResponse> {
+		ListReservations(channelClass: string | null | undefined, codec: string | null | undefined, maxResults: number | null | undefined, maximumBitrate: string | null | undefined, maximumFramerate: string | null | undefined, nextToken: string | null | undefined, resolution: string | null | undefined, resourceType: string | null | undefined, specialFeature: string | null | undefined, videoQuality: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListReservationsResponse> {
 			return this.http.get<ListReservationsResponse>(this.baseUri + 'prod/reservations?channelClass=' + (channelClass == null ? '' : encodeURIComponent(channelClass)) + '&codec=' + (codec == null ? '' : encodeURIComponent(codec)) + '&maxResults=' + maxResults + '&maximumBitrate=' + (maximumBitrate == null ? '' : encodeURIComponent(maximumBitrate)) + '&maximumFramerate=' + (maximumFramerate == null ? '' : encodeURIComponent(maximumFramerate)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&specialFeature=' + (specialFeature == null ? '' : encodeURIComponent(specialFeature)) + '&videoQuality=' + (videoQuality == null ? '' : encodeURIComponent(videoQuality)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

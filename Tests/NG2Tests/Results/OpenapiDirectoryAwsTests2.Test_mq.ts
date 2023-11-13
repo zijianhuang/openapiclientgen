@@ -571,7 +571,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {ListBrokersResponse} Success
 		 */
-		ListBrokers(maxResults: number, nextToken: string): Observable<ListBrokersResponse> {
+		ListBrokers(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListBrokersResponse> {
 			return this.http.get<ListBrokersResponse>(this.baseUri + 'v1/brokers?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -591,7 +591,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {ListConfigurationsResponse} Success
 		 */
-		ListConfigurations(maxResults: number, nextToken: string): Observable<ListConfigurationsResponse> {
+		ListConfigurations(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListConfigurationsResponse> {
 			return this.http.get<ListConfigurationsResponse>(this.baseUri + 'v1/configurations?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -708,7 +708,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {DescribeBrokerEngineTypesResponse} Success
 		 */
-		DescribeBrokerEngineTypes(engineType: string, maxResults: number, nextToken: string): Observable<DescribeBrokerEngineTypesResponse> {
+		DescribeBrokerEngineTypes(engineType: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<DescribeBrokerEngineTypesResponse> {
 			return this.http.get<DescribeBrokerEngineTypesResponse>(this.baseUri + 'v1/broker-engine-types?engineType=' + (engineType == null ? '' : encodeURIComponent(engineType)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -722,7 +722,7 @@ export namespace MyNS {
 		 * @param {string} storageType Filter response by storage type.
 		 * @return {DescribeBrokerInstanceOptionsResponse} Success
 		 */
-		DescribeBrokerInstanceOptions(engineType: string, hostInstanceType: string, maxResults: number, nextToken: string, storageType: string): Observable<DescribeBrokerInstanceOptionsResponse> {
+		DescribeBrokerInstanceOptions(engineType: string | null | undefined, hostInstanceType: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, storageType: string | null | undefined): Observable<DescribeBrokerInstanceOptionsResponse> {
 			return this.http.get<DescribeBrokerInstanceOptionsResponse>(this.baseUri + 'v1/broker-instance-options?engineType=' + (engineType == null ? '' : encodeURIComponent(engineType)) + '&hostInstanceType=' + (hostInstanceType == null ? '' : encodeURIComponent(hostInstanceType)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&storageType=' + (storageType == null ? '' : encodeURIComponent(storageType)), {});
 		}
 
@@ -765,7 +765,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {ListConfigurationRevisionsResponse} Success
 		 */
-		ListConfigurationRevisions(configuration_id: string, maxResults: number, nextToken: string): Observable<ListConfigurationRevisionsResponse> {
+		ListConfigurationRevisions(configuration_id: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListConfigurationRevisionsResponse> {
 			return this.http.get<ListConfigurationRevisionsResponse>(this.baseUri + 'v1/configurations/' + (configuration_id == null ? '' : encodeURIComponent(configuration_id)) + '/revisions&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -777,7 +777,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.
 		 * @return {ListUsersResponse} Success
 		 */
-		ListUsers(broker_id: string, maxResults: number, nextToken: string): Observable<ListUsersResponse> {
+		ListUsers(broker_id: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListUsersResponse> {
 			return this.http.get<ListUsersResponse>(this.baseUri + 'v1/brokers/' + (broker_id == null ? '' : encodeURIComponent(broker_id)) + '/users&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 

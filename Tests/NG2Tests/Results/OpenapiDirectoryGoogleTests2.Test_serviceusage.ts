@@ -3222,7 +3222,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Serviceusage_operations_list(filter: string, name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Serviceusage_operations_list(filter: string | null | undefined, name: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/operations?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3328,7 +3328,7 @@ export namespace MyNS {
 		 * previous list call.
 		 * @return {void} Successful response
 		 */
-		Serviceusage_services_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Serviceusage_services_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/services&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3363,7 +3363,7 @@ export namespace MyNS {
 		 * A single request can get a maximum of 20 services at a time.
 		 * @return {void} Successful response
 		 */
-		Serviceusage_services_batchGet(parent: string, names: Array<string>): Observable<HttpResponse<string>> {
+		Serviceusage_services_batchGet(parent: string, names: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/services:batchGet&' + names.map(z => `names=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 	}

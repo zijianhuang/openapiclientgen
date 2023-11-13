@@ -115,7 +115,7 @@ export namespace MyNS {
 		 * fields are overwritten.
 		 * @return {void} Successful response
 		 */
-		Cloudprofiler_projects_profiles_patch(name: string, updateMask: string, requestBody: Profile): Observable<HttpResponse<string>> {
+		Cloudprofiler_projects_profiles_patch(name: string, updateMask: string | null | undefined, requestBody: Profile): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

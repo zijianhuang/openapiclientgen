@@ -1557,7 +1557,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. The standard List page token.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_clusters_list(projectId: string, region: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_clusters_list(projectId: string, region: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/clusters&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1569,7 +1569,7 @@ export namespace MyNS {
 		 * @param {string} requestId Optional. A unique id used to identify the request. If the server receives two CreateClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_clusters_create(projectId: string, region: string, requestId: string, requestBody: Cluster): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_clusters_create(projectId: string, region: string, requestId: string | null | undefined, requestBody: Cluster): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/clusters&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1583,7 +1583,7 @@ export namespace MyNS {
 		 * @param {string} requestId Optional. A unique id used to identify the request. If the server receives two DeleteClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_clusters_delete(projectId: string, region: string, clusterName: string, clusterUuid: string, requestId: string): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_clusters_delete(projectId: string, region: string, clusterName: string, clusterUuid: string | null | undefined, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/clusters/' + (clusterName == null ? '' : encodeURIComponent(clusterName)) + '&clusterUuid=' + (clusterUuid == null ? '' : encodeURIComponent(clusterUuid)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1626,7 +1626,7 @@ export namespace MyNS {
 		 * <strong>Note:</strong> Currently, only the following fields can be updated:<table>  <tbody>  <tr>  <td><strong>Mask</strong></td>  <td><strong>Purpose</strong></td>  </tr>  <tr>  <td><strong><em>labels</em></strong></td>  <td>Update labels</td>  </tr>  <tr>  <td><strong><em>config.worker_config.num_instances</em></strong></td>  <td>Resize primary worker group</td>  </tr>  <tr>  <td><strong><em>config.secondary_worker_config.num_instances</em></strong></td>  <td>Resize secondary worker group</td>  </tr>  <tr>  <td>config.autoscaling_config.policy_uri</td><td>Use, stop using, or  change autoscaling policies</td>  </tr>  </tbody>  </table>
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_clusters_patch(projectId: string, region: string, clusterName: string, gracefulDecommissionTimeout: string, requestId: string, updateMask: string, requestBody: Cluster): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_clusters_patch(projectId: string, region: string, clusterName: string, gracefulDecommissionTimeout: string | null | undefined, requestId: string | null | undefined, updateMask: string | null | undefined, requestBody: Cluster): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/clusters/' + (clusterName == null ? '' : encodeURIComponent(clusterName)) + '&gracefulDecommissionTimeout=' + (gracefulDecommissionTimeout == null ? '' : encodeURIComponent(gracefulDecommissionTimeout)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1654,7 +1654,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. The page token, returned by a previous call, to request the next page of results.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_jobs_list(projectId: string, region: string, clusterName: string, filter: string, jobStateMatcher: Dataproc_projects_regions_jobs_listJobStateMatcher, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_jobs_list(projectId: string, region: string, clusterName: string | null | undefined, filter: string | null | undefined, jobStateMatcher: Dataproc_projects_regions_jobs_listJobStateMatcher | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/jobs&clusterName=' + (clusterName == null ? '' : encodeURIComponent(clusterName)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&jobStateMatcher=' + jobStateMatcher + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1691,7 +1691,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Required. Specifies the path, relative to <code>Job</code>, of the field to update. For example, to update the labels of a Job the <code>update_mask</code> parameter would be specified as <code>labels</code>, and the PATCH request body would specify the new value. <strong>Note:</strong> Currently, <code>labels</code> is the only field that can be updated.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_jobs_patch(projectId: string, region: string, jobId: string, updateMask: string, requestBody: Job): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_jobs_patch(projectId: string, region: string, jobId: string, updateMask: string | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/regions/' + (region == null ? '' : encodeURIComponent(region)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1738,7 +1738,7 @@ export namespace MyNS {
 		 * @param {number} version Optional. The version of workflow template to delete. If specified, will only delete the template if the current server version matches specified version.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_workflowTemplates_delete(name: string, version: number): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_workflowTemplates_delete(name: string, version: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&version=' + version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1753,7 +1753,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_workflowTemplates_get(name: string, version: number, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_workflowTemplates_get(name: string, version: number | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&version=' + version + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1801,7 +1801,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. The page token, returned by a previous call, to request the next page of results.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_autoscalingPolicies_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_autoscalingPolicies_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/autoscalingPolicies&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1827,7 +1827,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Optional. The page token, returned by a previous call, to request the next page of results.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_workflowTemplates_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_workflowTemplates_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/workflowTemplates&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1852,7 +1852,7 @@ export namespace MyNS {
 		 * @param {string} requestId Optional. A tag that prevents multiple concurrent workflow instances with the same tag from running. This mitigates risk of concurrent instances started due to retries.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The tag must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
 		 * @return {void} Successful response
 		 */
-		Dataproc_projects_regions_workflowTemplates_instantiateInline(parent: string, requestId: string, requestBody: WorkflowTemplate): Observable<HttpResponse<string>> {
+		Dataproc_projects_regions_workflowTemplates_instantiateInline(parent: string, requestId: string | null | undefined, requestBody: WorkflowTemplate): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/workflowTemplates:instantiateInline&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

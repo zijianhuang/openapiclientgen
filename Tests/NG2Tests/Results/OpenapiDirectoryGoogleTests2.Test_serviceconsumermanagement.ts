@@ -3464,7 +3464,7 @@ export namespace MyNS {
 		 * `nextPageToken` from the previous response.
 		 * @return {void} Successful response
 		 */
-		Serviceconsumermanagement_services_tenancyUnits_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Serviceconsumermanagement_services_tenancyUnits_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tenancyUnits&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3532,7 +3532,7 @@ export namespace MyNS {
 		 * Optional.
 		 * @return {void} Successful response
 		 */
-		Serviceconsumermanagement_services_search(parent: string, pageSize: number, pageToken: string, query: string): Observable<HttpResponse<string>> {
+		Serviceconsumermanagement_services_search(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + ':search&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 	}

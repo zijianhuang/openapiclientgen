@@ -71,7 +71,7 @@ export namespace MyNS {
 		 * Post oauth2/v2/tokeninfo
 		 * @return {void} Successful response
 		 */
-		Oauth2_tokeninfo(access_token: string, id_token: string): Observable<HttpResponse<string>> {
+		Oauth2_tokeninfo(access_token: string | null | undefined, id_token: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'oauth2/v2/tokeninfo?access_token=' + (access_token == null ? '' : encodeURIComponent(access_token)) + '&id_token=' + (id_token == null ? '' : encodeURIComponent(id_token)), null, { observe: 'response', responseType: 'text' });
 		}
 

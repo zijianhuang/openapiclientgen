@@ -221,7 +221,7 @@ export namespace MyNS {
 		 * @param {string} checkpointLabelFilter <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
 		 * @return {GetSessionResponse} Success
 		 */
-		GetSession(botName: string, botAlias: string, userId: string, checkpointLabelFilter: string): Observable<GetSessionResponse> {
+		GetSession(botName: string, botAlias: string, userId: string, checkpointLabelFilter: string | null | undefined): Observable<GetSessionResponse> {
 			return this.http.get<GetSessionResponse>(this.baseUri + 'bot/' + (botName == null ? '' : encodeURIComponent(botName)) + '/alias/' + (botAlias == null ? '' : encodeURIComponent(botAlias)) + '/user/' + (userId == null ? '' : encodeURIComponent(userId)) + '/session/&checkpointLabelFilter=' + (checkpointLabelFilter == null ? '' : encodeURIComponent(checkpointLabelFilter)), {});
 		}
 

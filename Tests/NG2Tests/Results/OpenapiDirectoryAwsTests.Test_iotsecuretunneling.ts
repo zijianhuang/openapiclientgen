@@ -186,7 +186,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTunnelsResponse} Success
 		 */
-		ListTunnels(maxResults: string, nextToken: string, requestBody: ListTunnelsRequest): Observable<ListTunnelsResponse> {
+		ListTunnels(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTunnelsRequest): Observable<ListTunnelsResponse> {
 			return this.http.post<ListTunnelsResponse>(this.baseUri + '#X-Amz-Target=IoTSecuredTunneling.ListTunnels?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

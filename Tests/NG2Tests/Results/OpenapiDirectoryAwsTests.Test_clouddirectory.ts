@@ -2426,7 +2426,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppliedSchemaArnsResponse} Success
 		 */
-		ListAppliedSchemaArns(MaxResults: string, NextToken: string, requestBody: ListAppliedSchemaArnsPostBody): Observable<ListAppliedSchemaArnsResponse> {
+		ListAppliedSchemaArns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAppliedSchemaArnsPostBody): Observable<ListAppliedSchemaArnsResponse> {
 			return this.http.post<ListAppliedSchemaArnsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/schema/applied?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2437,7 +2437,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAttachedIndicesResponse} Success
 		 */
-		ListAttachedIndices(MaxResults: string, NextToken: string, requestBody: ListAttachedIndicesPostBody): Observable<ListAttachedIndicesResponse> {
+		ListAttachedIndices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAttachedIndicesPostBody): Observable<ListAttachedIndicesResponse> {
 			return this.http.post<ListAttachedIndicesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/indices#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2448,7 +2448,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDevelopmentSchemaArnsResponse} Success
 		 */
-		ListDevelopmentSchemaArns(MaxResults: string, NextToken: string, requestBody: ListDevelopmentSchemaArnsPostBody): Observable<ListDevelopmentSchemaArnsResponse> {
+		ListDevelopmentSchemaArns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDevelopmentSchemaArnsPostBody): Observable<ListDevelopmentSchemaArnsResponse> {
 			return this.http.post<ListDevelopmentSchemaArnsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/schema/development?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2459,7 +2459,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDirectoriesResponse} Success
 		 */
-		ListDirectories(MaxResults: string, NextToken: string, requestBody: ListDirectoriesPostBody): Observable<ListDirectoriesResponse> {
+		ListDirectories(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDirectoriesPostBody): Observable<ListDirectoriesResponse> {
 			return this.http.post<ListDirectoriesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/directory/list?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2470,7 +2470,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFacetAttributesResponse} Success
 		 */
-		ListFacetAttributes(MaxResults: string, NextToken: string, requestBody: ListFacetAttributesPostBody): Observable<ListFacetAttributesResponse> {
+		ListFacetAttributes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFacetAttributesPostBody): Observable<ListFacetAttributesResponse> {
 			return this.http.post<ListFacetAttributesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/facet/attributes#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2481,7 +2481,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFacetNamesResponse} Success
 		 */
-		ListFacetNames(MaxResults: string, NextToken: string, requestBody: ListFacetNamesPostBody): Observable<ListFacetNamesResponse> {
+		ListFacetNames(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFacetNamesPostBody): Observable<ListFacetNamesResponse> {
 			return this.http.post<ListFacetNamesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/facet/list#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2501,7 +2501,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIndexResponse} Success
 		 */
-		ListIndex(MaxResults: string, NextToken: string, requestBody: ListIndexPostBody): Observable<ListIndexResponse> {
+		ListIndex(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListIndexPostBody): Observable<ListIndexResponse> {
 			return this.http.post<ListIndexResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/index/targets#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2512,7 +2512,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListManagedSchemaArnsResponse} Success
 		 */
-		ListManagedSchemaArns(MaxResults: string, NextToken: string, requestBody: ListManagedSchemaArnsPostBody): Observable<ListManagedSchemaArnsResponse> {
+		ListManagedSchemaArns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListManagedSchemaArnsPostBody): Observable<ListManagedSchemaArnsResponse> {
 			return this.http.post<ListManagedSchemaArnsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/schema/managed?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2523,7 +2523,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectAttributesResponse} Success
 		 */
-		ListObjectAttributes(MaxResults: string, NextToken: string, requestBody: ListObjectAttributesPostBody): Observable<ListObjectAttributesResponse> {
+		ListObjectAttributes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectAttributesPostBody): Observable<ListObjectAttributesResponse> {
 			return this.http.post<ListObjectAttributesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/attributes#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2534,7 +2534,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectChildrenResponse} Success
 		 */
-		ListObjectChildren(MaxResults: string, NextToken: string, requestBody: ListObjectChildrenPostBody): Observable<ListObjectChildrenResponse> {
+		ListObjectChildren(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectChildrenPostBody): Observable<ListObjectChildrenResponse> {
 			return this.http.post<ListObjectChildrenResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/children#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2545,7 +2545,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectParentPathsResponse} Success
 		 */
-		ListObjectParentPaths(MaxResults: string, NextToken: string, requestBody: ListObjectParentPathsPostBody): Observable<ListObjectParentPathsResponse> {
+		ListObjectParentPaths(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectParentPathsPostBody): Observable<ListObjectParentPathsResponse> {
 			return this.http.post<ListObjectParentPathsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/parentpaths#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2556,7 +2556,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectParentsResponse} Success
 		 */
-		ListObjectParents(MaxResults: string, NextToken: string, requestBody: ListObjectParentsPostBody): Observable<ListObjectParentsResponse> {
+		ListObjectParents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectParentsPostBody): Observable<ListObjectParentsResponse> {
 			return this.http.post<ListObjectParentsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/parent#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2567,7 +2567,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectPoliciesResponse} Success
 		 */
-		ListObjectPolicies(MaxResults: string, NextToken: string, requestBody: ListObjectPoliciesPostBody): Observable<ListObjectPoliciesResponse> {
+		ListObjectPolicies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectPoliciesPostBody): Observable<ListObjectPoliciesResponse> {
 			return this.http.post<ListObjectPoliciesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/policy#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2587,7 +2587,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPolicyAttachmentsResponse} Success
 		 */
-		ListPolicyAttachments(MaxResults: string, NextToken: string, requestBody: ListPolicyAttachmentsPostBody): Observable<ListPolicyAttachmentsResponse> {
+		ListPolicyAttachments(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPolicyAttachmentsPostBody): Observable<ListPolicyAttachmentsResponse> {
 			return this.http.post<ListPolicyAttachmentsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/policy/attachment#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2598,7 +2598,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPublishedSchemaArnsResponse} Success
 		 */
-		ListPublishedSchemaArns(MaxResults: string, NextToken: string, requestBody: ListPublishedSchemaArnsPostBody): Observable<ListPublishedSchemaArnsResponse> {
+		ListPublishedSchemaArns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPublishedSchemaArnsPostBody): Observable<ListPublishedSchemaArnsResponse> {
 			return this.http.post<ListPublishedSchemaArnsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/schema/published?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2609,7 +2609,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourcePostBody): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourcePostBody): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/tags?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2620,7 +2620,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTypedLinkFacetAttributesResponse} Success
 		 */
-		ListTypedLinkFacetAttributes(MaxResults: string, NextToken: string, requestBody: ListTypedLinkFacetAttributesPostBody): Observable<ListTypedLinkFacetAttributesResponse> {
+		ListTypedLinkFacetAttributes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTypedLinkFacetAttributesPostBody): Observable<ListTypedLinkFacetAttributesResponse> {
 			return this.http.post<ListTypedLinkFacetAttributesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/typedlink/facet/attributes#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2631,7 +2631,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTypedLinkFacetNamesResponse} Success
 		 */
-		ListTypedLinkFacetNames(MaxResults: string, NextToken: string, requestBody: ListTypedLinkFacetNamesPostBody): Observable<ListTypedLinkFacetNamesResponse> {
+		ListTypedLinkFacetNames(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTypedLinkFacetNamesPostBody): Observable<ListTypedLinkFacetNamesResponse> {
 			return this.http.post<ListTypedLinkFacetNamesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/typedlink/facet/list#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2642,7 +2642,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {LookupPolicyResponse} Success
 		 */
-		LookupPolicy(MaxResults: string, NextToken: string, requestBody: LookupPolicyPostBody): Observable<LookupPolicyResponse> {
+		LookupPolicy(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: LookupPolicyPostBody): Observable<LookupPolicyResponse> {
 			return this.http.post<LookupPolicyResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/policy/lookup#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

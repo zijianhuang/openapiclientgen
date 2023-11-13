@@ -3970,7 +3970,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_list(projectId: string, filter: Dataflow_projects_jobs_listFilter, location: string, pageSize: number, pageToken: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_list(projectId: string, filter: Dataflow_projects_jobs_listFilter | null | undefined, location: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs&filter=' + filter + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3990,7 +3990,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view The level of information requested in response.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_create(projectId: string, location: string, replaceJobId: string, view: Dataflow_projects_jobs_listView, requestBody: Job): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_create(projectId: string, location: string | null | undefined, replaceJobId: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs&location=' + (location == null ? '' : encodeURIComponent(location)) + '&replaceJobId=' + (replaceJobId == null ? '' : encodeURIComponent(replaceJobId)) + '&view=' + view, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4010,7 +4010,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view The level of information requested in response.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_get(projectId: string, jobId: string, location: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_get(projectId: string, jobId: string, location: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4029,7 +4029,7 @@ export namespace MyNS {
 		 * contains this job.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_update(projectId: string, jobId: string, location: string, requestBody: Job): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_update(projectId: string, jobId: string, location: string | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4081,7 +4081,7 @@ export namespace MyNS {
 		 * The default is the job creation time (i.e. beginning of messages).
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_messages_list(projectId: string, jobId: string, endTime: string, location: string, minimumImportance: JobMessageMessageImportance, pageSize: number, pageToken: string, startTime: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_messages_list(projectId: string, jobId: string, endTime: string | null | undefined, location: string | null | undefined, minimumImportance: JobMessageMessageImportance | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/messages&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&minimumImportance=' + minimumImportance + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4102,7 +4102,7 @@ export namespace MyNS {
 		 * Default is to return all information about all metrics for the job.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_getMetrics(projectId: string, jobId: string, location: string, startTime: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_getMetrics(projectId: string, jobId: string, location: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/metrics&location=' + (location == null ? '' : encodeURIComponent(location)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4155,7 +4155,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_aggregated(projectId: string, filter: Dataflow_projects_jobs_listFilter, location: string, pageSize: number, pageToken: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_aggregated(projectId: string, filter: Dataflow_projects_jobs_listFilter | null | undefined, location: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs:aggregated&filter=' + filter + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4207,7 +4207,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_list(projectId: string, location: string, filter: Dataflow_projects_jobs_listFilter, pageSize: number, pageToken: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_list(projectId: string, location: string, filter: Dataflow_projects_jobs_listFilter | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs&filter=' + filter + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4227,7 +4227,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view The level of information requested in response.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_create(projectId: string, location: string, replaceJobId: string, view: Dataflow_projects_jobs_listView, requestBody: Job): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_create(projectId: string, location: string, replaceJobId: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs&replaceJobId=' + (replaceJobId == null ? '' : encodeURIComponent(replaceJobId)) + '&view=' + view, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4247,7 +4247,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view The level of information requested in response.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_get(projectId: string, location: string, jobId: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_get(projectId: string, location: string, jobId: string, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4324,7 +4324,7 @@ export namespace MyNS {
 		 * The default is the job creation time (i.e. beginning of messages).
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_messages_list(projectId: string, location: string, jobId: string, endTime: string, minimumImportance: JobMessageMessageImportance, pageSize: number, pageToken: string, startTime: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_messages_list(projectId: string, location: string, jobId: string, endTime: string | null | undefined, minimumImportance: JobMessageMessageImportance | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/messages&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&minimumImportance=' + minimumImportance + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4345,7 +4345,7 @@ export namespace MyNS {
 		 * Default is to return all information about all metrics for the job.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_getMetrics(projectId: string, location: string, jobId: string, startTime: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_getMetrics(projectId: string, location: string, jobId: string, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/metrics&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4409,7 +4409,7 @@ export namespace MyNS {
 		 * @param {string} jobId If specified, list snapshots created from this job.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_snapshots_list(projectId: string, location: string, jobId: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_snapshots_list(projectId: string, location: string, jobId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/snapshots&jobId=' + (jobId == null ? '' : encodeURIComponent(jobId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4450,7 +4450,7 @@ export namespace MyNS {
 		 * @param {string} query The sql query to validate.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_sql_validate(projectId: string, location: string, query: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_sql_validate(projectId: string, location: string, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/sql:validate&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4480,7 +4480,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_locations_templates_getView} view The view to retrieve. Defaults to METADATA_ONLY.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_templates_get(projectId: string, location: string, gcsPath: string, view: Dataflow_projects_locations_templates_getView): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_templates_get(projectId: string, location: string, gcsPath: string | null | undefined, view: Dataflow_projects_locations_templates_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/templates:get&gcsPath=' + (gcsPath == null ? '' : encodeURIComponent(gcsPath)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4502,7 +4502,7 @@ export namespace MyNS {
 		 * Defaults to false.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_templates_launch(projectId: string, location: string, dynamicTemplate_gcsPath: string, dynamicTemplate_stagingLocation: string, gcsPath: string, validateOnly: boolean, requestBody: LaunchTemplateParameters): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_templates_launch(projectId: string, location: string, dynamicTemplate_gcsPath: string | null | undefined, dynamicTemplate_stagingLocation: string | null | undefined, gcsPath: string | null | undefined, validateOnly: boolean | null | undefined, requestBody: LaunchTemplateParameters): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/templates:launch&dynamicTemplate_gcsPath=' + (dynamicTemplate_gcsPath == null ? '' : encodeURIComponent(dynamicTemplate_gcsPath)) + '&dynamicTemplate_stagingLocation=' + (dynamicTemplate_stagingLocation == null ? '' : encodeURIComponent(dynamicTemplate_stagingLocation)) + '&gcsPath=' + (gcsPath == null ? '' : encodeURIComponent(gcsPath)) + '&validateOnly=' + validateOnly, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4514,7 +4514,7 @@ export namespace MyNS {
 		 * @param {string} snapshotId The ID of the snapshot.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_deleteSnapshots(projectId: string, location: string, snapshotId: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_deleteSnapshots(projectId: string, location: string | null | undefined, snapshotId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/snapshots&location=' + (location == null ? '' : encodeURIComponent(location)) + '&snapshotId=' + (snapshotId == null ? '' : encodeURIComponent(snapshotId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4526,7 +4526,7 @@ export namespace MyNS {
 		 * @param {string} location The location to list snapshots in.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_snapshots_list(projectId: string, jobId: string, location: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_snapshots_list(projectId: string, jobId: string | null | undefined, location: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/snapshots&jobId=' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4538,7 +4538,7 @@ export namespace MyNS {
 		 * @param {string} location The location that contains this snapshot.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_snapshots_get(projectId: string, snapshotId: string, location: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_snapshots_get(projectId: string, snapshotId: string, location: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/snapshots/' + (snapshotId == null ? '' : encodeURIComponent(snapshotId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4565,7 +4565,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_locations_templates_getView} view The view to retrieve. Defaults to METADATA_ONLY.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_templates_get(projectId: string, gcsPath: string, location: string, view: Dataflow_projects_locations_templates_getView): Observable<HttpResponse<string>> {
+		Dataflow_projects_templates_get(projectId: string, gcsPath: string | null | undefined, location: string | null | undefined, view: Dataflow_projects_locations_templates_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/templates:get&gcsPath=' + (gcsPath == null ? '' : encodeURIComponent(gcsPath)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4587,7 +4587,7 @@ export namespace MyNS {
 		 * Defaults to false.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_templates_launch(projectId: string, dynamicTemplate_gcsPath: string, dynamicTemplate_stagingLocation: string, gcsPath: string, location: string, validateOnly: boolean, requestBody: LaunchTemplateParameters): Observable<HttpResponse<string>> {
+		Dataflow_projects_templates_launch(projectId: string, dynamicTemplate_gcsPath: string | null | undefined, dynamicTemplate_stagingLocation: string | null | undefined, gcsPath: string | null | undefined, location: string | null | undefined, validateOnly: boolean | null | undefined, requestBody: LaunchTemplateParameters): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/templates:launch&dynamicTemplate_gcsPath=' + (dynamicTemplate_gcsPath == null ? '' : encodeURIComponent(dynamicTemplate_gcsPath)) + '&dynamicTemplate_stagingLocation=' + (dynamicTemplate_stagingLocation == null ? '' : encodeURIComponent(dynamicTemplate_stagingLocation)) + '&gcsPath=' + (gcsPath == null ? '' : encodeURIComponent(gcsPath)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&validateOnly=' + validateOnly, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

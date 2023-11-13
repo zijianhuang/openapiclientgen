@@ -3528,7 +3528,7 @@ export namespace MyNS {
 		 * ListSessionsResponse.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instances_databases_sessions_list(database: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Spanner_projects_instances_databases_sessions_list(database: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (database == null ? '' : encodeURIComponent(database)) + '/sessions&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3592,7 +3592,7 @@ export namespace MyNS {
 		 * If absent, all Instance fields are returned.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instanceConfigs_get(name: string, fieldMask: string): Observable<HttpResponse<string>> {
+		Spanner_projects_instanceConfigs_get(name: string, fieldMask: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3617,7 +3617,7 @@ export namespace MyNS {
 		 * by clients that do not know about them.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instances_backups_patch(name: string, updateMask: string, requestBody: Backup): Observable<HttpResponse<string>> {
+		Spanner_projects_instances_backups_patch(name: string, updateMask: string | null | undefined, requestBody: Backup): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3694,7 +3694,7 @@ export namespace MyNS {
 		 * same `parent` and with the same `filter`.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instances_backupOperations_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Spanner_projects_instances_backupOperations_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/backupOperations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3741,7 +3741,7 @@ export namespace MyNS {
 		 * `filter`.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instances_backups_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Spanner_projects_instances_backups_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/backups&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3770,7 +3770,7 @@ export namespace MyNS {
 		 * `projects/<project>/instances/<instance>/backups/<backup_id>`.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instances_backups_create(parent: string, backupId: string, requestBody: Backup): Observable<HttpResponse<string>> {
+		Spanner_projects_instances_backups_create(parent: string, backupId: string | null | undefined, requestBody: Backup): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/backups&backupId=' + (backupId == null ? '' : encodeURIComponent(backupId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3828,7 +3828,7 @@ export namespace MyNS {
 		 * same `parent` and with the same `filter`.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instances_databaseOperations_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Spanner_projects_instances_databaseOperations_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/databaseOperations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3844,7 +3844,7 @@ export namespace MyNS {
 		 * previous ListDatabasesResponse.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instances_databases_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Spanner_projects_instances_databases_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/databases&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3909,7 +3909,7 @@ export namespace MyNS {
 		 * from a previous ListInstanceConfigsResponse.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instanceConfigs_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Spanner_projects_instanceConfigs_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/instanceConfigs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3941,7 +3941,7 @@ export namespace MyNS {
 		 * previous ListInstancesResponse.
 		 * @return {void} Successful response
 		 */
-		Spanner_projects_instances_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Spanner_projects_instances_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/instances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

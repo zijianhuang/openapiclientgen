@@ -32,7 +32,7 @@ export namespace MyNS {
 		 * Get api/Card
 		 * @return {void} Success
 		 */
-		ApiCardGetByType(type: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiCardGetByType(type: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api/Card?type=' + (type == null ? '' : encodeURIComponent(type)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -64,7 +64,7 @@ export namespace MyNS {
 		 * Get api/Name/suggestions
 		 * @return {void} Success
 		 */
-		ApiNameSuggestionsGetByStartingWords(startingWords: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiNameSuggestionsGetByStartingWords(startingWords: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api/Name/suggestions?startingWords=' + (startingWords == null ? '' : encodeURIComponent(startingWords)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -72,7 +72,7 @@ export namespace MyNS {
 		 * Get api/Number
 		 * @return {void} Success
 		 */
-		ApiNumberGetByMinAndMax(min: number, max: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiNumberGetByMinAndMax(min: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api/Number?min=' + min + '&max=' + max, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -80,7 +80,7 @@ export namespace MyNS {
 		 * Get api/Number/Sequence
 		 * @return {Array<number>} Success
 		 */
-		ApiNumberSequenceGetByMinAndMax(min: number, max: number, headersHandler?: () => HttpHeaders): Observable<Array<number>> {
+		ApiNumberSequenceGetByMinAndMax(min: number | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<number>> {
 			return this.http.get<Array<number>>(this.baseUri + 'api/Number/Sequence?min=' + min + '&max=' + max, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -104,7 +104,7 @@ export namespace MyNS {
 		 * Get api/Phone/Validate
 		 * @return {void} Success
 		 */
-		ApiPhoneValidateGetByTelephoneAndCountryCode(telephone: string, CountryCode: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiPhoneValidateGetByTelephoneAndCountryCode(telephone: string, CountryCode: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api/Phone/Validate?telephone=' + (telephone == null ? '' : encodeURIComponent(telephone)) + '&CountryCode=' + (CountryCode == null ? '' : encodeURIComponent(CountryCode)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -144,7 +144,7 @@ export namespace MyNS {
 		 * Post api/Text/Transform
 		 * @return {void} Success
 		 */
-		ApiTextTransformPostByTextActionTypeAndCaseTypeAndFindAndReplace(textActionType: TextActionType, caseType: CaseType, find: string, replace: string, requestBody: TextDto, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiTextTransformPostByTextActionTypeAndCaseTypeAndFindAndReplace(textActionType: TextActionType, caseType: CaseType | null | undefined, find: string | null | undefined, replace: string | null | undefined, requestBody: TextDto, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'api/Text/Transform?textActionType=' + textActionType + '&caseType=' + caseType + '&find=' + (find == null ? '' : encodeURIComponent(find)) + '&replace=' + (replace == null ? '' : encodeURIComponent(replace)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 	}

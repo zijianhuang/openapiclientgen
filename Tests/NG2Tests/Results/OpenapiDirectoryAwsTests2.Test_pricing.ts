@@ -106,7 +106,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeServicesResponse} Success
 		 */
-		DescribeServices(MaxResults: string, NextToken: string, requestBody: DescribeServicesRequest): Observable<DescribeServicesResponse> {
+		DescribeServices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeServicesRequest): Observable<DescribeServicesResponse> {
 			return this.http.post<DescribeServicesResponse>(this.baseUri + '#X-Amz-Target=AWSPriceListService.DescribeServices?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -117,7 +117,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetAttributeValuesResponse} Success
 		 */
-		GetAttributeValues(MaxResults: string, NextToken: string, requestBody: GetAttributeValuesRequest): Observable<GetAttributeValuesResponse> {
+		GetAttributeValues(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetAttributeValuesRequest): Observable<GetAttributeValuesResponse> {
 			return this.http.post<GetAttributeValuesResponse>(this.baseUri + '#X-Amz-Target=AWSPriceListService.GetAttributeValues?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -128,7 +128,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetProductsResponse} Success
 		 */
-		GetProducts(MaxResults: string, NextToken: string, requestBody: GetProductsRequest): Observable<GetProductsResponse> {
+		GetProducts(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetProductsRequest): Observable<GetProductsResponse> {
 			return this.http.post<GetProductsResponse>(this.baseUri + '#X-Amz-Target=AWSPriceListService.GetProducts?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 	}

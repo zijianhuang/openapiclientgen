@@ -1253,7 +1253,7 @@ export namespace MyNS {
 		 *         </note>
 		 * @return {ListMeshesOutput} Success
 		 */
-		ListMeshes(limit: number, nextToken: string): Observable<ListMeshesOutput> {
+		ListMeshes(limit: number | null | undefined, nextToken: string | null | undefined): Observable<ListMeshesOutput> {
 			return this.http.get<ListMeshesOutput>(this.baseUri + 'v20190125/meshes?limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 		 *          a shared mesh, then you must be the owner of the virtual router resource.
 		 * @return {CreateRouteOutput} Success
 		 */
-		CreateRoute(meshName: string, meshOwner: string, virtualRouterName: string, requestBody: CreateRoutePutBody): Observable<CreateRouteOutput> {
+		CreateRoute(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string, requestBody: CreateRoutePutBody): Observable<CreateRouteOutput> {
 			return this.http.put<CreateRouteOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1296,7 +1296,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to list routes in.
 		 * @return {ListRoutesOutput} Success
 		 */
-		ListRoutes(limit: number, meshName: string, meshOwner: string, nextToken: string, virtualRouterName: string): Observable<ListRoutesOutput> {
+		ListRoutes(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined, virtualRouterName: string): Observable<ListRoutesOutput> {
 			return this.http.get<ListRoutesOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes?limit=' + limit + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1329,7 +1329,7 @@ export namespace MyNS {
 		 *              the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
 		 * @return {CreateVirtualNodeOutput} Success
 		 */
-		CreateVirtualNode(meshName: string, meshOwner: string, requestBody: CreateVirtualNodePutBody): Observable<CreateVirtualNodeOutput> {
+		CreateVirtualNode(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualNodePutBody): Observable<CreateVirtualNodeOutput> {
 			return this.http.put<CreateVirtualNodeOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1353,7 +1353,7 @@ export namespace MyNS {
 		 *          results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualNodesOutput} Success
 		 */
-		ListVirtualNodes(limit: number, meshName: string, meshOwner: string, nextToken: string): Observable<ListVirtualNodesOutput> {
+		ListVirtualNodes(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined): Observable<ListVirtualNodesOutput> {
 			return this.http.get<ListVirtualNodesOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes?limit=' + limit + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1372,7 +1372,7 @@ export namespace MyNS {
 		 *              the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
 		 * @return {CreateVirtualRouterOutput} Success
 		 */
-		CreateVirtualRouter(meshName: string, meshOwner: string, requestBody: CreateVirtualRouterPutBody): Observable<CreateVirtualRouterOutput> {
+		CreateVirtualRouter(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualRouterPutBody): Observable<CreateVirtualRouterOutput> {
 			return this.http.put<CreateVirtualRouterOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1396,7 +1396,7 @@ export namespace MyNS {
 		 *          previous results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualRoutersOutput} Success
 		 */
-		ListVirtualRouters(limit: number, meshName: string, meshOwner: string, nextToken: string): Observable<ListVirtualRoutersOutput> {
+		ListVirtualRouters(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined): Observable<ListVirtualRoutersOutput> {
 			return this.http.get<ListVirtualRoutersOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters?limit=' + limit + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1415,7 +1415,7 @@ export namespace MyNS {
 		 *              the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
 		 * @return {CreateVirtualServiceOutput} Success
 		 */
-		CreateVirtualService(meshName: string, meshOwner: string, requestBody: CreateVirtualServicePutBody): Observable<CreateVirtualServiceOutput> {
+		CreateVirtualService(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualServicePutBody): Observable<CreateVirtualServiceOutput> {
 			return this.http.put<CreateVirtualServiceOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1439,7 +1439,7 @@ export namespace MyNS {
 		 *          previous results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualServicesOutput} Success
 		 */
-		ListVirtualServices(limit: number, meshName: string, meshOwner: string, nextToken: string): Observable<ListVirtualServicesOutput> {
+		ListVirtualServices(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined): Observable<ListVirtualServicesOutput> {
 			return this.http.get<ListVirtualServicesOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices?limit=' + limit + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1463,7 +1463,7 @@ export namespace MyNS {
 		 *                the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
 		 * @return {DescribeMeshOutput} Success
 		 */
-		DescribeMesh(meshName: string, meshOwner: string): Observable<DescribeMeshOutput> {
+		DescribeMesh(meshName: string, meshOwner: string | null | undefined): Observable<DescribeMeshOutput> {
 			return this.http.get<DescribeMeshOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1487,7 +1487,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to delete the route in.
 		 * @return {DeleteRouteOutput} Success
 		 */
-		DeleteRoute(meshName: string, meshOwner: string, routeName: string, virtualRouterName: string): Observable<DeleteRouteOutput> {
+		DeleteRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string): Observable<DeleteRouteOutput> {
 			return this.http.delete<DeleteRouteOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes/' + (routeName == null ? '' : encodeURIComponent(routeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1501,7 +1501,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router that the route is associated with.
 		 * @return {DescribeRouteOutput} Success
 		 */
-		DescribeRoute(meshName: string, meshOwner: string, routeName: string, virtualRouterName: string): Observable<DescribeRouteOutput> {
+		DescribeRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string): Observable<DescribeRouteOutput> {
 			return this.http.get<DescribeRouteOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes/' + (routeName == null ? '' : encodeURIComponent(routeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1515,7 +1515,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router that the route is associated with.
 		 * @return {UpdateRouteOutput} Success
 		 */
-		UpdateRoute(meshName: string, meshOwner: string, routeName: string, virtualRouterName: string, requestBody: UpdateRoutePutBody): Observable<UpdateRouteOutput> {
+		UpdateRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string, requestBody: UpdateRoutePutBody): Observable<UpdateRouteOutput> {
 			return this.http.put<UpdateRouteOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes/' + (routeName == null ? '' : encodeURIComponent(routeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1530,7 +1530,7 @@ export namespace MyNS {
 		 * @param {string} virtualNodeName The name of the virtual node to delete.
 		 * @return {DeleteVirtualNodeOutput} Success
 		 */
-		DeleteVirtualNode(meshName: string, meshOwner: string, virtualNodeName: string): Observable<DeleteVirtualNodeOutput> {
+		DeleteVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string): Observable<DeleteVirtualNodeOutput> {
 			return this.http.delete<DeleteVirtualNodeOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes/' + (virtualNodeName == null ? '' : encodeURIComponent(virtualNodeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1543,7 +1543,7 @@ export namespace MyNS {
 		 * @param {string} virtualNodeName The name of the virtual node to describe.
 		 * @return {DescribeVirtualNodeOutput} Success
 		 */
-		DescribeVirtualNode(meshName: string, meshOwner: string, virtualNodeName: string): Observable<DescribeVirtualNodeOutput> {
+		DescribeVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string): Observable<DescribeVirtualNodeOutput> {
 			return this.http.get<DescribeVirtualNodeOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes/' + (virtualNodeName == null ? '' : encodeURIComponent(virtualNodeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1556,7 +1556,7 @@ export namespace MyNS {
 		 * @param {string} virtualNodeName The name of the virtual node to update.
 		 * @return {UpdateVirtualNodeOutput} Success
 		 */
-		UpdateVirtualNode(meshName: string, meshOwner: string, virtualNodeName: string, requestBody: UpdateVirtualNodePutBody): Observable<UpdateVirtualNodeOutput> {
+		UpdateVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string, requestBody: UpdateVirtualNodePutBody): Observable<UpdateVirtualNodeOutput> {
 			return this.http.put<UpdateVirtualNodeOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes/' + (virtualNodeName == null ? '' : encodeURIComponent(virtualNodeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1571,7 +1571,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to delete.
 		 * @return {DeleteVirtualRouterOutput} Success
 		 */
-		DeleteVirtualRouter(meshName: string, meshOwner: string, virtualRouterName: string): Observable<DeleteVirtualRouterOutput> {
+		DeleteVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string): Observable<DeleteVirtualRouterOutput> {
 			return this.http.delete<DeleteVirtualRouterOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1584,7 +1584,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to describe.
 		 * @return {DescribeVirtualRouterOutput} Success
 		 */
-		DescribeVirtualRouter(meshName: string, meshOwner: string, virtualRouterName: string): Observable<DescribeVirtualRouterOutput> {
+		DescribeVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string): Observable<DescribeVirtualRouterOutput> {
 			return this.http.get<DescribeVirtualRouterOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to update.
 		 * @return {UpdateVirtualRouterOutput} Success
 		 */
-		UpdateVirtualRouter(meshName: string, meshOwner: string, virtualRouterName: string, requestBody: UpdateVirtualRouterPutBody): Observable<UpdateVirtualRouterOutput> {
+		UpdateVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string, requestBody: UpdateVirtualRouterPutBody): Observable<UpdateVirtualRouterOutput> {
 			return this.http.put<UpdateVirtualRouterOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @param {string} virtualServiceName The name of the virtual service to delete.
 		 * @return {DeleteVirtualServiceOutput} Success
 		 */
-		DeleteVirtualService(meshName: string, meshOwner: string, virtualServiceName: string): Observable<DeleteVirtualServiceOutput> {
+		DeleteVirtualService(meshName: string, meshOwner: string | null | undefined, virtualServiceName: string): Observable<DeleteVirtualServiceOutput> {
 			return this.http.delete<DeleteVirtualServiceOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices/' + (virtualServiceName == null ? '' : encodeURIComponent(virtualServiceName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1623,7 +1623,7 @@ export namespace MyNS {
 		 * @param {string} virtualServiceName The name of the virtual service to describe.
 		 * @return {DescribeVirtualServiceOutput} Success
 		 */
-		DescribeVirtualService(meshName: string, meshOwner: string, virtualServiceName: string): Observable<DescribeVirtualServiceOutput> {
+		DescribeVirtualService(meshName: string, meshOwner: string | null | undefined, virtualServiceName: string): Observable<DescribeVirtualServiceOutput> {
 			return this.http.get<DescribeVirtualServiceOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices/' + (virtualServiceName == null ? '' : encodeURIComponent(virtualServiceName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1636,7 +1636,7 @@ export namespace MyNS {
 		 * @param {string} virtualServiceName The name of the virtual service to update.
 		 * @return {UpdateVirtualServiceOutput} Success
 		 */
-		UpdateVirtualService(meshName: string, meshOwner: string, virtualServiceName: string, requestBody: UpdateVirtualServicePutBody): Observable<UpdateVirtualServiceOutput> {
+		UpdateVirtualService(meshName: string, meshOwner: string | null | undefined, virtualServiceName: string, requestBody: UpdateVirtualServicePutBody): Observable<UpdateVirtualServiceOutput> {
 			return this.http.put<UpdateVirtualServiceOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices/' + (virtualServiceName == null ? '' : encodeURIComponent(virtualServiceName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1658,7 +1658,7 @@ export namespace MyNS {
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) that identifies the resource to list the tags for.
 		 * @return {ListTagsForResourceOutput} Success
 		 */
-		ListTagsForResource(limit: number, nextToken: string, resourceArn: string): Observable<ListTagsForResourceOutput> {
+		ListTagsForResource(limit: number | null | undefined, nextToken: string | null | undefined, resourceArn: string): Observable<ListTagsForResourceOutput> {
 			return this.http.get<ListTagsForResourceOutput>(this.baseUri + 'v20190125/tags#resourceArn?limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)), {});
 		}
 

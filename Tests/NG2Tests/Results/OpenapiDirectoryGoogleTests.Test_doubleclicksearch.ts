@@ -450,7 +450,7 @@ export namespace MyNS {
 		 * @param {string} criterionId Numeric ID of the criterion.
 		 * @return {void} Successful response
 		 */
-		Doubleclicksearch_conversion_get(agencyId: string, advertiserId: string, engineAccountId: string, endDate: number, rowCount: number, startDate: number, startRow: number, adGroupId: string, adId: string, campaignId: string, criterionId: string): Observable<HttpResponse<string>> {
+		Doubleclicksearch_conversion_get(agencyId: string, advertiserId: string, engineAccountId: string, endDate: number, rowCount: number, startDate: number, startRow: number, adGroupId: string | null | undefined, adId: string | null | undefined, campaignId: string | null | undefined, criterionId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'agency/' + (agencyId == null ? '' : encodeURIComponent(agencyId)) + '/advertiser/' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '/engine/' + (engineAccountId == null ? '' : encodeURIComponent(engineAccountId)) + '/conversion&endDate=' + endDate + '&rowCount=' + rowCount + '&startDate=' + startDate + '&startRow=' + startRow + '&adGroupId=' + (adGroupId == null ? '' : encodeURIComponent(adGroupId)) + '&adId=' + (adId == null ? '' : encodeURIComponent(adId)) + '&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&criterionId=' + (criterionId == null ? '' : encodeURIComponent(criterionId)), { observe: 'response', responseType: 'text' });
 		}
 

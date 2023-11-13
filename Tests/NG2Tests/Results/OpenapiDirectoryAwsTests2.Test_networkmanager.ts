@@ -479,7 +479,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCustomerGatewayAssociationsResponse} Success
 		 */
-		GetCustomerGatewayAssociations(globalNetworkId: string, customerGatewayArns: Array<string>, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<GetCustomerGatewayAssociationsResponse> {
+		GetCustomerGatewayAssociations(globalNetworkId: string, customerGatewayArns: Array<string> | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<GetCustomerGatewayAssociationsResponse> {
 			return this.http.get<GetCustomerGatewayAssociationsResponse>(this.baseUri + 'global-networks/' + (globalNetworkId == null ? '' : encodeURIComponent(globalNetworkId)) + '/customer-gateway-associations&' + customerGatewayArns.map(z => `customerGatewayArns=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -505,7 +505,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetLinkAssociationsResponse} Success
 		 */
-		GetLinkAssociations(globalNetworkId: string, deviceId: string, linkId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<GetLinkAssociationsResponse> {
+		GetLinkAssociations(globalNetworkId: string, deviceId: string | null | undefined, linkId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<GetLinkAssociationsResponse> {
 			return this.http.get<GetLinkAssociationsResponse>(this.baseUri + 'global-networks/' + (globalNetworkId == null ? '' : encodeURIComponent(globalNetworkId)) + '/link-associations&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&linkId=' + (linkId == null ? '' : encodeURIComponent(linkId)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -531,7 +531,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDevicesResponse} Success
 		 */
-		GetDevices(globalNetworkId: string, deviceIds: Array<string>, siteId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<GetDevicesResponse> {
+		GetDevices(globalNetworkId: string, deviceIds: Array<string> | null | undefined, siteId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<GetDevicesResponse> {
 			return this.http.get<GetDevicesResponse>(this.baseUri + 'global-networks/' + (globalNetworkId == null ? '' : encodeURIComponent(globalNetworkId)) + '/devices&' + deviceIds.map(z => `deviceIds=${encodeURIComponent(z)}`).join('&') + '&siteId=' + (siteId == null ? '' : encodeURIComponent(siteId)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -554,7 +554,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeGlobalNetworksResponse} Success
 		 */
-		DescribeGlobalNetworks(globalNetworkIds: Array<string>, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<DescribeGlobalNetworksResponse> {
+		DescribeGlobalNetworks(globalNetworkIds: Array<string> | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<DescribeGlobalNetworksResponse> {
 			return this.http.get<DescribeGlobalNetworksResponse>(this.baseUri + 'global-networks?' + globalNetworkIds.map(z => `globalNetworkIds=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -582,7 +582,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetLinksResponse} Success
 		 */
-		GetLinks(globalNetworkId: string, linkIds: Array<string>, siteId: string, type: string, provider: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<GetLinksResponse> {
+		GetLinks(globalNetworkId: string, linkIds: Array<string> | null | undefined, siteId: string | null | undefined, type: string | null | undefined, provider: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<GetLinksResponse> {
 			return this.http.get<GetLinksResponse>(this.baseUri + 'global-networks/' + (globalNetworkId == null ? '' : encodeURIComponent(globalNetworkId)) + '/links&' + linkIds.map(z => `linkIds=${encodeURIComponent(z)}`).join('&') + '&siteId=' + (siteId == null ? '' : encodeURIComponent(siteId)) + '&type=' + (type == null ? '' : encodeURIComponent(type)) + '&provider=' + (provider == null ? '' : encodeURIComponent(provider)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -607,7 +607,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSitesResponse} Success
 		 */
-		GetSites(globalNetworkId: string, siteIds: Array<string>, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<GetSitesResponse> {
+		GetSites(globalNetworkId: string, siteIds: Array<string> | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<GetSitesResponse> {
 			return this.http.get<GetSitesResponse>(this.baseUri + 'global-networks/' + (globalNetworkId == null ? '' : encodeURIComponent(globalNetworkId)) + '/sites&' + siteIds.map(z => `siteIds=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -742,7 +742,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTransitGatewayRegistrationsResponse} Success
 		 */
-		GetTransitGatewayRegistrations(globalNetworkId: string, transitGatewayArns: Array<string>, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<GetTransitGatewayRegistrationsResponse> {
+		GetTransitGatewayRegistrations(globalNetworkId: string, transitGatewayArns: Array<string> | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<GetTransitGatewayRegistrationsResponse> {
 			return this.http.get<GetTransitGatewayRegistrationsResponse>(this.baseUri + 'global-networks/' + (globalNetworkId == null ? '' : encodeURIComponent(globalNetworkId)) + '/transit-gateway-registrations&' + transitGatewayArns.map(z => `transitGatewayArns=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

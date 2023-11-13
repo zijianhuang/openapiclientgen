@@ -1933,7 +1933,7 @@ export namespace MyNS {
 		 * @param {string} updateMask The fields to update.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_notes_patch(name: string, updateMask: string, requestBody: Note): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_notes_patch(name: string, updateMask: string | null | undefined, requestBody: Note): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1972,7 +1972,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_notes_occurrences_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_notes_occurrences_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/occurrences&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1987,7 +1987,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_notes_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_notes_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/notes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1999,7 +1999,7 @@ export namespace MyNS {
 		 * @param {string} noteId Required. The ID to use for this note.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_notes_create(parent: string, noteId: string, requestBody: Note): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_notes_create(parent: string, noteId: string | null | undefined, requestBody: Note): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/notes&noteId=' + (noteId == null ? '' : encodeURIComponent(noteId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2025,7 +2025,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_occurrences_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_occurrences_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/occurrences&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2059,7 +2059,7 @@ export namespace MyNS {
 		 * @param {string} filter The filter expression.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_occurrences_getVulnerabilitySummary(parent: string, filter: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_occurrences_getVulnerabilitySummary(parent: string, filter: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/occurrences:vulnerabilitySummary&filter=' + (filter == null ? '' : encodeURIComponent(filter)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2073,7 +2073,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_scanConfigs_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_scanConfigs_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/scanConfigs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

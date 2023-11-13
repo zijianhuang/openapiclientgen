@@ -1257,7 +1257,7 @@ export namespace MyNS {
 		 * @param {string} teamDriveId Deprecated use driveId instead.
 		 * @return {void} Successful response
 		 */
-		Drive_changes_list(pageToken: string, driveId: string, includeCorpusRemovals: boolean, includeItemsFromAllDrives: boolean, includeRemoved: boolean, includeTeamDriveItems: boolean, pageSize: number, restrictToMyDrive: boolean, spaces: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, teamDriveId: string): Observable<HttpResponse<string>> {
+		Drive_changes_list(pageToken: string, driveId: string | null | undefined, includeCorpusRemovals: boolean | null | undefined, includeItemsFromAllDrives: boolean | null | undefined, includeRemoved: boolean | null | undefined, includeTeamDriveItems: boolean | null | undefined, pageSize: number | null | undefined, restrictToMyDrive: boolean | null | undefined, spaces: string | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, teamDriveId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'changes?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&driveId=' + (driveId == null ? '' : encodeURIComponent(driveId)) + '&includeCorpusRemovals=' + includeCorpusRemovals + '&includeItemsFromAllDrives=' + includeItemsFromAllDrives + '&includeRemoved=' + includeRemoved + '&includeTeamDriveItems=' + includeTeamDriveItems + '&pageSize=' + pageSize + '&restrictToMyDrive=' + restrictToMyDrive + '&spaces=' + (spaces == null ? '' : encodeURIComponent(spaces)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&teamDriveId=' + (teamDriveId == null ? '' : encodeURIComponent(teamDriveId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1270,7 +1270,7 @@ export namespace MyNS {
 		 * @param {string} teamDriveId Deprecated use driveId instead.
 		 * @return {void} Successful response
 		 */
-		Drive_changes_getStartPageToken(driveId: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, teamDriveId: string): Observable<HttpResponse<string>> {
+		Drive_changes_getStartPageToken(driveId: string | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, teamDriveId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'changes/startPageToken?driveId=' + (driveId == null ? '' : encodeURIComponent(driveId)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&teamDriveId=' + (teamDriveId == null ? '' : encodeURIComponent(teamDriveId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1291,7 +1291,7 @@ export namespace MyNS {
 		 * @param {string} teamDriveId Deprecated use driveId instead.
 		 * @return {void} Successful response
 		 */
-		Drive_changes_watch(pageToken: string, driveId: string, includeCorpusRemovals: boolean, includeItemsFromAllDrives: boolean, includeRemoved: boolean, includeTeamDriveItems: boolean, pageSize: number, restrictToMyDrive: boolean, spaces: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, teamDriveId: string, requestBody: Channel): Observable<HttpResponse<string>> {
+		Drive_changes_watch(pageToken: string, driveId: string | null | undefined, includeCorpusRemovals: boolean | null | undefined, includeItemsFromAllDrives: boolean | null | undefined, includeRemoved: boolean | null | undefined, includeTeamDriveItems: boolean | null | undefined, pageSize: number | null | undefined, restrictToMyDrive: boolean | null | undefined, spaces: string | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, teamDriveId: string | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'changes/watch?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&driveId=' + (driveId == null ? '' : encodeURIComponent(driveId)) + '&includeCorpusRemovals=' + includeCorpusRemovals + '&includeItemsFromAllDrives=' + includeItemsFromAllDrives + '&includeRemoved=' + includeRemoved + '&includeTeamDriveItems=' + includeTeamDriveItems + '&pageSize=' + pageSize + '&restrictToMyDrive=' + restrictToMyDrive + '&spaces=' + (spaces == null ? '' : encodeURIComponent(spaces)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&teamDriveId=' + (teamDriveId == null ? '' : encodeURIComponent(teamDriveId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1313,7 +1313,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then all shared drives of the domain in which the requester is an administrator are returned.
 		 * @return {void} Successful response
 		 */
-		Drive_drives_list(pageSize: number, pageToken: string, q: string, useDomainAdminAccess: boolean): Observable<HttpResponse<string>> {
+		Drive_drives_list(pageSize: number | null | undefined, pageToken: string | null | undefined, q: string | null | undefined, useDomainAdminAccess: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'drives?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&useDomainAdminAccess=' + useDomainAdminAccess, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1344,7 +1344,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the shared drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_drives_get(driveId: string, useDomainAdminAccess: boolean): Observable<HttpResponse<string>> {
+		Drive_drives_get(driveId: string, useDomainAdminAccess: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'drives/' + (driveId == null ? '' : encodeURIComponent(driveId)) + '&useDomainAdminAccess=' + useDomainAdminAccess, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1355,7 +1355,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the shared drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_drives_update(driveId: string, useDomainAdminAccess: boolean, requestBody: Drive): Observable<HttpResponse<string>> {
+		Drive_drives_update(driveId: string, useDomainAdminAccess: boolean | null | undefined, requestBody: Drive): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'drives/' + (driveId == null ? '' : encodeURIComponent(driveId)) + '&useDomainAdminAccess=' + useDomainAdminAccess, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1397,7 +1397,7 @@ export namespace MyNS {
 		 * @param {string} teamDriveId Deprecated use driveId instead.
 		 * @return {void} Successful response
 		 */
-		Drive_files_list(corpora: string, corpus: Drive_files_listCorpus, driveId: string, includeItemsFromAllDrives: boolean, includeTeamDriveItems: boolean, orderBy: string, pageSize: number, pageToken: string, q: string, spaces: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, teamDriveId: string): Observable<HttpResponse<string>> {
+		Drive_files_list(corpora: string | null | undefined, corpus: Drive_files_listCorpus | null | undefined, driveId: string | null | undefined, includeItemsFromAllDrives: boolean | null | undefined, includeTeamDriveItems: boolean | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, q: string | null | undefined, spaces: string | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, teamDriveId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files?corpora=' + (corpora == null ? '' : encodeURIComponent(corpora)) + '&corpus=' + corpus + '&driveId=' + (driveId == null ? '' : encodeURIComponent(driveId)) + '&includeItemsFromAllDrives=' + includeItemsFromAllDrives + '&includeTeamDriveItems=' + includeTeamDriveItems + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&spaces=' + (spaces == null ? '' : encodeURIComponent(spaces)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&teamDriveId=' + (teamDriveId == null ? '' : encodeURIComponent(teamDriveId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1413,7 +1413,7 @@ export namespace MyNS {
 		 * @param {boolean} useContentAsIndexableText Whether to use the uploaded content as indexable text.
 		 * @return {void} Successful response
 		 */
-		Drive_files_create(enforceSingleParent: boolean, ignoreDefaultVisibility: boolean, keepRevisionForever: boolean, ocrLanguage: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, useContentAsIndexableText: boolean, requestBody: File): Observable<HttpResponse<string>> {
+		Drive_files_create(enforceSingleParent: boolean | null | undefined, ignoreDefaultVisibility: boolean | null | undefined, keepRevisionForever: boolean | null | undefined, ocrLanguage: string | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, useContentAsIndexableText: boolean | null | undefined, requestBody: File): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'files?enforceSingleParent=' + enforceSingleParent + '&ignoreDefaultVisibility=' + ignoreDefaultVisibility + '&keepRevisionForever=' + keepRevisionForever + '&ocrLanguage=' + (ocrLanguage == null ? '' : encodeURIComponent(ocrLanguage)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&useContentAsIndexableText=' + useContentAsIndexableText, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1424,7 +1424,7 @@ export namespace MyNS {
 		 * @param {string} space The space in which the IDs can be used to create new files. Supported values are 'drive' and 'appDataFolder'.
 		 * @return {void} Successful response
 		 */
-		Drive_files_generateIds(count: number, space: string): Observable<HttpResponse<string>> {
+		Drive_files_generateIds(count: number | null | undefined, space: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/generateIds?count=' + count + '&space=' + (space == null ? '' : encodeURIComponent(space)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1445,7 +1445,7 @@ export namespace MyNS {
 		 * @param {boolean} supportsTeamDrives Deprecated use supportsAllDrives instead.
 		 * @return {void} Successful response
 		 */
-		Drive_files_delete(fileId: string, supportsAllDrives: boolean, supportsTeamDrives: boolean): Observable<HttpResponse<string>> {
+		Drive_files_delete(fileId: string, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1458,7 +1458,7 @@ export namespace MyNS {
 		 * @param {boolean} supportsTeamDrives Deprecated use supportsAllDrives instead.
 		 * @return {void} Successful response
 		 */
-		Drive_files_get(fileId: string, acknowledgeAbuse: boolean, supportsAllDrives: boolean, supportsTeamDrives: boolean): Observable<HttpResponse<string>> {
+		Drive_files_get(fileId: string, acknowledgeAbuse: boolean | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '&acknowledgeAbuse=' + acknowledgeAbuse + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1472,7 +1472,7 @@ export namespace MyNS {
 		 * @param {string} startModifiedTime The minimum value of 'modifiedTime' for the result comments (RFC 3339 date-time).
 		 * @return {void} Successful response
 		 */
-		Drive_comments_list(fileId: string, includeDeleted: boolean, pageSize: number, pageToken: string, startModifiedTime: string): Observable<HttpResponse<string>> {
+		Drive_comments_list(fileId: string, includeDeleted: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startModifiedTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/comments&includeDeleted=' + includeDeleted + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startModifiedTime=' + (startModifiedTime == null ? '' : encodeURIComponent(startModifiedTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 		 * @param {boolean} includeDeleted Whether to return deleted comments. Deleted comments will not include their original content.
 		 * @return {void} Successful response
 		 */
-		Drive_comments_get(fileId: string, commentId: string, includeDeleted: boolean): Observable<HttpResponse<string>> {
+		Drive_comments_get(fileId: string, commentId: string, includeDeleted: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/comments/' + (commentId == null ? '' : encodeURIComponent(commentId)) + '&includeDeleted=' + includeDeleted, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1530,7 +1530,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
 		 * @return {void} Successful response
 		 */
-		Drive_replies_list(fileId: string, commentId: string, includeDeleted: boolean, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Drive_replies_list(fileId: string, commentId: string, includeDeleted: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/comments/' + (commentId == null ? '' : encodeURIComponent(commentId)) + '/replies&includeDeleted=' + includeDeleted + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1566,7 +1566,7 @@ export namespace MyNS {
 		 * @param {boolean} includeDeleted Whether to return deleted replies. Deleted replies will not include their original content.
 		 * @return {void} Successful response
 		 */
-		Drive_replies_get(fileId: string, commentId: string, replyId: string, includeDeleted: boolean): Observable<HttpResponse<string>> {
+		Drive_replies_get(fileId: string, commentId: string, replyId: string, includeDeleted: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/comments/' + (commentId == null ? '' : encodeURIComponent(commentId)) + '/replies/' + (replyId == null ? '' : encodeURIComponent(replyId)) + '&includeDeleted=' + includeDeleted, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1594,7 +1594,7 @@ export namespace MyNS {
 		 * @param {boolean} supportsTeamDrives Deprecated use supportsAllDrives instead.
 		 * @return {void} Successful response
 		 */
-		Drive_files_copy(fileId: string, enforceSingleParent: boolean, ignoreDefaultVisibility: boolean, keepRevisionForever: boolean, ocrLanguage: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, requestBody: File): Observable<HttpResponse<string>> {
+		Drive_files_copy(fileId: string, enforceSingleParent: boolean | null | undefined, ignoreDefaultVisibility: boolean | null | undefined, keepRevisionForever: boolean | null | undefined, ocrLanguage: string | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, requestBody: File): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/copy&enforceSingleParent=' + enforceSingleParent + '&ignoreDefaultVisibility=' + ignoreDefaultVisibility + '&keepRevisionForever=' + keepRevisionForever + '&ocrLanguage=' + (ocrLanguage == null ? '' : encodeURIComponent(ocrLanguage)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_permissions_list(fileId: string, pageSize: number, pageToken: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, useDomainAdminAccess: boolean): Observable<HttpResponse<string>> {
+		Drive_permissions_list(fileId: string, pageSize: number | null | undefined, pageToken: string | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, useDomainAdminAccess: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/permissions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&useDomainAdminAccess=' + useDomainAdminAccess, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1638,7 +1638,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_permissions_create(fileId: string, emailMessage: string, enforceSingleParent: boolean, moveToNewOwnersRoot: boolean, sendNotificationEmail: boolean, supportsAllDrives: boolean, supportsTeamDrives: boolean, transferOwnership: boolean, useDomainAdminAccess: boolean, requestBody: Permission): Observable<HttpResponse<string>> {
+		Drive_permissions_create(fileId: string, emailMessage: string | null | undefined, enforceSingleParent: boolean | null | undefined, moveToNewOwnersRoot: boolean | null | undefined, sendNotificationEmail: boolean | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, transferOwnership: boolean | null | undefined, useDomainAdminAccess: boolean | null | undefined, requestBody: Permission): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/permissions&emailMessage=' + (emailMessage == null ? '' : encodeURIComponent(emailMessage)) + '&enforceSingleParent=' + enforceSingleParent + '&moveToNewOwnersRoot=' + moveToNewOwnersRoot + '&sendNotificationEmail=' + sendNotificationEmail + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&transferOwnership=' + transferOwnership + '&useDomainAdminAccess=' + useDomainAdminAccess, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1652,7 +1652,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_permissions_delete(fileId: string, permissionId: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, useDomainAdminAccess: boolean): Observable<HttpResponse<string>> {
+		Drive_permissions_delete(fileId: string, permissionId: string, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, useDomainAdminAccess: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/permissions/' + (permissionId == null ? '' : encodeURIComponent(permissionId)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&useDomainAdminAccess=' + useDomainAdminAccess, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1666,7 +1666,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_permissions_get(fileId: string, permissionId: string, supportsAllDrives: boolean, supportsTeamDrives: boolean, useDomainAdminAccess: boolean): Observable<HttpResponse<string>> {
+		Drive_permissions_get(fileId: string, permissionId: string, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, useDomainAdminAccess: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/permissions/' + (permissionId == null ? '' : encodeURIComponent(permissionId)) + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&useDomainAdminAccess=' + useDomainAdminAccess, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1682,7 +1682,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_permissions_update(fileId: string, permissionId: string, removeExpiration: boolean, supportsAllDrives: boolean, supportsTeamDrives: boolean, transferOwnership: boolean, useDomainAdminAccess: boolean, requestBody: Permission): Observable<HttpResponse<string>> {
+		Drive_permissions_update(fileId: string, permissionId: string, removeExpiration: boolean | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, transferOwnership: boolean | null | undefined, useDomainAdminAccess: boolean | null | undefined, requestBody: Permission): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/permissions/' + (permissionId == null ? '' : encodeURIComponent(permissionId)) + '&removeExpiration=' + removeExpiration + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives + '&transferOwnership=' + transferOwnership + '&useDomainAdminAccess=' + useDomainAdminAccess, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1694,7 +1694,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
 		 * @return {void} Successful response
 		 */
-		Drive_revisions_list(fileId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Drive_revisions_list(fileId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/revisions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1717,7 +1717,7 @@ export namespace MyNS {
 		 * @param {boolean} acknowledgeAbuse Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when alt=media.
 		 * @return {void} Successful response
 		 */
-		Drive_revisions_get(fileId: string, revisionId: string, acknowledgeAbuse: boolean): Observable<HttpResponse<string>> {
+		Drive_revisions_get(fileId: string, revisionId: string, acknowledgeAbuse: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/revisions/' + (revisionId == null ? '' : encodeURIComponent(revisionId)) + '&acknowledgeAbuse=' + acknowledgeAbuse, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1741,7 +1741,7 @@ export namespace MyNS {
 		 * @param {boolean} supportsTeamDrives Deprecated use supportsAllDrives instead.
 		 * @return {void} Successful response
 		 */
-		Drive_files_watch(fileId: string, acknowledgeAbuse: boolean, supportsAllDrives: boolean, supportsTeamDrives: boolean, requestBody: Channel): Observable<HttpResponse<string>> {
+		Drive_files_watch(fileId: string, acknowledgeAbuse: boolean | null | undefined, supportsAllDrives: boolean | null | undefined, supportsTeamDrives: boolean | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'files/' + (fileId == null ? '' : encodeURIComponent(fileId)) + '/watch&acknowledgeAbuse=' + acknowledgeAbuse + '&supportsAllDrives=' + supportsAllDrives + '&supportsTeamDrives=' + supportsTeamDrives, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1754,7 +1754,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then all Team Drives of the domain in which the requester is an administrator are returned.
 		 * @return {void} Successful response
 		 */
-		Drive_teamdrives_list(pageSize: number, pageToken: string, q: string, useDomainAdminAccess: boolean): Observable<HttpResponse<string>> {
+		Drive_teamdrives_list(pageSize: number | null | undefined, pageToken: string | null | undefined, q: string | null | undefined, useDomainAdminAccess: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'teamdrives?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&useDomainAdminAccess=' + useDomainAdminAccess, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1785,7 +1785,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the Team Drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_teamdrives_get(teamDriveId: string, useDomainAdminAccess: boolean): Observable<HttpResponse<string>> {
+		Drive_teamdrives_get(teamDriveId: string, useDomainAdminAccess: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'teamdrives/' + (teamDriveId == null ? '' : encodeURIComponent(teamDriveId)) + '&useDomainAdminAccess=' + useDomainAdminAccess, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1796,7 +1796,7 @@ export namespace MyNS {
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the Team Drive belongs.
 		 * @return {void} Successful response
 		 */
-		Drive_teamdrives_update(teamDriveId: string, useDomainAdminAccess: boolean, requestBody: TeamDrive): Observable<HttpResponse<string>> {
+		Drive_teamdrives_update(teamDriveId: string, useDomainAdminAccess: boolean | null | undefined, requestBody: TeamDrive): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'teamdrives/' + (teamDriveId == null ? '' : encodeURIComponent(teamDriveId)) + '&useDomainAdminAccess=' + useDomainAdminAccess, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

@@ -1738,7 +1738,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeBatchPredictionsOutput} Success
 		 */
-		DescribeBatchPredictions(Limit: string, NextToken: string, requestBody: DescribeBatchPredictionsInput): Observable<DescribeBatchPredictionsOutput> {
+		DescribeBatchPredictions(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeBatchPredictionsInput): Observable<DescribeBatchPredictionsOutput> {
 			return this.http.post<DescribeBatchPredictionsOutput>(this.baseUri + '#X-Amz-Target=AmazonML_20141212.DescribeBatchPredictions?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1749,7 +1749,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeDataSourcesOutput} Success
 		 */
-		DescribeDataSources(Limit: string, NextToken: string, requestBody: DescribeDataSourcesInput): Observable<DescribeDataSourcesOutput> {
+		DescribeDataSources(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeDataSourcesInput): Observable<DescribeDataSourcesOutput> {
 			return this.http.post<DescribeDataSourcesOutput>(this.baseUri + '#X-Amz-Target=AmazonML_20141212.DescribeDataSources?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1760,7 +1760,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeEvaluationsOutput} Success
 		 */
-		DescribeEvaluations(Limit: string, NextToken: string, requestBody: DescribeEvaluationsInput): Observable<DescribeEvaluationsOutput> {
+		DescribeEvaluations(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeEvaluationsInput): Observable<DescribeEvaluationsOutput> {
 			return this.http.post<DescribeEvaluationsOutput>(this.baseUri + '#X-Amz-Target=AmazonML_20141212.DescribeEvaluations?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1771,7 +1771,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeMLModelsOutput} Success
 		 */
-		DescribeMLModels(Limit: string, NextToken: string, requestBody: DescribeMLModelsInput): Observable<DescribeMLModelsOutput> {
+		DescribeMLModels(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeMLModelsInput): Observable<DescribeMLModelsOutput> {
 			return this.http.post<DescribeMLModelsOutput>(this.baseUri + '#X-Amz-Target=AmazonML_20141212.DescribeMLModels?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

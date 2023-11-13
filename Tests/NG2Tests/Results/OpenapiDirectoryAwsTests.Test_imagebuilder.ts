@@ -1167,7 +1167,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListComponentBuildVersionsResponse} Success
 		 */
-		ListComponentBuildVersions(maxResults: string, nextToken: string, requestBody: ListComponentBuildVersionsPostBody): Observable<ListComponentBuildVersionsResponse> {
+		ListComponentBuildVersions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListComponentBuildVersionsPostBody): Observable<ListComponentBuildVersionsResponse> {
 			return this.http.post<ListComponentBuildVersionsResponse>(this.baseUri + 'ListComponentBuildVersions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListComponentsResponse} Success
 		 */
-		ListComponents(maxResults: string, nextToken: string, requestBody: ListComponentsPostBody): Observable<ListComponentsResponse> {
+		ListComponents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListComponentsPostBody): Observable<ListComponentsResponse> {
 			return this.http.post<ListComponentsResponse>(this.baseUri + 'ListComponents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1189,7 +1189,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDistributionConfigurationsResponse} Success
 		 */
-		ListDistributionConfigurations(maxResults: string, nextToken: string, requestBody: ListDistributionConfigurationsPostBody): Observable<ListDistributionConfigurationsResponse> {
+		ListDistributionConfigurations(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDistributionConfigurationsPostBody): Observable<ListDistributionConfigurationsResponse> {
 			return this.http.post<ListDistributionConfigurationsResponse>(this.baseUri + 'ListDistributionConfigurations?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1200,7 +1200,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListImageBuildVersionsResponse} Success
 		 */
-		ListImageBuildVersions(maxResults: string, nextToken: string, requestBody: ListImageBuildVersionsPostBody): Observable<ListImageBuildVersionsResponse> {
+		ListImageBuildVersions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListImageBuildVersionsPostBody): Observable<ListImageBuildVersionsResponse> {
 			return this.http.post<ListImageBuildVersionsResponse>(this.baseUri + 'ListImageBuildVersions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1211,7 +1211,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListImagePipelineImagesResponse} Success
 		 */
-		ListImagePipelineImages(maxResults: string, nextToken: string, requestBody: ListImagePipelineImagesPostBody): Observable<ListImagePipelineImagesResponse> {
+		ListImagePipelineImages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListImagePipelineImagesPostBody): Observable<ListImagePipelineImagesResponse> {
 			return this.http.post<ListImagePipelineImagesResponse>(this.baseUri + 'ListImagePipelineImages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1222,7 +1222,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListImagePipelinesResponse} Success
 		 */
-		ListImagePipelines(maxResults: string, nextToken: string, requestBody: ListImagePipelinesPostBody): Observable<ListImagePipelinesResponse> {
+		ListImagePipelines(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListImagePipelinesPostBody): Observable<ListImagePipelinesResponse> {
 			return this.http.post<ListImagePipelinesResponse>(this.baseUri + 'ListImagePipelines?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1233,7 +1233,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListImageRecipesResponse} Success
 		 */
-		ListImageRecipes(maxResults: string, nextToken: string, requestBody: ListImageRecipesPostBody): Observable<ListImageRecipesResponse> {
+		ListImageRecipes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListImageRecipesPostBody): Observable<ListImageRecipesResponse> {
 			return this.http.post<ListImageRecipesResponse>(this.baseUri + 'ListImageRecipes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1244,7 +1244,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListImagesResponse} Success
 		 */
-		ListImages(maxResults: string, nextToken: string, requestBody: ListImagesPostBody): Observable<ListImagesResponse> {
+		ListImages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListImagesPostBody): Observable<ListImagesResponse> {
 			return this.http.post<ListImagesResponse>(this.baseUri + 'ListImages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1255,7 +1255,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListInfrastructureConfigurationsResponse} Success
 		 */
-		ListInfrastructureConfigurations(maxResults: string, nextToken: string, requestBody: ListInfrastructureConfigurationsPostBody): Observable<ListInfrastructureConfigurationsResponse> {
+		ListInfrastructureConfigurations(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListInfrastructureConfigurationsPostBody): Observable<ListInfrastructureConfigurationsResponse> {
 			return this.http.post<ListInfrastructureConfigurationsResponse>(this.baseUri + 'ListInfrastructureConfigurations?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

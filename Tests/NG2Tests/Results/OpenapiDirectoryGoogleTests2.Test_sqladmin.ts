@@ -1709,7 +1709,7 @@ export namespace MyNS {
 		 * method returns flags for all database types and versions.
 		 * @return {void} Successful response
 		 */
-		Sql_flags_list(databaseVersion: string): Observable<HttpResponse<string>> {
+		Sql_flags_list(databaseVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sql/v1beta4/flags?databaseVersion=' + (databaseVersion == null ? '' : encodeURIComponent(databaseVersion)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1730,7 +1730,7 @@ export namespace MyNS {
 		 * results to view.
 		 * @return {void} Successful response
 		 */
-		Sql_instances_list(project: string, filter: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Sql_instances_list(project: string, filter: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sql/v1beta4/projects/' + (project == null ? '' : encodeURIComponent(project)) + '/instances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1817,7 +1817,7 @@ export namespace MyNS {
 		 * results to view.
 		 * @return {void} Successful response
 		 */
-		Sql_backupRuns_list(project: string, instance: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Sql_backupRuns_list(project: string, instance: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sql/v1beta4/projects/' + (project == null ? '' : encodeURIComponent(project)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/backupRuns&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2152,7 +2152,7 @@ export namespace MyNS {
 		 * @param {Sql_projects_instances_startExternalSyncSyncMode} syncMode External sync mode
 		 * @return {void} Successful response
 		 */
-		Sql_projects_instances_startExternalSync(project: string, instance: string, syncMode: Sql_projects_instances_startExternalSyncSyncMode): Observable<HttpResponse<string>> {
+		Sql_projects_instances_startExternalSync(project: string, instance: string, syncMode: Sql_projects_instances_startExternalSyncSyncMode | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'sql/v1beta4/projects/' + (project == null ? '' : encodeURIComponent(project)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/startExternalSync&syncMode=' + syncMode, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2198,7 +2198,7 @@ export namespace MyNS {
 		 * @param {string} name Name of the user in the instance.
 		 * @return {void} Successful response
 		 */
-		Sql_users_delete(project: string, instance: string, host: string, name: string): Observable<HttpResponse<string>> {
+		Sql_users_delete(project: string, instance: string, host: string | null | undefined, name: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'sql/v1beta4/projects/' + (project == null ? '' : encodeURIComponent(project)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/users&host=' + (host == null ? '' : encodeURIComponent(host)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2233,7 +2233,7 @@ export namespace MyNS {
 		 * @param {string} name Name of the user in the instance.
 		 * @return {void} Successful response
 		 */
-		Sql_users_update(project: string, instance: string, host: string, name: string, requestBody: User): Observable<HttpResponse<string>> {
+		Sql_users_update(project: string, instance: string, host: string | null | undefined, name: string | null | undefined, requestBody: User): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'sql/v1beta4/projects/' + (project == null ? '' : encodeURIComponent(project)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/users&host=' + (host == null ? '' : encodeURIComponent(host)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2246,7 +2246,7 @@ export namespace MyNS {
 		 * @param {boolean} verifyConnectionOnly Flag to enable verifying connection only
 		 * @return {void} Successful response
 		 */
-		Sql_projects_instances_verifyExternalSyncSettings(project: string, instance: string, syncMode: Sql_projects_instances_startExternalSyncSyncMode, verifyConnectionOnly: boolean): Observable<HttpResponse<string>> {
+		Sql_projects_instances_verifyExternalSyncSettings(project: string, instance: string, syncMode: Sql_projects_instances_startExternalSyncSyncMode | null | undefined, verifyConnectionOnly: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'sql/v1beta4/projects/' + (project == null ? '' : encodeURIComponent(project)) + '/instances/' + (instance == null ? '' : encodeURIComponent(instance)) + '/verifyExternalSyncSettings&syncMode=' + syncMode + '&verifyConnectionOnly=' + verifyConnectionOnly, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2261,7 +2261,7 @@ export namespace MyNS {
 		 * results to view.
 		 * @return {void} Successful response
 		 */
-		Sql_operations_list(project: string, instance: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Sql_operations_list(project: string, instance: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sql/v1beta4/projects/' + (project == null ? '' : encodeURIComponent(project)) + '/operations&instance=' + (instance == null ? '' : encodeURIComponent(instance)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

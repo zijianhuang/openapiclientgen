@@ -441,7 +441,7 @@ export namespace MyNS {
 		 * returned in response to the previous call to the `ListJobs` method.
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_list(includeSystemManaged: boolean, onBehalfOfContentOwner: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_list(includeSystemManaged: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/jobs?includeSystemManaged=' + includeSystemManaged + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -452,7 +452,7 @@ export namespace MyNS {
 		 * not set, the user is acting for himself (his own channel).
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_create(onBehalfOfContentOwner: string, requestBody: Job): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_create(onBehalfOfContentOwner: string | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/jobs?onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -464,7 +464,7 @@ export namespace MyNS {
 		 * not set, the user is acting for himself (his own channel).
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_delete(jobId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_delete(jobId: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -476,7 +476,7 @@ export namespace MyNS {
 		 * not set, the user is acting for himself (his own channel).
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_get(jobId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_get(jobId: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -500,7 +500,7 @@ export namespace MyNS {
 		 * date/time are returned.
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_reports_list(jobId: string, createdAfter: string, onBehalfOfContentOwner: string, pageSize: number, pageToken: string, startTimeAtOrAfter: string, startTimeBefore: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_reports_list(jobId: string, createdAfter: string | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startTimeAtOrAfter: string | null | undefined, startTimeBefore: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/reports&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTimeAtOrAfter=' + (startTimeAtOrAfter == null ? '' : encodeURIComponent(startTimeAtOrAfter)) + '&startTimeBefore=' + (startTimeBefore == null ? '' : encodeURIComponent(startTimeBefore)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -513,7 +513,7 @@ export namespace MyNS {
 		 * not set, the user is acting for himself (his own channel).
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_reports_get(jobId: string, reportId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_reports_get(jobId: string, reportId: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/reports/' + (reportId == null ? '' : encodeURIComponent(reportId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -544,7 +544,7 @@ export namespace MyNS {
 		 * returned in response to the previous call to the `ListReportTypes` method.
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_reportTypes_list(includeSystemManaged: boolean, onBehalfOfContentOwner: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Youtubereporting_reportTypes_list(includeSystemManaged: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/reportTypes?includeSystemManaged=' + includeSystemManaged + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

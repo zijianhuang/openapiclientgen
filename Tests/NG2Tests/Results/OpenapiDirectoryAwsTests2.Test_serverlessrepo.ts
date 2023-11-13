@@ -361,7 +361,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationsResponse} Success
 		 */
-		ListApplications(maxItems: number, nextToken: string, MaxItems: string, NextToken: string): Observable<ListApplicationsResponse> {
+		ListApplications(maxItems: number | null | undefined, nextToken: string | null | undefined, MaxItems: string | null | undefined, NextToken: string | null | undefined): Observable<ListApplicationsResponse> {
 			return this.http.get<ListApplicationsResponse>(this.baseUri + 'applications?maxItems=' + maxItems + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -413,7 +413,7 @@ export namespace MyNS {
 		 * @param {string} semanticVersion The semantic version of the application to get.
 		 * @return {GetApplicationResponse} Success
 		 */
-		GetApplication(applicationId: string, semanticVersion: string): Observable<GetApplicationResponse> {
+		GetApplication(applicationId: string, semanticVersion: string | null | undefined): Observable<GetApplicationResponse> {
 			return this.http.get<GetApplicationResponse>(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '&semanticVersion=' + (semanticVersion == null ? '' : encodeURIComponent(semanticVersion)), {});
 		}
 
@@ -472,7 +472,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationDependenciesResponse} Success
 		 */
-		ListApplicationDependencies(applicationId: string, maxItems: number, nextToken: string, semanticVersion: string, MaxItems: string, NextToken: string): Observable<ListApplicationDependenciesResponse> {
+		ListApplicationDependencies(applicationId: string, maxItems: number | null | undefined, nextToken: string | null | undefined, semanticVersion: string | null | undefined, MaxItems: string | null | undefined, NextToken: string | null | undefined): Observable<ListApplicationDependenciesResponse> {
 			return this.http.get<ListApplicationDependenciesResponse>(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '/dependencies&maxItems=' + maxItems + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&semanticVersion=' + (semanticVersion == null ? '' : encodeURIComponent(semanticVersion)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -486,7 +486,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationVersionsResponse} Success
 		 */
-		ListApplicationVersions(applicationId: string, maxItems: number, nextToken: string, MaxItems: string, NextToken: string): Observable<ListApplicationVersionsResponse> {
+		ListApplicationVersions(applicationId: string, maxItems: number | null | undefined, nextToken: string | null | undefined, MaxItems: string | null | undefined, NextToken: string | null | undefined): Observable<ListApplicationVersionsResponse> {
 			return this.http.get<ListApplicationVersionsResponse>(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '/versions&maxItems=' + maxItems + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

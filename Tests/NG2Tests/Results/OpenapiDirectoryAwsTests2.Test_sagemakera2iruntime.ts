@@ -147,7 +147,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. 
 		 * @return {ListHumanLoopsResponse} Success
 		 */
-		ListHumanLoops(CreationTimeAfter: Date, CreationTimeBefore: Date, FlowDefinitionArn: string, SortOrder: SortOrder, NextToken: string, MaxResults: number): Observable<ListHumanLoopsResponse> {
+		ListHumanLoops(CreationTimeAfter: Date | null | undefined, CreationTimeBefore: Date | null | undefined, FlowDefinitionArn: string, SortOrder: SortOrder | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListHumanLoopsResponse> {
 			return this.http.get<ListHumanLoopsResponse>(this.baseUri + 'human-loops#FlowDefinitionArn?CreationTimeAfter=' + CreationTimeAfter.toISOString() + '&CreationTimeBefore=' + CreationTimeBefore.toISOString() + '&FlowDefinitionArn=' + (FlowDefinitionArn == null ? '' : encodeURIComponent(FlowDefinitionArn)) + '&SortOrder=' + SortOrder + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 

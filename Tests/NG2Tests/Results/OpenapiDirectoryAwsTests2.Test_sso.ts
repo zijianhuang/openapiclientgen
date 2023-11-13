@@ -92,7 +92,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAccountRolesResponse} Success
 		 */
-		ListAccountRoles(next_token: string, max_result: number, account_id: string, maxResults: string, nextToken: string): Observable<ListAccountRolesResponse> {
+		ListAccountRoles(next_token: string | null | undefined, max_result: number | null | undefined, account_id: string, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<ListAccountRolesResponse> {
 			return this.http.get<ListAccountRolesResponse>(this.baseUri + 'assignment/roles#x-amz-sso_bearer_token&account_id?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_result=' + max_result + '&account_id=' + (account_id == null ? '' : encodeURIComponent(account_id)) + '&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -105,7 +105,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAccountsResponse} Success
 		 */
-		ListAccounts(next_token: string, max_result: number, maxResults: string, nextToken: string): Observable<ListAccountsResponse> {
+		ListAccounts(next_token: string | null | undefined, max_result: number | null | undefined, maxResults: string | null | undefined, nextToken: string | null | undefined): Observable<ListAccountsResponse> {
 			return this.http.get<ListAccountsResponse>(this.baseUri + 'assignment/accounts#x-amz-sso_bearer_token?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_result=' + max_result + '&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 

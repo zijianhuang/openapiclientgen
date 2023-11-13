@@ -100,7 +100,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeHomeRegionControlsResult} Success
 		 */
-		DescribeHomeRegionControls(MaxResults: string, NextToken: string, requestBody: DescribeHomeRegionControlsRequest): Observable<DescribeHomeRegionControlsResult> {
+		DescribeHomeRegionControls(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeHomeRegionControlsRequest): Observable<DescribeHomeRegionControlsResult> {
 			return this.http.post<DescribeHomeRegionControlsResult>(this.baseUri + '#X-Amz-Target=AWSMigrationHubMultiAccountService.DescribeHomeRegionControls?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

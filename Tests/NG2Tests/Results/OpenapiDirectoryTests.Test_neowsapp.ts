@@ -185,7 +185,7 @@ export namespace MyNS {
 		 * @param {boolean} detailed detailed
 		 * @return {NearEarthObjectList} OK
 		 */
-		RetrieveNearEarthObjectFeed(start_date: string, end_date: string, detailed: boolean): Observable<NearEarthObjectList> {
+		RetrieveNearEarthObjectFeed(start_date: string | null | undefined, end_date: string | null | undefined, detailed: boolean | null | undefined): Observable<NearEarthObjectList> {
 			return this.http.get<NearEarthObjectList>(this.baseUri + 'rest/v1/feed?start_date=' + (start_date == null ? '' : encodeURIComponent(start_date)) + '&end_date=' + (end_date == null ? '' : encodeURIComponent(end_date)) + '&detailed=' + detailed, {});
 		}
 
@@ -196,7 +196,7 @@ export namespace MyNS {
 		 * @param {boolean} detailed detailed
 		 * @return {NearEarthObjectList} OK
 		 */
-		RetrieveNEOFeedToday(detailed: boolean): Observable<NearEarthObjectList> {
+		RetrieveNEOFeedToday(detailed: boolean | null | undefined): Observable<NearEarthObjectList> {
 			return this.http.get<NearEarthObjectList>(this.baseUri + 'rest/v1/feed/today?detailed=' + detailed, {});
 		}
 
@@ -208,7 +208,7 @@ export namespace MyNS {
 		 * @param {number} size size
 		 * @return {NearEarthObject} OK
 		 */
-		BrowseNearEarthObjects(page: number, size: number): Observable<NearEarthObject> {
+		BrowseNearEarthObjects(page: number | null | undefined, size: number | null | undefined): Observable<NearEarthObject> {
 			return this.http.get<NearEarthObject>(this.baseUri + 'rest/v1/neo/browse?page=' + page + '&size=' + size, {});
 		}
 
@@ -221,7 +221,7 @@ export namespace MyNS {
 		 * @param {number} size size
 		 * @return {SentryObjectPagingDto} OK
 		 */
-		RetrieveSentryRiskData(is_active: boolean, page: number, size: number): Observable<SentryObjectPagingDto> {
+		RetrieveSentryRiskData(is_active: boolean | null | undefined, page: number | null | undefined, size: number | null | undefined): Observable<SentryObjectPagingDto> {
 			return this.http.get<SentryObjectPagingDto>(this.baseUri + 'rest/v1/neo/sentry?is_active=' + is_active + '&page=' + page + '&size=' + size, {});
 		}
 

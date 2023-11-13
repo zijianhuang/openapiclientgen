@@ -936,7 +936,7 @@ export namespace MyNS {
 		 * field mask is unset or empty, all fields are returned.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_get(name: string, fieldMask: string): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_get(name: string, fieldMask: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -954,7 +954,7 @@ export namespace MyNS {
 		 * Mutable top-level fields: `credentials`, `blocked`, and `metadata`
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_patch(name: string, updateMask: string, requestBody: Device): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_patch(name: string, updateMask: string | null | undefined, requestBody: Device): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -970,7 +970,7 @@ export namespace MyNS {
 		 * value is zero, it will return all the versions available.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_configVersions_list(name: string, numVersions: number): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_configVersions_list(name: string, numVersions: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/configVersions&numVersions=' + numVersions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -986,7 +986,7 @@ export namespace MyNS {
 		 * value is zero, it will return all the states available.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_states_list(name: string, numStates: number): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_states_list(name: string, numStates: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/states&numStates=' + numStates, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1060,7 +1060,7 @@ export namespace MyNS {
 		 * the system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_list(parent: string, deviceIds: Array<string>, deviceNumIds: Array<string>, fieldMask: string, gatewayListOptions_associationsDeviceId: string, gatewayListOptions_associationsGatewayId: string, gatewayListOptions_gatewayType: GatewayConfigGatewayType, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_list(parent: string, deviceIds: Array<string> | null | undefined, deviceNumIds: Array<string> | null | undefined, fieldMask: string | null | undefined, gatewayListOptions_associationsDeviceId: string | null | undefined, gatewayListOptions_associationsGatewayId: string | null | undefined, gatewayListOptions_gatewayType: GatewayConfigGatewayType | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/devices&' + deviceIds.map(z => `deviceIds=${encodeURIComponent(z)}`).join('&') + '&' + deviceNumIds.map(z => `deviceNumIds=${encodeURIComponent(z)}`).join('&') + '&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)) + '&gatewayListOptions_associationsDeviceId=' + (gatewayListOptions_associationsDeviceId == null ? '' : encodeURIComponent(gatewayListOptions_associationsDeviceId)) + '&gatewayListOptions_associationsGatewayId=' + (gatewayListOptions_associationsGatewayId == null ? '' : encodeURIComponent(gatewayListOptions_associationsGatewayId)) + '&gatewayListOptions_gatewayType=' + gatewayListOptions_gatewayType + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1090,7 +1090,7 @@ export namespace MyNS {
 		 * the system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/registries&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

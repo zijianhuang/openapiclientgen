@@ -1413,7 +1413,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeDomainControllersResult} Success
 		 */
-		DescribeDomainControllers(Limit: string, NextToken: string, requestBody: DescribeDomainControllersRequest): Observable<DescribeDomainControllersResult> {
+		DescribeDomainControllers(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeDomainControllersRequest): Observable<DescribeDomainControllersResult> {
 			return this.http.post<DescribeDomainControllersResult>(this.baseUri + '#X-Amz-Target=DirectoryService_20150416.DescribeDomainControllers?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

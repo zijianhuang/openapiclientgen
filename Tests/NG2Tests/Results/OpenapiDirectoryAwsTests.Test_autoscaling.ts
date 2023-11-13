@@ -947,7 +947,7 @@ export namespace MyNS {
 		 * @param {string} AutoScalingGroupName The name of the Auto Scaling group.
 		 * @return {void} Success
 		 */
-		GET_AttachInstances(InstanceIds: Array<string>, AutoScalingGroupName: string, Action: GET_AttachInstancesAction, Version: GET_AttachInstancesVersion): Observable<HttpResponse<string>> {
+		GET_AttachInstances(InstanceIds: Array<string> | null | undefined, AutoScalingGroupName: string, Action: GET_AttachInstancesAction, Version: GET_AttachInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=AttachInstances?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1005,7 +1005,7 @@ export namespace MyNS {
 		 * @param {string} InstanceId The ID of the instance.
 		 * @return {void} Success
 		 */
-		GET_CompleteLifecycleAction(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleActionToken: string, LifecycleActionResult: string, InstanceId: string, Action: GET_CompleteLifecycleActionAction, Version: GET_CompleteLifecycleActionVersion): Observable<HttpResponse<string>> {
+		GET_CompleteLifecycleAction(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleActionToken: string | null | undefined, LifecycleActionResult: string, InstanceId: string | null | undefined, Action: GET_CompleteLifecycleActionAction, Version: GET_CompleteLifecycleActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CompleteLifecycleAction?LifecycleHookName=' + (LifecycleHookName == null ? '' : encodeURIComponent(LifecycleHookName)) + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LifecycleActionToken=' + (LifecycleActionToken == null ? '' : encodeURIComponent(LifecycleActionToken)) + '&LifecycleActionResult=' + (LifecycleActionResult == null ? '' : encodeURIComponent(LifecycleActionResult)) + '&InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 		 * @param {number} MaxInstanceLifetime <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null.</p> <p>This parameter is optional, but if you specify a value for it, you must specify a value of at least 604,800 seconds (7 days). To clear a previously set value, specify a new value of 0.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of 0.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateAutoScalingGroup(AutoScalingGroupName: string, LaunchConfigurationName: string, LaunchTemplate: GET_CreateAutoScalingGroupLaunchTemplate, MixedInstancesPolicy: GET_CreateAutoScalingGroupMixedInstancesPolicy, InstanceId: string, MinSize: number, MaxSize: number, DesiredCapacity: number, DefaultCooldown: number, AvailabilityZones: Array<string>, LoadBalancerNames: Array<string>, TargetGroupARNs: Array<string>, HealthCheckType: string, HealthCheckGracePeriod: number, PlacementGroup: string, VPCZoneIdentifier: string, TerminationPolicies: Array<string>, NewInstancesProtectedFromScaleIn: boolean, LifecycleHookSpecificationList: Array<LifecycleHookSpecification>, Tags: Array<Tag>, ServiceLinkedRoleARN: string, MaxInstanceLifetime: number, Action: GET_CreateAutoScalingGroupAction, Version: GET_CreateAutoScalingGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateAutoScalingGroup(AutoScalingGroupName: string, LaunchConfigurationName: string | null | undefined, LaunchTemplate: GET_CreateAutoScalingGroupLaunchTemplate | null | undefined, MixedInstancesPolicy: GET_CreateAutoScalingGroupMixedInstancesPolicy | null | undefined, InstanceId: string | null | undefined, MinSize: number, MaxSize: number, DesiredCapacity: number | null | undefined, DefaultCooldown: number | null | undefined, AvailabilityZones: Array<string> | null | undefined, LoadBalancerNames: Array<string> | null | undefined, TargetGroupARNs: Array<string> | null | undefined, HealthCheckType: string | null | undefined, HealthCheckGracePeriod: number | null | undefined, PlacementGroup: string | null | undefined, VPCZoneIdentifier: string | null | undefined, TerminationPolicies: Array<string> | null | undefined, NewInstancesProtectedFromScaleIn: boolean | null | undefined, LifecycleHookSpecificationList: Array<LifecycleHookSpecification> | null | undefined, Tags: Array<Tag> | null | undefined, ServiceLinkedRoleARN: string | null | undefined, MaxInstanceLifetime: number | null | undefined, Action: GET_CreateAutoScalingGroupAction, Version: GET_CreateAutoScalingGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateAutoScalingGroup?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LaunchConfigurationName=' + (LaunchConfigurationName == null ? '' : encodeURIComponent(LaunchConfigurationName)) + '&LaunchTemplate=' + LaunchTemplate + '&MixedInstancesPolicy=' + MixedInstancesPolicy + '&InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&MinSize=' + MinSize + '&MaxSize=' + MaxSize + '&DesiredCapacity=' + DesiredCapacity + '&DefaultCooldown=' + DefaultCooldown + '&' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&' + LoadBalancerNames.map(z => `LoadBalancerNames=${encodeURIComponent(z)}`).join('&') + '&' + TargetGroupARNs.map(z => `TargetGroupARNs=${encodeURIComponent(z)}`).join('&') + '&HealthCheckType=' + (HealthCheckType == null ? '' : encodeURIComponent(HealthCheckType)) + '&HealthCheckGracePeriod=' + HealthCheckGracePeriod + '&PlacementGroup=' + (PlacementGroup == null ? '' : encodeURIComponent(PlacementGroup)) + '&VPCZoneIdentifier=' + (VPCZoneIdentifier == null ? '' : encodeURIComponent(VPCZoneIdentifier)) + '&' + TerminationPolicies.map(z => `TerminationPolicies=${encodeURIComponent(z)}`).join('&') + '&NewInstancesProtectedFromScaleIn=' + NewInstancesProtectedFromScaleIn + '&' + LifecycleHookSpecificationList.map(z => `LifecycleHookSpecificationList=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ServiceLinkedRoleARN=' + (ServiceLinkedRoleARN == null ? '' : encodeURIComponent(ServiceLinkedRoleARN)) + '&MaxInstanceLifetime=' + MaxInstanceLifetime + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 		 * @param {string} PlacementTenancy <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p> <p>To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>.</p> <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
 		 * @return {void} Success
 		 */
-		GET_CreateLaunchConfiguration(LaunchConfigurationName: string, ImageId: string, KeyName: string, SecurityGroups: Array<string>, ClassicLinkVPCId: string, ClassicLinkVPCSecurityGroups: Array<string>, UserData: string, InstanceId: string, InstanceType: string, KernelId: string, RamdiskId: string, BlockDeviceMappings: Array<BlockDeviceMapping>, InstanceMonitoring: GET_CreateLaunchConfigurationInstanceMonitoring, SpotPrice: string, IamInstanceProfile: string, EbsOptimized: boolean, AssociatePublicIpAddress: boolean, PlacementTenancy: string, Action: GET_CreateLaunchConfigurationAction, Version: GET_CreateLaunchConfigurationVersion): Observable<HttpResponse<string>> {
+		GET_CreateLaunchConfiguration(LaunchConfigurationName: string, ImageId: string | null | undefined, KeyName: string | null | undefined, SecurityGroups: Array<string> | null | undefined, ClassicLinkVPCId: string | null | undefined, ClassicLinkVPCSecurityGroups: Array<string> | null | undefined, UserData: string | null | undefined, InstanceId: string | null | undefined, InstanceType: string | null | undefined, KernelId: string | null | undefined, RamdiskId: string | null | undefined, BlockDeviceMappings: Array<BlockDeviceMapping> | null | undefined, InstanceMonitoring: GET_CreateLaunchConfigurationInstanceMonitoring | null | undefined, SpotPrice: string | null | undefined, IamInstanceProfile: string | null | undefined, EbsOptimized: boolean | null | undefined, AssociatePublicIpAddress: boolean | null | undefined, PlacementTenancy: string | null | undefined, Action: GET_CreateLaunchConfigurationAction, Version: GET_CreateLaunchConfigurationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateLaunchConfiguration?LaunchConfigurationName=' + (LaunchConfigurationName == null ? '' : encodeURIComponent(LaunchConfigurationName)) + '&ImageId=' + (ImageId == null ? '' : encodeURIComponent(ImageId)) + '&KeyName=' + (KeyName == null ? '' : encodeURIComponent(KeyName)) + '&' + SecurityGroups.map(z => `SecurityGroups=${encodeURIComponent(z)}`).join('&') + '&ClassicLinkVPCId=' + (ClassicLinkVPCId == null ? '' : encodeURIComponent(ClassicLinkVPCId)) + '&' + ClassicLinkVPCSecurityGroups.map(z => `ClassicLinkVPCSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&UserData=' + (UserData == null ? '' : encodeURIComponent(UserData)) + '&InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&InstanceType=' + (InstanceType == null ? '' : encodeURIComponent(InstanceType)) + '&KernelId=' + (KernelId == null ? '' : encodeURIComponent(KernelId)) + '&RamdiskId=' + (RamdiskId == null ? '' : encodeURIComponent(RamdiskId)) + '&' + BlockDeviceMappings.map(z => `BlockDeviceMappings=${z}`).join('&') + '&InstanceMonitoring=' + InstanceMonitoring + '&SpotPrice=' + (SpotPrice == null ? '' : encodeURIComponent(SpotPrice)) + '&IamInstanceProfile=' + (IamInstanceProfile == null ? '' : encodeURIComponent(IamInstanceProfile)) + '&EbsOptimized=' + EbsOptimized + '&AssociatePublicIpAddress=' + AssociatePublicIpAddress + '&PlacementTenancy=' + (PlacementTenancy == null ? '' : encodeURIComponent(PlacementTenancy)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1084,7 +1084,7 @@ export namespace MyNS {
 		 * @param {boolean} ForceDelete Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
 		 * @return {void} Success
 		 */
-		GET_DeleteAutoScalingGroup(AutoScalingGroupName: string, ForceDelete: boolean, Action: GET_DeleteAutoScalingGroupAction, Version: GET_DeleteAutoScalingGroupVersion): Observable<HttpResponse<string>> {
+		GET_DeleteAutoScalingGroup(AutoScalingGroupName: string, ForceDelete: boolean | null | undefined, Action: GET_DeleteAutoScalingGroupAction, Version: GET_DeleteAutoScalingGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteAutoScalingGroup?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&ForceDelete=' + ForceDelete + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1127,7 +1127,7 @@ export namespace MyNS {
 		 * @param {string} PolicyName The name or Amazon Resource Name (ARN) of the policy.
 		 * @return {void} Success
 		 */
-		GET_DeletePolicy(AutoScalingGroupName: string, PolicyName: string, Action: GET_DeletePolicyAction, Version: GET_DeletePolicyVersion): Observable<HttpResponse<string>> {
+		GET_DeletePolicy(AutoScalingGroupName: string | null | undefined, PolicyName: string, Action: GET_DeletePolicyAction, Version: GET_DeletePolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeletePolicy?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1196,7 +1196,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeAutoScalingGroups(AutoScalingGroupNames: Array<string>, NextToken: string, MaxRecords: number, Action: GET_DescribeAutoScalingGroupsAction, Version: GET_DescribeAutoScalingGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAutoScalingGroups(AutoScalingGroupNames: Array<string> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeAutoScalingGroupsAction, Version: GET_DescribeAutoScalingGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAutoScalingGroups?' + AutoScalingGroupNames.map(z => `AutoScalingGroupNames=${encodeURIComponent(z)}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1208,7 +1208,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of items to return. (You received this token from a previous call.)
 		 * @return {void} Success
 		 */
-		GET_DescribeAutoScalingInstances(InstanceIds: Array<string>, MaxRecords: number, NextToken: string, Action: GET_DescribeAutoScalingInstancesAction, Version: GET_DescribeAutoScalingInstancesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAutoScalingInstances(InstanceIds: Array<string> | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeAutoScalingInstancesAction, Version: GET_DescribeAutoScalingInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAutoScalingInstances?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1238,7 +1238,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeLaunchConfigurations(LaunchConfigurationNames: Array<string>, NextToken: string, MaxRecords: number, Action: GET_DescribeLaunchConfigurationsAction, Version: GET_DescribeLaunchConfigurationsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLaunchConfigurations(LaunchConfigurationNames: Array<string> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeLaunchConfigurationsAction, Version: GET_DescribeLaunchConfigurationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLaunchConfigurations?' + LaunchConfigurationNames.map(z => `LaunchConfigurationNames=${encodeURIComponent(z)}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1267,7 +1267,7 @@ export namespace MyNS {
 		 * @param {Array<string>} LifecycleHookNames The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
 		 * @return {void} Success
 		 */
-		GET_DescribeLifecycleHooks(AutoScalingGroupName: string, LifecycleHookNames: Array<string>, Action: GET_DescribeLifecycleHooksAction, Version: GET_DescribeLifecycleHooksVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLifecycleHooks(AutoScalingGroupName: string, LifecycleHookNames: Array<string> | null | undefined, Action: GET_DescribeLifecycleHooksAction, Version: GET_DescribeLifecycleHooksVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLifecycleHooks?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + LifecycleHookNames.map(z => `LifecycleHookNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1279,7 +1279,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeLoadBalancerTargetGroups(AutoScalingGroupName: string, NextToken: string, MaxRecords: number, Action: GET_DescribeLoadBalancerTargetGroupsAction, Version: GET_DescribeLoadBalancerTargetGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLoadBalancerTargetGroups(AutoScalingGroupName: string, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeLoadBalancerTargetGroupsAction, Version: GET_DescribeLoadBalancerTargetGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancerTargetGroups?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1291,7 +1291,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeLoadBalancers(AutoScalingGroupName: string, NextToken: string, MaxRecords: number, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLoadBalancers(AutoScalingGroupName: string, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancers?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1321,7 +1321,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeNotificationConfigurations(AutoScalingGroupNames: Array<string>, NextToken: string, MaxRecords: number, Action: GET_DescribeNotificationConfigurationsAction, Version: GET_DescribeNotificationConfigurationsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeNotificationConfigurations(AutoScalingGroupNames: Array<string> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeNotificationConfigurationsAction, Version: GET_DescribeNotificationConfigurationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeNotificationConfigurations?' + AutoScalingGroupNames.map(z => `AutoScalingGroupNames=${encodeURIComponent(z)}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1335,7 +1335,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribePolicies(AutoScalingGroupName: string, PolicyNames: Array<string>, PolicyTypes: Array<string>, NextToken: string, MaxRecords: number, Action: GET_DescribePoliciesAction, Version: GET_DescribePoliciesVersion): Observable<HttpResponse<string>> {
+		GET_DescribePolicies(AutoScalingGroupName: string | null | undefined, PolicyNames: Array<string> | null | undefined, PolicyTypes: Array<string> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribePoliciesAction, Version: GET_DescribePoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribePolicies?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + PolicyNames.map(z => `PolicyNames=${encodeURIComponent(z)}`).join('&') + '&' + PolicyTypes.map(z => `PolicyTypes=${encodeURIComponent(z)}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1348,7 +1348,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of items to return. (You received this token from a previous call.)
 		 * @return {void} Success
 		 */
-		GET_DescribeScalingActivities(ActivityIds: Array<string>, AutoScalingGroupName: string, MaxRecords: number, NextToken: string, Action: GET_DescribeScalingActivitiesAction, Version: GET_DescribeScalingActivitiesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeScalingActivities(ActivityIds: Array<string> | null | undefined, AutoScalingGroupName: string | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeScalingActivitiesAction, Version: GET_DescribeScalingActivitiesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeScalingActivities?' + ActivityIds.map(z => `ActivityIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1381,7 +1381,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeScheduledActions(AutoScalingGroupName: string, ScheduledActionNames: Array<string>, StartTime: Date, EndTime: Date, NextToken: string, MaxRecords: number, Action: GET_DescribeScheduledActionsAction, Version: GET_DescribeScheduledActionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeScheduledActions(AutoScalingGroupName: string | null | undefined, ScheduledActionNames: Array<string> | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeScheduledActionsAction, Version: GET_DescribeScheduledActionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeScheduledActions?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + ScheduledActionNames.map(z => `ScheduledActionNames=${encodeURIComponent(z)}`).join('&') + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1393,7 +1393,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeTags(Filters: Array<Filter>, NextToken: string, MaxRecords: number, Action: GET_DescribeTagsAction, Version: GET_DescribeTagsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeTags(Filters: Array<Filter> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeTagsAction, Version: GET_DescribeTagsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeTags?' + Filters.map(z => `Filters=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1423,7 +1423,7 @@ export namespace MyNS {
 		 * @param {boolean} ShouldDecrementDesiredCapacity Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.
 		 * @return {void} Success
 		 */
-		GET_DetachInstances(InstanceIds: Array<string>, AutoScalingGroupName: string, ShouldDecrementDesiredCapacity: boolean, Action: GET_DetachInstancesAction, Version: GET_DetachInstancesVersion): Observable<HttpResponse<string>> {
+		GET_DetachInstances(InstanceIds: Array<string> | null | undefined, AutoScalingGroupName: string, ShouldDecrementDesiredCapacity: boolean, Action: GET_DetachInstancesAction, Version: GET_DetachInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DetachInstances?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&ShouldDecrementDesiredCapacity=' + ShouldDecrementDesiredCapacity + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1456,7 +1456,7 @@ export namespace MyNS {
 		 * @param {Array<string>} Metrics <p>Specifies one or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p> <code>GroupPendingInstances</code> </p> </li> <li> <p> <code>GroupStandbyInstances</code> </p> </li> <li> <p> <code>GroupTerminatingInstances</code> </p> </li> <li> <p> <code>GroupTotalInstances</code> </p> </li> <li> <p> <code>GroupInServiceCapacity</code> </p> </li> <li> <p> <code>GroupPendingCapacity</code> </p> </li> <li> <p> <code>GroupStandbyCapacity</code> </p> </li> <li> <p> <code>GroupTerminatingCapacity</code> </p> </li> <li> <p> <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter, all metrics are disabled. </p>
 		 * @return {void} Success
 		 */
-		GET_DisableMetricsCollection(AutoScalingGroupName: string, Metrics: Array<string>, Action: GET_DisableMetricsCollectionAction, Version: GET_DisableMetricsCollectionVersion): Observable<HttpResponse<string>> {
+		GET_DisableMetricsCollection(AutoScalingGroupName: string, Metrics: Array<string> | null | undefined, Action: GET_DisableMetricsCollectionAction, Version: GET_DisableMetricsCollectionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DisableMetricsCollection?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + Metrics.map(z => `Metrics=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1468,7 +1468,7 @@ export namespace MyNS {
 		 * @param {string} Granularity The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
 		 * @return {void} Success
 		 */
-		GET_EnableMetricsCollection(AutoScalingGroupName: string, Metrics: Array<string>, Granularity: string, Action: GET_EnableMetricsCollectionAction, Version: GET_EnableMetricsCollectionVersion): Observable<HttpResponse<string>> {
+		GET_EnableMetricsCollection(AutoScalingGroupName: string, Metrics: Array<string> | null | undefined, Granularity: string, Action: GET_EnableMetricsCollectionAction, Version: GET_EnableMetricsCollectionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=EnableMetricsCollection?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + Metrics.map(z => `Metrics=${encodeURIComponent(z)}`).join('&') + '&Granularity=' + (Granularity == null ? '' : encodeURIComponent(Granularity)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1480,7 +1480,7 @@ export namespace MyNS {
 		 * @param {boolean} ShouldDecrementDesiredCapacity Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.
 		 * @return {void} Success
 		 */
-		GET_EnterStandby(InstanceIds: Array<string>, AutoScalingGroupName: string, ShouldDecrementDesiredCapacity: boolean, Action: GET_EnterStandbyAction, Version: GET_EnterStandbyVersion): Observable<HttpResponse<string>> {
+		GET_EnterStandby(InstanceIds: Array<string> | null | undefined, AutoScalingGroupName: string, ShouldDecrementDesiredCapacity: boolean, Action: GET_EnterStandbyAction, Version: GET_EnterStandbyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=EnterStandby?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&ShouldDecrementDesiredCapacity=' + ShouldDecrementDesiredCapacity + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1494,7 +1494,7 @@ export namespace MyNS {
 		 * @param {number} BreachThreshold <p>The breach threshold for the alarm.</p> <p>Conditional: This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
 		 * @return {void} Success
 		 */
-		GET_ExecutePolicy(AutoScalingGroupName: string, PolicyName: string, HonorCooldown: boolean, MetricValue: number, BreachThreshold: number, Action: GET_ExecutePolicyAction, Version: GET_ExecutePolicyVersion): Observable<HttpResponse<string>> {
+		GET_ExecutePolicy(AutoScalingGroupName: string | null | undefined, PolicyName: string, HonorCooldown: boolean | null | undefined, MetricValue: number | null | undefined, BreachThreshold: number | null | undefined, Action: GET_ExecutePolicyAction, Version: GET_ExecutePolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ExecutePolicy?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&HonorCooldown=' + HonorCooldown + '&MetricValue=' + MetricValue + '&BreachThreshold=' + BreachThreshold + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 		 * @param {string} AutoScalingGroupName The name of the Auto Scaling group.
 		 * @return {void} Success
 		 */
-		GET_ExitStandby(InstanceIds: Array<string>, AutoScalingGroupName: string, Action: GET_ExitStandbyAction, Version: GET_ExitStandbyVersion): Observable<HttpResponse<string>> {
+		GET_ExitStandby(InstanceIds: Array<string> | null | undefined, AutoScalingGroupName: string, Action: GET_ExitStandbyAction, Version: GET_ExitStandbyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ExitStandby?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1522,7 +1522,7 @@ export namespace MyNS {
 		 * @param {string} DefaultResult Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is <code>ABANDON</code>.
 		 * @return {void} Success
 		 */
-		GET_PutLifecycleHook(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleTransition: string, RoleARN: string, NotificationTargetARN: string, NotificationMetadata: string, HeartbeatTimeout: number, DefaultResult: string, Action: GET_PutLifecycleHookAction, Version: GET_PutLifecycleHookVersion): Observable<HttpResponse<string>> {
+		GET_PutLifecycleHook(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleTransition: string | null | undefined, RoleARN: string | null | undefined, NotificationTargetARN: string | null | undefined, NotificationMetadata: string | null | undefined, HeartbeatTimeout: number | null | undefined, DefaultResult: string | null | undefined, Action: GET_PutLifecycleHookAction, Version: GET_PutLifecycleHookVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutLifecycleHook?LifecycleHookName=' + (LifecycleHookName == null ? '' : encodeURIComponent(LifecycleHookName)) + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LifecycleTransition=' + (LifecycleTransition == null ? '' : encodeURIComponent(LifecycleTransition)) + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&NotificationTargetARN=' + (NotificationTargetARN == null ? '' : encodeURIComponent(NotificationTargetARN)) + '&NotificationMetadata=' + (NotificationMetadata == null ? '' : encodeURIComponent(NotificationMetadata)) + '&HeartbeatTimeout=' + HeartbeatTimeout + '&DefaultResult=' + (DefaultResult == null ? '' : encodeURIComponent(DefaultResult)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1556,7 +1556,7 @@ export namespace MyNS {
 		 * @param {boolean} Enabled Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
 		 * @return {void} Success
 		 */
-		GET_PutScalingPolicy(AutoScalingGroupName: string, PolicyName: string, PolicyType: string, AdjustmentType: string, MinAdjustmentStep: number, MinAdjustmentMagnitude: number, ScalingAdjustment: number, Cooldown: number, MetricAggregationType: string, StepAdjustments: Array<StepAdjustment>, EstimatedInstanceWarmup: number, TargetTrackingConfiguration: GET_PutScalingPolicyTargetTrackingConfiguration, Enabled: boolean, Action: GET_PutScalingPolicyAction, Version: GET_PutScalingPolicyVersion): Observable<HttpResponse<string>> {
+		GET_PutScalingPolicy(AutoScalingGroupName: string, PolicyName: string, PolicyType: string | null | undefined, AdjustmentType: string | null | undefined, MinAdjustmentStep: number | null | undefined, MinAdjustmentMagnitude: number | null | undefined, ScalingAdjustment: number | null | undefined, Cooldown: number | null | undefined, MetricAggregationType: string | null | undefined, StepAdjustments: Array<StepAdjustment> | null | undefined, EstimatedInstanceWarmup: number | null | undefined, TargetTrackingConfiguration: GET_PutScalingPolicyTargetTrackingConfiguration | null | undefined, Enabled: boolean | null | undefined, Action: GET_PutScalingPolicyAction, Version: GET_PutScalingPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutScalingPolicy?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&PolicyType=' + (PolicyType == null ? '' : encodeURIComponent(PolicyType)) + '&AdjustmentType=' + (AdjustmentType == null ? '' : encodeURIComponent(AdjustmentType)) + '&MinAdjustmentStep=' + MinAdjustmentStep + '&MinAdjustmentMagnitude=' + MinAdjustmentMagnitude + '&ScalingAdjustment=' + ScalingAdjustment + '&Cooldown=' + Cooldown + '&MetricAggregationType=' + (MetricAggregationType == null ? '' : encodeURIComponent(MetricAggregationType)) + '&' + StepAdjustments.map(z => `StepAdjustments=${z}`).join('&') + '&EstimatedInstanceWarmup=' + EstimatedInstanceWarmup + '&TargetTrackingConfiguration=' + TargetTrackingConfiguration + '&Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1574,7 +1574,7 @@ export namespace MyNS {
 		 * @param {number} DesiredCapacity The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions. 
 		 * @return {void} Success
 		 */
-		GET_PutScheduledUpdateGroupAction(AutoScalingGroupName: string, ScheduledActionName: string, Time: Date, StartTime: Date, EndTime: Date, Recurrence: string, MinSize: number, MaxSize: number, DesiredCapacity: number, Action: GET_PutScheduledUpdateGroupActionAction, Version: GET_PutScheduledUpdateGroupActionVersion): Observable<HttpResponse<string>> {
+		GET_PutScheduledUpdateGroupAction(AutoScalingGroupName: string, ScheduledActionName: string, Time: Date | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Recurrence: string | null | undefined, MinSize: number | null | undefined, MaxSize: number | null | undefined, DesiredCapacity: number | null | undefined, Action: GET_PutScheduledUpdateGroupActionAction, Version: GET_PutScheduledUpdateGroupActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutScheduledUpdateGroupAction?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&Time=' + Time.toISOString() + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Recurrence=' + (Recurrence == null ? '' : encodeURIComponent(Recurrence)) + '&MinSize=' + MinSize + '&MaxSize=' + MaxSize + '&DesiredCapacity=' + DesiredCapacity + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1587,7 +1587,7 @@ export namespace MyNS {
 		 * @param {string} InstanceId The ID of the instance.
 		 * @return {void} Success
 		 */
-		GET_RecordLifecycleActionHeartbeat(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleActionToken: string, InstanceId: string, Action: GET_RecordLifecycleActionHeartbeatAction, Version: GET_RecordLifecycleActionHeartbeatVersion): Observable<HttpResponse<string>> {
+		GET_RecordLifecycleActionHeartbeat(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleActionToken: string | null | undefined, InstanceId: string | null | undefined, Action: GET_RecordLifecycleActionHeartbeatAction, Version: GET_RecordLifecycleActionHeartbeatVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RecordLifecycleActionHeartbeat?LifecycleHookName=' + (LifecycleHookName == null ? '' : encodeURIComponent(LifecycleHookName)) + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LifecycleActionToken=' + (LifecycleActionToken == null ? '' : encodeURIComponent(LifecycleActionToken)) + '&InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1598,7 +1598,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ScalingProcesses <p>One or more of the following processes. If you omit this parameter, all processes are specified.</p> <ul> <li> <p> <code>Launch</code> </p> </li> <li> <p> <code>Terminate</code> </p> </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>AZRebalance</code> </p> </li> <li> <p> <code>AlarmNotification</code> </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> <li> <p> <code>AddToLoadBalancer</code> </p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_ResumeProcesses(AutoScalingGroupName: string, ScalingProcesses: Array<string>, Action: GET_ResumeProcessesAction, Version: GET_ResumeProcessesVersion): Observable<HttpResponse<string>> {
+		GET_ResumeProcesses(AutoScalingGroupName: string, ScalingProcesses: Array<string> | null | undefined, Action: GET_ResumeProcessesAction, Version: GET_ResumeProcessesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ResumeProcesses?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + ScalingProcesses.map(z => `ScalingProcesses=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @param {boolean} HonorCooldown Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.
 		 * @return {void} Success
 		 */
-		GET_SetDesiredCapacity(AutoScalingGroupName: string, DesiredCapacity: number, HonorCooldown: boolean, Action: GET_SetDesiredCapacityAction, Version: GET_SetDesiredCapacityVersion): Observable<HttpResponse<string>> {
+		GET_SetDesiredCapacity(AutoScalingGroupName: string, DesiredCapacity: number, HonorCooldown: boolean | null | undefined, Action: GET_SetDesiredCapacityAction, Version: GET_SetDesiredCapacityVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetDesiredCapacity?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&DesiredCapacity=' + DesiredCapacity + '&HonorCooldown=' + HonorCooldown + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 		 * @param {boolean} ShouldRespectGracePeriod <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code> specified for the group, by default, this call respects the grace period. Set this to <code>False</code>, to have the call not respect the grace period associated with the group.</p> <p>For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_SetInstanceHealth(InstanceId: string, HealthStatus: string, ShouldRespectGracePeriod: boolean, Action: GET_SetInstanceHealthAction, Version: GET_SetInstanceHealthVersion): Observable<HttpResponse<string>> {
+		GET_SetInstanceHealth(InstanceId: string, HealthStatus: string, ShouldRespectGracePeriod: boolean | null | undefined, Action: GET_SetInstanceHealthAction, Version: GET_SetInstanceHealthVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetInstanceHealth?InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&HealthStatus=' + (HealthStatus == null ? '' : encodeURIComponent(HealthStatus)) + '&ShouldRespectGracePeriod=' + ShouldRespectGracePeriod + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1645,7 +1645,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ScalingProcesses <p>One or more of the following processes. If you omit this parameter, all processes are specified.</p> <ul> <li> <p> <code>Launch</code> </p> </li> <li> <p> <code>Terminate</code> </p> </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>AZRebalance</code> </p> </li> <li> <p> <code>AlarmNotification</code> </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> <li> <p> <code>AddToLoadBalancer</code> </p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_SuspendProcesses(AutoScalingGroupName: string, ScalingProcesses: Array<string>, Action: GET_SuspendProcessesAction, Version: GET_SuspendProcessesVersion): Observable<HttpResponse<string>> {
+		GET_SuspendProcesses(AutoScalingGroupName: string, ScalingProcesses: Array<string> | null | undefined, Action: GET_SuspendProcessesAction, Version: GET_SuspendProcessesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SuspendProcesses?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + ScalingProcesses.map(z => `ScalingProcesses=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1682,7 +1682,7 @@ export namespace MyNS {
 		 * @param {number} MaxInstanceLifetime <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null.</p> <p>This parameter is optional, but if you specify a value for it, you must specify a value of at least 604,800 seconds (7 days). To clear a previously set value, specify a new value of 0.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of 0.</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateAutoScalingGroup(AutoScalingGroupName: string, LaunchConfigurationName: string, LaunchTemplate: GET_UpdateAutoScalingGroupLaunchTemplate, MixedInstancesPolicy: GET_UpdateAutoScalingGroupMixedInstancesPolicy, MinSize: number, MaxSize: number, DesiredCapacity: number, DefaultCooldown: number, AvailabilityZones: Array<string>, HealthCheckType: string, HealthCheckGracePeriod: number, PlacementGroup: string, VPCZoneIdentifier: string, TerminationPolicies: Array<string>, NewInstancesProtectedFromScaleIn: boolean, ServiceLinkedRoleARN: string, MaxInstanceLifetime: number, Action: GET_UpdateAutoScalingGroupAction, Version: GET_UpdateAutoScalingGroupVersion): Observable<HttpResponse<string>> {
+		GET_UpdateAutoScalingGroup(AutoScalingGroupName: string, LaunchConfigurationName: string | null | undefined, LaunchTemplate: GET_UpdateAutoScalingGroupLaunchTemplate | null | undefined, MixedInstancesPolicy: GET_UpdateAutoScalingGroupMixedInstancesPolicy | null | undefined, MinSize: number | null | undefined, MaxSize: number | null | undefined, DesiredCapacity: number | null | undefined, DefaultCooldown: number | null | undefined, AvailabilityZones: Array<string> | null | undefined, HealthCheckType: string | null | undefined, HealthCheckGracePeriod: number | null | undefined, PlacementGroup: string | null | undefined, VPCZoneIdentifier: string | null | undefined, TerminationPolicies: Array<string> | null | undefined, NewInstancesProtectedFromScaleIn: boolean | null | undefined, ServiceLinkedRoleARN: string | null | undefined, MaxInstanceLifetime: number | null | undefined, Action: GET_UpdateAutoScalingGroupAction, Version: GET_UpdateAutoScalingGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateAutoScalingGroup?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LaunchConfigurationName=' + (LaunchConfigurationName == null ? '' : encodeURIComponent(LaunchConfigurationName)) + '&LaunchTemplate=' + LaunchTemplate + '&MixedInstancesPolicy=' + MixedInstancesPolicy + '&MinSize=' + MinSize + '&MaxSize=' + MaxSize + '&DesiredCapacity=' + DesiredCapacity + '&DefaultCooldown=' + DefaultCooldown + '&' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&HealthCheckType=' + (HealthCheckType == null ? '' : encodeURIComponent(HealthCheckType)) + '&HealthCheckGracePeriod=' + HealthCheckGracePeriod + '&PlacementGroup=' + (PlacementGroup == null ? '' : encodeURIComponent(PlacementGroup)) + '&VPCZoneIdentifier=' + (VPCZoneIdentifier == null ? '' : encodeURIComponent(VPCZoneIdentifier)) + '&' + TerminationPolicies.map(z => `TerminationPolicies=${encodeURIComponent(z)}`).join('&') + '&NewInstancesProtectedFromScaleIn=' + NewInstancesProtectedFromScaleIn + '&ServiceLinkedRoleARN=' + (ServiceLinkedRoleARN == null ? '' : encodeURIComponent(ServiceLinkedRoleARN)) + '&MaxInstanceLifetime=' + MaxInstanceLifetime + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}

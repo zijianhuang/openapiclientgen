@@ -885,7 +885,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results you want the request to return.
 		 * @return {ListApiKeysResponse} Success
 		 */
-		ListApiKeys(apiId: string, nextToken: string, maxResults: number): Observable<ListApiKeysResponse> {
+		ListApiKeys(apiId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListApiKeysResponse> {
 			return this.http.get<ListApiKeysResponse>(this.baseUri + 'v1/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/apikeys&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -907,7 +907,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results you want the request to return.
 		 * @return {ListDataSourcesResponse} Success
 		 */
-		ListDataSources(apiId: string, nextToken: string, maxResults: number): Observable<ListDataSourcesResponse> {
+		ListDataSources(apiId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDataSourcesResponse> {
 			return this.http.get<ListDataSourcesResponse>(this.baseUri + 'v1/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/datasources&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -929,7 +929,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results you want the request to return.
 		 * @return {ListFunctionsResponse} Success
 		 */
-		ListFunctions(apiId: string, nextToken: string, maxResults: number): Observable<ListFunctionsResponse> {
+		ListFunctions(apiId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListFunctionsResponse> {
 			return this.http.get<ListFunctionsResponse>(this.baseUri + 'v1/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/functions&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -949,7 +949,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results you want the request to return.
 		 * @return {ListGraphqlApisResponse} Success
 		 */
-		ListGraphqlApis(nextToken: string, maxResults: number): Observable<ListGraphqlApisResponse> {
+		ListGraphqlApis(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListGraphqlApisResponse> {
 			return this.http.get<ListGraphqlApisResponse>(this.baseUri + 'v1/apis?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -973,7 +973,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results you want the request to return.
 		 * @return {ListResolversResponse} Success
 		 */
-		ListResolvers(apiId: string, typeName: string, nextToken: string, maxResults: number): Observable<ListResolversResponse> {
+		ListResolvers(apiId: string, typeName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListResolversResponse> {
 			return this.http.get<ListResolversResponse>(this.baseUri + 'v1/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/types/' + (typeName == null ? '' : encodeURIComponent(typeName)) + '/resolvers&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 		 * @param {boolean} includeDirectives A flag that specifies whether the schema introspection should contain directives.
 		 * @return {GetIntrospectionSchemaResponse} Success
 		 */
-		GetIntrospectionSchema(apiId: string, format: TypeFormat, includeDirectives: boolean): Observable<GetIntrospectionSchemaResponse> {
+		GetIntrospectionSchema(apiId: string, format: TypeFormat, includeDirectives: boolean | null | undefined): Observable<GetIntrospectionSchemaResponse> {
 			return this.http.get<GetIntrospectionSchemaResponse>(this.baseUri + 'v1/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/schema#format&format=' + format + '&includeDirectives=' + includeDirectives, {});
 		}
 
@@ -1226,7 +1226,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results you want the request to return.
 		 * @return {ListResolversByFunctionResponse} Success
 		 */
-		ListResolversByFunction(apiId: string, functionId: string, nextToken: string, maxResults: number): Observable<ListResolversByFunctionResponse> {
+		ListResolversByFunction(apiId: string, functionId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListResolversByFunctionResponse> {
 			return this.http.get<ListResolversByFunctionResponse>(this.baseUri + 'v1/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/functions/' + (functionId == null ? '' : encodeURIComponent(functionId)) + '/resolvers&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1259,7 +1259,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results you want the request to return.
 		 * @return {ListTypesResponse} Success
 		 */
-		ListTypes(apiId: string, format: TypeFormat, nextToken: string, maxResults: number): Observable<ListTypesResponse> {
+		ListTypes(apiId: string, format: TypeFormat, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListTypesResponse> {
 			return this.http.get<ListTypesResponse>(this.baseUri + 'v1/apis/' + (apiId == null ? '' : encodeURIComponent(apiId)) + '/types#format&format=' + format + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 

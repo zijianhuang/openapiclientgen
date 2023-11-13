@@ -1956,7 +1956,7 @@ export namespace MyNS {
 		 * @param {string} nextPageToken Pagination token
 		 * @return {History} Success
 		 */
-		GetWorkflowExecutionHistory(maximumPageSize: string, nextPageToken: string, requestBody: GetWorkflowExecutionHistoryInput): Observable<History> {
+		GetWorkflowExecutionHistory(maximumPageSize: string | null | undefined, nextPageToken: string | null | undefined, requestBody: GetWorkflowExecutionHistoryInput): Observable<History> {
 			return this.http.post<History>(this.baseUri + '#X-Amz-Target=SimpleWorkflowService.GetWorkflowExecutionHistory?maximumPageSize=' + (maximumPageSize == null ? '' : encodeURIComponent(maximumPageSize)) + '&nextPageToken=' + (nextPageToken == null ? '' : encodeURIComponent(nextPageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1967,7 +1967,7 @@ export namespace MyNS {
 		 * @param {string} nextPageToken Pagination token
 		 * @return {ActivityTypeInfos} Success
 		 */
-		ListActivityTypes(maximumPageSize: string, nextPageToken: string, requestBody: ListActivityTypesInput): Observable<ActivityTypeInfos> {
+		ListActivityTypes(maximumPageSize: string | null | undefined, nextPageToken: string | null | undefined, requestBody: ListActivityTypesInput): Observable<ActivityTypeInfos> {
 			return this.http.post<ActivityTypeInfos>(this.baseUri + '#X-Amz-Target=SimpleWorkflowService.ListActivityTypes?maximumPageSize=' + (maximumPageSize == null ? '' : encodeURIComponent(maximumPageSize)) + '&nextPageToken=' + (nextPageToken == null ? '' : encodeURIComponent(nextPageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1978,7 +1978,7 @@ export namespace MyNS {
 		 * @param {string} nextPageToken Pagination token
 		 * @return {WorkflowExecutionInfos} Success
 		 */
-		ListClosedWorkflowExecutions(maximumPageSize: string, nextPageToken: string, requestBody: ListClosedWorkflowExecutionsInput): Observable<WorkflowExecutionInfos> {
+		ListClosedWorkflowExecutions(maximumPageSize: string | null | undefined, nextPageToken: string | null | undefined, requestBody: ListClosedWorkflowExecutionsInput): Observable<WorkflowExecutionInfos> {
 			return this.http.post<WorkflowExecutionInfos>(this.baseUri + '#X-Amz-Target=SimpleWorkflowService.ListClosedWorkflowExecutions?maximumPageSize=' + (maximumPageSize == null ? '' : encodeURIComponent(maximumPageSize)) + '&nextPageToken=' + (nextPageToken == null ? '' : encodeURIComponent(nextPageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1989,7 +1989,7 @@ export namespace MyNS {
 		 * @param {string} nextPageToken Pagination token
 		 * @return {DomainInfos} Success
 		 */
-		ListDomains(maximumPageSize: string, nextPageToken: string, requestBody: ListDomainsInput): Observable<DomainInfos> {
+		ListDomains(maximumPageSize: string | null | undefined, nextPageToken: string | null | undefined, requestBody: ListDomainsInput): Observable<DomainInfos> {
 			return this.http.post<DomainInfos>(this.baseUri + '#X-Amz-Target=SimpleWorkflowService.ListDomains?maximumPageSize=' + (maximumPageSize == null ? '' : encodeURIComponent(maximumPageSize)) + '&nextPageToken=' + (nextPageToken == null ? '' : encodeURIComponent(nextPageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2000,7 +2000,7 @@ export namespace MyNS {
 		 * @param {string} nextPageToken Pagination token
 		 * @return {WorkflowExecutionInfos} Success
 		 */
-		ListOpenWorkflowExecutions(maximumPageSize: string, nextPageToken: string, requestBody: ListOpenWorkflowExecutionsInput): Observable<WorkflowExecutionInfos> {
+		ListOpenWorkflowExecutions(maximumPageSize: string | null | undefined, nextPageToken: string | null | undefined, requestBody: ListOpenWorkflowExecutionsInput): Observable<WorkflowExecutionInfos> {
 			return this.http.post<WorkflowExecutionInfos>(this.baseUri + '#X-Amz-Target=SimpleWorkflowService.ListOpenWorkflowExecutions?maximumPageSize=' + (maximumPageSize == null ? '' : encodeURIComponent(maximumPageSize)) + '&nextPageToken=' + (nextPageToken == null ? '' : encodeURIComponent(nextPageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2020,7 +2020,7 @@ export namespace MyNS {
 		 * @param {string} nextPageToken Pagination token
 		 * @return {WorkflowTypeInfos} Success
 		 */
-		ListWorkflowTypes(maximumPageSize: string, nextPageToken: string, requestBody: ListWorkflowTypesInput): Observable<WorkflowTypeInfos> {
+		ListWorkflowTypes(maximumPageSize: string | null | undefined, nextPageToken: string | null | undefined, requestBody: ListWorkflowTypesInput): Observable<WorkflowTypeInfos> {
 			return this.http.post<WorkflowTypeInfos>(this.baseUri + '#X-Amz-Target=SimpleWorkflowService.ListWorkflowTypes?maximumPageSize=' + (maximumPageSize == null ? '' : encodeURIComponent(maximumPageSize)) + '&nextPageToken=' + (nextPageToken == null ? '' : encodeURIComponent(nextPageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2040,7 +2040,7 @@ export namespace MyNS {
 		 * @param {string} nextPageToken Pagination token
 		 * @return {DecisionTask} Success
 		 */
-		PollForDecisionTask(maximumPageSize: string, nextPageToken: string, requestBody: PollForDecisionTaskInput): Observable<DecisionTask> {
+		PollForDecisionTask(maximumPageSize: string | null | undefined, nextPageToken: string | null | undefined, requestBody: PollForDecisionTaskInput): Observable<DecisionTask> {
 			return this.http.post<DecisionTask>(this.baseUri + '#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask?maximumPageSize=' + (maximumPageSize == null ? '' : encodeURIComponent(maximumPageSize)) + '&nextPageToken=' + (nextPageToken == null ? '' : encodeURIComponent(nextPageToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

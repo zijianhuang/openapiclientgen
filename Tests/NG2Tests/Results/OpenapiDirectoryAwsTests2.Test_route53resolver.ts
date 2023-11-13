@@ -539,7 +539,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListResolverEndpointIpAddressesResponse} Success
 		 */
-		ListResolverEndpointIpAddresses(MaxResults: string, NextToken: string, requestBody: ListResolverEndpointIpAddressesRequest): Observable<ListResolverEndpointIpAddressesResponse> {
+		ListResolverEndpointIpAddresses(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListResolverEndpointIpAddressesRequest): Observable<ListResolverEndpointIpAddressesResponse> {
 			return this.http.post<ListResolverEndpointIpAddressesResponse>(this.baseUri + '#X-Amz-Target=Route53Resolver.ListResolverEndpointIpAddresses?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -550,7 +550,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListResolverEndpointsResponse} Success
 		 */
-		ListResolverEndpoints(MaxResults: string, NextToken: string, requestBody: ListResolverEndpointsRequest): Observable<ListResolverEndpointsResponse> {
+		ListResolverEndpoints(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListResolverEndpointsRequest): Observable<ListResolverEndpointsResponse> {
 			return this.http.post<ListResolverEndpointsResponse>(this.baseUri + '#X-Amz-Target=Route53Resolver.ListResolverEndpoints?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -561,7 +561,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListResolverRuleAssociationsResponse} Success
 		 */
-		ListResolverRuleAssociations(MaxResults: string, NextToken: string, requestBody: ListResolverRuleAssociationsRequest): Observable<ListResolverRuleAssociationsResponse> {
+		ListResolverRuleAssociations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListResolverRuleAssociationsRequest): Observable<ListResolverRuleAssociationsResponse> {
 			return this.http.post<ListResolverRuleAssociationsResponse>(this.baseUri + '#X-Amz-Target=Route53Resolver.ListResolverRuleAssociations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -572,7 +572,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListResolverRulesResponse} Success
 		 */
-		ListResolverRules(MaxResults: string, NextToken: string, requestBody: ListResolverRulesRequest): Observable<ListResolverRulesResponse> {
+		ListResolverRules(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListResolverRulesRequest): Observable<ListResolverRulesResponse> {
 			return this.http.post<ListResolverRulesResponse>(this.baseUri + '#X-Amz-Target=Route53Resolver.ListResolverRules?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

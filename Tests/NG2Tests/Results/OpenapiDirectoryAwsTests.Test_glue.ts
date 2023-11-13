@@ -3381,7 +3381,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetClassifiersResponse} Success
 		 */
-		GetClassifiers(MaxResults: string, NextToken: string, requestBody: GetClassifiersRequest): Observable<GetClassifiersResponse> {
+		GetClassifiers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetClassifiersRequest): Observable<GetClassifiersResponse> {
 			return this.http.post<GetClassifiersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetClassifiers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3401,7 +3401,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetConnectionsResponse} Success
 		 */
-		GetConnections(MaxResults: string, NextToken: string, requestBody: GetConnectionsRequest): Observable<GetConnectionsResponse> {
+		GetConnections(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetConnectionsRequest): Observable<GetConnectionsResponse> {
 			return this.http.post<GetConnectionsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetConnections?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3421,7 +3421,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCrawlerMetricsResponse} Success
 		 */
-		GetCrawlerMetrics(MaxResults: string, NextToken: string, requestBody: GetCrawlerMetricsRequest): Observable<GetCrawlerMetricsResponse> {
+		GetCrawlerMetrics(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetCrawlerMetricsRequest): Observable<GetCrawlerMetricsResponse> {
 			return this.http.post<GetCrawlerMetricsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetCrawlerMetrics?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3432,7 +3432,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCrawlersResponse} Success
 		 */
-		GetCrawlers(MaxResults: string, NextToken: string, requestBody: GetCrawlersRequest): Observable<GetCrawlersResponse> {
+		GetCrawlers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetCrawlersRequest): Observable<GetCrawlersResponse> {
 			return this.http.post<GetCrawlersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetCrawlers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3461,7 +3461,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDatabasesResponse} Success
 		 */
-		GetDatabases(MaxResults: string, NextToken: string, requestBody: GetDatabasesRequest): Observable<GetDatabasesResponse> {
+		GetDatabases(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetDatabasesRequest): Observable<GetDatabasesResponse> {
 			return this.http.post<GetDatabasesResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetDatabases?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3490,7 +3490,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDevEndpointsResponse} Success
 		 */
-		GetDevEndpoints(MaxResults: string, NextToken: string, requestBody: GetDevEndpointsRequest): Observable<GetDevEndpointsResponse> {
+		GetDevEndpoints(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetDevEndpointsRequest): Observable<GetDevEndpointsResponse> {
 			return this.http.post<GetDevEndpointsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetDevEndpoints?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3528,7 +3528,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetJobRunsResponse} Success
 		 */
-		GetJobRuns(MaxResults: string, NextToken: string, requestBody: GetJobRunsRequest): Observable<GetJobRunsResponse> {
+		GetJobRuns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetJobRunsRequest): Observable<GetJobRunsResponse> {
 			return this.http.post<GetJobRunsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetJobRuns?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3539,7 +3539,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetJobsResponse} Success
 		 */
-		GetJobs(MaxResults: string, NextToken: string, requestBody: GetJobsRequest): Observable<GetJobsResponse> {
+		GetJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetJobsRequest): Observable<GetJobsResponse> {
 			return this.http.post<GetJobsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3559,7 +3559,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetMLTaskRunsResponse} Success
 		 */
-		GetMLTaskRuns(MaxResults: string, NextToken: string, requestBody: GetMLTaskRunsRequest): Observable<GetMLTaskRunsResponse> {
+		GetMLTaskRuns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetMLTaskRunsRequest): Observable<GetMLTaskRunsResponse> {
 			return this.http.post<GetMLTaskRunsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetMLTaskRuns?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3579,7 +3579,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetMLTransformsResponse} Success
 		 */
-		GetMLTransforms(MaxResults: string, NextToken: string, requestBody: GetMLTransformsRequest): Observable<GetMLTransformsResponse> {
+		GetMLTransforms(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetMLTransformsRequest): Observable<GetMLTransformsResponse> {
 			return this.http.post<GetMLTransformsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetMLTransforms?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3608,7 +3608,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetPartitionsResponse} Success
 		 */
-		GetPartitions(MaxResults: string, NextToken: string, requestBody: GetPartitionsRequest): Observable<GetPartitionsResponse> {
+		GetPartitions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetPartitionsRequest): Observable<GetPartitionsResponse> {
 			return this.http.post<GetPartitionsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetPartitions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3646,7 +3646,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSecurityConfigurationsResponse} Success
 		 */
-		GetSecurityConfigurations(MaxResults: string, NextToken: string, requestBody: GetSecurityConfigurationsRequest): Observable<GetSecurityConfigurationsResponse> {
+		GetSecurityConfigurations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetSecurityConfigurationsRequest): Observable<GetSecurityConfigurationsResponse> {
 			return this.http.post<GetSecurityConfigurationsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetSecurityConfigurations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3675,7 +3675,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTableVersionsResponse} Success
 		 */
-		GetTableVersions(MaxResults: string, NextToken: string, requestBody: GetTableVersionsRequest): Observable<GetTableVersionsResponse> {
+		GetTableVersions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTableVersionsRequest): Observable<GetTableVersionsResponse> {
 			return this.http.post<GetTableVersionsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetTableVersions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3686,7 +3686,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTablesResponse} Success
 		 */
-		GetTables(MaxResults: string, NextToken: string, requestBody: GetTablesRequest): Observable<GetTablesResponse> {
+		GetTables(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTablesRequest): Observable<GetTablesResponse> {
 			return this.http.post<GetTablesResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetTables?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3715,7 +3715,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTriggersResponse} Success
 		 */
-		GetTriggers(MaxResults: string, NextToken: string, requestBody: GetTriggersRequest): Observable<GetTriggersResponse> {
+		GetTriggers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTriggersRequest): Observable<GetTriggersResponse> {
 			return this.http.post<GetTriggersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetTriggers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3735,7 +3735,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetUserDefinedFunctionsResponse} Success
 		 */
-		GetUserDefinedFunctions(MaxResults: string, NextToken: string, requestBody: GetUserDefinedFunctionsRequest): Observable<GetUserDefinedFunctionsResponse> {
+		GetUserDefinedFunctions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetUserDefinedFunctionsRequest): Observable<GetUserDefinedFunctionsResponse> {
 			return this.http.post<GetUserDefinedFunctionsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetUserDefinedFunctions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3773,7 +3773,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetWorkflowRunsResponse} Success
 		 */
-		GetWorkflowRuns(MaxResults: string, NextToken: string, requestBody: GetWorkflowRunsRequest): Observable<GetWorkflowRunsResponse> {
+		GetWorkflowRuns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetWorkflowRunsRequest): Observable<GetWorkflowRunsResponse> {
 			return this.http.post<GetWorkflowRunsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetWorkflowRuns?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3793,7 +3793,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCrawlersResponse} Success
 		 */
-		ListCrawlers(MaxResults: string, NextToken: string, requestBody: ListCrawlersRequest): Observable<ListCrawlersResponse> {
+		ListCrawlers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCrawlersRequest): Observable<ListCrawlersResponse> {
 			return this.http.post<ListCrawlersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListCrawlers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3804,7 +3804,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDevEndpointsResponse} Success
 		 */
-		ListDevEndpoints(MaxResults: string, NextToken: string, requestBody: ListDevEndpointsRequest): Observable<ListDevEndpointsResponse> {
+		ListDevEndpoints(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDevEndpointsRequest): Observable<ListDevEndpointsResponse> {
 			return this.http.post<ListDevEndpointsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListDevEndpoints?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3815,7 +3815,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJobsResponse} Success
 		 */
-		ListJobs(MaxResults: string, NextToken: string, requestBody: ListJobsRequest): Observable<ListJobsResponse> {
+		ListJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListJobsRequest): Observable<ListJobsResponse> {
 			return this.http.post<ListJobsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3826,7 +3826,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMLTransformsResponse} Success
 		 */
-		ListMLTransforms(MaxResults: string, NextToken: string, requestBody: ListMLTransformsRequest): Observable<ListMLTransformsResponse> {
+		ListMLTransforms(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMLTransformsRequest): Observable<ListMLTransformsResponse> {
 			return this.http.post<ListMLTransformsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListMLTransforms?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3837,7 +3837,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTriggersResponse} Success
 		 */
-		ListTriggers(MaxResults: string, NextToken: string, requestBody: ListTriggersRequest): Observable<ListTriggersResponse> {
+		ListTriggers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTriggersRequest): Observable<ListTriggersResponse> {
 			return this.http.post<ListTriggersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListTriggers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3848,7 +3848,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkflowsResponse} Success
 		 */
-		ListWorkflows(MaxResults: string, NextToken: string, requestBody: ListWorkflowsRequest): Observable<ListWorkflowsResponse> {
+		ListWorkflows(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkflowsRequest): Observable<ListWorkflowsResponse> {
 			return this.http.post<ListWorkflowsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListWorkflows?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3895,7 +3895,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchTablesResponse} Success
 		 */
-		SearchTables(MaxResults: string, NextToken: string, requestBody: SearchTablesRequest): Observable<SearchTablesResponse> {
+		SearchTables(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: SearchTablesRequest): Observable<SearchTablesResponse> {
 			return this.http.post<SearchTablesResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.SearchTables?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

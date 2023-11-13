@@ -73,7 +73,7 @@ export namespace MyNS {
 		 * @param {string} entryid Direct file I want to extract
 		 * @return {void} No response was specified
 		 */
-		GetForecastTimeSeries(latitude: number, longitude: number, inittime: string, endtime: string, days: number, hours: number, weather: string, wave: string, entryid: string): Observable<HttpResponse<string>> {
+		GetForecastTimeSeries(latitude: number, longitude: number, inittime: string | null | undefined, endtime: string | null | undefined, days: number | null | undefined, hours: number | null | undefined, weather: string, wave: string | null | undefined, entryid: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1.0/getForecastTimeSeries/' + latitude + '/' + longitude + '/?inittime=' + (inittime == null ? '' : encodeURIComponent(inittime)) + '&endtime=' + (endtime == null ? '' : encodeURIComponent(endtime)) + '&days=' + days + '&hours=' + hours + '&weather=' + (weather == null ? '' : encodeURIComponent(weather)) + '&wave=' + (wave == null ? '' : encodeURIComponent(wave)) + '&entryid=' + (entryid == null ? '' : encodeURIComponent(entryid)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -91,7 +91,7 @@ export namespace MyNS {
 		 * @param {string} entryid Direct file I want to extract
 		 * @return {void} No response was specified
 		 */
-		GetForecastTimeSeriesWrf(latitude: number, longitude: number, inittime: string, endtime: string, days: number, hours: number, weather: string, wave: string, entryid: string): Observable<HttpResponse<string>> {
+		GetForecastTimeSeriesWrf(latitude: number, longitude: number, inittime: string | null | undefined, endtime: string | null | undefined, days: number | null | undefined, hours: number | null | undefined, weather: string, wave: string | null | undefined, entryid: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1.0/getForecastTimeSeriesWrf/' + latitude + '/' + longitude + '/?inittime=' + (inittime == null ? '' : encodeURIComponent(inittime)) + '&endtime=' + (endtime == null ? '' : encodeURIComponent(endtime)) + '&days=' + days + '&hours=' + hours + '&weather=' + (weather == null ? '' : encodeURIComponent(weather)) + '&wave=' + (wave == null ? '' : encodeURIComponent(wave)) + '&entryid=' + (entryid == null ? '' : encodeURIComponent(entryid)), { observe: 'response', responseType: 'text' });
 		}
 

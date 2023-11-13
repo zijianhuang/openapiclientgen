@@ -417,7 +417,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDiscoverersResponse} Success
 		 */
-		ListDiscoverers(discovererIdPrefix: string, limit: number, nextToken: string, sourceArnPrefix: string, Limit: string, NextToken: string): Observable<ListDiscoverersResponse> {
+		ListDiscoverers(discovererIdPrefix: string | null | undefined, limit: number | null | undefined, nextToken: string | null | undefined, sourceArnPrefix: string | null | undefined, Limit: string | null | undefined, NextToken: string | null | undefined): Observable<ListDiscoverersResponse> {
 			return this.http.get<ListDiscoverersResponse>(this.baseUri + 'v1/discoverers?discovererIdPrefix=' + (discovererIdPrefix == null ? '' : encodeURIComponent(discovererIdPrefix)) + '&limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&sourceArnPrefix=' + (sourceArnPrefix == null ? '' : encodeURIComponent(sourceArnPrefix)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -491,7 +491,7 @@ export namespace MyNS {
 		 * @param {string} schemaVersion Specifying this limits the results to only this schema version.
 		 * @return {DescribeSchemaResponse} Success
 		 */
-		DescribeSchema(registryName: string, schemaName: string, schemaVersion: string): Observable<DescribeSchemaResponse> {
+		DescribeSchema(registryName: string, schemaName: string, schemaVersion: string | null | undefined): Observable<DescribeSchemaResponse> {
 			return this.http.get<DescribeSchemaResponse>(this.baseUri + 'v1/registries/name/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/schemas/name/' + (schemaName == null ? '' : encodeURIComponent(schemaName)) + '&schemaVersion=' + (schemaVersion == null ? '' : encodeURIComponent(schemaVersion)), {});
 		}
 
@@ -542,7 +542,7 @@ export namespace MyNS {
 		 * @param {string} registryName The name of the registry.
 		 * @return {void} 
 		 */
-		DeleteResourcePolicy(registryName: string): Observable<HttpResponse<string>> {
+		DeleteResourcePolicy(registryName: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/policy?registryName=' + (registryName == null ? '' : encodeURIComponent(registryName)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -552,7 +552,7 @@ export namespace MyNS {
 		 * @param {string} registryName The name of the registry.
 		 * @return {GetResourcePolicyResponse} Success
 		 */
-		GetResourcePolicy(registryName: string): Observable<GetResourcePolicyResponse> {
+		GetResourcePolicy(registryName: string | null | undefined): Observable<GetResourcePolicyResponse> {
 			return this.http.get<GetResourcePolicyResponse>(this.baseUri + 'v1/policy?registryName=' + (registryName == null ? '' : encodeURIComponent(registryName)), {});
 		}
 
@@ -562,7 +562,7 @@ export namespace MyNS {
 		 * @param {string} registryName The name of the registry.
 		 * @return {PutResourcePolicyResponse} Success
 		 */
-		PutResourcePolicy(registryName: string, requestBody: PutResourcePolicyPutBody): Observable<PutResourcePolicyResponse> {
+		PutResourcePolicy(registryName: string | null | undefined, requestBody: PutResourcePolicyPutBody): Observable<PutResourcePolicyResponse> {
 			return this.http.put<PutResourcePolicyResponse>(this.baseUri + 'v1/policy?registryName=' + (registryName == null ? '' : encodeURIComponent(registryName)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -587,7 +587,7 @@ export namespace MyNS {
 		 * @param {string} schemaVersion Specifying this limits the results to only this schema version.
 		 * @return {DescribeCodeBindingResponse} Success
 		 */
-		DescribeCodeBinding(language: string, registryName: string, schemaName: string, schemaVersion: string): Observable<DescribeCodeBindingResponse> {
+		DescribeCodeBinding(language: string, registryName: string, schemaName: string, schemaVersion: string | null | undefined): Observable<DescribeCodeBindingResponse> {
 			return this.http.get<DescribeCodeBindingResponse>(this.baseUri + 'v1/registries/name/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/schemas/name/' + (schemaName == null ? '' : encodeURIComponent(schemaName)) + '/language/' + (language == null ? '' : encodeURIComponent(language)) + '&schemaVersion=' + (schemaVersion == null ? '' : encodeURIComponent(schemaVersion)), {});
 		}
 
@@ -600,7 +600,7 @@ export namespace MyNS {
 		 * @param {string} schemaVersion Specifying this limits the results to only this schema version.
 		 * @return {void} 
 		 */
-		PutCodeBinding(language: string, registryName: string, schemaName: string, schemaVersion: string): Observable<HttpResponse<string>> {
+		PutCodeBinding(language: string, registryName: string, schemaName: string, schemaVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/registries/name/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/schemas/name/' + (schemaName == null ? '' : encodeURIComponent(schemaName)) + '/language/' + (language == null ? '' : encodeURIComponent(language)) + '&schemaVersion=' + (schemaVersion == null ? '' : encodeURIComponent(schemaVersion)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -613,7 +613,7 @@ export namespace MyNS {
 		 * @param {string} schemaVersion Specifying this limits the results to only this schema version.
 		 * @return {GetCodeBindingSourceResponse} Success
 		 */
-		GetCodeBindingSource(language: string, registryName: string, schemaName: string, schemaVersion: string): Observable<GetCodeBindingSourceResponse> {
+		GetCodeBindingSource(language: string, registryName: string, schemaName: string, schemaVersion: string | null | undefined): Observable<GetCodeBindingSourceResponse> {
 			return this.http.get<GetCodeBindingSourceResponse>(this.baseUri + 'v1/registries/name/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/schemas/name/' + (schemaName == null ? '' : encodeURIComponent(schemaName)) + '/language/' + (language == null ? '' : encodeURIComponent(language)) + '/source&schemaVersion=' + (schemaVersion == null ? '' : encodeURIComponent(schemaVersion)), {});
 		}
 
@@ -636,7 +636,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRegistriesResponse} Success
 		 */
-		ListRegistries(limit: number, nextToken: string, registryNamePrefix: string, scope: string, Limit: string, NextToken: string): Observable<ListRegistriesResponse> {
+		ListRegistries(limit: number | null | undefined, nextToken: string | null | undefined, registryNamePrefix: string | null | undefined, scope: string | null | undefined, Limit: string | null | undefined, NextToken: string | null | undefined): Observable<ListRegistriesResponse> {
 			return this.http.get<ListRegistriesResponse>(this.baseUri + 'v1/registries?limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&registryNamePrefix=' + (registryNamePrefix == null ? '' : encodeURIComponent(registryNamePrefix)) + '&scope=' + (scope == null ? '' : encodeURIComponent(scope)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -650,7 +650,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSchemaVersionsResponse} Success
 		 */
-		ListSchemaVersions(limit: number, nextToken: string, registryName: string, schemaName: string, Limit: string, NextToken: string): Observable<ListSchemaVersionsResponse> {
+		ListSchemaVersions(limit: number | null | undefined, nextToken: string | null | undefined, registryName: string, schemaName: string, Limit: string | null | undefined, NextToken: string | null | undefined): Observable<ListSchemaVersionsResponse> {
 			return this.http.get<ListSchemaVersionsResponse>(this.baseUri + 'v1/registries/name/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/schemas/name/' + (schemaName == null ? '' : encodeURIComponent(schemaName)) + '/versions?limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -664,7 +664,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSchemasResponse} Success
 		 */
-		ListSchemas(limit: number, nextToken: string, registryName: string, schemaNamePrefix: string, Limit: string, NextToken: string): Observable<ListSchemasResponse> {
+		ListSchemas(limit: number | null | undefined, nextToken: string | null | undefined, registryName: string, schemaNamePrefix: string | null | undefined, Limit: string | null | undefined, NextToken: string | null | undefined): Observable<ListSchemasResponse> {
 			return this.http.get<ListSchemasResponse>(this.baseUri + 'v1/registries/name/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/schemas?limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&schemaNamePrefix=' + (schemaNamePrefix == null ? '' : encodeURIComponent(schemaNamePrefix)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -698,7 +698,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchSchemasResponse} Success
 		 */
-		SearchSchemas(keywords: string, limit: number, nextToken: string, registryName: string, Limit: string, NextToken: string): Observable<SearchSchemasResponse> {
+		SearchSchemas(keywords: string, limit: number | null | undefined, nextToken: string | null | undefined, registryName: string, Limit: string | null | undefined, NextToken: string | null | undefined): Observable<SearchSchemasResponse> {
 			return this.http.get<SearchSchemasResponse>(this.baseUri + 'v1/registries/name/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/schemas/search#keywords?keywords=' + (keywords == null ? '' : encodeURIComponent(keywords)) + '&limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 

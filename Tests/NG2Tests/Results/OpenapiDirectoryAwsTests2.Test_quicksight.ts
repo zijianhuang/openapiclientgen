@@ -1917,7 +1917,7 @@ export namespace MyNS {
 		 * @param {number} version_number The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.
 		 * @return {DeleteDashboardResponse} Success
 		 */
-		DeleteDashboard(AwsAccountId: string, DashboardId: string, version_number: number): Observable<DeleteDashboardResponse> {
+		DeleteDashboard(AwsAccountId: string, DashboardId: string, version_number: number | null | undefined): Observable<DeleteDashboardResponse> {
 			return this.http.delete<DeleteDashboardResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/dashboards/' + (DashboardId == null ? '' : encodeURIComponent(DashboardId)) + '&version_number=' + version_number, {});
 		}
 
@@ -1930,7 +1930,7 @@ export namespace MyNS {
 		 * @param {string} alias_name The alias name.
 		 * @return {DescribeDashboardResponse} Success
 		 */
-		DescribeDashboard(AwsAccountId: string, DashboardId: string, version_number: number, alias_name: string): Observable<DescribeDashboardResponse> {
+		DescribeDashboard(AwsAccountId: string, DashboardId: string, version_number: number | null | undefined, alias_name: string | null | undefined): Observable<DescribeDashboardResponse> {
 			return this.http.get<DescribeDashboardResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/dashboards/' + (DashboardId == null ? '' : encodeURIComponent(DashboardId)) + '&version_number=' + version_number + '&alias_name=' + (alias_name == null ? '' : encodeURIComponent(alias_name)), {});
 		}
 
@@ -1965,7 +1965,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataSetsResponse} Success
 		 */
-		ListDataSets(AwsAccountId: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListDataSetsResponse> {
+		ListDataSets(AwsAccountId: string, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDataSetsResponse> {
 			return this.http.get<ListDataSetsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/data-sets&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1989,7 +1989,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataSourcesResponse} Success
 		 */
-		ListDataSources(AwsAccountId: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListDataSourcesResponse> {
+		ListDataSources(AwsAccountId: string, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDataSourcesResponse> {
 			return this.http.get<ListDataSourcesResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/data-sources&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2013,7 +2013,7 @@ export namespace MyNS {
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
 		 * @return {ListGroupsResponse} Success
 		 */
-		ListGroups(AwsAccountId: string, next_token: string, max_results: number, Namespace: string): Observable<ListGroupsResponse> {
+		ListGroups(AwsAccountId: string, next_token: string | null | undefined, max_results: number | null | undefined, Namespace: string): Observable<ListGroupsResponse> {
 			return this.http.get<ListGroupsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/namespaces/' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '/groups&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results, {});
 		}
 
@@ -2073,7 +2073,7 @@ export namespace MyNS {
 		 * @param {number} version_number Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. 
 		 * @return {DeleteTemplateResponse} Success
 		 */
-		DeleteTemplate(AwsAccountId: string, TemplateId: string, version_number: number): Observable<DeleteTemplateResponse> {
+		DeleteTemplate(AwsAccountId: string, TemplateId: string, version_number: number | null | undefined): Observable<DeleteTemplateResponse> {
 			return this.http.delete<DeleteTemplateResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/templates/' + (TemplateId == null ? '' : encodeURIComponent(TemplateId)) + '&version_number=' + version_number, {});
 		}
 
@@ -2086,7 +2086,7 @@ export namespace MyNS {
 		 * @param {string} alias_name The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
 		 * @return {DescribeTemplateResponse} Success
 		 */
-		DescribeTemplate(AwsAccountId: string, TemplateId: string, version_number: number, alias_name: string): Observable<DescribeTemplateResponse> {
+		DescribeTemplate(AwsAccountId: string, TemplateId: string, version_number: number | null | undefined, alias_name: string | null | undefined): Observable<DescribeTemplateResponse> {
 			return this.http.get<DescribeTemplateResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/templates/' + (TemplateId == null ? '' : encodeURIComponent(TemplateId)) + '&version_number=' + version_number + '&alias_name=' + (alias_name == null ? '' : encodeURIComponent(alias_name)), {});
 		}
 
@@ -2435,7 +2435,7 @@ export namespace MyNS {
 		 * @param {string} user_arn <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li> </ul>
 		 * @return {GetDashboardEmbedUrlResponse} Success
 		 */
-		GetDashboardEmbedUrl(AwsAccountId: string, DashboardId: string, creds_type: UserIdentityType, session_lifetime: number, undo_redo_disabled: boolean, reset_disabled: boolean, user_arn: string): Observable<GetDashboardEmbedUrlResponse> {
+		GetDashboardEmbedUrl(AwsAccountId: string, DashboardId: string, creds_type: UserIdentityType, session_lifetime: number | null | undefined, undo_redo_disabled: boolean | null | undefined, reset_disabled: boolean | null | undefined, user_arn: string | null | undefined): Observable<GetDashboardEmbedUrlResponse> {
 			return this.http.get<GetDashboardEmbedUrlResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/dashboards/' + (DashboardId == null ? '' : encodeURIComponent(DashboardId)) + '/embed-url#creds-type&creds_type=' + creds_type + '&session_lifetime=' + session_lifetime + '&undo_redo_disabled=' + undo_redo_disabled + '&reset_disabled=' + reset_disabled + '&user_arn=' + (user_arn == null ? '' : encodeURIComponent(user_arn)), {});
 		}
 
@@ -2450,7 +2450,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDashboardVersionsResponse} Success
 		 */
-		ListDashboardVersions(AwsAccountId: string, DashboardId: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListDashboardVersionsResponse> {
+		ListDashboardVersions(AwsAccountId: string, DashboardId: string, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDashboardVersionsResponse> {
 			return this.http.get<ListDashboardVersionsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/dashboards/' + (DashboardId == null ? '' : encodeURIComponent(DashboardId)) + '/versions&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2464,7 +2464,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDashboardsResponse} Success
 		 */
-		ListDashboards(AwsAccountId: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListDashboardsResponse> {
+		ListDashboards(AwsAccountId: string, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListDashboardsResponse> {
 			return this.http.get<ListDashboardsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/dashboards&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2478,7 +2478,7 @@ export namespace MyNS {
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
 		 * @return {ListGroupMembershipsResponse} Success
 		 */
-		ListGroupMemberships(GroupName: string, next_token: string, max_results: number, AwsAccountId: string, Namespace: string): Observable<ListGroupMembershipsResponse> {
+		ListGroupMemberships(GroupName: string, next_token: string | null | undefined, max_results: number | null | undefined, AwsAccountId: string, Namespace: string): Observable<ListGroupMembershipsResponse> {
 			return this.http.get<ListGroupMembershipsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/namespaces/' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '/groups/' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '/members&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results, {});
 		}
 
@@ -2491,7 +2491,7 @@ export namespace MyNS {
 		 * @param {number} max_results The maximum number of results to be returned per request.
 		 * @return {ListIAMPolicyAssignmentsResponse} Success
 		 */
-		ListIAMPolicyAssignments(AwsAccountId: string, Namespace: string, next_token: string, max_results: number): Observable<ListIAMPolicyAssignmentsResponse> {
+		ListIAMPolicyAssignments(AwsAccountId: string, Namespace: string, next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListIAMPolicyAssignmentsResponse> {
 			return this.http.get<ListIAMPolicyAssignmentsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/namespaces/' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '/iam-policy-assignments&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results, {});
 		}
 
@@ -2505,7 +2505,7 @@ export namespace MyNS {
 		 * @param {string} Namespace The namespace of the assignment.
 		 * @return {ListIAMPolicyAssignmentsForUserResponse} Success
 		 */
-		ListIAMPolicyAssignmentsForUser(AwsAccountId: string, UserName: string, next_token: string, max_results: number, Namespace: string): Observable<ListIAMPolicyAssignmentsForUserResponse> {
+		ListIAMPolicyAssignmentsForUser(AwsAccountId: string, UserName: string, next_token: string | null | undefined, max_results: number | null | undefined, Namespace: string): Observable<ListIAMPolicyAssignmentsForUserResponse> {
 			return this.http.get<ListIAMPolicyAssignmentsForUserResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/namespaces/' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '/users/' + (UserName == null ? '' : encodeURIComponent(UserName)) + '/iam-policy-assignments&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results, {});
 		}
 
@@ -2520,7 +2520,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIngestionsResponse} Success
 		 */
-		ListIngestions(DataSetId: string, next_token: string, AwsAccountId: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListIngestionsResponse> {
+		ListIngestions(DataSetId: string, next_token: string | null | undefined, AwsAccountId: string, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListIngestionsResponse> {
 			return this.http.get<ListIngestionsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/data-sets/' + (DataSetId == null ? '' : encodeURIComponent(DataSetId)) + '/ingestions&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2555,7 +2555,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTemplateAliasesResponse} Success
 		 */
-		ListTemplateAliases(AwsAccountId: string, TemplateId: string, next_token: string, max_result: number, MaxResults: string, NextToken: string): Observable<ListTemplateAliasesResponse> {
+		ListTemplateAliases(AwsAccountId: string, TemplateId: string, next_token: string | null | undefined, max_result: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListTemplateAliasesResponse> {
 			return this.http.get<ListTemplateAliasesResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/templates/' + (TemplateId == null ? '' : encodeURIComponent(TemplateId)) + '/aliases&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_result=' + max_result + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2570,7 +2570,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTemplateVersionsResponse} Success
 		 */
-		ListTemplateVersions(AwsAccountId: string, TemplateId: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListTemplateVersionsResponse> {
+		ListTemplateVersions(AwsAccountId: string, TemplateId: string, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListTemplateVersionsResponse> {
 			return this.http.get<ListTemplateVersionsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/templates/' + (TemplateId == null ? '' : encodeURIComponent(TemplateId)) + '/versions&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2584,7 +2584,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTemplatesResponse} Success
 		 */
-		ListTemplates(AwsAccountId: string, next_token: string, max_result: number, MaxResults: string, NextToken: string): Observable<ListTemplatesResponse> {
+		ListTemplates(AwsAccountId: string, next_token: string | null | undefined, max_result: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListTemplatesResponse> {
 			return this.http.get<ListTemplatesResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/templates&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_result=' + max_result + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2598,7 +2598,7 @@ export namespace MyNS {
 		 * @param {number} max_results The maximum number of results to return from this request.
 		 * @return {ListUserGroupsResponse} Success
 		 */
-		ListUserGroups(UserName: string, AwsAccountId: string, Namespace: string, next_token: string, max_results: number): Observable<ListUserGroupsResponse> {
+		ListUserGroups(UserName: string, AwsAccountId: string, Namespace: string, next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListUserGroupsResponse> {
 			return this.http.get<ListUserGroupsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/namespaces/' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '/users/' + (UserName == null ? '' : encodeURIComponent(UserName)) + '/groups&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results, {});
 		}
 
@@ -2611,7 +2611,7 @@ export namespace MyNS {
 		 * @param {string} Namespace The namespace. Currently, you should set this to <code>default</code>.
 		 * @return {ListUsersResponse} Success
 		 */
-		ListUsers(AwsAccountId: string, next_token: string, max_results: number, Namespace: string): Observable<ListUsersResponse> {
+		ListUsers(AwsAccountId: string, next_token: string | null | undefined, max_results: number | null | undefined, Namespace: string): Observable<ListUsersResponse> {
 			return this.http.get<ListUsersResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/namespaces/' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '/users&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results, {});
 		}
 
@@ -2634,7 +2634,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchDashboardsResponse} Success
 		 */
-		SearchDashboards(AwsAccountId: string, MaxResults: string, NextToken: string, requestBody: SearchDashboardsPostBody): Observable<SearchDashboardsResponse> {
+		SearchDashboards(AwsAccountId: string, MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: SearchDashboardsPostBody): Observable<SearchDashboardsResponse> {
 			return this.http.post<SearchDashboardsResponse>(this.baseUri + 'accounts/' + (AwsAccountId == null ? '' : encodeURIComponent(AwsAccountId)) + '/search/dashboards&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

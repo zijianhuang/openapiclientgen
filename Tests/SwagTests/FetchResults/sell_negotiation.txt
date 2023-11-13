@@ -198,7 +198,7 @@ export namespace MyNS {
 		 * @param {string} offset This query parameter specifies the number of results to skip in the result set before returning the first result in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 results from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0
 		 * @return {PagedEligibleItemCollection} Success
 		 */
-		FindEligibleItems(limit: string, offset: string): Promise<PagedEligibleItemCollection> {
+		FindEligibleItems(limit: string | null | undefined, offset: string | null | undefined): Promise<PagedEligibleItemCollection> {
 			return fetch(this.baseUri + 'find_eligible_items?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => d.json());
 		}
 

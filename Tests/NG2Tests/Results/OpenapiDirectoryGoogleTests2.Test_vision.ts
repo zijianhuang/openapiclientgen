@@ -6688,7 +6688,7 @@ export namespace MyNS {
 		 * Valid mask path is `display_name`.
 		 * @return {void} Successful response
 		 */
-		Vision_projects_locations_productSets_patch(name: string, updateMask: string, requestBody: ProductSet): Observable<HttpResponse<string>> {
+		Vision_projects_locations_productSets_patch(name: string, updateMask: string | null | undefined, requestBody: ProductSet): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6706,7 +6706,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Vision_projects_locations_productSets_products_list(name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Vision_projects_locations_productSets_products_list(name: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/products&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6853,7 +6853,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Vision_projects_locations_productSets_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Vision_projects_locations_productSets_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/productSets&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6871,7 +6871,7 @@ export namespace MyNS {
 		 * long. It cannot contain the character `/`.
 		 * @return {void} Successful response
 		 */
-		Vision_projects_locations_productSets_create(parent: string, productSetId: string, requestBody: ProductSet): Observable<HttpResponse<string>> {
+		Vision_projects_locations_productSets_create(parent: string, productSetId: string | null | undefined, requestBody: ProductSet): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/productSets&productSetId=' + (productSetId == null ? '' : encodeURIComponent(productSetId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6906,7 +6906,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Vision_projects_locations_products_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Vision_projects_locations_products_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/products&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -6927,7 +6927,7 @@ export namespace MyNS {
 		 * long. It cannot contain the character `/`.
 		 * @return {void} Successful response
 		 */
-		Vision_projects_locations_products_create(parent: string, productId: string, requestBody: Product): Observable<HttpResponse<string>> {
+		Vision_projects_locations_products_create(parent: string, productId: string | null | undefined, requestBody: Product): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/products&productId=' + (productId == null ? '' : encodeURIComponent(productId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6976,7 +6976,7 @@ export namespace MyNS {
 		 * Defaults to the first page if not specified.
 		 * @return {void} Successful response
 		 */
-		Vision_projects_locations_products_referenceImages_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Vision_projects_locations_products_referenceImages_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/referenceImages&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -7006,7 +7006,7 @@ export namespace MyNS {
 		 * most 128 characters long. It cannot contain the character `/`.
 		 * @return {void} Successful response
 		 */
-		Vision_projects_locations_products_referenceImages_create(parent: string, referenceImageId: string, requestBody: ReferenceImage): Observable<HttpResponse<string>> {
+		Vision_projects_locations_products_referenceImages_create(parent: string, referenceImageId: string | null | undefined, requestBody: ReferenceImage): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/referenceImages&referenceImageId=' + (referenceImageId == null ? '' : encodeURIComponent(referenceImageId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

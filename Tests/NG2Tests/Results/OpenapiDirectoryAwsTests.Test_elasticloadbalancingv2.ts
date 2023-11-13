@@ -915,7 +915,7 @@ export namespace MyNS {
 		 * @param {Array<string>} AlpnPolicy <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p> <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li> <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateListener(LoadBalancerArn: string, Protocol: ListenerProtocol, Port: number, SslPolicy: string, Certificates: Array<Certificate>, DefaultActions: Array<Action>, AlpnPolicy: Array<string>, Action: GET_CreateListenerAction, Version: GET_CreateListenerVersion): Observable<HttpResponse<string>> {
+		GET_CreateListener(LoadBalancerArn: string, Protocol: ListenerProtocol, Port: number, SslPolicy: string | null | undefined, Certificates: Array<Certificate> | null | undefined, DefaultActions: Array<Action>, AlpnPolicy: Array<string> | null | undefined, Action: GET_CreateListenerAction, Version: GET_CreateListenerVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateListener?LoadBalancerArn=' + (LoadBalancerArn == null ? '' : encodeURIComponent(LoadBalancerArn)) + '&Protocol=' + Protocol + '&Port=' + Port + '&SslPolicy=' + (SslPolicy == null ? '' : encodeURIComponent(SslPolicy)) + '&' + Certificates.map(z => `Certificates=${z}`).join('&') + '&' + DefaultActions.map(z => `DefaultActions=${z}`).join('&') + '&' + AlpnPolicy.map(z => `AlpnPolicy=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -932,7 +932,7 @@ export namespace MyNS {
 		 * @param {LoadBalancerIpAddressType} IpAddressType [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
 		 * @return {void} Success
 		 */
-		GET_CreateLoadBalancer(Name: string, Subnets: Array<string>, SubnetMappings: Array<SubnetMapping>, SecurityGroups: Array<string>, Scheme: GET_CreateLoadBalancerScheme, Tags: Array<Tag>, Type: LoadBalancerType, IpAddressType: LoadBalancerIpAddressType, Action: GET_CreateLoadBalancerAction, Version: GET_CreateLoadBalancerVersion): Observable<HttpResponse<string>> {
+		GET_CreateLoadBalancer(Name: string, Subnets: Array<string> | null | undefined, SubnetMappings: Array<SubnetMapping> | null | undefined, SecurityGroups: Array<string> | null | undefined, Scheme: GET_CreateLoadBalancerScheme | null | undefined, Tags: Array<Tag> | null | undefined, Type: LoadBalancerType | null | undefined, IpAddressType: LoadBalancerIpAddressType | null | undefined, Action: GET_CreateLoadBalancerAction, Version: GET_CreateLoadBalancerVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateLoadBalancer?Name=' + (Name == null ? '' : encodeURIComponent(Name)) + '&' + Subnets.map(z => `Subnets=${encodeURIComponent(z)}`).join('&') + '&' + SubnetMappings.map(z => `SubnetMappings=${z}`).join('&') + '&' + SecurityGroups.map(z => `SecurityGroups=${encodeURIComponent(z)}`).join('&') + '&Scheme=' + Scheme + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Type=' + Type + '&IpAddressType=' + IpAddressType + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -968,7 +968,7 @@ export namespace MyNS {
 		 * @param {TargetGroupTargetType} TargetType <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p> <ul> <li> <p> <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target group protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.</p> </li> <li> <p> <code>ip</code> - Targets are specified by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li> <li> <p> <code>lambda</code> - The target groups contains a single Lambda function.</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_CreateTargetGroup(Name: string, Protocol: ListenerProtocol, Port: number, VpcId: string, HealthCheckProtocol: ListenerProtocol, HealthCheckPort: string, HealthCheckEnabled: boolean, HealthCheckPath: string, HealthCheckIntervalSeconds: number, HealthCheckTimeoutSeconds: number, HealthyThresholdCount: number, UnhealthyThresholdCount: number, Matcher: GET_CreateTargetGroupMatcher, TargetType: TargetGroupTargetType, Action: GET_CreateTargetGroupAction, Version: GET_CreateTargetGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateTargetGroup(Name: string, Protocol: ListenerProtocol | null | undefined, Port: number | null | undefined, VpcId: string | null | undefined, HealthCheckProtocol: ListenerProtocol | null | undefined, HealthCheckPort: string | null | undefined, HealthCheckEnabled: boolean | null | undefined, HealthCheckPath: string | null | undefined, HealthCheckIntervalSeconds: number | null | undefined, HealthCheckTimeoutSeconds: number | null | undefined, HealthyThresholdCount: number | null | undefined, UnhealthyThresholdCount: number | null | undefined, Matcher: GET_CreateTargetGroupMatcher | null | undefined, TargetType: TargetGroupTargetType | null | undefined, Action: GET_CreateTargetGroupAction, Version: GET_CreateTargetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateTargetGroup?Name=' + (Name == null ? '' : encodeURIComponent(Name)) + '&Protocol=' + Protocol + '&Port=' + Port + '&VpcId=' + (VpcId == null ? '' : encodeURIComponent(VpcId)) + '&HealthCheckProtocol=' + HealthCheckProtocol + '&HealthCheckPort=' + (HealthCheckPort == null ? '' : encodeURIComponent(HealthCheckPort)) + '&HealthCheckEnabled=' + HealthCheckEnabled + '&HealthCheckPath=' + (HealthCheckPath == null ? '' : encodeURIComponent(HealthCheckPath)) + '&HealthCheckIntervalSeconds=' + HealthCheckIntervalSeconds + '&HealthCheckTimeoutSeconds=' + HealthCheckTimeoutSeconds + '&HealthyThresholdCount=' + HealthyThresholdCount + '&UnhealthyThresholdCount=' + UnhealthyThresholdCount + '&Matcher=' + Matcher + '&TargetType=' + TargetType + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call.
 		 * @return {void} Success
 		 */
-		GET_DescribeAccountLimits(Marker: string, PageSize: number, Action: GET_DescribeAccountLimitsAction, Version: GET_DescribeAccountLimitsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAccountLimits(Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeAccountLimitsAction, Version: GET_DescribeAccountLimitsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAccountLimits?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1042,7 +1042,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call.
 		 * @return {void} Success
 		 */
-		GET_DescribeListenerCertificates(ListenerArn: string, Marker: string, PageSize: number, Action: GET_DescribeListenerCertificatesAction, Version: GET_DescribeListenerCertificatesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeListenerCertificates(ListenerArn: string, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeListenerCertificatesAction, Version: GET_DescribeListenerCertificatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeListenerCertificates?ListenerArn=' + (ListenerArn == null ? '' : encodeURIComponent(ListenerArn)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1055,7 +1055,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call.
 		 * @return {void} Success
 		 */
-		GET_DescribeListeners(LoadBalancerArn: string, ListenerArns: Array<string>, Marker: string, PageSize: number, Action: GET_DescribeListenersAction, Version: GET_DescribeListenersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeListeners(LoadBalancerArn: string | null | undefined, ListenerArns: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeListenersAction, Version: GET_DescribeListenersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeListeners?LoadBalancerArn=' + (LoadBalancerArn == null ? '' : encodeURIComponent(LoadBalancerArn)) + '&' + ListenerArns.map(z => `ListenerArns=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1078,7 +1078,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call.
 		 * @return {void} Success
 		 */
-		GET_DescribeLoadBalancers(LoadBalancerArns: Array<string>, Names: Array<string>, Marker: string, PageSize: number, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLoadBalancers(LoadBalancerArns: Array<string> | null | undefined, Names: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancers?' + LoadBalancerArns.map(z => `LoadBalancerArns=${encodeURIComponent(z)}`).join('&') + '&' + Names.map(z => `Names=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1091,7 +1091,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call.
 		 * @return {void} Success
 		 */
-		GET_DescribeRules(ListenerArn: string, RuleArns: Array<string>, Marker: string, PageSize: number, Action: GET_DescribeRulesAction, Version: GET_DescribeRulesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeRules(ListenerArn: string | null | undefined, RuleArns: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeRulesAction, Version: GET_DescribeRulesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeRules?ListenerArn=' + (ListenerArn == null ? '' : encodeURIComponent(ListenerArn)) + '&' + RuleArns.map(z => `RuleArns=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1103,7 +1103,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call.
 		 * @return {void} Success
 		 */
-		GET_DescribeSSLPolicies(Names: Array<string>, Marker: string, PageSize: number, Action: GET_DescribeSSLPoliciesAction, Version: GET_DescribeSSLPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeSSLPolicies(Names: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeSSLPoliciesAction, Version: GET_DescribeSSLPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeSSLPolicies?' + Names.map(z => `Names=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1137,7 +1137,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to return with this call.
 		 * @return {void} Success
 		 */
-		GET_DescribeTargetGroups(LoadBalancerArn: string, TargetGroupArns: Array<string>, Names: Array<string>, Marker: string, PageSize: number, Action: GET_DescribeTargetGroupsAction, Version: GET_DescribeTargetGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeTargetGroups(LoadBalancerArn: string | null | undefined, TargetGroupArns: Array<string> | null | undefined, Names: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeTargetGroupsAction, Version: GET_DescribeTargetGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeTargetGroups?LoadBalancerArn=' + (LoadBalancerArn == null ? '' : encodeURIComponent(LoadBalancerArn)) + '&' + TargetGroupArns.map(z => `TargetGroupArns=${encodeURIComponent(z)}`).join('&') + '&' + Names.map(z => `Names=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1148,7 +1148,7 @@ export namespace MyNS {
 		 * @param {Array<TargetDescription>} Targets The targets.
 		 * @return {void} Success
 		 */
-		GET_DescribeTargetHealth(TargetGroupArn: string, Targets: Array<TargetDescription>, Action: GET_DescribeTargetHealthAction, Version: GET_DescribeTargetHealthVersion): Observable<HttpResponse<string>> {
+		GET_DescribeTargetHealth(TargetGroupArn: string, Targets: Array<TargetDescription> | null | undefined, Action: GET_DescribeTargetHealthAction, Version: GET_DescribeTargetHealthVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeTargetHealth?TargetGroupArn=' + (TargetGroupArn == null ? '' : encodeURIComponent(TargetGroupArn)) + '&' + Targets.map(z => `Targets=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1164,7 +1164,7 @@ export namespace MyNS {
 		 * @param {Array<string>} AlpnPolicy <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p> <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li> <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_ModifyListener(ListenerArn: string, Port: number, Protocol: ListenerProtocol, SslPolicy: string, Certificates: Array<Certificate>, DefaultActions: Array<Action>, AlpnPolicy: Array<string>, Action: GET_ModifyListenerAction, Version: GET_ModifyListenerVersion): Observable<HttpResponse<string>> {
+		GET_ModifyListener(ListenerArn: string, Port: number | null | undefined, Protocol: ListenerProtocol | null | undefined, SslPolicy: string | null | undefined, Certificates: Array<Certificate> | null | undefined, DefaultActions: Array<Action> | null | undefined, AlpnPolicy: Array<string> | null | undefined, Action: GET_ModifyListenerAction, Version: GET_ModifyListenerVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyListener?ListenerArn=' + (ListenerArn == null ? '' : encodeURIComponent(ListenerArn)) + '&Port=' + Port + '&Protocol=' + Protocol + '&SslPolicy=' + (SslPolicy == null ? '' : encodeURIComponent(SslPolicy)) + '&' + Certificates.map(z => `Certificates=${z}`).join('&') + '&' + DefaultActions.map(z => `DefaultActions=${z}`).join('&') + '&' + AlpnPolicy.map(z => `AlpnPolicy=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1187,7 +1187,7 @@ export namespace MyNS {
 		 * @param {Array<Action>} Actions <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p> <p>If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.</p> <p>[HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity provider that is OpenID Connect (OIDC) compliant.</p> <p>[HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user pools supported by Amazon Cognito.</p> <p>[Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests from one URL to another.</p> <p>[Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests and return a custom HTTP response.</p>
 		 * @return {void} Success
 		 */
-		GET_ModifyRule(RuleArn: string, Conditions: Array<RuleCondition>, Actions: Array<Action>, Action: GET_ModifyRuleAction, Version: GET_ModifyRuleVersion): Observable<HttpResponse<string>> {
+		GET_ModifyRule(RuleArn: string, Conditions: Array<RuleCondition> | null | undefined, Actions: Array<Action> | null | undefined, Action: GET_ModifyRuleAction, Version: GET_ModifyRuleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyRule?RuleArn=' + (RuleArn == null ? '' : encodeURIComponent(RuleArn)) + '&' + Conditions.map(z => `Conditions=${z}`).join('&') + '&' + Actions.map(z => `Actions=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1206,7 +1206,7 @@ export namespace MyNS {
 		 * @param {GET_ModifyTargetGroupMatcher} Matcher <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.</p> <p>With Network Load Balancers, you can't modify this setting.</p>
 		 * @return {void} Success
 		 */
-		GET_ModifyTargetGroup(TargetGroupArn: string, HealthCheckProtocol: ListenerProtocol, HealthCheckPort: string, HealthCheckPath: string, HealthCheckEnabled: boolean, HealthCheckIntervalSeconds: number, HealthCheckTimeoutSeconds: number, HealthyThresholdCount: number, UnhealthyThresholdCount: number, Matcher: GET_ModifyTargetGroupMatcher, Action: GET_ModifyTargetGroupAction, Version: GET_ModifyTargetGroupVersion): Observable<HttpResponse<string>> {
+		GET_ModifyTargetGroup(TargetGroupArn: string, HealthCheckProtocol: ListenerProtocol | null | undefined, HealthCheckPort: string | null | undefined, HealthCheckPath: string | null | undefined, HealthCheckEnabled: boolean | null | undefined, HealthCheckIntervalSeconds: number | null | undefined, HealthCheckTimeoutSeconds: number | null | undefined, HealthyThresholdCount: number | null | undefined, UnhealthyThresholdCount: number | null | undefined, Matcher: GET_ModifyTargetGroupMatcher | null | undefined, Action: GET_ModifyTargetGroupAction, Version: GET_ModifyTargetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyTargetGroup?TargetGroupArn=' + (TargetGroupArn == null ? '' : encodeURIComponent(TargetGroupArn)) + '&HealthCheckProtocol=' + HealthCheckProtocol + '&HealthCheckPort=' + (HealthCheckPort == null ? '' : encodeURIComponent(HealthCheckPort)) + '&HealthCheckPath=' + (HealthCheckPath == null ? '' : encodeURIComponent(HealthCheckPath)) + '&HealthCheckEnabled=' + HealthCheckEnabled + '&HealthCheckIntervalSeconds=' + HealthCheckIntervalSeconds + '&HealthCheckTimeoutSeconds=' + HealthCheckTimeoutSeconds + '&HealthyThresholdCount=' + HealthyThresholdCount + '&UnhealthyThresholdCount=' + UnhealthyThresholdCount + '&Matcher=' + Matcher + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1294,7 +1294,7 @@ export namespace MyNS {
 		 * @param {Array<SubnetMapping>} SubnetMappings <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. If you need static IP addresses for your internet-facing load balancer, you can specify one Elastic IP address per subnet. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.</p>
 		 * @return {void} Success
 		 */
-		GET_SetSubnets(LoadBalancerArn: string, Subnets: Array<string>, SubnetMappings: Array<SubnetMapping>, Action: GET_SetSubnetsAction, Version: GET_SetSubnetsVersion): Observable<HttpResponse<string>> {
+		GET_SetSubnets(LoadBalancerArn: string, Subnets: Array<string> | null | undefined, SubnetMappings: Array<SubnetMapping> | null | undefined, Action: GET_SetSubnetsAction, Version: GET_SetSubnetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetSubnets?LoadBalancerArn=' + (LoadBalancerArn == null ? '' : encodeURIComponent(LoadBalancerArn)) + '&' + Subnets.map(z => `Subnets=${encodeURIComponent(z)}`).join('&') + '&' + SubnetMappings.map(z => `SubnetMappings=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}

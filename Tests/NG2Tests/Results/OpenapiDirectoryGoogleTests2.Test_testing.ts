@@ -1576,7 +1576,7 @@ export namespace MyNS {
 		 * Optional, but strongly recommended.
 		 * @return {void} Successful response
 		 */
-		Testing_projects_testMatrices_create(projectId: string, requestId: string, requestBody: TestMatrix): Observable<HttpResponse<string>> {
+		Testing_projects_testMatrices_create(projectId: string, requestId: string | null | undefined, requestBody: TestMatrix): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/testMatrices&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1623,7 +1623,7 @@ export namespace MyNS {
 		 * @param {string} projectId For authorization, the cloud project requesting the TestEnvironmentCatalog.
 		 * @return {void} Successful response
 		 */
-		Testing_testEnvironmentCatalog_get(environmentType: Testing_testEnvironmentCatalog_getEnvironmentType, projectId: string): Observable<HttpResponse<string>> {
+		Testing_testEnvironmentCatalog_get(environmentType: Testing_testEnvironmentCatalog_getEnvironmentType, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/testEnvironmentCatalog/' + environmentType + '?projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 	}

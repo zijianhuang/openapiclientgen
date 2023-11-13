@@ -295,7 +295,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		GamesConfiguration_achievementConfigurations_list(applicationId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		GamesConfiguration_achievementConfigurations_list(applicationId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'games/v1configuration/applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '/achievements&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -319,7 +319,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		GamesConfiguration_leaderboardConfigurations_list(applicationId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		GamesConfiguration_leaderboardConfigurations_list(applicationId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'games/v1configuration/applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '/leaderboards&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

@@ -3707,7 +3707,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Servicemanagement_operations_list(filter: string, name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Servicemanagement_operations_list(filter: string | null | undefined, name: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/operations?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3731,7 +3731,7 @@ export namespace MyNS {
 		 * @param {string} producerProjectId Include services produced by the specified project.
 		 * @return {void} Successful response
 		 */
-		Servicemanagement_services_list(consumerId: string, pageSize: number, pageToken: string, producerProjectId: string): Observable<HttpResponse<string>> {
+		Servicemanagement_services_list(consumerId: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, producerProjectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/services?consumerId=' + (consumerId == null ? '' : encodeURIComponent(consumerId)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&producerProjectId=' + (producerProjectId == null ? '' : encodeURIComponent(producerProjectId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3790,7 +3790,7 @@ export namespace MyNS {
 		 * response.
 		 * @return {void} Successful response
 		 */
-		Servicemanagement_services_getConfig(serviceName: string, configId: string, view: Servicemanagement_services_getConfigView): Observable<HttpResponse<string>> {
+		Servicemanagement_services_getConfig(serviceName: string, configId: string | null | undefined, view: Servicemanagement_services_getConfigView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/services/' + (serviceName == null ? '' : encodeURIComponent(serviceName)) + '/config&configId=' + (configId == null ? '' : encodeURIComponent(configId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3805,7 +3805,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token of the page to retrieve.
 		 * @return {void} Successful response
 		 */
-		Servicemanagement_services_configs_list(serviceName: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Servicemanagement_services_configs_list(serviceName: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/services/' + (serviceName == null ? '' : encodeURIComponent(serviceName)) + '/configs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3838,7 +3838,7 @@ export namespace MyNS {
 		 * response.
 		 * @return {void} Successful response
 		 */
-		Servicemanagement_services_configs_get(serviceName: string, configId: string, view: Servicemanagement_services_getConfigView): Observable<HttpResponse<string>> {
+		Servicemanagement_services_configs_get(serviceName: string, configId: string, view: Servicemanagement_services_getConfigView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/services/' + (serviceName == null ? '' : encodeURIComponent(serviceName)) + '/configs/' + (configId == null ? '' : encodeURIComponent(configId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3882,7 +3882,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token of the page to retrieve.
 		 * @return {void} Successful response
 		 */
-		Servicemanagement_services_rollouts_list(serviceName: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Servicemanagement_services_rollouts_list(serviceName: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/services/' + (serviceName == null ? '' : encodeURIComponent(serviceName)) + '/rollouts&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

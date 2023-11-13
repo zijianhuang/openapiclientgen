@@ -75,7 +75,7 @@ export namespace MyNS {
 		 * @param {string} url URL that is being queried.
 		 * @return {void} Successful response
 		 */
-		Indexing_urlNotifications_getMetadata(url: string): Observable<HttpResponse<string>> {
+		Indexing_urlNotifications_getMetadata(url: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/urlNotifications/metadata?url=' + (url == null ? '' : encodeURIComponent(url)), { observe: 'response', responseType: 'text' });
 		}
 

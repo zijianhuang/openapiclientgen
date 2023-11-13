@@ -394,7 +394,7 @@ export namespace MyNS {
 		 * @param {Array<string>} dataTypeName The names of data types to include in the list. If not specified, all data sources will be returned.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_list(userId: string, dataTypeName: Array<string>): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_list(userId: string, dataTypeName: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources&' + dataTypeName.map(z => `dataTypeName=${encodeURIComponent(z)}`).join('&') + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -456,7 +456,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of nextPageToken from the previous response.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_dataPointChanges_list(userId: string, dataSourceId: string, limit: number, pageToken: string): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_dataPointChanges_list(userId: string, dataSourceId: string, limit: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources/' + (dataSourceId == null ? '' : encodeURIComponent(dataSourceId)) + '/dataPointChanges&limit=' + limit + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -470,7 +470,7 @@ export namespace MyNS {
 		 * @param {string} modifiedTimeMillis When the operation was performed on the client.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_datasets_delete(userId: string, dataSourceId: string, datasetId: string, currentTimeMillis: string, modifiedTimeMillis: string): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_datasets_delete(userId: string, dataSourceId: string, datasetId: string, currentTimeMillis: string | null | undefined, modifiedTimeMillis: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources/' + (dataSourceId == null ? '' : encodeURIComponent(dataSourceId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '&currentTimeMillis=' + (currentTimeMillis == null ? '' : encodeURIComponent(currentTimeMillis)) + '&modifiedTimeMillis=' + (modifiedTimeMillis == null ? '' : encodeURIComponent(modifiedTimeMillis)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -484,7 +484,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The continuation token, which is used to page through large datasets. To get the next page of a dataset, set this parameter to the value of nextPageToken from the previous response. Each subsequent call will yield a partial dataset with data point end timestamps that are strictly smaller than those in the previous partial response.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_datasets_get(userId: string, dataSourceId: string, datasetId: string, limit: number, pageToken: string): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_datasets_get(userId: string, dataSourceId: string, datasetId: string, limit: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources/' + (dataSourceId == null ? '' : encodeURIComponent(dataSourceId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '&limit=' + limit + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -497,7 +497,7 @@ export namespace MyNS {
 		 * @param {string} currentTimeMillis The client's current time in milliseconds since epoch. Note that the minStartTimeNs and maxEndTimeNs properties in the request body are in nanoseconds instead of milliseconds.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_datasets_patch(userId: string, dataSourceId: string, datasetId: string, currentTimeMillis: string, requestBody: Dataset): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_datasets_patch(userId: string, dataSourceId: string, datasetId: string, currentTimeMillis: string | null | undefined, requestBody: Dataset): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources/' + (dataSourceId == null ? '' : encodeURIComponent(dataSourceId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '&currentTimeMillis=' + (currentTimeMillis == null ? '' : encodeURIComponent(currentTimeMillis)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -522,7 +522,7 @@ export namespace MyNS {
 		 * @param {string} startTime An RFC3339 timestamp. Only sessions ending between the start and end times will be included in the response.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_sessions_list(userId: string, activityType: Array<number>, endTime: string, includeDeleted: boolean, pageToken: string, startTime: string): Observable<HttpResponse<string>> {
+		Fitness_users_sessions_list(userId: string, activityType: Array<number> | null | undefined, endTime: string | null | undefined, includeDeleted: boolean | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/sessions&' + activityType.map(z => `activityType=${z}`).join('&') + '&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&includeDeleted=' + includeDeleted + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -534,7 +534,7 @@ export namespace MyNS {
 		 * @param {string} currentTimeMillis The client's current time in milliseconds since epoch.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_sessions_delete(userId: string, sessionId: string, currentTimeMillis: string): Observable<HttpResponse<string>> {
+		Fitness_users_sessions_delete(userId: string, sessionId: string, currentTimeMillis: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/sessions/' + (sessionId == null ? '' : encodeURIComponent(sessionId)) + '&currentTimeMillis=' + (currentTimeMillis == null ? '' : encodeURIComponent(currentTimeMillis)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -546,7 +546,7 @@ export namespace MyNS {
 		 * @param {string} currentTimeMillis The client's current time in milliseconds since epoch.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_sessions_update(userId: string, sessionId: string, currentTimeMillis: string, requestBody: Session): Observable<HttpResponse<string>> {
+		Fitness_users_sessions_update(userId: string, sessionId: string, currentTimeMillis: string | null | undefined, requestBody: Session): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/sessions/' + (sessionId == null ? '' : encodeURIComponent(sessionId)) + '&currentTimeMillis=' + (currentTimeMillis == null ? '' : encodeURIComponent(currentTimeMillis)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

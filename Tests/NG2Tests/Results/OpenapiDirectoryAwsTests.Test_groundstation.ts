@@ -691,7 +691,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.
 		 * @return {ListConfigsResponse} Success
 		 */
-		ListConfigs(maxResults: number, nextToken: string): Observable<ListConfigsResponse> {
+		ListConfigs(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListConfigsResponse> {
 			return this.http.get<ListConfigsResponse>(this.baseUri + 'config?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -711,7 +711,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
 		 * @return {ListDataflowEndpointGroupsResponse} Success
 		 */
-		ListDataflowEndpointGroups(maxResults: number, nextToken: string): Observable<ListDataflowEndpointGroupsResponse> {
+		ListDataflowEndpointGroups(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListDataflowEndpointGroupsResponse> {
 			return this.http.get<ListDataflowEndpointGroupsResponse>(this.baseUri + 'dataflowEndpointGroup?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -731,7 +731,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
 		 * @return {ListMissionProfilesResponse} Success
 		 */
-		ListMissionProfiles(maxResults: number, nextToken: string): Observable<ListMissionProfilesResponse> {
+		ListMissionProfiles(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListMissionProfilesResponse> {
 			return this.http.get<ListMissionProfilesResponse>(this.baseUri + 'missionprofile?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -844,7 +844,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListContactsResponse} Success
 		 */
-		ListContacts(maxResults: string, nextToken: string, requestBody: ListContactsPostBody): Observable<ListContactsResponse> {
+		ListContacts(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListContactsPostBody): Observable<ListContactsResponse> {
 			return this.http.post<ListContactsResponse>(this.baseUri + 'contacts?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -856,7 +856,7 @@ export namespace MyNS {
 		 * @param {string} satelliteId Satellite ID to retrieve on-boarded ground stations.
 		 * @return {ListGroundStationsResponse} Success
 		 */
-		ListGroundStations(maxResults: number, nextToken: string, satelliteId: string): Observable<ListGroundStationsResponse> {
+		ListGroundStations(maxResults: number | null | undefined, nextToken: string | null | undefined, satelliteId: string | null | undefined): Observable<ListGroundStationsResponse> {
 			return this.http.get<ListGroundStationsResponse>(this.baseUri + 'groundstation?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&satelliteId=' + (satelliteId == null ? '' : encodeURIComponent(satelliteId)), {});
 		}
 
@@ -867,7 +867,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Next token that can be supplied in the next call to get the next page of satellites.
 		 * @return {ListSatellitesResponse} Success
 		 */
-		ListSatellites(maxResults: number, nextToken: string): Observable<ListSatellitesResponse> {
+		ListSatellites(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSatellitesResponse> {
 			return this.http.get<ListSatellitesResponse>(this.baseUri + 'satellite?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 

@@ -1801,7 +1801,7 @@ export namespace MyNS {
 		 * @param {string} RequestItems Pagination token
 		 * @return {BatchGetItemOutput} Success
 		 */
-		BatchGetItem(RequestItems: string, requestBody: BatchGetItemInput): Observable<BatchGetItemOutput> {
+		BatchGetItem(RequestItems: string | null | undefined, requestBody: BatchGetItemInput): Observable<BatchGetItemOutput> {
 			return this.http.post<BatchGetItemOutput>(this.baseUri + '#X-Amz-Target=DynamoDB_20120810.BatchGetItem?RequestItems=' + (RequestItems == null ? '' : encodeURIComponent(RequestItems)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1983,7 +1983,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListContributorInsightsOutput} Success
 		 */
-		ListContributorInsights(MaxResults: string, NextToken: string, requestBody: ListContributorInsightsInput): Observable<ListContributorInsightsOutput> {
+		ListContributorInsights(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListContributorInsightsInput): Observable<ListContributorInsightsOutput> {
 			return this.http.post<ListContributorInsightsOutput>(this.baseUri + '#X-Amz-Target=DynamoDB_20120810.ListContributorInsights?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2003,7 +2003,7 @@ export namespace MyNS {
 		 * @param {string} ExclusiveStartTableName Pagination token
 		 * @return {ListTablesOutput} Success
 		 */
-		ListTables(Limit: string, ExclusiveStartTableName: string, requestBody: ListTablesInput): Observable<ListTablesOutput> {
+		ListTables(Limit: string | null | undefined, ExclusiveStartTableName: string | null | undefined, requestBody: ListTablesInput): Observable<ListTablesOutput> {
 			return this.http.post<ListTablesOutput>(this.baseUri + '#X-Amz-Target=DynamoDB_20120810.ListTables?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&ExclusiveStartTableName=' + (ExclusiveStartTableName == null ? '' : encodeURIComponent(ExclusiveStartTableName)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2032,7 +2032,7 @@ export namespace MyNS {
 		 * @param {string} ExclusiveStartKey Pagination token
 		 * @return {QueryOutput} Success
 		 */
-		Query(Limit: string, ExclusiveStartKey: string, requestBody: QueryInput): Observable<QueryOutput> {
+		Query(Limit: string | null | undefined, ExclusiveStartKey: string | null | undefined, requestBody: QueryInput): Observable<QueryOutput> {
 			return this.http.post<QueryOutput>(this.baseUri + '#X-Amz-Target=DynamoDB_20120810.Query?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&ExclusiveStartKey=' + (ExclusiveStartKey == null ? '' : encodeURIComponent(ExclusiveStartKey)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2061,7 +2061,7 @@ export namespace MyNS {
 		 * @param {string} ExclusiveStartKey Pagination token
 		 * @return {ScanOutput} Success
 		 */
-		Scan(Limit: string, ExclusiveStartKey: string, requestBody: ScanInput): Observable<ScanOutput> {
+		Scan(Limit: string | null | undefined, ExclusiveStartKey: string | null | undefined, requestBody: ScanInput): Observable<ScanOutput> {
 			return this.http.post<ScanOutput>(this.baseUri + '#X-Amz-Target=DynamoDB_20120810.Scan?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&ExclusiveStartKey=' + (ExclusiveStartKey == null ? '' : encodeURIComponent(ExclusiveStartKey)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

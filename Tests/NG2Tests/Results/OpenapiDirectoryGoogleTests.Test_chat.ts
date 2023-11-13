@@ -566,7 +566,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {void} Successful response
 		 */
-		Chat_spaces_list(pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Chat_spaces_list(pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/spaces?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -606,7 +606,7 @@ export namespace MyNS {
 		 * * cards
 		 * @return {void} Successful response
 		 */
-		Chat_spaces_messages_update(name: string, updateMask: string, requestBody: Message): Observable<HttpResponse<string>> {
+		Chat_spaces_messages_update(name: string, updateMask: string | null | undefined, requestBody: Message): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -622,7 +622,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {void} Successful response
 		 */
-		Chat_spaces_members_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Chat_spaces_members_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/members&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -641,7 +641,7 @@ export namespace MyNS {
 		 * corresponding to an existing thread, is set in message.
 		 * @return {void} Successful response
 		 */
-		Chat_spaces_messages_create(parent: string, threadKey: string, requestBody: Message): Observable<HttpResponse<string>> {
+		Chat_spaces_messages_create(parent: string, threadKey: string | null | undefined, requestBody: Message): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/messages&threadKey=' + (threadKey == null ? '' : encodeURIComponent(threadKey)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

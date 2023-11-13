@@ -1116,7 +1116,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataSourceSyncJobsResponse} Success
 		 */
-		ListDataSourceSyncJobs(MaxResults: string, NextToken: string, requestBody: ListDataSourceSyncJobsRequest): Observable<ListDataSourceSyncJobsResponse> {
+		ListDataSourceSyncJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDataSourceSyncJobsRequest): Observable<ListDataSourceSyncJobsResponse> {
 			return this.http.post<ListDataSourceSyncJobsResponse>(this.baseUri + '#X-Amz-Target=AWSKendraFrontendService.ListDataSourceSyncJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1127,7 +1127,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataSourcesResponse} Success
 		 */
-		ListDataSources(MaxResults: string, NextToken: string, requestBody: ListDataSourcesRequest): Observable<ListDataSourcesResponse> {
+		ListDataSources(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDataSourcesRequest): Observable<ListDataSourcesResponse> {
 			return this.http.post<ListDataSourcesResponse>(this.baseUri + '#X-Amz-Target=AWSKendraFrontendService.ListDataSources?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1147,7 +1147,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIndicesResponse} Success
 		 */
-		ListIndices(MaxResults: string, NextToken: string, requestBody: ListIndicesRequest): Observable<ListIndicesResponse> {
+		ListIndices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListIndicesRequest): Observable<ListIndicesResponse> {
 			return this.http.post<ListIndicesResponse>(this.baseUri + '#X-Amz-Target=AWSKendraFrontendService.ListIndices?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

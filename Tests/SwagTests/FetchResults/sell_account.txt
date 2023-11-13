@@ -988,7 +988,7 @@ export namespace MyNS {
 		 * @param {string} country_code This query parameter specifies the two-letter ISO 3166-1 Alpha-2 code of country for which you want shipping-rate table information. If you do not specify a county code, the request returns all the seller-defined rate tables. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/CountryCodeEnum.html
 		 * @return {RateTableResponse} Success
 		 */
-		GetRateTables(country_code: string): Promise<RateTableResponse> {
+		GetRateTables(country_code: string | null | undefined): Promise<RateTableResponse> {
 			return fetch(this.baseUri + 'rate_table/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), { method: 'get' }).then(d => d.json());
 		}
 	}

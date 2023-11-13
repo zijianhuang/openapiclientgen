@@ -2922,7 +2922,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_debug_datasources_items_checkAccess(name: string, debugOptions_enableDebugging: boolean, requestBody: Principal): Observable<HttpResponse<string>> {
+		Cloudsearch_debug_datasources_items_checkAccess(name: string, debugOptions_enableDebugging: boolean | null | undefined, requestBody: Principal): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/debug/' + (name == null ? '' : encodeURIComponent(name)) + ':checkAccess&debugOptions_enableDebugging=' + debugOptions_enableDebugging, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2939,7 +2939,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_debug_identitysources_items_listForunmappedidentity(parent: string, debugOptions_enableDebugging: boolean, groupResourceName: string, pageSize: number, pageToken: string, userResourceName: string): Observable<HttpResponse<string>> {
+		Cloudsearch_debug_identitysources_items_listForunmappedidentity(parent: string, debugOptions_enableDebugging: boolean | null | undefined, groupResourceName: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, userResourceName: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/debug/' + (parent == null ? '' : encodeURIComponent(parent)) + '/items:forunmappedidentity&debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&groupResourceName=' + (groupResourceName == null ? '' : encodeURIComponent(groupResourceName)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&userResourceName=' + (userResourceName == null ? '' : encodeURIComponent(userResourceName)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2957,7 +2957,7 @@ export namespace MyNS {
 		 * @param {UnmappedIdentityResolutionStatusCode} resolutionStatusCode Limit users selection to this status.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_debug_identitysources_unmappedids_list(parent: string, debugOptions_enableDebugging: boolean, pageSize: number, pageToken: string, resolutionStatusCode: UnmappedIdentityResolutionStatusCode): Observable<HttpResponse<string>> {
+		Cloudsearch_debug_identitysources_unmappedids_list(parent: string, debugOptions_enableDebugging: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, resolutionStatusCode: UnmappedIdentityResolutionStatusCode | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/debug/' + (parent == null ? '' : encodeURIComponent(parent)) + '/unmappedids&debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&resolutionStatusCode=' + resolutionStatusCode, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2985,7 +2985,7 @@ export namespace MyNS {
 		 * The maximum length for this field is 1024 bytes.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_items_delete(name: string, connectorName: string, debugOptions_enableDebugging: boolean, mode: IndexItemRequestMode, version: string): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_items_delete(name: string, connectorName: string | null | undefined, debugOptions_enableDebugging: boolean | null | undefined, mode: IndexItemRequestMode | null | undefined, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '&connectorName=' + (connectorName == null ? '' : encodeURIComponent(connectorName)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&mode=' + mode + '&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3002,7 +3002,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_items_get(name: string, connectorName: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_items_get(name: string, connectorName: string | null | undefined, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '&connectorName=' + (connectorName == null ? '' : encodeURIComponent(connectorName)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3043,7 +3043,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_items_list(name: string, brief: boolean, connectorName: string, debugOptions_enableDebugging: boolean, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_items_list(name: string, brief: boolean | null | undefined, connectorName: string | null | undefined, debugOptions_enableDebugging: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '/items&brief=' + brief + '&connectorName=' + (connectorName == null ? '' : encodeURIComponent(connectorName)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3121,7 +3121,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_deleteSchema(name: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_deleteSchema(name: string, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '/schema&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3135,7 +3135,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_getSchema(name: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_getSchema(name: string, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '/schema&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3254,7 +3254,7 @@ export namespace MyNS {
 		 * If this field is not specified, the default time zone (UTC) is used.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_query_sources_list(pageToken: string, requestOptions_debugOptions_enableDebugging: boolean, requestOptions_languageCode: string, requestOptions_searchApplicationId: string, requestOptions_timeZone: string): Observable<HttpResponse<string>> {
+		Cloudsearch_query_sources_list(pageToken: string | null | undefined, requestOptions_debugOptions_enableDebugging: boolean | null | undefined, requestOptions_languageCode: string | null | undefined, requestOptions_searchApplicationId: string | null | undefined, requestOptions_timeZone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/query/sources?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&requestOptions_debugOptions_enableDebugging=' + requestOptions_debugOptions_enableDebugging + '&requestOptions_languageCode=' + (requestOptions_languageCode == null ? '' : encodeURIComponent(requestOptions_languageCode)) + '&requestOptions_searchApplicationId=' + (requestOptions_searchApplicationId == null ? '' : encodeURIComponent(requestOptions_searchApplicationId)) + '&requestOptions_timeZone=' + (requestOptions_timeZone == null ? '' : encodeURIComponent(requestOptions_timeZone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3284,7 +3284,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Starting index of the results.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_settings_datasources_list(debugOptions_enableDebugging: boolean, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudsearch_settings_datasources_list(debugOptions_enableDebugging: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/settings/datasources?debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3309,7 +3309,7 @@ export namespace MyNS {
 		 * <br/> The default value is 10
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_settings_searchapplications_list(debugOptions_enableDebugging: boolean, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudsearch_settings_searchapplications_list(debugOptions_enableDebugging: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/settings/searchapplications?debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3333,7 +3333,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_settings_datasources_delete(name: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_settings_datasources_delete(name: string, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/settings/' + (name == null ? '' : encodeURIComponent(name)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3347,7 +3347,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_settings_datasources_get(name: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_settings_datasources_get(name: string, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/settings/' + (name == null ? '' : encodeURIComponent(name)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3391,7 +3391,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_getIndex(fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_getIndex(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/index?fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3409,7 +3409,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_index_datasources_get(name: string, fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_index_datasources_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/index/' + (name == null ? '' : encodeURIComponent(name)) + '&fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3425,7 +3425,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_getQuery(fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_getQuery(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/query?fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3443,7 +3443,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_query_searchapplications_get(name: string, fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_query_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/query/' + (name == null ? '' : encodeURIComponent(name)) + '&fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3460,7 +3460,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_getSession(fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_getSession(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/session?fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3479,7 +3479,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_session_searchapplications_get(name: string, fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_session_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/session/' + (name == null ? '' : encodeURIComponent(name)) + '&fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3495,7 +3495,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_getUser(fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_getUser(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/user?fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3513,7 +3513,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_user_searchapplications_get(name: string, fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_user_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/user/' + (name == null ? '' : encodeURIComponent(name)) + '&fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 

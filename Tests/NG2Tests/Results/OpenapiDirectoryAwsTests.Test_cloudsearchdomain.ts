@@ -191,7 +191,7 @@ export namespace MyNS {
 		 * @param {string} stats <p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options supported for statistics.</p>
 		 * @return {SearchResponse} Success
 		 */
-		Search(cursor: string, expr: string, facet: string, fq: string, highlight: string, partial: boolean, q: string, q_options: string, q_parser: QueryParser, _return: string, size: number, sort: string, start: number, stats: string, format: SearchFormat, pretty: SearchPretty): Observable<SearchResponse> {
+		Search(cursor: string | null | undefined, expr: string | null | undefined, facet: string | null | undefined, fq: string | null | undefined, highlight: string | null | undefined, partial: boolean | null | undefined, q: string, q_options: string | null | undefined, q_parser: QueryParser | null | undefined, _return: string | null | undefined, size: number | null | undefined, sort: string | null | undefined, start: number | null | undefined, stats: string | null | undefined, format: SearchFormat, pretty: SearchPretty): Observable<SearchResponse> {
 			return this.http.get<SearchResponse>(this.baseUri + '2013-01-01/search#format=sdk&pretty=true&q?cursor=' + (cursor == null ? '' : encodeURIComponent(cursor)) + '&expr=' + (expr == null ? '' : encodeURIComponent(expr)) + '&facet=' + (facet == null ? '' : encodeURIComponent(facet)) + '&fq=' + (fq == null ? '' : encodeURIComponent(fq)) + '&highlight=' + (highlight == null ? '' : encodeURIComponent(highlight)) + '&partial=' + partial + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&q_options=' + (q_options == null ? '' : encodeURIComponent(q_options)) + '&q_parser=' + q_parser + '&_return=' + (_return == null ? '' : encodeURIComponent(_return)) + '&size=' + size + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&start=' + start + '&stats=' + (stats == null ? '' : encodeURIComponent(stats)) + '&format=' + format + '&pretty=' + pretty, {});
 		}
 
@@ -203,7 +203,7 @@ export namespace MyNS {
 		 * @param {number} size Specifies the maximum number of suggestions to return. 
 		 * @return {SuggestResponse} Success
 		 */
-		Suggest(q: string, suggester: string, size: number, format: SearchFormat, pretty: SuggestPretty): Observable<SuggestResponse> {
+		Suggest(q: string, suggester: string, size: number | null | undefined, format: SearchFormat, pretty: SuggestPretty): Observable<SuggestResponse> {
 			return this.http.get<SuggestResponse>(this.baseUri + '2013-01-01/suggest#format=sdk&pretty=true&q&suggester?q=' + (q == null ? '' : encodeURIComponent(q)) + '&suggester=' + (suggester == null ? '' : encodeURIComponent(suggester)) + '&size=' + size + '&format=' + format + '&pretty=' + pretty, {});
 		}
 

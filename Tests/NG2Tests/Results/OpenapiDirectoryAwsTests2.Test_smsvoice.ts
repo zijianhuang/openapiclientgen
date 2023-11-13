@@ -233,7 +233,7 @@ export namespace MyNS {
 		 * @param {string} PageSize Used to specify the number of items that should be returned in the response.
 		 * @return {ListConfigurationSetsResponse} Success
 		 */
-		ListConfigurationSets(NextToken: string, PageSize: string): Observable<ListConfigurationSetsResponse> {
+		ListConfigurationSets(NextToken: string | null | undefined, PageSize: string | null | undefined): Observable<ListConfigurationSetsResponse> {
 			return this.http.get<ListConfigurationSetsResponse>(this.baseUri + 'v1/sms-voice/configuration-sets?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + (PageSize == null ? '' : encodeURIComponent(PageSize)), {});
 		}
 

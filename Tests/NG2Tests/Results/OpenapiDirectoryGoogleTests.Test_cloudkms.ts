@@ -1138,7 +1138,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Required. List of fields to be updated in this request.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_patch(name: string, updateMask: string, requestBody: CryptoKeyVersion): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_patch(name: string, updateMask: string | null | undefined, requestBody: CryptoKeyVersion): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1151,7 +1151,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1289,7 +1289,7 @@ export namespace MyNS {
 		 * @param {Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView} view The fields to include in the response.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string, view: Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/cryptoKeyVersions&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1343,7 +1343,7 @@ export namespace MyNS {
 		 * @param {Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView} versionView The fields of the primary version to include in the response.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string, versionView: Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, versionView: Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/cryptoKeys&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&versionView=' + versionView, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1364,7 +1364,7 @@ export namespace MyNS {
 		 * before you can use this CryptoKey.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_create(parent: string, cryptoKeyId: string, skipInitialVersionCreation: boolean, requestBody: CryptoKey): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_create(parent: string, cryptoKeyId: string | null | undefined, skipInitialVersionCreation: boolean | null | undefined, requestBody: CryptoKey): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/cryptoKeys&cryptoKeyId=' + (cryptoKeyId == null ? '' : encodeURIComponent(cryptoKeyId)) + '&skipInitialVersionCreation=' + skipInitialVersionCreation, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1389,7 +1389,7 @@ export namespace MyNS {
 		 * ListImportJobsResponse.next_page_token.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_importJobs_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_importJobs_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/importJobs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1403,7 +1403,7 @@ export namespace MyNS {
 		 * expression `[a-zA-Z0-9_-]{1,63}`
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_importJobs_create(parent: string, importJobId: string, requestBody: ImportJob): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_importJobs_create(parent: string, importJobId: string | null | undefined, requestBody: ImportJob): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/importJobs&importJobId=' + (importJobId == null ? '' : encodeURIComponent(importJobId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1428,7 +1428,7 @@ export namespace MyNS {
 		 * ListKeyRingsResponse.next_page_token.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/keyRings&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * expression `[a-zA-Z0-9_-]{1,63}`
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_create(parent: string, keyRingId: string, requestBody: KeyRing): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_create(parent: string, keyRingId: string | null | undefined, requestBody: KeyRing): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/keyRings&keyRingId=' + (keyRingId == null ? '' : encodeURIComponent(keyRingId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1460,7 +1460,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

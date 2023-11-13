@@ -2770,7 +2770,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeTapeArchivesOutput} Success
 		 */
-		DescribeTapeArchives(Limit: string, Marker: string, requestBody: DescribeTapeArchivesInput): Observable<DescribeTapeArchivesOutput> {
+		DescribeTapeArchives(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeTapeArchivesInput): Observable<DescribeTapeArchivesOutput> {
 			return this.http.post<DescribeTapeArchivesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.DescribeTapeArchives?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2781,7 +2781,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeTapeRecoveryPointsOutput} Success
 		 */
-		DescribeTapeRecoveryPoints(Limit: string, Marker: string, requestBody: DescribeTapeRecoveryPointsInput): Observable<DescribeTapeRecoveryPointsOutput> {
+		DescribeTapeRecoveryPoints(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeTapeRecoveryPointsInput): Observable<DescribeTapeRecoveryPointsOutput> {
 			return this.http.post<DescribeTapeRecoveryPointsOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.DescribeTapeRecoveryPoints?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2792,7 +2792,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeTapesOutput} Success
 		 */
-		DescribeTapes(Limit: string, Marker: string, requestBody: DescribeTapesInput): Observable<DescribeTapesOutput> {
+		DescribeTapes(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeTapesInput): Observable<DescribeTapesOutput> {
 			return this.http.post<DescribeTapesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.DescribeTapes?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2812,7 +2812,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeVTLDevicesOutput} Success
 		 */
-		DescribeVTLDevices(Limit: string, Marker: string, requestBody: DescribeVTLDevicesInput): Observable<DescribeVTLDevicesOutput> {
+		DescribeVTLDevices(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeVTLDevicesInput): Observable<DescribeVTLDevicesOutput> {
 			return this.http.post<DescribeVTLDevicesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.DescribeVTLDevices?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2868,7 +2868,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListFileSharesOutput} Success
 		 */
-		ListFileShares(Limit: string, Marker: string, requestBody: ListFileSharesInput): Observable<ListFileSharesOutput> {
+		ListFileShares(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListFileSharesInput): Observable<ListFileSharesOutput> {
 			return this.http.post<ListFileSharesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListFileShares?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2879,7 +2879,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListGatewaysOutput} Success
 		 */
-		ListGateways(Limit: string, Marker: string, requestBody: ListGatewaysInput): Observable<ListGatewaysOutput> {
+		ListGateways(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListGatewaysInput): Observable<ListGatewaysOutput> {
 			return this.http.post<ListGatewaysOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListGateways?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2899,7 +2899,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListTagsForResourceOutput} Success
 		 */
-		ListTagsForResource(Limit: string, Marker: string, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
+		ListTagsForResource(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
 			return this.http.post<ListTagsForResourceOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListTagsForResource?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2910,7 +2910,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListTapesOutput} Success
 		 */
-		ListTapes(Limit: string, Marker: string, requestBody: ListTapesInput): Observable<ListTapesOutput> {
+		ListTapes(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListTapesInput): Observable<ListTapesOutput> {
 			return this.http.post<ListTapesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListTapes?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2939,7 +2939,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListVolumesOutput} Success
 		 */
-		ListVolumes(Limit: string, Marker: string, requestBody: ListVolumesInput): Observable<ListVolumesOutput> {
+		ListVolumes(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListVolumesInput): Observable<ListVolumesOutput> {
 			return this.http.post<ListVolumesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListVolumes?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

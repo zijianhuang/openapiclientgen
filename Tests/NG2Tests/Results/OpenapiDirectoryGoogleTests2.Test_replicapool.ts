@@ -373,7 +373,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Set this to the nextPageToken value returned by a previous list request to obtain the next page of results from the previous list request.
 		 * @return {void} Successful response
 		 */
-		Replicapool_pools_list(projectName: string, zone: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Replicapool_pools_list(projectName: string, zone: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (projectName == null ? '' : encodeURIComponent(projectName)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/pools&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -422,7 +422,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Set this to the nextPageToken value returned by a previous list request to obtain the next page of results from the previous list request.
 		 * @return {void} Successful response
 		 */
-		Replicapool_replicas_list(projectName: string, zone: string, poolName: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Replicapool_replicas_list(projectName: string, zone: string, poolName: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (projectName == null ? '' : encodeURIComponent(projectName)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/pools/' + (poolName == null ? '' : encodeURIComponent(poolName)) + '/replicas&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -474,7 +474,7 @@ export namespace MyNS {
 		 * @param {number} numReplicas The desired number of replicas to resize to. If this number is larger than the existing number of replicas, new replicas will be added. If the number is smaller, then existing replicas will be deleted.
 		 * @return {void} Successful response
 		 */
-		Replicapool_pools_resize(projectName: string, zone: string, poolName: string, numReplicas: number): Observable<HttpResponse<string>> {
+		Replicapool_pools_resize(projectName: string, zone: string, poolName: string, numReplicas: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (projectName == null ? '' : encodeURIComponent(projectName)) + '/zones/' + (zone == null ? '' : encodeURIComponent(zone)) + '/pools/' + (poolName == null ? '' : encodeURIComponent(poolName)) + '/resize&numReplicas=' + numReplicas + '', null, { observe: 'response', responseType: 'text' });
 		}
 

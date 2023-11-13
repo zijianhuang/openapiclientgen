@@ -647,7 +647,7 @@ export namespace MyNS {
 		 * @param {string} limit The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.
 		 * @return {ListPartsOutput} Success
 		 */
-		ListParts(accountId: string, vaultName: string, uploadId: string, marker: string, limit: string): Observable<ListPartsOutput> {
+		ListParts(accountId: string, vaultName: string, uploadId: string, marker: string | null | undefined, limit: string | null | undefined): Observable<ListPartsOutput> {
 			return this.http.get<ListPartsOutput>(this.baseUri + (accountId == null ? '' : encodeURIComponent(accountId)) + '/vaults/' + (vaultName == null ? '' : encodeURIComponent(vaultName)) + '/multipart-uploads/' + (uploadId == null ? '' : encodeURIComponent(uploadId)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '', {});
 		}
 
@@ -896,7 +896,7 @@ export namespace MyNS {
 		 * @param {string} completed The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
 		 * @return {ListJobsOutput} Success
 		 */
-		ListJobs(accountId: string, vaultName: string, limit: string, marker: string, statuscode: string, completed: string): Observable<ListJobsOutput> {
+		ListJobs(accountId: string, vaultName: string, limit: string | null | undefined, marker: string | null | undefined, statuscode: string | null | undefined, completed: string | null | undefined): Observable<ListJobsOutput> {
 			return this.http.get<ListJobsOutput>(this.baseUri + (accountId == null ? '' : encodeURIComponent(accountId)) + '/vaults/' + (vaultName == null ? '' : encodeURIComponent(vaultName)) + '/jobs&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&statuscode=' + (statuscode == null ? '' : encodeURIComponent(statuscode)) + '&completed=' + (completed == null ? '' : encodeURIComponent(completed)) + '', {});
 		}
 
@@ -920,7 +920,7 @@ export namespace MyNS {
 		 * @param {string} limit Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.
 		 * @return {ListMultipartUploadsOutput} Success
 		 */
-		ListMultipartUploads(accountId: string, vaultName: string, marker: string, limit: string): Observable<ListMultipartUploadsOutput> {
+		ListMultipartUploads(accountId: string, vaultName: string, marker: string | null | undefined, limit: string | null | undefined): Observable<ListMultipartUploadsOutput> {
 			return this.http.get<ListMultipartUploadsOutput>(this.baseUri + (accountId == null ? '' : encodeURIComponent(accountId)) + '/vaults/' + (vaultName == null ? '' : encodeURIComponent(vaultName)) + '/multipart-uploads&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '', {});
 		}
 
@@ -963,7 +963,7 @@ export namespace MyNS {
 		 * @param {string} limit The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
 		 * @return {ListVaultsOutput} Success
 		 */
-		ListVaults(accountId: string, marker: string, limit: string): Observable<ListVaultsOutput> {
+		ListVaults(accountId: string, marker: string | null | undefined, limit: string | null | undefined): Observable<ListVaultsOutput> {
 			return this.http.get<ListVaultsOutput>(this.baseUri + (accountId == null ? '' : encodeURIComponent(accountId)) + '/vaults&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '', {});
 		}
 

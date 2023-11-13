@@ -799,7 +799,7 @@ export namespace MyNS {
 		 * the last response. The initial value should be set to `"init"`.
 		 * @return {void} Successful response
 		 */
-		Clouddebugger_controller_debuggees_breakpoints_list(debuggeeId: string, agentId: string, successOnTimeout: boolean, waitToken: string): Observable<HttpResponse<string>> {
+		Clouddebugger_controller_debuggees_breakpoints_list(debuggeeId: string, agentId: string | null | undefined, successOnTimeout: boolean | null | undefined, waitToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/controller/debuggees/' + (debuggeeId == null ? '' : encodeURIComponent(debuggeeId)) + '/breakpoints&agentId=' + (agentId == null ? '' : encodeURIComponent(agentId)) + '&successOnTimeout=' + successOnTimeout + '&waitToken=' + (waitToken == null ? '' : encodeURIComponent(waitToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -830,7 +830,7 @@ export namespace MyNS {
 		 * @param {string} project Required. Project number of a Google Cloud project whose debuggees to list.
 		 * @return {void} Successful response
 		 */
-		Clouddebugger_debugger_debuggees_list(clientVersion: string, includeInactive: boolean, project: string): Observable<HttpResponse<string>> {
+		Clouddebugger_debugger_debuggees_list(clientVersion: string | null | undefined, includeInactive: boolean | null | undefined, project: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/debugger/debuggees?clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)) + '&includeInactive=' + includeInactive + '&project=' + (project == null ? '' : encodeURIComponent(project)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -854,7 +854,7 @@ export namespace MyNS {
 		 * should be called again with the same `wait_token`.
 		 * @return {void} Successful response
 		 */
-		Clouddebugger_debugger_debuggees_breakpoints_list(debuggeeId: string, action_value: BreakpointAction, clientVersion: string, includeAllUsers: boolean, includeInactive: boolean, stripResults: boolean, waitToken: string): Observable<HttpResponse<string>> {
+		Clouddebugger_debugger_debuggees_breakpoints_list(debuggeeId: string, action_value: BreakpointAction | null | undefined, clientVersion: string | null | undefined, includeAllUsers: boolean | null | undefined, includeInactive: boolean | null | undefined, stripResults: boolean | null | undefined, waitToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/debugger/debuggees/' + (debuggeeId == null ? '' : encodeURIComponent(debuggeeId)) + '/breakpoints&action_value=' + action_value + '&clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)) + '&includeAllUsers=' + includeAllUsers + '&includeInactive=' + includeInactive + '&stripResults=' + stripResults + '&waitToken=' + (waitToken == null ? '' : encodeURIComponent(waitToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -867,7 +867,7 @@ export namespace MyNS {
 		 * Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
 		 * @return {void} Successful response
 		 */
-		Clouddebugger_debugger_debuggees_breakpoints_set(debuggeeId: string, canaryOption: Clouddebugger_debugger_debuggees_breakpoints_setCanaryOption, clientVersion: string, requestBody: Breakpoint): Observable<HttpResponse<string>> {
+		Clouddebugger_debugger_debuggees_breakpoints_set(debuggeeId: string, canaryOption: Clouddebugger_debugger_debuggees_breakpoints_setCanaryOption | null | undefined, clientVersion: string | null | undefined, requestBody: Breakpoint): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/debugger/debuggees/' + (debuggeeId == null ? '' : encodeURIComponent(debuggeeId)) + '/breakpoints/set&canaryOption=' + canaryOption + '&clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -880,7 +880,7 @@ export namespace MyNS {
 		 * Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
 		 * @return {void} Successful response
 		 */
-		Clouddebugger_debugger_debuggees_breakpoints_delete(debuggeeId: string, breakpointId: string, clientVersion: string): Observable<HttpResponse<string>> {
+		Clouddebugger_debugger_debuggees_breakpoints_delete(debuggeeId: string, breakpointId: string, clientVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v2/debugger/debuggees/' + (debuggeeId == null ? '' : encodeURIComponent(debuggeeId)) + '/breakpoints/' + (breakpointId == null ? '' : encodeURIComponent(breakpointId)) + '&clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -893,7 +893,7 @@ export namespace MyNS {
 		 * Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
 		 * @return {void} Successful response
 		 */
-		Clouddebugger_debugger_debuggees_breakpoints_get(debuggeeId: string, breakpointId: string, clientVersion: string): Observable<HttpResponse<string>> {
+		Clouddebugger_debugger_debuggees_breakpoints_get(debuggeeId: string, breakpointId: string, clientVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/debugger/debuggees/' + (debuggeeId == null ? '' : encodeURIComponent(debuggeeId)) + '/breakpoints/' + (breakpointId == null ? '' : encodeURIComponent(breakpointId)) + '&clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)), { observe: 'response', responseType: 'text' });
 		}
 	}

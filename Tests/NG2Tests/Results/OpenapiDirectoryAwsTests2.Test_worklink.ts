@@ -558,7 +558,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDevicesResponse} Success
 		 */
-		ListDevices(MaxResults: string, NextToken: string, requestBody: ListDevicesPostBody): Observable<ListDevicesResponse> {
+		ListDevices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDevicesPostBody): Observable<ListDevicesResponse> {
 			return this.http.post<ListDevicesResponse>(this.baseUri + 'listDevices?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -569,7 +569,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDomainsResponse} Success
 		 */
-		ListDomains(MaxResults: string, NextToken: string, requestBody: ListDomainsPostBody): Observable<ListDomainsResponse> {
+		ListDomains(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDomainsPostBody): Observable<ListDomainsResponse> {
 			return this.http.post<ListDomainsResponse>(this.baseUri + 'listDomains?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -580,7 +580,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFleetsResponse} Success
 		 */
-		ListFleets(MaxResults: string, NextToken: string, requestBody: ListFleetsPostBody): Observable<ListFleetsResponse> {
+		ListFleets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFleetsPostBody): Observable<ListFleetsResponse> {
 			return this.http.post<ListFleetsResponse>(this.baseUri + 'listFleets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -611,7 +611,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWebsiteAuthorizationProvidersResponse} Success
 		 */
-		ListWebsiteAuthorizationProviders(MaxResults: string, NextToken: string, requestBody: ListWebsiteAuthorizationProvidersPostBody): Observable<ListWebsiteAuthorizationProvidersResponse> {
+		ListWebsiteAuthorizationProviders(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWebsiteAuthorizationProvidersPostBody): Observable<ListWebsiteAuthorizationProvidersResponse> {
 			return this.http.post<ListWebsiteAuthorizationProvidersResponse>(this.baseUri + 'listWebsiteAuthorizationProviders?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -622,7 +622,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWebsiteCertificateAuthoritiesResponse} Success
 		 */
-		ListWebsiteCertificateAuthorities(MaxResults: string, NextToken: string, requestBody: ListWebsiteCertificateAuthoritiesPostBody): Observable<ListWebsiteCertificateAuthoritiesResponse> {
+		ListWebsiteCertificateAuthorities(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWebsiteCertificateAuthoritiesPostBody): Observable<ListWebsiteCertificateAuthoritiesResponse> {
 			return this.http.post<ListWebsiteCertificateAuthoritiesResponse>(this.baseUri + 'listWebsiteCertificateAuthorities?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

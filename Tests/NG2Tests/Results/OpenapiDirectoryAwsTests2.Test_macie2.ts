@@ -1790,7 +1790,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListFindingsFiltersResponse} Success
 		 */
-		ListFindingsFilters(maxResults: number, nextToken: string): Observable<ListFindingsFiltersResponse> {
+		ListFindingsFilters(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListFindingsFiltersResponse> {
 			return this.http.get<ListFindingsFiltersResponse>(this.baseUri + 'findingsfilters?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1810,7 +1810,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListInvitationsResponse} Success
 		 */
-		ListInvitations(maxResults: number, nextToken: string): Observable<ListInvitationsResponse> {
+		ListInvitations(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListInvitationsResponse> {
 			return this.http.get<ListInvitationsResponse>(this.baseUri + 'invitations?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1831,7 +1831,7 @@ export namespace MyNS {
 		 * @param {string} onlyAssociated Specifies which accounts to include in the response, based on the status of an account's relationship with the master account. By default, the response includes only current member accounts. To include all accounts, set the value for this parameter to false.
 		 * @return {ListMembersResponse} Success
 		 */
-		ListMembers(maxResults: number, nextToken: string, onlyAssociated: string): Observable<ListMembersResponse> {
+		ListMembers(maxResults: number | null | undefined, nextToken: string | null | undefined, onlyAssociated: string | null | undefined): Observable<ListMembersResponse> {
 			return this.http.get<ListMembersResponse>(this.baseUri + 'members?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&onlyAssociated=' + (onlyAssociated == null ? '' : encodeURIComponent(onlyAssociated)), {});
 		}
 
@@ -2060,7 +2060,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The nextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListOrganizationAdminAccountsResponse} Success
 		 */
-		ListOrganizationAdminAccounts(maxResults: number, nextToken: string): Observable<ListOrganizationAdminAccountsResponse> {
+		ListOrganizationAdminAccounts(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListOrganizationAdminAccountsResponse> {
 			return this.http.get<ListOrganizationAdminAccountsResponse>(this.baseUri + 'admin?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 

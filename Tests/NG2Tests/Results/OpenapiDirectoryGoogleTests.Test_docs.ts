@@ -4125,7 +4125,7 @@ export namespace MyNS {
 		 * used.
 		 * @return {void} Successful response
 		 */
-		Docs_documents_get(documentId: string, suggestionsViewMode: DocumentSuggestionsViewMode): Observable<HttpResponse<string>> {
+		Docs_documents_get(documentId: string, suggestionsViewMode: DocumentSuggestionsViewMode | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/documents/' + (documentId == null ? '' : encodeURIComponent(documentId)) + '&suggestionsViewMode=' + suggestionsViewMode, { observe: 'response', responseType: 'text' });
 		}
 

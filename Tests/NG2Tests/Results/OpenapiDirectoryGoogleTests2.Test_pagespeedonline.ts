@@ -437,7 +437,7 @@ export namespace MyNS {
 		 * @param {string} utm_source Campaign source for analytics.
 		 * @return {void} Successful response
 		 */
-		Pagespeedonline_pagespeedapi_runpagespeed(captchaToken: string, category: Array<string>, locale: string, strategy: Pagespeedonline_pagespeedapi_runpagespeedStrategy, url: string, utm_campaign: string, utm_source: string): Observable<HttpResponse<string>> {
+		Pagespeedonline_pagespeedapi_runpagespeed(captchaToken: string | null | undefined, category: Array<string> | null | undefined, locale: string | null | undefined, strategy: Pagespeedonline_pagespeedapi_runpagespeedStrategy | null | undefined, url: string | null | undefined, utm_campaign: string | null | undefined, utm_source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'pagespeedonline/v5/runPagespeed?captchaToken=' + (captchaToken == null ? '' : encodeURIComponent(captchaToken)) + '&' + category.map(z => `category=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&strategy=' + strategy + '&url=' + (url == null ? '' : encodeURIComponent(url)) + '&utm_campaign=' + (utm_campaign == null ? '' : encodeURIComponent(utm_campaign)) + '&utm_source=' + (utm_source == null ? '' : encodeURIComponent(utm_source)), { observe: 'response', responseType: 'text' });
 		}
 	}

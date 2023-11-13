@@ -1510,7 +1510,7 @@ export namespace MyNS {
 		 * @param {string} ClientRequestToken A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that AWS CloudFormation successfully received them.
 		 * @return {void} Success
 		 */
-		GET_CancelUpdateStack(StackName: string, ClientRequestToken: string, Action: GET_CancelUpdateStackAction, Version: GET_CancelUpdateStackVersion): Observable<HttpResponse<string>> {
+		GET_CancelUpdateStack(StackName: string, ClientRequestToken: string | null | undefined, Action: GET_CancelUpdateStackAction, Version: GET_CancelUpdateStackVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CancelUpdateStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1523,7 +1523,7 @@ export namespace MyNS {
 		 * @param {string} ClientRequestToken A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation successfully received them.
 		 * @return {void} Success
 		 */
-		GET_ContinueUpdateRollback(StackName: string, RoleARN: string, ResourcesToSkip: Array<string>, ClientRequestToken: string, Action: GET_ContinueUpdateRollbackAction, Version: GET_ContinueUpdateRollbackVersion): Observable<HttpResponse<string>> {
+		GET_ContinueUpdateRollback(StackName: string, RoleARN: string | null | undefined, ResourcesToSkip: Array<string> | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_ContinueUpdateRollbackAction, Version: GET_ContinueUpdateRollbackVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ContinueUpdateRollback?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&' + ResourcesToSkip.map(z => `ResourcesToSkip=${encodeURIComponent(z)}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1548,7 +1548,7 @@ export namespace MyNS {
 		 * @param {Array<ResourceToImport>} ResourcesToImport The resources to import into your stack.
 		 * @return {void} Success
 		 */
-		GET_CreateChangeSet(StackName: string, TemplateBody: string, TemplateURL: string, UsePreviousTemplate: boolean, Parameters: Array<Parameter>, Capabilities: Array<Capability>, ResourceTypes: Array<string>, RoleARN: string, RollbackConfiguration: GET_CreateChangeSetRollbackConfiguration, NotificationARNs: Array<string>, Tags: Array<Tag>, ChangeSetName: string, ClientToken: string, Description: string, ChangeSetType: ChangeSetType, ResourcesToImport: Array<ResourceToImport>, Action: GET_CreateChangeSetAction, Version: GET_CreateChangeSetVersion): Observable<HttpResponse<string>> {
+		GET_CreateChangeSet(StackName: string, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, UsePreviousTemplate: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Capabilities: Array<Capability> | null | undefined, ResourceTypes: Array<string> | null | undefined, RoleARN: string | null | undefined, RollbackConfiguration: GET_CreateChangeSetRollbackConfiguration | null | undefined, NotificationARNs: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, ChangeSetName: string, ClientToken: string | null | undefined, Description: string | null | undefined, ChangeSetType: ChangeSetType | null | undefined, ResourcesToImport: Array<ResourceToImport> | null | undefined, Action: GET_CreateChangeSetAction, Version: GET_CreateChangeSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateChangeSet?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&RollbackConfiguration=' + RollbackConfiguration + '&' + NotificationARNs.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ChangeSetName=' + (ChangeSetName == null ? '' : encodeURIComponent(ChangeSetName)) + '&ClientToken=' + (ClientToken == null ? '' : encodeURIComponent(ClientToken)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&ChangeSetType=' + ChangeSetType + '&' + ResourcesToImport.map(z => `ResourcesToImport=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1574,7 +1574,7 @@ export namespace MyNS {
 		 * @param {boolean} EnableTerminationProtection <p>Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination protection is disabled on stacks by default. </p> <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateStack(StackName: string, TemplateBody: string, TemplateURL: string, Parameters: Array<Parameter>, DisableRollback: boolean, RollbackConfiguration: GET_CreateStackRollbackConfiguration, TimeoutInMinutes: number, NotificationARNs: Array<string>, Capabilities: Array<Capability>, ResourceTypes: Array<string>, RoleARN: string, OnFailure: OnFailure, StackPolicyBody: string, StackPolicyURL: string, Tags: Array<Tag>, ClientRequestToken: string, EnableTerminationProtection: boolean, Action: GET_CreateStackAction, Version: GET_CreateStackVersion): Observable<HttpResponse<string>> {
+		GET_CreateStack(StackName: string, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, Parameters: Array<Parameter> | null | undefined, DisableRollback: boolean | null | undefined, RollbackConfiguration: GET_CreateStackRollbackConfiguration | null | undefined, TimeoutInMinutes: number | null | undefined, NotificationARNs: Array<string> | null | undefined, Capabilities: Array<Capability> | null | undefined, ResourceTypes: Array<string> | null | undefined, RoleARN: string | null | undefined, OnFailure: OnFailure | null | undefined, StackPolicyBody: string | null | undefined, StackPolicyURL: string | null | undefined, Tags: Array<Tag> | null | undefined, ClientRequestToken: string | null | undefined, EnableTerminationProtection: boolean | null | undefined, Action: GET_CreateStackAction, Version: GET_CreateStackVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&DisableRollback=' + DisableRollback + '&RollbackConfiguration=' + RollbackConfiguration + '&TimeoutInMinutes=' + TimeoutInMinutes + '&' + NotificationARNs.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&OnFailure=' + OnFailure + '&StackPolicyBody=' + (StackPolicyBody == null ? '' : encodeURIComponent(StackPolicyBody)) + '&StackPolicyURL=' + (StackPolicyURL == null ? '' : encodeURIComponent(StackPolicyURL)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&EnableTerminationProtection=' + EnableTerminationProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 		 * @param {string} OperationId <p>The unique identifier for this stack set operation. </p> <p>The operation ID also functions as an idempotency token, to ensure that AWS CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that AWS CloudFormation successfully received them.</p> <p>If you don't specify an operation ID, the SDK generates one automatically. </p> <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>. </p>
 		 * @return {void} Success
 		 */
-		GET_CreateStackInstances(StackSetName: string, Accounts: Array<string>, DeploymentTargets: GET_CreateStackInstancesDeploymentTargets, Regions: Array<string>, ParameterOverrides: Array<Parameter>, OperationPreferences: GET_CreateStackInstancesOperationPreferences, OperationId: string, Action: GET_CreateStackInstancesAction, Version: GET_CreateStackInstancesVersion): Observable<HttpResponse<string>> {
+		GET_CreateStackInstances(StackSetName: string, Accounts: Array<string> | null | undefined, DeploymentTargets: GET_CreateStackInstancesDeploymentTargets | null | undefined, Regions: Array<string>, ParameterOverrides: Array<Parameter> | null | undefined, OperationPreferences: GET_CreateStackInstancesOperationPreferences | null | undefined, OperationId: string | null | undefined, Action: GET_CreateStackInstancesAction, Version: GET_CreateStackInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&' + ParameterOverrides.map(z => `ParameterOverrides=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1611,7 +1611,7 @@ export namespace MyNS {
 		 * @param {string} ClientRequestToken <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to create another stack set with the same name. You might retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation successfully received them.</p> <p>If you don't specify an operation ID, the SDK generates one automatically. </p>
 		 * @return {void} Success
 		 */
-		GET_CreateStackSet(StackSetName: string, Description: string, TemplateBody: string, TemplateURL: string, Parameters: Array<Parameter>, Capabilities: Array<Capability>, Tags: Array<Tag>, AdministrationRoleARN: string, ExecutionRoleName: string, PermissionModel: StackSetPermissionModel, AutoDeployment: GET_CreateStackSetAutoDeployment, ClientRequestToken: string, Action: GET_CreateStackSetAction, Version: GET_CreateStackSetVersion): Observable<HttpResponse<string>> {
+		GET_CreateStackSet(StackSetName: string, Description: string | null | undefined, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, Parameters: Array<Parameter> | null | undefined, Capabilities: Array<Capability> | null | undefined, Tags: Array<Tag> | null | undefined, AdministrationRoleARN: string | null | undefined, ExecutionRoleName: string | null | undefined, PermissionModel: StackSetPermissionModel | null | undefined, AutoDeployment: GET_CreateStackSetAutoDeployment | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_CreateStackSetAction, Version: GET_CreateStackSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateStackSet?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&AdministrationRoleARN=' + (AdministrationRoleARN == null ? '' : encodeURIComponent(AdministrationRoleARN)) + '&ExecutionRoleName=' + (ExecutionRoleName == null ? '' : encodeURIComponent(ExecutionRoleName)) + '&PermissionModel=' + PermissionModel + '&AutoDeployment=' + AutoDeployment + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 		 * @param {string} StackName If you specified the name of a change set to delete, specify the stack name or ID (ARN) that is associated with it.
 		 * @return {void} Success
 		 */
-		GET_DeleteChangeSet(ChangeSetName: string, StackName: string, Action: GET_DeleteChangeSetAction, Version: GET_DeleteChangeSetVersion): Observable<HttpResponse<string>> {
+		GET_DeleteChangeSet(ChangeSetName: string, StackName: string | null | undefined, Action: GET_DeleteChangeSetAction, Version: GET_DeleteChangeSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteChangeSet?ChangeSetName=' + (ChangeSetName == null ? '' : encodeURIComponent(ChangeSetName)) + '&StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1635,7 +1635,7 @@ export namespace MyNS {
 		 * @param {string} ClientRequestToken <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to delete a stack with the same name. You might retry <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully received them.</p> <p>All events triggered by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p> <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
 		 * @return {void} Success
 		 */
-		GET_DeleteStack(StackName: string, RetainResources: Array<string>, RoleARN: string, ClientRequestToken: string, Action: GET_DeleteStackAction, Version: GET_DeleteStackVersion): Observable<HttpResponse<string>> {
+		GET_DeleteStack(StackName: string, RetainResources: Array<string> | null | undefined, RoleARN: string | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_DeleteStackAction, Version: GET_DeleteStackVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + RetainResources.map(z => `RetainResources=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1651,7 +1651,7 @@ export namespace MyNS {
 		 * @param {string} OperationId <p>The unique identifier for this stack set operation. </p> <p>If you don't specify an operation ID, the SDK generates one automatically. </p> <p>The operation ID also functions as an idempotency token, to ensure that AWS CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You can retry stack set operation requests to ensure that AWS CloudFormation successfully received them.</p> <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>. </p>
 		 * @return {void} Success
 		 */
-		GET_DeleteStackInstances(StackSetName: string, Accounts: Array<string>, DeploymentTargets: GET_DeleteStackInstancesDeploymentTargets, Regions: Array<string>, OperationPreferences: GET_DeleteStackInstancesOperationPreferences, RetainStacks: boolean, OperationId: string, Action: GET_DeleteStackInstancesAction, Version: GET_DeleteStackInstancesVersion): Observable<HttpResponse<string>> {
+		GET_DeleteStackInstances(StackSetName: string, Accounts: Array<string> | null | undefined, DeploymentTargets: GET_DeleteStackInstancesDeploymentTargets | null | undefined, Regions: Array<string>, OperationPreferences: GET_DeleteStackInstancesOperationPreferences | null | undefined, RetainStacks: boolean, OperationId: string | null | undefined, Action: GET_DeleteStackInstancesAction, Version: GET_DeleteStackInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&RetainStacks=' + RetainStacks + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1674,7 +1674,7 @@ export namespace MyNS {
 		 * @param {string} VersionId The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the type version when it is registered.
 		 * @return {void} Success
 		 */
-		GET_DeregisterType(Arn: string, Type: DescribeTypeOutputType, TypeName: string, VersionId: string, Action: GET_DeregisterTypeAction, Version: GET_DeregisterTypeVersion): Observable<HttpResponse<string>> {
+		GET_DeregisterType(Arn: string | null | undefined, Type: DescribeTypeOutputType | null | undefined, TypeName: string | null | undefined, VersionId: string | null | undefined, Action: GET_DeregisterTypeAction, Version: GET_DeregisterTypeVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeregisterType?Arn=' + (Arn == null ? '' : encodeURIComponent(Arn)) + '&Type=' + Type + '&TypeName=' + (TypeName == null ? '' : encodeURIComponent(TypeName)) + '&VersionId=' + (VersionId == null ? '' : encodeURIComponent(VersionId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1684,7 +1684,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string that identifies the next page of limits that you want to retrieve.
 		 * @return {void} Success
 		 */
-		GET_DescribeAccountLimits(NextToken: string, Action: GET_DescribeAccountLimitsAction, Version: GET_DescribeAccountLimitsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAccountLimits(NextToken: string | null | undefined, Action: GET_DescribeAccountLimitsAction, Version: GET_DescribeAccountLimitsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAccountLimits?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1696,7 +1696,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string (provided by the <a>DescribeChangeSet</a> response output) that identifies the next page of information that you want to retrieve.
 		 * @return {void} Success
 		 */
-		GET_DescribeChangeSet(ChangeSetName: string, StackName: string, NextToken: string, Action: GET_DescribeChangeSetAction, Version: GET_DescribeChangeSetVersion): Observable<HttpResponse<string>> {
+		GET_DescribeChangeSet(ChangeSetName: string, StackName: string | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeChangeSetAction, Version: GET_DescribeChangeSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeChangeSet?ChangeSetName=' + (ChangeSetName == null ? '' : encodeURIComponent(ChangeSetName)) + '&StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1717,7 +1717,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string that identifies the next page of events that you want to retrieve.
 		 * @return {void} Success
 		 */
-		GET_DescribeStackEvents(StackName: string, NextToken: string, Action: GET_DescribeStackEventsAction, Version: GET_DescribeStackEventsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeStackEvents(StackName: string | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeStackEventsAction, Version: GET_DescribeStackEventsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeStackEvents?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1753,7 +1753,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.
 		 * @return {void} Success
 		 */
-		GET_DescribeStackResourceDrifts(StackName: string, StackResourceDriftStatusFilters: Array<StackResourceDriftStatus>, NextToken: string, MaxResults: number, Action: GET_DescribeStackResourceDriftsAction, Version: GET_DescribeStackResourceDriftsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeStackResourceDrifts(StackName: string, StackResourceDriftStatusFilters: Array<StackResourceDriftStatus> | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_DescribeStackResourceDriftsAction, Version: GET_DescribeStackResourceDriftsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeStackResourceDrifts?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + StackResourceDriftStatusFilters.map(z => `StackResourceDriftStatusFilters=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 		 * @param {string} PhysicalResourceId <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack the instance belongs to and what other resources are part of the stack.</p> <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p> <p>Default: There is no default value.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeStackResources(StackName: string, LogicalResourceId: string, PhysicalResourceId: string, Action: GET_DescribeStackResourcesAction, Version: GET_DescribeStackResourcesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeStackResources(StackName: string | null | undefined, LogicalResourceId: string | null | undefined, PhysicalResourceId: string | null | undefined, Action: GET_DescribeStackResourcesAction, Version: GET_DescribeStackResourcesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeStackResources?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&LogicalResourceId=' + (LogicalResourceId == null ? '' : encodeURIComponent(LogicalResourceId)) + '&PhysicalResourceId=' + (PhysicalResourceId == null ? '' : encodeURIComponent(PhysicalResourceId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1797,7 +1797,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string that identifies the next page of stacks that you want to retrieve.
 		 * @return {void} Success
 		 */
-		GET_DescribeStacks(StackName: string, NextToken: string, Action: GET_DescribeStacksAction, Version: GET_DescribeStacksVersion): Observable<HttpResponse<string>> {
+		GET_DescribeStacks(StackName: string | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeStacksAction, Version: GET_DescribeStacksVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeStacks?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1810,7 +1810,7 @@ export namespace MyNS {
 		 * @param {string} VersionId <p>The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the type version when it is registered.</p> <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type version. Otherwise, it returns information about the default type version.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeType(Type: DescribeTypeOutputType, TypeName: string, Arn: string, VersionId: string, Action: GET_DescribeTypeAction, Version: GET_DescribeTypeVersion): Observable<HttpResponse<string>> {
+		GET_DescribeType(Type: DescribeTypeOutputType | null | undefined, TypeName: string | null | undefined, Arn: string | null | undefined, VersionId: string | null | undefined, Action: GET_DescribeTypeAction, Version: GET_DescribeTypeVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeType?Type=' + Type + '&TypeName=' + (TypeName == null ? '' : encodeURIComponent(TypeName)) + '&Arn=' + (Arn == null ? '' : encodeURIComponent(Arn)) + '&VersionId=' + (VersionId == null ? '' : encodeURIComponent(VersionId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1831,7 +1831,7 @@ export namespace MyNS {
 		 * @param {Array<string>} LogicalResourceIds The logical names of any resources you want to use as filters.
 		 * @return {void} Success
 		 */
-		GET_DetectStackDrift(StackName: string, LogicalResourceIds: Array<string>, Action: GET_DetectStackDriftAction, Version: GET_DetectStackDriftVersion): Observable<HttpResponse<string>> {
+		GET_DetectStackDrift(StackName: string, LogicalResourceIds: Array<string> | null | undefined, Action: GET_DetectStackDriftAction, Version: GET_DetectStackDriftVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DetectStackDrift?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + LogicalResourceIds.map(z => `LogicalResourceIds=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1853,7 +1853,7 @@ export namespace MyNS {
 		 * @param {string} OperationId  <i>The ID of the stack set operation.</i> 
 		 * @return {void} Success
 		 */
-		GET_DetectStackSetDrift(StackSetName: string, OperationPreferences: GET_DetectStackSetDriftOperationPreferences, OperationId: string, Action: GET_DetectStackSetDriftAction, Version: GET_DetectStackSetDriftVersion): Observable<HttpResponse<string>> {
+		GET_DetectStackSetDrift(StackSetName: string, OperationPreferences: GET_DetectStackSetDriftOperationPreferences | null | undefined, OperationId: string | null | undefined, Action: GET_DetectStackSetDriftAction, Version: GET_DetectStackSetDriftVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DetectStackSetDrift?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&OperationPreferences=' + OperationPreferences + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1865,7 +1865,7 @@ export namespace MyNS {
 		 * @param {Array<Parameter>} Parameters A list of <code>Parameter</code> structures that specify input parameters.
 		 * @return {void} Success
 		 */
-		GET_EstimateTemplateCost(TemplateBody: string, TemplateURL: string, Parameters: Array<Parameter>, Action: GET_EstimateTemplateCostAction, Version: GET_EstimateTemplateCostVersion): Observable<HttpResponse<string>> {
+		GET_EstimateTemplateCost(TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, Parameters: Array<Parameter> | null | undefined, Action: GET_EstimateTemplateCostAction, Version: GET_EstimateTemplateCostVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=EstimateTemplateCost?TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1877,7 +1877,7 @@ export namespace MyNS {
 		 * @param {string} ClientRequestToken A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation successfully received them.
 		 * @return {void} Success
 		 */
-		GET_ExecuteChangeSet(ChangeSetName: string, StackName: string, ClientRequestToken: string, Action: GET_ExecuteChangeSetAction, Version: GET_ExecuteChangeSetVersion): Observable<HttpResponse<string>> {
+		GET_ExecuteChangeSet(ChangeSetName: string, StackName: string | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_ExecuteChangeSetAction, Version: GET_ExecuteChangeSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ExecuteChangeSet?ChangeSetName=' + (ChangeSetName == null ? '' : encodeURIComponent(ChangeSetName)) + '&StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1899,7 +1899,7 @@ export namespace MyNS {
 		 * @param {TemplateStage} TemplateStage <p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>
 		 * @return {void} Success
 		 */
-		GET_GetTemplate(StackName: string, ChangeSetName: string, TemplateStage: TemplateStage, Action: GET_GetTemplateAction, Version: GET_GetTemplateVersion): Observable<HttpResponse<string>> {
+		GET_GetTemplate(StackName: string | null | undefined, ChangeSetName: string | null | undefined, TemplateStage: TemplateStage | null | undefined, Action: GET_GetTemplateAction, Version: GET_GetTemplateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetTemplate?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&ChangeSetName=' + (ChangeSetName == null ? '' : encodeURIComponent(ChangeSetName)) + '&TemplateStage=' + TemplateStage + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1912,7 +1912,7 @@ export namespace MyNS {
 		 * @param {string} StackSetName <p>The name or unique ID of the stack set from which the stack was created.</p> <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
 		 * @return {void} Success
 		 */
-		GET_GetTemplateSummary(TemplateBody: string, TemplateURL: string, StackName: string, StackSetName: string, Action: GET_GetTemplateSummaryAction, Version: GET_GetTemplateSummaryVersion): Observable<HttpResponse<string>> {
+		GET_GetTemplateSummary(TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, StackName: string | null | undefined, StackSetName: string | null | undefined, Action: GET_GetTemplateSummaryAction, Version: GET_GetTemplateSummaryVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetTemplateSummary?TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1923,7 +1923,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string (provided by the <a>ListChangeSets</a> response output) that identifies the next page of change sets that you want to retrieve.
 		 * @return {void} Success
 		 */
-		GET_ListChangeSets(StackName: string, NextToken: string, Action: GET_ListChangeSetsAction, Version: GET_ListChangeSetsVersion): Observable<HttpResponse<string>> {
+		GET_ListChangeSets(StackName: string, NextToken: string | null | undefined, Action: GET_ListChangeSetsAction, Version: GET_ListChangeSetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListChangeSets?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1933,7 +1933,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string (provided by the <a>ListExports</a> response output) that identifies the next page of exported output values that you asked to retrieve.
 		 * @return {void} Success
 		 */
-		GET_ListExports(NextToken: string, Action: GET_ListExportsAction, Version: GET_ListExportsVersion): Observable<HttpResponse<string>> {
+		GET_ListExports(NextToken: string | null | undefined, Action: GET_ListExportsAction, Version: GET_ListExportsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListExports?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1944,7 +1944,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. 
 		 * @return {void} Success
 		 */
-		GET_ListImports(ExportName: string, NextToken: string, Action: GET_ListImportsAction, Version: GET_ListImportsVersion): Observable<HttpResponse<string>> {
+		GET_ListImports(ExportName: string, NextToken: string | null | undefined, Action: GET_ListImportsAction, Version: GET_ListImportsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListImports?ExportName=' + (ExportName == null ? '' : encodeURIComponent(ExportName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1958,7 +1958,7 @@ export namespace MyNS {
 		 * @param {string} StackInstanceRegion The name of the Region where you want to list stack instances. 
 		 * @return {void} Success
 		 */
-		GET_ListStackInstances(StackSetName: string, NextToken: string, MaxResults: number, StackInstanceAccount: string, StackInstanceRegion: string, Action: GET_ListStackInstancesAction, Version: GET_ListStackInstancesVersion): Observable<HttpResponse<string>> {
+		GET_ListStackInstances(StackSetName: string, NextToken: string | null | undefined, MaxResults: number | null | undefined, StackInstanceAccount: string | null | undefined, StackInstanceRegion: string | null | undefined, Action: GET_ListStackInstancesAction, Version: GET_ListStackInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&StackInstanceAccount=' + (StackInstanceAccount == null ? '' : encodeURIComponent(StackInstanceAccount)) + '&StackInstanceRegion=' + (StackInstanceRegion == null ? '' : encodeURIComponent(StackInstanceRegion)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1969,7 +1969,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A string that identifies the next page of stack resources that you want to retrieve.
 		 * @return {void} Success
 		 */
-		GET_ListStackResources(StackName: string, NextToken: string, Action: GET_ListStackResourcesAction, Version: GET_ListStackResourcesVersion): Observable<HttpResponse<string>> {
+		GET_ListStackResources(StackName: string, NextToken: string | null | undefined, Action: GET_ListStackResourcesAction, Version: GET_ListStackResourcesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListStackResources?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1982,7 +1982,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.
 		 * @return {void} Success
 		 */
-		GET_ListStackSetOperationResults(StackSetName: string, OperationId: string, NextToken: string, MaxResults: number, Action: GET_ListStackSetOperationResultsAction, Version: GET_ListStackSetOperationResultsVersion): Observable<HttpResponse<string>> {
+		GET_ListStackSetOperationResults(StackSetName: string, OperationId: string, NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_ListStackSetOperationResultsAction, Version: GET_ListStackSetOperationResultsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListStackSetOperationResults?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1994,7 +1994,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.
 		 * @return {void} Success
 		 */
-		GET_ListStackSetOperations(StackSetName: string, NextToken: string, MaxResults: number, Action: GET_ListStackSetOperationsAction, Version: GET_ListStackSetOperationsVersion): Observable<HttpResponse<string>> {
+		GET_ListStackSetOperations(StackSetName: string, NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_ListStackSetOperationsAction, Version: GET_ListStackSetOperationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListStackSetOperations?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2006,7 +2006,7 @@ export namespace MyNS {
 		 * @param {StackSetStatus} Status The status of the stack sets that you want to get summary information about.
 		 * @return {void} Success
 		 */
-		GET_ListStackSets(NextToken: string, MaxResults: number, Status: StackSetStatus, Action: GET_ListStackSetsAction, Version: GET_ListStackSetsVersion): Observable<HttpResponse<string>> {
+		GET_ListStackSets(NextToken: string | null | undefined, MaxResults: number | null | undefined, Status: StackSetStatus | null | undefined, Action: GET_ListStackSetsAction, Version: GET_ListStackSetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListStackSets?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Status=' + Status + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2017,7 +2017,7 @@ export namespace MyNS {
 		 * @param {Array<StackStatus>} StackStatusFilter Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.
 		 * @return {void} Success
 		 */
-		GET_ListStacks(NextToken: string, StackStatusFilter: Array<StackStatus>, Action: GET_ListStacksAction, Version: GET_ListStacksVersion): Observable<HttpResponse<string>> {
+		GET_ListStacks(NextToken: string | null | undefined, StackStatusFilter: Array<StackStatus> | null | undefined, Action: GET_ListStacksAction, Version: GET_ListStacksVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListStacks?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&' + StackStatusFilter.map(z => `StackStatusFilter=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2032,7 +2032,7 @@ export namespace MyNS {
 		 * @param {string} NextToken If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
 		 * @return {void} Success
 		 */
-		GET_ListTypeRegistrations(Type: DescribeTypeOutputType, TypeName: string, TypeArn: string, RegistrationStatusFilter: DescribeTypeRegistrationOutputProgressStatus, MaxResults: number, NextToken: string, Action: GET_ListTypeRegistrationsAction, Version: GET_ListTypeRegistrationsVersion): Observable<HttpResponse<string>> {
+		GET_ListTypeRegistrations(Type: DescribeTypeOutputType | null | undefined, TypeName: string | null | undefined, TypeArn: string | null | undefined, RegistrationStatusFilter: DescribeTypeRegistrationOutputProgressStatus | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined, Action: GET_ListTypeRegistrationsAction, Version: GET_ListTypeRegistrationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListTypeRegistrations?Type=' + Type + '&TypeName=' + (TypeName == null ? '' : encodeURIComponent(TypeName)) + '&TypeArn=' + (TypeArn == null ? '' : encodeURIComponent(TypeArn)) + '&RegistrationStatusFilter=' + RegistrationStatusFilter + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2047,7 +2047,7 @@ export namespace MyNS {
 		 * @param {DescribeTypeOutputDeprecatedStatus} DeprecatedStatus <p>The deprecation status of the type versions that you want to get summary information about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The type version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The type version has been deregistered and can no longer be used in CloudFormation operations. </p> </li> </ul> <p>The default is <code>LIVE</code>.</p>
 		 * @return {void} Success
 		 */
-		GET_ListTypeVersions(Type: DescribeTypeOutputType, TypeName: string, Arn: string, MaxResults: number, NextToken: string, DeprecatedStatus: DescribeTypeOutputDeprecatedStatus, Action: GET_ListTypeVersionsAction, Version: GET_ListTypeVersionsVersion): Observable<HttpResponse<string>> {
+		GET_ListTypeVersions(Type: DescribeTypeOutputType | null | undefined, TypeName: string | null | undefined, Arn: string | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined, DeprecatedStatus: DescribeTypeOutputDeprecatedStatus | null | undefined, Action: GET_ListTypeVersionsAction, Version: GET_ListTypeVersionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListTypeVersions?Type=' + Type + '&TypeName=' + (TypeName == null ? '' : encodeURIComponent(TypeName)) + '&Arn=' + (Arn == null ? '' : encodeURIComponent(Arn)) + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&DeprecatedStatus=' + DeprecatedStatus + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2061,7 +2061,7 @@ export namespace MyNS {
 		 * @param {string} NextToken If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
 		 * @return {void} Success
 		 */
-		GET_ListTypes(Visibility: DescribeTypeOutputVisibility, ProvisioningType: DescribeTypeOutputProvisioningType, DeprecatedStatus: DescribeTypeOutputDeprecatedStatus, MaxResults: number, NextToken: string, Action: GET_ListTypesAction, Version: GET_ListTypesVersion): Observable<HttpResponse<string>> {
+		GET_ListTypes(Visibility: DescribeTypeOutputVisibility | null | undefined, ProvisioningType: DescribeTypeOutputProvisioningType | null | undefined, DeprecatedStatus: DescribeTypeOutputDeprecatedStatus | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined, Action: GET_ListTypesAction, Version: GET_ListTypesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListTypes?Visibility=' + Visibility + '&ProvisioningType=' + ProvisioningType + '&DeprecatedStatus=' + DeprecatedStatus + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2077,7 +2077,7 @@ export namespace MyNS {
 		 * @param {string} ClientRequestToken Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.
 		 * @return {void} Success
 		 */
-		GET_RecordHandlerProgress(BearerToken: string, OperationStatus: OperationStatus, CurrentOperationStatus: OperationStatus, StatusMessage: string, ErrorCode: HandlerErrorCode, ResourceModel: string, ClientRequestToken: string, Action: GET_RecordHandlerProgressAction, Version: GET_RecordHandlerProgressVersion): Observable<HttpResponse<string>> {
+		GET_RecordHandlerProgress(BearerToken: string, OperationStatus: OperationStatus, CurrentOperationStatus: OperationStatus | null | undefined, StatusMessage: string | null | undefined, ErrorCode: HandlerErrorCode | null | undefined, ResourceModel: string | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_RecordHandlerProgressAction, Version: GET_RecordHandlerProgressVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RecordHandlerProgress?BearerToken=' + (BearerToken == null ? '' : encodeURIComponent(BearerToken)) + '&OperationStatus=' + OperationStatus + '&CurrentOperationStatus=' + CurrentOperationStatus + '&StatusMessage=' + (StatusMessage == null ? '' : encodeURIComponent(StatusMessage)) + '&ErrorCode=' + ErrorCode + '&ResourceModel=' + (ResourceModel == null ? '' : encodeURIComponent(ResourceModel)) + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2092,7 +2092,7 @@ export namespace MyNS {
 		 * @param {string} ClientRequestToken A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of a type from the same registeration request, even if the request is submitted multiple times. 
 		 * @return {void} Success
 		 */
-		GET_RegisterType(Type: DescribeTypeOutputType, TypeName: string, SchemaHandlerPackage: string, LoggingConfig: GET_RegisterTypeLoggingConfig, ExecutionRoleArn: string, ClientRequestToken: string, Action: GET_RegisterTypeAction, Version: GET_RegisterTypeVersion): Observable<HttpResponse<string>> {
+		GET_RegisterType(Type: DescribeTypeOutputType | null | undefined, TypeName: string, SchemaHandlerPackage: string, LoggingConfig: GET_RegisterTypeLoggingConfig | null | undefined, ExecutionRoleArn: string | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_RegisterTypeAction, Version: GET_RegisterTypeVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RegisterType?Type=' + Type + '&TypeName=' + (TypeName == null ? '' : encodeURIComponent(TypeName)) + '&SchemaHandlerPackage=' + (SchemaHandlerPackage == null ? '' : encodeURIComponent(SchemaHandlerPackage)) + '&LoggingConfig=' + LoggingConfig + '&ExecutionRoleArn=' + (ExecutionRoleArn == null ? '' : encodeURIComponent(ExecutionRoleArn)) + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2104,7 +2104,7 @@ export namespace MyNS {
 		 * @param {string} StackPolicyURL Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
 		 * @return {void} Success
 		 */
-		GET_SetStackPolicy(StackName: string, StackPolicyBody: string, StackPolicyURL: string, Action: GET_SetStackPolicyAction, Version: GET_SetStackPolicyVersion): Observable<HttpResponse<string>> {
+		GET_SetStackPolicy(StackName: string, StackPolicyBody: string | null | undefined, StackPolicyURL: string | null | undefined, Action: GET_SetStackPolicyAction, Version: GET_SetStackPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetStackPolicy?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&StackPolicyBody=' + (StackPolicyBody == null ? '' : encodeURIComponent(StackPolicyBody)) + '&StackPolicyURL=' + (StackPolicyURL == null ? '' : encodeURIComponent(StackPolicyURL)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2117,7 +2117,7 @@ export namespace MyNS {
 		 * @param {string} VersionId The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the type version when it is registered.
 		 * @return {void} Success
 		 */
-		GET_SetTypeDefaultVersion(Arn: string, Type: DescribeTypeOutputType, TypeName: string, VersionId: string, Action: GET_SetTypeDefaultVersionAction, Version: GET_SetTypeDefaultVersionVersion): Observable<HttpResponse<string>> {
+		GET_SetTypeDefaultVersion(Arn: string | null | undefined, Type: DescribeTypeOutputType | null | undefined, TypeName: string | null | undefined, VersionId: string | null | undefined, Action: GET_SetTypeDefaultVersionAction, Version: GET_SetTypeDefaultVersionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetTypeDefaultVersion?Arn=' + (Arn == null ? '' : encodeURIComponent(Arn)) + '&Type=' + Type + '&TypeName=' + (TypeName == null ? '' : encodeURIComponent(TypeName)) + '&VersionId=' + (VersionId == null ? '' : encodeURIComponent(VersionId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2166,7 +2166,7 @@ export namespace MyNS {
 		 * @param {string} ClientRequestToken <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to update a stack with the same name. You might retry <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully received them.</p> <p>All events triggered by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p> <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
 		 * @return {void} Success
 		 */
-		GET_UpdateStack(StackName: string, TemplateBody: string, TemplateURL: string, UsePreviousTemplate: boolean, StackPolicyDuringUpdateBody: string, StackPolicyDuringUpdateURL: string, Parameters: Array<Parameter>, Capabilities: Array<Capability>, ResourceTypes: Array<string>, RoleARN: string, RollbackConfiguration: GET_UpdateStackRollbackConfiguration, StackPolicyBody: string, StackPolicyURL: string, NotificationARNs: Array<string>, Tags: Array<Tag>, ClientRequestToken: string, Action: GET_UpdateStackAction, Version: GET_UpdateStackVersion): Observable<HttpResponse<string>> {
+		GET_UpdateStack(StackName: string, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, UsePreviousTemplate: boolean | null | undefined, StackPolicyDuringUpdateBody: string | null | undefined, StackPolicyDuringUpdateURL: string | null | undefined, Parameters: Array<Parameter> | null | undefined, Capabilities: Array<Capability> | null | undefined, ResourceTypes: Array<string> | null | undefined, RoleARN: string | null | undefined, RollbackConfiguration: GET_UpdateStackRollbackConfiguration | null | undefined, StackPolicyBody: string | null | undefined, StackPolicyURL: string | null | undefined, NotificationARNs: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_UpdateStackAction, Version: GET_UpdateStackVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&StackPolicyDuringUpdateBody=' + (StackPolicyDuringUpdateBody == null ? '' : encodeURIComponent(StackPolicyDuringUpdateBody)) + '&StackPolicyDuringUpdateURL=' + (StackPolicyDuringUpdateURL == null ? '' : encodeURIComponent(StackPolicyDuringUpdateURL)) + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&RollbackConfiguration=' + RollbackConfiguration + '&StackPolicyBody=' + (StackPolicyBody == null ? '' : encodeURIComponent(StackPolicyBody)) + '&StackPolicyURL=' + (StackPolicyURL == null ? '' : encodeURIComponent(StackPolicyURL)) + '&' + NotificationARNs.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2182,7 +2182,7 @@ export namespace MyNS {
 		 * @param {string} OperationId <p>The unique identifier for this stack set operation. </p> <p>The operation ID also functions as an idempotency token, to ensure that AWS CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that AWS CloudFormation successfully received them.</p> <p>If you don't specify an operation ID, the SDK generates one automatically. </p>
 		 * @return {void} Success
 		 */
-		GET_UpdateStackInstances(StackSetName: string, Accounts: Array<string>, DeploymentTargets: GET_UpdateStackInstancesDeploymentTargets, Regions: Array<string>, ParameterOverrides: Array<Parameter>, OperationPreferences: GET_UpdateStackInstancesOperationPreferences, OperationId: string, Action: GET_UpdateStackInstancesAction, Version: GET_UpdateStackInstancesVersion): Observable<HttpResponse<string>> {
+		GET_UpdateStackInstances(StackSetName: string, Accounts: Array<string> | null | undefined, DeploymentTargets: GET_UpdateStackInstancesDeploymentTargets | null | undefined, Regions: Array<string>, ParameterOverrides: Array<Parameter> | null | undefined, OperationPreferences: GET_UpdateStackInstancesOperationPreferences | null | undefined, OperationId: string | null | undefined, Action: GET_UpdateStackInstancesAction, Version: GET_UpdateStackInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&' + ParameterOverrides.map(z => `ParameterOverrides=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2208,7 +2208,7 @@ export namespace MyNS {
 		 * @param {Array<string>} Regions <p>The Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts in which to update stack set instances.</p> <p>To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p> <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status. </p>
 		 * @return {void} Success
 		 */
-		GET_UpdateStackSet(StackSetName: string, Description: string, TemplateBody: string, TemplateURL: string, UsePreviousTemplate: boolean, Parameters: Array<Parameter>, Capabilities: Array<Capability>, Tags: Array<Tag>, OperationPreferences: GET_UpdateStackSetOperationPreferences, AdministrationRoleARN: string, ExecutionRoleName: string, DeploymentTargets: GET_UpdateStackSetDeploymentTargets, PermissionModel: StackSetPermissionModel, AutoDeployment: GET_UpdateStackSetAutoDeployment, OperationId: string, Accounts: Array<string>, Regions: Array<string>, Action: GET_UpdateStackSetAction, Version: GET_UpdateStackSetVersion): Observable<HttpResponse<string>> {
+		GET_UpdateStackSet(StackSetName: string, Description: string | null | undefined, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, UsePreviousTemplate: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Capabilities: Array<Capability> | null | undefined, Tags: Array<Tag> | null | undefined, OperationPreferences: GET_UpdateStackSetOperationPreferences | null | undefined, AdministrationRoleARN: string | null | undefined, ExecutionRoleName: string | null | undefined, DeploymentTargets: GET_UpdateStackSetDeploymentTargets | null | undefined, PermissionModel: StackSetPermissionModel | null | undefined, AutoDeployment: GET_UpdateStackSetAutoDeployment | null | undefined, OperationId: string | null | undefined, Accounts: Array<string> | null | undefined, Regions: Array<string> | null | undefined, Action: GET_UpdateStackSetAction, Version: GET_UpdateStackSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateStackSet?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&AdministrationRoleARN=' + (AdministrationRoleARN == null ? '' : encodeURIComponent(AdministrationRoleARN)) + '&ExecutionRoleName=' + (ExecutionRoleName == null ? '' : encodeURIComponent(ExecutionRoleName)) + '&DeploymentTargets=' + DeploymentTargets + '&PermissionModel=' + PermissionModel + '&AutoDeployment=' + AutoDeployment + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&' + Accounts.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2230,7 +2230,7 @@ export namespace MyNS {
 		 * @param {string} TemplateURL <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
 		 * @return {void} Success
 		 */
-		GET_ValidateTemplate(TemplateBody: string, TemplateURL: string, Action: GET_ValidateTemplateAction, Version: GET_ValidateTemplateVersion): Observable<HttpResponse<string>> {
+		GET_ValidateTemplate(TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, Action: GET_ValidateTemplateAction, Version: GET_ValidateTemplateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ValidateTemplate?TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}

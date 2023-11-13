@@ -744,7 +744,7 @@ export namespace MyNS {
 		 *  </table>
 		 * @return {void} Successful response
 		 */
-		Composer_projects_locations_environments_patch(name: string, updateMask: string, requestBody: Environment): Observable<HttpResponse<string>> {
+		Composer_projects_locations_environments_patch(name: string, updateMask: string | null | undefined, requestBody: Environment): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -765,7 +765,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Composer_projects_locations_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Composer_projects_locations_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -778,7 +778,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Composer_projects_locations_environments_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Composer_projects_locations_environments_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/environments&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -802,7 +802,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Composer_projects_locations_imageVersions_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Composer_projects_locations_imageVersions_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/imageVersions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

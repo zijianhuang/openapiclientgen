@@ -341,7 +341,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupResourcesOutput} Success
 		 */
-		ListGroupResources(GroupName: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string, requestBody: ListGroupResourcesPostBody): Observable<ListGroupResourcesOutput> {
+		ListGroupResources(GroupName: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListGroupResourcesPostBody): Observable<ListGroupResourcesOutput> {
 			return this.http.post<ListGroupResourcesOutput>(this.baseUri + 'groups/' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '/resource-identifiers-list&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -354,7 +354,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupsOutput} Success
 		 */
-		ListGroups(maxResults: number, nextToken: string, MaxResults: string, NextToken: string, requestBody: ListGroupsPostBody): Observable<ListGroupsOutput> {
+		ListGroups(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListGroupsPostBody): Observable<ListGroupsOutput> {
 			return this.http.post<ListGroupsOutput>(this.baseUri + 'groups-list?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -365,7 +365,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchResourcesOutput} Success
 		 */
-		SearchResources(MaxResults: string, NextToken: string, requestBody: SearchResourcesPostBody): Observable<SearchResourcesOutput> {
+		SearchResources(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: SearchResourcesPostBody): Observable<SearchResourcesOutput> {
 			return this.http.post<SearchResourcesOutput>(this.baseUri + 'resources/search?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 	}

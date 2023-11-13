@@ -382,7 +382,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeCanariesResponse} Success
 		 */
-		DescribeCanaries(MaxResults: string, NextToken: string, requestBody: DescribeCanariesPostBody): Observable<DescribeCanariesResponse> {
+		DescribeCanaries(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeCanariesPostBody): Observable<DescribeCanariesResponse> {
 			return this.http.post<DescribeCanariesResponse>(this.baseUri + 'canaries?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -393,7 +393,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeCanariesLastRunResponse} Success
 		 */
-		DescribeCanariesLastRun(MaxResults: string, NextToken: string, requestBody: DescribeCanariesLastRunPostBody): Observable<DescribeCanariesLastRunResponse> {
+		DescribeCanariesLastRun(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeCanariesLastRunPostBody): Observable<DescribeCanariesLastRunResponse> {
 			return this.http.post<DescribeCanariesLastRunResponse>(this.baseUri + 'canaries/last-run?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -404,7 +404,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeRuntimeVersionsResponse} Success
 		 */
-		DescribeRuntimeVersions(MaxResults: string, NextToken: string, requestBody: DescribeRuntimeVersionsPostBody): Observable<DescribeRuntimeVersionsResponse> {
+		DescribeRuntimeVersions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeRuntimeVersionsPostBody): Observable<DescribeRuntimeVersionsResponse> {
 			return this.http.post<DescribeRuntimeVersionsResponse>(this.baseUri + 'runtime-versions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -416,7 +416,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCanaryRunsResponse} Success
 		 */
-		GetCanaryRuns(name: string, MaxResults: string, NextToken: string, requestBody: GetCanaryRunsPostBody): Observable<GetCanaryRunsResponse> {
+		GetCanaryRuns(name: string, MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetCanaryRunsPostBody): Observable<GetCanaryRunsResponse> {
 			return this.http.post<GetCanaryRunsResponse>(this.baseUri + 'canary/' + (name == null ? '' : encodeURIComponent(name)) + '/runs&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

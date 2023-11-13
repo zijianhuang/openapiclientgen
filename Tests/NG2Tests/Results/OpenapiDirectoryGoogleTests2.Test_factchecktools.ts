@@ -298,7 +298,7 @@ export namespace MyNS {
 		 * @param {string} reviewPublisherSiteFilter The review publisher site to filter results by, e.g. nytimes.com.
 		 * @return {void} Successful response
 		 */
-		Factchecktools_claims_search(languageCode: string, maxAgeDays: number, offset: number, pageSize: number, pageToken: string, query: string, reviewPublisherSiteFilter: string): Observable<HttpResponse<string>> {
+		Factchecktools_claims_search(languageCode: string | null | undefined, maxAgeDays: number | null | undefined, offset: number | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined, reviewPublisherSiteFilter: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1alpha1/claims:search?languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&maxAgeDays=' + maxAgeDays + '&offset=' + offset + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&reviewPublisherSiteFilter=' + (reviewPublisherSiteFilter == null ? '' : encodeURIComponent(reviewPublisherSiteFilter)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -324,7 +324,7 @@ export namespace MyNS {
 		 * an organization.
 		 * @return {void} Successful response
 		 */
-		Factchecktools_pages_list(offset: number, organization: string, pageSize: number, pageToken: string, url: string): Observable<HttpResponse<string>> {
+		Factchecktools_pages_list(offset: number | null | undefined, organization: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, url: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1alpha1/pages?offset=' + offset + '&organization=' + (organization == null ? '' : encodeURIComponent(organization)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&url=' + (url == null ? '' : encodeURIComponent(url)), { observe: 'response', responseType: 'text' });
 		}
 

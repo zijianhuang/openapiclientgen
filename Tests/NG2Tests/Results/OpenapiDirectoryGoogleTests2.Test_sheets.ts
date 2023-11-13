@@ -8797,7 +8797,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ranges The ranges to retrieve from the spreadsheet.
 		 * @return {void} Successful response
 		 */
-		Sheets_spreadsheets_get(spreadsheetId: string, includeGridData: boolean, ranges: Array<string>): Observable<HttpResponse<string>> {
+		Sheets_spreadsheets_get(spreadsheetId: string, includeGridData: boolean | null | undefined, ranges: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v4/spreadsheets/' + (spreadsheetId == null ? '' : encodeURIComponent(spreadsheetId)) + '&includeGridData=' + includeGridData + '&' + ranges.map(z => `ranges=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -8859,7 +8859,7 @@ export namespace MyNS {
 		 * The default render option is ValueRenderOption.FORMATTED_VALUE.
 		 * @return {void} Successful response
 		 */
-		Sheets_spreadsheets_values_get(spreadsheetId: string, range: string, dateTimeRenderOption: BatchGetValuesByDataFilterRequestDateTimeRenderOption, majorDimension: DimensionRangeDimension, valueRenderOption: BatchGetValuesByDataFilterRequestValueRenderOption): Observable<HttpResponse<string>> {
+		Sheets_spreadsheets_values_get(spreadsheetId: string, range: string, dateTimeRenderOption: BatchGetValuesByDataFilterRequestDateTimeRenderOption | null | undefined, majorDimension: DimensionRangeDimension | null | undefined, valueRenderOption: BatchGetValuesByDataFilterRequestValueRenderOption | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v4/spreadsheets/' + (spreadsheetId == null ? '' : encodeURIComponent(spreadsheetId)) + '/values/' + (range == null ? '' : encodeURIComponent(range)) + '&dateTimeRenderOption=' + dateTimeRenderOption + '&majorDimension=' + majorDimension + '&valueRenderOption=' + valueRenderOption, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8886,7 +8886,7 @@ export namespace MyNS {
 		 * @param {BatchUpdateValuesByDataFilterRequestValueInputOption} valueInputOption How the input data should be interpreted.
 		 * @return {void} Successful response
 		 */
-		Sheets_spreadsheets_values_update(spreadsheetId: string, range: string, includeValuesInResponse: boolean, responseDateTimeRenderOption: BatchGetValuesByDataFilterRequestDateTimeRenderOption, responseValueRenderOption: BatchGetValuesByDataFilterRequestValueRenderOption, valueInputOption: BatchUpdateValuesByDataFilterRequestValueInputOption, requestBody: ValueRange): Observable<HttpResponse<string>> {
+		Sheets_spreadsheets_values_update(spreadsheetId: string, range: string, includeValuesInResponse: boolean | null | undefined, responseDateTimeRenderOption: BatchGetValuesByDataFilterRequestDateTimeRenderOption | null | undefined, responseValueRenderOption: BatchGetValuesByDataFilterRequestValueRenderOption | null | undefined, valueInputOption: BatchUpdateValuesByDataFilterRequestValueInputOption | null | undefined, requestBody: ValueRange): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v4/spreadsheets/' + (spreadsheetId == null ? '' : encodeURIComponent(spreadsheetId)) + '/values/' + (range == null ? '' : encodeURIComponent(range)) + '&includeValuesInResponse=' + includeValuesInResponse + '&responseDateTimeRenderOption=' + responseDateTimeRenderOption + '&responseValueRenderOption=' + responseValueRenderOption + '&valueInputOption=' + valueInputOption, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -8921,7 +8921,7 @@ export namespace MyNS {
 		 * @param {BatchUpdateValuesByDataFilterRequestValueInputOption} valueInputOption How the input data should be interpreted.
 		 * @return {void} Successful response
 		 */
-		Sheets_spreadsheets_values_append(spreadsheetId: string, range: string, includeValuesInResponse: boolean, insertDataOption: Sheets_spreadsheets_values_appendInsertDataOption, responseDateTimeRenderOption: BatchGetValuesByDataFilterRequestDateTimeRenderOption, responseValueRenderOption: BatchGetValuesByDataFilterRequestValueRenderOption, valueInputOption: BatchUpdateValuesByDataFilterRequestValueInputOption, requestBody: ValueRange): Observable<HttpResponse<string>> {
+		Sheets_spreadsheets_values_append(spreadsheetId: string, range: string, includeValuesInResponse: boolean | null | undefined, insertDataOption: Sheets_spreadsheets_values_appendInsertDataOption | null | undefined, responseDateTimeRenderOption: BatchGetValuesByDataFilterRequestDateTimeRenderOption | null | undefined, responseValueRenderOption: BatchGetValuesByDataFilterRequestValueRenderOption | null | undefined, valueInputOption: BatchUpdateValuesByDataFilterRequestValueInputOption | null | undefined, requestBody: ValueRange): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v4/spreadsheets/' + (spreadsheetId == null ? '' : encodeURIComponent(spreadsheetId)) + '/values/' + (range == null ? '' : encodeURIComponent(range)) + ':append&includeValuesInResponse=' + includeValuesInResponse + '&insertDataOption=' + insertDataOption + '&responseDateTimeRenderOption=' + responseDateTimeRenderOption + '&responseValueRenderOption=' + responseValueRenderOption + '&valueInputOption=' + valueInputOption, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -8985,7 +8985,7 @@ export namespace MyNS {
 		 * The default render option is ValueRenderOption.FORMATTED_VALUE.
 		 * @return {void} Successful response
 		 */
-		Sheets_spreadsheets_values_batchGet(spreadsheetId: string, dateTimeRenderOption: BatchGetValuesByDataFilterRequestDateTimeRenderOption, majorDimension: DimensionRangeDimension, ranges: Array<string>, valueRenderOption: BatchGetValuesByDataFilterRequestValueRenderOption): Observable<HttpResponse<string>> {
+		Sheets_spreadsheets_values_batchGet(spreadsheetId: string, dateTimeRenderOption: BatchGetValuesByDataFilterRequestDateTimeRenderOption | null | undefined, majorDimension: DimensionRangeDimension | null | undefined, ranges: Array<string> | null | undefined, valueRenderOption: BatchGetValuesByDataFilterRequestValueRenderOption | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v4/spreadsheets/' + (spreadsheetId == null ? '' : encodeURIComponent(spreadsheetId)) + '/values:batchGet&dateTimeRenderOption=' + dateTimeRenderOption + '&majorDimension=' + majorDimension + '&' + ranges.map(z => `ranges=${encodeURIComponent(z)}`).join('&') + '&valueRenderOption=' + valueRenderOption, { observe: 'response', responseType: 'text' });
 		}
 
