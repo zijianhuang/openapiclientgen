@@ -1,0 +1,22 @@
+{
+	"ClientNamespace": "My.Pet.Client",
+	"ContainerClassName": "PetClient",
+	"ActionNameStrategy": 4,
+	"UseEnsureSuccessStatusCodeEx": true,
+	"DecorateDataModelWithDataContract": true,
+	"DataContractNamespace": "http://pet.domain/2020/03",
+	"DataAnnotationsEnabled": true,
+	"DataAnnotationsToComments": true,
+	"HandleHttpRequestHeaders": true,
+
+	"Plugins": [
+		{
+			"AssemblyName": "Fonlow.OpenApiClientGen.NG2FormGroup",
+			"TargetDir": "./ng2/src/clientapi",
+			"TSFile": "ClientApiAuto.ts",
+			"AsModule": true,
+			"ContentType": "application/json;charset=UTF-8"
+		}
+	]
+
+}

@@ -41,6 +41,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// The measured skill for hunting
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -109,6 +110,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// The size of the pack the dog is from
+		/// Required
 		/// Minimum: 1
 		/// </summary>
 		[System.ComponentModel.DefaultValue(1)]
@@ -127,6 +129,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// Average amount of honey produced per day in ounces
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
@@ -213,6 +216,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// The name given to a pet
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -220,6 +224,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
+		/// Required
 		/// Maximum items: 20
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -406,7 +411,7 @@ namespace My.Pet.Client
 		/// UpdatePet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody, System.Threading.CancellationToken cancellationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pet";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -422,7 +427,7 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

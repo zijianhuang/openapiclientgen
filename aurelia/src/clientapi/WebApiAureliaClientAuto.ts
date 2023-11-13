@@ -2,16 +2,19 @@ import {HttpClient} from 'aurelia-fetch-client';
 import {autoinject} from 'aurelia-framework';
 export namespace My_Pet_Client {
 	export interface ApiResponse {
-		code?: number;
-		type?: string;
-		message?: string;
+		code?: number | null;
+		type?: string | null;
+		message?: string | null;
 	}
 
 
 	/** A representation of a cat */
 	export interface Cat extends Pet {
 
-		/** The measured skill for hunting */
+		/**
+		 * The measured skill for hunting
+		 * Required
+		 */
 		huntingSkill: CatHuntingSkill;
 	}
 
@@ -20,22 +23,22 @@ export namespace My_Pet_Client {
 	export interface Category {
 
 		/** Category ID */
-		id?: number;
+		id?: number | null;
 
 		/**
 		 * Category name
 		 * Min length: 1
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Test Sub Category */
-		sub?: CategorySub;
+		sub?: CategorySub | null;
 	}
 
 	export interface CategorySub {
 
 		/** Dumb Property */
-		prop1?: string;
+		prop1?: string | null;
 	}
 
 
@@ -44,6 +47,7 @@ export namespace My_Pet_Client {
 
 		/**
 		 * The size of the pack the dog is from
+		 * Required
 		 * Minimum: 1
 		 */
 		packSize: number;
@@ -53,30 +57,33 @@ export namespace My_Pet_Client {
 	/** A representation of a honey bee */
 	export interface HoneyBee extends Pet {
 
-		/** Average amount of honey produced per day in ounces */
+		/**
+		 * Average amount of honey produced per day in ounces
+		 * Required
+		 */
 		honeyPerDay: number;
 	}
 
 	export interface Order {
 
 		/** Order ID */
-		id?: number;
+		id?: number | null;
 
 		/** Pet ID */
-		petId?: number;
-		quantity?: number;
+		petId?: number | null;
+		quantity?: number | null;
 
 		/** Estimated ship date */
-		shipDate?: Date;
+		shipDate?: Date | null;
 
 		/** Order Status */
-		status?: OrderStatus;
+		status?: OrderStatus | null;
 
 		/** Indicates whenever order was completed or not */
-		complete?: boolean;
+		complete?: boolean | null;
 
 		/** Unique Request Id */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 	export enum OrderStatus { placed = 0, approved = 1, delivered = 2 }
@@ -84,88 +91,92 @@ export namespace My_Pet_Client {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number;
+		id?: number | null;
 
 		/** Categories this pet belongs to */
-		category?: Category;
+		category?: Category | null;
 
-		/** The name given to a pet */
+		/**
+		 * The name given to a pet
+		 * Required
+		 */
 		name: string;
 
 		/**
 		 * The list of URL to a cute photos featuring pet
+		 * Required
 		 * Maximum items: 20
 		 */
 		photoUrls: Array<string>;
-		friend?: Pet;
+		friend?: Pet | null;
 
 		/**
 		 * Tags attached to the pet
 		 * Minimum items: 1
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 
 		/** Pet status in the store */
-		status?: PetStatus;
+		status?: PetStatus | null;
 
 		/** Type of a pet */
-		petType?: string;
+		petType?: string | null;
 	}
 
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number;
+		id?: number | null;
 
 		/**
 		 * Tag name
 		 * Min length: 1
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export interface User {
-		id?: number;
-		pet?: Pet;
+		id?: number | null;
+		pet?: Pet | null;
 
 		/**
 		 * User supplied username
 		 * Min length: 4
 		 */
-		username?: string;
+		username?: string | null;
 
 		/**
 		 * User first name
 		 * Min length: 1
 		 */
-		firstName?: string;
+		firstName?: string | null;
 
 		/**
 		 * User last name
 		 * Min length: 1
 		 */
-		lastName?: string;
+		lastName?: string | null;
 
 		/** User email address */
-		email?: string;
+		email?: string | null;
 
 		/**
 		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
 		 * Min length: 8
 		 * Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 		 */
-		password?: string;
+		password?: string | null;
 
 		/**
 		 * User phone number in international format
 		 * Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
 		 */
-		phone?: string;
+		phone?: string | null;
 
 		/** User status */
-		userStatus?: number;
+		userStatus?: number | null;
 	}
 
 	@autoinject()
