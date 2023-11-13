@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using TsTestHelpers;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -12,10 +13,10 @@ namespace SwagTests
 		readonly ITestOutputHelper output;
 		readonly bool buildToValidate;
 
-		public NG2TestHelper(Type genType, ITestOutputHelper output, bool buildToValidate) : base(genType)
+		public NG2TestHelper(Type genType, ITestOutputHelper output) : base(genType)
 		{
 			this.output = output;
-			this.buildToValidate = buildToValidate;
+			this.buildToValidate = TestingSettings.Instance.NgBuild;
 		}
 
 		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile, Settings settings = null)
@@ -35,6 +36,25 @@ namespace SwagTests
 
 			if (buildToValidate)
 			{
+				Assert.Equal(0, CheckNGBuild(s));
+			}
+		}
+
+		public void GenerateAndAssertBuild(string openApiFile, string expectedFile, Settings settings = null)
+		{
+			GenerateAndAssert(openApiFile, expectedFile, settings);
+
+			if (buildToValidate)
+			{
+				string s = TranslateDefToCode(openApiFile, settings ?? new Settings()
+				{
+					ClientNamespace = "MyNS",
+					ContainerClassName = "MyClient", //the TestBed requires this containerClassName
+					ContainerNameStrategy = ContainerNameStrategy.None,
+					ActionNameStrategy = ActionNameStrategy.Default,
+					DataAnnotationsToComments = true,
+				}); 
+				
 				Assert.Equal(0, CheckNGBuild(s));
 			}
 		}

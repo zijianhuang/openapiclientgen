@@ -7,7 +7,7 @@ namespace SwagTests
 {
 	public class NG2OpenApiDirTestHelper: NG2TestHelper
 	{
-		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output, bool buildToValidate): base(genType, output, buildToValidate)
+		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output): base(genType, output)
 		{
 		}
 

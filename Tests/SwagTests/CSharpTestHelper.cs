@@ -3,6 +3,7 @@ using Fonlow.OpenApiClientGen.CS;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using System.IO;
+using TsTestHelpers;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -40,7 +41,11 @@ namespace SwagTests
 		public void GenerateAndAssertAndBuild(string filePath, string expectedFile, Settings mySettings = null)
 		{
 			string s = TranslateDefToCode(filePath, mySettings);
-			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			if (TestingSettings.Instance.UpdateGenerated)
+			{
+				File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			}
+
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null && mySettings.UseSystemTextJson);

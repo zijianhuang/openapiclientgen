@@ -10,7 +10,7 @@ namespace SwagTests
 		readonly NG2OpenApiDirTestHelper helper;
 		public OpenapiDirectoryTests(ITestOutputHelper output)
 		{
-			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, CodeGenSettings.BuildToValidate);
+			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output);
 		}
 
 		[Fact]
