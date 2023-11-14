@@ -30,12 +30,12 @@ The plugin assemblies should be copied accordingly after a release build.
 
 Download the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) and extract to a local folder. The console app includes the following plugins for JavaScript/TypeScript libs or Frameworks:
 
-* Fonlow.OpenApiClientGenCore.Aurelia
-* Fonlow.OpenApiClientGenCore.Axios
-* Fonlow.OpenApiClientGenCore.Fetch
-* Fonlow.OpenApiClientGenCore.JQ
-* Fonlow.OpenApiClientGenCore.NG2
-* Fonlow.OpenApiClientGenCore.NG2FormGroup
+* Fonlow.OpenApiClientGen.Aurelia
+* Fonlow.OpenApiClientGen.Axios
+* Fonlow.OpenApiClientGen.Fetch
+* Fonlow.OpenApiClientGen.JQ
+* Fonlow.OpenApiClientGen.NG2
+* Fonlow.OpenApiClientGen.NG2FormGroup
 
 
 #### MacOS
