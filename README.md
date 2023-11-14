@@ -28,7 +28,15 @@ The plugin assemblies should be copied accordingly after a release build.
 
 ### Binary Download
 
-Download the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) and extract to a local folder. 
+Download the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) and extract to a local folder. The console app includes the following plugins for JavaScript/TypeScript libs or Frameworks:
+
+* Fonlow.OpenApiClientGenCore.Aurelia
+* Fonlow.OpenApiClientGenCore.Axios
+* Fonlow.OpenApiClientGenCore.Fetch
+* Fonlow.OpenApiClientGenCore.JQ
+* Fonlow.OpenApiClientGenCore.NG2
+* Fonlow.OpenApiClientGenCore.NG2FormGroup
+
 
 #### MacOS
 If you are using Mac OS or Linux for development, you may use "dotnet publish", for example:
