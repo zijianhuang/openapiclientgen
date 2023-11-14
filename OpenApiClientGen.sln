@@ -26,6 +26,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC372E94-AF86-4792-B47E-B0A76957D63A}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		CHANGELOG.md = CHANGELOG.md
 		CodeGen.bat = CodeGen.bat
 		DemoCodeGen.json = DemoCodeGen.json
 		README.md = README.md

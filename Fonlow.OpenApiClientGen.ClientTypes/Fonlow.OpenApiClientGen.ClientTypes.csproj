@@ -13,7 +13,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>Fonlow.OpenApiClientGen.ClientTypes</AssemblyName>
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
-    <Version>2.6.0</Version>
+    <Version>2.7.0</Version>
     <PackageReleaseNotes>.NET 7</PackageReleaseNotes>
   </PropertyGroup>
 
